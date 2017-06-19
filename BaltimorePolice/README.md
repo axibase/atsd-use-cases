@@ -18,6 +18,15 @@ These two data sets can be compared and contrasted to underline a number of feat
 regarding the nature and the scope of the violence that occurs against the backdrop of a nearly three hundred
 year old city less than forty miles from the nation's capital.
 
+To establish a correlation between incidents of police use of force and incidents of homicide,
+it must be possible to effectively predict the occurrence of an above average amount of incidents of
+police use of force using data about the number of homicides that occurred in a given 
+neighborhood. To establish a standard, for the sake of testing, mean values from each dataset
+will be collected. This mean will be compared to observed data from each dataset, and if
+a district is found to have witnessed an above average number of murders during the observed
+period, the alternative hypothesis will predict that the district will have also seen an
+above average number of incidents of police use of force.
+
 Both of these datasets can be analyzed in the Axibase Time Series Database which provides a built-in support for the [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md) Open Data format used by the majority of government agencies in the United States. ATSD also includes graphics capabilities to analyze the data with [SQL](https://github.com/axibase/atsd/blob/master/api/sql/README.md#overview)
 and visualize it with graphs.
 
@@ -472,6 +481,59 @@ over the span of the entire observed period.
 
 #### Analysis
 
+The baseline average for number of homicides in a given Baltimore neighborhood was
+47 (47.33) for the given time period. The average number of incidents of police 
+use of force was 7 (7.22) during the same time period. If the null hypothesis is to be
+rejected and the alternative hypothesis considered to be at least possibly true, an
+above average amount of homicides in a given neighborhood should predict an above average
+number of incidents of police use of force.
+
+| Neighborhood | O1 (Homicide) | E1 (Homicide) | O2(Police) | E2 (Police) |
+|--------------|---------------|---------------|------------|-------------|
+| Central | 31 | 47 | 3 | 7 |
+| Eastern | 57 | 47 | 11 | 7 |
+| Northeastern | 64 | 47 | 8 | 7 |
+| North | 33 | 47 | 5 | 7 |
+| Northwestern | 69 | 47 | 8 | 7 |
+| Southeastern | 26 | 47 | 5 | 7 |
+| Southern | 36 | 47 | 6 | 7|
+| Southwestern | 51 | 47 | 10 | 7 |
+| Western | 59 | 47 | 9 | 7 |
+
+The trend is effectively predicted using the model described in [Methodology](#Methodology).
+
+| Neighborhood | O1/E1 | O2/E2 |
+|--------------|-------|-------|
+| Central | 0.6596 | 0.4286 |
+| Eastern | 1.2128 | 1.5714 |
+| Northeastern | 1.3617 | 1.1429 |
+| North | 0.7021 | 0.7143 |
+| Northwestern | 1.4681 | 1.1429 |
+| Southeastern | 0.5532 | 0.7143 |
+| Southern | 0.7660 | 0.8571 |
+| Southwestern | 1.0851 | 1.4286 |
+| Western | 1.2553 | 1.2857 |
+
+The mean value of O1/E1 is 1.0426 and the standard deviation is 0.3398. The mean value of O2/E2 
+is 1.0317 and the standard deviation is 0.3765. 
+
+| Neighborhood | (O1-E1)^2/E1 | (O2-E2)^2/E2 |
+|--------------|-------|-------|
+| Central | 5.4460 | 2.2857 |
+| Eastern | 1.7544 | 2.2857 |
+| Northeastern | 4.5156 | 0.1429 |
+| North | 4.1702 | 0.5714 |
+| Northwestern | 9.3830 | 0.1429 |
+| Southeastern | 9.3830 | 0.5714 |
+| Southern | 2.5745 | 0.1429 |
+| Southwestern | 0.3404 | 1.2857 |
+| Western | 3.0638 | 0.5714 |
+
+The _p-value_ for the given series is 0.002, which is well within the acceptable range of
+significance, generally set around 0.05. Keep in mind, _p-value_ is used to reject the
+null hypothesis but does not indicate the absolute validity of the alternative 
+hypothesis.
+
 After the death of Freddie Gray at the hands of the Baltimore Police Department in 2015, widespread
 protests broke out across the country with the epicenter of the demonstrations in the city of
 Baltimore itself. These demonstrations quickly led to violence, with drugstores looted, vehicles
@@ -531,7 +593,7 @@ available that allows them to do just that.
 1. Download [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 2. Download the [docker-compose.yml](Resources/docker-compose.yml) file to launch the ATSD 
 container bundle.
-4. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
+3. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
 
 ```sh
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
