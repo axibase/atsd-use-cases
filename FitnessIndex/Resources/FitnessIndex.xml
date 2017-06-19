@@ -1,0 +1,50 @@
+<list>
+  <com.axibase.collector.model.job.socrata.SocrataJobConfig>
+    <name>FitnessIndex</name>
+    <cronExpression>0 0/15 * * * ?</cronExpression>
+    <enabled>false</enabled>
+    <jobType>SOCRATA</jobType>
+    <defaultTags/>
+    <checkLastTime>false</checkLastTime>
+    <commitInterval>10</commitInterval>
+    <errorThreshold>0</errorThreshold>
+    <configurations>
+      <com.axibase.collector.model.job.socrata.SocrataConfiguration>
+        <name>American Fitness Index Score (2010 - Present)</name>
+        <path>https://data.nola.gov/api/views/h5tp-44b5</path>
+        <ignoreDuplicates>false</ignoreDuplicates>
+        <settings>
+          <com.axibase.collector.model.job.socrata.SocrataConfigurationSetting>
+            <entityField>$.meta.view.id</entityField>
+            <timeEnabled>true</timeEnabled>
+            <timeField>year</timeField>
+            <timeFormat>yyyy</timeFormat>
+            <timeZone>UTC</timeZone>
+            <seriesEnabled>true</seriesEnabled>
+            <includedFields>
+              <string>*</string>
+            </includedFields>
+            <excludedFields>
+              <string>indicatorname</string>
+              <string>date</string>
+              <string>rowid</string>
+            </excludedFields>
+            <propertyEnabled>false</propertyEnabled>
+            <propertyTypeField>$.meta.view.name</propertyTypeField>
+            <propertyKeyFields/>
+            <propertyValueFields/>
+            <messageEnabled>false</messageEnabled>
+            <messageTypeField>$.meta.view.category</messageTypeField>
+            <messageSourceField>$.meta.view.attribution</messageSourceField>
+            <messageTagFields/>
+            <annotationFields/>
+          </com.axibase.collector.model.job.socrata.SocrataConfigurationSetting>
+        </settings>
+        <customTags/>
+        <addRowNumber>false</addRowNumber>
+        <skipOldData>false</skipOldData>
+        <checkEachRow>false</checkEachRow>
+      </com.axibase.collector.model.job.socrata.SocrataConfiguration>
+    </configurations>
+  </com.axibase.collector.model.job.socrata.SocrataJobConfig>
+</list>

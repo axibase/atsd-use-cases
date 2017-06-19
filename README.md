@@ -21,3 +21,5 @@ Axibase Time Series Database: Usage Examples and Research Articles
 15. [U.S. Expatriation Statistics](/Expatriation/README.md)
 16. [Climate Change: Back to the Drawing Board](/ClimateChange/README.md)
 17. [Violence Begets Violence: An Analysis of the Baltimore Police Force and Baltimore Homicide Data](/BaltimorePolice/README.md)
+18. [Quantifying Public Health: The American Fitness Index](/FitnessIndex/README.md)
+
