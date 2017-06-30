@@ -1,7 +1,7 @@
 Modeling Falling Birthrates in the Prairie State
 ===
 
-![](Images/ILL1.jpg)
+![](Images/ILL1.jpg) 
 
 ###Introduction
 Long-considered to be a bellwether for trends in the rest of the country, the nation's
