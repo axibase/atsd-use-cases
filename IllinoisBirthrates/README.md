@@ -3,7 +3,8 @@ Modeling Falling Birthrates in the Prairie State
 
 ![](Images/ILL1.jpg) 
 
-###Introduction
+### Introduction 
+
 Long-considered to be a bellwether for trends in the rest of the country, the nation's
 21st state has grown from a tiny, sparsely-populated part of the Northwest Territory to
 the home of Chicago, the third-largest city in the country. Illinois holds the headquarters
