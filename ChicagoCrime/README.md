@@ -3,7 +3,7 @@
 Analyzing Chicago Crime Statistics
 ==================================
 
-### Introduction
+Introduction
 ----------------
 
 Pizza. Michael Jordan. Lake Michigan. Jazz. The Bean. These are some of the great things that Chicago, Illinois, is known for. There is another thing that has defined the city since its birth, and
@@ -16,7 +16,7 @@ from data.gov can be easily loaded into the non-relational [Axibase Time Series 
 representation of raw data collected by government and private organizations. The article provides both sample queries and charts, as well as instructions on how to install your own ATSD instance
 and populate it with the raw data.  
 
-### Chicago Crime Statistics Dataset
+Chicago Crime Statistics Dataset
 ------------------------------------
 
 Let's take a look at the dataset titled **Crimes - 2001 to present** from [data.gov](https://www.data.gov/).  
@@ -33,7 +33,7 @@ Given the size of the dataset, you cannot load it in Excel. It is much more conv
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
-### Homicide Numbers
+Homicide Numbers
 --------------------
 
 Below is an image of monthly homicide totals from January 2001 through December 2016, but with a zoomed in screenshot starting with 2008. The month with the highest murder total in 2016 was August, which experienced 90 murders. August 2015 only had 53 murders.
@@ -158,7 +158,7 @@ LIMIT 20
 
 If you would like to see more queries on this Chicago crime dataset, please go to the [Additonal SQL Queries](#additional-sql-queries) section at the end of this article.
 
-### A Deeper Look at Crime in Chicago
+A Deeper Look at Crime in Chicago
 -------------------------------------
 
 So, what caused this drastic increase in murders in Chicago in 2016? Did the city experience an uptick in crime as a whole?
@@ -221,7 +221,7 @@ Click here to explore this Chart Lab portal:
 
 [![](../BaltimorePolice/Images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/8/#fullscreen)
 
-### Action Items
+Action Items
 ----------------
 
 Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector and create SQL queries for analyzing Chicago crime statistics:
@@ -247,12 +247,12 @@ Below are the summarized steps to follow to install local configurations of ATSD
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
-### Sources
------------
+Sources
+----------
 
 Title Photo: http://www.zerohedge.com/news/2016-08-23/chicagos-violent-crime-spreading-safe-north-side
 
-### Additional SQL Queries
+Additional SQL Queries
 --------------------------
 
 Here are some additional SQL queries (along with snippets of their outputs) which take a closer look at some of the crime statistics in Chicago.

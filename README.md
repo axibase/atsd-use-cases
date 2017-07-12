@@ -31,8 +31,10 @@ Axibase Time Series Database: Usage Examples and Research Articles
 1. [New York City's Most Crowded Industries](/Chart_of_the_Day/NY_Jobs/README.md)
 2. [500 Cities: Local Data for Better Health](/Chart_of_the_Day/CDC_TOP25/README.md)
 3. [San Francisco Air Traffic Noise Complaints by the Numbers](/Chart_of_the_Day/SFO_Complaints/README.md)
+4. [Island Living is Recession Proof](/Chart_of_the_Day/Hawaii_GDP/README.md)
 
-## Data Shorts 
+## Data Library
 
-1. [New York Insurance Asset Versus Liability Data](/DataShorts/NY_Insurance/README.md)
-2. [Connecticut Prison Population Statistics](/DataShorts/CT_Prison/README.md)
+1. [New York Insurance Asset Versus Liability Data (2014-2015)](/DataShorts/NY_Insurance/README.md)
+2. [Connecticut Prison Population Statistics (2009-2017)](/DataShorts/CT_Prison/README.md)
+3. [Projected Baltimore Employment Figures (2001-2040)](/DataShorts/Baltimore_MD_Employment/README.md)

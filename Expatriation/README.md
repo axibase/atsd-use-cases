@@ -103,8 +103,7 @@ GROUP BY period(1 QUARTER)
 | 2017-Apr | 1313            |
 
 
-
-## References
+References
 ---
 
 * Title Image: [Benedict Arnold's Oath of Allegiance, May 30, 1778](hhttps://en.wikipedia.org/wiki/Oath_of_allegiance#/media/File:Benedict_Arnold_oath_of_allegiance.jpg)

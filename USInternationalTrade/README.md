@@ -12,7 +12,7 @@ publicly available data from census.gov can be easily loaded into the non-relati
 for interactive analysis with SQL and graphical representation of open data published by government and multilateral organizations. This article provides both sample SQL queries and charts,
 as well as instructions on how to install your own ATSD instance and populate it with the underlying data.
 
-### America's International Trade Dataset
+America's International Trade Dataset
 -----------------------------------------
 
 Let's take a look at a dataset on America's international trade from [census.gov](https://www.census.gov/foreign-trade/balance/index.html).  The dataset is available as an Excel file at the following [link](https://www.census.gov/foreign-trade/balance/country.xlsx).
@@ -31,7 +31,7 @@ The BLS file format presents a number of challenges when loading the data. In pa
 
 ATSD handles this by implementing a [schema-based](https://github.com/axibase/atsd/blob/master/parsers/csv/csv-schema.md) parser which can be configured to load records from non-standard CSV files, such as the BLS report.
 
-### Overview
+Overview
 ------------
 
 Let's begin by analyzing when the U.S. had its best international trade balance in recent history.
@@ -67,7 +67,7 @@ GROUP BY e.period(1 year), e.tags
 | 1991  | World, Not Seasonally Adjusted  | 421.7   | 488.5   | -66.7         |
 ```
 
-### Trade by Country
+Trade by Country
 --------------------
 
 Let's now look at trade balance between the U.S. and individual countries.  
@@ -128,7 +128,7 @@ GROUP BY e.period(1 year), e.tags -- group values by year, tags (include country
 | 1985  | Mexico   | 13634.7   | 19131.7   | -5497.0       |
 ```
 
-### 2016: Year in Review
+2016: Year in Review
 ------------------------
 
 How did 2016 look for the United States? Below is a figure of the top countries for U.S. export and imports in 2016. The table to the right of the below graphs provides
@@ -232,7 +232,7 @@ GROUP BY e.period(1 year), e.tags
 | 2016  | Hong Kong       | 5820  | 31892.2   | 6821.8    | 38714.1       |
 ```
 
-### A Closer Look at America's Trading Partners
+A Closer Look at America's Trading Partners
 -----------------------------------------------
 
 Let's now take a closer look at America's trading partners. Are there any shared characteristics between these countries?
@@ -339,7 +339,7 @@ are both five poor (China, Mexico, Vietnam, India, and Malaysia) and rich (Japan
 While improving a country's international trade balance may not solve all of its economic problems, it can be a good place to start looking for answers. Do you agree with the findings
 in this article? Download ATSD, explore this dataset, and make up your own mind.
 
-### Action Items
+Action Items
 ----------------
 
 Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector and create SQL queries for analyzing America's trade balance statistics:
@@ -357,14 +357,14 @@ Check out our file on the describing our schema-based parser used for this datas
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
-### Sources
+Sources
 -----------
 
 Title Photo: https://www.reference.com/business-finance/denominations-u-s-currency-918a309bd714c43c
 
 World Population and World GDP Values: https://www.wikipedia.org/
 
-### Additional SQL Queries
+Additional SQL Queries
 --------------------------
 
 Here are some additional SQL queries (along with snippets of their outputs) which take a closer look at the U.S.'s international trade history.
