@@ -46,6 +46,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 4. [Asset Distribution of the Public's Asset Portfolio - Bank of Israel (1998-2017)](/DataShorts/CBI/Asset_Distribution/README.md)
 5. [Bank of Israel Debt (1997-2016)](DataShorts/CBI/Debt/README.md)
 6. [Tax Rate by State (2017)](/DataShorts/Taxes_By_State)
+7. [New York City Income by Adjusted Gross Income (AGI) Range (2014)](/DataShorts/NY_Pay)
 
 ## Support
 
