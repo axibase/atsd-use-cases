@@ -27,6 +27,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 21. [Riding the L Train in 2025](L_Train2025/README.md)
 22. [The Consumer Price Index Verus Your Savings Account (Bank of Israel)](CBI_CPI/README.md)
 23. [Does the Bag Tax Work?](Bag_Tax/README.md)
+24. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
 
 ## Chart of the Day 
 
