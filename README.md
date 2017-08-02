@@ -40,6 +40,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 7. [Who is Dropping Out in the State with the Fewest Dropouts?](Chart_of_the_Day/IA_Dropouts/README.md)
 8. [Public Utilities and Private Industry in Austin](Chart_of_the_Day/Austin_Power/README.md)
 
+
 ## Data Library
 
 1. [New York Insurance Asset Versus Liability Data (2014-2015)](/DataShorts/NY_Insurance/README.md)
