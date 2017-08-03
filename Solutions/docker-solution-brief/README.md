@@ -20,15 +20,15 @@ Bridge the gap between traditional and micro-services architectures by integrati
 
 ## Executive Summary
 
-Managing a complex IT environment has never been more challenging. Having recently completed major virtualization and datacenter consolidation projects, our enterprise customers are under increasing pressure to apply centralized tools and processes to the rapidly growing Linux container deployments, often spearheaded by the organization's development teams. Rather than fully embracing containers and risking the stability of current services, many organizations are adopting a two-speed approach to IT architecture where agile customer-oriented capabilities are demarketed from the stable legacy systems whose release cycles are generally slower.
+Managing a complex IT environment has never been more challenging. Having recently completed major virtualization and datacenter consolidation projects, enterprise customers are under increasing pressure to apply centralized tools and processes to the rapidly growing Linux container deployments, often spearheaded by the organization's development teams. Rather than fully embracing containers and risking the stability of current services, many organizations are adopting a two-speed approach to IT architecture where agile customer-oriented capabilities are demarcated from the stable legacy systems whose release cycles are slower.
 
-Axibase Time Series Database, with its integration capabilities, serves as a bridge between these two types of environments by providing IT operations teams the necessary visibility, control, and automation while delivering a single pane of glass view of container performance for development and QA teams.
+Axibase Time Series Database, with its integration capabilities, serves as a bridge between these two types of environments by providing IT operations teams the necessary visibility, control, and automation into Lonux containers while delivering a single pane of glass view of container performance for development and QA teams.
 
 ## Partner Quote
 
-We know firsthand from our experience with our enterprise customers that integration is their number one priority. With Linux containers being disruptive enough on their own, we worked closely with Red Hat engineering to test and certify the ATSD Red Hat image. Now, its the Red Hat catalog we're standing by to ensure deployment success for our joint customers.
+We know firsthand from our experience with enterprise customers that integration is their top priority. Linux containers are operationally disruptive enough on their own, so we worked closely with Red Hat engineering to test and certify the ATSD Red Hat image. Now that we have released ATSD in the Red Hat Container Catalog we're comitted to ensuring deployment success for our joint customers.
 
--Sergei Rodionov, Founder and CEO of Axibase Corporation
+-Sergei Rodionov, CEO of Axibase Corporation
 
 ## Solution Benefits
 
@@ -60,4 +60,4 @@ We know firsthand from our experience with our enterprise customers that integra
 
 ## Call to Action
 
-Request a demo or deploy a certified ATSD Red Hat container in 15 minutes by following these [easy-to-run steps](https://github.com/axibase/axibase-collector/blob/master/jobs/docker/docker-compose-rhel.md). For support and sales inquiries, contact our dedicated support at redhat-atsd@axibase.com or 1-(408)-973-7897
+Deploy a certified ATSD Red Hat container in your own environment in 15 minutes by following these [steps](https://github.com/axibase/axibase-collector/blob/master/jobs/docker/docker-compose-rhel.md). For support and sales inquiries, contact our dedicated support at redhat-atsd@axibase.com or (408) 973-7897.
