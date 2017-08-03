@@ -1,7 +1,7 @@
 # Red Hat Solutions Brief
 
-Company: Axibase
-Solution: Axibase Time Series Database
+* Company: Axibase
+* Solution: Axibase Time Series Database
 
 ## Company Description (100 Words)
 
