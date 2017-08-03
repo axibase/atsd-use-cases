@@ -2,7 +2,7 @@
 
 Axibase Time Series Database: Usage Examples and Research Articles
   
-## Research Articles
+## Research Articles 
 
 1. [Pain at the Pump - a Closer Look at Hawaii's High Fuel Prices](HawaiiGasPrices/hawaii_gas_prices.md)
 2. [Data Visualization with Chart Lab](ChartLabIntro/README.md)
