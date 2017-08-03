@@ -36,18 +36,18 @@ We know firsthand from our experience with enterprise customers that integration
 ## Use Cases (1-2 Sentences, 3-4 Bullet Points)
 
 * Linux Container Monitoring
-- Collect cpu, memory, I/O, volume, and network statistics from Docker hosts and containers.
-- Correllate container utilization with OS-level usage for triage and diagnostics.
-- Instantly visualize data with built-in real-time host and container dashboards.
-- Automatically build service dashboards using image and container labels.
+  - Collect cpu, memory, I/O, volume, and network statistics from Docker hosts and containers.
+  - Correllate container utilization with OS-level usage for triage and diagnostics.
+  - Instantly visualize data with built-in real-time host and container dashboards.
+  - Automatically build service dashboards using image and container labels.
 
 * Centralized Change Management
-- Perform detailed inventory scan of the Docker environment including hosts, images, containers, volumes, and networks.
-- Notify applications and operations teams in case of container misplacements.
-- Enforce labeling standards to ensure CMDB accuracy.
+  - Perform detailed inventory scan of the Docker environment including hosts, images, containers, volumes, and networks.
+  - Notify applications and operations teams in case of container misplacements.
+  - Enforce labeling standards to ensure CMDB accuracy.
 
 * Compliance and Security
-- Intercept and react to life-cycle events such as new image pulls, container starts, container command executions.
-- Identify images and containers that violate pre-approved black- and white-lists.
-- Perform enterprise-wide inventory queries to identify configuration abnormalities.
-- Scan launch parameters and variables to ensure secrets and credentials are protected.
+  - Intercept and react to life-cycle events such as new image pulls, container starts, container command executions.
+  - Identify images and containers that violate pre-approved black- and white-lists.
+  - Perform enterprise-wide inventory queries to identify configuration abnormalities.
+  - Scan launch parameters and variables to ensure secrets and credentials are protected.
