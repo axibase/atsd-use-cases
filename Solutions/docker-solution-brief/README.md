@@ -60,4 +60,4 @@ We know firsthand from our experience with enterprise customers that integration
 
 ## Call to Action
 
-Deploy a certified ATSD Red Hat container to your own environment in 15 minutes by following these [steps](https://github.com/axibase/axibase-collector/blob/master/jobs/docker/docker-compose-rhel.md). For support and sales inquiries, contact our dedicated support at redhat-atsd@axibase.com or (408) 973-7897.
+Deploy a certified ATSD Red Hat container in your own environment in 15 minutes by following these [steps](https://github.com/axibase/axibase-collector/blob/master/jobs/docker/docker-compose-rhel.md). For support and sales inquiries, contact our dedicated support at redhat-atsd@axibase.com or (408) 973-7897.
