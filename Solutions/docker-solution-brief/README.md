@@ -1,7 +1,10 @@
 # Red Hat Solutions Brief
 
-* Company: Axibase
+* Company: **Axibase**
 * Solution: Axibase Time Series Database
+* Product [Link](https://axibase.com/products/axibase-time-series-database/)
+* Company Logo: https://axibase.com/wp-content/uploads/2014/12/axibase_logo_orange-2.png
+* Red Hat Container Catalog [Link](https://access.redhat.com/containers/?tab=tags#/registry.connect.redhat.com/axibase/atsd)
 
 ## Company Description (100 Words)
 
