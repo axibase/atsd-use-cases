@@ -60,4 +60,4 @@ We know firsthand from our experience with our enterprise customers that integra
 
 ## Call to Action
 
-Request a demo or deploy a certified ATSD Red Hat container in 15 minutes by following these [easy-to-run steps](https://github.com/axibase/axibase-collector/blob/master/jobs/docker-compose.md). For support and sales inquiries, contact our dedicated support at redhat-atsd@axibase.com or 1-(408)-973-7897
+Request a demo or deploy a certified ATSD Red Hat container in 15 minutes by following these [easy-to-run steps](https://github.com/axibase/axibase-collector/blob/master/jobs/docker/docker-compose-rhel.md). For support and sales inquiries, contact our dedicated support at redhat-atsd@axibase.com or 1-(408)-973-7897
