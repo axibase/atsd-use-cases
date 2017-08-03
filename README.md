@@ -50,6 +50,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 6. [Tax Rate by State (2017)](DataShorts/Taxes_By_State/README.md)
 7. [New York City Income by Adjusted Gross Income (AGI) Range (2014)](DataShorts/NY_Pay/README.md)
 
-## Support
+## Support and Solutions 
 
 1. [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
+2. [Red Hat and Axibase Solutions Brief: Axibase Times Series Database](Solutions/docker-solution-brief/README.md)
