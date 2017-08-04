@@ -304,6 +304,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2013 | 106.00                 | 
 | 2014 | 105.90                 | 
 | 2015 | 105.70                 | 
+
 ```
 
 Return to the **[index](#data)**
@@ -1421,7 +1422,6 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2014 | 54.00                  | 
 | 2015 | 55.00                  | 
 ```
-
 Return to the **[index](#data)**
 
 ### Luxembourg
@@ -2196,7 +2196,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2000 | 131.50                 | 
 | 2001 | 140.40                 | 
 | 2002 | 148.50                 | 
-| #### Debt as Percent of GDP2003 | 148.70                 | 
+| 2003 | 148.70                 | 
 | 2004 | 153.30                 | 
 | 2005 | 162.20                 | 
 | 2006 | 167.70                 | 
