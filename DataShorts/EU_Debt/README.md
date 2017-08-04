@@ -31,6 +31,7 @@ the European Union debt as a percent of GDP, used as a baseline for reference.
 
 ## Debt as a Portion of the European Union Total
 
+
 **Figure 3.1**
 
 ![](Images/eud-04.png)
@@ -150,7 +151,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2014 | 143.61                 | 
 | 2015 | 127.93                 | 
 ```
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Austria
 
@@ -228,7 +229,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 126.40                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Belgium
 
@@ -306,7 +307,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 178.90                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Bulgaria
 
@@ -374,7 +375,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 110.50                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Croatia
 
@@ -440,7 +441,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 114.40                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Cyprus
 
@@ -518,7 +519,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 353.70                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Czech Republic
 
@@ -595,7 +596,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 68.00                  | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Denmark
 
@@ -672,7 +673,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 207.60                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Estonia
 
@@ -750,7 +751,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 116.60                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Finland
 
@@ -828,7 +829,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 152.90                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### France
 
@@ -906,7 +907,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 143.40                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Germany
 
@@ -984,7 +985,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 98.50                  | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Greece
 
@@ -1062,7 +1063,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 126.40                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Hungary
 
@@ -1140,7 +1141,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 84.70                  | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Ireland
 
@@ -1206,7 +1207,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 296.20                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Italy
 
@@ -1284,7 +1285,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 116.80                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Latvia
 
@@ -1344,7 +1345,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 88.70                  | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Lithuania
 
@@ -1624,7 +1625,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 225.10                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Poland
 
@@ -1686,7 +1687,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 78.70                  | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Portugal
 
@@ -1762,7 +1763,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2014 | 191.20                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Romania
 
@@ -1833,7 +1834,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2014 | 62.10                  | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Slovakia
 
@@ -1911,7 +1912,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 81.40                  | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Slovenia
 
@@ -1977,7 +1978,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 87.30                  | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Spain
 
@@ -2055,7 +2056,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 155.50                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### Sweden
 
@@ -2133,7 +2134,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 187.50                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
 
 ### United Kingdom
 
@@ -2173,7 +2174,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/10000 AS 'Debt (Billion Euro)'
 | 2014 | 291.58              | 
 | 2015 | 295.27              | 
 ```
-
+ 
 #### Debt as Percent of GDP
 
 **Script 29.2**
@@ -2196,7 +2197,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2000 | 131.50                 | 
 | 2001 | 140.40                 | 
 | 2002 | 148.50                 | 
-| #### Debt as Percent of GDP2003 | 148.70                 | 
+| 2003 | 148.70                 | 
 | 2004 | 153.30                 | 
 | 2005 | 162.20                 | 
 | 2006 | 167.70                 | 
@@ -2211,4 +2212,4 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2015 | 157.70                 | 
 ```
 
-Return to the **[index](#Data)**
+Return to the **[index](#data)**
