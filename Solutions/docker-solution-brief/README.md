@@ -22,7 +22,7 @@ Bridge the gap between traditional and micro-services architectures by integrati
 
 Managing a complex IT environment has never been more challenging. Having recently completed major virtualization and datacenter consolidation projects, enterprise customers are under increasing pressure to apply centralized tools and processes to the rapidly growing Linux container deployments, often spearheaded by the organization's development teams. Rather than fully embracing containers and risking the stability of current services, many organizations are adopting a two-speed approach to IT architecture where agile customer-oriented capabilities are demarcated from the stable legacy systems whose release cycles are slower.
 
-Axibase Time Series Database, with its integration capabilities, serves as a bridge between these two types of environments by providing IT operations teams the necessary visibility, control, and automation into Lonux containers while delivering a single pane of glass view of container performance for development and QA teams.
+Axibase Time Series Database, with its integration capabilities, serves as a bridge between these two types of environments by providing IT operations teams the necessary visibility, control, and automation into Linux containers while delivering a single pane of glass view of container performance for development and QA teams.
 
 ## Partner Quote
 
