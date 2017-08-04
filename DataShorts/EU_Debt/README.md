@@ -1,7 +1,7 @@
 European Union Debt by Country (1995-2016)
 ==
 
-> **Data Source**: [Eurostat](http://ec.europa.eu/eurostat)
+> **Data Source**: [Eurostat](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=teina225&plugin=1)
 
 > **Visualization**: [ChartLab](https://apps.axibase.com) from [Axibase](https://axibase.com)
 
@@ -1080,27 +1080,18 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/10000 AS 'Debt (Billion Euro)'
 ```ls
 | Year | Debt (Billion Euro) | 
 |------|---------------------| 
-| 1995 | 238.20              | 
-| 1996 | 304.67              | 
-| 1997 | 393.54              | 
-| 1998 | 466.99              | 
-| 1999 | 570.79              | 
-| 2000 | 746.49              | 
-| 2001 | 884.05              | 
-| 2002 | 983.64              | 
-| 2003 | 1289.40             | 
-| 2004 | 1482.85             | 
-| 2005 | 1780.23             | 
-| 2006 | 2022.32             | 
-| 2007 | 2406.46             | 
-| 2008 | 2854.74             | 
-| 2009 | 3075.68             | 
-| 2010 | 3129.19             | 
-| 2011 | 3236.93             | 
-| 2012 | 2924.80             | 
-| 2013 | 2875.53             | 
-| 2014 | 2960.70             | 
-| 2015 | 2878.66             | 
+| 2004 | 53.72               | 
+| 2005 | 62.00               | 
+| 2006 | 66.04               | 
+| 2007 | 72.63               | 
+| 2008 | 75.70               | 
+| 2009 | 78.42               | 
+| 2010 | 72.22               | 
+| 2011 | 76.68               | 
+| 2012 | 77.68               | 
+| 2013 | 77.68               | 
+| 2014 | 80.39               | 
+| 2015 | 83.66               | 
 ```
 
 #### Debt as Percent of GDP
@@ -2196,7 +2187,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
 | 2000 | 131.50                 | 
 | 2001 | 140.40                 | 
 | 2002 | 148.50                 | 
-| #### Debt as Percent of GDP2003 | 148.70                 | 
+| 2003 | 148.70                 | 
 | 2004 | 153.30                 | 
 | 2005 | 162.20                 | 
 | 2006 | 167.70                 | 
