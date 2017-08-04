@@ -13,7 +13,7 @@ European Union Debt by Country (2005-2016)
 
 ![](Images/eud-01.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/e4e290d2/3/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/e4e290d2/4/#fullscreen)
 
 > Open the ChartLab visualization above and use the dropdown menus to navigate between countries or select the European Union
 total. Use both charts to compare two countries, one country to the EU total, or any other desired combination.
@@ -24,7 +24,7 @@ total. Use both charts to compare two countries, one country to the EU total, or
 
 ![](Images/eud-03.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/5d6d6252/2/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/5d6d6252/5/#fullscreen)
 
 > Open the ChartLab visualization above and use the dropdown menu to navigate between countries. The red line represents
 the European Union debt as a percent of GDP, used as a baseline for reference.
@@ -35,7 +35,7 @@ the European Union debt as a percent of GDP, used as a baseline for reference.
 
 ![](Images/eud-04.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/64b4fd84/8/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/64b4fd84/9/#fullscreen)
 
 > Open the ChartLab visualization above and use the dropdown menu to navigate through time. 
 
@@ -80,7 +80,7 @@ visualizations and their corresponding SQL queries are shown below:
 
 #### Debt
 
-**Script 1.1**
+**Query 1.1**
 
 ```
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -108,7 +108,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 1.2**
+**Query 1.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -139,7 +139,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 2.1**
+**Query 2.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -167,7 +167,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 2.2**
+**Query 2.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -199,7 +199,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 3.1**
+**Query 3.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -227,7 +227,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 3.2**
+**Query 3.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -259,7 +259,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 4.1**
+**Query 4.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -287,7 +287,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 4.2**
+**Query 4.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt as Percent of GDP'
@@ -319,7 +319,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 5.1**
+**Query 5.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -347,7 +347,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 5.2**
+**Query 5.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -379,7 +379,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 6.1**
+**Query 6.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -407,7 +407,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 6.2**
+**Query 6.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -439,7 +439,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 7.1**
+**Query 7.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -467,7 +467,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 7.2**
+**Query 7.2**
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
   FROM '%czech_republic' WHERE entity = 'eu-debt-data-2'
@@ -498,7 +498,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 8.1**
+**Query 8.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -525,7 +525,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 8.2**
+**Query 8.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -557,7 +557,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 9.1**
+**Query 9.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -585,7 +585,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 9.2**
+**Query 9.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -617,7 +617,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 10.1**
+**Query 10.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -645,7 +645,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 10.2**
+**Query 10.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -677,7 +677,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 11.1**
+**Query 11.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/10000 AS 'Debt (Billion Euro)'
@@ -705,7 +705,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/10000 AS 'Debt (Billion Euro)'
 
 #### Debt as Percent of GDP
 
-**Script 11.2**
+**Query 11.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -737,7 +737,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 12.1**
+**Query 12.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -765,7 +765,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 12.2**
+**Query 12.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -797,7 +797,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 13.1**
+**Query 13.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -825,7 +825,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 13.2**
+**Query 13.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -857,7 +857,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 14.1**
+**Query 14.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -885,7 +885,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 14.2**
+**Query 14.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -917,7 +917,7 @@ Return to the **[index](#data)**
 
 ##### Debt
 
-**Script 15.1**
+**Query 15.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -945,7 +945,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 15.2**
+**Query 15.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -977,7 +977,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 16.1**
+**Query 16.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1005,7 +1005,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 16.2**
+**Query 16.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1037,7 +1037,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 17.1**
+**Query 17.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1065,7 +1065,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 17.2**
+**Query 17.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1097,7 +1097,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 18.1**
+**Query 18.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1125,7 +1125,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 18.2**
+**Query 18.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1157,7 +1157,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 19.1**
+**Query 19.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1185,7 +1185,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 19.2**
+**Query 19.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1217,7 +1217,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 20.1**
+**Query 20.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1245,7 +1245,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 20.2**
+**Query 20.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1277,7 +1277,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 21.1**
+**Query 21.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1305,7 +1305,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 21.2**
+**Query 21.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1337,7 +1337,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 22.1**
+**Query 22.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1365,7 +1365,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 22.2**
+**Query 22.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1397,7 +1397,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 23.1**
+**Query 23.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1425,7 +1425,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 23.2**
+**Query 23.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1458,7 +1458,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 24.1**
+**Query 24.1**
 
 ``sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1486,7 +1486,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 24.2**
+**Query 24.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1518,7 +1518,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 25.1**
+**Query 25.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1546,7 +1546,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 25.2**
+**Query 25.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1578,7 +1578,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 26.1**
+**Query 26.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1606,7 +1606,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 26.2**
+**Query 26.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1638,7 +1638,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 27.1**
+**Query 27.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1664,9 +1664,9 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 | 2016 | 1.1070               | 
 ```
 
-#### Debt as Percent of GDP
+#### Debt as Percent of GDP 
 
-**Script 27.2**
+**Query 27.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1698,7 +1698,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 28.1**
+**Query 28.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1726,7 +1726,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 28.2**
+**Query 28.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
@@ -1758,7 +1758,7 @@ Return to the **[index](#data)**
 
 #### Debt
 
-**Script 29.1**
+**Query 29.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
@@ -1786,7 +1786,7 @@ SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Eur
 
 #### Debt as Percent of GDP
 
-**Script 29.2**
+**Query 29.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value AS 'Debt Percent of GDP'
