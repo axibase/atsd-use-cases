@@ -20,7 +20,7 @@ total. Use both charts to compare two countries, one country to the EU total, or
 
 ## Debt as Percent of GDP
 
-**Figure 2.1**
+**Figure 2.1** 
 
 ![](Images/eud-03.png)
 
