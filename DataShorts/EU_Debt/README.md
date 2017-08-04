@@ -22,7 +22,7 @@ total. Use both charts to compare two countries, one country to the EU total, or
 
 **Figure 2.1** 
 
-![](Images/eud-03.png)
+![](Images/eud-03.png) 
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/5d6d6252/5/#fullscreen)
 
