@@ -1,7 +1,7 @@
 European Union Debt by Country (1995-2016)
 ==
 
-> **Data Source**: [Eurostat](http://ec.europa.eu/eurostat)
+> **Data Source**: [Eurostat](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=teina225&plugin=1)
 
 > **Visualization**: [ChartLab](https://apps.axibase.com) from [Axibase](https://axibase.com)
 
