@@ -13,7 +13,7 @@ European Union Debt by Country (2005-2016)
 
 ![](Images/eud-01.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/e4e290d2/4/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/e4e290d2/5/#fullscreen)
 
 > Open the ChartLab visualization above and use the dropdown menus to navigate between countries or select the European Union
 total. Use both charts to compare two countries, one country to the EU total, or any other desired combination.
