@@ -1,7 +1,7 @@
 The Average American Debt Profile
 ===
 
-![](Images/fed-000.jpg)
+![](Images/fed000.jpg)
 
 ### Introduction
 
