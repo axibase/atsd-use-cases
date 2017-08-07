@@ -13,6 +13,8 @@ This entry is an expansion of an earlier entry titled [European Union Debt by Co
 
 ### Year Index:
 
+Per capita debt indexed by country and year from 2005 to 2016.
+
 * [2005](#2005)
 * [2006](#2006)
 * [2007](#2007)
@@ -25,6 +27,7 @@ This entry is an expansion of an earlier entry titled [European Union Debt by Co
 * [2014](#2014)
 * [2015](#2015)
 * [2016](#2016)
+* [Per Capita Debt Growth (2006-2016)](#debt-growth)
 
 ### 2005
 
@@ -731,5 +734,68 @@ ORDER BY debt.tags.geo
 | Sweden         | 19200                  | 
 | United Kingdom | 30800                  | 
 ```
+
+* Return to the [Index](#year-index)
+
+### Debt Growth:
+
+Per capita debt growth indexed by country from 2006 to 2016.
+
+**Figure 2.01**
+
+![](Images/eudpc-013.png)
+
+[![](Images/button.png)](https://apps.axibase.com/chartlab/d38e750e/6/#fullscreen)
+
+**Query 2.01**
+
+```sql
+SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS Country, 
+  ROUND(FIRST(debt.value)/FIRST(pop.value)*1000000, -2) AS '2006, €',
+  ROUND(LAST(debt.value)/LAST(pop.value)*1000000, -2) AS '2016, €',
+  ROUND((LAST(debt.value)/LAST(pop.value) - FIRST(debt.value)/FIRST(pop.value))*1000000, -2) AS 'New Debt, €',
+  ROUND(100*((LAST(debt.value)/LAST(pop.value))/(FIRST(debt.value)/FIRST(pop.value))-1)) AS 'New Debt, %'
+FROM government_consolidated_gross_debt AS debt 
+  JOIN "average_population_-_total" AS pop 
+  ON debt.entity = pop.entity AND debt.time = pop.time AND debt.tags = pop.tags
+WHERE datetime BETWEEN '2006-01-01T00:00:00Z' AND '2016-01-01T00:00:00Z'
+  AND debt.entity = 'eurostat'
+  AND Country NOT LIKE 'Euro*'
+  GROUP BY debt.entity, Country
+ORDER BY Country
+```
+
+**Table 2.01**
+
+| Country        | 2006, € | 2016, € | New Debt, € | New Debt, % | 
+|----------------|---------|---------|-------------|-------------| 
+| Austria        | 21700   | 33900   | 12200       | 56          | 
+| Belgium        | 28200   | 39400   | 11200       | 40          | 
+| Bulgaria       | 800     | 2000    | 1200        | 160         | 
+| Croatia        | 3600    | 9200    | 5600        | 154         | 
+| Cyprus         | 12700   | 22700   | 10000       | 79          | 
+| Czech Republic | 3500    | 6100    | 2700        | 77          | 
+| Denmark        | 13100   | 18300   | 5200        | 40          | 
+| Estonia        | 400     | 1500    | 1100        | 241         | 
+| Finland        | 12500   | 24800   | 12200       | 98          | 
+| France         | 18800   | 32100   | 13300       | 71          | 
+| Germany        | 19300   | 25900   | 6600        | 34          | 
+| Greece         | 20500   | 29200   | 8800        | 43          | 
+| Hungary        | 6200    | 8500    | 2400        | 38          | 
+| Ireland        | 10200   | 42200   | 32000       | 313         | 
+| Italy          | 27300   | 36600   | 9300        | 34          | 
+| Latvia         | 800     | 5100    | 4400        | 564         | 
+| Lithuania      | 1300    | 5400    | 4100        | 327         | 
+| Luxembourg     | 5600    | 18600   | 13100       | 235         | 
+| Malta          | 8600    | 13200   | 4600        | 54          | 
+| Netherlands    | 15900   | 25500   | 9600        | 60          | 
+| Poland         | 3400    | 6000    | 2600        | 75          | 
+| Portugal       | 10900   | 23300   | 12400       | 114         | 
+| Romania        | 600     | 3200    | 2600        | 439         | 
+| Slovakia       | 2800    | 7700    | 4900        | 173         | 
+| Slovenia       | 4100    | 15300   | 11300       | 275         | 
+| Spain          | 8800    | 23800   | 15000       | 170         | 
+| Sweden         | 16500   | 19200   | 2700        | 17          | 
+| United Kingdom | 14600   | 30800   | 16200       | 111         | 
 
 * Return to the [Index](#year-index)
