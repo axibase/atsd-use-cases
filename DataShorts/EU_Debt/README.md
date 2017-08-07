@@ -76,6 +76,8 @@ visualizations and their corresponding SQL queries are shown below:
 * [Sweden](#sweden)
 * [United Kingdom](#united-kingdom)
 
+Using additional [EuroStat population data](http://ec.europa.eu/eurostat/web/population-demography-migration-projections/population-data), this debt has been indexed by per capita value as well [here](DataShorts/EU_Debt_percap/README.md).
+
 ### European Union Total
 
 #### Debt
