@@ -13,7 +13,7 @@ European Union Debt by Country (2005-2016)
 
 ![](Images/eud-01.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/e4e290d2/5/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/e4e290d2/7/#fullscreen)
 
 > Open the ChartLab visualization above and use the dropdown menus to navigate between countries or select the European Union
 total. Use both charts to compare two countries, one country to the EU total, or any other desired combination.
@@ -83,27 +83,27 @@ visualizations and their corresponding SQL queries are shown below:
 **Query 1.1**
 
 ```
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'eutotal' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'European Union (28 countries)'
 ```
 
 **Table 1.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 7.13                 | 
-| 2006 | 7.37                 | 
-| 2007 | 7.47                 | 
-| 2008 | 7.93                 | 
-| 2009 | 8.96                 | 
-| 2010 | 10.05                | 
-| 2011 | 10.70                | 
-| 2012 | 11.27                | 
-| 2013 | 11.62                | 
-| 2014 | 12.14                | 
-| 2015 | 12.50                | 
-| 2016 | 12.39                | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 7.13                       | 
+| 2006 | 7.37                       | 
+| 2007 | 7.47                       | 
+| 2008 | 7.93                       | 
+| 2009 | 8.96                       | 
+| 2010 | 10.05                      | 
+| 2011 | 10.70                      | 
+| 2012 | 11.27                      | 
+| 2013 | 11.62                      | 
+| 2014 | 12.14                      | 
+| 2015 | 12.50                      | 
+| 2016 | 12.39                      | 
 ```
 
 #### Debt as Percent of GDP
@@ -142,27 +142,27 @@ Return to the **[index](#data)**
 **Query 2.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'austria' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Austria'
 ```
 
 **Table 2.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.17                 | 
-| 2006 | 0.18                 | 
-| 2007 | 0.18                 | 
-| 2008 | 0.20                 | 
-| 2009 | 0.23                 | 
-| 2010 | 0.24                 | 
-| 2011 | 0.25                 | 
-| 2012 | 0.26                 | 
-| 2013 | 0.26                 | 
-| 2014 | 0.28                 | 
-| 2015 | 0.29                 | 
-| 2016 | 0.30                 | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.17                       | 
+| 2006 | 0.18                       | 
+| 2007 | 0.18                       | 
+| 2008 | 0.20                       | 
+| 2009 | 0.23                       | 
+| 2010 | 0.24                       | 
+| 2011 | 0.25                       | 
+| 2012 | 0.26                       | 
+| 2013 | 0.26                       | 
+| 2014 | 0.28                       | 
+| 2015 | 0.29                       | 
+| 2016 | 0.30                       | 
 ```
 
 #### Debt as Percent of GDP
@@ -202,27 +202,27 @@ Return to the **[index](#data)**
 **Query 3.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'belgium' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Belgium'
 ```
 
 **Table 3.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.29                 | 
-| 2006 | 0.30                 | 
-| 2007 | 0.30                 | 
-| 2008 | 0.33                 | 
-| 2009 | 0.35                 | 
-| 2010 | 0.36                 | 
-| 2011 | 0.39                 | 
-| 2012 | 0.40                 | 
-| 2013 | 0.41                 | 
-| 2014 | 0.43                 | 
-| 2015 | 0.43                 | 
-| 2016 | 0.45                 | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.29                       | 
+| 2006 | 0.30                       | 
+| 2007 | 0.30                       | 
+| 2008 | 0.33                       | 
+| 2009 | 0.35                       | 
+| 2010 | 0.36                       | 
+| 2011 | 0.39                       | 
+| 2012 | 0.40                       | 
+| 2013 | 0.41                       | 
+| 2014 | 0.43                       | 
+| 2015 | 0.43                       | 
+| 2016 | 0.45                       | 
 ```
 
 #### Debt as Percent of GDP
@@ -262,27 +262,27 @@ Return to the **[index](#data)**
 **Query 4.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'bulgaria' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Bulgaria'
 ```
 
 **Table 4.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0064               | 
-| 2006 | 0.0057               | 
-| 2007 | 0.0053               | 
-| 2008 | 0.0048               | 
-| 2009 | 0.0051               | 
-| 2010 | 0.0059               | 
-| 2011 | 0.0063               | 
-| 2012 | 0.0070               | 
-| 2013 | 0.0071               | 
-| 2014 | 0.0115               | 
-| 2015 | 0.0118               | 
-| 2016 | 0.0140               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0064                     | 
+| 2006 | 0.0057                     | 
+| 2007 | 0.0053                     | 
+| 2008 | 0.0048                     | 
+| 2009 | 0.0051                     | 
+| 2010 | 0.0059                     | 
+| 2011 | 0.0063                     | 
+| 2012 | 0.0070                     | 
+| 2013 | 0.0071                     | 
+| 2014 | 0.0115                     | 
+| 2015 | 0.0118                     | 
+| 2016 | 0.0140                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -322,27 +322,27 @@ Return to the **[index](#data)**
 **Query 5.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'croatia' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Croatia'
 ```
 
 **Table 5.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0151               | 
-| 2006 | 0.0156               | 
-| 2007 | 0.0166               | 
-| 2008 | 0.0187               | 
-| 2009 | 0.0222               | 
-| 2010 | 0.0259               | 
-| 2011 | 0.0288               | 
-| 2012 | 0.0309               | 
-| 2013 | 0.0355               | 
-| 2014 | 0.0371               | 
-| 2015 | 0.0379               | 
-| 2016 | 0.0382               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0151                     | 
+| 2006 | 0.0156                     | 
+| 2007 | 0.0166                     | 
+| 2008 | 0.0187                     | 
+| 2009 | 0.0222                     | 
+| 2010 | 0.0259                     | 
+| 2011 | 0.0288                     | 
+| 2012 | 0.0309                     | 
+| 2013 | 0.0355                     | 
+| 2014 | 0.0371                     | 
+| 2015 | 0.0379                     | 
+| 2016 | 0.0382                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -382,27 +382,27 @@ Return to the **[index](#data)**
 **Query 6.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'cyprus' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Cyprus'
 ```
 
 **Table 6.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0095               | 
-| 2006 | 0.0095               | 
-| 2007 | 0.0094               | 
-| 2008 | 0.0085               | 
-| 2009 | 0.0100               | 
-| 2010 | 0.0108               | 
-| 2011 | 0.0129               | 
-| 2012 | 0.0154               | 
-| 2013 | 0.0185               | 
-| 2014 | 0.0188               | 
-| 2015 | 0.0190               | 
-| 2016 | 0.0193               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0095                     | 
+| 2006 | 0.0095                     | 
+| 2007 | 0.0094                     | 
+| 2008 | 0.0085                     | 
+| 2009 | 0.0100                     | 
+| 2010 | 0.0108                     | 
+| 2011 | 0.0129                     | 
+| 2012 | 0.0154                     | 
+| 2013 | 0.0185                     | 
+| 2014 | 0.0188                     | 
+| 2015 | 0.0190                     | 
+| 2016 | 0.0193                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -442,27 +442,27 @@ Return to the **[index](#data)**
 **Query 7.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'czech_republic' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Czech Republic'
 ```
 
 **Table 7.1**
 
 ```sql
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0315               | 
-| 2006 | 0.0356               | 
-| 2007 | 0.0400               | 
-| 2008 | 0.0428               | 
-| 2009 | 0.0505               | 
-| 2010 | 0.0602               | 
-| 2011 | 0.0623               | 
-| 2012 | 0.0718               | 
-| 2013 | 0.0671               | 
-| 2014 | 0.0656               | 
-| 2015 | 0.0680               | 
-| 2016 | 0.0649               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0315                     | 
+| 2006 | 0.0356                     | 
+| 2007 | 0.0400                     | 
+| 2008 | 0.0428                     | 
+| 2009 | 0.0505                     | 
+| 2010 | 0.0602                     | 
+| 2011 | 0.0623                     | 
+| 2012 | 0.0718                     | 
+| 2013 | 0.0671                     | 
+| 2014 | 0.0656                     | 
+| 2015 | 0.0680                     | 
+| 2016 | 0.0649                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -501,26 +501,26 @@ Return to the **[index](#data)**
 **Query 8.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'denmark' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Denmark'
 ```
 **Table 8.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0795               | 
-| 2006 | 0.0712               | 
-| 2007 | 0.0638               | 
-| 2008 | 0.0805               | 
-| 2009 | 0.0930               | 
-| 2010 | 0.1035               | 
-| 2011 | 0.1145               | 
-| 2012 | 0.1140               | 
-| 2013 | 0.1139               | 
-| 2014 | 0.1168               | 
-| 2015 | 0.1074               | 
-| 2016 | 0.1047               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0795                     | 
+| 2006 | 0.0712                     | 
+| 2007 | 0.0638                     | 
+| 2008 | 0.0805                     | 
+| 2009 | 0.0930                     | 
+| 2010 | 0.1035                     | 
+| 2011 | 0.1145                     | 
+| 2012 | 0.1140                     | 
+| 2013 | 0.1139                     | 
+| 2014 | 0.1168                     | 
+| 2015 | 0.1074                     | 
+| 2016 | 0.1047                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -560,27 +560,27 @@ Return to the **[index](#data)**
 **Query 9.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'estonia' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Estonia'
 ```
 
 **Table 9.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0005               | 
-| 2006 | 0.0006               | 
-| 2007 | 0.0006               | 
-| 2008 | 0.0007               | 
-| 2009 | 0.0010               | 
-| 2010 | 0.0010               | 
-| 2011 | 0.0010               | 
-| 2012 | 0.0017               | 
-| 2013 | 0.0019               | 
-| 2014 | 0.0021               | 
-| 2015 | 0.0020               | 
-| 2016 | 0.0020               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0005                     | 
+| 2006 | 0.0006                     | 
+| 2007 | 0.0006                     | 
+| 2008 | 0.0007                     | 
+| 2009 | 0.0010                     | 
+| 2010 | 0.0010                     | 
+| 2011 | 0.0010                     | 
+| 2012 | 0.0017                     | 
+| 2013 | 0.0019                     | 
+| 2014 | 0.0021                     | 
+| 2015 | 0.0020                     | 
+| 2016 | 0.0020                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -620,27 +620,27 @@ Return to the **[index](#data)**
 **Query 10.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'finland' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Finland'
 ```
 
 **Table 10.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0658               | 
-| 2006 | 0.0659               | 
-| 2007 | 0.0634               | 
-| 2008 | 0.0633               | 
-| 2009 | 0.0755               | 
-| 2010 | 0.0882               | 
-| 2011 | 0.0955               | 
-| 2012 | 0.1077               | 
-| 2013 | 0.1148               | 
-| 2014 | 0.1237               | 
-| 2015 | 0.1334               | 
-| 2016 | 0.1361               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0658                     | 
+| 2006 | 0.0659                     | 
+| 2007 | 0.0634                     | 
+| 2008 | 0.0633                     | 
+| 2009 | 0.0755                     | 
+| 2010 | 0.0882                     | 
+| 2011 | 0.0955                     | 
+| 2012 | 0.1077                     | 
+| 2013 | 0.1148                     | 
+| 2014 | 0.1237                     | 
+| 2015 | 0.1334                     | 
+| 2016 | 0.1361                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -680,27 +680,27 @@ Return to the **[index](#data)**
 **Query 11.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/10000 AS 'Debt (Billion Euro)'
-  FROM 'france'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'France'
 ```
 
 **Table 11.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 1.1898               | 
-| 2006 | 1.1933               | 
-| 2007 | 1.2520               | 
-| 2008 | 1.3573               | 
-| 2009 | 1.5307               | 
-| 2010 | 1.6317               | 
-| 2011 | 1.7537               | 
-| 2012 | 1.8684               | 
-| 2013 | 1.9529               | 
-| 2014 | 2.0380               | 
-| 2015 | 2.0982               | 
-| 2016 | 2.1474               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 1.1898                     | 
+| 2006 | 1.1933                     | 
+| 2007 | 1.2520                     | 
+| 2008 | 1.3573                     | 
+| 2009 | 1.5307                     | 
+| 2010 | 1.6317                     | 
+| 2011 | 1.7537                     | 
+| 2012 | 1.8684                     | 
+| 2013 | 1.9529                     | 
+| 2014 | 2.0380                     | 
+| 2015 | 2.0982                     | 
+| 2016 | 2.1474                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -740,27 +740,27 @@ Return to the **[index](#data)**
 **Query 12.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'germany' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Germany (until 1990 former territory of the FRG)'
 ```
 
 **Table 12.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 1.5414               | 
-| 2006 | 1.5913               | 
-| 2007 | 1.5999               | 
-| 2008 | 1.6689               | 
-| 2009 | 1.7856               | 
-| 2010 | 2.0888               | 
-| 2011 | 2.1283               | 
-| 2012 | 2.2049               | 
-| 2013 | 2.1898               | 
-| 2014 | 2.1896               | 
-| 2015 | 2.1588               | 
-| 2016 | 2.1404               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 1.5414                     | 
+| 2006 | 1.5913                     | 
+| 2007 | 1.5999                     | 
+| 2008 | 1.6689                     | 
+| 2009 | 1.7856                     | 
+| 2010 | 2.0888                     | 
+| 2011 | 2.1283                     | 
+| 2012 | 2.2049                     | 
+| 2013 | 2.1898                     | 
+| 2014 | 2.1896                     | 
+| 2015 | 2.1588                     | 
+| 2016 | 2.1404                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -800,27 +800,27 @@ Return to the **[index](#data)**
 **Query 13.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'greece' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Greece'
 ```
 
 **Table 13.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.2140               | 
-| 2006 | 0.2256               | 
-| 2007 | 0.2399               | 
-| 2008 | 0.2648               | 
-| 2009 | 0.3011               | 
-| 2010 | 0.3306               | 
-| 2011 | 0.3563               | 
-| 2012 | 0.3051               | 
-| 2013 | 0.3205               | 
-| 2014 | 0.3197               | 
-| 2015 | 0.3117               | 
-| 2016 | 0.3149               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.2140                     | 
+| 2006 | 0.2256                     | 
+| 2007 | 0.2399                     | 
+| 2008 | 0.2648                     | 
+| 2009 | 0.3011                     | 
+| 2010 | 0.3306                     | 
+| 2011 | 0.3563                     | 
+| 2012 | 0.3051                     | 
+| 2013 | 0.3205                     | 
+| 2014 | 0.3197                     | 
+| 2015 | 0.3117                     | 
+| 2016 | 0.3149                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -860,27 +860,27 @@ Return to the **[index](#data)**
 **Query 14.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'hungary' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Hungary'
 ```
 
 **Table 14.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0537               | 
-| 2006 | 0.0620               | 
-| 2007 | 0.0660               | 
-| 2008 | 0.0726               | 
-| 2009 | 0.0757               | 
-| 2010 | 0.0784               | 
-| 2011 | 0.0722               | 
-| 2012 | 0.0767               | 
-| 2013 | 0.0777               | 
-| 2014 | 0.0777               | 
-| 2015 | 0.0804               | 
-| 2016 | 0.0837               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0537                     | 
+| 2006 | 0.0620                     | 
+| 2007 | 0.0660                     | 
+| 2008 | 0.0726                     | 
+| 2009 | 0.0757                     | 
+| 2010 | 0.0784                     | 
+| 2011 | 0.0722                     | 
+| 2012 | 0.0767                     | 
+| 2013 | 0.0777                     | 
+| 2014 | 0.0777                     | 
+| 2015 | 0.0804                     | 
+| 2016 | 0.0837                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -920,27 +920,27 @@ Return to the **[index](#data)**
 **Query 15.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'ireland' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Ireland'
 ```
 
 **Table 15.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0444               | 
-| 2006 | 0.0437               | 
-| 2007 | 0.0471               | 
-| 2008 | 0.0796               | 
-| 2009 | 0.1047               | 
-| 2010 | 0.1442               | 
-| 2011 | 0.1897               | 
-| 2012 | 0.2100               | 
-| 2013 | 0.2153               | 
-| 2014 | 0.2033               | 
-| 2015 | 0.2014               | 
-| 2016 | 0.2006               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0444                     | 
+| 2006 | 0.0437                     | 
+| 2007 | 0.0471                     | 
+| 2008 | 0.0796                     | 
+| 2009 | 0.1047                     | 
+| 2010 | 0.1442                     | 
+| 2011 | 0.1897                     | 
+| 2012 | 0.2100                     | 
+| 2013 | 0.2153                     | 
+| 2014 | 0.2033                     | 
+| 2015 | 0.2014                     | 
+| 2016 | 0.2006                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -980,27 +980,27 @@ Return to the **[index](#data)**
 **Query 16.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'italy' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Italy'
 ```
 
 **Table 16.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 1.5186               | 
-| 2006 | 1.5881               | 
-| 2007 | 1.6062               | 
-| 2008 | 1.6714               | 
-| 2009 | 1.7702               | 
-| 2010 | 1.8517               | 
-| 2011 | 1.9079               | 
-| 2012 | 1.9900               | 
-| 2013 | 2.0702               | 
-| 2014 | 2.1372               | 
-| 2015 | 2.1729               | 
-| 2016 | 2.2179               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 1.5186                     | 
+| 2006 | 1.5881                     | 
+| 2007 | 1.6062                     | 
+| 2008 | 1.6714                     | 
+| 2009 | 1.7702                     | 
+| 2010 | 1.8517                     | 
+| 2011 | 1.9079                     | 
+| 2012 | 1.9900                     | 
+| 2013 | 2.0702                     | 
+| 2014 | 2.1372                     | 
+| 2015 | 2.1729                     | 
+| 2016 | 2.2179                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1040,27 +1040,27 @@ Return to the **[index](#data)**
 **Query 17.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'latvia' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Latvia'
 ```
 
 **Table 17.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0016               | 
-| 2006 | 0.0017               | 
-| 2007 | 0.0019               | 
-| 2008 | 0.0045               | 
-| 2009 | 0.0068               | 
-| 2010 | 0.0084               | 
-| 2011 | 0.0087               | 
-| 2012 | 0.0091               | 
-| 2013 | 0.0089               | 
-| 2014 | 0.0097               | 
-| 2015 | 0.0089               | 
-| 2016 | 0.0100               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0016                     | 
+| 2006 | 0.0017                     | 
+| 2007 | 0.0019                     | 
+| 2008 | 0.0045                     | 
+| 2009 | 0.0068                     | 
+| 2010 | 0.0084                     | 
+| 2011 | 0.0087                     | 
+| 2012 | 0.0091                     | 
+| 2013 | 0.0089                     | 
+| 2014 | 0.0097                     | 
+| 2015 | 0.0089                     | 
+| 2016 | 0.0100                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1100,27 +1100,27 @@ Return to the **[index](#data)**
 **Query 18.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'lithuania' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Lithuania'
 ```
 
 **Table 18.1**
 
 ```sql
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0037               | 
-| 2006 | 0.0042               | 
-| 2007 | 0.0046               | 
-| 2008 | 0.0048               | 
-| 2009 | 0.0075               | 
-| 2010 | 0.0102               | 
-| 2011 | 0.0116               | 
-| 2012 | 0.0133               | 
-| 2013 | 0.0135               | 
-| 2014 | 0.0148               | 
-| 2015 | 0.0159               | 
-| 2016 | 0.0155               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0037                     | 
+| 2006 | 0.0042                     | 
+| 2007 | 0.0046                     | 
+| 2008 | 0.0048                     | 
+| 2009 | 0.0075                     | 
+| 2010 | 0.0102                     | 
+| 2011 | 0.0116                     | 
+| 2012 | 0.0133                     | 
+| 2013 | 0.0135                     | 
+| 2014 | 0.0148                     | 
+| 2015 | 0.0159                     | 
+| 2016 | 0.0155                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1160,27 +1160,27 @@ Return to the **[index](#data)**
 **Query 19.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'luxembourg' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Luxembourg'
 ```
 
 **Table 19.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0022               | 
-| 2006 | 0.0026               | 
-| 2007 | 0.0029               | 
-| 2008 | 0.0057               | 
-| 2009 | 0.0058               | 
-| 2010 | 0.0080               | 
-| 2011 | 0.0081               | 
-| 2012 | 0.0096               | 
-| 2013 | 0.0109               | 
-| 2014 | 0.0112               | 
-| 2015 | 0.0113               | 
-| 2016 | 0.0109               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0022                     | 
+| 2006 | 0.0026                     | 
+| 2007 | 0.0029                     | 
+| 2008 | 0.0057                     | 
+| 2009 | 0.0058                     | 
+| 2010 | 0.0080                     | 
+| 2011 | 0.0081                     | 
+| 2012 | 0.0096                     | 
+| 2013 | 0.0109                     | 
+| 2014 | 0.0112                     | 
+| 2015 | 0.0113                     | 
+| 2016 | 0.0109                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1220,27 +1220,27 @@ Return to the **[index](#data)**
 **Query 20.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'malta' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Malta'
 ```
 
 **Table 20.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0036               | 
-| 2006 | 0.0035               | 
-| 2007 | 0.0036               | 
-| 2008 | 0.0038               | 
-| 2009 | 0.0042               | 
-| 2010 | 0.0045               | 
-| 2011 | 0.0048               | 
-| 2012 | 0.0049               | 
-| 2013 | 0.0052               | 
-| 2014 | 0.0054               | 
-| 2015 | 0.0056               | 
-| 2016 | 0.0058               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0036                     | 
+| 2006 | 0.0035                     | 
+| 2007 | 0.0036                     | 
+| 2008 | 0.0038                     | 
+| 2009 | 0.0042                     | 
+| 2010 | 0.0045                     | 
+| 2011 | 0.0048                     | 
+| 2012 | 0.0049                     | 
+| 2013 | 0.0052                     | 
+| 2014 | 0.0054                     | 
+| 2015 | 0.0056                     | 
+| 2016 | 0.0058                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1280,27 +1280,27 @@ Return to the **[index](#data)**
 **Query 21.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'netherlands' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Netherlands'
 ```
 
 **Table 21.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.2689               | 
-| 2006 | 0.2597               | 
-| 2007 | 0.2621               | 
-| 2008 | 0.3505               | 
-| 2009 | 0.3511               | 
-| 2010 | 0.3747               | 
-| 2011 | 0.3963               | 
-| 2012 | 0.4283               | 
-| 2013 | 0.4422               | 
-| 2014 | 0.4505               | 
-| 2015 | 0.4410               | 
-| 2016 | 0.4341               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.2689                     | 
+| 2006 | 0.2597                     | 
+| 2007 | 0.2621                     | 
+| 2008 | 0.3505                     | 
+| 2009 | 0.3511                     | 
+| 2010 | 0.3747                     | 
+| 2011 | 0.3963                     | 
+| 2012 | 0.4283                     | 
+| 2013 | 0.4422                     | 
+| 2014 | 0.4505                     | 
+| 2015 | 0.4410                     | 
+| 2016 | 0.4341                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1340,27 +1340,27 @@ Return to the **[index](#data)**
 **Query 22.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'poland' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Poland'
 ```
 
 **Table 22.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.1192               | 
-| 2006 | 0.1311               | 
-| 2007 | 0.1459               | 
-| 2008 | 0.1433               | 
-| 2009 | 0.1653               | 
-| 2010 | 0.1932               | 
-| 2011 | 0.1902               | 
-| 2012 | 0.2148               | 
-| 2013 | 0.2221               | 
-| 2014 | 0.2022               | 
-| 2015 | 0.2157               | 
-| 2016 | 0.2282               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.1192                     | 
+| 2006 | 0.1311                     | 
+| 2007 | 0.1459                     | 
+| 2008 | 0.1433                     | 
+| 2009 | 0.1653                     | 
+| 2010 | 0.1932                     | 
+| 2011 | 0.1902                     | 
+| 2012 | 0.2148                     | 
+| 2013 | 0.2221                     | 
+| 2014 | 0.2022                     | 
+| 2015 | 0.2157                     | 
+| 2016 | 0.2282                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1400,27 +1400,27 @@ Return to the **[index](#data)**
 **Query 23.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'portugal' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Portugal'
 ```
 
 **Table 23.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.1069               | 
-| 2006 | 0.1150               | 
-| 2007 | 0.1201               | 
-| 2008 | 0.1282               | 
-| 2009 | 0.1467               | 
-| 2010 | 0.1731               | 
-| 2011 | 0.1962               | 
-| 2012 | 0.2126               | 
-| 2013 | 0.2197               | 
-| 2014 | 0.2260               | 
-| 2015 | 0.2315               | 
-| 2016 | 0.2411               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.1069                     | 
+| 2006 | 0.1150                     | 
+| 2007 | 0.1201                     | 
+| 2008 | 0.1282                     | 
+| 2009 | 0.1467                     | 
+| 2010 | 0.1731                     | 
+| 2011 | 0.1962                     | 
+| 2012 | 0.2126                     | 
+| 2013 | 0.2197                     | 
+| 2014 | 0.2260                     | 
+| 2015 | 0.2315                     | 
+| 2016 | 0.2411                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1460,28 +1460,28 @@ Return to the **[index](#data)**
 
 **Query 24.1**
 
-``sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'romania' WHERE entity = 'eu-debt-data-2'
-``
+```sql
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Romania'
+```
 
 **Table 24.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0124               | 
-| 2006 | 0.0126               | 
-| 2007 | 0.0148               | 
-| 2008 | 0.0172               | 
-| 2009 | 0.0280               | 
-| 2010 | 0.0375               | 
-| 2011 | 0.0447               | 
-| 2012 | 0.0499               | 
-| 2013 | 0.0539               | 
-| 2014 | 0.0587               | 
-| 2015 | 0.0597               | 
-| 2016 | 0.0630               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0124                     | 
+| 2006 | 0.0126                     | 
+| 2007 | 0.0148                     | 
+| 2008 | 0.0172                     | 
+| 2009 | 0.0280                     | 
+| 2010 | 0.0375                     | 
+| 2011 | 0.0447                     | 
+| 2012 | 0.0499                     | 
+| 2013 | 0.0539                     | 
+| 2014 | 0.0587                     | 
+| 2015 | 0.0597                     | 
+| 2016 | 0.0630                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1521,27 +1521,27 @@ Return to the **[index](#data)**
 **Query 25.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'slovakia' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Slovakia'
 ```
 
 **Table 25.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0137               | 
-| 2006 | 0.0152               | 
-| 2007 | 0.0170               | 
-| 2008 | 0.0195               | 
-| 2009 | 0.0232               | 
-| 2010 | 0.0278               | 
-| 2011 | 0.0308               | 
-| 2012 | 0.0379               | 
-| 2013 | 0.0406               | 
-| 2014 | 0.0407               | 
-| 2015 | 0.0413               | 
-| 2016 | 0.0421               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0137                     | 
+| 2006 | 0.0152                     | 
+| 2007 | 0.0170                     | 
+| 2008 | 0.0195                     | 
+| 2009 | 0.0232                     | 
+| 2010 | 0.0278                     | 
+| 2011 | 0.0308                     | 
+| 2012 | 0.0379                     | 
+| 2013 | 0.0406                     | 
+| 2014 | 0.0407                     | 
+| 2015 | 0.0413                     | 
+| 2016 | 0.0421                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1581,27 +1581,27 @@ Return to the **[index](#data)**
 **Query 26.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'slovenia' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Slovenia'
 ```
 
 **Table 26.1**
 
 ```sql
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.0077               | 
-| 2006 | 0.0082               | 
-| 2007 | 0.0080               | 
-| 2008 | 0.0083               | 
-| 2009 | 0.0125               | 
-| 2010 | 0.0139               | 
-| 2011 | 0.0172               | 
-| 2012 | 0.0194               | 
-| 2013 | 0.0255               | 
-| 2014 | 0.0302               | 
-| 2015 | 0.0321               | 
-| 2016 | 0.0317               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.0077                     | 
+| 2006 | 0.0082                     | 
+| 2007 | 0.0080                     | 
+| 2008 | 0.0083                     | 
+| 2009 | 0.0125                     | 
+| 2010 | 0.0139                     | 
+| 2011 | 0.0172                     | 
+| 2012 | 0.0194                     | 
+| 2013 | 0.0255                     | 
+| 2014 | 0.0302                     | 
+| 2015 | 0.0321                     | 
+| 2016 | 0.0317                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1641,27 +1641,27 @@ Return to the **[index](#data)**
 **Query 27.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'spain' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Spain'
 ```
 
 **Table 27.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.3935               | 
-| 2006 | 0.3921               | 
-| 2007 | 0.3847               | 
-| 2008 | 0.4406               | 
-| 2009 | 0.5695               | 
-| 2010 | 0.6501               | 
-| 2011 | 0.7443               | 
-| 2012 | 0.8915               | 
-| 2013 | 0.9790               | 
-| 2014 | 1.0416               | 
-| 2015 | 1.0739               | 
-| 2016 | 1.1070               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.3935                     | 
+| 2006 | 0.3921                     | 
+| 2007 | 0.3847                     | 
+| 2008 | 0.4406                     | 
+| 2009 | 0.5695                     | 
+| 2010 | 0.6501                     | 
+| 2011 | 0.7443                     | 
+| 2012 | 0.8915                     | 
+| 2013 | 0.9790                     | 
+| 2014 | 1.0416                     | 
+| 2015 | 1.0739                     | 
+| 2016 | 1.1070                     | 
 ```
 
 #### Debt as Percent of GDP 
@@ -1701,27 +1701,27 @@ Return to the **[index](#data)**
 **Query 28.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'sweden' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'Sweden'
 ```
 
 **Table 28.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.1514               | 
-| 2006 | 0.1497               | 
-| 2007 | 0.1360               | 
-| 2008 | 0.1169               | 
-| 2009 | 0.1317               | 
-| 2010 | 0.1503               | 
-| 2011 | 0.1540               | 
-| 2012 | 0.1622               | 
-| 2013 | 0.1721               | 
-| 2014 | 0.1896               | 
-| 2015 | 0.1999               | 
-| 2016 | 0.1906               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.1514                     | 
+| 2006 | 0.1497                     | 
+| 2007 | 0.1360                     | 
+| 2008 | 0.1169                     | 
+| 2009 | 0.1317                     | 
+| 2010 | 0.1503                     | 
+| 2011 | 0.1540                     | 
+| 2012 | 0.1622                     | 
+| 2013 | 0.1721                     | 
+| 2014 | 0.1896                     | 
+| 2015 | 0.1999                     | 
+| 2016 | 0.1906                     | 
 ```
 
 #### Debt as Percent of GDP
@@ -1761,27 +1761,27 @@ Return to the **[index](#data)**
 **Query 29.1**
 
 ```sql
-SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Debt (Trillion Euro)'
-  FROM 'united_kingdom' WHERE entity = 'eu-debt-data-2'
+SELECT date_format(time, 'yyyy') AS 'Year', value/1000000 AS 'Gross Debt (Trillion Euro)'
+  FROM government_consolidated_gross_debt WHERE tags.geo = 'United Kingdom'
 ```
 
 **Table 29.1**
 
 ```ls
-| Year | Debt (Trillion Euro) | 
-|------|----------------------| 
-| 2005 | 0.8063               | 
-| 2006 | 0.8887               | 
-| 2007 | 0.8774               | 
-| 2008 | 0.8241               | 
-| 2009 | 1.1033               | 
-| 2010 | 1.3876               | 
-| 2011 | 1.5908               | 
-| 2012 | 1.7459               | 
-| 2013 | 1.7990               | 
-| 2014 | 2.0604               | 
-| 2015 | 2.2699               | 
-| 2016 | 2.0222               | 
+| Year | Gross Debt (Trillion Euro) | 
+|------|----------------------------| 
+| 2005 | 0.8063                     | 
+| 2006 | 0.8887                     | 
+| 2007 | 0.8774                     | 
+| 2008 | 0.8241                     | 
+| 2009 | 1.1033                     | 
+| 2010 | 1.3876                     | 
+| 2011 | 1.5908                     | 
+| 2012 | 1.7459                     | 
+| 2013 | 1.7990                     | 
+| 2014 | 2.0604                     | 
+| 2015 | 2.2699                     | 
+| 2016 | 2.0222                     | 
 ```
 
 #### Debt as Percent of GDP
