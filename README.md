@@ -40,6 +40,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 6. [The Cleanest Water in Washington State](Chart_of_the_Day/WA_Water/README.md)
 7. [Who is Dropping Out in the State with the Fewest Dropouts?](Chart_of_the_Day/IA_Dropouts/README.md)
 8. [Public Utilities and Private Industry in Austin](Chart_of_the_Day/Austin_Power/README.md)
+9. [European Union Per Capita Debt by Country](Chart_of_the_Day/EU_Debt_percap/README.md)
 
 ## Data Library
 
@@ -51,6 +52,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 6. [Tax Rate by State (2017)](DataShorts/Taxes_By_State/README.md)
 7. [New York City Income by Adjusted Gross Income (AGI) Range (2014)](DataShorts/NY_Pay/README.md)
 8. [European Union Debt by Country (2005-2016)](DataShorts/EU_Debt/README.md)
+9. [European Union Per Capita Debt by Country (2005-2016)](DataShorts/EU_Debt_percap/README.md)
 
 ## Support
 
