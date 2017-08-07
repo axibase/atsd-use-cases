@@ -47,7 +47,7 @@ timestamp(quarterToMonth(cell(row,1))).
 metric(cell(1,col));
 ```
 
-For step-by-step instructions on data customization with schema based parsing, see this [support tutorial](/Support/Schema-Parser-Mod-Pre-Import).
+For step-by-step instructions on data customization with schema based parsing, see this [support tutorial](/Support/Schema-Parser-Mod-Pre-Import). Additionally, the dataset can be downloaded in CSV form [here](https://www.federalreserve.gov/datadownload/Output.aspx?rel=FOR&series=91e0f9a6b8e6a4b1ef334ce2eaf22860&lastobs=&from=03/01/1980&to=12/31/2017&filetype=csv&label=include&layout=seriescolumn).
 
 #### Financial Obligation Ratio:
 
@@ -60,7 +60,7 @@ releases this number each quarter.
 
 ![](Images/fed-001.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/da132e01/2/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/842f1dd9/#fullscreen)
 
 > Use the dropdown menus at the top of the visualization screen to navigate through time, selecting the `starttime` and `endtime` values
 to observe a desired period.
@@ -137,7 +137,7 @@ of a person's gross monthly earning would still be available to them after makin
 
 ![](Images/fed-002.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/da132e01/3/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/85522dd3/#fullscreen)
 
 **Query 3.1**
 
@@ -203,12 +203,12 @@ displayed:
 
 ```ls
     [series]
-      metric = dsr_total
+      metric = dtfd%ypd.q
       display = false
       alias = dsr
       
     [series]
-      metric = for
+      metric = dtf%ypd.q
       display = false
       alias = for
       
@@ -225,7 +225,7 @@ the last three decades.
 
 ![](Images/fed-003.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/da132e01/4/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/f25de723/#fullscreen)
 
 The visualization can also be organized to show the amount of each type of debt as it relates to the others:
 
@@ -233,7 +233,7 @@ The visualization can also be organized to show the amount of each type of debt 
 
 ![](Images/fed-004.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/da132e01/5/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/f25de723/3/#fullscreen)
 
 Additionally, these values can be compared on an annual basis as shown in the visualization below:
 
@@ -241,7 +241,7 @@ Additionally, these values can be compared on an annual basis as shown in the vi
 
 ![](Images/fed-005.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/da132e01/6/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/81ea0ea0/#fullscreen)
 
 To view the distribution of these values across time, a histogram is shown below:
 
@@ -249,7 +249,7 @@ To view the distribution of these values across time, a histogram is shown below
 
 ![](Images/fed-006.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/da132e01/7/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/9f74c179/#fullscreen)
 
 In the following box diagram, explore time with the dropdown menus at the top of the visualization screen. The visualization
 shows the distribution of debt values as a percentage of total income, with the initial time period set to include the
@@ -259,7 +259,7 @@ entire data set:
 
 ![](Images/fed-007.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/da132e01/8/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/20ff0ade/#fullscreen)
 
 The following SQL query will detail the above visualizations in one table, displaying averaged annual values of each component
 described above: non-essential credit payments, mortgage credit payments, and consumer credit payments, as well as the Financial
