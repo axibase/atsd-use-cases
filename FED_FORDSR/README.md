@@ -21,15 +21,15 @@ about these consumers and their monetary practices to better inform their decisi
 
 ### Data
 
-Provided by the [Federal Reserve](https://www.federalreserve.gov/), this [dataset](https://www.federalreserve.gov/releases/housedebt/default.htm)
-must be modified during import. The data are aggregated by quarter, but stored with ambiguous denominations. Upon import, this value
-must be reformatted to reflect the quarter's first month, so as not to be  interpreted incorrectly. [Axibase Schema 
-Based Parsing](https://axibase.com/products/axibase-time-series-database/writing-data/csv/) supports javascript customization 
-of data, the desired schema is shown below:
+Provided by the [Federal Reserve](https://www.federalreserve.gov/), this [dataset](https://www.federalreserve.gov/datadownload/Download.aspx?rel=FOR&series=91e0f9a6b8e6a4b1ef334ce2eaf22860&filetype=csv&label=include&layout=seriescolumn&from=01/01/1980&to=12/31/2017)
+must be correctly parsed during import. We need to convert quarterly date format into a monthly format that ATSD can interprete (`Q/q` letter is not supported). We also need to discard metadata lines container in the multi-line header. This can be accompilshed with [schema-based parser](https://axibase.com/products/axibase-time-series-database/writing-data/csv/) that provides granular control over the document's rows and columns using RFC 7111 selectors and Javascript:
 
 **Script 1.1**
 
-```ls
+```javascript
+/*
+  Convert yyyy'Q'q to yyyy-MM, e.g. 2017Q2 to 201704
+*/
 function quarterToMonth(yearAndQuarter) {
     var month;
     switch (yearAndQuarter.charAt(5)) {
@@ -38,13 +38,17 @@ function quarterToMonth(yearAndQuarter) {
         case '3': month = '07'; break;
         case '4': month = '10'; break;
     }
-    return yearAndQuarter.substring(0, 5) + month;
+    return yearAndQuarter.substring(0, 4) + '-' + month;
 }
 
-select("#row=2-*!1").select("#col=2-*!1").
+/* 
+  Select all rows starting from 7th row.
+  Select all columns in the row starting with the 2nd column.
+*/
+select("#row=7-*").select("#col=2-*").
 addSeries().
 timestamp(quarterToMonth(cell(row,1))).
-metric(cell(1,col));
+metric(cell(6,col));
 ```
 
 For step-by-step instructions on data customization with schema based parsing, see this [support tutorial](/Support/Schema-Parser-Mod-Pre-Import).
