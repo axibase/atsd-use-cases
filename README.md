@@ -28,6 +28,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 22. [The Consumer Price Index Verus Your Savings Account (Bank of Israel)](CBI_CPI/README.md)
 23. [Does the Bag Tax Work?](Bag_Tax/README.md)
 24. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
+25. [Debt Profile of the Average American](Fed_FORDSR/README.md)
 
 ## Chart of the Day 
 
@@ -49,7 +50,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 5. [Bank of Israel Debt (1997-2016)](DataShorts/CBI/Debt/README.md)
 6. [Tax Rate by State (2017)](DataShorts/Taxes_By_State/README.md)
 7. [New York City Income by Adjusted Gross Income (AGI) Range (2014)](DataShorts/NY_Pay/README.md)
-8. [European Union Debt by Country (1995-2016)](DataShorts/EU_Debt/README.md)
+8. [European Union Debt by Country (2005-2016)](DataShorts/EU_Debt/README.md)
 
 ## Support
 
