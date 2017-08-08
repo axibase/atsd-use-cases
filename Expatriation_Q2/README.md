@@ -286,3 +286,5 @@ LIMIT 15
 ```
 
 >Only the name Smith appears on the list of most common American last names, linked [here](http://www.census.gov/main/www/cen2000.html)
+
+Use the [Axibase Data Crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler) to collect the data used in this artcle and examine it yourself in [ChartLab](https://apps.axibase.com).
