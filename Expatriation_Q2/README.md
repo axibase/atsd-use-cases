@@ -188,8 +188,8 @@ GROUP BY period(1 QUARTER)
 
 ```
 
-Zooming in a bit to look at data over the last 5 years captures the repetition of this trend for this
-period of time. Of the eighteen quarters included in this query, only six of them, roughly 33% percent showed negative growth for
+Reducing the timespan to look at data over the last 5 years captures the repetition of this trend for this
+period of time. Of the eighteen quarters included in this query, only six of them, roughly 33% showed negative growth for
 this statistic.
 
 ### Conclusion
