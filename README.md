@@ -29,6 +29,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 23. [Does the Bag Tax Work?](Bag_Tax/README.md)
 24. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
 25. [Debt Profile of the Average American](Fed_FORDSR/README.md)
+26. [U.S. Expatriation Statistics (Quarter 2 Update)](Expatriation_Q2/README.md)
 
 ## Chart of the Day 
 
