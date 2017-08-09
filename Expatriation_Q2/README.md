@@ -86,7 +86,7 @@ control the amount of long-term immigrants that America accepts each year and th
 our Q1 article, the sister value and subject of this examination, expatriation numbers, has been steadily growing for several
 consecutive years.
 
-**Figure 2**
+**Figure 2.1**
 
 ![](Images/expat-002.png)
 
@@ -132,6 +132,12 @@ GROUP BY period(1 YEAR, END_TIME)
 | 2016 | 4143       | 517          | 14              | 
 | 2017 | 6807       | 2664         | 64              | 
 ```
+
+**Figure 2.2**
+
+![](Images/expat-006.png)
+
+[![](Images/button.png)](https://apps.axibase.com/chartlab/7fa5b643/5/#fullscreen)
 
 Expatriation has been increasing each year by roughly 30% since 2010, which featured abnormally high expatriation rates, most
 likely attributable to the economic turndown of the Great Recession which began in the United States as a result of the sub-prime
