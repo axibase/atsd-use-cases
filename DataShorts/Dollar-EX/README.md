@@ -25,8 +25,8 @@ favorable while the lower 25th percentile is considered less than favorable. The
 
 [Asia](#asia)
 
-* [Japanese Yen (dexjpus)](usd-v-japanese-yen)
-* [Chinese Yuan (dexchus)](usd-v-chinese-yuan)
+* [Japanese Yen (dexjpus)](#usd-v-japanese-yen)
+* [Chinese Yuan (dexchus)](#usd-v-chinese-yuan)
 * [Hong Kong Dollar (dexhkus)](#usd-v-hong-kong-dollar)
 * [Singapore Dollar (dexsius)](#usd-v-singapore-dollar)
 
