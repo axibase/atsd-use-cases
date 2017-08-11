@@ -11,7 +11,9 @@ Structured Query Language: [SQL Console](https://github.com/axibase/atsd/tree/ma
 
 Data is aggregated daily in visualizations, and annually in SQL queries. Favorable dollar exhange rates are shown in green
 while less favorable exchange rates are shown in red, based on overall 5-year average exchange rate. Each section is accompanied
-by a brief analysis to give the data context.
+by a brief analysis to give the data context. Using computed [value settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/)
+thresholds have been calculated using the underlying data, the upper 25th percentile of a given exchange rate is considered
+favorable while the lower 25th percentile is considered less than favorable.
 
 1. [Europe](#europe)
 
@@ -21,8 +23,8 @@ by a brief analysis to give the data context.
 
 2. [Asia](#asia)
 
-* [Japanese Yen](#usd-v-japanese-yen)
-* [Chinese Yuan](#usd-v-chinese-yuan)
+* [Japanese Yen](usd-v-japanese-yen)
+* [Chinese Yuan](usd-v-chinese-yuan)
 * [Hong Kong Dollar](#usd-v-hong-kong-dollar)
 * [Singapore Dollar](#usd-v-singapore-dollar)
 
@@ -64,13 +66,11 @@ GROUP BY date_format(time, 'yyyy')
 
 **Figure 1.1**
 
-![](Images/de-001.png)
+![](Images/de-01.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/4d02749c/2/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/#fullscreen)
 
-> Exchange Rate > 1.3 = red, Exchange Rate < 1.1 = green
-
-Return to the [Index](#index)
+> Return to the [Index](#index)
 
 #### USD v. Swiss Franc
 
@@ -105,13 +105,11 @@ GROUP BY date_format(time, 'yyyy')
 
 **Figure 1.2**
 
-![](Images/de-008.png)
+![](Images/de-02.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/4d02749c/9/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/2/#fullscreen)
 
-> Exchange Rate < 0.90 = red, Exchange Rate > 1.0 = green
-
-Return to the [Index](#index)
+> Return to the [Index](#index)
 
 #### USD v. Great British Pound
 
@@ -143,11 +141,9 @@ GROUP BY date_format(time, 'yyyy')
 
 **Figure 1.3**
 
-![](Images/de-009.png)
+![](Images/de-03.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/4d02749c/10/#fullscreen)
-
-> Exchange Rate > 1.7 = red, Exchange Rate < 1.3 = green
+[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/3/#fullscreen)
 
 > Return to the [Index](#index)
 
@@ -187,13 +183,11 @@ GROUP BY date_format(time, 'yyyy')
 
 **Figure 2.1**
 
-![](Images/de-002.png)
+![](Images/de-041.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/4d02749c/3/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/10/#fullscreen)
 
-> Exchange Rate < 110 = red, Exchange Rate > 110 = green
-
-Return to the [Index](#index)
+> Return to the [Index](#index)
 
 #### USD v. Chinese Yuan
 
@@ -227,13 +221,11 @@ GROUP BY date_format(time, 'yyyy')
 
 **Figure 2.2**
 
-![](Images/de-003.png)
+![](Images/de-05.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/4d02749c/4/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/7/#fullscreen)
 
-> Exchange Rate < 6.2 = red, Exchange Rate > 6.7 = green
-
-Return to the [Index](#index)
+> Return to the [Index](#index)
 
 #### USD v. Hong Kong Dollar
 
@@ -265,13 +257,11 @@ GROUP BY date_format(time, 'yyyy')
 
 **Figure 2.3**
 
-![](Images/de-005.png)
+![](Images/de-06.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/4d02749c/6/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/8/#fullscreen)
 
-> Exchange Rate < 7.75 = red, Exchange Rate > 7.8 = green
-
-Return to the [Index](#index)
+> Return to the [Index](#index)
 
 #### USD v. Singapore Dollar
 
@@ -305,11 +295,9 @@ GROUP BY date_format(time, 'yyyy')
 
 **Figure 2.4**
 
-![](Images/de-007.png)
+![](Images/de-07.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/4d02749c/8/#fullscreen)
-
-> Exchange Rate < 1.25 = red, Exchange Rate > 1.4 = green
+[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/9/#fullscreen)
 
 > Return to the [Index](#index)
 
@@ -346,13 +334,11 @@ GROUP BY date_format(time, 'yyyy')
 
 **Figure 3.1**
 
-![](Images/de-004.png)
+![](Images/de-08.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/4d02749c/5/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/11/#fullscreen)
 
-> Exchange Rate < 1.1 = red, Exchange Rate > 1.3 = green
-
-Return to the [Index](#index)
+> Return to the [Index](#index)
 
 #### USD v. Mexican Peso
 
@@ -388,10 +374,8 @@ GROUP BY date_format(time, 'yyyy')
 
 **Figure 3.2**
 
-![](Images/de-006.png)
+![](Images/de-09.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/4d02749c/7/#fullscreen)
-
-> Exchange Rate < 13 = red, Exchange Rate > 17 = green
+[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/12/#fullscreen)
 
 > Return to the [Index](#index)
