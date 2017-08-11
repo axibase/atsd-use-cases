@@ -7,31 +7,33 @@ Visualizations: [ChartLab](https://apps.axibase.com)
 
 Structured Query Language: [SQL Console](https://github.com/axibase/atsd/tree/master/api/sql) from [Axibase](https://axibase.com)
 
+Download the Community Edition of [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) [here](https://github.com/axibase/atsd/blob/master/installation/README.md#installation)
+
 ## Index
 
 Data is aggregated daily in visualizations, and annually in SQL queries. Favorable dollar exhange rates are shown in green
-while less favorable exchange rates are shown in red, based on overall 5-year average exchange rate. Each section is accompanied
+while less favorable exchange rates are shown in red, based on the overall 5-year average exchange rate. Each section is accompanied
 by a brief analysis to give the data context. Using computed [value settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/)
 thresholds have been calculated using the underlying data, the upper 25th percentile of a given exchange rate is considered
-favorable while the lower 25th percentile is considered less than favorable.
+favorable while the lower 25th percentile is considered less than favorable. The data is coded with an ID which is provided in the index as well. Open any [ChartLab](https://apps.axibse.com) display below to navigate through time, or change the metric to reflect the desired exchange rate.
 
 [Europe](#europe)
 
-* [European Union Euro](#usd-v-euro)
-* [Swiss Franc](#usd-v-swiss-franc)
-* [Great British Pound](#usd-v-great-british-pound)
+* [European Union Euro (dexuseu)](#usd-v-euro)
+* [Swiss Franc (dexszus)](#usd-v-swiss-franc)
+* [Great British Pound (dexusuk)](#usd-v-great-british-pound)
 
 [Asia](#asia)
 
-* [Japanese Yen](usd-v-japanese-yen)
-* [Chinese Yuan](usd-v-chinese-yuan)
-* [Hong Kong Dollar](#usd-v-hong-kong-dollar)
-* [Singapore Dollar](#usd-v-singapore-dollar)
+* [Japanese Yen (dexjpus)](usd-v-japanese-yen)
+* [Chinese Yuan (dexchus)](usd-v-chinese-yuan)
+* [Hong Kong Dollar (dexhkus)](#usd-v-hong-kong-dollar)
+* [Singapore Dollar (dexsius)](#usd-v-singapore-dollar)
 
 [North America](#north-america)
 
-* [Canadian Dollar](#usd-v-canadian-dollar)
-* [Mexican Peso](#usd-v-mexican-peso)
+* [Canadian Dollar (dexcaus)](#usd-v-canadian-dollar)
+* [Mexican Peso (dexmxus)](#usd-v-mexican-peso)
 
 ## Europe
 
@@ -62,13 +64,14 @@ GROUP BY PERIOD(1 YEAR)
 | 2016 | 1.11          | 
 | 2017 | 1.09          | 
 ```
-> Average Exchange Rate: 1.21 Dollars to Euro
 
 **Figure 1.1**
 
 ![](Images/de-01.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/5/#fullscreen)
+
+> Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
@@ -101,13 +104,13 @@ GROUP BY PERIOD(1 YEAR)
 | 2017 | 0.99          | 
 ```
 
-> Average Exchange Rate: 0.95
-
 **Figure 1.2**
 
 ![](Images/de-02.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/2/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/9/#fullscreen)
+
+> Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
@@ -143,7 +146,9 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](Images/de-03.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/3/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/6/#fullscreen)
+
+> Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
@@ -179,13 +184,13 @@ GROUP BY PERIOD(1 YEAR)
 | 2017 | 112.33        | 
 ```
 
-> Average Exchange Rate: 104.23
-
 **Figure 2.1**
 
 ![](Images/de-041.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/10/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/4/#fullscreen)
+
+> Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
@@ -217,13 +222,13 @@ GROUP BY PERIOD(1 YEAR)
 | 2017 | 6.86          | 
 ```
 
-> Average Exchange Rate: 6.40
-
 **Figure 2.2**
 
 ![](Images/de-05.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/7/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/2/#fullscreen)
+
+> Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
@@ -253,13 +258,13 @@ GROUP BY PERIOD(1 YEAR)
 | 2017 | 7.78          | 
 ```
 
-> Average Exchange Rate: 7.76
-
 **Figure 2.3**
 
 ![](Images/de-06.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/8/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/3/#fullscreen)
+
+> Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
@@ -291,13 +296,13 @@ GROUP BY PERIOD(1 YEAR)
 | 2017 | 1.40          | 
 ```
 
-> Average Exchange Rate = 1.32
-
 **Figure 2.4**
 
 ![](Images/de-07.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/9/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/8/#fullscreen)
+
+> Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
@@ -330,13 +335,13 @@ GROUP BY PERIOD(1 YEAR)
 | 2017 | 1.33          | 
 ```
 
-> Average Exchange Rate: 1.18
-
 **Figure 3.1**
 
 ![](Images/de-08.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/11/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/#fullscreen)
+
+> Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
@@ -370,12 +375,12 @@ GROUP BY PERIOD(1 YEAR)
 | 2017 | 19.18         | 
 ```
 
-> Average Exchange Rate: 15.46
-
 **Figure 3.2**
 
 ![](Images/de-09.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/030d5f16/12/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/7/#fullscreen)
+
+> Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
