@@ -1,7 +1,7 @@
 United States Dollar International Exchange Rate (2012-2017)
 ===
 
-Data Source: [Federal Reserve Economic Data (FRED)](https://fred.stlouisfed.org/)
+Data Source: [Federal Reserve Economic Data (FRED)](https://fred.stlouisfed.org/categories/94)
 
 Visualizations: [ChartLab](https://apps.axibase.com)
 
