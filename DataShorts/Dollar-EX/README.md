@@ -15,20 +15,20 @@ by a brief analysis to give the data context. Using computed [value settings](ht
 thresholds have been calculated using the underlying data, the upper 25th percentile of a given exchange rate is considered
 favorable while the lower 25th percentile is considered less than favorable.
 
-1. [Europe](#europe)
+[Europe](#europe)
 
 * [European Union Euro](#usd-v-euro)
 * [Swiss Franc](#usd-v-swiss-franc)
 * [Great British Pound](#usd-v-great-british-pound)
 
-2. [Asia](#asia)
+[Asia](#asia)
 
 * [Japanese Yen](usd-v-japanese-yen)
 * [Chinese Yuan](usd-v-chinese-yuan)
 * [Hong Kong Dollar](#usd-v-hong-kong-dollar)
 * [Singapore Dollar](#usd-v-singapore-dollar)
 
-3. [North America](#north-america)
+[North America](#north-america)
 
 * [Canadian Dollar](#usd-v-canadian-dollar)
 * [Mexican Peso](#usd-v-mexican-peso)
