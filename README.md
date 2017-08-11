@@ -54,6 +54,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 7. [New York City Income by Adjusted Gross Income (AGI) Range (2014)](DataShorts/NY_Pay/README.md)
 8. [European Union Debt by Country (2005-2016)](DataShorts/EU_Debt/README.md)
 9. [European Union Per Capita Debt by Country (2005-2016)](DataShorts/EU_Debt_percap/README.md)
+10. [US Dollar Exchange Rate Analysis (2012-2017)](DataShorts/Dollar-EX/README.md)
 
 ## Support
 
