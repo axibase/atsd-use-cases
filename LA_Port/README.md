@@ -88,7 +88,7 @@ To give these numbers perspective, when the study began in 2005, the Port of Los
 all diesel particulate matter in the Los Angeles Basin: an area composed of part or all of the counties of Los Angeles, 
 San Bernadino, Riverside, and Orange. When the study concluded just seven years later that number had dropped to 4%. That six
 percent reduction of greenhouse gas emission in seven years (0.85%/year) is on par with the State of California's overall 
-reduction during [a twelve-year study](/ClimateChange/README.md) (0.50%/year) conducted across several states, 
+reduction during [a twelve-year study](../ClimateChange/README.md) (0.50%/year) conducted across several states, 
 with New York seeing numbers as high as 30% during the same observed period (2.5%/year).
 
 Using the previous year as a baseline, the percent change for each year is shown below:
