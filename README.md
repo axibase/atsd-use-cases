@@ -59,3 +59,4 @@ Axibase Time Series Database: Usage Examples and Research Articles
 ## Support
 
 1. [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
+2. [Curve Smoothing Using Moving Averages](Support/Moving-Avg/README.md)
