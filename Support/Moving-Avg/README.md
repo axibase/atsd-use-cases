@@ -32,13 +32,13 @@ of variance is visible for each metric:
 
 ![](Images/ra-001.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f015978c/10/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/479e4525/#fullscreen)
 
 **Figure 1.2**: LGA Cargo Tonnage (1977-2015)
 
 ![](Images/ra-002.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f015978c/11/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/f36262ee/#fullscreen)
 
 Averaging cargo data across the entire observed period would return results that considered data from almost
 half a century ago as equal to data recorded two years ago. While potentially helpful in another analysis, for the purposes
@@ -51,7 +51,7 @@ The passenger emplanement data, aggregated annually is shown below:
 
 ![](Images/ra-003.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f015978c/13/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/00cf9be3/#fullscreen)
 
 Not only is the granularization mismatched but the observed periods differ by twenty years. The latter problem's solution is
 quick enough, modify the observation period using the dropdowns in ChartLab or hardcode the desired timespan in the editor
@@ -82,13 +82,13 @@ Applying the moving, or weighted, average to **Figures 1.1** and **1.2** is show
 
 ![](Images/ra-004.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f015978c/18/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/b03d8e2c/#fullscreen)
 
 **Figure 2.2** Annual Average of LGA Cargo Tonnage (1997-2015)
 
 ![](Images/ra-005.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f015978c/14/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/b456f1b5/#fullscreen)
 
 > Open the ChartLab visualizations above to inspect the newly-inserted syntax on lines 17 and 18
 
@@ -100,7 +100,7 @@ produces the following:
 
 ![](Images/ra-006.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f015978c/16/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/897c0429/#fullscreen)
 
 **Scale Modification**:
 
@@ -110,7 +110,7 @@ produces the following:
 
 ![](Images/ra-007.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f015978c/17/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/0de58b58/#fullscreen)
 
 **Scale Modification**:
 
@@ -127,14 +127,14 @@ airport traffic) because they are now included in the underlying data.
 
 ![](Images/ra-009.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f015978c/22/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/6b3e4ed6/#fullscreen)
 
 **Figure 2.6**
 
 
 ![](Images/ra-010.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f015978c/23/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/a4d77c47/#fullscreen)
 
 Download the Community Edition of Axibase [here](https://github.com/axibase/atsd/blob/master/installation/README.md#installation),
 view prepared public datasets [here](https://github.com/axibase/open-data-catalog), and contact [Axibase](https://axibase.com)
