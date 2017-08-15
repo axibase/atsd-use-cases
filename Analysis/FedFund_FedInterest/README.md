@@ -1,7 +1,7 @@
 The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment
 ===
 
-Source Document: [FRED Research](https://doi.org/10.20955/es.2017.10)
+Source Document: [FRED Research](https://research.stlouisfed.org/publications/economic-synopses/2017/06/30/the-rising-federal-funds-rate-in-the-current-low-long-term-interest-rate-environment/)
 
 Source Authors: YiLi Chien and Paul Morris
 
@@ -11,9 +11,15 @@ Visualization: [ChartLab](https://apps.axibase.com) from [Axibase](https://axiba
 
 ![](Images/fedf-01.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/9183d77b/#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/9183d77b/5/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time by selecting the desired years in the dropdown menus at the top of screen
+> Open the ChartLab visualization above to navigate through time by selecting the desired years in the dropdown menus at the top of screen. Note that debt balances are shown as negative values.
+
+The following visualization tracks the last seven years of data (2010-2017) to highlight post-recession changes:
+
+![](Images/fedf-02.png)
+
+[![](Images/button.png)](https://apps.axibase.com/chartlab/9183d77b/7/#fullscreen)
 
 _From the source document:_
 
@@ -92,3 +98,5 @@ interest rates likely has more to do with increasing foreign demand for Treasury
 | Israel | $30.9 |
 | All Others | $455.7 |
 | Total | $6123.6 |
+
+> Source: [United States Treasury](http://ticdata.treasury.gov/Publish/mfh.txt)
