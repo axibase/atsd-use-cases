@@ -13,6 +13,8 @@ Visualization: [ChartLab](https://apps.axibase.com) from [Axibase](https://axiba
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/9183d77b/#fullscreen)
 
+> Open the ChartLab visualization above to navigate through time by selecting the desired years in the dropdown menus at the top of screen
+
 _From the source document:_
 
 "After keeping the federal funds rate close to zero for seven years, the Federal Open Market Committee (FOMC) increased 
