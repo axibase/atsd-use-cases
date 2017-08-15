@@ -60,3 +60,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 
 1. [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
 2. [Curve Smoothing Using Moving Averages](Support/Moving-Avg/README.md)
+
+## Analysis
+
+1. [The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment](Analysis/FedFund_FedInterest/README.md)
