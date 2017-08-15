@@ -9,7 +9,7 @@ Visualization: [ChartLab](https://apps.axibase.com) from [Axibase](https://axiba
 
 **Treasury Yields and the Federal Funds Rate (1998-2017)**
 
-![](Images/fedf-01.png)
+![](Images/fedf-03.png)
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/9183d77b/5/#fullscreen)
 
