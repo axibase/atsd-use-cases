@@ -42,6 +42,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 7. [Who is Dropping Out in the State with the Fewest Dropouts?](Chart_of_the_Day/IA_Dropouts/README.md)
 8. [Public Utilities and Private Industry in Austin](Chart_of_the_Day/Austin_Power/README.md)
 9. [European Union Per Capita Debt by Country](Chart_of_the_Day/EU_Debt_percap/README.md)
+10. [International Students in America by Country of Origin](Chart_of_the_Day/International_Students/README.md)
 
 ## Data Library
 
