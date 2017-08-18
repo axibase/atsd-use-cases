@@ -54,3 +54,5 @@ The visualization below arranges the data by continent for an additional perspec
 ![](Images/is-002.png)
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/de703084/2/#fullscreen)
+
+If you would like to see your data analyzed with Axibase tools [contact us](https://axibase.com/feedback/).
