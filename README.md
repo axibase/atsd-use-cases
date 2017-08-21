@@ -30,6 +30,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 24. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
 25. [Debt Profile of the Average American](FED_FORDSR/README.md)
 26. [U.S. Expatriation Statistics (Quarter 2 Update)](Expatriation_Q2/README.md)
+27. [Calls May Be Recorded or Monitored for Training Purposes: Using Call Abandonment Rates to Establish Thresholds](SF_Phone/README.md)
 
 ## Chart of the Day 
 
