@@ -5,10 +5,9 @@ Leveraging Calculated Values to Include Many Features of the Same Data in One Vi
 
 ### Executive Summary
 
-Using [calculated values](Support/Add-Calculated-Values/README.md) in the [ChartLab](https://apps.axibase.com) interface
+Using [calculated values](../Support/Add-Calculated-Values/README.md) in the [ChartLab](https://apps.axibase.com) interface
 is useful for creating multiple outputs from one set of underlying data. [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
-supports a range of in-built [functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions.md) which allow
-the entire range of data users to manipulate a dataset to derive the desired meaning from it.
+supports a range of in-built functions which allow the entire range of data users to manipulate a dataset to derive the desired meaning from it.
 
 The St. Louis branch of the Federal Reserve branch maintains FRED, short for [Federal Reserve Economic Data](https://fred.stlouisfed.org/), an 
 open-access platform for analyzing the data collected and published by the Federal Reserve. One important metric tracked
