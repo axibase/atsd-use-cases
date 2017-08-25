@@ -1,25 +1,25 @@
-Leveraging Calculated Values to Include Many Features of the Same Data in One Visualization
+Analyzing Econometric Datasets with Calculated Series
 ===
 
 ![](images/FRED_logo.jpg)
 
-### Executive Summary
+### Summary
 
 Using [calculated values](../Support/Add-Calculated-Values/README.md) in the [ChartLab](https://apps.axibase.com) interface
 is useful for creating multiple outputs from one set of underlying data. [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
-supports a range of in-built functions which allow the entire range of data users to manipulate a dataset to derive the desired meaning from it.
+supports a range of in-built functions which allow end-users to manipulate a dataset to derive the desired meaning from it.
 
 The St. Louis branch of the Federal Reserve branch maintains FRED, short for [Federal Reserve Economic Data](https://fred.stlouisfed.org/), an 
 open-access platform for analyzing the data collected and published by the Federal Reserve. One important metric tracked
-by FRED is the [Consumer Price Index](https://fred.stlouisfed.org/series/CPIAUCSL#0), shortened as CPI. The Consumer Price
+by FRED is the **CPIAUCSL** - [Consumer Price Index](https://fred.stlouisfed.org/series/CPIAUCSL#0), shortened as CPI. The Consumer Price
 Index is used to track inflation by measuring the costs of goods relative to some year. 
 
 ### Problem Brief
 
 Using a number of functions supported in the ChartLab interface, the [following visualization](https://fred.stlouisfed.org/series/CPIAUCSL#0)
-can be replicated in any instance of ATSD. Explore the FRED visualization with the _EDIT GRAPH_ button by selecting the desired
+can be replicated in ATSD. Explore the FRED visualization with the _EDIT GRAPH_ button by selecting the desired
 output. To learn more about how any of the metrics are calculated from the underlying data, the [following page](https://fredhelp.stlouisfed.org/fred/data/understanding-the-data/formulas-calculate-growth-rates/)
-provides information about the formulas used to modify the original CPI data. A brief tutorial on data modification in the
+provides information about the formulas used to modify the original series. A brief tutorial on data modification in the
 FRED interface is shown below:
 
 ![](images/tut-1.png)
@@ -36,11 +36,9 @@ FRED interface is shown below:
 
 ### Solution
 
-A side-by-side comparison of each feature of the Consumer Price Index is shown below, as well as links to the accompanying
+A side-by-side comparison of each feature of the Consumer Price Index transformation is shown below, as well as links to the accompanying
 visualizations. Because ATSD supports storing historical data from the year 1970 onward while the Federal Reserve tracks
 data from 1947 onward, small scale differences are expected in the outputs of each graph.
-
-Each feature of the data is indexed below and can be used for quick navigation of this document.
 
 #### Index
 
