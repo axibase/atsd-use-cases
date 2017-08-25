@@ -99,20 +99,21 @@ a year not included in the dropdown by modifying one of the dates in the _keyDat
 
 * The list _keyDates_ contains the same dates as the FRED chart referenced in the [Problem Brief](#problem-brief):
 
-```sql
-    list keyDates = 1970-11-01, 
+```javascript
+list keyDates = 1970-11-01, 
   1973-11-01, 1975-03-01,
   1980-01-01, 1980-07-01, 
   1981-07-01, 1982-11-01,
   1990-07-01, 1991-03-01, 
   2001-03-01, 2001-11-01,
   2007-12-01, 2009-06-01
-    endlist
-  ```
+endlist
+```
+
 * These dates are fed into the dropdown menu which represent the official start dates of several recessions throughout U.S.
 history. The syntax for this chart's dropdown menu is shown below:
 
-```sql
+```ls
   [dropdown]
     on-change = widget.config.series[0].value = this.value; widget.replaceSeries(widget.config.series);
     for date in keyDates
@@ -156,7 +157,7 @@ The monthly numerical change in CPI value over the observed period.
 
 **Underlying Formula**:
 
-```sql
+```javascript
 value = delta("cpi", "1 month")
 ```
 
@@ -182,8 +183,8 @@ The numerical change in CPI value from the same month of the previous year.
 
 **Underlying Formula**:
 
-```sql
-value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return v - p
+```javascript
+value = var v = value('cpi'); var p = value('prev_cpi'); if(p != null && v != null) return v - p;
 ``` 
 * This setting uses a second underlying series which is not enabled, to select values of the Consumer Price Index from one year
 ago using a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting,
@@ -209,7 +210,7 @@ The monthly percentile change in CPI value over the entire observed period.
 
 **Underlying Formula**:
 
-```sql
+```javascript
 value = (value("cpi") / previous("cpi") - 1) * 100
 ```
 
@@ -235,7 +236,7 @@ The percentile change in CPI from the same month of the previous year.
 
 **Underlying Formula**:
 
-```sql
+```javascript
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return (v / p - 1) * 100
 ```
 
@@ -259,7 +260,7 @@ The mean annual rate of change for the Consumer Price Index.
 
 **Underlying Formula**:
 
-```sql
+```javascript
 value = (Math.pow(( value("cpi") / previous("cpi") ), 12) - 1) * 100
  ```
 
@@ -285,7 +286,7 @@ The mean rate of change for the Consumer Price Index compounded continuously.
 
 **Underlying Formula**:
 
-```sql
+```javascript
 value = ( Math.log(value("cpi")) - Math.log(previous("cpi")) ) * 100
 ```
 
@@ -309,7 +310,7 @@ Return to the [Index](#index)
 
 **Underlying Formula**:
 
-```sql
+```javascript
 value = ( Math.log(value("cpi")) - Math.log(previous("cpi")) ) * 100 * 12
 ```
 
@@ -333,7 +334,7 @@ Each value's logarithm to base of the mathematical constant _e_
  
  **Underlying Formula**:
  
-```sql
+```javascript
 value = Math.log(value("cpi"))
 ```
 
@@ -355,15 +356,15 @@ Indexes the Consumer Price Index by its maximum and most recent value.
 
 **Underlying Formula**:
 
-```sql
+```javascript
 value = value("cpi") / value("cpi_max") * 100 || null
 ```
 
 Return to the [Index](#index)
 
-### Debrief
+### Summary
 
-These visualization demonstrate the power of the ChartLab interface which uses simple syntax to create robust performance. 
+These visualizations demonstrate the capabilities of the ChartLab interface which uses declarative syntax to create derived series. 
 Any of these formulas or settings can be applied to any time series dataset in order to enable customizable transformations
-using just one underlying dataset. Contact [Axibase](https://axibase.com/feedback) with any questions regarding the above
+of the underlying data. Contact [Axibase](https://axibase.com/feedback) with any questions regarding the above
 information.
