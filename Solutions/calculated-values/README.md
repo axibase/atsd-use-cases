@@ -154,7 +154,7 @@ The monthly numerical change in CPI value over the observed period.
 
 ![](images/cpi3.png)
 
-[![](images/button.png)](https://apps.axibase.com/chartlab/5267b4a7/#fullscreen)
+[![](images/button.png)](https://apps.axibase.com/chartlab/5267b4a7/2/#fullscreen)
 
 **Underlying Formula**:
 
