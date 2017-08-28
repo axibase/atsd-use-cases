@@ -69,3 +69,4 @@ Axibase Time Series Database: Usage Examples and Research Articles
 
 1. [The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment](Analysis/FedFund_FedInterest/README.md)
 2. [United States Treasuries as International Assets: China's Role in the Federal Fund Rate](Analysis/Treasuries_as_Assets/README.md)
+3. [The New Bubble: Fed Rates Stay Low While Debt Value Remains High](Analysis/The_New_Bubble)
