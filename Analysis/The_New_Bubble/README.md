@@ -182,9 +182,9 @@ age of Neo-liberalism.
  
 4. [Brookings Institution](https://www.brookings.edu/blog/ben-bernanke/2015/03/30/why-are-interest-rates-so-low/); 2015; Bernake, Ben
 
-5. [Axibase Research](../Solutions/calculated-values/README.md); 2017; Hamilton, Kenneth
+5. [Axibase Research: Econometrics and FRED](../../Solutions/calculated-values/README.md); 2017; Hamilton, Kenneth
 
-6. [Axibase Reseatch](../CBI-CPI/README.md); 2017; Hamilton, Kenneth
+6. [Axibase Research: Bank of Israel](../../CBI_CPI/README.md); 2017; Hamilton, Kenneth
 
 7. [Bloomberg Markets](https://www.bloomberg.com/news/articles/2017-08-25/gold-shaken-out-of-slumber-by-a-mysterious-2-million-ounce-trade); 2017; Barton, Susanne and Javiar, Luzi-Ann
 
