@@ -1,6 +1,10 @@
 The New Bubble: Fed Rates Stay Low While Debt Value Remains High
 ===
 
+![](images/fig0.png)
+
+[![](images/button.png)](https://apps.axibase.com/chartlab/25f3a4d2/2/#fullscreen)
+
 ### Introduction
 
 The interest rate paid by the United States on its outstanding debt is set by the Federal Reserve Bank of America, who is
@@ -29,7 +33,7 @@ the downturn of 2009, which saw a loss of about a third of the average family's 
 
 ![](images/fig1.png)
 
-[![](images/button.png)](https://apps.axibase.com/chartlab/e2ad4e35/5/#fullscreen)
+[![](images/button.png)](https://apps.axibase.com/chartlab/5c59726d/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -44,9 +48,9 @@ of the state of the entire U.S. economy.
 
 **Figure 2**: Difference in Gross Debt and Gross Debt Market Value
 
-![](images/fig2.png)
+![](images/fig-2.png)
 
-[![](images/button.png)](https://apps.axibase.com/chartlab/e2ad4e35//#fullscreen)
+[![](images/button.png)](https://apps.axibase.com/chartlab/cdbfb8ff/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -65,9 +69,9 @@ is shrinking and is still nowhere near the levels observed pre-recession.
 
 **Figure 3**: U.S. GDP vs. Debt
 
-![](images/fig3.png)
+![](images/fig-3.png)
 
-[![](images/button.png)](https://apps.axibase.com/chartlab/e2ad4e35/5/#fullscreen)
+[![](images/button.png)](https://apps.axibase.com/chartlab/da9a7eb6/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -76,9 +80,9 @@ decreases, the margin between the debt and its market value increases.
 
 **Figure 4**: Difference in Gross Debt and Gross Debt Market Value Compared to U.S. GDP vs. Debt
 
-![](images/fig4.png)
+![](images/fig-4.png)
 
-[![](images/button.png)](https://apps.axibase.com/chartlab/e2ad4e35/6/#fullscreen)
+[![](images/button.png)](https://apps.axibase.com/chartlab/919f5f72/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -87,9 +91,9 @@ a decrease in U.S. debt market value.
 
 **Figure 5**: Percent of GDP Allocated to Debt Payments
 
-![](images/fig-5.png)
+![](images/fig-05.png)
 
-[![](images/button.png)](https://apps.axibase.com/chartlab/e2ad4e35/7/#fullscreen)
+[![](images/button.png)](https://apps.axibase.com/chartlab/a70b074a/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -182,9 +186,9 @@ age of Neo-liberalism.
  
 4. [Brookings Institution](https://www.brookings.edu/blog/ben-bernanke/2015/03/30/why-are-interest-rates-so-low/); 2015; Bernake, Ben
 
-5. [Axibase Research: Econometrics and FRED](../../Solutions/calculated-values/README.md); 2017; Hamilton, Kenneth
+5. [Axibase Research](../Solutions/calculated-values/README.md); 2017; Hamilton, Kenneth
 
-6. [Axibase Research: Bank of Israel](../../CBI_CPI/README.md); 2017; Hamilton, Kenneth
+6. [Axibase Reseatch](../CBI-CPI/README.md); 2017; Hamilton, Kenneth
 
 7. [Bloomberg Markets](https://www.bloomberg.com/news/articles/2017-08-25/gold-shaken-out-of-slumber-by-a-mysterious-2-million-ounce-trade); 2017; Barton, Susanne and Javiar, Luzi-Ann
 
