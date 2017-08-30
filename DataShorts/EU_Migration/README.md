@@ -18,5 +18,5 @@ net migration data.
 
 Additional European Union datasets:
 
-* [European Union Debt by Country](EU_Debt/README.md)
-* [European Union Per Capita Debt by Country](EU_Debt_percap/README.md)
+* [European Union Debt by Country](../EU_Debt/README.md)
+* [European Union Per Capita Debt by Country](../EU_Debt_percap/README.md)
