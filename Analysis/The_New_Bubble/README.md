@@ -41,8 +41,7 @@ The above visualization, made using the non-relational [Axibase Time Series Data
 tracks the growth of the United States GDP, Gross Debt, and Gross Debt Market Valuation. Since August 2011, the market value of the
 government's debt has outstripped the value of the GDP meaning that the United States' debt is worth more than the country
 is producing, that is, the traditionally safe United States index is primed to lose its position as the place to hold money
-for reliable growth in favor of positions in U.S. public debt, currently a [$14 trillion](https://treasurydirect.gov/NP/debt/current) 
-industry. Because the debt market value also considers the interest rate at which the debt was created it is considered a 
+for reliable growth. Because the debt market value also considers the interest rate at which the debt was created it is considered a 
 more accurate indicator of the overall state of American debt ([2](#sources)) which is becoming more and more itself an indicator
 of the state of the entire U.S. economy.
 
