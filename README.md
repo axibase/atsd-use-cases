@@ -58,6 +58,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 9. [European Union Per Capita Debt by Country (2005-2016)](DataShorts/EU_Debt_percap/README.md)
 10. [US Dollar Exchange Rate Analysis (2012-2017)](DataShorts/Dollar-EX/README.md)
 11. [European Union Net Migration (2004-2015)](DataShorts/EU_Migration/README.md)
+12. [Comprehensive Housing Market Analysis: City of Austin (2014)](DataShorts/Austin_Housing_Market/README.md)
 
 ## Support
 
