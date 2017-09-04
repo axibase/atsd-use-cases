@@ -31,6 +31,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 25. [Debt Profile of the Average American](FED_FORDSR/README.md)
 26. [U.S. Expatriation Statistics (Quarter 2 Update)](Expatriation_Q2/README.md)
 27. [Calls May Be Recorded or Monitored for Training Purposes: Using Call Abandonment Rates to Establish Thresholds](SF_Phone/README.md)
+28. [The Slow Death of the American Auto Industry](Automobiles/README.md)
 
 ## Chart of the Day 
 
