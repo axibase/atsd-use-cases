@@ -46,6 +46,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 9. [European Union Per Capita Debt by Country](Chart_of_the_Day/EU_Debt_percap/README.md)
 10. [International Students in America by Country of Origin](Chart_of_the_Day/International_Students/README.md)
 11. [United States Voter Turnout Since 1970](Chart_of_the_Day/voter-turnout/README.md)
+12. [Outstanding Students Loan Debt Continues to Exceed One Trillion Dollars](Chart_of_the_Day/Student_Loan/README.md)
 
 ## Data Library
 
