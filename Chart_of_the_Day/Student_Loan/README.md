@@ -1,9 +1,9 @@
 Outstanding Students Loan Debt Continues to Exceed One Trillion Dollars
 ===
 
-![](Images/sld1.png)
+![](Images/sld2.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/e6cf48b9#fullscreen)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/e6cf48b9/2/#fullscreen)
 
 > Open the [ChartLab](https://apps.axibase.com) visualization above and use the dropdown menus to navigate through time.
 
