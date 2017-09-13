@@ -38,4 +38,4 @@ The map below details the City Council districts of Los Angeles to provide a cle
 
 ![](Images/lamap.png)
 
-> Source: [City of Los Angeles](https://www.lacity.org/your-g
+> Source: [City of Los Angeles](https://www.lacity.org/your-government/elected-officials/city-council/map-districts), 2017
