@@ -32,7 +32,7 @@ The data is collected by [Axibase Collector](https://github.com/axibase/axibase-
 ### Change Management
 
 -   Perform detailed inventory scans of the Docker environment including hosts, images, containers, volumes, and networks.
--   Notify applications and operations teams in case of container misplacements.
+-   Notify applications and operations teams in case of container misplacement.
 -   Enforce labeling standards to ensure CMDB accuracy.
 
 ### Compliance and Security
@@ -110,7 +110,7 @@ $ docker logs -f axibase-collector
 
 ### Verify Installation
 
-Login into ATSD web interface at `https://atsd_host:8443`.
+Log in to the ATSD web interface at `https://atsd_host:8443`.
 
 Create a built-in administrator account.
 
