@@ -27,7 +27,7 @@ curl -sSL https://get.docker.com/ | sh
 
 ### Launch ATSD and Axibase Collector 
 
-From the Linux terminal execute the following command:
+From the Linux terminal execute the following *sandbox* command:
 
 ```$ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 --name=MYSANDBOX \
@@ -109,8 +109,7 @@ Confirm connectivity by clicking the **Test** button. Click **Save**.
 
 ![](Images/Test.png)
 
-Confirm the test was successfully completed. If the test fails, there was an error in the Sandbox command you used earlier.
-Stop the Collector and ATSD and begin the process again from the beginning.
+Confirm the test was successfully completed. If the test fails, there was an error in the *sandbox* command you used earlier. Stop the Collector and ATSD and begin the process again from the beginning.
 
 ![](Images/Test%20Complete.png)
 
@@ -120,13 +119,13 @@ From the **JSON Job** page, enable the **marathon_apps** job.
 
 ### Import XML Archive to ATSD
 
-ATSD uses a different port than Axibase Collector, changed the Collector URL to the port defined in the original Sandbox
+ATSD uses a different port than Axibase Collector. Change the Collector URL to the port defined in the original *sandbox*
 command. The ATSD Port should appear similar to the one here:
 ```
 https://XXX.XX.X.X:8443
 ```
 Log in to ATSD using the username which you defined in the **Launch ATSD and Axibase Collector** portion of the process.
-By default the password will be the same as the username you entered upon application launch but it may be changed by clicking the **My Account** logo in the upper right corner of the UI.
+By default, the password will be the same as the username you entered upon application launch but it may be changed by clicking the **My Account** logo in the upper right corner of the UI.
 
 ![](Images/ATSD%20Login.png)
 
