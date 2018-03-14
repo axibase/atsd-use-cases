@@ -47,6 +47,9 @@ Axibase Time Series Database: Usage Examples and Research Articles
 10. [International Students in America by Country of Origin](Chart_of_the_Day/International_Students/README.md)
 11. [United States Voter Turnout Since 1970](Chart_of_the_Day/voter-turnout/README.md)
 12. [Outstanding Students Loan Debt Continues to Exceed One Trillion Dollars](Chart_of_the_Day/Student_Loan/README.md)
+13. [Food Insecurity in America (2009-2013)](Chart_of_the_Day/Food_Insecurity/README.md)
+14. [Credit Card Loan Delinquency at 25 Year Low](Chart_of_the_Day/Credit_Delinquency/README.md)
+15. [Citywide LED Streetlight Savings (Los Angeles, CA)](Chart_of_the_Day/LA_Lights/README.md)
 
 ## Data Library
 
@@ -62,6 +65,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 10. [US Dollar Exchange Rate Analysis (2012-2017)](DataShorts/Dollar-EX/README.md)
 11. [European Union Net Migration (2004-2015)](DataShorts/EU_Migration/README.md)
 12. [Comprehensive Housing Market Analysis: City of Austin (2014)](DataShorts/Austin_Housing_Market/README.md)
+13. [Foreign Businesses Operating in Hong Kong (1996-2016)](DataShorts/Hong_Kong_Business/README.md)
 
 ## Support
 
@@ -74,4 +78,6 @@ Axibase Time Series Database: Usage Examples and Research Articles
 
 1. [The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment](Analysis/FedFund_FedInterest/README.md)
 2. [United States Treasuries as International Assets: China's Role in the Federal Fund Rate](Analysis/Treasuries_as_Assets/README.md)
-3. [The New Bubble: Fed Rates Stay Low While Debt Value Remains High](Analysis/The_New_Bubble)
+3. [The New Bubble: Fed Rates Stay Low While Debt Value Remains High](Analysis/The_New_Bubble/README.md)
+4. [CPI vs. PPI: Producers are Spending Less While Consumers are Paying More](Analysis/CPI_PPI/README.md)
+5. [BitCoin After the GHash.IO Era](Analysis/BitCoin_After_GHash/README.md)
