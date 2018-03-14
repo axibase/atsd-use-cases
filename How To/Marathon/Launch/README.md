@@ -113,7 +113,7 @@ Confirm the test was successfully completed. If the test fails, there was an err
 
 ![](Images/Test%20Complete.png)
 
-From the **JSON Job** page, enable the **marathon_apps** job.
+From the **JSON Job** page, enable the **marathon_apps** job. Click **Save**.
 
 ![](Images/Enable%20Job.png)
 
