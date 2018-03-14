@@ -97,10 +97,13 @@ If the **marathon_apps** job is not visible, be sure that the **Status** drop-do
 
 ![](Images/Enabled.png)
 
-Click the job link to open the **JSON Job** page. Then, open the **JSON Configuration** page by clicking the **apps** link 
-from the **JSON Job** page.
+Click the job link to open the **JSON Job** page.
 
 ![](Images/Job%20Link.png)
+
+Then, open the **JSON Configuration** page by clicking the **apps** link from the **JSON Job** page.
+
+![](Images/JSON%20Job%20Page.png)
 
 Confirm connectivity by clicking the **Test** button. Click **Save**. 
 
@@ -133,7 +136,7 @@ On your local machine, create an archive of the XML files to be uploaded. Click 
 
 ![](Images/Backup%20Import)
 
-You've prepared the application to interact with Marathon. Choose the third party messenger you would like to work with, and follow one of the links below to continue.
+You've successfully prepared the application to interact with Marathon. Choose the third party messenger you would like to work with, and follow one of the links below to continue.
 
 ### Integrating Notifications With a Third Party Messaging Client or Interface
 
