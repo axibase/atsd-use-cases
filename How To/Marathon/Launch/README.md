@@ -133,7 +133,7 @@ From the ATSD homepage, follow the path **Settings > Diagnostics > Back-up Impor
 
 On your local machine, create an archive of the XML files to be uploaded. Click **Choose Files** and select the newly created archive. ATSD is able to unpack and import the archive automatically. Click **Import**.
 
-![](Images/Backup%20Import)
+![](Images/Backup%20Import.png)
 
 You've successfully prepared the application to interact with Marathon. Choose the third party messenger you would like to work with, and follow one of the links below to continue.
 
