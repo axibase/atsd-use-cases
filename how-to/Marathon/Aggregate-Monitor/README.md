@@ -36,7 +36,7 @@ name and `axibase` as our Docker username.
 
 ### Import Marathon Jobs to Axibase Collector
 
-Once you have confirmed the launch of ATSD and the creation of a new Axibase Collector follow the Collector link to the URL. The link should appear similar to the one below:
+Once you have confirmed the launch of ATSD and the creation of a new Axibase Collector follow the link to the Collector URL. 
 ```
 https://docker_host:9443
 ```
