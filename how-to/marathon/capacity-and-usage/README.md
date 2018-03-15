@@ -56,7 +56,7 @@ Click the job link to open the **JSON Job** page, then open the **JSON Configura
 
 Replace the template information with your server address, login information and password.
 
-![](images/http_pool_config.png)
+![](images/http_pool_config_.png)
 
 Confirm connectivity by clicking the **Test** button. Click **Save**. 
 
