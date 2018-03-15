@@ -24,11 +24,13 @@ The framework consists of the following components:
 
 Both the API and the user interface provide a way to view allocated capacity alongside the number of launched, healthy, and unhealthy tasks aggregated for each application. The health statuses of these applications are reported for tasks with enabled health checks.
 
-![](images/marathon_monitoring.png)
+![](images/monitor-marathon.png)
 
 ### Capacity Usage
 
 Integration with [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) adds an additional level of visibility by collecting and aggregating CPU, memory, and disk usage at the **Application** level. This allows to achieve higher capacity utilization by correlating resource allocations with actual usage.
+
+![](images/marathon-applications.png)
 
 ## Configuration
 
@@ -113,7 +115,7 @@ Open **Settings > Diagnostics > Backup Import** and upload the [atsd-marathon-xm
 
 The view displays all Marathon applications, the number of healthy tasks for each application, as well as aggregate resource utilization with breakdown by CPU, memory, and disk.
 
-![](images/entities_view.png)
+![](images/marathon-applications-label.png)
 
 ### Resource Utilization Portal
 
