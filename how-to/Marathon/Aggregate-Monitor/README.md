@@ -75,9 +75,9 @@ Log in to ATSD using the username which you defined in the **Launch ATSD and Axi
 
 > By default, the password will be the same as the username you entered upon application launch but it may be changed by clicking the **My Account** logo in the upper right corner of the UI. 
 
-From the ATSD homepage, follow the path **Settings > Diagnostics > Back-up Import**
+From the ATSD homepage, follow the path **Settings > Diagnostics > Back-up Import**.
 
-Click **Choose Files** and upload it the [attached archive](Resources/atsd-marathon-xml.zip). ATSD is able to unpack and import the archive automatically. Click **Import**.
+Click **Choose Files** and upload the [attached archive](Resources/atsd-marathon-xml.zip). ATSD is able to unpack and import the archive automatically. Click **Import**.
 
 You've successfully prepared the application to interact with Marathon. In the **Marathon Applications** tab of the ATSD UI, monitor the jobs you've integrated by clicking **View Portal** at the top of the screen.
 
