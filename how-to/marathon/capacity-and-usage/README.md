@@ -4,7 +4,9 @@
 
 [Marathon](https://mesosphere.github.io/marathon/) is a framework for automating the deployment of Linux containers on top of clusters managed by [Apache Mesos](http://mesos.apache.org/). The framework supports auto-scaling and failover based on built-in http/tcp health checks. 
 
-The primary concept implemented in Marathon is an **Application** which is a resizeable collection of similar containers launched as a long-running service or a short-term batch processing job. Each container (or **task** in Marathon terms) is allocated a pre-defined amount of CPU, memory, and disk resources. The containers are launched on the underlying Mesos nodes based on available capacity.
+The primary concept implemented in Marathon is an **Application** which is a resizeable collection of similar containers launched as a long-running service or a short-term batch processing job. 
+
+Each container (or **task** in Marathon terms) is allocated a pre-defined amount of CPU, memory, and disk resources. The containers are launched on the underlying [Mesos nodes](http://mesos.apache.org/documentation/latest/architecture/) based on available capacity.
 
 ## Marathon Components
 
@@ -24,7 +26,7 @@ Both the API and the user interface provide a way to view allocated capacity alo
 
 ## Capacity Usage
 
-Integration with [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) adds an additional level of visibility by collecting and aggregating CPU, memory, and disk usage at the Application level. This allows correlating resource allocations with actual resource usage, monitoring Marathon Applications as services, and achieving higher capacity utilization.
+Integration with [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) adds an additional level of visibility by collecting and aggregating CPU, memory, and disk usage at the Application level. This allows correlating resource allocations with actual usage in order to achieve higher capacity utilization.
 
 ## Configuration
 
@@ -43,9 +45,11 @@ $ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   axibase/atsd-sandbox:latest
 ```
 
-The sandbox container includes both the ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances. The Axibase Collector is a companion data collection tool in the ATSD toolbox and the Collecter instance installed in the sandbox container will automatically start historizing statistics from the local Docker engine.
+The sandbox container includes both the ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances. 
 
-Log in to ATSD user interface using 'axibase' username and 'axibase' password:
+The Collector instance installed in the sandbox container will automatically start historizing statistics from the local Docker engine.
+
+Log in to ATSD user interface using `axibase` username and `axibase` password.
 
 ```
 https://atsd_hostname:8443/
@@ -61,21 +65,21 @@ docker run -d -p 9443:9443 --restart=always \
    --volume /var/run/docker.sock:/var/run/docker.sock \
    --env=DOCKER_HOSTNAME=`hostname -f` \
   axibase/collector \
-   -atsd-url=https://axibase:axibase@atsd_hostname:8443 \
+   -atsd-url=https://collector:collector@atsd_hostname:8443 \
    -job-enable=docker-socket
 ```
 
 ### Import Marathon Job into Axibase Collector
 
-Log in to Axibase Collector instance in the sandbox container at `https://atsd_hostname:9443` using 'axibase' username and 'axibase' password.
+Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axibase` username and `axibase` password.
 
-Import the attached [job configuration](resources/marathon_jobs.xml) XML file. 
+Import the attached [job configuration](resources/marathon_jobs.xml) XML file.
 
-The JSON job will query the Marathon REST API for Application definitions and health status, then offload this data into ATSD database.
+The **marathon_apps** JSON job will query the Marathon `/v2/apps` API endpoint for Application definitions and health status, then offload this data into ATSD database.
 
 ![](images/import_job.png)
 
-### Configure Marathon API Connection
+### Configure Marathon Connection
 
 In the **Jobs** drop-down menu, select **JSON** jobs.
 
@@ -85,7 +89,7 @@ Open the **JSON Job** page, then open the **JSON Configuration** page by clickin
 
 ![](images/http_pool.png)
 
-Specify Server, Username and Password.
+Specify 'Server', 'Username' and 'Password' for a Marathon user with API query permissions.
 
 ![](images/http_pool_config_.png)
 
