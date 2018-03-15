@@ -9,7 +9,7 @@ Mesosphere’s Datacenter Operating System (DC/OS) and Apache Mesos. Using [Axib
 
 * ATSD is configured to work with utilities such as Marathon and Docker, and supports additional capabilities to integrate and deploy custom bots in a variety of messaging platforms and internet connected devices.
 
-* You may launch both [ATSD](https://github.com/axibase/atsd-use-cases/tree/master/Solutions/docker#launch-atsd) and an [Axibase Collector](https://github.com/axibase/atsd-use-cases/tree/master/Solutions/docker#launch-axibase-collectors) using a single command.
+* You may launch [ATSD](https://github.com/axibase/atsd-use-cases/tree/master/Solutions/docker#launch-atsd) and an [Axibase Collector](https://github.com/axibase/atsd-use-cases/tree/master/Solutions/docker#launch-axibase-collectors) using a single command.
 
 **Preparing your instance of ATSD, starting the Axibase Collector, and uploading the needed files should take less than 10 minutes.**
 
