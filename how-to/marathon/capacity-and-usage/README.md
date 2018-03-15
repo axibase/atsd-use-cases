@@ -20,7 +20,7 @@ The framework consists of the following components:
 
 Both the API and the user interface provide a way to view allocated capacity alongside the number of launched, healthy, and unhealthy tasks aggregated for each application. The health statuses of these applications are reported for tasks with enabled health checks.
 
-![marathon_capacity](images/marathon_capacity.png)
+![](images/marathon_monitoring.png)
 
 ## Capacity Usage
 
@@ -106,8 +106,6 @@ Open **Settings > Diagnostics > Backup Import** and upload the [atsd-marathon-xm
 ### Entity View
 
 The view displays all Marathon applications, the number of healthy tasks for each application, as well as aggregate resource utilization with breakdown by CPU, memory, and disk.
-
-![](images/marathon_monitoring.png)
 
 ![](images/entities_view.png)
 
