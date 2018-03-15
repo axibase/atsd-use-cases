@@ -1,6 +1,6 @@
 # How to Monitor Aggregate CPU and Memory Usage in Marathon Application
 
-![](Images/Axibase%20Logo.png)
+![Axibase Logo](images/axibase_logo.png)
 
 ### Overview
 
@@ -17,7 +17,7 @@ Mesosphere’s Datacenter Operating System (DC/OS) and Apache Mesos. Using [Axib
 
 * Marathon v1.5.6
 
-![](Images/Marathon%20Home.png)
+![Marathon v1.5.6 User Interface](images/marathon_ui.png)
 
 ### Launch ATSD and Axibase Collector 
 
@@ -40,9 +40,9 @@ Once you have confirmed the launch of ATSD and the creation of a new Axibase Col
 ```
 https://docker_host:9443
 ```
-Create and confirm your password on the login page to access the Collector UI. Import the [attached XML file](Resources/marathon_jobs.xml) to connect Marathon and Axibase Collector. In the **Jobs** tab, click **Import** and select the appropriate file from the local machine.
+Create and confirm your password on the login page to access the Collector UI. Import the [attached XML file](resources/marathon_jobs.xml) to connect Marathon and Axibase Collector. In the **Jobs** tab, click **Import** and select the appropriate file from the local machine.
 
-![](Images/Job%20Import.png)
+![](images/import_job.png)
 
 ### Configure Marathon Properties to Ensure Connectivity
 
@@ -52,17 +52,17 @@ In the **Jobs** drop-down menu, select **JSON** jobs.
 
 Click the job link to open the **JSON Job** page, then open the **JSON Configuration** page by clicking the **apps** link from the **JSON Job** page. On the **JSON Configuration** page, open **HTTP Pool** settings. 
 
-![](Images/HTTP%20Pool.png)
+![](images/http_pool.png)
 
 Replace the template information with your server address, login information and password.
 
-![](Images/HTTP%20Pool%20Config.png)
+![](images/http_pool_config.png)
 
 Confirm connectivity by clicking the **Test** button. Click **Save**. 
 
 From the **JSON Job** page, enable the **marathon_apps** job. Click **Save**.
 
-![](Images/Enable%20Job.png)
+![](images/enable_job.png)
 
 ### Import XML Archive to ATSD
 
@@ -77,8 +77,8 @@ Log in to ATSD using the username which you defined in the **Launch ATSD and Axi
 
 From the ATSD homepage, follow the path **Settings > Diagnostics > Back-up Import**.
 
-Click **Choose Files** and upload the [attached archive](Resources/atsd-marathon-xml.zip). ATSD is able to unpack and import the archive automatically. Click **Import**.
+Click **Choose Files** and upload the [attached archive](resources/atsd-marathon-xml.zip). ATSD is able to unpack and import the archive automatically. Click **Import**.
 
 You've successfully prepared the application to interact with Marathon. In the **Marathon Applications** tab of the ATSD UI, monitor the jobs you've integrated by clicking **View Portal** at the top of the screen.
 
-![](Images/Marathon%20Portal.png)
+![](images/marathon_portal.png)
