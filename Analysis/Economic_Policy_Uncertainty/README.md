@@ -60,3 +60,8 @@ The above query returns the following results:
 Using [public data](https://www.britannica.com/topic/United-States-Presidential-Election-Results-1788863) from [Encyclopaedia Britannica](https://www.britannica.com/) to track election results for the same period of time produces the following visulization.
 
 ![](images/election-results.png)
+*Fig. 3*: Historical election result data from recent United States Presidential Elections, the winning candidate has been separated from the remaining area using the [`expand`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/#tab-id-2) setting. Open the ChartLab sandbox to view the complete figure.
+
+[![](images/button.png)](https://apps.axibase.com/chartlab/73ab0050/2/#fullscreen)
+
+Although the 2016 election was one of the more contentious in recent U.S. History, the EPU index immediately before the election was lower than the previous four elections. 
