@@ -32,7 +32,7 @@
           <testPath>/</testPath>
           <authType>BASIC</authType>
           <userName>USERNAME</userName>
-          <password>PASSWORD</password>
+          <password></password>
           <headers/>
           <parameters/>
           <keyStore>NONE</keyStore>
@@ -70,7 +70,7 @@
             <propertyValueFields/>
             <messageEnabled>false</messageEnabled>
             <messageTagFields/>
-            <jsonPath>$['apps'][*]</jsonPath>
+            <jsonPath>$[&apos;apps&apos;][*]</jsonPath>
             <depth>0</depth>
             <customTags/>
             <renamedFields/>
