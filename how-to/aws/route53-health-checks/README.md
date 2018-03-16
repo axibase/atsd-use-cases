@@ -2,9 +2,9 @@
 
 ## Overview
 
-[AWS Route53](https://aws.amazon.com/route53) service provides tools to automate DNS configuration to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, it provides dynamic routing services, including Latency Based Routing, Geo DNS, Geoproximity, and Weighted Round Robin.
+[AWS Route53](https://aws.amazon.com/route53) provides tools to automate DNS configuration in order to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, it provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
 
-One of the core Route53 capabilities is the ability to configure [Health Checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) to route traffic to healthy endpoints or to independently monitor the health of your application and its endpoints.
+A core Route53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) that route incoming traffic to healthy endpoints and then independently monitor the health of that application and its endpoints.
 
 ![](images/route53-1.png)
 
@@ -12,18 +12,17 @@ An automation procedure, such as DNS change or instance restart, can be initiate
 
 ![](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/images/how-health-checks-work.png)
 
-The Health Checks are available for HTTP, HTTPS, and TCP protocols and can be executed from a variety of regions for resiliency.
+Health checks are available for HTTP, HTTPS, and TCP protocols and may be executed from a variety of regions for resiliency.
 
 ![](images/route53-regions.png)
 
-The built-in monitoring charts provide an overview over a period of up to 2 weeks.
+Built-in monitoring charts provide an overview for a period of up to 2 weeks.
 
 ![](images/route53-monitoring.png)
 
 ## Service Availability Dashboards
 
-By offloading Route53 health check statistics to [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) you can build consolidated dashboards spanning all or subsets of health checks with the ability to define custom thresholds.
-
+These health checks may be offloaded to [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) to create consolidated dashboards with custom thresholds for alerts and notifications.
 
 ## Configuration
 
@@ -39,8 +38,9 @@ Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) cont
 ```
 $ docker run -d -p 8443:8443 -p 9443:9443 \
   --name=atsd-sandbox \
+  --volume /var/run/docker.sock:/var/run/docker.sock \
   axibase/atsd-sandbox:latest
-```
+  ```
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
 
@@ -124,7 +124,7 @@ Configure a cron-scheduled task to copy health check attributes into ATSD sandbo
 
 ### Consolidated View
 
-The view displays all Route53 health checks.
+All working Route53 health checks are now visible on the **AWS Route53** tab. 
 
 ![](images/route53-entity-view.png)
 
