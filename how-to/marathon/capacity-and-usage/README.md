@@ -124,7 +124,7 @@ Open **Settings > Diagnostics > Backup Import** and upload the [atsd-marathon-xm
 
 ### Marathon Applications Entity View
 
-Click **Marathon Applcations** on the menu to access the Entity View. This view displays all Marathon applications, the number of healthy tasks for each application, as well as aggregate resource utilization with breakdown by CPU, memory, and disk.
+Click **Marathon Applications** on the menu to access the Entity View. This view displays all Marathon applications, the number of healthy tasks for each application, as well as aggregate resource utilization with breakdown by CPU, memory, and disk.
 
 ![](images/marathon-applications.png)
 
