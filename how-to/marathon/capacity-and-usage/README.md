@@ -28,7 +28,7 @@ Both the API and the user interface provide a way to view allocated capacity alo
 
 ### Capacity Usage
 
-Integration with [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) adds an additional level of visibility by collecting and aggregating CPU, memory, and disk usage at the **Application** level. This allows to achieve higher capacity utilization by correlating resource allocations with actual usage.
+Integration with [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) adds an additional level of visibility by collecting and aggregating CPU, memory, and disk usage at the **Application** level. This allows the user to achieve higher capacity utilization by correlating resource allocations with actual usage.
 
 ![](images/marathon-applications-label.png)
 
@@ -75,10 +75,10 @@ Launch Collector instances on the other Docker hosts in the environment. The rem
 Replace `atsd_hostname` in the command below with the hostname or IP address where ATSD is running. 
 
 ```
-docker run -d -p 9443:9443 --restart=always \
+$ docker run -d -p 9443:9443 --restart=always \
    --name=axibase-collector \
    --volume /var/run/docker.sock:/var/run/docker.sock \
-   --env=DOCKER_HOSTNAME=`hostname -f` \
+   --env=atsd_hostname=`hostname -f` \
   axibase/collector \
    -atsd-url=https://collector:collector@atsd_hostname:8443 \
    -job-enable=docker-socket
@@ -98,7 +98,7 @@ The **marathon_apps** JSON job will query the Marathon `/v2/apps` API endpoint f
 
 In the **Jobs** drop-down menu, select **JSON** jobs.
 
-> If the **marathon_apps** job is not visible, be sure that the **Status** drop-down menu is displaying all jobs.
+> By default, the **marathon_apps** job is not enabled and therefore not visible. Be sure that the **Status** drop-down menu is displaying all jobs to proceed.
 
 Open the **JSON Job** page, then open the **JSON Configuration** page by clicking the **apps** link. On the **JSON Configuration** page, open **HTTP Pool** settings.
 
@@ -122,9 +122,9 @@ Open **Settings > Diagnostics > Backup Import** and upload the [atsd-marathon-xm
 
 ## Results
 
-### Entity View
+### Marathon Applications Entity View
 
-The view displays all Marathon applications, the number of healthy tasks for each application, as well as aggregate resource utilization with breakdown by CPU, memory, and disk.
+Click **Marathon Applcations** on the menu to access the Entity View. This view displays all Marathon applications, the number of healthy tasks for each application, as well as aggregate resource utilization with breakdown by CPU, memory, and disk.
 
 ![](images/marathon-applications.png)
 
