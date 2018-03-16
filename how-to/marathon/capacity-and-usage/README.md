@@ -78,7 +78,7 @@ Replace `atsd_hostname` in the command below with the hostname or IP address whe
 $ docker run -d -p 9443:9443 --restart=always \
    --name=axibase-collector \
    --volume /var/run/docker.sock:/var/run/docker.sock \
-   --env=atsd_hostname=`hostname -f` \
+   --env=DOCKER_HOSTNAME=`hostname -f` \
   axibase/collector \
    -atsd-url=https://collector:collector@atsd_hostname:8443 \
    -job-enable=docker-socket
