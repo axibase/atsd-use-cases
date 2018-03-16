@@ -70,7 +70,7 @@
             <propertyValueFields/>
             <messageEnabled>false</messageEnabled>
             <messageTagFields/>
-            <jsonPath>$[&apos;apps&apos;][*]</jsonPath>
+            <jsonPath>$['apps'][*]</jsonPath>
             <depth>0</depth>
             <customTags/>
             <renamedFields/>
