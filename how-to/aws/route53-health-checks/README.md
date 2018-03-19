@@ -36,11 +36,14 @@ These health check statistics may be offloaded to [Axibase Time Series Database]
 Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts:
 
 ```
-$ docker run -d -p 8443:8443 -p 9443:9443 \
+$docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
   --volume /var/run/docker.sock:/var/run/docker.sock \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/marathon/capacity-and-usage/resources/atsd-marathon-xml.zip' \
+  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/marathon/capacity-and-usage/resources/marathon-jobs.xml?raw=true' \
+  --env EDIT_CONFIGS='marathon-jobs.xml,server=195.201.23.173,port=8080,userName=axibase,password=pa$$w0rd!' \
   axibase/atsd-sandbox:latest
-  ```
+```
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
 
