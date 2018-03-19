@@ -1,4 +1,4 @@
-# How to Monitor Marathon Applications as Services (Manual Walkthrough)
+# Marathon Integration: Manual File Import
 
 To perform this process using a single command, see the following [abbreviated walkthrough](/how-to/marathon/capacity-and-usage/README.md).
 
