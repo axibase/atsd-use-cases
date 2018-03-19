@@ -1,0 +1,81 @@
+[configuration]
+  offset-right = 50
+  height-units = 2
+  width-units = 1
+  var ent = '${entity}'
+  
+  var mtr = 'aws_route53.connectiontime.average'
+  #var mtr = 'aws_route53.sslhandshaketime.average'
+  #var mtr = 'aws_route53.timetofirstbyte.average'  
+  
+  entity = @{ent}
+  metric = @{mtr}  
+  
+[group]
+
+[widget]
+  type = graph
+  title = Region TCP Connection Times
+  node-connect = false
+  node-labels = true
+  link-data = true
+  timespan = 1 day
+  layout = rectangle
+  limit = 1
+
+  link-thresholds = percentile(50), percentile(75), percentile(95)
+  link-widths = 1, 2, 3
+  link-colors = green, steelblue, orange
+
+  [node]
+    id = target
+    label = atsd-nur 
+
+  var regions = getTags(mtr, "region", ent)
+
+  for reg in regions
+  [node]
+      id = @{reg.replace(/-/g, '')}
+      label = @{reg}
+  endfor
+   
+  for reg in regions
+  [link]
+    nodes = @{reg.replace(/-/g, '')} - target     
+  endfor   
+       
+  for reg in regions
+  [series]         
+    links = @{reg.replace(/-/g, '')} - target
+    [tags]
+      region = @{reg}  
+  endfor
+      
+[group]      
+
+[widget]
+  type = chart
+  title = Region TCP Connection Times Daily Statistics
+  timespan = 1 day
+  label-format = tags.region
+  mode = range
+  period = 30 minute
+  step-line = false
+  legend-value = false
+  server-aggregate = true
+
+  replace-value = Math.log(value)
+  format = fixed(value == 0? 0 : Math.pow(Math.E, value), 0) 
+    
+  #replace-value = Math.log10(value)
+  #format = fixed(value == 0? 0 : Math.pow(10, value), 0)     
+  
+  [series]
+      statistics = min  
+      [tags]
+        region = *
+  
+  [series]
+      statistics = max
+      [tags]
+        region = *    
