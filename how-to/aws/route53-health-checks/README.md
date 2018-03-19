@@ -28,8 +28,8 @@ These health check statistics may be offloaded to [Axibase Time Series Database]
 
 ### Prerequisites
 
-* AWS [IAM account](https://github.com/axibase/axibase-collector/blob/master/jobs/aws-iam.md) to query CloudWatch statistics.
-* 4GB RAM for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+* Create an AWS [IAM account](https://github.com/axibase/axibase-collector/blob/master/jobs/aws-iam.md) to query CloudWatch statistics.
+* Make sure 4GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
 
 ### Launch ATSD Sandbox
 
