@@ -36,10 +36,11 @@ These health check statistics may be offloaded to [Axibase Time Series Database]
 Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts:
 
 ```
-$ docker run -d -p 8443:8443 -p 9443:9443 \
-   --name=atsd-sandbox \
-   --volume /var/run/docker.sock:/var/run/docker.sock \
-   axibase/atsd-sandbox:latest
+docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
+  --name=atsd-sandbox \
+  --env ATSD_IMPORT_PATH='https://github.com/axibase/atsd-use-cases/raw/master/how-to/aws/route53-health-checks/resources/aws-route53-xml.zip' \
+  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/aws/route53-health-checks/resources/job_aws_aws-route53.xml' \
+  axibase/atsd-sandbox:latest
 ```
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
@@ -58,17 +59,10 @@ Log in to ATSD user interface using `axibase` username and `axibase` password.
 https://atsd_hostname:8443/
 ```
 
-### Import AWS Job into Axibase Collector
+
+### Configure AWS Access Keys
 
 Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axibase` username and `axibase` password.
-
-Import the attached [job configuration](resources/job_aws_aws-route53.xml) XML file.
-
-The **aws** job will query Route53 metrics using the CloudWatch API and store the data in ATSD.
-
-![](images/import_job.png)
-
-### Configure Access Parameters
 
 In the **Jobs** drop-down menu, select **AWS** jobs.
 
@@ -109,12 +103,6 @@ The response should contain a list of metrics for the enabled health checks.
 From the **AWS Job** page, enable the **aws-route53** job. Click **Save**.
 
 ![](images/enable_job.png)
-
-### Import Route53 Models into ATSD
-
-Open ATSD user interface at `https://atsd_hostname:8443`.
-
-Open **Settings > Diagnostics > Backup Import** and upload the [aws-route53-xml.zip](resources/aws-route53-xml.zip) archive that contains entity views, portals, SQL queries and rules designed specifically for AWS Route53 data.
 
 ### Setup Health Check Attribute Copy
 
