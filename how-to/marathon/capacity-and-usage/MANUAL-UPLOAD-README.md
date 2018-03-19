@@ -12,24 +12,6 @@ $ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   axibase/atsd-sandbox:latest
 ```
 
-### Launch Axibase Collectors containers
-
-Launch Collector instances on the other Docker hosts in the environment. The remote Collector instances will send Docker statistics into the centralized ATSD database running in the sandbox container that we previously launched. 
-
-![](images/marathon.png)
-
-Replace `atsd_hostname` in the command below with the hostname or IP address where ATSD is running. 
-
-```
-$ docker run -d -p 9443:9443 --restart=always \
-   --name=axibase-collector \
-   --volume /var/run/docker.sock:/var/run/docker.sock \
-   --env=DOCKER_HOSTNAME=`hostname -f` \
-  axibase/collector \
-   -atsd-url=https://collector:collector@atsd_hostname:8443 \
-   -job-enable=docker-socket
-```
-
 ### Import Marathon Job into Axibase Collector
 
 Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axibase` username and `axibase` password.
