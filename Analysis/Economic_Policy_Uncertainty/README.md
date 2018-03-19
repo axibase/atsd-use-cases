@@ -3,7 +3,7 @@
 ![](images/epu_title.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/59f36025#fullscreen)
 
-*Fig. 1*: The EPU Index for the United States, China, Russia, and Europe (Eurozone countries), superimposed over the quarterly average of the same value. Quarters where the true EPU value was greater than the quarterly average are shown in red using an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/alert-expressions/).
+*Fig. 1*: The EPU Index for the United States, China, Russia, and Europe (Eurozone countries), superimposed over the quarterly average of the same value. Months where the EPU value was greater than the quarterly average are shown in red using an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/alert-expressions/).
 
 **Source Data**: [FRED Economic Data](https://fred.stlouisfed.org/categories/33201)
 
@@ -20,19 +20,18 @@ Published in 2015 by the [National Bureau of Economic Research](http://www.nber.
 * What **effects** will that policy have on the local economy?
 
 According to the authors (Baker, Bloom, and Davis), their EPU (Economic Policy Uncertainty) metric is able to accurately
-predict economic growth and investment by tracking geopolitical events such as international treaties, public information like newpapers and policy position releases, and actual actions undertaken by government bodies such as a central bank raising
-interest rates.
+predict economic growth and investment by tracking geopolitical events such as international treaties, public information like newpapers and policy position releases, and actual actions undertaken by government bodies such as a central bank raising interest rates.
 
 ## Visualization
 
-This box chart shows the range of the EPU index for each of the 4 regions. A wider range shows greater variance of index values, and the central box has may be modified to include any [percentile](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/#tab-id-6) values.
+This box chart shows the range of the EPU index for each of the 4 regions. A wider range shows greater variance of index values, and the central box has may be modified to include any [percentile](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/#tab-id-6) values. According to the data, the People's Republic of China has seen the most volatile movements of their EPU Index, followed by the Eurozone, the Russian Federation, and the United States. Perhaps this is due to recent slow downs in the fixed assets and exports industry in the China in recent years as the index reached its absolute maximum value within the last few years.
 
 ![](images/epu-box-chart.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/af5d576e/2/#fullscreen)
 
 *Fig 2*: Use the drop-down menus in the ChartLab sandbox to change the date range of the visualization. Open the Editor window to modify percentile range with a `percentile = X%/Y%` expression where `X` and `Y` are the values of the percentile range you would like to display.
 
-Tracking the EPU Index for the People's Republic of China alongside more concrete metrics can be used to examine the validity of the EPU index. Shown below, the EPU is placed alongside real PRC Treasury Securities rates for the last decade and a half. The quarterly and bi-annual averages are compared in the same environment to smooth the occasionally volitile movement of both indices. Treasury Securities are a good tool for tracking economic prosperity because they show the interest rates that businesses borrowing money are paying to to their lenders. Historically speaking, a lower interest rate usually encourages business to borrow money and expand their operations.
+Tracking the EPU Index for the People's Republic of China alongside more concrete metrics can be used to examine the validity of the EPU Index. Shown below, the EPU is placed alongside real PRC Treasury Securities rates for the last decade and a half. The quarterly and bi-annual averages are compared in the same environment and a `wtavg` expression is used to smooth the occasionally volitile movement of both indices. Treasury Securities are a good tool for tracking economic potential and growth because they show the interest rates that businesses borrowing money are paying to to their lenders. Historically speaking, a lower interest rate usually encourages business to borrow money and expand their operations.
 
 ![](images/epu-rates.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/661d387e/#fullscreen)
@@ -43,10 +42,10 @@ The above figure was creating using the [`weighted average`](https://axibase.com
 
 ### Dual Axis
 
-Using a time series chart with two axes, drastically different data may be compared side-by-side without significantly altering one dataset using a [`replace-value`](https://apps.axibase.com/chartlab/3f080fe4/2/) expression. In the visualization here, per capita GDP for the Russian Federation is compared alongside EPU index for the same period of time using ['axis'](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) expressions.
+Using a time series chart with two axes, drastically different data may be compared side-by-side without significantly altering one dataset using a [`replace-value`](https://apps.axibase.com/chartlab/3f080fe4/2/) expression. In the visualization here, per capita GDP for the Russian Federation is compared alongside EPU index for the same period of time using [`axis`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) expressions.
 
 ![](images/epu-gdp-russia.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/73ab0050/2/#fullscreen)
+[![](images/button.png)](https://apps.axibase.com/chartlab/ebbe24c0/#fullscreen)
 
 *Fig. 4*: The left and right axis display different orders of value based on the `axis` setting. Open the Editor window in ChartLab to see the syntax for such expressions.
 
@@ -54,7 +53,7 @@ Dual axis visualizations are helpful for comparing data of different orders of m
 
 ## SQL Queries
 
-The United States has held presidential elections every four years since 1978, without exception; although several states who were actively in rebellion failed to nominate electors or cast ballots during the 1864 Presidential Elections which occured against the backdrop of the American Civil War.
+The United States has held presidential elections every four years since 1978, without exception; although several states who were actively in rebellion failed to nominate electors or cast ballots during the 1864 Presidential Elections which occurred against the backdrop of the American Civil War.
 
 Election season is a notoriously uncertain economic time period for the United States, as elections have been known to represent dramatic changes in policy and personnel that reshape the face of American policy. Using the following SQL query to track the EPU Index during election years only, and comparing that data to the election results, it is expected that more contested elections should generate a higher EPU Index.
 
