@@ -42,7 +42,7 @@ $ docker run -d -p 8443:8443 -p 9443:9443 \
    axibase/atsd-sandbox:latest
 ```
 
-The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances. Replace the tmeplate information from the script above in the `server=`, `userName=`, and `password=` fields of the `EDIT_CONFIGS=` command. 
+The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
 
 The Collector instance installed in the sandbox container will be used to retrieve Route53 statistics from AWS CloudWatch and store them in ATSD.
 
