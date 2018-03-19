@@ -4,7 +4,8 @@
 
 [AWS Route53](https://aws.amazon.com/route53) provides tools to automate DNS configuration in order to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, it provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
 
-A core Route53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) that route incoming traffic to healthy endpoints and then independently monitor the health of that application and its endpoints.
+
+A core Route53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) which route incoming traffic to healthy endpoints and then independently monitor the health of that application and its endpoints.
 
 ![](images/route53-1.png)
 
@@ -22,7 +23,7 @@ Built-in monitoring charts provide an overview for a period of up to 2 weeks.
 
 ## Service Availability Dashboards
 
-These health check statistics may be offloaded to [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) to create consolidated dashboards with custom thresholds for alerts and notifications.
+Health check statistics may be offloaded to [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) and used to create consolidated dashboards with custom thresholds for alerts and notifications.
 
 ## Configuration
 
@@ -58,7 +59,6 @@ Log in to ATSD user interface using `axibase` username and `axibase` password.
 ```
 https://atsd_hostname:8443/
 ```
-
 
 ### Configure AWS Access Keys
 
