@@ -22,7 +22,7 @@ Built-in monitoring charts provide an overview for a period of up to 2 weeks.
 
 ## Service Availability Dashboards
 
-These health checks may be offloaded to [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) to create consolidated dashboards with custom thresholds for alerts and notifications.
+These health check statistics may be offloaded to [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) to create consolidated dashboards with custom thresholds for alerts and notifications.
 
 ## Configuration
 
