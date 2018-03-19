@@ -11,7 +11,7 @@
 
 **Structured Query Language (SQL)**: [Axibase SQL Console](https://github.com/axibase/atsd/tree/master/sql#overview)
 
-### Introduction
+## Introduction
 
 Published in 2015 by the [National Bureau of Economic Research](http://www.nber.org/) in Cambridge, Massachusetts, a paper entitled [Measuring Economic Policy Uncertainty](http://www.policyuncertainty.com/media/BakerBloomDavis.pdf) seeks to establish a set of clear guidelines for quantifying economic policy uncertainty with the following questions: 
 
@@ -23,7 +23,7 @@ According to the authors (Baker, Bloom, and Davis), their EPU (Economic Policy U
 predict economic growth and investment by tracking geopolitical events such as international treaties, public information like newpapers and policy position releases, and actual actions undertaken by government bodies such as a central bank raising
 interest rates.
 
-### Visualization
+## Visualization
 
 This box chart shows the range of the EPU index for each of the 4 regions. A wider range shows greater variance of index values, and the central box has may be modified to include any [percentile](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/#tab-id-6) values.
 
@@ -35,13 +35,24 @@ This box chart shows the range of the EPU index for each of the 4 regions. A wid
 Tracking the EPU Index for the People's Republic of China alongside more concrete metrics can be used to examine the validity of the EPU index. Shown below, the EPU is placed alongside real PRC Treasury Securities rates for the last decade and a half. The quarterly and bi-annual averages are compared in the same environment to smooth the occasionally volitile movement of both indices. Treasury Securities are a good tool for tracking economic prosperity because they show the interest rates that businesses borrowing money are paying to to their lenders. Historically speaking, a lower interest rate usually encourages business to borrow money and expand their operations.
 
 ![](images/epu-rates.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/73ab0050/2/#fullscreen)
+[![](images/button.png)](https://apps.axibase.com/chartlab/661d387e/#fullscreen)
 
 *Fig. 3*: Economic Policy Uncertainty Index and PRC Treasury Securities Rates (2000-2017), bi-annually and quarterly.
 
 The above figure was creating using the [`weighted average`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) statistical tool. This tool may be used to creating a rolling average value for a specific time period. For more information about using this statistical tool, see the following [walkthrough](https://github.com/axibase/atsd-use-cases/blob/master/Support/Moving-Avg/README.md). 
 
-### SQL Queries
+### Dual Axis
+
+Using a time series chart with two axes, drastically different data may be compared side-by-side without significantly altering one dataset using a [`replace-value`](https://apps.axibase.com/chartlab/3f080fe4/2/) expression. In the visualization here, per capita GDP for the Russian Federation is compared alongside EPU index for the same period of time using ['axis'](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) expressions.
+
+![](images/epu-gdp-russia.png)
+[![](images/button.png)](https://apps.axibase.com/chartlab/73ab0050/2/#fullscreen)
+
+*Fig. 4*: The left and right axis display different orders of value based on the `axis` setting. Open the Editor window in ChartLab to see the syntax for such expressions.
+
+Dual axis visualizations are helpful for comparing data of different orders of magnitude. In the above case for example the per capita GDP value tracks quite closely to the annual average EPU Index value for the Russian Federation.
+
+## SQL Queries
 
 The United States has held presidential elections every four years since 1978, without exception; although several states who were actively in rebellion failed to nominate electors or cast ballots during the 1864 Presidential Elections which occured against the backdrop of the American Civil War.
 
@@ -68,7 +79,7 @@ Using [public data](https://www.britannica.com/topic/United-States-Presidential-
 ![](images/election-results.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/73ab0050/2/#fullscreen)
 
-*Fig. 4*: Historical election result data from recent U.S. presidential elections, the winning candidate has been separated from the remaining area using the [`expand`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/#tab-id-2) setting. Open the ChartLab sandbox to view the complete figure.
+*Fig. 5*: Historical election result data from recent U.S. presidential elections, the winning candidate has been separated from the remaining area using the [`expand`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/#tab-id-2) setting. Open the ChartLab sandbox to view the complete figure.
 
 Although the 2016 election was one of the more contentious in recent U.S. history, the EPU index immediately before the election was lower than the previous four elections.
 
@@ -142,6 +153,23 @@ This query shows that none of the expected entries appear among the greatest EPU
 |2011-10|242|
 |2013-01|240|
 
-Tracking both results on a simple [time series chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) to compare the expected (purple) versus actual results (blue):
+Tracking both results on a simple [time series chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) to compare the expected versus actual results:
 
 ![](images/eurozone-time-chart.png)
+
+*Fig 5*: Highlighted above are points from the two queries shown here. Expected results are highlighted with purple arrows while actual results are highlighted with blue arrows.
+
+## Conclusion
+
+As expected the EPU Index is much stronger as a metric that tracks changes across broader periods of time than responding to specific events, evidenced by the inability of the index to respond to major events such as those predicted in the Eurozone demonstrations. However, it is quite a strong predictor of broad periods of time, when the vast number of factors considered by the economists who designed the index may be compiled together and averaged for longer spans.
+
+Using SQL queries and visualization tools, predictive algorithms and compiled indices may be quickly evaluated against actual data to confirm their validity and evaluate their relative strengths and weaknesses. 
+
+### Resources
+
+Use the following tools to recreate any of the visualizations seen here.
+
+* Install an ATSD instance on your local Linux system [here](https://github.com/axibase/atsd/blob/master/installation/README.md).
+* Visit [FRED](https://fred.stlouisfed.org/) for any of the data used in this article.
+* Access the ChartLab sandbox, and other Axibase applications, [here](https://apps.axibase.com/) and comprehensive documentation [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+* Download the following [parser job file](resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface.
