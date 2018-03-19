@@ -44,15 +44,16 @@ Integration with [Axibase Time Series Database](http://axibase.com/products/axib
 Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts:
 
 ```
-$ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
+docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
   --volume /var/run/docker.sock:/var/run/docker.sock \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/marathon/capacity-and-usage/resources/atsd-marathon-xml.zip' \
+  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/marathon/capacity-and-usage/resources/marathon-jobs.xml?raw=true' \
+  --env EDIT_CONFIGS='marathon-jobs.xml,server=195.201.23.173,port=8080,userName=axibase,password=pa$$w0rd!' \
   axibase/atsd-sandbox:latest
 ```
 
-The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
-
-The Collector instance installed in the sandbox container will automatically start historizing statistics from the local Docker engine.
+The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances, and the command will upload the needed xml files to ATSD and Axibase Collector. If you would like to perform this process manually, follow these instructions for [manual upload](../capacity-and-usage-manual-upload/README.md). The Collector instance installed in the sandbox container will automatically start historizing statistics from the local Docker engine.
 
 Wait until the sandbox is initialized and 'All applications started.' message is displayed.
 
@@ -84,16 +85,6 @@ $ docker run -d -p 9443:9443 --restart=always \
    -job-enable=docker-socket
 ```
 
-### Import Marathon Job into Axibase Collector
-
-Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axibase` username and `axibase` password.
-
-Import the attached [job configuration](resources/marathon_jobs.xml) XML file.
-
-The **marathon_apps** JSON job will query the Marathon `/v2/apps` API endpoint for Application definitions and health status, then offload this data into ATSD.
-
-![](images/import_job.png)
-
 ### Configure Marathon API Connection
 
 In the **Jobs** drop-down menu, select **JSON** jobs.
@@ -113,12 +104,6 @@ Confirm connectivity by clicking the **Test** button. Click **Save**.
 From the **JSON Job** page, enable the **marathon_apps** job. Click **Save**.
 
 ![](images/enable_job.png)
-
-### Import Marathon Models into ATSD
-
-Open ATSD user interface at `https://atsd_hostname:8443`.
-
-Open **Settings > Diagnostics > Backup Import** and upload the [atsd-marathon-xml.zip](resources/atsd-marathon-xml.zip) archive that contains entity views, portals, queries and rules designed specifically for Marathon.
 
 ## Results
 
