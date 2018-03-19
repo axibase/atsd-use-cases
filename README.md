@@ -32,6 +32,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 26. [U.S. Expatriation Statistics (Quarter 2 Update)](Expatriation_Q2/README.md)
 27. [Calls May Be Recorded or Monitored for Training Purposes: Using Call Abandonment Rates to Establish Thresholds](SF_Phone/README.md)
 28. [The Slow Death of the American Auto Industry](Automobiles/README.md)
+29. [United States Federal Reserve: The Economic Policy Uncertainty Index](Analysis/Economic_Policy_Uncertainty/README.md)
 
 ## Chart of the Day 
 
