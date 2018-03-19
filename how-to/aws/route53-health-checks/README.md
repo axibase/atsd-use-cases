@@ -4,6 +4,7 @@
 
 [AWS Route53](https://aws.amazon.com/route53) provides tools to automate DNS configuration in order to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, it provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
 
+
 A core Route53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) which route incoming traffic to healthy endpoints and then independently monitor the health of that application and its endpoints.
 
 ![](images/route53-1.png)
