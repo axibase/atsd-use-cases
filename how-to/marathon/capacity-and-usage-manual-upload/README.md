@@ -73,7 +73,7 @@ $ docker run -d -p 9443:9443 --restart=always \
 
 Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axibase` username and `axibase` password.
 
-Import the attached [job configuration](resources/marathon_jobs.xml) XML file.
+Import the attached [job configuration](resources/marathon-job.xml) XML file.
 
 The **marathon_apps** JSON job will query the Marathon `/v2/apps` API endpoint for Application definitions and health status, then offload this data into ATSD.
 
