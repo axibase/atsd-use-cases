@@ -41,7 +41,9 @@ Integration with [Axibase Time Series Database](http://axibase.com/products/axib
 
 ### Launch ATSD Sandbox
 
-Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts:
+Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts.
+
+Replace `marathon_hostname`, `my-user`, and `my-password` in the command below with actual Marathon user credentials.
 
 ```
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
@@ -49,11 +51,15 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --volume /var/run/docker.sock:/var/run/docker.sock \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/marathon/capacity-and-usage/resources/atsd-marathon-xml.zip' \
   --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/marathon/capacity-and-usage/resources/marathon-jobs.xml?raw=true' \
-  --env EDIT_CONFIGS='marathon-jobs.xml,server=195.201.23.173,port=8080,userName=axibase,password=pa$$w0rd!' \
+  --env EDIT_CONFIGS='marathon-jobs.xml,server=marathon_hostname,port=8080,userName=my-user,password=my-password' \
   axibase/atsd-sandbox:latest
 ```
 
-The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances, and the command will upload the needed xml files to ATSD and Axibase Collector. If you would like to perform this process manually, follow these instructions for [manual upload](../capacity-and-usage-manual-upload/README.md). The Collector instance installed in the sandbox container will automatically start historizing statistics from the local Docker engine.
+The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances, and the command will upload the needed xml files to ATSD and Axibase Collector. 
+
+> If you would like to import files manually, follow these instructions for [manual upload](../capacity-and-usage-manual-upload/README.md). 
+
+The Collector instance installed in the sandbox container will automatically start historizing statistics from the local Docker engine.
 
 Wait until the sandbox is initialized and 'All applications started.' message is displayed.
 
