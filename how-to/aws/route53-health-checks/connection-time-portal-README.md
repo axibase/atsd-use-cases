@@ -1,6 +1,6 @@
 # Tracking Application Latency Issues with ATSD and Route53
 
-![](images/route-53-connection-times.png)
+![](images/route53-1.png)
 
 ## Introduction
 
@@ -12,9 +12,11 @@ Additionally, using latency checks to monitor connectivity issues at each endpoi
 for system administrators who need to diagnose whether an endpoint itself is unhealthy or the target application is not 
 performing as expected and causing connection timeouts. 
 
-Integrate your instance of ATSD with Route 53 as described [here](README.md) to enable availabilty reports before beginning this process. 
+Health checks are available for HTTP, HTTPS, and TCP protocols and may be executed from a variety of regions for resiliency.
 
-![](images/route53-1.png)
+![](images/route53-regions.png)
+
+Integrate your instance of ATSD with Route 53 as described [here](README.md) to enable availabilty reports before beginning this process. 
 
 ### Prerequisites
 
@@ -31,10 +33,27 @@ From the **AWS Route53** tab in ATSD, open the **Portals** drop-down menu and se
 
 ![](images/upload-portal.png)
 
+The application supports direct xml upload from the local machine, or copy/paste the configuration from the [resources](resources) folder in to the configuration window. Click **Save**.
+
 ## Import Entity View Configuration
 
 Upload the following entity view [configuration](resources/entity-views.xml) to ATSD. From the **Entity Views** tab, expand the operation drop-down menu and select **Create**.
 
 ![](images/aws-entity-config.png)
 
-Directly upload the provided xml file or copy/paste the document's contents into the text editor.
+Directly upload the provided xml file or copy/paste the document's contents into the text editor. Click **Save**
+
+## Results
+
+### AWS Route 53 Entity View and Application Latency Portal
+
+In the **AWS Route53** tab, the newly configured entity view and portal are accessible. Click the **Open Portal** button to monitor worldwide endpoint latency.
+
+![](images/aws-entity-view-2.png)
+
+The Latency Portal has two windows: The first tracks average connection time and the second shows real-time and historical connection data.
+
+![](images/route-53-connection-times.png)
+![![](images/button.png)](https://apps.axibase.com/chartlab/23afef12)
+
+Open the ChartLab example above to see a public, fully functioning Latency Portal integrated with Axibase servers delivering applications across the globe.
