@@ -1,5 +1,7 @@
 # Tracking Application Latency Issues with ATSD and Route53
 
+![](images/route-53-connection-times.png)
+
 ## Introduction
 
 Amazon Web Services' Route 53 networking and content delivery tool supports worldwide endpoint health checks which may be 
@@ -31,16 +33,14 @@ From the **AWS Route53** tab in ATSD, open the **Portals** drop-down menu and se
 
 From the **AWS Route53** tab, click **View Portal**.
 
-![](images/aws-portal.png)
-
 ## Import Entity View Configuration
+
+Upload the following entity view [configuration](resources/entity-views.xml) to ATSD. From the **Entity Views** tab, expand the operation drop-down menu and select create.
+
+![](images/aws-entity-config.xml)
 
 ## Results
 
 ### AWS Entity View
 
 ![](images/aws-entity-view-2.png)
-
-### Route 53 Regional Connections Portal
-
-![](images/route-53-connection-times.png)
