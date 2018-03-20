@@ -6,9 +6,27 @@ This document describes how to monitor [Apache Kafka](https://kafka.apache.org/)
 
 ## Configuration
 
-### Prerequisites
+### Launch ATSD
 
-* ATSD with opened TCP port
+Launch [ATSD](https://github.com/axibase/dockers) container on one of the Docker hosts:
+
+```
+docker run \
+  --detach \
+  --name=atsd \
+  --restart=always \
+  --publish 8088:8088 \
+  --publish 8443:8443 \
+  --publish 8081:8081 \
+  --publish 8082:8082/udp \
+  axibase/atsd:latest
+```
+
+Wait until the container is initialized and 'ATSD start completed.' message is displayed.
+
+```
+docker logs -f atsd
+```
 
 ### Start script
 
