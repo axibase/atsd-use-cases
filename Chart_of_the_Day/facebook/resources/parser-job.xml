@@ -1,0 +1,40 @@
+<list>
+  <com.axibase.tsd.model.csv.CsvConfiguration>
+    <name>yahoo-finance-history-daily</name>
+    <putType>METRIC</putType>
+    <delimiter>,</delimiter>
+    <recordDelimiter>
+</recordDelimiter>
+    <padding> </padding>
+    <comment>�</comment>
+    <textQualifier>&quot;</textQualifier>
+    <entityColumn/>
+    <defaultEntity>nasdaq:fb</defaultEntity>
+    <timestampColumn class="java.util.Arrays$ArrayList">
+      <a class="string-array">
+        <string>Date</string>
+      </a>
+    </timestampColumn>
+    <timestampFormat>yyyy-MM-dd</timestampFormat>
+    <metricPrefix>stock.</metricPrefix>
+    <timestampType>PATTERN</timestampType>
+    <processEvents>false</processEvents>
+    <writeProperty>false</writeProperty>
+    <enabled>true</enabled>
+    <discardNan>true</discardNan>
+    <ignoreParseErrors>false</ignoreParseErrors>
+    <timeZone>America/New_York</timeZone>
+    <tagColumns class="linked-hash-set"/>
+    <excludedColumns class="linked-hash-set"/>
+    <propertyColumns class="linked-hash-set"/>
+    <propertyKeyColumns class="linked-hash-set"/>
+    <entityTags class="linked-hash-set"/>
+    <metricTags class="linked-hash-set"/>
+    <defaultTags class="linked-hash-map"/>
+    <renamedColumns class="linked-hash-map"/>
+    <header/>
+    <decimalSeparator>.</decimalSeparator>
+    <groupingSeparator>�</groupingSeparator>
+    <skipLines>0</skipLines>
+  </com.axibase.tsd.model.csv.CsvConfiguration>
+</list>
