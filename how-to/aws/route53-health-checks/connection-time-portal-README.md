@@ -12,6 +12,8 @@ performing as expected and causing connection timeouts.
 
 Integrate your instance of ATSD with Route 53 as described [here](README.md) to enable availabilty reports before beginning this process. 
 
+![](images/route53-1.png)
+
 ### Prerequisites
 
 * Create an AWS [IAM account](https://github.com/axibase/axibase-collector/blob/master/jobs/aws-iam.md) to query CloudWatch 
@@ -21,4 +23,24 @@ statistics with [Route 53](https://aws.amazon.com/route53/?nc2=h_m1) enabled.
 
 ## Import AWS Route53 Connection Time Latency Portal Configuration
 
-Once you have integrated your instance of ATSD with Amazon Wed Services, upload the following [portal configuration](resources/aws-route53-connection-time-latency.xml). Navigate to 
+Once you have integrated your instance of ATSD with Amazon Wed Services, upload the following [portal configuration](resources/aws-route53-connection-time-latency.xml) to visualize endpoint monitoring.
+
+From the **AWS Route53** tab in ATSD, open the **Portals** drop-down menu and select **Create**.
+
+![](images/upload-portal.png)
+
+From the **AWS Route53** tab, click **View Portal**.
+
+![](images/aws-portal.png)
+
+## Import Entity View Configuration
+
+## Results
+
+### AWS Entity View
+
+![](images/aws-entity-view-2.png)
+
+### Route 53 Regional Connections Portal
+
+![](images/route-53-connection-times.png)
