@@ -10,7 +10,7 @@ Additionally, using latency checks to monitor connectivity issues at each of the
 for System Administrators who need to diagnose whether an endpoint itself is unhealthy or the target application is not 
 performing as expected and causing connection timeouts. 
 
-Integrate your instance of ATSD with Route 53 as described [here](route53-health-checks/README.md) before beginning this process. 
+Integrate your instance of ATSD with Route 53 as described [here](README.md) to enable availabilty reports before beginning this process. 
 
 ### Prerequisites
 
@@ -21,4 +21,4 @@ statistics with [Route 53](https://aws.amazon.com/route53/?nc2=h_m1) enabled.
 
 ## Import AWS Route53 Connection Time Latency Portal Configuration
 
-Once you have integrated your instance of ATSD with Amazon Wed Services, upload the following [portal configuration]
+Once you have integrated your instance of ATSD with Amazon Wed Services, upload the following [portal configuration](resources/aws-route53-connection-time-latency.xml). Navigate to 
