@@ -1,0 +1,94 @@
+<linked-list>
+  <com.axibase.tsd.model.EntityView>
+    <name>AWS Route53</name>
+    <entityGroup>aws-route53-healthchecks</entityGroup>
+    <columns>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PORTALS_COLUMN</type>
+        <header>Portals</header>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>NAME_COLUMN</type>
+        <header>ID</header>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>LABEL_COLUMN</type>
+        <header>Name</header>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>ENTITY_TAG</type>
+        <header>Protocol</header>
+        <value>protocol</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>ENTITY_TAG</type>
+        <header>URL</header>
+        <value>url</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Healthy, %</header>
+        <value>aws_route53.healthcheckpercentagehealthy.average</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>TCP Connect Time, ms</header>
+        <value>aws_route53.connectiontime.average</value>
+        <link>CHART</link>
+        <formatting>formatNumber(value, &apos;0&apos;)</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>TTFB, ms</header>
+        <value>aws_route53.timetofirstbyte.average</value>
+        <link>CHART</link>
+        <formatting>formatNumber(value, &apos;0&apos;)</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>SSL Handshake, ms</header>
+        <value>aws_route53.sslhandshaketime.average</value>
+        <link>CHART</link>
+        <formatting>formatNumber(value, &apos;0&apos;)</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>ENTITY_TAG</type>
+        <header>Regions</header>
+        <value>regions</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>METRICS_COLUMN</type>
+        <header>Last Insert</header>
+        <value>aws_route53.healthcheckpercentagehealthy.average:960</value>
+        <formatting>formatIntervalShort(elapsedTime(value))</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+    </columns>
+    <pageSize>100</pageSize>
+    <enabled>true</enabled>
+    <menu>true</menu>
+    <filters class="java.util.Arrays$ArrayList">
+      <a class="com.axibase.tsd.model.EntityView$EntityViewFilter-array">
+        <com.axibase.tsd.model.EntityView_-EntityViewFilter>
+          <name>HTTP</name>
+          <expression>tags.protocol == &apos;HTTP&apos;</expression>
+        </com.axibase.tsd.model.EntityView_-EntityViewFilter>
+        <com.axibase.tsd.model.EntityView_-EntityViewFilter>
+          <name>TCP</name>
+          <expression>tags.protocol == &apos;TCP&apos;</expression>
+        </com.axibase.tsd.model.EntityView_-EntityViewFilter>
+        <com.axibase.tsd.model.EntityView_-EntityViewFilter>
+          <name>HTTPS</name>
+          <expression>tags.protocol == &apos;HTTPS&apos;</expression>
+        </com.axibase.tsd.model.EntityView_-EntityViewFilter>
+        <com.axibase.tsd.model.EntityView_-EntityViewFilter>
+          <name>HTTP/S</name>
+          <expression>tags.protocol LIKE &apos;HTTP*&apos;</expression>
+        </com.axibase.tsd.model.EntityView_-EntityViewFilter>
+      </a>
+    </filters>
+    <displayIndex>0</displayIndex>
+    <multiEntityPortalName>AWS Route53 Health Checks</multiEntityPortalName>
+    <icon>pt-icon-path-search</icon>
+  </com.axibase.tsd.model.EntityView>
+</linked-list>
