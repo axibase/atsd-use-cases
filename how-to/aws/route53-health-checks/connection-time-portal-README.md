@@ -47,13 +47,13 @@ Directly upload the provided xml file or copy/paste the document's contents into
 
 ### AWS Route 53 Entity View and Application Latency Portal
 
-In the **AWS Route53** tab, the newly configured entity view and portal are accessible. Click the **Open Portal** button to monitor worldwide endpoint latency.
+In the **AWS Route53** tab, the newly configured entity view and portal are now accessible. Click the **Open Portal** button to monitor worldwide endpoint latency.
 
 ![](images/aws-entity-view-2.png)
 
 The Latency Portal has two windows: The first tracks average connection time and the second shows real-time and historical connection data.
 
 ![](images/route-53-connection-times.png)
-![![](images/button.png)](https://apps.axibase.com/chartlab/23afef12)
+[![](images/button.png)](https://apps.axibase.com/chartlab/23afef12)
 
-Open the ChartLab example above to see a public, fully functioning Latency Portal integrated with Axibase servers delivering applications across the globe.
+Open the ChartLab example above to see a fully functioning Latency Portal integrated with Axibase servers delivering status information from endpoints and applications across the globe.
