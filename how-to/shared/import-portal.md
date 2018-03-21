@@ -8,7 +8,7 @@ A Portal is a collection of real-time data visualizations which are grouped toge
 
 ![](images/portal-config.png)
 
-2. From the **Portals** page, expand the split button and click **Import**
+2. From the **Portals** page, expand the split button and click **Import**.
 
 ![](images/import-portal.png)
 
