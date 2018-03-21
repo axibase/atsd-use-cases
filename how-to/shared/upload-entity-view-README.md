@@ -1,6 +1,6 @@
-# Uploading a Portal Configuration
+# Importing Entity Views
 
-![](images/portal.png)
+![](images/entity-view.png)
 
 A portal is a series of data visualizations displayed and grouped together which conveys related information based on a portal configuration.
 
