@@ -12,7 +12,7 @@ Entity Views are a set of special queries which retrieve specific information au
 
 ![](images/import-evs.png)
 
-3. Select the appropriate XML file from you local machine by clicking **Choose File**. By default ATSD will add a number to the file name if such an entity view already exists. Set the flag in the **Replace Existing Entity Views** box to modify this behavior. Click **Import**.
+3. Select the appropriate XML file from your local machine by clicking **Choose File**. By default ATSD will add a number to the file name if such an entity view already exists. Set the flag in the **Replace Existing Entity Views** box to modify this behavior. Click **Import**.
 
 ![](images/import-page.png)
 
