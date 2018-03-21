@@ -4,7 +4,7 @@
 
 Entity Views are a set of special queries which retrieve specific information automtically on a recurring basis. Follow this process to upload an Entity View configuration to your local ATSD instance.
 
-1. From the ATSD homepage, expand the **Entity Views** menu from the left toolbar and select **Configure**.
+1. From any tab in the ATSD interface, expand the **Entity Views** menu from the left toolbar and select **Configure**.
 
 ![](images/portal-config-path.png)
 
