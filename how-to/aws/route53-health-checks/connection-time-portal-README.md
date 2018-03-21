@@ -4,45 +4,47 @@
 
 ## Introduction
 
-Amazon Web Services' Route 53 networking and content delivery tool supports worldwide endpoint health checks which may be 
+Amazon Web Services' Route53 networking and content delivery tool supports worldwide endpoint health checks which may be 
 monitored using ATSD and Axibase Collector to historize data for longer intervals than the two weeks which are
-recorded by Route 53.
-
-Additionally, using latency checks to monitor connectivity issues at each endpoint can provide valuable insight
-for system administrators who need to diagnose whether an endpoint itself is unhealthy or the target application is not 
-performing as expected and causing connection timeouts. Look at the figure below for tips about interpreting latency data.
-
-![](images/latency-guide.png)
-> In the above figure, latency spikes indicated by green arrows show regional connectivity issues. Your application is functioning as expected. The group of latency spikes indicated by the red arrow (showing latency issues across all regions) indicate the issue is more likely from the target application, which is unable to connect to any endpoint effectively. 
-
+recorded by Route53.
 
 Health checks are available for HTTP, HTTPS, and TCP protocols and may be executed from a variety of regions for resiliency.
 
+Additionally, using latency checks to monitor connectivity issues from multiple regions can provide valuable insight
+for system administrators who need to diagnose whether the problem is related to network infrastructure or the target application itself is unhealthy. Look at the figure below for tips about interpreting latency data.
+
+![](images/latency-guide.png)
+
+
+In the above figure, latency spikes indicated by green arrows show regional connectivity issues. Your application is functioning as expected. The group of latency spikes indicated by the red arrow (showing simultaneous latency issues across **all** regions) indicate the problem is likely related to the monitored application, which is inaccessible from multiple  regions. 
+
 ![](images/route53-region.png)
 
-> Note that **Latency Graphs** must be enabled through AWS, they will be disabled by default. 
+> Note that **Latency Graphs** is a premium feature and must be enabled through the AWS console or API. 
 
 ### Prerequisites
 
-* Integrate your instance of ATSD with Route 53 as described [here](README.md) to enable availabilty reports before beginning this process. 
+* Install ATSD [sandbox](README.md). 
 
-## Import AWS Route53 Connection Time Latency Portal Configuration
+## Import Latency Portal
 
-Once you have configured your instance of ATSD to work with Amazon Web Services, upload the following [portal configuration](resources/aws-route53-connection-time-latency.xml) to visualize endpoint monitoring.
+Once you have configured your ATSD instance, upload the following [portal configuration](resources/aws-route53-connection-time-latency.xml) to visualize latency.
 
-From the **AWS Route53** tab in ATSD, open the **Portals** drop-down menu and select **Create**.
+From the **AWS Route53** tab in ATSD, open the **Portals** drop-down menu and click **Configure**.
 
 ![](images/upload-portal.png)
 
-The application supports direct xml upload from the local machine, or copy/paste the configuration from the [resources](resources) folder in to the configuration window. Click **Save**.
+Scroll down and expand the **Create** multi-action button and select the **Import** page.
 
 ## Import Entity View Configuration
 
-Upload the following entity view [configuration](resources/entity-views.xml) to ATSD. From the **Entity Views** tab, expand the operation drop-down menu and select **Create**.
+Replace the default entity view for AWS Route53 health checks that was installed in the sandbox earlier.
+
+From the **Entity Views** tab, expand the operation drop-down menu and select **Import**.
 
 ![](images/aws-entity-config.png)
 
-Directly upload the provided xml file or copy/paste the document's contents into the text editor. Click **Save**
+Attach the new [entity view](resources/entity-views.xml) xml file. 
 
 ## Results
 
