@@ -10,20 +10,23 @@ recorded by Route 53.
 
 Additionally, using latency checks to monitor connectivity issues at each endpoint can provide valuable insight
 for system administrators who need to diagnose whether an endpoint itself is unhealthy or the target application is not 
-performing as expected and causing connection timeouts. 
+performing as expected and causing connection timeouts. Look at the figure below for tips about interpreting latency data.
+
+![](images/latency-guide.png)
+> In the above figure, latency spikes indicated by green arrows show regional connectivity issues. Your application is functioning as expected. The group of latency spikes indicated by the red arrow (showing latency issues across all regions) indicate the issue is more likely from the target application, which is unable to connect to any endpoint effectively. 
+
 
 Health checks are available for HTTP, HTTPS, and TCP protocols and may be executed from a variety of regions for resiliency.
 
-![](images/route53-regions.png)
+![](images/route53-region.png)
+
+> Note that **Latency Graphs** must be enabled through AWS, they will be disabled by default. 
 
 Integrate your instance of ATSD with Route 53 as described [here](README.md) to enable availabilty reports before beginning this process. 
 
 ### Prerequisites
 
-* Create an AWS [IAM account](https://github.com/axibase/axibase-collector/blob/master/jobs/aws-iam.md) to query CloudWatch 
-statistics with [Route 53](https://aws.amazon.com/route53/?nc2=h_m1) enabled.
-* 4 GB of available RAM for ATSD sandbox containers.
-* [Integration](README.md) of ATSD and Amazon Web Services.
+* Integrate your instance of ATSD with Route 53 as described [here](README.md) to enable availabilty reports before beginning this process. 
 
 ## Import AWS Route53 Connection Time Latency Portal Configuration
 
@@ -51,9 +54,9 @@ In the **AWS Route53** tab, the newly configured entity view and portal are now 
 
 ![](images/aws-entity-view-2.png)
 
-The Latency Portal has two windows: The first tracks average connection time and the second shows real-time and historical connection data.
+The Latency Portal has two windows: The first tracks average connection time (milliseconds) and the second shows real-time and historical connection data (milliseconds).
 
 ![](images/route-53-connection-times.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/23afef12)
+[![](images/button.png)](https://apps.axibase.com/chartlab/f3c08268)
 
 Open the ChartLab example above to see a fully functioning Latency Portal integrated with Axibase servers delivering status information from endpoints and applications across the globe.
