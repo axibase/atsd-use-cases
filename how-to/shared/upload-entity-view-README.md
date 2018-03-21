@@ -1,6 +1,6 @@
 # Importing Entity Views
 
-![](images/entity-view.png)
+![](images/entity-views.png)
 
 Entity Views are a set of special queries which retrieve specific information automtically on a recurring basis. Follow this process to upload an Entity View configuration to your local ATSD instance.
 
