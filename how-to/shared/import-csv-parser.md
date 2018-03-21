@@ -2,7 +2,7 @@
 
 ![](images/parser.png)
 
-A parser is an automated tool that reads CSV files and creates Entities, Metrics, Timestamps, and Tags from the information contained there.
+A parser is an automated tool that reads CSV files and creates Entities, Metrics, Timestamps, and Tags from the information contained therein.
 
 1. From any tab in the ATSD interface, expand the **Data** menu and select **CSV Parsers**.
 
