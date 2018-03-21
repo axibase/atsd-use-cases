@@ -22,8 +22,6 @@ Health checks are available for HTTP, HTTPS, and TCP protocols and may be execut
 
 > Note that **Latency Graphs** must be enabled through AWS, they will be disabled by default. 
 
-Integrate your instance of ATSD with Route 53 as described [here](README.md) to enable availabilty reports before beginning this process. 
-
 ### Prerequisites
 
 * Integrate your instance of ATSD with Route 53 as described [here](README.md) to enable availabilty reports before beginning this process. 
