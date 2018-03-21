@@ -27,23 +27,11 @@ In the above figure, latency spikes indicated by green arrows show regional conn
 
 ## Import Latency Portal
 
-Once you have configured your ATSD instance, upload the following [portal configuration](resources/aws-route53-connection-time-latency.xml) to visualize latency.
+Click on the **Portals** link in the top menu and import the [latency portal](resources/aws-route53-connection-time-latency.xml) from the XML file as described [here](../../shared/import-portal.md).
 
-From the **AWS Route53** tab in ATSD, open the **Portals** split button and click **Configure**.
+## Import Entity View
 
-![](images/upload-portal.png)
-
-Scroll down and expand the split button and select the **Import** page.
-
-## Import Entity View Configuration
-
-Replace the default entity view for AWS Route53 health checks that was installed in the sandbox earlier.
-
-Expand the **Entity Views** menu and click **Configure**, open the operation split button and select **Import**.
-
-![](images/import-evs.png)
-
-Attach the new [entity view](resources/entity-views.xml) xml file. 
+Click on the **Entity View** link in the tool menu on the left and import the [Route53 entity view](resources/entity-views.xml) from the XML file as described [here](../../shared/import-entity-view.md).
 
 ## Results
 
