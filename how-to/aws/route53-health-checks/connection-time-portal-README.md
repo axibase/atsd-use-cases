@@ -15,12 +15,11 @@ for system administrators who need to diagnose whether the problem is related to
 
 ![](images/latency-guide.png)
 
-
 In the above figure, latency spikes indicated by green arrows show regional connectivity issues. Your application is functioning as expected. The group of latency spikes indicated by the red arrow (showing simultaneous latency issues across **all** regions) indicate the problem is likely related to the monitored application, which is inaccessible from multiple  regions. 
 
 ![](images/route53-region.png)
 
-> Note that **Latency Graphs** is a premium feature and must be enabled through the AWS console or API. 
+> Note that **Latency Graphs** are a premium feature and must be enabled through the AWS console or API. 
 
 ### Prerequisites
 
@@ -30,11 +29,11 @@ In the above figure, latency spikes indicated by green arrows show regional conn
 
 Once you have configured your ATSD instance, upload the following [portal configuration](resources/aws-route53-connection-time-latency.xml) to visualize latency.
 
-From the **AWS Route53** tab in ATSD, open the **Portals** drop-down menu and click **Configure**.
+From the **AWS Route53** tab in ATSD, open the **Portals** operation drop-down menu and click **Configure**.
 
 ![](images/upload-portal.png)
 
-Scroll down and expand the **Create** multi-action button and select the **Import** page.
+Scroll down and expand the operation drop-down menu and select the **Import** page.
 
 ## Import Entity View Configuration
 
