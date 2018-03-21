@@ -40,9 +40,9 @@ Scroll down and expand the **Create** multi-action button and select the **Impor
 
 Replace the default entity view for AWS Route53 health checks that was installed in the sandbox earlier.
 
-From the **Entity Views** tab, expand the operation drop-down menu and select **Import**.
+Expand the **Entity Views** menu and click **Configure**, open the operation drop-down menu and select **Import**.
 
-![](images/aws-entity-config.png)
+![](images/import-evs.png)
 
 Attach the new [entity view](resources/entity-views.xml) xml file. 
 
