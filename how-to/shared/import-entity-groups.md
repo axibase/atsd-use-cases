@@ -4,7 +4,7 @@
 
 An Entity Group is the highest denomination of data within ATSD. An entity may be subdivided into metrics, which may be further subdivided into tags. Follow this process to upload a new Entity Group to your local ATSD instance.
 
-1. From any tab in the ATSD interface, click the **Entities** link from the toolbar on the left. 
+1. Click the **Entities** link in the toolbar on the left. 
 
 ![](images/entities.png)
 
