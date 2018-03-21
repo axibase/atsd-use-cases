@@ -12,7 +12,7 @@ A Portal is a collection of real-time data visualizations which are grouped toge
 
 ![](images/import-portal.png)
 
-3. Select the appropriate XML file from your local machine by clicking Choose File. By default, ATSD will add a number to the file name if such a portal already exists. Set the flag in the **Replace Existing Portals** box to modify this behavior. By default, a new portal will not be enabled. Set the flag in the **Auto-Enable New Portals** box to modify this behavior. Click **Import**.
+3. Select the appropriate XML file from your local machine by clicking **Choose File**. By default, ATSD will add a number to the file name if such a portal already exists. Set the flag in the **Replace Existing Portals** box to modify this behavior. By default, a new portal will not be enabled. Set the flag in the **Auto-Enable New Portals** box to modify this behavior. Click **Import**.
 
 ![](images/portal-import-page.png)
 
