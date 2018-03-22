@@ -2,7 +2,9 @@
 
 ![](images/entity-group.png)
 
-An Entity Group is the highest denomination of data within ATSD. An entity may be subdivided into metrics, which may be further subdivided into tags. Follow this process to upload a new Entity Group to your local ATSD instance.
+An Entity Group represents a collection of entities, typically grouped by a common feature or an attribute. The groups typically consist of entities of similar type, such as 'Docker Containers', or entities collecting the same metrics, such as 'collectd' agents.
+
+Follow this process to upload a new Entity Group definition to your local ATSD instance.
 
 1. Click the **Entities** link in the toolbar on the left. 
 
