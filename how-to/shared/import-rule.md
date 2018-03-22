@@ -19,3 +19,9 @@ Follow this process to upload a rule to you local ATSD instance.
 ![](images/import-rule.png)
 
 Your new rule has been uploaded to ATSD. Return to the **Rules** page where the newly configured rule will be visible.
+
+### Uploading Multiple Configuration Files
+
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+
+![](images/backup-import.png)
