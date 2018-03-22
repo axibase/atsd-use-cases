@@ -21,3 +21,9 @@ Follow this process to add a new schedule SQL query to your local ATSD instance.
 Your scheduled SQL query has been added to ATSD. 
 
 Return to the **Scheduled Queries** page, where the newly configured scheduled SQL query will be visible.
+
+### Uploading Multiple Configuration Files
+
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+
+![](images/backup-import.png)
