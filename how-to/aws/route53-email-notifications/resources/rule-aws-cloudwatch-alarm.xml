@@ -1,0 +1,185 @@
+f<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>aws-cloudwatch-alarm</name>
+<metric>message</metric>
+<tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[true]]></expression>
+<window>length(1)</window>
+<filter>type = 'webhook' &amp;&amp; source = 'aws-cw' &amp;&amp; tags.message.alarmname  != ''</filter>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<userExpressions>
+<expression><![CDATA[tags['message.trigger.dimensions[0].value']]]><![CDATA[ AS aws_entity]]></expression>
+</userExpressions>
+<lastUpdated>1521627294565</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>false</loadHistory>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner>Sergei Rodionov</owner>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<timeFilter>
+<intervalCount>1</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<emailNotification>
+<disabled>false</disabled>
+<rule-name>aws-cloudwatch-alarm</rule-name>
+<repeat-interval>
+<type>ALL</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Email Notification id=621</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>true</first-details>
+<repeat-details>true</repeat-details>
+<cancel-details>true</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<recipients>test@example.org</recipients>
+<first-subject>AWS Alarm for ${entity_label(aws_entity)}: ${entity_tag(aws_entity, 'url')}</first-subject>
+<repeat-subject>AWS Alarm for ${entity_label(aws_entity)}: ${entity_tag(aws_entity, 'url')}</repeat-subject>
+<cancel-subject>AWS Alarm for ${entity_label(aws_entity)}: ${entity_tag(aws_entity, 'url')}</cancel-subject>
+<merge>false</merge>
+<priority>0</priority>
+<body-first>${addPortal('AWS Route53 Health Check Detail', aws_entity)}</body-first>
+<body-repeat>${addPortal('AWS Route53 Health Check Detail', aws_entity)}</body-repeat>
+<body-cancel>${addPortal('AWS Route53 Health Check Detail', aws_entity)}</body-cancel>
+</emailNotification>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>aws-cloudwatch-alarm</rule-name>
+<repeat-interval>
+<type>ALL</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=622</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<webNotificationConfigName>telegram-devops</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>disable_notification</key>
+<value/>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>details_table_format</key>
+<value>ascii</value>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>text</key>
+<value>AWS Alarm ${tags.message.alarmname} for ${entity_label(aws_entity)}: ${entity_tag(aws_entity, 'url')}&#13;
+${addPortal('AWS Route53 Health Check Detail', aws_entity)}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>disable_notification</key>
+<value/>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>details_table_format</key>
+<value>ascii</value>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>AWS Alarm ${tags.message.alarmname} for ${entity_label(aws_entity)}: ${entity_tag(aws_entity, 'url')}&#13;
+${addPortal('AWS Route53 Health Check Detail', aws_entity)}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>disable_notification</key>
+<value/>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>details_table_format</key>
+<value>ascii</value>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>AWS Alarm ${tags.message.alarmname} for ${entity_label(aws_entity)}: ${entity_tag(aws_entity, 'url')}&#13;
+${addPortal('AWS Route53 Health Check Detail', aws_entity)}</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>true</repeat-enabled>
+<cancel-enabled>false</cancel-enabled>
+</webNotification>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>aws-cloudwatch-alarm</rule-name>
+<repeat-interval>
+<type>ALL</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=625</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>true</first-details>
+<repeat-details>true</repeat-details>
+<cancel-details>true</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<webNotificationConfigName>slack-devops</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>text</key>
+<value>AWS Alarm ${tags.message.alarmname} for ${entity_label(aws_entity)}: ${entity_tag(aws_entity, 'url')}&#13;
+${addPortal('AWS Route53 Health Check Detail', aws_entity)}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>AWS Alarm ${tags.message.alarmname} for ${entity_label(aws_entity)}: ${entity_tag(aws_entity, 'url')}&#13;
+${addPortal('AWS Route53 Health Check Detail', aws_entity)}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>AWS Alarm ${tags.message.alarmname} for ${entity_label(aws_entity)}: ${entity_tag(aws_entity, 'url')}&#13;
+${addPortal('AWS Route53 Health Check Detail', aws_entity)}</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>true</repeat-enabled>
+<cancel-enabled>false</cancel-enabled>
+</webNotification>
+<ruleTable/>
+<derivedCommand>series e:${entity} m:metric_123=${100 - value} ${commandTags}</derivedCommand>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>
