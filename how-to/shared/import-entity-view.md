@@ -19,3 +19,9 @@ Follow this process to upload an Entity View configuration to your local ATSD in
 ![](images/import-page.png)
 
 Your Entity View has been uploaded to ATSD. Expand the **Entity Views** menu from the left toolbar to navigate to this new page.
+
+### Uploading Multiple Configuration Files
+
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+
+![](images/backup-import.png)
