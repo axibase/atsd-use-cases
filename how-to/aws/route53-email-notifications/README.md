@@ -64,5 +64,32 @@ https://atsd_hostname/api/v1/messages/webhook/aws-cw?type=webhook&entity=aws-cw&
 
 > Replace **atsd_hostname** and **my**
 
-4. In ATSD, import the following [rule](). For instructions on importing a new rule see the following [walkthrough]().
+4. Import the following [rule](rule-aws-cloudwatch-alarm.xml) to your local ATSD instance. For instructions on importing a new rule see the following [walkthrough](walkthrough.url).
 
+5. Configure the ATSD Mail Client as described [here](/../../../../axibase/atsd/blob/master/administration/setting-up-email-client.md)
+
+You're ready to start receiving detailed notifications about endpoint health status alerts on any internet connected device. Follow the auxillary procedures below to further enhance this functionality to send messages directly to your local machine or smartphone messenger service. 
+
+### Alarm Notifications in [Slack](https://slack.com/)
+
+* Configure your local ATSD instance to output messages to **Slack Messenger** by following [this procedure](/../../../../axibase/atsd/blob/master/rule-engine/notifications/slack.md). Now, your alarm notifications will be sent via Slack messages as well as email.
+
+![](images/route53-alert-slack.png)
+
+### Alarm Notifications in [Telegram](https://telegram.org/)
+
+* Configure your local ATSD instance to output messages to **Telegram Messenger** by following [this procedure](/../../../../axibase/atsd/blob/master/rule-engine/notifications/telegram.md). Now, your alarm notifications will be sent via Telegram messages as well as email.
+
+![](images/route53-tg-alert.png)
+
+## Advanced Configuration
+
+* To configure advanced settings, expand the **Alerts** menu and select **Rules**. Follow the procedure described [here](/../../../../axibase/atsd/blob/master/rule-engine/web-notifications.md#attachments) to include detailed reports and portals in your alert emails.
+
+* Enable the **Attach Details** option to include detailed email reports upon alarm notification:
+
+![](images/route53-alarm-email-detail.png)
+
+* Enable the **Attach Portals** option to include complete health check portals upon alarm notification (not only unhealthy endpoints):
+
+![](images/route53-alarm-email-portal.png)
