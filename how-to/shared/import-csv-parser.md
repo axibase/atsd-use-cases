@@ -2,7 +2,9 @@
 
 ![](images/parser.png)
 
-A parser is an automated tool that reads CSV files and creates Entities, Metrics, Timestamps, and Tags from the information contained therein. Follow this process to upload a CSV Parser configuration to your local ATSD instance.
+CSV parser is a collection of rules of how to read and translate CSV files into series, properties, and message commands inserted into the database. The parser contains instructions which columns contain entity names, metric names, timestamps, and command tags. 
+
+Follow this process to upload a CSV Parser configuration to your local ATSD instance.
 
 1. Expand the **Data** menu and select **CSV Parsers**.
 
@@ -16,4 +18,6 @@ A parser is an automated tool that reads CSV files and creates Entities, Metrics
 
 ![](images/import-parser-config.png)
 
-Your parser configuration has been uploaded to ATSD. Return to the **CSV** page where the newly configured portal will be visible.
+Your parser configuration has been uploaded to ATSD. 
+
+Return to the **CSV** page where the newly configured portal will be visible.
