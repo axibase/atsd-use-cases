@@ -2,7 +2,9 @@
 
 ![](images/sched-sql.png)
 
-A scheduled SQL query is one that is completed on a repetive and time-dependant basis, it may include additional operations such as email notifications. Follow this process to add a new schedule SQL query to your local ATSD instance.
+A scheduled SQL query is executed by the database on schedule. When the query is executed, it can be configured to generate files on the local file syste, to send a report via email, or to produce calculated metrics and store them in the database.
+
+Follow this process to add a new schedule SQL query to your local ATSD instance.
 
 1. Expand the **SQL** menu and select **Scheduled Queries**.
 
@@ -16,4 +18,6 @@ A scheduled SQL query is one that is completed on a repetive and time-dependant 
 
 ![](images/import-sql.png)
 
-Your scheduled SQL query has been added to ATSD. Return to the **Scheduled Queries** page, where the newly configured scheduled SQL query will be visible.
+Your scheduled SQL query has been added to ATSD. 
+
+Return to the **Scheduled Queries** page, where the newly configured scheduled SQL query will be visible.
