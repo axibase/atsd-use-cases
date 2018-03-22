@@ -21,3 +21,9 @@ Follow this process to upload a tag template to your local ATSD instance.
 Your tag template has been uploaded to ATSD. 
 
 Return to the **Tag Templates** page where the newly configured template will be visible.
+
+### Uploading Multiple Configuration Files
+
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+
+![](images/backup-import.png)
