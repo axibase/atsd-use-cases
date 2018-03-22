@@ -14,7 +14,7 @@ Route53 may be configured to send email notifications based on customizable [rul
 
 ![](images/route53-menu.png)
 
-3. Configure a new end point health check on the form shown below. Specify the **Domain Name** to monitor the status of a specific website and define the path you would like to monitor. Click **Next**.
+3. Configure a new endpoint health check on the form shown below. Specify the **Domain Name** to monitor the status of a specific website and define the path you would like to monitor. Click **Next**.
 
 ![](images/route53-config.png)
 
@@ -34,7 +34,7 @@ Route53 may be configured to send email notifications based on customizable [rul
 
 ![](images/route53-alarm.png)
 
-8. Should the endpoint become unhealthy and the alarm be triggered, the specified email address will recieve an email notification from AWS similar to the one shown below.
+8. Should the endpoint become unhealthy and the alarm be triggered, the specified email address will receive an email notification from AWS similar to the one shown below.
 
 ![](images/route53-alarm-github.png)
 
@@ -42,7 +42,7 @@ Your health checks and alarms are now fully functioning. Complete the process be
 
 ## ATSD Configuration
 
-ATSD may be configured to monitor AWS Route53 health checks and send detailed downtime reports featuring data visualization portal and comprehensive outage information. 
+ATSD may be configured to monitor AWS Route53 health checks and send detailed downtime reports including a portal with availability and latency statistics. 
 
 1. Open the **Services** drop-down menu and navigate to the **Simple Notification Service** page in the **Application Integration** section of the menu.
 
@@ -52,21 +52,23 @@ ATSD may be configured to monitor AWS Route53 health checks and send detailed do
 
 ![](images/route53-slack-subscription.png)
 
-3. In the **Subscriptions** section of the **Topic Details** page, click **Create Subscription** to enable enriched emails with contextual information. Click **Create Subscription** and use the following webhook in the **endpoint** field:
+3. Create a [webhook](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#messages-webhook) user with `aws-cw` username in your ATSD instance.
+
+4. In the **Subscriptions** section of the **Topic Details** page, click **Create Subscription** to enable enriched emails with contextual information. Click **Create Subscription** and use the following webhook URL in the **endpoint** field:
 
 ```
-https://atsd_hostname/api/v1/messages/webhook/aws-cw?type=webhook&entity=aws-cw&command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
+https://aws-cw:1234568@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?type=webhook&entity=aws-cw&command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
 ```
 
-> Replace **atsd_hostname** with a valid hostname in the webhook above. 
+  Replace **atsd_hostname** with a valid hostname and update user password in the webhook above. 
+
+  Note that URL above should either use HTTP protocol without encryption or your ATSD must be configured to accept HTTPS requests with a [**CA-signed**](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) SSL certificate. Alternatively, ATSD should be running behind a reverse proxy/load balancer that terminates SSL traffic using a **CA-signed** certificate.
 
 ![](images/route53-slack.png)
 
-> Replace **atsd_hostname** and **my**
+5. Import the [aws-cloudwatch-alarm](rule-aws-cloudwatch-alarm.xml) rule into ATSD. For instructions on importing a new rule see the following [walkthrough](walkthrough.url).
 
-4. Import the following [rule](rule-aws-cloudwatch-alarm.xml) to your local ATSD instance. For instructions on importing a new rule see the following [walkthrough](walkthrough.url).
-
-5. Configure the ATSD Mail Client as described [here](/../../../../axibase/atsd/blob/master/administration/setting-up-email-client.md)
+6. Configure the ATSD [mail client](/../../../../axibase/atsd/blob/master/administration/setting-up-email-client.md)
 
 You're ready to start receiving detailed notifications about endpoint health status alerts on any internet connected device. Follow the auxillary procedures below to further enhance this functionality to send messages directly to your local machine or smartphone messenger service. 
 
