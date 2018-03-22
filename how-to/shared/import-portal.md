@@ -2,7 +2,9 @@
 
 ![](images/portal.png)
 
-A Portal is a collection of real-time data visualizations which are grouped together in one interface. Follow this process to upload a Portal to your local ATSD instance.
+A Portal is a collection of real-time data visualizations which are grouped together in one interface. 
+
+Follow this process to upload a Portal to your local ATSD instance.
 
 1. Click the **Portals** link in the top menu and select **Configure**.
 
