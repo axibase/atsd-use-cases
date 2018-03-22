@@ -2,7 +2,9 @@
 
 ![](images/tag-templates.png)
 
-A Tag Template is a set of tags which belong to an specific. Follow this process to upload a tag template to your local ATSD instance.
+A Tag Template is a set of pre-defined formatting rules applied in the rule editor or metric editor for matching entities or metrics correspondingly. The tag template formats the information displayed in the editor in a way, that is customized for the given record.
+
+Follow this process to upload a tag template to your local ATSD instance.
 
 1. Expand the **Settings** menu and select **Tag Templates**.
 
@@ -16,4 +18,6 @@ A Tag Template is a set of tags which belong to an specific. Follow this process
 
 ![](images/import-tag-template.png)
 
-Your tag template has been uploaded to ATSD. Return to the **Tag Templates** page where the newly configured template will be visible.
+Your tag template has been uploaded to ATSD. 
+
+Return to the **Tag Templates** page where the newly configured template will be visible.
