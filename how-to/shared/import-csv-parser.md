@@ -21,3 +21,9 @@ Follow this process to upload a CSV Parser configuration to your local ATSD inst
 Your parser configuration has been uploaded to ATSD. 
 
 Return to the **CSV** page where the newly configured portal will be visible.
+
+### Uploading Multiple Configuration Files
+
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+
+![](images/backup-import.png)
