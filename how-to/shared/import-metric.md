@@ -2,15 +2,15 @@
 
 ![](images/metric.png)
 
-Metrics are quantitative measurements recorded by or imported into ATSD, they may be either discrete (finite) or continuous (infinite) based on the data which they record.
+Metrics are numeric measurements stored in ATSD. The [metric record](https://github.com/axibase/atsd/blob/master/api/meta/metric/list.md#fields) includes information about the measured attribute including its name, a user-friendly label, measurement units etc.
 
-Follow this process to upload metrics to your local ATSD instance.
+Follow this process to import metric definitions into your local ATSD instance.
 
 1. Click the **Metrics** link in the toolbar on the left.
 
 ![](images/metrics.png)
 
-2. From the **Entites** page, expand the split button at the bottom of the page and click **Import**.
+2. From the **Metrics** page, expand the split button at the bottom of the page and click **Import**.
 
 ![](images/import-metric.png)
 
