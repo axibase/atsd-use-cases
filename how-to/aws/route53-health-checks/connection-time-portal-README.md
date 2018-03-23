@@ -27,11 +27,11 @@ In the above figure, latency spikes indicated by green arrows show regional conn
 
 ## Import Latency Portal
 
-Click on the **Portals** link in the top menu and import the [latency portal](resources/aws-route53-connection-time-latency.xml) from the XML file as described [here](../../shared/import-portal.md).
+Click on the **Portals** link in the top menu and import the [latency portal](resources/aws-route53-connection-time-latency.xml) from the XML file as described [here](/../../blob/master/how-to/shared/import-portal.md).
 
 ## Import Entity View
 
-Click on the **Entity View** link in the tool menu on the left and import the [Route53 entity view](resources/entity-views.xml) from the XML file as described [here](../../shared/import-entity-view.md).
+Click on the **Entity View** link in the tool menu on the left and import the [Route53 entity view](resources/entity-views.xml) from the XML file as described [here](/../../blob/master/how-to/shared/import-entity-view.md).
 
 ## Results
 
