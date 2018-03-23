@@ -2,7 +2,7 @@
 
 ![](images/entity-views.png)
 
-Entity Views display a custom set of attributes and statistics for the members of the selected Entity Group. The information displayed by an entity view is presented in a tabular format and is updated when the page is refreshed. Entity Views can be added to the top menu. For more information on entity views, see the following [documentation](/../../../../axibase/atsd/blob/master/configuration/entity_views.md).
+Entity Views display a custom set of attributes and statistics for the members of the selected Entity Group. The information displayed by an entity view is presented in a tabular format and is updated when the page is refreshed. Entity Views can be added to the top menu. For more information on entity views, see the following [documentation](https://github.com/axibase/atsd/blob/master/configuration/entity_views.md).
 
 Follow this process to upload an Entity View configuration to your local ATSD instance.
 
