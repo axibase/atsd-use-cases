@@ -80,13 +80,13 @@ Follow the optional steps below to further enhance this functionality to send co
 
 ### Alarm Notifications in Slack
 
-* Configure your local ATSD instance to output messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md). Now, your alarm notifications will be sent via Slack messages as well as email.
+* Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md). Now, your alarm notifications will be sent via Slack messages as well as email.
 
 ![](images/route53-alert-slack.png)
 
 ### Alarm Notifications in Telegram
 
-* Configure your local ATSD instance to output messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md). Now, your alarm notifications will be sent via Telegram messages as well as email.
+* Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md). Now, your alarm notifications will be sent via Telegram messages as well as email.
 
 ![](images/route53-tg-alert.png)
 
