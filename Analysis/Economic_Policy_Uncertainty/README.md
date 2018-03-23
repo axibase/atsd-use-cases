@@ -24,7 +24,7 @@ predict economic growth and investment by tracking geopolitical events such as i
 
 ## Visualization
 
-This box chart shows the range of the EPU index for each of the 4 regions. A wider range shows greater variance of index values, and the central box has may be modified to include any [percentile](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/#tab-id-6) values. According to the data, the People's Republic of China has seen the most volatile movements of their EPU Index, followed by the Eurozone, the Russian Federation, and the United States. Perhaps this is due to recent slow downs in the fixed assets and exports industry in the China in recent years as the index reached its absolute maximum value within the last few years.
+This box chart shows the range of the EPU index for each of the 4 regions. A wider range shows greater variance of index values, and the central box has may be modified to include any [percentile](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/#tab-id-6) values. According to the data, the People's Republic of China has seen the most volatile movements of their EPU Index, followed by the Eurozone, the Russian Federation, and the United States. Perhaps this is due to recent slow downs in the fixed assets and exports industry in China in recent years as the index reached its absolute maximum value within the last few years.
 
 ![](images/epu-box-chart.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/af5d576e/2/#fullscreen)
@@ -53,8 +53,6 @@ Dual axis visualizations are helpful for comparing data of different orders of m
 
 ## SQL Queries
 
-The United States has held presidential elections every four years since 1978, without exception; although several states who were actively in rebellion failed to nominate electors or cast ballots during the 1864 Presidential Elections which occurred against the backdrop of the American Civil War.
-
 Election season is a notoriously uncertain economic time period for the United States, as elections have been known to represent dramatic changes in policy and personnel that reshape the face of American policy. Using the following SQL query to track the EPU Index during election years only, and comparing that data to the election results, it is expected that more contested elections should generate a higher EPU Index.
 
 ```
@@ -82,7 +80,7 @@ Using [public data](https://www.britannica.com/topic/United-States-Presidential-
 
 Although the 2016 election was one of the more contentious in recent U.S. history, the EPU index immediately before the election was lower than the previous four elections.
 
-The European debt crisis was a financial debacle that was enflamed by the so called P.I.G.S. countries (Portugal, Ireland, Greece, and Spain) coming dangerously close to defaulting on their outrageously high goverment debts. Tracking the events of the crisos alongside the EPU index reflects the panic and uncertainty of the multi-year crisis, bailout, and recovery process. Using the following 7 events to chronicle the timeline:
+The European debt crisis was a financial debacle that was enflamed by the so called P.I.G.S. countries (Portugal, Ireland, Greece, and Spain) coming dangerously close to defaulting on their outrageously high goverment debts. Tracking several events alongside the EPU index reflects the panic and uncertainty of the multi-year crisis, bailout, and recovery process. Using the following 7 events to chronicle the timeline:
 
 1. Jan 1, 2002: Euro banknotes and coins begin circulation.
 2. Nov 27, 2008: European Union stimulus package totalling 200 billion Euro is proposed and eventually approved.
@@ -90,7 +88,7 @@ The European debt crisis was a financial debacle that was enflamed by the so cal
 4. May 2, 2010: European Union announces a 110 billion Euro bailout for Greece.
 5. Nov 28, 2010: European Union announces an 85 billion Euro bailout for the Republic of Ireland.
 6. Mar 13, 2012: A second bailout for Greece is proposed and approved for and additional 130 billion Euro after further 
-inspection of government financial records reveal the depth and severity of the problem is even worse that orginially 
+inspection of government financial records reveal the depth and severity of the problem is even worse than orginially 
 understood.
 7. July 1, 2014: The end of the EU bailout policy, and completion of funds distribution.
 
@@ -156,7 +154,7 @@ Tracking both results on a simple [time series chart](https://axibase.com/produc
 
 ![](images/eurozone-time-chart.png)
 
-*Fig 5*: Highlighted above are points from the two queries shown here. Expected results are highlighted with purple arrows while actual results are highlighted with blue arrows.
+*Fig 5*: Highlighted above are points from both queries. Expected results are highlighted with purple arrows while actual results are highlighted with blue arrows.
 
 ## Conclusion
 
@@ -171,4 +169,4 @@ Use the following tools to recreate any of the visualizations seen here.
 * Install an ATSD instance on your local Linux system [here](https://github.com/axibase/atsd/blob/master/installation/README.md).
 * Visit [FRED](https://fred.stlouisfed.org/) for any of the data used in this article.
 * Access the ChartLab sandbox, and other Axibase applications, [here](https://apps.axibase.com/) and comprehensive documentation [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
-* Download the following [parser job file](resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface.
+* Download the following [parser job file](resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface. Use the following [walkthrough](/../../blob/master/how-to/shared/import-csv-parser.md) for help uploading the XML file to ATSD. 
