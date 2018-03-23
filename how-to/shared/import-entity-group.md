@@ -2,7 +2,7 @@
 
 ![](images/entity-group1.png)
 
-Entity Groups provide a way to organize similar entities into cohesive collections that can be re-used when managing user permissions, filtering data, calculating aggregations, etc. For more information on entity groups, see the following [documentation](/../../../../axibase/atsd/blob/master/configuration/entity_groups.md).
+Entity Groups provide a way to organize similar entities into cohesive collections that can be re-used when managing user permissions, filtering data, calculating aggregations, etc. For more information on entity groups, see the following [documentation](https://github.com/axibase/atsd/blob/master/configuration/entity_groups.md).
 
 Follow this procedure to upload an Entity Group to your local ATSD instance.
 
