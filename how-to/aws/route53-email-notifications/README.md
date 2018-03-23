@@ -1,8 +1,8 @@
-# Enhancing Route53 Health Status Alarms with ATSD
+# Route53 Health Status Alarms
 
 ## Overview
 
-Route53 may be configured to send email notifications based on customizable [rules](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) whereby the system monitors incoming data from endpoint health checks and notifies specified users via email with reports upon endpoint failure or continual timeout. Follow this process to enable email notifications from Route53.
+This guide described how to configure email alerts when a url monitored with Route53 health checks becomes inaccessible. It also provides information on how to enhance the alerts with availability portals and outage details using Axibase Time Series Database [rule engine](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine).
 
 ## Initial Configuration
 
@@ -38,55 +38,63 @@ Route53 may be configured to send email notifications based on customizable [rul
 
 ![](images/route53-alarm-github.png)
 
-Your health checks and alarms are now fully functioning. Complete the process below to enhance Route53 alarms with your local ATSD instance.
+Your health checks and alarms are now fully functioning. 
 
-## ATSD Configuration
+Complete the process below to enhance Route53 alarms with your local ATSD instance.
 
-ATSD may be configured to monitor AWS Route53 health checks and send detailed downtime reports including a portal with availability and latency statistics. 
+## Enhancing Alerts with Axibase Time Series Database
 
-1. Open the **Services** drop-down menu and navigate to the **Simple Notification Service** page in the **Application Integration** section of the menu.
+1. Install [ATSD sandbox](README.md) with AWS integration.
+
+2. Configure ATSD to accept HTTPS requests from AWS infrastructure servers with a [**CA-signed**](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) SSL certificate. Alternatively, use the HTTP protocol when configuring the SNS subscription URL below.
+
+3. Open the **Services** drop-down menu and navigate to the **Simple Notification Service** page in the **Application Integration** section of the menu.
 
 ![](images/app-integration-sns.png)
 
-2. Open the **Topics** page from toolbar on the left, and click the Amazon Resource Name (ARN) link of the alert which you would like to integrate with ATSD. 
+4. Open the **Topics** page from toolbar on the left, and click the Amazon Resource Name (ARN) link of the alert which you would like to integrate with ATSD. 
 
 ![](images/route53-slack-subscription.png)
 
-3. Create a [webhook](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#messages-webhook) user with `aws-cw` username in your ATSD instance.
+5. Create a [webhook](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#messages-webhook) user with `aws-cw` username in your ATSD instance.
 
-4. In the **Subscriptions** section of the **Topic Details** page, click **Create Subscription** to enable enriched emails with contextual information. Click **Create Subscription** and use the following webhook URL in the **endpoint** field:
+6. In the **Subscriptions** section of the **Topic Details** page, click **Create Subscription** to enable enriched emails with contextual information. Click **Create Subscription** and use the following webhook URL in the **endpoint** field:
 
 ```
 https://aws-cw:1234568@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?type=webhook&entity=aws-cw&command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
 ```
 
-  Replace **atsd_hostname** with a valid hostname and update user password in the webhook above. 
+  Replace **atsd_hostname** with a valid hostname and update user password in the webhook URL above. 
 
-  Note that URL above should either use HTTP protocol without encryption or your ATSD must be configured to accept HTTPS requests with a [**CA-signed**](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) SSL certificate. Alternatively, ATSD should be running behind a reverse proxy/load balancer that terminates SSL traffic using a **CA-signed** certificate.
+  Switch to HTTP protocol and modify the port number of your ATSD is not yet configured with a [**CA-signed**](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) SSL certificate.
 
 ![](images/route53-slack.png)
 
-5. Import the [aws-cloudwatch-alarm](rule-aws-cloudwatch-alarm.xml) rule into ATSD. For instructions on importing a new rule see the following [walkthrough](walkthrough.url).
+7. Import the [aws-cloudwatch-alarm](rule-aws-cloudwatch-alarm.xml) rule into ATSD. For instructions on importing a new rule see the following [walkthrough](walkthrough.url).
 
-6. Configure the ATSD [mail client](/../../../../axibase/atsd/blob/master/administration/setting-up-email-client.md)
+8. Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/setting-up-email-client.md).
 
-You're ready to start receiving detailed notifications about endpoint health status alerts on any internet connected device. Follow the auxillary procedures below to further enhance this functionality to send messages directly to your local machine or smartphone messenger service. 
+9. Configure the [web driver](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/web-driver.md) in order to send availability portals as screenshots.
 
-### Alarm Notifications in [Slack](https://slack.com/)
+You're ready to start receiving detailed email notifications about endpoint health status alerts.
 
-* Configure your local ATSD instance to output messages to **Slack Messenger** by following [this procedure](/../../../../axibase/atsd/blob/master/rule-engine/notifications/slack.md). Now, your alarm notifications will be sent via Slack messages as well as email.
+Follow the optional steps below to further enhance this functionality to send context-rich messages to a [collaboration service](https://github.com/axibase/atsd/blob/master/rule-engine/web-notifications.md#web-notifications) such as Slack or Telegram.
+
+### Alarm Notifications in Slack
+
+* Configure your local ATSD instance to output messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md). Now, your alarm notifications will be sent via Slack messages as well as email.
 
 ![](images/route53-alert-slack.png)
 
-### Alarm Notifications in [Telegram](https://telegram.org/)
+### Alarm Notifications in Telegram
 
-* Configure your local ATSD instance to output messages to **Telegram Messenger** by following [this procedure](/../../../../axibase/atsd/blob/master/rule-engine/notifications/telegram.md). Now, your alarm notifications will be sent via Telegram messages as well as email.
+* Configure your local ATSD instance to output messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md). Now, your alarm notifications will be sent via Telegram messages as well as email.
 
 ![](images/route53-tg-alert.png)
 
-## Advanced Configuration
+### Advanced Configuration
 
-* To configure advanced settings, expand the **Alerts** menu and select **Rules**. Follow the procedure described [here](/../../../../axibase/atsd/blob/master/rule-engine/web-notifications.md#attachments) to include detailed reports and portals in your alert emails.
+* To configure advanced settings, expand the **Alerts** menu and select **Rules**. Follow the procedure described [here](https://github.com/axibase/atsd/blob/master/rule-engine/web-notifications.md#attachments) to include detailed reports and portals in your alert emails.
 
 * Enable the **Attach Details** option to include detailed email reports upon alarm notification:
 
