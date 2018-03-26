@@ -104,3 +104,13 @@ On the **Rules** page, be sure that your new rule has **Running** status, indica
 ![](images/cw-7.png)
 
 ![](images/cw-8.png)
+
+### ATSD Interface Configuration
+
+In the ATSD interface, navigate to the **Rules** page, and import this [XML file](resources/rule_aws-cloudwatch-events.xml) to configure ATSD to notify you via [**Slack Team Messeging**](https://slack.com/). For more information about importing a configured rule to ATSD see this brief [guide](/../../blob/master/how-to/shared/import-rule.md).
+
+After the rule has been created and is enabled, it is active. Follow [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) to configure ATSD to use your new rule to send messaeges directly to a Slack channel.
+
+A sample status change Slack message is shown here. 
+
+![](images/slack-notification.png)
