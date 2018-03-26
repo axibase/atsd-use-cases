@@ -99,7 +99,9 @@ SELECT ROUND(AVG(value), 0) AS "average-epu" FROM EUEPUINDXM_
   WHERE datetime  >= '2002-01'
 ```
 
-Axibase SQL Console supports [literal date parameters](https://github.com/axibase/atsd/blob/master/sql/README.md#interval-condition), ISO 8601 time format is not required for `datetime` clauses. This query returns the following:
+> The `datetime` column can be compared with literal dates specified in [various date formats](https://github.com/axibase/atsd/blob/master/sql/README.md#interval-condition) including ISO 8601 and short dates such as `yyyy-MM`. 
+
+This query returns the following:
 
 |average-epu|
 |:-:|
@@ -112,7 +114,7 @@ SELECT datetime, ROUND(value,0) FROM EUEPUINDXM_
   WHERE datetime  IN ('2002-01','2008-11','2010-02','2010-05','2010-11','2012-03','2014-07')
 ```
 
-Multiple `datetime` values may be targeted within one clause using an [`IN`](https://github.com/axibase/atsd/tree/master/sql#in-expression) expression.The above query returns the following values for each of the targeted months:
+Multiple `datetime` values can be convenienty enumerated as a list using an [`IN`](https://github.com/axibase/atsd/tree/master/sql#in-expression) expression. The above query returns the following values for each of the targeted months:
 
 |Event|EPU Index Value|
 |---|:-:|
