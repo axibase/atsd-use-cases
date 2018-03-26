@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) brokers using Axibase Time Series Database.
+This guide describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) brokers using Axibase Time Series Database.
 
 ## Configuration
 
@@ -26,7 +26,7 @@ axibase/atsd-sandbox:latest
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
 
-The Collector instance installed in the sandbox container will be used to retrieve Kafka statistics using JMX and store them in ATSD.
+The Collector instance installed in the sandbox container is used to retrieve Kafka statistics using JMX and store them in ATSD.
 
 Wait until the sandbox is initialized and 'All applications started.' message is displayed.
 
@@ -38,7 +38,7 @@ docker logs -f atsd-sandbox
 
 Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axibase` username and `axibase` password.
 
-Click `Jobs` and set job type `JMX`. Make sure that `kafka-jmx` job is presented on the page and enabled.
+Click `Jobs` and set job type `JMX`. Make sure that `kafka-jmx` job is visible on the page and enabled.
 
 ![](images/check-kafka-job.png)
 
@@ -60,7 +60,7 @@ Click `kafka-series` configuration
 
 ![](images/kafka-job-check-1.png)
 
-At the bottom of the page click `Test` button.
+At the bottom of the page click the `Test` button.
 
 ![](images/kafka-job-check-2.png)
 
@@ -68,7 +68,7 @@ If connection parameters are correct, series commands will be shown. Select othe
 
 ![](images/kafka-job-check-3.png)
 
-Return to Job page and run job.
+Return to the Job page and run job.
 
 ![](images/kafka-job-run-1.png)
 
@@ -90,7 +90,7 @@ Select `Kafka Broker` and `Kafka Cluster` portals and enable them using button a
 
 ![](images/portals-enable-2.png)
 
-Check Kafka broker portal. Return to entities page, find any kafka broker and click `Open portals`
+Check Kafka broker portal. Return to the entities page, find any kafka broker and click `Open portals`
 
 ![](images/kafka-broker-portal-check-1.png)
 
