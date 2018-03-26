@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>aws-cloudwatch-events</name>
+<metric>message</metric>
+<tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[true]]></expression>
+<window>length(1)</window>
+<filter>type = 'webhook' &amp;&amp; source = 'aws-cw' &amp;&amp; tags.message.source != ''</filter>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<userExpressions>
+<expression><![CDATA[tags.message.region AS region]]></expression>
+<expression><![CDATA[tags['message.resources[0]']]]><![CDATA[.toString() AS rsc]]></expression>
+<expression><![CDATA[rsc != null && rsc.contains('/') ? keepAfterLast(rsc, '/') : '' AS rscId]]></expression>
+<expression><![CDATA[rsc != null && rsc.contains(':') && rsc.indexOf('/') > rsc.lastIndexOf(':') ? keepBefore(keepAfterLast(rsc, ':'), '/') : '' AS rscType]]></expression>
+</userExpressions>
+<lastUpdated>1521819092599</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>false</loadHistory>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner>Axibase</owner>
+<description><![CDATA[arn:aws:ec2:us-east-1:091158911190:instance/i-039ccc4f6fcd875d2
+
+https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Volumes:search=vol-03efa0ceb594d4576
+
+https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:search=i-006d67789ea7c4ab6;sort=instanceId]]></description>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<timeFilter>
+<intervalCount>1</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<emailNotification>
+<disabled>false</disabled>
+<rule-name>aws-cloudwatch-events</rule-name>
+<repeat-interval>
+<type>ALL</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Email Notification id=621</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>true</first-details>
+<repeat-details>true</repeat-details>
+<cancel-details>true</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<recipients>dev@axibase.com</recipients>
+<first-subject>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.</first-subject>
+<repeat-subject>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.</repeat-subject>
+<cancel-subject>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.</cancel-subject>
+<merge>false</merge>
+<priority>0</priority>
+<body-first>Resource is &lt;b&gt;${coalesce([tags.message.detail.state, tags.message.detail.result])}&lt;/b&gt;: ${rsc}&#13;
+&#13;
+${addLink('View in AWS Console', 'https://console.aws.amazon.com/ec2/v2/home?region=' + region + '#' + rscType + 's:search=' + rscId)}</body-first>
+<body-repeat>Resource is &lt;b&gt;${coalesce([tags.message.detail.state, tags.message.detail.result])}&lt;/b&gt;: ${rsc}&#13;
+&#13;
+${addLink('View in AWS Console', 'https://console.aws.amazon.com/ec2/v2/home?region=' + region + '#' + rscType + 's:search=' + rscId)}</body-repeat>
+<body-cancel>Resource is &lt;b&gt;${coalesce([tags.message.detail.state, tags.message.detail.result])}&lt;/b&gt;: ${rsc}&#13;
+&#13;
+${addLink('View in AWS Console', 'https://console.aws.amazon.com/ec2/v2/home?region=' + region + '#' + rscType + 's:search=' + rscId)}</body-cancel>
+</emailNotification>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>aws-cloudwatch-events</rule-name>
+<repeat-interval>
+<type>ALL</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=622</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<webNotificationConfigName>telegram-axibase-devops-with-attachments</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>disable_notification</key>
+<value/>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>details_table_format</key>
+<value>ascii</value>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>text</key>
+<value>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.&#13;
+Resource is *${coalesce([tags.message.detail.state, tags.message.detail.result])}*: ${rsc}&#13;
+${addLink('View in AWS Console', 'https://console.aws.amazon.com/ec2/v2/home?region=' + region + '#' + rscType + 's:search=' + rscId)}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>disable_notification</key>
+<value/>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>details_table_format</key>
+<value>ascii</value>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.&#13;
+Resource is *${coalesce([tags.message.detail.state, tags.message.detail.result])}*: ${rsc}&#13;
+${addLink('View in AWS Console', 'https://console.aws.amazon.com/ec2/v2/home?region=' + region + '#' + rscType + 's:search=' + rscId)}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>disable_notification</key>
+<value/>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>details_table_format</key>
+<value>ascii</value>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.&#13;
+Resource is *${coalesce([tags.message.detail.state, tags.message.detail.result])}*: ${rsc}&#13;
+${addLink('View in AWS Console', 'https://console.aws.amazon.com/ec2/v2/home?region=' + region + '#' + rscType + 's:search=' + rscId)}</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>true</repeat-enabled>
+<cancel-enabled>false</cancel-enabled>
+</webNotification>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>aws-cloudwatch-events</rule-name>
+<repeat-interval>
+<type>ALL</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=633</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>true</first-details>
+<repeat-details>true</repeat-details>
+<cancel-details>true</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<webNotificationConfigName>slack-devops</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>text</key>
+<value>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.&#13;
+Resource is *${coalesce([tags.message.detail.state, tags.message.detail.result])}*: ${rsc}&#13;
+${addLink('View in AWS Console', 'https://console.aws.amazon.com/ec2/v2/home?region=' + region + '#' + rscType + 's:search=' + rscId)}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.&#13;
+Resource is *${coalesce([tags.message.detail.state, tags.message.detail.result])}*: ${rsc}&#13;
+${addLink('View in AWS Console', 'https://console.aws.amazon.com/ec2/v2/home?region=' + region + '#' + rscType + 's:search=' + rscId)}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.&#13;
+Resource is *${coalesce([tags.message.detail.state, tags.message.detail.result])}*: ${rsc}&#13;
+${addLink('View in AWS Console', 'https://console.aws.amazon.com/ec2/v2/home?region=' + region + '#' + rscType + 's:search=' + rscId)}</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>true</repeat-enabled>
+<cancel-enabled>false</cancel-enabled>
+</webNotification>
+<ruleTable/>
+<alertLoggerName>atsd.alert.default</alertLoggerName>
+<derivedCommand>series e:${entity} m:metric_123=${100 - value} ${commandTags}</derivedCommand>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>
