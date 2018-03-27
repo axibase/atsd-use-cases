@@ -105,11 +105,11 @@ ATSD is ready to be configured to notify you via [**Slack Team Messeging**](http
 
 For more information about manually importing a configured rule to ATSD see this brief [guide](/../../blob/master/how-to/shared/import-rule.md). The raw Rule XML file may be downloaded [here](https://raw.githubusercontent.com/axibase/atsd-use-cases/cloud-watch-alert/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml).
 
-Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the needed rule will be called `aws-cloudwatch-events`. Open the **Configuration** page by clicking the rule name link. Select the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like email notification to be delivered.
+### Detailed Email Notifications from ATSD
+
+Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule will be named `aws-cloudwatch-events`. Open the **Configuration** page by clicking the rule name link. Select the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like email notification to be delivered.
 
 ![](images/my-email.png)
-
-### Detailed Email Notifications from ATSD
 
 Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/setting-up-email-client.md) by following the instructions here. Now, detailed status change notifications will be sent via email. It is possible to remove CloudWatch notifications in order to eliminate duplicate emails from being received.
 
