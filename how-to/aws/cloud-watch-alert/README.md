@@ -85,7 +85,7 @@ Navigate to the **Topics** section of the **Simple Notification Service** page o
 
 In a new window, use the [**Webhook User Wizard**](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#webhook-user-wizard) to create a Webhook User in order to receive notification requests from AWS.
 
-A Webhook User sample is shown here:
+A sample Webhook URL is shown here:
 
 ```
 https://aws-cw:aws-cw@atsd.hostname:443/api/v1/messages/webhook/aws-cw?type=webhook&entity=aws-cw&command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
