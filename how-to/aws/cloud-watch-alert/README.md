@@ -2,16 +2,11 @@
 
 ## Overview
 
-This guide shows how to configure automatic email notifications upon resource launch from an Amazon Web Services account. This feature enables real-time notifications that alert you to resource status change and prevent unauthorized use of your AWS console which, if left unchecked, can result in expensive fees from Amazon and potentionally harmful operations carried out from your console.
+This guide shows how to configure automatic email notifications upon resource launch from an Amazon Web Services account. This feature enables real-time notifications that alert you to resource status change and prevent unauthorized use of your AWS account which, if left unchecked, can result in expensive fees from Amazon and potentionally harmful operations.
 
 ![](images/new-flow.png)
 
 You may follow these instructions to set up native AWS email notifications or follow the advanced procedure to integrate ATSD and AWS for enhanced notifications delivered via email, or through your preferred messegner service such as Telegram or Slack.
-
-### Infrastructure Prerequisites
-
-* Create an AWS [IAM account](https://github.com/axibase/axibase-collector/blob/master/jobs/aws-iam.md) to query CloudWatch statistics.
-* Make sure 4GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
 
 ### Configure a New CloudWatch Event
 
@@ -63,6 +58,19 @@ Refresh the page with the **Refresh** button on the bottom right portion of the 
 
 ![](images/confirmed-email.png)
 
+## ATSD Interface Configuration
+
+### Infrastructure Prerequisites
+
+* Launch a local ATSD instance with the following command:
+```
+LAUNCH COMMAND
+```
+
+### Create Webhook User
+
+On the same **Topic Details** page that you used to create the AWS email subscription, click **Create Subscription**.
+
 Confirm that your new subscription is active by checking that the **Subscriber** column contains actual subcriber information and is not showing **Pending Confirmation** as seen here.
 
 ![](images/sns-6.png)
@@ -85,34 +93,6 @@ Set the flag in the checkbox next to your new subscriber and click **Publish to 
 ![](images/cw-6.png)
 
 Click **Publish Message**.
-
-### Finalize CloudWatch Event
-
-Return to the **Create Rule** page. On the right of the screen in the **Targets** section, click **Add Target**. Select the **SNS Topic** event target and select your newly created SNS topic.
-
-![](images/cw-3.png)
-
-You should see an account number in the **Event Pattern Preview** text box.
-
-![](images/cw-4.png)
-
-Click **Configure Details** at the bottom of the screen to move on. On the following page, name the rule and click **Create Rule**.
-
-![](images/cw-5.png)
-
-On the **Rules** page, be sure that your new rule has **Running** status, indicated by a green circle in the **Status** column.
-
-![](images/cw-7.png)
-
-![](images/cw-8.png)
-
-## ATSD Interface Configuration
-
-Begin by integrating your local ATSD instance to communicate with AWS by following the **Configuration** set-up described in this [guide](/../../tree/master/how-to/aws/route53-health-checks/README.md#configuration).
-
-### Create Webhook User
-
-On the **Topic Details** page, click **Create Subscription**.
 
 ![](images/sns-3.png)
 
