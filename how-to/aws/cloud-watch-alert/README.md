@@ -58,13 +58,21 @@ Refresh the page with the **Refresh** button on the bottom right portion of the 
 
 ![](images/confirmed-email.png)
 
+You are ready to start receiving native AWS status change notifications. A sample email notification is shown here.
+
+![](images/aws-default.png)
+
 ## ATSD Interface Configuration
 
 ### Infrastructure Prerequisites
 
-* Launch a local ATSD instance with the following command:
+* Launch a local ATSD instance with the needed rule already imported with the following command:
+
 ```
-LAUNCH COMMAND
+docker run -d -p 8443:8443 \
+  --name=atsd-sandbox \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/cloud-watch-alert/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
+  axibase/atsd-sandbox:latest
 ```
 
 ### Create Webhook User
@@ -108,7 +116,7 @@ Return to the **Create Subscription** form, and paste Webhook User information i
 
 ![](images/sns-4.png)
 
-In the ATSD interface, navigate to the **Rules** page, and import this [XML file](resources/rule_aws-cloudwatch-events.xml) to configure ATSD to notify you via [**Slack Team Messeging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/), or email. For more information about importing a configured rule to ATSD see this brief [guide](/../../blob/master/how-to/shared/import-rule.md).
+ATSD is ready to be configured to notify you via [**Slack Team Messeging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/), or email upon resource launch. For more information about manually importing a configured rule to ATSD see this brief [guide](/../../blob/master/how-to/shared/import-rule.md). The raw Rule XML file may be downloaded [here](https://raw.githubusercontent.com/axibase/atsd-use-cases/cloud-watch-alert/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml).
 
 ### Detailed Email Notifications from ATSD
 
