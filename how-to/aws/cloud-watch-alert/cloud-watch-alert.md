@@ -4,9 +4,9 @@
 
 This guide shows how to configure automatic notifications from ATSD upon resource launch from an Amazon Web Services account. This feature enables real-time notifications that alert you to instance launch and prevent unauthorized use of your AWS console which, if left unchecked, can result in expensive fees from Amazon and potentionally harmful operations carried out from your console.
 
-Shown here is a simple overview of the required steps.
-
 ![](images/new-flow.png)
+
+You may follow these instructions to set up native AWS email notifications or follow the advanced procedure to integrate ATSD and AWS for enhanced notifications delivered via email, or through your preferred messegner service such as Telegram or Slack.
 
 ### Infrastructure Prerequisites
 
@@ -106,6 +106,8 @@ On the **Rules** page, be sure that your new rule has **Running** status, indica
 ![](images/cw-8.png)
 
 ### ATSD Interface Configuration
+
+Begin by integrating your local ATSD instance to communicate with AWS by following the **Configuration** set-up described in this [guide](/../../tree/master/how-to/aws/route53-health-checks/README.md#configuration).
 
 In the ATSD interface, navigate to the **Rules** page, and import this [XML file](resources/rule_aws-cloudwatch-events.xml) to configure ATSD to notify you via [**Slack Team Messeging**](https://slack.com/). For more information about importing a configured rule to ATSD see this brief [guide](/../../blob/master/how-to/shared/import-rule.md).
 
