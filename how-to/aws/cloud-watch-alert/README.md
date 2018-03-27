@@ -68,7 +68,7 @@ Enhance notification value, information, and expediency by completing the follow
 
 ### Infrastructure Prerequisites
 
-* Launch a local ATSD instance (with the needed rule already imported) using the following command:
+* Launch a local ATSD instance using the following command:
 
 ```
 docker run -d -p 8443:8443 \
@@ -77,9 +77,11 @@ docker run -d -p 8443:8443 \
   axibase/atsd-sandbox:latest
 ```
 
+This command contains a script which will automatically import a rule needed for integration. If you launch ATSD using this script, there is no need to manually import the rule using the attached XML file.
+
 ### Create New Webhook User
 
-On the same **Topic Details** page that you used to create the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
+Navigate to the **Topics** section of the **Simple Notification Service** page once again. On the same **Topic Details** page that you used to create the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
 
 In a new window, use the [**Webhook User Wizard**](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#webhook-user-wizard) to create a Webhook User with your AWS account.
 
@@ -89,7 +91,7 @@ A Webhook User template is shown here:
 https://aws-cw:aws-cw@atsd.hostname:443/api/v1/messages/webhook/aws-cw?type=webhook&entity=aws-cw&command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
 ```
 
-Return to the **Create Subscription** form, and paste Webhook User information in the **Endpoint** field. If you used the above Webhook User template be sure to replace the `aws-cw` and `atsd.hostname` placeholders with legitimate information.
+Return to the **Create Subscription** form, and paste Webhook User information in the **Endpoint** field. If you used the above Webhook User template be sure to replace the `aws-cw` and `atsd.hostname` placeholders with legitimate information. Be sure that the **Protocol** drop-down menu is showing **HTTPS**.
 
 ![](images/sns-4.png)
 
@@ -97,7 +99,7 @@ Confirm that your new subscription is active by checking that the **Subscriber**
 
 ![](images/sns-6.png)
 
-Set the flag in the checkbox next to your new subscriber and click **Publish to Topic**. Title the publication and paste the following in the **Message** body.
+Set the flag in the checkbox next to your new confirmed subscriber and click **Publish to Topic**. Title the publication and paste the following in the **Message** body.
 
 ```
 {
@@ -118,7 +120,9 @@ Click **Publish Message**.
 
 ![](images/sns-3.png)
 
-ATSD is ready to be configured to notify you via [**Slack Team Messeging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/), or email upon resource launch. For more information about manually importing a configured rule to ATSD see this brief [guide](/../../blob/master/how-to/shared/import-rule.md). The raw Rule XML file may be downloaded [here](https://raw.githubusercontent.com/axibase/atsd-use-cases/cloud-watch-alert/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml).
+ATSD is ready to be configured to notify you via [**Slack Team Messeging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/), or email upon resource launch. 
+
+For more information about manually importing a configured rule to ATSD see this brief [guide](/../../blob/master/how-to/shared/import-rule.md). The raw Rule XML file may be downloaded [here](https://raw.githubusercontent.com/axibase/atsd-use-cases/cloud-watch-alert/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml).
 
 ### Detailed Email Notifications from ATSD
 
