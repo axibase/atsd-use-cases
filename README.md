@@ -51,6 +51,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 13. [Food Insecurity in America (2009-2013)](Chart_of_the_Day/Food_Insecurity/README.md)
 14. [Credit Card Loan Delinquency at 25 Year Low](Chart_of_the_Day/Credit_Delinquency/README.md)
 15. [Citywide LED Streetlight Savings (Los Angeles, CA)](Chart_of_the_Day/LA_Lights/README.md)
+16. [The Fall of Facebook](Chart_of_the_Day/facebook/README.md)
 
 ## Data Library
 
