@@ -6,7 +6,7 @@ This guide shows how to configure automatic email notifications upon resource la
 
 ![](images/new-flow.png)
 
-You may follow these instructions to set up native AWS email notifications or follow the advanced procedure to integrate ATSD and AWS for enhanced notifications delivered via email, or through your preferred messegner service such as Telegram or Slack.
+You may follow these instructions to set up native AWS email notifications or follow the advanced procedure to integrate ATSD and AWS for enhanced notifications delivered via email, or through your preferred messenger service such as Telegram or Slack.
 
 ### Configure a New CloudWatch Event
 
@@ -62,11 +62,13 @@ You are ready to start receiving native AWS status change notifications. A sampl
 
 ![](images/aws-default.png)
 
+Enhance notification value, information, and expediency by completing the following procedure to integrate AWS and ATSD.
+
 ## ATSD Interface Configuration
 
 ### Infrastructure Prerequisites
 
-* Launch a local ATSD instance with the needed rule already imported with the following command:
+* Launch a local ATSD instance (with the needed rule already imported) using the following command:
 
 ```
 docker run -d -p 8443:8443 \
@@ -75,9 +77,21 @@ docker run -d -p 8443:8443 \
   axibase/atsd-sandbox:latest
 ```
 
-### Create Webhook User
+### Create New Webhook User
 
-On the same **Topic Details** page that you used to create the AWS email subscription, click **Create Subscription**.
+On the same **Topic Details** page that you used to create the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
+
+In a new window, use the [**Webhook User Wizard**](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#webhook-user-wizard) to create a Webhook User with your AWS account.
+
+A Webhook User template is shown here:
+
+```
+https://aws-cw:aws-cw@atsd.hostname:443/api/v1/messages/webhook/aws-cw?type=webhook&entity=aws-cw&command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
+```
+
+Return to the **Create Subscription** form, and paste Webhook User information in the **Endpoint** field. If you used the above Webhook User template be sure to replace the `aws-cw` and `atsd.hostname` placeholders with legitimate information.
+
+![](images/sns-4.png)
 
 Confirm that your new subscription is active by checking that the **Subscriber** column contains actual subcriber information and is not showing **Pending Confirmation** as seen here.
 
@@ -103,18 +117,6 @@ Set the flag in the checkbox next to your new subscriber and click **Publish to 
 Click **Publish Message**.
 
 ![](images/sns-3.png)
-
-In a new window, use the [**Webhook User Wizard**](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#webhook-user-wizard) to create a Webhook User with your AWS account.
-
-A Webhook User template is shown here:
-
-```
-https://aws-cw:aws-cw@atsd.hostname:443/api/v1/messages/webhook/aws-cw?type=webhook&entity=aws-cw&command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
-```
-
-Return to the **Create Subscription** form, and paste Webhook User information in the **Endpoint** field. If you used the above Webhook User template be sure to replace the `aws-cw` and `atsd.hostname` placeholders with legitimate information.
-
-![](images/sns-4.png)
 
 ATSD is ready to be configured to notify you via [**Slack Team Messeging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/), or email upon resource launch. For more information about manually importing a configured rule to ATSD see this brief [guide](/../../blob/master/how-to/shared/import-rule.md). The raw Rule XML file may be downloaded [here](https://raw.githubusercontent.com/axibase/atsd-use-cases/cloud-watch-alert/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml).
 
