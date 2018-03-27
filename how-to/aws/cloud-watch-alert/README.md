@@ -83,15 +83,17 @@ This command contains a script which will automatically import a rule needed for
 
 Navigate to the **Topics** section of the **Simple Notification Service** page once again. On the same **Topic Details** page that you used to create the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
 
-In a new window, use the [**Webhook User Wizard**](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#webhook-user-wizard) to create a Webhook User with your AWS account.
+In a new window, use the [**Webhook User Wizard**](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#webhook-user-wizard) to create a Webhook User in order to receive notification requests from AWS.
 
-A Webhook User template is shown here:
+A Webhook User sample is shown here:
 
 ```
 https://aws-cw:aws-cw@atsd.hostname:443/api/v1/messages/webhook/aws-cw?type=webhook&entity=aws-cw&command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
 ```
 
-Return to the **Create Subscription** form, and paste Webhook User information in the **Endpoint** field. If you used the above Webhook User template be sure to replace the `aws-cw` and `atsd.hostname` placeholders with legitimate information. Be sure that the **Protocol** drop-down menu is showing **HTTPS**.
+Return to the **Create Subscription** form, and paste the Webhook URL in the **Endpoint** field. If you used the above Webhook User template be sure to replace the `aws-cw` and `atsd.hostname` placeholders with local connection properties. Be sure that the **Protocol** drop-down menu is showing **HTTPS**. 
+
+Configure ATSD to accept HTTPS requests from AWS infrastructure servers with a [CA-signed SSL certificate](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md). Alternatively, use the HTTP protocol when configuring the SNS subscription URL below.
 
 ![](images/sns-4.png)
 
@@ -99,30 +101,13 @@ Confirm that your new subscription is active by checking that the **Subscriber**
 
 ![](images/sns-6.png)
 
-Set the flag in the checkbox next to your new confirmed subscriber and click **Publish to Topic**. Title the publication and paste the following in the **Message** body.
-
-```
-{
-  "detail-type": "Test Notification",
-  "source": "aws.ec2",
-  "region": "us-east-1",
-  "resources": ["test-1"],
-  "detail": {
-    "instance-id": "test-1",
-    "state": "starting"
-  }
-}
-```
-
-![](images/cw-6.png)
-
-Click **Publish Message**.
-
-![](images/sns-3.png)
-
 ATSD is ready to be configured to notify you via [**Slack Team Messeging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/), or email upon resource launch. 
 
 For more information about manually importing a configured rule to ATSD see this brief [guide](/../../blob/master/how-to/shared/import-rule.md). The raw Rule XML file may be downloaded [here](https://raw.githubusercontent.com/axibase/atsd-use-cases/cloud-watch-alert/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml).
+
+Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the needed rule will be called `aws-cloudwatch-events`. Open the **Configuration** page by clicking the rule name link. Select the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like email notification to be delivered.
+
+![](images/my-email.png)
 
 ### Detailed Email Notifications from ATSD
 
@@ -134,14 +119,6 @@ ATSD email notifications contain literal links to the newly launched AWS resourc
 
 ![](images/atsd-advanced-alert.png)
 
-### Detailed Telegram Notifications from ATSD 
-
-Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md). Now, your status change notifications will be sent via Telegram messages as well as email.
-
-A sample Telegram message is shown here. Telegram notifications will contain links to newly launched resources, as seen here.
-
-![](images/telegram-alerts.png)
-
 ### Detailed Slack Notifications from ATSD
 
 Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md). Now, your status change notifications will be sent via Slack messages as well as email.
@@ -149,3 +126,11 @@ Configure your local ATSD instance to send messages to **Slack Messenger** by fo
 A sample status change Slack message is shown here. 
 
 ![](images/slack-notification.png)
+
+### Detailed Telegram Notifications from ATSD 
+
+Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md). Now, your status change notifications will be sent via Telegram messages as well as email.
+
+A sample Telegram message is shown here. Telegram notifications will contain links to newly launched resources, as seen here.
+
+![](images/telegram-alerts.png)
