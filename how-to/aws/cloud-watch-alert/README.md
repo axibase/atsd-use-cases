@@ -63,8 +63,6 @@ Refresh the page with the **Refresh** button on the bottom right portion of the 
 
 ![](images/confirmed-email.png)
 
-![](images/sns-5.png)
-
 Confirm that your new subscription is active by checking that the **Subscriber** column contains actual subcriber information and is not showing **Pending Confirmation** as seen here.
 
 ![](images/sns-6.png)
