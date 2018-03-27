@@ -6,7 +6,7 @@ This guide shows how to configure automatic notifications from ATSD upon resourc
 
 Shown here is a simple overview of the required steps.
 
-![](images/cw-alerts-flow.png)
+![](images/new-flow.png)
 
 ### Infrastructure Prerequisites
 
