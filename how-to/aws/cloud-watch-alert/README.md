@@ -51,7 +51,17 @@ Define the email address to which you would like AWS status change notifications
 
 ![](images/email-subscription.png)
 
-Once you have completed creating a new subscription, click **Confirm Subscription**. After confirming, refresh the page with the **Refresh** button on the bottom right portion of the screen. 
+Once you have completed creating a new subscription, click **Confirm Subscription** and AWS will send the new subscriber an email similar to the one shown here. 
+
+![](images/confirm-email.png)
+
+After confirming, you will be shown the following notification indicating that the email address was successfully confirmed.
+
+![](images/email-confirm.png)
+
+Refresh the page with the **Refresh** button on the bottom right portion of the screen. A confirmed email subscriber entry is shown here.
+
+![](images/confirmed-email.png)
 
 ![](images/sns-5.png)
 
@@ -126,23 +136,19 @@ In the ATSD interface, navigate to the **Rules** page, and import this [XML file
 
 Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/setting-up-email-client.md) by following the instructions here. Now, detailed status change notifications will be sent via email. It is possible to remove CloudWatch notifications in order to eliminate duplicate emails from being received.
 
-![](images/email-not-adv.png)
+![](images/atsd-event-alert.png)
 
-ATSD email notifications contain literal links to the newly launched AWS resource for quick response time in the event of unauthorized use.
+ATSD email notifications contain literal links to the newly launched AWS resource for quick response time in the event of unauthorized. Links redirect to the AWS console, as seen here.
+
+![](images/atsd-advanced-alert.png)
 
 ### Detailed Telegram Notifications from ATSD 
 
 Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md). Now, your status change notifications will be sent via Telegram messages as well as email.
 
-A sample Telegram message is shown here.
+A sample Telegram message is shown here. Telegram notifications will contain links to newly launched resources, as seen here.
 
-![](images/tg-2.png)
-
-![](images/tg-1.png)
-
-Telegram notifications will contain links to newly launched resources, as seen here.
-
-![](images/tg-3.png)
+![](images/telegram-alerts.png)
 
 ### Detailed Slack Notifications from ATSD
 
