@@ -52,6 +52,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 14. [Credit Card Loan Delinquency at 25 Year Low](Chart_of_the_Day/Credit_Delinquency/README.md)
 15. [Citywide LED Streetlight Savings (Los Angeles, CA)](Chart_of_the_Day/LA_Lights/README.md)
 16. [The Fall of Facebook](Chart_of_the_Day/facebook/README.md)
+17. [The Creeping Overnight Fund Rate](Chart_of_the_Day/overnight-fund-rate/README.md)
 
 ## Data Library
 
