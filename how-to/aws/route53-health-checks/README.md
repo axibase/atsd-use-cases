@@ -79,7 +79,7 @@ Health check statistics may be offloaded to [Axibase Time Series Database](http:
 
 ### Launch ATSD Sandbox
 
-Create `import` directory and create `aws.propeties` file in it with following contents:
+Create `import` directory and `aws.propeties` file in it with following contents:
 
 ```
 accessKeyId=KEY
