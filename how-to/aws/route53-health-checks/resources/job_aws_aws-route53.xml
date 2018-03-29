@@ -2,7 +2,7 @@
   <com.axibase.collector.model.job.aws.AwsJobConfig>
     <name>aws-route53</name>
     <cronExpression>R 0/5 * * * ?</cronExpression>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <jobType>AWS</jobType>
     <defaultTags/>
     <checkLastTime>false</checkLastTime>

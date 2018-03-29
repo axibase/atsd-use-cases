@@ -79,13 +79,23 @@ Health check statistics may be offloaded to [Axibase Time Series Database](http:
 
 ### Launch ATSD Sandbox
 
+Create `import` directory and create `aws.propeties` file in it with following contents:
+
+```
+accessKeyId=KEY
+secretAccessKey=SECRET
+```
+
+where `KEY` and `SECRET` are access key ID and secret access key respectively.
 Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts:
 
 ```
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
+  --volume=$(pwd)/import:/import
   --env ATSD_IMPORT_PATH='https://github.com/axibase/atsd-use-cases/raw/master/how-to/aws/route53-health-checks/resources/aws-route53-xml.zip' \
   --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/aws/route53-health-checks/resources/job_aws_aws-route53.xml' \
+  --env COLLECTOR_CONFIG='job_aws_aws-route53.xml:aws.properties'
   axibase/atsd-sandbox:latest
 ```
 
@@ -99,57 +109,23 @@ Wait until the sandbox is initialized and 'All applications started.' message is
 docker logs -f atsd-sandbox
 ```
 
+```
+[Collector] 2018-03-29 17:47:40,329 Job 'aws-route53' completed.
+[Collector] 2018-03-29 17:47:40,330 All jobs completed.
+[Collector] Checking Collector web-interface port 9443 ...
+[Collector] Collector web interface:
+[Collector] https://172.17.0.2:9443
+[Collector] Collector start completed.
+[Collector] For more details see logfile in /opt/axibase-collector/logs/axibase-collector.log
+[Collector] Account 'axibase' created.
+All applications started
+```
+
 Log in to ATSD user interface using `axibase` username and `axibase` password.
 
 ```
 https://atsd_hostname:8443/
 ```
-
-### Configure AWS Access Keys
-
-Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axibase` username and `axibase` password.
-
-In the **Jobs** drop-down menu, select **AWS** jobs.
-
-> If the **aws-route53** job is not visible, be sure that the **Status** drop-down menu is displaying all jobs.
-
-Open **us-east-1** configuration and specify AWS Access and Secret keys.
-
-> You only need to configure collection from the **us-east-1** region as outlined in the [Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-monitor-view-status.html) (see section **To view Route 53 metrics on the CloudWatch console**).
-
-Confirm connectivity by clicking the **Test** button.
-
-The response should contain a list of metrics for the enabled health checks.
-
-```xml
-<ListMetricsResponse xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/">
-  <ListMetricsResult>
-    <Metrics>
-      <member>
-        <Namespace>AWS/Route53</Namespace>
-        <MetricName>TimeToFirstByte</MetricName>
-        <Dimensions>
-          <member>
-            <Name>HealthCheckId</Name>
-            <Value>726bed8e-c205-47d7-9d26-f8e61799b1a3</Value>
-          </member>
-        </Dimensions>
-      </member>
-    </Metrics>
-  </ListMetricsResult>
-  <ResponseMetadata>
-    <RequestId>01af0476-2911-11e8-8699-e53c6524cd7c</RequestId>
-  </ResponseMetadata>
-</ListMetricsResponse>
-```
-
-![](images/route53-test.png)
-
-### Enable Job
-
-From the **AWS Job** page, enable the **aws-route53** job. Click **Save**.
-
-![](images/enable_job.png)
 
 ### Setup Health Check Attribute Copy
 
