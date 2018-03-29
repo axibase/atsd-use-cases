@@ -11,7 +11,7 @@ The United States provides retirement security for the elderly and disabled in a
 
 ## Objectives
 
-Using [**Forcasting**](https://axibase.com/products/axibase-time-series-database/forecasts/) functionality from [Axibase Time Series Database](https://axibase.com/), current population figures, and birth / death data, models may be created to predict trends in America's population crisis. 
+Using [**Forecasting**](https://axibase.com/products/axibase-time-series-database/forecasts/) functionality from [Axibase Time Series Database](https://axibase.com/), current population figures, and birth data, models may be created to predict trends in America's population crisis. 
 
 ## Data
 
@@ -25,8 +25,7 @@ All data is sourced from the United States Federal Reserve.
 ## Methodology
 
 1. Visualize Datasets using [ChartLab](https://apps.axibase.com/);
-2. Use [SQL Console](https://github.com/axibase/atsd/tree/master/sql#overview) for concrete analysis;
-3. Implement Forecasting.
+2. Implement Forecasting.
 
 ## Visualization
 
@@ -56,3 +55,9 @@ Using a `value` expression, calculated series may be created using existing data
 [![](images/button.png)](https://apps.axibase.com/chartlab/c4593647)
 
 *Fig 4.*: The [box chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) and [histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/) establish the dataset's median value and range, which are then used in the [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14), which activates when a condition is satisfied. Here, the condition is set to color a bar red if it is greater than the calculated median value which shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
+
+### Forecasting
+
+The ATSD Forecast tool may be used to model future trends based on existings data. See the [Resources](#resources)
+
+### Resources
