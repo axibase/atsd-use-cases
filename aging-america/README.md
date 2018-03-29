@@ -1,5 +1,10 @@
 # Aging America: Modeling Birth Trends in the United States
 
+![](images/aging-america-title.png)
+[![](images/button)](https://apps.axibase.com/chartlab/7a396847)
+
+*Fig. 1*: The upper graph shows the growing senior population contrasted against the diminishing birth rate while the lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
+
 ## Overview
 
 The United States provides retirement security for the elderly and disabled in a number of ways: Medicaid, Medicare, and Social Secuirty are the main components of the social welfare program. Each of these systems is financed primarily with payroll taxes called the Federal Insurance Contribution Act (FICA) tax. The underlying philosophy of this, and almost any, social welfare program is thus: the young should pay for the healthcare of those unable to do so themselves due to age or disability in the hopes that one day the next generation will do the same for them. Sound logic to be sure, but what happens when the previous generation failed to repopulate the nation in the same way their parents did? What happens when this trend is repeated through one, two, three, or four generations? For a long time analysts have been warning about the coming drought in the Social Security Administration's coffers, but more and more it's starting to appear that it may be just over the horizon.
@@ -25,3 +30,8 @@ All data is sourced from the United States Federal Reserve.
 
 ## Visualization
 
+**Working Population as a Portion of Total Population**
+
+Open the ChartLab visualzation and use the drop-down menu to navigate through time to compare working-aged popualtion to the United States total population.
+
+![](working-population-pie.png)
