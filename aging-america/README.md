@@ -1,7 +1,7 @@
 # Aging America: Modeling Birth Trends in the United States
 
 ![](images/aging-america-title.png)
-[![](images/button)](https://apps.axibase.com/chartlab/7a396847)
+[![](images/button.png)](https://apps.axibase.com/chartlab/7a396847)
 
 *Fig. 1*: The upper graph shows the growing senior population contrasted against the diminishing birth rate while the lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
 
@@ -24,7 +24,7 @@ All data is sourced from the United States Federal Reserve.
 
 ## Methodology
 
-1. Visualize Datasets;
+1. Visualize Datasets using [ChartLab](https://apps.axibase.com/);
 2. Use [SQL Console](https://github.com/axibase/atsd/tree/master/sql#overview) for concrete analysis;
 3. Implement Forecasting.
 
@@ -34,4 +34,25 @@ All data is sourced from the United States Federal Reserve.
 
 Open the ChartLab visualzation and use the drop-down menu to navigate through time to compare working-aged popualtion to the United States total population.
 
-![](working-population-pie.png)
+![](images/working-population.png)
+[![](images/button.png)](https://apps.axibase.com/chartlab/eb9826a3#fullscreen)
+
+*Fig 2.*: The portion of the population eligible forwork (aged between 15 and 64) is shown in purple, while the remaining ineligible population is shown in red.
+
+**Births per 1000 / Population Over 65**
+
+The upper histogram tracks annual crude births per one thousand persons and the lower histogram tracks the 65+ population in percentile terms. Deceptively, the data seems to show that the average amount of births outperforms the aging population, but when scaled to 100, in fact, the aged population severely outnumbers the amounnt of crude births which are occurring.
+
+![](images/population-histogram.png)
+[![](images/button.png)](https://apps.axibase.com/chartlab/51caa169#fullscreen)
+
+*Fig 3.*: Open the ChartLab visualization and modify the number of bars in either histogram using a [`bar-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/#tab-id-1) setting for more granularized data visualization.
+
+**Dimishing Working Population**
+
+Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series.
+
+![](images/working-population-charts.png)
+[![](images/button.png)](https://apps.axibase.com/chartlab/c4593647)
+
+*Fig 4.*: The [box chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) and [histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/) establish the dataset's median value and range, which are then used in the [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14), which activates when a condition is satisfied. Here, the condition is set to color a bar red if it is greater than the calculated median value which shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
