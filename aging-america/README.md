@@ -58,6 +58,21 @@ Using a `value` expression, calculated series may be created using existing data
 
 ### Forecasting
 
-The ATSD Forecast tool may be used to model future trends based on existings data. See the [Resources](#resources)
+The ATSD Forecast tool may be used to model future trends based on existings data. See the [Resources](#resources) section of this article to download the complete configuration used in this forecast or reference the abbreviated table below for a basic understanding of the mechanics at work.
+
+|Basic Forecast Configuration Information| |
+|--|--| 
+|Algorithm | Holt-Winters |
+|Alpha Value| 0.5|
+|Beta Value|0.4|
+|Gamma Value|0.5|
+|Score Interval|5 Years|
+
+Forecasting for each of the original metrics is shown below for 20 years into the future. 
+
+![](images/forecast-data.png)
+[![](images/button.png)](https://apps.axibase.com/chartlab/5e8bc5e8)
+
+*Fig 5.*: The orginial data is shown here with forecasts performed in ATSD. Some of the data may appear slightly distorted as the scale for some of the graphs has been modified to accommidate new data points.
 
 ### Resources
