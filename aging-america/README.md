@@ -52,6 +52,8 @@ The upper histogram plots the frequency of each value of annual crude births per
 Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized. This setting is shown here.
 
 ```sql
+# Sample configuration for calculating and visualizing an ad-hoc derived series.
+
 [group]
   [widget]
     title = Working Population Bar Chart
@@ -64,6 +66,8 @@ Using a `value` expression, calculated series may be created using existing data
     metric = POPTOTUSA647NWDB
     display = false
     alias = pop
+    
+# Each series is given an alias and display setting is false (series is only used for calulation).
       
     [series]
     metric = LFWA64TTUSM647S_
@@ -77,6 +81,8 @@ Using a `value` expression, calculated series may be created using existing data
     label = Difference in Total Population and Working Populaton
     alert-expression = value > 104
     alert-style = color: red
+    
+# Calculated series has no metric value as it is only derived. Alert expression is entered based on information provided by box graph     
 ```
 
 Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in ChartLab, see this [guide](/../..//tree/master/Solutions/calculated-values).
