@@ -11,7 +11,7 @@ The United States provides retirement security for the elderly and disabled in a
 
 ## Objectives
 
-Using [**Forecasting**](https://axibase.com/products/axibase-time-series-database/forecasts/) functionality from [Axibase Time Series Database](https://axibase.com/), current population figures, and birth data, models may be created to predict trends in America's population crisis. 
+Using [**Forecasting**](https://axibase.com/products/axibase-time-series-database/forecasts/) functionality from [Axibase Time Series Database](https://axibase.com/), current population figures and birth data, models may be created to predict trends in America's potential population crisis. 
 
 ## Data
 
@@ -25,22 +25,22 @@ All data is sourced from the United States Federal Reserve.
 ## Methodology
 
 1. Visualize Datasets using [ChartLab](https://apps.axibase.com/);
-2. Implement Forecasting.
+2. Implement Forecasting for a five year period.
 
 ## Visualization
 
 **Working Population as a Portion of Total Population**
 
-Open the ChartLab visualzation and use the drop-down menu to navigate through time to compare working-aged popualtion to the United States total population.
+Open the ChartLab visualzation and use the drop-down menu to navigate through time to compare working-aged population to the United States total population.
 
 ![](images/working-population.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/eb9826a3#fullscreen)
 
-*Fig 2.*: The portion of the population eligible forwork (aged between 15 and 64) is shown in purple, while the remaining ineligible population is shown in red.
+*Fig 2.*: The portion of the population eligible for work (aged between 15 and 64) is shown in purple, while the remaining ineligible population is shown in red.
 
 **Births per 1000 / Population Over 65**
 
-The upper histogram tracks annual crude births per one thousand persons and the lower histogram tracks the 65+ population in percentile terms. Deceptively, the data seems to show that the average amount of births outperforms the aging population, but when scaled to 100, in fact, the aged population severely outnumbers the amounnt of crude births which are occurring.
+The upper histogram plots the frequency of each value of annual crude births per one thousand persons and the lower histogram tracks the 65+ population in percentile terms. Deceptively, the data seems to show that the average amount of births outperforms the aging population, but when scaled to 100, in fact, the aged population severely outnumbers the amounnt of crude births which are occurring.
 
 ![](images/population-histogram.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/51caa169#fullscreen)
@@ -49,7 +49,7 @@ The upper histogram tracks annual crude births per one thousand persons and the 
 
 **Dimishing Working Population**
 
-Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series.
+Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized. 
 
 ![](images/working-population-charts.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/c4593647)
@@ -63,15 +63,15 @@ The ATSD Forecast tool may be used to model future trends based on existings dat
 |Basic Forecast Configuration Information| |
 |--|--| 
 |Algorithm | Holt-Winters |
-|Alpha Value| 0.5|
+|Alpha (\alpha) Value| 0.5|
 |Beta Value|0.4|
 |Gamma Value|0.5|
 |Score Interval|5 Years|
 
 Forecasting for each of the original metrics is shown below for 20 years into the future. 
 
-![](images/forecast-data.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/5e8bc5e8)
+![](images/forecast_data.png)
+[![](images/button.png)](https://apps.axibase.com/chartlab/1528477a#fullscreen)
 
 *Fig 5.*: The orginial data is shown here with forecasts performed in ATSD. Some of the data may appear slightly distorted as the scale for some of the graphs has been modified to accommidate new data points.
 
