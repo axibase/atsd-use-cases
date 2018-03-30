@@ -116,6 +116,6 @@ Using forecasting, the continuation of mathematical trends may be readily observ
 The following tools may be used to replicate these results in a local instance of ATSD:
 
 * ATSD [installation guide](https://github.com/axibase/atsd/tree/master/installation#installation);
-* [Forecast Configuration](resources/forecast-settings.xml);
+* [Forecast Configuration](/../../how-to/shared/import-forecast.md);
 * For detailed information about configuring the Forecasting tool, see this [guide](/../../axibase/atsd-use-cases/new/master/how-to/shared);
 * Download [data](#data).
