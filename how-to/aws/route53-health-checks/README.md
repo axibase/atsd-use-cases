@@ -79,15 +79,23 @@ Health check statistics may be offloaded to [Axibase Time Series Database](http:
 
 ### Launch ATSD Sandbox
 
-Create `import` directory and `aws.propeties` file within containing the following information:
+Create an `import` directory in the current directory:
+
+```sh
+mkdir import
+cd import
+```
+
+This directory will be mounted into the Docker container in order to pass AWS credentials to the CloudWatch data collector without exposing them as environment variables.
+
+Create an `aws.propeties` file in the `import` directory and replace `KEY` and `SECRET` with AWS Access Key ID and Secret Access Key respectively.
 
 ```
 accessKeyId=KEY
 secretAccessKey=SECRET
 ```
 
-Where `KEY` and `SECRET` are access key ID and secret access key respectively.
-Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts:
+Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on a Docker host:
 
 ```
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
