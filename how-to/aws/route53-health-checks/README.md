@@ -29,7 +29,7 @@ Health checks are executed from different parts of the world so that the outage 
 
 ### Access Security
 
-Amazon AWS publishes a list of IP ranges used by [health checker nodes](https://ip-ranges.amazonaws.com/ip-ranges.json) and your network administrators need to make sure that inbound traffic from `ROUTE53_HEALTHCHECKS` addresses is allowed.
+Amazon AWS publishes a list of IP ranges used by [health checker nodes](https://ip-ranges.amazonaws.com/ip-ranges.json). Your network administrators need to make sure that inbound traffic from `ROUTE53_HEALTHCHECKS` addresses are allowed.
 
 ```json
 {
@@ -50,13 +50,13 @@ The individual checkers are not synchronized and the rate at which the requests 
 
 Health checks are available for HTTP, HTTPS, and TCP protocols.
 
-The endpoint is considered to be in Healthy state when the specified percentage of checkers were able to establish a TCP connection and (for HTTP/S) received a 2xx/3xx response code from the server. The response should also contain the specified keyword of **String Matching** is enabled.
+The endpoint is considered to be in a `Healthy` state when the specified percentage of checkers were able to establish a TCP connection and (for HTTP/S) received a 2xx/3xx response code from the server. The response should also contain the specified keyword if **String Matching** is enabled.
 
 When specifying paths for HTTP/S endpoints, factor in the increased traffic sent to the target service. The monitored URL should not cause excessive load on the server.
 
 ### HTTPS
 
-The health checks **cannot** be used to monitor validity of SSL certificates as part of HTTPS endpoint monitoring. In particular, they will report Healthy status even if the SSL certificate is expired, self-signed, and otherwise invalid.
+The health checks **cannot** be used to monitor validity of SSL certificates as part of HTTPS endpoint monitoring. In particular, they will report `Healthy` status even if the SSL certificate is expired, self-signed, or otherwise invalid.
 
 ### Metrics
 
@@ -79,14 +79,14 @@ Health check statistics may be offloaded to [Axibase Time Series Database](http:
 
 ### Launch ATSD Sandbox
 
-Create `import` directory and `aws.propeties` file in it with following contents:
+Create `import` directory and `aws.propeties` file within containing the following information:
 
 ```
 accessKeyId=KEY
 secretAccessKey=SECRET
 ```
 
-where `KEY` and `SECRET` are access key ID and secret access key respectively.
+Where `KEY` and `SECRET` are access key ID and secret access key respectively.
 Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts:
 
 ```
