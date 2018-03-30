@@ -49,16 +49,42 @@ The upper histogram plots the frequency of each value of annual crude births per
 
 **Dimishing Working Population**
 
-Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized.
+Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized. This setting is shown below.
 
+```sql
+[group]
+  [widget]
+    title = Working Population Bar Chart
+    type = chart
+    mode = column
+    starttime = 1980
+    endtime = 2017
+    
+    [series]
+    metric = POPTOTUSA647NWDB
+    display = false
+    alias = pop
+      
+    [series]
+    metric = LFWA64TTUSM647S_
+    display = false
+    alias = wpop
+      
+    [series]
+    value = value('pop') - value('wpop')
+    style = stroke-width: 2
+    color = green
+    label = Difference in Total Population and Working Populaton
+    alert-expression = value > 104
+    alert-style = color: red
+```
 
-
-
+Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in ChartLab, see this [guide](/../..//tree/master/Solutions/calculated-values).
 
 ![](images/working-population-charts.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/b99d54ae#fullscreen)
+[![](images/button.png)](https://apps.axibase.com/chartlab/28ad0e6f#fullscreen)
 
-*Fig 4.*: The [box chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) and [histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/) establish the dataset's median value and range, which are then used in the [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14), which activates when a condition is satisfied. Here, the condition is set to color a bar red if it is greater than the calculated median value which shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
+*Fig 4.*: The [box chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) and [histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/) establish the dataset's median value and range, which are then used in the [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14), which activates when a condition is satisfied. Here, the condition is set to color a bar red if it is greater than the calculated median value. This expression shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
 
 ### Forecasting
 
@@ -80,6 +106,10 @@ Forecasting for each of the original metrics is shown below for roughly 20 years
 *Fig 5.*: The orginial data is shown here with forecasts performed in ATSD.
 
 The Forecasting tool may be scaled to work with highly granularized data such as millisecond frequency or with more sporadic data as seen.
+
+### Conclusion
+
+Using forecasting, the continuation of mathematical trends may be readily observed and predicted. Forecasts may include periodicity settings for data which is repetitive over some interval. In this example, only mathematical factors have been considered which any sociologist can tell you is flawed methodology since population reproduction is the result of an array of complicated non-mathematical factors as well. However, strictly mathematical modeling is often used to predict trends under the assumption that social factors remain constant for a given period of time.
 
 ### Resources
 
