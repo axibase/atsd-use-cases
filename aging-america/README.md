@@ -1,7 +1,7 @@
 # Aging America: Modeling Birth Trends in the United States
 
 ![](images/aging-america-title.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/7a396847)
+[![](images/button.png)](https://apps.axibase.com/chartlab/e096e234#fullscreen)
 
 *Fig. 1*: The upper graph shows the growing senior population contrasted against the diminishing birth rate while the lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
 
@@ -34,7 +34,7 @@ All data is sourced from the United States Federal Reserve.
 Open the ChartLab visualzation and use the drop-down menu to navigate through time to compare working-aged population to the United States total population.
 
 ![](images/working-population.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/eb9826a3#fullscreen)
+[![](images/button.png)](https://apps.axibase.com/chartlab/b67186c0#fullscreen)
 
 *Fig 2.*: The portion of the population eligible for work (aged between 15 and 64) is shown in purple, while the remaining ineligible population is shown in red.
 
@@ -49,10 +49,14 @@ The upper histogram plots the frequency of each value of annual crude births per
 
 **Dimishing Working Population**
 
-Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized. 
+Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized.
+
+
+
+
 
 ![](images/working-population-charts.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/c4593647)
+[![](images/button.png)](https://apps.axibase.com/chartlab/b99d54ae#fullscreen)
 
 *Fig 4.*: The [box chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) and [histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/) establish the dataset's median value and range, which are then used in the [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14), which activates when a condition is satisfied. Here, the condition is set to color a bar red if it is greater than the calculated median value which shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
 
@@ -63,16 +67,25 @@ The ATSD Forecast tool may be used to model future trends based on existings dat
 |Basic Forecast Configuration Information| |
 |--|--| 
 |Algorithm | Holt-Winters |
-|Alpha (\alpha) Value| 0.5|
+|Alpha Value| 0.5|
 |Beta Value|0.4|
 |Gamma Value|0.5|
 |Score Interval|5 Years|
 
-Forecasting for each of the original metrics is shown below for 20 years into the future. 
+Forecasting for each of the original metrics is shown below for roughly 20 years into the future. 
 
 ![](images/forecast_data.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/1528477a#fullscreen)
 
-*Fig 5.*: The orginial data is shown here with forecasts performed in ATSD. Some of the data may appear slightly distorted as the scale for some of the graphs has been modified to accommidate new data points.
+*Fig 5.*: The orginial data is shown here with forecasts performed in ATSD.
+
+The Forecasting tool may be scaled to work with highly granularized data such as millisecond frequency or with more sporadic data as seen.
 
 ### Resources
+
+The following tools may be used to replicate these results in a local instance of ATSD:
+
+* ATSD [installation guide](https://github.com/axibase/atsd/tree/master/installation#installation);
+* [Forecast Configuration](resources/forecast-settings.xml);
+* For detailed information about configuring the Forecasting tool, see this [guide](/../../axibase/atsd-use-cases/new/master/how-to/shared);
+* Download [data](#data).
