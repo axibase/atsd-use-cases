@@ -40,7 +40,7 @@ Open the ChartLab visualzation and use the drop-down menu to navigate through ti
 
 **Births per 1000 / Population Over 65**
 
-The upper histogram plots the frequency of each value of annual crude births per one thousand persons and the lower histogram tracks the 65+ population in percentile terms. Deceptively, the data seems to show that the average amount of births outperforms the aging population, but when scaled to 100, in fact, the aged population severely outnumbers the amounnt of crude births which are occurring.
+The upper histogram plots the frequency of each value of annual crude births per one thousand persons and the lower histogram tracks the 65+ population in percentile terms. Deceptively, the data seems to show that the average amount of births outperforms the aging population, but when scaled to 100, in fact, the aged population severely outnumbers the amount of crude births which are occurring.
 
 ![](images/population-histogram.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/51caa169#fullscreen)
@@ -49,7 +49,7 @@ The upper histogram plots the frequency of each value of annual crude births per
 
 **Dimishing Working Population**
 
-Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized. This setting is shown below.
+Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized. This setting is shown here.
 
 ```sql
 [group]
@@ -88,7 +88,7 @@ Each of the target series is given an `alias` which is then used to create the c
 
 ### Forecasting
 
-The ATSD Forecast tool may be used to model future trends based on existings data. See the [Resources](#resources) section of this article to download the complete configuration used in this forecast or reference the abbreviated table below for a basic understanding of the mechanics at work.
+The ATSD Forecast tool may be used to model future trends based on existing data. See the [Resources](#resources) section of this article to download the complete configuration used in this forecast or reference the abbreviated table below for a basic understanding of the mechanics at work.
 
 |Basic Forecast Configuration Information| |
 |--|--| 
@@ -103,9 +103,9 @@ Forecasting for each of the original metrics is shown below for roughly 20 years
 ![](images/forecast_data.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/1528477a#fullscreen)
 
-*Fig 5.*: The orginial data is shown here with forecasts performed in ATSD.
+*Fig 5.*: The orginial data is shown here with forecasts performed in ATSD showing the potentially widening gap between those eligible to pay in to the Social Security system and those needing to be paid out from that system. 
 
-The Forecasting tool may be scaled to work with highly granularized data such as millisecond frequency or with more sporadic data as seen.
+The Forecasting tool may be scaled to work with per annumn data as seen here just as readily as millisecond-frequency data input from a sensor or other device.
 
 ### Conclusion
 
