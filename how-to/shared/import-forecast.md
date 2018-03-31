@@ -1,10 +1,10 @@
-# Importing Forecasts
+# Importing Forecast Settings
 
 ![](images/forecast-title.png)
 
-A Forecast is a prediction of future data using existing data and a mathematical algorithm. Forecasts may be automatically configured by ATSD or customized to include a specific score interval, data selection interval, and aggregation period.
+[Forecast Settings](https://github.com/axibase/atsd/tree/master/forecasting) is a set of rules to predict future data by applying a statistical algorithm to histroical records.  The choice of the algorithm and its parameters may be manually specified by an expert user or automatically selected by ATSD based on the built-in scoring system.
 
-Follow this process to upload a Forecast configuration to your local ATSD instance.
+Follow this process to upload a forecast configuration to your local ATSD instance.
 
 1. Expand the **Data** menu and select **Forecasts**.
 
@@ -20,7 +20,7 @@ Follow this process to upload a Forecast configuration to your local ATSD instan
 
 4. Your forecast configuration has been uploaded to ATSD.
 
-Return to the **Forecasts** page where the newly configured Forecast will be visible.
+Return to the **Forecasts** page where the newly configured forecast settings will be visible.
 
 ### Uploading Multiple Configuration Files
 
