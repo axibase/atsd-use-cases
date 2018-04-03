@@ -1,7 +1,7 @@
 # Aging America: Modeling Birth Trends in the United States
 
 ![](images/aging-america-title.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/e096e234#fullscreen)
+[![](images/button-new.png)](https://trends.axibase.com/167694d7#fullscreen)
 
 *Fig. 1*: The upper graph shows the growing senior population contrasted against the diminishing birth rate while the lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
 
