@@ -33,6 +33,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 27. [Calls May Be Recorded or Monitored for Training Purposes: Using Call Abandonment Rates to Establish Thresholds](SF_Phone/README.md)
 28. [The Slow Death of the American Auto Industry](Automobiles/README.md)
 29. [United States Federal Reserve: The Economic Policy Uncertainty Index](Analysis/Economic_Policy_Uncertainty/README.md)
+30. [Aging America: Modeling Birth Trends in the United States](aging-america/README.md)
 
 ## Chart of the Day 
 
