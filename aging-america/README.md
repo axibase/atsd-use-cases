@@ -22,6 +22,8 @@ All data is sourced from the United States Federal Reserve.
 * [Working Age Population: Aged 15 - 64](https://fred.stlouisfed.org/series/LFWA64TTUSM647S)
 * [Population Total: United States](https://fred.stlouisfed.org/series/POPTOTUSA647NWDB)
 
+Data is visualized using **TRENDS** service from Axibase, a public data repository with subsets of public data from organizations like the United States Federal Reserve, the Central Bank of Israel, the SEC, FCC, and other government agencies.
+
 ## Methodology
 
 1. Visualize Datasets using [TRENDS](https://trends.axibase.com/);
