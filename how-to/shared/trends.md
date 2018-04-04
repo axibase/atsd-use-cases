@@ -10,13 +10,6 @@
 
 **TRENDS** uses a convenient [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for data modification that will be briefly discussed in this guide. Feel free to ask questions or suggest datasets or topics by dropping us a line [here](mailto:hello@axibase.com).
 
-### Modifying a Visualization
-
-If it is not already visible, open the **Editor** window in the **TRENDS** interface by clicking the button at the top of the visualization.
-
-![](images/editor-window.png)
-[![](images/button-new.png)](https://trends.axibase.com/167694d7#fullscreen)
-
 In the Editor window you will see the configuration for the current visualization. All configurations have several levels of settings:
 
 * **[configuration]**: Overall settings for the entire visualization. Even the most complex portals and visualizations will have one set of **[configuration]** settings. Define broad parameters for the visualization such as widget size, data entity, and additional formating parameters such as visualization offset.
@@ -29,4 +22,42 @@ In the Editor window you will see the configuration for the current visualizatio
 
 > Some settings may be defined at multiple levels of a visualization. The most subordinate setting is given priority by **TRENDS**. That means, that if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[widget]** level for one chart you define a different entity `y`, entity `x` will be used for all widgets **EXCEPT** for the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
 
-Using the chart above as an example, 
+
+### Modifying a Visualization
+
+If it is not already visible, open the **Editor** window in the **TRENDS** interface by clicking the button at the top of the visualization.
+
+![](images/editor-window.png)
+[![](images/button-new.png)](https://trends.axibase.com/e91b896e#fullscreen)
+
+Using the chart above as a configuration example:
+
+```sql
+[configuration]
+  height-units = 2
+  width-units = 1
+  offset-right = 20
+  entity = fred.stlouisfed.org
+  
+  [group]
+    [widget]
+      title = Crude Birth Rates vs. Over 65 Population
+      timespan = all
+      markers = false
+      type = chart
+      starttime = 1980
+      endtime = 2016
+        
+      [series]
+        metric = SPDYNCBRTINUSA
+        label = Live Births per 1000 Individuals 
+        style = stroke-width: 2
+      
+      [series]
+        metric = SPPOP65UPTOZSUSA
+        label = Over 65 Population (Percent of Total)
+        replace-value = value/100
+        format = %
+        axis = right
+        style = stroke-width: 2
+```
