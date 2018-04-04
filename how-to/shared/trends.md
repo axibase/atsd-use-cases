@@ -8,11 +8,11 @@
 
 The **TRENDS** service enables users to interact with the data that they are reading about by creating their own visualizations as well as by modifying examples shared by other users.
 
-**TRENDS** doesn't require the readers to be proficient in any programming language however a certain familiarity with key concepts and the schema is recommended.
+**TRENDS** doesn't require readers to be proficient in any programming language however a certain familiarity with key concepts and general schema is recommended.
 
 ### Syntax
 
-**TRENDS** uses a convenient [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for creating graphs that will be briefly discussed in this guide. Feel free to ask questions or suggest datasets or topics by contacting us [here](mailto:hello@axibase.com).
+**TRENDS** uses a convenient [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for creating graphs that will be briefly discussed in this guide. Feel free to ask questions or suggest datasets or topics by raising an issues on our [GitHub](https://github.com/axibase/atsd-use-cases/issues) page.
 
 In the **Editor** window you will see the configuration for the current portal. All portals have several levels of settings:
 
@@ -24,12 +24,11 @@ In the **Editor** window you will see the configuration for the current portal. 
 
 For detailed information about **[widget]** level settings, see the following [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/#series).
 
-* **[series]**: Each widget must have at least one series. A series is a ordered timestamped array of observations loaded from the database and visualized by the widget. **[series]** settings include the metric name, entity name, optional tags as well as an series-specific transformations.
+* **[series]**: Each widget must have at least one series. A series is a ordered and timestamped array of observations loaded from the database and visualized by the widget. **[series]** settings include the metric name, entity name, optional tags as well as any series-specific transformations.
 
 More information about selecting series can be found [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/selecting-series/).
 
 > Some settings may be defined at multiple levels. Settings defined at the **[configuration]** level are inhereted by nested levels: **[group]** > **[widget]** > **[series]**. Settings defined at the lower level override settings set at the upper level. For example, if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[series]** level for one chart you define a different entity `y`, entity `x` will be used for all widgets **EXCEPT** for the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
-
 
 ### Modifying Portals
 
@@ -72,7 +71,7 @@ Using the chart above as a configuration example:
 
 Each of these settings may be modified and new settings may be added based on Charts syntax. Additionally, complex transformations may be performed according to this [guide](https://github.com/axibase/atsd-use-cases/tree/master/Solutions/calculated-values), which details common transformations. For more information about advanced portal configuration, use this [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/).
 
-Likewise, series may be derived from existing data using according to this [guide](https://github.com/axibase/atsd-use-cases/tree/master/Support/Add-Calculated-Value), which shows each step from one series to another.
+Likewise, series may be derived from existing data according to this [guide](https://github.com/axibase/atsd-use-cases/tree/master/Support/Add-Calculated-Value), which shows each step from one series to another.
 
 For baselines and thresholds, data may be manually input using the `value = x` setting at the **[series]** level, where `x` is the constant value.
 
@@ -86,8 +85,8 @@ To save the portal under an entirely new URL click **Clone**.
 
 ![](images/save-clone-button.png)
 
-**TRENDS** is a sandbox for everyone, we encourage users to create their own charts and share it with othersa.
+**TRENDS** is a sandbox for everyone, we encourage users to create their own charts and share it with others.
 
 ### Further Reading 
 
-For more detailed information about the ATSD, underlying mechanics, or download instructions see the [ATSD Documentation](https://github.com/axibase/atsd) or reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com). Good luck and happy data hunting!
+For more detailed information about the ATSD, underlying mechanics, or download instructions see the [ATSD Documentation](https://github.com/axibase/atsd) or reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com) via email or [here](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page. Good luck and happy data hunting!
