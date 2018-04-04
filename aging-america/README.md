@@ -1,7 +1,7 @@
 # Aging America: Modeling Birth Trends in the United States
 
 ![](images/aging-america-title.png)
-[![](images/button-new.png)](https://trends.axibase.com/167694d7#fullscreen)
+[![](images/button-new.png)](https://trends.axibase.com/6d2469d9#fullscreen)
 
 *Fig. 1*: The upper graph shows the growing senior population contrasted against the diminishing birth rate while the lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
 
@@ -123,5 +123,6 @@ Using forecasting, the continuation of mathematical trends may be readily observ
 
 The following tools may be used to replicate these results in a local instance of ATSD:
 
+* For information about modifying data visualizations in the **TRENDS** interface, see this [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md).
 * [Forecast Configuration](resources/forecast-settings.xml);
 * For detailed information about configuring the Forecasting tool, see this [guide](/../../master/how-to/shared/import-forecast.md);
