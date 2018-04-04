@@ -22,7 +22,11 @@ In the **Editor** window you will see the configuration for the current portal. 
 
 * **[widget]**: Widget represents a chart. Define the [type](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) of chart and its parameters such as title, timespan, formatting.
 
+For detailed information about **[widget]** level settings, see the following [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/#series).
+
 * **[series]**: Each widget must have at least one series. A series is a ordered timestamped array of observations loaded from the database and visualized by the widget. **[series]** settings include the metric name, entity name, optional tags as well as an series-specific transformations.
+
+More information about selecting series can be found [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/selecting-series/).
 
 > Some settings may be defined at multiple levels. Settings defined at the **[configuration]** level are inhereted by nested levels: **[group]** > **[widget]** > **[series]**. Settings defined at the lower level override settings set at the upper level. For example, if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[series]** level for one chart you define a different entity `y`, entity `x` will be used for all widgets **EXCEPT** for the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
 
@@ -66,7 +70,7 @@ Using the chart above as a configuration example:
         style = stroke-width: 2
 ```
 
-Each of these settings may be modified and new settings may be added based on Charts syntax. Additionally, complex transformations may be performed according to this [guide](https://github.com/axibase/atsd-use-cases/tree/master/Solutions/calculated-values), which details common transformations.
+Each of these settings may be modified and new settings may be added based on Charts syntax. Additionally, complex transformations may be performed according to this [guide](https://github.com/axibase/atsd-use-cases/tree/master/Solutions/calculated-values), which details common transformations. For more information about advanced portal configuration, use this [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/).
 
 Likewise, series may be derived from existing data using according to this [guide](https://github.com/axibase/atsd-use-cases/tree/master/Support/Add-Calculated-Value), which shows each step from one series to another.
 
