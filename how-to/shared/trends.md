@@ -66,9 +66,9 @@ Each of these settings may be modified and new settings may be added based on Ch
 
 Likewise, series may be derived from existing data using according to this [guide](https://github.com/axibase/atsd-use-cases/tree/master/Support/Add-Calculated-Value), which shows each step from one dataset to another.
 
-For simpler charts (non-time series) data may be manually input using the `value = x` setting, where `x` is the desired value for some series.
+For simpler charts, non-time series data may be manually input using the `value = x` setting, where `x` is the desired value for some series.
 
-Once you have satisfactorily modified a configuration, click the **Run** button apply the new settings.
+Once you have satisfactorily modified a configuration, click the **Run** button to apply the new settings.
 
 ![](images/run-button.png)
 
