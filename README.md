@@ -34,6 +34,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 28. [The Slow Death of the American Auto Industry](Automobiles/README.md)
 29. [United States Federal Reserve: The Economic Policy Uncertainty Index](Analysis/Economic_Policy_Uncertainty/README.md)
 30. [Aging America: Modeling Birth Trends in the United States](aging-america/README.md)
+31. [Slow Growth is Becoming a Human Trend Too](Chart_of_the_Day/life-expectancy/README.md)
 
 ## Chart of the Day 
 
