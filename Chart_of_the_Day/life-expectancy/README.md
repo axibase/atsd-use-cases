@@ -91,13 +91,6 @@ value = (Math.pow(( value("x") / previous("x") ), 12) - 1) * 100
 The underlying configurations is shown here:
 
 ```sql
-[group]
-  [widget]
-    type = chart
-    entity = catalog.data.gov
-    metric = average_life_expectancy_(years)
-    title = Life Expectancy (Compounded Annual Change)
-    
   [series]
     display = false
     alias = cle
@@ -106,15 +99,62 @@ The underlying configurations is shown here:
     sex = Both Sexes
 
   [series]
-      color = red
-      label = Combined Life Expectancy
-      style = stroke-width: 5
-value = (Math.pow(( value("cle") / previous("cle") ), 12) - 1) * 100``sql
+    color = red
+    label = Combined Life Expectancy
+    style = stroke-width: 5
+    value = (Math.pow(( value("cle") / previous("cle") ), 12) - 1) * 100``sql
 ```
 
-**Weighted Average Statistical Function**
+The `previous` argument is used to select the entry preceeding the current value. The first `previous` argument returns `null` value, making it possible to use as a divisor.
+
+**Moving Average Statistical Function**
 
 While the compounded annual rate of change for this dataset showed the overall downward trend of the growth in life expectancy figure, it failed to smooth the individual points along the trend line and actually exaggerated them in some places.
 
-The weighted average [statistical function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) is a native ATSD aggregator that multiples each entry in the series by a factor which is determined by a selectable timespan instead of index position.
+The moving average [statistical function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) is a native ATSD aggregator records a new average value for any desired period of time.
 
+![](images/avg-life-exp.png)
+[![](images/button-new.png)](https://trends.axibase.com/7082a274#fullscreen)
+
+*Fig 4.* Not only is the general downward slope of the trend line visible but most of the dramatically varied points have been smoothed and moved closer to the median value. Below the Time Series chart above, the Box Chart shows that while the median values for each of the metrics has remained constant, the range has been dramtically reduced.
+
+To create such a series, add an additional **[series]** expression with a derived value using the Statistical Function syntax:
+
+```sql
+      value = avg('series', 'time')
+```
+
+Where `series` is the `alias` of the series from which the new series will be derived and `time` is the period for which the moving average will be calculated.
+
+The configuration used above may be used a template for user-derived series:
+
+```sql
+  [series]
+    display = false
+    alias = cle
+    [tags]
+    race = All Races
+    sex = Both Sexes
+   
+  [series]
+      time-offset = 1 year
+      display = false
+      alias = cleo
+      [tags]
+      race = All Races
+      sex = Both Sexes
+
+  [series]
+      style = stroke-width: 5
+      value = var v = value('cle'); var p = value('cleo'); if(p!=null && v!=null) return v - p
+      alias = delta
+      display = false
+      
+   [series]
+      label = Combined Life Expectancy
+      color = red
+      style = stroke-width: 5
+      value = avg('delta', '2.5 year')
+```
+
+The final derived series' `value` expression's `time` argument may be modified in **TRENDS** to increase or decrease the variance threshold as desired.
