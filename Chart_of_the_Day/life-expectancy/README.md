@@ -1,2 +1,75 @@
-# United States Life Expectancy
+# Slow Growth is Becoming a Human Trend Too
+
+![](images/life-exp-title.png)
+[![](images/button-new.png)](https://trends.axibase.com/f57c4e8e#fullscreen)
+
+*Fig 1.* The above chart shows United States life expectancy figures for the last three and a half decades contrasted against the age-adjusted death rate per 100,000 persons.
+
+### Overview
+
+The slowing growth of the American economy is at the forefront of many investors' minds; the United States hasn't seen 3% annual GDP growth for over a decade, a modest target in the eyes of many analysts. Meanwhile, developing countries like China and India have consistently seen twice that amount for more than thirty years now. As [US debt](/../master/Analysis/The_New_Bubble/README.md) remains nearly three times the size of Great Britain's, the country with the second largest public debt in the world, and the Social Security Administraton is [preparing to cope](/../master/aging-america/README.md) with the growing number of would-be applicants, another phenomenon is garnering more and more attention: average life expectancy.
+
+The number of Social Security recipients is growing all the time and those recipients are living for longer each year. At the same time, the number of live births is still on the decline so the number of people paying in to these already over-taxed systems is decreasing. Social Security and other disability-aid systems, often collectively refered to as "entitlements" need to be addressed by the any administration that is truely interested in reversing America's precipitous fall from economic grace. 
+
+### Objectives
+
+Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with JavaScript [Math.]() objects.
+
+### Data
+
+All data is sourced from the Center for Disease Control and Prevention and the Social Security Administration.
+
+* [NCHS - Death rates and life expectancy at birth](https://catalog.data.gov/dataset/age-adjusted-death-rates-and-life-expectancy-at-birth-all-races-both-sexes-united-sta-1900)
+* [SSA Disability Claim Data](https://catalog.data.gov/dataset/ssa-disability-claim-data)
+
+Data is visualized using **TRENDS** service from Axibase, a public data repository with subsets of public data from organizations like the United States Federal Reserve, the Central Bank of Israel, the SEC, FCC, and other government agencies.
+
+### Methodology
+
+1. Visualize Datasets using [TRENDS](https://trends.axibase.com/);
+2. Implement Math. objects to derive calculated series.
+
+### Visualization
+
+**Change in Age Expectancy by Year**
+
+Open the TRENDS visualization to toggle secondary datasets on and off using the labeled buttons along the top of the visualization. 
+
+![](images/life-exp-delta.png)
+[![](images/button-new.png)](https://trends.axibase.com/e029d65a#fullscreen)
+
+*Fig 2.* Using a variable `value` expression and a `time-offset` setting, previous-year data may be compared to current year data to show the dimishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) below the [Time Series](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) chart tracks the range of values and shows that the average growth rate of the life expectancy has been roughly achieved for the last several years from all tracked demographics.
+
+The `value` expression using to derive the above series is shown here:
+
+```sql
+value = var v = value('x'); var p = value('y'); if(p!=null && v!=null) return v - p
+```
+
+To create such a series in a local **TRENDS** instance, use the following syntax as a template:
+
+```sql
+ [series]
+    display = false
+    alias = cle
+    [tags]
+    race = All Races
+    sex = Both Sexes
+   
+  [series]
+      time-offset = 1 year
+      display = false
+      alias = cleo
+      [tags]
+      race = All Races
+      sex = Both Sexes
+
+  [series]
+      color = red
+      label = Combined Life Expectancy (Delta)
+      style = stroke-width: 5
+      value = var v = value('cle'); var p = value('cleo'); if(p!=null && v!=null) return v - p
+```
+
+For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression as the subtrahend.
 
