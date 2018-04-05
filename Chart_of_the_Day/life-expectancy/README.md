@@ -80,9 +80,9 @@ Because changes in life expectancy may fluctuate dramtically from year to year, 
 ![](images/comp-life-exp.png)
 [![](images/button-new.png)](https://trends.axibase.com/af7905a1#fullscreen)
 
-*Fig 3.* Because compounded rate of change is an additive set of values, the individual points along the line display more variance but the slope of the line is shown to be distinctly negative.
+*Fig 3.* Because compounded rate of change is an iterative set of added values, the individual points along the trend line display even more variance than before but the slope of the line is shown to be distinctly negative.
 
-Once again, a `value` expression is used to derive the above series, but here a JavaScript `Math.` method is used to create an exponential argument: 
+Once again, a `value` expression is used to derive the above series, but here a `Math.` JavaScript method is used to create an exponential argument: 
 
 ```sql
 value = (Math.pow(( value("x") / previous("x") ), 12) - 1) * 100
@@ -105,18 +105,18 @@ The underlying configuration is shown here:
     value = (Math.pow(( value("cle") / previous("cle") ), 12) - 1) * 100``sql
 ```
 
-The `previous` argument is used to select the entry preceeding the current value. The first `previous` argument returns `null` value, making it possible to use as a divisor.
+The `previous` argument is used to select the entry preceeding the current value. The first `previous` argument returns `null` value, making it possible to use as a divisor in mathematical operations.
 
 **Moving Average Statistical Function**
 
 While the compounded annual rate of change for this dataset showed the overall downward trend of the growth in life expectancy figure, it failed to smooth the individual points along the trend line and actually exaggerated them in some places.
 
-The moving average [statistical function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) is a native ATSD aggregator which records a new average value for any desired period of time.
+The moving average [statistical function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) is a native ATSD aggregator which records a new average value for some desired period of time.
 
 ![](images/avg-life-exp.png)
 [![](images/button-new.png)](https://trends.axibase.com/7082a274#fullscreen)
 
-*Fig 4.* Not only is the general downward slope of the trend line visible but most of the dramatically varied points have been smoothed and moved closer to the median value. Below the Time Series chart above, the Box Chart shows that while the median values for each of the metrics has remained constant, the range has been dramtically reduced.
+*Fig 4.* Not only is the general downward slope of the trend line visible but most of the dramatically varied datapoints have been smoothed, moving them closer to the median value. Below the Time Series chart above, the Box Chart shows that while the median values for each of the metrics has remained constant, the range has been dramtically reduced.
 
 To create such a series, add an additional **[series]** expression with a derived value using the Statistical Function syntax:
 
@@ -126,7 +126,7 @@ To create such a series, add an additional **[series]** expression with a derive
 
 Where `series` is the `alias` of the series from which the new series will be derived and `time` is the period for which the moving average will be calculated.
 
-The configuration used above may be used a template for user-derived series:
+The configuration above may be used a template for additional user-derived series:
 
 ```sql
   [series]
@@ -161,7 +161,7 @@ The final derived series' `value` expression's `time` argument may be modified i
 
 ### Conclusion
 
-The diminishing increase in United States life expectacy indicates that this may be as good as it gets for mankind. A number of [easily accessible](http://lmgtfy.com/?q=peak+life+expectancy) and recent resources have shown large research organizations coming to the same conclusion. Despite the continuous increase in nutritional, performance-enhancing, and medical / surgical options, man scientists are beginning to believe that man's current life expectancy may not reach much higher than it already has.
+The diminishing increase in United States life expectacy indicates that this may be as good as it gets for mankind. A number of [easily accessible](http://lmgtfy.com/?q=peak+life+expectancy) and recent resources have shown large research organizations coming to the same conclusion: sometime in the next 20 - 30 years we may see a complete flattening of that line. Despite the continuous increase in nutritional, performance-enhancing, and medical / surgical options, scientists are beginning to believe that man's current life expectancy may not reach much higher than it already has.
 
 ### Resources
 
