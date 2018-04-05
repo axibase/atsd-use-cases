@@ -32,9 +32,8 @@ Axibase Time Series Database: Usage Examples and Research Articles
 26. [U.S. Expatriation Statistics (Quarter 2 Update)](Expatriation_Q2/README.md)
 27. [Calls May Be Recorded or Monitored for Training Purposes: Using Call Abandonment Rates to Establish Thresholds](SF_Phone/README.md)
 28. [The Slow Death of the American Auto Industry](Automobiles/README.md)
-29. [United States Federal Reserve: The Economic Policy Uncertainty Index](Analysis/Economic_Policy_Uncertainty/README.md)
-30. [Aging America: Modeling Birth Trends in the United States](aging-america/README.md)
-31. [Slow Growth is Becoming a Human Trend Too](Chart_of_the_Day/life-expectancy/README.md)
+29. [Aging America: Modeling Birth Trends in the United States](aging-america/README.md)
+30. [Slow Growth is Becoming a Human Trend Too](Chart_of_the_Day/life-expectancy/README.md)
 
 ## Chart of the Day 
 
@@ -86,3 +85,4 @@ Axibase Time Series Database: Usage Examples and Research Articles
 3. [The New Bubble: Fed Rates Stay Low While Debt Value Remains High](Analysis/The_New_Bubble/README.md)
 4. [CPI vs. PPI: Producers are Spending Less While Consumers are Paying More](Analysis/CPI_PPI/README.md)
 5. [BitCoin After the GHash.IO Era](Analysis/BitCoin_After_GHash/README.md)
+6. [United States Federal Reserve: The Economic Policy Uncertainty Index](Analysis/Economic_Policy_Uncertainty/README.md)
