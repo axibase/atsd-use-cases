@@ -105,7 +105,7 @@ ATSD is ready to be configured to notify you via [**Slack Team Messeging**](http
 
 ### Email Notifications from ATSD
 
-Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/setting-up-email-client.md) by following the instructions here.
+Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/mail-client.md) by following the instructions here.
 
 Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule will be named `aws-cloudwatch-events`. Open the rule editor by clicking the rule name link. Select the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like email notification to be delivered.
 

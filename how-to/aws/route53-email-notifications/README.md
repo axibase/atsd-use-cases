@@ -72,7 +72,7 @@ Complete the process below to enhance Route53 alarms with your local ATSD instan
 
 7. Import the [aws-cloudwatch-alarm](rule-aws-cloudwatch-alarm.xml) rule into ATSD. For instructions on importing a new rule see the following [walkthrough](walkthrough.url).
 
-8. Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/setting-up-email-client.md).
+8. Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/mail-client.md).
 
 You're ready to start receiving detailed email notifications about endpoint health status alerts.
 
