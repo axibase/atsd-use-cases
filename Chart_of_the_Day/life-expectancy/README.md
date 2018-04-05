@@ -17,17 +17,17 @@ Track life expectancy growth using calculated series in [Axibase Times Series Da
 
 ### Data
 
-All data is sourced from the Center for Disease Control and Prevention and the Social Security Administration.
+Data is sourced from the Center for Disease Control and Prevention.
 
 * [NCHS - Death rates and life expectancy at birth](https://catalog.data.gov/dataset/age-adjusted-death-rates-and-life-expectancy-at-birth-all-races-both-sexes-united-sta-1900)
-* [SSA Disability Claim Data](https://catalog.data.gov/dataset/ssa-disability-claim-data)
 
 Data is visualized using **TRENDS** service from Axibase, a public data repository with subsets of public data from organizations like the United States Federal Reserve, the Central Bank of Israel, the SEC, FCC, and other government agencies.
 
 ### Methodology
 
 1. Visualize Datasets using [TRENDS](https://trends.axibase.com/);
-2. Implement Math. objects to derive calculated series.
+2. Implement Math. objects to derive calculated series;
+3. Use built-in [Statistical Functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions.md#statistical-functions) to transform the dataset.
 
 ### Visualization
 
@@ -73,3 +73,6 @@ To create such a series in a local **TRENDS** instance, use the following syntax
 
 For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression as the subtrahend.
 
+**Compunded Annual Rate of Change**
+
+Because changes in life expectancy may be volatile from year to year, compounding the annual rate of change 
