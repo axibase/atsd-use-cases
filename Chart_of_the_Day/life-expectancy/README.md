@@ -13,7 +13,7 @@ The number of Social Security recipients is growing all the time and those recip
 
 ### Objectives
 
-Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with JavaScript [Math.]() objects.
+Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with JavaScript [Math.]() objects and statistical functions.
 
 ### Data
 
@@ -75,4 +75,38 @@ For both series used to calculate the derived series, an `alias` is applied and 
 
 **Compunded Annual Rate of Change**
 
-Because changes in life expectancy may be volatile from year to year, compounding the annual rate of change 
+Because changes in life expectancy may change dramtically from year to year, compounding the annual rate of change is useful to smooth such volatility.
+
+![](images/comp-life-exp.png)
+[![](images/button-new.png)](https://trends.axibase.com/af7905a1#fullscreen)
+
+*Fig 3.* Because compounded rate of change is an additive set of values, the individual points along the line display more variance but the slope of the line is shown to be distinctly negative.
+
+Once again, a `value` expression is used to derive the above series, but here a JavaScript `Math.` method is used to create an exponential argument: 
+
+```sql
+value = (Math.pow(( value("x") / previous("x") ), 12) - 1) * 100
+```
+
+The underlying configurations is shown here:
+
+`[group]
+  [widget]
+    type = chart
+    entity = catalog.data.gov
+    metric = average_life_expectancy_(years)
+    title = Life Expectancy (Compounded Annual Change)
+    
+  [series]
+    display = false
+    alias = cle
+    [tags]
+    race = All Races
+    sex = Both Sexes
+
+  [series]
+      color = red
+      label = Combined Life Expectancy
+      style = stroke-width: 5
+value = (Math.pow(( value("cle") / previous("cle") ), 12) - 1) * 100``sql
+```
