@@ -111,3 +111,10 @@ The underlying configurations is shown here:
       style = stroke-width: 5
 value = (Math.pow(( value("cle") / previous("cle") ), 12) - 1) * 100``sql
 ```
+
+**Weighted Average Statistical Function**
+
+While the compounded annual rate of change for this dataset showed the overall downward trend of the growth in life expectancy figure, it failed to smooth the individual points along the trend line and actually exaggerated them in some places.
+
+The weighted average [statistical function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) is a native ATSD aggregator that multiples each entry in the series by a factor which is determined by a selectable timespan instead of index position.
+
