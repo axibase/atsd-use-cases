@@ -113,7 +113,7 @@ Forecasting for each of the original metrics is shown below for roughly 20 years
 
 *Fig 5.*: The orginial data is shown here with forecasts performed in ATSD showing the potentially widening gap between those eligible to pay in to the Social Security system and those needing to be paid out from that system. 
 
-The Forecasting tool may be scaled to work with per annumn data as seen here just as readily as millisecond-frequency data input from a sensor or other device.
+The Forecasting tool may be scaled to work with per annum data as seen here just as readily as millisecond-frequency data input from a sensor or other device.
 
 ### Conclusion
 
@@ -123,6 +123,6 @@ Using forecasting, the continuation of mathematical trends may be readily observ
 
 The following tools may be used to replicate these results in a local instance of ATSD:
 
-* For information about modifying data visualizations in the **TRENDS** interface, see this [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md).
+* For information about modifying data visualizations in the **TRENDS** interface, see this [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md);
 * [Forecast Configuration](resources/forecast-settings.xml);
-* For detailed information about configuring the Forecasting tool, see this [guide](/../../master/how-to/shared/import-forecast.md);
+* For detailed information about configuring the Forecasting tool, see this [guide](/../../master/how-to/shared/import-forecast.md).
