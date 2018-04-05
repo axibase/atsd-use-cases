@@ -75,7 +75,7 @@ For both series used to calculate the derived series, an `alias` is applied and 
 
 **Compunded Annual Rate of Change**
 
-Because changes in life expectancy may change dramtically from year to year, compounding the annual rate of change is useful to smooth such volatility.
+Because changes in life expectancy may fluctuate dramtically from year to year, compounding the annual rate of change is useful to smooth such volatility.
 
 ![](images/comp-life-exp.png)
 [![](images/button-new.png)](https://trends.axibase.com/af7905a1#fullscreen)
