@@ -90,7 +90,8 @@ value = (Math.pow(( value("x") / previous("x") ), 12) - 1) * 100
 
 The underlying configurations is shown here:
 
-`[group]
+```sql
+[group]
   [widget]
     type = chart
     entity = catalog.data.gov
