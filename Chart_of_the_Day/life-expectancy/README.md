@@ -13,7 +13,7 @@ The number of Social Security recipients is growing all the time and those recip
 
 ### Objectives
 
-Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with JavaScript [Math.](http://mathjs.org/docs/index.html) objects and native statistical functions. Use data visualizations to illustrate growth trends.
+Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with statistical functions optimized for time-series processing. Use data visualizations to illustrate growth trends.
 
 ### Data
 
@@ -21,12 +21,12 @@ Data is sourced from the Center for Disease Control and Prevention.
 
 * [NCHS - Death rates and life expectancy at birth](https://catalog.data.gov/dataset/age-adjusted-death-rates-and-life-expectancy-at-birth-all-races-both-sexes-united-sta-1900)
 
-Data is visualized using **TRENDS** service from Axibase, a public data repository with subsets of public data from organizations like the United States Federal Reserve, the Central Bank of Israel, the SEC, FCC, and other government agencies. In order to replicate data visualizations in a local ATSD instance see the [Resources](#resources) section of this article.
+Data is visualized using **TRENDS** service from Axibase, a public data repository with subsets of public data from organizations like the United States Federal Reserve, SEC, FCC, the Central Bank of Israel, and other government agencies. In order to replicate data visualizations in a local ATSD instance see the [Resources](#resources) section of this article.
 
 ### Methodology
 
 1. Visualize Datasets using [TRENDS](https://trends.axibase.com/);
-2. Implement Math. objects to derive calculated series;
+2. Implement formulas to derive calculated series;
 3. Use built-in [Statistical Functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions.md#statistical-functions) to transform the dataset.
 4. Compare the original and transformed datasets in one visualization.
 
@@ -73,9 +73,9 @@ To create such a series in a local **TRENDS** instance, use the following syntax
       value = var v = value('cle'); var p = value('cleo'); if(p!=null && v!=null) return v - p
 ```
 
-For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression as the subtrahend. For metrics with multiple tags, [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) (`*`) symbols are used. Metric tag labels are imported using [label formatting](https://axibase.com/products/axibase-time-series-database/visualization/widgets/label-formatting/) settings.
+For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression. For metrics with multiple tags, [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) (`*`) symbols are used. Metric tag labels are set automatically using [label formatting](https://axibase.com/products/axibase-time-series-database/visualization/widgets/label-formatting/) settings.
 
-**Compunded Decadal Rate of Change**
+**Compounded Decadal Rate of Change**
 
 Because changes in life expectancy may fluctuate dramatically, compounding the decadal rate of change is useful to smooth such volatility across the entire trend line. 
 
@@ -84,7 +84,7 @@ Because changes in life expectancy may fluctuate dramatically, compounding the d
 
 *Fig 3.* Because compounded rate of change is an iterative set of added values, the individual points along the trend line display even more variance than before but the slope of the line is shown to be distinctly negative.
 
-Once again, a `value` expression is used to derive the above series, but here a `Math.` JavaScript method is used to create an exponential argument: 
+Once again, a `value` expression is used to derive the above series, but here a JavaScript `Math.` library is used to create an exponential argument: 
 
 ```sql
 value = (Math.pow(( value("x") / previous("x") ), 12) - 1) 
@@ -114,7 +114,7 @@ The underlying configuration is shown here:
       format = %
 ```
 
-The `previous` argument is used to select the entry preceeding the current value. The first `previous` argument returns `null` value, making it possible to use as a divisor in mathematical operations.
+The `previous` function is used to select the entry preceeding the current value.
 
 **Moving Average Statistical Function**
 
@@ -169,7 +169,7 @@ The configuration above may be used a template for additional user-derived serie
   endfor
 ```
 
-Instead of using a wildcard to access each tag for the given series, this configuration uses the [getSeries](https://github.com/axibase/charts/blob/master/syntax/functions.md) method.
+Instead of using a wildcard to access each tag for the given series, this configuration uses the [getSeries](https://github.com/axibase/charts/blob/master/syntax/functions.md) method to load tag combinations from the server.
 
 Compare the combined life expectancy data for both sexes and racial categories on one chart to see the effects of smoothing:
 
@@ -180,7 +180,7 @@ Compare the combined life expectancy data for both sexes and racial categories o
 
 ### Conclusion
 
-The diminishing increase in United States life expectacy indicates that this may be as good as it gets for mankind. A number of [easily accessible](http://lmgtfy.com/?q=peak+life+expectancy) and recent resources have shown large research organizations coming to the same conclusion: sometime in the next 20 - 30 years we may see a complete flattening of that line. Despite the continuous increase in nutritional, performance-enhancing, and medical / surgical options, scientists are beginning to believe that man's current life expectancy may not reach much higher than it already has.
+The diminishing increase in United States life expectacy indicates that this rate of improvements may be as good as it gets for mankind. A number of [easily accessible](http://lmgtfy.com/?q=peak+life+expectancy) and recent resources have shown large research organizations coming to the same conclusion: sometime in the next 20 - 30 years we may see a complete flattening of that line. Despite the continuous increase in nutritional, performance-enhancing, and medical / surgical options, scientists are beginning to believe that man's current life expectancy may not reach much higher than it already has.
 
 ![](images/life-ex-comb.png)
 [![](images/button-new.png)](https://trends.axibase.com/feeee62f#fullscreen)
