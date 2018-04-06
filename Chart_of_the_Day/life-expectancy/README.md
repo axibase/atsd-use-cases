@@ -80,14 +80,14 @@ For both series used to calculate the derived series, an `alias` is applied and 
 Because changes in life expectancy may fluctuate dramatically, compounding the decadal rate of change is useful to smooth such volatility across the entire trend line. 
 
 ![](images/comp-life-ex.png)
-[![](images/button-new.png)](https://trends.axibase.com/2bc28990#fullscreen)
+[![](images/button-new.png)](https://trends.axibase.com/e9e54d0f#fullscreen)
 
 *Fig 3.* Because compounded rate of change is an iterative set of added values, the individual points along the trend line display even more variance than before but the slope of the line is shown to be distinctly negative.
 
 Once again, a `value` expression is used to derive the above series, but here a `Math.` JavaScript method is used to create an exponential argument: 
 
 ```sql
-value = (Math.pow(( value("x") / previous("x") ), 12) - 1) * 100
+value = (Math.pow(( value("x") / previous("x") ), 12) - 1) 
 ```
 
 The underlying configuration is shown here:
@@ -110,7 +110,8 @@ The underlying configuration is shown here:
     [series]
       label-format = tags.race\ntags.sex
       style = stroke-width: 5
-      value = (Math.pow(( value("cle") / previous("cle") ), 120) - 1) * 100
+      value = (Math.pow(( value("cle") / previous("cle") ), 120) - 1)
+      format = %
 ```
 
 The `previous` argument is used to select the entry preceeding the current value. The first `previous` argument returns `null` value, making it possible to use as a divisor in mathematical operations.
@@ -180,6 +181,14 @@ Compare the combined life expectancy data for both sexes and racial categories o
 ### Conclusion
 
 The diminishing increase in United States life expectacy indicates that this may be as good as it gets for mankind. A number of [easily accessible](http://lmgtfy.com/?q=peak+life+expectancy) and recent resources have shown large research organizations coming to the same conclusion: sometime in the next 20 - 30 years we may see a complete flattening of that line. Despite the continuous increase in nutritional, performance-enhancing, and medical / surgical options, scientists are beginning to believe that man's current life expectancy may not reach much higher than it already has.
+
+![](images/life-ex-comb.png)
+[![](images/button-new.png)](https://trends.axibase.com/feeee62f#fullscreen)
+
+*Fig 6.* Open the **TRENDS** visualization above and disable the series as shown to reproduce the above visualization showing that allow life expectancy continues to increase, the derivative rate of increase is approaching zero. 
+
+Under the assumption that human life expectancy will increase roughly 1.4 years each decade and calculating from the current combined life expectancy value (78.9 years), American life expectancy will reach 100 years in roughly 151 years. Stay tuned for updates.
+
 
 ### Resources
 
