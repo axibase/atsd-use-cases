@@ -35,7 +35,7 @@ Data is visualized using **TRENDS** service from Axibase, a public data reposito
 
 Open the TRENDS visualization to toggle secondary datasets on and off using the labeled buttons along the top of the visualization. 
 
-![](images/life-exp-10.png)
+![](images/life-ex-10.png)
 [![](images/button-new.png)](https://trends.axibase.com/172ff342#fullscreen)
 
 *Fig 2.* Using a variable `value` expression and a `time-offset` setting, previous-year data may be compared to current-year data to show the dimishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) below the [Time Series](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) chart tracks the range of values and shows that the average growth rate of the life expectancy has been roughly achieved for the last several years from all tracked demographics.
