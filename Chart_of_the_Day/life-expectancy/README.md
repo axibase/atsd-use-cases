@@ -72,7 +72,7 @@ To create such a series in a local **TRENDS** instance, use the following syntax
       value = var v = value('cle'); var p = value('cleo'); if(p!=null && v!=null) return v - p
 ```
 
-For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression as the subtrahend. For metrics with multiple tags, [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) (`*`) symbols are supported.
+For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression as the subtrahend. For metrics with multiple tags, [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) (`*`) symbols are used and metric tag labels may be imported using [label formatting](https://axibase.com/products/axibase-time-series-database/visualization/widgets/label-formatting/) functionality.
 
 **Compunded Decadal Rate of Change**
 
@@ -118,10 +118,10 @@ The `previous` argument is used to select the entry preceeding the current value
 
 While the compounded annual rate of change for this dataset showed the overall downward trend of the growth in life expectancy figure, it failed to smooth the individual points along the trend line and actually exaggerated them in some places.
 
-The moving average [statistical function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) is a native ATSD aggregator which records a new average value for some desired period of time.
+The moving average [statistical function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) is a native ATSD aggregator which records a new average value for some number of index positions, in this case each index position represents one year.
 
-![](images/avg-life-exp.png)
-[![](images/button-new.png)](https://trends.axibase.com/7082a274#fullscreen)
+![](images/smooth-life-ex.png)
+[![](images/button-new.png)](https://trends.axibase.com/0533f119#fullscreen)
 
 *Fig 4.* Not only is the general downward slope of the trend line visible but most of the dramatically varied datapoints have been smoothed, moving them closer to the median value. Below the Time Series chart above, the Box Chart shows that while the median values for each of the metrics has remained constant, the range has been dramtically reduced.
 
@@ -136,35 +136,38 @@ Where `series` is the `alias` of the series from which the new series will be de
 The configuration above may be used a template for additional user-derived series:
 
 ```sql
+[group]
+  [widget]
+    type = chart
+    entity = catalog.data.gov
+    metric = average_life_expectancy_(years)
+    title = Life Expectancy Time Series (5 Year Percentage Change From Last Year Moving Average)
+
+    var seriesDescriptors = getSeries("average_life_expectancy_(years)", "catalog.data.gov")
+    
+  	for descriptor in seriesDescriptors
+    
+  [series]
+    alias = cle-@{descriptor.tags.race}-@{descriptor.tags.sex}
+    display = false
+    [tags]
+    race = @{descriptor.tags.race}
+    sex = @{descriptor.tags.sex} 
+      
   [series]
     display = false
-    alias = cle
-    [tags]
-    race = All Races
-    sex = Both Sexes
+    value = (value('cle-@{descriptor.tags.race}-@{descriptor.tags.sex}')/previous('cle-@{descriptor.tags.race}-@{descriptor.tags.sex}')-1)*100
+    alias = cleo-@{descriptor.tags.race}-@{descriptor.tags.sex}
+    label-format = @{descriptor.tags.race}\n@{descriptor.tags.sex}
    
   [series]
-      time-offset = 1 year
-      display = false
-      alias = cleo
-      [tags]
-      race = All Races
-      sex = Both Sexes
+    value = movavg('cleo-@{descriptor.tags.race}-@{descriptor.tags.sex}', 5)
+    label-format = Smoothed: @{descriptor.tags.race}\n@{descriptor.tags.sex}
 
-  [series]
-      style = stroke-width: 5
-      value = var v = value('cle'); var p = value('cleo'); if(p!=null && v!=null) return v - p
-      alias = delta
-      display = false
-      
-   [series]
-      label = Combined Life Expectancy
-      color = red
-      style = stroke-width: 5
-      value = avg('delta', '2.5 year')
+  endfor
 ```
 
-The final derived series' `value` expression's `time` argument may be modified in **TRENDS** to increase or decrease the variance threshold as desired.
+Instead of using a wildcard to access each tag for the given series, this configuration uses the [getSeries](https://github.com/axibase/charts/blob/master/syntax/functions.md) method. 
 
 ### Conclusion
 
