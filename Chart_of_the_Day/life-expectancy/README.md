@@ -38,7 +38,7 @@ Open the TRENDS visualization to toggle secondary datasets on and off using the 
 ![](images/life-ex-10.png)
 [![](images/button-new.png)](https://trends.axibase.com/172ff342#fullscreen)
 
-*Fig 2.* Using a variable `value` expression and a `time-offset` setting, previous-year data may be compared to current-year data to show the dimishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) below the [Time Series](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) chart tracks the range of values and shows that the average growth rate of the life expectancy has been roughly achieved for the last several years from all tracked demographics.
+*Fig 2.* Using a variable `value` expression and a `time-offset` setting, previous-year data may be compared to current-year data to show the dimishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) below the [Time Series](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) chart tracks the distribution range of values and shows that the average growth rate of the life expectancy has not achieved for the last several years from all tracked demographics.
 
 The `value` expression using to derive the above series is shown here:
 
@@ -49,36 +49,37 @@ value = var v = value('x'); var p = value('y'); if(p!=null && v!=null) return v 
 To create such a series in a local **TRENDS** instance, use the following syntax as a template:
 
 ```sql
- [series]
+[group]
+  [widget]
+    type = chart
+    title = Life Expectancy (Change from Previous Decade)
+     [tags]
+      race = *
+      sex = *
+    
+  [series]
     display = false
     alias = cle
-    [tags]
-    race = All Races
-    sex = Both Sexes
    
   [series]
-      time-offset = 1 year
+      time-offset = 10 year
       display = false
       alias = cleo
-      [tags]
-      race = All Races
-      sex = Both Sexes
 
   [series]
-      color = red
-      label = Combined Life Expectancy (Delta)
+      label-format = tags.race\ntags.sex
       style = stroke-width: 5
       value = var v = value('cle'); var p = value('cleo'); if(p!=null && v!=null) return v - p
 ```
 
-For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression as the subtrahend.
+For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression as the subtrahend. For metrics with multiple tags, [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) (`*`) symbols are supported.
 
-**Compunded Annual Rate of Change**
+**Compunded Decadal Rate of Change**
 
-Because changes in life expectancy may fluctuate dramtically from year to year, compounding the annual rate of change is useful to smooth such volatility.
+Because changes in life expectancy may fluctuate dramatically, compounding the decadal rate of change is useful to smooth such volatility across the entire trend line. 
 
-![](images/comp-life-exp.png)
-[![](images/button-new.png)](https://trends.axibase.com/3b0ab475#fullscreen)
+![](images/comp-life-ex.png)
+[![](images/button-new.png)](https://trends.axibase.com/2bc28990#fullscreen)
 
 *Fig 3.* Because compounded rate of change is an iterative set of added values, the individual points along the trend line display even more variance than before but the slope of the line is shown to be distinctly negative.
 
@@ -91,21 +92,27 @@ value = (Math.pow(( value("x") / previous("x") ), 12) - 1) * 100
 The underlying configuration is shown here:
 
 ```sql
-  [series]
-    display = false
-    alias = cle
-    [tags]
-    race = All Races
-    sex = Both Sexes
+[group]
+  [widget]
+    type = chart
+    entity = catalog.data.gov
+    metric = average_life_expectancy_(years)
+    title = Life Expectancy (Compounded Annual Change)
 
-  [series]
-    color = red
-    label = Combined Life Expectancy
-    style = stroke-width: 5
-    value = (Math.pow(( value("cle") / previous("cle") ), 12) - 1) * 100``sql
+    [series]
+      display = false
+      alias = cle
+      [tags]
+      race = *
+      sex = *
+
+    [series]
+      label-format = tags.race\ntags.sex
+      style = stroke-width: 5
+      value = (Math.pow(( value("cle") / previous("cle") ), 120) - 1) * 100
 ```
 
-The `previous` argument is used to select the entry preceeding the current value. The first `previous` argument returns `null` value, making it possible to use as a divisor in mathematical operations.
+The `previous` argument is used to select the entry preceeding the current value. The first `previous` argument returns `null` value, making it possible to use as a divisor in mathematical operations. Once again, wildcard symbols are used to select all tags contained in the given metric.
 
 **Moving Average Statistical Function**
 
