@@ -123,7 +123,7 @@ The moving average [statistical function](https://axibase.com/products/axibase-t
 ![](images/smooth-life-ex.png)
 [![](images/button-new.png)](https://trends.axibase.com/0533f119#fullscreen)
 
-*Fig 4.* Not only is the general downward slope of the trend line visible but most of the dramatically varied datapoints have been smoothed, moving them closer to the median value. Below the Time Series chart above, the Box Chart shows that while the median values for each of the metrics has remained constant, the range has been dramtically reduced.
+*Fig 4.* Not only is the general downward slope of the trend line visible but most of the dramatically varied datapoints have been smoothed, moving them closer to the median value. The upper time series chart shows the smoothed data, the lower chart shows the original data for comparison.
 
 To create such a series, add an additional **[series]** expression with a derived value using the Statistical Function syntax:
 
@@ -167,7 +167,14 @@ The configuration above may be used a template for additional user-derived serie
   endfor
 ```
 
-Instead of using a wildcard to access each tag for the given series, this configuration uses the [getSeries](https://github.com/axibase/charts/blob/master/syntax/functions.md) method. 
+Instead of using a wildcard to access each tag for the given series, this configuration uses the [getSeries](https://github.com/axibase/charts/blob/master/syntax/functions.md) method.
+
+Compare the combined life expectancy data for both sexes and racial categories on one chart to see the effects of smoothing:
+
+![](images/life-ex-comp.png)
+[![](images/button-new.png)](https://trends.axibase.com/1e7242d7#fullscreen)
+
+*Fig 5.*: The original life expenctancy change from previous year data is shown here with the same data after it the `movavg` function has been applied.
 
 ### Conclusion
 
