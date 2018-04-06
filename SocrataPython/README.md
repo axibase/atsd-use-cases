@@ -4,7 +4,7 @@
 
 This **10 minute** tutorial demonstrates how to load a [data.gov](https://catalog.data.gov/dataset/solar-photovoltaic-pv-incentive-program-completed-projects-by-city-and-contractor-beginnin) dataset into a python DataFrame in a few simple steps.
 
-For this particular exercise, we'll import the data on the [New York State Solar Photovoltaic Incentive Program](https://www.nyserda.ny.gov/All-Programs/Programs/NY-Sun/Customers) into Axibase Time Series Database and will query it with SQL to identify the top 10 contractors by total project cost and installed capacity.
+For this particular exercise, we'll import the data on the [New York State Solar Photovoltaic Incentive Program](https://www.nyserda.ny.gov/All-Programs/Programs/NY-Sun/Customers) into Axibase Time Series Database and query it with SQL to identify the top 10 contractors by total project cost and installed capacity.
 
 ## Prerequisites
 
@@ -117,6 +117,6 @@ print(tabulate(df, headers='keys', tablefmt='psql'))
 
 ### Conclusion
 
-The tutorial provides an example on how to load one particular data.gov dataset into ATSD while minimizing time spent on designing table schemas and implementing parsers.
+This tutorial provides an example on how to load one particular data.gov dataset into ATSD while minimizing time spent on designing table schemas and implementing parsers.
 
 In a more advanced (consolidation) scenario, the Collector can be scheduled to store and even incrementally update a wide range of datasets from data.gov into the same ATSD instance. This can be accomplished by creating additional [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md) jobs in the Collector web interface accessible at https://localhost:9443.
