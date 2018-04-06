@@ -1,7 +1,7 @@
 # Slow Growth is Becoming a Human Trend Too
 
-![](images/life-exp-title.png)
-[![](images/button-new.png)](https://trends.axibase.com/f57c4e8e#fullscreen)
+![](images/life-ex-title.png)
+[![](images/button-new.png)](https://trends.axibase.com/a31598af#fullscreen)
 
 *Fig 1.* The above chart shows United States life expectancy figures for the last three and a half decades contrasted against the age-adjusted death rate per 100,000 persons.
 
@@ -13,7 +13,7 @@ The number of Social Security recipients is growing all the time and those recip
 
 ### Objectives
 
-Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with JavaScript [Math.]() objects and native statistical functions.
+Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with JavaScript [Math.](http://mathjs.org/docs/index.html) objects and native statistical functions.
 
 ### Data
 
@@ -31,12 +31,12 @@ Data is visualized using **TRENDS** service from Axibase, a public data reposito
 
 ### Visualization
 
-**Change in Age Expectancy by Year**
+**Change in Age Expectancy from Previous Decade**
 
 Open the TRENDS visualization to toggle secondary datasets on and off using the labeled buttons along the top of the visualization. 
 
-![](images/life-exp-delta.png)
-[![](images/button-new.png)](https://trends.axibase.com/e029d65a#fullscreen)
+![](images/life-exp-10.png)
+[![](images/button-new.png)](https://trends.axibase.com/172ff342#fullscreen)
 
 *Fig 2.* Using a variable `value` expression and a `time-offset` setting, previous-year data may be compared to current-year data to show the dimishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) below the [Time Series](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) chart tracks the range of values and shows that the average growth rate of the life expectancy has been roughly achieved for the last several years from all tracked demographics.
 
@@ -78,7 +78,7 @@ For both series used to calculate the derived series, an `alias` is applied and 
 Because changes in life expectancy may fluctuate dramtically from year to year, compounding the annual rate of change is useful to smooth such volatility.
 
 ![](images/comp-life-exp.png)
-[![](images/button-new.png)](https://trends.axibase.com/af7905a1#fullscreen)
+[![](images/button-new.png)](https://trends.axibase.com/3b0ab475#fullscreen)
 
 *Fig 3.* Because compounded rate of change is an iterative set of added values, the individual points along the trend line display even more variance than before but the slope of the line is shown to be distinctly negative.
 
@@ -168,4 +168,5 @@ The diminishing increase in United States life expectacy indicates that this may
 The following tools may be used to replicate these results in a local ATSD instance:
 
 * Instructional [guide](/../master/how-to/shared/trends.md) for using **TRENDS**;
-* [Death rates and life expectancy data](#data)
+* [Death rates and life expectancy data](#data);
+* Use this [guide](/../../blob/master/SocrataPython/README.md) to quickly upload data.gov datasets to a local ATSD instance.
