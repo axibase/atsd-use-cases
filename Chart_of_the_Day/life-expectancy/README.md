@@ -13,7 +13,7 @@ The number of Social Security recipients is growing all the time and those recip
 
 ### Objectives
 
-Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with JavaScript [Math.](http://mathjs.org/docs/index.html) objects and native statistical functions.
+Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with JavaScript [Math.](http://mathjs.org/docs/index.html) objects and native statistical functions. Use data visualizations to illustrate growth trends.
 
 ### Data
 
@@ -21,13 +21,14 @@ Data is sourced from the Center for Disease Control and Prevention.
 
 * [NCHS - Death rates and life expectancy at birth](https://catalog.data.gov/dataset/age-adjusted-death-rates-and-life-expectancy-at-birth-all-races-both-sexes-united-sta-1900)
 
-Data is visualized using **TRENDS** service from Axibase, a public data repository with subsets of public data from organizations like the United States Federal Reserve, the Central Bank of Israel, the SEC, FCC, and other government agencies.
+Data is visualized using **TRENDS** service from Axibase, a public data repository with subsets of public data from organizations like the United States Federal Reserve, the Central Bank of Israel, the SEC, FCC, and other government agencies. In order to replicate data visualizations in a local ATSD instance see the [Resources](#resources) section of this article.
 
 ### Methodology
 
 1. Visualize Datasets using [TRENDS](https://trends.axibase.com/);
 2. Implement Math. objects to derive calculated series;
 3. Use built-in [Statistical Functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions.md#statistical-functions) to transform the dataset.
+4. Compare the original and transformed datasets in one visualization.
 
 ### Visualization
 
@@ -72,7 +73,7 @@ To create such a series in a local **TRENDS** instance, use the following syntax
       value = var v = value('cle'); var p = value('cleo'); if(p!=null && v!=null) return v - p
 ```
 
-For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression as the subtrahend. For metrics with multiple tags, [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) (`*`) symbols are used and metric tag labels may be imported using [label formatting](https://axibase.com/products/axibase-time-series-database/visualization/widgets/label-formatting/) functionality.
+For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression as the subtrahend. For metrics with multiple tags, [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) (`*`) symbols are used. Metric tag labels are imported using [label formatting](https://axibase.com/products/axibase-time-series-database/visualization/widgets/label-formatting/) settings.
 
 **Compunded Decadal Rate of Change**
 
@@ -112,7 +113,7 @@ The underlying configuration is shown here:
       value = (Math.pow(( value("cle") / previous("cle") ), 120) - 1) * 100
 ```
 
-The `previous` argument is used to select the entry preceeding the current value. The first `previous` argument returns `null` value, making it possible to use as a divisor in mathematical operations. Once again, wildcard symbols are used to select all tags contained in the given metric.
+The `previous` argument is used to select the entry preceeding the current value. The first `previous` argument returns `null` value, making it possible to use as a divisor in mathematical operations.
 
 **Moving Average Statistical Function**
 
