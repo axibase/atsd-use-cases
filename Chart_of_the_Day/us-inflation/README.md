@@ -30,6 +30,8 @@ The `threshold` sections calculate and display top and bottom deciles for the mo
 
 The chart is created using the declarative [graphics syntax](https://axibase.com/products/axibase-time-series-database/visualization/) implemented in the [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database).
 
+Currently, the Federal Reserve's stated target inflation level is around 2%. Fed Chairman Jerome Powell [has claimed](https://www.bloomberg.com/news/articles/2018-04-06/who-needs-an-economics-ph-d-as-powell-unravels-inflation-riddle) that online-only retailers like Amazon and others have contributed to keeping inflation levels down because of their ability to completely streamline their business models. Not exactly a criticism, but certainly not the kind of glowing praise Jeff Bezos et al are used to receiving from Obama-era policy makers.
+
 ### Configuration
 
 This section of the article discusses the underlying settings used for the chart above. For introductory information on using **TRENDS**, see this [guide](/../master/how-to/shared/trends.md).
