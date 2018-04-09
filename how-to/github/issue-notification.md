@@ -25,7 +25,7 @@ https://user:PWD@atsd_host/api/v1/messages/webhook/github?type=webhook&entity=gi
 
 * **Content Type**: application/json
 * Click **Disbale SSL Verification** and confirm the setting.
-* Select **Let me individual events** under **Which events would you like to trigger this webhook?** and select **Watches**. 
+* Select **Let me individual events** under **Which events would you like to trigger this webhook?** and select **Issues**. 
 
 ![](images/webhook-config.png)
 
