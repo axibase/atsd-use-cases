@@ -64,7 +64,7 @@ All applications started
 
 ### Import Rule Configuration
 
-In ATSD, import the following [rule configuration](resources/issue-rule.xml) to ATSD. For instructions on importing a rule configuration use this [guide](/../master/how-to/shared/import-rule.md). Configure your messenger of choice according to one of the following guides:
+In ATSD, import the following [rule configuration](resources/github-issue-rule.xml) to ATSD. For instructions on importing a rule configuration use this [guide](/../master/how-to/shared/import-rule.md). Configure your messenger of choice according to one of the following guides:
 
 * [Slack](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md)
 * [Telegram](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md)
