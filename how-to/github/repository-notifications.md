@@ -28,6 +28,10 @@ https://user:PWD@atsd_host/api/v1/messages/webhook/github?type=webhook&entity=gi
 
 ![](images/webhook-config.png)
 
+Be sure that your server is exposed to receiving webhooks from GitHub, for more information about configuring your server use this [guide](https://developer.github.com/webhooks/configuring/). Once your server and webhook have been properly configured, confirm connectivity at the bottom of the **Manage Webhook** page.
+
+![](images/deliv-confirm.png)
+
 ### Launch ATSD Sandbox
 
 Launch a local ATSD instance using the following sandbox image:
@@ -55,6 +59,15 @@ All applications started
 
 ```
 
-* Replace `atsd-host`, `user` and `password` in payload URL template above using valid information from Docker logs. Default username and password with be `axibase`.
+* Replace `atsd-host`, `user` and `password` in payload URL template above using valid information from Docker logs. Default username and password will be `axibase`.
 
 ### Import Rule Configuration
+
+In ATSD, import the following [rule configuration](resources/github-rule.xml) to ATSD. For instructions on importing a rule configuration use this [guide](/../master/how-to/shared/import-rule.md). Configure your messenger of choice according to one of the following guides:
+
+* [Slack](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md)
+* [Telegram](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md)
+
+After you have configured ATSD, GitHub, and the desired messenger service, new watch notifications will be delivered to any device where you can access the messenger service.
+
+![](images/message.png)
