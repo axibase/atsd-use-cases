@@ -6,6 +6,10 @@ This guide shows how to configure GitHub to alert you when someone raises an iss
 
 ![](images/title-workflow.png)
 
+### Purpose
+
+Many GitHub repositories contains thousands of lines of code across a seemingly endless number of unique pages. Logging in to GitHub several times a day to check for new issues is time-consuming, tedious, and ineffective. Use **Issue Notifications** to spend your time on the projects that matter and focus your attention on malformed code and errors only when issues are raised, either by internal staff or end-users.
+
 ### Launch ATSD Sandbox
 
 Launch a local ATSD instance using the following sandbox image:
