@@ -1,9 +1,7 @@
 # Using Thresholds to Track United States Inflation
 
-![](images/us-inflation.png)
-[![](images/button-new.png)](https://trends.axibase.com/491c2442#fullscreen)
-
-
+![](images/inflation-title.png)
+[![](images/button-new.png)](https://trends.axibase.com/5bb4621e#fullscreen)
 
 ### Overview
 
@@ -86,9 +84,16 @@ The configuration for the above chart is shown here:
     color = DeepSkyBlue
     pointer-position = left
     alias = t-2
+    
+  [threshold]
+    value = 2.00
+    label = Fed Target Inflation
+    color = black
+    pointer-position = left
+    alias = t-3
 ```
 
-There are four series in this configuration, defined by their `alias` setting:
+There are five series in this configuration, defined by their `alias` setting:
 
 * **s-1**: United States Experimental CPI value for all items, sourced from the United States Federal Reserve [FRED API](https://fred.stlouisfed.org/series/CPIEALL). This series has a `display = false` expression so that it will not be shown in the final version of the visualization but may still be used for deriving a new series. When displayed, the series will be placed on the right axis using a [dual-axis](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting, which is helpful when visualizing series with dramatically different orders of magnitude.
 
@@ -96,6 +101,8 @@ There are four series in this configuration, defined by their `alias` setting:
 
 * **t-1**: The upper-limit threshold is defined with a `value` setting, `value = percentile(90, 's-2', '10 year')`, where the first argument is the desired percentile, the second argument is the series from which the value should be calculated, and the third is the time period for applying the statistic.
 
-* **t-2**: The lower-limit threshold is defined similar to **t-1** except the percentile is specified as 10%.
+* **t-2**: The lower-limit threshold is defined similarly to **t-1** except the percentile is specified as 10%.
+
+* **t-3**: The Fed's target inflation level is defined similarly to **t-1** and **t-2** 
 
 Complete Charts documentation may be found [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
