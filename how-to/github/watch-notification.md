@@ -6,6 +6,10 @@ This guide shows how to configure GitHub to alert you when someone begins to wat
 
 ![](images/title-workflow.png)
 
+### Purpose
+
+Many repositories encapsulate a broad range of code and documentation to which end-users respond by subscribing. Turn your public repositories into market research and product experimentation with **Subscription Notifications**. New releases which generate a large number of subscriptions may be tracked without manually monitoring your watchlists, and obsolete repositiories which no longer garner much attention may be simplified and integrated to streamline your company's GitHub optics.
+
 ### Launch ATSD Sandbox
 
 Launch a local ATSD instance using the following sandbox image:
