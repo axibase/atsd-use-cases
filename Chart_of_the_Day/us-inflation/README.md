@@ -3,7 +3,7 @@
 ![](images/us-inflation.png)
 [![](images/button-new.png)](https://trends.axibase.com/491c2442#fullscreen)
 
-*Fig 1.* The chart above tracks percentile inflation for the United States for a two-decade period beginning in 2000 and uses an `alert-expression` and **[threshold]** configuration to highlight values greater than the 90th-percentile and less that the 10th-percentile values.
+*Fig 1.* The chart above tracks percentile inflation for the United States for a two-decade period beginning in 2000 and uses an `alert-expression` and **[threshold]** configuration to highlight values greater than the 90th-percentile and less than the 10th-percentile values.
 
 ### Overview
 
@@ -17,6 +17,10 @@ Inflation is an oft-debated topic which many experts claim is a nessesary part o
 |Nov 1923|726,000,000,000.0|
 
 The hyperinflation documentated during 1920s Germany created the economic desperation which resulted in the 1929-1930 German Great Depression that many historians credit as being among the main reasons for the meteoric rise of Hitler's National Socialist Party, who had won just 2.6% of the vote in 1928, but went on to become Germany's second-largest political party within 5 years.
+
+Conversely, too little inflation has been known to create what John Maynard Keynes refered to as the Paradox of Thrift whereby consumers refuse to consistently purchase new goods, instead opting to wait until the price inevitably decreases dues to low or negative inflation. This phenomenon has been known to exacerbate economies already mired in recession as consumers stop spending, so businesses are unable to produce goods or afford employee salaries, so more people are laid off and begin to spend even less. This trend is often personified by the Japanese economy during the early 2000s as they recovered from the Lost Decade, marked by a speculative asset bubble of Japanese land and goods which was brought to a head with the Japanese stock market crash in 1989.
+
+Naturally, the ideal level of inflation is somewhere between these two extremes; high enough to encourage growth and consumption but low enough to keep the cost of living manageable. As the Fed has announced plans to raise the interest rate as many as three time in 2018, with a target inflation of 2%, the current generation of economic policy makers have their work cut out for them.
 
 ### Resources
 
