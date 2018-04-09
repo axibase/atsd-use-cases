@@ -4,7 +4,37 @@
 
 This guide shows how to configure GitHub to alert you when someone begins to watch your reposity. This feature allows you to monitor your repository's followers. Follow the instructions to configure the notifications to be sent to you directly through a third-party messenger service with [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/).
 
-![](images/title-chart.png)
+![](images/title-workflow.png)
+
+### Launch ATSD Sandbox
+
+Launch a local ATSD instance using the following sandbox image:
+
+```
+docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
+  --name=atsd-sandbox \
+  --env SERVER_URL=https://example.com \
+  --env WEBHOOK=github \
+  axibase/atsd-sandbox:latest
+```
+
+For detailed launch information, or advanced launch configuration settings use the following [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
+
+Confirm successful launch and acquire hostname information by consulting Docker logs:
+
+```
+docker logs -f atsd-sandbox
+```
+
+Wait for `All applications started` notification:
+
+```
+[Collector] Account 'axibase' created.
+All applications started
+
+```
+
+* Replace `atsd-host`, `user` and `password` in payload URL template below using valid information from Docker logs. Default username and password will be `axibase`.
 
 ### Create a GitHub Webhook
 
@@ -31,35 +61,6 @@ https://user:PWD@atsd_host/api/v1/messages/webhook/github?type=webhook&entity=gi
 Be sure that your server is exposed to receiving webhooks from GitHub, for more information about configuring your server use this [guide](https://developer.github.com/webhooks/configuring/). Once your server and webhook have been properly configured, confirm connectivity at the bottom of the **Manage Webhook** page.
 
 ![](images/deliv-confirm.png)
-
-### Launch ATSD Sandbox
-
-Launch a local ATSD instance using the following sandbox image:
-
-```
-docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
-  --name=atsd-sandbox \
-  --volume /var/run/docker.sock:/var/run/docker.sock \
-  axibase/atsd-sandbox:latest
-```
-
-For detailed launch information, or advanced launch configuration settings use the following [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
-
-Confirm successful launch and acquire hostname information by consulting Docker logs:
-
-```
-docker logs -f atsd-sandbox
-```
-
-Wait for `All applications started` notification:
-
-```
-[Collector] Account 'axibase' created.
-All applications started
-
-```
-
-* Replace `atsd-host`, `user` and `password` in payload URL template above using valid information from Docker logs. Default username and password will be `axibase`.
 
 ### Import Rule Configuration
 
