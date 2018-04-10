@@ -21,7 +21,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
   --env SERVER_URL=https://example.com \
   --env WEBHOOK=github \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/repo-notifications/how-to/github/resources/github-watch-rule.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/repo-notifications/how-to/github/resources/github-watch-event.xml' \
   axibase/atsd-sandbox:latest
 ```
 
