@@ -62,21 +62,21 @@ tags.sender.login != null</filter>
 <webNotificationConfigName>Slack</webNotificationConfigName>
 <firstWebConfigParameters>
 <key>text</key>
-<value>[${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
-User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
-Repository: ${addLink('https://github.com/' + tags.repository.name)</value>
+<value>New Repository Watch Notification:
+Repository: ${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.
+User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}</value>
 </firstWebConfigParameters>
 <repeatWebConfigParameters>
 <key>text</key>
-<value>[${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
-User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
-Repository: ${addLink('https://github.com/' + tags.repository.name)</value>
+<value>New Repository Watch Notification:
+Repository: ${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.
+User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}</value>
 </repeatWebConfigParameters>
 <cancelWebConfigParameters>
 <key>text</key>
-<value>[${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
-User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
-Repository: ${addLink('https://github.com/' + tags.repository.name)</value>
+<value>New Repository Watch Notification:
+Repository: ${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.
+User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}</value>
 </cancelWebConfigParameters>
 <first-enabled>true</first-enabled>
 <repeat-enabled>true</repeat-enabled>
