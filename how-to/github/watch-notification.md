@@ -27,7 +27,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 
 Replace the `SERVER_URL` parameter in the command above with the public DNS name of the Docker host where the sandbox container will be running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
 
-For detailed launch information, or advanced launch configuration settings use the following [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
+For advanced launch settings refer to the following [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
 Watch the sandbox container logs for `All applications started` line.
 
@@ -110,4 +110,4 @@ On the **Web Notifications** tab, enable the rule. Click **Save**.
 
 You'll begin receiving messenger notifications the next time a new subscriber begins to watch your GitHub repository.
 
-![](images/slack_watch.png)
+![](images/slack-watch.png)
