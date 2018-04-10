@@ -4,7 +4,7 @@
 
 This guide shows how to configure GitHub to alert you when someone begins to watch your reposity. This feature allows you to monitor your repository's followers. Follow the instructions to configure the notifications to be sent to you directly through a third-party messenger service with [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/).
 
-![](images/title-workflow.png)
+![](images/workflow2.png)
 
 ### Purpose
 
@@ -84,15 +84,6 @@ Configure your [messenger of choice](https://github.com/axibase/atsd/blob/master
 
 ![](images/message.png)
 
-### Configure Web Notification
-
-Configure your [messenger of choice](https://github.com/axibase/atsd/blob/master/rule-engine/web-notifications.md#collaboration-services), for example:
-
-* [Slack](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md)
-* [Telegram](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md)
-
-### Configure Alert Rule to Process GitHub Webhook Requests
-
 In the ATSD environment, open the left-side **Alerts** menu and select **Web Notifications**.
 
 ![](images/alerts-wn.png)
@@ -104,5 +95,19 @@ Select the messenger which you've configured from the list on the **Web Notifica
 On the messenger-specific page, be sure that the **Web Notification** is enabled. In the **Auth Token** field, insert the authentication token you received from your messenger of choice. Configure additional parameters as needed such as **Bot Username** and click **Save**
 
 ![](images/web-notifications.png)
+
+### Configure Alert Rule to Process GitHub Webhook Requests
+
+Navigate to the **Rules** page as shown here.
+
+![](images/alerts-rules.png)
+
+Open the rule configuration by clicking the link in the **Name** column.
+
+![](images/open-watch-rule.png)
+
+On the **Web Notifications** tab, enable the rule. Click **Save**.
+
+![](images/wn-watch.png)
 
 You'll begin receiving messenger notifications the next time a new subscriber begins to watch your GitHub repository.
