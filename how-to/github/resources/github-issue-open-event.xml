@@ -60,7 +60,7 @@ tags.sender.login != null</filter>
 <cancel-screenshot>false</cancel-screenshot>
 <repeat-as-open>true</repeat-as-open>
 <cancel-as-open>true</cancel-as-open>
-<webNotificationConfigName>slack-devops</webNotificationConfigName>
+<webNotificationConfigName>Slack</webNotificationConfigName>
 <firstWebConfigParameters>
 <key>text</key>
 <value>${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
