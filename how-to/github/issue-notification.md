@@ -75,7 +75,6 @@ On the **Webhook Requests** page, you will see your newly-configured webhook. Un
 
 ![](images/webhook-confirm.png)
 
-
 ### Configure Web Notification
 
 Configure your [messenger of choice](https://github.com/axibase/atsd/blob/master/rule-engine/web-notifications.md#collaboration-services), for example:
@@ -83,6 +82,18 @@ Configure your [messenger of choice](https://github.com/axibase/atsd/blob/master
 * [Slack](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md)
 * [Telegram](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md)
 
-## Configure Alert Rule to Process GitHub Webhook Requests
+### Configure Alert Rule to Process GitHub Webhook Requests
 
- -- Describe how to configure the imported rule to send an alert into the web notification created previosly.
+In the ATSD environment, open the left-side **Alerts** menu and select **Web Notifications**.
+
+![](images/alerts-wn.png)
+
+Select the messenger which you've configured from the list on the **Web Notifications** page.
+
+![](images/wn-page.png)
+
+On the messenger-specific page, be sure that the **Web Notification** is enabled. In the **Auth Token** field, insert the authentication token you received from your messenger of choice. Configure additional parameters as needed such as **Bot Username** and click **Save**
+
+![](images/web-notifications.png)
+
+You'll begin receiving messenger notifications the next time an issue is raised on your GitHub repository.
