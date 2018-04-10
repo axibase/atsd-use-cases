@@ -125,7 +125,7 @@ Configure your local ATSD instance to send messages to **Slack Messenger** by fo
 
 A sample status change Slack message is shown here. 
 
-![](images/slack-notification.png)
+![](images/-slack-notification.png)
 
 ### Detailed Telegram Notifications from ATSD 
 
