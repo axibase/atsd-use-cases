@@ -31,7 +31,7 @@ tags.sender.login != null</filter>
 <alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
 <logOutput>false</logOutput>
 <owner>Axibase</owner>
-<description><![CDATA[Message alert on watch event from github.]]></description>
+<description><![CDATA[Message alert on issue event from github.]]></description>
 <actionStrategy>
 <type>ALL</type>
 <intervalCount>5</intervalCount>
