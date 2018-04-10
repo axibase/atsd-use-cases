@@ -21,7 +21,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
   --name=atsd-sandbox \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/repo-notifications/how-to/github/resources/github-issue-open-event.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/repo-notifications/how-to/github/resources/github-issue-open.xml' \
   axibase/atsd-sandbox:latest
 ```
 
@@ -63,7 +63,7 @@ Be sure that your server is reachable by GitHub servers. For more information ab
 
 Once your ATSD server and webhook have been properly configured, confirm connectivity at the bottom of the **Manage Webhook** page.
 
-![](images/deliv-confirm.png)
+![](images/recent-delivery.png)
 
 ### Confirm Connectivity
 
@@ -109,3 +109,5 @@ On the **Web Notifications** tab, enable the rule. Click **Save**.
 ![](images/wn-issue.png)
 
 You'll begin receiving messenger notifications the next time an issue is raised on your GitHub repository.
+
+![](images/slack_issue.png)
