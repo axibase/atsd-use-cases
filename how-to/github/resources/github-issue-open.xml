@@ -63,19 +63,19 @@ tags.sender.login != null</filter>
 <webNotificationConfigName>Slack</webNotificationConfigName>
 <firstWebConfigParameters>
 <key>text</key>
-<value>${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
+<value>Repository: ${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
 User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
 Issue: ${addLink(tags.issue.title, 'https://github.com/' + tags.repository.name + '/issues/' + tags.issue.number)}</value>
 </firstWebConfigParameters>
 <repeatWebConfigParameters>
 <key>text</key>
-<value>${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
+<value>Repository: ${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
 User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
 Issue: ${addLink(tags.issue.title, 'https://github.com/' + tags.repository.name + '/issues/' + tags.issue.number)}</value>
 </repeatWebConfigParameters>
 <cancelWebConfigParameters>
 <key>text</key>
-<value>${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
+<value>Repository: ${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
 User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
 Issue: ${addLink(tags.issue.title, 'https://github.com/' + tags.repository.name + '/issues/' + tags.issue.number)}</value>
 </cancelWebConfigParameters>
