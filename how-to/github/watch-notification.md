@@ -19,26 +19,30 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
   --env SERVER_URL=https://example.com \
   --env WEBHOOK=github \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/repo-notifications/how-to/github/resources/github-watch-rule.xml' \
   axibase/atsd-sandbox:latest
 ```
 
+The `SERVER_URL` parameter in the template above should be replaced with the the externally-addressable DNS name of the machine on which `atsd-sandbox` is running.
+
 For detailed launch information, or advanced launch configuration settings use the following [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
-Confirm successful launch and acquire hostname information by consulting Docker logs:
+Monitor launch by consulting Docker logs:
 
 ```
 docker logs -f atsd-sandbox
 ```
 
-Wait for `All applications started` notification:
+Wait for the sandbox to launch, indicated by the `All applications started` line, and copy the newly-created webhook from the logs.
 
 ```
-[Collector] Account 'axibase' created.
-All applications started
+[ATSD] Administrator account 'axibase' created.
+github webhook created:
+https://github:password@atsd-hostname0/api/v1/messages/webhook/github?type=webhook&entity=github&exclude=organization.*%3Brepository.*%3B*.signature%3B*.payload%3B*.sha%3B*.ref%3B*_at%3B*.id&include=repository.name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
 
 ```
 
-* Replace `atsd-host`, `user` and `password` in payload URL template below using valid information from Docker logs. Default username and password will be `axibase`.
+* Replace `atsd-host` and `password` in payload URL template with valid information from Docker logs. Default username and password will be `axibase`.
 
 ### Create a GitHub Webhook
 
@@ -50,15 +54,10 @@ Select the **Webhooks** tab from the left-side menu and click **Add Webhook**.
 
 On the **Add Webhook** page, configure the following settings:
 
-* **Payload URL**: 
-```
-https://user:PWD@atsd_host/api/v1/messages/webhook/github?type=webhook&entity=github&exclude=organization.*%3Brepository.*%3B*.signature%3B*.payload%3B*.sha%3B*.ref%3B*_at%3B*.id&include=repository.name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
-```
-> The above payload URL template should be modified to include a valid ATSD hostname and password. Follow the [Launch ATSD Sandbox](#launch-atsd-sandbox) instructions below to launch a local ATSD instance.
-
+* **Payload URL**: Follow the [Launch ATSD Sandbox](#launch-atsd-sandbox) instructions below to launch a local ATSD instance and create a valid webhook. Copy / paste that webhook into this field. 
 * **Content Type**: application/json
-* Click **Disbale SSL Verification** and confirm the setting.
-* Select **Let me individual events** under **Which events would you like to trigger this webhook?** and select **Watches**. 
+* Click **Disable SSL Verification** and confirm the setting.
+* Select **Send me everything**, under **Which events would you like to trigger this webhook?** and select **Watches**. 
 
 ![](images/webhook-config.png)
 
@@ -66,9 +65,11 @@ Be sure that your server is exposed to receiving webhooks from GitHub, for more 
 
 ![](images/deliv-confirm.png)
 
-### Import Rule Configuration
+### Configure ATSD
 
-In ATSD, import the following [rule configuration](resources/github-watch-rule.xml) to ATSD. For instructions on importing a rule configuration use this [guide](/../master/how-to/shared/import-rule.md). Configure your messenger of choice according to one of the following guides:
+> The sandbox command above contains a line which automatically imports the needed rule into ATSD. If you would like to import the following [rule configuration](resources/github-watch-rule.xml) manually, use this [guide](/../master/how-to/shared/import-rule.md).
+
+Configure your messenger of choice according to one of the following guides:
 
 * [Slack](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md)
 * [Telegram](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md)
@@ -76,3 +77,13 @@ In ATSD, import the following [rule configuration](resources/github-watch-rule.x
 After you have configured ATSD, GitHub, and the desired messenger service, new watch notifications will be delivered to any device where you can access the messenger service.
 
 ![](images/message.png)
+
+### Confirm Connectivity
+
+In the ATSD environment, open the left-side **Settings** menu, navigate to **Diagnostics** and click **Webhook Requests**.
+
+![](images/webhook-diag.png)
+
+On the **Webhook Requests** page, you will see your newly-configured webhook. Under the **Details** column, click the **View** link to see detailed information about the webhook request.
+
+![](images/webhook-confirm.png)
