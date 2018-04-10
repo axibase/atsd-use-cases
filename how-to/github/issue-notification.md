@@ -111,3 +111,5 @@ On the **Web Notifications** tab, enable the rule. Click **Save**.
 You'll begin receiving messenger notifications the next time an issue is raised on your GitHub repository.
 
 ![](images/slack_issue.png)
+
+**Repository**, **User**, and **Issue** links will redirect you to the repository where the issue was raised, the user who raised the issue, and the issue page itself, respectively.
