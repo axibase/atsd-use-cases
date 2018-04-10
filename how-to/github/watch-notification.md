@@ -103,6 +103,6 @@ Select the messenger which you've configured from the list on the **Web Notifica
 
 On the messenger-specific page, be sure that the **Web Notification** is enabled. In the **Auth Token** field, insert the authentication token you received from your messenger of choice. Configure additional parameters as needed such as **Bot Username** and click **Save**
 
-![](images/web-notifications)
+![](images/web-notifications.png)
 
 You'll begin receiving messenger notifications the next time a new subscriber begins to watch your GitHub repository.
