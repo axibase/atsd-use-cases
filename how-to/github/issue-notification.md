@@ -74,7 +74,7 @@ Configure your messenger of choice according to one of the following guides:
 * [Slack](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md)
 * [Telegram](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md)
 
-After you have configured ATSD, GitHub, and the desired messenger service, new watch notifications will be delivered to any device where you can access the messenger service.
+After you have configured ATSD, GitHub, and the desired messenger service, new issue notifications will be delivered to any device where you can access the messenger service.
 
 ### Confirm Connectivity
 
