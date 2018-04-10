@@ -110,4 +110,6 @@ On the **Web Notifications** tab, enable the rule. Click **Save**.
 
 You'll begin receiving messenger notifications the next time a new subscriber begins to watch your GitHub repository.
 
-![](images/slack-watch.png)
+![](images/-slack-watch.png)
+
+**Repository** and **User** links will redirect you to the newly-watched repository and the newly-subscribed user, respectively.
