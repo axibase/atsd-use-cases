@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>github-issue-open-event</name>
+<metric>message</metric>
+<tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[count() > 0]]></expression>
+<window>time(1 second)</window>
+<filter>type = 'webhook' &amp;&amp;&#13;
+source = 'github' &amp;&amp;&#13;
+entity = 'github' &amp;&amp;&#13;
+tags.event = 'issues' &amp;&amp;&#13;
+tags.action = 'opened' &amp;&amp;&#13;
+tags.sender.login != null</filter>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<lastUpdated>1523358489015</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>false</loadHistory>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner>Axibase</owner>
+<description><![CDATA[Message alert on watch event from github.]]></description>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<timeFilter>
+<intervalCount>1</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>github-issue-open-event</rule-name>
+<repeat-interval>
+<type>NONE</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=640</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<webNotificationConfigName>slack-devops</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>text</key>
+<value>${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
+User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
+Issue: ${addLink(tags.issue.title, 'https://github.com/' + tags.repository.name + '/issues/' + tags.issue.number)}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
+User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
+Issue: ${addLink(tags.issue.title, 'https://github.com/' + tags.repository.name + '/issues/' + tags.issue.number)}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
+User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
+Issue: ${addLink(tags.issue.title, 'https://github.com/' + tags.repository.name + '/issues/' + tags.issue.number)}</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>false</repeat-enabled>
+<cancel-enabled>false</cancel-enabled>
+</webNotification>
+<ruleTable/>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>
