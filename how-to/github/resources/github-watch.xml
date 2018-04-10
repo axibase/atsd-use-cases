@@ -62,11 +62,15 @@ tags.sender.login != null</filter>
 <webNotificationConfigName>Slack</webNotificationConfigName>
 <firstWebConfigParameters>
 <key>text</key>
-<value>[${status}] ${rule} for ${entity.displayName} ${tags}. ${alert_duration}</value>
+<value>[${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
+User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
+Repository: ${addLink('https://github.com/' + tags.repository.name)</value>
 </firstWebConfigParameters>
 <repeatWebConfigParameters>
 <key>text</key>
-<value>[${status}] ${rule} for ${entity.displayName} ${tags}. ${alert_duration}</value>
+<value>[${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.name)}.&#13;
+User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
+Repository: ${addLink('https://github.com/' + tags.repository.name)</value>
 </repeatWebConfigParameters>
 <cancelWebConfigParameters>
 <key>text</key>
