@@ -21,7 +21,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
   --env SERVER_URL=https://example.com \
   --env WEBHOOK=github \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/repo-notifications/how-to/github/resources/github-watch-event.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/repo-notifications/how-to/github/resources/github-watch.xml' \
   axibase/atsd-sandbox:latest
 ```
 
@@ -63,7 +63,7 @@ Be sure that your server is reachable by GitHub servers. For more information ab
 
 Once your server and webhook have been properly configured, confirm connectivity at the bottom of the **Manage Webhook** page.
 
-![](images/deliv-confirm.png)
+![](images/recent-delivery.png)
 
 ### Confirm Connectivity
 
@@ -81,8 +81,6 @@ Configure your [messenger of choice](https://github.com/axibase/atsd/blob/master
 
 * [Slack](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md)
 * [Telegram](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md)
-
-![](images/message.png)
 
 In the ATSD environment, open the left-side **Alerts** menu and select **Web Notifications**.
 
@@ -111,3 +109,5 @@ On the **Web Notifications** tab, enable the rule. Click **Save**.
 ![](images/wn-watch.png)
 
 You'll begin receiving messenger notifications the next time a new subscriber begins to watch your GitHub repository.
+
+![](images/slack_watch.png)
