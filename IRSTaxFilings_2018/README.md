@@ -265,3 +265,5 @@ docker logs -f atsd-sandbox
 ![](images/sql-console.png)
 
 6. Open ChartLab via links provided throughout the article and modify visualizations as needed per [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+
+> Feel free to contact us with installation and technical support either via the [feedback](https://axibase.com/feedback/) form, or by [raising an issue](https://github.com/axibase/atsd-use-cases/issues) on our GitHub repository. 
