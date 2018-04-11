@@ -2,13 +2,13 @@
 
 ### Introduction
 
-Each year the Internal Revenue Service (IRS) releases [public data](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics) about the number of Americans who have filed their annual income tax paperwork. The data for 2018 shows that American filing practice is roughly in line with the previous several years although minor differences can always be detected between almost any two datasets. Open-source data may be visualized using [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and queried with [SQL console](https://github.com/axibase/atsd/tree/master/sql#overview).
+Each year the Internal Revenue Service (IRS) releases [public data](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics) about the number of Americans who have filed their annual income tax paperwork. The data for 2018 shows that American filing practice is roughly in line with the previous several years although minor differences can always be detected between any two datasets. Open-source data may be visualized using [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and queried with [SQL console](https://github.com/axibase/atsd/tree/master/sql#overview).
 
 ### Objectives 
 
 * Visualize public data using [ChartLab](https://apps.axibase.com);
 * Query data using **SQL console**;
-* Compare and contrast previous-year filing statistics with current-year data via multiple chart configurations and queries.
+* Compare and contrast previous-year filing statistics with current-year data via chart configurations and queries.
 
 ### Visualization
 
