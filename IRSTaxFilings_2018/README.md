@@ -167,3 +167,43 @@ ORDER BY date_format(time, 'MM-dd')
 | 2017 | Mar-30 | 92.47          | 95.28          | -2.81           | -2.95         | 
 | 2018 | Mar-30 | 94.14          | 92.47          | 1.67            | 1.80          | 
 ```
+
+#### Year-on-year change based on calendar index position
+
+Here, the query will return the number of filed tax returns for the same calendar index position. Calendar years with unequal number of days (leap years) will have different index positions for the same day.
+
+**Query:**
+
+```sql
+SELECT date_format(time, 'yyyy') AS "Year",
+  date_format(time, 'MMM-dd') AS "Date",
+  CAST(date_format(time, 'D') AS NUMBER) AS "Day in Year",
+  value/1000000 AS "Curr Year, Mln",
+  LAG(value)/1000000 AS "Prev Year, Mln",
+  (value-LAG(value))/1000000 AS "YoY Change, Mln",
+  (value/LAG(value)-1)*100 AS "YoY Change, %"
+  FROM "irs_season.count_year_current"
+WHERE tags.section = 'Individual Income Tax Returns' AND tags.type = 'Total Returns Received'
+  AND "Day in Year" = CAST(date_format(date_parse('2018-03-30T00:00:00Z'), 'D') AS NUMBER)
+  WITH INTERPOLATE(1 DAY)
+ORDER BY "Day in Year", time
+```
+
+**Syntax Features:**
+* [`CAST`](https://github.com/axibase/atsd/tree/master/sql#cast): value function which changes a number into a string or vice versa. Time values are cast as numbers so they be interpolated.
+
+**Result:**
+
+```
+| Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % | 
+|------|--------|-------------|----------------|----------------|-----------------|---------------| 
+| 2011 | Mar-30 | 89.00       | 87.59          | null           | null            | null          | 
+| 2012 | Mar-29 | 89.00       | 90.08          | 87.59          | 2.49            | 2.85          | 
+| 2013 | Mar-30 | 89.00       | 89.46          | 90.08          | -0.62           | -0.68         | 
+| 2014 | Mar-30 | 89.00       | 93.36          | 89.46          | 3.89            | 4.35          | 
+| 2015 | Mar-30 | 89.00       | 94.03          | 93.36          | 0.67            | 0.72          | 
+| 2016 | Mar-29 | 89.00       | 94.11          | 94.03          | 0.08            | 0.09          | 
+| 2017 | Mar-30 | 89.00       | 92.47          | 94.11          | -1.64           | -1.74         | 
+| 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          | 
+```
+
