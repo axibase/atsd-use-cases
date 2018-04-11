@@ -4,6 +4,8 @@
 
 Each year the Internal Revenue Service (IRS) releases [public data](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics) about the number of Americans who have filed their annual income tax paperwork. The data for 2018 shows that American filing practice is roughly in line with the previous several years although minor differences can always be detected between any two datasets. Open-source data may be visualized using [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and queried with [SQL console](https://github.com/axibase/atsd/tree/master/sql#overview).
 
+Axibase has [monitored](/../master/IRSTaxFilings/README.md) IRS statistics annually after Tax Day 2017 saw a higher number of people filing [later than usual](https://www.reuters.com/article/us-money-taxes-delays/u-s-taxpayers-procrastinate-on-filing-returns-this-year-idUSKBN16L18C) or [not at all](https://www.bloomberg.com/news/articles/2017-04-17/millions-of-americans-still-haven-t-filed-their-taxes) according to Reuters and Bloomberg, respectively. The income tax is makes up roughly [half](https://www.nationalpriorities.org/budget-basics/federal-budget-101/revenues/) of the Federal Government's annual operating costs so a huge surge in late or missing payments would wreak havoc on Uncle Sam's budget the subsequent year.
+
 ### Objectives 
 
 * Visualize public data using [ChartLab](https://apps.axibase.com);
