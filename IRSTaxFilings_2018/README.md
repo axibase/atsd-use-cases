@@ -4,7 +4,7 @@
 
 Each year the Internal Revenue Service (IRS) releases [public data](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics) about the number of Americans who have filed their annual income tax paperwork. The data for 2018 shows that American filing practice is roughly in line with the previous several years although minor differences can always be detected between any two datasets. Open-source data may be visualized using [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and queried with [SQL console](https://github.com/axibase/atsd/tree/master/sql#overview).
 
-Axibase has [monitored](/../master/IRSTaxFilings/README.md) IRS statistics annually after Tax Day 2017 saw a higher number of people filing [later than usual](https://www.reuters.com/article/us-money-taxes-delays/u-s-taxpayers-procrastinate-on-filing-returns-this-year-idUSKBN16L18C) or [not at all](https://www.bloomberg.com/news/articles/2017-04-17/millions-of-americans-still-haven-t-filed-their-taxes) according to Reuters and Bloomberg, respectively. The income tax is makes up roughly [half](https://www.nationalpriorities.org/budget-basics/federal-budget-101/revenues/) of the Federal Government's annual operating costs so a huge surge in late or missing payments would wreak havoc on Uncle Sam's budget the subsequent year.
+Axibase has [monitored](/../master/IRSTaxFilings/README.md) IRS statistics annually after Tax Day 2017 saw a higher number of people filing [later than usual](https://www.reuters.com/article/us-money-taxes-delays/u-s-taxpayers-procrastinate-on-filing-returns-this-year-idUSKBN16L18C) or [not at all](https://www.bloomberg.com/news/articles/2017-04-17/millions-of-americans-still-haven-t-filed-their-taxes) according to Reuters and Bloomberg, respectively. The income tax is makes up roughly [half](https://www.nationalpriorities.org/budget-basics/federal-budget-101/revenues/) of the federal government's annual revenue (around $1.48 trillion) so a huge surge in late or missing payments would wreak havoc on Uncle Sam's budget the subsequent year.
 
 ### Objectives 
 
@@ -14,7 +14,7 @@ Axibase has [monitored](/../master/IRSTaxFilings/README.md) IRS statistics annua
 
 ### Visualization
 
-ChartLab is a data visualization sandbox that uses a simple declarative syntax for creating chart. It is designed to be used by anyone, but a basic understanding of the key concepts and settings helpful here. Full ChartLab documentation may be accessed [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/); this article will demonstrate the process of using data stored in ATSD to create multiple visualizations using the same dataset. Each chart will be shown with its configuration and a brief explanation of the particularities therein.
+ChartLab is a data visualization sandbox that uses a simple declarative syntax for creating charts. It is designed to be used by anyone, but a basic understanding of the key concepts and settings is helpful here. Full ChartLab documentation may be accessed [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/); this article will demonstrate the process of using data stored in ATSD to create multiple visualizations using the same dataset. Each chart will be shown with its configuration and a brief explanation of the particularities therein.
 
 #### Configuration 1: Time Series Line Graph
 
@@ -143,11 +143,11 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 **Configuration Features:**
 
 * [`percentiles`](https://apps.axibase.com/chartlab/7f906511/7/): the percentile range for each bar may be set to a user-configured value when observing irregular series. Here, percentile values are `20, 40, 60, 80, 99`.
-* [`bar-count`]: modify the number of bars displayed in the visualization. 
+* `bar-count`: modify the number of bars displayed in the visualization. 
 
 ### SQL
 
-Although ATSD is a non-relational database it offer a SQL-like syntax with time-series extensions such as interpolation functions. It also provides a built-in **SQL Console** for ad-hoc data exploration.
+Although ATSD is a non-relational database it offers a SQL-like syntax with time-series extensions such as interpolation functions. It also provides a built-in **SQL Console** for ad-hoc data exploration.
 
 The following queries will be shown here:
 
@@ -217,7 +217,7 @@ ORDER BY "Day in Year", time
 ```
 
 **Syntax Features:**
-* [`CAST`](https://github.com/axibase/atsd/tree/master/sql#cast): value function which changes a number into a string or vice versa. Time values are cast as numbers so they be interpolated.
+* [`CAST`](https://github.com/axibase/atsd/tree/master/sql#cast): value function which changes a number into a string or vice versa. Time values are cast as numbers so they may be interpolated.
 
 **Result:**
 
@@ -234,6 +234,6 @@ ORDER BY "Day in Year", time
 | 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          | 
 ```
 
-SQL console suppports the [`ROUND`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
+SQL console suppports the [`ROUND`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
 
 ![](images/dec-pre.png)
