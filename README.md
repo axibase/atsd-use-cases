@@ -34,6 +34,7 @@ Axibase Time Series Database: Usage Examples and Research Articles
 28. [The Slow Death of the American Auto Industry](Automobiles/README.md)
 29. [Aging America: Modeling Birth Trends in the United States](aging-america/README.md)
 30. [Slow Growth is Becoming a Human Trend Too](Chart_of_the_Day/life-expectancy/README.md)
+31. [Tax Day 2018: Americans Reverse the Late-Filing Trend](IRSTaxFilings_2018/README.md)
 
 ## Chart of the Day 
 
