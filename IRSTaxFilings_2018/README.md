@@ -12,7 +12,7 @@ Each year the Internal Revenue Service (IRS) releases [public data](https://www.
 
 ### Visualization
 
-ChartLab is a data visualization sandbox that uses a simple syntax with robust performance. It is designed to be used by anyone, but a basic understanding of any programming language will be immenseley helpful here. Full ChartLab documentation may be accessed [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/); this article will demonstrate the process of using data stored in ATSD to create multiple visualizations using one dataset. Each chart will be shown with its configuration and a brief explanation of the particularities therein.
+ChartLab is a data visualization sandbox that uses a simple declarative syntax for creating chart. It is designed to be used by anyone, but a basic understanding of the key concepts and settings helpful here. Full ChartLab documentation may be accessed [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/); this article will demonstrate the process of using data stored in ATSD to create multiple visualizations using the same dataset. Each chart will be shown with its configuration and a brief explanation of the particularities therein.
 
 #### Configuration 1: Time Series Line Graph
 
@@ -54,11 +54,11 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 
 **Configuration Features:**
 
-* `disconnect-interval`: data with missing points, or gaps in the time series, may be given a new value for a user-defined interval. Compare this [example](https://apps.axibase.com/chartlab/8234982b) which features a `disconnect-interval` setting to [this one](https://apps.axibase.com/chartlab/2f06ecee) where the setting is disabled, or [here](https://apps.axibase.com/chartlab/bb9e34e8) where the `disconnect-value` setting has been given a non-zero value. 
+* `disconnect-interval`: data with missing points, or gaps in the time series, are highlighted by specifying a user-defined data gap. Compare this [example](https://apps.axibase.com/chartlab/8234982b) which features a `disconnect-interval` setting to [this one](https://apps.axibase.com/chartlab/2f06ecee) where the setting is disabled, or [here](https://apps.axibase.com/chartlab/bb9e34e8) where the `disconnect-value` setting has been given a non-zero value. 
 
-* `var`: ChartLab configurations may feature user-defined variables, according to the following [control structures](https://axibase.com/products/axibase-time-series-database/visualization/widgets/control-structures/). Here a variable called `offsets` is created using a `range(x,y)` function to control the settings for multiple `[series]` at once representing previous-year data, index begins at `0`.
+* `var`: ChartLab configurations may include JavaScript objects and functions as well as built-in [control structures](https://axibase.com/products/axibase-time-series-database/visualization/widgets/control-structures/). Here a variable called `offsets` is created using a `range(x,y)` function to control the settings for multiple `[series]` at once representing previous-year data. The index begins at `0`.
 
-* `color`: this setting may accept RGB parameters, plain-english color names, or HTML color codes.
+* `color`: this setting may accept RGB parameters, web color names, or HTML color codes.
 
 #### Configuration 2: Time Series Bar Chart
 
@@ -145,7 +145,7 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 
 ### SQL
 
-Although a non-relational database which offers scalability, dependability, and flexibility, ATSD has a built-in **SQL Console** for data retrieval.
+Although ATSD is a non-relational database it offer a SQL-like syntax with time-series extensions such as interpolation functions. It also provides a built-in **SQL Console** for ad-hoc data exploration.
 
 The following queries will be shown here:
 
@@ -183,7 +183,7 @@ ORDER BY date_format(time, 'MM-dd')
 ```
 | Year | Date   | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % | 
 |------|--------|----------------|----------------|-----------------|---------------| 
-| 2011 | Mar-30 | 87.59          | null           | null            | null          | 
+| 2011 | Mar-30 | 87.59          |                |                 |               | 
 | 2012 | Mar-30 | 91.07          | 87.59          | 3.48            | 3.98          | 
 | 2013 | Mar-30 | 89.46          | 91.07          | -1.61           | -1.76         | 
 | 2014 | Mar-30 | 93.36          | 89.46          | 3.89            | 4.35          | 
@@ -222,7 +222,7 @@ ORDER BY "Day in Year", time
 ```
 | Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % | 
 |------|--------|-------------|----------------|----------------|-----------------|---------------| 
-| 2011 | Mar-30 | 89.00       | 87.59          | null           | null            | null          | 
+| 2011 | Mar-30 | 89.00       | 87.59          |                |                 |               | 
 | 2012 | Mar-29 | 89.00       | 90.08          | 87.59          | 2.49            | 2.85          | 
 | 2013 | Mar-30 | 89.00       | 89.46          | 90.08          | -0.62           | -0.68         | 
 | 2014 | Mar-30 | 89.00       | 93.36          | 89.46          | 3.89            | 4.35          | 
@@ -232,38 +232,6 @@ ORDER BY "Day in Year", time
 | 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          | 
 ```
 
-SQL console suppports the [`ROUND`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to control the number of calculated decimal points after the query has been completed.
+SQL console suppports the [`ROUND`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
 
 ![](images/dec-pre.png)
-
-### Resources
-
-Visualizations and queries may be replicated and modified in a local ATSD instance.
-
-1. Launch ATSD from a Docker image:
-
-``` 
-  docker run \
-   --detach \
-   --name=atsd \
-   --publish 8443:8443 \
-  axibase/atsd:latest
-```
-
-2. Watch ATSD container logs for `[ATSD] ATSD start completed. Time: 2018-01-01 12-00-00.` line. (Time / date will be shown as server time and date). Launch with https://your-docker-host:8443 link that appears.
-
-```
-docker logs -f atsd-sandbox
-```
-
-3. Configure administrator account settings with a desired username and password.
-
-4. Download data from [irs.gov](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics).
-
-5. Open SQL console via the **SQL** menu. Click **Console** to run queries.
-
-![](images/sql-console.png)
-
-6. Open ChartLab via links provided throughout the article and modify visualizations as needed per [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
-
-> Feel free to contact us with installation and technical support either via the [feedback](https://axibase.com/feedback/) form, or by [raising an issue](https://github.com/axibase/atsd-use-cases/issues) on our GitHub repository. 
