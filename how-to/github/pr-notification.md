@@ -106,7 +106,7 @@ Open the rule configuration by clicking the link in the **Name** column.
 
 On the **Web Notifications** tab, enable the rule. Click **Save**.
 
-![](images/wn-issue.png)
+![](images/wn-issue-1.png)
 
 You'll begin receiving messenger notifications the next time an issue is raised on your GitHub repository.
 
