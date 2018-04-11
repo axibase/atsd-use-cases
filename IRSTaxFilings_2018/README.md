@@ -14,12 +14,14 @@ Each year the Internal Revenue Service (IRS) releases [public data](https://www.
 
 ChartLab is a data visualization sandbox that uses a simple syntax with robust performance. It is designed to be used by anyone, but a basic understanding of any programming language will be immenseley helpful here. Full ChartLab documentation may be accessed [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/); this article will demonstrate the process of using data stored in ATSD to create multiple visualizations using one dataset. Each chart will be shown with its configuration and a brief explanation of the particularities therein.
 
+#### Configuration 1: Time Series Line Graph
+
 ![](images/tax-2018-title.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/fd986f58)
 
 *Fig 1.* Tax filing data for the 2017 and 2018 superimposed over previous-year data. 
 
-**Configuration:**
+**Configuration Settings:**
 
 ```sql
 [configuration]
@@ -78,12 +80,16 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 
 * `color`: this setting may accept RGB parameters, plain-english color names, or HTML color codes.
 
+#### Configuration 2: Time Series Bar Chart
+
 ![](images/tax-2018_1.png)
 ![](images/button.png)
 
 *Fig 2.* The same data displayed displayed with different settings.
 
-**Configuration:**
+**Configuration Settings:**
+
+*Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.*
 
 ```sql
 [widget]
@@ -99,13 +105,30 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
      alert-style = fill:green      
 ```
 
-*Configuration has been shortened to include only non-repeated settings for brevity.*
-
 **Configuration Features:**
 
 * `alert-expression`: user-defined thresholds may be created via `[threshold]` series, or comparison to other series in the visualzation. Here, the two colored series are assigned an `alias` according to the year whose data they contain and compared. When the condition is satisfied, that is, the value of 2018 tax return filings is greater than the value of 2017 tax filings for the same period, the `alert-style` setting is activated, in this case coloring that period's representative bar green.
 
 * `mode`: time charts feature several display [modes](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) to quickly change visualization styles. 
 
+#### Configuration 3: Box-and-Whisker Plot
 
+![](images/tax-2018-2.png)
+![](images/button.png)
 
+*Fig 3.* Average filing numbers for the entire observed period show that the total number of Americans filing a tax return has diminished in recent years.
+
+**Configuration Settings:**
+
+*Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.*
+
+```sql
+
+[widget]
+  type = box
+  title = Individual Income Tax Returns Received: 2018 compared to prior years
+```
+
+**Configuration Features:**
+
+* `type`: a variety of visualization widgets are available in ChartLab, see the full list [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
