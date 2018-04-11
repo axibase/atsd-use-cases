@@ -8,7 +8,7 @@ Each year the Internal Revenue Service (IRS) releases [public data](https://www.
 
 * Visualize public data using [ChartLab](https://apps.axibase.com);
 * Query data using **SQL console**;
-* Compare previous-year filing statistics with current-year data via multiple chart.
+* Compare previous-year filing statistics with current-year data via multiple chart configurations and queries.
 
 ### Visualization
 
@@ -23,33 +23,15 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 
 **Configuration Settings:**
 
+*Configuration has been shortened to include only relevant settings for brevity, open ChartLab visualization to view the entire configuration.*
+
 ```sql
 [configuration]
-  offset-right = 100
-  offset-left = 40
-  offset-top = 40
-  height-units = 2
-  width-units = 1
-  label-format = label
-  end-time = 2018-06-01T00:00:00Z
-  start-time = 2018-01-01T00:00:00Z  
   disconnect-interval = 10 day
-  
-  entity = irs.gov
-  metric = irs_season.count_year_current
-  [tags] 
-     section=Individual Income Tax Returns
-     "type"=Total Returns Received
 
 [group]
 
 [widget]
-  type = chart
-  title = Individual Income Tax Returns Received: 2018 compared to prior years
-  last-marker = false
-  legend-position = top
-  pointer-position = hidden
-
   var offsets = range(2,6)
   for ofs in offsets
   [series]
@@ -63,13 +45,11 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
   [series]
      label = 2017 
      time-offset = 1 year
-     color = steelblue
-     style = stroke-width: 3      
+     color = steelblue  
    
   [series]
      label = 2018   
      color = #d00
-     style = stroke-width: 5
 ```
 
 **Configuration Features:**
