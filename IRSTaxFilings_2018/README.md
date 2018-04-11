@@ -63,7 +63,7 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 #### Configuration 2: Time Series Bar Chart
 
 ![](images/tax-2018_1.png)
-![](images/button.png)
+[![](images/button.png)](https://apps.axibase.com/chartlab/07f8b200)
 
 *Fig 2.* The same data displayed displayed with different settings.
 
@@ -94,7 +94,7 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 #### Configuration 3: Box-and-Whisker Plot
 
 ![](images/tax-2018-2.png)
-![](images/button.png)
+[![](images/button.png)](https://apps.axibase.com/chartlab/5dba3269)
 
 *Fig 3.* Average filing numbers for the entire observed period show that the total number of Americans filing a tax return has diminished in recent years.
 
@@ -107,11 +107,16 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 [widget]
   type = box
   title = Individual Income Tax Returns Received: 2018 compared to prior years
+  
+[widget]
+  var offsets = range(6,2)
+  for ofs in offsets  
 ```
 
 **Configuration Features:**
 
 * `type`: a variety of visualization widgets are available in ChartLab, see the full list [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+* `range(y,x)`: in order to show chronological data, a reverse-ordered range setting may be used where the more recent parameter is the second argument instead of the first as seen above.
 
 ### SQL
 
