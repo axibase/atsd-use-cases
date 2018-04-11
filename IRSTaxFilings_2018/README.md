@@ -112,3 +112,53 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 **Configuration Features:**
 
 * `type`: a variety of visualization widgets are available in ChartLab, see the full list [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+
+### SQL
+
+Although a non-relational database which offers scalability, dependability, and flexibility, ATSD has a built-in **SQL Console** for data retrieval.
+
+The following queries will be shown here:
+
+* Year-on-year change based on calander day;
+* Year-on-year change based on calendar index position.
+
+#### Year-on-Year Change based on calendar day
+
+Here, the query will return the number of filed tax returns for the same calendar day (March 30) each year.
+
+**Query:**
+
+```sql
+SELECT date_format(time, 'yyyy') AS "Year",
+  date_format(time, 'MMM-dd') AS "Date",
+  value/1000000 AS "Curr Year, Mln",
+  LAG(value)/1000000 AS "Prev Year, Mln",
+  (value-LAG(value))/1000000 AS "YoY Change, Mln",
+  (value/LAG(value)-1)*100 AS "YoY Change, %"
+  FROM "irs_season.count_year_current"
+WHERE tags.section = 'Individual Income Tax Returns' AND tags.type = 'Total Returns Received'
+  AND date_format(time, 'MM-dd') = '03-30'
+  WITH INTERPOLATE(1 DAY)
+ORDER BY date_format(time, 'MM-dd')
+```
+
+**Syntax Features:**
+
+* [`date_format`](https://github.com/axibase/atsd/tree/master/sql#date-functions): date function which converts Unix millisecond time to a user-defined format.
+* [`LAG(columnName)`](https://github.com/axibase/atsd/tree/master/sql#lag): value function which returns the previous data point for the selected column. Very useful for time-on-time comparisons such as the one shown here.
+* [`INTERPOLATE(period)`](https://github.com/axibase/atsd/tree/master/sql#functions): value function which is used to fill gaps for irregular series. Used in this example to regularize data which has a timestamp other than the observed date.
+
+**Result:**
+
+```
+| Year | Date   | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % | 
+|------|--------|----------------|----------------|-----------------|---------------| 
+| 2011 | Mar-30 | 87.59          | null           | null            | null          | 
+| 2012 | Mar-30 | 91.07          | 87.59          | 3.48            | 3.98          | 
+| 2013 | Mar-30 | 89.46          | 91.07          | -1.61           | -1.76         | 
+| 2014 | Mar-30 | 93.36          | 89.46          | 3.89            | 4.35          | 
+| 2015 | Mar-30 | 94.03          | 93.36          | 0.67            | 0.72          | 
+| 2016 | Mar-30 | 95.28          | 94.03          | 1.26            | 1.34          | 
+| 2017 | Mar-30 | 92.47          | 95.28          | -2.81           | -2.95         | 
+| 2018 | Mar-30 | 94.14          | 92.47          | 1.67            | 1.80          | 
+```
