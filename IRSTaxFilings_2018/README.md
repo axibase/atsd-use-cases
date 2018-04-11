@@ -1,14 +1,14 @@
 # Tax Day 2018: Open-Source Financial Intelligence
 
-### Overview
+### Introduction
 
-Each year the Internal Revenue Service (IRS) releases [public data](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics) about the number of Americans who have filed their annual income tax paperwork. The data for 2018 shows that American filing practice is roughly in line with the previous several years of data. Open-source data may be visualized using [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and queried with [SQL console](https://github.com/axibase/atsd/tree/master/sql#overview).
+Each year the Internal Revenue Service (IRS) releases [public data](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics) about the number of Americans who have filed their annual income tax paperwork. The data for 2018 shows that American filing practice is roughly in line with the previous several years although minor differences can always be detected between almost any two datasets. Open-source data may be visualized using [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and queried with [SQL console](https://github.com/axibase/atsd/tree/master/sql#overview).
 
 ### Objectives 
 
 * Visualize public data using [ChartLab](https://apps.axibase.com);
 * Query data using **SQL console**;
-* Compare previous-year filing statistics with current-year data via multiple chart configurations and queries.
+* Compare and contrast previous-year filing statistics with current-year data via multiple chart configurations and queries.
 
 ### Visualization
 
@@ -56,7 +56,7 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 
 * `disconnect-interval`: data with missing points, or gaps in the time series, may be given a new value for a user-defined interval. Compare this [example](https://apps.axibase.com/chartlab/8234982b) which features a `disconnect-interval` setting to [this one](https://apps.axibase.com/chartlab/2f06ecee) where the setting is disabled, or [here](https://apps.axibase.com/chartlab/bb9e34e8) where the `disconnect-value` setting has been given a non-zero value. 
 
-* `var`: ChartLab configurations may feature user-defined variables, according to the following [control structures](https://axibase.com/products/axibase-time-series-database/visualization/widgets/control-structures/). Here a variable called `offsets` is created using a `range(x,y)` function to control the settings for multiple `[series]` at once representing previous-year data, index begins at `0`
+* `var`: ChartLab configurations may feature user-defined variables, according to the following [control structures](https://axibase.com/products/axibase-time-series-database/visualization/widgets/control-structures/). Here a variable called `offsets` is created using a `range(x,y)` function to control the settings for multiple `[series]` at once representing previous-year data, index begins at `0`.
 
 * `color`: this setting may accept RGB parameters, plain-english color names, or HTML color codes.
 
@@ -87,7 +87,7 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 
 **Configuration Features:**
 
-* `alert-expression`: user-defined thresholds may be created via `[threshold]` series, or comparison to other series in the visualzation. Here, the two colored series are assigned an `alias` according to the year whose data they contain and compared. When the condition is satisfied, that is, the value of 2018 tax return filings is greater than the value of 2017 tax filings for the same period, the `alert-style` setting is activated, in this case coloring that period's representative bar green.
+* `alert-expression`: user-defined thresholds may be created via `[threshold]` series, or comparison to other series in the visualzation. Here, the two colored series are assigned an `alias` according to their year and compared. When the condition is satisfied, that is, the value of 2018 tax return filings is greater than the value of 2017 tax filings for the same period, the `alert-style` setting is activated, in this case coloring that period's representative bar green.
 
 * `mode`: time charts feature several display [modes](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) to quickly change visualization styles. 
 
@@ -117,6 +117,31 @@ ChartLab is a data visualization sandbox that uses a simple syntax with robust p
 
 * `type`: a variety of visualization widgets are available in ChartLab, see the full list [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
 * `range(y,x)`: in order to show chronological data, a reverse-ordered range setting may be used where the more recent parameter is the second argument instead of the first as seen above.
+
+#### Configuration 4: Histogram
+
+![](images/tax-2018-3.png)
+[![](images/button.png)](https://apps.axibase.com/chartlab/bdab5fd8)
+
+*Fig 4.* A histrogram shows the distribution of values for the given datasets. Assuming all series were equally-distributed the slope of the stacked boxes should be zero.
+
+**Configuration Settings:**
+
+*Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.*
+
+```sql
+[widget]
+  type = histogram
+  mode = stack
+  title = Individual Income Tax Returns Received: 2018 compared to prior years
+  bar-count = 10
+  percentiles = 20, 40, 60, 80, 99
+```
+
+**Configuration Features:**
+
+* [`percentiles`](https://apps.axibase.com/chartlab/7f906511/7/): the percentile range for each bar may be set to a user-configured value when observing irregular series. Here, percentile values are `20, 40, 60, 80, 99`.
+* [`bar-count`]: modify the number of bars displayed in the visualization. 
 
 ### SQL
 
@@ -207,3 +232,36 @@ ORDER BY "Day in Year", time
 | 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          | 
 ```
 
+SQL console suppports the [`ROUND`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to control the number of calculated decimal points after the query has been completed.
+
+![](images/dec-pre.png)
+
+### Resources
+
+Visualizations and queries may be replicated and modified in a local ATSD instance.
+
+1. Launch ATSD from a Docker image:
+
+``` 
+  docker run \
+   --detach \
+   --name=atsd \
+   --publish 8443:8443 \
+  axibase/atsd:latest
+```
+
+2. Watch ATSD container logs for `[ATSD] ATSD start completed. Time: 2018-01-01 12-00-00.` line. (Time / date will be shown as server time and date). Launch with https://your-docker-host:8443 link that appears.
+
+```
+docker logs -f atsd-sandbox
+```
+
+3. Configure administrator account settings with a desired username and password.
+
+4. Download data from [irs.gov](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics).
+
+5. Open SQL console via the **SQL** menu. Click **Console** to run queries.
+
+![](images/sql-console.png)
+
+6. Open ChartLab via links provided throughout the article and modify visualizations as needed per [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
