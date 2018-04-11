@@ -1,4 +1,4 @@
-![Title Phot](Images/Title Photo.png)
+![Title Phot](Images/Title%20Photo.png)
 
 Pain at the Pump - a Closer Look at Hawaii's High Fuel Prices
 =============================================================
