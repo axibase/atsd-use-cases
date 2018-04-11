@@ -110,6 +110,6 @@ On the **Web Notifications** tab, enable the rule. Click **Save**.
 
 You'll begin receiving messenger notifications the next time an issue is raised on your GitHub repository.
 
-![](images/slack_issue.png)
+![](images/slack_pr.png)
 
-**Repository**, **User**, and **Pull Request** links will redirect you to the repository where the PR was opened, the user who opened the PR, and the PR page itself, respectively.
+**Repository**, **User**, and **PR** links will redirect you to the repository where the PR was opened, the GitHub profile of the user who opened the PR, and the PR page itself, respectively.
