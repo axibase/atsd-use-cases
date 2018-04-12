@@ -3,7 +3,7 @@
 ![](images/unemp-title.png)
 [![](images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
-*Fig 1.* The upper chart in the **TRENDS** visualization above tracks U.S. unemployment and GDP, while the lower charts track percent change in unemployment and GDP value, respectively. For configuration information, see the [Configuration](#configuration) section of this article.
+*Fig 1.* The upper chart in the **TRENDS** visualization above tracks U.S. unemployment and GDP, while the lower charts track percent change in unemployment and GDP value, respectively. For specific configuration information, see the [Configuration](#configuration) section of this article.
 
 ### Overview
 
@@ -18,20 +18,20 @@ Since the 1980s, the United States has almost always been on the wrong side of t
 ![](images/full-10-employ.png)
 [![](images/button-new.png)](https://trends.axibase.com/39178867#fullscreen)
 
-*Fig 2.* Periods of full employment are highlighted in green and periods of over 10% unemployment are highlighted in red. Full-employment and 10%-unemployment `[threshold]` series are used.
+*Fig 2.* Periods of full employment are highlighted in green and periods of over 10% unemployment are highlighted in red. Full-employment and 10%-unemployment `[threshold]` series are used to highlight upper and lower value limits.
 
-The **TRENDS** chart above tracks periods with full employment using an `alert-expression`. See the [Configuration](#configuration) section of this article for detailed configuration information. The exceptionally high unemployment period during the early 1980s may be explained by the then-ongoing worldwide recession which began in 1979 amid a global energy crisis caused by an Iranian oil embargo and the subsequent Iran-Iraq war combined extreme Fed monitary policy meant to combat double-digit inflation. Ironically, the global oil supply only contracted roughly 4% during the Iranian embargo, but speculation, panic, and commodity runs caused a huge price surge which would be reversed for almost twenty years.
+The **TRENDS** chart above tracks periods with full employment using an `alert-expression`. See the [Configuration](#configuration) section of this article for detailed configuration information. The exceptionally high unemployment period during the early 1980s may be explained by the then-ongoing worldwide recession which began in 1979 amid a global energy crisis caused by an Iranian oil embargo and the subsequent Iran-Iraq war combined with extreme Fed monitary policy meant to combat double-digit inflation. Ironically, the global oil supply only contracted about 4% during the Iranian embargo, but speculation, panic, and commodity runs caused a huge price surge which would be reversed for almost twenty years.
 
 ### How Does GDP Correlate to Unemployment?
 
-While correlation alone can never be used to prove causation, common sense tells us that the more unemployed there are in the population, the worse off the GDP will inevitably be. Compare the percent change charts from above for unemployment and GDP when they are overlaid.
+While correlation alone can never be used to prove causation, common sense tells us that the more unemployed there are in the population, the worse off the GDP will inevitably be. Compare the percent-change charts from above for unemployment and GDP when they are overlaid on one another.
 
 ![](images/compare-emp-gdp.png)
 [![](images/button-new.png)](https://trends.axibase.com/2a9d8451#fullscreen)
 
 *Fig 3.* Series of dramatically different orders of magnitude may be shown on the same visualization using an `axis` setting. See the [Configuration](#configuration) section of this article for detailed configuration information.
 
-Annual average percent change in both GDP and unemployment is the dominant line in the above visualization. Using the two-argument `avg()` function, a series may be averaged according to a user-specified period of time. Because unemployment data is monthly, it has been averaged by month, quarter, half year, and year. Because GDP data is quarterly, it has been average by quarter, half year, and year.
+Annual average percent change in both GDP and unemployment is the dominant line in the above visualization. Using the two-argument `avg()` function, a series may be averaged according to a user-specified time period. Because unemployment data is collected monthly, it has been averaged by month, quarter, half year, and year. Because GDP data is collected quarterly, it has been average by quarter, half year, and year.
 
 ### Configuration
 
@@ -106,3 +106,11 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   style = opacity: 0.25  
 ```
 * [`axis`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting is used to enable dual-axis functionality when comparing two series of different orders of magnitude.
+
+### Resources
+
+The **TRENDS** service relies on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) for data-storage and processing tasks. All of the data from the above article has been loaded into a publicly-accessible instance of the **TRENDS** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) or any of the configuration settings explained in this article. 
+
+To create your own chart using the existing data, open an empty **TRENDS** [instance](https://trends.axibase.com/).
+
+For questions, technical support, or to suggest a dataset that you would like to see visualized, visit our [GitHub repository](https://github.com/axibase/atsd-use-cases) and [raise an issue](https://github.com/axibase/atsd-use-cases/issues). 
