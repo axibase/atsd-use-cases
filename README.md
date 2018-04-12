@@ -42,16 +42,41 @@ ATSD functionality and features applied to real-world public data to solve commo
 
 ## How-To
 
-Walkthrough guides for ATSD integrations that offer practical solutions to daily tasks.
+Walkthrough guides for ATSD integration that offers programmatic solutions to optimize business performance.
 
+**ATSD**
 1. [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
 2. [Curve Smoothing Using Moving Averages](Support/Moving-Avg/README.md)
 3. [Creating Calculated Metrics in ChartLab and SQL Console](Support/Add-Calculated-Value/README.md)
-4. [Marathon Resource Manager Integration](how-to/marathon)
-5. [Amazon Web Services (AWS) Integrations](how-to/aws)
-6. [Monitoring Kafka Brokers and Consumer Offsets](how-to/kafka)
-7. [Github Webhook Integration Guides](how-to/github)
-8. [Shared ATSD Guides](how-to/shared)
+4. [Using TRENDS](how-to/shared/trends.md)
+5. [How to Import Template Tags](how-to/shared/import-tag-template.md)
+6. [How to Import Scheduled SQL Queries](how-to/shared/import-scheduled-sql-query.md)
+7. [How to Import Rules](how-to/shared/import-rule.md)
+8. [How to Import Portals](how-to/shared/import-portal.md)
+9. [How to Import Metrics](how-to/shared/import-metric.md)
+10. [How to Import Forecast Configuration Settings](how-to/shared/import-forecast.md)
+11. [How to Import Entities](how-to/shared/import-entity.md)
+12. [How to Import Entity Views](how-to/shared/import-entity-view.md)
+13. [How to Import Entity Groups](how-to/shared/import-entity-group.md)
+14. [How to Import CSV Parser Configuration Settings](how-to/shared/import-csv-parser.md)
+
+**Marathon**
+1. [How to Monitor Marathon Applications as Services](how-to/marathon/capacity-and-usage)
+
+**Amazon Web Services**
+1. [Configure Launch Notifications for AWS Resources](how-to/aws/cloud-watch-alert)
+2. [Route53 Health Status Alarms](how-to/aws/route53-email-notifications)
+3. [Build Availability Report for AWS Route53](how-to/aws/route53-health-checks)
+
+**Apache Kafka**
+1. [Monitoring Kafka Brokers](how-to/kafka/brokers-monitoring)
+2. [Monitoring Kafka Consumers](how-to/kafka/consumers-monitoring)
+
+**GitHub**
+1. [Configure Slack/Telegram Notifications for New GitHub Issues](how-to/github/issue-notification.md)
+2. [Configure Slack/Telegram Notifications for New GitHub Pull Requests](how-to/github/pr-notification.md)
+3. [Configure Slack/Telegram Notifications for New GitHub Repository Subscriptions](how-to/github/watch-notification.md)
+
 
 ## Chart of the Day 
 
@@ -74,6 +99,7 @@ Sometimes data tell their own story and ChartLab visualizations can grab reader 
 15. [Citywide LED Streetlight Savings (Los Angeles, CA)](Chart_of_the_Day/LA_Lights/README.md)
 16. [The Fall of Facebook](Chart_of_the_Day/facebook/README.md)
 17. [The Creeping Overnight Fund Rate](Chart_of_the_Day/overnight-fund-rate/README.md)
+18. [Using Thresholds to Track United States Inflation](Chart_of_the_Day/us-inflation)
 
 ## Data Library
 
