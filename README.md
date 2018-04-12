@@ -4,6 +4,8 @@ Axibase Time Series Database: Usage Examples and Research Articles
   
 ## Research Articles 
 
+ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information.
+
 1. [Pain at the Pump - a Closer Look at Hawaii's High Fuel Prices](HawaiiGasPrices/hawaii_gas_prices.md)
 2. [Data Visualization with Chart Lab](ChartLabIntro/README.md)
 3. [Analyzing UK Aviation Statistics using CAA Datasets](UKAviation/README.md)
@@ -35,8 +37,25 @@ Axibase Time Series Database: Usage Examples and Research Articles
 29. [Aging America: Modeling Birth Trends in the United States](aging-america/README.md)
 30. [Slow Growth is Becoming a Human Trend Too](Chart_of_the_Day/life-expectancy/README.md)
 31. [Tax Day 2018: Americans Reverse the Late-Filing Trend](IRSTaxFilings_2018/README.md)
+32. [Analyzing Econometric Datasets with Calculated Series](Solutions/calculated-values/README.md)
+
+## How-To
+
+Walkthrough guides for ATSD integrations that offer more than meets the eye.
+
+1. [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
+2. [Curve Smoothing Using Moving Averages](Support/Moving-Avg/README.md)
+3. [Managing Calculated Values in ChartLab and SQL Console](Support/Add-Calculated-Value/README.md)
+4. [Marthon Integration Guides](how-to/marathon)
+5. [Amazon Web Resources Guides](how-to/aws)
+6. [Kafka Guides](how-to/kafka)
+7. [Github Guides](how-to/github)
+8. [ATSD General Guides](how-to/shared)
+
 
 ## Chart of the Day 
+
+Sometimes data tell their own story and ChartLab visualizations can grab reader attention to make a statement. The Chart of the Day is reproduced in a variety of publications and helps Axibase say, “hello world.”
 
 1. [New York City's Most Crowded Industries](Chart_of_the_Day/NY_Jobs/README.md)
 2. [500 Cities: Local Data for Better Health](Chart_of_the_Day/CDC_TOP25/README.md)
@@ -58,6 +77,8 @@ Axibase Time Series Database: Usage Examples and Research Articles
 
 ## Data Library
 
+Visualizations and SQL queries that are indexed by topic to form the Axibase Data Library, an invaluable tool for researchers looking for specific data. Data shorts display comprehensive information from a wide-range of data sets.
+
 1. [New York Insurance Asset Versus Liability Data (2014-2015)](DataShorts/NY_Insurance/README.md)
 2. [Connecticut Prison Population Statistics (2009-2017)](DataShorts/CT_Prison/README.md)
 3. [Projected Baltimore Employment Figures (2001-2040)](DataShorts/Baltimore_MD_Employment/README.md)
@@ -72,14 +93,9 @@ Axibase Time Series Database: Usage Examples and Research Articles
 12. [Comprehensive Housing Market Analysis: City of Austin (2014)](DataShorts/Austin_Housing_Market/README.md)
 13. [Foreign Businesses Operating in Hong Kong (1996-2016)](DataShorts/Hong_Kong_Business/README.md)
 
-## Support
-
-1. [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
-2. [Curve Smoothing Using Moving Averages](Support/Moving-Avg/README.md)
-3. [Managing Calculated Values in ChartLab and SQL Console](Support/Add-Calculated-Value/README.md)
-4. [Analyzing Econometric Datasets with Calculated Series](Solutions/calculated-values/README.md)
-
 ## Analysis
+
+Detailed use cases that feature in-depth data exploration and complex functionality.
 
 1. [The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment](Analysis/FedFund_FedInterest/README.md)
 2. [United States Treasuries as International Assets: China's Role in the Federal Fund Rate](Analysis/Treasuries_as_Assets/README.md)
