@@ -11,7 +11,7 @@ Since the 1980s, the United States has almost always been on the wrong side of t
 
 ### What is Frictional Unemployment?
 
-[Frictional unemployment](https://www.economicshelp.org/blog/glossary/frictional-unemployment/) is the understanding that at any given time, some percentage of the population will be unemployed of their own volition. Whether it's because of a personal sabbatical, the desire to find a new job without working during the hunt, or other circumstantial factors, some part of the population will be counted as unemployed when they perhaps shouldn't be.
+[Frictional unemployment](https://www.economicshelp.org/blog/glossary/frictional-unemployment/) is the understanding that at any given time, some percentage of the population will be unemployed of their own volition. Whether it's because of a personal sabbatical, the desire to find a new job without working during the hunt, or other circumstantial factors, some part of the population will be counted as unemployed when perhaps they shouldn't be.
 
 ### When has the U.S seen full employment?
 
