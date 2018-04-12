@@ -1,4 +1,4 @@
-# U.S. Approaching 3-Year Mark of Full Employment
+# U.S. Approaching 3-Year Mark for Full Employment
 
 ![](images/unemp-title.png)
 [![](images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
@@ -7,7 +7,7 @@
 
 ### Overview
 
-Since the 1980s, the United States has been on the wrong side of the unemployment Rubicon, so to speak, only seeing full employment in the country for a handful of months leading up to September 11, 2001. The idealists among those in the economic class like to consider "Full Employment" to be somewhere around 1-2%, but the reality is that this is almost never the case. The phenomenon known as frictional unemployment means that most experts tend to consider a country fully employed as long as the unemployment level is less than roughly 5%.
+Since the 1980s, the United States has almost always been on the wrong side of unemployment statistics, only seeing full employment in the country for a handful of years leading up to September 11, 2001. The idealists among those in the economic class like to consider "Full Employment" to be somewhere around 1-2%, but the reality is that this is almost never the case. The phenomenon known as frictional unemployment means that most experts tend to consider a country fully employed as long as the unemployment level is [less than roughly 5%](https://www.npr.org/2013/01/03/168508910/what-is-a-good-unemployment-number-really).
 
 ### What is Frictional Unemployment?
 
@@ -15,3 +15,18 @@ Fricitional unemployment means that at any given time, some percentage of the po
 
 ### When has the U.S seen full employment?
 
+![](images/full-employ.png)
+[![](images/button-new.png)](https://trends.axibase.com/39178867#fullscreen)
+
+*Fig 2.* Periods of full employment, accourd
+
+The **TRENDS** chart above tracks periods with full employment using an `alert-expression`. See the [Configuration](#configuration) section of this article for detailed configuration information.
+
+### How Does GDP Correlate to Unemployment?
+
+While correlation alone can never be used to prove causation, common sense tells us that the more unemployed there are in the population, the worse off the GDP will inevitably be. Compare the percent change charts from above for unemployment and GDP when they are overlaid.
+
+![](images/compare-emp-gdp.png)
+[![](images/button-new.png)](https://trends.axibase.com/2a9d8451#fullscreen)
+
+*Fig 3.* Series of dramatically different orders of magnitude may be shown on the same visualization using an `axis` setting. See the [Configuration](#configuration) section of this article for detailed configuration information.
