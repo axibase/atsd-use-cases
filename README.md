@@ -38,6 +38,7 @@ ATSD functionality and features applied to real-world public data to solve commo
 30. [Slow Growth is Becoming a Human Trend Too](Chart_of_the_Day/life-expectancy/README.md)
 31. [Tax Day 2018: Americans Reverse the Late-Filing Trend](IRSTaxFilings_2018/README.md)
 32. [Analyzing Econometric Datasets with Calculated Series](Solutions/calculated-values/README.md)
+33. [U.S. Approaching 3-Year Mark for Full Employment](Chart_of_the_Day/unemployment/README.md)
 
 ## How-To
 
