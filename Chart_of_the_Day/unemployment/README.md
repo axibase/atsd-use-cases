@@ -3,7 +3,9 @@
 ![](images/unemp-title.png)
 [![](images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
-*Fig 1.* The upper chart in the **TRENDS** visualization above tracks U.S. unemployment and GDP, while the lower charts track percent change in unemployment and GDP value, respectively. For specific configuration information, see the [Configuration](#configuration) section of this article.
+*Fig 1.* The upper chart in the **TRENDS** visualization above tracks U.S. unemployment and GDP, while the lower charts track percent change in unemployment and GDP value, respectively. 
+
+> For specific configuration information about any of the visualizations in this article, see the [Configuration](#configuration) section towards the end of this page.
 
 ### Overview
 
@@ -20,7 +22,7 @@ Since the 1980s, the United States has almost always been on the wrong side of t
 
 *Fig 2.* Periods of full employment are highlighted in green and periods of over 10% unemployment are highlighted in red. Full-employment and 10%-unemployment `[threshold]` series are used to highlight upper and lower value limits.
 
-The **TRENDS** chart above tracks periods with full employment using an `alert-expression`. See the [Configuration](#configuration) section of this article for detailed configuration information. The exceptionally high unemployment period during the early 1980s may be explained by the then-ongoing worldwide recession which began in 1979 amid a global energy crisis caused by an Iranian oil embargo and the subsequent Iran-Iraq war combined with extreme Fed monitary policy meant to combat double-digit inflation. Ironically, the global oil supply only contracted about 4% during the Iranian embargo, but speculation, panic, and commodity runs caused a huge price surge which would be reversed for almost twenty years.
+The **TRENDS** chart above tracks periods with full employment using an `alert-expression`. The exceptionally high unemployment period during the early 1980s may be explained by the then-ongoing worldwide recession which began in 1979 amid a global energy crisis caused by an Iranian oil embargo and the subsequent Iran-Iraq war combined with extreme Fed monitary policy meant to combat double-digit inflation. Ironically, the global oil supply only contracted about 4% during the Iranian embargo, but speculation, panic, and commodity runs caused a huge price surge which would be reversed for almost twenty years.
 
 ### How Does GDP Correlate to Unemployment?
 
@@ -29,7 +31,7 @@ While correlation alone can never be used to prove causation, common sense tells
 ![](images/compare-emp-gdp.png)
 [![](images/button-new.png)](https://trends.axibase.com/2a9d8451#fullscreen)
 
-*Fig 3.* Series of dramatically different orders of magnitude may be shown on the same visualization using an `axis` setting. See the [Configuration](#configuration) section of this article for detailed configuration information.
+*Fig 3.* Series of dramatically different orders of magnitude may be shown on the same visualization using an `axis` setting.
 
 Annual average percent change in both GDP and unemployment is the dominant line in the above visualization. Using the two-argument `avg()` function, a series may be averaged according to a user-specified time period. Because unemployment data is collected monthly, it has been averaged by month, quarter, half year, and year. Because GDP data is collected quarterly, it has been average by quarter, half year, and year.
 
