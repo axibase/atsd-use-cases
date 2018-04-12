@@ -41,21 +41,20 @@ ATSD functionality and features applied to real-world public data to solve commo
 
 ## How-To
 
-Walkthrough guides for ATSD integrations that offer more than meets the eye.
+Walkthrough guides for ATSD integrations that offer practical solutions to daily tasks.
 
 1. [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
 2. [Curve Smoothing Using Moving Averages](Support/Moving-Avg/README.md)
-3. [Managing Calculated Values in ChartLab and SQL Console](Support/Add-Calculated-Value/README.md)
-4. [Marthon Integration Guides](how-to/marathon)
-5. [Amazon Web Resources Guides](how-to/aws)
-6. [Kafka Guides](how-to/kafka)
-7. [Github Guides](how-to/github)
-8. [ATSD General Guides](how-to/shared)
-
+3. [Creating Calculated Metrics in ChartLab and SQL Console](Support/Add-Calculated-Value/README.md)
+4. [Marathon Resource Manager Integration](how-to/marathon)
+5. [Amazon Web Services (AWS) Integrations](how-to/aws)
+6. [Monitoring Kafka Brokers and Consumer Offsets](how-to/kafka)
+7. [Github Webhook Integration Guides](how-to/github)
+8. [Shared ATSD Guides](how-to/shared)
 
 ## Chart of the Day 
 
-Sometimes data tell their own story and ChartLab visualizations can grab reader attention to make a statement. The Chart of the Day is reproduced in a variety of publications and helps Axibase say, “hello world.”
+Sometimes data tell their own story and ChartLab visualizations can grab reader attention to make a statement. The Chart of the Day is reproduced in a variety of publications.
 
 1. [New York City's Most Crowded Industries](Chart_of_the_Day/NY_Jobs/README.md)
 2. [500 Cities: Local Data for Better Health](Chart_of_the_Day/CDC_TOP25/README.md)
