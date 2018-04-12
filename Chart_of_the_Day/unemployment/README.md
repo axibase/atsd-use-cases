@@ -7,7 +7,7 @@
 
 ### Overview
 
-Since the 1980s, the United States has almost always been on the wrong side of unemployment statistics, only seeing full employment in the country for a handful of years leading up to September 11, 2001. The idealists among those in the economic class like to consider "Full Employment" to be somewhere around 1-2%, but the reality is that this is almost never the case. The phenomenon known as frictional unemployment means that most experts tend to consider a country fully employed as long as the unemployment level is [less than roughly 5%](https://www.npr.org/2013/01/03/168508910/what-is-a-good-unemployment-number-really).
+Since the 1980s, the United States has almost always been on the wrong side of unemployment statistics, only seeing full employment in the country for a handful of years leading up to September 11, 2001 and a few years again preceeding the 2008-2009 stock market crash. The idealists among those in the economic class like to consider "Full Employment" to be somewhere around 1-2%, but the reality is that this is almost never the case. A phenomenon known as frictional unemployment means that most experts tend to consider a country fully employed as long as the unemployment level is [less than roughly 5%](https://www.npr.org/2013/01/03/168508910/what-is-a-good-unemployment-number-really).
 
 ### What is Frictional Unemployment?
 
@@ -15,10 +15,10 @@ Fricitional unemployment means that at any given time, some percentage of the po
 
 ### When has the U.S seen full employment?
 
-![](images/full-employ.png)
+![](images/full-10-employ.png)
 [![](images/button-new.png)](https://trends.axibase.com/39178867#fullscreen)
 
-*Fig 2.* Periods of full employment, accourd
+*Fig 2.* Periods of full employment are highlighted in green and periods of over 10% unemployment are highlighted in red. Full-employment and 10%-unemployment `[threshold]` series are used.
 
 The **TRENDS** chart above tracks periods with full employment using an `alert-expression`. See the [Configuration](#configuration) section of this article for detailed configuration information.
 
@@ -30,3 +30,5 @@ While correlation alone can never be used to prove causation, common sense tells
 [![](images/button-new.png)](https://trends.axibase.com/2a9d8451#fullscreen)
 
 *Fig 3.* Series of dramatically different orders of magnitude may be shown on the same visualization using an `axis` setting. See the [Configuration](#configuration) section of this article for detailed configuration information.
+
+Annual average percent change in both GDP and unemployment is the dominant line in the above visualization. Using the two-argument `avg()` function, a series may be averaged according to a user-specified period of time. Because unemployment data is monthly, it has been averaged by month, quarter, half year, and year. Because GDP data is quarterly, it has been average by quarter, half year, and year.
