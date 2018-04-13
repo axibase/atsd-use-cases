@@ -64,21 +64,21 @@ tags.sender.login != null</filter>
 <firstWebConfigParameters>
 <key>text</key>
 <value>New Pull Request:
-Repository: ${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.full_name)}.&#13;
+Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}.&#13;
 User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
 PR: ${addLink('#' + tags.number, 'https://github.com/' + tags.repository.full_name + '/pull/' + tags.number)}</value>
 </firstWebConfigParameters>
 <repeatWebConfigParameters>
 <key>text</key>
 <value>New Pull Request:
-Repository: ${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.full_name)}.&#13;
+Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}.&#13;
 User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
 PR: ${addLink('#' + tags.number, 'https://github.com/' + tags.repository.full_name + '/pull/' + tags.number)}</value>
 </repeatWebConfigParameters>
 <cancelWebConfigParameters>
 <key>text</key>
 <value>New Pull Request:
-Repository: ${addLink(tags.repository.name, 'https://github.com/axibase/' + tags.repository.full_name)}.&#13;
+Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}.&#13;
 User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
 PR: ${addLink('#' + tags.number, 'https://github.com/' + tags.repository.full_name + '/pull/' + tags.number)}</value>
 </cancelWebConfigParameters>
