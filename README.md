@@ -1,6 +1,6 @@
 # Overview
 
-Axibase Time Series Database makes is a Hadoop-based time series database with SQL, rule-engine, and visualization.
+Axibase Time Series Database is a Hadoop-based time series database with SQL, rule-engine, and visualization.
 
 The **Use Cases** repository contains [Research Articles](#research-articles) demonstrating solutions to real-world data problems using ATSD, [How-To](#how-to) guides for programmatic integration instructions with some of the most commonly-used enterprise softwares and services, our [Chart of the Day](#chart-of-the-day) publications, a [Data Library](#data-library) with in-depth SQL guides, and [Analysis](#analysis) of complex data problems faced on the modern data science landscape.
   
@@ -23,30 +23,30 @@ ATSD functionality and features applied to real-world public data to solve commo
 
 Walkthrough guides for ATSD integration that offers programmatic solutions to optimize business performance.
 
-**ATSD**
-1. [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
-1. [Curve Smoothing Using Moving Averages](Support/Moving-Avg/README.md)
-1. [Creating Calculated Metrics in ChartLab and SQL Console](Support/Add-Calculated-Value/README.md)
-1. [Using TRENDS](how-to/shared/trends.md)
-1. [Essential ATSD Operations](how-to/shared)
+### ATSD
+- [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
+- [Curve Smoothing Using Moving Averages](Support/Moving-Avg/README.md)
+- [Creating Calculated Metrics in ChartLab and SQL Console](Support/Add-Calculated-Value/README.md)
+- [Using TRENDS](how-to/shared/trends.md)
+- [Essential ATSD Operations](how-to/shared)
 
-**Marathon**
-1. [How to Monitor Marathon Applications as Services](how-to/marathon/capacity-and-usage)
+### Marathon
+- [How to Monitor Marathon Applications as Services](how-to/marathon/capacity-and-usage)
 
-**Amazon Web Services**
-1. [Build Availability Report for AWS Route53](how-to/aws/route53-health-checks)
-1. [Configure Launch Notifications for AWS Resources](how-to/aws/cloud-watch-alert)
-1. [Route53 Health Status Alarms](how-to/aws/route53-email-notifications)
+### Amazon Web Services
+- [Build Availability Report for AWS Route53](how-to/aws/route53-health-checks)
+- [Configure Launch Notifications for AWS Resources](how-to/aws/cloud-watch-alert)
+- [Route53 Health Status Alarms](how-to/aws/route53-email-notifications)
 
-**Apache Kafka**
-1. [Monitoring Kafka Brokers](how-to/kafka/brokers-monitoring)
-1. [Monitoring Kafka Consumers](how-to/kafka/consumers-monitoring)
+### Apache Kafka
+- [Monitoring Kafka Brokers](how-to/kafka/brokers-monitoring)
+- [Monitoring Kafka Consumer Lag](how-to/kafka/consumers-monitoring)
 
-**GitHub**
-1. [Notifications for New GitHub Issues](how-to/github/issue-notification.md)
-1. [Notifications for New GitHub Project Releases](how-to/github/project-release-notification.md)
-1. [Notifications for New GitHub Pull Requests](how-to/github/pr-notification.md)
-1. [Notifications for New GitHub Repository Subscriptions](how-to/github/watch-notification.md)
+### GitHub
+- [Notifications for New GitHub Issues](how-to/github/issue-notification.md)
+- [Notifications for New GitHub Project Releases](how-to/github/project-release-notification.md)
+- [Notifications for New GitHub Pull Requests](how-to/github/pr-notification.md)
+- [Notifications for New GitHub Repository Subscriptions](how-to/github/watch-notification.md)
 
 ## Chart of the Day 
 
