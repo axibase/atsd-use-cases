@@ -1,6 +1,6 @@
 # Overview
 
-Axibase Time Series Database: Usage Examples and Research Articles
+Axibase Time Series Database is a Hadoop-based time series database with SQL, rule-engine, and visualization. The **Use Cases** repository contains [Research Articles](#research-articles) demonstrating solutions to real-world data problems using ATSD, [How-To](#how-to) guides for programmatic integration instructions with some of the most commonly-used enterprise softwares and services, our [Chart of the Day](#chart-of-the-day) publications, a [Data Library](#data-library) for in-depth SQL guides, and [Analysis](#analysis) of complex data problems faced on the modern data science landscape.
   
 ## Research Articles 
 
@@ -78,6 +78,19 @@ Sometimes data tell their own story and ChartLab visualizations can grab reader 
 17. [The Creeping Overnight Fund Rate](Chart_of_the_Day/overnight-fund-rate/README.md)
 18. [Using Thresholds to Track United States Inflation](Chart_of_the_Day/us-inflation)
 
+## Analysis
+
+Detailed use cases that feature in-depth data exploration and complex functionality used to solve the world's modern data problems.
+
+1. [Realtime Analysis of the Oroville Dam Disaster](OrovilleDam/README.md)
+2. [The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment](Analysis/FedFund_FedInterest/README.md)
+3. [United States Treasuries as International Assets: China's Role in the Federal Fund Rate](Analysis/Treasuries_as_Assets/README.md)
+4. [The New Bubble: Fed Rates Stay Low While Debt Value Remains High](Analysis/The_New_Bubble/README.md)
+5. [CPI vs. PPI: Producers are Spending Less While Consumers are Paying More](Analysis/CPI_PPI/README.md)
+6. [BitCoin After the GHash.IO Era](Analysis/BitCoin_After_GHash/README.md)
+7. [United States Federal Reserve: The Economic Policy Uncertainty Index](Analysis/Economic_Policy_Uncertainty/README.md)
+8. [Analyzing UK Aviation Statistics using CAA Datasets](UKAviation/README.md)
+
 ## Data Library
 
 Visualizations and SQL queries that are indexed by topic to form the Axibase Data Library, an invaluable tool for researchers looking for specific data. Data shorts display comprehensive information from a wide-range of data sets.
@@ -96,41 +109,28 @@ Visualizations and SQL queries that are indexed by topic to form the Axibase Dat
 12. [Comprehensive Housing Market Analysis: City of Austin (2014)](DataShorts/Austin_Housing_Market/README.md)
 13. [Foreign Businesses Operating in Hong Kong (1996-2016)](DataShorts/Hong_Kong_Business/README.md)
 
-## Analysis
-
-Detailed use cases that feature in-depth data exploration and complex functionality.
-
-1. [The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment](Analysis/FedFund_FedInterest/README.md)
-2. [United States Treasuries as International Assets: China's Role in the Federal Fund Rate](Analysis/Treasuries_as_Assets/README.md)
-3. [The New Bubble: Fed Rates Stay Low While Debt Value Remains High](Analysis/The_New_Bubble/README.md)
-4. [CPI vs. PPI: Producers are Spending Less While Consumers are Paying More](Analysis/CPI_PPI/README.md)
-5. [BitCoin After the GHash.IO Era](Analysis/BitCoin_After_GHash/README.md)
-6. [United States Federal Reserve: The Economic Policy Uncertainty Index](Analysis/Economic_Policy_Uncertainty/README.md)
-
 ## Archive
 
 Older ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. Some features may have been updated or function differently, see our latest features and functionality used in more recent [Research Articles](#research-articles).
 
 1. [Pain at the Pump - a Closer Look at Hawaii's High Fuel Prices](HawaiiGasPrices/hawaii_gas_prices.md)
 2. [Data Visualization with Chart Lab](ChartLabIntro/README.md)
-3. [Analyzing UK Aviation Statistics using CAA Datasets](UKAviation/README.md)
-4. [Country Living - Analyzing and Combining Iowa Employment and Consumer Price Index Datasets](SocrataIowaCompensation/README.md)
-5. [Knocking on Heaven's Door - Computing U.S. Mortality Statistics](USMortality/README.md)
-6. [Analyzing Chicago Crime Statistics](ChicagoCrime/README.md)
-7. [Analyzing America's International Trade history](USInternationalTrade/README.md)
-8. [From data.gov dataset to Python DataFrame in 10 minutes](SocrataPython/README.md)
-9. [Realtime Analysis of the Oroville Dam Disaster](OrovilleDam/README.md)
-10. [U.S. State Department: Getting Paid $400 Million While Rejecting Visitors](USVisaRefusal/README.md)
-11. [Visa Travel to the United States with Charts, SQL, and Redash](USVisa/README.md)
-12. [Norway Car Registrations](NorwayCars/README.md)
-13. [Tax Day 2017: Are U.S. Tax Payers Procrastinating?](IRSTaxFilings/README.md)
-14. [Consumer Finance Complaints](ConsumerFinance/README.md)
-15. [U.S. Expatriation Statistics](Expatriation/README.md)
-16. [Climate Change: Back to the Drawing Board](ClimateChange/README.md)
-17. [Violence Begets Violence: An Analysis of the Baltimore Police Force and Baltimore Homicide Data](BaltimorePolice/README.md)
-18. [Quantifying Public Health: The American Fitness Index](FitnessIndex/README.md)
-19. [Modeling Falling Birthrates in the Prairie State](IllinoisBirthrates/README.md)
-20. [How to Predict a Fire in Hartford](CT_Fire/README.md)
-21. [Riding the L Train in 2025](L_Train2025/README.md)
-22. [The Consumer Price Index Verus Your Savings Account (Bank of Israel)](CBI_CPI/README.md)
-23. [Does the Bag Tax Work?](Bag_Tax/README.md)
+3. [Country Living - Analyzing and Combining Iowa Employment and Consumer Price Index Datasets](SocrataIowaCompensation/README.md)
+4. [Knocking on Heaven's Door - Computing U.S. Mortality Statistics](USMortality/README.md)
+5. [Analyzing Chicago Crime Statistics](ChicagoCrime/README.md)
+6. [Analyzing America's International Trade history](USInternationalTrade/README.md)
+7. [From data.gov dataset to Python DataFrame in 10 minutes](SocrataPython/README.md)
+8. [U.S. State Department: Getting Paid $400 Million While Rejecting Visitors](USVisaRefusal/README.md)
+9. [Visa Travel to the United States with Charts, SQL, and Redash](USVisa/README.md)
+10. [Norway Car Registrations](NorwayCars/README.md)
+11. [Tax Day 2017: Are U.S. Tax Payers Procrastinating?](IRSTaxFilings/README.md)
+12. [Consumer Finance Complaints](ConsumerFinance/README.md)
+13. [U.S. Expatriation Statistics](Expatriation/README.md)
+14. [Climate Change: Back to the Drawing Board](ClimateChange/README.md)
+15. [Violence Begets Violence: An Analysis of the Baltimore Police Force and Baltimore Homicide Data](BaltimorePolice/README.md)
+16. [Quantifying Public Health: The American Fitness Index](FitnessIndex/README.md)
+17. [Modeling Falling Birthrates in the Prairie State](IllinoisBirthrates/README.md)
+18. [How to Predict a Fire in Hartford](CT_Fire/README.md)
+19. [Riding the L Train in 2025](L_Train2025/README.md)
+20. [The Consumer Price Index Verus Your Savings Account (Bank of Israel)](CBI_CPI/README.md)
+21. [Does the Bag Tax Work?](Bag_Tax/README.md)
