@@ -105,6 +105,18 @@ To save the portal under an entirely new URL click **Clone**.
 
 **TRENDS** is a sandbox for everyone, we encourage users to create their own charts and share it with others.
 
+### Pre-Defined Functions
+
+Click the **Widgets** button in the upper toolbar to open pre-defined functions that may be used as a baseline or threshold when comparing metrics. 
+
+![](images/pre-def-func.png)
+
+The two pre-defined functions are described here:
+
+* **Inflation Index**: Experimental Consumer Price Index (CPIE) is the measure of a particular basket of consumer goods. It is often used to track inflation across a given period of time or compare "today's" dollars to historic dollar values.
+
+* **Annual Inflation**: Percentile inflation for the the United States. Inflation is calculated by comparing CPI, money supply, gross domestic product (GDP), and average wages.
+
 ### Further Reading 
 
 For more detailed information about ATSD, the underlying mechanics, or download instructions see the [ATSD Documentation](https://github.com/axibase/atsd). Reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com) via email or [here](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page. For a complete list of metrics stored in **TRENDS**, see the following [index](https://trends.axibase.com/public/reference.html). Good luck and happy data hunting!
