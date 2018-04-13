@@ -53,6 +53,7 @@ Walkthrough guides for ATSD integration that offers programmatic solutions to op
 1. [Configure Slack/Telegram Notifications for New GitHub Issues](how-to/github/issue-notification.md)
 2. [Configure Slack/Telegram Notifications for New GitHub Pull Requests](how-to/github/pr-notification.md)
 3. [Configure Slack/Telegram Notifications for New GitHub Repository Subscriptions](how-to/github/watch-notification.md)
+4. [Configure Slack/Telegram Notifications for New GitHub Project Releases](how-to/github/project-release-notification.md)
 
 
 ## Chart of the Day 
