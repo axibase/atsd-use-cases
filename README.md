@@ -32,9 +32,9 @@ Walkthrough guides for ATSD integration that offers programmatic solutions to op
 1. [How to Monitor Marathon Applications as Services](how-to/marathon/capacity-and-usage)
 
 **Amazon Web Services**
+1. [Build Availability Report for AWS Route53](how-to/aws/route53-health-checks)
 1. [Configure Launch Notifications for AWS Resources](how-to/aws/cloud-watch-alert)
 1. [Route53 Health Status Alarms](how-to/aws/route53-email-notifications)
-1. [Build Availability Report for AWS Route53](how-to/aws/route53-health-checks)
 
 **Apache Kafka**
 1. [Monitoring Kafka Brokers](how-to/kafka/brokers-monitoring)
