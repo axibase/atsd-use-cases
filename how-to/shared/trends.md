@@ -30,6 +30,10 @@ More information about selecting series can be found [here](https://axibase.com/
 
 > Some settings may be defined at multiple levels. Settings defined at the **[configuration]** level are inhereted by nested levels: **[group]** > **[widget]** > **[series]**. Settings defined at the lower level override settings set at the upper level. For example, if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[series]** level for one chart you define a different entity `y`, entity `x` will be used for all widgets **EXCEPT** for the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
 
+For a complete [index](https://trends.axibase.com/public/reference.html) of all metrics stored in ATSD and accessible to **TRENDS** users, click the **Reference** button in the upper-right corner as seen here.
+
+![](images/metric-index.png)
+
 ### Modifying Portals
 
 Open the **Editor** window in the **TRENDS** interface by clicking the button in the top menu.
@@ -89,4 +93,4 @@ To save the portal under an entirely new URL click **Clone**.
 
 ### Further Reading 
 
-For more detailed information about the ATSD, underlying mechanics, or download instructions see the [ATSD Documentation](https://github.com/axibase/atsd) or reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com) via email or [here](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page. Good luck and happy data hunting!
+For more detailed information about ATSD, the underlying mechanics, or download instructions see the [ATSD Documentation](https://github.com/axibase/atsd). Reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com) via email or [here](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page. For a complete list of metrics stored in **TRENDS**, see the following [index](https://trends.axibase.com/public/reference.html). Good luck and happy data hunting!
