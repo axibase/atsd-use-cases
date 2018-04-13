@@ -30,9 +30,23 @@ More information about selecting series can be found [here](https://axibase.com/
 
 > Some settings may be defined at multiple levels. Settings defined at the **[configuration]** level are inhereted by nested levels: **[group]** > **[widget]** > **[series]**. Settings defined at the lower level override settings set at the upper level. For example, if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[series]** level for one chart you define a different entity `y`, entity `x` will be used for all widgets **EXCEPT** for the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
 
-For a complete [index](https://trends.axibase.com/public/reference.html) of all metrics stored in ATSD and accessible to **TRENDS** users, click the **Reference** button in the upper-right corner as seen here.
+### Metrics Reference Page
 
-![](images/metric-index.png)
+For a complete [index](https://trends.axibase.com/public/reference.html) of all metrics stored in ATSD and accessible to **TRENDS** users, click the **Reference** button in the upper toolbar as seen here.
+
+![](images/ref-button.png)
+
+On the **References** pages, you'll see a list of all of the metrics that are usuable in **TRENDS**. Search available metrics in the **Search Bar**. The entire reference table in indexed and may be searched there. Keywords may apply to any column.
+
+![](images/ref-search.png)
+
+Any column may be filtered by its components. Click the **Filter** button to open the menu of available components.
+
+![](images/ref-filter.png)
+
+Each metric may be previewed using the **Portal** button. Click the button to open a non-modifiable preview of the data visualization associated with the particular metric.
+
+![](images/ref-portal.png)
 
 ### Modifying Portals
 
