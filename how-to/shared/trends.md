@@ -32,19 +32,21 @@ More information about selecting series can be found [here](https://axibase.com/
 
 ### Metrics Reference Page
 
-For a complete [index](https://trends.axibase.com/public/reference.html) of all metrics stored in ATSD and accessible to **TRENDS** users, click the **Reference** button in the upper toolbar as seen here.
+For a [listing](https://trends.axibase.com/public/reference.html) of available metrics stored in ATSD and accessible to **TRENDS** users, click the **Reference** button in the top toolbar as seen here.
 
 ![](images/ref-button.png)
 
-On the **References** pages, you'll see a list of all of the metrics that are usuable in **TRENDS**. Search available metrics in the **Search Bar**. The entire reference table in indexed and may be searched there. Keywords may apply to any column.
+On the **Reference** page, you'll see a list of all metrics that are usable in **TRENDS**.  
+
+Search available metrics in the **Search Bar**. The entire metric list is indexed and may be searched there.
 
 ![](images/ref-search.png)
 
-Any column may be filtered by its components. Click the **Filter** button to open the menu of available components.
+Dictionary columns may be filtered by value. Click the **Filter** icon to open the menu of available values.
 
 ![](images/ref-filter.png)
 
-Each metric may be previewed using the **Portal** button. Click the button to open a non-modifiable preview of the data visualization associated with the particular metric.
+Each metric may be previewed using the **Portal** button. Click the icon to open a preview of the data associated with the particular metric.
 
 ![](images/ref-portal.png)
 
@@ -105,17 +107,17 @@ To save the portal under an entirely new URL click **Clone**.
 
 **TRENDS** is a sandbox for everyone, we encourage users to create their own charts and share it with others.
 
-### Pre-Defined Functions
+### Pre-Defined Widgets
 
-Click the **Widgets** button in the upper toolbar to open pre-defined functions that may be used as a baseline or threshold when comparing metrics. 
+Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections that may be used as a template for developing your custom widgets. 
 
 ![](images/pre-def-func.png)
 
-The two pre-defined functions are described here:
+The two pre-defined widgets are described here:
 
 * **Inflation Index**: Experimental Consumer Price Index (CPIE) is the measure of a particular basket of consumer goods. It is often used to track inflation across a given period of time or compare "today's" dollars to historic dollar values.
 
-* **Annual Inflation**: Percentile inflation for the the United States. Inflation is calculated by comparing CPI, money supply, gross domestic product (GDP), and average wages.
+* **Annual Inflation**: Percentile inflation for the the United States. Inflation is calculated by comparing CPI, money supply, gross domestic product (GDP), and average wages. This widget relies on calculated metrics to created a derived measurement.
 
 ### Further Reading 
 
