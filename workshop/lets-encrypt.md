@@ -48,9 +48,9 @@ CA is a trusted organization authorized to issue public key certificates to end 
 
 Trust is established when the person installs software (OS, browser, Java Runtime/Development Environment, python) containing a list of trusted CAs.
 
-CAs issue certificates which is a file, typically in [X509](https://tools.ietf.org/html/rfc5280) format, containing information about the issuer (CA), the subject (aka end entity), validity dates, issuer signature, and the subject's public key.
+CAs issue certificates which is a file, typically in [X509](https://tools.ietf.org/html/rfc5280) format, containing information about the issuer (CA), the subject or end entity, the certificate's validity dates, issuer signature, and the subject's public key.
 
-In case of HTTPS connection, the certificate is presented by the web server (nginx, apache, tomcat, jetty) to the client (browser, curl, apache http client, java url connection) as part of SSL handshake.
+In cases of HTTPS connection, the certificate is presented by the web server (nginx, apache, tomcat, jetty) to the client (browser, curl, apache http client, java url connection) as part of an SSL handshake.
 
 `*.axibase.com` old wildcard certificate:
 
@@ -159,7 +159,7 @@ The client uses its private trust store (`CAfile: /etc/ssl/certs/ca-certificates
 
 The CA can delegate certificate issuance to other intermediate CAs.
 
-Both Root CA and any of its intermediate CAs can issue a certificate to **any** subject.
+Both the Root CA and any of its intermediate CAs can issue a certificate to **any** subject.
 
 Trust is established when the issuer of the certificate is present in the client's trust store. Trust is also established when the issuer is an intermediate CA whose authority can be verified with a chain of certificates leading to a trusted CA certificate present in the client's trust store.
 
@@ -205,7 +205,7 @@ Sample certificate chain for Let's Encrypt Authority X3-signed certificate:
 
 ## Trust Store
 
-Trust store is where client maintains a list of trusted CAs.
+Trust store is where a client maintains a list of trusted CAs.
 
 Trust store typically uses `JKS` (Java specific) or `PKCS12` format.
 
@@ -319,7 +319,7 @@ GeoTrust_Universal_CA.crt                                           XRamp_Global
 
 The list of root CAs is updated through the `ca-certificates` package.
 
-Search apt package manager history to view the `ca-certificates` package was last updated.
+Search apt package manager history to view when the `ca-certificates` package was last updated.
 
 ```sh
 $ zgrep ca-certificates /var/log/apt/history*
@@ -334,7 +334,7 @@ ca-certificates:amd64 (20160104ubuntu0.14.04.1, 20170717~14.04.1)
 ca-certificates-java:amd64 (20130815ubuntu1)
 ```
 
-The list of changes in specific version for the `ca-certificates` package is summarized in the package [changelog](https://launchpad.net/ubuntu/+source/ca-certificates/+changelog):
+The list of changes performed on a specific version of the `ca-certificates` package is summarized in the package [changelog](https://launchpad.net/ubuntu/+source/ca-certificates/+changelog):
 
 ```
 ca-certificates (20170717) unstable; urgency=medium
@@ -380,7 +380,7 @@ The following certificate authorities were removed (-):
 
 ### Browser Trust Store
 
-* Chrome browser defers to the list of Root CAs maintained by the operating system.
+* Chrome defers to the list of Root CAs maintained by the operating system.
 
 * Mozilla Firefox maintains its own list of Root CAs.
 
@@ -1005,7 +1005,7 @@ public class CertListChain {
 
 #### Self-Signed Certificate Chain
 
-[Self-Signed](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) certificate has no chain.
+[Self-Signed](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) certificates have no chain.
 
 The subject is the same as the issuer.
 
@@ -1159,7 +1159,7 @@ public class CertTrust {
 
 ```
 
-Validation results for Expired Certificate
+Validation results for Expired Certificate:
 
 ```css
 Certificate chain validatation failed: java.security.cert.CertPathValidatorException: timestamp check failed :
@@ -1170,7 +1170,7 @@ Default trust manager: certificate chain validatation failed:
   java.security.cert.CertPathValidatorException: timestamp check failed
 ```
 
-Validation Results for Self-Signed Certificate
+Validation Results for Self-Signed Certificate:
 
 ```css
 Certificate chain validatation failed: java.security.cert.CertPathValidatorException: Path does not chain with any of the trust anchors : null
@@ -1189,7 +1189,7 @@ Use [keytool](https://github.com/axibase/atsd/blob/master/administration/ssl-sel
 
 The default certificate in ATSD is issued for 'atsd' CN and 'atsd' alias.
 
-Example to generate a self-signed certificate.
+Example generating a self-signed certificate:
 
 ```sh
 keytool -genkeypair -keystore /opt/atsd/atsd/conf/server.keystore -alias atsd -keyalg RSA -keysize 2048 -validity 365000
@@ -1302,7 +1302,7 @@ $ sudo apt install python-certbot-nginx
 sudo certbot --nginx -d trends.axibase.com
 ```
 
-* The certificate is issued only for 90 days.
+* The certificate is only issued for 90 days.
 * Port 80 must remain open for host challenge to succeed.
 * Our fix to port 80 exposure was to configure nginx to redirect from 80 to 443 using `301` status.
 * Port 80 exposure increases the risk of insecure cookie highjacking, for example in Redmine.
@@ -1381,7 +1381,7 @@ sudo curl -k -u cert-renew:********** -X POST https://locahost:8443/admin/certif
    -F "privkey=@privkey.pem" -F "fullchain=@fullchain.pem" -w "\n%{http_code}\n"
 ```
 
-The ATSD will validate the certificate and install it without restarting the server.
+ATSD will validate the certificate and install it without restarting the server.
 
 We had to upgrade Jetty to version **9.4** to support SSLContent reloading without reboot.
 
@@ -1595,7 +1595,7 @@ Congratulations, all renewals succeeded. The following certs have been renewed:
 -------------------------------------------------------------------------------
 ```
 
-New certificate is now installed. No ATSD restart.
+New certificate is now installed. No ATSD restart performed.
 
 ![](images/atsd_hbs_certificates_list_after_renew.png)
 
@@ -1603,9 +1603,9 @@ New certificate is now installed. No ATSD restart.
 
 ### Certificate Transparency Logs
 
-Some of the CAs, including Lets Encrypt, volutarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
+Some CAs, including Lets Encrypt, volutarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
 
-The CT servers store immutable logs of certificate issuance events which contain the subject's CN (common name) and certificate details.
+CT servers store immutable logs of certificate issuance events which contain the subject's CN (common name) and certificate details.
 
 The CT servers also accept events from crawlers when they identify a new certificate.
 
@@ -1639,7 +1639,7 @@ Certificate details including DNS names are now publicly available even if the c
 
 ### CRT Database Access
 
-Publicly accessible certificate database.
+Publicly-accessible certificate database.
 
 Table schema is available on [github](https://github.com/crtsh/certwatch_db/blob/master/create_schema.sql).
 
@@ -1682,7 +1682,7 @@ SELECT ci.ISSUER_CA_ID,
 
 * Query Performance
 
-The database is **slow** for analytical queries (group by). Analytical queries do not complete.
+The database is **slow** for analytical queries (`GROUP BY`). Analytical queries do not complete.
 
 ![](images/dbvis_crt.png)
 
@@ -1860,7 +1860,7 @@ DNS.1 = atsd.axibase.com
 
 #### Create `atsd` KeyStore
 
-Create trust store file in `PKCS12` format, containing the atsd_axibase_com private key and the signed certificate, stored under `1` (default) alias.
+Create trust store file in `PKCS12` format containing the atsd_axibase_com private key and the signed certificate, stored under `1` (default) alias.
 
 ```sh
 $ openssl pkcs12 -export -inkey atsd_axibase_com.key -in atsd_axibase_com.crt -out atsd_axibase_com.pkcs12
