@@ -110,6 +110,6 @@ On the **Web Notifications** tab, enable the rule. Click **Save**.
 
 You'll begin receiving messenger notifications the next time someone pushes to your GitHub repository.
 
-![](images/slack-push.png)
+![](images/slack_push.png)
 
 **Repository** and **User** links will redirect you to the repository where the push occurred and user by whom the push was made, respectively.
