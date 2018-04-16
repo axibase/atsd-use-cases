@@ -47,6 +47,7 @@ Walkthrough guides for ATSD integration that offers programmatic solutions to op
 - [Notifications for New GitHub Project Releases](how-to/github/project-release-notification.md)
 - [Notifications for New GitHub Pull Requests](how-to/github/pr-notification.md)
 - [Notifications for New GitHub Repository Subscriptions](how-to/github/watch-notification.md)
+- [Configure Slack/Telegram Notifications for a New GitHub Push](how-to/github/push-notification.md)
 
 ## Chart of the Day 
 
