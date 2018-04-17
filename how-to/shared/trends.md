@@ -119,6 +119,13 @@ The two pre-defined widgets are described here:
 
 * **Annual Inflation**: Percentile inflation for the the United States. Inflation is calculated by comparing CPI, money supply, gross domestic product (GDP), and average wages. This widget relies on calculated metrics to created a derived measurement.
 
+### User-Defined Functions
+
+The Charts API supports user-defined functions, enabling users to make permanent the mathematical functions which they use on a regular basis.
+
+
+
+
 ### Further Reading 
 
 For more detailed information about ATSD, the underlying mechanics, or download instructions see the [ATSD Documentation](https://github.com/axibase/atsd). Reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com) via email or [here](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page. For a complete list of metrics stored in **TRENDS**, see the following [index](https://trends.axibase.com/public/reference.html). Good luck and happy data hunting!
