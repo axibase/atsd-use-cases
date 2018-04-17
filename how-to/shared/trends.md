@@ -123,8 +123,57 @@ The two pre-defined widgets are described here:
 
 The Charts API supports user-defined functions, enabling users to make permanent the mathematical functions which they use on a regular basis.
 
+![](images/fred-lib-demo.png)
+[![](images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
+The above visualization uses user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 
+```sql
+### On the [configuration] level, the import command is used and the series is given the name 'fred.' 
+### The library is named 'fred.js'.
+### The function library may be imported at any configuration level, especially helpful for 
+### transformations which use multiple user-definied function libraries.
+
+[configuration]
+  import fred = fred.js
+
+  offset-right = 50
+  height-units = 2
+  width-units = 1
+  start-time = 1980
+  
+  entity = fred.stlouisfed.org
+  metric = unrate  
+
+[series]
+  alias = base
+  display = false
+    
+[series]      
+  value = fred.MonthlyChange('base')
+  alias = month
+  display = false
+```
+
+Using two series, the monthly percent change is visualized with a simple `value` statement which takes three arguments `library.function('series')`, where `library` is the name assigned during import, `function` is the **case-sensitive** function name, and `series` is the `alias` assigned to the series to be transformed. 
+
+The `fred.js` library is available to any **TRENDS** user and contains the following functions:
+
+| Function Name                      | Arguments       | Description |
+|------------------------------------|-----------------|-------------|
+| [MonthlyChange](https://trends.axibase.com/c5e043b5)                      | alias           | Month-on-month change |
+| [ChangeFromYearAgo](https://trends.axibase.com/34165ff1)                  | alias           | Year-on-year change |
+| [ChangeByOffset](https://trends.axibase.com/90cfadae)                     | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
+| [MonthlyPercentChange](https://trends.axibase.com/7bca24b2)               | alias           | Month-on-month percent change |
+| [PercentChangeFromYearAgo](https://trends.axibase.com/44627e1d)           | alias           | Year-on-year percent change |
+| [PercentChangeByOffset](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
+| [CompoundedAnnualRateOfChange](https://trends.axibase.com/f04b65fc)       | alias           | Geometric-progression ratio which compounds change annually
+| [ContinuouslyCompoundedRateOfChange](https://trends.axibase.com/16ea90bf) | alias           | Geometric-progression ratio which continuously compounds change over an infinitesimally small interval
+| [NaturalLog](https://trends.axibase.com/897f53e1)                         | alias           | Natural Logarithm (`LOG` base constant `e`) 
+| [IndexMax](https://trends.axibase.com/3db3bfa7)                           | alias           | Maximum series value is used as index value
+| [Index](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/products/axibase-time-series-database/visualization/end-time/)     | User-selected value is used as index value
+
+Open any of the visualizations above to see syntax and visual demonstrations of each function.
 
 ### Further Reading 
 
