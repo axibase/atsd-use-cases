@@ -1,4 +1,4 @@
-# Let's Encrypt Workshop
+# Let's Encrypt SSL Certificates for Java Developers
 
 ## Table of Contents
 
