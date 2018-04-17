@@ -121,18 +121,17 @@ The two pre-defined widgets are described here:
 
 ### User-Defined Functions
 
-The Charts API supports user-defined functions, enabling users to make permanent the mathematical functions which they use on a regular basis.
+The Charts API supports user-defined functions, enabling users to store and re-use statistical functions which they apply on a regular basis.
 
 ![](images/fred-lib-demo.png)
 [![](images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
-The above visualization uses user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
+The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 
 ```sql
-### On the [configuration] level, the import command is used and the series is given the name 'fred.' 
-### The library is named 'fred.js'.
-### The function library may be imported at any configuration level, especially helpful for 
-### transformations which use multiple user-definied function libraries.
+### On the [configuration] level, the 'import' command is used to load functions from the `fred.js` file 
+### The library is assigned the name 'fred'.
+### Multiple function libraries may be imported into the same portal.
 
 [configuration]
   import fred = fred.js
@@ -151,11 +150,9 @@ The above visualization uses user-defined functions for each of the series. An a
     
 [series]      
   value = fred.MonthlyChange('base')
-  alias = month
-  display = false
 ```
 
-Using two series, the monthly percent change is visualized with a simple `value` statement which takes three arguments `library.function('series')`, where `library` is the name assigned during import, `function` is the **case-sensitive** function name, and `series` is the `alias` assigned to the series to be transformed. 
+Using two series, the monthly change is calculated as a new series with a `value` expression which applies `MonthlyChange` function from the `fred` library to the series identified with alias `base`. 
 
 The `fred.js` library is available to any **TRENDS** user and contains the following functions:
 
