@@ -187,7 +187,7 @@ SELECT * FROM stat_orders_hourly_total LIMIT 5
 
 Now that the data source is configured and validated, create a new `JDBC` job on the **Jobs** tab.
 
-![images](jdbc-config.png)
+![images](images/jdbc-config.png)
 
 To execute the job once per hour, set schedule as `0 0 * * * ?`.
 
