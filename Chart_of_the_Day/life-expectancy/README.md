@@ -7,9 +7,9 @@
 
 ### Overview
 
-The slowing growth of the American economy is at the forefront of many investors' minds; the United States hasn't seen 3% annual GDP growth for over a decade, which many analysts consider to be a fairly modest goal. Meanwhile, developing countries like China and India have consistently seen twice that amount for more than thirty years now. As [US debt](/../master/Analysis/The_New_Bubble/README.md) remains nearly three times the size of Great Britain's, the country with the second largest public debt in the world, and the Social Security Administraton is [preparing to cope](/../master/aging-america/README.md) with the growing number of would-be applicants, another phenomenon is garnering more and more attention: average life expectancy.
+The slowing growth of the American economy is at the forefront of many investors' minds; the United States hasn't seen 3% annual GDP growth for over a decade, which many analysts consider to be a fairly modest goal. Meanwhile, developing countries like China and India have consistently seen twice that amount for more than thirty years now. As [US debt](/../master/Analysis/The_New_Bubble/README.md) remains nearly three times the size of Great Britain's, the country with the second largest public debt in the world, and the Social Security Administration is [preparing to cope](/../master/aging-america/README.md) with the growing number of would-be applicants, another phenomenon is garnering more and more attention: average life expectancy.
 
-The number of Social Security recipients is growing all the time and those recipients are living for longer each year. At the same time, the number of live births is still on the decline so the number of people paying in to these already over-taxed systems is decreasing. Social Security and other disability-aid systems, often collectively refered to as "entitlements" need to be addressed by any administration that is truly interested in reversing America's potentially precipitous fall from economic grace. 
+The number of Social Security recipients is growing all the time and those recipients are living for longer each year. At the same time, the number of live births is still on the decline so the number of people paying in to these already over-taxed systems is decreasing. Social Security and other disability-aid systems, often collectively referred to as "entitlements" need to be addressed by any administration that is truly interested in reversing America's potentially precipitous fall from economic grace. 
 
 ### Objectives
 
@@ -39,7 +39,7 @@ Open the TRENDS visualization to toggle secondary datasets on and off using the 
 ![](images/life-ex-10.png)
 [![](images/button-new.png)](https://trends.axibase.com/172ff342#fullscreen)
 
-*Fig 2.* Using a variable `value` expression and a `time-offset` setting, previous-year data may be compared to current-year data to show the dimishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) below the [Time Series](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) chart tracks the distribution range of values and shows that the average growth rate of the life expectancy has not achieved for the last several years from all tracked demographics.
+*Fig 2.* Using a variable `value` expression and a `time-offset` setting, previous-year data may be compared to current-year data to show the diminishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) below the [Time Series](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) chart tracks the distribution range of values and shows that the average growth rate of the life expectancy has not achieved for the last several years from all tracked demographics.
 
 The `value` expression using to derive the above series is shown here:
 
@@ -114,7 +114,7 @@ The underlying configuration is shown here:
       format = %
 ```
 
-The `previous` function is used to select the entry preceeding the current value.
+The `previous` function is used to select the entry preceding the current value.
 
 **Moving Average Statistical Function**
 
@@ -176,11 +176,11 @@ Compare the combined life expectancy data for both sexes and racial categories o
 ![](images/life-ex-comp.png)
 [![](images/button-new.png)](https://trends.axibase.com/1e7242d7#fullscreen)
 
-*Fig 5.*: The original life expenctancy change from previous year data is shown here with the same data after it the `movavg` function has been applied.
+*Fig 5.*: The original life expectancy change from previous year data is shown here with the same data after it the `movavg` function has been applied.
 
 ### Conclusion
 
-The diminishing increase in United States life expectacy indicates that this rate of improvements may be as good as it gets for mankind. A number of [easily accessible](http://lmgtfy.com/?q=peak+life+expectancy) and recent resources have shown large research organizations coming to the same conclusion: sometime in the next 20 - 30 years we may see a complete flattening of that line. Despite the continuous increase in nutritional, performance-enhancing, and medical / surgical options, scientists are beginning to believe that man's current life expectancy may not reach much higher than it already has.
+The diminishing increase in United States life expectancy indicates that this rate of improvements may be as good as it gets for mankind. A number of [easily accessible](http://lmgtfy.com/?q=peak+life+expectancy) and recent resources have shown large research organizations coming to the same conclusion: sometime in the next 20 - 30 years we may see a complete flattening of that line. Despite the continuous increase in nutritional, performance-enhancing, and medical / surgical options, scientists are beginning to believe that man's current life expectancy may not reach much higher than it already has.
 
 ![](images/life-ex-comb.png)
 [![](images/button-new.png)](https://trends.axibase.com/feeee62f#fullscreen)
