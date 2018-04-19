@@ -216,7 +216,7 @@ GROUP BY entity
 
 ### Calendar Filtering
 
-The database provides a convenient syntax to filter data via calendar. This is convenient, if the availability objectives vary by  peak/offpeak hours. This filtering condition calculates average uptime for specific hours of the day such as 8 am to 6 pm during weekdays (Monday to Friday).
+The database provides a convenient syntax to filter data via calendar. This is convenient, if the availability objectives vary by  peak/off-peak hours. This filtering condition calculates average uptime for specific hours of the day such as 8 am to 6 pm during weekdays (Monday to Friday).
 
 
 ```sql
