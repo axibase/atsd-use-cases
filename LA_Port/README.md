@@ -43,7 +43,7 @@ fuel is the primary industrial fuel source the world over but despite this, the 
 on-shore technology with California-generated electricity from the Water and Power Department. Various compounds formed by
 oxygen and nitrogen, specifically nitrogen dioxide, are the result of high-temperature combustion and form the tell-tale
 brown haze known as smog that suffocates polluted city skylines across the globe and contributes to acid rain when mixed with
-the sulfurous gases produced by coal and petroleum usage. Sulfur oxides, while sometimes naturally occuring, are more commonly
+the sulfurous gases produced by coal and petroleum usage. Sulfur oxides, while sometimes naturally occurring, are more commonly
 negatively associated with industry processes and the formation of dangerously acidic rain, which can harm plants and animals 
 alike and even damage buildings. 
 
@@ -179,7 +179,7 @@ The numerical values associated with the above visualization are shown below:
 | 2012 | 631.0               | 
 ```
 
-Sulfur Oxide is produced naturally by volcanos but the majority of its harmful production comes from burning fossil fuels
+Sulfur Oxide is produced naturally by volcanoes but the majority of its harmful production comes from burning fossil fuels
 in industrial processes. The Port of Los Angeles has cut its own portion of such production by a stunning 20% in just 7 years,
 down from 25% of the Los Angeles Basin total in 2005 to just 6% in 2012.
 
@@ -231,7 +231,7 @@ range of values.
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/0f8b70ab/10/#fullscreen)
 
-> Open the diagram in ChartLab and use the dropdown menu at the top of the screen to see the changing total values of each
+> Open the diagram in ChartLab and use the drop-down menu at the top of the screen to see the changing total values of each
 metric relative to one another throughout the entire observed period.
 
 Based on the above diagram, the relative levels of each measured pollutant are shown alongside one another. Throughout the
