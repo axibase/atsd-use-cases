@@ -1,7 +1,5 @@
 # Anomaly Detection
 
-
-
 ## Overview
 
 Axibase Time Series Database allows IT operations teams to monitor Linux containers in concert with existing management systems.
