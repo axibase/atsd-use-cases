@@ -93,7 +93,7 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 
 **Configuration Features:**
 
-* `alert-expression`: user-defined thresholds may be created via `[threshold]` series, or comparison to other series in the visualzation. Here, the two colored series are assigned an `alias` according to their year and compared. When the condition is satisfied, that is, the value of 2018 tax return filings is greater than the value of 2017 tax filings for the same period, the `alert-style` setting is activated, in this case coloring that period's representative bar green.
+* `alert-expression`: user-defined thresholds may be created via `[threshold]` series, or comparison to other series in the visualization. Here, the two colored series are assigned an `alias` according to their year and compared. When the condition is satisfied, that is, the value of 2018 tax return filings is greater than the value of 2017 tax filings for the same period, the `alert-style` setting is activated, in this case coloring that period's representative bar green.
 
 * `mode`: time charts feature several display [modes](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) to quickly change visualization styles. 
 
@@ -238,6 +238,6 @@ ORDER BY "Day in Year", time
 | 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          | 
 ```
 
-SQL console suppports the [`ROUND`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
+SQL console supports the [`ROUND`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
 
 ![](images/dec-pre.png)
