@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide shows how to configure automatic email notifications upon resource launch from an Amazon Web Services account. This feature enables real-time notifications that alert you to resource status change and prevent unauthorized use of your AWS account which, if left unchecked, can result in expensive fees from AWS and potentionally harmful operations.
+This guide shows how to configure automatic email notifications upon resource launch from an Amazon Web Services account. This feature enables real-time notifications that alert you to resource status change and prevent unauthorized use of your AWS account which, if left unchecked, can result in expensive fees from AWS and potentially harmful operations.
 
 ![](images/new-flow.png)
 
