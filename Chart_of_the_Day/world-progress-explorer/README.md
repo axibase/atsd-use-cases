@@ -58,6 +58,13 @@ ORDER BY "Life Expectancy" DESC
   LIMIT 10
 ```
 
+Query uses the following clauses:
+* [`FROM`](https://github.com/axibase/atsd/tree/master/sql#virtual-table)
+* [Alias / `AS`](https://github.com/axibase/atsd/tree/master/sql#aliases)
+* [`WHERE`](https://github.com/axibase/atsd/tree/master/sql#where-clause)
+* [`LIMIT`](https://github.com/axibase/atsd/tree/master/sql#limiting)
+* [`ORDER BY`](https://github.com/axibase/atsd/tree/master/sql#ordering)
+
 | Year | Country           | Life Expectancy | 
 |------|-------------------|-----------------| 
 | 2015 | Hong Kong         | 84              | 
@@ -71,7 +78,7 @@ ORDER BY "Life Expectancy" DESC
 | 2015 | Republic of Korea | 82              | 
 | 2015 | Canada            | 82              | 
 
-#### Lowestt Life Expectancy at Birth for Year 2015
+#### Lowest Life Expectancy at Birth for Year 2015
 
 ```sql
 SELECT year(time) AS "Year",
@@ -106,6 +113,10 @@ FROM "life_expectancy_at_birth_by_country"
   ORDER BY AVG(value) DESC
   LIMIT 10
 ```
+
+Query uses the following clauses:
+* [`AVG` Aggregator](https://github.com/axibase/atsd/tree/master/sql#aggregation-functions)
+* [`GROUP BY`](https://github.com/axibase/atsd/tree/master/sql#grouping)
 
 | Country       | Life Expectancy | 
 |---------------|-----------------| 
@@ -154,6 +165,9 @@ FROM "life_expectancy_at_birth_by_country"
   ORDER BY "Change in Life Expectancy" DESC
   LIMIT 10
 ```
+Clauses used in this query:
+* [`FIRST`](https://github.com/axibase/atsd/blob/master/sql/examples/aggregate-first-last.md#aggregate-functions-first-and-last)
+* [`LAST`](https://github.com/axibase/atsd/blob/master/sql/examples/aggregate-first-last.md#aggregate-functions-first-and-last)
 
 | Country                            | Change in Life Expectancy | 
 |------------------------------------|---------------------------| 
@@ -174,10 +188,14 @@ FROM "life_expectancy_at_birth_by_country"
 SELECT tags.country AS "Country",
 CONCAT(CAST((LAST(value) - FIRST(value))/1000000 AS string), ' Million') AS "Change in Population"
 FROM "population_total_by_country"
-GROUP BY "Country"
-ORDER BY LAST(value) - FIRST(value) DESC
+  GROUP BY "Country"
+  ORDER BY LAST(value) - FIRST(value) DESC
   LIMIT 10
 ```
+
+Clauses used in this query:
+* [`CONCAT` String Function](https://github.com/axibase/atsd/tree/master/sql#string-functions)
+* [`CAST`](https://github.com/axibase/atsd/tree/master/sql#cast)
 
 | Country       | Change in Population | 
 |---------------|----------------------| 
@@ -198,8 +216,8 @@ ORDER BY LAST(value) - FIRST(value) DESC
 SELECT tags.country AS "Country",
 CONCAT(CAST((LAST(value) - FIRST(value))/1000000 AS string), ' Million') AS "Change in Population"
 FROM "population_total_by_country"
-GROUP BY "Country"
-ORDER BY LAST(value) - FIRST(value) ASC
+  GROUP BY "Country"
+  ORDER BY LAST(value) - FIRST(value) ASC
   LIMIT 10
 ```
 
@@ -222,8 +240,8 @@ ORDER BY LAST(value) - FIRST(value) ASC
 SELECT tags.country AS "Country",
 LAST(value) AS "Fertility Rate"
 FROM "fertility_rate_total_by_country"
-GROUP BY "Country"
-ORDER BY LAST(value) DESC
+  GROUP BY "Country"
+  ORDER BY LAST(value) DESC
   LIMIT 10
 ```
 
@@ -245,10 +263,10 @@ ORDER BY LAST(value) DESC
 
 ```sql
 SELECT tags.country AS "Country",
-(LAST(value) AS "Fertility Rate"
+LAST(value) AS "Fertility Rate"
 FROM "fertility_rate_total_by_country"
-GROUP BY "Country"
-ORDER BY LAST(value) ASC
+  GROUP BY "Country"
+  ORDER BY LAST(value) ASC
   LIMIT 10
 ```
 
