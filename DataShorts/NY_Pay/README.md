@@ -58,7 +58,7 @@ SELECT tags.income_group AS "AGI Decile", value AS "Total Filers", value/1000 AS
 
 ```sql
 SELECT tags.income_group AS "AGI Decile", value AS "Decile Average Income"
-  FROM "avergae_income_per_filer"
+  FROM "average_income_per_filer"
 ```
 
 **Table 2.1**
