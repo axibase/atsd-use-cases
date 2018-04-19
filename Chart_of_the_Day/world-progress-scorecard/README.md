@@ -1,4 +1,4 @@
-# The World Progress Scorecard: In-Depth Visualization with SQL and User-Defined Functions
+# The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions
 
 ![](images/wps-title.png)
 [![](images/button-new.png)](https://trends.axibase.com/eb435d60)
@@ -102,8 +102,8 @@ ORDER BY "Life Expectancy" ASC
 SELECT tags.country AS "Country",
   AVG(value) AS "Life Expectancy"
 FROM "life_expectancy_at_birth_by_country"
-GROUP BY "Country"
-ORDER BY AVG(value) DESC
+  GROUP BY "Country"
+  ORDER BY AVG(value) DESC
   LIMIT 10
 ```
 
@@ -126,8 +126,8 @@ ORDER BY AVG(value) DESC
 SELECT tags.country AS "Country",
   AVG(value) AS "Life Expectancy"
 FROM "life_expectancy_at_birth_by_country"
-GROUP BY "Country"
-ORDER BY AVG(value) ASC
+  GROUP BY "Country"
+  ORDER BY AVG(value) ASC
   LIMIT 10
 ```
 
@@ -144,24 +144,125 @@ ORDER BY AVG(value) ASC
 | Central African Republic | 47              | 
 | Somalia                  | 48              | 
 
-### Resources
+#### Greatest Growth in Life Expectancy Across Observed Period (1970-2015)
 
-* Launch a local ATSD instance to use SQL Console;
-
+```sql
+SELECT tags.country AS "Country",
+  LAST(value) - FIRST(value) AS "Change in Life Expectancy"
+FROM "life_expectancy_at_birth_by_country"
+  GROUP BY "Country"
+  ORDER BY "Change in Life Expectancy" DESC
+  LIMIT 10
 ```
-docker run -d -p 8443:8443 -p 9443:9443 \
-  --name=atsd-sandbox \
-  axibase/atsd-sandbox:latest
+
+| Country                            | Change in Life Expectancy | 
+|------------------------------------|---------------------------| 
+| Maldives                           | 33                        | 
+| Bhutan                             | 30                        | 
+| Nepal                              | 29                        | 
+| Democratic Republic of Timor-Leste | 29                        | 
+| Senegal                            | 27                        | 
+| Cambodia                           | 27                        | 
+| Oman                               | 27                        | 
+| Islamic Republic of Afghanistan    | 27                        | 
+| Algeria                            | 26                        | 
+| Mali                               | 25                        | 
+
+#### Greatest Population Growth (1970-2015)
+
+```sql
+SELECT tags.country AS "Country",
+CONCAT(CAST((LAST(value) - FIRST(value))/1000000 AS string), ' Million') AS "Change in Population"
+FROM "population_total_by_country"
+GROUP BY "Country"
+ORDER BY LAST(value) - FIRST(value) DESC
+  LIMIT 10
 ```
 
-* Wait until `All applications started` appears;
+| Country       | Change in Population | 
+|---------------|----------------------| 
+| India         | 770.59 Million       | 
+| China         | 560.35 Million       | 
+| Indonesia     | 146.28 Million       | 
+| Pakistan      | 135.11 Million       | 
+| Nigeria       | 130 Million          | 
+| United States | 118.07 Million       | 
+| Brazil        | 112.32 Million       | 
+| Bangladesh    | 97.9 Million         | 
+| Mexico        | 75.51 Million        | 
+| Ethiopia      | 73.98 Million        | 
 
-* Open ATSD interface: `https://atsd-hostname:8443`
+#### Greatest Population Decline (1970-2015)
 
-* Open the **SQL** menu and select **Console**;
+```sql
+SELECT tags.country AS "Country",
+CONCAT(CAST((LAST(value) - FIRST(value))/1000000 AS string), ' Million') AS "Change in Population"
+FROM "population_total_by_country"
+GROUP BY "Country"
+ORDER BY LAST(value) - FIRST(value) ASC
+  LIMIT 10
+```
 
-![](images/sql-console.png)
+| Country                | Change in Population | 
+|------------------------|----------------------| 
+| Ukraine                | -2.08 Million        | 
+| Bulgaria               | -1.36 Million        | 
+| Romania                | -0.54 Million        | 
+| Serbia                 | -0.52 Million        | 
+| Hungary                | -0.51 Million        | 
+| Georgia                | -0.4 Million         | 
+| Latvia                 | -0.39 Million        | 
+| Lithuania              | -0.26 Million        | 
+| Bosnia and Herzegovina | -0.24 Million        | 
+| Croatia                | -0.24 Million        | 
 
-* Use ATSD [documentation](https://github.com/axibase/atsd/tree/master/sql#overview) for syntax and functional information.
+#### Greatest Fertility Rate (2015)
 
-> If you have any questions or comments, [raise an issue](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page.
+```sql
+SELECT tags.country AS "Country",
+LAST(value) AS "Fertility Rate"
+FROM "fertility_rate_total_by_country"
+GROUP BY "Country"
+ORDER BY LAST(value) DESC
+  LIMIT 10
+```
+
+| Country                            | Fertility Rate | 
+|------------------------------------|----------------| 
+| Niger                              | 7.29          | 
+| Somalia                            | 6.36          | 
+| Democratic Republic of Congo       | 6.2           | 
+| Mali                               | 6.14          | 
+| Chad                               | 6.05          | 
+| Burundi                            | 5.78          | 
+| Angola                             | 5.76          | 
+| Democratic Republic of Timor-Leste | 5.61          | 
+| Nigeria                            | 5.59          | 
+| Republic of Gambia                 | 5.48          | 
+
+
+#### Lowest Fertility Rate (2015)
+
+```sql
+SELECT tags.country AS "Country",
+(LAST(value) AS "Fertility Rate"
+FROM "fertility_rate_total_by_country"
+GROUP BY "Country"
+ORDER BY LAST(value) ASC
+  LIMIT 10
+```
+
+| Country                | Fertility Rate | 
+|------------------------|----------------| 
+| Hong Kong              | 1.19          | 
+| Portugal               | 1.23          | 
+| Republic of Korea      | 1.23          | 
+| Singapore              | 1.24          | 
+| Republic of Moldova    | 1.24          | 
+| Macao                  | 1.28          | 
+| Greece                 | 1.3           | 
+| Poland                 | 1.32          | 
+| Spain                  | 1.32          | 
+| Bosnia and Herzegovina | 1.34          | 
+
+#### Greatest Change in Fertility Rate
