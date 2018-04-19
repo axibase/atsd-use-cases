@@ -12,7 +12,7 @@ Comprehensive Housing Market Analysis: City of Austin (2014)
 #### Index
 
 The following table contains the entire set of included metrics as well as their corresponding visualization figure for easy navigation.
-Use the clickable links in the Figure column to jump between visualizations and in Chartlab, use the dropdown menus to toggle
+Use the clickable links in the Figure column to jump between visualizations and in Chartlab, use the drop-down menus to toggle
 between metrics.
 
 | Metric | Comment | Figure |
@@ -59,7 +59,7 @@ The following ChartLab visualization displays information related to the changin
  
 [![](Images/button.png)](http://apps.axibase.com/chartlab/69d313b9/3/#fullscreen)
 
-> Use the dropdown menu to toggle between metrics
+> Use the drop-down menu to toggle between metrics
 
 Return to the [Index](#Index)
 
@@ -79,7 +79,7 @@ The following ChartLab visualization displays information related to transportat
 
 [![](Images/button.png)](http://apps.axibase.com/chartlab/0964c838/2/#fullscreen)
 
-> Use the dropdown menu to toggle between metrics
+> Use the drop-down menu to toggle between metrics
 
 Return to the [Index](#Index)
 
@@ -102,7 +102,7 @@ The following ChartLab visualization displays information related to the socioec
 
 [![](Images/button.png)](http://apps.axibase.com/chartlab/ac220ab9/4/#fullscreen)
 
-> Use the dropdown menu to toggle between metrics
+> Use the drop-down menu to toggle between metrics
 
 Return to the [Index](#Index)
 
