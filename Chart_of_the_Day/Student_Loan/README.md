@@ -23,7 +23,7 @@ debt's guarantor.
 
 That presents an entirely new problem, because while the student loan debt is not directly held by the government it is
 beginning to look more and more like the Federal Government will end up footing the bill. Right now, more than 10% of student
-loan borrowers are deliquent on their payments ([3](https://ifap.ed.gov/perkinscdrguide/attachments/1415PerkinsCDR.pdf)).
+loan borrowers are delinquent on their payments ([3](https://ifap.ed.gov/perkinscdrguide/attachments/1415PerkinsCDR.pdf)).
 
 The lower part of the above visualization shows that the rate of student loan debt growth is staying relatively constant,
 which isn't great news considering that that rate of increase is relatively more significant than the rate of GDP growth 
