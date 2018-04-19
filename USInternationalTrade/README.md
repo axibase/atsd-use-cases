@@ -3,7 +3,7 @@
 Analyzing America's International Trade History
 ===============================================
 
-Buy American. Drive American. Wear American. The American economy seems to be on everybody's minds these days, namely returning jobs and money sent overseas back to the American people. Many voters in the 2016 U.S. presidental election
+Buy American. Drive American. Wear American. The American economy seems to be on everybody's minds these days, namely returning jobs and money sent overseas back to the American people. Many voters in the 2016 U.S. presidential election
 desired to return to a time when America was producing more than it was taking in. According to data published by the [World Bank](http://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2015&start=1960&view=chart&year_high_desc=true),
 the United States represented **40%** of the world's GDP in **1960**. By 2015, that number had dropped to only **24%**. According to the [Bureau of Labor Statistics (BLS)](https://www.bls.gov/opub/mlr/2012/01/art4full.pdf), by 2020 the U.S. is predicted to have **5.7
 million** less manufacturing jobs than it had in 2000. Additionally, the percentage of Americans employed in manufacturing dropped from **19%** in 1980 to **8%** in 2016. In this article we will analyze a dataset from [census.gov](https://www.census.gov) looking at
@@ -72,7 +72,7 @@ Trade by Country
 
 Let's now look at trade balance between the U.S. and individual countries.  
 
-Below is an image showing import, export, and trade balance values between the U.S. and its largest trading partner, China. In 2016, exports and imports to/from China totalled **$104 billion** and **$423 billion**, respectively.
+Below is an image showing import, export, and trade balance values between the U.S. and its largest trading partner, China. In 2016, exports and imports to/from China totaled **$104 billion** and **$423 billion**, respectively.
 As marked in the figure below, we can see that the trade balance deficit between the U.S. and China grew from **-$6 million** in 1985 to **-$319 billion** in 2016.  
 
 ![Figure 4](Images/Figure4.png)
@@ -179,8 +179,8 @@ GROUP BY e.period(1 year), e.tags
 
 In addition to tables output from SQL queries, we can display these continental relationships in Chart Lab graphs. Below is an image for U.S. trade export and import numbers with South and
 Central America, Asia, Africa, Europe, and North America for 2016. Lines are drawn going from (exports) and coming back to (imports) the U.S. The heavier the lines
-are between the U.S. and the respective continent, the greater the dollar amount in trade. We can see that 2016 exports from the U.S. to North America totalled
-**$457 billion**, while imports from North America into the US totalled **$525 billion**, resulting in a trade balance deficit of **-$68 billion**. Additionally, we can see that the
+are between the U.S. and the respective continent, the greater the dollar amount in trade. We can see that 2016 exports from the U.S. to North America totaled
+**$457 billion**, while imports from North America into the US totaled **$525 billion**, resulting in a trade balance deficit of **-$68 billion**. Additionally, we can see that the
 heaviest lines were between the U.S. and Asia, indicating that these two have the highest trade volume between them.
 
 ![Figure 3](Images/Figure3.png)
