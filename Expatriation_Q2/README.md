@@ -29,7 +29,7 @@ officially releases quarterly information about American citizens who renounce t
 residents who have decided to repatriate, view the raw data [here](https://www.federalregister.gov/documents/2017/05/10/2017-09475/quarterly-publication-of-individuals-who-have-chosen-to-expatriate-as-required-by-section-6039g) and use the [Axibase Data Crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler) designed specifically for collecting, parsing, organzing and inserting historical expatriation data and new data as it becomes available. 
 [Axibase](https://axibase.com) covered last quarter's expatriation release [here](Expatriation/README.md) and is using
 this quarter's release to follow-up. Every election cycle countless celebrities and netizens issue their promise to leave
-if their candidate fails to get elected and the growing notoriety surrounding the 2016 Presidental Election has proven to 
+if their candidate fails to get elected and the growing notoriety surrounding the 2016 Presidential Election has proven to 
 be no different.
 
 This type of social theater is almost as old as the country itself as there have been
