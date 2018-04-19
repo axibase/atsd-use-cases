@@ -6,7 +6,7 @@ The New Face of Nuclear Proliferation
 Since taking effect in 1970, the [Non-Proliferation Treaty](https://www.iaea.org/publications/documents/infcircs/treaty-non-proliferation-nuclear-weapons) 
 (NPT) has required that the world's foremost nuclear powers take dramatic steps to reduce their inventory of atomic bombs and has
 sought to prevent the spread of weaponized nuclear technology to countries who lack it. Signed as the Cold War began to reach its peak in 1968,
-less than a decade after the Cuban Missle Crisis but almost twenty years before the fall of the Berlin Wall, the NPT has 
+less than a decade after the Cuban Missile Crisis but almost twenty years before the fall of the Berlin Wall, the NPT has 
 served an important role in international cooperation over the last 47 years.
 
 ### Cold War Rivals Lead De-escalation
