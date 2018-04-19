@@ -101,7 +101,7 @@ The following three filters are applied to the default portal:
 
 * First dropdown: allows the user to view data by the specified metric. In the default portal, the only current option is to filter by thousands of US dollars. 
 * Second dropdown: allows the user to filter between 23 industries. In the case above, all industries have been selected. 
-* Third dropdown: allows the user to filter by industry groups (farm, government and government enterprise, and private nonfarm). In the above case, all groups have been selected.
+* Third dropdown: allows the user to filter by industry groups (farm, government and government enterprise, and private non-farm). In the above case, all groups have been selected.
 
 The below figure shows the output when **farm** is selected as the **[industry_type]** from the third filter. We can see that the total employee compensation for farming fluctuates quite
 often. There does not seem to be a single pattern that repeats year over year, such as low amount of work in the winter (leading to low values) and a high amount of work in the fall
@@ -387,7 +387,7 @@ multiplying your unadjusted value by the current CPI over the CPI at any specifi
 Let us now pull a dataset from the BLS website for CPI. A CPI dataset is available for download here: [http://data.bls.gov/cgi-bin/surveymost](http://data.bls.gov/cgi-bin/surveymost). The data is only
 available, however, in XLSX format. As a result, we needed to create a file job in Axibase collector to download the tabular data from the Bureau of Labor Statistics file format and then upload it into
 ATSD. Because the file format is nonstandard, ATSD needs to be told how to parse the data. This configuration, which describes the rules for parsing, is called a CSV parser configuration. Specific rules 
-need to be written for custom BLS ouputs.
+need to be written for custom BLS outputs.
 
 The BLS file job can be found [here](jobs.xml). The CSV parser can be found [here](csv-configs.xml). 
 
