@@ -1,7 +1,7 @@
 # The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions
 
 ![](images/wps-title.png)
-[![](images/button-new.png)](https://trends.axibase.com/eb435d60)
+[![](images/button-new.png)](https://trends.axibase.com/ecb8def7#fullscreen)
 
 ### Introduction
 
@@ -26,7 +26,7 @@ For detailed information about using the **TRENDS** service, read this [guide](/
 The visualizations in the chart above demonstrate a [user-defined function](/../master/how-to/shared/trends.md#user-defined-functions) which sets the year 1990 as the baseline using the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js) library. Using the `PercentChangeFromYearAgo` function instead creates the visualization below. Open the **TRENDS** interface and explore the data using the same drop-down menus to navigate between countries and metrics.
 
 ![](images/wps-1.png)
-[![](images/button-new.png)](https://trends.axibase.com/5ce2f40e#)
+[![](images/button-new.png)](https://trends.axibase.com/5d0563d2#fullscreen)
 
 Axibase [Charts API](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) uses a simple syntax with robust functionality. The underlying mechanics of the `PercentChangeFromYearAgo` function are shown here:
 
@@ -41,6 +41,12 @@ value = fred.PercentChangeFromYearAgo('raw')
 ```
 
 Open the **TRENDS** visualization and use any of the supported user-defined functions from the [`fred.js` library](/../master/how-to/shared/trends.md#fred-library).
+
+Some datasets have volatile movements that make gleaning information from the visualization alone difficult. Using supported [aggregators](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/), such volatility may be smoothed or removed entirely.
+
+![](images/wpe-bad.png)
+
+The visualization below uses a 
 
 ### SQL Queries
 
@@ -168,7 +174,7 @@ FROM "life_expectancy_at_birth_by_country"
 | Algeria                            | 26                        | 
 | Mali                               | 25                        | 
 
-#### Greatest Population Growth (1970-2015)
+#### Greatest Population Growth Across Observed Period (1970-2015)
 
 ```sql
 SELECT tags.country AS "Country",
@@ -192,7 +198,7 @@ ORDER BY LAST(value) - FIRST(value) DESC
 | Mexico        | 75.51 Million        | 
 | Ethiopia      | 73.98 Million        | 
 
-#### Greatest Population Decline (1970-2015)
+#### Greatest Population Decline Across Observed Period (1970-2015)
 
 ```sql
 SELECT tags.country AS "Country",
@@ -265,4 +271,3 @@ ORDER BY LAST(value) ASC
 | Spain                  | 1.32          | 
 | Bosnia and Herzegovina | 1.34          | 
 
-#### Greatest Change in Fertility Rate
