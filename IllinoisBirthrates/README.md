@@ -11,7 +11,7 @@ to some of the largest and most successful corporations in the United States inc
 Boots Alliance, McDonald's, Sears Holdings, and United Continental. The University of
 Chicago has contributed countless innovations to the fields of business, economics, law,
 political science, and physics, among others, and is consistently ranked among the
-ten best universites in the country. Occasionally marred by political corruption, five state governors have been found
+ten best universities in the country. Occasionally marred by political corruption, five state governors have been found
 guilty of misuse of power since the 1920's and a number of other state officials have 
 also served time in prison as a result of their actions in office.
 
@@ -60,14 +60,14 @@ county by birthrate, consistently out-performed by the smaller Peoria County (Po
 ![](Images/ILL29.png)
 
 Open [ChartLab](https://apps.axibase.com/chartlab/6402f01c) to explore the number of live births in each of the counties listed above
-and navigate throughout the 20-year time period using the dropdown menu at the top of
+and navigate throughout the 20-year time period using the drop-down menu at the top of
 the display.
 
 ![](Images/ILL31.png)
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/2/#fullscreen)
 
->Learn more about creating a Dropdown menu in ChartLab in the [Appendix](#appendix) below.
+>Learn more about creating a drop-down menu in ChartLab in the [Appendix](#appendix) below.
 
 Use the ChartLab model below to compare the Top 10 counties' live births against the
 whole of Illinois' live births. Toggle between observed years using the dropdown menu:
