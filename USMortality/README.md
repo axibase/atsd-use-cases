@@ -43,7 +43,7 @@ While you can manually analyze this information in a spreadsheet program, it is 
 ### Axibase Time Series Database
 --------------------------------
 
-The [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) (ATSD) is a powerful tool when it comes to storing, analyzing, and visualising datasets. This article will not focus on creating graphs and figures using ATSD, but
+The [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) (ATSD) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. This article will not focus on creating graphs and figures using ATSD, but
 rather on writing and running SQL queries. If you are interested in reading more on the visual presentation capabilities of ATSD, check out our articles on
 [employee compensation numbers in Iowa](../SocrataIowaCompensation/README.md) and
 [aviation statistics in the United Kingdom](../UKAviation/README.md).
@@ -97,7 +97,7 @@ Below is a list and brief descriptions of some dataset schema terminology we wil
 
 Now we will begin by introducing ourselves to this dataset and taking a look at where exactly this information is stored.
 
-1. Navigate to the **Entities** tab in ATSD. Click on the entity for our datset, `mr8w-325u`.
+1. Navigate to the **Entities** tab in ATSD. Click on the entity for our dataset, `mr8w-325u`.
 
    ![Figure 37](Images/Figure37.png)
 
@@ -435,7 +435,7 @@ This query is the same as the above example, except for the fact that the line `
 
 Noticeably absent in from the above list is the city of New Orleans, Louisiana. On August 29th, 2005, [Hurricane Katrina](http://edition.cnn.com/2013/08/23/us/hurricane-katrina-statistics-fast-facts/)
 struck the Gulf coast of the United States, with New Orleans taking the brunt of the storm's force. According to the Federal Emergency Management Agency (FEMA), Katrina was "the single most catastrophic
-natural disaster in U.S. history." FEMA estimated the total damage from the hurricane ammounted to $108 billion dollars, making it the "costliest hurricane in U.S. history." Approximately 1,833 people
+natural disaster in U.S. history." FEMA estimated the total damage from the hurricane amounted to $108 billion dollars, making it the "costliest hurricane in U.S. history." Approximately 1,833 people
 are estimated to have died in the storm, with 1,577 of those deaths occurring in the New Orleans area. This number of deaths would clearly put New Orleans, so why is it not showing up?
 
 Below is a Chart Lab output for the number of deaths for New Orleans from 1970 to 2016.
