@@ -242,7 +242,7 @@ are marked in red in the figure below.
 
 ![HawaiiIslands](Images/HawaiiIslands.png)
 
-To briefly demonstrate our capabilities, let us compare Diesel prices at Honolulu, Wailuku, and Hilo with the Residental electricty rates at their
+To briefly demonstrate our capabilities, let us compare Diesel prices at Honolulu, Wailuku, and Hilo with the Residential electricity rates at their
 respective corresponding islands (Oahu, Maui, Hawaii).
 
 ![Figure 10](Images/Figure10.png)
