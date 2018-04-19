@@ -24,7 +24,7 @@ The data is collected by [Axibase Collector](https://github.com/axibase/axibase-
 
 ### Linux Container Monitoring
 
--   Collect cpu, memory, I/O, volume, and network statistics from Docker hosts and containers.
+-   Collect CPU, memory, I/O, volume, and network statistics from Docker hosts and containers.
 -   Correlate container utilization with OS-level usage for triage and diagnostics.
 -   Instantly visualize data with built-in, real-time host and container dashboards.
 -   Automatically build service dashboards using image and container labels.
