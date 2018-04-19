@@ -44,7 +44,7 @@ Open the **TRENDS** visualization and use any of the supported user-defined func
 
 ### SQL Queries
 
-Although a non-relational database, ATSD supports an SQL-like feature called [SQL Console](https://github.com/axibase/atsd/tree/master/sql#overview). This convenient interface lets users quickly query data. To launch a local ATSD instance, and use the SQL console for yourself, follow the launch instructions in the [Resources](#resources) section of this article. 
+Although a non-relational database, ATSD supports an SQL-like feature called [SQL Console](https://github.com/axibase/atsd/tree/master/sql#overview), a convenient interface which lets users quickly query data.
 
 #### Greatest Life Expectancy for Year 2015
 
