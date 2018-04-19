@@ -10,7 +10,7 @@ is 'Frisco home to the Golden Gate Bridge, one of the wonders of the modern worl
 Francisco International Airport, or SFO as it's known to frequent fliers. The data was collected by
 the airport's [Office of Aircraft Noise Abatement](https://www.flysfo.com/community/noise-abatement) and includes
 complaints received via email, hotline, and even handwritten letter. Open [ChartLab](https://apps.axibase.com) below and navigate through time
-using the dropdown menu at the top of the visualization:
+using the drop-down menu at the top of the visualization:
 
 ![](Images/SFO1.png)
 
@@ -25,7 +25,7 @@ The visualization below further contracts the data, showing complaints by neighb
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/d8b696da/#fullscreen)
 
-Follow SFO's seasonal passenger eb and flow trends to spot patterns in complaint traffic, using additional [city data](https://github.com/axibase/open-data-catalog/blob/master/datasets/rkru-6vcg.md). It's no
+Follow SFO's seasonal passenger ebb and flow trends to spot patterns in complaint traffic, using additional [city data](https://github.com/axibase/open-data-catalog/blob/master/datasets/rkru-6vcg.md). It's no
 surprise that during peak travel months, the number of complaints received increases as well:
 
 ![](Images/SFO2.png)
