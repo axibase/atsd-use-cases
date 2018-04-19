@@ -13,7 +13,7 @@ Who is Dropping Out in the State with the Fewest Dropouts Per Year?
 
 For the 2014-2015 academic year, more than [90%](https://www2.ed.gov/admins/lead/account/consolidated/sy14-15part1/ia.pdf) 
 of eligible Iowa students successfully graduated high school making it the [highest 
-performing state](https://nces.ed.gov/programs/coe/indicator_coi.asp) in the country with respectto graduation rate, and the 
+performing state](https://nces.ed.gov/programs/coe/indicator_coi.asp) in the country with respect to graduation rate, and the 
 first state in recent memory to see such results. Using publicly-available [education data](https://catalog.data.gov/dataset/2014-2015-public-school-district-dropout-rates)
 released by the State of Iowa, it can be seen that cities which account for just 17% of the state's three and a half million residents, 
 also account for more than 30% of the state's high school dropouts.
