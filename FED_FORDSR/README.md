@@ -22,7 +22,7 @@ about these consumers and their monetary practices to better inform their decisi
 ### Data
 
 Provided by the [Federal Reserve](https://www.federalreserve.gov/), this [dataset](https://www.federalreserve.gov/datadownload/Download.aspx?rel=FOR&series=91e0f9a6b8e6a4b1ef334ce2eaf22860&filetype=csv&label=include&layout=seriescolumn&from=01/01/1980&to=12/31/2017)
-must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interprete (`Q/q` letter is not supported). We also need to discard metadata lines contained in the multi-line header. This can be accompilshed with a [schema-based parser](https://axibase.com/products/axibase-time-series-database/writing-data/csv/) that provides granular control over the document's rows and columns using RFC 7111 selectors and Javascript:
+must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interpret (`Q/q` letter is not supported). We also need to discard metadata lines contained in the multi-line header. This can be accomplished with a [schema-based parser](https://axibase.com/products/axibase-time-series-database/writing-data/csv/) that provides granular control over the document's rows and columns using RFC 7111 selectors and Javascript:
 
 **Script 1.1**
 
@@ -221,7 +221,7 @@ displayed:
       label = Non-Essential Debt Payment
 ```
 
-Shown below is the debt profile of the average American consumer from 1980 to 2017, navigate through time using the dropdown
+Shown below is the debt profile of the average American consumer from 1980 to 2017, navigate through time using the drop-down
 menus at the top of the screen to select a desired span of time and compare how bearing debt has changed over the course of
 the last three decades.
 
@@ -339,7 +339,7 @@ to create more comprehensive data.
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/da132e01/11/#fullscreen)
 
-The above visualization aggregates the values from **Table 3.1** based on a time period of the user's selection. Use the dropdown
+The above visualization aggregates the values from **Table 3.1** based on a time period of the user's selection. Use the drop-down
 menu at the top of the screen to select the aggregation period. The initial visualization shows the average values for each
 metric over the entire period of time in 2015 USD by obligation amount per quarter. 
 
@@ -407,7 +407,7 @@ income towards a place to hang their hat up as the average 1980 consumer.
 
 The Federal Reserve is able to pull certain levers of power from the Eccles Building in Washington, D.C. such as printing
 more money, or raising and lowering interest rates to cope with inflation. However, all of these are reactionary measures meant
-to create small changes that have a butterfly effect over time. Ultimately, the machinations of the Board of Governers have
+to create small changes that have a butterfly effect over time. Ultimately, the machinations of the Board of Governors have
 always be something opaque and esoteric to the average man, leading to many people denouncing the Federal Reserve System entirely, occasionally 
 opting for a return of the gold standard or leveling accusations of wrong-doing.
 
