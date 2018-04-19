@@ -5,7 +5,7 @@
 
 >*Fig 1.* The upper graph shows the opening and closing prices for Facebook, Inc. common stock since the end of 2017. The lower graph uses a [`value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) expression to display the difference between them, and an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14) to highlight those days where the company's stock lost value in red.
 
-Since launching its IPO in mid-2012 for $38 a share, and being initially valued at $108 billion (the largest valuation of a company at the time of initial public offering), Facebook, Inc. has run into something of a problem in recent months. Besides the public's general distrust of the massive data-mining enterprise slash social networking site, Facebook has found itself embroiled in scandal after scandal after scandal and the once untouchable tech giant is starting to feel it in the market and not just the papers.
+Since launching its IPO in mid-2012 for $38 a share, and being initially valued at $108 billion (the largest valuation of a company at the time of initial public offering), Facebook, Inc. has run into something of a problem in recent months. Besides the general distrust of the massive data-mining enterprise slash social networking site, Facebook has found itself embroiled in scandal after scandal after scandal and the once untouchable tech giant is starting to feel it in the market and not just the papers.
 
 ![](images/volume-compare.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/e2635247#fullscreen)
