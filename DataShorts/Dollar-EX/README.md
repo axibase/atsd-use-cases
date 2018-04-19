@@ -311,7 +311,7 @@ GROUP BY PERIOD(1 YEAR)
 #### USD v. Canadian Dollar
 
 Relative to the USD, the Canadian dollar has been making a bit of a resurgence in 2017 as United States GDP numbers missed
-its targets in quarter two. Although dependant on the price of oil due to their large natural reserves, the diverse Canadian
+its targets in quarter two. Although dependent on the price of oil due to their large natural reserves, the diverse Canadian
 economy is one of the few globally-active nations with a significant trade surplus, although that too have been reduced in recent years.
 
 **Query 3.1**
