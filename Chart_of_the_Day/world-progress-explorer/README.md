@@ -42,12 +42,6 @@ value = fred.PercentChangeFromYearAgo('raw')
 
 Open the **TRENDS** visualization and use any of the supported user-defined functions from the [`fred.js` library](/../master/how-to/shared/trends.md#fred-library).
 
-Some datasets have volatile movements that make gleaning information from the visualization alone difficult. Using supported [aggregators](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/), such volatility may be smoothed or removed entirely.
-
-![](images/wpe-bad.png)
-
-The visualization below uses a 
-
 ### SQL Queries
 
 Although a non-relational database, ATSD supports an SQL-like feature called [SQL Console](https://github.com/axibase/atsd/tree/master/sql#overview). This convenient interface lets users quickly query data. To launch a local ATSD instance, and use the SQL console for yourself, follow the launch instructions in the [Resources](#resources) section of this article. 
