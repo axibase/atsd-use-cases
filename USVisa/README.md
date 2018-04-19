@@ -3,13 +3,12 @@
 Visa Travel to America. Identifying Trends and Outliers with Charts, SQL and Redash
 ===================================================
 
-In 2015, the United States was the [second most](https://en.wikipedia.org/wiki/World_Tourism_rankings) visited country in the world. Where do all of these travellers come from and
+In 2015, the United States was the [second most](https://en.wikipedia.org/wiki/World_Tourism_rankings) visited country in the world. Where do all of these travelers come from and
 what are their reasons for coming to the United States?
 
 In this article we will analyze a dataset from [travel.state.gov](https://travel.state.gov) looking at non-immigrant visa figures from 1997 through 2015. This research article illustrates
 how publicly available data collected by government organizations can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](http://axibase.com/products/axibase-time-series-database/)
-for interactive analysis. Additionally, this article illustrates some of the capabilities of [Redash](https://redash.io/),
-which is an open-source data visualization tool that is integrated with Axibase TSD. We will walk through how to make SQL queries in ATSD and create visualizations in Redash. Additionally,
+for interactive analysis. Additionally, this article illustrates some of the capabilities of [Redash](https://redash.io/), an open-source data visualization tool that is integrated with ATSD. We’ll walk through how to make SQL queries in ATSD and create visualizations in Redash. Additionally,
 this article contains instructions on how to install your own ATSD instance and populate it with the raw data.  
 
 ### U.S. Visa Dataset
@@ -33,7 +32,7 @@ You can load the dataset into your ATSD instance by following the steps provided
 ----------------------------------------------------
 
 Let's begin by taking a look at travel by country. The portal shown below allows you to sort by country and visa type. You can toggle between different countries in the first
-dropdown, and by visa type in the second dropdown. The below image output shows an output for H-1B visas, which are temporary work visas for workers in speciality occupations, issued
+dropdown, and by visa type in the second dropdown. The below image output shows an output for H-1B visas, which are temporary work visas for workers in specialty occupations, issued
 to Indian nationals from 1997 to 2015, which increased from **31,684** in 1997 to **119,952** in 2015. The number of visas issued to mainland China grew from **3,206** in 1997 to
 **18,306** in 2015.
 
@@ -90,7 +89,7 @@ these numbers has dropped off, falling to to 9,977 in 2015 ($1,596,320 in revenu
 ![Figure15](Images/Figure15.png)
 
 If the Eu would require U.S. citizens to obtain travel visas, Washington would likely as a response require the currently visa exempt countries from the EU to obtain visas. The total
-[number of european travelers](https://en.wikipedia.org/wiki/Visa_Waiver_Program ) to the U.S. utilizing the visa waiver program was 14,043,823 and 13,997,570 in 2014 and 2015, respectively.
+[number of European travelers](https://en.wikipedia.org/wiki/Visa_Waiver_Program ) to the U.S. utilizing the visa waiver program was 14,043,823 and 13,997,570 in 2014 and 2015, respectively.
 At $160 per visa, this would have come to about **$2.24 and $2.239 billion**, a bill EU citizens may soon have to foot should the visa waiver program be lifted.
 
 You can explore this portal by clicking on the below button:
@@ -98,7 +97,7 @@ You can explore this portal by clicking on the below button:
 [![](Images/button.png)](https://apps.axibase.com/chartlab/82d4e825#fullscreen)
 
 This below figure shows how many dependents come with each primary visa holder. Saudi Arabian visa holders are currently bringing in the most dependents. Below are some ratios (in %)
-for Saudi nationals showing the number of dependent travellers coming to the United States per primary visa holder.
+for Saudi nationals showing the number of dependent travelers coming to the United States per primary visa holder.
 
 * H-4 (family members of H-1B visa holders) to H-1B (general temporary work visa): **170**
 * L-2 (spouse of L-1 visa holder) to L-1 (work visa available to employees of international companies with offices abroad and in the U.S.): **245**
@@ -275,8 +274,8 @@ GROUP BY datetime
 ----------------------------------
 
 SQL queries are a great tool for searching for and displaying specific information from a dataset in tabular format. One of the biggest drawbacks from SQL outputs is that you are
-not able to show these tables as some kind graphical output. **But fear no more**!  Axibase is partnered with [Redash](https://redash.io/), which is an open-source data visualization tool.
-You can plug in your query results into Redash, and with a few simple steps, create graphical outputs for your SQL queries. Begin by walking through [setting up Redash through ATSD](https://redash.io/help/data-sources/axibase_tsd.html). The setup should take you about 10 minutes.
+not able to show these tables as some kind graphical output. Axibase is partnered with [Redash](https://redash.io/), an open-source data visualization tool.
+You can plug your query results into Redash, and with a few simple steps, create graphical outputs from your SQL queries. Begin by walking through [setting up Redash through ATSD](https://redash.io/help/data-sources/axibase_tsd.html). The setup should take you about 10 minutes.
 
 
 Let's begin by preparing a visualization for our last SQL query looking at worldwide visa issuances.
