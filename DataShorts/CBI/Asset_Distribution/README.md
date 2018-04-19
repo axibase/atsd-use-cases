@@ -1,4 +1,4 @@
-Distribution of the Public's Asset Portfolio, 1998-2017
+Distribution of the Public Asset Portfolio, 1998-2017
 ===
 
 ChartLab and SQL Console: [Axibase](https://axibase.com)
