@@ -141,7 +141,7 @@ GROUP BY 'Facility Name'
 
 ### Average Connecticut Prison Population Density by Facility (2009 - 2017)
 
-> Density is defined as [(Number of Prisonors)/(Number of Beds)]
+> Density is defined as [(Number of Prisoners)/(Number of Beds)]
 
 ![](Images/CTP4.1.png)
 
@@ -185,7 +185,7 @@ ORDER BY 'Density' DESC
 
 ###Current Connecticut Prison Population Density by Facility (2017)
 
-> Density is defined as [(Number of Prisonors)/(Number of Beds)]
+> Density is defined as [(Number of Prisoners)/(Number of Beds)]
 
 ```sql
 SELECT tags.facility_name AS "Facility Name", last(value) AS "Density"
