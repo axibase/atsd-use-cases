@@ -1,11 +1,19 @@
 {
   "lang": "en",
   "ignoreCapitalization": true,
+  "findRepeatWords": true,
+  "ignoreDigits": true,
+  "ignoreUppercase": true,
+  "ignoreUrls": true,
+  "format": "markdown",
   "fileExtensions": [
     ".md"
   ],
   "dictionary": [
     "axibase",
-    "ATSD"
+    "ATSD",
+    "ChartLab",
+    "dataset",
+    "dropdown"
   ]
 }
