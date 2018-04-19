@@ -95,7 +95,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/5/#fullscreen)
 
-> Open the ChartLab visualization to toggle between observed countries or navigate through time using the dropdown menu.
+> Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down menu.
 
 ### Australia
 
@@ -807,7 +807,7 @@ Return to the [Metric Index](#metric-index)
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/4/#fullscreen)
 
-> Open the visualization in ChartLab and use the dropdown menus at the top of the screen to select the desired observation period.
+> Open the visualization in ChartLab and use the drop-down menus at the top of the screen to select the desired observation period.
 
 _Total Foreign Businesses Operating a Local Branch in Hong Kong:_
 
@@ -864,7 +864,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/7/#fullscreen)
 
-> Open the ChartLab visualization to toggle between observed countries or navigate through time using the dropdown menu.
+> Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down menu.
 
 ### Australia (Local)
 
@@ -1354,7 +1354,7 @@ Return to the [Metric Index](#metric-index)
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/8/#fullscreen)
 
-> Open the visualization in ChartLab and use the dropdown menus at the top of the screen to select the desired observation period.
+> Open the visualization in ChartLab and use the drop-down menus at the top of the screen to select the desired observation period.
 
 _Total Foreign Businesses Operating a Regional Branch in Hong Kong:_
 
@@ -1422,7 +1422,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/9/#fullscreen)
 
-> Open the ChartLab visualization to toggle between observed countries or navigate through time using the dropdown menu.
+> Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down menu.
 
 ### Australia (Regional)
 
