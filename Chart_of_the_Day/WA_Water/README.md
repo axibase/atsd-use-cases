@@ -6,7 +6,7 @@ The Cleanest Water in Washington State
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/89c8183d/2/#fullscreen)
 
-> Use the dropdown menu to examine the Top 10 or Bottom 10 testing stations, or use the Wildcard ([`*`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/))
+> Use the drop-down menu to examine the Top 10 or Bottom 10 testing stations, or use the Wildcard ([`*`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/))
 option to view all available testing sites together. 
 
 
