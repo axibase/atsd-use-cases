@@ -117,6 +117,6 @@ print(tabulate(df, headers='keys', tablefmt='psql'))
 
 ### Conclusion
 
-This tutorial provides an example on how to load one particular data.gov dataset into ATSD while minimizing time spent on designing table schemas and implementing parsers.
+This tutorial provides an example on how to load one particular data.gov dataset into ATSD while minimizing time spent on designing table schemata and implementing parsers.
 
 In a more advanced (consolidation) scenario, the Collector can be scheduled to store and even incrementally update a wide range of datasets from data.gov into the same ATSD instance. This can be accomplished by creating additional [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md) jobs in the Collector web interface accessible at https://localhost:9443.
