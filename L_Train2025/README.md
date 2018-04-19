@@ -25,8 +25,8 @@ for the years 2020 and 2025.
 
 #### Data
 
-Open the visualization below in [ChartLab](https://axibase.com) to see the data in its entirety. Use the dropdown menus at
-the top to navigate through time, selecting the years to be observed. Use the third dropdown menu to toggle between visualizations
+Open the visualization below in [ChartLab](https://axibase.com) to see the data in its entirety. Use the drop-down menus at
+the top to navigate through time, selecting the years to be observed. Use the third drop-down menu to toggle between visualizations
 of the top or bottom fifteen stations, the top or bottom fifty stations, or select the wildcard [`*`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/selecting-series/) 
 option to see all 145.
 
@@ -76,7 +76,7 @@ GROUP BY date_format(time, 'yyyy')
 
 While it is certainly possible that L ridership has peaked and will begin to decline in the future, a total of three such
 periods of stagnation were seen throughout the observation period of sixteen years leading to the conclusion that there are and always
-have been occassional decreases in annual ridership that are not necessarily indicative of true decline.
+have been occasional decreases in annual ridership that are not necessarily indicative of true decline.
 
 ###### 2001
 
