@@ -68,30 +68,37 @@ Follow the procedure below to send AWS CloudWatch events into ATSD to enrich def
 
 ### Infrastructure Prerequisites
 
-* Launch a local ATSD sandbox using the following command:
+* Launch a local [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) using the following command:
 
 ```
 docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
+  --env WEBHOOK=aws-cw
   axibase/atsd-sandbox:latest
 ```
 
-This command contains a link to a rule-engine rule needed for integration.
+This command contains a link to the rule-engine rule needed for integration and automatically configures the webhook needed as well.
+
+Monitor the launch process:
+
+```
+docker logs -f atsd-sandbox
+```
 
 ### Create New Webhook User
 
 Navigate to the **Topics** section of the **Simple Notification Service** page once again. On the same **Topic Details** page that you used to create the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
 
-In a new window, use the [**Webhook User Wizard**](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#webhook-user-wizard) in ATSD to create a new user in order to receive notification requests from AWS.
+Copy the Webhook URL from the docker logs.
 
-A sample Webhook URL is shown here:
+A template is shown here:
 
 ```
 https://aws-cw:PASSWORD@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
 ```
 
-Return to the **Create Subscription** form, and paste the Webhook URL in the **Endpoint** field. Replace the `aws-cw` and `atsd_hostname` placeholders with actual connection properties. Be sure that the **Protocol** drop-down menu is showing **HTTPS**. 
+Return to the **Create Subscription** form, and paste the Webhook URL in the **Endpoint** field. Be sure that the **Protocol** drop-down menu is showing **HTTPS**. 
 
 AWS SNS notifications do not support endpoints with self-signed SSL certificates. If your ATSD instance is running on a self-signed certificate, switch to the HTTP protocol or install a [CA-signed SSL certificate](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) into ATSD.
 
@@ -105,7 +112,26 @@ ATSD is ready to be configured to notify you via [**Slack Team Messeging**](http
 
 ### Email Notifications from ATSD
 
-Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/mail-client.md) by following the instructions here.
+Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/mail-client.md) by following the instructions here or by adding the following environment variable to the sandbox image above:
+
+```
+   --env EMAIL_CONFIG=mail.properties \
+```
+
+Bind the `mail.properties` file to the sandbox image with the following:
+
+```
+   --volume home/user/mail.properties.xml:/mail.properties.xml \
+```
+
+The bound volume should at least contain the following required parameters:
+
+```
+server_name=ATSD-sandbox
+server=mail.example.org
+port=587
+sender=myuser@example.org
+```
 
 Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule will be named `aws-cloudwatch-events`. Open the rule editor by clicking the rule name link. Select the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like email notification to be delivered.
 
@@ -121,7 +147,26 @@ ATSD email notifications contain context-aware links to the newly launched AWS r
 
 ### Detailed Slack Notifications from ATSD
 
-Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md). Now, your status change notifications will be sent via Slack messages as well as email.
+Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding the following environment variable to the atsd-sandbox image above:
+
+```
+   --env SLACK_CONFIG="slack.properties"
+```
+
+Bind the `slack.properties` file to the sandbox image with the following:
+
+```
+   --volume /home/user/slack.properties.xml:/slack.properties.xml
+```
+
+The bound volume should at least contain the following required parameters:
+
+```
+token=xoxb-************-************************
+channels=general
+```
+
+Now, your status change notifications will be sent via Slack messages as well as email.
 
 A sample status change Slack message is shown here. 
 
@@ -129,7 +174,26 @@ A sample status change Slack message is shown here.
 
 ### Detailed Telegram Notifications from ATSD 
 
-Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md). Now, your status change notifications will be sent via Telegram messages as well as email.
+Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding the following environment variable to the atsd-sandbox image above:
+
+```
+   --env TELEGRAM_CONFIG="telegram.properties"
+```
+
+Bind the `telegram.properties` file to the sandbox image with the following:
+
+```
+   --volume /home/user/telegram.properties.xml:/telegram.properties.xml
+```
+
+The bound volume should at least contain the following required parameters:
+
+```
+token=xoxb-************-************************
+channels=general
+```
+
+Now, your status change notifications will be sent via Telegram messages as well as email.
 
 A sample Telegram message is shown here. Telegram notifications will contain links to newly launched resources, as seen here.
 
