@@ -49,11 +49,10 @@ Although a non-relational database, ATSD supports an SQL-like feature called [SQ
 #### Greatest Life Expectancy for Year 2015
 
 ```sql
-SELECT year(time) AS "Year",
-  tags.country AS "Country",
+SELECT tags.country AS "Country",
   value AS "Life Expectancy"
 FROM "life_expectancy_at_birth_by_country"
-  WHERE "Year" = 2015
+  WHERE datetime = '2015'
 ORDER BY "Life Expectancy" DESC
   LIMIT 10
 ```
@@ -65,100 +64,49 @@ Query uses the following clauses:
 * [`LIMIT`](https://github.com/axibase/atsd/tree/master/sql#limiting)
 * [`ORDER BY`](https://github.com/axibase/atsd/tree/master/sql#ordering)
 
-| Year | Country           | Life Expectancy | 
-|------|-------------------|-----------------| 
-| 2015 | Hong Kong         | 84              | 
-| 2015 | Macao             | 84              | 
-| 2015 | Spain             | 83              | 
-| 2015 | Switzerland       | 83              | 
-| 2015 | Singapore         | 83              | 
-| 2015 | Sweden            | 83              | 
-| 2015 | Australia         | 82              | 
-| 2015 | Luxembourg        | 82              | 
-| 2015 | Republic of Korea | 82              | 
-| 2015 | Canada            | 82              | 
+| Country           | Life Expectancy | 
+|-------------------|-----------------| 
+| Hong Kong         | 84              | 
+| Macao             | 84              | 
+| Spain             | 83              | 
+| Switzerland       | 83              | 
+| Singapore         | 83              | 
+| Sweden            | 83              | 
+| Australia         | 82              | 
+| Luxembourg        | 82              | 
+| Republic of Korea | 82              | 
+| Canada            | 82              | 
 
 #### Lowest Life Expectancy at Birth for Year 2015
 
 ```sql
-SELECT year(time) AS "Year",
-  tags.country AS "Country",
+SELECT tags.country AS "Country",
   value AS "Life Expectancy"
 FROM "life_expectancy_at_birth_by_country"
-  WHERE "Year" = 2015
+  WHERE datetime = 2015
 ORDER BY "Life Expectancy" ASC
   LIMIT 10
 ```
 
-| Year | Country                   | Life Expectancy | 
-|------|---------------------------|-----------------| 
-| 2015 | Central African Republic  | 51              | 
-| 2015 | Sierra Leone              | 51              | 
-| 2015 | Chad                      | 53              | 
-| 2015 | Nigeria                   | 53              | 
-| 2015 | Republic of Cote d'Ivoire | 53              | 
-| 2015 | Lesotho                   | 54              | 
-| 2015 | Somalia                   | 56              | 
-| 2015 | Republic of South Sudan   | 56              | 
-| 2015 | Swaziland                 | 57              | 
-| 2015 | Burundi                   | 57              | 
-
-#### Greatest Average Life Expectancy Across Observed Period (1970-2015)
-
-```sql
-SELECT tags.country AS "Country",
-  AVG(value) AS "Life Expectancy"
-FROM "life_expectancy_at_birth_by_country"
-  GROUP BY "Country"
-  ORDER BY AVG(value) DESC
-  LIMIT 10
-```
-
-Query uses the following clauses:
-* [`AVG` Aggregator](https://github.com/axibase/atsd/tree/master/sql#aggregation-functions)
-* [`GROUP BY`](https://github.com/axibase/atsd/tree/master/sql#grouping)
-
-| Country       | Life Expectancy | 
-|---------------|-----------------| 
-| Liechtenstein | 80              | 
-| Switzerland   | 78              | 
-| Bermuda       | 78              | 
-| Sweden        | 78              | 
-| Hong Kong     | 78              | 
-| Norway        | 78              | 
-| Spain         | 78              | 
-| Canada        | 78              | 
-| Macao         | 78              | 
-| Netherlands   | 77              | 
-
-#### Lowest Average Life Expectancy Across Observed Period (1970-2015)
-
-```sql
-SELECT tags.country AS "Country",
-  AVG(value) AS "Life Expectancy"
-FROM "life_expectancy_at_birth_by_country"
-  GROUP BY "Country"
-  ORDER BY AVG(value) ASC
-  LIMIT 10
-```
-
-| Country                  | Life Expectancy | 
-|--------------------------|-----------------| 
-| Sierra Leone             | 41              | 
-| Republic of South Sudan  | 45              | 
-| Mali                     | 46              | 
-| Angola                   | 46              | 
-| Niger                    | 46              | 
-| Mozambique               | 46              | 
-| Nigeria                  | 47              | 
-| Chad                     | 47              | 
-| Central African Republic | 47              | 
-| Somalia                  | 48              | 
+| Country                   | Life Expectancy | 
+|---------------------------|-----------------| 
+| Central African Republic  | 51              | 
+| Sierra Leone              | 51              | 
+| Chad                      | 53              | 
+| Nigeria                   | 53              | 
+| Republic of Cote d'Ivoire | 53              | 
+| Lesotho                   | 54              | 
+| Somalia                   | 56              | 
+| Republic of South Sudan   | 56              | 
+| Swaziland                 | 57              | 
+| Burundi                   | 57              | 
 
 #### Greatest Growth in Life Expectancy Across Observed Period (1970-2015)
 
 ```sql
 SELECT tags.country AS "Country",
+  FIRST(value) AS "1971 Value",
+  LAST(value) AS "2015 Value",
   LAST(value) - FIRST(value) AS "Change in Life Expectancy"
 FROM "life_expectancy_at_birth_by_country"
   GROUP BY "Country"
@@ -169,24 +117,51 @@ Clauses used in this query:
 * [`FIRST`](https://github.com/axibase/atsd/blob/master/sql/examples/aggregate-first-last.md#aggregate-functions-first-and-last)
 * [`LAST`](https://github.com/axibase/atsd/blob/master/sql/examples/aggregate-first-last.md#aggregate-functions-first-and-last)
 
-| Country                            | Change in Life Expectancy | 
-|------------------------------------|---------------------------| 
-| Maldives                           | 33                        | 
-| Bhutan                             | 30                        | 
-| Nepal                              | 29                        | 
-| Democratic Republic of Timor-Leste | 29                        | 
-| Senegal                            | 27                        | 
-| Cambodia                           | 27                        | 
-| Oman                               | 27                        | 
-| Islamic Republic of Afghanistan    | 27                        | 
-| Algeria                            | 26                        | 
-| Mali                               | 25                        | 
+| Country                            | 1971 Value | 2015 Value | Change in Life Expectancy | 
+|------------------------------------|------------|------------|---------------------------| 
+| Maldives                           | 44.24      | 77.12      | 32.88                     | 
+| Bhutan                             | 39.63      | 69.81      | 30.17                     | 
+| Nepal                              | 40.50      | 69.87      | 29.37                     | 
+| Democratic Republic of Timor-Leste | 39.54      | 68.58      | 29.04                     | 
+| Senegal                            | 39.22      | 66.66      | 27.44                     | 
+| Cambodia                           | 41.57      | 68.47      | 26.90                     | 
+| Oman                               | 50.26      | 77.12      | 26.86                     | 
+| Islamic Republic of Afghanistan    | 36.71      | 63.30      | 26.59                     | 
+| Algeria                            | 50.34      | 75.86      | 25.51                     | 
+| Mali                               | 32.39      | 57.46      | 25.06                     | 
+
+#### Least Growth in Life Expectancy Across Observed Period (1970-2015)
+
+```sql
+SELECT tags.country AS "Country",
+  FIRST(value) AS "1971 Value",
+  LAST(value) AS "2015 Value",
+  LAST(value) - FIRST(value) AS "Change in Life Expectancy"
+FROM "life_expectancy_at_birth_by_country"
+  GROUP BY "Country"
+  ORDER BY "Change in Life Expectancy" ASC
+  LIMIT 10
+```
+
+| Country            | 1971 Value | 2015 Value | Change in Life Expectancy | 
+|--------------------|------------|------------|---------------------------| 
+| Ukraine            | 70.24      | 71.19      | 0.95                      | 
+| Russian Federation | 68.13      | 70.91      | 2.77                      | 
+| Curacao            | 74.71      | 77.82      | 3.11                      | 
+| Bulgaria           | 71.26      | 74.47      | 3.21                      | 
+| Belarus            | 70.08      | 73.62      | 3.55                      | 
+| Liechtenstein      | 78.42      | 82.07      | 3.65                      | 
+| Serbia             | 71.49      | 75.49      | 4.00                      | 
+| Armenia            | 69.92      | 74.21      | 4.28                      | 
+| Latvia             | 69.84      | 74.12      | 4.29                      | 
+| Lithuania          | 70.80      | 75.12      | 4.32                      | 
+
 
 #### Greatest Population Growth Across Observed Period (1970-2015)
 
 ```sql
 SELECT tags.country AS "Country",
-CONCAT(CAST((LAST(value) - FIRST(value))/1000000 AS string), ' Million') AS "Change in Population"
+ROUND((LAST(value) - FIRST(value))/1000000,0) AS "Change in Population (Million)"
 FROM "population_total_by_country"
   GROUP BY "Country"
   ORDER BY LAST(value) - FIRST(value) DESC
@@ -194,21 +169,48 @@ FROM "population_total_by_country"
 ```
 
 Clauses used in this query:
-* [`CONCAT` String Function](https://github.com/axibase/atsd/tree/master/sql#string-functions)
-* [`CAST`](https://github.com/axibase/atsd/tree/master/sql#cast)
 
-| Country       | Change in Population | 
-|---------------|----------------------| 
-| India         | 770.59 Million       | 
-| China         | 560.35 Million       | 
-| Indonesia     | 146.28 Million       | 
-| Pakistan      | 135.11 Million       | 
-| Nigeria       | 130 Million          | 
-| United States | 118.07 Million       | 
-| Brazil        | 112.32 Million       | 
-| Bangladesh    | 97.9 Million         | 
-| Mexico        | 75.51 Million        | 
-| Ethiopia      | 73.98 Million        | 
+* [`ROUND`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions)
+
+| Country       | Change in Population (Million) | 
+|---------------|-----------------------------| 
+| India         | 770                         | 
+| China         | 560                         | 
+| Indonesia     | 146                         | 
+| Pakistan      | 135                         | 
+| Nigeria       | 130                         | 
+| United States | 118                         | 
+| Brazil        | 112                         | 
+| Bangladesh    | 97                          | 
+| Mexico        | 75                          | 
+| Ethiopia      | 73                          | 
+
+#### Greatest Population Growth Percent Across Observed Period (1970-2015)
+
+```
+SELECT tags.country AS "Country",
+  FIRST(value)/1000000 AS "Population 1971 (Million)",
+  LAST(value)/1000000 AS "Population 2015 (Million)",
+  ((LAST(value) - FIRST(value)) / FIRST(value)) * 100 AS "Change in Population (%)"
+FROM "population_total_by_country"
+  GROUP BY "Country"
+  ORDER BY "Change in Population (%)" DESC
+  LIMIT 10
+```
+
+| Country                      | Population 1971 (Million) | Population 2015 (Million) | Change in Population (%) | 
+|------------------------------|---------------------------|---------------------------|--------------------------| 
+| United Arab Emirates         | 0.24                      | 9.27                      | 3836.16                  | 
+| Qatar                        | 0.11                      | 2.57                      | 2246.55                  | 
+| Bahrain                      | 0.21                      | 1.43                      | 570.34                   | 
+| Cayman Islands               | 0.01                      | 0.06                      | 564.53                   | 
+| Turks and Caicos Islands     | 0.01                      | 0.03                      | 519.56                   | 
+| Oman                         | 0.72                      | 4.42                      | 511.28                   | 
+| Djibouti                     | 0.16                      | 0.94                      | 490.22                   | 
+| Collectivity of Saint Martin | 0.01                      | 0.03                      | 486.22                   | 
+| Saudi Arabia                 | 5.84                      | 32.28                     | 453.01                   | 
+| Jordan                       | 1.72                      | 9.46                      | 450.10                   | 
+
 
 #### Greatest Population Decline Across Observed Period (1970-2015)
 
@@ -232,7 +234,33 @@ FROM "population_total_by_country"
 | Latvia                 | -0.39 Million        | 
 | Lithuania              | -0.26 Million        | 
 | Bosnia and Herzegovina | -0.24 Million        | 
-| Croatia                | -0.24 Million        | 
+| Croatia                | -0.24 Million        |
+
+#### Greatest Population Decline Percent Across Observed Period (1970-2015)
+
+```
+SELECT tags.country AS "Country",
+  FIRST(value)/1000000 AS "Population 1971 (Million)",
+  LAST(value)/1000000 AS "Population 2015 (Million)",
+  ((LAST(value) - FIRST(value)) / FIRST(value)) * 100 AS "Change in Population (%)"
+FROM "population_total_by_country"
+  GROUP BY "Country"
+  ORDER BY "Change in Population (%)" ASC
+  LIMIT 10
+```
+
+| Country                | Population 1971 (Million) | Population 2015 (Million) | Change in Population (%) | 
+|------------------------|---------------------------|---------------------------|--------------------------| 
+| Latvia                 | 2.36                      | 1.96                      | -16.90                   | 
+| Bulgaria               | 8.49                      | 7.13                      | -16.04                   | 
+| Georgia                | 4.12                      | 3.72                      | -9.72                    | 
+| Lithuania              | 3.14                      | 2.87                      | -8.52                    | 
+| Serbia                 | 7.59                      | 7.06                      | -6.97                    | 
+| Bosnia and Herzegovina | 3.76                      | 3.52                      | -6.48                    | 
+| Croatia                | 4.41                      | 4.17                      | -5.45                    | 
+| Hungary                | 10.34                     | 9.82                      | -5.03                    | 
+| Ukraine                | 47.09                     | 45.00                     | -4.42                    | 
+| Estonia                | 1.36                      | 1.32                      | -3.21                    | 
 
 #### Greatest Fertility Rate (2015)
 
