@@ -98,7 +98,6 @@ To automatically configure an email client in the ATSD sandbox container:
   ```
   server=mail.example.org
   port=587
-  sender=myuser@example.org
   user=myuser@example.org
   password=secret
   ```
