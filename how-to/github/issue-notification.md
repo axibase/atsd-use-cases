@@ -27,7 +27,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
 
 Replace the `SERVER_URL` parameter in the command above with the public DNS name of the Docker host where the sandbox container will be running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
 
-If you would like to automatically configure Slack Messaging Service in the launch command, use the following ATSD Sandbox launch command:
+If you would like to automatically configure Slack Messaging Service at runtime, use the following ATSD Sandbox launch command:
 
 ```
 docker run -d -p 8443:8443 -p 9443:9443 \
