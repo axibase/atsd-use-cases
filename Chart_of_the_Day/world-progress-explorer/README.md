@@ -77,7 +77,7 @@ Query uses the following clauses:
 | Luxembourg        | 82              | 
 | Republic of Korea | 82              | 
 
-**Notes:** Japan and the various semi-autonomous regions of the People's Republic of China are often celebrated for their high life expectancies, generally ascribed to the high average income, healthy diet, and focus on basic excersise.
+**Notes:** Japan and the various semi-autonomous regions of the People's Republic of China are often celebrated for their high life expectancies, generally ascribed to the high average income, healthy diet, and focus on basic exercise.
 
 #### Lowest Life Expectancy at Birth for Year 2015
 
@@ -134,7 +134,7 @@ Clauses used in this query:
 | Algeria                            | 50.34      | 75.86      | 25.51                     | 
 | Mali                               | 32.39      | 57.46      | 25.06                     | 
 
-**Notes:** East Timor, officially the Democratic Republic of Timor-Leste is an interesting appearance on this table of overall highest improvement in life expectancy. Colonized by the Portugeise until 1975, during the last three decades the small East-Indian Ocean island community has been one of the few nations that has fared better after the end of their colonization.
+**Notes:** East Timor, officially the Democratic Republic of Timor-Leste is an interesting appearance on this table of overall highest improvement in life expectancy. Colonized by the Portuguese until 1975, during the last three decades the small East-Indian Ocean island community has been one of the few nations that has fared better after the end of their colonization.
 
 #### Least Growth in Life Expectancy Across Observed Period (1970-2015)
 
