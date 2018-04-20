@@ -262,7 +262,7 @@ FROM "population_total_by_country"
 | Ukraine                | 47.09                     | 45.00                     | -4.42                    | 
 | Estonia                | 1.36                      | 1.32                      | -3.21                    | 
 
-#### Greatest Fertility Rate (2015)
+#### Greatest Fertlity Rate Rate (2015)
 
 ```sql
 SELECT tags.country AS "Country",
