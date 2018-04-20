@@ -64,9 +64,11 @@ You are ready to start receiving native AWS status change notifications. A sampl
 
 ## ATSD Integration
 
-Follow the procedure below to send AWS CloudWatch events into ATSD to enrich default notifications with additional resource details and helpful AWS console links.
+### Launch ATSD Sandbox
 
-* Launch a local [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) using the following command:
+Follow the procedure below to send AWS CloudWatch events into ATSD to enrich standard SNS notifications with additional resource details and AWS console links.
+
+* Launch an [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) using the following command:
 
 ```
 docker run -d -p 8443:8443 \
@@ -76,57 +78,67 @@ docker run -d -p 8443:8443 \
   axibase/atsd-sandbox:latest
 ```
 
-This command contains a link to the rule-engine rule needed for integration and automatically configures the webhook needed as well.
+This command will start the sandbox applications, import the [rule](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) needed for integration and generate an incoming webhook for AWS SNS subscriptions.
 
-To automatically include email notifications in the launch command, use the following:
-
-```
-docker run -d -p 8443:8443 \
-  --name=atsd-sandbox \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
-  --env EMAIL_CONFIG=mail.properties \  
-  --env WEBHOOK=aws-cw \
-  --volume home/user/mail.properties.xml:/mail.properties.xml \  
-  axibase/atsd-sandbox:latest
-```
-
-The bound volume should at least contain the following required parameters in a plaintext file at the defined location on your local machine:
-
-```
-server_name=ATSD-sandbox
-server=mail.example.org
-port=587
-sender=myuser@example.org
-```
-
-Monitor the launch process:
+Watch the start log for progress:
 
 ```
 docker logs -f atsd-sandbox
 ```
 
-Wait for `All applications started` notification.
+Wait for the `All applications started` line.
 
-Navigate to the **Topics** section of the **Simple Notification Service** page once again. On the same **Topic Details** page that you used to create the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
+### Launch Sandbox with Automated Slack and Email Configuration
 
-Copy the Webhook URL from the docker logs.
+To automatically configure an email client in the ATSD sandbox container:
 
-A template is shown here, with several preceding lines:
+* Create a directory that will be mounted into the container, for example `/home/user/import`.
+* Specify email account settings in the `mail.properties` file in this directory:
+
+  ```
+  server=mail.example.org
+  port=587
+  sender=myuser@example.org
+  user=myuser@example.org
+  password=secret
+  ```
+* Specify Slack Bot token in the `slack.properties` file in this directory:
+
+  ```
+  token=xoxb-************-************************
+  channels=general,devops
+  ```  
+
+* Add the `EMAIL_CONFIG` and `SLACK_CONFIG` variables, as well as the `volume` setting to the run command:
 
 ```
-[ATSD] Administrator account 'axibase' created.
+docker run -d -p 8443:8443 \
+  --name=atsd-sandbox \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
+  --env WEBHOOK=aws-cw \
+  --env SLACK_CONFIG=slack.properties \
+  --env EMAIL_CONFIG=mail.properties \
+  --volume /home/user/import:/import \
+  axibase/atsd-sandbox:latest
+```
+
+### Create SNS Subscription
+
+Copy the incoming 'aws-cw' webhook URL from the start log.
+
+```
+...
 [ATSD] Importing '/tmp/import/rule_aws-cloudwatch-events.xml' configuration
 [ATSD] Successfully imported '/tmp/import/rule_aws-cloudwatch-events.xml'
 aws-cw webhook created:
 https://aws-cw:PASSWORD@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
-Starting collectd ...
-plugin_load: plugin "aggregation" successfully loaded.
-plugin_load: plugin "contextswitch" successfully loaded.
 ```
+
+Navigate to the **Topics** section of the **Simple Notification Service** page once again. On the same **Topic Details** page that you used to create the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
 
 Return to the **Create Subscription** form, and paste the Webhook URL in the **Endpoint** field. Be sure that the **Protocol** drop-down menu is showing **HTTPS**. 
 
-AWS SNS notifications do not support endpoints with self-signed SSL certificates. If your ATSD instance is running on a self-signed certificate, switch to the HTTP protocol or install a [CA-signed SSL certificate](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) into ATSD.
+AWS SNS notifications over HTTPS protocol do not support destination endpoints with self-signed SSL certificates. If your ATSD instance is running on a self-signed certificate, switch to the HTTP protocol or install a [CA-signed SSL certificate](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) into ATSD.
 
 ![](images/sns-4.png)
 
