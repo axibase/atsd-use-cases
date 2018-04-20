@@ -8,7 +8,7 @@ This guide shows how to configure GitHub to alert you when someone creates a new
 
 ### Purpose
 
-Project management functionality in GitHub has evolved to enable users to to design, execute, and complete the projects associated with their code stored on GitHub without the need for an external plug-in. Many GitHub repositories contain thousands of lines of code and need to handle an increasing number of projects, especially those associated with larger organizations with employees across the globe.
+Project management functionality in GitHub has evolved to enable users to design, execute, and complete the projects associated with their code stored on GitHub without the need for an external plug-in. Many GitHub repositories contain thousands of lines of code and need to handle an increasing number of projects, especially those associated with larger organizations with employees across the globe.
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of watching new projects as they are created can be better accomplished using programmatic integration leveraging GitHub webhook functionality.
 
