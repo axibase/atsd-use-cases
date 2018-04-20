@@ -2,13 +2,13 @@
 
 ### Overview
 
-This guide shows how to configure GitHub to alert you when someone begins to watch your reposity. This feature allows you to monitor your repository's followers. Follow the instructions to configure the notifications to be sent to you directly through a third-party messenger service with [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/).
+This guide shows how to configure GitHub to alert you when someone begins to watch your repository. This feature allows you to monitor your repository's followers. Follow the instructions to configure the notifications to be sent to you directly through a third-party messenger service with [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/).
 
 ![](images/workflow-two.png)
 
 ### Purpose
 
-Many repositories contain a broad range of code and documentation to which end-users may positively respond by subscribing. Turn your public repositories into market research and product experimentation with **Subscription Notifications**. New releases which generate a large number of subscriptions may be tracked without manually monitoring your watchlists, and obsolete repositiories which no longer garner much attention may be simplified and integrated to streamline your company's GitHub optics.
+Many repositories contain a broad range of code and documentation to which end-users may positively respond by subscribing. Turn your public repositories into market research and product experimentation with **Subscription Notifications**. New releases which generate a large number of subscriptions may be tracked without manually monitoring your watchlists, and obsolete repositories which no longer garner much attention may be simplified and integrated to streamline your company's GitHub optics.
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to track new subscribers can be better accomplished using programmatic integration leveraging GitHub webhook functionality.
 
