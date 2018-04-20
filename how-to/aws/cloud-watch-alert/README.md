@@ -157,7 +157,7 @@ ATSD email notifications contain context-aware links to the newly launched AWS r
 Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding the following environment variable to the atsd-sandbox image above:
 
 ```
-   --env SLACK_CONFIG="slack.properties.xml"
+   --env SLACK_CONFIG="slack.properties"
 ```
 
 Bind the `slack.properties` file to the sandbox image with the following:
