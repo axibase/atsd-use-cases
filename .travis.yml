@@ -4,6 +4,7 @@ node_js:
   - "8"
 install:
   - npm install -g yaspeller
+  - npm install -g markdown-link-check
 script: 
   - yaspeller -e ".md" ./
   - find . -name \*.md -exec markdown-link-check {} \;
