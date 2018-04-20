@@ -55,11 +55,14 @@ Watch the sandbox container logs for `All applications started` line.
 docker logs -f atsd-sandbox
 ```
 
-Copy the newly-created GitHub webhook URL from the log output.
+Copy the newly-created GitHub webhook URL from the log output once all applications have successfully started.
 
 ```
-github webhook created:
-https://github:password@atsd.company_name.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
+All applications started
+Webhooks created:
+Webhook user: github
+Webhook URL: https://github:PdWnC1jF@dev.axibase.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
+
 ```
 
 ### Create a GitHub Webhook
