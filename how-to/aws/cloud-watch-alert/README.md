@@ -157,10 +157,10 @@ ATSD email notifications contain context-aware links to the newly launched AWS r
 Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding the following environment variable to the atsd-sandbox image above:
 
 ```
-   --env SLACK_CONFIG="slack.properties"
+   --env SLACK_CONFIG="slack.properties.xml"
 ```
 
-Bind the `slack.properties` file to the sandbox image with the following:
+Bind the `slack.properties.xml` file to the sandbox image with the following:
 
 ```
    --volume /home/user/slack.properties.xml:/slack.properties.xml
@@ -184,7 +184,7 @@ A sample status change Slack message is shown here.
 Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding the following environment variable to the atsd-sandbox image above:
 
 ```
-   --env TELEGRAM_CONFIG="telegram.properties"
+   --env TELEGRAM_CONFIG="telegram.properties.xml"
 ```
 
 Bind the `telegram.properties` file to the sandbox image with the following:
