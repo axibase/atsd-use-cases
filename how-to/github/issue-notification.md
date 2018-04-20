@@ -36,7 +36,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
   --env WEBHOOK=github \
   --env SLACK_CONFIG="slack.properties \  
   --volume /home/user/slack.properties.xml:/slack.properties.xml \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/repo-notifications/how-to/github/resources/github-issue-open.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-issue-open.xml' \
   axibase/atsd-sandbox:latest
 ```
 
