@@ -4,7 +4,9 @@ node_js:
   - "8"
 install:
   - npm install -g yaspeller
-script: yaspeller -e ".md" ./
+script: 
+  - yaspeller -e ".md" ./
+  - find . -name \*.md -exec markdown-link-check {} \;
 cache:
   directories:
     - "node_modules"
