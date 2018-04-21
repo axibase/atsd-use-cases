@@ -81,7 +81,7 @@ _Source_: Quandl - [Market Capitalization](https://www.quandl.com/data/BCHAIN/MK
 ### The Future of CryptoCurrency
 
 The number of transactions occurring each day using BitCoin has reached impressive levels since its emergence in 2009 and despite
-a contraction in recent months, the figure remains strong with over 200,000 unique transactions occuring each day. Additionally,
+a contraction in recent months, the figure remains strong with over 200,000 unique transactions occurring each day. Additionally,
 the number of unique BitCoin addresses has also continued to increase, showing that even today new users are opening BitCoin
 wallets and beginning to invest themselves.
 
