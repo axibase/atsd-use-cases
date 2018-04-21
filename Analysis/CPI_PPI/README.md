@@ -229,7 +229,7 @@ GROUP BY YEAR(time)
 > Open any ChartLab visualization to navigate through time using the dropdown menus at the top of the screen.
 
 When the data is controlled to exclude volatile metrics such as energy and food production and consumption,
-a more accurate representation of the the difference between production costs and consumer costs can be seen. To further
+a more accurate representation of the difference between production costs and consumer costs can be seen. To further
 lend credence to the instability of the energy market, the per barrel price of oil, one of the largest parts of the energy
 sector is shown below alongside the calculated both Potential Profitability Values calculated above:
 
