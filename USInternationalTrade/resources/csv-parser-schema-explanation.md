@@ -11,7 +11,7 @@ year,CTY_CODE,CTYNAME,IJAN,...,IDEC,IYR,EJAN,...,EDEC,EYR
 
 Below is the table structure that is represented. The first line is used for column headers:
 
-| year | CTY_CODE | CTYNAME | IJAN | ... | IDEC | IYR   | EJAN | ... | EDEC | EYR   | 
+| year | `CTY_CODE` | `CTYNAME` | `IJAN` | ... | `IDEC` | `IYR`   | `EJAN` | ... | `EDEC` | `EYR`   | 
 |------|----------|---------|------|-----|------|-------|------|-----|------|-------| 
 | 1985 | 0001     | OPEC    | 1733 | ... | 2426 | 22801 | 1033 | ... | 1186 | 12478 | 
 | 1986 | 0001     | OPEC    | 2631 | ... | 1327 | 19751 | 947  | ... | 813  | 10844 | 
