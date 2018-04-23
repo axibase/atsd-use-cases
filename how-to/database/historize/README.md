@@ -132,7 +132,7 @@ CREATE VIEW stat_orders_hourly_detail AS
   WHERE received > NOW() - INTERVAL 1 HOUR
     GROUP BY customer
 ```
-
+results resultes
 We can then create a read-only account and restrict it to executing `SELECT` queries on specific views.
 
 ```sql
