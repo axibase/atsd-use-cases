@@ -88,7 +88,7 @@ these numbers has dropped off, falling to 9,977 in 2015 ($1,596,320 in revenue a
 
 ![Figure15](Images/Figure15.png)
 
-If the Eu would require U.S. citizens to obtain travel visas, Washington would likely as a response require the currently visa exempt countries from the EU to obtain visas. The total
+If the EU would require U.S. citizens to obtain travel visas, Washington would likely require the currently visa-exempt countries from the EU to begin obtaining visas in order to visit the country. The total
 [number of European travelers](https://en.wikipedia.org/wiki/Visa_Waiver_Program ) to the U.S. utilizing the visa waiver program was 14,043,823 and 13,997,570 in 2014 and 2015, respectively.
 At $160 per visa, this would have come to about **$2.24 and $2.239 billion**, a bill EU citizens may soon have to foot should the visa waiver program be lifted.
 
@@ -323,7 +323,7 @@ rate in this 10-years period was **30.2%**, which came in 2nd only behind Brazil
 
 Travellers have come to America from all over the world. With over 200 countries and 84 visa types included in this dataset, the possibilities for travel documents seem endless.
 Using ATSD can help you make sense of all this information. You can use Chart Lab to create interactive graphs which allow you to gain a general view of the situation, SQL queries
-to search for specific minutia contained within the datset, and Redash to display this specifically searched for information in a clear and concise manner.  
+to search for specific information contained within the dataset, and Redash to display this specifically searched for information in a clear and concise manner.  
 
 ### Action Items
 ----------------
@@ -360,7 +360,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 5. Import the [`travel_visas.xml`](../USVisaRefusal/Resources/travel_visas.xml) file into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
 6. Import the [`visas.tar.gz`](../USVisaRefusal/Resources/visas.tar.gz) file into ATSD using the above-mentioned parser.
 7. Navigate to the Docker machine IP at port 5000, where you should see a Redash login screen.
-8. Follow the steps in [ATSD datasource guide](https://redash.io/help/data-sources/axibase_tsd.html) to create a read-only account in ATSD and add a new ATSD datasource in Redash.
+8. Follow the steps in [ATSD data source guide](https://redash.io/help/data-sources/axibase_tsd.html) to create a read-only account in ATSD and add a new ATSD data source in Redash.
 9. Create a sample query configuration, and execute the following query to validate the integration:
 
    ```sql
