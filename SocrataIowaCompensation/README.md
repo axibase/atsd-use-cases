@@ -227,7 +227,7 @@ we looked at earlier, let us filter for the **Construction** and **Manufacturing
 
 As with the employee compensation dataset, we can see that these metrics were generally experiencing steady, upward growth until the late 2000's, where each metric experienced a sharp 
 decline (as marked by the red boxes in the figures above). We can see that both the total employee compensation and the gross number of employees decreased in the late 2000's, likely
-as a result of the **Great Recession**. Additionally, we can see there there was a significant decline in employment numbers for manufacturing between approximately 2001 and 2004. Looking
+as a result of the **Great Recession**. Additionally, we can see that there was a significant decline in employment numbers for manufacturing between approximately 2001 and 2004. Looking
 back at the total statewide employee compensation dataset, we can see that there was also a significant decline for this data around this same period. Construction, however, did not seem to
 be effected nearly as much. This decline may be attributed to a economic recession (slightly less severe than the one beginning in 2008) brought on by the September 11th terrorist attacks. For
 this period, it appears that the manufacturing field was greatly affected, while the construction industry was only slightly affected. 
@@ -327,7 +327,7 @@ Let us begin by displaying the metrics for total employee compensation and total
 ![Figure 17](Images/Figure17.png)
 
 This configuration is relatively straightforward. First, we display the **[series]** for both fields by specifying their respective entity and metric names. Next, using the **[tags]** command, we are
-able to display only the pertinent information, in this case data on the federal government. Finally, by specifying **axis=right** (at the bottom of the configuration), we are able to display axises for employment (in thousands, on the left hand
+able to display only the pertinent information, in this case data on the federal government. Finally, by specifying **axis=right** (at the bottom of the configuration), we are able to display axes for employment (in thousands, on the left hand
 side) and for total compensation (in thousand, on the right hand side). Below is an image of the output in Chart Lab:
 
 ![Figure 16](Images/Figure16.png)
@@ -346,7 +346,7 @@ This line in the configuration is shown below:
 value = (value('comp')/value('emp'))==0 ? null : value('comp')/value('emp')
 ```
 
-Since we are looking for the average compensation per employee, we simply need to divide the the total employee compensation in the state (comp) by the total number of employees in the state (emp).
+Since we are looking for the average compensation per employee, we simply need to divide the total employee compensation in the state (comp) by the total number of employees in the state (emp).
 Since the start times of these two series differ, the beginning of the equation serves to set any non-real values (when the series do not intersect) equal to 'null.' Time intervals containing both series will be computed and displayed,
 per the second part of the equation. Below is an image of the average employee compensation for the federal government industry in the state of Iowa. 
 
@@ -402,7 +402,7 @@ it is basically the same configuration as with the unadjusted compensation for e
 
 In our portal, we now have the following outputs:
 
-* Federal government headcount and total compensation
+* Federal government head count and total compensation
 * Federal government compensation per employee
 * CPI - all urban customers
 * Federal government compensation per employee, inflation adjusted in current dollars
