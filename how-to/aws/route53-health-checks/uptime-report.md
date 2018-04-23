@@ -19,7 +19,7 @@ The default list of regions where tests are performed is as follows:
 The test frequency is set to 30 second intervals, which may be reduced to 10 seconds for operation in **fast** mode.
 In addition to connection parameters, which specify the DNS name or IP address, the port and the path for HTTP/S tests, you can specify retry logic to test the endpoint again if the connection fails. The number of retry attempts specified, executed with the same frequency as the base test, determines how many successive failures are allowed before an endpoint is determined to be unavailable.
 
-The intervals of time when the endpoint is unavailable are captured by the 'HealthCheckPercentageHealthy' metric. This metric measures the percentage of time in the given period when the endpoint was available from 0% to 100%. For example, if the value of the average statistic for the 'HealthCheckPercentageHealthy' metric was 90% for the 10 minute period, it means that the target was reachable for 9 minutes (`10 * 60 * 90% = 540 seconds`). These statistics are stored in AWS CloudWatch for a period of up two weeks.
+The intervals of time when the endpoint is unavailable are captured by the `HealthCheckPercentageHealthy` metric. This metric measures the percentage of time in the given period when the endpoint was available from 0% to 100%. For example, if the value of the average statistic for the `HealthCheckPercentageHealthy` metric was 90% for the 10 minute period, it means that the target was reachable for 9 minutes (`10 * 60 * 90% = 540 seconds`). These statistics are stored in AWS CloudWatch for a period of up two weeks.
 
 ![](images/route53-sla.png)
 
@@ -216,7 +216,7 @@ GROUP BY entity
 
 ### Calendar Filtering
 
-The database provides a convenient syntax to filter data via calendar. This is convenient, if the availability objectives vary by  peak/off-peak hours. This filtering condition calculates average uptime for specific hours of the day such as 8 am to 6 pm during weekdays (Monday to Friday).
+The database provides a convenient syntax to filter data via calendar. This is convenient, if the availability objectives vary by  peak/off-peak hours. This filtering condition calculates average uptime for specific hours of the day such as 8 AM to 6 PM during weekdays (Monday to Friday).
 
 
 ```sql
