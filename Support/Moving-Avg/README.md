@@ -45,7 +45,7 @@ half a century ago as equal to data recorded two years ago. While potentially he
 described above, such aggregation would not only be unhelpful, but most likely detrimental to the desired outcome, which is
 dependant on current trends.
 
-The passenger emplanement data, aggregated annually is shown below:
+The passenger enplanement data, aggregated annually is shown below:
 
 **Figure 1.3**: LGA and JFK Passenger Enplanement Data (1997-2015)
 
