@@ -1634,7 +1634,7 @@ New certificate is now installed. No ATSD restart performed.
 
 ### Certificate Transparency Logs
 
-Some CAs, including Lets Encrypt, volutarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
+Some CAs, including Lets Encrypt, voluntarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
 
 CT servers store immutable logs of certificate issuance events which contain the subject's CN (common name) and certificate details.
 
