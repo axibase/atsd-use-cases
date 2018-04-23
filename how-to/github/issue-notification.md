@@ -61,7 +61,7 @@ Copy the newly-created GitHub webhook URL from the log output once all applicati
 All applications started
 Webhooks created:
 Webhook user: github
-Webhook URL: https://github:PdWnC1jF@dev.axibase.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
+Webhook URL: https://github:PdWnC1jF@atsd.company.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
 ```
 
 Open the **Settings** menu for the GitHub repository for which you would like to create notifications.
