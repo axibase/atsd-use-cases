@@ -31,7 +31,7 @@ While the [base article](README.md) described how to collect AWS Route53 statist
 
 ## Preparation
 
-* Setup [IAM account](https://github.com/axibase/axibase-collector/blob/master/jobs/aws-iam.md) account
+* Setup [IAM account](https://github.com/axibase/axibase-collector/blob/master/jobs/aws-iam.md)
 * Configure [Route53 - ATSD](README.md) integration. Make sure health check attributes are copied as described [here](https://github.com/axibase/atsd-integration/tree/aws-route53)
 
 Log in to ATSD user interface using `axibase` username and `axibase` password.
