@@ -2,7 +2,7 @@
 
 ![](images/sched-sql.png)
 
-A scheduled SQL query is executed by the database on schedule. When the query is executed, it can be configured to generate files on the local file syste, to send a report via email, or to produce calculated metrics and store them in the database.
+A scheduled SQL query is executed by the database on schedule. When the query is executed, it can be configured to generate files on the local file system, to send a report via email, or to produce calculated metrics and store them in the database.
 
 Follow this process to add a new schedule SQL query to your local ATSD instance.
 
