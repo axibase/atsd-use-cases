@@ -121,7 +121,7 @@ Clauses used in this query:
 * [`FIRST`](https://github.com/axibase/atsd/blob/master/sql/examples/aggregate-first-last.md#aggregate-functions-first-and-last)
 * [`LAST`](https://github.com/axibase/atsd/blob/master/sql/examples/aggregate-first-last.md#aggregate-functions-first-and-last)
 
-| Country                            | 1971 Value | 2015 Value | Change in Life Expectancy | 
+| Country                            | 1970 Value | 2015 Value | Change in Life Expectancy | 
 |------------------------------------|------------|------------|---------------------------| 
 | Maldives                           | 44.24      | 77.12      | 32.88                     | 
 | Bhutan                             | 39.63      | 69.81      | 30.17                     | 
@@ -149,7 +149,7 @@ FROM "life_expectancy_at_birth_by_country"
   LIMIT 10
 ```
 
-| Country            | 1971 Value | 2015 Value | Change in Life Expectancy | 
+| Country            | 1970 Value | 2015 Value | Change in Life Expectancy | 
 |--------------------|------------|------------|---------------------------| 
 | Ukraine            | 70.24      | 71.19      | 0.95                      | 
 | Russian Federation | 68.13      | 70.91      | 2.77                      | 
@@ -226,29 +226,41 @@ FROM "population_total_by_country"
 
 **Notes:** Many of these oil-rich countries discovered their vast supplies of natural resources earlier than the 1970s but were unable to achieve independence to fully control them until 1971. Qatar, Bahrain, the UAE, and Oman achieved independence in 1971 and have since then vastly expanded their oil production capabilities including inviting large numbers of foreign national into the country to either develop or oversee the continued expansion of an industry which is responsible for the overwhelming majority of each country's GDP.
 
+The table below shows the percent of foreigners in selected countries above where the figure is significant:
+
+|Country | Approximate Foreign Population (%)|
+|--------|-------------------------------------|
+|United Arab Emirates | 80 |
+|Qatar | 88 |
+|Turks and Caicos Islands | 56 |
+|Oman | 45 |
+|Saudi Arabia | 31 |
+|Jordan | 31 |
+|Cayman Islands | 25 |
+
 #### Greatest Population Decline Across Observed Period (1970-2015)
 
 ```sql
 SELECT tags.country AS "Country",
-CONCAT(CAST((LAST(value) - FIRST(value))/1000000 AS string), ' Million') AS "Change in Population"
+(LAST(value) - FIRST(value)/1000000 AS "Change in Population"
 FROM "population_total_by_country"
   GROUP BY "Country"
   ORDER BY LAST(value) - FIRST(value) ASC
   LIMIT 10
 ```
 
-| Country                | Change in Population | 
+| Country                | Change in Population (Million) | 
 |------------------------|----------------------| 
-| Ukraine                | -2.08 Million        | 
-| Bulgaria               | -1.36 Million        | 
-| Romania                | -0.54 Million        | 
-| Serbia                 | -0.52 Million        | 
-| Hungary                | -0.51 Million        | 
-| Georgia                | -0.4 Million         | 
-| Latvia                 | -0.39 Million        | 
-| Lithuania              | -0.26 Million        | 
-| Bosnia and Herzegovina | -0.24 Million        | 
-| Croatia                | -0.24 Million        |
+| Ukraine                | -2.08        | 
+| Bulgaria               | -1.36        | 
+| Romania                | -0.54        | 
+| Serbia                 | -0.52        | 
+| Hungary                | -0.51        | 
+| Georgia                | -0.4         | 
+| Latvia                 | -0.39        | 
+| Lithuania              | -0.26        | 
+| Bosnia and Herzegovina | -0.24        | 
+| Croatia                | -0.24        |
 
 **Notes**: Almost all of these countries are form Warsaw Pact / Eastern Bloc countries who have in one way or another achieved some sort of cooperation with European countries that has allowed for massive amounts of emigration from the formerly closed nations. In the case of the Ukraine, the significant drop in population immediately after the dissolution of the USSR is clearly visible.
 
@@ -270,7 +282,7 @@ FROM "population_total_by_country"
   LIMIT 10
 ```
 
-| Country                | Population 1971 (Million) | Population 2015 (Million) | Change in Population (%) | 
+| Country                | Population 1970 (Million) | Population 2015 (Million) | Change in Population (%) | 
 |------------------------|---------------------------|---------------------------|--------------------------| 
 | Latvia                 | 2.36                      | 1.96                      | -16.90                   | 
 | Bulgaria               | 8.49                      | 7.13                      | -16.04                   | 
