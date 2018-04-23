@@ -84,7 +84,7 @@ According to a recent article published by [Reuters](http://www.reuters.com/arti
 obtain travel visas to visit Europe (currently, Americans do not need visas). This is in response to Washington refusing to to grant visa-free access to 5 EU countries: Poland, Croatia,
 Bulgaria, Romania, and Cyprus. All EU countries except for these 5 may travel to the US without needing to obtain a travel visa. The following image shows the number of B-1 and B-2 visas
 from these countries between 1997 and 2015. The early to mid 2000's saw the peak of the total number of B-1 and B-2 visas issued to these countries, but in recent years
-these numbers has dropped off, falling to to 9,977 in 2015 ($1,596,320 in revenue at $160 per visa).  
+these numbers has dropped off, falling to 9,977 in 2015 ($1,596,320 in revenue at $160 per visa).  
 
 ![Figure15](Images/Figure15.png)
 
@@ -358,7 +358,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 
 4. Login into ATSD and configure the pre-defined administrator account.
 5. Import the [`travel_visas.xml`](../USVisaRefusal/Resources/travel_visas.xml) file into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
-6. Import the [`visas.tar.gz`](../USVisaRefusal/Resources/visas.tar.gz) file into ATSD using the the above mentioned parser.
+6. Import the [`visas.tar.gz`](../USVisaRefusal/Resources/visas.tar.gz) file into ATSD using the above-mentioned parser.
 7. Navigate to the Docker machine IP at port 5000, where you should see a Redash login screen.
 8. Follow the steps in [ATSD datasource guide](https://redash.io/help/data-sources/axibase_tsd.html) to create a read-only account in ATSD and add a new ATSD datasource in Redash.
 9. Create a sample query configuration, and execute the following query to validate the integration:
