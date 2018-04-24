@@ -22,7 +22,7 @@ Since the 1980s, the United States has almost always been on the wrong side of t
 
 *Fig 2.* Periods of full employment are highlighted in green and periods of over 10% unemployment are highlighted in red. Full-employment and 10%-unemployment `[threshold]` series are used to highlight upper and lower value limits.
 
-The **TRENDS** chart above tracks periods with full employment using an `alert-expression`. The exceptionally high unemployment period during the early 1980s may be explained by the then-ongoing worldwide recession which began in 1979 amid a global energy crisis caused by the Iranian oil embargo and subsequent Iran-Iraq war, combined with extreme Fed monitary policy meant to combat double-digit inflation. Ironically, the global oil supply only contracted about 4% during the embargo, but speculation, panic, and commodity runs caused a huge price surge which wouldn't be reversed for almost twenty years.
+The **TRENDS** chart above tracks periods with full employment using an `alert-expression`. The exceptionally high unemployment period during the early 1980s may be explained by the then-ongoing worldwide recession which began in 1979 amid a global energy crisis caused by the Iranian oil embargo and subsequent Iran-Iraq war, combined with extreme Fed monetary policy meant to combat double-digit inflation. Ironically, the global oil supply only contracted about 4% during the embargo, but speculation, panic, and commodity runs caused a huge price surge which wouldn't be reversed for almost twenty years.
 
 ### How Does GDP Correlate to Unemployment?
 
@@ -58,7 +58,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   display = false
 ```
 * [`value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting can define series value without `entity` or `metric`. In this case, a [user-defined function](https://github.com/axibase/charts/blob/master/syntax/udf.md) is used for inline value calculation.
-```
+```sql
 [series]
   value = avg('month')
   format = %    
