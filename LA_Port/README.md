@@ -201,7 +201,7 @@ down from 25% of the Los Angeles Basin total in 2005 to just 6% in 2012.
 ### Analysis
 
 The Port of Los Angeles was able to reduce all measured metrics by a significant amount over the observed period. The histogram
-belows details those changes, showing the frequency of various percentile changes.
+below details those changes, showing the frequency of various percentile changes.
 
 **Figure 5.1**
 
