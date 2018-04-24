@@ -4,7 +4,7 @@
 
 ### Introduction
 
-Each year the Internal Revenue Service of the United States releases expatriation information about American citizens who've decided to renoune their citizenship via the [Federal Register](https://www.federalregister.gov/), the government's self-described daily journal. It's interesting to note that the reason the IRS publishes this informaton, or tracks it all, is to levy the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) upon those citizens with enough material wealth to incur the tax at the time of their renunciation. The tax doesn't apply to just anyone who decides to leave the country for good, only to those soon-to-be-former citizens who qualify as "covered expatriates."
+Each year the Internal Revenue Service of the United States releases expatriation information about American citizens who have decided to renounce their citizenship via the [Federal Register](https://www.federalregister.gov/), the government's self-described daily journal. It's interesting to note that the reason the IRS publishes this information, or tracks it all, is to levy the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) upon those citizens with enough material wealth to incur the tax at the time of their renunciation. The tax doesn't apply to just anyone who decides to leave the country for good, only to those soon-to-be-former citizens who qualify as "covered expatriates."
 
 A covered expatriate must meet any one of the following criteria:
 
@@ -16,10 +16,10 @@ A covered expatriate must meet any one of the following criteria:
 
 As observed [last year](/../master/Expatriation_Q2), citizens from the United States were leaving the country at previously unseen levels against the backdrop of one of the more contentious recent presidential elections.
 
-![](images/y-o-y-expat.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/61a855b0#fullscreen)
+![](images/expat-title-2.png)
+[![](images/button.png)](https://apps.axibase.com/chartlab/61a855b0/3/#fullscreen)
 
-*Fig 1.* Open the ChartLab visualization above to compare the previous quarter's data (upper visualization) to the current quarter's data (lower visualization). 
+*Fig 1.* The raw dataset is shown in the upper visualization, while the lower visualization uses a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting to show a year-on-year comparison.
 
 ### ChartLab
 
@@ -30,7 +30,7 @@ A number of built-in [statistical functions](https://github.com/axibase/atsd/blo
 ![](images/previous-year.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/a14a69a4#fullscreen)
 
-*Fig 2.* The above visualization uses the `ChangeFromPreviousYear` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually obsevered several years ago.
+*Fig 2.* The above visualization uses the `ChangeFromPreviousYear` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually observed several years ago.
 
 While the underlying function is quite complex:
 
@@ -63,13 +63,13 @@ The syntax for the `alert-expression` above is shown here:
     alert-style = if (alert < -10) return 'color:green'
 ```
 
-When using a two-parameter `alert-expression`, three arguments are needed: an upper bound, lower bound, and median value seperated by `:` delimiter.
+When using a two-parameter `alert-expression`, three arguments are needed: an upper bound, lower bound, and median value separated by `:` delimiter.
 
 For more information about ChartLab syntax or to explore other features which may be used in the example above, see the complete [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
 
 ### SQL
 
-Axibase Time Series Database features the funcionality of an SQL-like tool called [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md). Expatriation data may be queried to create tabular representations not typically available in non-relational databases, thus negating the traditionally-understood sacrifice in data consistency associated with such databases.
+Axibase Time Series Database features the functionality of an SQL-like tool called [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md). Expatriation data may be queried to create tabular representations not typically available in non-relational databases, thus negating the traditionally-understood sacrifice in data consistency associated with such databases.
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", 
