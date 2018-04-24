@@ -17,7 +17,7 @@ Track life expectancy growth using calculated series in [Axibase Times Series Da
 
 ### Data
 
-Data is sourced from the Center for Disease Control and Prevention.
+This data is sourced from the Center for Disease Control and Prevention.
 
 * [NCHS - Death rates and life expectancy at birth](https://catalog.data.gov/dataset/age-adjusted-death-rates-and-life-expectancy-at-birth-all-races-both-sexes-united-sta-1900)
 
