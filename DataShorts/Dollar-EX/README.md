@@ -11,7 +11,7 @@ Download the Community Edition of [Axibase Time Series Database](https://axibase
 
 ## Index
 
-Data is aggregated daily in visualizations, and annually in SQL queries. Favorable dollar exhange rates are shown in green
+Data is aggregated daily in visualizations, and annually in SQL queries. Favorable dollar exchange rates are shown in green
 while less favorable exchange rates are shown in red, based on the overall 5-year average exchange rate. Each section is accompanied
 by a brief analysis to give the data context. Using computed [value settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/)
 thresholds have been calculated using the underlying data, the upper 25th percentile of a given exchange rate is considered
@@ -79,7 +79,7 @@ GROUP BY PERIOD(1 YEAR)
 
 During the worst of the [European Debt Crisis](/DataShorts/EU_Debt/README.md) which saw [European Union per capita debt](/DataShorts/EU_percap_Debt/README.md)
 grow at unprecedented rates across the continent, EU investors sought refuge in the stability of the Swiss Franc, backed by the
-world-renowned Swiss banking system. Further, the Swiss National Bank removed the peg to the Euro unexpectably in 2015 causing a huge
+world-renowned Swiss banking system. Further, the Swiss National Bank removed the peg to the Euro unexpectedly in 2015 causing a huge
 surge in 2015, clearly visible in the visualization below as a sudden change from a favorable exchange rate for dollar holders
 to an all-time low for the observed time period.
 
