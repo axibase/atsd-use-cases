@@ -44,12 +44,12 @@ or [plotly](https://plot.ly/).
 ### CartoDB
 -----------
 
-CartoDB is primarily a mapping software and does not allow the user to plot the data set (in this case gas prices of Hawaii) over time.
+Mapping software CartoDB does not support plotting datasets (in this case gas prices of Hawaii) over some time period.
 
 ### plotly
 ----------
 
-plotly fairly easily allows the user to display the relationship of gas prices over time; however, without extensively manipulating the raw data set, each
+This visualization tool allows the user to display the relationship of gas prices over time; however, without extensively manipulating the raw data set, each
 location is allowed to be compared with only one fuel type at a time.
 
 We will quickly run through plotting this dataset in plotly.
