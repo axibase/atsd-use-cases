@@ -1780,7 +1780,7 @@ $ openssl x509 -outform der -in axibase_root_ca.pem -out axibase_root_ca.crt
 
 These browsers inherit root CAs from the operating system trust store.
 
-* Firefox
+* Firefox Browser
 
 Firefox will display 'Unknown Identity' error.
 
