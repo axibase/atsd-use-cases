@@ -71,7 +71,7 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 ![](images/tax-2018_1.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/07f8b200)
 
-*Fig 2.* The same data displayed displayed with different settings.
+*Fig 2.* The same data displayed with different settings.
 
 **Configuration Settings:**
 
@@ -129,7 +129,7 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 ![](images/tax-2018-3.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/bdab5fd8)
 
-*Fig 4.* A histrogram shows the distribution of values for the given datasets. Assuming all series were equally-distributed the slope of the stacked boxes should be zero.
+*Fig 4.* A histogram shows the distribution of values for the given datasets. Assuming all series were equally-distributed the slope of the stacked boxes should be zero.
 
 **Configuration Settings:**
 
@@ -155,7 +155,7 @@ Although ATSD is a non-relational database it offers a SQL-like syntax with time
 
 The following queries will be shown here:
 
-* Year-on-year change based on calander day;
+* Year-on-year change based on calendar day;
 * Year-on-year change based on calendar index position.
 
 #### Year-on-Year Change based on calendar day
