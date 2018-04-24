@@ -81,7 +81,7 @@ You can explore this portal by clicking on the below button:
 [![](Images/button.png)](https://apps.axibase.com/chartlab/16c6e667/3/#fullscreen)
 
 According to a recent article published by [Reuters](http://www.reuters.com/article/us-eu-usa-visa-idUSKBN1691Q9), the [European Union](https://en.wikipedia.org/wiki/European_Union) (EU) becoming increasingly insistent on requiring American citizens to
-obtain travel visas to visit Europe (currently, Americans do not need visas). This is in response to Washington refusing to to grant visa-free access to 5 EU countries: Poland, Croatia,
+obtain travel visas to visit Europe (currently, Americans do not need visas). This is in response to Washington refusing to grant visa-free access to 5 EU countries: Poland, Croatia,
 Bulgaria, Romania, and Cyprus. All EU countries except for these 5 may travel to the US without needing to obtain a travel visa. The following image shows the number of B-1 and B-2 visas
 from these countries between 1997 and 2015. The early to mid 2000's saw the peak of the total number of B-1 and B-2 visas issued to these countries, but in recent years
 these numbers has dropped off, falling to 9,977 in 2015 ($1,596,320 in revenue at $160 per visa).  
