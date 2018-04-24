@@ -21,7 +21,7 @@ drop-down menu to toggle between all of the recorded metrics for a complete pict
 The table below indexes the recorded metrics and offers explanation when  needed:
  
 **Table 1.1**
-
+```sh
 | Metric | Unit | Comment |
 |--------|:----:|:-------:|
 | annual_c02_reduction_metric_tons | Metric Tons | - |
@@ -31,7 +31,7 @@ The table below indexes the recorded metrics and offers explanation when  needed
 | total_nom_wats_tafter_kw | | |
 | total_nom_watts_before_kw | | |
 | total_units | Count | Number of streetlights |
-
+```
 The map below details the City Council districts of Los Angeles to provide a clearer picture of the work being done.
 
 **Map 1.1**
