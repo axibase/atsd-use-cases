@@ -237,7 +237,7 @@ A Closer Look at America's Trading Partners
 
 Let's now take a closer look at America's trading partners. Are there any shared characteristics between these countries?
 
-A claim often made is that poor, developing countries are stealing American jobs and industry. If a country is poaching another country's jobs and industry, it is reasonable to
+A claim often made is that poor, developing countries are stealing American jobs and industry. If a country is poaching another country's jobs and industry, it is reasonable
 to assume that the afflicted country's trade balance would change as a result. For example, the more steel manufacturing jobs that leave the U.S. for Asia, the more steel the
 U.S. will need to import from Asia. In this instance, `2016_GDP_per_capita` was calculated from the following two replacement tables:
 [`world-population.txt`](https://github.com/axibase/atsd-use-cases/blob/master/USInternationalTrade/resources/world-population.txt) and [`world-gdp.txt`](https://github.com/axibase/atsd-use-cases/blob/master/USInternationalTrade/resources/world-gdp.txt). Results are sorted by the country's `2016_trade_balance_rank`. The
