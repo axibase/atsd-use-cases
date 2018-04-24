@@ -73,7 +73,8 @@ python
 ```
 Replace `localhost` with the actual Docker hostname, if necessary.
 
-```python
+```sh
+python
 import atsd_client
 from atsd_client.services import SQLService
 
