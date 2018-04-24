@@ -4,7 +4,7 @@
 
 ### Introduction
 
-Each year the Internal Revenue Service of the United States releases expatriation information about American citizens who have decided to renounce their citizenship via the [Federal Register](https://www.federalregister.gov/), the government's self-described daily journal. It's interesting to note that the reason the IRS publishes this information, or tracks it all, is to levy the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) upon those citizens with enough material wealth to incur the tax at the time of their renunciation. The tax doesn't apply to just anyone who decides to leave the country for good, only to those soon-to-be-former citizens who qualify as "covered expatriates."
+Each year the Internal Revenue Service of the United States releases expatriation information about American citizens who have decided to renounce their citizenship via the [Federal Register](https://www.federalregister.gov/), the government's official journal. The reason the IRS publishes this information is to levy the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) upon those citizens with enough wealth to incur the tax at the time of their renunciation. The tax doesn't apply to just anyone who decides to leave the country for good, only to those soon-to-be-former citizens who qualify as "covered expatriates".
 
 A covered expatriate must meet any one of the following criteria:
 
@@ -12,39 +12,39 @@ A covered expatriate must meet any one of the following criteria:
 * Your net worth is $2 million or more on the date of your expatriation or termination of residency.
 * You fail to certify on Form 8854 that you have complied with all U.S. federal tax obligations for the 5 years preceding the date of your expatriation or termination of residency.
 
-[IRS Form 8854](https://www.irs.gov/pub/irs-pdf/f8854.pdf) is a somewhat lengthy document that simply confirms that up to the date of your expatriation, you have complied with United States Federal Tax Code to the letter of the law. Failing to correctly complete this document means that you are obligated to pay the Expatriation Tax, even if you do not meet either of the previous criteria.
+[IRS Form 8854](https://www.irs.gov/pub/irs-pdf/f8854.pdf) is a statement that confirms that up to the date of your expatriation, you have complied with United States Federal Tax Code to the letter of the law. Failing to correctly complete this document means that you are obligated to pay the Expatriation Tax, even if you do not meet either of the previous criteria.
 
 As observed [last year](/../master/Expatriation_Q2), citizens from the United States were leaving the country at previously unseen levels against the backdrop of one of the more contentious recent presidential elections.
 
 ![](images/expat-title-2.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/61a855b0/3/#fullscreen)
 
-*Fig 1.* The raw dataset is shown in the upper visualization, while the lower visualization uses a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting to show a year-on-year comparison.
+*Fig 1.* The top chart uses a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting to show a quarter-on-quarter comparison, while the annual totals are shown in the bottom chart.
 
 ### ChartLab
 
-ChartLab is a visualization sandbox that features convenient syntax with robust output. The above visualization may be manipulated to produce several impressions of the same dataset by any level of user. Although not required, a basic understanding of any programming language is helpful when using ChartLab.
+Both of the above graphs were prepared with Axibase ChartLab which is a visualization sandbox that features convenient syntax with different chart types. The above visualizations may be modified to produce several projections of the same dataset stored in Axibase Time Series Database (ATSD).
 
-A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported in any ChartLab instance, and [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. Follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
+A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported by ChartLab, and [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
 
 ![](images/previous-year.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/a14a69a4#fullscreen)
 
 *Fig 2.* The above visualization uses the `ChangeFromPreviousYear` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually observed several years ago.
 
-While the underlying function is quite complex:
+While the underlying function maybe be quite verbose:
 
 ```sql
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return (v / p - 1) * 100
 ```
 
-The syntax required in the ChartLab UI is simple:
+The syntax required in the ChartLab configuration is simple:
 
 ```sql
 value = fred.PercentChangeFromYearAgo('raw')
 ```
 
-> View the complete [`fred.js`](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#fred-library) library here.
+> View the complete [`fred.js`](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#fred-library) UDF library here.
 
 Customized data monitoring in ATSD is possible using [`alert-expressions`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14) whereby user-specified parameters may be defined to trigger alarms based on incoming data.
 
@@ -69,7 +69,7 @@ For more information about ChartLab syntax or to explore other features which ma
 
 ### SQL
 
-Axibase Time Series Database features the functionality of an SQL-like tool called [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md). Expatriation data may be queried to create tabular representations not typically available in non-relational databases, thus negating the traditionally-understood sacrifice in data consistency associated with such databases.
+In addition to ChartLab, the Axibase Time Series Database includes a web-based [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) which can be used for ad-hoc data exploration.
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", 
@@ -83,7 +83,7 @@ GROUP BY period(1 YEAR, END_TIME)
 ```
 
 | Year | Year Total | Y-o-Y Change | Y-o-Y Change, % | 
-|------|------------|--------------|-----------------| 
+|------|-----------:|-------------:|----------------:| 
 | 2000 | 430        | null         | null            | 
 | 2001 | 488        | 58.00        | 13.49           | 
 | 2002 | 503        | 15.00        | 3.07            | 
@@ -105,7 +105,7 @@ GROUP BY period(1 YEAR, END_TIME)
 
 *Fig 4.* The table above shows the results of a query which tracks absolute and percentile year-on-year change in expatriate numbers, similar to the *Fig 2* and *Fig 3* above.
 
-The above query uses several [`LAG`](https://github.com/axibase/atsd/tree/master/sql#lag) clauses to quickly select the previous value, offset by one index position, when creating comparative tables like the one shown here.
+The above query uses the [`LAG`](https://github.com/axibase/atsd/tree/master/sql#lag) function to select the previous value, offset by one index position, when creating comparative tables like the one shown here.
 
 Likewise, data may be tracked by quarter using the query below:
 
@@ -119,7 +119,7 @@ GROUP BY period(1 QUARTER)
 ```
 
 | Quarter | Year | Quarter Total | 
-|---------|------|---------------| 
+|---------|------|--------------:| 
 | 1       | 2013 | 679           | 
 | 2       | 2013 | 1129          | 
 | 3       | 2013 | 560           | 
@@ -143,17 +143,17 @@ GROUP BY period(1 QUARTER)
 
 *Fig 5.* Tracked by quarter, expatriation data since 2013 is shown in the table above.
 
-The above query uses a [`CAST`](https://github.com/axibase/atsd/tree/master/sql#cast) clause and [`CEIL`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) mathematical function to rename each quarter. A `CAST` clause allows incoming data to be output as either a string or number, depending on need.
+The above query uses a [`CAST`](https://github.com/axibase/atsd/tree/master/sql#cast) clause and [`CEIL`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) function to rename each quarter.
 
 ### Web Crawler
 
-A web crawler is a tool similar to those used by indexing services like Google, Bing, or Duck Duck Go which searches a URL or collection of URLs looking for a specifically-defined piece of information. In the case of a search engine, this is usually a set of keywords and parameters input by a user into a search bar on the company's site. In the case of expatriation data and ATSD, Axibase developers have written a [Web Crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler#irs-expatriation-statistics-data-crawler) specifically for the task of tracking Federal Register publications for new expatriation data releases.
+The data published by the Federal Register requires an intermediate ETL step in order to be available for analysis. This extraction-transformation-loading procedure is implemented by a [web crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler#irs-expatriation-statistics-data-crawler) built specifically for the task of tracking Federal Register publications for new expatriation data releases.
 
 The Web Crawler operates according to the following workflow:
 
 ![](images/crawler-flow.png)
 
-The Web Crawler reads incoming data from the Federal Register and parses it into a [`series` command](https://github.com/axibase/atsd/blob/master/api/network/series.md), readable by [ATSD](https://axibase.com/products/axibase-time-series-database/), the database which hosts all the data used in this article and supports the background operations of SQL Console. A `series` command template is shown below:
+The Web Crawler reads incoming data from the Federal Register and parses it into [`series` commands](https://github.com/axibase/atsd/blob/master/api/network/series.md), readable by [ATSD](https://axibase.com/products/axibase-time-series-database/), the database which hosts all the data used in this article and supports the background operations of SQL Console. A `series` command template is shown below:
 
 ```sql
 series d:{iso-date} e:{entity} t:{tag-1}={val-1} m:{metric-1}={number}
