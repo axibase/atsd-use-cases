@@ -23,7 +23,7 @@ As observed [last year](/../master/Expatriation_Q2), citizens from the United St
 
 ### ChartLab
 
-Both of the above graphs were prepared with Axibase ChartLab which is a visualization sandbox that features convenient syntax with different chart types. The above visualizations may be modified to produce several projections of the same dataset stored in Axibase Time Series Database (ATSD).
+Both of the above graphs were prepared with Axibase ChartLab which is a visualization sandbox that features convenient syntax with different types of charts. The above visualizations may be modified to produce several projections of the same dataset stored in Axibase Time Series Database (ATSD).
 
 A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported by ChartLab, and [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
 
@@ -32,7 +32,7 @@ A number of built-in [statistical functions](https://github.com/axibase/atsd/blo
 
 *Fig 2.* The above visualization uses the `ChangeFromPreviousYear` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually observed several years ago.
 
-While the underlying function maybe be quite verbose:
+While the underlying function may be quite verbose:
 
 ```sql
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return (v / p - 1) * 100
