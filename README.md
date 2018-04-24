@@ -103,7 +103,7 @@ Older ATSD functionality and features applied to real-world public data to solve
 
 1. [Calls May Be Recorded or Monitored for Training Purposes: Using Call Abandonment Rates to Establish Thresholds](SF_Phone/README.md)
 1. [Does the Bag Tax Work?](Bag_Tax/README.md)
-1. [The Consumer Price Index Verus Your Savings Account (Bank of Israel)](CBI_CPI/README.md)
+1. [The Consumer Price Index Versus Your Savings Account (Bank of Israel)](CBI_CPI/README.md)
 1. [Riding the L Train in 2025](L_Train2025/README.md)
 1. [How to Predict a Fire in Hartford](CT_Fire/README.md)
 1. [The Cleanest Water in Washington State](Chart_of_the_Day/WA_Water/README.md)
