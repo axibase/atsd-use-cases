@@ -75,7 +75,7 @@ Detailed use cases that feature in-depth data exploration and complex functional
 1. [The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment](Analysis/FedFund_FedInterest/README.md)
 1. [United States Treasuries as International Assets: China's Role in the Federal Fund Rate](Analysis/Treasuries_as_Assets/README.md)
 1. [CPI vs. PPI: Producers are Spending Less While Consumers are Paying More](Analysis/CPI_PPI/README.md)
-1. [BitCoin After the GHash.IO Era](Analysis/BitCoin_After_GHash/README.md)
+1. [Bitcoin After the GHash.IO Era](Analysis/Bitcoin_After_GHash/README.md)
 1. [Visa Travel to the United States with Charts, SQL, and Redash](USVisa/README.md)
 1. [Analyzing UK Aviation Statistics using CAA Datasets](UKAviation/README.md)
 
