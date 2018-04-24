@@ -26,7 +26,7 @@ beginning to look more and more like the Federal Government will end up footing 
 loan borrowers are delinquent on their payments ([3](https://ifap.ed.gov/perkinscdrguide/attachments/1415PerkinsCDR.pdf)).
 
 The lower part of the above visualization shows that the rate of student loan debt growth is staying relatively constant,
-which isn't great news considering that that rate of increase is relatively more significant than the rate of GDP growth 
+which isn't great news considering that this rate of increase is relatively more significant than the rate of GDP growth 
 produced by the United States. The number of economic troubles being juggled by the United States is significant at the moment,
 especially considering that the debt profile of the average American has managed to remain relatively consistent for the last
 several decades ([4](../../FED_FORDSR/README.md)), it seems that the brunt of the damage has been inflicted on the system itself.
