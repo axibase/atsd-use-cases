@@ -4,13 +4,15 @@
 
 ### Introduction
 
-Each year the Internal Revenue Service of the United States releases expatriation information about American citizens via the [Federal Register](https://www.federalregister.gov/), the government's self-described daily journal. It's interesting to note that the reason the IRS publishes this informaton, or tracks it all, is to levy the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax). The tax doesn't apply to just anyone who decides to leave the country and renounce their citizenship, only to those soon-to-be-former citizens who qualify as "covered expatriates."
+Each year the Internal Revenue Service of the United States releases expatriation information about American citizens who've decided to renoune their citizenship via the [Federal Register](https://www.federalregister.gov/), the government's self-described daily journal. It's interesting to note that the reason the IRS publishes this informaton, or tracks it all, is to levy the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) upon those citizens with enough material wealth to incur the tax at the time of their renunciation. The tax doesn't apply to just anyone who decides to leave the country for good, only to those soon-to-be-former citizens who qualify as "covered expatriates."
 
-A covered expatriate must meet one of the following criteria:
+A covered expatriate must meet any one of the following criteria:
 
 * Your average annual net income tax for the 5 years ending before the date of expatriation or termination of residency is more than a specified amount that is adjusted for inflation ($151,000 for 2012, $155,000 for 2013, $157,000 for 2014, and $160,000 for 2015).
 * Your net worth is $2 million or more on the date of your expatriation or termination of residency.
 * You fail to certify on Form 8854 that you have complied with all U.S. federal tax obligations for the 5 years preceding the date of your expatriation or termination of residency.
+
+[IRS Form 8854](https://www.irs.gov/pub/irs-pdf/f8854.pdf) is a somewhat lengthy document that simply confirms that up to the date of your expatriation, you have complied with United States Federal Tax Code to the letter of the law. Failing to correctly complete this document means that you are obligated to pay the Expatriation Tax, even if you do not meet either of the previous criteria.
 
 As observed [last year](/../master/Expatriation_Q2), citizens from the United States were leaving the country at previously unseen levels against the backdrop of one of the more contentious recent presidential elections.
 
@@ -46,12 +48,12 @@ value = fred.PercentChangeFromYearAgo('raw')
 
 Customized data monitoring in ATSD is possible using [`alert-expressions`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14) whereby user-specified parameters may be defined to trigger alarms based on incoming data.
 
-Here, alert expressions are applied are to static data, but they may be easily applied to dynamic data and used for systems monitoring as seen in this [example](https://apps.axibase.com/chartlab/67aa3b61) which is monitoring one of the Axibase servers right now.
+Here, alert expressions are applied to static data, but they may be easily applied to dynamic data and used for systems monitoring as seen in this [example](https://apps.axibase.com/chartlab/67aa3b61) which is monitoring one of the Axibase servers right now.
 
 ![](images/percent-change.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/95617f2b)
 
-*Fig 3.* The `alert-expression` used here highlights quarters where the percent change from the previous year was greater than 50% in red, and quarter where it was less than -10% in green.
+*Fig 3.* The `alert-expression` used here highlights quarters where the percent change from the previous year was greater than 50% in red, and quarters where it was less than -10% in green.
 
 The syntax for the `alert-expression` above is shown here:
 
@@ -61,11 +63,13 @@ The syntax for the `alert-expression` above is shown here:
     alert-style = if (alert < -10) return 'color:green'
 ```
 
-For more information about ChartLab syntax or to explore other features see the complete [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+When using a two-parameter `alert-expression`, three arguments are needed: an upper bound, lower bound, and median value seperated by `:` delimiter.
+
+For more information about ChartLab syntax or to explore other features which may be used in the example above, see the complete [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
 
 ### SQL
 
-Axibase Time Series Database features the funcionality of an SQL-like tool called [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md). Expatriation data may be queried to create tabular representations not typically available in non-relational databases, thus negating the traditionally-understood sacrifice in data consistency associated with such modern databases.
+Axibase Time Series Database features the funcionality of an SQL-like tool called [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md). Expatriation data may be queried to create tabular representations not typically available in non-relational databases, thus negating the traditionally-understood sacrifice in data consistency associated with such databases.
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", 
@@ -143,21 +147,21 @@ The above query uses a [`CAST`](https://github.com/axibase/atsd/tree/master/sql#
 
 ### Web Crawler
 
-A web crawler is a tool similar to those used by indexing services like Google, Bing, or Duck Duck Go which searches a URL or collection of URLs looking for a specifically-defined piece of information. In the case of a search engine, this is usually a set of keywords and parameters input by a user into a search bar on the companies site. In the case of expatriation data and ATSD, Axibase developers have written a [Web Crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler#irs-expatriation-statistics-data-crawler) specifically for the task of tracking Federal Register publications for new expatriation data releases.
+A web crawler is a tool similar to those used by indexing services like Google, Bing, or Duck Duck Go which searches a URL or collection of URLs looking for a specifically-defined piece of information. In the case of a search engine, this is usually a set of keywords and parameters input by a user into a search bar on the company's site. In the case of expatriation data and ATSD, Axibase developers have written a [Web Crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler#irs-expatriation-statistics-data-crawler) specifically for the task of tracking Federal Register publications for new expatriation data releases.
 
 The Web Crawler operates according to the following workflow:
 
 ![](images/crawler-flow.png)
 
-The Web Crawler reads incoming data from the Federal Register and parses it into a [`series` command](https://github.com/axibase/atsd/blob/master/api/network/series.md), readable by [ATSD](https://axibase.com/products/axibase-time-series-database/), the database which hosts all the data used in this article and supports the background operations of SQL Console. A sample `series` command is shown below:
+The Web Crawler reads incoming data from the Federal Register and parses it into a [`series` command](https://github.com/axibase/atsd/blob/master/api/network/series.md), readable by [ATSD](https://axibase.com/products/axibase-time-series-database/), the database which hosts all the data used in this article and supports the background operations of SQL Console. A `series` command template is shown below:
 
 ```sql
 series d:{iso-date} e:{entity} t:{tag-1}={val-1} m:{metric-1}={number}
 ```
 
-Once the data is stored in the database, the date (`d:`) parameter may be referenced in ISO format, or modified to output human-readable date information such as that seen in the [SQL](#sql) section of this article.
+Once the data is stored in the database, the date (`d:`) parameter may be referenced in ISO format, or modified to output human-readable date information such as that seen in the [SQL](#sql) section of this article. Tags (`t:`), metrics (`m:`), and entities (`e:`) are identifying features of a particular set of data. In the case of expatriation data here, the entity is the publishing body, the IRS and the metric is the number of expatriates. The raw data does not feature tag-level differentiation, but it could be something like `us-born-citizens` versus `naturalized-citizens`, if the data were tracked that specifically. 
 
-The complete least and operation instructions of supported Axibase data crawlers is hosted [here](https://github.com/axibase/atsd-data-crawlers).
+The complete list and operation instructions of other supported Axibase data crawlers is hosted [here](https://github.com/axibase/atsd-data-crawlers).
 
 ### Conclusion
 
