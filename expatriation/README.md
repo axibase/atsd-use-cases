@@ -114,7 +114,6 @@ GROUP BY period(1 QUARTER)
   ORDER BY period(1 QUARTER)
 ```
 
-```sql
 | Quarter | Year | Quarter Total | 
 |---------|------|---------------| 
 | 1       | 2013 | 679           | 
@@ -137,7 +136,6 @@ GROUP BY period(1 QUARTER)
 | 2       | 2017 | 1756          | 
 | 3       | 2017 | 1374          | 
 | 4       | 2017 | 685           | 
-```
 
 *Fig 5.* Tracked by quarter, expatriation data since 2013 is shown in the table above.
 
@@ -150,3 +148,21 @@ A web crawler is a tool similar to those used by indexing services like Google, 
 The Web Crawler operates according to the following workflow:
 
 ![](images/crawler-flow.png)
+
+The Web Crawler reads incoming data from the Federal Register and parses it into a [`series` command](https://github.com/axibase/atsd/blob/master/api/network/series.md), readable by [ATSD](https://axibase.com/products/axibase-time-series-database/), the database which hosts all the data used in this article and supports the background operations of SQL Console. A sample `series` command is shown below:
+
+```sql
+series d:{iso-date} e:{entity} t:{tag-1}={val-1} m:{metric-1}={number}
+```
+
+Once the data is stored in the database, the date (`d:`) parameter may be referenced in ISO format, or modified to output human-readable date information such as that seen in the [SQL](#sql) section of this article.
+
+The complete least and operation instructions of supported Axibase data crawlers is hosted [here](https://github.com/axibase/atsd-data-crawlers).
+
+### Conclusion
+
+An unusually large number of expatriates renouncing their United States citizenship was observed during the last half-decade, with an exceptionally high number leaving the country during 2016-2107. While the most recent figures show that this number has markedly decreased, it still remains higher than it ever was pre-2010. There's probably not a very simple answer to the question of 'Why?' but BBC recently wrote a brief [exposé](http://www.bbc.com/capital/story/20170123-meet-the-people-leaving-trumps-america) discussing the Americans who chose to leave the country in response to the recent presidential elections.
+
+Whatever the reason, it's unlikely that the roughly 5000 citizens leaving the country will have much of an impact on the overall demographics or population of the country as the United States is constantly host to some 750,000 newly naturalized citizens each year.
+
+For more information about any of the data in this article, instructions on using any of the tools featured here, or suggestions and comments about articles you'd like to see in the future, raise an [issue](https://github.com/axibase/atsd-use-cases/issues/new) on our GitHub repository.
