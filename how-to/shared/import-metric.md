@@ -1,4 +1,4 @@
-# Importing Metric to ATSD 
+# Importing Metrics to ATSD 
 
 ![](images/metric.png)
 
