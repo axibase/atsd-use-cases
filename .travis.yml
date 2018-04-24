@@ -5,9 +5,13 @@ node_js:
 install:
   - npm install -g yaspeller
   - npm install -g markdown-link-check
+  # download dictionary from atsd repository for merging
+  - wget https://raw.githubusercontent.com/axibase/atsd/master/.spelling
+  # generate dictionary in JSON format
+  - cat .spelling .dictionary | sort | uniq | awk '{printf("%s\0", $0)}' | jq -csR 'split("\u0000")' > .yaspeller-dictionary.json
 script: 
-  - yaspeller -e ".md" ./
-  - find . -name \*.md -exec markdown-link-check {} \;
+  - yaspeller --dictionary .yaspeller-dictionary.json -e ".md" ./
+  - find . -name \*.md -print0 | xargs -0 -n1 -P8 markdown-link-check
 cache:
   directories:
-    - "node_modules"
+    - $(npm config get prefix)/lib/node_modules
