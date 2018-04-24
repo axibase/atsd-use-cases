@@ -1,54 +1,54 @@
-# WebGL
+# WebGL: Mozilla Designed Web-based Graphics Library
+### 3D Image Design Without Plugins
 
-> Examples in this article use ES6 syntax and Fetch API, which are not supported in IE.
+> Examples in this article use ES6 syntax and Fetch API, which are not supported in Internet Explorer.
 
 ## Introduction
 Drawing in Web:
 * Adobe Flash / MS Silverlight
   + Requires plugin
 
-* SVG 
-  + Creates DOM elements, which can handle events
-  + Declarative creation and styling
-  + Can be slow
-  + Not designed for 3D graphics.
-  + As HTML, works fine with fonts, but can not manage text layout 
+* SVG:
+  + Creates DOM elements, which handles events;
+  + Declarative creation and styling;
+  + May be slow;
+  + Not designed for 3D graphics;
+  + As HTML, works fine with fonts, but cannot manage text layout.
 
-* Canvas 2D API
-  + Imperative 2D rendering
-  + Rendering does not affect DOM.
-  + Can provide raw frame buffer.
-  + Can draw text like SVG, but text drawing must be controlled by user (e.g. to replace text line with another you need manually clean old line space and put the new one to its place, or redraw the whole scene)
-  + User interaction (mouse events etc.) must be implemented manually or with any framework
+* Canvas 2D API:
+  + Imperative 2D rendering;
+  + Rendering does not affect DOM;
+  + Can provide raw frame buffer;
+  + Can draw text like SVG, but text drawing must be controlled by user (e.g. to replace one text line with another, you need manually clean the old line space and put the new one in its place, or redraw the whole scene);
+  + User interaction (mouse events etc.) must be implemented manually or with some framework.
 
 * WebGL
 
 ## Key Concepts
 
-Based on OpenGL ES 2.0, (WebGL2 on OpenGL ES 3.0).
-GPU computation principle: execute simple commands for lots of data in parallel.
-GPU-accelerated rendering, uses shaders: small programs for GPU (written in GLSL). WebGL supports 2 types of shaders: vertex shaders and fragment shaders.
+* Based on OpenGL ES 2.0, (WebGL2 on OpenGL ES 3.0);
+* GPU-computation principle: execute simple commands for a lot of data in parallel;
+* GPU-accelerated rendering using shaders: small programs for GPU (written in GLSL). WebGL supports 2 types of shaders: vertex shaders and fragment shaders.
 
 Pipeline (simplified):
 
 ![](https://kaidu1982.github.io/2013-jco-webgl/reveal.js-master/img/webgl_rendering_pipeline.png)
 > https://kaidu1982.github.io/2013-jco-webgl/reveal.js-master/img/webgl_rendering_pipeline.png
 
-
-Simplicity causes a reduced number of primitives, which can be rendered: WebGL can draw lines, points and triangles (polygones), but it can't draw cubes, spheres, circles etc.). To display other figures, they must be represented as a polygonal model.
+Simplicity causes a reduced number of primitives to be rendered: WebGL can draw lines, points and triangles (polygons), but it can't draw cubes, spheres, circles etc.). To display other figures, they must be represented as a polygonal model.
 
 ![Utah teapot](images/utah_teapot.jpg)
 > http://caig.cs.nctu.edu.tw/course/CG2007/images/ex1_wireframe.jpg
 
-To display this teapot, we need:
-1. Initialize WebGL context
-2. Create array of vertices of the teapot model
-3. Create array of indices of vertices of each polygon
-4. Create vertex and fragment shaders
-5. Link shaders to shader program
-6. Create array buffer and pass vertex data to it 
-7. Create index buffer and pass indices to it
-8. Connect shader attribute variables with data representation
+To display this teapot, we need to: 
+1. Initialize WebGL context;
+2. Create array of vertices for the teapot model;
+3. Create array of indices for the vertices of each polygon;
+4. Create vertex and fragment shaders;
+5. Link shaders to shader program;
+6. Create array buffer and pass it vertex data;
+7. Create index buffer and pass it indices;
+8. Connect shader attribute variables with data representation;
 9. Draw! 
 
 ## Limitations
@@ -56,7 +56,7 @@ To display this teapot, we need:
 2. Very hard to render text.
 3. Can not render Web content (DOM elements, iframes, etc.).
 4. Requires lots of platform resources
-5. Context loss (required proper handling)
+5. Context loss (required for proper handling)
 
 ## Browser Support
 
@@ -106,7 +106,7 @@ gl.clear(gl.COLOR_BUFFER_BIT);
 
 ### Create Vertex Shader
 
-Vertex shader transforms model vertices position, e.g. to scale, rotate, move the model. Since vertex shader is the first programmable shader in pipeline, only this shader can take attribute variables. So we pass vertex position and color to shader, simply set final vertex position to given and move color to fragment shader.
+The vertex shader transforms model vertices positions, e.g. to scale, rotate, or move the model. Since the vertex shader is the first programmable shader in the pipeline, only this shader can handle attribute variables. Thus, vertex position and color are passed to this shader, set the final vertex position to the given value and move the color to the fragment shader.
 
 Data can be passed to shaders through attributes and uniforms.
 
@@ -126,7 +126,7 @@ void main()
 
 ### Create Fragment Shader
 
-Fragment shaders calculates the color for each vertex. We just pass the argument to output.
+Fragment shaders calculate the color for each vertex. We just pass the argument to output.
 
 ```glsl
 // Set medium precision (required in WebGL 1)
@@ -158,8 +158,8 @@ gl.deleteShader(vertexShader);
 gl.deleteShader(fragmentShader);
 ```
 
-### Buffer initialization
-Passing data from to GPU costs a lot, so we need to pass as much data at once, as we can. We pass position and color info as plain typed array through the _buffer object_ `vbo`. To tell the GPU which attribute is located at buffer, we call `gl.vertexAttribPointer`, passing the attribute location index from program, count and type of attribute type vector (position is `vec2` and color is `vec3`), normalization flag, size of structure and field offset. 
+### Buffer Initialization
+Passing data to and from the GPU is expensive, so we need to pass as much data as we can in as few trips as possible. We pass position and color info as a plaintext array through the _buffer object_ `vbo`. To tell the GPU which attribute is located at buffer, we call `gl.vertexAttribPointer`, passing the attribute location index from program, count, and type of attribute type vector (position is `vec2` and color is `vec3`), normalization flag, size of structure and field offset. 
 
 We are drawing a single triangle, so we don't need index buffer.
 
@@ -312,11 +312,11 @@ draw();
 
 ![](images/threejs_barchart_cpu.png)
 
-> Loading ATSD data requires HTTP server. In this example we use SimpleHTTPServer from Python
+> Loading ATSD data requires an HTTP server. For this example we'll use SimpleHTTPServer from Python.
 
 1. Create a folder for your project
 
-2. Download from [threejs.org](https://threejs.org) and unpack THREE.js. Copy `build/three.min.js` to your project folder.
+2. Download the required volume [threejs.org](https://threejs.org) and unpack THREE.js. Copy `build/three.min.js` to your project folder.
 
 3. Create `index.html` file at your project folder.
 ```html
@@ -421,7 +421,7 @@ loadAtsdCpuBusyData.then(data => {
 })
 ```
 
-5. Start HTTP server for your project directory and open it in web-browser
+5. Start HTTP server for your project directory and open it in a web browser
 
 ```sh
 python -m SimpleHTTPServer 8080
@@ -437,7 +437,7 @@ Open [http://localhost:8080](http://localhost:8080)
 
 ![](images/threejs_gallery.png)
 
-WebGL does not support HTML rendering, but with THREE.js we can work with dom objects like with scene objects.
+WebGL does not support HTML rendering, but with THREE.js we can work with DOM objects as if they were scene objects.
 
 ```javascript
 
@@ -502,7 +502,7 @@ document.addEventListener("keyup", (e) => {
 ## Cesium
 [https://cesiumjs.org/](https://cesiumjs.org/)
 
-Provides interactive globe for data visualization. Supports time-based data rendering, different surface map systems (Bing, OpenStreetMap), data based 2d and 3d entity rendering.
+Provides interactive globe for data visualization. Supports time-based data rendering, different surface map systems (Bing, OpenStreetMap), data based 2D and 3D entity rendering.
 
 ### Geo-spatial data with Cesium
 
