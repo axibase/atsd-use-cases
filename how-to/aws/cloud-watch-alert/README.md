@@ -166,16 +166,16 @@ ATSD email notifications contain context-aware links to the newly launched AWS r
 
 ### Detailed Slack Notifications from ATSD
 
-Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding the following environment variable to the atsd-sandbox image above:
+Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding the following environment variable to the atsd-sandbox container above:
 
 ```
-   --env SLACK_CONFIG="slack.properties.xml"
+   --env SLACK_CONFIG="slack.properties"
 ```
 
-Bind the `slack.properties.xml` file to the sandbox image with the following:
+Bind the `slack.properties` file to the sandbox container with the following:
 
 ```
-   --volume /home/user/slack.properties.xml:/slack.properties.xml
+   --volume /home/user/slack.properties:/slack.properties
 ```
 
 The bound volume should at least contain the following required parameters:
@@ -193,23 +193,23 @@ A sample status change Slack message is shown here.
 
 ### Detailed Telegram Notifications from ATSD 
 
-Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding the following environment variable to the atsd-sandbox image above:
+Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding the following environment variable to the atsd-sandbox container above:
 
 ```
-   --env TELEGRAM_CONFIG="telegram.properties.xml"
+   --env TELEGRAM_CONFIG="telegram.properties"
 ```
 
-Bind the `telegram.properties` file to the sandbox image with the following:
+Bind the `telegram.properties` file to the sandbox container with the following:
 
 ```
-   --volume /home/user/telegram.properties.xml:/telegram.properties.xml
+   --volume /home/user/telegram.properties:/telegram.properties
 ```
 
 The bound volume should at least contain the following required parameters:
 
 ```
-token=xoxb-************-************************
-channels=general
+bot_id=*********:***********************************
+chat_id=-NNNNNNNNN
 ```
 
 Now, your status change notifications will be sent via Telegram messages as well as email.
