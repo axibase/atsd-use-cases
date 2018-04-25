@@ -66,7 +66,7 @@ In this query example, the `LAG(column_name)` function provides a convenient syn
 
 The `WITH INTERPOLATE(1 DAY)` clause is used to fill the missing data points and make the series regular.  
 
-| Year | Date   | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % |
+| Year | Date   | Curr Year, Mln | Prev Year, Mln | Year-on-Year Change, Mln | Year-on-Year Change, % |
 |------|--------|----------------:|----------------:|------------------:|----------------:|
 | 2011 | Mar-31 | 88.7            | null            | null              | null            |
 | 2012 | Mar-31 | 92.2            | 88.7            | 3.5               | 4.0             |
@@ -96,7 +96,7 @@ ORDER BY "Day in Year", time
 The [`date_format`](https://github.com/axibase/atsd/tree/master/sql#date-formatting-functions) function can be conveniently used to perform date- and calendar-based filtering.
 
 
-| Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % |
+| Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | Year-on-Year Change, Mln | Year-on-Year Change, % |
 |------|--------|------------:|----------------------:|-------------------:|------------------:|----------------:|
 | 2011 | Mar-31 | 90          | 88.7                  | null               | null              | null            |
 | 2012 | Mar-30 | 90          | 91.1                  | 88.7               | 2.4               | 2.7             |
@@ -130,7 +130,7 @@ WHERE tags.section = 'Individual Income Tax Returns' AND tags.type = 'Total Retu
 ORDER BY "Days to File" DESC, time
 ```
 
-| Year | Date   | Day in Year | Days to File | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % |
+| Year | Date   | Day in Year | Days to File | Curr Year, Mln | Prev Year, Mln | Year-on-Year Change, Mln | Year-on-Year Change, % |
 |------|--------|-------------|--------------|----------------|----------------|-----------------|---------------|
 | 2011 | Mar-28 | 87          | 18           | 85.5           | null           | null            | null          |
 | 2012 | Mar-30 | 90          | 18           | 91.1           | 85.5           | 5.6             | 6.6           |
@@ -145,7 +145,7 @@ ORDER BY "Days to File" DESC, time
 
 By normalizing the raw data collected by IRS we're observing the following percentage changes for the 2017/16 filing season.
 
-| Case | 2017/2016 YoY Change, %   |
+| Case | 2017/2016 Year-on-Year Change, %   |
 |------|-------:|
 | 1 | -2.9 |
 | 2 | -1.7 |
@@ -155,7 +155,7 @@ These estimates are measurably smaller than **4.1%** drop displayed in the lates
 
 We noticed however that the trends are not uniform across E-filing channels.
 
-**2017/2016 YoY Change, %**
+**2017/2016 Year-on-Year Change, %**
 
 | Case | Tax Professionals | Self-prepared |
 |------|-------:|---:|
