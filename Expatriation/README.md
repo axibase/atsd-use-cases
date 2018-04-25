@@ -1,6 +1,6 @@
 # Tracking Expatriation with ChartLab, SQL, and Web Crawler in ATSD
 
-![](images/expat-title.png)
+![](Images/expat-title.png)
 
 ### Introduction
 
@@ -16,8 +16,8 @@ A covered expatriate must meet any one of the following criteria:
 
 As observed [last year](/../master/Expatriation_Q2), citizens from the United States were leaving the country at previously unseen levels against the backdrop of one of the more contentious recent presidential elections.
 
-![](images/expat-title-2.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/61a855b0/3/#fullscreen)
+![](Images/expat-title-2.png)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/61a855b0/3/#fullscreen)
 
 *Fig 1.* The top chart uses a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting to show a quarter-on-quarter comparison, while the annual totals are shown in the bottom chart.
 
@@ -27,8 +27,8 @@ Both of the above graphs were prepared with Axibase ChartLab which is a visualiz
 
 A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported by ChartLab, and [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
 
-![](images/previous-year.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/a14a69a4#fullscreen)
+![](Images/previous-year.png)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/a14a69a4#fullscreen)
 
 *Fig 2.* The above visualization uses the `ChangeFromPreviousYear` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually observed several years ago.
 
@@ -50,8 +50,8 @@ Customized data monitoring in ATSD is possible using [`alert-expressions`](https
 
 Here, alert expressions are applied to static data, but they may be easily applied to dynamic data and used for systems monitoring as seen in this [example](https://apps.axibase.com/chartlab/67aa3b61) which is monitoring one of the Axibase servers right now.
 
-![](images/percent-change.png)
-[![](images/button.png)](https://apps.axibase.com/chartlab/95617f2b)
+![](Images/percent-change.png)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/95617f2b)
 
 *Fig 3.* The `alert-expression` used here highlights quarters where the percent change from the previous year was greater than 50% in red, and quarters where it was less than -10% in green.
 
@@ -151,7 +151,7 @@ The data published by the Federal Register requires an intermediate ETL step in 
 
 The Web Crawler operates according to the following workflow:
 
-![](images/crawler-flow.png)
+![](Images/crawler-flow.png)
 
 The Web Crawler reads incoming data from the Federal Register and parses it into [`series` commands](https://github.com/axibase/atsd/blob/master/api/network/series.md), readable by [ATSD](https://axibase.com/products/axibase-time-series-database/), the database which hosts all the data used in this article and supports the background operations of SQL Console. A `series` command template is shown below:
 
