@@ -107,7 +107,7 @@ advantage and massive consumer base into the kind of success that made the indus
 what it was twenty years ago.
 
 Instead, despite the massively expensive bailout less than ten years ago, American automobile manufacturers are struggling
-to stay relevant when faced with competition from Asian and European automakers like Honda, Toyota, and Volkswagon.
+to stay relevant when faced with competition from Asian and European automakers like Honda, Toyota, and Volkswagen.
 
 If auto-makers in America are interested in keeping their hegemonic position at home, and indeed, their jobs in the future,
 a serious re-structuring of the way the industry does business needs to happen and it needs to happen now. Production costs aren't to blame, there are
