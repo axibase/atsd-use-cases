@@ -1,6 +1,6 @@
 # Marathon Integration: Manual File Import
 
-To perform this process using a single command, see the following [abbreviated walkthrough](/how-to/marathon/capacity-and-usage/README.md).
+To perform this process using a single command, see the following [abbreviated walkthrough](../capacity-and-usage/README.md).
 
 ### Launch Axibase Sandbox
 
