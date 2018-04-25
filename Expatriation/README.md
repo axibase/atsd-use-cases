@@ -1,112 +1,172 @@
-![TitlePhoto](Images/pledge.png)
+# Tracking Expatriation with ChartLab, SQL, and Web Crawler in ATSD
 
-git revert: Oath of Allegiance?
-==============
+![](Images/expat-title.png)
 
-Each year more than 700 thousand people become U.S. citizens in a process called naturalization.
+### Introduction
 
-The number of people who pledge allegiance to these United States has been relatively stable over the years.
+Each year the Internal Revenue Service of the United States releases expatriation information about American citizens who have decided to renounce their citizenship via the [Federal Register](https://www.federalregister.gov/), the government's official journal. The reason the IRS publishes this information is to levy the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) upon those citizens with enough wealth to incur the tax at the time of their renunciation. The tax doesn't apply to just anyone who decides to leave the country for good, only to those soon-to-be-former citizens who qualify as "covered expatriates".
 
-![](Images/new-citizens.png)
+A covered expatriate must meet any one of the following criteria:
 
-What is interesting however is the number of individuals rolling back their commitment to this country.
+* Your average annual net income tax for the 5 years ending before the date of expatriation or termination of residency is more than a specified amount that is adjusted for inflation ($151,000 for 2012, $155,000 for 2013, $157,000 for 2014, and $160,000 for 2015).
+* Your net worth is $2 million or more on the date of your expatriation or termination of residency.
+* You fail to certify on Form 8854 that you have complied with all U.S. federal tax obligations for the 5 years preceding the date of your expatriation or termination of residency.
 
-The data is published (somewhat) regularly in the U.S. Federal Register and each report goes as far as disclosing the names of expatriating individuals. The [latest report](https://www.federalregister.gov/documents/2017/05/10/2017-09475/quarterly-publication-of-individuals-who-have-chosen-to-expatriate-as-required-by-section-6039g) published on May 10, 2017, for example, contains the last, first, and middle names of 1,313 individuals losing United States citizenship with respect to whom the government received information during the quarter ending March 31, 2017.
+[IRS Form 8854](https://www.irs.gov/pub/irs-pdf/f8854.pdf) is a statement that confirms that up to the date of your expatriation, you have complied with United States Federal Tax Code to the letter of the law. Failing to correctly complete this document means that you are obligated to pay the Expatriation Tax, even if you do not meet either of the previous criteria.
 
-The IRS legal rationale of disclosing the names under the auspices of HIPPA which is supposed to protect patient privacy seems rather strange to an uninitiated observer but it's of out of scope for this article.
+As observed [last year](/../master/Expatriation_Q2), citizens from the United States were leaving the country at previously unseen levels against the backdrop of one of the more contentious recent presidential elections.
 
-After removing the duplicate names which are most likely associated with different SSNs in the backend systems and by calculating a rolling yearly total to smooth out the variance, the trend becomes more apparent. More people are leaving the U.S. than in previous years.
+![](Images/expat-title-2.png)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/61a855b0/3/#fullscreen)
+
+*Fig 1.* The top chart uses a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting to show a quarter-on-quarter comparison, while the annual totals are shown in the bottom chart.
+
+### ChartLab
+
+Both of the above graphs were prepared with Axibase ChartLab which is a visualization sandbox that features convenient syntax with different types of charts. The above visualizations may be modified to produce several projections of the same dataset stored in Axibase Time Series Database (ATSD).
+
+A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported by ChartLab, and [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
+
+![](Images/previous-year.png)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/a14a69a4#fullscreen)
+
+*Fig 2.* The above visualization uses the `ChangeFromPreviousYear` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually observed several years ago.
+
+While the underlying function may be quite verbose:
 
 ```sql
-SELECT date_format(time+365*24*60*60000, 'yyyy') AS "Year",
-  count(value) AS "Total"
+value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return (v / p - 1) * 100
+```
+
+The syntax required in the ChartLab configuration is simple:
+
+```sql
+value = fred.PercentChangeFromYearAgo('raw')
+```
+
+> View the complete [`fred.js`](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#fred-library) UDF library here.
+
+Customized data monitoring in ATSD is possible using [`alert-expressions`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14) whereby user-specified parameters may be defined to trigger alarms based on incoming data.
+
+Here, alert expressions are applied to static data, but they may be easily applied to dynamic data and used for systems monitoring as seen in this [example](https://apps.axibase.com/chartlab/67aa3b61) which is monitoring one of the Axibase servers right now.
+
+![](Images/percent-change.png)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/95617f2b)
+
+*Fig 3.* The `alert-expression` used here highlights quarters where the percent change from the previous year was greater than 50% in red, and quarters where it was less than -10% in green.
+
+The syntax for the `alert-expression` above is shown here:
+
+```sql
+    alert-expression = value > 50 ? 4000 : value < -10 ? -100 : 0
+    alert-style = if (alert > 50) return 'color:red'
+    alert-style = if (alert < -10) return 'color:green'
+```
+
+When using a two-parameter `alert-expression`, three arguments are needed: an upper bound, lower bound, and median value separated by `:` delimiter.
+
+For more information about ChartLab syntax or to explore other features which may be used in the example above, see the complete [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+
+### SQL
+
+In addition to ChartLab, the Axibase Time Series Database includes a web-based [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) which can be used for ad-hoc data exploration.
+
+```sql
+SELECT date_format(time, 'yyyy') AS "Year", 
+  count(value) AS "Year Total", 
+  count(value)-lag(count(value)) AS "Y-o-Y Change", 
+  100*(count(value)-lag(count(value)))/lag(count(value)) AS "Y-o-Y Change, %"
 FROM "us-expatriate-counter"
-  WHERE entity = 'us.irs' AND datetime < '2017-04-01T00:00:00Z'
+  WHERE entity = 'us.irs' AND datetime <= '2018-01-01T00:00:00Z'
 GROUP BY period(1 YEAR, END_TIME)
-  ORDER BY time
+  ORDER BY period(1 YEAR, END_TIME)
 ```
 
-### Expatriated Citizens & Long-term Permanent Residents, 12-month rolling sum
+| Year | Year Total | Y-o-Y Change | Y-o-Y Change, % | 
+|------|-----------:|-------------:|----------------:| 
+| 2000 | 430        | null         | null            | 
+| 2001 | 488        | 58.00        | 13.49           | 
+| 2002 | 503        | 15.00        | 3.07            | 
+| 2003 | 550        | 47.00        | 9.34            | 
+| 2004 | 631        | 81.00        | 14.73           | 
+| 2005 | 745        | 114.00       | 18.07           | 
+| 2006 | 279        | -466.00      | -62.55          | 
+| 2007 | 470        | 191.00       | 68.46           | 
+| 2008 | 229        | -241.00      | -51.28          | 
+| 2009 | 741        | 512.00       | 223.58          | 
+| 2010 | 1531       | 790.00       | 106.61          | 
+| 2011 | 1780       | 249.00       | 16.26           | 
+| 2012 | 932        | -848.00      | -47.64          | 
+| 2013 | 2999       | 2067.00      | 221.78          | 
+| 2014 | 3411       | 412.00       | 13.74           | 
+| 2015 | 4273       | 862.00       | 25.27           | 
+| 2016 | 5398       | 1125.00      | 26.33           | 
+| 2017 | 5128       | -270.00      | -5.00           | 
 
-| **Year** | **Total** | **Change, %** |
-|------|-------|----------:|
-| 2000 | 184   | -      |
-| 2001 | 470   | 155       |
-| 2002 | 373   | -21       |
-| 2003 | 507   | 36        |
-| 2004 | 545   | 7         |
-| 2005 | 645   | 18        |
-| 2006 | 724   | 12        |
-| 2007 | 285   | -61       |
-| 2008 | 485   | 70        |
-| 2009 | 174   | -64       |
-| 2010 | 853   | 390       |
-| 2011 | 1850  | 117       |
-| 2012 | 1742  | -6        |
-| 2013 | 1151  | -34       |
-| 2014 | 3319  | 188       |
-| 2015 | 3743  | 13        |
-| 2016 | 4096  | 9         |
-| 2017 | 5557  | 36        |
+*Fig 4.* The table above shows the results of a query which tracks absolute and percentile year-on-year change in expatriate numbers, similar to the *Fig 2* and *Fig 3* above.
 
-> 12-month rolling sum. For example, Year 2017 covers the period between April 1, 2016 and March 31, 2017.
+The above query uses the [`LAG`](https://github.com/axibase/atsd/tree/master/sql#lag) function to select the previous value, offset by one index position, when creating comparative tables like the one shown here.
 
-![](Images/expatriate-quarterly.png)
-
-[![](Images/button.png)](https://apps.axibase.com/chartlab/3cc7e293/3)
-
-Given that it usually takes several months between the application is submitted and the name appearing on the list, it's not clear if there is any effect of the latest political season on the expatriation numbers.
-
-The next report is due in early August. Stay tuned!
-
-### Expatriated Citizens & Long-term Permanent Residents, Quarterly Totals
+Likewise, data may be tracked by quarter using the query below:
 
 ```sql
-SELECT date_format(time+90*24*60*60000, 'yyyy-MMM') AS "Date",
-  count(value) AS "Quarterly Total"
+SELECT CEIL(CAST(date_format(time, 'M') AS NUMBER)/3) AS "Quarter", date_format(time, 'yyyy') AS "Year", 
+  count(value) AS "Quarter Total"
 FROM "us-expatriate-counter"
-  WHERE entity = 'us.irs' AND datetime >= '2010-01-01T00:00:00Z'
+  WHERE entity = 'us.irs' AND date_format(time, 'yyyy-MM') >= '2013-01' AND datetime <= now
 GROUP BY period(1 QUARTER)
-  ORDER BY time
+  ORDER BY period(1 QUARTER)
 ```
 
-| **Date** | **Quarterly Total** |
-|----------|----------------:|
-| 2010-Apr | 179             |
-| 2010-Jun | 557             |
-| 2010-Sep | 397             |
-| 2010-Dec | 398             |
-| 2011-Apr | 498             |
-| 2011-Jun | 519             |
-| 2011-Sep | 403             |
-| 2011-Dec | 360             |
-| 2012-Mar | 460             |
-| 2012-Jun | 189             |
-| 2012-Sep | 238             |
-| 2012-Dec | 45              |
-| 2013-Apr | 679             |
-| 2013-Jun | 1129            |
-| 2013-Sep | 560             |
-| 2013-Dec | 631             |
-| 2014-Apr | 999             |
-| 2014-Jun | 576             |
-| 2014-Sep | 775             |
-| 2014-Dec | 1061            |
-| 2015-Apr | 1331            |
-| 2015-Jun | 459             |
-| 2015-Sep | 1426            |
-| 2015-Dec | 1057            |
-| 2016-Mar | 1154            |
-| 2016-Jun | 506             |
-| 2016-Sep | 1379            |
-| 2016-Dec | 2359            |
-| 2017-Apr | 1313            |
+| Quarter | Year | Quarter Total | 
+|---------|------|--------------:| 
+| 1       | 2013 | 679           | 
+| 2       | 2013 | 1129          | 
+| 3       | 2013 | 560           | 
+| 4       | 2013 | 631           | 
+| 1       | 2014 | 999           | 
+| 2       | 2014 | 576           | 
+| 3       | 2014 | 775           | 
+| 4       | 2014 | 1061          | 
+| 1       | 2015 | 1331          | 
+| 2       | 2015 | 459           | 
+| 3       | 2015 | 1426          | 
+| 4       | 2015 | 1057          | 
+| 1       | 2016 | 1154          | 
+| 2       | 2016 | 506           | 
+| 3       | 2016 | 1379          | 
+| 4       | 2016 | 2359          | 
+| 1       | 2017 | 1313          | 
+| 2       | 2017 | 1756          | 
+| 3       | 2017 | 1374          | 
+| 4       | 2017 | 685           | 
 
+*Fig 5.* Tracked by quarter, expatriation data since 2013 is shown in the table above.
 
-References
----
+The above query uses a [`CAST`](https://github.com/axibase/atsd/tree/master/sql#cast) clause and [`CEIL`](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) function to rename each quarter.
 
-* Title Image: [Benedict Arnold's Oath of Allegiance, May 30, 1778](hhttps://en.wikipedia.org/wiki/Oath_of_allegiance#/media/File:Benedict_Arnold_oath_of_allegiance.jpg)
-* Axibase Time Series Database [SQL Documentation](https://github.com/axibase/atsd/tree/master/sql#overview)
-* [Federal Register](https://www.federalregister.gov/documents/search?conditions%5Bterm%5D=Quarterly+Expatriate)
-* Wikipedia: [Quarterly Publication of Individuals Who Have Chosen to Expatriate](https://en.wikipedia.org/wiki/Quarterly_Publication_of_Individuals_Who_Have_Chosen_to_Expatriate)
+### Web Crawler
+
+The data published by the Federal Register requires an intermediate ETL step in order to be available for analysis. This extraction-transformation-loading procedure is implemented by a [web crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler#irs-expatriation-statistics-data-crawler) built specifically for the task of tracking Federal Register publications for new expatriation data releases.
+
+The Web Crawler operates according to the following workflow:
+
+![](Images/crawler-flow.png)
+
+The Web Crawler reads incoming data from the Federal Register and parses it into [`series` commands](https://github.com/axibase/atsd/blob/master/api/network/series.md), readable by [ATSD](https://axibase.com/products/axibase-time-series-database/), the database which hosts all the data used in this article and supports the background operations of SQL Console. A `series` command template is shown below:
+
+```sql
+series d:{iso-date} e:{entity} t:{tag-1}={val-1} m:{metric-1}={number}
+```
+
+Once the data is stored in the database, the date (`d:`) parameter may be referenced in ISO format, or modified to output human-readable date information such as that seen in the [SQL](#sql) section of this article. Tags (`t:`), metrics (`m:`), and entities (`e:`) are identifying features of a particular set of data. In the case of expatriation data here, the entity is the publishing body, the IRS and the metric is the number of expatriates. The raw data does not feature tag-level differentiation, but it could be something like `us-born-citizens` versus `naturalized-citizens`, if the data were tracked that specifically. 
+
+The complete list and operation instructions of other supported Axibase data crawlers is hosted [here](https://github.com/axibase/atsd-data-crawlers).
+
+### Conclusion
+
+An unusually large number of expatriates renouncing their United States citizenship was observed during the last half-decade, with an exceptionally high number leaving the country during 2016-2107. While the most recent figures show that this number has markedly decreased, it still remains higher than it ever was pre-2010. There's probably not a very simple answer to the question of 'Why?' but BBC recently wrote a brief [exposé](http://www.bbc.com/capital/story/20170123-meet-the-people-leaving-trumps-america) discussing the Americans who chose to leave the country in response to the recent presidential elections.
+
+Whatever the reason, it's unlikely that the roughly 5000 citizens leaving the country will have much of an impact on the overall demographics or population of the country as the United States is constantly host to some 750,000 newly naturalized citizens each year.
+
+For more information about any of the data in this article, instructions on using any of the tools featured here, or suggestions and comments about articles you'd like to see in the future, raise an [issue](https://github.com/axibase/atsd-use-cases/issues/new) on our GitHub repository.

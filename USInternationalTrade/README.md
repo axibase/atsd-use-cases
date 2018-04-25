@@ -136,7 +136,7 @@ monetary values for exports, imports, and the trade balance (export minus import
 trade balance, with the highest negative trade balances showing at the top. You may sort the table as you wish by accessing the Chart Lab portal (button below) and clicking
 on the column headers.
 
-In 2016, the locations with which the United States had the highest negative and positive trade balances were China and Hong Kong at **-$319 billion** and **$25.1 billion**,
+In 2016, the locations with which the United States had the highest negative and positive trade balances were China / Hong Kong at **-$319 billion** and **$25.1 billion**,
 respectively.   
 
 ![Figure 2](Images/Figure2.png)
@@ -237,13 +237,13 @@ A Closer Look at America's Trading Partners
 
 Let's now take a closer look at America's trading partners. Are there any shared characteristics between these countries?
 
-A claim often made is that poor, developing countries are stealing American jobs and industry. If a country is poaching another country's jobs and industry, it is reasonable to
+A claim often made is that poor, developing countries are stealing American jobs and industry. If a country is poaching another country's jobs and industry, it is reasonable
 to assume that the afflicted country's trade balance would change as a result. For example, the more steel manufacturing jobs that leave the U.S. for Asia, the more steel the
 U.S. will need to import from Asia. In this instance, `2016_GDP_per_capita` was calculated from the following two replacement tables:
 [`world-population.txt`](https://github.com/axibase/atsd-use-cases/blob/master/USInternationalTrade/resources/world-population.txt) and [`world-gdp.txt`](https://github.com/axibase/atsd-use-cases/blob/master/USInternationalTrade/resources/world-gdp.txt). Results are sorted by the country's `2016_trade_balance_rank`. The
 more negative a country's trade balance, the higher its ranking. You can refer to the [`us-trade-balance-rank-2016.txt`](https://github.com/axibase/atsd-use-cases/blob/master/USInternationalTrade/resources/us-trade-balance-rank-2016.txt) file to see these rankings.
-In order to seperate rich and poor countries, we calculated an average world GDP. We divided the world population ([7,432,663,275](https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)))
-by the world's GDP ([$75,212,696 billion](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal))) to get a world GDP of $10,273. Any
+In order to separate rich and poor countries, we calculated an average world GDP. We divided the world population
+by the world's GDP to get a world GDP of $10,273. Any
 countries having a GDP less than this were considered poor countries, while countries with a greater GDP were considered rich.
 
 Here is a query showing the year with the highest trade balance (least negative or most positive, in millions USD) going back to 1985
@@ -283,13 +283,13 @@ Looking at our results, a couple of things stand out:
 | India       | 1988  | 2500.1   | 2939.5   | -439.4         | -22959.1            | 1696.6               | 9.0                     |
 | Malaysia    | 1986  | 1729.6   | 2420.4   | -690.8         | -22853.4            | 9845.0               | 10.0                    |
 | Thailand    | 1985  | 849.1    | 1428.3   | -579.2         | -17537.7            | 5731.6               | 11.0                    |
-| Indonesia   | 1991  | 1891.5   | 3240.6   | -1349.1        | -12245.4            | 3611.0               | 15.0                    |
+| Indonesia   | 1991  | 1891.5   | 3240.6   | -1349.1        | -12245.4            | 3611.0               | 15.0                    |F
 | Russia      | 1992  | 2112.5   | 481.4    | 1631.1         | -7839.3             | 8838.2               | 18.0                    |
 | Bangladesh  | 1985  | 218.9    | 196.0    | 22.9           | -4695.8             | 1410.3               | 23.0                    |
 | Iraq        | 1993  | 4.0      | 0.0      | 4.0            | -4048.3             | 4163.3               | 24.0                    |
 ```
 
-Now, lets take a look at the most recent year the U.S. had the the highest trade balance (least negative or most positive, in millions USD) for countries in the top 50% by
+Now, lets take a look at the most recent year the U.S. had the highest trade balance (least negative or most positive, in millions USD) for countries in the top 50% by
 GDP per capita (true/absolute value shown below).
 
 ```sql
@@ -317,7 +317,7 @@ Looking at our results, a couple of things stand out:
 * All of these countries have a GDP per capita of greater than $22,190.9 (Taiwan).
 
 Looking at these two outputs together, we can see that the U.S. has bad trade balances with both poor and rich countries. For both poor and rich countries, we need to go back to the
-early 1900's (as we found in the first query of this article) for when the U.S. had its best trade balance. While there may not be a direct correlation between a
+early 1900's (as we found in the first query of this article) for when the U.S. had its best trade balance. While there may not be a direct correlation between
 a country losing jobs and having to increase its imports, both rich and poor countries could be equally accused of taking U.S. jobs. In the top ten for trade balance rank, there
 are both five poor (China, Mexico, Vietnam, India, and Malaysia) and rich (Japan, Germany, Ireland, South Korea, and Italy) countries included in this list.
 

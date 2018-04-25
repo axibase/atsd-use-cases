@@ -2,7 +2,7 @@
 
 ![](images/forecast-title.png)
 
-[Forecast Settings](https://github.com/axibase/atsd/tree/master/forecasting) is a set of rules to predict future data by applying a statistical algorithm to histroical records.  The choice of the algorithm and its parameters may be manually specified by an expert user or automatically selected by ATSD based on the built-in scoring system.
+[Forecast Settings](https://github.com/axibase/atsd/tree/master/forecasting) is a set of rules to predict future data by applying a statistical algorithm to historical records.  The choice of the algorithm and its parameters may be manually specified by an expert user or automatically selected by ATSD based on the built-in scoring system.
 
 Follow this process to upload a forecast configuration to your local ATSD instance.
 

@@ -5,7 +5,7 @@ Analyzing Econometric Datasets with Calculated Series
 
 ### Summary
 
-Using [calculated values](../Support/Add-Calculated-Values/README.md) in the [ChartLab](https://apps.axibase.com) interface
+Using [calculated values](../../Support/Add-Calculated-Value/README.md) in the [ChartLab](https://apps.axibase.com) interface
 is useful for creating multiple outputs from one set of underlying data. [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 supports a range of in-built functions which allow end-users to manipulate a dataset to derive the desired meaning from it.
 
@@ -43,8 +43,8 @@ data from 1947 onward, small scale differences are expected in the outputs of ea
 #### Index
 
 * [Consumer Price Index](#consumer-price-index)
-* [CPI Calculated from a Variable Baseline](#cpi-calculated-from-a-variable-baseline)
 * [Monthly Change](#monthly-change)
+* [CPI Calculated from a Variable Baseline](#cpi-calculated-from-a-variable-baseline)
 * [Change from a Year Ago](#change-from-a-year-ago)
 * [Monthly Percent Change](#monthly-percent-change)
 * [Monthly Percent Change from a Year Ago](#monthly-percent-change-from-a-year-ago)
@@ -91,13 +91,13 @@ goods will therefore be greater than 100.00 while years which saw deflation in t
 [![](images/button.png)](https://apps.axibase.com/chartlab/978c79b4/4/#fullscreen)
 
 > In ChartLab, use the dropdown menu at the top of the visualization to select the year to be used as a baseline, or hardcode
-a year not included in the dropdown by modifying one of the dates in the _keyDates_ list.
+a year not included in the dropdown by modifying one of the dates in the `keyDates` list.
 
 **Key Components of This Visualization**: 
 
 > Open the ChartLab visualization shown above and view the Editor window to see these features of the chart. 
 
-* The list _keyDates_ contains the same dates as the FRED chart referenced in the [Problem Brief](#problem-brief):
+* The list `keyDates` contains the same dates as the FRED chart referenced in the [Problem Brief](#problem-brief):
 
 ```javascript
 list keyDates = 1970-11-01, 
@@ -121,10 +121,11 @@ history. The syntax for this chart's dropdown menu is shown below:
         text = Index (Scale to 100 for @{date})
         value = value("cpi") / value("cpi_@{date}") * 100 || null
     endfor
- ```
+```
+
 > For more information about the above syntax see the following [documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/).
 
-By modifying any of the dates contained in the _keyDates_ list above, the user can select any desired date to set as the
+By modifying any of the dates contained in the `keyDates` list above, the user can select any desired date to set as the
 baseline value, and the `value` equation contained in the `[option]` portion of the `[dropdown]` configuration above uses 
 a simple formula to establish the new index. The `on-change` setting defines this newly calculated series, and is explained
 piecewise below:
@@ -185,7 +186,8 @@ The numerical change in CPI value from the same month of the previous year.
 
 ```javascript
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p != null && v != null) return v - p;
-``` 
+```
+
 * This setting uses a second underlying series which is not enabled, to select values of the Consumer Price Index from one year
 ago using a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting,
 and comparing them to the current year's values.

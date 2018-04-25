@@ -1,17 +1,16 @@
 ![TitlePhoto](Images/TitlePhoto.png)
 
-Knocking on Heaven's Door - Computing U.S. Mortality Statistics
+Computing U.S. Mortality Statistics with a Structured Query Language
 ===============================================================
 
 ### Introduction
 ----------------
 
-Death. Along with taxes, it is one of the few certainties in life. While we all will meet our end some day, that end is becoming farther and farther away and the risk of death is decreasing.
 According to [infoplease.com](http://www.infoplease.com/ipa/A0005148.html), life expectancy from 1935 to 2010 for both sexes in the U.S. increased from 61.7 to 78.7 years.
 As reported by the [Center for Disease Control and Prevention (CDC)](http://www.cdc.gov/nchs/data/databriefs/db88.htm#x2013;2010%3C/a%3E>), the crude death rate in the United States fell from
 10.9 to 7.9 deaths per 1,000 people from 1935 to 2010, translating to a **27% decrease**. Mortality rates, however, are vastly different across different U.S. cities and age groups.
 In this article we will analyze a data.gov dataset looking at [death statistics for 122 U.S. cities](https://catalog.data.gov/dataset/deaths-in-122-u-s-cities-1962-2016-122-cities-mortality-reporting-system).
-This article will focus on the Axibase Time Series Databases's (ATSD) [SQL query language capabilities](https://github.com/axibase/atsd/blob/master/sql/README.md#overview), which we will use to search for specific information contained in this dataset.
+This article will focus on Axibase Time Series Database (ATSD) [SQL query language capabilities](https://github.com/axibase/atsd/blob/master/sql/README.md#overview), which we will use to search for specific information contained in this dataset.
 
 ### Death Statistics for 122 U.S. Cities
 ----------------------------------------
@@ -35,7 +34,7 @@ or contributing cause of death by age group. Deaths in this dataset are split in
 
 You can find a complete list of the cities (with their corresponding state) in our [city-list](https://github.com/axibase/atsd-use-cases/blob/master/USMortality/city-list.md) file.
 
-Additionally, these cities are be grouped by their [United States Census Bureau regions](http://www.census.gov/econ/census/help/geography/regions_and_divisions.html).
+Additionally, these cities are be grouped by United States Census Bureau regions.
 You can find a table of these regions in our [region-table](https://github.com/axibase/atsd-use-cases/blob/master/USMortality/region-table.md) file.
 
 While you can manually analyze this information in a spreadsheet program, it is much more convenient to interact with the data once it is loaded into a database.  
@@ -787,7 +786,7 @@ FROM cdc.pneumonia_and_influenza_deaths
 GROUP BY tags.region, period(1 MONTH)
 ORDER BY sum(value) desc
   LIMIT 3
-```  
+```
 
 ```ls
 | date      | region              | pneumonia_influenza_deaths |
@@ -1035,7 +1034,7 @@ Here are some numbers from [census.gov](http://www.census.gov/quickfacts/table/L
 
 Persons without health insurance, under age 65 (percent): **15.0%** vs 10.5%<br />
 Persons in poverty (percent): **38.3%** vs 13.5%<br />
-Per capita income in past 12 monts (in 2015 dolloars), 2011-2015: **$15,056** vs $28,930<br />
+Per capita income in past 12 months (in 2015 dollars), 2011-2015: **$15,056** vs $28,930<br />
 
 Now, let us move to looking at mortality rates in New York City (fixed population size):
 
@@ -1126,7 +1125,7 @@ Here are a few noteworthy points regarding this query:
 | 2015-01-01T00:00:00.000Z  | New York  | NY     | Middle-Atlantic  | 11.0          | 517.0          | 727.0        | 2619.0        | 11118.0       | 39309.0     | 54301.0     | 8550405.0   | 6.4                  |
 ```
 
-We can see that the mortality rate in the city has declined considerably since the 1970's. According to their [report](http://www.nyc.gov/html/records/pdf/govpub/6551as_2010_final_population_&_mortality.pdf) on Population
+We can see that the mortality rate in the city has declined considerably since the 1970's. According to their (since-removed) report on Population
 and Mortality in 2010, the City of New York had the following key findings:
 
 * The 2010 New York City death rate reached a historic low of 6.4 deaths per 1,000 people in the population, a 14.7% decline from 2001.
@@ -1267,7 +1266,7 @@ WHERE tot.entity = 'mr8w-325u'
   AND tot.datetime >= '2010-01-01T00:00:00Z' AND tot.datetime < '2011-01-01T00:00:00Z'
   AND tot.tags.city = 'New York'
 GROUP BY tot.period(1 YEAR)
-```  
+```
 
 ```ls
 | population  | infant_deaths  | 1-24_deaths  | 25-44_deaths  | 45-64_deaths  | 65+_deaths  | all_deaths  | infant_mortality_rate  | 1-24_mortality_rate  | 25-44_mortality_rate  | 45-64_mortality_rate  | 65+_mortality_rate  | total_mortality_rate |
@@ -1335,7 +1334,7 @@ United States as a whole.
 |--------------------------------------|------------------------------|---------------|
 | Heart Disease                        | 203.6                        | [167.0](http://kff.org/other/state-indicator/number-of-deaths-due-to-diseases-of-the-heart-per-100000-population/?currentTimeframe=0) |
 | Cancer                               | 190.5                        | [171.2](https://www.cancer.gov/about-cancer/understanding/statistics) |
-| Chronic Lower Resp Disease           | 47.7                         | [46.1](https://www.cdc.gov/nchs/fastats/copd.htm) |
+| Chronic Lower Respiratory Disease           | 47.7                         | [46.1](https://www.cdc.gov/nchs/fastats/copd.htm) |
 | Stroke                               | 49.9                         | [41.7](https://www.cdc.gov/nchs/fastats/stroke.htm) |
 | Unintentional Injury (Accident)      | 50.7                         | [42.7](https://www.cdc.gov/nchs/fastats/accidental-injury.htm) |
 | Alzheimer's Disease                  | 30.8                         | [29.8](https://www.cdc.gov/nchs/fastats/alzheimers.htm) |
@@ -1355,13 +1354,13 @@ Below are the summarized steps to follow to install local configurations of ATSD
 1. Install Docker. A link for how to install Docker can be found [here](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
 2. Download the [`docker-compose.yml`](https://raw.githubusercontent.com/axibase/atsd-use-cases/master/USMortality/resources/docker-compose.yml) file to launch the ATSD Collector container bundle.
 
-   ```sql
+   ```sh
    curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/USMortality/resources/docker-compose.yml
    ```
 
 3. In Terminal, launch containers with the following command:
 
-   ```sql
+   ```sh
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
    ```
 

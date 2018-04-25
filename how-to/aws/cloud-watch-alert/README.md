@@ -70,7 +70,7 @@ Follow the procedure below to send AWS CloudWatch events into ATSD to enrich sta
 
 * Launch an [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) using the following command:
 
-```
+```elm
 docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
@@ -82,7 +82,7 @@ This command will start the sandbox applications, import the [rule](https://gith
 
 Watch the start log for progress:
 
-```
+```sh
 docker logs -f atsd-sandbox
 ```
 
@@ -95,22 +95,23 @@ To automatically configure an email client in the ATSD sandbox container:
 * Create a directory that will be mounted into the container, for example `/home/user/import`.
 * Specify email account settings in the `mail.properties` file in this directory:
 
-  ```
+  ```txt
   server=mail.example.org
   port=587
   user=myuser@example.org
   password=secret
   ```
+
 * Specify Slack Bot token in the `slack.properties` file in this directory:
 
-  ```
+  ```txt
   token=xoxb-************-************************
   channels=general,devops
-  ```  
+  ```
 
 * Add the `EMAIL_CONFIG` and `SLACK_CONFIG` variables, as well as the `volume` setting to the run command:
 
-```
+```sh
 docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
@@ -123,9 +124,9 @@ docker run -d -p 8443:8443 \
 
 ### Create SNS Subscription
 
-Copy the incoming 'aws-cw' webhook URL from the start log.
+Copy the incoming `aws-cw` webhook URL from the start log.
 
-```
+```txt
 ...
 [ATSD] Importing '/tmp/import/rule_aws-cloudwatch-events.xml' configuration
 [ATSD] Successfully imported '/tmp/import/rule_aws-cloudwatch-events.xml'
@@ -141,11 +142,11 @@ AWS SNS notifications over HTTPS protocol do not support destination endpoints w
 
 ![](images/sns-4.png)
 
-Confirm that your new subscription is active by checking that the **Subscriber** column contains actual subcriber information and is not showing **Pending Confirmation** as seen here.
+Confirm that your new subscription is active by checking that the **Subscriber** column contains actual subscriber information and is not showing **Pending Confirmation** as seen here.
 
 ![](images/sns-6.png)
 
-ATSD is ready to be configured to notify you via [**Slack Team Messeging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/). 
+ATSD is ready to be configured to notify you via [**Slack Team Messaging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/). 
 
 ### Email Notifications from ATSD
 

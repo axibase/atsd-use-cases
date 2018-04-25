@@ -167,7 +167,7 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
 
 [![](Images/button.png)](http://apps.axibase.com/chartlab/83d2a616/9/#fullscreen)
 
-Open [ChartLab](www.axibase.com) with the button above and navigate through time using the dropdown menu.
+Open [ChartLab](https://www.axibase.com) with the button above and navigate through time using the dropdown menu.
 
 Despite consistent overall call numbers throughout the week, it is interesting to note that the number of fire-related calls
 made to the Hartford Fire Department was the highest on Sundays:
@@ -423,7 +423,7 @@ calls received in 2015, however, when modeling using an average value baseline, 
 #### Validation
 
 Since data is already available for the first two months of 2017, but was not included in the above calculations, it can be 
-used as holdout data and used to test the validity of the above models. Likewise, this excercise can be used to demonstrate 
+used as holdout data and used to test the validity of the above models. Likewise, this exercise can be used to demonstrate 
 the potential scalability of such modeling:
 
 ###### January (2014-2017)

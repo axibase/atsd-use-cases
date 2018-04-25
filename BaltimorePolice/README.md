@@ -460,7 +460,7 @@ GROUP BY date_format(time, 'u')
 
 This query's results are displayed as follows:
 
-```sql
+```ls
 | date_format(time, 'u') | count(*) | 
 |------------------------|----------| 
 | 1                      | 52       | 
@@ -470,14 +470,14 @@ This query's results are displayed as follows:
 | 5                      | 71       | 
 | 6                      | 64       | 
 | 7                      | 62       |  
-``` 
+```
 
 The above datasets can be combined to show the total number of incidents of police use of force and homicides
 over the span of the entire observed period.
 
 ![TotalVTotal](Images/Total2.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/26s/)
+[![](Images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/26/)
 
 #### Analysis
 
@@ -591,14 +591,13 @@ available that allows them to do just that.
 #### Action Items
 
 1. Download [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
-2. Download the [docker-compose.yml](Resources/docker-compose.yml) file to launch the ATSD 
-container bundle.
+2. Download the [`docker-compose.yml`](resources/docker-compose.yml) file to launch the ATSD container bundle.
 3. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
 
 ```sh
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
-   ```
-   
+```
+
 Note that both data sets have been collected under one Socrata job.
 
 Contact [Axibase](https://axibase.com/feedback/) with any questions.

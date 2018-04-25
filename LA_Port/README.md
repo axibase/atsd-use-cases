@@ -34,7 +34,7 @@ The pollutants recorded by the port are shown below:
 |--------|---------|---------|
 | dpm_tpy | Diesel particulate matter | [Group 1 carcinogen](https://www.cancer.org/cancer/cancer-causes/general-info/known-and-probable-human-carcinogens.html) |
 | nox_tpy | Nitric oxides | A leading contributor to both smog and acid rain |
-| sox_try | Sulfur oxides | When found with NOx, may form N2SO4 (acid rain) |
+| sox_try | Sulfur oxides | When found with `NOx`, may form N2SO4 (acid rain) |
 
 > All values are recorded as tons per year (TPY)
 
@@ -55,8 +55,8 @@ alike and even damage buildings.
 
 The annual average value of each of the observed metrics is shown above. The annual average can be helpful when looking at
 overall emission totals because it establishes perspective for the following visualizations. Additionally, it shows relative
-change amongst different metrics, for example when comparing DPM change to NOx change, what amounts to a huge seven year reduction
-of Diesel Particulate Matter relatively, is more than doubly achieved in NOx emission reduction for 2006-2007.
+change amongst different metrics, for example when comparing DPM change to `NOx` change, what amounts to a huge seven year reduction
+of Diesel Particulate Matter relatively, is more than doubly achieved in `NOx` emission reduction for 2006-2007.
 
 #### Diesel Particulate Matter
 
@@ -108,7 +108,7 @@ Using the previous year as a baseline, the percent change for each year is shown
 
 > The average change per year was -17.98%
 
-#### NOx: Nitrogen Oxides
+#### `NOx`: Nitrogen Oxides
 
 **Figure 3.1**
 
@@ -134,10 +134,10 @@ The SQL query for this metric returns the following values:
 ```
 
 In 2005, the Port represented only 5% of Los Angeles Basin area nitrogen emissions, but by 2012 that already low number had
-fallen even further to only 3%. What is interesting to note with the NOx metric, as shown above in **Figure 1.1** and below
-in **Figures 5.3** and **5.4**, NOx production by the port paradoxically represents the overwhelming majority of raw emission
+fallen even further to only 3%. What is interesting to note with the `NOx` metric, as shown above in **Figure 1.1** and below
+in **Figures 5.3** and **5.4**, `NOx` production by the port paradoxically represents the overwhelming majority of raw emission
 numbers from the port but only a fractional amount of the Los Angeles Basin's overall emission rate, giving perspective on
-the sheer magnitude of the problem of NOx emission in the Los Angeles area. NOx compounds are a contributor to both smog and acid
+the sheer magnitude of the problem of `NOx` emission in the Los Angeles area. `NOx` compounds are a contributor to both smog and acid
 rain and primarily form during imperfect high-temperature combustion processes such as those that occur under the hood of 
 consumer automobiles. 
 
@@ -156,7 +156,7 @@ consumer automobiles.
 
 > The average change per year was -10.40%.
 
-#### SOx: Sulfur Oxides
+#### `SOx`: Sulfur Oxides
 
 **Figure 4.1**
 
@@ -201,7 +201,7 @@ down from 25% of the Los Angeles Basin total in 2005 to just 6% in 2012.
 ### Analysis
 
 The Port of Los Angeles was able to reduce all measured metrics by a significant amount over the observed period. The histogram
-belows details those changes, showing the frequency of various percentile changes.
+below details those changes, showing the frequency of various percentile changes.
 
 **Figure 5.1**
 
@@ -211,7 +211,7 @@ belows details those changes, showing the frequency of various percentile change
 
 The above chart details the frequency and severity of the Port of Los Angeles' efforts to reduce various observed pollution
 metrics. The large central red bar shows that the majority of the reduction for diesel particulate matter was consistent
-throughout the observed period, while it was much more varied for NOx pollution. Interestingly, this wider range resulted in substantially
+throughout the observed period, while it was much more varied for `NOx` pollution. Interestingly, this wider range resulted in substantially
 better reduction results, detailed in the legend at the top of the screen.
 
 **Figure 5.2**
@@ -221,7 +221,7 @@ better reduction results, detailed in the legend at the top of the screen.
 [![](Images/button.png)](https://apps.axibase.com/chartlab/0f8b70ab/12/#fullscreen)
 
 The same data regarding average percent change can be visualized differently to highlight the deviation in percent change 
-value. Here the taller green box (representing percent change in NOx emissions) has a broader area, indicating a wider range
+value. Here the taller green box (representing percent change in `NOx` emissions) has a broader area, indicating a wider range
 of values whereas the red box (representing percent change in DPM emissions) has a much smaller area, indicating a much narrower
 range of values.
 
@@ -235,7 +235,7 @@ range of values.
 metric relative to one another throughout the entire observed period.
 
 Based on the above diagram, the relative levels of each measured pollutant are shown alongside one another. Throughout the
-observation period, NOx pollution was emitted significantly more than the other two metrics combined. Nitrogen oxides most
+observation period, `NOx` pollution was emitted significantly more than the other two metrics combined. Nitrogen oxides most
 heavily contribute to the reddish-brown smog layer that hangs over Los Angeles and other polluted metropolitan areas.
 
 **Figure 5.4**

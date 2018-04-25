@@ -221,7 +221,7 @@ Is there a correlation between population size and score on the AFI?
 
 The following table shows cities included in earlier data compared to cities not 
 included, their Metropolitan populations, and also their score and rank on the 
-[2017 American Fitness Index](http://www.americanfitnessindex.org/wp-content/uploads/2014/02/ACSM-AFI-Report-2017.pdf_)
+[2017 American Fitness Index](http://www.americanfitnessindex.org/wp-content/uploads/2014/02/ACSM-AFI-Report-2017.pdf)
 report:
 
 | State |Metropolitan Statistical Area | Population | AFI Score | Rank |
@@ -387,18 +387,18 @@ presentation of such data is crucial to drawing meaningful conclusions from it,
 which is why the [Axibase Time Series Database](https://axibase.com) is ideal for comprehensive and comprehensible solutions
 to a wide range of data science problems, a handful of which were demonstrated here.
 
-> Please contact [Axibase](https://axibase.com/feedback/) with any questions.
+> Contact [Axibase](https://axibase.com/feedback/) with any support issues.
 
 ### Action Items
 
 1. Download [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
-2. Download the [docker-compose.yml](Resources/docker-compose.yml) file to launch the ATSD 
-container bundle.
+2. Download the [`docker-compose.yml`](Resources/docker-compose.yml) file to launch the ATSD container bundle.
 3. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
 
 ```sh
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
-   ```
+```
+
 4. Open Docker and begin working with your data.
 
 > Please contact [Axibase](https://axibase.com/feedback/) with any questions.

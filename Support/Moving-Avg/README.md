@@ -4,7 +4,7 @@ Curve Smoothing Using Moving Averages
 ### Problem Overview
 
 Working with highly-granularized data presents a number of unique challenges to the entire range of data users. Sometimes
-the data is stored incorrectly, creating the need for [modification upon import](/Support/Schema-Parser-Mod-Pre-Import/README.md),
+the data is stored incorrectly, creating the need for [modification upon import](../Schema-Parser-Mod-Pre-Import/README.md),
 and sometimes the nature of the data makes it difficult to work with. Take the following example: an analyst is presented
 with two possibly-related datasets, [cargo tonnage data](https://github.com/axibase/open-data-catalog/blob/master/datasets/nthh-fhwt.md) from
 the two largest airports in the New York City Metropolitan Area and [passenger enplanement data](https://github.com/axibase/open-data-catalog/blob/master/datasets/vpv5-zd4k.md)
@@ -45,7 +45,7 @@ half a century ago as equal to data recorded two years ago. While potentially he
 described above, such aggregation would not only be unhelpful, but most likely detrimental to the desired outcome, which is
 dependant on current trends.
 
-The passenger emplanement data, aggregated annually is shown below:
+The passenger enplanement data, aggregated annually is shown below:
 
 **Figure 1.3**: LGA and JFK Passenger Enplanement Data (1997-2015)
 

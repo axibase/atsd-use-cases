@@ -156,12 +156,12 @@ LIMIT 20
 | TAVERN                     | 2.0             |
 ```
 
-If you would like to see more queries on this Chicago crime dataset, please go to the [Additonal SQL Queries](#additional-sql-queries) section at the end of this article.
+If you would like to see more queries on this Chicago crime dataset, please go to the [Additional SQL Queries](#additional-sql-queries) section at the end of this article.
 
 A Deeper Look at Crime in Chicago
 -------------------------------------
 
-So, what caused this drastic increase in murders in Chicago in 2016? Did the city experience an uptick in crime as a whole?
+So, what caused this drastic increase in murders in Chicago in 2016? Did the city experience an overall increase in crime?
 
 There actually has been a long term decrease in crime as a whole in Chicago, as we can see in the figure below.
 

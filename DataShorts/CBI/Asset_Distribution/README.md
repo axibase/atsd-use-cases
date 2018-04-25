@@ -3,7 +3,7 @@ Distribution of the Public Asset Portfolio, 1998-2017
 
 ChartLab and SQL Console: [Axibase](https://axibase.com)
 
-> Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics/Pages/MainPage.aspx?Level=3&Sid=47&SubjectType=2)
+> Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics)
 
 ##### Value of the Public Portfolio (NIS Billion)
 

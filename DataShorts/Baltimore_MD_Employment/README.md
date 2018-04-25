@@ -197,8 +197,6 @@ ORDER BY 'Average Total (Thousand)' ASC
 
 ![](Images/BMD_11.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/56ce84ce/10/#fullscreen)
-
 #### Least Populous Industries (2040)
 
 ```sql
@@ -226,8 +224,6 @@ ORDER BY 'Average Total (Thousand)' ASC
 ```
 
 ![](Images/BMD_12.png)
-
-[![](Images/button.png)](https://apps.axibase.com/chartlab/56ce84ce/11/#fullscreen)
 
 #### Least Populous Industries (Average) (2001-2040)
 

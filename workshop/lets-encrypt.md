@@ -56,7 +56,7 @@ In cases of HTTPS connection, the certificate is presented by the web server (ng
 
 `*.axibase.com` old wildcard certificate:
 
-```
+```txt
 Certificate:
     Data:
         Version: 3 (0x2)
@@ -122,7 +122,7 @@ The certificate is presented to the client as part of the secure connection nego
 
 `curl` SSL handshake:
 
-```
+```txt
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to axibase.com (.....) port 443 (#0)
 * Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
 * successfully set certificate verify locations:
@@ -169,17 +169,16 @@ The certificates for intermediate CAs are bundled by web server into an ordered 
 
 In case of the old `*.axibase.com` wildcard certificate, the chain was established as follows:
 
-```
+```txt
 *.axibase.com
   issued by COMODO RSA Domain Validation Secure Server CA
     issued by COMODO RSA Certification Authority
       issued by  AddTrust External CA Root [ROOT]
 ```
 
-
 ### Let's Encrypt CA Certificates
 
-The Let's Encrypt's own root CA, **ISRG Root X1**, is not _yet_ present in trust stores.
+The Let's Encrypt root CA, **ISRG Root X1**, is not _yet_ present in trust stores.
 
 Let's Encrypt has [four](https://letsencrypt.org/certificates/) intermediate CAs, two of which are signed by other more established CAs who are present in trust stores.
 
@@ -192,7 +191,7 @@ The root CA for X3 and X4 is **DST Root CA X3** by **Digital Signature Trust Co.
 
 Sample certificate chain for Let's Encrypt Authority X3-signed certificate:
 
-```
+```txt
 === BEGIN chain ===
   Subject = CN=nur.axibase.com
    Issuer = CN=Let's Encrypt Authority X3, O=Let's Encrypt, C=US
@@ -203,7 +202,6 @@ Sample certificate chain for Let's Encrypt Authority X3-signed certificate:
     Valid = 2016-03-17 - 2021-03-17
 === END   chain ===
 ```
-
 
 ## Trust Store
 
@@ -336,9 +334,9 @@ ca-certificates:amd64 (20160104ubuntu0.14.04.1, 20170717~14.04.1)
 ca-certificates-java:amd64 (20130815ubuntu1)
 ```
 
-The list of changes performed on a specific version of the `ca-certificates` package is summarized in the package [changelog](https://launchpad.net/ubuntu/+source/ca-certificates/+changelog):
+The list of changes performed on a specific version of the `ca-certificates` package is summarized in the package [change log](https://launchpad.net/ubuntu/+source/ca-certificates/+changelog):
 
-```
+```txt
 ca-certificates (20170717) unstable; urgency=medium
   * mozilla/{certdata.txt,nssckbi.h}:
 
@@ -790,7 +788,7 @@ $ diff --unchanged-line-format="" --old-line-format="" --new-line-format="%L" ja
 
 New CAs in OpenJDK 8 -> 9:
 
-```
+```txt
   no CN = OU=AC RAIZ FNMT-RCM, O=FNMT-RCM, C=ES
      CN = Amazon Root CA 1
      CN = Amazon Root CA 2
@@ -802,7 +800,7 @@ New CAs in OpenJDK 8 -> 9:
 
 Removed CAs in OpenJDK 8 -> 9:
 
-```
+```txt
      CN = AC Raíz Certicámara S.A.
   no CN = OU=ApplicationCA, O=Japanese Government, C=JP
      CN = Buypass Class 2 CA 1
@@ -834,7 +832,7 @@ Removed CAs in OpenJDK 8 -> 9:
 
 Oracle OpenJDK 1.8.0_131:
 
-```
+```txt
      trust.path= /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts
 
      CN = Actalis Authentication Root CA
@@ -949,7 +947,7 @@ When establishing a secure connection based on X509 certificates, the client is 
 
 The list of hierarchically validated certificates is called a **certificate chain**.
 
-```
+```txt
 Domain Certificate (1)
   Intermediate Certificate (2)
     Intermediate Certificate (3)
@@ -1011,7 +1009,7 @@ public class CertListChain {
 
 The subject is the same as the issuer.
 
-```
+```txt
   Subject = CN=atsd, OU=Software Group, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
    Issuer = CN=atsd, OU=Software Group, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
     Valid = 2017-01-18 - 2017-04-18
@@ -1021,7 +1019,7 @@ The subject is the same as the issuer.
 
 [CA-Signed](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) Certificate.
 
-```
+```txt
   Subject = CN=*.axibase.com, OU=PositiveSSL Wildcard, OU=Domain Control Validated
    Issuer = CN=COMODO RSA Domain Validation Secure Server CA, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
     Valid = 2015-03-17 - 2018-03-16
@@ -1197,7 +1195,7 @@ Example generating a self-signed certificate:
 keytool -genkeypair -keystore /opt/atsd/atsd/conf/server.keystore -alias atsd -keyalg RSA -keysize 2048 -validity 365000
 ```
 
-```
+```txt
 Enter keystore password:  
 Re-enter new password:
 What is your first and last name?
@@ -1212,7 +1210,7 @@ Enter key password for <atsd>
   (RETURN if same as keystore password):  
 ```
 
-```
+```txt
 === BEGIN chain ===
   Subject = CN=atsd.axibase.com, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
    Issuer = CN=atsd.axibase.com, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown
@@ -1226,7 +1224,7 @@ Certificate authorities can perform various validation checks, from simple domai
 
 **Domain validation** is the easiest method to obtain an SSL certificate. It involves checks by the CA to prove that the requester has **full** control of a specific domain (range of domains in case of wildcard certificates).
 
-```
+```txt
     Issuer: (CA ID: 1455)
         commonName                = COMODO RSA Domain Validation Secure Server CA
 		...
@@ -1320,7 +1318,7 @@ $ sudo mkdir -p /var/www/certbot
 $ sudo certbot certonly --standalone --agree-tos --no-eff-email --email support@axibase.com -w /var/www/certbot -d atsd.axibase.com
 ```
 
-```
+```txt
 - Congratulations! Your certificate and chain have been saved at:
    /etc/letsencrypt/live/atsd.axibase.com/fullchain.pem
    Your key file has been saved at:
@@ -1354,7 +1352,7 @@ View certbot renewal command
 $ cat /etc/cron.d/certbot
 ```
 
-```
+```txt
 # /etc/cron.d/certbot: crontab entries for the certbot package
 #
 # Upstream recommends attempting renewal twice a day
@@ -1384,7 +1382,7 @@ We estimate that most of our enterprise customers will adopt a centralized appro
 
 The certbot workflow in a centralized environment:
 
-- (1) certbot initiates a new certificate challenge for atsd subdomain with Let's Encrypt servers
+- (1) certbot initiates a new certificate challenge for `atsd` subdomain with Let's Encrypt servers
 - (2) Let's Encrypt server responds with a prepared DNS challenge
 - (3) certbot invokes DNS provider API to add a temporary `TXT` record
 - (4) Let's Encrypt servers validate the presence of `TXT` record within a timeout
@@ -1433,7 +1431,7 @@ To automate the certificate upload after certbot renewal, create `deploy.sh` scr
 
 > The certbot can be installed on the same machine as ATSD or on a remote machine in which case its IP address must be included in the ['Allow Access'](#upload-permissions) list.
 
-```
+```sh
 #!/bin/bash
 
 axiuser=cert-renew
@@ -1448,7 +1446,7 @@ curl -k -u $axiuser:$axipass https://localhost:8443/admin/certificates/import/at
 
 Add post-renewal trigger to the renewal command.
 
-```
+```txt
 crontab -e
 0 */12 * * * certbot -q renew --deploy-hook "/path/to/deploy.sh"
 ```
@@ -1465,7 +1463,7 @@ Certificates are displayed on **Settings > Certificates** page.
 $ sudo certbot renew
 ```
 
-```
+```txt
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 -------------------------------------------------------------------------------
 Processing /etc/letsencrypt/renewal/hbs.axibase.com.conf
@@ -1488,7 +1486,7 @@ $ sudo cat /var/log/letsencrypt/letsencrypt.log
 $ sudo certbot renew --dry-run
 ```
 
-```
+```txt
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 -------------------------------------------------------------------------------
 Processing /etc/letsencrypt/renewal/hbs.axibase.com.conf
@@ -1522,7 +1520,7 @@ To check that `deploy-hook` is configured, search for it in the `/etc/letsencryp
 $ sudo grep -nr /etc/letsencrypt -e "deploy.sh"
 ```
 
-```
+```txt
 /etc/letsencrypt/renewal/hbs.axibase.com.conf:14:renew_hook = /home/axibase/certbot-hook/deploy.sh
 ```
 
@@ -1534,7 +1532,7 @@ Renewals are subject to **weekly** limits, per subdomain and per domain.
 $ sudo certbot renew --force-renewal
 ```
 
-```
+```txt
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 -------------------------------------------------------------------------------
 Processing /etc/letsencrypt/renewal/hbs.axibase.com.conf
@@ -1552,7 +1550,7 @@ Upload private key and certificate
 
 The script reports an error because the `curl` connection was **closed** when the SSL context is restarted. While all current SSL connections are closed, ATSD server itself is not restarted during this process.
 
-```
+```txt
 Error output from deploy.sh:
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -1634,7 +1632,7 @@ New certificate is now installed. No ATSD restart performed.
 
 ### Certificate Transparency Logs
 
-Some CAs, including Lets Encrypt, volutarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
+Some CAs, including Lets Encrypt, voluntarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
 
 CT servers store immutable logs of certificate issuance events which contain the subject's CN (common name) and certificate details.
 
@@ -1642,9 +1640,9 @@ The CT servers also accept events from crawlers when they identify a new certifi
 
 [crt.sh](https://crt.sh) is a front-end to a database of issued certificates, maintained by COMODO CA.
 
-Certificate chain for our old widlcard certificate:
+Certificate chain for our old wildcard certificate:
 
-```
+```txt
 *.axibase.com
   issued by COMODO RSA Domain Validation Secure Server CA
     issued by COMODO RSA Certification Authority
@@ -1663,8 +1661,6 @@ Certificate details including DNS names are now publicly available even if the c
 [crt.sh](https://crt.sh) maintained by one of the CAs, COMODO, allows searching a consolidated log from multiple CT servers for certificates using wildcards.
 
 * [axibase.com certificates](https://crt.sh/?Identity=%.axibase.com)
-
-* [ibm.com certificates](https://crt.sh/?Identity=%.ibm.com)
 
 ![](images/ct_hostname_disclosure.png)
 
@@ -1717,7 +1713,7 @@ The database is **slow** for analytical queries (`GROUP BY`). Analytical queries
 
 ![](images/dbvis_crt.png)
 
-Chartlab [crt.sh]()https://apps.axibase.com/chartlab/0ffbd30b/6#fullscreen) Portal.
+ChartLab [crt.sh]()https://apps.axibase.com/chartlab/0ffbd30b/6#fullscreen) Portal.
 
 ![](images/crt-chartlab.png)
 
@@ -1748,7 +1744,7 @@ Generate root CA certificate. This certificate will be used to sign (validate) e
 $ openssl req -x509 -new -nodes -key axibase_root_ca.key -sha256 -days 90 -out axibase_root_ca.pem
 ```
 
-```
+```txt
   Country Name (2 letter code) [AU]:US
   State or Province Name (full name) [Some-State]:CA
   Locality Name (eg, city) []:Cupertino
@@ -1780,7 +1776,7 @@ $ openssl x509 -outform der -in axibase_root_ca.pem -out axibase_root_ca.crt
 
 These browsers inherit root CAs from the operating system trust store.
 
-* Firefox
+* Firefox Browser
 
 Firefox will display 'Unknown Identity' error.
 
@@ -1805,7 +1801,7 @@ $ sudo keytool -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Cont
 
 Notice the `CA:true` flag.
 
-```
+```txt
 Enter keystore password:  
 Owner: CN=Axibase Root CA, OU=SWG, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
 Issuer: CN=Axibase Root CA, OU=SWG, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
@@ -1821,7 +1817,7 @@ BasicConstraints:[
 ]
 ```
 
-```
+```txt
 Trust this certificate? [no]: yes
 Certificate was added to keystore
 ```
@@ -1832,7 +1828,7 @@ Verify that 'Axibase Root CA' is present in the root CA list.
 $ keytool -list -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts | grep axibase
 ```
 
-```
+```txt
 axibaserootca, Apr 12, 2018, trustedCertEntry,
 ```
 
@@ -1854,7 +1850,7 @@ Generate CSR (Certificate Signing Request) file, to be submitted to the CA.
 $ openssl req -new -key atsd_axibase_com.key -out atsd_axibase_com.csr
 ```
 
-```
+```txt
 Country Name (2 letter code) [AU]:US
 State or Province Name (full name) [Some-State]:CA
 Locality Name (eg, city) []:Cupertino            
@@ -1905,7 +1901,7 @@ $ keytool -importkeystore -srckeystore atsd_axibase_com.pkcs12 -srcstoretype PKC
 
 Check `atsd_axibase_com.keystore`: chain and trust.
 
-```
+```txt
         alias= atsd
    trust.path= /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre//lib/security/cacerts
 keystore aliases= [atsd]
@@ -1925,7 +1921,7 @@ The `atsd_axibase_com` certificate, signed with 'Axibase Root CA' is now valid.
 
 If 'Axibase Root CA' were not present in the trust store, an exception is raised:
 
-```
+```txt
 Certificate chain validatation failed: java.security.cert.CertPathValidatorException: Path does not chain with any of the trust anchors : null
 
   Default trust manager: certificate chain validatation failed: sun.security.validator.ValidatorException: PKIX path building failed:
@@ -1973,7 +1969,7 @@ Modify `/etc/hosts` File to Route `atsd.axibase.com` to localhost
 $ sudo nano /etc/hosts
 ```
 
-```
+```txt
 127.0.0.1 localhost, atsd.axibase.com
 255.255.255.255 broadcasthost
 ::1             localhost
@@ -2011,7 +2007,7 @@ Modify `/etc/hosts` File to route `www.uber.com` to localhost
 $ sudo nano /etc/hosts
 ```
 
-```
+```txt
 127.0.0.1 localhost, www.uber.com
 255.255.255.255 broadcasthost
 ::1             localhost
@@ -2032,7 +2028,7 @@ Generate CSR
 $ openssl req -new -key www.uber.com.key -out www.uber.com.csr
 ```
 
-```
+```txt
 ...
 Country Name (2 letter code) [AU]:US
 ...
@@ -2067,7 +2063,7 @@ Modify nginx server configuration to fetch (proxy) content from https://uber.com
 $ nano /etc/nginx/conf.d/default.conf
 ```
 
-```
+```txt
 server {
   ...
   location / {
@@ -2082,15 +2078,15 @@ Apply new nginx configuration without restarting.
 $ service nginx reload
 ```
 
-Access https://www.uber.com in the browser as usual.
+Access `https://www.uber.com` in the browser as usual.
 
 ![](images/uber_chrome_ok.png)
 
 ![](images/firefox_uber_ok.png)
 
-The requests are now logged in nginx. Content is proxied from https://uber.com.
+The requests are now logged in nginx. Content is proxied from `https://uber.com`.
 
-```
+```txt
 nginx.1    | www.uber.com 172.17.0.1 - - [12/Apr/2018:10:55:27 +0000] "GET / HTTP/2.0" 200 162485 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
 nginx.1    | www.uber.com 172.17.0.1 - - [12/Apr/2018:10:55:30 +0000] "GET /api/current-city HTTP/2.0" 200 174 "https://www.uber.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
 ```
@@ -2104,13 +2100,13 @@ Since custom CA is in the Java trust store, URL connections complete without err
   System.out.println("Connection OK");
 ```
 
-```
+```txt
   Connection OK
 ```
 
 If the certificate were untrusted, we would see the following error:
 
-```
+```txt
 Exception in thread "main" javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No name matching www.uber.com found
   at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
 ```
@@ -2123,7 +2119,7 @@ Exception in thread "main" javax.net.ssl.SSLHandshakeException: java.security.ce
 $ openssl s_client -showcerts -connect axibase.com:443
 ```
 
-```
+```txt
 CONNECTED(00000003)
 depth=2 O = Digital Signature Trust Co., CN = DST Root CA X3
 verify return:1
@@ -2207,7 +2203,7 @@ The `ssl` output can be further detailed by appending one of the following optio
 
 Refer to [IBMJSSE2 tracing note](https://www.ibm.com/support/knowledgecenter/en/SSYKE2_6.0.0/com.ibm.java.security.component.60.doc/security-component/jsse2Docs/debug.html) for additional details.
 
-```
+```txt
 Ignoring unavailable cipher suite: TLS_DHE_DSS_WITH_AES_256_GCM_SHA384
 Ignoring unavailable cipher suite: TLS_DH_anon_WITH_AES_256_CBC_SHA
 Ignoring unavailable cipher suite: TLS_DH_anon_WITH_AES_256_CBC_SHA256

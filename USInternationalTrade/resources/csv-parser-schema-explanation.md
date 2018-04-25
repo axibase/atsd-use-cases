@@ -11,7 +11,7 @@ year,CTY_CODE,CTYNAME,IJAN,...,IDEC,IYR,EJAN,...,EDEC,EYR
 
 Below is the table structure that is represented. The first line is used for column headers:
 
-| year | CTY_CODE | CTYNAME | IJAN | ... | IDEC | IYR   | EJAN | ... | EDEC | EYR   | 
+| year | `CTY_CODE` | `CTYNAME` | `IJAN` | ... | `IDEC` | `IYR`   | `EJAN` | ... | `EDEC` | `EYR`   | 
 |------|----------|---------|------|-----|------|-------|------|-----|------|-------| 
 | 1985 | 0001     | OPEC    | 1733 | ... | 2426 | 22801 | 1033 | ... | 1186 | 12478 | 
 | 1986 | 0001     | OPEC    | 2631 | ... | 1327 | 19751 | 947  | ... | 813  | 10844 | 
@@ -38,7 +38,7 @@ select('#row=2-*')
 select('#row=2-*')
 ```
 
-This method selects elements from the table for following the above expression.
+This method selects elements from the table based on the above expression.
 In this case, `'#row=2-*'`  means that we want to select all rows starting with row Index 2 (which will ignore the first row).
 
 After execution, we will work with the following table's cells:

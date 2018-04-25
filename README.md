@@ -1,4 +1,4 @@
-# Overview
+# Repository Overview
 
 Axibase Time Series Database is a Hadoop-based time series database with SQL, rule-engine, and visualization.
 
@@ -8,6 +8,7 @@ The **Use Cases** repository contains [Research Articles](#research-articles) de
 
 ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. See older articles in the [Archive](#archive).
 
+1. [Tracking Expatriation with ChartLab, SQL, and Web Crawler in ATSD](expatriation/README.md)
 1. [Let's Encrypt SSL Certificates for Java Developers](workshop/lets-encrypt.md)
 1. [U.S. Approaching 3-Year Mark for Full Employment](Chart_of_the_Day/unemployment/README.md)
 1. [Tax Day 2018: Americans Reverse the Late-Filing Trend](IRSTaxFilings_2018/README.md)
@@ -17,7 +18,6 @@ ATSD functionality and features applied to real-world public data to solve commo
 1. [The Slow Death of the American Auto Industry](Automobiles/README.md)
 1. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
 1. [Debt Profile of the Average American](FED_FORDSR/README.md)
-1. [U.S. Expatriation Statistics (Quarter 2 Update)](Expatriation_Q2/README.md)
 
 ## How-To
 
@@ -68,14 +68,14 @@ Sometimes data tell their own story and ChartLab visualizations can grab reader 
 
 Detailed use cases that feature in-depth data exploration and complex functionality used to solve the world's modern data problems.
 
-1. [The World Progress Scorecard: In-Depth Visualization with SQL and User-Defined Functions](Chart_of_the_Day/world-progress-scorecard/README.md)
+1. [The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions](Chart_of_the_Day/world-progress-explorer/README.md)
 1. [United States Federal Reserve: The Economic Policy Uncertainty Index](Analysis/Economic_Policy_Uncertainty/README.md)
 1. [The New Bubble: Fed Rates Stay Low While Debt Value Remains High](Analysis/The_New_Bubble/README.md)
 1. [Realtime Analysis of the Oroville Dam Disaster](OrovilleDam/README.md)
 1. [The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment](Analysis/FedFund_FedInterest/README.md)
 1. [United States Treasuries as International Assets: China's Role in the Federal Fund Rate](Analysis/Treasuries_as_Assets/README.md)
 1. [CPI vs. PPI: Producers are Spending Less While Consumers are Paying More](Analysis/CPI_PPI/README.md)
-1. [BitCoin After the GHash.IO Era](Analysis/BitCoin_After_GHash/README.md)
+1. [Bitcoin After the GHash.IO Era](Analysis/BitCoin_After_GHash/README.md)
 1. [Visa Travel to the United States with Charts, SQL, and Redash](USVisa/README.md)
 1. [Analyzing UK Aviation Statistics using CAA Datasets](UKAviation/README.md)
 
@@ -101,16 +101,17 @@ Visualizations and SQL queries that are indexed by topic to form the Axibase Dat
 
 Older ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. Some features may have been updated or function differently, see our latest features and functionality used in more recent [Research Articles](#research-articles) or the [Chart of the Day](#chart-of-the-day).
 
+1. [U.S. Expatriation Statistics (Quarter 2 Update)](Expatriation_Q2/2017-2.md)
 1. [Calls May Be Recorded or Monitored for Training Purposes: Using Call Abandonment Rates to Establish Thresholds](SF_Phone/README.md)
 1. [Does the Bag Tax Work?](Bag_Tax/README.md)
-1. [The Consumer Price Index Verus Your Savings Account (Bank of Israel)](CBI_CPI/README.md)
+1. [The Consumer Price Index Versus Your Savings Account (Bank of Israel)](CBI_CPI/README.md)
 1. [Riding the L Train in 2025](L_Train2025/README.md)
 1. [How to Predict a Fire in Hartford](CT_Fire/README.md)
 1. [The Cleanest Water in Washington State](Chart_of_the_Day/WA_Water/README.md)
 1. [Public Utilities and Private Industry in Austin](Chart_of_the_Day/Austin_Power/README.md)
 1. [What Do Seattlelites Have to Complain About?](Chart_of_the_Day/Seattle_Complaints/README.md)
 1. [Food Insecurity in America (2009-2013)](Chart_of_the_Day/Food_Insecurity/README.md)
-1. [Citywide LED Streetlight Savings (Los Angeles, CA)](Chart_of_the_Day/LA_Lights/README.md)
+1. [City-wide LED Streetlight Savings (Los Angeles, CA)](Chart_of_the_Day/LA_Lights/README.md)
 1. [New York City's Most Crowded Industries](Chart_of_the_Day/NY_Jobs/README.md)
 1. [San Francisco Air Traffic Noise Complaints by the Numbers](Chart_of_the_Day/SFO_Complaints/README.md)
 1. [Island Living is Recession Proof](Chart_of_the_Day/Hawaii_GDP/README.md)
@@ -118,14 +119,14 @@ Older ATSD functionality and features applied to real-world public data to solve
 1. [Quantifying Public Health: The American Fitness Index](FitnessIndex/README.md)
 1. [Violence Begets Violence: An Analysis of the Baltimore Police Force and Baltimore Homicide Data](BaltimorePolice/README.md)
 1. [Climate Change: Back to the Drawing Board](ClimateChange/README.md)
-1. [U.S. Expatriation Statistics](Expatriation/README.md)
+1. [U.S. Expatriation Statistics](Expatriation/2017.md)
 1. [Consumer Finance Complaints](ConsumerFinance/README.md)
 1. [Tax Day 2017: Are U.S. Tax Payers Procrastinating?](IRSTaxFilings/README.md)
 1. [Norway Car Registrations](NorwayCars/README.md)
 1. [U.S. State Department: Getting Paid $400 Million While Rejecting Visitors](USVisaRefusal/README.md)
 1. [From data.gov dataset to Python DataFrame in 10 minutes](SocrataPython/README.md)
 1. [Analyzing America's International Trade history](USInternationalTrade/README.md)
-1. [Pain at the Pump - a Closer Look at Hawaii's High Fuel Prices](HawaiiGasPrices/hawaii_gas_prices.md)
+1. [Pain at the Pump - a Closer Look at Hawaii's High Fuel Prices](HawaiiGasPrices/README.md)
 1. [Data Visualization with Chart Lab](ChartLabIntro/README.md)
 1. [Country Living - Analyzing and Combining Iowa Employment and Consumer Price Index Datasets](SocrataIowaCompensation/README.md)
 1. [Knocking on Heaven's Door - Computing U.S. Mortality Statistics](USMortality/README.md)

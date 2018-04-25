@@ -8,7 +8,7 @@ This guide shows how to configure GitHub to alert you when someone creates a new
 
 ### Purpose
 
-Project management functionality in GitHub has evolved to enable users to to design, execute, and complete the projects associated with their code stored on GitHub without the need for an external plug-in. Many GitHub repositories contain thousands of lines of code and need to handle an increasing number of projects, especially those associated with larger organizations with employees across the globe.
+Project management functionality in GitHub has evolved to enable users to design, execute, and complete the projects associated with their code stored on GitHub without the need for an external plug-in. Many GitHub repositories contain thousands of lines of code and need to handle an increasing number of projects, especially those associated with larger organizations with employees across the globe.
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of watching new projects as they are created can be better accomplished using programmatic integration leveraging GitHub webhook functionality.
 
@@ -21,11 +21,31 @@ docker run -d -p 8443:8443 -p 9443:9443 \
   --name=atsd-sandbox \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/repo-notifications/how-to/github/resources/github-project-create.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-project-create.xml' \
   axibase/atsd-sandbox:latest
 ```
 
 Replace the `SERVER_URL` parameter in the command above with the public DNS name of the Docker host where the sandbox container will be running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
+
+If you would like to automatically configure Slack Messaging Service at runtime, use the following ATSD Sandbox launch command:
+
+```
+docker run -d -p 8443:8443 -p 9443:9443 \
+  --name=atsd-sandbox \
+  --env SERVER_URL=https://atsd.company_name.com:8443 \
+  --env WEBHOOK=github \
+  --env SLACK_CONFIG="slack.properties \  
+  --volume /home/user/slack.properties.xml:/slack.properties.xml \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-project-create.xml' \
+  axibase/atsd-sandbox:latest
+```
+
+The bound volume should at least contain at least the required parameters seen below and be stored as a plaintext file at the defined location on your local machine or URL.
+
+```
+token=xoxb-************-************************
+channels=general
+```
 
 For advanced launch settings refer to the following [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
@@ -35,14 +55,14 @@ Watch the sandbox container logs for `All applications started` line.
 docker logs -f atsd-sandbox
 ```
 
-Copy the newly-created GitHub webhook URL from the log output.
+Copy the newly-created GitHub webhook URL from the log output once all applications have successfully started.
 
 ```
-github webhook created:
-https://github:password@atsd.company_name.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
+All applications started
+Webhooks created:
+Webhook user: github
+Webhook URL: https://github:PdWnC1jF@atsd.company.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
 ```
-
-### Create a GitHub Webhook
 
 Open the **Settings** menu for the GitHub repository for which you would like to create notifications.
 
@@ -90,7 +110,7 @@ Select the messenger which you've configured from the list on the **Web Notifica
 
 ![](images/wn-page.png)
 
-On the messenger-specific page, be sure that the **Web Notification** is enabled. In the **Auth Token** field, insert the authentication token you received from your messenger of choice. Configure additional parameters as needed such as **Bot Username** and click **Save**
+On the messenger-specific page, be sure that the **Web Notification** is enabled. In the `Auth Token` field, insert the authentication token you received from your messenger of choice. Configure additional parameters as needed such as **Bot Username** and click **Save**
 
 ![](images/web-notifications.png)
 

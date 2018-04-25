@@ -44,12 +44,12 @@ or [plotly](https://plot.ly/).
 ### CartoDB
 -----------
 
-CartoDB is primarily a mapping software and does not allow the user to plot the data set (in this case gas prices of Hawaii) over time.
+Mapping software CartoDB does not support plotting datasets (in this case gas prices of Hawaii) over some time period.
 
 ### plotly
 ----------
 
-plotly fairly easily allows the user to display the relationship of gas prices over time; however, without extensively manipulating the raw data set, each
+This visualization tool allows the user to display the relationship of gas prices over time; however, without extensively manipulating the raw data set, each
 location is allowed to be compared with only one fuel type at a time.
 
 We will quickly run through plotting this dataset in plotly.
@@ -71,7 +71,7 @@ location), and the **Price** as the y axis.
 
 ![Figure 3](Images/Figure3.png)
 
-The ouput will look as is shown below. The graph is relatively easy to interpret. The user can see that Gasoline - Regular fuel prices in Hawaii have for the last 6
+The output will look as is shown below. The graph is relatively easy to interpret. The user can see that Gasoline - Regular fuel prices in Hawaii have for the last 6
 years steadily remained more expensive than US average prices. The main drawback of using plotly to process datasets from data.gov seems to be the extensive
 time and effort it would take to create outputs for each of the following fuel types. The same time consuming steps would have to be taken for analyzing Diesel,
 Gasoline - Midgrade, and Gasoline - Premium between all 5 locations. The same cumbersome process would have to be followed for comparing fuel types for each particular location. Additionally,
@@ -155,7 +155,7 @@ We will walk through a brief example on how to customize the default dataset to 
 
 ![Figure 12](Images/Figure12.png)
 
-Your customized outputted graph should look something like this:
+Your customized graph should look something like this:
 
 ![Figure 13](Images/Figure13.png)
 
@@ -182,7 +182,7 @@ change the name of the county to **US**. At this point your portal should look s
 	Next, we need to make a new series to find the difference between US and Hilo Diesel prices.
 
 8.	In the Hilo series, enter in **alias = s1**. In the US series, enter in **alias = s2**. For both series enter **display = false**.
-9.	Create a new series. Enter **label = Hilo over US Diesel Surchages** and **value = value(s1) - value(s2)**.
+9.	Create a new series. Enter **label = Hilo over US Diesel Surcharges** and **value = value(s1) - value(s2)**.
 
 	At this point your portal should look something like this:
 
@@ -200,7 +200,7 @@ change the name of the county to **US**. At this point your portal should look s
 13.	Under configuration (at the very top) enter **height-units = 2** to increase the size of your graph.
 14.	Run!
 
-Your customized outputted graph should look something like this:
+Your customized graph should look something like this:
 
 ![Figure 17](Images/Figure17.png)
 
@@ -223,7 +223,7 @@ an anomaly, but rather quite possibly a trend.
 
 From the data.gov website, let us choose [Hawaii electricity prices](https://catalog.data.gov/dataset/hi-electricity-prices-815fa) as our second dataset.
 
-From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/KWh) for each of the following Hawaiian islands:
+From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/kwh) for each of the following Hawaiian islands:
 
 **Hawaii**, **Kauai**, **Lanai**, **Maui**, **Molokai**, **Oahu**
 
@@ -265,7 +265,7 @@ Here is a table of additional datasets from data.gov that you can explore using 
 
 |State		|data.gov dataset		|Axibase Portal			|		  
 |-----------|-----------------------|-----------------------|
-|llinois 	|[Abortion Demographics, 1995-2012](http://catalog.data.gov/dataset/abortion-demographics-1995-2012-8f496)|[Portal](https://apps.axibase.com/chartlab/55eb27ce)|
+|Illinois 	|[Abortion Demographics, 1995-2012](http://catalog.data.gov/dataset/abortion-demographics-1995-2012-8f496)|[Portal](https://apps.axibase.com/chartlab/55eb27ce)|
 |Maryland 	|[Anne Arundel County Crime Rate By Type](http://catalog.data.gov/dataset/anne-arundel-county-crime-rate-by-type-e5923)|[Portal](https://apps.axibase.com/chartlab/a85c4f60)|
 |New York 	|[Automobiles Annual Imports and Exports Through Port Authority of NY NJ Maritime Terminals: Beginning 2000](http://catalog.data.gov/dataset/automobiles-annual-imports-and-exports-through-port-authority-of-ny-nj-maritime-terminals-)|[Portal](https://apps.axibase.com/chartlab/c041c40b)|
 |Maryland 	|[Employment Figures](http://catalog.data.gov/dataset/employment-figures-f55ae)|[Portal](https://apps.axibase.com/chartlab/fc75db9b)|

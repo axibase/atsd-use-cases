@@ -12,7 +12,7 @@ Comprehensive Housing Market Analysis: City of Austin (2014)
 #### Index
 
 The following table contains the entire set of included metrics as well as their corresponding visualization figure for easy navigation.
-Use the clickable links in the Figure column to jump between visualizations and in Chartlab, use the drop-down menus to toggle
+Use the clickable links in the Figure column to jump between visualizations and in ChartLab, use the drop-down menus to toggle
 between metrics.
 
 | Metric | Comment | Figure |

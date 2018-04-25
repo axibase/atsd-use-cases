@@ -16,7 +16,7 @@ The **TRENDS** service enables users to interact with the data that they are rea
 
 In the **Editor** window you will see the configuration for the current portal. All portals have several levels of settings:
 
-* **[configuration]**: Overall settings for the entire portal. Even the most complex visualizations will have one set of **[configuration]** settings. Define base parameters for the portal such as layout, offset, formatting, as well as the default parameters that will be inhereted by all widgets contained in the portal.
+* **[configuration]**: Overall settings for the entire portal. Even the most complex visualizations will have one set of **[configuration]** settings. Define base parameters for the portal such as layout, offset, formatting, as well as the default parameters that will be inherited by all widgets contained in the portal.
 
 * **[group]**: Each row of widgets is defined as a group. **[group]** level settings are applied to an entire row.
 
@@ -28,7 +28,7 @@ For detailed information about **[widget]** level settings, see the following [g
 
 More information about selecting series can be found [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/selecting-series/).
 
-> Some settings may be defined at multiple levels. Settings defined at the **[configuration]** level are inhereted by nested levels: **[group]** > **[widget]** > **[series]**. Settings defined at the lower level override settings set at the upper level. For example, if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[series]** level for one chart you define a different entity `y`, entity `x` will be used for all widgets **EXCEPT** for the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
+> Some settings may be defined at multiple levels. Settings defined at the **[configuration]** level are inherited by nested levels: **[group]** > **[widget]** > **[series]**. Settings defined at the lower level override settings set at the upper level. For example, if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[series]** level for one chart you define a different entity `y`, entity `x` will be used for all widgets **EXCEPT** for the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
 
 ## Metrics Reference Page
 
@@ -117,7 +117,7 @@ The two pre-defined widgets are described here:
 
 * **Inflation Index**: Experimental Consumer Price Index (CPIE) is the measure of a particular basket of consumer goods. It is often used to track inflation across a given period of time or compare "today's" dollars to historic dollar values.
 
-* **Annual Inflation**: Percentile inflation for the the United States. Inflation is calculated by comparing CPI, money supply, gross domestic product (GDP), and average wages. This widget relies on calculated metrics to created a derived measurement.
+* **Annual Inflation**: Percentile inflation for the United States. Inflation is calculated by comparing CPI, money supply, gross domestic product (GDP), and average wages. This widget relies on calculated metrics to created a derived measurement.
 
 ## User-Defined Functions
 
@@ -160,17 +160,17 @@ The `fred.js` library is available to any **TRENDS** user and contains the follo
 
 | Function Name                      | Arguments       | Description |
 |------------------------------------|-----------------|-------------|
-| [MonthlyChange](https://trends.axibase.com/c5e043b5)                      | alias           | Month-on-month change |
-| [ChangeFromYearAgo](https://trends.axibase.com/34165ff1)                  | alias           | Year-on-year change |
-| [ChangeByOffset](https://trends.axibase.com/90cfadae)                     | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
-| [MonthlyPercentChange](https://trends.axibase.com/7bca24b2)               | alias           | Month-on-month percent change |
-| [PercentChangeFromYearAgo](https://trends.axibase.com/44627e1d)           | alias           | Year-on-year percent change |
-| [PercentChangeByOffset](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
-| [CompoundedAnnualRateOfChange](https://trends.axibase.com/f04b65fc)       | alias           | Geometric-progression ratio which compounds change annually
-| [ContinuouslyCompoundedRateOfChange](https://trends.axibase.com/16ea90bf) | alias           | Geometric-progression ratio which continuously compounds change over an infinitesimally small interval
-| [NaturalLog](https://trends.axibase.com/897f53e1)                         | alias           | Natural Logarithm (`LOG` base constant `e`) 
-| [IndexMax](https://trends.axibase.com/3db3bfa7)                           | alias           | Maximum series value is used as index value
-| [Index](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/products/axibase-time-series-database/visualization/end-time/)     | User-selected value is used as index value
+| [`MonthlyChange`](https://trends.axibase.com/c5e043b5)                      | alias           | Month-on-month change |
+| [`ChangeFromYearAgo`](https://trends.axibase.com/34165ff1)                  | alias           | Year-on-year change |
+| [`ChangeByOffset`](https://trends.axibase.com/90cfadae)                     | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
+| [`MonthlyPercentChange`](https://trends.axibase.com/7bca24b2)               | alias           | Month-on-month percent change |
+| [`PercentChangeFromYearAgo`](https://trends.axibase.com/44627e1d)           | alias           | Year-on-year percent change |
+| [`PercentChangeByOffset`](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
+| [`CompoundedAnnualRateOfChange`](https://trends.axibase.com/f04b65fc)       | alias           | Geometric-progression ratio which compounds change annually
+| [`ContinuouslyCompoundedRateOfChange`](https://trends.axibase.com/16ea90bf) | alias           | Geometric-progression ratio which continuously compounds change over an infinitesimally small interval
+| [`NaturalLog`](https://trends.axibase.com/897f53e1)                         | alias           | Natural Logarithm (`LOG` base constant `e`) 
+| [`IndexMax`](https://trends.axibase.com/3db3bfa7)                           | alias           | Maximum series value is used as index value
+| [`Index`](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/products/axibase-time-series-database/visualization/end-time/)     | User-selected value is used as index value
 
 Open any of the visualizations above to see syntax and visual demonstrations of each function.
 

@@ -40,8 +40,10 @@ function quarterToMonth(yearAndQuarter) {
     }
     return yearAndQuarter.substring(0, 4) + '-' + month;
 }
+```
 
-/* 
+```javascript
+/*
   Select all rows starting from 7th row.
   Select all columns in the row starting with the 2nd column.
 */
@@ -51,7 +53,7 @@ timestamp(quarterToMonth(cell(row,1))).
 metric(cell(6,col));
 ```
 
-For step-by-step instructions on data customization with schema based parsing, see this [support tutorial](/Support/Schema-Parser-Mod-Pre-Import).
+For step-by-step instructions on data customization with schema based parsing, see this [support tutorial](../Support/Schema-Parser-Mod-Pre-Import).
 
 #### Financial Obligation Ratio:
 

@@ -6,7 +6,7 @@ Producers are Spending Less While Consumers are Paying More
 The Consumer Price Index (CPI) is a metric that is most commonly associated with inflation. It tracks the average cost of goods,
 and by doing so, demonstrates the changing prices that consumers are paying for a typical basket of goods. Think about your 
 favorite grandparent telling you about how much the movies cost when they were your age. To learn more about the effect of 
-the CPI see the following [analysis](CBI_CPI/README.md) that track how CPI affected the value of the Israeli Shekel over several
+the CPI see the following [analysis](../../CBI_CPI/README.md) that track how CPI affected the value of the Israeli Shekel over several
 decades.
 
 The Producer Price Index (PPI) is a complementary metric which tracks the amount of capital that producers are using to create
@@ -14,7 +14,7 @@ a final product. Both are shown below from 1990 to 2017:
 
 **Figure 1**: United States CPI (blue) and PPI (orange)
 
-![](../../Support/Inline_View/Images/pro-1.png)
+![](Images/pro-one.png)
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/0b791490/#fullscreen)
 
@@ -143,7 +143,7 @@ SELECT AVG(cpi.value) AS "Avg CPI", AVG(ppi.value) AS "Avg PPI", AVG(cpi.value -
 Using the [moving average](https://github.com/axibase/atsd/tree/master/sql#aggregation-functions) function to aggregate the 
 average values in annual increments instead of across the entire observed period smooths the MPV curve and shows the effects 
 of the recession on producer profits. A detailed use case and syntax explanation of the weighted average function can be found 
-[here](Support/Moving-Avg/README.md).
+[here](../../Support/Moving-Avg/README.md).
 
 **Figure 4**: MPV Annual Aggregation
 
@@ -229,7 +229,7 @@ GROUP BY YEAR(time)
 > Open any ChartLab visualization to navigate through time using the dropdown menus at the top of the screen.
 
 When the data is controlled to exclude volatile metrics such as energy and food production and consumption,
-a more accurate representation of the the difference between production costs and consumer costs can be seen. To further
+a more accurate representation of the difference between production costs and consumer costs can be seen. To further
 lend credence to the instability of the energy market, the per barrel price of oil, one of the largest parts of the energy
 sector is shown below alongside the calculated both Potential Profitability Values calculated above:
 

@@ -26,7 +26,7 @@ and complicated process, one of the main features of which is settling up with t
 
 The [Federal Register](https://www.federalregister.gov/) is a publishing outlet for the United States Government where the IRS
 officially releases quarterly information about American citizens who renounce their passport in lieu of a new one and other long-term
-residents who have decided to repatriate, view the raw data [here](https://www.federalregister.gov/documents/2017/05/10/2017-09475/quarterly-publication-of-individuals-who-have-chosen-to-expatriate-as-required-by-section-6039g) and use the [Axibase Data Crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler) designed specifically for collecting, parsing, organzing and inserting historical expatriation data and new data as it becomes available. 
+residents who have decided to repatriate, view the raw data [here](https://www.federalregister.gov/documents/2017/05/10/2017-09475/quarterly-publication-of-individuals-who-have-chosen-to-expatriate-as-required-by-section-6039g) and use the [Axibase Data Crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler) designed specifically for collecting, parsing, organizing and inserting historical expatriation data and new data as it becomes available. 
 [Axibase](https://axibase.com) covered last quarter's expatriation release [here](Expatriation/README.md) and is using
 this quarter's release to follow-up. Every election cycle countless celebrities and netizens issue their promise to leave
 if their candidate fails to get elected and the growing notoriety surrounding the 2016 Presidential Election has proven to 
@@ -149,7 +149,7 @@ quite expensive similar to a long-position that will cost more at purchasing tim
 maturity.
 
 The peak, or more appropriately, valley of the global recession occurred in 2009 when the global GDP contracted causing
-a decline in the median familty income of [about five percent](https://web.stanford.edu/group/recessiontrends/cgi-bin/web/sites/all/themes/barron/pdf/IncomeWealthDebt_fact_sheet.pdf).
+a decline in the median family income of [about five percent](https://web.stanford.edu/group/recessiontrends/cgi-bin/web/sites/all/themes/barron/pdf/IncomeWealthDebt_fact_sheet.pdf).
 
 **Figure 3**
 
@@ -293,4 +293,4 @@ LIMIT 15
 
 >Only the name Smith appears on the list of most common American last names, linked [here](http://www.census.gov/main/www/cen2000.html)
 
-Use the [Axibase Data Crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler) to collect the data used in this artcle and examine it yourself in [ChartLab](https://apps.axibase.com).
+Use the [Axibase Data Crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler) to collect the data used in this article and examine it yourself in [ChartLab](https://apps.axibase.com).

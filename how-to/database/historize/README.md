@@ -143,7 +143,7 @@ GRANT SELECT ON mysql.stat_orders_hourly_total TO 'axibase-readonly'@'%';
 GRANT SELECT ON mysql.stat_orders_hourly_detail TO 'axibase-readonly'@'%';
 ```
 
-* `stat_orders_hourly_total` results
+* `stat_orders_hourly_total` results.
 
 ```ls
 | total_amount | total_count |
@@ -151,7 +151,7 @@ GRANT SELECT ON mysql.stat_orders_hourly_detail TO 'axibase-readonly'@'%';
 | 920          | 1           |
 ```
 
-* `stat_orders_hourly_detail` results
+* `stat_orders_hourly_detail` results.
 
 ```ls
 | customer | customer_amount | customer_count |
@@ -165,7 +165,7 @@ The [JDBC](https://github.com/axibase/axibase-collector/blob/master/jobs/jdbc.md
 
 ### Create Data Source
 
-To connect the Collector to a database, create a new data source connection on the **DataSources > Databases** page.
+To connect the Collector to a database, create a new data source connection on the `DataSources > Databases` page.
 
 ![](images/data-source-mysql.png)
 
@@ -237,7 +237,7 @@ The series collected by Collector can be located within ATSD in various ways: se
 
 Open the **Metrics** tab and search metrics by name or prefix.
 
-![](images/metrics-search.png)
+![](images/metrics_search.png)
 
 To view individual series, click on the **Series** icon and then on the chart link.
 

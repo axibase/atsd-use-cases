@@ -87,7 +87,7 @@ Using a `value` expression, calculated series may be created using existing data
 # Calculated series has no metric value as it is only derived. Alert expression is entered based on information provided by box graph     
 ```
 
-Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in TRENDS / ChartLab, see this [guide](/../..//tree/master/Solutions/calculated-values).
+Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in TRENDS / ChartLab, see this [guide](../Solutions/calculated-values).
 
 ![](images/working-population-charts.png)
 [![](images/button-new.png)](https://trends.axibase.com/68f93899#fullscreen)
@@ -125,4 +125,4 @@ The following tools may be used to replicate these results in a local instance o
 
 * For information about modifying data visualizations in the **TRENDS** interface, see this [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md);
 * [Forecast Configuration](resources/forecast-settings.xml);
-* For detailed information about configuring the Forecasting tool, see this [guide](/../../master/how-to/shared/import-forecast.md).
+* For detailed information about configuring the Forecasting tool, see this [guide](../how-to/shared/import-forecast.md).

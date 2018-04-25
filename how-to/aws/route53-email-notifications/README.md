@@ -66,11 +66,11 @@ Complete the process below to enhance Route53 alarms with your local ATSD instan
 
   Switch to the HTTP protocol and modify the port number (default is `8088`) if the ATSD is running on a self-signed SSL certificate.
 
-  Replace **atsd_hostname** with a valid hostname and update user password in the webhook URL above.
+  Replace `atsd_hostname` with a valid hostname and update user password in the webhook URL above.
 
   ![](images/route53-slack.png)
 
-7. Import the [aws-cloudwatch-alarm](rule-aws-cloudwatch-alarm.xml) rule into ATSD. For instructions on importing a new rule see the following [walkthrough](walkthrough.url).
+7. Import the [`aws-cloudwatch-alarm`](resources/rule-aws-cloudwatch-alarm.xml) rule into ATSD. For instructions on importing a new rule see the following [guide](../../shared/import-rule.md).
 
 8. Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/mail-client.md).
 

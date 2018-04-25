@@ -31,7 +31,7 @@ This box chart shows the range of the EPU index for each of the 4 regions. A wid
 
 *Fig 2*: Use the drop-down menus in the ChartLab sandbox to change the date range of the visualization. Open the Editor window to modify percentile range with a `percentile = X%/Y%` expression where `X` and `Y` are the values of the percentile range you would like to display.
 
-Tracking the EPU Index for the People's Republic of China alongside more concrete metrics can be used to examine the validity of the EPU Index. Shown below, the EPU is placed alongside real PRC Treasury Securities rates for the last decade and a half. The quarterly and bi-annual averages are compared in the same environment and a `wtavg` expression is used to smooth the occasionally volatile movement of both indices. Treasury Securities are a good tool for tracking economic potential and growth because they show the interest rates that businesses borrowing money are paying to to their lenders. Historically speaking, a lower interest rate usually encourages business to borrow money and expand their operations.
+Tracking the EPU Index for the People's Republic of China alongside more concrete metrics can be used to examine the validity of the EPU Index. Shown below, the EPU is placed alongside real PRC Treasury Securities rates for the last decade and a half. The quarterly and bi-annual averages are compared in the same environment and a `wtavg` expression is used to smooth the occasionally volatile movement of both indices. Treasury Securities are a good tool for tracking economic potential and growth because they show the interest rates that businesses borrowing money are paying to their lenders. Historically speaking, a lower interest rate usually encourages business to borrow money and expand their operations.
 
 ![](images/epu-rates.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/661d387e/#fullscreen)
@@ -88,7 +88,7 @@ The European debt crisis was a financial debacle that was inflamed by the so cal
 4. May 2, 2010: European Union announces a 110 billion Euro bailout for Greece.
 5. Nov 28, 2010: European Union announces an 85 billion Euro bailout for the Republic of Ireland.
 6. Mar 13, 2012: A second bailout for Greece is proposed and approved for and additional 130 billion Euro after further 
-inspection of government financial records reveal the depth and severity of the problem is even worse than originially 
+inspection of government financial records reveal the depth and severity of the problem is even worse than originally 
 understood.
 7. July 1, 2014: The end of the EU bailout policy, and completion of funds distribution.
 
@@ -166,4 +166,4 @@ Use the following tools to recreate any of the visualizations seen here.
 * Install an ATSD instance on your local Linux system [here](https://github.com/axibase/atsd/blob/master/installation/README.md).
 * Visit [FRED](https://fred.stlouisfed.org/) for any of the data used in this article.
 * Access the ChartLab sandbox, and other Axibase applications, [here](https://apps.axibase.com/) and comprehensive documentation [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
-* Download the following [parser job file](resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface. Use the following [walkthrough](/../../blob/master/how-to/shared/import-csv-parser.md) for help uploading the XML file to ATSD. 
+* Download the following [parser job file](resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface. Use the following [walkthrough](../../how-to/shared/import-csv-parser.md) for help uploading the XML file to ATSD. 

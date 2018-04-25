@@ -90,7 +90,7 @@ GROUP BY 'Year'
 **Table 1.3** shows that after the initial drop in plastic bag usage, the average person continued to use the same number of bags
 until 2016 when another drop was detected. For clarification, per capita bag use divides the number of people living in Montgomery
 County by the number of reported bags used per year to arrive at an estimated value of the number of plastic bags used by
-the average person in a given year. Though the population of Montogomery County, Maryland is growing the number of bags used
+the average person in a given year. Though the population of Montgomery County, Maryland is growing the number of bags used
 is decreasing.
 
 **Figure 1.2**
@@ -213,7 +213,7 @@ to the people of Montgomery County:
 
 The average Montgomery County citizen has paid roughly three dollars each year since the bag tax was implemented in 2012, with
 the majority of that total used by the government to offset their own costs for water quality improvement projects.
-Although companies in the county were able to generate some extra income, it is likely that that amount was re-invested 
+Although companies in the county were able to generate some extra income, it is likely that this amount was re-invested 
 to deal with the increase in infrastructure related to the levying of the new tax, new employees, paperwork,
 overtime, or a little bit of all four. Even when analyzing these profits by business, no individual or organization
 made a significant amount from the Bag Tax:
@@ -259,15 +259,15 @@ LIMIT 20
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/95365f3d/7/#fullscreen)
 
-Even enormous national retailers like [Giant-Landover](https://giantfood.com/), [Whole Foods](http://www.wholefoodsmarket.com/safeway), and [Safeway](http://www.safeway.com/) 
+Even enormous national retailers like [Giant-Landover](https://giantfood.com/), [Whole Foods](http://www.wholefoodsmarket.com/), and [Safeway](http://www.safeway.com/) 
 never recorded a significant amount of revenue from bag sales, though Giant-Landover held the top spot for every recorded year, with a
-five year total revenue of $670,000 (Don't worry too much though, that total accounts for about 0.02% of their recorded [2016 profits](http://www.hoovers.com/company-information/cs/revenue-financial.giant_food_stores_llc.d4515a340e8871d2.html)).
+five year total revenue of $670,000 (Don't worry too much though, that total accounts for about 0.02% of their recorded 2016 profits).
 
 #### Conclusions
 
 After the initial implementation of the Bag Tax, plastic bags sales noticeably decreased the following year. After that, sales
 recovered slightly and now the average person uses about four less plastic bags a year. With respect to its goal of reducing
-overall plastic bag use, at least in Montogomery County, the Bag Tax seems ineffective. However, the income
+overall plastic bag use, at least in Montgomery County, the Bag Tax seems ineffective. However, the income
 generated from plastic bag sales is used by the county government to enact water quality initiates which counteract the harmful
 effects of plastic litter clogging up the county's waterways. The county estimates this total to be around $3 million, and
 the Bag Tax successfully generated roughly that amount. This may be the Bag Tax's hidden beauty, while perhaps ineffective at modifying

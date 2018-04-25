@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Marathon](https://mesosphere.github.io/marathon/) is a framework for automating the deployment of Linux containers on top of clusters managed by [Apache Mesos](http://mesos.apache.org/). The framework supports auto-scaling and failover based on built-in health checks. 
+[Marathon](https://mesosphere.github.io/marathon/) is a framework for automating the deployment of Linux containers on top of clusters managed by [Apache Mesos](http://mesos.apache.org/). The framework supports auto-scaling and fail-over based on built-in health checks.
 
 The primary concept implemented in Marathon is the [**Application**](https://mesosphere.github.io/marathon/docs/application-basics.html), which is a resizeable collection of identical containers launched as a long-running service or a short-term batch processing job.
 
@@ -57,7 +57,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances, and the command will upload the needed xml files to ATSD and Axibase Collector. 
 
-> If you would like to import files manually, follow these instructions for [manual upload](../capacity-and-usage-manual-upload/README.md). 
+> If you would like to import files manually, follow these instructions for [manual upload](MANUAL-UPLOAD-README.md). 
 
 The Collector instance installed in the sandbox container will automatically start historizing statistics from the local Docker engine.
 

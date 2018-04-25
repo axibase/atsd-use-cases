@@ -9,7 +9,7 @@ A core Route53 functionality is the ability to configure [health checks](https:/
 
 ![](images/route53-1.png)
 
-An automation procedure, such as DNS failover or service restart, can be initiated once the health check status drops below a certain threshold.
+An automation procedure, such as DNS fail-over or service restart, can be initiated once the health check status drops below a certain threshold.
 
 ![](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/images/how-health-checks-work.png)
 
@@ -25,7 +25,7 @@ Health checks are executed from different parts of the world so that the outage 
 * ap-southeast-2
 * ap-northeast-1
 
-![](images/route53-regions.png)
+![](images/route53-region.png)
 
 ### Access Security
 
@@ -121,7 +121,7 @@ The Collector instance installed in the sandbox container will be used to retrie
 
 Wait until the sandbox is initialized and 'All applications started.' message is displayed.
 
-```
+```sh
 docker logs -f atsd-sandbox
 ```
 
@@ -137,11 +137,7 @@ docker logs -f atsd-sandbox
 All applications started
 ```
 
-Log in to ATSD user interface using `axibase` username and `axibase` password.
-
-```
-https://atsd_hostname:8443/
-```
+Log in to ATSD user interface using `axibase` username and `axibase` password at `https://atsd_hostname:8443/`.
 
 ### Setup Health Check Attribute Copy
 
