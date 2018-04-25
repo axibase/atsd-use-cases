@@ -136,7 +136,7 @@ monetary values for exports, imports, and the trade balance (export minus import
 trade balance, with the highest negative trade balances showing at the top. You may sort the table as you wish by accessing the Chart Lab portal (button below) and clicking
 on the column headers.
 
-In 2016, the locations with which the United States had the highest negative and positive trade balances were China and Hong Kong at **-$319 billion** and **$25.1 billion**,
+In 2016, the locations with which the United States had the highest negative and positive trade balances were China / Hong Kong at **-$319 billion** and **$25.1 billion**,
 respectively.   
 
 ![Figure 2](Images/Figure2.png)
