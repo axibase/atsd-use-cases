@@ -235,7 +235,7 @@ This is an advanced example using a graph Widget to show passenger traffic distr
 
 ![Figure 22](Images/Figure22.png)
 
-The connections between Heathrow and Edinburgh are dark blue, which indicates heavy traffic. We can observe that the total passengers in May 2016 from Heathrow to Edinburg was 95,569, and 92,342 for the trip from Edinburg to Heathrow. We can see 48,566 passengers travelled from Heathrow to Aberdeen, and that 48,577 passengers travelled back from Aberdeen to Heathrow. Additionally, observing the figure, a user can observe the fact that there was **no** passenger traffic from quite a number of airports, including Coventry Shoreham, Prestwick, Exeter, and Humberside.
+The connections between Heathrow and Edinburgh are dark blue, which indicates heavy traffic. We can observe that the total passengers in May 2016 from Heathrow to Edinburgh was 95,569, and 92,342 for the trip from Edinburgh to Heathrow. We can see 48,566 passengers travelled from Heathrow to Aberdeen, and that 48,577 passengers travelled back from Aberdeen to Heathrow. Additionally, observing the figure, a user can observe the fact that there was **no** passenger traffic from quite a number of airports, including Coventry Shoreham, Prestwick, Exeter, and Humberside.
 
 The user can change the base airport quite easily by modifying the configuration. You simply need to change the `var baseAirport` setting from `HEATHROW` to any airport for which you would like to see air passenger totals and connectivity.
 
