@@ -267,7 +267,7 @@ five year total revenue of $670,000 (Don't worry too much though, that total acc
 
 After the initial implementation of the Bag Tax, plastic bags sales noticeably decreased the following year. After that, sales
 recovered slightly and now the average person uses about four less plastic bags a year. With respect to its goal of reducing
-overall plastic bag use, at least in Montogomery County, the Bag Tax seems ineffective. However, the income
+overall plastic bag use, at least in Montgomery County, the Bag Tax seems ineffective. However, the income
 generated from plastic bag sales is used by the county government to enact water quality initiates which counteract the harmful
 effects of plastic litter clogging up the county's waterways. The county estimates this total to be around $3 million, and
 the Bag Tax successfully generated roughly that amount. This may be the Bag Tax's hidden beauty, while perhaps ineffective at modifying
