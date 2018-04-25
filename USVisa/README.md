@@ -15,12 +15,12 @@ this article contains instructions on how to install your own ATSD instance and 
 ---------------------
 
 Let's take a look at the dataset from travel.state.gov, which can be accessed via our archive located in the [Resources](../USVisaRefusal/Resources/visas.tar.gz) folder in this repository. Alternatively, you can
-download the Excel file from the [travel.state.gov](https://travel.state.gov/content/visas/en/law-and-policy/statistics/non-immigrant-visas.html) website and save each year as its
+download the Excel file from the [travel.state.gov](https://travel.state.gov) website and save each year as its
 own separate CSV file. The title of the Excel file on the travel.state.gov website is **Nonimmigrant Visa Issuances by Visa Class and by Nationality FY1997-2015 NIV Detail Table**.    
 
 This dataset contains yearly totals for non-immigrant visas issued from 1997 through 2015. Totals were collected for 84 different visa
 types. You can find the complete list of all the visa types included in this dataset [here](../USVisaRefusal/Resources/visalist.txt). You can find descriptions of all visa types on
-the [U.S. Department of State](https://travel.state.gov/content/visas/en/general/all-visa-categories.html) website.
+the [U.S. Department of State](https://travel.state.gov) website.
 
 Visa figures were collected for 200 countries, 7 continents, and for unknown national origins. You can find a complete list of all the countries included in this dataset [here](../USVisaRefusal/Resources/countrylist.txt).
 
@@ -71,7 +71,7 @@ You can explore this portal by clicking on the below button:
 
 Below is an image for the total visas issued for the countries included in Trump administration's revised [travel ban](https://www.washingtonpost.com/graphics/national/immigration-order-explainer/)
 (which has since been lifted). These countries included Iran, Libya, Somalia, Sudan, Syria, and Yemen. After the September 11th terrorist attacks, the number of visas issued
-to these countries dropped to only **16,076** in 2003 but climbed back up to **62,464** in 2015. Visas to the United States are generally priced at [$160](https://travel.state.gov/content/visas/en/fees/fees-visa-services.html),
+to these countries dropped to only **16,076** in 2003 but climbed back up to **62,464** in 2015. Visas to the United States are generally priced at [$160](https://travel.state.gov),
 which amounted to **$10 million** in revenue in 2015.    
 
 ![Figure4](Images/Figure4.png)
