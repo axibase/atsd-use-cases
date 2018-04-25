@@ -1,4 +1,4 @@
-Citywide LED Street Light Savings (Los Angeles, CA)
+City-wide LED Street Light Savings (Los Angeles, CA)
 ===
 
 **Figure 1.1**
