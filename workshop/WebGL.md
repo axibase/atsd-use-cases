@@ -1,4 +1,4 @@
-# WebGL: Mozilla Designed Web-based Graphics Library
+# WebGL: Web-based Graphics Library
 ### 3D Image Design Without Plugins
 
 > Examples in this article use ES6 syntax and Fetch API, which are not supported in Internet Explorer.
@@ -78,6 +78,7 @@ To display this teapot, we need to:
 ## Hello World
 
 A traditional triangle example. 
+[Open in Playground](https://stackblitz.com/edit/axibase-workshop-webgl-triangle)
 
 [View on apps.axibase.com](https://apps.axibase.com/webgl/triangle)
 
@@ -194,7 +195,72 @@ gl.drawArrays(gl.TRIANGLES, 0, 3);
 
 ### Full code
 
-<iframe src="https://stackblitz.com/edit/axibase-workshop-webgl-triangle?embed=1&file=index.js"></iframe>
+_index.html_
+```html
+<canvas width="400" height="300"></canvas>
+<script src="index.js"></script>
+```
+
+_index.js_
+```js
+let canvas = document.querySelector("canvas");
+let gl = canvas.getContext("webgl");
+
+gl.clearColor(1.0, 1.0, 1.0, 1.0);
+gl.clear(gl.COLOR_BUFFER_BIT);
+
+
+let vertexShaderSrc = `
+attribute vec2 position;
+void main()
+{
+  gl_Position = vec4(position,0.0,1.0);
+}`;
+
+let fragmentShaderSrc = `
+precision mediump float;
+void main() {
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);  
+}`;
+
+
+let vertexShader = gl.createShader(gl.VERTEX_SHADER);
+gl.shaderSource(vertexShader, vertexShaderSrc);
+gl.compileShader(vertexShader)
+
+let fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
+gl.shaderSource(fragmentShader, fragmentShaderSrc);
+gl.compileShader(fragmentShader);
+
+let prog = gl.createProgram();
+gl.attachShader(prog, vertexShader);
+gl.attachShader(prog, fragmentShader);
+gl.linkProgram(prog);
+gl.deleteShader(vertexShader);
+gl.deleteShader(fragmentShader);
+
+let vertices = new Float32Array([
+  //  x     y  
+  -0.5, -0.5,
+  0.5,  -0.5,
+  0,    0.5,
+]);
+
+const f32Size = vertices.BYTES_PER_ELEMENT;
+
+let vbo = gl.createBuffer();
+let posLoc = gl.getAttribLocation(prog, "position");
+gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
+gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+gl.enableVertexAttribArray(posLoc);
+gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+
+gl.useProgram(prog);
+gl.drawArrays(gl.TRIANGLES, 0, 3);
+
+gl.deleteBuffer(vbo);
+gl.deleteProgram(prog)
+```
 
 
 
@@ -205,6 +271,8 @@ Drawing to WebGL can be simplified, using a rendering framework, like [THREE.js]
 Simple rotating cube example with THREE.js
 
 [View on apps.axibase.com](https://apps.axibase.com/webgl/cube)
+
+[Open in Playground](https://stackblitz.com/edit/axibase-workshop-threejs-cube)
 
 ![](images/threejs_cube.png)
 
@@ -247,15 +315,10 @@ draw();
 
 [View on apps.axibase.com](https://apps.axibase.com/webgl/threegl_chart)
 
+[Open in Playground](https://stackblitz.com/edit/axibase-workshop-threejs-barchart)
+
 ![](images/threejs_barchart_cpu.png)
 
-> Loading ATSD data requires an HTTP server. For this example we'll use SimpleHTTPServer from Python.
-
-1. Create a folder for your project
-
-2. Download the required volume [threejs.org](https://threejs.org) and unpack THREE.js. Copy `build/three.min.js` to your project folder.
-
-3. Create `index.html` file at your project folder.
 ```html
 <!DOCTYPE html>
 <html>
@@ -263,8 +326,44 @@ draw();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THREE.js example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-size: 20px;
+            font-family: sans-serif;
+            color: snow;
+        }
+
+        h1 {
+            position: absolute;
+            top: 24px;
+            font-weight: 300;
+            width: 100%;
+            text-align: center;
+        }
+
+        #description {
+            position: absolute;
+            bottom: 16%;
+            justify-content: space-between;
+            width: 80%;
+            left: 10%;
+            text-align: center;
+            z-index: 100;
+            text-transform: uppercase;
+            display: flex;
+        }
+
+        #description > * {
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body>
+    <h1>CPU Busy, %</h1>
+    <div id="description"></div>
     <script src="three.min.js"></script>
     <script src="barchart.js"></script>
 </body>
@@ -357,15 +456,6 @@ loadAtsdCpuBusyData.then(data => {
     renderer.render(scene, camera);
 })
 ```
-
-5. Start HTTP server for your project directory and open it in a web browser
-
-```sh
-python -m SimpleHTTPServer 8080
-```
-
-Open [http://localhost:8080](http://localhost:8080)
-
 
 ### Portal gallery with THREE.js CSS3DRenderer
 
