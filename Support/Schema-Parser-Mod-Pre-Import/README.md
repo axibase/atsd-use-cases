@@ -15,7 +15,7 @@ or [ChartLab](https://apps.axibase.com) is more useful.
 
 Using Bank of Israel foreign trade data as an example, this procedure is explained below:
 
-> Data Source: [Central Bank of Israel](http://www.boi.org.il/en/DataAndStatistics/Pages/MainPage.aspx?Level=3&Sid=12&SubjectType=2)
+> Data Source: [Central Bank of Israel](http://www.boi.org.il/en/DataAndStatistics)
 
 To start, look at the below visualization, SQL query, and result set:
 
