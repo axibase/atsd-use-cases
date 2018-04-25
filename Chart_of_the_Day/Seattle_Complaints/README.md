@@ -1,4 +1,4 @@
-What Do Seattelites Have to Complain About?
+What Do Seattleites Have to Complain About?
 ===
 
 ![](Images/SEA_COM1.png)
