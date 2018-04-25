@@ -1125,7 +1125,7 @@ Here are a few noteworthy points regarding this query:
 | 2015-01-01T00:00:00.000Z  | New York  | NY     | Middle-Atlantic  | 11.0          | 517.0          | 727.0        | 2619.0        | 11118.0       | 39309.0     | 54301.0     | 8550405.0   | 6.4                  |
 ```
 
-We can see that the mortality rate in the city has declined considerably since the 1970's. According to their [report](http://www.nyc.gov/html/records/pdf/govpub/6551as_2010_final_population_&_mortality.pdf) on Population
+We can see that the mortality rate in the city has declined considerably since the 1970's. According to their (since-removed) report on Population
 and Mortality in 2010, the City of New York had the following key findings:
 
 * The 2010 New York City death rate reached a historic low of 6.4 deaths per 1,000 people in the population, a 14.7% decline from 2001.
