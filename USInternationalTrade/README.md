@@ -317,7 +317,7 @@ Looking at our results, a couple of things stand out:
 * All of these countries have a GDP per capita of greater than $22,190.9 (Taiwan).
 
 Looking at these two outputs together, we can see that the U.S. has bad trade balances with both poor and rich countries. For both poor and rich countries, we need to go back to the
-early 1900's (as we found in the first query of this article) for when the U.S. had its best trade balance. While there may not be a direct correlation between a
+early 1900's (as we found in the first query of this article) for when the U.S. had its best trade balance. While there may not be a direct correlation between
 a country losing jobs and having to increase its imports, both rich and poor countries could be equally accused of taking U.S. jobs. In the top ten for trade balance rank, there
 are both five poor (China, Mexico, Vietnam, India, and Malaysia) and rich (Japan, Germany, Ireland, South Korea, and Italy) countries included in this list.
 
