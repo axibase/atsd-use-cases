@@ -53,7 +53,7 @@ timestamp(quarterToMonth(cell(row,1))).
 metric(cell(6,col));
 ```
 
-For step-by-step instructions on data customization with schema based parsing, see this [support tutorial](/Support/Schema-Parser-Mod-Pre-Import).
+For step-by-step instructions on data customization with schema based parsing, see this [support tutorial](../Support/Schema-Parser-Mod-Pre-Import).
 
 #### Financial Obligation Ratio:
 
