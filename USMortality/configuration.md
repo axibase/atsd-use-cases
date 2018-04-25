@@ -51,7 +51,7 @@ Below is a step-by-step guide for setting up local instances of the Axibase Time
    ![Figure 24](Images/Figure24.png)
    
 10. After the parser has been added, we will proceed to uploading our [`us.population.csv`](https://github.com/axibase/atsd-use-cases/blob/master/USMortality/resources/us.population.csv) file. 
-    This file contains population estimates from [census.gov](https://http://www.census.gov/data.html) for all 122 cities for 1960, 1970, 1980, 1990, 2000, 2010,
+    This file contains population estimates from [census.gov](http://www.census.gov/data.html) for all 122 cities for 1960, 1970, 1980, 1990, 2000, 2010,
     and 2015. **Save** a local copy of this file. Click on the **Parsers:CSV** dropdown, and then on the **Upload** button and select our `us.population.csv` file.          
    
    ![Figure 25](Images/Figure25.png)
