@@ -7,7 +7,7 @@
 
 ### Overview
 
-The slowing growth of the American economy is at the forefront of many investors' minds; the United States hasn't seen 3% annual GDP growth for over a decade, which many analysts consider to be a fairly modest goal. Meanwhile, developing countries like China and India have consistently seen twice that amount for more than thirty years now. As [US debt](/../master/Analysis/The_New_Bubble/README.md) remains nearly three times the size of Great Britain's, the country with the second largest public debt in the world, and the Social Security Administration is [preparing to cope](/../master/aging-america/README.md) with the growing number of would-be applicants, another phenomenon is garnering more and more attention: average life expectancy.
+The slowing growth of the American economy is at the forefront of many investors' minds; the United States hasn't seen 3% annual GDP growth for over a decade, which many analysts consider to be a fairly modest goal. Meanwhile, developing countries like China and India have consistently seen twice that amount for more than thirty years now. As [US debt](../../Analysis/The_New_Bubble/README.md) remains nearly three times the size of Great Britain's, the country with the second largest public debt in the world, and the Social Security Administration is [preparing to cope](../../aging-america/README.md) with the growing number of would-be applicants, another phenomenon is garnering more and more attention: average life expectancy.
 
 The number of Social Security recipients is growing all the time and those recipients are living for longer each year. At the same time, the number of live births is still on the decline so the number of people paying in to these already over-taxed systems is decreasing. Social Security and other disability-aid systems, often collectively referred to as "entitlements" need to be addressed by any administration that is truly interested in reversing America's potentially precipitous fall from economic grace. 
 
@@ -194,6 +194,6 @@ Under the assumption that human life expectancy will increase roughly 1.4 years 
 
 The following tools may be used to replicate these results in a local ATSD instance:
 
-* Instructional [guide](/../master/how-to/shared/trends.md) for using **TRENDS**;
+* Instructional [guide](../../how-to/shared/trends.md) for using **TRENDS**;
 * [Death rates and life expectancy data](#data);
-* Use this [guide](/../../blob/master/SocrataPython/README.md) to quickly upload data.gov datasets to a local ATSD instance.
+* Use this [guide](../../SocrataPython/README.md) to quickly upload data.gov datasets to a local ATSD instance.
