@@ -213,7 +213,7 @@ The list of available series:
 | Total Refunds                 | Average refund          |
 | Web Usage                     | Visits to IRS.gov       |
 
-You can also use [Chartlab](https://apps.axibase.com/chartlab/) to create, save, and share custom visualizations based on hosted data.
+You can also use [ChartLab](https://apps.axibase.com/chartlab/) to create, save, and share custom visualizations based on hosted data.
 
 ## Installation Steps
 ---

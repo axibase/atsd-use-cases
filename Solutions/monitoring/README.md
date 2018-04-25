@@ -66,7 +66,7 @@ Wait for the database to initialize.
 $ docker logs -f atsd
 ```
 
-```
+```txt
 [ATSD] ATSD user interface:
 [ATSD] http://172.17.0.2:8088
 [ATSD] https://172.17.0.2:8443
@@ -78,9 +78,9 @@ $ docker logs -f atsd
 
 Launch an [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instance on each Docker host.
 
-Replace **cuser** and **cpassword** variables with collector credentials specified above.
+Replace `cuser` and `cpassword` variables with collector credentials specified above.
 
-Replace **atsd_host** variable with the hostname of the Docker host where ATSD container is running.
+Replace `atsd_host` variable with the hostname of the Docker host where ATSD container is running.
 
 The hostname must be resolvable from the Docker host where collector is installed.
 
@@ -99,7 +99,7 @@ Wait for the collector to initialize.
 $ docker logs -f axibase-collector
 ```
 
-```
+```txt
 ...
 [Collector] Waiting for Collector to bind to port 9443 ...( 6 of 30 )
 [Collector] Collector web interface:

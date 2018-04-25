@@ -121,7 +121,7 @@ GROUP BY 'Date', cpi.value, ui1.value, ui2.value, di.value, fcd.value
 | 2014 | 50          | 29                       | 6                   | 0              | 15                           | 
 | 2015 | 50          | 30                       | 6                   | 0              | 14                           | 
 | 2016 | 51          | 30                       | 6                   | 0              | 13                           | 
-``` 
+```
 
 ![](Images/CBI_10.png)
 

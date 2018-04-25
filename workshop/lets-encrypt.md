@@ -336,7 +336,7 @@ ca-certificates:amd64 (20160104ubuntu0.14.04.1, 20170717~14.04.1)
 ca-certificates-java:amd64 (20130815ubuntu1)
 ```
 
-The list of changes performed on a specific version of the `ca-certificates` package is summarized in the package [changelog](https://launchpad.net/ubuntu/+source/ca-certificates/+changelog):
+The list of changes performed on a specific version of the `ca-certificates` package is summarized in the package [change log](https://launchpad.net/ubuntu/+source/ca-certificates/+changelog):
 
 ```
 ca-certificates (20170717) unstable; urgency=medium
@@ -1384,7 +1384,7 @@ We estimate that most of our enterprise customers will adopt a centralized appro
 
 The certbot workflow in a centralized environment:
 
-- (1) certbot initiates a new certificate challenge for atsd subdomain with Let's Encrypt servers
+- (1) certbot initiates a new certificate challenge for `atsd` subdomain with Let's Encrypt servers
 - (2) Let's Encrypt server responds with a prepared DNS challenge
 - (3) certbot invokes DNS provider API to add a temporary `TXT` record
 - (4) Let's Encrypt servers validate the presence of `TXT` record within a timeout
@@ -1433,7 +1433,7 @@ To automate the certificate upload after certbot renewal, create `deploy.sh` scr
 
 > The certbot can be installed on the same machine as ATSD or on a remote machine in which case its IP address must be included in the ['Allow Access'](#upload-permissions) list.
 
-```
+```sh
 #!/bin/bash
 
 axiuser=cert-renew
@@ -1552,7 +1552,7 @@ Upload private key and certificate
 
 The script reports an error because the `curl` connection was **closed** when the SSL context is restarted. While all current SSL connections are closed, ATSD server itself is not restarted during this process.
 
-```
+```txt
 Error output from deploy.sh:
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
@@ -1642,7 +1642,7 @@ The CT servers also accept events from crawlers when they identify a new certifi
 
 [crt.sh](https://crt.sh) is a front-end to a database of issued certificates, maintained by COMODO CA.
 
-Certificate chain for our old widlcard certificate:
+Certificate chain for our old wildcard certificate:
 
 ```
 *.axibase.com
@@ -1717,7 +1717,7 @@ The database is **slow** for analytical queries (`GROUP BY`). Analytical queries
 
 ![](images/dbvis_crt.png)
 
-Chartlab [crt.sh]()https://apps.axibase.com/chartlab/0ffbd30b/6#fullscreen) Portal.
+ChartLab [crt.sh]()https://apps.axibase.com/chartlab/0ffbd30b/6#fullscreen) Portal.
 
 ![](images/crt-chartlab.png)
 
@@ -1780,7 +1780,7 @@ $ openssl x509 -outform der -in axibase_root_ca.pem -out axibase_root_ca.crt
 
 These browsers inherit root CAs from the operating system trust store.
 
-* Firefox
+* Firefox Browser
 
 Firefox will display 'Unknown Identity' error.
 

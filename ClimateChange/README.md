@@ -164,7 +164,7 @@ Using the following procedure, users can replicate data analysis seen here.
 
 1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
-2. Download the [docker-compose.yml](Resources/docker-compose.yml) file to launch the ATSD container bundle.
+2. Download the [`docker-compose.yml`](Resources/docker-compose.yml) file to launch the ATSD container bundle.
 
 3. Launch containers with the following command:
 

@@ -213,7 +213,7 @@ to the people of Montgomery County:
 
 The average Montgomery County citizen has paid roughly three dollars each year since the bag tax was implemented in 2012, with
 the majority of that total used by the government to offset their own costs for water quality improvement projects.
-Although companies in the county were able to generate some extra income, it is likely that that amount was re-invested 
+Although companies in the county were able to generate some extra income, it is likely that this amount was re-invested 
 to deal with the increase in infrastructure related to the levying of the new tax, new employees, paperwork,
 overtime, or a little bit of all four. Even when analyzing these profits by business, no individual or organization
 made a significant amount from the Bag Tax:

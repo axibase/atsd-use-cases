@@ -40,8 +40,10 @@ function quarterToMonth(yearAndQuarter) {
     }
     return yearAndQuarter.substring(0, 4) + '-' + month;
 }
+```
 
-/* 
+```javascript
+/*
   Select all rows starting from 7th row.
   Select all columns in the row starting with the 2nd column.
 */

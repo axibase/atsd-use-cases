@@ -38,7 +38,7 @@ select('#row=2-*')
 select('#row=2-*')
 ```
 
-This method selects elements from the table for following the above expression.
+This method selects elements from the table based on the above expression.
 In this case, `'#row=2-*'`  means that we want to select all rows starting with row Index 2 (which will ignore the first row).
 
 After execution, we will work with the following table's cells:

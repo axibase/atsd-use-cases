@@ -2,7 +2,7 @@
 
 ![](images/parser.png)
 
-CSV parser is a collection of rules of how to read and translate CSV files into series, properties, and message commands inserted into the database. The parser contains instructions which columns contain entity names, metric names, timestamps, and command tags. 
+CSV parser is a collection of rules of how to read and translate CSV files into series, properties, and message commands inserted into the database. The parser contains instructions which columns contain entity names, metric names, timestamps, and command tags.
 
 Follow this process to upload a CSV Parser configuration to your local ATSD instance.
 

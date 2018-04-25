@@ -786,7 +786,7 @@ FROM cdc.pneumonia_and_influenza_deaths
 GROUP BY tags.region, period(1 MONTH)
 ORDER BY sum(value) desc
   LIMIT 3
-```  
+```
 
 ```ls
 | date      | region              | pneumonia_influenza_deaths |
@@ -1266,7 +1266,7 @@ WHERE tot.entity = 'mr8w-325u'
   AND tot.datetime >= '2010-01-01T00:00:00Z' AND tot.datetime < '2011-01-01T00:00:00Z'
   AND tot.tags.city = 'New York'
 GROUP BY tot.period(1 YEAR)
-```  
+```
 
 ```ls
 | population  | infant_deaths  | 1-24_deaths  | 25-44_deaths  | 45-64_deaths  | 65+_deaths  | all_deaths  | infant_mortality_rate  | 1-24_mortality_rate  | 25-44_mortality_rate  | 45-64_mortality_rate  | 65+_mortality_rate  | total_mortality_rate |
@@ -1354,13 +1354,13 @@ Below are the summarized steps to follow to install local configurations of ATSD
 1. Install Docker. A link for how to install Docker can be found [here](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
 2. Download the [`docker-compose.yml`](https://raw.githubusercontent.com/axibase/atsd-use-cases/master/USMortality/resources/docker-compose.yml) file to launch the ATSD Collector container bundle.
 
-   ```sql
+   ```sh
    curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/USMortality/resources/docker-compose.yml
    ```
 
 3. In Terminal, launch containers with the following command:
 
-   ```sql
+   ```sh
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
    ```
 

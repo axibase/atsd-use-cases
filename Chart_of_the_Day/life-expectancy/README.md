@@ -17,7 +17,7 @@ Track life expectancy growth using calculated series in [Axibase Times Series Da
 
 ### Data
 
-Data is sourced from the Center for Disease Control and Prevention.
+This data is sourced from the Center for Disease Control and Prevention.
 
 * [NCHS - Death rates and life expectancy at birth](https://catalog.data.gov/dataset/age-adjusted-death-rates-and-life-expectancy-at-birth-all-races-both-sexes-united-sta-1900)
 
@@ -125,7 +125,7 @@ The moving average [statistical function](https://axibase.com/products/axibase-t
 ![](images/smooth-life-ex.png)
 [![](images/button-new.png)](https://trends.axibase.com/0533f119#fullscreen)
 
-*Fig 4.* Not only is the general downward slope of the trend line visible but most of the dramatically varied datapoints have been smoothed, moving them closer to the median value. The upper time series chart shows the smoothed data, the lower chart shows the original data for comparison.
+*Fig 4.* Not only is the general downward slope of the trend line visible but most of the dramatically varied data points have been smoothed, moving them closer to the median value. The upper time series chart shows the smoothed data, the lower chart shows the original data for comparison.
 
 To create such a series, add an additional **[series]** expression with a derived value using the Statistical Function syntax:
 
@@ -137,7 +137,7 @@ Where `series` is the `alias` of the series from which the new series will be de
 
 The configuration above may be used a template for additional user-derived series:
 
-```sql
+```ls
 [group]
   [widget]
     type = chart
@@ -147,29 +147,29 @@ The configuration above may be used a template for additional user-derived serie
 
     var seriesDescriptors = getSeries("average_life_expectancy_(years)", "catalog.data.gov")
     
-  	for descriptor in seriesDescriptors
+    for descriptor in seriesDescriptors
     
-  [series]
-    alias = cle-@{descriptor.tags.race}-@{descriptor.tags.sex}
-    display = false
-    [tags]
-    race = @{descriptor.tags.race}
-    sex = @{descriptor.tags.sex} 
+      [series]
+        alias = cle-@{descriptor.tags.race}-@{descriptor.tags.sex}
+        display = false
+        [tags]
+        race = @{descriptor.tags.race}
+        sex = @{descriptor.tags.sex} 
+          
+      [series]
+        display = false
+        value = (value('cle-@{descriptor.tags.race}-@{descriptor.tags.sex}')/previous('cle-@{descriptor.tags.race}-@{descriptor.tags.sex}')-1)*100
+        alias = cleo-@{descriptor.tags.race}-@{descriptor.tags.sex}
+        label-format = @{descriptor.tags.race}\n@{descriptor.tags.sex}
       
-  [series]
-    display = false
-    value = (value('cle-@{descriptor.tags.race}-@{descriptor.tags.sex}')/previous('cle-@{descriptor.tags.race}-@{descriptor.tags.sex}')-1)*100
-    alias = cleo-@{descriptor.tags.race}-@{descriptor.tags.sex}
-    label-format = @{descriptor.tags.race}\n@{descriptor.tags.sex}
-   
-  [series]
-    value = movavg('cleo-@{descriptor.tags.race}-@{descriptor.tags.sex}', 5)
-    label-format = Smoothed: @{descriptor.tags.race}\n@{descriptor.tags.sex}
+      [series]
+        value = movavg('cleo-@{descriptor.tags.race}-@{descriptor.tags.sex}', 5)
+        label-format = Smoothed: @{descriptor.tags.race}\n@{descriptor.tags.sex}
 
-  endfor
+    endfor
 ```
 
-Instead of using a wildcard to access each tag for the given series, this configuration uses the [getSeries](https://github.com/axibase/charts/blob/master/syntax/functions.md) method to load tag combinations from the server.
+Instead of using a wildcard to access each tag for the given series, this configuration uses the [`getSeries`](https://github.com/axibase/charts/blob/master/syntax/functions.md) method to load tag combinations from the server.
 
 Compare the combined life expectancy data for both sexes and racial categories on one chart to see the effects of smoothing:
 
