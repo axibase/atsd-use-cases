@@ -498,8 +498,8 @@ And the same forward-shift of the viewing window:
 
 ![](Images/ILL24.png)
 
-To test the accuracy of each model, [live birth figures](http://www.dph.illinois.gov/data-statistics/vital-statistics/birth-statistics) from years not included in the data set but
-available from the [Illinois Department of Public Health](http://www.dph.illinois.gov/) can be used,
+To test the accuracy of each model, live birth figures from years not included in the data set but
+available from the Illinois Department of Public Health can be used,
 and [WolframAlpha](https://www.wolframalpha.com/) can manage the computations.  
 
 | Year | Live Births (Estimated) Model 1, Model 2 (Hundred Thousand) | Live Births (Actual) (Hundred Thousand) | % Error Model 1, Model 2 |
