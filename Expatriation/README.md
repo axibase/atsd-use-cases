@@ -14,7 +14,7 @@ A covered expatriate must meet any one of the following criteria:
 
 [IRS Form 8854](https://www.irs.gov/pub/irs-pdf/f8854.pdf) is a statement that confirms that up to the date of your expatriation, you have complied with United States Federal Tax Code to the letter of the law. Failing to correctly complete this document means that you are obligated to pay the Expatriation Tax, even if you do not meet either of the previous criteria.
 
-As observed [last year](/../master/Expatriation_Q2), citizens from the United States were leaving the country at previously unseen levels against the backdrop of one of the more contentious recent presidential elections.
+As observed [last year](2017-2.md), citizens from the United States were leaving the country at previously unseen levels against the backdrop of one of the more contentious recent presidential elections.
 
 ![](Images/expat-title-2.png)
 [![](Images/button.png)](https://apps.axibase.com/chartlab/61a855b0/3/#fullscreen)
