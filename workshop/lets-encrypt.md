@@ -2078,13 +2078,13 @@ Apply new nginx configuration without restarting.
 $ service nginx reload
 ```
 
-Access https://www.uber.com in the browser as usual.
+Access `https://www.uber.com` in the browser as usual.
 
 ![](images/uber_chrome_ok.png)
 
 ![](images/firefox_uber_ok.png)
 
-The requests are now logged in nginx. Content is proxied from https://uber.com.
+The requests are now logged in nginx. Content is proxied from `https://uber.com`.
 
 ```txt
 nginx.1    | www.uber.com 172.17.0.1 - - [12/Apr/2018:10:55:27 +0000] "GET / HTTP/2.0" 200 162485 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36"
