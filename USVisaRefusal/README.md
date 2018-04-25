@@ -17,11 +17,11 @@ visual outputs with Chart Lab charts and SQL queries. Additionally, this article
 ---------------------------------------
 
 Let's take a look at a dataset from travel.state.gov, which can be accessed via our archive located in the [Resources](Resources/visas.tar.gz) folder in this repository. Alternatively, you can
-download the Excel file from the [travel.state.gov](https://travel.state.gov/content/visas/en/law-and-policy/statistics/non-immigrant-visas.html) website and save each separate year as its
+download the Excel file from the [travel.state.gov](https://travel.state.gov) website and save each separate year as its
 own individual CSV file. The title of the Excel file on the travel.state.gov website is **Nonimmigrant Visa Issuances by Visa Class and by Nationality FY1997-2015 NIV Detail Table**.    
 
 This dataset contains yearly totals for non-immigrant visas issued from 1997 through 2015. Totals were collected for 84 different visa types. You can find the complete list of all
-the visa types included in this dataset [here](Resources/visalist.txt). You can find descriptions of all visa types on the [U.S. Department of State](https://travel.state.gov/content/visas/en/general/all-visa-categories.html) website.
+the visa types included in this dataset [here](Resources/visalist.txt). You can find descriptions of all visa types on the [U.S. Department of State](https://travel.state.gov) website.
 
 Visa figures were collected for 200 countries, 7 continents, and for unknown national origins. You can find a complete list of all the countries included in this dataset [here](Resources/countrylist.txt).
 
