@@ -200,7 +200,7 @@ change the name of the county to **US**. At this point your portal should look s
 13.	Under configuration (at the very top) enter **height-units = 2** to increase the size of your graph.
 14.	Run!
 
-Your customized outputted graph should look something like this:
+Your customized graph should look something like this:
 
 ![Figure 17](Images/Figure17.png)
 
@@ -223,7 +223,7 @@ an anomaly, but rather quite possibly a trend.
 
 From the data.gov website, let us choose [Hawaii electricity prices](https://catalog.data.gov/dataset/hi-electricity-prices-815fa) as our second dataset.
 
-From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/KWh) for each of the following Hawaiian islands:
+From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/kwh) for each of the following Hawaiian islands:
 
 **Hawaii**, **Kauai**, **Lanai**, **Maui**, **Molokai**, **Oahu**
 
