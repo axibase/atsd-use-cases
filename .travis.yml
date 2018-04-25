@@ -11,7 +11,7 @@ install:
   - cat .spelling .dictionary | sort | uniq | awk '{printf("%s\0", $0)}' | jq -csR 'split("\u0000")' > .yaspeller-dictionary.json
 script: 
   - yaspeller --dictionary .yaspeller-dictionary.json -e ".md" ./
-  - find . -name \*.md -print0 | xargs -0 -n1 -P8 markdown-link-check
+  - find . -name \*.md -print0 | xargs -0 -n1 markdown-link-check
 cache:
   directories:
     - $(npm config get prefix)/lib/node_modules
