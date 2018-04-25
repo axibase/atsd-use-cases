@@ -4,7 +4,7 @@
 
 If you have images hosted on the [Docker Hub](https://hub.docker.com)  registry, you need to monitor build jobs on Docker Hub to make sure that the images are successfully published and your CI pipeline is healthy.
 
-While the Docker Hub provides a capability to trigger [outgoing webhooks](https://docs.docker.com/docker-hub/webhooks/), they're executed only when the build completes **successfully**. If the job fails, the webhooks are not fired and your team remains unaware of broken builds. This limitation is [known](https://forums.docker.com/t/docker-hub-webhook-on-build-failure/1166) however the fix is currently not available.
+While the Docker Hub provides the capability to trigger [outgoing webhooks](https://docs.docker.com/docker-hub/webhooks/), they're only executed when the build completes **successfully**. If the job fails, webhooks are not fired and your team remains unaware of broken builds. This limitation is [known](https://forums.docker.com/t/docker-hub-webhook-on-build-failure/1166) however a fix is currently not available.
 
 ![](images/docker-hub-notifications.png)
 
@@ -28,11 +28,11 @@ Dockerfile compressed for minimum layers is often difficult to troubleshoot:
 
 ## Build History
 
-The build history, containing success and failure statuses, is accessible under the Build Details tab.
+The build history, containing success and failure statuses, is accessible under the **Build Details** tab.
 
 ![](images/job-fail.png)
 
-The history is also available via the Docker Hub v2 API.
+Build history is also available via the **Docker Hub v2 API**.
 
 https://hub.docker.com/v2/repositories/axibase/cadvisor/buildhistory/?page=1&page_size=5
 
@@ -137,7 +137,7 @@ Modify `ATSD_CONFIG` variable in the command below to set Endpoint URL for a web
   --env ATSD_CONFIG='notify.xml:url=https://jenkins_srv:8443' \
 ```
 
-Execute the command to launch [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+Execute the command below to launch [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 \
@@ -153,7 +153,7 @@ Go to Docker Hub and open Build Settings for one of the repositories. Trigger a 
 
 ![](images/docker-hub-trigger.png)
 
-The webhook should arrive in less than 5 minutes after the job completes.
+The webhook should arrive less than 5 minutes after the job completes.
 
 You can adjust the frequency in the Collector at `https://localhost:8443`. Open `dockerhub-poller` job and set Cron Expression to `0 * * * * ?` (every minute).
 
@@ -161,7 +161,7 @@ You can adjust the frequency in the Collector at `https://localhost:8443`. Open 
 
 ### Axibase Collector
 
-Login into Collector at `https://localhost:9443` with `axibase`/`axibase` credentials.
+Log in to Collector at `https://localhost:9443` with `axibase`/`axibase` credentials.
 
 Locate `dockerhub-poller`. Check that its status is 'Completed'.
 
@@ -169,7 +169,7 @@ Locate `dockerhub-poller`. Check that its status is 'Completed'.
 
 ### Axibase Time Series Database
 
-Login into ATSD at `https://localhost:8443` with `axibase`/`axibase` credentials.
+Log in to ATSD at `https://localhost:8443` with `axibase`/`axibase` credentials.
 
 Open **Alerts > Web Notifications** page. Open `dockerhub-webhook-sender` notification. Make sure it's enabled. Click Test to verify connection.
 
