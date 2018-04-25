@@ -18,7 +18,7 @@ For this particular exercise, we'll import the data on the [New York State Solar
 curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/SocrataPython/docker-compose.yml
 ```
 
-The [`docker-compose.yml`](docker-compose.yml) file configures Axibase Time Series Database (ATSD) and Axibase Collector services along with the required dependencies. The Collector's role is to automatically download and parse a specific data.gov [JSON file](https://data.ny.gov/api/views/3pzs-2zsk) while ATSD serves as the SQL-enabled database.
+The [`docker-compose.yml`](docker-compose.yml) file configures Axibase Time Series Database (ATSD) and Axibase Collector services along with the required dependencies. The Collector's role is to automatically download and parse a specific data.gov JSON file while ATSD serves as the SQL-enabled database.
 
 ### Launch containers
 
@@ -140,4 +140,4 @@ print(tabulate(df, headers='keys', tablefmt='psql'))
 
 This tutorial provides an example on how to load one particular data.gov dataset into ATSD while minimizing time spent on designing table schema and implementing parsers.
 
-In a more advanced (consolidation) scenario, the Collector can be scheduled to store and even incrementally update a wide range of datasets from data.gov into the same ATSD instance. This can be accomplished by creating additional [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md) jobs in the Collector web interface accessible at https://localhost:9443.
+In a more advanced (consolidation) scenario, the Collector can be scheduled to store and even incrementally update a wide range of datasets from data.gov into the same ATSD instance. This can be accomplished by creating additional [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md) jobs in the Collector web interface accessible at `https://localhost:9443`.
