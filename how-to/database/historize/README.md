@@ -237,7 +237,7 @@ The series collected by Collector can be located within ATSD in various ways: se
 
 Open the **Metrics** tab and search metrics by name or prefix.
 
-![](images/metrics-search.png)
+![](images/metrics_search.png)
 
 To view individual series, click on the **Series** icon and then on the chart link.
 
