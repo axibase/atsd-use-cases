@@ -34,7 +34,7 @@ or contributing cause of death by age group. Deaths in this dataset are split in
 
 You can find a complete list of the cities (with their corresponding state) in our [city-list](https://github.com/axibase/atsd-use-cases/blob/master/USMortality/city-list.md) file.
 
-Additionally, these cities are be grouped by their [United States Census Bureau regions](http://www.census.gov/econ/census/help/geography/regions_and_divisions.html).
+Additionally, these cities are be grouped by United States Census Bureau regions.
 You can find a table of these regions in our [region-table](https://github.com/axibase/atsd-use-cases/blob/master/USMortality/region-table.md) file.
 
 While you can manually analyze this information in a spreadsheet program, it is much more convenient to interact with the data once it is loaded into a database.  
