@@ -68,14 +68,14 @@ Sometimes data tell their own story and ChartLab visualizations can grab reader 
 
 Detailed use cases that feature in-depth data exploration and complex functionality used to solve the world's modern data problems.
 
-1. [The World Progress Scorecard: In-Depth Visualization with SQL and User-Defined Functions](Chart_of_the_Day/world-progress-scorecard/README.md)
+1. [The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions](Chart_of_the_Day/world-progress-explorer/README.md)
 1. [United States Federal Reserve: The Economic Policy Uncertainty Index](Analysis/Economic_Policy_Uncertainty/README.md)
 1. [The New Bubble: Fed Rates Stay Low While Debt Value Remains High](Analysis/The_New_Bubble/README.md)
 1. [Realtime Analysis of the Oroville Dam Disaster](OrovilleDam/README.md)
 1. [The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment](Analysis/FedFund_FedInterest/README.md)
 1. [United States Treasuries as International Assets: China's Role in the Federal Fund Rate](Analysis/Treasuries_as_Assets/README.md)
 1. [CPI vs. PPI: Producers are Spending Less While Consumers are Paying More](Analysis/CPI_PPI/README.md)
-1. [Bitcoin After the GHash.IO Era](Analysis/Bitcoin_After_GHash/README.md)
+1. [Bitcoin After the GHash.IO Era](Analysis/BitCoin_After_GHash/README.md)
 1. [Visa Travel to the United States with Charts, SQL, and Redash](USVisa/README.md)
 1. [Analyzing UK Aviation Statistics using CAA Datasets](UKAviation/README.md)
 
@@ -126,7 +126,7 @@ Older ATSD functionality and features applied to real-world public data to solve
 1. [U.S. State Department: Getting Paid $400 Million While Rejecting Visitors](USVisaRefusal/README.md)
 1. [From data.gov dataset to Python DataFrame in 10 minutes](SocrataPython/README.md)
 1. [Analyzing America's International Trade history](USInternationalTrade/README.md)
-1. [Pain at the Pump - a Closer Look at Hawaii's High Fuel Prices](HawaiiGasPrices/hawaii_gas_prices.md)
+1. [Pain at the Pump - a Closer Look at Hawaii's High Fuel Prices](HawaiiGasPrices/README.md)
 1. [Data Visualization with Chart Lab](ChartLabIntro/README.md)
 1. [Country Living - Analyzing and Combining Iowa Employment and Consumer Price Index Datasets](SocrataIowaCompensation/README.md)
 1. [Knocking on Heaven's Door - Computing U.S. Mortality Statistics](USMortality/README.md)
