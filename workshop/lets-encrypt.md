@@ -1997,7 +1997,7 @@ The certificate is now validated.
 
 ### Any Site Validated by Custom CA
 
-Example: https://www.uber.com
+Example: `https://www.uber.com`
 
 #### Change DNS
 
@@ -2057,7 +2057,7 @@ $ docker exec -it uber bash
 $ apt update && apt install nano
 ```
 
-Modify nginx server configuration to fetch (proxy) content from https://uber.com for all requests.
+Modify nginx server configuration to fetch (proxy) content from `https://uber.com` for all requests.
 
 ```sh
 $ nano /etc/nginx/conf.d/default.conf
