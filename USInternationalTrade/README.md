@@ -242,8 +242,8 @@ to assume that the afflicted country's trade balance would change as a result. F
 U.S. will need to import from Asia. In this instance, `2016_GDP_per_capita` was calculated from the following two replacement tables:
 [`world-population.txt`](https://github.com/axibase/atsd-use-cases/blob/master/USInternationalTrade/resources/world-population.txt) and [`world-gdp.txt`](https://github.com/axibase/atsd-use-cases/blob/master/USInternationalTrade/resources/world-gdp.txt). Results are sorted by the country's `2016_trade_balance_rank`. The
 more negative a country's trade balance, the higher its ranking. You can refer to the [`us-trade-balance-rank-2016.txt`](https://github.com/axibase/atsd-use-cases/blob/master/USInternationalTrade/resources/us-trade-balance-rank-2016.txt) file to see these rankings.
-In order to separate rich and poor countries, we calculated an average world GDP. We divided the world population ([7,432,663,275](https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations) ))
-by the world's GDP ([$75,212,696 billion](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal) )) to get a world GDP of $10,273. Any
+In order to separate rich and poor countries, we calculated an average world GDP. We divided the world population
+by the world's GDP to get a world GDP of $10,273. Any
 countries having a GDP less than this were considered poor countries, while countries with a greater GDP were considered rich.
 
 Here is a query showing the year with the highest trade balance (least negative or most positive, in millions USD) going back to 1985
