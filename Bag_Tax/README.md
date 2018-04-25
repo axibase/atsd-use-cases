@@ -90,7 +90,7 @@ GROUP BY 'Year'
 **Table 1.3** shows that after the initial drop in plastic bag usage, the average person continued to use the same number of bags
 until 2016 when another drop was detected. For clarification, per capita bag use divides the number of people living in Montgomery
 County by the number of reported bags used per year to arrive at an estimated value of the number of plastic bags used by
-the average person in a given year. Though the population of Montogomery County, Maryland is growing the number of bags used
+the average person in a given year. Though the population of Montgomery County, Maryland is growing the number of bags used
 is decreasing.
 
 **Figure 1.2**
