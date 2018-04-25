@@ -57,7 +57,7 @@ available testing sites together.
 
 The map below shows the Top 10 Overall Best WQI site locations noted in blue, and the Bottom 10 Overall Worst WQI site locations
 noted in red. The Station ID for each site is contained in the metadata, and can be summoned with the following SQL
-query in the [Axibase SQL Console](https://github.com/axibase/atsd/tree/master/sql#overview) and then cross-referenced
+query in the SQL Console and then cross-referenced
 to the Department of Ecology's own map (linked [here](https://fortress.wa.gov/ecy/eap/riverwq/regions/state_ContTemp.asp)):
 
 
