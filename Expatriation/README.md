@@ -1,6 +1,6 @@
 # Tracking Expatriation with ChartLab, SQL, and Web Crawler in ATSD
 
-![](Images/expat-title.png)
+![](Images/expat-title.png) 
 
 ### Introduction
 
