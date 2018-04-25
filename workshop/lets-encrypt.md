@@ -1662,8 +1662,6 @@ Certificate details including DNS names are now publicly available even if the c
 
 * [axibase.com certificates](https://crt.sh/?Identity=%.axibase.com)
 
-* [ibm.com certificates](https://crt.sh/?Identity=%.ibm.com)
-
 ![](images/ct_hostname_disclosure.png)
 
 ### CRT Database Access
