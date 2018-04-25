@@ -77,7 +77,7 @@ To display this teapot, we need to:
 
 ## Hello World
 
-A traditional coloured triangle example. 
+A traditional triangle example. 
 
 [View on apps.axibase.com](https://apps.axibase.com/webgl/triangle)
 
@@ -193,75 +193,10 @@ gl.drawArrays(gl.TRIANGLES, 0, 3);
 ```
 
 ### Full code
-_triangle.js_
-```js
-let canvas = document.querySelector("canvas");
-let gl = canvas.getContext("webgl");
 
-gl.clearColor(0.99, 0.84, 0.20, 1.0); // Orange
-gl.clear(gl.COLOR_BUFFER_BIT);
+<iframe src="https://stackblitz.com/edit/axibase-workshop-webgl-triangle?embed=1&file=index.js"></iframe>
 
 
-let vertexShaderSrc = `
-attribute vec2 position;
-attribute vec3 color;
-varying vec3 vcolor;
-void main()
-{
-  gl_Position = vec4(position,0.0,1.0);
-  vcolor = color;
-}`;
-
-let fragmentShaderSrc = `
-precision mediump float;
-varying vec3 vcolor;
-void main() {
-  gl_FragColor = vec4(vcolor, 1.0);  
-}`;
-
-
-let vertexShader = gl.createShader(gl.VERTEX_SHADER);
-gl.shaderSource(vertexShader, vertexShaderSrc);
-gl.compileShader(vertexShader)
-
-let fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
-gl.shaderSource(fragmentShader, fragmentShaderSrc);
-gl.compileShader(fragmentShader);
-
-let prog = gl.createProgram();
-gl.attachShader(prog, vertexShader);
-gl.attachShader(prog, fragmentShader);
-gl.linkProgram(prog);
-gl.deleteShader(vertexShader);
-gl.deleteShader(fragmentShader);
-
-let vertices = new Float32Array([
-//  Position          Color
-//  x     y        r    g    b
-  -0.5, -0.5,     1.0, 0.0, 0.0,
-   0.5, -0.5,     0.0, 1.0, 0.0,
-   0  ,  0.5,     0.0, 0.0, 1.0,
-]);
-
-const f32Size = vertices.BYTES_PER_ELEMENT;
-
-let vbo = gl.createBuffer();
-let posLoc = gl.getAttribLocation(prog, "position");
-let colorLoc = gl.getAttribLocation(prog, "color");
-gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
-gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
-gl.enableVertexAttribArray(posLoc);
-gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 5 * f32Size, 0);
-gl.enableVertexAttribArray(colorLoc);
-gl.vertexAttribPointer(colorLoc, 3, gl.FLOAT, false, 5 * f32Size, 2 * f32Size);
-
-
-gl.useProgram(prog);
-gl.drawArrays(gl.TRIANGLES, 0, 3);
-
-gl.deleteBuffer(vbo);
-gl.deleteProgram(prog)
-```
 
 ## THREE.js
 
@@ -309,7 +244,6 @@ draw();
 ```
 
 ### 3d charts with THREE.js
-
 
 [View on apps.axibase.com](https://apps.axibase.com/webgl/threegl_chart)
 
