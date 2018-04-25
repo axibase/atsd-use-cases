@@ -110,7 +110,7 @@ Older ATSD functionality and features applied to real-world public data to solve
 1. [Public Utilities and Private Industry in Austin](Chart_of_the_Day/Austin_Power/README.md)
 1. [What Do Seattlelites Have to Complain About?](Chart_of_the_Day/Seattle_Complaints/README.md)
 1. [Food Insecurity in America (2009-2013)](Chart_of_the_Day/Food_Insecurity/README.md)
-1. [Citywide LED Streetlight Savings (Los Angeles, CA)](Chart_of_the_Day/LA_Lights/README.md)
+1. [City-wide LED Streetlight Savings (Los Angeles, CA)](Chart_of_the_Day/LA_Lights/README.md)
 1. [New York City's Most Crowded Industries](Chart_of_the_Day/NY_Jobs/README.md)
 1. [San Francisco Air Traffic Noise Complaints by the Numbers](Chart_of_the_Day/SFO_Complaints/README.md)
 1. [Island Living is Recession Proof](Chart_of_the_Day/Hawaii_GDP/README.md)
