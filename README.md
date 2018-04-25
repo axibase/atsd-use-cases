@@ -1,4 +1,4 @@
-# Overview
+# Repository Overview
 
 Axibase Time Series Database is a Hadoop-based time series database with SQL, rule-engine, and visualization.
 
