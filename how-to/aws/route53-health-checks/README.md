@@ -25,7 +25,7 @@ Health checks are executed from different parts of the world so that the outage 
 * ap-southeast-2
 * ap-northeast-1
 
-![](images/route53-regions.png)
+![](images/route53-region.png)
 
 ### Access Security
 
