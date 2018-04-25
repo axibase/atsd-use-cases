@@ -15,7 +15,7 @@ The data is published (somewhat) regularly in the U.S. Federal Register and each
 
 The IRS legal rationale of disclosing the names under the auspices of HIPPA which is supposed to protect patient privacy seems rather strange to an uninitiated observer but it's of out of scope for this article.
 
-After removing the duplicate names which are most likely associated with different SSNs in the backend systems and by calculating a rolling yearly total to smooth out the variance, the trend becomes more apparent. More people are leaving the U.S. than in previous years.
+After removing the duplicate names which are most likely associated with different SSNs in the back-end systems and by calculating a rolling yearly total to smooth out the variance, the trend becomes more apparent. More people are leaving the U.S. than in previous years.
 
 ```sql
 SELECT date_format(time+365*24*60*60000, 'yyyy') AS "Year",
