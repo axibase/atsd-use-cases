@@ -35,7 +35,7 @@ Pipeline (simplified):
 > https://kaidu1982.github.io/2013-jco-webgl/reveal.js-master/img/webgl_rendering_pipeline.png
 
 
-Simplicity causes a reduced number of primitives, which can be rendered: WebGL can draw lines, points and triangles (polygones), but it can't draw cubes, spheres, circles etc.). To display other figures, they must be represented as a polygonal model.
+Simplicity causes a reduced number of primitives, which can be rendered: WebGL can draw lines, points and triangles (polygons), but it can't draw cubes, spheres, circles etc.). To display other figures, they must be represented as a polygonal model.
 
 ![Utah teapot](images/utah_teapot.jpg)
 > http://caig.cs.nctu.edu.tw/course/CG2007/images/ex1_wireframe.jpg
@@ -258,6 +258,9 @@ gl.vertexAttribPointer(colorLoc, 3, gl.FLOAT, false, 5 * f32Size, 2 * f32Size);
 
 gl.useProgram(prog);
 gl.drawArrays(gl.TRIANGLES, 0, 3);
+
+gl.deleteBuffer(vbo);
+gl.deleteProgram(prog)
 ```
 
 ## THREE.js
@@ -286,7 +289,7 @@ scene.add(cube);
 // Add lights
 let hemiLight = new THREE.HemisphereLight(0xdedede, 0x101010, 1);
 scene.add(hemiLight);
-let ambLight = new THREE.AmbientLight(0x333);
+let ambLight = new THREE.AmbientLight(0x303030);
 scene.add(ambLight);
 
 // Add camera
@@ -504,7 +507,7 @@ document.addEventListener("keyup", (e) => {
 
 Provides interactive globe for data visualization. Supports time-based data rendering, different surface map systems (Bing, OpenStreetMap), data based 2d and 3d entity rendering.
 
-### Geo-spatial data with Cesium
+### Geospatial data with Cesium
 
 [View on apps.axibase.com](https://apps.axibase.com/webgl/cesium)
 

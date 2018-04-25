@@ -38,6 +38,14 @@
     "timestamp",
     "hardcode",
     "BitCoin",
-    "Hadoop"
+    "Hadoop",
+    "Silverlight",
+    "iframes?",
+    "Bing",
+    "OpenStreetMap",
+    "shaders?",
+    "SimpleHTTPServer",
+    "OpenGL",
+    "WebGL"
   ]
 }
