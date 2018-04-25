@@ -12,9 +12,9 @@ Outstanding Students Loan Debt Continues to Exceed One Trillion Dollars
 **Visualization Tool**: [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 The United States is carrying around about $20 trillion USD in outstanding debt right now, $14 trillion of which is being
-traded on various financial markets across the globe. The remaining amount is mostly held in Social Security assets ([1](../../Analysis/The_New_Bubble/README.md)) 
+traded on various financial markets across the globe. The remaining amount is mostly held in Social Security assets ([1](/../master/Analysis/The_New_Bubble/README.md)) 
 or owed to various United States government agencies and so is appropriately called intergovernmental debt. China owns about a trillion 
-dollars of the public debt ([2](../../Analysis/Treasuries_As_Assets/README.md)), which many consider to be substantial as it 
+dollars of the public debt ([2](/../master/Analysis/Treasuries_as_Assets/README.md)), which many consider to be substantial as it 
 represents around 5% of the total, and an even larger portion of that debt which is owned by the public. However, as the chart above
 shows, student loan debt has also grown at an alarming rate since the 1990s and makes up a comparable total amount. The difference
 is the "debt owned to China" is held in the form of United States Treasury Bills, whereas the student loan debt is scattered
