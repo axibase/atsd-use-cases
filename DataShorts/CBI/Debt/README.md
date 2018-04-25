@@ -2,7 +2,7 @@ Bank of Israel Debt, 1997-2016
 ==
 ChartLab and SQL Console: [Axibase](https://axibase.com)
 
-> Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics/Pages/MainPage.aspx?Level=2&Sid=19&SubjectType=2)
+> Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics/Pages/Default.aspx)
 
 ##### Debt Balances (NIS Billion, current value)
 
