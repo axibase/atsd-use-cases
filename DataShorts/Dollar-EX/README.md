@@ -77,7 +77,7 @@ GROUP BY PERIOD(1 YEAR)
 
 #### USD v. Swiss Franc
 
-During the worst of the [European Debt Crisis](/DataShorts/EU_Debt/README.md) which saw [European Union per capita debt](/DataShorts/EU_percap_Debt/README.md)
+During the worst of the [European Debt Crisis](../EU_Debt/README.md) which saw [European Union per capita debt](../EU_Debt_percap/README.md)
 grow at unprecedented rates across the continent, EU investors sought refuge in the stability of the Swiss Franc, backed by the
 world-renowned Swiss banking system. Further, the Swiss National Bank removed the peg to the Euro unexpectedly in 2015 causing a huge
 surge in 2015, clearly visible in the visualization below as a sudden change from a favorable exchange rate for dollar holders
