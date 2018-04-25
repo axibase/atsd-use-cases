@@ -1279,7 +1279,7 @@ There are two noteworthy points regarding this query:
 1) All metrics with death numbers are joined (grouped by year) using the `SUM` aggregation.<br />
 2) `SUM` aggregation is divided by the size of the corresponding age group, retrieved with a lookup function, and multiplied by 1000 since mortality is measured in deaths per 1000 people.<br />
 
-As the final query in this article, let us take a look at mortality rates by age group in Youngstown. We determined population figures with help from [http://places.mooseroots.com](http://places.mooseroots.com/l/332116/Youngstown-OH)
+As the final query in this article, let us take a look at mortality rates by age group in Youngstown. We determined population figures with help from `http://places.mooseroots.com`
 as part of the 2010 U.S. Census. The `youngstown-2010-population` file can be found [here](https://github.com/axibase/atsd-use-cases/blob/master/USMortality/resources/youngstown-2010-population).
 
 ```sql
@@ -1340,7 +1340,7 @@ United States as a whole.
 | Alzheimer's Disease                  | 30.8                         | [29.8](https://www.cdc.gov/nchs/fastats/alzheimers.htm) |
 
 We can see that Youngstown has higher incident rates for each disease. Additionally, according to the 2010 U.S. Census, the percentage of residents age 65 and older in Youngstown versus the United
-States was [16.44%](http://places.mooseroots.com/l/332116/Youngstown-OH) versus [12.75%](http://places.mooseroots.com/l/310125/United-States). These factors, along with a struggling economy and
+States was 16.44% versus 12.75%. These factors, along with a struggling economy and
 high poverty and crime rates, may have led to Youngstown having such high mortality rates.
 
 This may be a simplified conclusion to a complicated issue. However, we were able to get to this point using ATSD. We loaded a dataset from data.gov, pulled in population figures from census.gov,
