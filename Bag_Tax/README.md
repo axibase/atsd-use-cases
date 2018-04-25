@@ -259,7 +259,7 @@ LIMIT 20
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/95365f3d/7/#fullscreen)
 
-Even enormous national retailers like [Giant-Landover](https://giantfood.com/), [Whole Foods](http://www.wholefoodsmarket.com/safeway), and [Safeway](http://www.safeway.com/) 
+Even enormous national retailers like [Giant-Landover](https://giantfood.com/), [Whole Foods](http://www.wholefoodsmarket.com/), and [Safeway](http://www.safeway.com/) 
 never recorded a significant amount of revenue from bag sales, though Giant-Landover held the top spot for every recorded year, with a
 five year total revenue of $670,000 (Don't worry too much though, that total accounts for about 0.02% of their recorded [2016 profits](http://www.hoovers.com/company-information/cs/revenue-financial.giant_food_stores_llc.d4515a340e8871d2.html)).
 
