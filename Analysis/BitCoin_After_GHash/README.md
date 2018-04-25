@@ -24,8 +24,7 @@ _Source_: [CoinDesk](https://www.coindesk.com/price/)
 
 In July 2014, a Bitcoin mining pool known as [GHash.IO](http://ghash.io/) breached an unspoken Bitcoin convention by achieving 51% 
 of the total hash power for the first time in Bitcoin's short history, which established what became the first Bitcoin trust. 
-In the months leading to GHash.IO gaining control of the 51% majority of the total hash rate the Bitcoin market was rattled and huge 
-sell-offs occurred, causing the value of Bitcoin to plummet at the beginning of the year when speculation began to occur about 
+In the months leading to GHash.IO gaining control of the 51% majority of the total hash rate the Bitcoin market was rattled and owners began to dump what they had, causing the value of Bitcoin to plummet at the beginning of the year when speculation began to occur about 
 when GHash.IO would reach the dreaded 51% mark. Though the number of transactions remained consistent, the value of those 
 transactions also decreased as shown below.
 
