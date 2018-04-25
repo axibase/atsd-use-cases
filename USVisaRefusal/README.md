@@ -60,7 +60,7 @@ You can explore this portal by clicking on the below button:
 
 [![](Images/button.png)](https://apps.axibase.com/chartlab/8c9bb9cc/5/#fullscreen)
 
-The below figure shows the countries with the highest and lowest refusal rates in 2015. Cuba topped the list with the highest refusal rate at **82%**, while Lictenstein, Monaco, and
+The below figure shows the countries with the highest and lowest refusal rates in 2015. Cuba topped the list with the highest refusal rate at **82%**, while Liechtenstein, Monaco, and
 San Marino all had refusal rates of **0%**.
 
 ![Figure3](Images/Figure3.png)
