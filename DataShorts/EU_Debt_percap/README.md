@@ -684,8 +684,6 @@ ORDER BY debt.tags.geo
 
 ![](Images/eudpc-012.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/12/#fullscreen)
-
 **Query 1.12**
 
 ```sql
