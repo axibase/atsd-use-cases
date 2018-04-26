@@ -110,7 +110,7 @@ No technical writing guide would be complete without a technical explanation of 
 
 **The Third Person:** When writing technical documents, it's usually best to avoid personal pronouns such as I, you, and we unless it is explicitly required. Often this means restructuring sentences to use different registers or tenses.
 
-* "We have been been developing the rule engine since 2004."
+* "We have been developing the rule engine since 2004."
 
 * "The rule engine has been in development since 2004."
 
