@@ -8,8 +8,6 @@ install:
   - wget https://raw.githubusercontent.com/axibase/atsd/master/.spelling
   # generate dictionary in JSON format
   - cat .spelling .dictionary | awk '{$1=$1};1' | sort -u | jq -csR 'split("\n")' > .yaspeller-dictionary.json
-  - echo $TRAVIS_BRANCH
-  - git diff --name-only HEAD...$TRAVIS_BRANCH
 script: 
   - yaspeller --max-requests 10 --dictionary .yaspeller-dictionary.json -e ".md" ./
   - bash get_changed_md_files.sh | xargs -d '\n' -n1 markdown-link-check
