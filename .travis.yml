@@ -5,14 +5,15 @@ node_js:
 install:
   - npm install --global --production yaspeller markdown-link-check
   # download dictionary from atsd repository for merging
-  - wget https://raw.githubusercontent.com/axibase/atsd/master/.spelling
-  - wget https://raw.githubusercontent.com/axibase/atsd/master/list_modified_md_files.sh
-  # generate dictionary in JSON format
-  - cat .spelling .dictionary | awk '{$1=$1};1' | sort -u | jq -csR 'split("\n")' > .yaspeller-dictionary.json
-  - printf "modified files:\n`bash list_modified_md_files.sh`"
-script: 
-  - bash list_modified_md_files.sh | xargs -d '\n' -n1 yaspeller --dictionary .yaspeller-dictionary.json {}
-  - bash list_modified_md_files.sh | xargs -d '\n' -n1 markdown-link-check
+  - wget https://raw.githubusercontent.com/axibase/atsd/master/.spelling -O .spelling-atsd
+  # download functions from atsd repository
+  - wget https://raw.githubusercontent.com/axibase/atsd/master/.travis-functions.sh && source .travis-functions.sh
+  - cat .spelling-atsd .dictionary > .spelling
+  - generate_yaspeller_dictionary .spelling
+script:
+  - print_modified_markdown_files
+  - spellcheck --single
+  - linkcheck
 cache:
   directories:
     - $(npm config get prefix)/lib/node_modules
