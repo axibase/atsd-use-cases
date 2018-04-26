@@ -3,11 +3,9 @@ United States Dollar International Exchange Rate (2012-2017)
 
 Data Source: [Federal Reserve Economic Data (FRED)](https://fred.stlouisfed.org/categories/94)
 
-Visualizations: [ChartLab](https://apps.axibase.com)
+Visualizations: [ChartLab](https://apps.axibase.com/chartlab)
 
-Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) from [Axibase](https://axibase.com)
-
-Download the Community Edition of [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) [here](https://github.com/axibase/atsd/blob/master/installation/README.md#installation)
+Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 ## Index
 
@@ -15,7 +13,7 @@ Data is aggregated daily in visualizations, and annually in SQL queries. Favorab
 while less favorable exchange rates are shown in red, based on the overall 5-year average exchange rate. Each section is accompanied
 by a brief analysis to give the data context. Using computed [value settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/)
 thresholds have been calculated using the underlying data, the upper 25th percentile of a given exchange rate is considered
-favorable while the lower 25th percentile is considered less than favorable. The data is coded with an ID which is provided in the index as well. Open any [ChartLab](https://apps.axibase.com) display below to navigate through time, or change the metric to reflect the desired exchange rate.
+favorable while the lower 25th percentile is considered less than favorable. The data is coded with an ID which is provided in the index as well. Open any [ChartLab](https://apps.axibase.com/chartlab) display below to navigate through time, or change the metric to reflect the desired exchange rate.
 
 [Europe](#europe)
 

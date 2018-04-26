@@ -5,7 +5,7 @@ Analyzing Econometric Datasets with Calculated Series
 
 ### Summary
 
-Using [calculated values](../../Support/Add-Calculated-Value/README.md) in the [ChartLab](https://apps.axibase.com) interface
+Using [calculated values](../../Support/Add-Calculated-Value/README.md) in the [ChartLab](https://apps.axibase.com/chartlab) interface
 is useful for creating multiple outputs from one set of underlying data. [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 supports a range of in-built functions which allow end-users to manipulate a dataset to derive the desired meaning from it.
 

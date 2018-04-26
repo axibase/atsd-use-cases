@@ -3,7 +3,7 @@ New York City Income by Adjusted Gross Income (AGI) Range (2014)
 
 > Data Source: [The City of New York](https://catalog.data.gov/dataset/personal-income-by-agi-range-3b6e6)
 
-> Visualizations: [ChartLab](https://apps.axibase.com) from [Axibase](https://axibase.com)
+> Visualizations: [ChartLab](https://apps.axibase.com/chartlab) from [Axibase](https://axibase.com)
 
 > Structured Query Language (SQL): [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) from [Axibase](https://axibase.com)
 

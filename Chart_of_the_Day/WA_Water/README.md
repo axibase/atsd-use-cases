@@ -45,7 +45,7 @@ conversions to qualitative words have also been provided below:
 
 >More information about the Water Quality Index, its methodology, or metrics, can be found [here](https://www.water-research.net/)
 
-Use the [ChartLab](https://apps.axibase.com) visualization below, and the dropdown menus at the top of the screen to choose the desired metric, and compare
+Use the [ChartLab](https://apps.axibase.com/chartlab) visualization below, and the dropdown menus at the top of the screen to choose the desired metric, and compare
 the Top 10, Top 20, or Top 30, Bottom 10, Bottom 20, or Bottom 30 testing sites, or use the Wildcard option to view all 
 available testing sites together.
 
@@ -57,7 +57,7 @@ available testing sites together.
 
 The map below shows the Top 10 Overall Best WQI site locations noted in blue, and the Bottom 10 Overall Worst WQI site locations
 noted in red. The Station ID for each site is contained in the metadata, and can be summoned with the following SQL
-query in the [Axibase SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) and then cross-referenced
+query in the [Axibase TSD SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) and then cross-referenced
 to the Department of Ecology's own map (linked [here](https://fortress.wa.gov/ecy/eap/riverwq/regions/state_ContTemp.asp)):
 
 

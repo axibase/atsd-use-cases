@@ -5,7 +5,7 @@ Source Document: [FRED Research](https://research.stlouisfed.org/publications/ec
 
 Source Authors: YiLi Chien and Paul Morris
 
-Visualization: [ChartLab](https://apps.axibase.com) from [Axibase](https://axibase.com)
+Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 **Treasury Yields and the Federal Funds Rate (1998-2017)**
 
@@ -30,7 +30,7 @@ likely that the federal funds rate will rise further. According to the latest pr
 rate hike is expected this year, which would lift the federal funds rate by another 25 basis points."
 
 This visualization tracks a number of metrics and displays them together to highlight their relationship to one another.
-The metrics shown in the [ChartLab](https://apps.axibase.com) visualization above are explained below using analysis from
+The metrics shown in the [ChartLab](https://apps.axibase.com/chartlab) visualization above are explained below using analysis from
 the original source document:
 
 **Federal Fund Rate**: "The federal funds rate... is the overnight borrowing rate among commercial banks... [and] varied significantly 

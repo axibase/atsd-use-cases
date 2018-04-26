@@ -332,7 +332,7 @@ several decades has been the roughly one percent increase in non-essential credi
 
 According to [data](https://fred.stlouisfed.org/series/MEHOINUSA646N) from the [Economic Research Department](https://research.stlouisfed.org/)
 of the [Saint Louis Branch of the Federal Reserve](https://www.stlouisfed.org/), the 2015 US median household income was $56,516
-per year in 2015 USD. This number can be applied to the above table and visualized in [ChartLab](https://apps.axibase.com)
+per year in 2015 USD. This number can be applied to the above table and visualized in [ChartLab](https://apps.axibase.com/chartlab)
 to create more comprehensive data. 
 
 **Figure 3.6**

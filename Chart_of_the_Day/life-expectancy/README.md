@@ -13,7 +13,7 @@ The number of Social Security recipients is growing all the time and those recip
 
 ### Objectives
 
-Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with statistical functions optimized for time-series processing. Use data visualizations to illustrate growth trends.
+Track life expectancy growth using calculated series in [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/) with statistical functions optimized for time series processing. Use data visualizations to illustrate growth trends.
 
 ### Data
 

@@ -3,9 +3,9 @@ Connecticut Prison Populations
 
 [Source Dataset](https://github.com/axibase/open-data-catalog/blob/master/datasets/f8ar-pgu4.md)
 
-[SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) from [Axibase](https://axibase.com)
+[SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md)
 
-[ChartLab](https://apps.axibase.com/) from [Axibase](https://axibase.com)
+[ChartLab](https://apps.axibase.com/chartlab) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 ### Total Connecticut Prison Population by Quarter (2009 - 2017)
 

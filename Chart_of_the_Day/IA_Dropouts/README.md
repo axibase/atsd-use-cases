@@ -3,7 +3,7 @@ Who is Dropping Out in the State with the Fewest Dropouts Per Year?
 
 > Data Source: [The State of Iowa](https://www.iowa.gov/)
 
-> Visualizations: [ChartLab](https://apps.axibase.com) from [Axibase](https://axibase.com)
+> Visualizations: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 **Figure 1.1**: Iowa State Total Dropouts
 

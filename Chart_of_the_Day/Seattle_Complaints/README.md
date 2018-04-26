@@ -11,7 +11,7 @@ areas, has a number of methods for community members to reach out and draw the g
 problem and as of the last year, they've begun to publish the number of complaints they receive every month about the seven
 most reported problems.
 
-The chart, made in [ChartLab](https://apps.axibase.com) from [Axibase](https://axibase.com), at the top of the screen shows the total number of complaints received from the beginning of the dataset last July all the way up
+The chart, made in [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), at the top of the screen shows the total number of complaints received from the beginning of the dataset last July all the way up
 until a few months ago, in June, and the chart below details the complaints by month. Use the drop-down menu at the top of
 the visualization to change the subject of the complaint and see for yourself the changing rates of Seattle's main complaints.
 

@@ -3,7 +3,7 @@
 
 Learning about your favorite city's local health has never been easier. With help from 
 [data](https://github.com/axibase/open-data-catalog/blob/master/datasets/dxpw-cm5u.md) released by [The Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) plus 
-visualization and querying tools from [Axibase](https://axibase.com), spotting your city's place in the rankings
+visualization and querying tools in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), spotting your city's place in the rankings
 isn't just for your health, but vital to informing your company's next health-related venture
 or enhancing your staff's already existing knowledge of such valuable public data.
 

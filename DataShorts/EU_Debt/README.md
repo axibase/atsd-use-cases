@@ -3,9 +3,9 @@ European Union Debt by Country (2005-2016)
 
 > **Data Source**: [Eurostat](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=teina225&plugin=1)
 
-> **Visualization**: [ChartLab](https://apps.axibase.com) from [Axibase](https://axibase.com)
+> **Visualization**: [ChartLab](https://apps.axibase.com/chartlab)
 
-> **Structured Query Language**: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in the [Axibase Timeseries Database](https://axibase.com)
+> **Structured Query Language**: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 ## Debt Total
 
@@ -41,7 +41,7 @@ the European Union debt as a percent of GDP, used as a baseline for reference.
 
 ## Data
 
-Use the following index to navigate between countries, the numerical data associated with the above [ChartLab](https://apps.axibase.com)
+Use the following index to navigate between countries, the numerical data associated with the above [ChartLab](https://apps.axibase.com/chartlab)
 visualizations and their corresponding SQL queries are shown below:
 
 **European Union Countries Index**:

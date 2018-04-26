@@ -5,7 +5,7 @@
 
 * **Overnight Fund Data**: This charts uses a [`dual axis`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2 ) setting to compare two series measured in different units, the Overnight Fund Rate and the Overnight Fund Volume. As expected, while interest rates were under 0.4%, overnight funding activity was the highest and as the Fed has steadily raised rates, overnight fund volume has steadily decreased.
 
-* **Industrial Production Index**: The Industrial Production Index is a measure of real output from United States manufacturing, mining, and electric, and gas utilities. Because this timeseries data tracks a longer span of time that the target period, `starttime` and `endtime` [settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) are used to display only the target period.
+* **Industrial Production Index**: The Industrial Production Index is a measure of real output from United States manufacturing, mining, and electric, and gas utilities. Because this time series data tracks a longer span of time that the target period, `starttime` and `endtime` [settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) are used to display only the target period.
 
 * **Dow Jones Industrial Average**: One of the best indicators of economic strength is stock market performance. Using a `statistic` expression and [`weighted average (wtavg)`](../../Support/Moving-Avg) setting, volatile trade volume values may be smoothed to show a rolling average for a desired time period. Here, the data is grouped by month and shown alongside the closing value of the stock market, which remains unmodified.
 

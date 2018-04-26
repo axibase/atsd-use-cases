@@ -12,7 +12,7 @@ We [analyzed](../IRSTaxFilings/README.md) IRS filing statistics after Tax Day 20
 
 ### Objectives 
 
-* Visualize public data using [ChartLab](https://apps.axibase.com);
+* Visualize public data using [ChartLab](https://apps.axibase.com/chartlab);
 * Query data using **SQL console**;
 * Compare and contrast previous-year filing statistics with current-year data via chart configurations and queries.
 
@@ -151,7 +151,7 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 
 ### SQL
 
-Although ATSD is a non-relational database it offers a SQL-like syntax with time-series extensions such as interpolation functions. It also provides a built-in **SQL Console** for ad-hoc data exploration.
+Although ATSD is a non-relational database it offers a SQL-like syntax with time series extensions such as interpolation functions. It also provides a built-in **SQL Console** for ad-hoc data exploration.
 
 The following queries will be shown here:
 

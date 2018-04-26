@@ -1,7 +1,7 @@
 Where Do International Students in the United States Come From?
 ===
 
-> Visualization: [ChartLab](https://apps.axibase.com) from **[Axibase](https://axibase.com)**
+> Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 > Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md)
 

@@ -1,7 +1,7 @@
 Distribution of the Public Asset Portfolio, 1998-2017
 ===
 
-ChartLab and SQL Console: [Axibase](https://axibase.com)
+[ChartLab](https://apps.axibase.com/chartlab) and SQL Console in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 > Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics)
 

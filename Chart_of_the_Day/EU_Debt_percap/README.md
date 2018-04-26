@@ -3,7 +3,7 @@ European Union Debt by Country Per Capita (2005-2016)
 
 Data Source: [EuroStat](http://ec.europa.eu/eurostat)
 
-Visualization Tool: [ChartLab](https://apps.axibase.com)
+Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
 
 **Figure 1.1**
 
@@ -14,7 +14,7 @@ Visualization Tool: [ChartLab](https://apps.axibase.com)
 > Use the dropdown menus at the top of the visualization to navigate through time by selecting the desired start and end
 years for the observation period.
 
-Recently, [European Union Debt Data](https://axibase.github.io/atsd-use-cases/DataShorts/EU_Debt/) sorted by country was published 
+Recently, [European Union Debt Data](../../DataShorts/EU_Debt/README.md) sorted by country was published 
 in the [Axibase Data Library](https://axibase.com/blog/data-library/). After its release, there were a number of requests to explore
 that data considering population numbers to arrive at a modified debt per capita visualization, representing how much of a
 government's gross debt is represented by individual citizens of that particular country. 

@@ -170,6 +170,6 @@ Using the following procedure, users can replicate data analysis seen here.
 
 ![ContainerCommand](Images/containercommand.png)
 
-4. Open Axibase Timeseries Database and begin working with your data.
+4. Open Axibase Time Series Database user interface and begin analyzing your data.
 
 [Contact Axibase](https://axibase.com/feedback/) with any questions here.

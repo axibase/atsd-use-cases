@@ -44,7 +44,7 @@ Is there a way to predict performance on the ACSM AFI, and by extension, overall
 health using this data?
 
 Publicly-available data allows for anyone with access to the correct analytics tools to pursue answers
-to their own questions and convey that information to any audience. The [Axibase Timeseries Database](https://axibase.com/)
+to their own questions and convey that information to any audience. The [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 is developed to work within the [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md) 
 framework used by government agencies to publish data, so it was selected as the main tool for this project
 and calculations were done using the computational knowledge engine [WolframAlpha](https://www.wolframalpha.com/).
@@ -384,7 +384,7 @@ range of areas over a given period of time.
 
 The data observed here is objectively quite large, and effective management and 
 presentation of such data is crucial to drawing meaningful conclusions from it, 
-which is why the [Axibase Time Series Database](https://axibase.com) is ideal for comprehensive and comprehensible solutions
+which is why the [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is ideal for comprehensive and comprehensible solutions
 to a wide range of data science problems, a handful of which were demonstrated here.
 
 > Contact [Axibase](https://axibase.com/feedback/) with any support issues.

@@ -52,7 +52,7 @@ Almost half of the United States gross public debt is held by foreign government
 The largest bearers of United States public debt are shown below. Worth noting is the fact that of the six trillion dollars
 of foreign-held debt, more than two-thirds of that amount is held by the top ten bearers shown in **Table 1**.
 
-> Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) from [Axibase](https://axibase.com)
+> Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 **Query 1**
 

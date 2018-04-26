@@ -12,7 +12,7 @@ than 100 miles of tracks.
 #### Methodology
 
 Using [ridership data](https://github.com/axibase/open-data-catalog/blob/master/datasets/t2rn-p8d7.md) released by the City
-of Chicago rider estimates can be made for the future. Analytics tools from [Axibase](https://axibase.com)
+of Chicago rider estimates can be made for the future. Analytics tools in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 can model current ridership trends to highlight patterns in transit system usage and Future Value models can be used to
 estimate future rider totals. The population of Chicago is falling, and it's the only major United 
 States metropolitan to experience such changes, but unfortunately, that is unlikely to mean an extra seat opening up on 

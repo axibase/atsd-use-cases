@@ -7,7 +7,7 @@
 
 **Source Data**: [FRED Economic Data](https://fred.stlouisfed.org/categories/33201)
 
-**Visualization Tool**: [Axibase ChartLab](https://axibase.com/)
+**Visualization Tool**: [Axibase ChartLab](https://apps.axibase.com/chartlab)
 
 **Structured Query Language (SQL)**: [Axibase SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview)
 

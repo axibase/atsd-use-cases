@@ -5,9 +5,9 @@ European Union Debt by Country Per Capita (2005-2016)
 
 > Population Data Source: [EuroStat](http://ec.europa.eu/eurostat/web/population-demography-migration-projections/population-data)
 
-> Visualization Tool: [ChartLab](https://apps.axibase.com)
+> Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
 
-> Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) from [Axibase](https://axibase.com)
+> Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 This entry is an expansion of an earlier entry titled [European Union Debt by Country](../EU_Debt/README.md).
 

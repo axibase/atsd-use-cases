@@ -8,7 +8,7 @@ desired to return to a time when America was producing more than it was taking i
 the United States represented **40%** of the world's GDP in **1960**. By 2015, that number had dropped to only **24%**. According to the [Bureau of Labor Statistics (BLS)](https://www.bls.gov/opub/mlr/2012/01/art4full.pdf), by 2020 the U.S. is predicted to have **5.7
 million** less manufacturing jobs than it had in 2000. Additionally, the percentage of Americans employed in manufacturing dropped from **19%** in 1980 to **8%** in 2016. In this article we will analyze a dataset from [census.gov](https://www.census.gov) looking at
 [America's international trade balance](https://www.census.gov/foreign-trade/balance/country.xlsx) from 1985 through the present day. This research article illustrates how
-publicly available data from census.gov can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](https://axibase.com/products/axibase-time-series-database/)
+publicly available data from census.gov can be easily loaded into the non-relational [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 for interactive analysis with SQL and graphical representation of open data published by government and multilateral organizations. This article provides both sample SQL queries and charts,
 as well as instructions on how to install your own ATSD instance and populate it with the underlying data.
 
@@ -21,7 +21,7 @@ This dataset contains import and export statistics collected monthly from 1985 t
 world regions (such as Europe and Asia), trade unions (such as the European Union or NAFTA), as well as various other organizations (such as [OPEC](https://en.wikipedia.org/wiki/OPEC)).
 
 While Excel can provide quick answers to simple questions, when it comes to complex analysis it is much more convenient to interact with the data once it is loaded into a database. The
-[Axibase Time Series Database (ATSD)](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to look into this dataset: interactive graphs from [Chart Lab](../ChartLabIntro/README.md) and tabular outputs from analytical SQL queries with support for [partitioning](https://github.com/axibase/atsd/blob/master/sql/README.md#partitioning).
+[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to look into this dataset: interactive graphs from [Chart Lab](../ChartLabIntro/README.md) and tabular outputs from analytical SQL queries with support for [partitioning](https://github.com/axibase/atsd/blob/master/sql/README.md#partitioning).
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
 

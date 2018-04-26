@@ -23,8 +23,8 @@ on the other line?
 Using public [call center data](https://catalog.data.gov/dataset/call-center-metrics-for-the-health-service-system) from
 San Francisco's [Health Service System](http://www.myhss.org/), which is an insurance provider to city employees, elected
 officials, and their families, call abandonment rates can be compared to call response times to establish baselines for call
-center performance and customer patience thresholds. These data will be visualized in [ChartLab](https://apps.axibase.com)
-and dissected with the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) from [Axibase](https://axibase.com)
+center performance and customer patience thresholds. These data will be visualized in [ChartLab](https://apps.axibase.com/chartlab)
+and dissected with the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 and concrete wait times that are likely to result in an abandoned call will be calculated.
 
 ### Data

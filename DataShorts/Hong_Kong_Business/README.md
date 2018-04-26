@@ -3,9 +3,9 @@ Foreign Businesses Operating in Hong Kong (1996-2016)
 
 Data Source: [data.gov.hk](https://data.gov.hk/en-data/dataset/hk-censtatd-tablechart-scorp)
 
-Visualization: [ChartLab](https://apps.axibase.com)
+Visualization: [ChartLab](https://apps.axibase.com/chartlab)
 
-Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) from [Axibase](https://axibase.com)
+Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 The data records three types of foreign companies operating in Hong Kong: local companies with foreign parent companies,
 foreign companies with locals branches in Hong Kong, and foreign companies with regional branches in Hong Kong. The differences 

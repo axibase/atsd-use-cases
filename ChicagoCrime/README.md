@@ -12,7 +12,7 @@ than New York City and Los Angeles **combined**. In 2016, there were 753 murders
 in 2015. From 2004 to 2015, the peak number of murders in the city was under 500. From 2011 to 2015, the city recorded less than 3,000 shooting victims per year. So what is the reason for this alarming
 increase in violence in Chicago? Was there an increase in all kinds of crime, or was the rise in murders and shootings an exception? In this article we will analyze a dataset from [data.gov](https://www.data.gov/)
 looking at [Chicago crime statistics](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4) from 2001 to the present time. This research article illustrates how publicly available data
-from data.gov can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](https://axibase.com/products/axibase-time-series-database/) for interactive analysis and graphical
+from data.gov can be easily loaded into the non-relational [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) for interactive analysis and graphical
 representation of raw data collected by government and private organizations. The article provides both sample queries and charts, as well as instructions on how to install your own ATSD instance
 and populate it with the raw data.  
 
@@ -29,7 +29,7 @@ where the crime occurred, and by the specific crime type. For example, for the c
 of cocaine, manufacturing and delivering heroin, soliciting narcotics etc). Each crime type has its own number of locations and specific violations that it may be sorted for.
 
 Given the size of the dataset, you cannot load it in Excel. It is much more convenient to interact with the data once it is loaded into a database. The
-[Axibase Time Series Database (ATSD)](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to look into this dataset: interactive graphs from [Chart Lab](../ChartLabIntro/README.md) and tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).
+[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to look into this dataset: interactive graphs from [Chart Lab](../ChartLabIntro/README.md) and tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 

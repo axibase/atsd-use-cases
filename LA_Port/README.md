@@ -82,7 +82,7 @@ The numbers associated with **Figure 2.1** are shown below:
 | 2012 | 185.0                 | 
 ```
 
-> This dataset is queried using the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) from [Axibase](https://axibase.com).
+> This dataset is queried using the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/).
 
 To give these numbers perspective, when the study began in 2005, the Port of Los Angeles was responsible for 10% of
 all diesel particulate matter in the Los Angeles Basin: an area composed of part or all of the counties of Los Angeles, 
