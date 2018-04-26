@@ -8,6 +8,7 @@ The **Use Cases** repository contains [Research Articles](#research-articles) de
 
 ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. See older articles in the [Archive](#archive).
 
+1. [Technical Writing for Software Developers](workshop/technical-writing.md)
 1. [WebGL: Hello, World and Integration Examples](workshop/WebGL.md)
 1. [Tracking Expatriation with ChartLab, SQL, and Web Crawler in ATSD](Expatriation/README.md)
 1. [Let's Encrypt SSL Certificates for Java Developers](workshop/lets-encrypt.md)
@@ -17,7 +18,6 @@ ATSD functionality and features applied to real-world public data to solve commo
 1. [Slow Growth is Becoming a Human Trend Too](Chart_of_the_Day/life-expectancy/README.md)
 1. [Aging America: Modeling Birth Trends in the United States](aging-america/README.md)
 1. [The Slow Death of the American Auto Industry](Automobiles/README.md)
-1. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
 
 ## How-To
 
@@ -101,6 +101,7 @@ Visualizations and SQL queries that are indexed by topic to form the Axibase Dat
 
 Older ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. Some features may have been updated or function differently, see our latest features and functionality used in more recent [Research Articles](#research-articles) or the [Chart of the Day](#chart-of-the-day).
 
+1. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
 1. [Debt Profile of the Average American](FED_FORDSR/README.md)
 1. [U.S. Expatriation Statistics (Quarter 2 Update)](Expatriation/2017-2.md)
 1. [Calls May Be Recorded or Monitored for Training Purposes: Using Call Abandonment Rates to Establish Thresholds](SF_Phone/README.md)
