@@ -1,6 +1,6 @@
 # Technical Writing for Software Developers
 
-![](images/axibase-logo.png.png)
+![](images/axibase-logo.png.png) 
 
 ## Introduction
 
