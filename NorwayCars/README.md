@@ -126,7 +126,7 @@ look at the statistics by following the below steps to install your own [Axibase
       axibase/atsd:latest
    ```
 
-2. Login into ATSD and configure the pre-defined administrator account.
+2. Log in to ATSD and configure the pre-defined administrator account.
 3. Import the [`csv-parser-nor-configs.xml`](Resources/csv-parser-nor-configs.xml) parser definitions on **Configuration > Parsers: CSV** page.
 4. Export files from Statbank in Matrix TSV format (see instructions at the end of this article) or upload prepared tsv files as outlined in steps 5 and 6 below.
 5. Upload the [`total.tsv`](Resources/total.tsv) file using the `nor-transport` parser.

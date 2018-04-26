@@ -22,7 +22,7 @@ Below is a step-by-step guide for setting up local instances of the Axibase Time
 
    <img src="Images/Figure11.png" width="500" >
 
-5. After completing Step 4, you will be redirected to the page shown below. Login to ATSD with the username and password you just created.
+5. After completing Step 4, you will be redirected to the page shown below. Log in to ATSD with the username and password you just created.
 
     <img src="Images/Figure12.png" width="500" >
    

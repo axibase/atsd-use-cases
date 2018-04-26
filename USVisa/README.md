@@ -356,7 +356,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
       axibase/atsd:latest
    ```
 
-4. Login into ATSD and configure the pre-defined administrator account.
+4. Log in to ATSD and configure the pre-defined administrator account.
 5. Import the [`travel_visas.xml`](../USVisaRefusal/Resources/travel_visas.xml) file into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
 6. Import the [`visas.tar.gz`](../USVisaRefusal/Resources/visas.tar.gz) file into ATSD using the above-mentioned parser.
 7. Navigate to the Docker machine IP at port 5000, where you should see a Redash login screen.

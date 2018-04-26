@@ -347,7 +347,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
 2. [Install the ATSD database](https://github.com/axibase/atsd/blob/master/installation/docker.md#option-2-configure-collector-account-manually) on in your local Docker configuration.
 3. Save the [Excel file](https://www.census.gov/foreign-trade/balance/country.xlsx) in CSV format.
-4. Login to ATSD by navigating to `https://docker_host:8443/`.
+4. Log in to ATSD by navigating to `https://docker_host:8443/`.
 5. Import the `us-trade-ie-csv-parser.xml` file into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
 6. Upload the Excel file saved in `.csv` format into ATSD. Refer to step 10 from this same walkthrough.
 7. Import the `us-trade-balance-2016`, `us-trade-balance-rank-2016`, `world-gdp`, and `world-population` replacement tables into ATSD. Refer to steps 7 and 8 from this same walkthrough.

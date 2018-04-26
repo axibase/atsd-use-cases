@@ -161,7 +161,7 @@ docker logs -f atsd-sandbox
 
 ## Verification
 
-Let's now verify that the webhook delivery is working as expected.
+Let's verify that the webhook delivery is working as expected.
 
 Go to Docker Hub and open Build Settings for one of the projects (images). Trigger a build for one of the branches known to fail.
 

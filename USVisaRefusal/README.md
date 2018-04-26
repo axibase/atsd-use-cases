@@ -514,7 +514,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
       axibase/atsd:latest
    ```
 
-2. Login into ATSD and configure the pre-defined administrator account.
+2. Log in to ATSD and configure the pre-defined administrator account.
 3. Import the [`travel_visas.xml`](Resources/travel_visas.xml) and [`visa-refusal-rates-csv-parser.xml`](Resources/visa-refusal-rates-csv-parser.xml) files into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
 4. Import the [`visas.tar.gz`](Resources/visas.tar.gz) file into ATSD using the `travel_visas.xml` parser. For a more detailed description, refer to step 10 from the walkthrough mentioned in the previous step.
 5. Import the [`visa-refusal.csv`](Resources/visa-refusal.csv) using the `visa-refusal-rates-csv-parser.xml` parser.
