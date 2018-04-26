@@ -4,7 +4,7 @@
 
 * [Key Parameters](#key-parameters)
 * [Tips and Tricks](#the-global-audience-and-international-writer)
-* [Coroporate Blogging](#corporate-blogging)
+* [Corporate Blogging](#corporate-blogging)
 * [Additional Resources](#resources)
 
 ## Introduction
@@ -12,7 +12,7 @@
 Technical writing is one of the four primary expressions of written language, these forms are known as different things to different people but the general concept is usually the same across languages and nations:
 
 * **Creative / Narrative Writing:** Fictional or non-fictional writing meant to serve an entertaining or informative purpose by telling a story or recounting an event.
-* **Pursuasive Writing:** Fictional or non-fictional writing meant to convince the reader of an opinion, or at least consider a new viewpoint.
+* **Persuasive Writing:** Fictional or non-fictional writing meant to convince the reader of an opinion, or at least consider a new viewpoint.
 * **Academic / Scientific Writing:** Non-fictional writing meant to define and defend a thesis / hypothesis for the intellectual community.
 * **Technical / Expository Writing:** Non-fictional writing meant to explain a process or product, the advantages therein, and its usage for an unfamiliar audience.
 
@@ -24,11 +24,11 @@ The easiest way to assess and analyze meaningful technical writing is to use qua
 
 Just remember your ABCs: 
 
-* **Accuracy:** Although seemingly obvious, an astoundning amount of technical writing contains factural errors, careless mistakes, or otherwise thoughtless omissions that discourage users from advancing their understanding of a product or pursuing its implementation in their working environment. Unused software is no software at all.
+* **Accuracy:** Although seemingly obvious, an astounding amount of technical writing contains factural errors, careless mistakes, or otherwise thoughtless omissions that discourage users from advancing their understanding of a product or pursuing its implementation in their working environment. Unused software is no software at all.
 
 * **Brevity:** When attempting to use a new feature or sample a new product, no audience has unlimited time. Make sure that technical writing is produced with the understanding that readers have places to be and people to see. Make a point before losing their attention.
 
-* **Clarity:** The average reader will spend roughly one percent of the amount of time working with the final product that you spend developing it, probably less. The minutae and subtle features of the product or process may largely escape them. Acknowledge this fact and adjust technical pieces to respect it. 
+* **Clarity:** The average reader will spend roughly one percent of the amount of time working with the final product that you spend developing it, probably less. The subtle features of the product or process may largely escape them. Acknowledge this fact and adjust technical pieces to respect it. 
 
 > [GitHub Issue: Terrible Documentation](https://github.com/search?q=terrible+documentation&type=Issues)
 
@@ -36,7 +36,7 @@ Just remember your ABCs:
 
 ## Schools of Thought: Classicism versus Modernism
 
-Like software development itself, technical writing has evolved throughout its existence. Although the descerning reader may point to many subcategories within the two most general: classical and modern, osctensibly each new iteration of technical writing practice is either a continuation of what was, or an attempt at something new.
+Like software development itself, technical writing has evolved throughout its existence. Although the descerning reader may point to many subcategories within the two most general: classical and modern, ostensibly each new iteration of technical writing practice is either a continuation of what was, or an attempt at something new.
 
 Classical technical writing tends to use more formal language, and constructions that are rarely spoken:
 
@@ -76,9 +76,9 @@ The presentation of writing is nearly as important as the writing itself. A grea
 
 ## The Global Audience and International Writer
 
-Write technical documentation with the world in mind. Whether this means simplifying the launguage in a technical document or using industry-standard terminology, be sure that the writing may be read by anyone with access to a translator, or a basic understanding of the language of the document. In the field of software development and computer science, the common and widely-understood lexicon should be used to properly name and describe operations and features. See the [Resources](#resources) section of this document for helpful links regarding composition.
+Write technical documentation with the world in mind. Whether this means simplifying the language in a technical document or using industry-standard terminology, be sure that the writing may be read by anyone with access to a translator, or a basic understanding of the language of the document. In the field of software development and computer science, the common and widely-understood lexicon should be used to properly name and describe operations and features. See the [Resources](#resources) section of this document for helpful links regarding composition.
 
-**Literary Language:** Avoid the desire to use words based on length or complexity. Words should be choosen for their ability to properly convey the required information.
+**Literary Language:** Avoid the desire to use words based on length or complexity. Words should be chosen for their ability to properly convey the required information.
 
 * "Leveraging programmatic solutions to common problems in the legacy API should be considered before seeking a new solution entirely."
 
@@ -96,7 +96,7 @@ Write technical documentation with the world in mind. Whether this means simplif
 
 * "A device operating on a secure network is able to easily connect with other devices using the network as well. Network traffic among devices may be monitored and throttled using IPv6 protocol."
 
-* "A device oprating on a secture network is able to easily connect with other equipment using the structure as well. System traffic among apparatus may be monitored and throttled using IPv6 protocol."
+* "A device operating on a secure network is able to easily connect with other equipment using the structure as well. System traffic among apparatus may be monitored and throttled using IPv6 protocol."
 
 ## Technical Points
 
@@ -120,7 +120,7 @@ No technical writing guide would be complete without a technical explanation of 
 
 * "Let us move on to the next topic, it will have several components, they are not difficult to explain."
 
-**The Passive Voice:** It is generally recommended to avoid the passive voice in technical writing other than using it to soften the accusitory tone of a particular expression. Some situations require the passive voice, in which case, its use is perfectly acceptable for example to include the mention of an activty or process in which the reader has no part.
+**The Passive Voice:** It is generally recommended to avoid the passive voice in technical writing other than using it to soften the accusatory tone of a particular expression. Some situations require the passive voice, in which case, its use is perfectly acceptable for example to include the mention of an activity or process in which the reader has no part.
 
 *Accusation*
 
@@ -134,7 +134,7 @@ No technical writing guide would be complete without a technical explanation of 
 
 * " *A user uses* SQL Console to query data stored in ATSD using a convenient syntax."
 
-**Articles:** More often than in traditional English writing, some articles may be omitted in places they would otherwise register as required. This is especially true of short, imperitive sentences. Both examples below are correct, but because ATSD is a well-known product, and the sentence is written in the imperative, omitting the article sounds more professional.
+**Articles:** More often than in traditional English writing, some articles may be omitted in places they would otherwise register as required. This is especially true of short, imperative sentences. Both examples below are correct, but because ATSD is a well-known product, and the sentence is written in the imperative, omitting the article sounds more professional.
 
 * "Launch *the* Axibase Time Series Database using the following command:
 
@@ -192,17 +192,17 @@ Other corporations separate the two publications, as with [Apple Newsroom](https
 
 ### Targeted Outcomes
 
-Hosting a corporate blog has the ability to waste a lot of time, or accomplish a lot of things. When writng analytic documents such as use cases or solution briefs, remember your purpose:
+Hosting a corporate blog has the ability to waste a lot of time, or accomplish a lot of things. When writing analytic documents such as use cases or solution briefs, remember your purpose:
 
-* **Make Your Time Count**: Writing can create huge outlays when performed improperly and in a disorganized manner. Make sure your writing is efficient, effective, and engaging. Compose pieces which generate interest, inspire conversation, and create oppurtunity.
+* **Make Your Time Count**: Writing can create huge outlays when performed improperly and in a disorganized manner. Make sure your writing is efficient, effective, and engaging. Compose pieces which generate interest, inspire conversation, and create opportunity.
 
 * **Represent Your Product:** An article that touches on a hot-button issue or topical theme is only as good a blog post as it is able to relate to the underlying software. Inspiring thought in a reader's cognitive space is no use if it doesn't demonstrate the way the technology facilitated that discovery. 
 
-* **Engage Your Audience:** At the other extreme, a densely-worded write-up on the paticularities of the latest version of some tool doesn't accomplish the task of engagement. Readers should come to your space to see a tool or service in action. Link to the technical writing if the oppurtunity presents itself, but don't force it on unwitting civilians. 
+* **Engage Your Audience:** At the other extreme, a densely-worded write-up on the paticularities of the latest version of some tool doesn't accomplish the task of engagement. Readers should come to your space to see a tool or service in action. Link to the technical writing if the opportunity presents itself, but don't force it on unwitting civilians. 
 
 ## Resources
 
-**Purdue OWL:** The [Online Writing Lab](https://owl.english.purdue.edu/owl/section/4/16/) from Purdue Uninversity is a valuable resource for writers of all kinds. It features specific templates for every variety of technical writing, so that any piece is able to meet post-university level publication standards.
+**Purdue OWL:** The [Online Writing Lab](https://owl.english.purdue.edu/owl/section/4/16/) from Purdue University is a valuable resource for writers of all kinds. It features specific templates for every variety of technical writing, so that any piece is able to meet post-university level publication standards.
 
 **Duke University ESL / EFL Resources:** The Thompson Writing Program publishes a [public catalog](https://twp.duke.edu/twp-writing-studio/resources-students/esl) of technical writing resources for non-native speakers of English.
 
