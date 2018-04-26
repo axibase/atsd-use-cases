@@ -2,12 +2,17 @@
 
 ![](images/axibase-logo.png.png) 
 
+* [Key Parameters](#key-parameters)
+* [Tips and Tricks](#the-global-audience-and-international-writer)
+* [Coroporate Blogging](#corporate-blogging)
+* [Additional Resources](#resources)
+
 ## Introduction
 
 Technical writing is one of the four primary expressions of written language, these forms are known as different things to different people but the general concept is usually the same across languages and nations:
 
 * **Creative / Narrative Writing:** Fictional or non-fictional writing meant to serve an entertaining or informative purpose by telling a story or recounting an event.
-* **Pursuasive Writing:** Fictional or non-fictional writing meant to convince the reader of an opinion, or at least consider a viewpoint.
+* **Pursuasive Writing:** Fictional or non-fictional writing meant to convince the reader of an opinion, or at least consider a new viewpoint.
 * **Academic / Scientific Writing:** Non-fictional writing meant to define and defend a thesis / hypothesis for the intellectual community.
 * **Technical / Expository Writing:** Non-fictional writing meant to explain a process or product, the advantages therein, and its usage for an unfamiliar audience.
 
@@ -19,7 +24,7 @@ The easiest way to assess and analyze meaningful technical writing is to use qua
 
 Just remember your ABCs: 
 
-* **Accuracy:** Although seemingly obvious, an astoundning amount of technical writing contains factural errors, careless mistakes, or otherwise thoughtless omittions that discourage users from advancing their understanding of a product or pursuing its implementation in their working environment. Unused software is no software at all.
+* **Accuracy:** Although seemingly obvious, an astoundning amount of technical writing contains factural errors, careless mistakes, or otherwise thoughtless omissions that discourage users from advancing their understanding of a product or pursuing its implementation in their working environment. Unused software is no software at all.
 
 * **Brevity:** When attempting to use a new feature or sample a new product, no audience has unlimited time. Make sure that technical writing is produced with the understanding that readers have places to be and people to see. Make a point before losing their attention.
 
@@ -129,7 +134,7 @@ No technical writing guide would be complete without a technical explanation of 
 
 * " *A user uses* SQL Console to query data stored in ATSD using a convenient syntax."
 
-**Articles:** More often than traditional English writing, some articles may be omitted in places they would otherwise register as required. This is especially true of short, imperitive sentences. Both examples below are correct, but because ATSD is a well-known product, and the sentence is written in the imperative, omitting the article sounds more professional.
+**Articles:** More often than in traditional English writing, some articles may be omitted in places they would otherwise register as required. This is especially true of short, imperitive sentences. Both examples below are correct, but because ATSD is a well-known product, and the sentence is written in the imperative, omitting the article sounds more professional.
 
 * "Launch *the* Axibase Time Series Database using the following command:
 
@@ -145,6 +150,11 @@ sudo apt-get update && sudo apt-get install atsd
 
 > It's worth noting here, that "the following [anything]" must always include the definite article.
 
+**The Dangling Modifier:** A modifier is a word that changes another word, typically a present or past participle, or an adjective. Make sure its clear what these types of words are referencing. 
+
+* "Executable at runtime, the database contains many Docker Jobs by default."
+* "The many Docker Jobs contained in the database are executable at runtime by default."
+
 **The Oxford Comma:** Either use it, or don't use it. You can't do both.
 
 * "Technical writing is about accuracy, brevity, and clarity."
@@ -154,7 +164,7 @@ sudo apt-get update && sudo apt-get install atsd
 
 Many large corporations operate a blog or journal of their activities. Sometimes this is one publication, as is the case with the [IBM Analytics Community](https://www.ibm.com/communities/analytics/cognos-analytics/blog/) or [Redmine Blog](http://www.redmineblog.com/), who document software updates and changes in the same place as use cases and research articles. 
 
-*Strenghs of the Unified Resource*
+*Strengths of the Unified Resource*
 
 * Ease-of-Access
 
@@ -162,7 +172,7 @@ Many large corporations operate a blog or journal of their activities. Sometimes
 
 * Integrated Advertising
 
-Other corporations seperate the two publications, as with the [Apple Newsroom](https://www.apple.com/newsroom/) and [Apple Support](https://support.apple.com/en-us/HT208067)
+Other corporations separate the two publications, as with [Apple Newsroom](https://www.apple.com/newsroom/) and [Apple Support](https://support.apple.com/en-us/HT208067)
 
 *Strengths of Separate Resources*
 
@@ -184,9 +194,9 @@ Other corporations seperate the two publications, as with the [Apple Newsroom](h
 
 Hosting a corporate blog has the ability to waste a lot of time, or accomplish a lot of things. When writng analytic documents such as use cases or solution briefs, remember your purpose:
 
-* **Make Your Time Count**: Writing can create huge outlays when performed improperly and disorganized. Make sure your writing is efficient, effective, and engaging. Compose pieces which generate interest, inspire conversation, and create oppurtunity.
+* **Make Your Time Count**: Writing can create huge outlays when performed improperly and in a disorganized manner. Make sure your writing is efficient, effective, and engaging. Compose pieces which generate interest, inspire conversation, and create oppurtunity.
 
-* **Represent Your Product:** An article that touches on a hot-button issue or topical theme is only as good a blog post as it is able to relate to the underlying software. Inspiring thught in a reader's cognitive space is no use if it doesn't demonstrate the way the technology facilitated that discovery. 
+* **Represent Your Product:** An article that touches on a hot-button issue or topical theme is only as good a blog post as it is able to relate to the underlying software. Inspiring thought in a reader's cognitive space is no use if it doesn't demonstrate the way the technology facilitated that discovery. 
 
 * **Engage Your Audience:** At the other extreme, a densely-worded write-up on the paticularities of the latest version of some tool doesn't accomplish the task of engagement. Readers should come to your space to see a tool or service in action. Link to the technical writing if the oppurtunity presents itself, but don't force it on unwitting civilians. 
 
@@ -199,3 +209,5 @@ Hosting a corporate blog has the ability to waste a lot of time, or accomplish a
 **Harvard Business Review:** An online [publication](https://hbr.org/) which releases articles on everything from employee management to technical writing strategy.
 
 **Society for Technical Communication:** [Technical Communication Online](https://www.stc.org/techcomm/) is a quarterly industry journal written by professional technical writers and speakers which publishes several free articles with each edition.
+
+**Google Developer Documentation Guide:** Publicly-accessible and internally-mandatory, [Developer Guides](https://developers.google.com/style/) from Google demonstrate the beauty of simple documentation in action. 
