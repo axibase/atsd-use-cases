@@ -33,7 +33,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
   --env SLACK_CONFIG="slack.properties \  
-  --volume /home/user/slack.properties.xml:/slack.properties.xml \
+  --volume /home/user/slack.properties:/slack.properties \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-pr.xml' \
   axibase/atsd-sandbox:latest
 ```
@@ -46,26 +46,6 @@ channels=general
 ```
 
 Replace the `SERVER_URL` parameter in the command above with the public DNS name of the Docker host where the sandbox container will be running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
-
-If you would like to automatically configure Slack Messaging Service at runtime, use the following ATSD Sandbox launch command:
-
-```
-docker run -d -p 8443:8443 -p 9443:9443 \
-  --name=atsd-sandbox \
-  --env SERVER_URL=https://atsd.company_name.com:8443 \
-  --env WEBHOOK=github \
-  --env SLACK_CONFIG="slack.properties \  
-  --volume /home/user/slack.properties.xml:/slack.properties.xml \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-issue-open.xml' \
-  axibase/atsd-sandbox:latest
-```
-
-The bound volume should at least contain at least the required parameters seen below and be stored as a plaintext file at the defined location on your local machine or URL.
-
-```
-token=xoxb-************-************************
-channels=general
-```
 
 For advanced launch settings refer to the following [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
