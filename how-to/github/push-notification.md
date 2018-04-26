@@ -35,7 +35,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
   --env SLACK_CONFIG="slack.properties \  
-  --volume /home/user/slack.properties.xml:/slack.properties.xml \
+  --volume /home/user/slack.properties:/slack.properties \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-issue-open.xml' \
   axibase/atsd-sandbox:latest
 ```
@@ -96,22 +96,49 @@ On the **Webhook Requests** page, you will see your newly-configured webhook. Un
 
 ### Configure Web Notification
 
-Configure your [messenger of choice](https://github.com/axibase/atsd/blob/master/rule-engine/web-notifications.md#collaboration-services), for example:
+#### Detailed Slack Notifications from ATSD
 
-* [Slack](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md)
-* [Telegram](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md)
+Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding the following environment variable to the atsd-sandbox container above:
 
-In the ATSD environment, open the left-side **Alerts** menu and select **Web Notifications**.
+```
+   --env SLACK_CONFIG="slack.properties"
+```
 
-![](images/alerts-wn.png)
+Bind the `slack.properties` file to the sandbox container with the following:
 
-Select the messenger which you've configured from the list on the **Web Notifications** page.
+```
+   --volume /home/user/slack.properties:/slack.properties
+```
 
-![](images/wn-page.png)
+The bound volume should at least contain the following required parameters:
 
-On the messenger-specific page, be sure that the **Web Notification** is enabled. In the `Auth Token` field, insert the authentication token you received from your messenger of choice. Configure additional parameters as needed such as **Bot Username** and click **Save**
+```
+token=xoxb-************-************************
+channels=general
+```
 
-![](images/web-notifications.png)
+Now, your status change notifications will be sent via Slack messages as well as email.
+
+#### Detailed Telegram Notifications from ATSD 
+
+Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding the following environment variable to the atsd-sandbox container above:
+
+```
+   --env TELEGRAM_CONFIG="telegram.properties"
+```
+
+Bind the `telegram.properties` file to the sandbox container with the following:
+
+```
+   --volume /home/user/telegram.properties:/telegram.properties
+```
+
+The bound volume should at least contain the following required parameters:
+
+```
+token=xoxb-************-************************
+channels=general
+```
 
 ### Configure Alert Rule to Process GitHub Webhook Requests
 

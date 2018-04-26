@@ -1676,8 +1676,6 @@ Username = guest
 Password = (none)
 ```
 
-> Collector [Data Source](https://hbs.axibase.com:10443/jdbc/form.xhtml?dataSourceId=40)
-
 ```sql
 SELECT ci.ISSUER_CA_ID,
         ca.NAME ISSUER_NAME,

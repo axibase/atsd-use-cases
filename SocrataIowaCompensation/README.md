@@ -447,7 +447,7 @@ Below are the steps to follow and create figures for Iowa employment metrics:
 1. Follow the action items in the Hawaii Gas Prices article for installing ATSD.
 2. Import the [BLS file job](jobs.xml) and [CSV parser](csv-configs.xml) into Axibase Collector to collect CPI datasets.
 3. Add your desired data.gov, iowa.data.gov, or Bureau of Labor Statistics dataset to enable data collection. Click on [Run] to collect data for the first time.
-4. Login into ATSD and open a sample Socrata portal to explore the data.
+4. Log in to ATSD and open a sample Socrata portal to explore the data.
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 

@@ -293,6 +293,6 @@ Below are the steps to follow to install ATSD:
 2. [Install Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/installation.md#axibase-collector-installation) and configure it to write data into your ATSD instance.
 3. Import [SOCRATA Job](hawaii_gas_prices.xml) into Axibase Collector.
 4. Add your desired data.gov dataset to the job to enable data collection. Click on [Run] to collect data for the first time.
-5. Login into ATSD and open a sample Socrata portal to explore the data.
+5. Log in to ATSD and open a sample Socrata portal to explore the data.
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!

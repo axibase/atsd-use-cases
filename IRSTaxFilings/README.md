@@ -228,7 +228,7 @@ You can also use [ChartLab](https://apps.axibase.com/chartlab/) to create, save,
       axibase/atsd:latest
    ```
 
-2. Login into ATSD at `https://your-docker-host:8443` and configure the pre-defined administrator account.
+2. Log in to ATSD at `https://your-docker-host:8443` and configure the pre-defined administrator account.
 3. Import the data [`series.txt`](Resources/series.txt) pre-collected by the [web crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-crawler) on **Metrics > Data Entry** page.
 4. Open the SQL tab in the top menu and execute one of the above SQL queries.
 5. To download and parse [IRS filing statistics pages](https://www.irs.gov/uac/2017-and-prior-year-filing-season-statistics) for continuous updates throughout this filing season and beyond run the web crawler.

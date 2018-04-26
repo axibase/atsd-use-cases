@@ -36,7 +36,7 @@ The producer offset is collected from Kafka brokers by the JMX Job above.
 
 The consumer offset is collected using a Kafka console consumer reading events from  the `__consumer_offset` topic on one of the Kafka servers in the cluster.
 
-Login into the Kafka server.
+Log in to the Kafka server.
 
 Download the [script](resources/send_offset.sh) into Kafka `bin` directory.
 

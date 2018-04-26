@@ -3,12 +3,11 @@ language: node_js
 node_js:
   - "8"
 install:
-  - npm install -g yaspeller
-  - npm install -g markdown-link-check
+  - npm install --global --production yaspeller markdown-link-check
   # download dictionary from atsd repository for merging
   - wget https://raw.githubusercontent.com/axibase/atsd/master/.spelling
   # generate dictionary in JSON format
-  - cat .spelling .dictionary | sort | uniq | awk '{printf("%s\0", $0)}' | jq -csR 'split("\u0000")' > .yaspeller-dictionary.json
+  - cat .spelling .dictionary | awk '{$1=$1};1' | sort -u | jq -csR 'split("\n")' > .yaspeller-dictionary.json
 script: 
   - yaspeller --max-requests 10 --dictionary .yaspeller-dictionary.json -e ".md" ./
   - bash get_changed_md_files.sh | xargs -d '\n' -n1 markdown-link-check

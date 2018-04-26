@@ -44,35 +44,66 @@ Complete the process below to enhance Route53 alarms with your local ATSD instan
 
 ## Enhancing Alerts with Axibase Time Series Database
 
-1. Install [ATSD sandbox](../route53-health-checks/README.md) with AWS integration.
+1. Install [ATSD sandbox](../route53-health-checks/README.md) with AWS integration. Configure Mail Client, Webhook user and import `rule-aws-cloudwatch-alarm.xml` using Docker `run` command.
+
+    ```sh
+    cat import/mail.properties
+    ```
+
+    ```
+    server=mail.example.org
+    port=587
+    user=myuser@example.org
+    password=secret
+    ```
+
+    ```sh
+    docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
+      --name=atsd-sandbox \
+      --volume=$(pwd)/import:/import \
+      --env ATSD_IMPORT_PATH='https://github.com/axibase/atsd-use-cases/raw/master/how-to/aws/route53-health-checks/resources/aws-route53-xml.zip,https://github.com/axibase/atsd-use-cases/blob/master/how-to/aws/route53-email-notifications/resources/rule-aws-cloudwatch-alarm.xml' \
+      --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/aws/route53-health-checks/resources/job_aws_aws-route53.xml' \
+      --env COLLECTOR_CONFIG='job_aws_aws-route53.xml:aws.properties' \
+      axibase/atsd-sandbox:latest \
+      --env EMAIL_CONFIG=mail.properties \
+      --env WEBHOOK=aws-cw
+    ```
+
+    View container start log.
+
+    ```sh
+    docker log -f atsd-sandbox
+    ```
+
+    Webhook URL will be printed to the start log:
+
+    ```elm
+    Webhooks created:
+    Webhook user: aws-cw
+    Webhook URL: https://aws-cw:PASSWORD@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
+    ```
 
 2. Configure ATSD to accept HTTPS requests from AWS infrastructure servers with a [**CA-signed**](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) SSL certificate. Alternatively, use the HTTP protocol when configuring the SNS subscription URL below.
 
 3. Open the **Services** drop-down menu and navigate to the **Simple Notification Service** page in the **Application Integration** section of the menu.
 
-  ![](images/app-integration-sns.png)
+    ![](images/app-integration-sns.png)
 
 4. Open the **Topics** page from toolbar on the left, and click the Amazon Resource Name (ARN) link of the alert which you would like to integrate with ATSD. 
 
-  ![](images/route53-slack-subscription.png)
+    ![](images/route53-slack-subscription.png)
 
-5. Create a [webhook](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#webhook-user-wizard) user with `aws-cw` username in your ATSD instance.
+5. In the **Subscriptions** section of the **Topic Details** page, click **Create Subscription** to enable enriched emails with contextual information. Click **Create Subscription** and use the following webhook URL in the **endpoint** field:
 
-6. In the **Subscriptions** section of the **Topic Details** page, click **Create Subscription** to enable enriched emails with contextual information. Click **Create Subscription** and use the following webhook URL in the **endpoint** field:
+    ```elm
+    https://aws-cw:PASSWORD@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
+    ```
 
-  ```elm
-  https://aws-cw:1234568@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
-  ```
+    Switch to the HTTP protocol and modify the port number (default is `8088`) if the ATSD is running on a self-signed SSL certificate.
 
-  Switch to the HTTP protocol and modify the port number (default is `8088`) if the ATSD is running on a self-signed SSL certificate.
+    Replace `atsd_hostname` with a valid hostname and update user password in the webhook URL above.
 
-  Replace `atsd_hostname` with a valid hostname and update user password in the webhook URL above.
-
-  ![](images/route53-slack.png)
-
-7. Import the [`aws-cloudwatch-alarm`](resources/rule-aws-cloudwatch-alarm.xml) rule into ATSD. For instructions on importing a new rule see the following [guide](../../shared/import-rule.md).
-
-8. Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/mail-client.md).
+    ![](images/route53-slack.png)
 
 You're ready to start receiving detailed email notifications about endpoint health status alerts.
 
