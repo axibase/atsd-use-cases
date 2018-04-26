@@ -6,11 +6,13 @@ install:
   - npm install --global --production yaspeller markdown-link-check
   # download dictionary from atsd repository for merging
   - wget https://raw.githubusercontent.com/axibase/atsd/master/.spelling
+  - wget https://raw.githubusercontent.com/axibase/atsd/master/list_modified_md_files.sh
   # generate dictionary in JSON format
   - cat .spelling .dictionary | awk '{$1=$1};1' | sort -u | jq -csR 'split("\n")' > .yaspeller-dictionary.json
+  - printf "modified files:\n`bash list_modified_md_files.sh`"
 script: 
-  - yaspeller --dictionary .yaspeller-dictionary.json -e ".md" ./
-  #- find . -name \*.md -print0 | xargs -0 -n1 markdown-link-check
+  - bash list_modified_md_files.sh | xargs -d '\n' -n1 yaspeller --dictionary .yaspeller-dictionary.json {}
+  - bash list_modified_md_files.sh | xargs -d '\n' -n1 markdown-link-check
 cache:
   directories:
     - $(npm config get prefix)/lib/node_modules
