@@ -77,7 +77,7 @@ On the **Add Webhook** page, configure the following settings:
 * **Payload URL**: Copy the GitHub webhook URL from the Docker log. 
 * **Content Type**: Make sure you select `application/json`.
 * Click **Disable SSL Verification** and confirm the setting.
-* Select 'Send me everything', under **Which events would you like to trigger this webhook?**. 
+* Select 'Send me everything', under **Which events would you like to trigger this webhook?**.
 
 ![](images/webhook-config.png)
 

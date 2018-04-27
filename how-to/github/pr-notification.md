@@ -64,6 +64,8 @@ Webhook user: github
 Webhook URL: https://github:PdWnC1jF@atsd.company.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
 ```
 
+For further information about how GitHub handles webhooks, see their [developer page](https://developer.github.com/webhooks/).
+
 Open the **Settings** menu for the GitHub repository for which you would like to create notifications.
 
 ![](images/repo-settings.png)
@@ -94,6 +96,8 @@ In the ATSD environment, open the left-side **Settings** menu, navigate to **Dia
 On the **Webhook Requests** page, you will see your newly-configured webhook. Under the **Details** column, click the **View** link to see detailed information about the webhook request.
 
 ![](images/webhook-confirm.png)
+
+If you launched ATSD with the pre-configured `SLACK_CONFIG` variable, the set-up process is complete. You're ready to begin receiving notifications to the defined Slack Workspace.
 
 ### Configure Web Notification
 

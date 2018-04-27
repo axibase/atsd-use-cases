@@ -1,6 +1,6 @@
 <list>
   <com.axibase.collector.model.job.json.JsonJobConfig>
-    <name>dockerhub-poller</name>
+    <name>dockerhub-poller-cloned</name>
     <cronExpression>R 0/5 * * * ?</cronExpression>
     <enabled>false</enabled>
     <jobType>JSON</jobType>
@@ -29,7 +29,7 @@
           <closeInterval>0</closeInterval>
           <connectionTimeout>60</connectionTimeout>
           <connectionPoolTimeout>180</connectionPoolTimeout>
-          <testPath>/v2/repositories/axibase</testPath>
+          <testPath>/v2/repositories/${ENV.NAMESPACE}</testPath>
           <authType>NONE</authType>
           <headers/>
           <parameters/>
@@ -46,7 +46,7 @@
           </entities>
           <separator>,</separator>
           <contentFormat>JSON</contentFormat>
-          <jsonPath>$.results[?(@.is_automated == true)][?(@.last_updated > '2016')]</jsonPath>
+          <jsonPath>$.results[?(@.is_automated == true)][?(@.last_updated > '2010')]</jsonPath>
         </entitySet>
         <payloadMethod>GET</payloadMethod>
         <httpHeaders/>
