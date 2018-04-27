@@ -78,7 +78,7 @@ On the **Add Webhook** page, configure the following settings:
 
 ![](images/webhook-config.png)
 
-For further information about how GitHub handles webhooks, see their [developer page](https://developer.github.com/webhooks/).
+Refer to [GitHub Developer Guide](https://developer.github.com/webhooks/) for additional information on outgoing webhooks.
 
 Be sure that your server is reachable by GitHub servers. For more information about configuring GitHub webhooks use the [developer guide](https://developer.github.com/webhooks/configuring/). 
 
