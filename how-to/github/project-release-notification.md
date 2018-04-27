@@ -64,7 +64,7 @@ Webhook user: github
 Webhook URL: https://github:PdWnC1jF@atsd.company.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
 ```
 
-For further information about how GitHub handles webhooks, see their [developer page](https://developer.github.com/webhooks/).
+Refer to [GitHub Developer Guide](https://developer.github.com/webhooks/) for additional information on outgoing webhooks.
 
 Open the **Settings** menu for the GitHub repository for which you would like to create notifications.
 
