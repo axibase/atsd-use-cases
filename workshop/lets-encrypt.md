@@ -8,7 +8,7 @@
   - [Operating System](#operating-system-trust-store)
   - [Browsers](#browser-trust-store)
   - [Applications](#application-trust-store)
-- [Trust Inheritance](#trust-chain)
+- [Trust Inheritance](#trust-inheritance)
 - [Certificate Issuance](#certificate-issuance)
   - [Self-Signed](#self-signed-certificate)
   - [CA-Signed](#ca-signed-certificate)
@@ -1733,7 +1733,7 @@ ChartLab [crt.sh]()https://apps.axibase.com/chartlab/0ffbd30b/6#fullscreen) Port
 Generate private key file for the new custom CA which will be manually added to the trust stores. This key needs to guarded as **top secret**.
 
 ```sh
-$ genrsa -des3 -out axibase_root_ca.key 2048
+$ openssl genrsa -des3 -out axibase_root_ca.key 2048
 ```
 
 Generate root CA certificate. This certificate will be used to sign (validate) end entity certificates.
