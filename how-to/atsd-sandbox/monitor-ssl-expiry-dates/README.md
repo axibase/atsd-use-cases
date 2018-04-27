@@ -69,6 +69,10 @@ In case of changing SSL certificate you will receive following notification:
 
 ![Certificate's expiry date set](images/expiry-date-changed.png)
 
+If certificate's expiration is approaching and number of remaining days is less than 30 you will receive a appropriate notification.
+
+![Expiration rule](images/expiration-approaching.png)
+
 #### Disable not necessary notifications
 
 To disable notifications for a list of domains you should edit the collection containing a blacklist.
