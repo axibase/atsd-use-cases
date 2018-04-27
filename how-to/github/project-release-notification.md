@@ -97,7 +97,7 @@ On the **Webhook Requests** page, you will see your newly-configured webhook. Un
 
 ![](images/webhook-confirm.png)
 
-If you launched ATSD with the pre-configured `SLACK_CONFIG` variable, the set-up process is complete. You're ready to begin receiving notifications to the defined Slack Workspace.
+If you launched ATSD with the pre-configured `SLACK_CONFIG` variable, the setup process is complete. You're ready to begin receiving notifications to the defined Slack Workspace.
 
 ### Configure Web Notification
 
