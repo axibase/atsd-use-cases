@@ -129,11 +129,38 @@ LIMIT 10
 ### Market Totals
 
 ![](images/market-totals.png)
-[![](images/button-new.png)](https://trends.axibase.com/86aafba6)
+[![](images/button-new.png)](https://trends.axibase.com/c78e4e04#fullscreen)
 
 *Fig 5.* The above visualization tracks market totals across all observed metrics. Use the drop-down menu to narrow the displayed metrics to the top ten, bottom ten, or use the `*` wildcard symbol to show them all. **Metric:** `*`.
 
+**Query:**
 
+```sql
+SELECT metric AS "Profitability Metric", value * 100 AS "Profit Margin (%)"
+FROM atsd_series
+WHERE metric IN metrics ('stern.nyu.edu') 
+   AND (tags.industry_name = 'Total Market')
+ORDER BY value DESC
+```
+
+| Profitability Metric                  | Profit Margin (%) | 
+|---------------------------------------|-------------------| 
+| cogs/sales                            | 63.43             | 
+| gross_margin                          | 36.57             | 
+| ebitdasg&a/sales                      | 31.34             | 
+| ebitdar&d/sales                       | 17.41             | 
+| sg&a/_sales                           | 16.32             | 
+| ebitda/sales                          | 15.02             | 
+| pre-tax_lease_&_r&d_adj_margin        | 10.70             | 
+| pre-tax_unadjusted_operating_margin   | 10.66             | 
+| pre-tax_lease_adjusted_margin         | 10.56             | 
+| after-tax_lease_&_r&d_adj_margin      | 9.64              | 
+| after-tax_unadjusted_operating_margin | 9.59              | 
+| after-tax_lease_adjusted_margin       | 9.50              | 
+| net_margin                            | 7.90              | 
+| r&d/sales                             | 2.39              | 
+| lease_expense/sales                   | 1.45              | 
+| stock-based_compensation/sales        | 0.98              | 
 
 ### Top Ten Industries with the Highest Profit Margin
 
