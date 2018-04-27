@@ -34,7 +34,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
   --name=atsd-sandbox \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
-  --env SLACK_CONFIG="slack.properties \  
+  --env SLACK_CONFIG="slack.properties" \  
   --volume /home/user/slack.properties:/slack.properties \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-watch.xml' \
   axibase/atsd-sandbox:latest
@@ -78,6 +78,8 @@ On the **Add Webhook** page, configure the following settings:
 
 ![](images/webhook-config.png)
 
+For further information about how GitHub handles webhooks, see their [developer page](https://developer.github.com/webhooks/).
+
 Be sure that your server is reachable by GitHub servers. For more information about configuring GitHub webhooks use the [developer guide](https://developer.github.com/webhooks/configuring/). 
 
 Once your server and webhook have been properly configured, confirm connectivity at the bottom of the **Manage Webhook** page.
@@ -93,6 +95,8 @@ In the ATSD environment, open the left-side **Settings** menu, navigate to **Dia
 On the **Webhook Requests** page, you will see your newly-configured webhook. Under the **Details** column, click the **View** link to see detailed information about the webhook request.
 
 ![](images/webhook-confirm.png)
+
+If you launched ATSD with the pre-configured `SLACK_CONFIG` variable, the set-up process is complete. You're ready to begin receiving notifications to the defined Slack Workspace.
 
 ### Configure Web Notification
 
