@@ -77,8 +77,7 @@ If certificate's expiration is approaching and number of remaining days is less 
 
 To disable notifications for a list of domains you should edit the collection containing a blacklist.
 
-To open the collection login to the *ATSD* interface located on <https://localhost:8443> with default credentials:
-
+To open the collection login to the *ATSD* interface located on [https://localhost:8443]() with default credentials:
 ```properties
 user=axibase
 password=axibase
