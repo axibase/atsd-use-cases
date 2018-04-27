@@ -230,7 +230,7 @@ awk -v cmd='openssl x509 -noout -subject' '
 
 The list has 148 entries including the 'DST Root CA X3' certificate.
 
-```
+```txt
 ...
 subject= /C=US/O=Digital Signature Trust/OU=DST ACES/CN=DST ACES CA X6
 subject= /O=Digital Signature Trust Co./CN=DST Root CA X3
@@ -325,11 +325,11 @@ Search apt package manager history to view when the `ca-certificates` package wa
 $ zgrep ca-certificates /var/log/apt/history*
 ```
 
-```
+```txt
 -rw-r--r--  1 root root    3300 Oct 30 09:55 history.log.6.gz
 ```
 
-```
+```txt
 ca-certificates:amd64 (20160104ubuntu0.14.04.1, 20170717~14.04.1)
 ca-certificates-java:amd64 (20130815ubuntu1)
 ```
@@ -1873,7 +1873,7 @@ Extended settings (`CA:FALSE`).
 cat atsd_axibase_com.conf
 ```
 
-```
+```txt
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment

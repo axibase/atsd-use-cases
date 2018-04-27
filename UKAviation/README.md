@@ -268,7 +268,7 @@ If you require assistance in installing this software or have any questions, ple
 
 ### Appendix: CAA Metric List
 --------------------------
-```
+```txt
 uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_scheduled_uk <br />
 uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_charter_foreign_eu <br />
 uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_charter_foreign_non_eu <br />

@@ -10,7 +10,7 @@ This document describes how to monitor [Apache Kafka](https://kafka.apache.org/)
 
 Launch [ATSD](https://github.com/axibase/dockers) container on one of the Docker hosts:
 
-```
+```sh
 docker run \
   --detach \
   --name=atsd \
@@ -24,7 +24,7 @@ docker run \
 
 Wait until the container is initialized and 'ATSD start completed.' message is displayed.
 
-```
+```sh
 docker logs -f atsd
 ```
 
@@ -40,7 +40,7 @@ Log in to the Kafka server.
 
 Download the [script](resources/send_offset.sh) into Kafka `bin` directory.
 
-```
+```sh
 # assign execute permission
 chmod +x /opt/kafka_2.12-1.0.0/bin/send_offset.sh
 ```
@@ -53,14 +53,14 @@ Replace `ATSD_HOST` and `TCP_PORT` with actual values and launch the script.
 
 The script will read topic offsets and send them to ATSD under the hostname entity.
 
-```
+```sh
 # launch the script
 nohup /opt/kafka_2.12-1.0.0/bin/send_offset.sh ATSD_HOST TCP_PORT &
 ```
 
 If the hostname is different from the entity name used in the JMX job, specify the entity manually.
 
-```
+```sh
 nohup /opt/kafka_2.12-1.0.0/bin/send_offset.sh ATSD_HOST TCP_PORT ENTITY &
 ```
 

@@ -376,7 +376,7 @@ WHERE 'County' = 'COOK'
 ORDER BY 'Year'
 ```
 
-```ls
+
 | Year | County | Live Births (100000) | 
 |------|--------|---------------------| 
 | 1989 | COOK   | 0.94                | 
@@ -400,7 +400,7 @@ ORDER BY 'Year'
 | 2007 | COOK   | 0.79                | 
 | 2008 | COOK   | 0.78                | 
 | 2009 | COOK   | 0.76                | 
-```
+
 
 #### Curve Fitting
 
@@ -408,15 +408,15 @@ Data points can also be collected using an SQL query.
 
 Illinois Total Live Births:
 
-````
+```sql
 SELECT DATE_FORMAT(TIME, 'yyyy') AS "Year", tags.county_name AS "County", VALUE/1000 AS "Live Births (1000)"
   FROM "year.9e74-xdvk.value"
 WHERE 'County' = 'ILLINOIS TOTAL'
   GROUP BY 'County', VALUE, 'Year'
 ORDER BY 'Year'
-````
+```
 
-````
+
 | Year | County         | Live Births (1000) | 
 |------|----------------|--------------------| 
 | 1989 | ILLINOIS TOTAL | 190                | 
@@ -440,7 +440,7 @@ ORDER BY 'Year'
 | 2007 | ILLINOIS TOTAL | 181                | 
 | 2008 | ILLINOIS TOTAL | 177                | 
 | 2009 | ILLINOIS TOTAL | 171                | 
-````
+
 
 The data set used for modeling is as follows:
 
@@ -476,9 +476,7 @@ Using [Fityk](http://fityk.nieto.pl/) to create a best-fit model for this data:
 
 The associated formula is shown below:
 
-``
-F(x) = 197 + -2.59*x + 0.179*x^2 + -0.00511*x^3
-``
+`F(x) = 197 + -2.59*x + 0.179*x^2 + -0.00511*x^3`
 
 Moving the window to the right estimates the total live births for years not included in the table above:
 
@@ -492,7 +490,7 @@ Excluding the final data point from the series, which deviated significantly, cr
 
 This model's formula is:
 
-``F(x) = 196 + -1.7*x + 0.0587*x^2 + -0.000794*x^3``
+`F(x) = 196 + -1.7*x + 0.0587*x^2 + -0.000794*x^3`
 
 And the same forward-shift of the viewing window:
 
@@ -527,7 +525,7 @@ When updated to include the latest figures, the model looks like this:
 
 This updated model's formula is shown here:
 
-``F(x) = 197 + -2.53*x + 0.189*x^2 + -0.006*x^3``
+`F(x) = 197 + -2.53*x + 0.189*x^2 + -0.006*x^3`
 
 The forward-shift is shown below:
 
@@ -544,7 +542,7 @@ that has experienced a wide array of dramatic changes:
 
 This newly updated model's formula is shown here:
 
-``F(x) = 81.9 + 17.6*x + -0.929*x^2 + 0.0139*x^3``
+`F(x) = 81.9 + 17.6*x + -0.929*x^2 + 0.0139*x^3`
 
 The forward-shift is shown below:
 

@@ -82,7 +82,7 @@ This query aggregates Potential Profitability Value by year for the entire obser
 
 **Table 2**: Average Potential Profitability Value (1990-present)
 
-````ls
+```ls
 | Date | Avg CPI | Avg PPI | Potential Profitability Value | 
 |------|---------|---------|-----------------------| 
 | 1990 | 130.7   | 116.3   | 14.4                  | 
@@ -113,7 +113,7 @@ This query aggregates Potential Profitability Value by year for the entire obser
 | 2015 | 237.0   | 190.4   | 46.5                  | 
 | 2016 | 240.0   | 185.4   | 54.6                  | 
 | 2017 | 244.0   | 192.2   | 51.8                  | 
-````
+```
 
 As shown in the table above and figure below, the Potential Profitability Value has been steadily growing since 1990 with number of notable exceptions.
 
@@ -179,15 +179,15 @@ is shown below from 1990 to present:
 
 **Query 4**
 
-````sql
+```sql
 SELECT YEAR(time) AS "Date", AVG(ccpi.value) AS "Avg cCPI", AVG(cppi.value) AS "Avg cPPI", AVG(ccpi.value - cppi.value) AS "Potential Profitability Value"
   FROM ccpi AS ccpi JOIN cppi AS cppi
 GROUP BY YEAR(time)
-````
+```
 
 **Table 4**
 
-````ls
+```ls
 | Date | Avg cCPI | Avg cPPI | Potential Profitability Value | 
 |------|----------|----------|-----------------------| 
 | 1990 | 135.4    | 125.5    | 9.9                   | 
@@ -218,7 +218,7 @@ GROUP BY YEAR(time)
 | 2015 | 242.2    | 191.8    | 50.4                  | 
 | 2016 | 247.6    | 194.6    | 53.0                  | 
 | 2017 | 251.3    | 197.0    | 54.3                  | 
-````
+```
 
 **Figure 6**: Potential Profitability Value Using cCPI and cPPI (1990-present)
 

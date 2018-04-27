@@ -84,7 +84,7 @@ Using additional [EuroStat population data](http://ec.europa.eu/eurostat/web/pop
 
 **Query 1.1**
 
-```
+```sql
 SELECT date_format(time, 'yyyy') AS "Year", value/1000000 AS "Gross Debt (Trillion Euro)"
   FROM government_consolidated_gross_debt WHERE tags.geo = 'European Union (28 countries)'
 ```

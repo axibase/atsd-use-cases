@@ -101,7 +101,7 @@ Wait for the collector to initialize.
 $ docker logs -f axibase-collector
 ```
 
-```
+```txt
 ...
 [Collector] Waiting for Collector to bind to port 9443 ...( 6 of 30 )
 [Collector] Collector web interface:

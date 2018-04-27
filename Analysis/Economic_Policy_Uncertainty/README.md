@@ -55,7 +55,7 @@ Dual axis visualizations are helpful for comparing data of different orders of m
 
 Election season is a notoriously uncertain economic time period for the United States, as elections have been known to represent dramatic changes in policy and personnel that reshape the face of American policy. Using the following SQL query to track the EPU Index during election years only, and comparing that data to the election results, it is expected that more contested elections should generate a higher EPU Index.
 
-```
+```sql
 SELECT year(time) AS Election, value AS EPU_Index
 FROM usepuindxd_ 
 WHERE year(time) % 4 = 0 AND month(time) = 1
@@ -94,7 +94,7 @@ understood.
 
 The following SQL query will return the [average value](https://github.com/axibase/atsd/blob/master/sql/README.md#aggregation-functions) of the EPU index for the Eurozone for the period from 2002 until 2018 and will consolidate the information using a [`round` expression](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions).
 
-```
+```sql
 SELECT ROUND(AVG(value), 0) AS "average-epu" FROM EUEPUINDXM_
   WHERE datetime  >= '2002-01'
 ```
@@ -109,7 +109,7 @@ This query returns the following:
 
 The next query will target the months of each of the events above and so we can compare it to the index value from the birth of the Euro to the periods including the crisis, bailout, and eventual recovery.
 
-```
+```sql
 SELECT datetime, ROUND(value,0) FROM EUEPUINDXM_
   WHERE datetime  IN ('2002-01','2008-11','2010-02','2010-05','2010-11','2012-03','2014-07')
 ```
@@ -128,7 +128,7 @@ Multiple `datetime` values can be conveniently enumerated as a list using an [`I
 
 Further querying the data to show the top seven entries for the period from January 2002 to July 2014 using the following:
 
-```
+```sql
 SELECT datetime, ROUND(value, 0) AS "top-epu" FROM EUEPUINDXM_
   WHERE datetime  >= '2002-01'
   --AND datetime <= '2014-07'

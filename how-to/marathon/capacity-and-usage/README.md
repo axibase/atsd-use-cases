@@ -45,7 +45,7 @@ Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) cont
 
 Replace `marathon_hostname`, `my-user`, and `my-password` in the command below with actual Marathon user credentials.
 
-```
+```sh
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
   --volume /var/run/docker.sock:/var/run/docker.sock \
@@ -63,13 +63,13 @@ The Collector instance installed in the sandbox container will automatically sta
 
 Wait until the sandbox is initialized and 'All applications started.' message is displayed.
 
-```
+```sh
 docker logs -f atsd-sandbox
 ```
 
 Log in to ATSD user interface using `axibase` username and `axibase` password.
 
-```
+```sh
 https://atsd_hostname:8443/
 ```
 
@@ -81,7 +81,7 @@ Launch Collector instances on the other Docker hosts in the environment. The rem
 
 Replace `atsd_hostname` in the command below with the hostname or IP address where ATSD is running. 
 
-```
+```sh
 $ docker run -d -p 9443:9443 --restart=always \
    --name=axibase-collector \
    --volume /var/run/docker.sock:/var/run/docker.sock \

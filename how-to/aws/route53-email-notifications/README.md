@@ -50,7 +50,7 @@ Complete the process below to enhance Route53 alarms with your local ATSD instan
     cat import/mail.properties
     ```
 
-    ```
+    ```txt
     server=mail.example.org
     port=587
     user=myuser@example.org

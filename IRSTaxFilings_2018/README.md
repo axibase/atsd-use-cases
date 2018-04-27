@@ -186,7 +186,7 @@ ORDER BY date_format(time, 'MM-dd')
 
 **Result:**
 
-```
+
 | Year | Date   | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % | 
 |------|--------|----------------|----------------|-----------------|---------------| 
 | 2011 | Mar-30 | 87.59          |                |                 |               | 
@@ -197,7 +197,7 @@ ORDER BY date_format(time, 'MM-dd')
 | 2016 | Mar-30 | 95.28          | 94.03          | 1.26            | 1.34          | 
 | 2017 | Mar-30 | 92.47          | 95.28          | -2.81           | -2.95         | 
 | 2018 | Mar-30 | 94.14          | 92.47          | 1.67            | 1.80          | 
-```
+
 
 #### Year-on-year change based on calendar index position
 
@@ -225,7 +225,7 @@ ORDER BY "Day in Year", time
 
 **Result:**
 
-```
+
 | Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % | 
 |------|--------|-------------|----------------|----------------|-----------------|---------------| 
 | 2011 | Mar-30 | 89.00       | 87.59          |                |                 |               | 
@@ -236,7 +236,7 @@ ORDER BY "Day in Year", time
 | 2016 | Mar-29 | 89.00       | 94.11          | 94.03          | 0.08            | 0.09          | 
 | 2017 | Mar-30 | 89.00       | 92.47          | 94.11          | -1.64           | -1.74         | 
 | 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          | 
-```
+
 
 SQL console supports the [`ROUND`](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
 
