@@ -133,7 +133,6 @@ GROUP BY tags.county_name, VALUE
 LIMIT 11
 ````
 
-````ls
 | Live Births (1000) | County         | 
 |--------------------|----------------| 
 | 190                | ILLINOIS TOTAL | 
@@ -147,7 +146,6 @@ LIMIT 11
 | 4                  | MADISON        | 
 | 3                  | MCHENRY        | 
 | 3                  | PEORIA         |  
-````
 
 ##### 1994:
 
@@ -159,7 +157,6 @@ GROUP BY tags.county_name, VALUE
 LIMIT 11
 ````
 
-````ls
 | Live Births (1000) | County         | 
 |--------------------|----------------| 
 | 189                | ILLINOIS TOTAL | 
@@ -173,7 +170,6 @@ LIMIT 11
 | 4                  | MCHENRY        | 
 | 3                  | MADISON        | 
 | 3                  | PEORIA         | 
-````
 
 ##### 1999:
 
@@ -185,7 +181,6 @@ GROUP BY tags.county_name, VALUE
 LIMIT 11
 ````
 
-````ls
 | Live Births (1000) | County         | 
 |--------------------|----------------| 
 | 182                | ILLINOIS TOTAL | 
@@ -199,7 +194,7 @@ LIMIT 11
 | 4                  | ST CLAIR       | 
 | 3                  | MADISON        | 
 | 3                  | PEORIA         | 
-````
+
 
 ##### 2004:
 
@@ -211,7 +206,7 @@ GROUP BY tags.county_name, VALUE
 LIMIT 11
 ````
 
-````ls
+
 | Live Births (1000) | County         | 
 |--------------------|----------------| 
 | 181                | ILLINOIS TOTAL | 
@@ -225,19 +220,19 @@ LIMIT 11
 | 4                  | ST CLAIR       | 
 | 3                  | MADISON        | 
 | 3                  | PEORIA         | 
-````
+
 
 ##### 2009:
 
-````sql
+```sql
 SELECT VALUE/1000 AS "Live Births (1000)", tags.county_name AS "County"
   FROM 2009 WHERE 'County' NOT IN ('Chicago', 'Suburban Cook')
 GROUP BY tags.county_name, VALUE
   ORDER BY VALUE DESC, tags.county_name
 LIMIT 11
-````
+```
 
-````ls
+
 | Live Births (1000) | County         | 
 |--------------------|----------------| 
 | 171                | ILLINOIS TOTAL | 
@@ -251,7 +246,7 @@ LIMIT 11
 | 4                  | ST CLAIR       | 
 | 3                  | MADISON        | 
 | 3                  | PEORIA         | 
-````
+
 
 Likewise, county totals can be gathered using the same five-year steps, but evaluating for
 the entire observed time and not one-year segments: 
@@ -267,7 +262,7 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
   LIMIT 11
 ````
 
-````ls
+
 | Live Births (1000) | County         | 
 |--------------------|----------------| 
 | 961                | ILLINOIS TOTAL | 
@@ -281,20 +276,19 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
 | 18                 | MADISON        | 
 | 16                 | MCHENRY        | 
 | 14                 | PEORIA         | 
-````
+
 
 ##### 1994 - 1998:
 
-````sql
+```sql
 SELECT (t1.VALUE + t2.VALUE + t3.VALUE + t4.VALUE + t5.VALUE)/1000 AS "Live Births (1000)", t1.tags.county_name AS "County"
   FROM 1994 t1 JOIN 1995 t2 JOIN 1996 t3 JOIN 1997 t4 JOIN 1998 t5
 WHERE t1.tags.county_name = t2.tags.county_name AND t1.tags.county_name NOT IN ('Chicago','Suburban Cook')
   GROUP BY t1.tags.county_name, t1.VALUE, t2.VALUE, t3.VALUE, t4.VALUE, t5.VALUE
 ORDER BY t1.VALUE DESC, t1.tags.county_name
   LIMIT 11
-````
+```
 
-````ls
 | Live Births (1000) | County         | 
 |--------------------|----------------| 
 | 921                | ILLINOIS TOTAL | 
@@ -308,7 +302,6 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
 | 19                 | MCHENRY        | 
 | 17                 | MADISON        | 
 | 13                 | PEORIA         | 
-````
 
 ##### 1999 - 2003:
 
@@ -321,7 +314,7 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
   LIMIT 11
 ````
 
-````ls
+
 | Live Births (1000) | County         | 
 |--------------------|----------------| 
 | 914                | ILLINOIS TOTAL | 
@@ -335,20 +328,20 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
 | 18                 | ST CLAIR       | 
 | 17                 | MADISON        | 
 | 13                 | PEORIA         | 
-````
+
 
 ##### 2004 - 2008
 
-````sql
+```sql
 SELECT (t1.VALUE + t2.VALUE + t3.VALUE + t4.VALUE + t5.VALUE)/1000 AS "Live Births (1000)", t1.tags.county_name AS "County"
   FROM 2004 t1 JOIN 2005 t2 JOIN 2006 t3 JOIN 2007 t4 JOIN 2008 t5
 WHERE t1.tags.county_name = t2.tags.county_name AND t1.tags.county_name NOT IN ('Chicago','Suburban Cook')
   GROUP BY t1.tags.county_name, t1.VALUE, t2.VALUE, t3.VALUE, t4.VALUE, t5.VALUE
 ORDER BY t1.VALUE DESC, t1.tags.county_name
   LIMIT 11
-````
+```
 
-````ls
+
 | Live Births (1000) | County         | 
 |--------------------|----------------| 
 | 897                | ILLINOIS TOTAL | 
@@ -362,7 +355,7 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
 | 19                 | ST CLAIR       | 
 | 17                 | MADISON        | 
 | 13                 | PEORIA         | 
-````
+
 
 Information can also be collected on a desired county, for the entire period:
 
@@ -476,7 +469,9 @@ Using [Fityk](http://fityk.nieto.pl/) to create a best-fit model for this data:
 
 The associated formula is shown below:
 
-`F(x) = 197 + -2.59*x + 0.179*x^2 + -0.00511*x^3`
+```javascript
+F(x) = 197 + -2.59*x + 0.179*x^2 + -0.00511*x^3
+```
 
 Moving the window to the right estimates the total live births for years not included in the table above:
 
@@ -490,7 +485,9 @@ Excluding the final data point from the series, which deviated significantly, cr
 
 This model's formula is:
 
-`F(x) = 196 + -1.7*x + 0.0587*x^2 + -0.000794*x^3`
+```javascript
+F(x) = 196 + -1.7*x + 0.0587*x^2 + -0.000794*x^3
+```
 
 And the same forward-shift of the viewing window:
 
@@ -525,7 +522,9 @@ When updated to include the latest figures, the model looks like this:
 
 This updated model's formula is shown here:
 
-`F(x) = 197 + -2.53*x + 0.189*x^2 + -0.006*x^3`
+```javascript
+F(x) = 197 + -2.53*x + 0.189*x^2 + -0.006*x^3
+```
 
 The forward-shift is shown below:
 
@@ -542,7 +541,9 @@ that has experienced a wide array of dramatic changes:
 
 This newly updated model's formula is shown here:
 
-`F(x) = 81.9 + 17.6*x + -0.929*x^2 + 0.0139*x^3`
+```javascript
+F(x) = 81.9 + 17.6*x + -0.929*x^2 + 0.0139*x^3
+```
 
 The forward-shift is shown below:
 
