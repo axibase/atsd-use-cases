@@ -35,7 +35,7 @@ ATSD Sandbox may pass a path to a file containing web notification properties as
 Specify actual Bot User OAuth Access `token` and `channels` for notifications in `slack.properties` file. For more information about the configuration, you can follow this [reference](https://github.com/axibase/dockers/tree/atsd-sandbox#web-notifications-configuration). 
 
 ```bash
-touch slack.properties && echo 'token=xoxb-************-************************\nchannels=general\n' > slack.properties
+touch slack.properties && printf "token=xoxb-************-************************\nchannels=general\n" > slack.properties
 ```
 
 ### Configure and launch ATSD Sandbox
