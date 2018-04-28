@@ -64,7 +64,7 @@ tags.sender.login != null</filter>
 <firstWebConfigParameters>
 <key>text</key>
 <value>New Project Created!
-Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.name)}.&#13;
+Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}.&#13;
 User: ${addLink(tags.project.creator.login, 'https://github.com/' + tags.project.creator.login)}&#13;
 Project: ${addLink(tags.project.name, 'https://github.com/' + tags.project.creator.login + '/' + tags.repository.name + '/projects/' + tags.project.number)}&#13;
 ${addLink(tags.project.body, 'https://github.com/' + tags.project.creator.login + '/' + tags.repository.name + '/projects/' + tags.project.number)}</value>
@@ -72,7 +72,7 @@ ${addLink(tags.project.body, 'https://github.com/' + tags.project.creator.login 
 <repeatWebConfigParameters>
 <key>text</key>
 <value>New Project Created!
-Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.name)}.&#13;
+Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}.&#13;
 User: ${addLink(tags.project.creator.login, 'https://github.com/' + tags.project.creator.login)}&#13;
 Project: ${addLink(tags.project.name, 'https://github.com/' + tags.project.creator.login + '/' + tags.repository.name + '/projects/' + tags.project.number)}&#13;
 ${addLink(tags.project.body, 'https://github.com/' + tags.project.creator.login + '/' + tags.repository.name + '/projects/' + tags.project.number)}</value>
@@ -80,7 +80,7 @@ ${addLink(tags.project.body, 'https://github.com/' + tags.project.creator.login 
 <cancelWebConfigParameters>
 <key>text</key>
 <value>New Project Created!
-Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.name)}.&#13;
+Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}.&#13;
 User: ${addLink(tags.project.creator.login, 'https://github.com/' + tags.project.creator.login)}&#13;
 Project: ${addLink(tags.project.name, 'https://github.com/' + tags.project.creator.login + '/' + tags.repository.name + '/projects/' + tags.project.number)}&#13;
 ${addLink(tags.project.body, 'https://github.com/' + tags.project.creator.login + '/' + tags.repository.name + '/projects/' + tags.project.number)}</value>
