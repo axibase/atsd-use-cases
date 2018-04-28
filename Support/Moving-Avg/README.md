@@ -104,7 +104,9 @@ produces the following:
 
 **Scale Modification**:
 
-`enplanements = value/100`
+```javascript
+enplanements = value/100
+```
 
 **Figure 2.4**: LGA Cargo Tonnage vs. Passenger Enplanement (1997-2015)
 
@@ -114,7 +116,9 @@ produces the following:
 
 **Scale Modification**:
 
-`enplanements = value/10000`
+```javascript
+enplanements = value/10000
+```
 
 Once the comparison is complete, removing the `statistic` setting from the editor window returns the data to its original
 state without additional computation. Alternatively, it may be helpful to compare the modified chart with the original to
