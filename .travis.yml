@@ -3,13 +3,8 @@ language: node_js
 node_js:
   - "8"
 install:
-  - npm install --global --production yaspeller markdown-link-check
-  # download dictionary from atsd repository for merging
-  - wget https://raw.githubusercontent.com/axibase/atsd/master/.spelling -O .spelling-atsd
-  # download functions from atsd repository
   - wget https://raw.githubusercontent.com/axibase/atsd/master/.travis-functions.sh && source .travis-functions.sh
-  - cat .spelling-atsd .dictionary > .spelling
-  - generate_yaspeller_dictionary .spelling
+  - install_checkers
 script:
   - print_modified_markdown_files
   - spellcheck --single
