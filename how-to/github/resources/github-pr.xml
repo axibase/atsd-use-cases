@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><rules>
 <rule>
-<name>github-issue-open-event</name>
+<name>github-pr-event</name>
 <metric>message</metric>
 <tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
 <expression><![CDATA[true]]></expression>
