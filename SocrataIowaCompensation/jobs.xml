@@ -2,7 +2,7 @@
   <com.axibase.collector.model.job.file.FileJobConfig>
     <name>us-labor</name>
     <cronExpression>0 0 0 5 * ?</cronExpression>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <jobType>FILE</jobType>
     <defaultTags/>
     <checkLastTime>false</checkLastTime>

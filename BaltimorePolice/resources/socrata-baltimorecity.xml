@@ -2,7 +2,7 @@
   <com.axibase.collector.model.job.socrata.SocrataJobConfig>
     <name>socrata-baltimorecity</name>
     <cronExpression>0 0/15 * * * ?</cronExpression>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <jobType>SOCRATA</jobType>
     <defaultTags/>
     <checkLastTime>false</checkLastTime>

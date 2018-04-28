@@ -23,7 +23,7 @@ tags.sender.login != null</filter>
 <intervalUnit>MINUTE</intervalUnit>
 </alertStrategy>
 <lastUpdated>1523366941762</lastUpdated>
-<enabled>false</enabled>
+<enabled>true</enabled>
 <disableEntityGrouping>false</disableEntityGrouping>
 <leavingEvents>true</leavingEvents>
 <loadHistory>false</loadHistory>

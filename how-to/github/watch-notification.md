@@ -97,7 +97,7 @@ On the **Webhook Requests** page, you will see your newly-configured webhook. Un
 
 ![](images/webhook-confirm.png)
 
-In the ATSD UI, enable the rule by clicking the link and toggling the **Enabled** flipper to **Yes**. If you launched ATSD with the pre-configured `SLACK_CONFIG` variable, the setup process is complete. You're ready to begin receiving notifications to the defined Slack Workspace.
+If you launched ATSD with the pre-configured `SLACK_CONFIG` variable, the setup process is complete. You're ready to begin receiving notifications to the defined Slack Workspace.
 
 ### Configure Web Notification
 
