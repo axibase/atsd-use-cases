@@ -14,6 +14,7 @@ script:
   - print_modified_markdown_files
   - spellcheck --single
   - linkcheck
+  - stylecheck
 cache:
   directories:
     - $(npm config get prefix)/lib/node_modules
