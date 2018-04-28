@@ -278,7 +278,7 @@ Navigate to **Unemployment insurance claims and payments (statewide - monthly)**
 As with the previous figure, we can see that this dataset follows the same general trend, with the payments tending to peak in January of a given year and continue to fall throughout
 the rest of the year. However, we can see that in the late 2000's, the series shifted up as marked in the above figure. We can also add a 'shifted' duplicate of this series.
 
-```sh
+```ls
      [series]
        time-offset = 1 year
        color = silver
@@ -343,7 +343,7 @@ Our next step is similar to our first step. First, we begin by specifying the **
 we specify **display = false** for both of these series. Next, we specify **alias** names to be used in order to create our custom series. Finally, we specify the **value** we would like to be displayed.
 This line in the configuration is shown below:
 
-```txt
+```javascript
 value = (value('comp')/value('emp'))==0 ? null : value('comp')/value('emp')
 ```
 
