@@ -18,7 +18,7 @@ Please note that this solution only applies to automated builds which are execut
 
 ## Build Failures
 
-Build failures come in different flavors - some are caused by human error while others occur are due to infrastructure changes outside of our control. Your team needs to fix these failure regardless of the cause.
+Build failures come in different flavors - some are caused by human error while others occur due to infrastructure changes outside of our control. Your team needs to fix these failure regardless of the cause.
 
 Human Error:
 
@@ -137,7 +137,7 @@ Set `NOTIFY_URL` variable to a request URL where `on-error` webhook notification
   --env NOTIFY_URL='https://host01:10443/jenkins/plugin?token=123' \
 ```
 
-The notification URL may include user credentials for `Basic` authorization. SSL certificate validation is disabled by default.
+The notification URL may include `Basic` authorization credentials, for example `https://usr:pwd@host01:10443/`. SSL certificate validation is disabled by default.
 
 Execute the command below to launch an [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
 
@@ -146,7 +146,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
   --name=atsd-sandbox \
   --env NAMESPACE='google' \
   --env NOTIFY_URL='https://webhook.site/71fd9feb-8751-4afd-9e13-16072a34b259' \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/docker/resources/rule.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/docker/resources/notify.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/docker/resources/notify.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/docker/resources/rule.xml' \
   --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/docker/resources/job.xml' \
   axibase/atsd-sandbox:latest
 ```
@@ -175,6 +175,32 @@ The webhook should arrive in less than 5 minutes, which is the collector polling
 If you don't have a good failure candidate handy, send a test `message` command for `test/my-image` project as described below.
 
 You can adjust the frequency in the collector UI at `https://docker_host:8443`. Open `dockerhub-poller` job and set Cron Expression to `0 * * * * ?` in order to run the data collection every minute.
+
+## Automation
+
+### Retry Failed Builds
+
+In addition to sending build error notifications, the `dockerhub-build-fail` rule in ATSD can be programmed to retry a failed build using Docker Hub [Remote Build Triggers](https://docs.docker.com/docker-hub/builds/#remote-build-triggers). The remote triggers allow you to initiate an automated build by sending a `POST` request to an endpoint on Docker Hub.
+
+1. Create a new trigger token for a project on Docker Hub (projects with intermittent failures are good candidates for this).
+
+![](images/docker-hub-build-trigger.png)
+
+2. Create a CUSTOM web notification to launch an automated build on Docker Hub.
+
+![](images/docker-hub-trigger-notify.png)
+
+3. Add a corresponding web notification action in the `dockerhub-build-fail` rule.
+
+![](images/docker-hub-trigger-rule.png)
+
+For a more robust implementation, create a [lookup table](https://github.com/axibase/atsd/blob/master/rule-engine/functions-lookup.md#lookup) to associate images in incoming failure events with trigger tokens.
+
+### Send Alerts
+
+You can also customize the rule to send alerts into your preferred messaging service such as [Slack](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or Rocket.Chat.
+
+![](images/rocket-alert.png)
 
 ## Troubleshooting
 
@@ -233,10 +259,6 @@ The target service should now receive the following JSON payload:
   }
 }
 ```
-
-You can also customize the `dockerhub-build-fail` rule in ATSD to send alerts into your preferred messaging service such as Slack or Rocket.Chat.
-
-![](images/rocket-alert.png)
 
 ## References
 
