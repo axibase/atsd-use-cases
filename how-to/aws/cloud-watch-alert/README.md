@@ -128,7 +128,7 @@ docker run -d -p 8443:8443 \
 
 ### Create SNS Subscription
 
-**NOTE:** If you have used the custom launch procedure, be sure you have added the appropriate information to the generic launch command before configuring the SNS Subscription, see [Custom Launch Preferences](#custom-launch-preferences). If you have used the quick launch procedure, move on. 
+**NOTE:** If you have used the custom launch procedure, be sure you have added the appropriate information to the generic launch command before configuring the SNS Subscription, see [Custom Launch Preferences](#custom-launch-preferences). If you have used the quick launch procedure, move on.
 
 Copy the incoming `aws-cw` webhook URL from the start log.
 
