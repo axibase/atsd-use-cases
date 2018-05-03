@@ -16,7 +16,7 @@ As of this writing, FB stock is down almost 15 points within the last 24 hours w
 
 Ironically, competitor social media platform Twitter is now home to the #DeleteFacebook movement, a protest action that the struggling media corporation can only be too happy to facilitate as their own stock prices soared in recent weeks amid the first reported profits of the company's history since going public in 2014.
 
-### Resources
+## Resources
 
 * [Nasdaq:FB Historical Data](https://finance.yahoo.com/quote/FB/history?p=FB) from Yahoo! Finance
 * Launch [ATSD](https://github.com/axibase/atsd/tree/master/installation#installation) on your local machine.

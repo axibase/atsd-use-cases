@@ -1,15 +1,14 @@
-New York City Income by Adjusted Gross Income (AGI) Range (2014)
-===
+# New York City Income by Adjusted Gross Income (AGI) Range (2014)
 
-> Data Source: [The City of New York](https://catalog.data.gov/dataset/personal-income-by-agi-range-3b6e6)
+* Data Source: [The City of New York](https://catalog.data.gov/dataset/personal-income-by-agi-range-3b6e6)
 
-> Visualizations: [ChartLab](https://apps.axibase.com/chartlab) from [Axibase](https://axibase.com)
+* Visualizations: [ChartLab](https://apps.axibase.com/chartlab) from [Axibase](https://axibase.com)
 
-> Structured Query Language (SQL): [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) from [Axibase](https://axibase.com)
+* Structured Query Language (SQL): [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) from [Axibase](https://axibase.com)
 
 All data is stored in the [Axibase Time Series Database](https://axibase.com). Download the Community Version [here](https://github.com/axibase/atsd/blob/master/installation/README.md#installation).
 
-#### Adjusted Gross Income (AGI):
+## Adjusted Gross Income (AGI)
 
 "Adjusted Gross Income is defined as gross income minus adjustments to income." (Source: [Internal Revenue Service](https://www.irs.gov/uac/definition-of-adjusted-gross-income))
 
@@ -18,19 +17,13 @@ filer will be making. The City of New York has collected information for all loc
 equally sized groups representing increasing 10th percentiles (called deciles here). The first decile represents the bottom
 10% of New York City wage earners by AGI while the tenth decile represents the top 10% of New York City wage earners by AGI.
 
-#### Number of Filers:
-
-
-**Script 1.1**
+## Number of Filers
 
 ```sql
 SELECT tags.income_group AS "AGI Decile", value AS "Total Filers", value/1000 AS "Total Filers (1000)"
   FROM "number_of_filers"
 ```
 
-**Table 1.1**
-
-```ls
 | AGI Decile  | Total Filers | Total Filers (1000) |
 |-------------|--------------|---------------------|
 | Total       | 3461521      | 3462                |
@@ -44,26 +37,18 @@ SELECT tags.income_group AS "AGI Decile", value AS "Total Filers", value/1000 AS
 | 8th Decile  | 346132       | 346                 |
 | 9th Decile  | 346068       | 346                 |
 | 10th Decile | 346121       | 346                 |
-```
-
-**Figure 1.1**
 
 ![](Images/NYP_1.1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/1576163d/2/#fullscreen)
 
-#### Average Income by Decile:
-
-**Script 2.1**
+## Average Income by Decile
 
 ```sql
 SELECT tags.income_group AS "AGI Decile", value AS "Decile Average Income"
   FROM "average_income_per_filer"
 ```
 
-**Table 2.1**
-
-```ls
 | AGI Decile  | Decile Average Income |
 |-------------|-----------------------|
 | Total       | 66580                 |
@@ -77,17 +62,12 @@ SELECT tags.income_group AS "AGI Decile", value AS "Decile Average Income"
 | 8th Decile  | 57881                 |
 | 9th Decile  | 83790                 |
 | 10th Decile | 387259                |
-```
-
-**Figure 2.1**
 
 ![](Images/NYP_2.1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/d979bec5/2/#fullscreen)
 
 > Average Total Income for all deciles: $66,580/year.
-
-**Table 2.2**
 
 | AGI Decile | Percent of Average Income (%)|
 |:----------:|:-------------------------:|
@@ -104,18 +84,13 @@ SELECT tags.income_group AS "AGI Decile", value AS "Decile Average Income"
 
 > A person making the average adjusted salary in New York City ($66580/year) is in the upper 85th percentile of wage earners.
 
-#### Total Income by Decile:
-
-**Script 3.1**
+## Total Income by Decile:
 
 ```sql
 SELECT tags.income_group AS "Age Decile", value AS "Decile Total Income (USD Million)"
   FROM "total_income_dollars_in_millions"
 ```
 
-**Table 3.1**
-
-```ls
 | Age Decile  | Decile Total Income (USD Million) |
 |-------------|-----------------------------------|
 | Total       | 230468                            |
@@ -129,17 +104,12 @@ SELECT tags.income_group AS "Age Decile", value AS "Decile Total Income (USD Mil
 | 8th Decile  | 20034                             |
 | 9th Decile  | 28997                             |
 | 10th Decile | 134038                            |
-```
-
-**Figure 3.1**
 
 ![](Images/NYP_3.1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/d979bec5/3/#fullscreen)
 
-#### Income by Decile as a Percent of Total Income:
-
-**Script 4.1**
+## Income by Decile as a Percent of Total Income:
 
 ```sql
 SELECT tags.income_group AS "Age Decile", ((value/230468)*100) AS "Percent of Total Income"
@@ -148,9 +118,6 @@ SELECT tags.income_group AS "Age Decile", ((value/230468)*100) AS "Percent of To
 
 > This is a calculated metric using the `Total` figure from **Table 3.1** as the total value.
 
-**Table 4.1**
-
-```ls
 | Age Decile  | Percent of Total Income |
 |-------------|-------------------------|
 | 1st Decile  | 0.15                    |
@@ -163,7 +130,6 @@ SELECT tags.income_group AS "Age Decile", ((value/230468)*100) AS "Percent of To
 | 8th Decile  | 8.69                    |
 | 9th Decile  | 12.58                   |
 | 10th Decile | 58.16                   |
-```
 
 >The top 10th percentile of earners in New York City earned almost 60% of the adjusted gross income in 2014.
 

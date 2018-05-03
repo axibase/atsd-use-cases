@@ -1,9 +1,8 @@
-How to Predict a Fire in Hartford
-===
+# How to Predict a Fire in Hartford
 
 ![](Images/CT_Fire18.jpg)
 
-### Introduction
+## Introduction
 
 Time sensitive industries the world over are constantly trying to innovate new ways to maximize their staffing efficiency,
 making sure to have the exact number of needed personnel on hand at all times. Too many people incurs unnecessary costs, while too few
@@ -13,7 +12,7 @@ Nobody knows this need better then those working in emergency services. Too many
 a city's fragile operating income, while too few at the wrong time can spell disaster for those in need of the department's
 emergency services.
 
-### Methodology
+## Methodology
 
 Using [time series data](https://github.com/axibase/open-data-catalog/blob/master/datasets/izai-dug8.md) released by the
 City of Hartford, call volume to the local fire department can be analyzed and visualized to predict future infrastructural
@@ -25,10 +24,10 @@ The data will be parsed and examined to note trends based on the day of the week
 compared to Year 2017 data to determine whether the volume is on pace with previous years, in decline, or experiencing
 growth.
 
-Predicting future personnel and supply needs is a vital step in readiness preparation but making such judgements is impossible
+Predicting future personnel and supply needs is a vital step in readiness preparation but making such judgments is impossible
 without the needed data, and in the case of emergency services this preparation can literally be the difference between life and death.
 
-### Data
+## Data
 
 > Visualizations created using [ChartLab](https://apps.axibase.com/)
 
@@ -44,9 +43,7 @@ by sound data analysis.
 
 Using the SQL Console in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) to query the dataset:
 
-#### Call Numbers by Year
-
-###### 2014-2017
+### Call Numbers by Year
 
 ```sql
 SELECT  date_format(time, 'yyyy') AS "Year", sum(value) AS "Total Calls"
@@ -55,14 +52,12 @@ GROUP BY period(1 year)
   ORDER BY 'Year' ASC
 ```
 
-```ls
 | Year  | Total Calls |
 |-------|-------------|
 | 2014  | 22196       |
 | 2015  | 23829       |
 | 2016  | 27267       |
 | 2017* | 4266        |
-```
 
 While undoubtedly important, the annual information here is not scalable to an applicable level. Using yearly increments
 of calls cannot provide insight about seasonal increases and decreases, and certainly cannot be used to predict an increase in type
@@ -74,10 +69,7 @@ of calls made to the Hartford Fire Department.
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/0af389cf/6/#fullscreen)
 
-
-#### Call Numbers by Month
-
-###### 2014-2017
+### Call Numbers by Month
 
 ```sql
 SELECT  date_format(time, 'MM, yyyy') AS "Month, Year", sum(value) AS "Total Calls"
@@ -86,7 +78,6 @@ GROUP BY period(1 month)
   ORDER BY time ASC
 ```
 
-```ls
 | Month, Year | Total Calls |
 |-------------|-------------|
 | 01, 2014    | 2029        |
@@ -127,7 +118,6 @@ GROUP BY period(1 month)
 | 12, 2016    | 2386        |
 | 01, 2017    | 2362        |
 | 02, 2017    | 1904        |
-```
 
 ![](Images/CT_Fire3.png)
 
@@ -136,13 +126,11 @@ GROUP BY period(1 month)
 While this visualization shows that despite an overall increase in calls to the department has been observed throughout the
 entire observation period, recently, the data shows a certain amount of stability and even decline.
 
-#### Call Numbers by Day of the Week
+### Call Numbers by Day of the Week
 
 Diurnal analysis shows that instances of calls to the Hartford Fire Department remain fairly consistent throughout the week,
 and while the highest volume of calls came on Friday, the deviation from the average is quite low. Likewise, the lowest call
 volume, which came on Sunday, did not significantly deviate from the average either.
-
-###### 2014-2017
 
 ```sql
 SELECT  date_format(time, 'E') AS "Day of the Week", sum(value)/1000 AS "Total Calls (Thousand)"
@@ -151,7 +139,6 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
   ORDER BY date_format(time, 'u') ASC
 ```
 
-```ls
 | Day of the Week | Total Calls (Thousand) |
 |-----------------|------------------------|
 | Mon             | 33.16                  |
@@ -161,7 +148,6 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
 | Fri             | 34.46                  |
 | Sat             | 33.37                  |
 | Sun             | 31.39                  |
-```
 
 ![](Images/CT_Fire10.png)
 
@@ -179,7 +165,6 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
   ORDER BY date_format(time, 'u') ASC
 ```
 
-```ls
 | Day of the Week | Fire Calls |
 |-----------------|------------|
 | Mon             | 591        |
@@ -189,7 +174,6 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
 | Fri             | 600        |
 | Sat             | 648        |
 | Sun             | 696        |
-```
 
 Additionally, the number of EMS calls was highest on Mondays:
 
@@ -200,7 +184,6 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
   ORDER BY date_format(time, 'u') ASC
 ```
 
-```ls
 | Day of the Week | EMS Calls (Thousand) |
 |-----------------|----------------------|
 | Mon             | 18.56                |
@@ -210,9 +193,8 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
 | Fri             | 16.38                |
 | Sat             | 15.33                |
 | Sun             | 14.61                |
-```
 
-#### EMS Calls by Year
+### EMS Calls by Year
 
 ```sql
 SELECT  date_format(time, 'yyyy') AS "Year", sum(value) AS "Total Calls"
@@ -221,20 +203,18 @@ GROUP BY period(1 year)
   ORDER BY 'Year' ASC
 ```
 
-```ls
 | Year | Total Calls |
 |------|-------------|
 | 2014 | 15563       |
 | 2015 | 16797       |
 | 2016 | 19499       |
 | 2017 | 3164        |
-```
 
 ![](Images/CT_Fire4%20.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/0af389cf/7/#fullscreen)
 
-#### Fire Calls by Year
+### Fire Calls by Year
 
 ```sql
 SELECT  date_format(time, 'yyyy') AS "Year", sum(value) AS "Total Calls"
@@ -243,20 +223,18 @@ GROUP BY period(1 year)
   ORDER BY 'Year' ASC
 ```
 
-```ls
 | Year | Total Calls |
 |------|-------------|
 | 2014 | 566         |
 | 2015 | 702         |
 | 2016 | 760         |
 | 2017 | 58          |
-```
 
 ![](Images/CT_Fire5.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/0af389cf/8/#fullscreen)
 
-#### EMS Calls by Month
+### EMS Calls by Month
 
 ```sql
 SELECT  date_format(time, 'MM, yyyy') AS "Month, Year", sum(value) AS "Total Calls"
@@ -265,7 +243,6 @@ GROUP BY period(1 month)
   ORDER BY time ASC
 ```
 
-```ls
 | Month, Year | Total Calls |
 |-------------|-------------|
 | 01, 2014    | 1367        |
@@ -306,13 +283,12 @@ GROUP BY period(1 month)
 | 12, 2016    | 1705        |
 | 01, 2017    | 1744        |
 | 02, 2017    | 1420        |
-```
 
 ![](Images/CT_Fire7.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/83d2a616/4/#fullscreen)
 
-#### Fire Calls by Month
+### Fire Calls by Month
 
 ```sql
 SELECT  date_format(time, 'MM, yyyy') AS "Month, Year", sum(value) AS "Total Calls"
@@ -321,7 +297,6 @@ GROUP BY period(1 month)
   ORDER BY time ASC
 ```
 
-```ls
 | Month, Year | Total Calls |
 |-------------|-------------|
 | 01, 2014    | 40          |
@@ -362,31 +337,30 @@ GROUP BY period(1 month)
 | 12, 2016    | 36          |
 | 01, 2017    | 27          |
 | 02, 2017    | 31          |
-```
 
 ![](Images/CT_Fire8.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/83d2a616/5/#fullscreen)
 
-### Analysis
+## Analysis
 
 The percent by year change in number of calls received by the Hartford Fire Department is shown below:
 
-###### Previous Year Baseline
+### Previous Year Baseline
 
 | Year | EMS | Fire | Other | Total |
 |------|----:|-----:|------:|------:|
 | 2015 | +7.33% | +19.37% | +4.15% | +6.85% |
 | 2016 | +13.86% | +7.63% | +9.67% | +12.61% |
 
-###### First Year Baseline
+### First Year Baseline
 
 | Year | EMS | Fire | Other | Total |
 |------|----:|-----:|------:|------:|
 | 2015 | +7.33% | +19.37% | +4.15% | +6.85% |
 | 2016 | +18.59% | +20.19% | +25.52% | +13.43% |
 
-###### Average Value Baseline
+### Average Value Baseline
 
 | Year | EMS | Fire | Other | Total |
 |------|----:|-----:|------:|------:|
@@ -398,7 +372,7 @@ The percent by year change in number of calls received by the Hartford Fire Depa
 >Based on the first two baseline tables, predicting fire call growth is difficult due to the irregularly large amount of
 calls received in 2015, however, when modeling using an average value baseline, consistent 8% annual growth is shown.
 
-###### Median Value Baseline
+### Median Value Baseline
 
 | Year | EMS | Fire | Other | Total |
 |------|----:|-----:|------:|------:|
@@ -409,7 +383,7 @@ calls received in 2015, however, when modeling using an average value baseline, 
 
 >2015 was the median baseline
 
-###### Growth Rates
+### Growth Rates
 
 | Baseline | Average Percent Growth Per Year |
 |-------|------------------------:|
@@ -420,13 +394,13 @@ calls received in 2015, however, when modeling using an average value baseline, 
 
 > *Absolute value of percent change is used for percent growth calculations.
 
-#### Validation
+## Validation
 
 Since data is already available for the first two months of 2017, but was not included in the above calculations, it can be
 used as holdout data and used to test the validity of the above models. Likewise, this exercise can be used to demonstrate
 the potential scalability of such modeling:
 
-###### January (2014-2017)
+### January (2014-2017)
 
 ```sql
 SELECT date_format(time, 'MM, yyyy') AS "Month, Year", SUM(value) AS "Total Calls"
@@ -434,14 +408,12 @@ SELECT date_format(time, 'MM, yyyy') AS "Month, Year", SUM(value) AS "Total Call
 GROUP BY 'Month, Year'
 ```
 
-```ls
 | Month, Year | Total Calls |
 |-------------|-------------|
 | 01, 2014    | 2029        |
 | 01, 2015    | 1810        |
 | 01, 2016    | 1975        |
 | 01, 2017    | 2362        |
-```
 
 The expected total calls for January 2017 are predicted using each of the models:
 
@@ -449,8 +421,7 @@ The expected total calls for January 2017 are predicted using each of the models
 |----:|----:|----:|----:|
 | 2,167 | 2,646 | 2,477 | 2,454 |
 
-> *AVB and MVB values for one month are taken by dividing the year total AVB and MVB by twelve. The average value is 2,036.
- The median value is 1,986.
+> *AVB and MVB values for one month are taken by dividing the year total AVB and MVB by twelve. The average value is 2,036. The median value is 1,986.
 
 Observed Growth Rates:
 
@@ -474,7 +445,7 @@ Error Calculations:
 
 > *p-value is calculated using the expected versus actual measurements. For these values, there is one degree of freedom.
 
-###### February (2014-2017)
+### February (2014-2017)
 
 ```sql
 SELECT date_format(time, 'MM, yyyy') AS "Month, Year", SUM(value) AS "Total Calls"
@@ -482,14 +453,12 @@ SELECT date_format(time, 'MM, yyyy') AS "Month, Year", SUM(value) AS "Total Call
 GROUP BY 'Month, Year'
 ```
 
-```ls
 | Month, Year | Total Calls |
 |-------------|-------------|
 | 02, 2014    | 1673        |
 | 02, 2015    | 1763        |
 | 02, 2016    | 2182        |
 | 02, 2017    | 1904        |
-```
 
 The expected total calls for February 2017 are predicted using each of the models:
 
@@ -526,7 +495,7 @@ target variable itself was the outlier (February) the model's error percentage g
 is simply unable to predict whether or not the target data point will be an outlier or not, and the very definition of an outlier
 makes its prediction near impossible.
 
-### Implementation
+## Implementation
 
 Continuing to manually input this data for the remaining ten months would be a practice in patience, but the AVB model just effectively demonstrated
 above is the same method used to predict future values with the Forecast feature in the [Axibase Time Series Database](https://axibase.com).
@@ -563,7 +532,7 @@ interval here is demonstrated by the Forecast tool's replication of the patterns
 because of the ambiguous nature of such a category. Additional data would be needed, for example, about Fire Department events
 or public outreach efforts since likely such a category contains calls of a non-emergency nature.
 
-### Conclusion
+## Conclusion
 
 This particular data set was extremely responsive to the Average Value Baseline modeling techniques demonstrated above and
 the number of calls to be placed to the Hartford Fire Department about its most serious responsibilities were modeled to anticipate
@@ -573,7 +542,4 @@ Often, such models are extremely case-sensitive and are unable to significantly 
 different set of data, but the techniques demonstrated above can be applied to a different instance of the same type of data,
 or even an entirely different dataset should the need arise.
 
-> Forecast settings used here are contained in the [Resources](Resources/forecastSettingsList.xml) folder. Launch the Forecast
- feature with the .xml file contained there by opening your instance of ATSD and following the path Configuration > Forecasts.
- At the bottom of the screen click `import` and launch the Forecast feature with the provided .xml file.
- Contact [Axibase](https://axibase.com) with any questions.
+> Forecast settings used here are contained in the [Resources](Resources/forecastSettingsList.xml) folder. Launch the Forecast feature with the .xml file contained there by opening your instance of ATSD and following the path Configuration > Forecasts. At the bottom of the screen click `import` and launch the Forecast feature with the provided .xml file. Contact [Axibase](https://axibase.com) with any questions.

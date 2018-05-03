@@ -1,7 +1,5 @@
-The Cleanest Water in Washington State
-===
+# The Cleanest Water in Washington State
 
-**Figure 1.1**
 ![](Images/WQI_1.0.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/89c8183d/2/#fullscreen)
@@ -9,13 +7,10 @@ The Cleanest Water in Washington State
 > Use the drop-down menu to examine the Top 10 or Bottom 10 testing stations, or use the Wildcard ([`*`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/))
 option to view all available testing sites together.
 
-
-**Figure 1.1** above shows the ranking of the results of the latest Water Quality Index tests performed by the State of Washington.
+The visualization above shows the ranking of the results of the latest Water Quality Index tests performed by the State of Washington.
 Washington State is known for its scenic mountain ranges, diverse climate, and crystal clear water and has
 published the [following dataset](https://catalog.data.gov/dataset/annual-2015-water-quality-index-data), which tracks
 a number of metrics for the 2015 Water Quality tests performed by the [Department of Ecology](http://www.ecy.wa.gov/):
-
-**Table 1.1**
 
 | Metric Abbreviation | Abbreviation Meaning | Metric Weight |
 |---------------------|----------------------|---------------|
@@ -33,8 +28,6 @@ These metrics all have individual weights applied based on their importance in t
 and have been converted to a 0-100 ascending scale. Such a scale can be ambiguous to the amateur viewer, and so
 conversions to qualitative words have also been provided below:
 
-**Table 1.2**
-
 | Range | Quality |
 |-------|---------|
 | 90-100 | Excellent |
@@ -49,8 +42,6 @@ Use the [ChartLab](https://apps.axibase.com/chartlab) visualization below, and t
 the Top 10, Top 20, or Top 30, Bottom 10, Bottom 20, or Bottom 30 testing sites, or use the Wildcard option to view all
 available testing sites together.
 
-
-**Figure 2.1**
 ![](Images/WQI_2.0.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/89c8183d/5/#fullscreen)
@@ -60,7 +51,6 @@ noted in red. The Station ID for each site is contained in the metadata, and can
 query in the [Axibase TSD SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) and then cross-referenced
 to the Department of Ecology's own map (linked [here](https://fortress.wa.gov/ecy/eap/riverwq/regions/state_ContTemp.asp)):
 
-
 ```sql
 SELECT tags.station_name AS "Station Name", value AS "WQI Overall Score", tags.station AS "Station Code"
   FROM "overallwqi_2015"
@@ -68,9 +58,8 @@ ORDER BY value DESC
   LIMIT 10
 ```
 
-**Table 2.1**: Highest Water Quality Test Sites
+Highest Water Quality Test Sites
 
-```ls
 | Station Name                        | WQI Overall Score | Station Code |
 |-------------------------------------|-------------------|--------------|
 | Abernathy Cr nr mouth               | 99                | 25E060       |
@@ -83,7 +72,6 @@ ORDER BY value DESC
 | Duckabush R nr Brinnon              | 88                | 16C090       |
 | Yakima R @ Umtanum Cr Footbridge    | 88                | 39A055       |
 | Columbia R @ Umatilla               | 88                | 31A070       |
-```
 
 ```sql
 SELECT tags.station_name AS "Station Name", value AS "WQI Overall Score", tags.station AS "Station Code"
@@ -92,9 +80,8 @@ ORDER BY value ASC
   LIMIT 10
 ```
 
-**Table 2.2**: Lowest Water Quality Test Sites
+Lowest Water Quality Test Sites
 
-```ls
 | Station Name                     | WQI Overall Score | Station Code |
 |----------------------------------|-------------------|--------------|
 | NF Stillaguamish R @ Cicero      | 29                | 05B070       |
@@ -107,9 +94,6 @@ ORDER BY value ASC
 | Palouse R @ Palouse              | 45                | 34A170       |
 | Walla Walla R nr Touchet         | 49                | 32A070       |
 | Yakima R @ Kiona                 | 49                | 37A090       |
-```
-
-**Map 1.1**
 
 ![](Images/WQI_Map.png)
 

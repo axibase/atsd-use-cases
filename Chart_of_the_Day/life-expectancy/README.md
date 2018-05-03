@@ -32,7 +32,7 @@ Data is visualized using **TRENDS** service from Axibase, a public data reposito
 
 ### Visualization
 
-**Change in Age Expectancy from Previous Decade**
+#### Change in Age Expectancy from Previous Decade
 
 Open the TRENDS visualization to toggle secondary datasets on and off using the labeled buttons along the top of the visualization.
 
@@ -49,7 +49,7 @@ value = var v = value('x'); var p = value('y'); if(p!=null && v!=null) return v 
 
 To create such a series in a local **TRENDS** instance, use the following syntax as a template:
 
-```sql
+```ls
 [group]
   [widget]
     type = chart
@@ -75,7 +75,7 @@ To create such a series in a local **TRENDS** instance, use the following syntax
 
 For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression. For metrics with multiple tags, [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) (`*`) symbols are used. Metric tag labels are set automatically using [label formatting](https://axibase.com/products/axibase-time-series-database/visualization/widgets/label-formatting/) settings.
 
-**Compounded Decadal Rate of Change**
+#### Compounded Decadal Rate of Change
 
 Because changes in life expectancy may fluctuate dramatically, compounding the decadal rate of change is useful to smooth such volatility across the entire trend line.
 
@@ -86,13 +86,13 @@ Because changes in life expectancy may fluctuate dramatically, compounding the d
 
 Once again, a `value` expression is used to derive the above series, but here a JavaScript `Math.` library is used to create an exponential argument:
 
-```sql
+```ls
 value = (Math.pow(( value("x") / previous("x") ), 12) - 1)
 ```
 
 The underlying configuration is shown here:
 
-```sql
+```ls
 [group]
   [widget]
     type = chart
@@ -116,7 +116,7 @@ The underlying configuration is shown here:
 
 The `previous` function is used to select the entry preceding the current value.
 
-**Moving Average Statistical Function**
+#### Moving Average Statistical Function
 
 While the compounded annual rate of change for this dataset showed the overall downward trend of the growth in life expectancy figure, it failed to smooth the individual points along the trend line and actually exaggerated them in some places.
 
@@ -129,7 +129,7 @@ The moving average [statistical function](https://axibase.com/products/axibase-t
 
 To create such a series, add an additional **[series]** expression with a derived value using the Statistical Function syntax:
 
-```sql
+```ls
       value = avg('series', 'time')
 ```
 

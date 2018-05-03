@@ -1,5 +1,4 @@
-Maryland Death Statistics (1993-2015)
-===
+# Maryland Death Statistics (1993-2015)
 
 [Source Dataset](https://github.com/axibase/open-data-catalog/blob/master/datasets/i4x2-3kc7.md)
 
@@ -7,7 +6,7 @@ Maryland Death Statistics (1993-2015)
 
 [ChartLab](https://apps.axibase.com/chartlab)
 
-### Total Maryland Deaths Per 100,000 Persons (1992 - 2011)
+## Total Maryland Deaths Per 100,000 Persons (1992 - 2011)
 
 ![MD2](Images/MD_DEATH3.png)
 
@@ -21,7 +20,6 @@ WHERE entity = 'i4x2-3kc7' AND metric like ('cause.of.death.*') AND metric.label
 ORDER BY date_format(time, 'yyyy')
 ```
 
-```ls
 | Year | Total Deaths per 100,000 Persons |
 |------|----------------------------------|
 | 1992 | 943                              |
@@ -48,9 +46,6 @@ ORDER BY date_format(time, 'yyyy')
 | 2013 | 706                              |
 | 2014 | 697                              |
 | 2015 | 706                              |
-```
-
-
 
 ### Maryland Deaths Per 100,000 Persons by Cause (1992 - 2011)
 
@@ -66,7 +61,6 @@ WHERE entity = 'i4x2-3kc7' AND metric like ('cause.of.death.*') AND metric.label
 ORDER BY metric.label
 ```
 
-```ls
 | Cause of Death                                         | Total |
 |--------------------------------------------------------|-------|
 | Accidents                                              | 640   |
@@ -85,13 +79,10 @@ ORDER BY metric.label
 | Motor Vehicle Accidents                                | 258   |
 | Nephritis, Nephrotic Syndrome, and Nephrosis           | 308   |
 | Septicemia                                             | 422   |
-```
 
 ### Total Deaths Per 100,000 Persons by Year
 
 Querying these data for death information by cause and year is shown below.
-
-
 
 ### Total Deaths Per 100,000 Persons by Cause and Year (1992, 1998, 2004, 2010)
 
@@ -99,7 +90,7 @@ Querying these data for death information by cause and year is shown below.
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/bb18ecdc/7/#fullscreen)
 
-##### Total Deaths Per 100,000 Persons (1992)
+#### Total Deaths Per 100,000 Persons (1992)
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', metric.label AS 'Cause of Death', value AS 'Total'
@@ -109,7 +100,6 @@ WHERE entity = 'i4x2-3kc7' AND metric like ('cause.of.death.*') AND metric.label
 ORDER BY date_format(time, 'yyyy'), metric.label
 ```
 
-```ls
 | Year | Cause of Death                                         | Total |
 |------|--------------------------------------------------------|-------|
 | 1992 | Accidents                                              | 27    |
@@ -128,11 +118,10 @@ ORDER BY date_format(time, 'yyyy'), metric.label
 | 1992 | Motor Vehicle Accidents                                | 11    |
 | 1992 | Nephritis, Nephrotic Syndrome, and Nephrosis           | 15    |
 | 1992 | Septicemia                                             | 18    |
-```
 
 ![](Images/MD_DEATH5.png)
 
-##### Total Deaths Per 100,000 Persons (1998)
+#### Total Deaths Per 100,000 Persons (1998)
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', metric.label AS 'Cause of Death', value AS 'Total'
@@ -142,7 +131,6 @@ WHERE entity = 'i4x2-3kc7' AND metric like ('cause.of.death.*') AND metric.label
 ORDER BY date_format(time, 'yyyy'), metric.label
 ```
 
-```ls
 | Year | Cause of Death                                         | Total |
 |------|--------------------------------------------------------|-------|
 | 1998 | Accidents                                              | 28    |
@@ -161,11 +149,10 @@ ORDER BY date_format(time, 'yyyy'), metric.label
 | 1998 | Motor Vehicle Accidents                                | 10    |
 | 1998 | Nephritis, Nephrotic Syndrome, and Nephrosis           | 12    |
 | 1998 | Septicemia                                             | 19    |
-```
 
 ![](Images/MD_DEATH6.png)
 
-##### Total Deaths Per 100,000 Persons (2004)
+#### Total Deaths Per 100,000 Persons (2004)
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', metric.label AS 'Cause of Death', value AS 'Total'
@@ -175,7 +162,6 @@ WHERE entity = 'i4x2-3kc7' AND metric like ('cause.of.death.*') AND metric.label
 ORDER BY date_format(time, 'yyyy'), metric.label
 ```
 
-```ls
 | Year | Cause of Death                                         | Total |
 |------|--------------------------------------------------------|-------|
 | 2004 | Accidents                                              | 26    |
@@ -194,11 +180,10 @@ ORDER BY date_format(time, 'yyyy'), metric.label
 | 2004 | Motor Vehicle Accidents                                | 12    |
 | 2004 | Nephritis, Nephrotic Syndrome, and Nephrosis           | 13    |
 | 2004 | Septicemia                                             | 20    |
-```
 
 ![](Images/MD_DEATH7.png)
 
-##### Total Deaths Per 100,000 Persons (2010)
+#### Total Deaths Per 100,000 Persons (2010)
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', metric.label AS 'Cause of Death', value AS 'Total'
@@ -208,7 +193,6 @@ WHERE entity = 'i4x2-3kc7' AND metric like ('cause.of.death.*') AND metric.label
 ORDER BY date_format(time, 'yyyy'), metric.label
 ```
 
-```ls
 | Year | Cause of Death                                         | Total |
 |------|--------------------------------------------------------|-------|
 | 2010 | Accidents                                              | 24    |
@@ -227,6 +211,5 @@ ORDER BY date_format(time, 'yyyy'), metric.label
 | 2010 | Motor Vehicle Accidents                                | 9     |
 | 2010 | Nephritis, Nephrotic Syndrome, and Nephrosis           | 14    |
 | 2010 | Septicemia                                             | 15    |
-```
 
 ![](Images/MD_DEATH8.png)

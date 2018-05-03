@@ -1,9 +1,8 @@
-Calls May be Recorded for Quality or Training Purposes
-===
+# Calls May be Recorded for Quality or Training Purposes
 
 ![](Images/sfc-001.jpg)
 
-### Introduction
+## Introduction
 
 The all too familiar notification that your phone call to almost any call center in the world is being recorded has been heard
 by so many people so many times that it's probably forgotten almost as quickly as it's understood. But that hasn't stopped
@@ -18,7 +17,7 @@ is essential to starting client interactions off on the right foot and sets the 
 But what exactly is a low response time? How long is the average person willing to wait on hold before speaking to someone
 on the other line?
 
-### Methodology
+## Methodology
 
 Using public [call center data](https://catalog.data.gov/dataset/call-center-metrics-for-the-health-service-system) from
 San Francisco's [Health Service System](http://www.myhss.org/), which is an insurance provider to city employees, elected
@@ -27,28 +26,21 @@ center performance and customer patience thresholds. These data will be visualiz
 and dissected with the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 and concrete wait times that are likely to result in an abandoned call will be calculated.
 
-### Data
-
-**Figure 1.1**
+## Data
 
 ![](Images/sfc-002.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/b91c1140/2/#fullscreen)
 
-**Figure 1.1** above shows the total number of calls received by the Health Service System over the entire observed period,
+The visualization above shows the total number of calls received by the Health Service System over the entire observed period,
 which began in January 2011 and continues until June 2017. Abandoned calls are shown in orange. The numbers associated with
 the above figure are shown below:
-
-**Script 1.1**
 
 ```sql
 SELECT datetime AS "Date", ibc.value AS "Inbound Calls", abc.value AS "Abandoned Calls", car.value AS "Abandonment Rate"
   FROM "inbound_calls" AS ibc JOIN "abandoned_calls" AS abc JOIN "call_abandonment_rate" AS car
 ```
 
-**Table 1.1**
-
-```ls
 | Date       | Inbound Calls | Abandoned Calls | Abandonment Rate |
 |------------|---------------|-----------------|------------------|
 | 2011-01-01 | 3171          | 45              | 1.4              |
@@ -129,19 +121,16 @@ SELECT datetime AS "Date", ibc.value AS "Inbound Calls", abc.value AS "Abandoned
 | 2017-04-01 | 3084          | 29              | 0.9              |
 | 2017-05-01 | 3402          | 28              | 0.8              |
 | 2017-06-01 | 3425          | 65              | 1.9              |
-```
 
 When scaled appropriately, the relationships between the three values contained in **Table 1.1** are shown. Although tempting
 to conclude that an increased call volume will immediately result in an increased call abandonment rate, which is simply
 the calculated percent of total calls that were abandoned, is shown to be incorrect.
 
-**Figure 1.2**
-
 ![](Images/sfc-003.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/9c6c37ac/3/#fullscreen)
 
-**Scale Modifications**:
+Scale Modifications:
 
 * `inbound_calls = value/10`
 * `call abandonment rate = value*100`
@@ -149,10 +138,8 @@ the calculated percent of total calls that were abandoned, is shown to be incorr
 > To learn more about scale modification in ChartLab, see the [following documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/).
 
 Although an increased call volume results in an increased abandonment rate several times throughout the observed period,
-several local maxima in call volume are not matched by a corresponding maxima in abandoned calls. **Figure 1.3** below compares
+several local maxima in call volume are not matched by a corresponding maxima in abandoned calls. The visualization below compares
 call wait time to call abandonment rate.
-
-**Figure 1.3**
 
 ![](Images/sfc-004.png)
 
@@ -161,22 +148,17 @@ call wait time to call abandonment rate.
 > The scale of this visualization has been intentionally modified to exclude the 2013 absolute maxima so as not to distort
 the perspective of the rest of the data.
 
-**Scale Modifications**:
+Scale Modifications:
 
 * `call_abandonment_rate = value*100`
 
 There is a visible relationship between call wait time and call abandonment rate. The associated SQL query is below:
-
-**Script 1.2**
 
 ```sql
 SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", ROUND(cwt.value, 0) AS "Call Wait Time"
   FROM "call_abandonment_rate" AS car JOIN "average_speed_of_answer_in_secs" AS cwt
 ```
 
-**Table 1.2**
-
-```ls
 | Date       | Call Abandonment Rate | Call Wait Time |
 |------------|-----------------------|----------------|
 | 2011-01-01 | 1.4                   | 25             |
@@ -257,25 +239,20 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", ROUND(cwt.value
 | 2017-04-01 | 0.9                   | 14             |
 | 2017-05-01 | 0.8                   | 16             |
 | 2017-06-01 | 1.9                   | 32             |
-```
 
-### Analysis
 
-The figures below visualize the information from **Figure 1.3** and **Table 1.2** as a distribution table to highlight median
-values of the above data. **Figure 2.1** applies the same scale modification as above, while **Figure 2.2** has no scale
-modification.
+## Analysis
 
-**Figure 2.1**
+The figures below visualize the information as a distribution table to highlight median
+values of the above data. The first visualization applies the same scale modification as above, while the second has no scale modification.
 
 ![](Images/sfc-005.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/9c6c37ac/4/#fullscreen)
 
-**Scale Modification**:
+Scale Modification:
 
 * `call_abandonment rate = value*10`
-
-**Figure 2.2**
 
 ![](Images/sfc-007.png)
 
@@ -284,18 +261,12 @@ modification.
 The relatively small deviation in wait times is highlighted by the tight concentration of bars on the lower graph. That data, along with
 call abandonment rate, will be further analyzed below.
 
-
-**Script 2.1**
-
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Date', AVG(value) AS 'Call Wait Time by Year'
   FROM 'average_speed_of_answer_in_secs'
 GROUP BY date_format(time, 'yyyy')
 ```
 
-**Table 2.1**
-
-```ls
 | Date | Call Wait Time by Year |
 |------|------------------------|
 | 2011 | 32.4                   | 2
@@ -305,11 +276,8 @@ GROUP BY date_format(time, 'yyyy')
 | 2015 | 12.1                   | 6
 | 2016 | 27.7                   | 4
 | 2017 | 20.5                   | 5
-```
 
 > Overall average wait time: 26.3 seconds
-
-**Script 2.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Call Abandonment Rate"
@@ -317,9 +285,6 @@ SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Call Abandonm
 GROUP BY date_format(time, 'yyyy')
 ```
 
-**Table 2.2**
-
-```ls
 | Date | Average Call Abandonment Rate |
 |------|-------------------------------|
 | 2011 | 2.2                           | 2
@@ -329,11 +294,10 @@ GROUP BY date_format(time, 'yyyy')
 | 2015 | 0.9                           | 6
 | 2016 | 1.9                           | 4
 | 2017 | 1.2                           | 5
-```
 
 > Overall average call abandonment rate: 1.6
 
-> The values have also been ranked, shown outside the table.
+The values have also been ranked, shown outside the table.
 
 In order to preserve 2016 and 2017 data as holdout data, the values used for modeling will exclude 2016 and 2017 data. The new baseline values
 are shown below:
@@ -349,22 +313,17 @@ willing to wait at least the average wait time before hanging up. However such a
 rate as normal and rarely are successful businesses content with the average. The alternative method is to adjust the abandonment rate
 down and establish a less-than-average call wait time that meets the selected target abandonment rate criteria. Both methods will be pursued below.
 
-##### Model 1: Maintain Abandonment Rate <= 1.56%
+### Model 1: Maintain Abandonment Rate <= 1.56%
 
 Suppose the company is content to maintain the 1.56% call abandonment rate and is simply interested in finding the typical
 client's limit to wait before their call is fielded or abandoned. By averaging the wait time for only months which demonstrated a call
 abandonment rate of greater than 1.56% we arrive at the following table:
-
-**Script 3.1**
 
 ```sql
 SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "Call Wait Time"
   FROM "call_abandonment_rate" AS car JOIN "average_speed_of_answer_in_secs" AS cat WHERE car.value > 1.56 AND datetime < '2016-01-01 00:00:00'
 ```
 
-**Table 3.1**
-
-```ls
 | Date       | Call Abandonment Rate | Call Wait Time |
 |------------|-----------------------|----------------|
 | 2011-03-01 | 2.1                   | 29             |
@@ -384,15 +343,13 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "C
 | 2014-01-01 | 1.6                   | 13             |
 | 2015-01-01 | 2.4                   | 13             |
 | 2015-10-01 | 1.8                   | 28             |
-```
+
 > *Values greater than twice the average wait time will be counted as 64.2, twice the average.
 
-> Adjusted average wait time: **33.7 seconds**
+Adjusted average wait time: **33.7 seconds**
 
 The training data is visualized below with an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/alert-expressions/)
 included to highlight those months where the call abandonment rate exceeded 1.56%.
-
-**Figure 3.1**
 
 ![](Images/sfc-009.png)
 
@@ -401,22 +358,17 @@ included to highlight those months where the call abandonment rate exceeded 1.56
 The adjusted average wait time value will act as the threshold by which the 1.56% call abandonment rate may be successfully
 maintained and will be tested below in the [Validation](#validation) section.
 
-##### Model 2: Achieve Abandonment Rate <= 1.00%
+### Model 2: Achieve Abandonment Rate <= 1.00%
 
 Suppose the goal of the Health Service System is to have a call abandonment rate no higher than 1%. What is the longest tolerable
 wait time before one can be reasonably sure the call will be abandoned? The following SQL query summons all instances in the
 training data of a call abandonment rate less than or equal to 1%:
-
-**Script 4.1**
 
 ```sql
 SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "Call Wait Time"
   FROM "call_abandonment_rate" AS car JOIN "average_speed_of_answer_in_secs" AS cat WHERE car.value <= 1 AND datetime < '2016-01-01 00:00:00'
 ```
 
-**Table 4.1**
-
-```ls
 | Date       | Call Abandonment Rate | Call Wait Time |
 |------------|-----------------------|----------------|
 | 2012-01-01 | 1                     | 17             |
@@ -444,16 +396,13 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "C
 | 2015-07-01 | 0.5                   | 7              |
 | 2015-08-01 | 0.7                   | 10             |
 | 2015-09-01 | 0.8                   | 10             |
-```
 
 > *Values greater than twice the average wait time will be counted as 64.2, twice the average.
 
-> Adjusted average wait time: **15.5 seconds**
+Adjusted average wait time: **15.5 seconds**
 
 The training data is visualized below with an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/alert-expressions/)
 included to highlight those months where the call abandonment rate did not exceed 1.00%.
-
-**Figure 4.1**
 
 ![](Images/sfc-010.png)
 
@@ -462,7 +411,7 @@ included to highlight those months where the call abandonment rate did not excee
 The adjusted average wait time value will act as the threshold by which the 1.00% call abandonment rate may be successfully
 achieved and will be tested below in the [Validation](#validation) section.
 
-### Validation
+## Validation
 
 | Model Number and Goal | Wait Time (t) Threshold |
 |:------------:|:-------------------:|
@@ -471,16 +420,11 @@ achieved and will be tested below in the [Validation](#validation) section.
 
 The following SQL query will display the holdout data to test the above models' thresholds:
 
-**Script 5.1**
-
 ```sql
 SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "Call Wait Time"
   FROM "call_abandonment_rate" AS car JOIN "average_speed_of_answer_in_secs" AS cat WHERE datetime >= '2016-01-01 00:00:00'
 ```
 
-**Table 5.1**
-
-```ls
 | Date       | Call Abandonment Rate | Call Wait Time |
 |------------|-----------------------|----------------|
 | 2016-01-01 | 3.3                   | 39             |
@@ -501,36 +445,36 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "C
 | 2017-04-01 | 0.9                   | 14             |
 | 2017-05-01 | 0.8                   | 16             |
 | 2017-06-01 | 1.9                   | 32             |
-```
+
 
 To create confusion matrices, the following table details true positives (p,t), true negatives (n,t), false positives (p,t),
 and false negatives (n,f):
 
-**Table 5.2**: Confusion Matrices
+Confusion Matrices
 
 | Model | (p,t) | (n,t) | (p,f) | (n,f) |
 |:-----:|:-----:|:-----:|:-----:|:-----:|
 | 1 | 3 | 11 | 0 | 4 |
 | 2 | 9 | 7 | 2 | 0 |
 
-**Table 5.3**: Error Rates
+Error Rates
 
 | Model | Probability (p,t)| Probability (n,t)| Probability (p,f) | Probability (n,f) | Total Error Probability |
 |:-----:|:----------------:|:----------------:|:-----------------:|:-----------------:|:-----------------------:|
 | 1 | .167 | .611 | 0 | .222 | .222 |
 | 2 | .5 | .389 | .111 | 0 | .111 |
 
-**Table 5.4**: Accuracy
+Accuracy
 
 | Model | Accuracy |
 |:-----:|:--------:|
 | 1 | 77.78% |
 | 2 | 88.89% |
 
-### Conclusions
+## Conclusions
 
 Wait time threshold analysis is a common practice among businesses that operate call centers, and has become standard
-practice for determing staffing and infrastructure requirements. With additional data such as average call time for example,
+practice for determining staffing and infrastructure requirements. With additional data such as average call time for example,
 an analyst could determine the amount of time that any given call is likely to take, and then cross reference call volume
 numbers to staff numbers to determine the capacity of the call center at any given time and make informed decisions about
 times to increase or decrease operator numbers based on the results. Determining thresholds of caller patience is an essential

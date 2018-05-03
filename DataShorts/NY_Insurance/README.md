@@ -1,12 +1,12 @@
-## New York Insurance Company Assets and Liabilities
+# New York Insurance Company Assets and Liabilities
 
-### References
+## References
 
 * [Dataset](https://github.com/axibase/open-data-catalog/blob/master/datasets/xek8-zfrt.md)
 * [SQL Syntax](https://github.com/axibase/atsd/blob/master/sql/README.md)
 * Axibase [ChartLab](https://apps.axibase.com/)
 
-### 2015 Insurance Assets (Top 10)
+## 2015 Insurance Assets (Top 10)
 
 ```sql
 SELECT tags.company_name AS "Company", SUM(value)/1000000 AS "Total Assets, $M"
@@ -17,7 +17,6 @@ ORDER BY 'Total Assets, $M' DESC
   LIMIT 10
 ```
 
-```ls
 | Company                                        | Total Assets, $M |
 |------------------------------------------------|------------------|
 | Mutual of Omaha Insurance Company              | 6945             |
@@ -30,9 +29,8 @@ ORDER BY 'Total Assets, $M' DESC
 | Health Insurance Plan of Greater New York      | 1644             |
 | Trustmark Insurance Company                    | 1407             |
 | UnitedHealthcare Insurance Company of New York | 1223             |
-```
 
-### 2015 Insurance Liabilities (Top 10)
+## 2015 Insurance Liabilities (Top 10)
 
 ```sql
 SELECT tags.company_name AS "Company", SUM(value)/1000000 AS "Total Assets, $M"
@@ -43,7 +41,6 @@ ORDER BY 'Total Assets, $M' DESC
   LIMIT 10
 ```
 
-```ls
 | Company                                        | Total Assets, $M |
 |------------------------------------------------|------------------|
 | Mutual of Omaha Insurance Company              | 4082             |
@@ -56,9 +53,8 @@ ORDER BY 'Total Assets, $M' DESC
 | Oxford Health Insurance, Inc.                  | 938              |
 | Sierra Health and Life Insurance Co, Inc.      | 898              |
 | UnitedHealthcare Insurance Company of New York | 749              |
-```
 
-### 2015 Insurance Assets Versus Liabilities (Top 10)
+## 2015 Insurance Assets Versus Liabilities (Top 10)
 
 ```sql
 SELECT a.tags.company_name AS "Company", SUM(a.value - l.value)/1000000 AS "Net Assets, $M"
@@ -69,7 +65,6 @@ ORDER BY 'Net Assets' DESC
   LIMIT 10
 ```
 
-```ls
 | Company                                   | Net Assets, $M |
 |-------------------------------------------|----------------|
 | Mutual of Omaha Insurance Company         | 2863           |
@@ -82,19 +77,18 @@ ORDER BY 'Net Assets' DESC
 | SilverScript Insurance Company            | 614            |
 | HealthNow New York Inc.                   | 544            |
 | Oxford Health Plans (NY), Inc.            | 475            |
-```
 
 ![](Images/NY_I6.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/3904f832/12/#fullscreen)
 
-#### 2015 New York Insurance Assets Versus Liabilities (Top 10)
+## 2015 New York Insurance Assets Versus Liabilities (Top 10)
 
 ![](Images/NY_I4.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/6402f01c/78/#fullscreen)
 
-### 2014 - 2015 Change in Net Insurance Assets (Top 10)
+## 2014 - 2015 Change in Net Insurance Assets (Top 10)
 
 ```sql
 SELECT t1.tags.company_name AS "Company",
@@ -108,7 +102,6 @@ GROUP BY t1.tags.company_name
 LIMIT 10
 ```
 
-```ls
 | Company                                   | Change in Assets, $M | Change in Liabilities, $M | Change in Net Assets, $M |
 |-------------------------------------------|----------------------|---------------------------|--------------------------|
 | Sierra Health and Life Insurance Co, Inc. | 1506.6               | 803.2                     | 703.4                    |
@@ -121,7 +114,6 @@ LIMIT 10
 | MVP Health Plan, Inc.                     | 72.5                 | 23.1                      | 49.4                     |
 | Capital District Physicians Health Plan   | 38.0                 | -5.9                      | 43.9                     |
 | Physicians Mutual Insurance Company       | 80.0                 | 40.0                      | 40.1                     |
-```
 
 ![](Images/NY_I2.png)
 

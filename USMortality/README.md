@@ -1,10 +1,8 @@
 ![TitlePhoto](Images/TitlePhoto.png)
 
-Computing U.S. Mortality Statistics with a Structured Query Language
-===============================================================
+# Computing U.S. Mortality Statistics with a Structured Query Language
 
-### Introduction
-----------------
+## Introduction
 
 According to [infoplease.com](http://www.infoplease.com/ipa/A0005148.html), life expectancy from 1935 to 2010 for both sexes in the U.S. increased from 61.7 to 78.7 years.
 As reported by the [Center for Disease Control and Prevention (CDC)](http://www.cdc.gov/nchs/data/databriefs/db88.htm#x2013;2010%3C/a%3E>), the crude death rate in the United States fell from
@@ -12,8 +10,7 @@ As reported by the [Center for Disease Control and Prevention (CDC)](http://www.
 In this article we will analyze a data.gov dataset looking at [death statistics for 122 U.S. cities](https://catalog.data.gov/dataset/deaths-in-122-u-s-cities-1962-2016-122-cities-mortality-reporting-system).
 This article will focus on Axibase Time Series Database (ATSD) [SQL query language capabilities](https://github.com/axibase/atsd/blob/master/sql/README.md#overview), which we will use to search for specific information contained in this dataset.
 
-### Death Statistics for 122 U.S. Cities
-----------------------------------------
+## Death Statistics for 122 U.S. Cities
 
 Let's take a look at the dataset titled **Deaths in 122 U.S. cities - 1962-2016. 122 Cities Mortality Reporting System** from [data.gov](https://www.data.gov/).
 
@@ -39,8 +36,7 @@ You can find a table of these regions in our [region-table](region-table.md) fil
 
 While you can manually analyze this information in a spreadsheet program, it is much more convenient to interact with the data once it is loaded into a database.
 
-### Axibase Time Series Database
---------------------------------
+## Axibase Time Series Database
 
 The [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. This article will not focus on creating graphs and figures using ATSD, but
 rather on writing and running SQL queries. If you are interested in reading more on the visual presentation capabilities of ATSD, check out our articles on
@@ -55,16 +51,14 @@ Here you can explore the complete dataset for U.S. death totals:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/3d07088c)
 
-### Creating Local Configurations for ATSD and Axibase Collector using Docker
------------------------------------------------------------------------------
+## Creating Local Configurations for ATSD and Axibase Collector using Docker
 
 To query information from this dataset you will need to install both ATSD and Axibase Collector.
 
 You can set up local instances of ATSD and Axibase Collector using Docker by going through our [step-by-step walk through](../USMortality/configuration.md).
 It should take you about 15 minutes.
 
-### ATSD Schema
----------------
+## ATSD Schema
 
 Before we get in to creating SQL queries, let us begin by running through the [data schema and models](https://axibase.com/products/axibase-time-series-database/data-model/) of ATSD.
 
@@ -123,8 +117,7 @@ Below is an output for this data.
 Maneuvering through the entity and searching for our desired data for different cities, states, regions, age groups, and deaths types can be time consuming. Now, let us look some
 simple SQL queries which will do the work for us.
 
-### Basic SQL Queries
----------------------
+## Basic SQL Queries
 
 Here are some basic SQL queries with brief descriptions included. Look these over to get yourself acclimated to the general format of SQL queries. In the example following this section, we will
 in detail walk through executing a query from start to finish. You can read more about our SQL syntax [here](https://github.com/axibase/atsd/blob/master/sql/README.md#syntax).
@@ -195,8 +188,7 @@ This final example filters records for a particular city and time. Weekly sample
 
 You can take a look at various other [SQL queries examples on our GitHub page](https://github.com/axibase/atsd/blob/master/sql/README.md#examples).
 
-### Detailed SQL Example 1 - Pneumonia and Influenza Deaths in Boston
-------------------------------------------------------------
+## Detailed SQL Example 1 - Pneumonia and Influenza Deaths in Boston
 
 Now that we have looked at the basics, let's get into a detailed example. Here is an SQL query looking at recent pneumonia and influenza deaths in Boston, Massachusetts.
 
@@ -350,8 +342,7 @@ WHERE tags.region = '1'
 | 2016-01-01T00:00:00.000Z  | 214.0       | New-England |
 ```
 
-### Detailed SQL Example 2 - Best of the Best and Worst of the Worst
---------------------------------------------------------------------
+## Detailed SQL Example 2 - Best of the Best and Worst of the Worst
 
 Let us now look at some additional examples which delve into finding out which of our 122 cities have some of the deadliest and least deadly conditions.
 
@@ -826,8 +817,7 @@ ORDER BY sum(value) DESC
 | Sep    | Pacific  | 18611.0                    |
 ```
 
-### Detailed SQL Example 3 - Calculating Mortality Rates
---------------------------------------------------------
+## Detailed SQL Example 3 - Calculating Mortality Rates
 
 We have spent some time looking at SQL queries to search for information from our dataset for the total number of deaths, percentages of deaths caused by pneumonia and influenza, and ranking
 these results in terms of the deadliest month, region, or city. Now let us delve into computing our own mortality statistics for our dataset. According to the [CIA World Factbook](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2066rank.html), mortality (or death)
@@ -1347,7 +1337,6 @@ This may be a simplified conclusion to a complicated issue. However, we were abl
 wrote our own SQL queries, and were able to compute our own mortality statistics. Using these capabilities of ATSD allows you gain a deeper understanding of complicated datasets and issues.
 
 ### Action Items
-----------------
 
 Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector and create SQL queries for analyzing CDC death statistics:
 
@@ -1374,7 +1363,6 @@ The full guide for setting up can be found [here](../USMortality/configuration.m
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
 ### Sources
------------
 
 Article Title Photo: [http://www.governing.com/gov-data/pedestrian-deaths-poor-neighborhoods-report.html](http://www.governing.com/gov-data/pedestrian-deaths-poor-neighborhoods-report.html)<br />
 Rust Belt Photo: [http://fountainheadauto.blogspot.ru/2014/09/trivia-time.html](http://fountainheadauto.blogspot.ru/2014/09/trivia-time.html)<br />

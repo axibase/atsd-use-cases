@@ -1,5 +1,4 @@
-Outstanding Students Loan Debt Continues to Exceed One Trillion Dollars
-===
+# Outstanding Students Loan Debt Continues to Exceed One Trillion Dollars
 
 ![](Images/sld2.png)
 

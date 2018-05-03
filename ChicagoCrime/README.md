@@ -1,10 +1,8 @@
  <img src="Images/TitlePhoto.png" width="650" >
 
-Analyzing Chicago Crime Statistics
-==================================
+# Analyzing Chicago Crime Statistics
 
-Introduction
-----------------
+## Introduction
 
 Pizza. Michael Jordan. Lake Michigan. Jazz. The Bean. These are some of the great things that Chicago, Illinois, is known for. There is another thing that has defined the city since its birth, and
 as of late seems to be all we think about when it comes to Chicago: **crime**. In 2016, Chicago, the 3rd most populous city in the United States, had more homicides
@@ -16,12 +14,11 @@ from data.gov can be easily loaded into the non-relational [Axibase Time Series 
 representation of raw data collected by government and private organizations. The article provides both sample queries and charts, as well as instructions on how to install your own ATSD instance
 and populate it with the raw data.
 
-Chicago Crime Statistics Dataset
-------------------------------------
+## Chicago Crime Statistics Dataset
 
 Let's take a look at the dataset titled **Crimes - 2001 to present** from [data.gov](https://www.data.gov/).
 
-This dataset can be found here: https://catalog.data.gov/dataset/crimes-2001-to-present-398a4. On the data.gov website, this dataset can be downloaded as a CSV (1.4 GB), RDF, JSON (**2.8 GB**), or a
+This dataset can be found [here](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4). On the data.gov website, this dataset can be downloaded as a CSV (1.4 GB), RDF, JSON (**2.8 GB**), or a
 XML file. This dataset can easily be parsed using the JSON job in Axibase Collector.
 
 This dataset contains crime statistics collected daily from 2001 to the present time. This dataset is continuously updated with a time lag of 7 days. Statistics are available for **32 different crime types**. Furthermore, these crimes may be filtered by the location
@@ -33,8 +30,7 @@ Given the size of the dataset, you cannot load it in Excel. It is much more conv
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
-Homicide Numbers
---------------------
+## Homicide Numbers
 
 Below is an image of monthly homicide totals from January 2001 through December 2016, but with a zoomed in screenshot starting with 2008. The month with the highest murder total in 2016 was August, which experienced 90 murders. August 2015 only had 53 murders.
 Taking a closer look at this graph, we can see that every year seems to follow a general trend of low numbers to start the year out, with totals increasing in the summer months, and then dropping back
@@ -69,7 +65,6 @@ GROUP BY date_format(time, 'MMM')
 ORDER BY date_format(time, 'MM')
 ```
 
-```ls
 | month  | avg(value) |
 |--------|------------|
 | Jan    | 30.4       |
@@ -84,7 +79,6 @@ ORDER BY date_format(time, 'MM')
 | Oct    | 41.7       |
 | Nov    | 37.6       |
 | Dec    | 36.3       |
-```
 
 How about the deadliest day of the week in Chicago in 2016?
 
@@ -96,7 +90,6 @@ WHERE datetime >= '2016-01-01T00:00:00Z'
 GROUP BY date_format(time, 'EEE')
 ```
 
-```ls
 | day_of_week  | count(value) |
 |--------------|--------------|
 | Mon          | 112          |
@@ -106,7 +99,6 @@ GROUP BY date_format(time, 'EEE')
 | Fri          | 107          |
 | Sat          | 123          |
 | Sun          | 142          |
-```
 
 Did the most common locations for homicides change from 2015 to 2016? The below pie chart shows the top five locations where homicides were committed in 2015 and 2016. Both years have the same top five
 locations for murders (alley, apartment, street, house, auto) and we can see that the greatest number of homicides took place on the street. The percentage of murders on the street in 2015 and 2016
@@ -131,7 +123,6 @@ ORDER BY 2 DESC
 LIMIT 20
 ```
 
-```ls
 | tags.location_description  | count(value)/15 |
 |----------------------------|-----------------|
 | STREET                     | 230.1           |
@@ -154,12 +145,10 @@ LIMIT 20
 | CHA HALLWAY                | 2.3             |
 | CHA PARKING LOT            | 2.3             |
 | TAVERN                     | 2.0             |
-```
 
 If you would like to see more queries on this Chicago crime dataset, please go to the [Additional SQL Queries](#additional-sql-queries) section at the end of this article.
 
-A Deeper Look at Crime in Chicago
--------------------------------------
+## A Deeper Look at Crime in Chicago
 
 So, what caused this drastic increase in murders in Chicago in 2016? Did the city experience an overall increase in crime?
 
@@ -221,8 +210,7 @@ Click here to explore this Chart Lab portal:
 
 [![](../BaltimorePolice/Images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/8/#fullscreen)
 
-Action Items
-----------------
+## Action Items
 
 Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector and create SQL queries for analyzing Chicago crime statistics:
 
@@ -247,13 +235,11 @@ Below are the summarized steps to follow to install local configurations of ATSD
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
-Sources
-----------
+## Sources
 
-Title Photo: http://www.zerohedge.com/news/2016-08-23/chicagos-violent-crime-spreading-safe-north-side
+[Title Photo](http://www.zerohedge.com/news/2016-08-23/chicagos-violent-crime-spreading-safe-north-side)
 
-Additional SQL Queries
---------------------------
+## Additional SQL Queries
 
 Here are some additional SQL queries (along with snippets of their outputs) which take a closer look at some of the crime statistics in Chicago.
 
@@ -267,7 +253,6 @@ AND tags.primary_type = 'HOMICIDE'
 LIMIT 1000
 ```
 
-```ls
 | entity     | datetime              | value    | tags.arrest  | tags.description     | tags.primary_type  | tags.location_description |
 |------------|-----------------------|----------|--------------|----------------------|--------------------|---------------------------|
 | ijzp-q8t2  | 2016-01-01T02:37:00Z  | 3946209  | false        | FIRST DEGREE MURDER  | HOMICIDE           | STREET                    |
@@ -276,7 +261,6 @@ LIMIT 1000
 | ijzp-q8t2  | 2016-01-03T13:17:00Z  | 3946532  | false        | FIRST DEGREE MURDER  | HOMICIDE           | AUTO                      |
 | ijzp-q8t2  | 2016-01-04T08:58:00Z  | 3946583  | true         | FIRST DEGREE MURDER  | HOMICIDE           | STREET                    |
 | ijzp-q8t2  | 2016-01-05T01:52:00Z  | 3946672  | false        | FIRST DEGREE MURDER  | HOMICIDE           | STREET                    |
-```
 
 Number of arrests made for homicides in 2015 and 2016. When `tags.arrest` is `true`, it means that an arrest was made. When this tag is `false`, no arrest was made.
 
@@ -288,7 +272,6 @@ AND tags.primary_type = 'HOMICIDE'
 GROUP BY tags.arrest, period(1 month)
 ```
 
-```ls
 | datetime              | tags.arrest  | count(value) |
 |-----------------------|--------------|--------------|
 | 2015-01-01T00:00:00Z  | false        | 21           |
@@ -296,8 +279,7 @@ GROUP BY tags.arrest, period(1 month)
 | 2015-03-01T00:00:00Z  | false        | 19           |
 | 2015-01-01T00:00:00Z  | true         | 9            |
 | 2015-02-01T00:00:00Z  | true         | 8            |
-| 2015-03-01T00:00:00Z  | true         | 13           |
-```
+| 2015-03-01T00:00:00Z  | true         | 13           
 
 Number of arrests made for narcotics possession in 2014.
 
@@ -313,7 +295,6 @@ ORDER BY 2 DESC
 LIMIT 20
 ```
 
-```ls
 | tags.description                 | count(value) |
 |----------------------------------|------------- |
 | POSS: CANNABIS 30GMS OR LESS     | 12732        |
@@ -332,7 +313,6 @@ LIMIT 20
 | POSSESSION: SYNTHETIC MARIJUANA  | 28           |
 | POSS: HEROIN(BLACK TAR)          | 9            |
 | POSS: LOOK-ALIKE DRUGS           | 8            |
-```
 
 Total yearly drug possession arrests from 2001 through 2016.
 
@@ -345,7 +325,6 @@ AND tags.description LIKE 'POSS%'
 GROUP BY period(1 year)
 ```
 
-```ls
 | datetime              | count(value) |
 |-----------------------|--------------|
 | 2001-01-01T00:00:00Z  | 39623        |
@@ -364,7 +343,6 @@ GROUP BY period(1 year)
 | 2014-01-01T00:00:00Z  | 23133        |
 | 2015-01-01T00:00:00Z  | 18938        |
 | 2016-01-01T00:00:00Z  | 8797         |
-```
 
 Total yearly drug possession arrests from 2001 through 2016, excluding marijuana.
 
@@ -378,7 +356,6 @@ AND tags.description NOT LIKE '%CANNAB%'
 GROUP BY period(1 year)
 ```
 
-```ls
 | datetime              | count(value) |
 |-----------------------|--------------|
 | 2001-01-01T00:00:00Z  | 24165        |
@@ -397,7 +374,6 @@ GROUP BY period(1 year)
 | 2014-01-01T00:00:00Z  | 9493         |
 | 2015-01-01T00:00:00Z  | 8368         |
 | 2016-01-01T00:00:00Z  | 4352         |
-```
 
 Total yearly drug manufacturing and distribution arrests from 2001 through 2016, excluding marijuana.
 
@@ -410,7 +386,6 @@ AND tags.description LIKE 'MANU%' AND tags.description NOT LIKE '%CANNAB%'
 GROUP BY period(1 year)
 ```
 
-```ls
 | datetime              | count(value) |
 |-----------------------|--------------|
 | 2001-01-01T00:00:00Z  | 3859         |
@@ -429,7 +404,6 @@ GROUP BY period(1 year)
 | 2014-01-01T00:00:00Z  | 2764         |
 | 2015-01-01T00:00:00Z  | 2258         |
 | 2016-01-01T00:00:00Z  | 1526         |
-```
 
 All narcotics arrests made from 2001 through 2016.
 
@@ -441,7 +415,6 @@ AND tags.primary_type = 'NARCOTICS'
 GROUP BY period(1 year)
 ```
 
-```ls
 | datetime              | count(value) |
 |-----------------------|--------------|
 | 2001-01-01T00:00:00Z  | 49483        |
@@ -460,7 +433,6 @@ GROUP BY period(1 year)
 | 2014-01-01T00:00:00Z  | 28722        |
 | 2015-01-01T00:00:00Z  | 23647        |
 | 2016-01-01T00:00:00Z  | 12323        |
-```
 
 Yearly homicide totals.
 
@@ -472,7 +444,6 @@ AND tags.primary_type = 'HOMICIDE'
 GROUP BY period(1 year)
 ```
 
-```ls
 | datetime              | count(value) |
 |-----------------------|--------------|
 | 2001-01-01T00:00:00Z  | 654          |
@@ -491,7 +462,6 @@ GROUP BY period(1 year)
 | 2014-01-01T00:00:00Z  | 418          |
 | 2015-01-01T00:00:00Z  | 486          |
 | 2016-01-01T00:00:00Z  | 753          |
-```
 
 Monthly homicide totals from 2014 through 2016.
 
@@ -503,7 +473,6 @@ AND tags.primary_type = 'HOMICIDE'
 GROUP BY period(1 month)
 ```
 
-```ls
 | date      | count(value) |
 |-----------|--------------|
 | 2014-Jan  | 19           |
@@ -511,7 +480,6 @@ GROUP BY period(1 month)
 | 2014-Mar  | 23           |
 | 2014-Apr  | 35           |
 | 2014-May  | 41           |
-```
 
 Yearly weapons violation arrest from 2011 through 2016.
 
@@ -523,7 +491,6 @@ AND tags.primary_type = 'WEAPONS VIOLATION'
 GROUP BY period(1 year)
 ```
 
-```ls
 | date      | count(value) |
 |-----------|--------------|
 | 2010-Jan  | 3695         |
@@ -533,7 +500,6 @@ GROUP BY period(1 year)
 | 2014-Jan  | 3108         |
 | 2015-Jan  | 3353         |
 | 2016-Jan  | 3423         |
-```
 
 Murders per week, averaged over the 5 year period from 2010 to 2015.
 
@@ -547,7 +513,6 @@ GROUP BY date_format(time, 'w')
  LIMIT 15
 ```
 
-```ls
 | week_in_year  | murders_per_week |
 |---------------|------------------|
 | 1             | 10.2             |
@@ -565,7 +530,6 @@ GROUP BY date_format(time, 'w')
 | 13            | 8.4              |
 | 14            | 9.8              |
 | 15            | 7.0              |
-```
 
 Murders per week in 2016.
 
@@ -579,7 +543,6 @@ GROUP BY date_format(time, 'w')
  LIMIT 15
 ```
 
-```ls
 | week_in_year  | murders_per_week |
 |---------------|------------------|
 | 1             | 3                |
@@ -597,7 +560,6 @@ GROUP BY date_format(time, 'w')
 | 13            | 9                |
 | 14            | 8                |
 | 15            | 12               |
-```
 
 Murders per week in 2017.
 
@@ -611,10 +573,8 @@ GROUP BY date_format(time, 'w')
  LIMIT 15
 ```
 
-```ls
 | week_in_year  | murders_per_week |
 |---------------|------------------|
 | 1             | 9                |
 | 2             | 12               |
 | 3             | 6                |
-```

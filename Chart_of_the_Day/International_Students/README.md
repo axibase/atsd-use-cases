@@ -1,11 +1,8 @@
-Where Do International Students in the United States Come From?
-===
+# Where Do International Students in the United States Come From?
 
-> Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+* Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
-> Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md)
-
-**Figure 1.1**
+* Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md)
 
 ![](Images/is-001.png)
 
@@ -18,17 +15,12 @@ and sometimes accepting work and joining the millions who have done the same thr
 
 But where do they come from?
 
-**Script 1.1**
-
 ```sql
 SELECT tags.country AS "Country", value/1000 AS "Thousand Students"
   FROM "no_of_students"
 ORDER BY value DESC
 ```
 
-**Table 1.1**
-
-```ls
 | Country      | Thousand Students |
 |--------------|-------------------|
 | China        | 235.6             |
@@ -41,15 +33,12 @@ ORDER BY value DESC
 | Vietnam      | 16.1              |
 | Mexico       | 14.2              |
 | Turkey       | 11.3              |
-```
 
-The number of international students is on a growing arc upward and **Figure 1.1** above details the home country of the
+The number of international students is on a growing arc upward the table and visualization above details the home country of the
 top ten groups of international students studying in the United States from [2013 data](https://catalog.data.gov/dataset/top-10-source-countries-of-international-students-in-the-us-2013-44dd7)
 released by the State of Hawaii.
 
 The visualization below arranges the data by continent for an additional perspective.
-
-**Figure 2.2**
 
 ![](Images/is-002.png)
 

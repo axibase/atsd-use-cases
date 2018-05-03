@@ -1,8 +1,8 @@
-## Climate Change: Back to the Drawing Board
+# Climate Change: Back to the Drawing Board
 
 ![Earth](Images/Earth.jpg)
 
-#### Introduction
+## Introduction
 
 The [Paris Climate Accords](http://unfccc.int/files/essential_background/convention/application/pdf/english_paris_agreement.pdf) are the most recent iteration of the [United Nations Framework
 Convention on Climate Change](https://unfccc.int/resource/docs/convkp/conveng.pdf),
@@ -25,7 +25,7 @@ So, is America's position as a green leader truly in jeopardy?
 Have the last decades of climate change action produced the desired results?
 And perhaps most importantly, what does the data show?
 
-#### Methodology
+## Methodology
 
 Using [data](https://catalog.data.gov/dataset/greenhouse-gas-emissions-from-fuel-combustion-million-metric-tons-beginning-1990)
  made available by New York State that examines its greenhouse gas emissions from
@@ -41,7 +41,7 @@ imported energy, that is, energy produced outside the state itself. This is an i
 important variable to consider because currently, externally produced energy makes up more than
 half of the [New York State energy market](https://www.eia.gov/state/analysis.php?sid=NY).
 
-#### Data
+## Data
 
 ![NYTotal](Images/NYTotal.png)
 
@@ -91,7 +91,7 @@ the stark difference in absolute change of two similarly performing sectors.
 A histogram that displays all sectors together can highlight trends that may be otherwise
 missed such as the sharp decrease in emissions from all sectors between 2007 and 2012.
 
-#### Analysis
+## Analysis
 
 During the observed period, New York State greenhouse gas emissions are shown to decrease noticeably
 with a difference of more than 20 million metric tons of gas emitted in the year 2014
@@ -145,7 +145,7 @@ greenhouse gas emissions have not changed dramatically. For the observed period,
 the standard deviation of the residential sector was 2.82, which accounts for just 7.95% of
 the observed mean.
 
-#### Conclusions
+## Conclusions
 
 The true effects of the President's decision have yet to be seen of course,
 as the clause in the Paris Agreement that relates to voluntary withdrawal states a country
@@ -158,18 +158,18 @@ symbolic at present. In the meantime, however,
 public data provided by states like New York can offer a unique insight to the policies currently
 in place and help analysts make predictions about the validity of future efforts.
 
-#### Action Items
+## Action Items
 
-Using the following procedure, users can replicate data analysis seen here.
+Users can replicate data analysis shown here.
 
-1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
+* Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
-2. Download the [`docker-compose.yml`](resources/docker-compose.yml) file to launch the ATSD container bundle.
+* Download the [`docker-compose.yml`](resources/docker-compose.yml) file to launch the ATSD container bundle.
 
-3. Launch containers with the following command:
+* Launch containers with the following command:
 
 ![ContainerCommand](Images/containercommand.png)
 
-4. Open Axibase Time Series Database user interface and begin analyzing your data.
+* Open Axibase Time Series Database user interface and begin analyzing your data.
 
 [Contact Axibase](https://axibase.com/feedback/) with any questions here.

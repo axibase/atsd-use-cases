@@ -1,7 +1,6 @@
-Calculated Values with Schema-Based Parsing
-===
+# Calculated Values with Schema-Based Parsing
 
-#### Introduction
+## Introduction
 
 Data is not always recorded ideally for a given analysis. Perhaps the metrics that you would like to work with are not contained
 in a given file, or maybe calculations must be done with the given data in order to arrive to a dataset that better suits
@@ -11,7 +10,7 @@ With [Schema-Based Parsing](https://axibase.com/products/axibase-time-series-dat
 data can be modified upon import so that working with it in the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md)
 or [ChartLab](https://apps.axibase.com/chartlab) is more useful.
 
-#### Data
+## Data
 
 Using Bank of Israel foreign trade data as an example, this procedure is explained below:
 
@@ -21,20 +20,13 @@ To start, look at the below visualization, SQL query, and result set:
 
 >The data here has been imported into ATSD with no modification.
 
-**Figure 1.1**
-
 ![](Images/SBP_1.1.png)
-
-**Script 1.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", im.value AS "Import Percent Change", ex.value 'Export Percent Change'
   FROM import_total AS "im" JOIN export_total AS "ex"
 ```
 
-**Table 1.1**
-
-```ls
 | Year | Import Percent Change | Export Percent Change |
 |------|-----------------------|-----------------------|
 | 1970 | 17.7                  | 9.7                   |
@@ -84,7 +76,6 @@ SELECT date_format(time, 'yyyy') AS "Year", im.value AS "Import Percent Change",
 | 2014 | 3.8                   | 1.4                   |
 | 2015 | -0.5                  | -4.3                  |
 | 2016 | 9.5                   | 3.0                   |
-```
 
 The given dataset shows the annual change in 2010 New Israeli Shekel (NIS) amount of foreign trade done by Israel for each year
 from 1970 to 2016. These values are shown as a calculated percent and the following key is given for 2016 information:
@@ -104,8 +95,6 @@ In a local instance of ATSD follow the path **Configurations> Parsers: CSV**, sc
 ![](Images/SBP_2.1.png)
 
 The desired schema for this data set is shown below:
-
-**Script 2.1**
 
 ```sql
 var dataPer2016 = ['2016',341267,319631,183461,135824,15268,367246,356431,10984,268057,89354,21465]; // numbers for 2016
@@ -155,20 +144,13 @@ the Axibase Schema-Based Parsing documentation, linked [here](https://axibase.co
 Because ATSD supports schema-based parsing and javascript customization, your data can be modified before you submit it for storage and kept in a form
 that is exactly as needed. The enhanced SQL query and visualization are shown below, featuring the newly calculated values:
 
-**Figure 2.1**
-
 ![](Images/SBP_3.1.png)
-
-**Script 3.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", ima.value AS "Import Total", im.value AS "Import Percent Change", exa.value AS "Export Total", ex.value 'Export Percent Change'
   FROM import_total AS "im" JOIN import_total_actual AS "ima" JOIN export_total AS "ex" JOIN export_total_actual AS "exa"
 ```
 
-**Table 2.1**
-
-```ls
 | Year | Import Total | Import Percent Change | Export Total | Export Percent Change |
 |------|--------------|-----------------------|--------------|-----------------------|
 | 1970 | 36111.9      | 17.7                  | 21892.3      | 9.7                   |
@@ -218,4 +200,3 @@ SELECT date_format(time, 'yyyy') AS "Year", ima.value AS "Import Total", im.valu
 | 2014 | 337069.8     | 3.8                   | 346214.4     | 1.4                   |
 | 2015 | 335384.5     | -0.5                  | 331327.2     | -4.3                  |
 | 2016 | 367246.0     | 9.5                   | 341267.0     | 3.0                   |
-```

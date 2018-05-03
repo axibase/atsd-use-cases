@@ -127,7 +127,6 @@ docker run -d -p 8443:8443 \
 Copy the incoming `aws-cw` webhook URL from the start log.
 
 ```txt
-...
 [ATSD] Importing '/tmp/import/rule_aws-cloudwatch-events.xml' configuration
 [ATSD] Successfully imported '/tmp/import/rule_aws-cloudwatch-events.xml'
 aws-cw webhook created:

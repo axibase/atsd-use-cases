@@ -1,7 +1,4 @@
-City-wide LED Street Light Savings (Los Angeles, CA)
-===
-
-**Figure 1.1**
+# City-wide LED Street Light Savings (Los Angeles, CA)
 
 ![](Images/lal-001.png)
 
@@ -20,8 +17,6 @@ drop-down menu to toggle between all of the recorded metrics for a complete pict
 
 The table below indexes the recorded metrics and offers explanation when  needed:
 
-**Table 1.1**
-
 | Metric | Unit | Comment |
 |--------|:----:|:-------:|
 | annual_c02_reduction_metric_tons | Metric Tons | - |
@@ -33,8 +28,6 @@ The table below indexes the recorded metrics and offers explanation when  needed
 | total_units | Count | Number of streetlights |
 
 The map below details the City Council districts of Los Angeles to provide a clearer picture of the work being done.
-
-**Map 1.1**
 
 ![](Images/lamap.png)
 

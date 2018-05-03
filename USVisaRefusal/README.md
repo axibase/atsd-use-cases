@@ -1,7 +1,6 @@
 ![TitlePhoto](Images/TitlePhoto.png)
 
-U.S. State Department: Getting Paid $400 Million While Rejecting Visitors
-==========================================================================
+# U.S. State Department: Getting Paid $400 Million While Rejecting Visitors
 
 There are a few ways to earn **$400 million** in today's world. You can win the [lottery jackpot](https://en.wikipedia.org/wiki/Lottery_jackpot_records), or come up with the next big [smart phone app](https://www.bloomberg.com/gadfly/articles/2017-03-01/snapchat-s-ipo-leads-the-way-for-other-overheated-startups). These are relatively
 established "get rich" schemes. How about earning millions by rejecting visitors? In 2015, the [U.S. State Department](https://www.state.gov/) earned over **$400 million** from non-immigrant visa applications that ended up being rejected.
@@ -13,8 +12,7 @@ from 2006 to 2016 (also from [travel.state.gov](https://travel.state.gov)). This
 organizations can be easily loaded into the non-relational [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) for interactive analysis and
 visual outputs with Chart Lab charts and SQL queries. Additionally, this article contains instructions on how to install your own ATSD instance and populate it with raw data.
 
-### U.S. Visa Dataset and Refusal Rates
----------------------------------------
+## U.S. Visa Dataset and Refusal Rates
 
 Let's take a look at a dataset from travel.state.gov, which can be accessed via our archive located in the [Resources](Resources/visas.tar.gz) folder in this repository. Alternatively, you can
 download the Excel file from the [travel.state.gov](https://travel.state.gov) website and save each separate year as its
@@ -35,8 +33,7 @@ As opposed to analyzing this information in Excel, it is much more convenient to
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
-### U.S. Visa Refusal Rates
----------------------------
+## U.S. Visa Refusal Rates
 
 The below figure shows the refusal rates from 2006 through 2016. We can see that refusal rates for Syrian nationals grew from **23.6%** in 2009 to **60.0%** in 2016. You can filter
 by country by clicking on the dropdown button. Here are a few more countries with figures showing how their refusal rates have changed over time.
@@ -80,8 +77,7 @@ You can explore this portal by clicking on the below button:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/b8675093#fullscreen)
 
-### SQL Queries
----------------
+## SQL Queries
 
 In addition to outputs from Chart Lab, ATSD is also capable of performing [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview),
 which can be used to search for specific information contained in this dataset. You can read more about our SQL syntax [here](https://github.com/axibase/atsd/blob/master/sql/README.md#syntax).
@@ -495,8 +491,7 @@ that 10.9 million visas were issued at foreign posts in 2015. The total revenue 
 refusal fees shouldn't be considered pocket change. According to our SQL query, in this year **2.6 million** non-immigrant visa applications were rejected. You can take a closer
 look at the U.S. visa refusal rates by following the below actions items to install your own ATSD instance.
 
-### Action Items
-----------------
+## Action Items
 
 Below are the summarized steps to follow to install local configurations of ATSD for analyzing United States visa statistics:
 
@@ -522,7 +517,6 @@ docker run \
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
-### Sources
------------
+## Sources
 
 Title Photo: http://www.siam-legal.com/US_Visa/k1-visa-thailand.php

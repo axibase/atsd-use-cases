@@ -39,7 +39,7 @@ is developed to work within the [Socrata](https://github.com/axibase/axibase-col
 framework used by government agencies to publish data, so it was selected as the main tool for this project
 and calculations were done using the computational knowledge engine [WolframAlpha](https://www.wolframalpha.com/).
 
-### Data
+## Data
 
 ![AllCity](Images/MainGraph.png)
 
@@ -156,7 +156,7 @@ also be displayed next to one another, and the Benchmark Average:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/e926d483/60/)
 
-### Analysis
+## Analysis
 
 The American College of Sports Medicine has taken on the bold task of attempting to
 quantify the public health of the fifty most populous metropolitan areas in the
@@ -327,7 +327,7 @@ particular state conform to the general public health standards of other MSAs in
 Since this type of profiling seeks to determine the likelihood of other cities in a given state to follow the public health trends observed and recorded in public databases, highly uncertain or irregular data merely suggests that, no, the AFI score of a given MSA in a particular state cannot be predicted based on the AFI scores of other MSAs in the same state and a different model, or different data,
 is needed for that state.
 
-### Conclusions
+## Conclusions
 
 The predictive model explored here indicates that there is a number of states where enough public data
 exists to effectively predict community health figures in MSAs where no such data is present, the ACSM only observes the fifty largest Metropolitan Statistical Areas in the country.
@@ -344,7 +344,7 @@ to a wide range of data science problems, a handful of which were demonstrated h
 
 > Contact [us](https://axibase.com/feedback/) with any support issues.
 
-### Action Items
+## Action Items
 
 Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
@@ -358,7 +358,7 @@ Launch containers by specifying the built-in collector account credentials that 
 
 Open ATSD web interface and begin exploring your data.
 
-### Appendix
+## Appendix
 
 ### How the AFI is Calculated
 

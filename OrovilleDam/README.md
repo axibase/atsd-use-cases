@@ -1,7 +1,6 @@
 ![Figure 4](Images/Figure4.png)
 
-Realtime Analysis of the Oroville Dam Disaster
-==============================================
+# Realtime Analysis of the Oroville Dam Disaster
 
 In February 2017, reservoir levels for the tallest dam in the United States, located near [Oroville, California](http://www.water.ca.gov/swp/facilities/Oroville/LakeDam.cfm), were
 beginning to reach capacity from high rainfall totals. Officials decided to begin using the primary dam spillway, which quickly began to deteriorate, and by
@@ -19,8 +18,7 @@ Oroville dam. This article provides **realtime analysis** with Chart Lab graphs 
 how publicly available data from the California DWR can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](https://axibase.com/products/axibase-time-series-database/)
 for interactive analysis with graphical representation of open data published by government organizations.
 
-### Oroville Dam Dataset
-------------------------
+## Oroville Dam Dataset
 
 Let's begin by gathering current data for the Oroville dam from [cdec.water.ca.gov](https://cdec.water.ca.gov/index.html). This dataset can be found [here](https://cdec.water.ca.gov/cgi-progs/queryF?s=ORO&d=13-Feb-2017+02:57&span=1week).
 
@@ -45,8 +43,7 @@ You can explore the basic CDWR portal (loaded into ATSD) by clicking the button 
 
 You can, however, load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
-### The Current Situation - Realtime Analysis
----------------------------------------------
+## The Current Situation - Realtime Analysis
 
 Now let's take a more in depth look at the situation at the Oroville dam.
 
@@ -62,8 +59,7 @@ You can explore this portal by clicking the button below:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/dee79515#fullscreen)
 
-### Reservoir Storage Levels
-----------------------------
+## Reservoir Storage Levels
 
 Below is an image showing the change in reservoir storage going back to March 2016 at the Oroville dam. The blue line represents the hourly, absolute value of the
 reservoir storage (in acre-feet), with values shown on the left hand side of the graph. Change in the dam storage is represented by the yellow and green columns: yellow represents an increase
@@ -83,8 +79,7 @@ You can explore this portal by clicking on the button below:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/dee79515/2#fullscreen)
 
-### Reservoir Inflow, Outflows, and Precipitation
--------------------------------------------------
+## Reservoir Inflow, Outflows, and Precipitation
 
 Below are three outputs for the Oroville dam:
 
@@ -100,8 +95,7 @@ You can explore this portal by clicking on the button below:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/dee79515/10/#fullscreen)
 
-### The Next Several Days
--------------------------
+## The Next Several Days
 
 In the last several days, the storage level in the dam has dropped back down below the threshold capacity. The crisis, however, is not over quite yet. The main driving force behind
 the Oroville dam disaster has been a continued period of heavy rainfall in northern California. Below is an image showing daily precipitation totals together with the dam storage levels.
@@ -165,7 +159,6 @@ Come back to these Chart Lab portals in the coming days and look at our **realti
 the situation. Simply by clicking on each of the **Chart Lab buttons**, you can keep up to date on dam storage levels, dam inflow, dam outflow, spillway outflow, and precipitation.
 
 ### Action Items
-----------------
 
 Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector for analyzing the Oroville dam disaster:
 

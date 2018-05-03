@@ -1,7 +1,8 @@
 ![TitlePhoto](Images/TitlePhoto.png)
 
-Analyzing America's International Trade History
-===============================================
+# Analyzing America's International Trade History
+
+# Introduction
 
 Buy American. Drive American. Wear American. The American economy seems to be on everybody's minds these days, namely returning jobs and money sent overseas back to the American people. Many voters in the 2016 U.S. presidential election
 desired to return to a time when America was producing more than it was taking in. According to data published by the [World Bank](http://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2015&start=1960&view=chart&year_high_desc=true),
@@ -13,7 +14,6 @@ for interactive analysis with SQL and graphical representation of open data publ
 as well as instructions on how to install your own ATSD instance and populate it with the underlying data.
 
 America's International Trade Dataset
------------------------------------------
 
 Let's take a look at a dataset on America's international trade from [census.gov](https://www.census.gov/foreign-trade/balance/index.html).  The dataset is available as an Excel file at the following [link](https://www.census.gov/foreign-trade/balance/country.xlsx).
 
@@ -24,15 +24,13 @@ While Excel can provide quick answers to simple questions, when it comes to comp
 [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to look into this dataset: interactive graphs from [Chart Lab](../ChartLabIntro/README.md) and tabular outputs from analytical SQL queries with support for [partitioning](https://github.com/axibase/atsd/blob/master/sql/README.md#partitioning).
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
-
 The BLS file format presents a number of challenges when loading the data. In particular, it requires the parser to handle columns that combine both metric names (E - export, I - import), as well as partial dates (3-letter months).
 
 ![csv-structure](Images/csv-structure.png)
 
 ATSD handles this by implementing a [schema-based](https://github.com/axibase/atsd/blob/master/parsers/csv/csv-schema.md) parser which can be configured to load records from non-standard CSV files, such as the BLS report.
 
-Overview
-------------
+## Overview
 
 Let's begin by analyzing when the U.S. had its best international trade balance in recent history.
 
@@ -67,8 +65,7 @@ GROUP BY e.period(1 year), e.tags
 | 1991  | World, Not Seasonally Adjusted  | 421.7   | 488.5   | -66.7         |
 ```
 
-Trade by Country
---------------------
+## Trade by Country
 
 Let's now look at trade balance between the U.S. and individual countries.
 
@@ -128,8 +125,7 @@ GROUP BY e.period(1 year), e.tags -- group values by year, tags (include country
 | 1985  | Mexico   | 13634.7   | 19131.7   | -5497.0       |
 ```
 
-2016: Year in Review
-------------------------
+## 2016: Year in Review
 
 How did 2016 look for the United States? Below is a figure of the top countries for U.S. export and imports in 2016. The table to the right of the below graphs provides
 monetary values for exports, imports, and the trade balance (export minus import) between the U.S. and each respective country, continent, or organization. The table is sorted by
@@ -232,10 +228,9 @@ GROUP BY e.period(1 year), e.tags
 | 2016  | Hong Kong       | 5820  | 31892.2   | 6821.8    | 38714.1       |
 ```
 
-A Closer Look at America's Trading Partners
------------------------------------------------
+## A Closer Look at America's Trading Partners
 
-Let's now take a closer look at America's trading partners. Are there any shared characteristics between these countries?
+Now let's take a closer look at America's trading partners. Are there any shared characteristics between these countries?
 
 A claim often made is that poor, developing countries are stealing American jobs and industry. If a country is poaching another country's jobs and industry, it is reasonable
 to assume that the afflicted country's trade balance would change as a result. For example, the more steel manufacturing jobs that leave the U.S. for Asia, the more steel the
@@ -339,8 +334,7 @@ are both five poor (China, Mexico, Vietnam, India, and Malaysia) and rich (Japan
 While improving a country's international trade balance may not solve all of its economic problems, it can be a good place to start looking for answers. Do you agree with the findings
 in this article? Download ATSD, explore this dataset, and make up your own mind.
 
-Action Items
-----------------
+## Action Items
 
 Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector and create SQL queries for analyzing America's trade balance statistics:
 
@@ -357,15 +351,13 @@ Check out our file on the describing our schema-based parser used for this datas
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
-Sources
------------
+### Sources
 
 Title Photo: https://www.reference.com/business-finance/denominations-u-s-currency-918a309bd714c43c
 
 World Population and World GDP Values: https://www.wikipedia.org/
 
-Additional SQL Queries
---------------------------
+### Additional SQL Queries
 
 Here are some additional SQL queries (along with snippets of their outputs) which take a closer look at the U.S.'s international trade history.
 

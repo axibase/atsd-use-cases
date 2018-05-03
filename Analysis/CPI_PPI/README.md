@@ -1,7 +1,6 @@
-Producers are Spending Less While Consumers are Paying More
-==
+# Producers are Spending Less While Consumers are Paying More
 
-### Introduction
+## Introduction
 
 The Consumer Price Index (CPI) is a metric that is most commonly associated with inflation. It tracks the average cost of goods,
 and by doing so, demonstrates the changing prices that consumers are paying for a typical basket of goods. Think about your
@@ -27,7 +26,7 @@ arbitrary as such a decision simply sets that year's value at 100 and all other 
 value. A value of 50 would indicate proportionally half of the 1982 value, while a value of 150 would indicate a value
 1.5 times greater than the 1982 value. Because CPI and PPI have been converted to unitless values, they can be directly compared.
 
-### Recent Data
+## Recent Data
 
 By modifying the observation period of the above data to begin in 2007, which is usually considered to be the first year
 of the Great Recession, substantial producer losses are shown by unequal changes in CPI and PPI values:
@@ -38,8 +37,6 @@ of the Great Recession, substantial producer losses are shown by unequal changes
 
 Using [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/),
 the underlying data can be explored to calculate producer losses during the worst year of the recession for American producers:
-
-**Query 1**
 
 ```sql
 SELECT date_format(time, 'MM-yyyy') AS "Date", cpi.value AS "CPI", ppi.value AS "PPI", (cpi.value - ppi.value) AS "Potential Profitability Value"
@@ -69,8 +66,6 @@ of the CPI less the value of the PPI.
 ```
 
 In order to effectively contextualize this data, average Potential Profitability Values are shown below by year:
-
-**Query 2**
 
 ```sql
 SELECT YEAR(time) AS "Date", AVG(cpi.value) AS "Avg CPI", AVG(ppi.value) AS "Avg PPI", AVG(cpi.value - ppi.value) AS "Potential Profitability Value"
@@ -125,8 +120,6 @@ As shown in the table above and figure below, the Potential Profitability Value 
 
 The red line shows the average Potential Profitability Value over the entire observed period.
 
-**Query 3**
-
 ```sql
 SELECT AVG(cpi.value) AS "Avg CPI", AVG(ppi.value) AS "Avg PPI", AVG(cpi.value - ppi.value) AS "Potential Profitability Value"
   FROM cpi AS cpi JOIN ppi AS ppi
@@ -151,7 +144,7 @@ of the recession on producer profits. A detailed use case and syntax explanation
 
 [![View ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/9fe50f95/#fullscreen)
 
-### Analysis
+## Analysis
 
 A consistently growing Potential Profitability Value, calculated as a growing difference in CPI and PPI values, indicates that producers are spending less money producing goods but consumers
 are continuing to pay more. In recent years, the sharp increase in MPV seen from 2015 to present is most likely explained by corporate
@@ -177,15 +170,13 @@ The calculations shown above can be repeated with core CPI and PPI to account fo
 Immediately visible is the lack of fluctuation in both CPI and PPI surrounding the years of the recession. The underlying data
 is shown below from 1990 to present:
 
-**Query 4**
-
 ```sql
 SELECT YEAR(time) AS "Date", AVG(ccpi.value) AS "Avg cCPI", AVG(cppi.value) AS "Avg cPPI", AVG(ccpi.value - cppi.value) AS "Potential Profitability Value"
   FROM ccpi AS ccpi JOIN cppi AS cppi
 GROUP BY YEAR(time)
 ```
 
-**Table 4**
+**Table 4**: Average cCPI, cPPI, and PPV
 
 ```ls
 | Date | Avg cCPI | Avg cPPI | Potential Profitability Value |
@@ -253,7 +244,7 @@ Using an ad-hoc modification to align the origin of the two metrics shows the gr
 indicating that while related to one another, high oil prices do not guarantee a high marginal profit. In fact, because of
 the reflection across the x-axis, as oil prices increase, the value of marginal profit actually decreases.
 
-### Conclusion
+## Conclusion
 
 **Figure 9**: Core Potential Profitability Value and Potential Profitability Value
 

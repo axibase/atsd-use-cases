@@ -1,15 +1,12 @@
 ![TitlePhoto](Images/tax_season_1920.png)
 
-
-
-Tax Day 2017: Are U.S. Tax Payers Procrastinating?
-==============
+# Tax Day 2017: Procrastination of the Nation's Taxpayers
 
 Americans are filing fewer tax returns this year.
 
 According to the IRS, the total number of tax returns received by the agency as of March 31 is down by **4.1%** compared to previous year.
 
-**Total Returns Received in 2017 compared to 2016**
+Total Returns Received in 2017 compared to 2016
 
 | Date | Change |
 |------|-------:|
@@ -20,7 +17,7 @@ According to the IRS, the total number of tax returns received by the agency as 
 | March 24 | -4.7% |
 | March 31 | -4.1% |
 
-_Source: [IRS Filing Season Statistics](https://www.irs.gov/uac/2017-and-prior-year-filing-season-statistics)_
+_Source_: [IRS Filing Season Statistics](https://www.irs.gov/uac/2017-and-prior-year-filing-season-statistics)
 
 ![](Images/total_receipts.png)
 
@@ -95,7 +92,6 @@ ORDER BY "Day in Year", time
 
 The [`date_format`](https://github.com/axibase/atsd/blob/master/sql/README.md#date-formatting-functions) function can be conveniently used to perform date- and calendar-based filtering.
 
-
 | Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | Year-on-Year Change, Mln | Year-on-Year Change, % |
 |------|--------|------------:|----------------------:|-------------------:|------------------:|----------------:|
 | 2011 | Mar-31 | 90          | 88.7                  | null               | null              | null            |
@@ -139,7 +135,6 @@ ORDER BY "Days to File" DESC, time
 | 2015 | Mar-28 | 87          | 18           | 91.5           | 90.8           | 0.8             | 0.8           |
 | 2016 | Mar-31 | 91          | 18           | 96.5           | 91.5           | 4.9             | 5.4           |
 | 2017 | Mar-31 | 90          | 18           | 93.7           | 96.5           | -2.8            | -2.9          |
-
 
 ## Summary
 
@@ -189,9 +184,7 @@ Given that a higher percentage (60+%) of early returns is submitted via tax prep
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/fc79b852/2/#fullscreen)
 
-
 ## Querying Data
----
 
 You can take a closer
 look at the IRS filing statistics by installing a local [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) instance and loading the data for interactive analysis with SQL and charts.
@@ -216,7 +209,6 @@ The list of available series:
 You can also use [ChartLab](https://apps.axibase.com/chartlab/) to create, save, and share custom visualizations based on hosted data.
 
 ## Installation Steps
----
 
 1. Install the database from a Docker image:
 
@@ -236,7 +228,6 @@ You can also use [ChartLab](https://apps.axibase.com/chartlab/) to create, save,
 > Feel free to contact us with installation and technical support issues via the [feedback](https://axibase.com/feedback/) form.
 
 ## References
----
 
 * Title Image: [1920 Tax Season](https://upload.wikimedia.org/wikipedia/commons/archive/8/81/20060827235737%211920_tax_forms_IRS.jpg)
 * Axibase Time Series Database [SQL Documentation](https://github.com/axibase/atsd/blob/master/sql/README.md#overview)

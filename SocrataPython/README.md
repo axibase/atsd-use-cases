@@ -10,7 +10,7 @@ For this particular exercise, we'll import the data on the [New York State Solar
 
 * [Docker](https://docs.docker.com/engine/installation/)
 
-## Steps
+## Procedure
 
 ### Download the `docker-compose.yml` file
 
