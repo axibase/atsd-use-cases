@@ -1,6 +1,6 @@
-![TitlePhoto](Images/TitlePhoto.png)
-
 # Computing U.S. Mortality Statistics with a Structured Query Language
+
+![TitlePhoto](Images/TitlePhoto.png)
 
 ## Introduction
 
