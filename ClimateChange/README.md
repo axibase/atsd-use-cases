@@ -47,7 +47,6 @@ half of the [New York State energy market](https://www.eia.gov/state/analysis.ph
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/14f22d6e/8/)
 
-
 Total emissions from each sector can be analyzed together to get a clearer
 representation of the complete data that a simpler chart would neglect.
 
@@ -70,7 +69,6 @@ Advanced charting can be done for side-by-side comparison of relevant data:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/14f22d6e/4/)
 
-
 When analyzing the emissions from two sectors of the New York State energy market,
 a simultaneous comparison highlights the achievements of the industrial sector and the
 shortcomings of the residential sector.
@@ -79,14 +77,12 @@ shortcomings of the residential sector.
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/14f22d6e/7/)
 
-
 Although similar when comparing percent change, a stacked comparison shows
 the stark difference in absolute change of two similarly performing sectors.
 
 ![NYTotalHisto](Images/NYTotalHisto.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/14f22d6e/9/)
-
 
 A histogram that displays all sectors together can highlight trends that may be otherwise
 missed such as the sharp decrease in emissions from all sectors between 2007 and 2012.
@@ -115,7 +111,6 @@ that left former industry titans penniless and facing bankruptcy, the state of N
 its historically coal-heavy energy sector have been forced to find new alternatives
 to supply their energy needs, including importing energy from neighboring states and Canada.
 
-
 New York is considered a model state by environmentalists who point to the
 [per capita](https://www.eia.gov/state/?sid=NY) consumption rate,
 the second lowest in the nation behind only the District of Columbia,
@@ -125,7 +120,6 @@ fossil fuels alongside emissions helps illuminate the concerns of analysts who c
 that while America may be making strides on a macro scale,
 more changes are needed to see the kinds of goals laid
 out by the previous administration reached in due time.
-
 
 The largest push from green media shifts the focus of reducing America's carbon footprint
 to the individual. Low flow toilets, florescent light bulbs, and a host of

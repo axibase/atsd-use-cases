@@ -61,6 +61,7 @@ SELECT tags.district, count(*)
 GROUP BY tags.district
   ORDER BY tags.district
 ```
+
 Notice the time period is not set to calculate the break-down of police use of force incidents for the entire timespan.
 
 This results of this query are as follows:
@@ -273,7 +274,7 @@ should be used again.
 >For a more detailed explanation of performing SQL Queries, see the [Appendix](#Appendix)
 below
 
-### Location of Homicides
+### District of Homicides
 
 To organize the data so that the location of the incident is considered,
 the following SQL query is used:
@@ -284,7 +285,6 @@ SELECT tags.district, count(*)
 GROUP BY tags.district
   ORDER BY tags.district
 ```
-This query's results are displayed as follows:
 
 | tags.district | count(*) |
 |---------------|----------|
@@ -343,8 +343,6 @@ of this query are displayed as follows:
 These results can be shown graphically as well:
 
 ![MethodOfAttack](Images/WeaponRing.png)
-
-### Date of Homicides
 
 To organize the data so that the year of the incident is considered, the following SQL query
 is used:
@@ -652,6 +650,7 @@ SELECT datetime, count(*)
 GROUP BY period(1 month)
   ORDER BY datetime
 ```
+
 Removing the `VALUE 0` clause from the `GROUP BY` command renders the chart without
 interpolation. This query's results are as shown below:
 

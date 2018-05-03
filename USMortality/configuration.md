@@ -50,22 +50,23 @@ Below is a step-by-step guide for setting up local instances of the Axibase Time
    ![Figure 24](Images/Figure24.png)
 
 10. After the parser has been added, we will proceed to uploading our [`us.population.csv`](resources/us.population.csv) file.
+
     This file contains population estimates from [census.gov](http://www.census.gov/data.html) for all 122 cities for 1960, 1970, 1980, 1990, 2000, 2010,
     and 2015. **Save** a local copy of this file. Click on the **Parsers:CSV** dropdown, and then on the **Upload** button and select our `us.population.csv` file.
 
-   ![Figure 25](Images/Figure25.png)
+    ![Figure 25](Images/Figure25.png)
 
-   ![Figure 26](Images/Figure26.png)
+    ![Figure 26](Images/Figure26.png)
 
-   Click on the **To submitted tasks** button.
+    Click on the **To submitted tasks** button.
 
-   ![Figure 27](Images/Figure27.png)
+    ![Figure 27](Images/Figure27.png)
 
    If the upload was success, you should see something like the below image.
 
    ![Figure 28](Images/Figure28.png)
 
-11. Next, navigate to **Metrics** and enter in `us.population` into the **Name Mask** bar.
+Next, navigate to **Metrics** and enter in `us.population` into the **Name Mask** bar.
 
    ![Figure 29](Images/Figure29.png)
 

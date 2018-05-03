@@ -215,7 +215,7 @@ GROUP BY 'State', value
 
 ```sql
 SELECT tags.state AS "State", value AS "Total Tax Rate (%)"
-  FROM 	state_local_tax_revenue_perc_income
+  FROM state_local_tax_revenue_perc_income
 GROUP BY 'State', value
   ORDER BY value desc
 ```

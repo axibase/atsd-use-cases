@@ -1,6 +1,5 @@
 # The Consumer Price Index Versus Your Savings Account
 
-
 ![](Images/CPI_1.1.png)
 
 ## Introduction

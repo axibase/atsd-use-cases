@@ -698,7 +698,7 @@ Return to the [Country Index](#country-index)
 
 Return to the [Metric Index](#metric-index)
 
-## Foreign Businesses With a Local Branch in Hong Kong, Sorted by Country (2001-2016):
+## Foreign Businesses With a Local Branch in Hong Kong, Sorted by Country (2001-2016)
 
 ![](Images/hkb-02.png)
 
@@ -732,7 +732,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 4106                    | 8.02             |
 | 2016 | 4255                    | 3.63             |
 
-#### Country Index (Local)
+### Country Index (Local)
 
 * [Australia](#australia-(local))
 * [Canada](#cananda-(local))

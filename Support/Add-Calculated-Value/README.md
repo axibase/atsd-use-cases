@@ -242,11 +242,9 @@ GROUP BY datetime, value
 | 2014 | 19748.3             | -3.8                 |
 | 2015 | 20525.2             | 0.0                  |
 
-
 ![](Images/acv-007.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/82713e8a/7/#fullscreen)
-
 
 ![](Images/acv-006.png)
 

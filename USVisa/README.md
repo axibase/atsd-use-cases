@@ -1,6 +1,6 @@
-![TitlePhoto](Images/TitlePhoto.png)
-
 # Visa Travel to America. Identifying Trends and Outliers with Charts, SQL and Redash
+
+![TitlePhoto](Images/TitlePhoto.png)
 
 In 2015, the United States was the [second most](https://en.wikipedia.org/wiki/World_Tourism_rankings) visited country in the world. Where do all of these travelers come from and
 what are their reasons for coming to the United States?
@@ -319,7 +319,6 @@ Using ATSD can help you make sense of all this information. You can use Chart La
 to search for specific information contained within the dataset, and Redash to display this specifically searched for information in a clear and concise manner.
 
 ### Action Items
-----------------
 
 Below are the summarized steps to follow to install local configurations of ATSD for analyzing United States visa statistics:
 
@@ -366,4 +365,4 @@ If you require assistance in installing this software or have any questions, ple
 
 ## Sources
 
-Title Photo: http://www.siam-legal.com/US_Visa/k1-visa-thailand.php
+[Title Photo](http://www.siam-legal.com/US_Visa/k1-visa-thailand.php)

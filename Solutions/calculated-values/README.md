@@ -128,13 +128,9 @@ baseline value, and the `value` equation contained in the `[option]` portion of 
 a simple formula to establish the new index. The `on-change` setting defines this newly calculated series, and is explained
 piecewise below:
 
-* `widget.config.series[0]` selects the series to be replaced. Series are indexed beginning with 0 and increasing by a single
-step for each additional series (0,1,2,3....). There is only one underlying series in this visualization.
-* `value = this.value` assigns a user-defined value, that is, the option selected in the dropdown menu, as the value for
-the series defined in the the `widget.config` portion of the script. `this` defines the specific object to be modified, in this
-case the dropdown menu.
-* `widget.replaceSeries(widget.config.series)` replaces the underlying values of the original series defined as a parameter
-of the function, with the newly calculated values defined in the `[option]` setting.
+* `widget.config.series[0]` selects the series to be replaced. Series are indexed beginning with 0 and increasing by a single step for each additional series (0,1,2,3....). There is only one underlying series in this visualization.
+* `value = this.value` assigns a user-defined value, that is, the option selected in the dropdown menu, as the value for the series defined in the the `widget.config` portion of the script. `this` defines the specific object to be modified, in this case the dropdown menu.
+* `widget.replaceSeries(widget.config.series)` replaces the underlying values of the original series defined as a parameter of the function, with the newly calculated values defined in the `[option]` setting.
 
 Return to the [Index](#index)
 

@@ -1,6 +1,5 @@
 # The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment
 
-
 Source Document: [FRED Research](https://research.stlouisfed.org/publications/economic-synopses/2017/06/30/the-rising-federal-funds-rate-in-the-current-low-long-term-interest-rate-environment/)
 
 Source Authors: YiLi Chien and Paul Morris

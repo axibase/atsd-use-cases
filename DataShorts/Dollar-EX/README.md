@@ -302,7 +302,6 @@ GROUP BY PERIOD(1 YEAR)
 | 2016 | 18.67         |
 | 2017 | 19.18         |
 
-
 ![](Images/de-09.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/7/#fullscreen)

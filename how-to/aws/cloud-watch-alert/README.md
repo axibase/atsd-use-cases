@@ -64,11 +64,13 @@ You are ready to start receiving native AWS status change notifications. A sampl
 
 ## ATSD Integration
 
+Follow the quick [launch procedure](#launch-sandbox-with-automated-slack-and-email-configuration) below to integrate AWS with Slack, email, and ATSD or use the custom [set-up](#launch-atsd-sandbox) to configure a preferred launch procedure.
+
 ### Launch ATSD Sandbox
 
-Follow the procedure below to send AWS CloudWatch events into ATSD to enrich standard SNS notifications with additional resource details and AWS console links.
+Follow this procedure to send AWS CloudWatch events into ATSD to enrich standard SNS notifications with additional resource details and AWS console links.
 
-* Launch an [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) using the following command:
+* Launch an [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox):
 
 ```sh
 docker run -d -p 8443:8443 \
@@ -78,7 +80,9 @@ docker run -d -p 8443:8443 \
   axibase/atsd-sandbox:latest
 ```
 
-This command will start the sandbox applications, import the [rule](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) needed for integration and generate an incoming webhook for AWS SNS subscriptions.
+This command will start the sandbox applications, import the [rule](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) needed for integration, and generate an incoming webhook for AWS SNS subscriptions.
+
+Customized the launch command based on your preferences using the instructions in [Custom Launch Preferences](#custom-launch-preferences)
 
 Watch the start log for progress:
 
@@ -93,7 +97,7 @@ Wait for the `All applications started` line.
 To automatically configure an email client in the ATSD sandbox container:
 
 * Create a directory that will be mounted into the container, for example `/home/user/import`.
-* Specify email account settings in the `mail.properties` file in this directory:
+* Specify email account settings in the `mail.properties` file in the aforementioned directory:
 
   ```txt
   server=mail.example.org
@@ -102,14 +106,14 @@ To automatically configure an email client in the ATSD sandbox container:
   password=secret
   ```
 
-* Specify Slack Bot token in the `slack.properties` file in this directory:
+* Specify Slack Bot token in the `slack.properties` file in same directory:
 
   ```txt
   token=xoxb-************-************************
   channels=general,devops
   ```
 
-* Add the `EMAIL_CONFIG` and `SLACK_CONFIG` variables, as well as the `volume` setting to the run command:
+* Add the `EMAIL_CONFIG` and `SLACK_CONFIG` variables, as well as the `volume` bind setting to the run command:
 
 ```sh
 docker run -d -p 8443:8443 \
@@ -123,6 +127,8 @@ docker run -d -p 8443:8443 \
 ```
 
 ### Create SNS Subscription
+
+**NOTE:** If you have used the custom launch procedure, be sure you have added the appropriate information to the generic launch command before configuring the SNS Subscription, see [Custom Launch Preferences](#custom-launch-preferences). If you have used the quick launch procedure, move on. 
 
 Copy the incoming `aws-cw` webhook URL from the start log.
 
@@ -145,7 +151,11 @@ Confirm that your new subscription is active by checking that the **Subscriber**
 
 ![](images/sns-6.png)
 
-ATSD is ready to be configured to notify you via [**Slack Team Messaging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/).
+ATSD is ready to be configured to notify you via [**Slack Team Messaging**](https://slack.com/) and email.
+
+## Custom Launch Preferences
+
+Customize the generic ATSD launch command with your preferences from these options. After customizing the launch command and executing, return to the [Create SNS Subscription](#create-sns-subscription) section to complete the procedure.
 
 ### Email Notifications from ATSD
 

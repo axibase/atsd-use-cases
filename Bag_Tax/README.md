@@ -1,4 +1,4 @@
-# Does the Bag Tax Work?
+# The Effectiveness of the Bag Tax
 
 ![](Images/BT1.jpg)
 

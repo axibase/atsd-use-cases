@@ -1,6 +1,6 @@
-![Title Photo](Images/Title%20Photo.png)
-
 # Pain at the Pump - a Closer Look at Hawaii's High Fuel Prices
+
+![Title Photo](Images/Title%20Photo.png)
 
 ## Introduction
 
@@ -142,7 +142,7 @@ We will walk through a brief example on how to customize the default dataset to 
 
 * Copy the entity name from the default portal into the blank portal (in this case **dqp6-3idi**).
 * In the blank portal enter **price** into metric. This will display the price of fuel as the y column.
-* In the blank portal enter in the county and fuel. In this case, enter **Hilo** for county and * for fuel (* is shorthand for all).
+* In the blank portal enter in the county and fuel. In this case, enter **Hilo** for county and `*` for fuel (`*` is the wildcard symbol).
 * Your blank portal should now look as is shown below. Hit run to output your customized graph.
 
 ![Figure 12](Images/Figure12.png)

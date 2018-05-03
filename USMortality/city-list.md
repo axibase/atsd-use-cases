@@ -3,12 +3,12 @@ City List
 
 Akron (OH)<br />
 Albany (NY)<br />
-Albuquerque	(NM)<br />
+Albuquerque (NM)<br />
 Allentown (PA)<br />
 Atlanta (GA)<br />
 Austin (TX)<br />
 Baltimore (MD)<br />
-Baton Rouge	(LA)<br />
+Baton Rouge (LA)<br />
 Berkeley (CA)<br />
 Birmingham (AL)<br />
 Boise (ID)<br />
@@ -50,15 +50,15 @@ Indianapolis (IN)<br />
 Jacksonville (FL)<br />
 Jersey City (NJ)<br />
 Kansas City (KS)<br />
-Kansas City	(MO)<br />
+Kansas City (MO)<br />
 Knoxville (TN)<br />
 Lansing (MI)<br />
 Las Vegas (NV)<br />
 Lexington (KY)<br />
 Lincoln (NE)<br />
-Little Rock	(AR)<br />
+Little Rock (AR)<br />
 Long Beach (CA)<br />
-Los Angeles	(CA)<br />
+Los Angeles (CA)<br />
 Lowell (MA)<br />
 Lynn (MA)<br />
 Memphis (TN)<br />
@@ -73,19 +73,19 @@ New Haven (CT)<br />
 New Orleans (LA)<br />
 New York (NY)<br />
 Newark (NJ)<br />
-Norfolk	(VA)<br />
+Norfolk (VA) <br />
 Ogden (UT)<br />
 Omaha (NE)<br />
 Pasadena (CA)<br />
 Paterson (NJ)<br />
 Peoria (IL)<br />
 Philadelphia (PA)<br />
-Phoenix	(AZ)<br />
+Phoenix (AZ) <br />
 Pittsburgh (PA)<br />
 Portland (OR)<br />
 Providence (RI)<br />
 Pueblo (CO)<br />
-Reading	(PA)<br />
+Reading (PA) <br />
 Richmond (VA)<br />
 Rochester (NY)<br />
 Rockford (IL)<br />
@@ -94,7 +94,7 @@ Saint Louis (MO)<br />
 Saint Paul (MN)<br />
 Saint Petersburg (FL)<br />
 Salt Lake City (UT)<br />
-San Antonio	(TX)<br />
+San Antonio (TX) <br />
 San Diego (CA)<br />
 San Francisco (CA)<br />
 San Jose (CA)<br />
@@ -102,12 +102,12 @@ Santa Cruz (CA)<br />
 Savannah (GA)<br />
 Schenectady (NY)<br />
 Scranton (PA)<br />
-Seattle	(WA)<br />
+Seattle (WA) <br />
 Shreveport (LA)<br />
 Somerville (MA)<br />
 South Bend (IN)<br />
-Spokane	(WA)<br />
-Springfield	(MA)<br />
+Spokane (WA) <br />
+Springfield (MA) <br />
 Syracuse (NY)<br />
 Tacoma (WA)<br />
 Tampa (FL)<br />

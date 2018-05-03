@@ -1,6 +1,6 @@
-![Titlephoto](Images/Titlephoto.png)
-
 # Data Visualization with Chart Lab
+
+![Titlephoto](Images/Titlephoto.png)
 
 ## Introduction
 
@@ -93,7 +93,7 @@ of these values from 2 to 4, the following visualization will be rendered.
 
 Single-line comment start with **#**. Text on the same line after a **#** will be ignored.
 
-Multi-line comments start with / * and end with * /. Any text between / * and * / will be ignored.
+Multi-line comments start with `/*` and end with `*/`. Any text between `/*` and `*/` will be ignored.
 
 The figure below shows two histogram Widgets. The histogram on the left has the right and top axis commented out.
 

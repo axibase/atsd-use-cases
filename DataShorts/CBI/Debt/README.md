@@ -120,7 +120,6 @@ GROUP BY 'Date', cpi.value, ui1.value, ui2.value, di.value, fcd.value
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/040c4e03/2/#fullscreen)
 
-
 ![](Images/CBI_8.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/5/#fullscreen)

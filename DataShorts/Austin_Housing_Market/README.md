@@ -60,7 +60,7 @@ The following ChartLab visualization displays information related to the changin
 
 Return to the [Index](#Index)
 
-## Transportation Statistics:
+## Transportation Statistics
 
 The following ChartLab visualization displays information related to transportation cost in the city of Austin.
 
@@ -78,7 +78,7 @@ The following ChartLab visualization displays information related to transportat
 
 Return to the [Index](#Index)
 
-## Socioeconomic Statistics:
+## Socioeconomic Statistics
 
 The following ChartLab visualization displays information related to the socioeconomic conditions of Austin residents.
 
@@ -99,7 +99,7 @@ The following ChartLab visualization displays information related to the socioec
 
 Return to the [Index](#Index)
 
-## Accessibility Statistics:
+## Accessibility Statistics
 
 The following ChartLab visualization displays information related to the accessibility of both owning and renting a home
 in Austin. **Figure 4.1** deals with ownership statistics, whereas **Figure 4.2** deals with home rental statistics.

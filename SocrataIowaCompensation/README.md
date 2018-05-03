@@ -1,6 +1,6 @@
-![TitlePhoto](Images/TitlePhoto.png)
-
 # Country Living - Analyzing and Combining Iowa Employment and Consumer Price Index Datasets
+
+![TitlePhoto](Images/TitlePhoto.png)
 
 ## Introduction
 

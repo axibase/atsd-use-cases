@@ -84,7 +84,7 @@ SELECT tags.income_group AS "AGI Decile", value AS "Decile Average Income"
 
 > A person making the average adjusted salary in New York City ($66580/year) is in the upper 85th percentile of wage earners.
 
-## Total Income by Decile:
+## Total Income by Decile
 
 ```sql
 SELECT tags.income_group AS "Age Decile", value AS "Decile Total Income (USD Million)"
@@ -109,7 +109,7 @@ SELECT tags.income_group AS "Age Decile", value AS "Decile Total Income (USD Mil
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/d979bec5/3/#fullscreen)
 
-## Income by Decile as a Percent of Total Income:
+## Income by Decile as a Percent of Total Income
 
 ```sql
 SELECT tags.income_group AS "Age Decile", ((value/230468)*100) AS "Percent of Total Income"

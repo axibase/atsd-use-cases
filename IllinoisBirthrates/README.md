@@ -3,6 +3,7 @@
 ![](Images/ILL1.jpg)
 
 ## Introduction
+
 Long-considered to be a bellwether for trends in the rest of the country, the nation's
 21st state has grown from a tiny, sparsely-populated part of the Northwest Territory to
 the home of Chicago, the third-largest city in the country. Illinois holds the headquarters
@@ -38,7 +39,6 @@ fitting to anticipate future birth rates.
 
 Illinois contains 102 counties, the top ten most populous of which will be observed here.
 They are:
-
 
 | Rank | County | County Seat | Population (Million) |
 |------|--------|-------------|----------------------|

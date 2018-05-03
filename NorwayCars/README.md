@@ -1,6 +1,6 @@
-![TitlePhoto](Images/TitlePhoto.png)
-
 # Norway: Electric Vehicles Close the Gap with Diesel in 2016
+
+![TitlePhoto](Images/TitlePhoto.png)
 
 Norway's central statistical agency, [SSB](https://www.ssb.no/statistikkbanken/selecttable/hovedtabellHjem.asp?KortNavnWeb=bilreg&CMSSubjectArea=transport-og-reiseliv&PLanguage=1&checked=true), released its annual car registration statistics on March 28, 2017. While the key trends such as the rotation out of gasoline models were still in place, the dataset delivered a few surprises.
 

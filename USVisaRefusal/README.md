@@ -1,6 +1,6 @@
-![TitlePhoto](Images/TitlePhoto.png)
-
 # U.S. State Department: Getting Paid $400 Million While Rejecting Visitors
+
+![TitlePhoto](Images/TitlePhoto.png)
 
 There are a few ways to earn **$400 million** in today's world. You can win the [lottery jackpot](https://en.wikipedia.org/wiki/Lottery_jackpot_records), or come up with the next big [smart phone app](https://www.bloomberg.com/gadfly/articles/2017-03-01/snapchat-s-ipo-leads-the-way-for-other-overheated-startups). These are relatively
 established "get rich" schemes. How about earning millions by rejecting visitors? In 2015, the [U.S. State Department](https://www.state.gov/) earned over **$400 million** from non-immigrant visa applications that ended up being rejected.
@@ -495,7 +495,7 @@ look at the U.S. visa refusal rates by following the below actions items to inst
 
 Below are the summarized steps to follow to install local configurations of ATSD for analyzing United States visa statistics:
 
-1. Install the ATSD database on your local configuration using the following command.
+* Install the ATSD database on your local configuration using the following command.
 
 ```sh
 docker run \
@@ -509,14 +509,14 @@ docker run \
   axibase/atsd:latest
 ```
 
-2. Log in to ATSD and configure the pre-defined administrator account.
-3. Import the [`travel_visas.xml`](Resources/travel_visas.xml) and [`visa-refusal-rates-csv-parser.xml`](Resources/visa-refusal-rates-csv-parser.xml) files into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
-4. Import the [`visas.tar.gz`](Resources/visas.tar.gz) file into ATSD using the `travel_visas.xml` parser. For a more detailed description, refer to step 10 from the walkthrough mentioned in the previous step.
-5. Import the [`visa-refusal.csv`](Resources/visa-refusal.csv) using the `visa-refusal-rates-csv-parser.xml` parser.
-6. To check that data has correctly been imported, navigate to the metrics page in ATSD, and check that the metrics with the names `state.non-immigrant-visa` and `state.visa-refusal-rate` have appeared.
+* Log in to ATSD and configure the pre-defined administrator account.
+* Import the [`travel_visas.xml`](Resources/travel_visas.xml) and [`visa-refusal-rates-csv-parser.xml`](Resources/visa-refusal-rates-csv-parser.xml) files into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
+* Import the [`visas.tar.gz`](Resources/visas.tar.gz) file into ATSD using the `travel_visas.xml` parser. For a more detailed description, refer to step 10 from the walkthrough mentioned in the previous step.
+* Import the [`visa-refusal.csv`](Resources/visa-refusal.csv) using the `visa-refusal-rates-csv-parser.xml` parser.
+* To check that data has correctly been imported, navigate to the metrics page in ATSD, and check that the metrics with the names `state.non-immigrant-visa` and `state.visa-refusal-rate` have appeared.
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
 ## Sources
 
-Title Photo: http://www.siam-legal.com/US_Visa/k1-visa-thailand.php
+[Title Photo](http://www.siam-legal.com/US_Visa/k1-visa-thailand.php)

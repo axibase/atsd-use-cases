@@ -1,6 +1,6 @@
-![TitlePhoto](Images/tax_season_1920.png)
-
 # Tax Day 2017: Procrastination of the Nation's Taxpayers
+
+![TitlePhoto](Images/tax_season_1920.png)
 
 Americans are filing fewer tax returns this year.
 
@@ -150,7 +150,7 @@ These estimates are measurably smaller than **4.1%** drop displayed in the lates
 
 We noticed however that the trends are not uniform across E-filing channels.
 
-**2017/2016 Year-on-Year Change, %**
+2017/2016 Year-on-Year Change, %
 
 | Case | Tax Professionals | Self-prepared |
 |------|-------:|---:|

@@ -279,7 +279,7 @@ GROUP BY tags.arrest, period(1 month)
 | 2015-03-01T00:00:00Z  | false        | 19           |
 | 2015-01-01T00:00:00Z  | true         | 9            |
 | 2015-02-01T00:00:00Z  | true         | 8            |
-| 2015-03-01T00:00:00Z  | true         | 13           
+| 2015-03-01T00:00:00Z  | true         | 13           |
 
 Number of arrests made for narcotics possession in 2014.
 

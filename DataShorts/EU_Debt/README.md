@@ -123,8 +123,6 @@ Return to the **[index](#data)**
 
 Debt
 
-**Query 2.1**
-
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", value/1000000 AS "Gross Debt (Trillion Euro)"
   FROM government_consolidated_gross_debt WHERE tags.geo = 'Austria'
@@ -406,7 +404,6 @@ SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt Percent of GDP"
 | 2014 | 42.20               |
 | 2015 | 40.30               |
 | 2016 | 37.20               |
-
 
 Return to the **[index](#data)**
 

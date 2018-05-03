@@ -198,7 +198,7 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
 
 ```sql
 SELECT  date_format(time, 'yyyy') AS "Year", sum(value) AS "Total Calls"
-  FROM 	ems_calls
+  FROM ems_calls
 GROUP BY period(1 year)
   ORDER BY 'Year' ASC
 ```
@@ -218,7 +218,7 @@ GROUP BY period(1 year)
 
 ```sql
 SELECT  date_format(time, 'yyyy') AS "Year", sum(value) AS "Total Calls"
-  FROM 	fire_calls
+  FROM fire_calls
 GROUP BY period(1 year)
   ORDER BY 'Year' ASC
 ```

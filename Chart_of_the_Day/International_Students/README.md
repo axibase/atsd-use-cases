@@ -1,4 +1,4 @@
-# Where Do International Students in the United States Come From?
+# United States International Students
 
 * Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 

@@ -240,7 +240,6 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", ROUND(cwt.value
 | 2017-05-01 | 0.8                   | 16             |
 | 2017-06-01 | 1.9                   | 32             |
 
-
 ## Analysis
 
 The figures below visualize the information as a distribution table to highlight median
@@ -445,7 +444,6 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "C
 | 2017-04-01 | 0.9                   | 14             |
 | 2017-05-01 | 0.8                   | 16             |
 | 2017-06-01 | 1.9                   | 32             |
-
 
 To create confusion matrices, the following table details true positives (p,t), true negatives (n,t), false positives (p,t),
 and false negatives (n,f):

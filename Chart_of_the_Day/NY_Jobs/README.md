@@ -59,7 +59,6 @@ WHERE date_format(time, 'yyyy') = '2015'
 ORDER BY total DESC
 ```
 
-
 ## New York City
 
 | tags.industry                                                            | total    |

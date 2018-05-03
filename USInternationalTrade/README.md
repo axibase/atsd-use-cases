@@ -1,8 +1,8 @@
-![TitlePhoto](Images/TitlePhoto.png)
-
 # Analyzing America's International Trade History
 
-# Introduction
+![TitlePhoto](Images/TitlePhoto.png)
+
+## Introduction
 
 Buy American. Drive American. Wear American. The American economy seems to be on everybody's minds these days, namely returning jobs and money sent overseas back to the American people. Many voters in the 2016 U.S. presidential election
 desired to return to a time when America was producing more than it was taking in. According to data published by the [World Bank](http://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2015&start=1960&view=chart&year_high_desc=true),
@@ -353,9 +353,8 @@ If you require assistance in installing this software or have any questions, ple
 
 ### Sources
 
-Title Photo: https://www.reference.com/business-finance/denominations-u-s-currency-918a309bd714c43c
-
-World Population and World GDP Values: https://www.wikipedia.org/
+* [Title Photo](https://www.reference.com/business-finance/denominations-u-s-currency-918a309bd714c43c)
+* [World Population and World GDP Values](https://www.wikipedia.org/)
 
 ### Additional SQL Queries
 
