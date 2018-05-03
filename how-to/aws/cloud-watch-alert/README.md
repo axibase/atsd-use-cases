@@ -46,7 +46,7 @@ Define the email address to which you would like AWS status change notifications
 
 ![](images/email-subscription.png)
 
-Once you have completed creating a new subscription, click **Confirm Subscription** and AWS will send the new subscriber an email similar to the one shown here. 
+Once you have completed creating a new subscription, click **Confirm Subscription** and AWS will send the new subscriber an email similar to the one shown here.
 
 ![](images/confirm-email.png)
 
@@ -70,7 +70,7 @@ Follow the procedure below to send AWS CloudWatch events into ATSD to enrich sta
 
 * Launch an [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) using the following command:
 
-```elm
+```sh
 docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
@@ -136,7 +136,7 @@ https://aws-cw:PASSWORD@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?comman
 
 Navigate to the **Topics** section of the **Simple Notification Service** page once again. On the same **Topic Details** page that you used to create the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
 
-Return to the **Create Subscription** form, and paste the Webhook URL in the **Endpoint** field. Be sure that the **Protocol** drop-down menu is showing **HTTPS**. 
+Return to the **Create Subscription** form, and paste the Webhook URL in the **Endpoint** field. Be sure that the **Protocol** drop-down menu is showing **HTTPS**.
 
 AWS SNS notifications over HTTPS protocol do not support destination endpoints with self-signed SSL certificates. If your ATSD instance is running on a self-signed certificate, switch to the HTTP protocol or install a [CA-signed SSL certificate](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) into ATSD.
 
@@ -146,7 +146,7 @@ Confirm that your new subscription is active by checking that the **Subscriber**
 
 ![](images/sns-6.png)
 
-ATSD is ready to be configured to notify you via [**Slack Team Messaging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/). 
+ATSD is ready to be configured to notify you via [**Slack Team Messaging**](https://slack.com/), [**Telegram Messenger**](https://telegram.org/).
 
 ### Email Notifications from ATSD
 
@@ -166,50 +166,50 @@ ATSD email notifications contain context-aware links to the newly launched AWS r
 
 ### Detailed Slack Notifications from ATSD
 
-Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding the following environment variable to the atsd-sandbox image above:
+Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding the following environment variable to the atsd-sandbox container above:
 
-```
-   --env SLACK_CONFIG="slack.properties.xml"
+```sh
+   --env SLACK_CONFIG="slack.properties"
 ```
 
-Bind the `slack.properties.xml` file to the sandbox image with the following:
+Bind the `slack.properties` file to the sandbox container with the following:
 
-```
-   --volume /home/user/slack.properties.xml:/slack.properties.xml
+```sh
+   --volume /home/user/slack.properties:/slack.properties
 ```
 
 The bound volume should at least contain the following required parameters:
 
-```
+```txt
 token=xoxb-************-************************
 channels=general
 ```
 
 Now, your status change notifications will be sent via Slack messages as well as email.
 
-A sample status change Slack message is shown here. 
+A sample status change Slack message is shown here.
 
 ![](images/-slack-notification.png)
 
-### Detailed Telegram Notifications from ATSD 
+### Detailed Telegram Notifications from ATSD
 
-Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding the following environment variable to the atsd-sandbox image above:
+Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding the following environment variable to the atsd-sandbox container above:
 
+```sh
+   --env TELEGRAM_CONFIG="telegram.properties"
 ```
-   --env TELEGRAM_CONFIG="telegram.properties.xml"
-```
 
-Bind the `telegram.properties` file to the sandbox image with the following:
+Bind the `telegram.properties` file to the sandbox container with the following:
 
-```
-   --volume /home/user/telegram.properties.xml:/telegram.properties.xml
+```sh
+   --volume /home/user/telegram.properties:/telegram.properties
 ```
 
 The bound volume should at least contain the following required parameters:
 
-```
-token=xoxb-************-************************
-channels=general
+```txt
+bot_id=*********:***********************************
+chat_id=-NNNNNNNNN
 ```
 
 Now, your status change notifications will be sent via Telegram messages as well as email.

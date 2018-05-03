@@ -24,7 +24,7 @@ Naturally, the ideal level of inflation is somewhere between these two extremes;
 
 The chart above tracks inflation for the United States for a two-decade period beginning in 2000 and uses `alert-expression` and `threshold` settings to highlight periods outside of the user-defined range as well as to overlay percentile statistics.
 
-The `alert-expression` specifies a range of observed inflation of 0.5 to 4.0 percent. Values outside of this range are filled with red and blue colors respectively. 
+The `alert-expression` specifies a range of observed inflation of 0.5 to 4.0 percent. Values outside of this range are filled with red and blue colors respectively.
 
 The `threshold` sections calculate and display top and bottom deciles for the most recent 10-year period.
 
@@ -41,7 +41,7 @@ The configuration for the above chart is shown here:
 ```sql
 [configuration]
   import fred = fred.js
-  
+
   timespan = 20 year
   entity = fred.stlouisfed.org
   offset-left = 50
@@ -59,10 +59,10 @@ The configuration for the above chart is shown here:
 
   [series]
     metric = cpieall
-    axis = right 
+    axis = right
     display = false
-    alias = s-1 
-      
+    alias = s-1
+
   [series]
     mode = column
     label-format = Annual Change, %
@@ -79,14 +79,14 @@ The configuration for the above chart is shown here:
     color = Salmon
     pointer-position = left
     alias = t-1
-  
+
   [threshold]
     value = percentile(10, 's-2', '10 year')
     label = 10 year - 10% percentile
     color = DeepSkyBlue
     pointer-position = left
     alias = t-2
-    
+
   [threshold]
     value = 2.00
     label = Fed Target Inflation
@@ -105,6 +105,6 @@ There are five series in this configuration, defined by their `alias` setting:
 
 * **t-2**: The lower-limit threshold is defined similarly to **t-1** except the percentile is specified as 10%.
 
-* **t-3**: The Fed's target inflation level is defined similarly to **t-1** and **t-2** 
+* **t-3**: The Fed's target inflation level is defined similarly to **t-1** and **t-2**
 
 Complete Charts documentation may be found [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).

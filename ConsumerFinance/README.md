@@ -126,7 +126,7 @@ GROUP BY PERIOD(1 QUARTER)
 ```sql
 SELECT tags.product, COUNT(*)
   FROM "cfpb.row_number.s6ew-h6mp"
-WHERE tags.company = 'Bank of America'  
+WHERE tags.company = 'Bank of America'
   GROUP BY tags.product
 ORDER BY COUNT(*) DESC
 ```
@@ -165,4 +165,4 @@ Below are the summarized steps to follow to install local instances of Axibase T
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
    ```
 
-4. Login into ATSD at `https://docker_host:8443`, click on the **SQL** tab in the top menu to submit queries.
+4. Log in to ATSD at `https://docker_host:8443`, click on the **SQL** tab in the top menu to submit queries.

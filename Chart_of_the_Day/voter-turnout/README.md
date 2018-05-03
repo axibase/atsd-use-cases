@@ -3,7 +3,7 @@ United States Voter Turnout Since 1970
 
 ![](Images/vote1.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/499e5c3b/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/499e5c3b/#fullscreen)
 
 > Data Source: [The Institute for Democracy and Electoral Assistance](http://www.idea.int/data-tools/question-countries-view/521/295/ctr)
 
@@ -21,7 +21,7 @@ have been steadily increasing.
 Each presidential election since 1970 is detailed below to give the data context, showing which elections drew the highest voter turnout
 rates:
 
-| Election Year | Candidates | Winner | 
+| Election Year | Candidates | Winner |
 |---------------|------------|--------|
 | 2016 | Donald J. Trump (R) <br> Hillary Clinton (D) | Donald J. Trump |
 | 2012 | Barack Obama (D) <br> Mitt Romney (R) | Barack Obama |

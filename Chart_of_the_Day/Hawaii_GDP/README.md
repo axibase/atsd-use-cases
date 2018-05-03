@@ -1,22 +1,22 @@
 Island Living is Recession Proof
-===  
-  
+===
+
 ![](Images/HI_GDP_1.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/b06a7576/4/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/b06a7576/4/#fullscreen)
 
 Hawaii is not often considered among the economic powerhouses of the United States, but it
-seems the tiny archipelago two-and-a-half thousand miles from the California coastline 
-knows something the rest of us don't. 
+seems the tiny archipelago two-and-a-half thousand miles from the California coastline
+knows something the rest of us don't.
 
 Using [data](https://catalog.data.gov/dataset/dbedt-hawaii-nominal-gross-domestic-product-2000-2010-59862)
-from the State of Hawaii's Department of Business, Economic Development, and Tourism, and 
-the [Axibase Time Series Database](https://axibase.com/), the fiftieth state's economic 
-performance can be explored using a number of analytic tools. Shown above are two 
-visualizations of Hawaii's economy: its percent growth from 2000 to 2010 and its nominal 
+from the State of Hawaii's Department of Business, Economic Development, and Tourism, and
+the [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), the fiftieth state's economic
+performance can be explored using a number of analytic tools. Shown above are two
+visualizations of Hawaii's economy: its percent growth from 2000 to 2010 and its nominal
 GDP value for the same years. GDP is generally considered to be the godfather of economic
-indicators and with a state that imports [close to 90%](http://files.hawaii.gov/dbedt/op/spb/INCREASED_FOOD_SECURITY_AND_FOOD_SELF_SUFFICIENCY_STRATEGY.pdf) 
-of its food, a dollar amount subtracted from the GDP and estimated by the State to be about three billion dollars, 
+indicators and with a state that imports [close to 90%](http://files.hawaii.gov/dbedt/op/spb/INCREASED_FOOD_SECURITY_AND_FOOD_SELF_SUFFICIENCY_STRATEGY.pdf)
+of its food, a dollar amount subtracted from the GDP and estimated by the State to be about three billion dollars,
 positive growth results amid global recession are no small feat.
 
 Comprising a modest [0.45%](https://fred.stlouisfed.org/series/HINGSP) of the overall United States GDP, the Aloha State makes up for its
@@ -48,9 +48,9 @@ accurately provide average performance benchmarks for Hawaii and the United Stat
 Even during the worst year of the eponymous Great Recession, the state of Hawaii actually continued
 to see growth locally, and it was not until the final observed year that the United States
 GDP Growth was able to surpass a tiny economy built on [tourism and agriculture](https://www.bea.gov/regional/bearfacts/pdf.cfm?fips=15000&areatype=STATE&geotype=3),
-two notoriously volatile industries. Hawaii is also in the top 20 states when considering 
+two notoriously volatile industries. Hawaii is also in the top 20 states when considering
 per capita GDP, another popular economic indicator.
 
-Whether it's the warm sunshine, the clear water, or the endless beaches that are driving 
+Whether it's the warm sunshine, the clear water, or the endless beaches that are driving
 Hawaii's steady positive growth is unclear but economic stability and opportunity
 can be added to the list of benefits of island living.

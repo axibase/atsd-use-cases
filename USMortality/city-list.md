@@ -1,4 +1,4 @@
-City List 
+City List
 =========
 
 Akron (OH)<br />

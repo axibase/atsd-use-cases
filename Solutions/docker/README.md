@@ -14,33 +14,33 @@ The data is collected by [Axibase Collector](https://github.com/axibase/axibase-
 
 ## Integration Benefits
 
--   Seamlessly collect detailed configurations and statistics at the host, container, volume, and network level from multiple Docker hosts.
--   Analyze incoming data with the built-in rule engine and escalate actionable data to upstream alerting and monitoring systems.
--   Automatically compose application and service dashboards using image and container-labels for filtering and roll-ups.
--   Provide development and operations teams a search interface to quickly locate resources as the environment grows in size and scope.
--   Distribute scheduled reports on historical and estimated host and container utilization to prevent performance bottlenecks.
+* Seamlessly collect detailed configurations and statistics at the host, container, volume, and network level from multiple Docker hosts.
+* Analyze incoming data with the built-in rule engine and escalate actionable data to upstream alerting and monitoring systems.
+* Automatically compose application and service dashboards using image and container-labels for filtering and roll-ups.
+* Provide development and operations teams a search interface to quickly locate resources as the environment grows in size and scope.
+* Distribute scheduled reports on historical and estimated host and container utilization to prevent performance bottlenecks.
 
 ## Use Cases
 
 ### Linux Container Monitoring
 
--   Collect CPU, memory, I/O, volume, and network statistics from Docker hosts and containers.
--   Correlate container utilization with OS-level usage for triage and diagnostics.
--   Instantly visualize data with built-in, real-time host and container dashboards.
--   Automatically build service dashboards using image and container labels.
+* Collect CPU, memory, I/O, volume, and network statistics from Docker hosts and containers.
+* Correlate container utilization with OS-level usage for triage and diagnostics.
+* Instantly visualize data with built-in, real-time host and container dashboards.
+* Automatically build service dashboards using image and container labels.
 
 ### Change Management
 
--   Perform detailed inventory scans of the Docker environment including hosts, images, containers, volumes, and networks.
--   Notify applications and operations teams in case of container misplacement.
--   Enforce labeling standards to ensure CMDB accuracy.
+* Perform detailed inventory scans of the Docker environment including hosts, images, containers, volumes, and networks.
+* Notify applications and operations teams in case of container misplacement.
+* Enforce labeling standards to ensure CMDB accuracy.
 
 ### Compliance and Security
 
--   Intercept and react to life-cycle events such as new image pulls, container starts, container command executions.
--   Identify images and containers that violate pre-approved black-lists and white-lists.
--   Perform enterprise-wide inventory queries to identify configuration abnormalities.
--   Scan launch parameters and variables to ensure secrets and credentials are protected.
+* Intercept and react to life-cycle events such as new image pulls, container starts, container command executions.
+* Identify images and containers that violate pre-approved black-lists and white-lists.
+* Perform enterprise-wide inventory queries to identify configuration abnormalities.
+* Scan launch parameters and variables to ensure secrets and credentials are protected.
 
 ## Getting Started
 
@@ -65,7 +65,7 @@ $ docker run -d --name=atsd -p 8443:8443 -p 8081:8081 \
 Wait for the database to initialize.
 
 ```sh
-$ docker logs -f atsd
+docker logs -f atsd
 ```
 
 ```txt
@@ -98,10 +98,10 @@ $ docker run -d --name axibase-collector \
 Wait for the collector to initialize.
 
 ```sh
-$ docker logs -f axibase-collector
+docker logs -f axibase-collector
 ```
 
-```
+```txt
 ...
 [Collector] Waiting for Collector to bind to port 9443 ...( 6 of 30 )
 [Collector] Collector web interface:
@@ -126,49 +126,47 @@ Open **Configuration > Rules** and import alerting rules into the rule engine.
 
 ## Discovery
 
-### Containers:
+### Containers
 
 ![docker-view-container](images/docker-view-container.png)
 
-### Images:
+### Images
 
 ![docker-images](images/docker-images.png)
 
-### Filtered containers:
+### Filtered containers
 
 ![docker-view-container-filter](images/docker-view-container-filter.png)
 
-### Filtered views:
+### Filtered views
 
 ![docker-image-filter](images/docker-image-filter.png)
 
-### Volume views:
+### Volume views
 
 ![docker-containers](images/docker-containers.png)
 
-
 ## Search
 
-### Full-text Series Metadata Search:
+### Full-text Series Metadata Search
 
 ![docker-search](images/docker-search.png)
 
-### Metadata Fields:
+### Metadata Fields
 
 ![docker-container-summary](images/docker-container-summary.png)
 
-
 ## Configuration Detail
 
-### Docker host:
+### Docker host
 
 ![docker-host-properties](images/docker-host-properties.png)
 
-### Docker container:
+### Docker container
 
 ![docker-container-properties](images/docker-container-properties.png)
 
-### Docker inspect files:
+### Docker inspect files
 
 ![docker-inspect](images/docker-inspect.png)
 

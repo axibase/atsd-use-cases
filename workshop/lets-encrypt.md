@@ -2,41 +2,41 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [What is Certificate Authority](#what-is-certificate-authority)
-- [Trust Store](#trust-store)
-  - [Operating System](#operating-system-trust-store)
-  - [Browsers](#browser-trust-store)
-  - [Applications](#application-trust-store)
-- [Trust Inheritance](#trust-chain)
-- [Certificate Issuance](#certificate-issuance)
-  - [Self-Signed](#self-signed-certificate)
-  - [CA-Signed](#ca-signed-certificate)
-  - [Custom CA-Signed](#custom-ca-signed-certificate)
-- [Automated Certificate Issuance](#automated-certificate-issuance)
-  - [ACME Protocol](#acme-protocol)
-  - [Let's Encrypt Process](#lets-encrypt-process)
-    - [Automation with certbot](#automation-with-certbot)
-    - [nginx Mode](#nginx-mode)
-    - [Standalone Mode](#standalone-mode)
-    - [Renewal](#renewal)
-- [ATSD Integration](#atsd-integration)
-  - [Certificate Upload Endpoint](#certificate-upload-endpoint)
-  - [Upload Permissions](#upload-permissions)
-  - [Renewal Trigger](#renewal-trigger)
-- [Public Certificate Logging](#public-certificate-logging)
-  - [Certificate Transparency Logs](#certificate-transparency-logs)
-  - [CRT Database Access](#crt-database-access)
-  - [Certificate Issuance Monitoring](#certificate-issuance-monitoring)
-- [Custom CA](#custom-ca)
-  - [Generate Custom CA Certificate](#generate-custom-ca-certificate)
-  - [Install Custom CA Certificate](#install-custom-ca-certificate)
-- [Custom CA Examples](#custom-ca-examples)
-  - [ATSD Validated by Custom CA](#atsd-validated-by-custom-ca)
-  - [`www.uber.com` Validated by Custom CA](#www-uber-com-validated-by-custom-ca)
-- [Miscellaneous](#miscellaneous)
-  - [`openssl s_connect` Utility](#openssl-s-connect-utility)
-  - [Java Client Debugging](#java-client-debugging)
+* [Overview](#overview)
+* [What is Certificate Authority](#what-is-certificate-authority)
+* [Trust Store](#trust-store)
+  * [Operating System](#operating-system-trust-store)
+  * [Browsers](#browser-trust-store)
+  * [Applications](#application-trust-store)
+* [Trust Inheritance](#trust-inheritance)
+* [Certificate Issuance](#certificate-issuance)
+  * [Self-Signed](#self-signed-certificate)
+  * [CA-Signed](#ca-signed-certificate)
+  * [Custom CA-Signed](#custom-ca-signed-certificate)
+* [Automated Certificate Issuance](#automated-certificate-issuance)
+  * [ACME Protocol](#acme-protocol)
+  * [Let's Encrypt Process](#lets-encrypt-process)
+    * [Automation with certbot](#automation-with-certbot)
+    * [nginx Mode](#nginx-mode)
+    * [Standalone Mode](#standalone-mode)
+    * [Renewal](#renewal)
+* [ATSD Integration](#atsd-integration)
+  * [Certificate Upload Endpoint](#certificate-upload-endpoint)
+  * [Upload Permissions](#upload-permissions)
+  * [Renewal Trigger](#renewal-trigger)
+* [Public Certificate Logging](#public-certificate-logging)
+  * [Certificate Transparency Logs](#certificate-transparency-logs)
+  * [CRT Database Access](#crt-database-access)
+  * [Certificate Issuance Monitoring](#certificate-issuance-monitoring)
+* [Custom CA](#custom-ca)
+  * [Generate Custom CA Certificate](#generate-custom-ca-certificate)
+  * [Install Custom CA Certificate](#install-custom-ca-certificate)
+* [Custom CA Examples](#custom-ca-examples)
+  * [ATSD Validated by Custom CA](#atsd-validated-by-custom-ca)
+  * [`www.uber.com` Validated by Custom CA](#www-uber-com-validated-by-custom-ca)
+* [Miscellaneous](#miscellaneous)
+  * [`openssl s_connect` Utility](#openssl-s-connect-utility)
+  * [Java Client Debugging](#java-client-debugging)
 
 ## Overview
 
@@ -230,14 +230,14 @@ awk -v cmd='openssl x509 -noout -subject' '
 
 The list has 148 entries including the 'DST Root CA X3' certificate.
 
-```
+```txt
 ...
 subject= /C=US/O=Digital Signature Trust/OU=DST ACES/CN=DST ACES CA X6
 subject= /O=Digital Signature Trust Co./CN=DST Root CA X3
 ```
 
 ```sh
-$ ls /usr/share/ca-certificates/mozilla/
+ls /usr/share/ca-certificates/mozilla/
 ```
 
 ```css
@@ -322,14 +322,14 @@ The list of root CAs is updated through the `ca-certificates` package.
 Search apt package manager history to view when the `ca-certificates` package was last updated.
 
 ```sh
-$ zgrep ca-certificates /var/log/apt/history*
+zgrep ca-certificates /var/log/apt/history*
 ```
 
-```
+```txt
 -rw-r--r--  1 root root    3300 Oct 30 09:55 history.log.6.gz
 ```
 
-```
+```txt
 ca-certificates:amd64 (20160104ubuntu0.14.04.1, 20170717~14.04.1)
 ca-certificates-java:amd64 (20130815ubuntu1)
 ```
@@ -381,7 +381,6 @@ The following certificate authorities were removed (-):
 ### Browser Trust Store
 
 * Chrome defers to the list of Root CAs maintained by the operating system.
-
 * Mozilla Firefox maintains its own list of Root CAs.
 
 The changes are subject to [review](https://ccadb-public.secure.force.com/mozilla/PendingCACertificateReport). It takes 2 years to become a Mozilla root CA.
@@ -417,31 +416,31 @@ import javax.naming.ldap.LdapName;
 
 public class CertListCA {
 
-	public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-		String trustPath = System.getProperties().get("java.home") + "/lib/security/cacerts";
-		System.out.println("   trust.path= " + trustPath);
+        String trustPath = System.getProperties().get("java.home") + "/lib/security/cacerts";
+        System.out.println("   trust.path= " + trustPath);
 
-		KeyStore trustStore = KeyStore.getInstance("JKS");
-		trustStore.load(new FileInputStream(trustPath), "changeit".toCharArray());
+        KeyStore trustStore = KeyStore.getInstance("JKS");
+        trustStore.load(new FileInputStream(trustPath), "changeit".toCharArray());
 
-		Collections.list(trustStore.aliases()).stream().sorted(String.CASE_INSENSITIVE_ORDER).forEach(
-				rootAlias -> {
-				try {
-					X509Certificate caCert = (X509Certificate)trustStore.getCertificate(rootAlias);
-					LdapName issuerName = new LdapName(caCert.getIssuerDN().getName());
-					String issuerCN = issuerName.getRdns().stream().filter(rdn -> rdn.getType().equalsIgnoreCase("cn")).map(rdn -> rdn.getValue().toString()).collect(Collectors.joining( "," ));
-					if (issuerCN.isEmpty()) {
-						System.out.println("  no CN = " + caCert.getIssuerDN().getName());
-					} else {
-						System.out.println("     CN = " + issuerCN);
-					}
-				} catch (Exception ke) {
-					ke.printStackTrace();
-				}
-		});
+        Collections.list(trustStore.aliases()).stream().sorted(String.CASE_INSENSITIVE_ORDER).forEach(
+                rootAlias -> {
+                try {
+                    X509Certificate caCert = (X509Certificate)trustStore.getCertificate(rootAlias);
+                    LdapName issuerName = new LdapName(caCert.getIssuerDN().getName());
+                    String issuerCN = issuerName.getRdns().stream().filter(rdn -> rdn.getType().equalsIgnoreCase("cn")).map(rdn -> rdn.getValue().toString()).collect(Collectors.joining( "," ));
+                    if (issuerCN.isEmpty()) {
+                        System.out.println("  no CN = " + caCert.getIssuerDN().getName());
+                    } else {
+                        System.out.println("     CN = " + issuerCN);
+                    }
+                } catch (Exception ke) {
+                    ke.printStackTrace();
+                }
+        });
 
-	}
+    }
 
 }
 ```
@@ -783,7 +782,7 @@ Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](http://ww
 ---
 
 ```sh
-$ diff --unchanged-line-format="" --old-line-format="" --new-line-format="%L" java8_ca.txt java9_ca.txt
+diff --unchanged-line-format="" --old-line-format="" --new-line-format="%L" java8_ca.txt java9_ca.txt
 ```
 
 New CAs in OpenJDK 8 -> 9:
@@ -975,31 +974,31 @@ import java.util.*;
 
 public class CertListChain {
 
-	public static final DateTimeFormatter DF = DateTimeFormatter.ISO_LOCAL_DATE.withZone( ZoneId.of("UTC") );
+    public static final DateTimeFormatter DF = DateTimeFormatter.ISO_LOCAL_DATE.withZone( ZoneId.of("UTC") );
 
-	public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-		String path = args[0];
-		String password = args[1];
-		String alias = args[2];		
+        String path = args[0];
+        String password = args[1];
+        String alias = args[2];
 
-		KeyStore keyStore = KeyStore.getInstance("JKS");
+        KeyStore keyStore = KeyStore.getInstance("JKS");
         // Load certificates from a password-protected file in JKS format
-		keyStore.load(new FileInputStream(new File(path)), password.toCharArray());
+        keyStore.load(new FileInputStream(new File(path)), password.toCharArray());
 
-		// Retrieve certificates from the keystore for the given alias
-		Certificate[] certificateChain = keyStore.getCertificateChain(alias);
+        // Retrieve certificates from the keystore for the given alias
+        Certificate[] certificateChain = keyStore.getCertificateChain(alias);
 
         // Cast certificates to X509Certificate
-		X509Certificate[] chain = Arrays.stream(certificateChain).toArray(X509Certificate[]::new);
+        X509Certificate[] chain = Arrays.stream(certificateChain).toArray(X509Certificate[]::new);
 
-		// Print the X509 chain
-		for (X509Certificate c : chain) {
-			System.out.println("  Subject = " + c.getSubjectDN().getName());
-			System.out.println("   Issuer = " + c.getIssuerDN().getName());
-			System.out.println("    Valid = " + DF.format(c.getNotBefore().toInstant()) + " - " + DF.format(c.getNotAfter().toInstant()));
-		}
-	}
+        // Print the X509 chain
+        for (X509Certificate c : chain) {
+            System.out.println("  Subject = " + c.getSubjectDN().getName());
+            System.out.println("   Issuer = " + c.getIssuerDN().getName());
+            System.out.println("    Valid = " + DF.format(c.getNotBefore().toInstant()) + " - " + DF.format(c.getNotAfter().toInstant()));
+        }
+    }
 }
 ```
 
@@ -1027,17 +1026,15 @@ The subject is the same as the issuer.
   Subject = CN=COMODO RSA Domain Validation Secure Server CA, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
    Issuer = CN=COMODO RSA Certification Authority, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
     Valid = 2014-02-12 - 2029-02-11
-:::    
+:::
   Subject = CN=COMODO RSA Certification Authority, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
    Issuer = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
     Valid = 2000-05-30 - 2020-05-30
-:::    
+:::
   Subject = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
    Issuer = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
     Valid = 2000-05-30 - 2020-05-30
 ```
-
-
 
 ### Trust Manager in Java
 
@@ -1052,7 +1049,7 @@ The client can traverse the chain up until it finds a root CA in its trust store
             X509Certificate rc = (X509Certificate)keyStore.getCertificate(tAlias);
             if (rc.getIssuerX500Principal().equals(searchCert.getIssuerX500Principal())) {
                 System.err.println("Root CA found by name: " + rc.getIssuerDN());
-                printCert(rootCert);                
+                printCert(rootCert);
                 // Proceed to validate the certificate chain using public keys and signatures
             }
         }
@@ -1081,79 +1078,79 @@ import javax.net.ssl.*;
 
 public class CertTrust {
 
-	public static final DateTimeFormatter DF = DateTimeFormatter.ISO_LOCAL_DATE.withZone( ZoneId.of("UTC") );
+    public static final DateTimeFormatter DF = DateTimeFormatter.ISO_LOCAL_DATE.withZone( ZoneId.of("UTC") );
 
-	public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-		String path = args[0];
-		String password = args[1];
-		String alias = args[2];		
-		String trustPath = System.getProperties().get("java.home") + "/lib/security/cacerts";
+        String path = args[0];
+        String password = args[1];
+        String alias = args[2];
+        String trustPath = System.getProperties().get("java.home") + "/lib/security/cacerts";
 
-		KeyStore keyStore = KeyStore.getInstance("JKS");
-		keyStore.load(new FileInputStream(new File(path)), password.toCharArray());
+        KeyStore keyStore = KeyStore.getInstance("JKS");
+        keyStore.load(new FileInputStream(new File(path)), password.toCharArray());
 
-		Certificate[] certificateChain = keyStore.getCertificateChain(alias);
-		X509Certificate[] chain = Arrays.stream(certificateChain).toArray(X509Certificate[]::new);
+        Certificate[] certificateChain = keyStore.getCertificateChain(alias);
+        X509Certificate[] chain = Arrays.stream(certificateChain).toArray(X509Certificate[]::new);
 
-		KeyStore trustStore = KeyStore.getInstance("JKS");
-		trustStore.load(new FileInputStream(trustPath), "changeit".toCharArray());
+        KeyStore trustStore = KeyStore.getInstance("JKS");
+        trustStore.load(new FileInputStream(trustPath), "changeit".toCharArray());
 
-		TrustManagerFactory factory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-		factory.init(trustStore);
-		X509TrustManager defaultTrustManager = (X509TrustManager)factory.getTrustManagers()[0];
+        TrustManagerFactory factory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+        factory.init(trustStore);
+        X509TrustManager defaultTrustManager = (X509TrustManager)factory.getTrustManagers()[0];
 
-		LoggingX509TrustManager loggingTrustManager = new LoggingX509TrustManager(defaultTrustManager, trustStore);
-		loggingTrustManager.checkServerTrusted(chain, "ECDHE_RSA");
-	}
+        LoggingX509TrustManager loggingTrustManager = new LoggingX509TrustManager(defaultTrustManager, trustStore);
+        loggingTrustManager.checkServerTrusted(chain, "ECDHE_RSA");
+    }
 
-	public static class LoggingX509TrustManager implements X509TrustManager {
+    public static class LoggingX509TrustManager implements X509TrustManager {
 
-		private X509TrustManager defaultTrustManager;
-		private KeyStore trustStore;
+        private X509TrustManager defaultTrustManager;
+        private KeyStore trustStore;
 
-		public LoggingX509TrustManager(X509TrustManager defaultTrustManager, KeyStore trustStore) throws NoSuchAlgorithmException, KeyStoreException {
-			this.defaultTrustManager = defaultTrustManager;
-			this.trustStore = trustStore;
-		}
+        public LoggingX509TrustManager(X509TrustManager defaultTrustManager, KeyStore trustStore) throws NoSuchAlgorithmException, KeyStoreException {
+            this.defaultTrustManager = defaultTrustManager;
+            this.trustStore = trustStore;
+        }
 
-		@Override
-		public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
-			throw new CertificateException("not implemented");
-		}
+        @Override
+        public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+            throw new CertificateException("not implemented");
+        }
 
-		@Override
-		public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+        @Override
+        public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
 
-			try {
+            try {
 
-	            CertPathValidator validator = CertPathValidator.getInstance("PKIX");
-	            CertificateFactory factory = CertificateFactory.getInstance("X509");
-	            CertPath certPath = factory.generateCertPath(Arrays.asList(chain));
-	            PKIXParameters params = new PKIXParameters(trustStore);
-	            params.setRevocationEnabled(false);
-	            validator.validate(certPath, params);
-	            System.out.println("Certificate chain validated OK");
+                CertPathValidator validator = CertPathValidator.getInstance("PKIX");
+                CertificateFactory factory = CertificateFactory.getInstance("X509");
+                CertPath certPath = factory.generateCertPath(Arrays.asList(chain));
+                PKIXParameters params = new PKIXParameters(trustStore);
+                params.setRevocationEnabled(false);
+                validator.validate(certPath, params);
+                System.out.println("Certificate chain validated OK");
 
-			} catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException | KeyStoreException | CertPathValidatorException e) {
-				System.err.println("Certificate chain validation failed: " + e + " : " + e.getCause());
-			}
+            } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException | KeyStoreException | CertPathValidatorException e) {
+                System.err.println("Certificate chain validation failed: " + e + " : " + e.getCause());
+            }
 
-			try {
-				//check with default trust manager
-				defaultTrustManager.checkServerTrusted(chain, authType);
-				System.out.println("Default trust manager: certificate chain validated OK");
-			} catch (CertificateException ce){
-				System.err.println("Default trust manager: certificate chain validation failed: " + ce + " : " + ce.getCause());
-			}
+            try {
+                //check with default trust manager
+                defaultTrustManager.checkServerTrusted(chain, authType);
+                System.out.println("Default trust manager: certificate chain validated OK");
+            } catch (CertificateException ce){
+                System.err.println("Default trust manager: certificate chain validation failed: " + ce + " : " + ce.getCause());
+            }
 
-		}
+        }
 
-		@Override
-		public X509Certificate[] getAcceptedIssuers() {
-			return defaultTrustManager.getAcceptedIssuers();
-		}
-	}
+        @Override
+        public X509Certificate[] getAcceptedIssuers() {
+            return defaultTrustManager.getAcceptedIssuers();
+        }
+    }
 
 }
 
@@ -1196,18 +1193,18 @@ keytool -genkeypair -keystore /opt/atsd/atsd/conf/server.keystore -alias atsd -k
 ```
 
 ```txt
-Enter keystore password:  
+Enter keystore password:
 Re-enter new password:
 What is your first and last name?
   [Unknown]:  atsd.axibase.com
 What is the name of your organizational unit?
-  [Unknown]:  
+  [Unknown]:
   ...
 Is CN=atsd.axibase.com, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
   [no]:  yes
 
 Enter key password for <atsd>
-  (RETURN if same as keystore password):  
+  (RETURN if same as keystore password):
 ```
 
 ```txt
@@ -1227,7 +1224,7 @@ Certificate authorities can perform various validation checks, from simple domai
 ```txt
     Issuer: (CA ID: 1455)
         commonName                = COMODO RSA Domain Validation Secure Server CA
-		...
+        ...
     Subject:
         commonName                = *.axibase.com
         organizationalUnitName    = PositiveSSL Wildcard
@@ -1277,25 +1274,25 @@ The `TLS-SNI-01` challenge on port 443 is no longer supported by Let's Encrypt.
 How we receive certificates in 2018 using Let's Encrypt plugins and `HOST-01` challenge.
 
 ```sh
-$ sudo apt install software-properties-common
+sudo apt install software-properties-common
 ```
 
 ```sh
-$ sudo add-apt-repository ppa:certbot/certbot
+sudo add-apt-repository ppa:certbot/certbot
 ```
 
 ```sh
-$ sudo apt update
+sudo apt update
 ```
 
 ```sh
-$ sudo apt install certbot
+sudo apt install certbot
 ```
 
 #### nginx Mode
 
 ```sh
-$ sudo apt install python-certbot-nginx
+sudo apt install python-certbot-nginx
 ```
 
 ```sh
@@ -1311,11 +1308,11 @@ sudo certbot --nginx -d trends.axibase.com
 #### Standalone Mode
 
 ```sh
-$ sudo mkdir -p /var/www/certbot
+sudo mkdir -p /var/www/certbot
 ```
 
 ```sh
-$ sudo certbot certonly --standalone --agree-tos --no-eff-email --email support@axibase.com -w /var/www/certbot -d atsd.axibase.com
+sudo certbot certonly --standalone --agree-tos --no-eff-email --email support@axibase.com -w /var/www/certbot -d atsd.axibase.com
 ```
 
 ```txt
@@ -1349,7 +1346,7 @@ cd /etc/letsencrypt/live/atsd.axibase.com
 View certbot renewal command
 
 ```sh
-$ cat /etc/cron.d/certbot
+cat /etc/cron.d/certbot
 ```
 
 ```txt
@@ -1382,13 +1379,13 @@ We estimate that most of our enterprise customers will adopt a centralized appro
 
 The certbot workflow in a centralized environment:
 
-- (1) certbot initiates a new certificate challenge for `atsd` subdomain with Let's Encrypt servers
-- (2) Let's Encrypt server responds with a prepared DNS challenge
-- (3) certbot invokes DNS provider API to add a temporary `TXT` record
-- (4) Let's Encrypt servers validate the presence of `TXT` record within a timeout
-- (5) certbot requests the new certificate from Let's Encrypt servers
-- (6) Let's Encrypt servers reply with new certificates based on completed DNS challenge
-- (7) certbot invokes deploy-hook to upload new certificates into ATSD
+* (1) certbot initiates a new certificate challenge for `atsd` subdomain with Let's Encrypt servers
+* (2) Let's Encrypt server responds with a prepared DNS challenge
+* (3) certbot invokes DNS provider API to add a temporary `TXT` record
+* (4) Let's Encrypt servers validate the presence of `TXT` record within a timeout
+* (5) certbot requests the new certificate from Let's Encrypt servers
+* (6) Let's Encrypt servers reply with new certificates based on completed DNS challenge
+* (7) certbot invokes deploy-hook to upload new certificates into ATSD
 
 ### Certificate Upload Endpoint
 
@@ -1460,7 +1457,7 @@ Certificates are displayed on **Settings > Certificates** page.
 ![](images/atsd_hbs_certificate_detail.png)
 
 ```sh
-$ sudo certbot renew
+sudo certbot renew
 ```
 
 ```txt
@@ -1479,11 +1476,11 @@ No renewals were attempted.
 Review renewal logs if necessary.
 
 ```sh
-$ sudo cat /var/log/letsencrypt/letsencrypt.log
+sudo cat /var/log/letsencrypt/letsencrypt.log
 ```
 
 ```sh
-$ sudo certbot renew --dry-run
+sudo certbot renew --dry-run
 ```
 
 ```txt
@@ -1517,7 +1514,7 @@ Congratulations, all renewals succeeded. The following certs have been renewed:
 To check that `deploy-hook` is configured, search for it in the `/etc/letsencrypt` directory.
 
 ```sh
-$ sudo grep -nr /etc/letsencrypt -e "deploy.sh"
+sudo grep -nr /etc/letsencrypt -e "deploy.sh"
 ```
 
 ```txt
@@ -1529,7 +1526,7 @@ $ sudo grep -nr /etc/letsencrypt -e "deploy.sh"
 Renewals are subject to **weekly** limits, per subdomain and per domain.
 
 ```sh
-$ sudo certbot renew --force-renewal
+sudo certbot renew --force-renewal
 ```
 
 ```txt
@@ -1626,8 +1623,6 @@ New certificate is now installed. No ATSD restart performed.
 
 ![](images/atsd_hbs_certificates_list_after_renew.png)
 
-
-
 ## Public Certificate Logging
 
 ### Certificate Transparency Logs
@@ -1649,10 +1644,10 @@ Certificate chain for our old wildcard certificate:
       issued by  AddTrust External CA Root [ROOT]
 ```
 
-* https://crt.sh/?id=6871548
-* `--` https://crt.sh/?caid=1455
-* `----` https://crt.sh/?id=3509153
-* `------`  https://crt.sh/?id=1044348
+* [6871548](https://crt.sh/?id=6871548)
+* `--` [1455](https://crt.sh/?caid=1455)
+* `----` [3509153](https://crt.sh/?id=3509153)
+* `------`  [1044348](https://crt.sh/?id=1044348)
 
 Certificate details including DNS names are now publicly available even if the certificate was issued for an internal server:
 
@@ -1675,8 +1670,6 @@ Database.URL = jdbc:postgresql://crt.sh:5432/certwatch
 Username = guest
 Password = (none)
 ```
-
-> Collector [Data Source](https://hbs.axibase.com:10443/jdbc/form.xhtml?dataSourceId=40)
 
 ```sql
 SELECT ci.ISSUER_CA_ID,
@@ -1713,7 +1706,7 @@ The database is **slow** for analytical queries (`GROUP BY`). Analytical queries
 
 ![](images/dbvis_crt.png)
 
-ChartLab [crt.sh]()https://apps.axibase.com/chartlab/0ffbd30b/6#fullscreen) Portal.
+ChartLab [crt.sh](https://apps.axibase.com/chartlab/0ffbd30b/6#fullscreen) Portal.
 
 ![](images/crt-chartlab.png)
 
@@ -1723,8 +1716,8 @@ ChartLab [crt.sh]()https://apps.axibase.com/chartlab/0ffbd30b/6#fullscreen) Port
 
 * Sample phishing domains:
 
-  - `accountreview.com-microsoft.macultiple .ga`
-  - `lichnyj-kabinet-sberbank .ru`
+  * `accountreview.com-microsoft.macultiple .ga`
+  * `lichnyj-kabinet-sberbank .ru`
 
 ![](images/phish-msft.png)
 
@@ -1735,13 +1728,13 @@ ChartLab [crt.sh]()https://apps.axibase.com/chartlab/0ffbd30b/6#fullscreen) Port
 Generate private key file for the new custom CA which will be manually added to the trust stores. This key needs to guarded as **top secret**.
 
 ```sh
-$ genrsa -des3 -out axibase_root_ca.key 2048
+openssl genrsa -des3 -out axibase_root_ca.key 2048
 ```
 
 Generate root CA certificate. This certificate will be used to sign (validate) end entity certificates.
 
 ```sh
-$ openssl req -x509 -new -nodes -key axibase_root_ca.key -sha256 -days 90 -out axibase_root_ca.pem
+openssl req -x509 -new -nodes -key axibase_root_ca.key -sha256 -days 90 -out axibase_root_ca.pem
 ```
 
 ```txt
@@ -1757,7 +1750,7 @@ $ openssl req -x509 -new -nodes -key axibase_root_ca.key -sha256 -days 90 -out a
 Convert PEM file to CRT file.
 
 ```sh
-$ openssl x509 -outform der -in axibase_root_ca.pem -out axibase_root_ca.crt
+openssl x509 -outform der -in axibase_root_ca.pem -out axibase_root_ca.crt
 ```
 
 ### Install Custom CA Certificate
@@ -1795,14 +1788,14 @@ keytool -list -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Conte
 Add 'Axibase Root CA' to root CAs (need root privilege).
 
 ```sh
-$ sudo keytool -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts \
+sudo keytool -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts \
   -importcert -alias axibaserootca -file axibase_root_ca.crt
 ```
 
 Notice the `CA:true` flag.
 
 ```txt
-Enter keystore password:  
+Enter keystore password:
 Owner: CN=Axibase Root CA, OU=SWG, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
 Issuer: CN=Axibase Root CA, OU=SWG, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
 Serial number: db9a0b3b2639f4f9
@@ -1825,7 +1818,7 @@ Certificate was added to keystore
 Verify that 'Axibase Root CA' is present in the root CA list.
 
 ```sh
-$ keytool -list -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts | grep axibase
+keytool -list -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts | grep axibase
 ```
 
 ```txt
@@ -1841,19 +1834,19 @@ axibaserootca, Apr 12, 2018, trustedCertEntry,
 Generate private key file.
 
 ```sh
-$ openssl genrsa -out atsd_axibase_com.key 2048
+openssl genrsa -out atsd_axibase_com.key 2048
 ```
 
 Generate CSR (Certificate Signing Request) file, to be submitted to the CA.
 
 ```sh
-$ openssl req -new -key atsd_axibase_com.key -out atsd_axibase_com.csr
+openssl req -new -key atsd_axibase_com.key -out atsd_axibase_com.csr
 ```
 
 ```txt
 Country Name (2 letter code) [AU]:US
 State or Province Name (full name) [Some-State]:CA
-Locality Name (eg, city) []:Cupertino            
+Locality Name (eg, city) []:Cupertino
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Axibase Corporation
 Organizational Unit Name (eg, section) []:SWG
 Common Name (e.g. server FQDN or YOUR name) []:atsd.axibase.com
@@ -1864,7 +1857,7 @@ Submit the CSR file `atsd_axibase_com.csr` to the CA.
 #### CA signs CSR for the domain
 
 ```sh
-$ openssl x509 -req -in atsd_axibase_com.csr -CAcreateserial \
+openssl x509 -req -in atsd_axibase_com.csr -CAcreateserial \
   -CA axibase_root_ca.pem -CAkey axibase_root_ca.key \
   -out atsd_axibase_com.crt -days 90 -sha256 -extfile atsd_axibase_com.conf
 ```
@@ -1875,7 +1868,7 @@ Extended settings (`CA:FALSE`).
 cat atsd_axibase_com.conf
 ```
 
-```
+```txt
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
@@ -1890,13 +1883,13 @@ DNS.1 = atsd.axibase.com
 Create trust store file in `PKCS12` format containing the atsd_axibase_com private key and the signed certificate, stored under `1` (default) alias.
 
 ```sh
-$ openssl pkcs12 -export -inkey atsd_axibase_com.key -in atsd_axibase_com.crt -out atsd_axibase_com.pkcs12
+openssl pkcs12 -export -inkey atsd_axibase_com.key -in atsd_axibase_com.crt -out atsd_axibase_com.pkcs12
 ```
 
 Convert the `PKCS12` keystore into `JKS` keystore, change alias from `1` to `atsd`.
 
 ```sh
-$ keytool -importkeystore -srckeystore atsd_axibase_com.pkcs12 -srcstoretype PKCS12 -alias 1 -destkeystore atsd_axibase_com.keystore -destalias atsd
+keytool -importkeystore -srckeystore atsd_axibase_com.pkcs12 -srcstoretype PKCS12 -alias 1 -destkeystore atsd_axibase_com.keystore -destalias atsd
 ```
 
 Check `atsd_axibase_com.keystore`: chain and trust.
@@ -1934,31 +1927,31 @@ No TRUSTED root certificate found for CN=Axibase Root CA, OU=SWG, O=Axibase Corp
 Start ATSD container.
 
 ```sh
-$ docker run -d --name=atsd -p 8443:8443 axibase/atsd:latest
+docker run -d --name=atsd -p 8443:8443 axibase/atsd:latest
 ```
 
 ```sh
-$ docker exec -it atsd bash
+docker exec -it atsd bash
 ```
 
 Copy `atsd_axibase_com.keystore` as `/opt/atsd/atsd/conf/server.keystore` and set correct file permissions.
 
 ```sh
-$ docker cp atsd_axibase_com.keystore atsd:/opt/atsd/atsd/conf/server.keystore
+docker cp atsd_axibase_com.keystore atsd:/opt/atsd/atsd/conf/server.keystore
 ```
 
 ```sh
-$ docker exec -u root atsd chown axibase:axibase /opt/atsd/atsd/conf/server.keystore
+docker exec -u root atsd chown axibase:axibase /opt/atsd/atsd/conf/server.keystore
 ```
 
 Restart ATSD
 
 ```sh
-$ docker exec /opt/atsd/bin/atsd-tsd.sh stop
+docker exec /opt/atsd/bin/atsd-tsd.sh stop
 ```
 
 ```sh
-$ docker exec /opt/atsd/bin/atsd-tsd.sh start
+docker exec /opt/atsd/bin/atsd-tsd.sh start
 ```
 
 #### Change DNS for `atsd.axibase.com`
@@ -1966,7 +1959,7 @@ $ docker exec /opt/atsd/bin/atsd-tsd.sh start
 Modify `/etc/hosts` File to Route `atsd.axibase.com` to localhost
 
 ```sh
-$ sudo nano /etc/hosts
+sudo nano /etc/hosts
 ```
 
 ```txt
@@ -1976,7 +1969,7 @@ $ sudo nano /etc/hosts
 fe80::1%lo0 localhost
 ```
 
-#### Access ATSD on a trusted certificate.
+#### Access ATSD on a trusted certificate
 
 The `atsd.axibase.com` domain is trusted because its certificate is signed by 'Axibase Root CA' which is present in MacOS System Root list.
 
@@ -1994,17 +1987,16 @@ The certificate is now validated.
 
 ![](images/firefox_root_ca_ok_after_import.png)
 
-
 ### Any Site Validated by Custom CA
 
-Example: https://www.uber.com
+Example: `https://www.uber.com`
 
 #### Change DNS
 
 Modify `/etc/hosts` File to route `www.uber.com` to localhost
 
 ```sh
-$ sudo nano /etc/hosts
+sudo nano /etc/hosts
 ```
 
 ```txt
@@ -2019,13 +2011,13 @@ fe80::1%lo0 localhost
 Generate private key file
 
 ```sh
-$ openssl genrsa -out www.uber.com.key 2048
+openssl genrsa -out www.uber.com.key 2048
 ```
 
 Generate CSR
 
 ```sh
-$ openssl req -new -key www.uber.com.key -out www.uber.com.csr
+openssl req -new -key www.uber.com.key -out www.uber.com.csr
 ```
 
 ```txt
@@ -2046,21 +2038,21 @@ openssl x509 -req -in www.uber.com.csr -CAcreateserial \
 #### Launch nginx Proxy Container
 
 ```sh
-$ docker run --name uber -d -p 443:443 -e VIRTUAL_HOST=www.uber.com -v /Users/sergei/Desktop/cert:/etc/nginx/certs -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+docker run --name uber -d -p 443:443 -e VIRTUAL_HOST=www.uber.com -v /Users/sergei/Desktop/cert:/etc/nginx/certs -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 ```
 
 ```sh
-$ docker exec -it uber bash
+docker exec -it uber bash
 ```
 
 ```sh
-$ apt update && apt install nano
+apt update && apt install nano
 ```
 
-Modify nginx server configuration to fetch (proxy) content from https://uber.com for all requests.
+Modify nginx server configuration to fetch (proxy) content from `https://uber.com` for all requests.
 
 ```sh
-$ nano /etc/nginx/conf.d/default.conf
+nano /etc/nginx/conf.d/default.conf
 ```
 
 ```txt
@@ -2075,7 +2067,7 @@ server {
 Apply new nginx configuration without restarting.
 
 ```sh
-$ service nginx reload
+service nginx reload
 ```
 
 Access `https://www.uber.com` in the browser as usual.
@@ -2116,7 +2108,7 @@ Exception in thread "main" javax.net.ssl.SSLHandshakeException: java.security.ce
 ### `openssl s_client` Utility
 
 ```sh
-$ openssl s_client -showcerts -connect axibase.com:443
+openssl s_client -showcerts -connect axibase.com:443
 ```
 
 ```txt
@@ -2191,15 +2183,15 @@ java -Djavax.net.debug=ssl
 
 The `ssl` output can be further detailed by appending one of the following options, for example `javax.net.debug=ssl:trustmanager`:
 
-- `record`
-- `handshake`
-- `keygen`
-- `session`
-- `defaultctx`
-- `sslctx`
-- `sessioncache`
-- `keymanager`
-- `trustmanager`
+* `record`
+* `handshake`
+* `keygen`
+* `session`
+* `defaultctx`
+* `sslctx`
+* `sessioncache`
+* `keymanager`
+* `trustmanager`
 
 Refer to [IBMJSSE2 tracing note](https://www.ibm.com/support/knowledgecenter/en/SSYKE2_6.0.0/com.ibm.java.security.component.60.doc/security-component/jsse2Docs/debug.html) for additional details.
 
@@ -2273,7 +2265,7 @@ Ignoring unavailable cipher suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
 Ignoring unavailable cipher suite: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 trustStore is: /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts
 trustStore type is : jks
-trustStore provider is : 
+trustStore provider is :
 init truststore
 adding as trusted cert:
   Subject: CN=Equifax Secure Global eBusiness CA-1, O=Equifax Secure Inc., C=US

@@ -2,7 +2,7 @@
 
 ![](Images/expat-title.png)
 
-### Introduction
+## Introduction
 
 Each year the Internal Revenue Service of the United States releases expatriation information about American citizens who have decided to renounce their citizenship via the [Federal Register](https://www.federalregister.gov/), the government's official journal. The reason the IRS publishes this information is to levy the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) upon those citizens with enough wealth to incur the tax at the time of their renunciation. The tax doesn't apply to just anyone who decides to leave the country for good, only to those soon-to-be-former citizens who qualify as "covered expatriates".
 
@@ -17,18 +17,18 @@ A covered expatriate must meet any one of the following criteria:
 As observed [last year](2017-2.md), citizens from the United States were leaving the country at previously unseen levels against the backdrop of one of the more contentious recent presidential elections.
 
 ![](Images/expat-title-2.png)
-[![](Images/button.png)](https://apps.axibase.com/chartlab/61a855b0/3/#fullscreen)
+[![](Images/btn.png)](https://apps.axibase.com/chartlab/61a855b0/3/#fullscreen)
 
 *Fig 1.* The top chart uses a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting to show a quarter-on-quarter comparison, while the annual totals are shown in the bottom chart.
 
-### ChartLab
+## ChartLab
 
 Both of the above graphs were prepared with Axibase ChartLab which is a visualization sandbox that features convenient syntax with different types of charts. The above visualizations may be modified to produce several projections of the same dataset stored in Axibase Time Series Database (ATSD).
 
 A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported by ChartLab, and [user-defined functions](../how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
 
 ![](Images/previous-year.png)
-[![](Images/button.png)](https://apps.axibase.com/chartlab/a14a69a4#fullscreen)
+[![](Images/btn.png)](https://apps.axibase.com/chartlab/a14a69a4#fullscreen)
 
 *Fig 2.* The above visualization uses the `ChangeFromPreviousYear` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually observed several years ago.
 
@@ -51,7 +51,7 @@ Customized data monitoring in ATSD is possible using [`alert-expressions`](https
 Here, alert expressions are applied to static data, but they may be easily applied to dynamic data and used for systems monitoring as seen in this [example](https://apps.axibase.com/chartlab/67aa3b61) which is monitoring one of the Axibase servers right now.
 
 ![](Images/percent-change.png)
-[![](Images/button.png)](https://apps.axibase.com/chartlab/95617f2b)
+[![](Images/btn.png)](https://apps.axibase.com/chartlab/95617f2b)
 
 *Fig 3.* The `alert-expression` used here highlights quarters where the percent change from the previous year was greater than 50% in red, and quarters where it was less than -10% in green.
 
@@ -67,14 +67,14 @@ When using a two-parameter `alert-expression`, three arguments are needed: an up
 
 For more information about ChartLab syntax or to explore other features which may be used in the example above, see the complete [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
 
-### SQL
+## SQL
 
 In addition to ChartLab, the Axibase Time Series Database includes a web-based [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) which can be used for ad-hoc data exploration.
 
 ```sql
-SELECT date_format(time, 'yyyy') AS "Year", 
-  count(value) AS "Year Total", 
-  count(value)-lag(count(value)) AS "Y-o-Y Change", 
+SELECT date_format(time, 'yyyy') AS "Year",
+  count(value) AS "Year Total",
+  count(value)-lag(count(value)) AS "Y-o-Y Change",
   100*(count(value)-lag(count(value)))/lag(count(value)) AS "Y-o-Y Change, %"
 FROM "us-expatriate-counter"
   WHERE entity = 'us.irs' AND datetime <= '2018-01-01T00:00:00Z'
@@ -82,26 +82,26 @@ GROUP BY period(1 YEAR, END_TIME)
   ORDER BY period(1 YEAR, END_TIME)
 ```
 
-| Year | Year Total | Y-o-Y Change | Y-o-Y Change, % | 
-|------|-----------:|-------------:|----------------:| 
-| 2000 | 430        | null         | null            | 
-| 2001 | 488        | 58.00        | 13.49           | 
-| 2002 | 503        | 15.00        | 3.07            | 
-| 2003 | 550        | 47.00        | 9.34            | 
-| 2004 | 631        | 81.00        | 14.73           | 
-| 2005 | 745        | 114.00       | 18.07           | 
-| 2006 | 279        | -466.00      | -62.55          | 
-| 2007 | 470        | 191.00       | 68.46           | 
-| 2008 | 229        | -241.00      | -51.28          | 
-| 2009 | 741        | 512.00       | 223.58          | 
-| 2010 | 1531       | 790.00       | 106.61          | 
-| 2011 | 1780       | 249.00       | 16.26           | 
-| 2012 | 932        | -848.00      | -47.64          | 
-| 2013 | 2999       | 2067.00      | 221.78          | 
-| 2014 | 3411       | 412.00       | 13.74           | 
-| 2015 | 4273       | 862.00       | 25.27           | 
-| 2016 | 5398       | 1125.00      | 26.33           | 
-| 2017 | 5128       | -270.00      | -5.00           | 
+| Year | Year Total | Y-o-Y Change | Y-o-Y Change, % |
+|------|-----------:|-------------:|----------------:|
+| 2000 | 430        | null         | null            |
+| 2001 | 488        | 58.00        | 13.49           |
+| 2002 | 503        | 15.00        | 3.07            |
+| 2003 | 550        | 47.00        | 9.34            |
+| 2004 | 631        | 81.00        | 14.73           |
+| 2005 | 745        | 114.00       | 18.07           |
+| 2006 | 279        | -466.00      | -62.55          |
+| 2007 | 470        | 191.00       | 68.46           |
+| 2008 | 229        | -241.00      | -51.28          |
+| 2009 | 741        | 512.00       | 223.58          |
+| 2010 | 1531       | 790.00       | 106.61          |
+| 2011 | 1780       | 249.00       | 16.26           |
+| 2012 | 932        | -848.00      | -47.64          |
+| 2013 | 2999       | 2067.00      | 221.78          |
+| 2014 | 3411       | 412.00       | 13.74           |
+| 2015 | 4273       | 862.00       | 25.27           |
+| 2016 | 5398       | 1125.00      | 26.33           |
+| 2017 | 5128       | -270.00      | -5.00           |
 
 *Fig 4.* The table above shows the results of a query which tracks absolute and percentile year-on-year change in expatriate numbers, similar to the *Fig 2* and *Fig 3* above.
 
@@ -110,7 +110,7 @@ The above query uses the [`LAG`](https://github.com/axibase/atsd/blob/master/sql
 Likewise, data may be tracked by quarter using the query below:
 
 ```sql
-SELECT CEIL(CAST(date_format(time, 'M') AS NUMBER)/3) AS "Quarter", date_format(time, 'yyyy') AS "Year", 
+SELECT CEIL(CAST(date_format(time, 'M') AS NUMBER)/3) AS "Quarter", date_format(time, 'yyyy') AS "Year",
   count(value) AS "Quarter Total"
 FROM "us-expatriate-counter"
   WHERE entity = 'us.irs' AND date_format(time, 'yyyy-MM') >= '2013-01' AND datetime <= now
@@ -118,34 +118,34 @@ GROUP BY period(1 QUARTER)
   ORDER BY period(1 QUARTER)
 ```
 
-| Quarter | Year | Quarter Total | 
-|---------|------|--------------:| 
-| 1       | 2013 | 679           | 
-| 2       | 2013 | 1129          | 
-| 3       | 2013 | 560           | 
-| 4       | 2013 | 631           | 
-| 1       | 2014 | 999           | 
-| 2       | 2014 | 576           | 
-| 3       | 2014 | 775           | 
-| 4       | 2014 | 1061          | 
-| 1       | 2015 | 1331          | 
-| 2       | 2015 | 459           | 
-| 3       | 2015 | 1426          | 
-| 4       | 2015 | 1057          | 
-| 1       | 2016 | 1154          | 
-| 2       | 2016 | 506           | 
-| 3       | 2016 | 1379          | 
-| 4       | 2016 | 2359          | 
-| 1       | 2017 | 1313          | 
-| 2       | 2017 | 1756          | 
-| 3       | 2017 | 1374          | 
-| 4       | 2017 | 685           | 
+| Quarter | Year | Quarter Total |
+|---------|------|--------------:|
+| 1       | 2013 | 679           |
+| 2       | 2013 | 1129          |
+| 3       | 2013 | 560           |
+| 4       | 2013 | 631           |
+| 1       | 2014 | 999           |
+| 2       | 2014 | 576           |
+| 3       | 2014 | 775           |
+| 4       | 2014 | 1061          |
+| 1       | 2015 | 1331          |
+| 2       | 2015 | 459           |
+| 3       | 2015 | 1426          |
+| 4       | 2015 | 1057          |
+| 1       | 2016 | 1154          |
+| 2       | 2016 | 506           |
+| 3       | 2016 | 1379          |
+| 4       | 2016 | 2359          |
+| 1       | 2017 | 1313          |
+| 2       | 2017 | 1756          |
+| 3       | 2017 | 1374          |
+| 4       | 2017 | 685           |
 
 *Fig 5.* Tracked by quarter, expatriation data since 2013 is shown in the table above.
 
 The above query uses a [`CAST`](https://github.com/axibase/atsd/blob/master/sql/README.md#cast) clause and [`CEIL`](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions) function to rename each quarter.
 
-### Web Crawler
+## Web Crawler
 
 The data published by the Federal Register requires an intermediate ETL step in order to be available for analysis. This extraction-transformation-loading procedure is implemented by a [web crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler#irs-expatriation-statistics-data-crawler) built specifically for the task of tracking Federal Register publications for new expatriation data releases.
 
@@ -159,11 +159,11 @@ The Web Crawler reads incoming data from the Federal Register and parses it into
 series d:{iso-date} e:{entity} t:{tag-1}={val-1} m:{metric-1}={number}
 ```
 
-Once the data is stored in the database, the date (`d:`) parameter may be referenced in ISO format, or modified to output human-readable date information such as that seen in the [SQL](#sql) section of this article. Tags (`t:`), metrics (`m:`), and entities (`e:`) are identifying features of a particular set of data. In the case of expatriation data here, the entity is the publishing body, the IRS and the metric is the number of expatriates. The raw data does not feature tag-level differentiation, but it could be something like `us-born-citizens` versus `naturalized-citizens`, if the data were tracked that specifically. 
+Once the data is stored in the database, the date (`d:`) parameter may be referenced in ISO format, or modified to output human-readable date information such as that seen in the [SQL](#sql) section of this article. Tags (`t:`), metrics (`m:`), and entities (`e:`) are identifying features of a particular set of data. In the case of expatriation data here, the entity is the publishing body, the IRS and the metric is the number of expatriates. The raw data does not feature tag-level differentiation, but it could be something like `us-born-citizens` versus `naturalized-citizens`, if the data were tracked that specifically.
 
 The complete list and operation instructions of other supported Axibase data crawlers is hosted [here](https://github.com/axibase/atsd-data-crawlers).
 
-### Conclusion
+## Conclusion
 
 An unusually large number of expatriates renouncing their United States citizenship was observed during the last half-decade, with an exceptionally high number leaving the country during 2016-2107. While the most recent figures show that this number has markedly decreased, it still remains higher than it ever was pre-2010. There's probably not a very simple answer to the question of 'Why?' but BBC recently wrote a brief [exposé](http://www.bbc.com/capital/story/20170123-meet-the-people-leaving-trumps-america) discussing the Americans who chose to leave the country in response to the recent presidential elections.
 

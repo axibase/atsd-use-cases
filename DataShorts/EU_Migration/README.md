@@ -3,7 +3,7 @@ European Union Net Migration by Country
 
 _Source_: EuroStat [Immigration](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tps00176&plugin=1) and [Emigration](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tps00177&plugin=1) Data
 
-_Visualization_: [ChartLab](https://apps.axibase.com)
+_Visualization_: [ChartLab](https://apps.axibase.com/chartlab)
 
 _Database_: [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
@@ -12,7 +12,7 @@ net migration data.
 
 ![](Images/mig-01.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/574349d5/3/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/574349d5/3/#fullscreen)
 
 > Use the dropdown menu to navigate between countries.
 

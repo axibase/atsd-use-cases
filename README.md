@@ -3,11 +3,13 @@
 Axibase Time Series Database is a Hadoop-based time series database with SQL, rule-engine, and visualization.
 
 The **Use Cases** repository contains [Research Articles](#research-articles) demonstrating solutions to real-world data problems using ATSD, [How-To](#how-to) guides for programmatic integration instructions with some of the most commonly-used enterprise softwares and services, our [Chart of the Day](#chart-of-the-day) publications, a [Data Library](#data-library) with in-depth SQL guides, and [Analysis](#analysis) of complex data problems faced on the modern data science landscape.
-  
-## Research Articles 
+
+## Research Articles
 
 ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. See older articles in the [Archive](#archive).
 
+1. [Technical Writing for Software Developers](workshop/technical-writing.md)
+1. [WebGL: Hello, World and Integration Examples](workshop/WebGL.md)
 1. [Tracking Expatriation with ChartLab, SQL, and Web Crawler in ATSD](Expatriation/README.md)
 1. [Let's Encrypt SSL Certificates for Java Developers](workshop/lets-encrypt.md)
 1. [U.S. Approaching 3-Year Mark for Full Employment](Chart_of_the_Day/unemployment/README.md)
@@ -16,8 +18,6 @@ ATSD functionality and features applied to real-world public data to solve commo
 1. [Slow Growth is Becoming a Human Trend Too](Chart_of_the_Day/life-expectancy/README.md)
 1. [Aging America: Modeling Birth Trends in the United States](aging-america/README.md)
 1. [The Slow Death of the American Auto Industry](Automobiles/README.md)
-1. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
-1. [Debt Profile of the Average American](FED_FORDSR/README.md)
 
 ## How-To
 
@@ -49,7 +49,7 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 - [Curve Smoothing Using Moving Averages](Support/Moving-Avg/README.md)
 - [Creating Calculated Metrics in ChartLab and SQL Console](Support/Add-Calculated-Value/README.md)
 
-## Chart of the Day 
+## Chart of the Day
 
 Sometimes data tell their own story and ChartLab visualizations can grab reader attention to make a statement. The Chart of the Day is reproduced in a variety of publications.
 
@@ -102,6 +102,8 @@ Visualizations and SQL queries that are indexed by topic to form the Axibase Dat
 Older ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. Some features may have been updated or function differently, see our latest features and functionality used in more recent [Research Articles](#research-articles) or the [Chart of the Day](#chart-of-the-day).
 
 1. [Who is Dropping Out in the State with the Fewest Dropouts?](Chart_of_the_Day/IA_Dropouts/README.md)
+1. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
+1. [Debt Profile of the Average American](FED_FORDSR/README.md)
 1. [U.S. Expatriation Statistics (Quarter 2 Update)](Expatriation/2017-2.md)
 1. [Calls May Be Recorded or Monitored for Training Purposes: Using Call Abandonment Rates to Establish Thresholds](SF_Phone/README.md)
 1. [Does the Bag Tax Work?](Bag_Tax/README.md)

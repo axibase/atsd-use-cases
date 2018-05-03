@@ -37,12 +37,12 @@ You can find a complete list of the cities (with their corresponding state) in o
 Additionally, these cities are be grouped by United States Census Bureau regions.
 You can find a table of these regions in our [region-table](region-table.md) file.
 
-While you can manually analyze this information in a spreadsheet program, it is much more convenient to interact with the data once it is loaded into a database.  
+While you can manually analyze this information in a spreadsheet program, it is much more convenient to interact with the data once it is loaded into a database.
 
 ### Axibase Time Series Database
 --------------------------------
 
-The [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) (ATSD) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. This article will not focus on creating graphs and figures using ATSD, but
+The [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. This article will not focus on creating graphs and figures using ATSD, but
 rather on writing and running SQL queries. If you are interested in reading more on the visual presentation capabilities of ATSD, check out our articles on
 [employee compensation numbers in Iowa](../SocrataIowaCompensation/README.md) and
 [aviation statistics in the United Kingdom](../UKAviation/README.md).
@@ -53,7 +53,7 @@ Below is an output of the default configuration with all 122 U.S. cities parsed 
 
 Here you can explore the complete dataset for U.S. death totals:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/3d07088c)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/3d07088c)
 
 ### Creating Local Configurations for ATSD and Axibase Collector using Docker
 -----------------------------------------------------------------------------
@@ -66,7 +66,7 @@ It should take you about 15 minutes.
 ### ATSD Schema
 ---------------
 
-Before we get in to creating SQL queries, let us begin by running through the [data schema and models](http://axibase.com/products/axibase-time-series-database/data-model/) of ATSD.
+Before we get in to creating SQL queries, let us begin by running through the [data schema and models](https://axibase.com/products/axibase-time-series-database/data-model/) of ATSD.
 
 Below is a list and brief descriptions of some dataset schema terminology we will be using.
 
@@ -100,19 +100,19 @@ Now we will begin by introducing ourselves to this dataset and taking a look at 
 
    ![Figure 37](Images/Figure37.png)
 
-2. Click the **Metrics** button.   
+2. Click the **Metrics** button.
 
    ![Figure 38](Images/Figure38.png)
 
-3. In **Metrics**, click on **Series** for `cdc.pneumonia_and _influenza_deaths`.   
+3. In **Metrics**, click on **Series** for `cdc.pneumonia_and _influenza_deaths`.
 
    ![Figure 39](Images/Figure39.png)
 
-4. For Boston, select **Export**.   
+4. For Boston, select **Export**.
 
    ![Figure 40](Images/Figure40.png)
 
-5. Let us export the last 20 years of data for pneumonia and influenza deaths. Click **Submit**.   
+5. Let us export the last 20 years of data for pneumonia and influenza deaths. Click **Submit**.
 
    ![Figure 41](Images/Figure41.png)
 
@@ -127,7 +127,7 @@ simple SQL queries which will do the work for us.
 ---------------------
 
 Here are some basic SQL queries with brief descriptions included. Look these over to get yourself acclimated to the general format of SQL queries. In the example following this section, we will
-in detail walk through executing a query from start to finish. You can read more about our SQL syntax [here](https://github.com/axibase/atsd/blob/master/sql/README.md#syntax).   
+in detail walk through executing a query from start to finish. You can read more about our SQL syntax [here](https://github.com/axibase/atsd/blob/master/sql/README.md#syntax).
 
 ```sql
 SELECT *
@@ -300,7 +300,7 @@ This next query looks at total pneumonia and influenza deaths for all cities in 
 specified in this query is **New-England**. Read more about the `GROUP BY` clause [here](https://github.com/axibase/atsd/blob/master/sql/README.md#grouping).
 
 ```sql
-SELECT datetime, sum(value),  
+SELECT datetime, sum(value),
   LOOKUP('us-region', tags.region) AS "region"
   FROM cdc.pneumonia_and_influenza_deaths
 WHERE tags.region = '1'
@@ -327,7 +327,7 @@ LIMIT 10
 Here, monthly pneumonia and influenza death are totaled for all cities in the **New-England** region for the time-range from January 1st, 2016, to October 1st, 2016.
 
 ```sql
-SELECT datetime, sum(value),  
+SELECT datetime, sum(value),
   LOOKUP('us-region', tags.region) AS "region"
   FROM cdc.pneumonia_and_influenza_deaths
 WHERE tags.region = '1'
@@ -387,7 +387,7 @@ some of the remaining query results may show truncated tables for the sake of ma
 | 2015-08-22  | Scranton          | PA     | Middle-Atlantic     | 11.0        | 77118      |
 | 2015-02-07  | Baltimore         | MD     | South-Atlantic      | 18.0        | 621849     |
 | 2015-01-03  | Milwaukee         | WI     | East-North-Central  | 25.0        | 600155     |
-| 2014-12-27  | New Bedford       | MA     | New-England         | 9.0         | 94958      |  
+| 2014-12-27  | New Bedford       | MA     | New-England         | 9.0         | 94958      |
 ```
 
 Here a few noteworthy points regarding this query.
@@ -409,7 +409,7 @@ FROM cdc.all_deaths
   WHERE entity = 'mr8w-325u' and tags.city IS NOT NULL
   WITH row_number(tags ORDER BY value desc, time desc) <= 1
 ORDER BY value desc
-  OPTION (ROW_MEMORY_THRESHOLD 500000)  
+  OPTION (ROW_MEMORY_THRESHOLD 500000)
 ```
 
 ```ls
@@ -446,7 +446,7 @@ Since the hurricane occurred on August 29th, 2005, these sky high death totals d
 
 You can explore the death totals for New Orleans in the Chart Lab instance below.
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/3d07088c/2/)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/3d07088c/2/)
 
 Another example of a city stopping data collection is Philadelphia, Pennsylvania. Looking at a [filtered output for Philadelphia](https://apps.axibase.com/chartlab/3d07088c/3/), we can see that the
 city has recently experienced a significant increase in deaths. The city recorded a death total of 1,063 on February 4th, 2012; however data collection was stopped on November 24th, 2012. So, using this
@@ -484,7 +484,7 @@ The deadliest pneumonia and influenza week as a percentage of all deaths:
 ```sql
 SELECT date_format(tot.time, 'yyyy-MM-dd') AS "date",
   tot.tags.city AS "city", tot.tags.state AS "state",
-  LOOKUP('us-region', tot.tags.region) AS "region",  
+  LOOKUP('us-region', tot.tags.region) AS "region",
   tot.value AS "all_deaths",
   pni.value AS "pneumonia_influenza_deaths",
   pni.value/tot.value*100 AS "pneumonia_influenza_deaths, %",
@@ -616,7 +616,7 @@ This query shows the top 10 cities with the highest percentage of deaths caused 
 
 ```sql
 SELECT tot.tags.city AS "city", tot.tags.state AS "state",
-  LOOKUP('us-region', tot.tags.region) AS "region",  
+  LOOKUP('us-region', tot.tags.region) AS "region",
   sum(tot.value) AS "all_deaths",
   sum(pni.value) AS "pneumonia_influenza_deaths",
   sum(pni.value)/sum(tot.value)*100 AS "pneumonia_influenza_deaths, %",
@@ -651,7 +651,7 @@ Here is a query for the top 10 cities with the highest percentage of deaths caus
 
 ```sql
 SELECT tot.tags.city AS "city", tot.tags.state AS "state",
-  LOOKUP('us-region', tot.tags.region) AS "region",  
+  LOOKUP('us-region', tot.tags.region) AS "region",
   sum(tot.value) AS "all_deaths",
   sum(pni.value) AS "pneumonia_influenza_deaths",
   sum(pni.value)/sum(tot.value)*100 AS "pneumonia_influenza_deaths, %",
@@ -687,7 +687,7 @@ Top 10 cities with the highest percentage of deaths caused by pneumonia and infl
 
 ```sql
 SELECT tot.tags.city AS "city", tot.tags.state AS "state",
-  LOOKUP('us-region', tot.tags.region) AS "region",  
+  LOOKUP('us-region', tot.tags.region) AS "region",
   sum(tot.value) AS "all_deaths",
   sum(pni.value) AS "pneumonia_influenza_deaths",
   sum(pni.value)/sum(tot.value)*100 AS "pneumonia_influenza_deaths, %",
@@ -832,7 +832,7 @@ ORDER BY sum(value) DESC
 We have spent some time looking at SQL queries to search for information from our dataset for the total number of deaths, percentages of deaths caused by pneumonia and influenza, and ranking
 these results in terms of the deadliest month, region, or city. Now let us delve into computing our own mortality statistics for our dataset. According to the [CIA World Factbook](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2066rank.html), mortality (or death)
 rate is the average annual number of deaths during a year per 1,000 individuals in the population. As of 2016, the **United States** as a whole ranks 90th in the world, with a rate of **8.20**
-deaths per 1,000 individuals. Generally speaking, the higher the death rate, the worse. Below is a table from their website showing the top 5 death rates in the world.    
+deaths per 1,000 individuals. Generally speaking, the higher the death rate, the worse. Below is a table from their website showing the top 5 death rates in the world.
 
 | Rank | Country       | (Deaths/1,000 Population) | Date of Information |
 |------|---------------|---------------------------|---------------------|
@@ -1160,7 +1160,7 @@ FROM cdc.all_deaths tot
   AND tot.tags.city = 'New York'
 GROUP BY tot.tags, tot.period(1 year)
   HAVING sum(tot.value) > 0
-WITH INTERPOLATE (1 WEEK, LINEAR, INNER, EXTEND, START_TIME)  
+WITH INTERPOLATE (1 WEEK, LINEAR, INNER, EXTEND, START_TIME)
   ORDER BY tot.datetime
 ```
 
@@ -1215,7 +1215,7 @@ WITH INTERPOLATE (1 WEEK, LINEAR, INNER, EXTEND, START_TIME)
 | 2015-01-01T00:00:00.000Z  | New York  | NY     | Middle-Atlantic  | 11.0          | 527.3          | 742.1        | 2680.3        | 11335.9       | 40083.7     | 55380.3     | 6.5                   | 8550405.0              |
 ```
 
-Using our interpolated population numbers, we can see that our death rate value for 2010 (6.4) matches the one found in the report by the City of New York.  
+Using our interpolated population numbers, we can see that our death rate value for 2010 (6.4) matches the one found in the report by the City of New York.
 
 Since numbers for `us.population` and the CDC metrics are collected at different frequencies (10 year vs 1 week), they have different collection periods. Therefore, it is necessary to
 calculate intermediate (weekly) population values to match the frequency of the CDC metrics. The `WITH INTERPOLATE` clause is set to 1 week to match the population periods to those of the
@@ -1316,8 +1316,8 @@ Below is a table comparing mortality rates in 2010 in New York City and Youngsto
 
 |Mortality Rate  | New York City  | Youngstown  |
 |----------------|----------------|-------------|
-| Infant         | 5.5            | 0.0**       |                
-| 1 to 24 years  | 0.3            | 0.7         |            
+| Infant         | 5.5            | 0.0**       |
+| 1 to 24 years  | 0.3            | 0.7         |
 | 25 to 44 years | 1.1            | 2.6         |
 | 45 to 64 years | 5.8            | 27.5        |
 | 65+ years      | 37.2           | 223.4       |
@@ -1328,7 +1328,7 @@ group), so we were not able to calculate an infant mortality rate for the city. 
 
 So what can explain these unbelievably high values in Youngstown? This is a complicated, multi-layered issue, with some experts spending years analyzing these problems. Two factors that may play into
 these high rates are an aging population, which has above average rates for a number of diseases. Below is a table comparing incident rates for [6 diseases in Mahoning County (Youngstown)](https://www.odh.ohio.gov/healthstats/vitalstats/deathstat.aspx) versus the
-United States as a whole.  
+United States as a whole.
 
 | Rate (# Deaths / 100,000 Population) | Mahoning County (Youngstown) | United States |
 |--------------------------------------|------------------------------|---------------|
@@ -1340,11 +1340,11 @@ United States as a whole.
 | Alzheimer's Disease                  | 30.8                         | [29.8](https://www.cdc.gov/nchs/fastats/alzheimers.htm) |
 
 We can see that Youngstown has higher incident rates for each disease. Additionally, according to the 2010 U.S. Census, the percentage of residents age 65 and older in Youngstown versus the United
-States was [16.44%](http://places.mooseroots.com/l/332116/Youngstown-OH) versus [12.75%](http://places.mooseroots.com/l/310125/United-States). These factors, along with a struggling economy and
+States was 16.44% versus 12.75%. These factors, along with a struggling economy and
 high poverty and crime rates, may have led to Youngstown having such high mortality rates.
 
 This may be a simplified conclusion to a complicated issue. However, we were able to get to this point using ATSD. We loaded a dataset from data.gov, pulled in population figures from census.gov,
-wrote our own SQL queries, and were able to compute our own mortality statistics. Using these capabilities of ATSD allows you gain a deeper understanding of complicated datasets and issues.    
+wrote our own SQL queries, and were able to compute our own mortality statistics. Using these capabilities of ATSD allows you gain a deeper understanding of complicated datasets and issues.
 
 ### Action Items
 ----------------

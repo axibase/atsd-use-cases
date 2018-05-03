@@ -21,12 +21,12 @@ The purpose of this article is to walk the new user through the whole process an
 
 A blank, customizable ChartLab portal for can be found here:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/)
 
 The ChartLab menu contains the following items:
 
 * Editor - Toggle configuration editor;
-* Run - Apply and view a portal based on the current configuration in the Editor window; 
+* Run - Apply and view a portal based on the current configuration in the Editor window;
 * Save - Save the current configuration under as new version in the current directory;
 * Clone - Save current configuration in a new directory;
 * Widget - Append a widget template to the current desired configuration;
@@ -104,7 +104,7 @@ Single-line comment start with **#**. Text on the same line after a **#** will b
 
 Multi-line comments start with / * and end with * /. Any text between / * and * / will be ignored.
 
-The figure below shows two histogram Widgets. The histogram on the left has the right and top axis commented out.  
+The figure below shows two histogram Widgets. The histogram on the left has the right and top axis commented out.
 
 ![Figure 17](Images/Figure17.png)
 

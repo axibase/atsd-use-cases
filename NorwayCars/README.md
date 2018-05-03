@@ -92,7 +92,7 @@ ORDER BY time
 
 ![](Images/chart-total.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/5/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/5/#fullscreen)
 
 ---
 
@@ -100,7 +100,7 @@ ORDER BY time
 
 ![](Images/chart-winner-losers.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/6/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/6/#fullscreen)
 
 ---
 
@@ -109,12 +109,12 @@ ORDER BY time
 
 ![](Images/chart-tesla.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/7/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/7/#fullscreen)
 
 ---
 
 You can take a closer
-look at the statistics by following the below steps to install your own [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) instance.
+look at the statistics by following the below steps to install your own [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) instance.
 
 1. Install the ATSD database from a Docker image:
 
@@ -126,7 +126,7 @@ look at the statistics by following the below steps to install your own [Axibase
       axibase/atsd:latest
    ```
 
-2. Login into ATSD and configure the pre-defined administrator account.
+2. Log in to ATSD and configure the pre-defined administrator account.
 3. Import the [`csv-parser-nor-configs.xml`](Resources/csv-parser-nor-configs.xml) parser definitions on **Configuration > Parsers: CSV** page.
 4. Export files from Statbank in Matrix TSV format (see instructions at the end of this article) or upload prepared tsv files as outlined in steps 5 and 6 below.
 5. Upload the [`total.tsv`](Resources/total.tsv) file using the `nor-transport` parser.
@@ -141,7 +141,7 @@ look at the statistics by following the below steps to install your own [Axibase
   ```
 
 8. Execute SQL queries for `nor.registered_vehicles` and `nor.registered_vehicles_by_make` to analyze statistics in tabular format using [SQL](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) syntax implemented in ATSD.
-9. Create new [visualizations](http://axibase.com/products/axibase-time-series-database/visualization/) on **Configuration > Portals** page using chart configurations from the ChartLab examples above.
+9. Create new [visualizations](https://axibase.com/products/axibase-time-series-database/visualization/) on **Configuration > Portals** page using chart configurations from the ChartLab examples above.
 
 > Feel free to contact us with installation and technical support issues via the [feedback](https://axibase.com/feedback/) form.
 
@@ -151,7 +151,7 @@ look at the statistics by following the below steps to install your own [Axibase
 
 1. Registered motor vehicles, by type of transport and type of fuel (M).
   - Configuration Form: [link](https://www.ssb.no/statistikkbanken/selectvarval/Define.asp?subjectcode=&ProductId=&MainTable=RegKjoretoy2&nvl=&PLanguage=1&nyTmpVar=true&CMSSubjectArea=transport-og-reiseliv&KortNavnWeb=bilreg&StatVariant=&checked=true)
-  - Format: Matrix TSV  
+  - Format: Matrix TSV
   - Summation: by Contents
 
   ![TitlePhoto](Images/table-total.png)

@@ -50,7 +50,7 @@ the recent trend indicating less and less cars being sold.
 _Source_: Federal Reserve Economic Data - [Domestic Motor Vehicle Production](https://fred.stlouisfed.org/series/DAUPSA), [Domestic Motor Vehicle Sales](https://fred.stlouisfed.org/series/DAUTOSA)
 
 The second part of the above visualization tracks the difference in domestic automobile production and sales which has remained
-within a range of roughly 100,000 units and was derived from the underlying data using an [ad-hoc calculation](../Support/Add-Calculated-Value/README.md) 
+within a range of roughly 100,000 units and was derived from the underlying data using an [ad-hoc calculation](../Support/Add-Calculated-Value/README.md)
 in the ChartLab interface. This value has been averaged over each observed year, and is an excellent metric to gauge trends
 in production output. Because sales are likely a much larger factor in deciding production, then production is a factor in
 predicting sales, this line shows that declining sales are being met with declining production. But more than that, production
@@ -67,7 +67,7 @@ _Source_: Federal Reserve Economic Data - [Imported and Domestic Motor Vehicle S
 
 In stark contrast to falling domestic sales figures, imported motor vehicle sales have shown both a quicker post-recession
 recovery and more promising long-term potential. Only five of the top twenty best-selling cars in America for [May 2017](http://www.goodcarbadcar.net/2017/06/top-20-best-selling-cars-in-america-may.html)
-came from American producers. 
+came from American producers.
 
 ### Analysis
 
@@ -95,15 +95,15 @@ _Source_: Federal Reserve Economic Data - [A Class CPI](https://fred.stlouisfed.
 
 Further, the above chart details the Consumer Price Index (CPI) for four types of common consumer vehicles. The categorization
 system ranks vehicles by size and load. The only class of vehicle which showed a significant increase in overall cost during
-the observed period was the D Class, mostly populated by sport utility type vehicles. 
+the observed period was the D Class, mostly populated by sport utility type vehicles.
 
 ### Conclusion
 
 Overall automobile sales are growing smaller and smaller in the United States and amid that reduction, the market is being
 further and further dominated by import manufacturers. Certainly, some of these manufacturers maintain local plants in the
 United States, but their headquarters are located abroad and the majority of their profits end up there as well. As the second largest
-automotive market in the world and originator of the industry, the United States should be able to leverage its home field 
-advantage and massive consumer base into the kind of success that made the industry what it is today, or more accurately, 
+automotive market in the world and originator of the industry, the United States should be able to leverage its home field
+advantage and massive consumer base into the kind of success that made the industry what it is today, or more accurately,
 what it was twenty years ago.
 
 Instead, despite the massively expensive bailout less than ten years ago, American automobile manufacturers are struggling

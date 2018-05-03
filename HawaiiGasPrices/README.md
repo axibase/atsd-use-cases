@@ -109,7 +109,7 @@ comparing fuel types at Hilo and Diesel prices by location, respectively.
 
 Here, you can explore the complete dataset for Hawaiian fuel prices using our portal:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/ee379926)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/ee379926)
 
 ### Creating Custom Portals
 ---------------------------
@@ -161,7 +161,7 @@ Your customized graph should look something like this:
 
 Here, you can explore the this graph:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/06a95d7c)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/06a95d7c)
 
 Now, we will quickly walk through creating a histogram to display the fuel price differences for Diesel fuel between Hilo and the US.
 
@@ -206,7 +206,7 @@ Your customized graph should look something like this:
 
 Here, you can explore the this graph:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/aff8779b)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/aff8779b)
 
 Various additional settings may be applied to create outputs that fit your needs. Below is a link to settings that may be applied to create custom data.gov charts:
 
@@ -233,7 +233,7 @@ In turn, each island had it's electricity broken into the following  sectors:
 
 Here, you can explore the portal for this dataset:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/9e548f6b)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/9e548f6b)
 
 Next, let us look at which areas we can compare.
 
@@ -256,14 +256,14 @@ the possibilities of combining and comparing multiple datasets.
 
 Here you can explore the portal of this comparison:
 
-[![](Images/button.png)](http://apps.axibase.com/chartlab/b1046948)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/b1046948)
 
 ### Additional Examples
 -----------------------
 
 Here is a table of additional datasets from data.gov that you can explore using Axibase's portal:
 
-|State		|data.gov dataset		|Axibase Portal			|		  
+|State		|data.gov dataset		|Axibase Portal			|		
 |-----------|-----------------------|-----------------------|
 |Illinois 	|[Abortion Demographics, 1995-2012](http://catalog.data.gov/dataset/abortion-demographics-1995-2012-8f496)|[Portal](https://apps.axibase.com/chartlab/55eb27ce)|
 |Maryland 	|[Anne Arundel County Crime Rate By Type](http://catalog.data.gov/dataset/anne-arundel-county-crime-rate-by-type-e5923)|[Portal](https://apps.axibase.com/chartlab/a85c4f60)|
@@ -293,6 +293,6 @@ Below are the steps to follow to install ATSD:
 2. [Install Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/installation.md#axibase-collector-installation) and configure it to write data into your ATSD instance.
 3. Import [SOCRATA Job](hawaii_gas_prices.xml) into Axibase Collector.
 4. Add your desired data.gov dataset to the job to enable data collection. Click on [Run] to collect data for the first time.
-5. Login into ATSD and open a sample Socrata portal to explore the data.
+5. Log in to ATSD and open a sample Socrata portal to explore the data.
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!

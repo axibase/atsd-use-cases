@@ -11,7 +11,7 @@ The United States provides retirement security for the elderly and disabled in a
 
 ## Objectives
 
-Using [**Forecasting**](https://axibase.com/products/axibase-time-series-database/forecasts/) functionality from [Axibase Time Series Database](https://axibase.com/), current population figures and birth data, models may be created to predict trends in America's potential population crisis. 
+Using [**Forecasting**](https://github.com/axibase/atsd/blob/master/forecasting/README.md#data-forecasting) functionality from [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), current population figures and birth data, models may be created to predict trends in America's potential population crisis.
 
 ## Data
 
@@ -63,19 +63,19 @@ Using a `value` expression, calculated series may be created using existing data
     mode = column
     starttime = 1980
     endtime = 2017
-    
+
     [series]
     metric = POPTOTUSA647NWDB
     display = false
     alias = pop
-    
+
 # Each series is given an alias and display setting is false (series is only used for calulation).
-      
+
     [series]
     metric = LFWA64TTUSM647S_
     display = false
     alias = wpop
-      
+
     [series]
     value = value('pop') - value('wpop')
     style = stroke-width: 2
@@ -83,8 +83,8 @@ Using a `value` expression, calculated series may be created using existing data
     label = Difference in Total Population and Working Populaton
     alert-expression = value > 104
     alert-style = color: red
-    
-# Calculated series has no metric value as it is only derived. Alert expression is entered based on information provided by box graph     
+
+# Calculated series has no metric value as it is only derived. Alert expression is entered based on information provided by box graph
 ```
 
 Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in TRENDS / ChartLab, see this [guide](../Solutions/calculated-values).
@@ -99,19 +99,19 @@ Each of the target series is given an `alias` which is then used to create the c
 The ATSD Forecast tool may be used to model future trends based on existing data. See the [Resources](#resources) section of this article to download the complete configuration used in this forecast or reference the abbreviated table below for a basic understanding of the mechanics at work.
 
 |Basic Forecast Configuration Information| |
-|--|--| 
+|--|--|
 |Algorithm | Holt-Winters |
 |Alpha Value| 0.5|
 |Beta Value|0.4|
 |Gamma Value|0.5|
 |Score Interval|5 Years|
 
-Forecasting for each of the original metrics is shown below for roughly 20 years into the future. 
+Forecasting for each of the original metrics is shown below for roughly 20 years into the future.
 
 ![](images/forecast_data.png)
 [![](images/button-new.png)](https://trends.axibase.com/a2967bc9#fullscreen)
 
-*Fig 5.*: The original data is shown here with forecasts performed in ATSD showing the potentially widening gap between those eligible to pay in to the Social Security system and those needing to be paid out from that system. 
+*Fig 5.*: The original data is shown here with forecasts performed in ATSD showing the potentially widening gap between those eligible to pay in to the Social Security system and those needing to be paid out from that system.
 
 The Forecasting tool may be scaled to work with per annum data as seen here just as readily as millisecond-frequency data input from a sensor or other device.
 

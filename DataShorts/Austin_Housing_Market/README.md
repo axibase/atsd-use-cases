@@ -3,9 +3,9 @@ Comprehensive Housing Market Analysis: City of Austin (2014)
 
 > Source Data: [City of Austin Report](http://www.austintexas.gov/sites/default/files/files/NHCD/2014_Comprehensive_Housing_Market_Analysis_-_Document_reduced_for_web.pdf)
 
-> Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in the [Axibase Time Series Database](https://axibase.com)
+> Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in the[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
-> Visualization: [ChartLab](https://apps.axibase.com) from [Axibase](https://axibase.com)
+> Visualization: [ChartLab](https://apps.axibase.com/chartlab)
 
 ![](Images/hma-000.png)
 
@@ -56,14 +56,14 @@ The following ChartLab visualization displays information related to the changin
 **Figure 1.1**
 
 ![](Images/hma-001.png)
- 
-[![](Images/button.png)](http://apps.axibase.com/chartlab/69d313b9/3/#fullscreen)
+
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/69d313b9/3/#fullscreen)
 
 > Use the drop-down menu to toggle between metrics
 
 Return to the [Index](#Index)
 
-#### Transportation Statistics: 
+#### Transportation Statistics:
 
 The following ChartLab visualization displays information related to transportation cost in the city of Austin.
 
@@ -77,7 +77,7 @@ The following ChartLab visualization displays information related to transportat
 
 ![](Images/hma-002.png)
 
-[![](Images/button.png)](http://apps.axibase.com/chartlab/0964c838/2/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/0964c838/2/#fullscreen)
 
 > Use the drop-down menu to toggle between metrics
 
@@ -100,7 +100,7 @@ The following ChartLab visualization displays information related to the socioec
 
 ![](Images/hma-0031.png)
 
-[![](Images/button.png)](http://apps.axibase.com/chartlab/ac220ab9/4/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/4/#fullscreen)
 
 > Use the drop-down menu to toggle between metrics
 
@@ -130,7 +130,7 @@ _Figure 4.2_
 
 ![](Images/hma-0041.png)
 
-[![](Images/button.png)](http://apps.axibase.com/chartlab/ac220ab9/2/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/2/#fullscreen)
 
 > Use the dropdown menu to toggle between metrics
 
@@ -138,7 +138,7 @@ _Figure 4.2_
 
 ![](Images/hma-0042.png)
 
-[![](Images/button.png)](http://apps.axibase.com/chartlab/ac220ab9/3/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/3/#fullscreen)
 
 > Use the dropdown menu to toggle between metrics
 
@@ -159,7 +159,7 @@ The following ChartLab visualization displays information related to the quality
 
 ![](Images/hma-005.png)
 
-[![](Images/button.png)](http://apps.axibase.com/chartlab/ac220ab9/5/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/5/#fullscreen)
 
 > Use the dropdown menu to toggle between metrics
 

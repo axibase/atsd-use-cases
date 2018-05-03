@@ -4,7 +4,6 @@
 
 [AWS Route53](https://aws.amazon.com/route53) provides tools to automate DNS configuration in order to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, it provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
 
-
 A core Route53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) which monitor the health of an application and can route incoming traffic to its healthy endpoints.
 
 ![](images/route53-1.png)
@@ -41,7 +40,7 @@ Amazon AWS publishes a list of IP ranges used by [health checker nodes](https://
 
 ### Healthy Endpoint
 
-For HTTP and HTTPS checks, the endpoint is considered healthy if the TCP connection was established within **ten** seconds and the endpoint returned an HTTP status code of `2xx` or `3xx` within **two** seconds. 
+For HTTP and HTTPS checks, the endpoint is considered healthy if the TCP connection was established within **ten** seconds and the endpoint returned an HTTP status code of `2xx` or `3xx` within **two** seconds.
 
 For TCP checks, the endpoint status is determined as healthy if the TCP connection was established within **ten** seconds.
 
@@ -76,7 +75,7 @@ Route53 CloudWatch metrics are available only in the **us-east-1** region as spe
 
 ## Service Availability Dashboards
 
-Health check statistics may be offloaded to [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) and used to create consolidated dashboards with custom thresholds for alerts and notifications.
+Health check statistics may be offloaded to [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and used to create consolidated dashboards with custom thresholds for alerts and notifications.
 
 ## Configuration
 
@@ -98,14 +97,14 @@ This directory will be mounted into the Docker container in order to pass AWS cr
 
 Create an `aws.propeties` file in the `import` directory and replace `KEY` and `SECRET` with AWS Access Key ID and Secret Access Key respectively.
 
-```
+```sh
 accessKeyId=KEY
 secretAccessKey=SECRET
 ```
 
 Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on a Docker host:
 
-```
+```sh
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
   --volume=$(pwd)/import:/import \
@@ -125,7 +124,7 @@ Wait until the sandbox is initialized and 'All applications started.' message is
 docker logs -f atsd-sandbox
 ```
 
-```
+```sh
 [Collector] 2018-03-29 17:47:40,329 Job 'aws-route53' completed.
 [Collector] 2018-03-29 17:47:40,330 All jobs completed.
 [Collector] Checking Collector web-interface port 9443 ...

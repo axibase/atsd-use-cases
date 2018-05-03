@@ -17,13 +17,13 @@ the [New York Department of Transportation](https://www.dot.ny.gov/index) is agg
 
 The analyst knows that the data must be modified somehow, but using a schema based parser to aggregate the Port Authority Cargo data
 would destroy the fine granularization that was created by monthly collection over the entire observation period and using an
-average baseline calculated over the entire observation period would return results that neglected current trends because 
+average baseline calculated over the entire observation period would return results that neglected current trends because
 four decades worth of data would be regarded equally.
 
-Enter [Axibase](https://axibase.com) and the [Moving Average](http://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
+Enter [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
 setting.
 
-### Data 
+### Data
 
 The tonnage dataset is visualized below. Because of the differences in the ranges of the data, it has been split into two charts so that the high level
 of variance is visible for each metric:
@@ -32,13 +32,13 @@ of variance is visible for each metric:
 
 ![](Images/ra-001.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/479e4525/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/479e4525/#fullscreen)
 
 **Figure 1.2**: LGA Cargo Tonnage (1977-2015)
 
 ![](Images/ra-002.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/f36262ee/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f36262ee/#fullscreen)
 
 Averaging cargo data across the entire observed period would return results that considered data from almost
 half a century ago as equal to data recorded two years ago. While potentially helpful in another analysis, for the purposes
@@ -51,7 +51,7 @@ The passenger enplanement data, aggregated annually is shown below:
 
 ![](Images/ra-003.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/00cf9be3/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/00cf9be3/#fullscreen)
 
 Not only is the granularization mismatched but the observed periods differ by twenty years. The latter problem's solution is
 quick enough, modify the observation period using the dropdowns in ChartLab or hardcode the desired timespan in the editor
@@ -68,10 +68,10 @@ series.
   period = 1 year
 ```
 
-The `period` feature of the setting is user-assigned and can be set as low as millisecond granularity and as high as any 
+The `period` feature of the setting is user-assigned and can be set as low as millisecond granularity and as high as any
 number of years. This two line syntax calculates the average of each year's inputs and aggregates them to return one value
 per selected period. Additionally, this type of ad-hoc modification does nothing to the underlying data, so it may be returned
-to at any time. Read detailed documentation about the `wtavg` setting as well as other supported aggregation functions 
+to at any time. Read detailed documentation about the `wtavg` setting as well as other supported aggregation functions
 [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/).
 
 ### Implementation
@@ -82,39 +82,43 @@ Applying the moving, or weighted, average to **Figures 1.1** and **1.2** is show
 
 ![](Images/ra-004.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/b03d8e2c/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/b03d8e2c/#fullscreen)
 
 **Figure 2.2** Annual Average of LGA Cargo Tonnage (1997-2015)
 
 ![](Images/ra-005.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/b456f1b5/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/b456f1b5/#fullscreen)
 
 > Open the ChartLab visualizations above to inspect the newly-inserted syntax on lines 17 and 18
 
-The analyst is now able to more accurately judge the relationship between the two datasets because of the equal rate of 
-granularization. Combining the JFK and LGA elements from each of the two datasets, and using the `mode = column` setting, 
+The analyst is now able to more accurately judge the relationship between the two datasets because of the equal rate of
+granularization. Combining the JFK and LGA elements from each of the two datasets, and using the `mode = column` setting,
 produces the following:
 
 **Figure 2.3**: JFK Cargo Tonnage vs. Passenger Enplanement (1997-2015)
 
 ![](Images/ra-006.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/897c0429/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/897c0429/#fullscreen)
 
 **Scale Modification**:
 
-```enplanements = value/100```
+```javascript
+enplanements = value/100
+```
 
 **Figure 2.4**: LGA Cargo Tonnage vs. Passenger Enplanement (1997-2015)
 
 ![](Images/ra-007.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/0de58b58/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/0de58b58/#fullscreen)
 
 **Scale Modification**:
 
-```enplanements = value/10000```
+```javascript
+enplanements = value/10000
+```
 
 Once the comparison is complete, removing the `statistic` setting from the editor window returns the data to its original
 state without additional computation. Alternatively, it may be helpful to compare the modified chart with the original to
@@ -127,14 +131,14 @@ airport traffic) because they are now included in the underlying data.
 
 ![](Images/ra-009.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/6b3e4ed6/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/6b3e4ed6/#fullscreen)
 
 **Figure 2.6**
 
 
 ![](Images/ra-010.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/a4d77c47/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/a4d77c47/#fullscreen)
 
 Download the Community Edition of Axibase [here](https://github.com/axibase/atsd/blob/master/installation/README.md#installation),
 view prepared public datasets [here](https://github.com/axibase/open-data-catalog), and contact [Axibase](https://axibase.com)

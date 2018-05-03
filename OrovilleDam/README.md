@@ -8,7 +8,7 @@ beginning to reach capacity from high rainfall totals. Officials decided to begi
 February 10th, a hole 300 feet wide, 500 feet long, and 45 feet deep had appeared in the spillway. [On February 11th](http://www.latimes.com/local/california/la-live-updates-oroville-dam-oroville-dam-spillway-expected-to-fail-1486953074-htmlstory.html),
 officials decided to begin using an auxiliary, spillway composed of earthen materials. The emergency spillway quickly began to erode as well. On
 February 12th, due to the "hazardous situation" surrounding the dam, more than [200,000 people](http://www.npr.org/sections/thetwo-way/2017/02/14/515172686/with-more-rain-forecast-crews-work-to-reinforce-oroville-dam)
-from downstream communities were ordered to evacuate the area. In the early morning hours of February 13th, the reservoir water levels returned below the threshold capacity of the dam.  
+from downstream communities were ordered to evacuate the area. In the early morning hours of February 13th, the reservoir water levels returned below the threshold capacity of the dam.
 
 While the situation has calmed somewhat in the last several days, the crisis is by no means over. Rain has been [forecasted](https://weather.com/en/weather/tenday/l/95966:4:US)
 for the next several days. With a water surface area of 15,810 acres, the difference of mere inches of rain can make the difference between crisis averted and complete disaster for the
@@ -16,7 +16,7 @@ Oroville dam.
 
 In this article we will analyze a dataset from the [California Department of Water Resources (CDWR)](https://cdec.water.ca.gov/index.html) looking at the several vital statistics for the
 Oroville dam. This article provides **realtime analysis** with Chart Lab graphs (updated **hourly** and **automatically** with data taken from the CDWR website), which show the current situation at the dam. Additionally, this article illustrates
-how publicly available data from the California DWR can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](http://axibase.com/products/axibase-time-series-database/)
+how publicly available data from the California DWR can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](https://axibase.com/products/axibase-time-series-database/)
 for interactive analysis with graphical representation of open data published by government organizations.
 
 ### Oroville Dam Dataset
@@ -33,13 +33,13 @@ Data is collected hourly for the Oroville dam for the following metrics:
 * Spillway Outflow (cubic feet/second)
 * Rain (inches)
 
-Below is an image showing these CDWR metrics in ATSD. You can toggle between the different metrics by clicking on the dropdown.     
+Below is an image showing these CDWR metrics in ATSD. You can toggle between the different metrics by clicking on the dropdown.
 
 ![Figure 1](Images/Figure1.png)
 
 You can explore the basic CDWR portal (loaded into ATSD) by clicking the button below:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/dee79515/11/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/dee79515/11/#fullscreen)
 
 **You do not need to install ATSD to look the realtime Oroville dam analysis in this article**.
 
@@ -54,13 +54,13 @@ Below is a screenshot showing the change in storage capacity of the dam from Fri
 The threshold capacity is **3,537,577 af**, as marked by the orange line in the image. As a note, you can scroll over horizontally and up or down vertically by left-clicking and dragging in the direction you
 would like to shift. We can see the approximate time that the dam **exceeded the threshold capacity** was between 2:00 and 3:00 am U.S. pacific time (PT) on February 11th. 3,539,160 af was recorded at 2:00 am on February 11th, and the storage level **returned to
 below the threshold limit** between 11:00 pm on February 12th and 12:00 am (PT) on February 13th with 3,533,936 af recorded at midnight (both times marked below). Additionally, we can observe that the dam hit its peak overflow
-of 3,578,686 af on Sunday February 12th at 3:00 am.  
+of 3,578,686 af on Sunday February 12th at 3:00 am.
 
 ![Figure 3](Images/Figure3.png)
 
 You can explore this portal by clicking the button below:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/dee79515#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/dee79515#fullscreen)
 
 ### Reservoir Storage Levels
 ----------------------------
@@ -77,11 +77,11 @@ Zooming into the last couple of months, we can take a look at how storage levels
 
 Reservoir levels experienced their first significant uptick on December 10th, 2016, with an increase of 34,571 af added to the reservoir storage. Over the next several weeks,
 the dam experienced an increase in storage (with the exception of a handful of days). By toggling over each of the individual columns, we can see the change in the storage
-for February 9th (237,689 af), 10th (39,522 af), and 11th (53,896 af), which was when the dam was overtopped.      
+for February 9th (237,689 af), 10th (39,522 af), and 11th (53,896 af), which was when the dam was overtopped.
 
 You can explore this portal by clicking on the button below:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/dee79515/2#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/dee79515/2#fullscreen)
 
 ### Reservoir Inflow, Outflows, and Precipitation
 -------------------------------------------------
@@ -89,7 +89,7 @@ You can explore this portal by clicking on the button below:
 Below are three outputs for the Oroville dam:
 
 * Precipitation vs new inflows, where net inflow is the difference between reservoir inflow and outflow. From this graph we can see the relationship between precipitation totals
-  and the net inflows/storage of the dam.  
+  and the net inflows/storage of the dam.
 * Inflows (measured in acre-foot per day) for 2017, 2016, 2015, 2014, and 2013. In this output, we can see that inflows for 2017 have been far greater than any of the recent previous years.
 * Precipitation per day (inches) for 2017, 2016, 2015, 2014, and 2013. While inflows for 2017 were quite a bit greater than previous years totals, we can see that precipitation totals
   in 2017 were not too far ahead of previous years.
@@ -98,7 +98,7 @@ Below are three outputs for the Oroville dam:
 
 You can explore this portal by clicking on the button below:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/dee79515/10/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/dee79515/10/#fullscreen)
 
 ### The Next Several Days
 -------------------------
@@ -110,7 +110,7 @@ By toggling over any of the columns, we can see the values and time of these var
 ![Figure 7](Images/Figure7.png)
 
 Below is a table of four of the most recent and significant rainfalls. We can see that periods having rainfall accumulations over 6 inches led to massive increases in dam storage
-levels. Periods with rainfall accumulation less than 4 inches experienced much less drastic increases.     
+levels. Periods with rainfall accumulation less than 4 inches experienced much less drastic increases.
 
 |Rainfall Period| Accumulation (in) | Reservoir Storage Change (af) (Values at 12:00 pm PT)      | Net Change (af) |
 |---------------|-------------------|------------------------------------------------------------|-----------------|
@@ -121,7 +121,7 @@ levels. Periods with rainfall accumulation less than 4 inches experienced much l
 
 You can explore this portal by clicking on the button below:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/dee79515/7/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/dee79515/7/#fullscreen)
 
 Below is an image of the situation at the time this article was published. As of 5:00 am PT on February 15th, the reservoir storage level was at 3,230,432 af, which is 307,145 af
 less than the dam threshold. We can also see that for the last several days, the storage level has been decreasing. However, rain has been [forecast](https://weather.com/en/weather/tenday/l/95966:4:US)
@@ -131,7 +131,7 @@ for the next several days.
 
 Is there any way we can predict how quickly the dam will fill up for a given amount of rainfall? Another very helpful tool in ATSD is the capability to perform
 [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview), which can be used to search for specific information contained in this dataset.
-Using the following query, we are able to obtain an estimate for the volume added (acre-foot) to the storage level of the reservoir per inch of rainfall.    
+Using the following query, we are able to obtain an estimate for the volume added (acre-foot) to the storage level of the reservoir per inch of rainfall.
 
 ```sql
 SELECT

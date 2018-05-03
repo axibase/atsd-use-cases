@@ -2,10 +2,12 @@
 <rule>
 <name>dockerhub-build-fail</name>
 <metric>message</metric>
-<tags>type, source, repository</tags>
+<tags>type, source, repository, tags.dockertag_name</tags>
 <tagsGroupingStrategy>DEFINED_TAGS</tagsGroupingStrategy>
-<expression><![CDATA[tags.status NOT IN ('0', '3', '10')]]></expression>
-<window>time(1 second)</window>
+<expression><![CDATA[elapsedTime(update_ms) < 24*60*60000
+&& ( tags.status NOT IN ('0', '2', '3', '10') 
+  || tags.status = '0' && (now.getMillis() - create_ms) > 60*60000 )]]></expression>
+<window>length(1)</window>
 <filter>type = 'build' &amp;&amp; source = 'docker.hub'</filter>
 <severity>WARNING</severity>
 <alertOpenMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
@@ -19,9 +21,13 @@
 <intervalUnit>MINUTE</intervalUnit>
 </alertStrategy>
 <userExpressions>
+<expression><![CDATA[milliseconds(tags.created_date) AS create_ms]]></expression>
+<expression><![CDATA[milliseconds(tags.last_updated) AS update_ms]]></expression>
+<expression><![CDATA[tags.status AS st]]></expression>
+<expression><![CDATA[st = '-1' ? 'Failed' : (st = '0' ? 'Queued' : (st = '3' ? 'Pending' : (st = '10' ? 'Completed' : st))) AS status_desc]]></expression>
 <expression><![CDATA['https://hub.docker.com/r/' + tags.repository + '/builds/' + tags.build_code AS lnk]]></expression>
 </userExpressions>
-<lastUpdated>1524633075036</lastUpdated>
+<lastUpdated>1524808089630</lastUpdated>
 <enabled>true</enabled>
 <disableEntityGrouping>false</disableEntityGrouping>
 <leavingEvents>true</leavingEvents>
@@ -43,7 +49,7 @@
 <disabled>false</disabled>
 <rule-name>dockerhub-build-fail</rule-name>
 <repeat-interval>
-<type>NONE</type>
+<type>ALL</type>
 <intervalCount>6</intervalCount>
 <intervalUnit>MINUTE</intervalUnit>
 </repeat-interval>
@@ -64,7 +70,7 @@
 </firstWebConfigParameters>
 <firstWebConfigParameters>
 <key>cause</key>
-<value>${tags.cause}</value>
+<value>${ifEmpty(tags.cause, 'N/A')}</value>
 </firstWebConfigParameters>
 <firstWebConfigParameters>
 <key>created_date</key>
@@ -76,7 +82,7 @@
 </firstWebConfigParameters>
 <firstWebConfigParameters>
 <key>dockertag_name</key>
-<value>${tags.dockertag_name}</value>
+<value>${ifEmpty(tags.dockertag_name, 'N/A')}</value>
 </firstWebConfigParameters>
 <firstWebConfigParameters>
 <key>id</key>
@@ -97,6 +103,10 @@
 <firstWebConfigParameters>
 <key>status</key>
 <value>${tags.status}</value>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>status_desc</key>
+<value>${status_desc}</value>
 </firstWebConfigParameters>
 <firstWebConfigParameters>
 <key>user</key>
@@ -108,7 +118,7 @@
 </repeatWebConfigParameters>
 <repeatWebConfigParameters>
 <key>cause</key>
-<value>${tags.cause}</value>
+<value>${ifEmpty(tags.cause, 'N/A')}</value>
 </repeatWebConfigParameters>
 <repeatWebConfigParameters>
 <key>created_date</key>
@@ -120,7 +130,7 @@
 </repeatWebConfigParameters>
 <repeatWebConfigParameters>
 <key>dockertag_name</key>
-<value>${tags.dockertag_name}</value>
+<value>${ifEmpty(tags.dockertag_name, 'N/A')}</value>
 </repeatWebConfigParameters>
 <repeatWebConfigParameters>
 <key>id</key>
@@ -141,6 +151,10 @@
 <repeatWebConfigParameters>
 <key>status</key>
 <value>${tags.status}</value>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>status_desc</key>
+<value>${status_desc}</value>
 </repeatWebConfigParameters>
 <repeatWebConfigParameters>
 <key>user</key>
@@ -152,7 +166,7 @@
 </cancelWebConfigParameters>
 <cancelWebConfigParameters>
 <key>cause</key>
-<value>${tags.cause}</value>
+<value>${ifEmpty(tags.cause, 'N/A')}</value>
 </cancelWebConfigParameters>
 <cancelWebConfigParameters>
 <key>created_date</key>
@@ -164,7 +178,7 @@
 </cancelWebConfigParameters>
 <cancelWebConfigParameters>
 <key>dockertag_name</key>
-<value>${tags.dockertag_name}</value>
+<value>${ifEmpty(tags.dockertag_name, 'N/A')}</value>
 </cancelWebConfigParameters>
 <cancelWebConfigParameters>
 <key>id</key>
@@ -185,13 +199,17 @@
 <cancelWebConfigParameters>
 <key>status</key>
 <value>${tags.status}</value>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>status_desc</key>
+<value>${status_desc}</value>
 </cancelWebConfigParameters>
 <cancelWebConfigParameters>
 <key>user</key>
 <value>${tags.user}</value>
 </cancelWebConfigParameters>
 <first-enabled>true</first-enabled>
-<repeat-enabled>false</repeat-enabled>
+<repeat-enabled>true</repeat-enabled>
 <cancel-enabled>false</cancel-enabled>
 </webNotification>
 <ruleTable/>

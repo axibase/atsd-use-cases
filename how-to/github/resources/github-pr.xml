@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><rules>
 <rule>
-<name>github-issue-open-event</name>
+<name>github-pr-open-event</name>
 <metric>message</metric>
 <tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
 <expression><![CDATA[true]]></expression>
@@ -31,7 +31,7 @@ tags.sender.login != null</filter>
 <alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
 <logOutput>false</logOutput>
 <owner>Axibase</owner>
-<description><![CDATA[Message alert on open PR from github.]]></description>
+<description><![CDATA[Message alert on PR open event from github.]]></description>
 <actionStrategy>
 <type>ALL</type>
 <intervalCount>5</intervalCount>
@@ -44,7 +44,7 @@ tags.sender.login != null</filter>
 <discardPreviousValues>true</discardPreviousValues>
 <webNotification>
 <disabled>false</disabled>
-<rule-name>github-pr-event</rule-name>
+<rule-name>github-pr-open-event</rule-name>
 <repeat-interval>
 <type>ALL</type>
 <intervalCount>6</intervalCount>
@@ -64,23 +64,23 @@ tags.sender.login != null</filter>
 <firstWebConfigParameters>
 <key>text</key>
 <value>New Pull Request:
-Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}.&#13;
+Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.pull_request.base.repo.full_name)}.&#13;
 User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
-PR: ${addLink('#' + tags.number, 'https://github.com/' + tags.repository.full_name + '/pull/' + tags.number)}</value>
+PR: ${addLink('#' + tags.number, 'https://github.com/' + tags.pull_request.base.repo.full_name + '/pull/' + tags.number)}</value>
 </firstWebConfigParameters>
 <repeatWebConfigParameters>
 <key>text</key>
 <value>New Pull Request:
-Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}.&#13;
+Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.pull_request.base.repo.full_name)}.&#13;
 User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
-PR: ${addLink('#' + tags.number, 'https://github.com/' + tags.repository.full_name + '/pull/' + tags.number)}</value>
+PR: ${addLink('#' + tags.number, 'https://github.com/' + tags.pull_request.base.repo.full_name + '/pull/' + tags.number)}</value>
 </repeatWebConfigParameters>
 <cancelWebConfigParameters>
 <key>text</key>
 <value>New Pull Request:
-Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}.&#13;
+Repository: ${addLink(tags.repository.name, 'https://github.com/' + tags.pull_request.base.repo.full_name)}.&#13;
 User: ${addLink(tags.sender.login, 'https://github.com/' + tags.sender.login)}&#13;
-PR: ${addLink('#' + tags.number, 'https://github.com/' + tags.repository.full_name + '/pull/' + tags.number)}</value>
+PR: ${addLink('#' + tags.number, 'https://github.com/' + tags.pull_request.base.repo.full_name + '/pull/' + tags.number)}</value>
 </cancelWebConfigParameters>
 <first-enabled>true</first-enabled>
 <repeat-enabled>true</repeat-enabled>

@@ -12,14 +12,14 @@ than New York City and Los Angeles **combined**. In 2016, there were 753 murders
 in 2015. From 2004 to 2015, the peak number of murders in the city was under 500. From 2011 to 2015, the city recorded less than 3,000 shooting victims per year. So what is the reason for this alarming
 increase in violence in Chicago? Was there an increase in all kinds of crime, or was the rise in murders and shootings an exception? In this article we will analyze a dataset from [data.gov](https://www.data.gov/)
 looking at [Chicago crime statistics](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4) from 2001 to the present time. This research article illustrates how publicly available data
-from data.gov can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](http://axibase.com/products/axibase-time-series-database/) for interactive analysis and graphical
+from data.gov can be easily loaded into the non-relational [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) for interactive analysis and graphical
 representation of raw data collected by government and private organizations. The article provides both sample queries and charts, as well as instructions on how to install your own ATSD instance
-and populate it with the raw data.  
+and populate it with the raw data.
 
 Chicago Crime Statistics Dataset
 ------------------------------------
 
-Let's take a look at the dataset titled **Crimes - 2001 to present** from [data.gov](https://www.data.gov/).  
+Let's take a look at the dataset titled **Crimes - 2001 to present** from [data.gov](https://www.data.gov/).
 
 This dataset can be found here: https://catalog.data.gov/dataset/crimes-2001-to-present-398a4. On the data.gov website, this dataset can be downloaded as a CSV (1.4 GB), RDF, JSON (**2.8 GB**), or a
 XML file. This dataset can easily be parsed using the JSON job in Axibase Collector.
@@ -29,7 +29,7 @@ where the crime occurred, and by the specific crime type. For example, for the c
 of cocaine, manufacturing and delivering heroin, soliciting narcotics etc). Each crime type has its own number of locations and specific violations that it may be sorted for.
 
 Given the size of the dataset, you cannot load it in Excel. It is much more convenient to interact with the data once it is loaded into a database. The
-[Axibase Time Series Database (ATSD)](http://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to look into this dataset: interactive graphs from [Chart Lab](../ChartLabIntro/README.md) and tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).
+[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to look into this dataset: interactive graphs from [Chart Lab](../ChartLabIntro/README.md) and tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
@@ -110,7 +110,7 @@ GROUP BY date_format(time, 'EEE')
 
 Did the most common locations for homicides change from 2015 to 2016? The below pie chart shows the top five locations where homicides were committed in 2015 and 2016. Both years have the same top five
 locations for murders (alley, apartment, street, house, auto) and we can see that the greatest number of homicides took place on the street. The percentage of murders on the street in 2015 and 2016
-was exactly same at 68%.  
+was exactly same at 68%.
 
 ![Figure 6](Images/Figure6.png)
 
@@ -171,7 +171,7 @@ Click on the button below to explore this Chart Lab portal:
 
 [![](../BaltimorePolice/Images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/4/#fullscreen)
 
-Below is a figure showing the change from 2015 to 2016 for each of the crime types included in this dataset.  
+Below is a figure showing the change from 2015 to 2016 for each of the crime types included in this dataset.
 
 ![Figure 4](Images/Figure4.png)
 
@@ -213,7 +213,7 @@ two points), the police have become afraid of becoming the next "viral video" an
 Can this really be true? Have the police become less engaged in saving the city of Chicago? Below is a figure showing the monthly homicide count in Chicago with breakdown by arrest. The red represents murders that resulted in an arrest at the time of the incident, while grey represents
 murders without any arrests made. We can see that December 2016 had 57 murders. Of these murders, 55 had no arrest made and only 2 resulted in an arrest, resulting in a 3.6% arrest rate. What can this
 drastically low arrest rate be due to? Is it because there is such a high number of killings that the police are unable to make any arrests? Or have the police become less invested in their work, and
-as a result less willing to go out, fight crime, make arrests, and make a difference? Take a look at this dataset on Chicago crime and be the judge for yourself.      
+as a result less willing to go out, fight crime, make arrests, and make a difference? Take a look at this dataset on Chicago crime and be the judge for yourself.
 
 ![Figure 8](Images/Figure8.png)
 
@@ -278,7 +278,7 @@ LIMIT 1000
 | ijzp-q8t2  | 2016-01-05T01:52:00Z  | 3946672  | false        | FIRST DEGREE MURDER  | HOMICIDE           | STREET                    |
 ```
 
-Number of arrests made for homicides in 2015 and 2016. When `tags.arrest` is `true`, it means that an arrest was made. When this tag is `false`, no arrest was made.   
+Number of arrests made for homicides in 2015 and 2016. When `tags.arrest` is `true`, it means that an arrest was made. When this tag is `false`, no arrest was made.
 
 ```sql
 SELECT datetime, tags.arrest, count(value)
@@ -535,7 +535,7 @@ GROUP BY period(1 year)
 | 2016-Jan  | 3423         |
 ```
 
-Murders per week, averaged over the 5 year period from 2010 to 2015.  
+Murders per week, averaged over the 5 year period from 2010 to 2015.
 
 ```sql
 SELECT date_format(time, 'w') AS "week_in_year", count(value)/5 AS "murders_per_week"
@@ -584,7 +584,7 @@ GROUP BY date_format(time, 'w')
 |---------------|------------------|
 | 1             | 3                |
 | 2             | 14               |
-| 3             | 9                |  
+| 3             | 9                |
 | 4             | 8                |
 | 5             | 19               |
 | 6             | 10               |

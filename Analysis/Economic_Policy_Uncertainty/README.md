@@ -7,16 +7,16 @@
 
 **Source Data**: [FRED Economic Data](https://fred.stlouisfed.org/categories/33201)
 
-**Visualization Tool**: [Axibase ChartLab](https://axibase.com/)
+**Visualization Tool**: [Axibase ChartLab](https://apps.axibase.com/chartlab)
 
 **Structured Query Language (SQL)**: [Axibase SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview)
 
 ## Introduction
 
-Published in 2015 by the [National Bureau of Economic Research](http://www.nber.org/) in Cambridge, Massachusetts, a paper entitled [Measuring Economic Policy Uncertainty](http://www.policyuncertainty.com/media/BakerBloomDavis.pdf) seeks to establish a set of clear guidelines for quantifying economic policy uncertainty with the following questions: 
+Published in 2015 by the [National Bureau of Economic Research](http://www.nber.org/) in Cambridge, Massachusetts, a paper entitled [Measuring Economic Policy Uncertainty](http://www.policyuncertainty.com/media/BakerBloomDavis.pdf) seeks to establish a set of clear guidelines for quantifying economic policy uncertainty with the following questions:
 
-* **Who** is responsible for making economic policy decisions? 
-* **What** economic policy will be enacted? 
+* **Who** is responsible for making economic policy decisions?
+* **What** economic policy will be enacted?
 * What **effects** will that policy have on the local economy?
 
 According to the authors (Baker, Bloom, and Davis), their EPU (Economic Policy Uncertainty) metric is able to accurately
@@ -55,9 +55,9 @@ Dual axis visualizations are helpful for comparing data of different orders of m
 
 Election season is a notoriously uncertain economic time period for the United States, as elections have been known to represent dramatic changes in policy and personnel that reshape the face of American policy. Using the following SQL query to track the EPU Index during election years only, and comparing that data to the election results, it is expected that more contested elections should generate a higher EPU Index.
 
-```
+```sql
 SELECT year(time) AS Election, value AS EPU_Index
-FROM usepuindxd_ 
+FROM usepuindxd_
 WHERE year(time) % 4 = 0 AND month(time) = 1
 ```
 
@@ -87,19 +87,19 @@ The European debt crisis was a financial debacle that was inflamed by the so cal
 3. Feb 9, 2010: The first of three austerity packages are introduced to combat out of control debt growth in Greece.
 4. May 2, 2010: European Union announces a 110 billion Euro bailout for Greece.
 5. Nov 28, 2010: European Union announces an 85 billion Euro bailout for the Republic of Ireland.
-6. Mar 13, 2012: A second bailout for Greece is proposed and approved for and additional 130 billion Euro after further 
-inspection of government financial records reveal the depth and severity of the problem is even worse than originally 
+6. Mar 13, 2012: A second bailout for Greece is proposed and approved for and additional 130 billion Euro after further
+inspection of government financial records reveal the depth and severity of the problem is even worse than originally
 understood.
 7. July 1, 2014: The end of the EU bailout policy, and completion of funds distribution.
 
 The following SQL query will return the [average value](https://github.com/axibase/atsd/blob/master/sql/README.md#aggregation-functions) of the EPU index for the Eurozone for the period from 2002 until 2018 and will consolidate the information using a [`round` expression](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions).
 
-```
+```sql
 SELECT ROUND(AVG(value), 0) AS "average-epu" FROM EUEPUINDXM_
   WHERE datetime  >= '2002-01'
 ```
 
-> The `datetime` column can be compared with literal dates specified in [various date formats](https://github.com/axibase/atsd/blob/master/sql/README.md#interval-condition) including ISO 8601 and short dates such as `yyyy-MM`. 
+> The `datetime` column can be compared with literal dates specified in [various date formats](https://github.com/axibase/atsd/blob/master/sql/README.md#interval-condition) including ISO 8601 and short dates such as `yyyy-MM`.
 
 This query returns the following:
 
@@ -109,7 +109,7 @@ This query returns the following:
 
 The next query will target the months of each of the events above and so we can compare it to the index value from the birth of the Euro to the periods including the crisis, bailout, and eventual recovery.
 
-```
+```sql
 SELECT datetime, ROUND(value,0) FROM EUEPUINDXM_
   WHERE datetime  IN ('2002-01','2008-11','2010-02','2010-05','2010-11','2012-03','2014-07')
 ```
@@ -128,7 +128,7 @@ Multiple `datetime` values can be conveniently enumerated as a list using an [`I
 
 Further querying the data to show the top seven entries for the period from January 2002 to July 2014 using the following:
 
-```
+```sql
 SELECT datetime, ROUND(value, 0) AS "top-epu" FROM EUEPUINDXM_
   WHERE datetime  >= '2002-01'
   --AND datetime <= '2014-07'
@@ -157,7 +157,7 @@ Tracking both results on a simple [time series chart](https://axibase.com/produc
 
 As expected the EPU Index is much stronger as a metric that tracks changes across broader periods of time than responding to specific events, evidenced by the inability of the index to respond to major events such as those predicted in the Eurozone demonstrations. However, it is quite a strong predictor of broad periods of time, when the vast number of factors considered by the economists who designed the index may be compiled together and averaged for longer spans.
 
-Using SQL queries and visualization tools, predictive algorithms and compiled indices may be quickly evaluated against actual data to confirm their validity and evaluate their relative strengths and weaknesses. 
+Using SQL queries and visualization tools, predictive algorithms and compiled indices may be quickly evaluated against actual data to confirm their validity and evaluate their relative strengths and weaknesses.
 
 ### Resources
 
@@ -166,4 +166,4 @@ Use the following tools to recreate any of the visualizations seen here.
 * Install an ATSD instance on your local Linux system [here](https://github.com/axibase/atsd/blob/master/installation/README.md).
 * Visit [FRED](https://fred.stlouisfed.org/) for any of the data used in this article.
 * Access the ChartLab sandbox, and other Axibase applications, [here](https://apps.axibase.com/) and comprehensive documentation [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
-* Download the following [parser job file](resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface. Use the following [walkthrough](../../how-to/shared/import-csv-parser.md) for help uploading the XML file to ATSD. 
+* Download the following [parser job file](resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface. Use the following [walkthrough](../../how-to/shared/import-csv-parser.md) for help uploading the XML file to ATSD.

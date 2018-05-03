@@ -4,8 +4,7 @@
 
 ## Introduction
 
-Amazon Web Services' Route53 networking and content delivery tool supports worldwide endpoint health checks which may be 
-monitored using ATSD and Axibase Collector to historize data for longer intervals than the two weeks which are
+Amazon Web Services' Route53 networking and content delivery tool supports worldwide endpoint health checks which may be monitored using ATSD and Axibase Collector to historize data for longer intervals than the two weeks which are
 recorded by Route53.
 
 Health checks are available for HTTP, HTTPS, and TCP protocols and may be executed from a variety of regions for resiliency.
@@ -15,15 +14,15 @@ for system administrators who need to diagnose whether the problem is related to
 
 ![](images/latency-guide.png)
 
-In the above figure, latency spikes indicated by green arrows show regional connectivity issues. Your application is functioning as expected. The group of latency spikes indicated by the red arrow (showing simultaneous latency issues across **all** regions) indicate the problem is likely related to the monitored application, which is inaccessible from multiple  regions. 
+In the above figure, latency spikes indicated by green arrows show regional connectivity issues. Your application is functioning as expected. The group of latency spikes indicated by the red arrow (showing simultaneous latency issues across **all** regions) indicate the problem is likely related to the monitored application, which is inaccessible from multiple  regions.
 
 ![](images/route53-region.png)
 
-> Note that **Latency Graphs** are a premium feature and must be enabled through the AWS console or API. 
+> Note that **Latency Graphs** are a premium feature and must be enabled through the AWS console or API.
 
 ### Prerequisites
 
-* Install ATSD [sandbox](README.md). 
+* Install ATSD [sandbox](README.md).
 
 ## Import Latency Portal
 

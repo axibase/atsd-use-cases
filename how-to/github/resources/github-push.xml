@@ -62,15 +62,15 @@ tags.sender.login != null</filter>
 <webNotificationConfigName>Slack</webNotificationConfigName>
 <firstWebConfigParameters>
 <key>text</key>
-<value>${addLink(tags.head_commit.author.name, 'https://github.com/' + tags.head_commit.author.username)} has pushed to the repository ${addLink(tags.repository.name, 'https://github.com/' + tags.head_commit.author.username + '/' + tags.repository.name)}</value>
+<value>${addLink(tags.head_commit.author.name, 'https://github.com/' + tags.head_commit.author.username)} has pushed to the repository ${addLink(tags.repository.name, 'https://github.com/'  + tags.full_repository.name)}</value>
 </firstWebConfigParameters>
 <repeatWebConfigParameters>
 <key>text</key>
-<value>${addLink(tags.head_commit.author.name, 'https://github.com/' + tags.head_commit.author.username)} has pushed to the repository ${addLink(tags.repository.name, 'https://github.com/' + tags.head_commit.author.username + '/' + tags.repository.name)}</value>
+<value>${addLink(tags.head_commit.author.name, 'https://github.com/' + tags.head_commit.author.username)} has pushed to the repository ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}</value>
 </repeatWebConfigParameters>
 <cancelWebConfigParameters>
 <key>text</key>
-<value>${addLink(tags.head_commit.author.name, 'https://github.com/' + tags.head_commit.author.username)} has pushed to the repository ${addLink(tags.repository.name, 'https://github.com/' + tags.head_commit.author.username + '/' + tags.repository.name)}</value>
+<value>${addLink(tags.head_commit.author.name, 'https://github.com/' + tags.head_commit.author.username)} has pushed to the repository ${addLink(tags.repository.name, 'https://github.com/' + tags.repository.full_name)}</value>
 </cancelWebConfigParameters>
 <first-enabled>true</first-enabled>
 <repeat-enabled>true</repeat-enabled>

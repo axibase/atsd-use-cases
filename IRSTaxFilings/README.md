@@ -24,7 +24,7 @@ _Source: [IRS Filing Season Statistics](https://www.irs.gov/uac/2017-and-prior-y
 
 ![](Images/total_receipts.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/626f6fb9/3/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/626f6fb9/3/#fullscreen)
 
 One of the possible reasons is refund delays introduced by the [Protecting Americans From Tax Hikes Act of 2015](https://www.irs.gov/uac/newsroom/path-act-tax-related-provisions) (**PATH**). While some news reports have speculated that the slack is caused by the misguided expectations of a possible [tax relief](http://www.reuters.com/article/us-money-taxes-delays-idUSKBN16L18C) in the aftermath of the 2017 presidential election, the PATH Act appears to be the most credible explanation for the drop in filings. The Act mandates the IRS to put a hold on refunds claiming the Earned Income Tax Credit or the Additional Child Tax Credit until mid-February. It removes incentives for the early filers to submit the returns as soon as possible. To its credit the PATH act attempts to fight a major loophole that allowed identity fraudsters to submit **5 million** fake returns and steal **[$30 billion](https://www.justice.gov/tax/stolen-identity-refund-fraud)** from tax payers in 2013 of which only **$24 billion** was recovered.
 
@@ -64,7 +64,7 @@ ORDER BY date_format(time, 'MM-dd')
 
 In this query example, the `LAG(column_name)` function provides a convenient syntax to access columns in the previous row within the current result set.
 
-The `WITH INTERPOLATE(1 DAY)` clause is used to fill the missing data points and make the series regular.  
+The `WITH INTERPOLATE(1 DAY)` clause is used to fill the missing data points and make the series regular.
 
 | Year | Date   | Curr Year, Mln | Prev Year, Mln | Year-on-Year Change, Mln | Year-on-Year Change, % |
 |------|--------|----------------:|----------------:|------------------:|----------------:|
@@ -112,19 +112,19 @@ The [`date_format`](https://github.com/axibase/atsd/blob/master/sql/README.md#da
 SELECT date_format(time, 'yyyy') AS "Year",
   date_format(time, 'MMM-dd') AS "Date",
   CAST(date_format(time, 'D') AS NUMBER) AS "Day in Year",
-  CAST(date_format(date_parse(CONCAT(date_format(time, 'yyyy'), '-04-',   
-    CASE date_format(time, 'yyyy')               
+  CAST(date_format(date_parse(CONCAT(date_format(time, 'yyyy'), '-04-',
+    CASE date_format(time, 'yyyy')
       WHEN '2012' OR '2018' THEN '17'
       WHEN '2016' OR '2017' THEN '18'
       ELSE '15'
-    END, 'T00:00:00Z')), 'D') AS NUMBER) - CAST(date_format(time, 'D') AS NUMBER) AS "Days to File",     
+    END, 'T00:00:00Z')), 'D') AS NUMBER) - CAST(date_format(time, 'D') AS NUMBER) AS "Days to File",
   value/1000000 AS "Curr Year, Mln",
   LAG(value)/1000000 AS "Prev Year, Mln",
   (value-LAG(value))/1000000 AS "YoY Change, Mln",
   (value/LAG(value)-1)*100 AS "YoY Change, %"
   FROM "irs_season.count_year_current"
 WHERE tags.section = 'Individual Income Tax Returns' AND tags.type = 'Total Returns Received'
-  -- 18 days between 31-Mar-2017 and 18-Apr-2017  
+  -- 18 days between 31-Mar-2017 and 18-Apr-2017
   AND "Days to File" = 18
   WITH INTERPOLATE(1 DAY)
 ORDER BY "Days to File" DESC, time
@@ -165,12 +165,12 @@ We noticed however that the trends are not uniform across E-filing channels.
 SELECT date_format(time, 'yyyy') AS "Year",
   date_format(time, 'MMM-dd') AS "Date",
   CAST(date_format(time, 'D') AS NUMBER) AS "Day in Year",
-  CAST(date_format(date_parse(CONCAT(date_format(time, 'yyyy'), '-04-',   
-    CASE date_format(time, 'yyyy')               
+  CAST(date_format(date_parse(CONCAT(date_format(time, 'yyyy'), '-04-',
+    CASE date_format(time, 'yyyy')
       WHEN '2012' OR '2018' THEN '17'
       WHEN '2016' OR '2017' THEN '18'
       ELSE '15'
-    END, 'T00:00:00Z')), 'D') AS NUMBER) - CAST(date_format(time, 'D') AS NUMBER) AS "Days to File",     
+    END, 'T00:00:00Z')), 'D') AS NUMBER) - CAST(date_format(time, 'D') AS NUMBER) AS "Days to File",
   value/1000000 AS "Returns Received, Mln",
   LAG(value)/1000000 AS "Previous Year, Mln",
   (value-LAG(value))/1000000 AS "Y-o-Y Change, Mln",
@@ -187,14 +187,14 @@ Given that a higher percentage (60+%) of early returns is submitted via tax prep
 
 ![](Images/e_filings.png)
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/fc79b852/2/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/fc79b852/2/#fullscreen)
 
 
 ## Querying Data
 ---
 
 You can take a closer
-look at the IRS filing statistics by installing a local [Axibase Time Series Database](http://axibase.com/products/axibase-time-series-database/) instance and loading the data for interactive analysis with SQL and charts.
+look at the IRS filing statistics by installing a local [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) instance and loading the data for interactive analysis with SQL and charts.
 
 The list of available series:
 
@@ -228,7 +228,7 @@ You can also use [ChartLab](https://apps.axibase.com/chartlab/) to create, save,
       axibase/atsd:latest
    ```
 
-2. Login into ATSD at `https://your-docker-host:8443` and configure the pre-defined administrator account.
+2. Log in to ATSD at `https://your-docker-host:8443` and configure the pre-defined administrator account.
 3. Import the data [`series.txt`](Resources/series.txt) pre-collected by the [web crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-crawler) on **Metrics > Data Entry** page.
 4. Open the SQL tab in the top menu and execute one of the above SQL queries.
 5. To download and parse [IRS filing statistics pages](https://www.irs.gov/uac/2017-and-prior-year-filing-season-statistics) for continuous updates throughout this filing season and beyond run the web crawler.

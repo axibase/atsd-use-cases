@@ -12,18 +12,41 @@
       <com.axibase.collector.model.job.json.JsonConfiguration>
         <name>dockerhub</name>
         <protocol>HTTP</protocol>
-        <path>https://hub.docker.com/v2/repositories/${ITEM?split(&apos;,&apos;)[2]}/${ITEM?split(&apos;,&apos;)[1]}/buildhistory/?page=1&amp;page_size=1</path>
+        <path>/v2/repositories/${ITEM?split(&apos;,&apos;)[2]}/${ITEM?split(&apos;,&apos;)[1]}/buildhistory/?page=1&amp;page_size=1</path>
+        <connectionPoolConfig>
+          <name>hub.docker.com</name>
+          <protocol>https</protocol>
+          <server>hub.docker.com</server>
+          <port>-1</port>
+          <maxTotal>4</maxTotal>
+          <cookieEnabled>false</cookieEnabled>
+          <soTimeout>60</soTimeout>
+          <soReuse>false</soReuse>
+          <soLinger>0</soLinger>
+          <soKeepAlive>false</soKeepAlive>
+          <tcpNoDelay>false</tcpNoDelay>
+          <sslSkip>false</sslSkip>
+          <closeInterval>0</closeInterval>
+          <connectionTimeout>60</connectionTimeout>
+          <connectionPoolTimeout>180</connectionPoolTimeout>
+          <testPath>/v2/repositories/${ENV.NAMESPACE}</testPath>
+          <authType>NONE</authType>
+          <headers/>
+          <parameters/>
+          <keyStore>NONE</keyStore>
+          <redirectsEnabled>true</redirectsEnabled>
+        </connectionPoolConfig>
         <format>JSON</format>
         <entitySet>
           <name>dockerhub-repos</name>
           <type>URL</type>
           <discardDuplicates>false</discardDuplicates>
           <entities>
-            <string>https://hub.docker.com/v2/repositories/axibase/</string>
+            <string>https://hub.docker.com/v2/repositories/${ENV.NAMESPACE}/?page=1&amp;page_size=100</string>
           </entities>
           <separator>,</separator>
           <contentFormat>JSON</contentFormat>
-          <jsonPath>$[&apos;results&apos;][*]</jsonPath>
+          <jsonPath>$.results[?(@.is_automated == true)][?(@.last_updated > '2010')]</jsonPath>
         </entitySet>
         <payloadMethod>GET</payloadMethod>
         <httpHeaders/>

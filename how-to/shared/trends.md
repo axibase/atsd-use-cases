@@ -1,18 +1,18 @@
-# Using TRENDS
+# Using Trends
 
 ![](images/portal.png)
 
 ## Overview
 
-[**TRENDS**](https://trends.axibase.com/) is a data visualization sandbox based on the [Axibase Charts](https://axibase.com/products/axibase-time-series-database/visualization/) library and the [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) which provides essential data storage and processing tasks. 
+[**Trends**](https://trends.axibase.com/) is a data visualization sandbox based on the [Axibase Charts](https://axibase.com/products/axibase-time-series-database/visualization/) library and the [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) which provides essential data storage and processing tasks.
 
-The **TRENDS** service enables users to interact with the data that they are reading about by creating their own visualizations as well as by modifying examples shared by other users.
+The **Trends** service enables users to interact with the data that they are reading about by creating their own visualizations as well as by modifying examples shared by other users.
 
-**TRENDS** doesn't require readers to be proficient in any programming language however a certain familiarity with key concepts and general schema is recommended.
+**Trends** doesn't require readers to be proficient in any programming language however a certain familiarity with key concepts and general schema is recommended.
 
 ## Syntax
 
-**TRENDS** uses a convenient [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for creating graphs that will be briefly discussed in this guide. Feel free to ask questions or suggest datasets or topics by raising an issues on our [GitHub](https://github.com/axibase/atsd-use-cases/issues) page.
+**Trends** uses a convenient [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for creating graphs that will be briefly discussed in this guide. Feel free to ask questions or suggest datasets or topics by raising an issues on our [GitHub](https://github.com/axibase/atsd-use-cases/issues) page.
 
 In the **Editor** window you will see the configuration for the current portal. All portals have several levels of settings:
 
@@ -32,11 +32,11 @@ More information about selecting series can be found [here](https://axibase.com/
 
 ## Metrics Reference Page
 
-For a [listing](https://trends.axibase.com/public/reference.html) of available metrics stored in ATSD and accessible to **TRENDS** users, click the **Reference** button in the top toolbar as seen here.
+For a [listing](https://trends.axibase.com/public/reference.html) of available metrics stored in ATSD and accessible to **Trends** users, click the **Reference** button in the top toolbar as seen here.
 
 ![](images/ref-button.png)
 
-On the **Reference** page, you'll see a list of all metrics that are usable in **TRENDS**.  
+On the **Reference** page, you'll see a list of all metrics that are usable in **Trends**.
 
 Search available metrics in the **Search Bar**. The entire metric list is indexed and may be searched there.
 
@@ -52,7 +52,7 @@ Each metric may be previewed using the **Portal** button. Click the icon to open
 
 ## Modifying Portals
 
-Open the **Editor** window in the **TRENDS** interface by clicking the button in the top menu.
+Open the **Editor** window in the **Trends** interface by clicking the button in the top menu.
 
 ![](images/editor-window.png)
 [![](images/button-new.png)](https://trends.axibase.com/e91b896e#fullscreen)
@@ -65,7 +65,7 @@ Using the chart above as a configuration example:
   width-units = 1
   offset-right = 20
   entity = fred.stlouisfed.org
-  
+
   [group]
     [widget]
       title = Crude Birth Rates vs. Over 65 Population
@@ -74,12 +74,12 @@ Using the chart above as a configuration example:
       type = chart
       starttime = 1980
       endtime = 2016
-        
+
       [series]
         metric = SPDYNCBRTINUSA
-        label = Live Births per 1000 Individuals 
+        label = Live Births per 1000 Individuals
         style = stroke-width: 2
-      
+
       [series]
         metric = SPPOP65UPTOZSUSA
         label = Over 65 Population (Percent of Total)
@@ -101,15 +101,15 @@ Once you have modified a configuration, click the **Run** button to apply the ne
 
 If you would like to create a new version of the current portal by adding a version suffix to the current URL, click **Save**.
 
-To save the portal under an entirely new URL click **Clone**. 
+To save the portal under an entirely new URL click **Clone**.
 
 ![](images/save-clone-button.png)
 
-**TRENDS** is a sandbox for everyone, we encourage users to create their own charts and share it with others.
+**Trends** is a sandbox for everyone, we encourage users to create their own charts and share it with others.
 
 ## Pre-Defined Widgets
 
-Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections that may be used as a template for developing your custom widgets. 
+Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections that may be used as a template for developing your custom widgets.
 
 ![](images/pre-def-func.png)
 
@@ -129,7 +129,7 @@ The Charts API supports user-defined functions, enabling users to store and re-u
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 
 ```sql
-### On the [configuration] level, the 'import' command is used to load functions from the `fred.js` file 
+### On the [configuration] level, the 'import' command is used to load functions from the `fred.js` file
 ### The library is assigned the name 'fred'.
 ### Multiple function libraries may be imported into the same portal.
 
@@ -140,23 +140,23 @@ The above visualization applies user-defined functions for each of the series. A
   height-units = 2
   width-units = 1
   start-time = 1980
-  
+
   entity = fred.stlouisfed.org
-  metric = unrate  
+  metric = unrate
 
 [series]
   alias = base
   display = false
-    
-[series]      
+
+[series]
   value = fred.MonthlyChange('base')
 ```
 
-Using two series, the monthly change is calculated as a new series with a `value` expression which applies `MonthlyChange` function from the `fred` library to the series identified with alias `base`. 
+Using two series, the monthly change is calculated as a new series with a `value` expression which applies `MonthlyChange` function from the `fred` library to the series identified with alias `base`.
 
-#### `fred` Library
+### `fred` Library
 
-The `fred.js` library is available to any **TRENDS** user and contains the following functions:
+The `fred.js` library is available to any **Trends** user and contains the following functions:
 
 | Function Name                      | Arguments       | Description |
 |------------------------------------|-----------------|-------------|
@@ -168,16 +168,16 @@ The `fred.js` library is available to any **TRENDS** user and contains the follo
 | [`PercentChangeByOffset`](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
 | [`CompoundedAnnualRateOfChange`](https://trends.axibase.com/f04b65fc)       | alias           | Geometric-progression ratio which compounds change annually
 | [`ContinuouslyCompoundedRateOfChange`](https://trends.axibase.com/16ea90bf) | alias           | Geometric-progression ratio which continuously compounds change over an infinitesimally small interval
-| [`NaturalLog`](https://trends.axibase.com/897f53e1)                         | alias           | Natural Logarithm (`LOG` base constant `e`) 
+| [`NaturalLog`](https://trends.axibase.com/897f53e1)                         | alias           | Natural Logarithm (`LOG` base constant `e`)
 | [`IndexMax`](https://trends.axibase.com/3db3bfa7)                           | alias           | Maximum series value is used as index value
 | [`Index`](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/products/axibase-time-series-database/visualization/end-time/)     | User-selected value is used as index value
 
 Open any of the visualizations above to see syntax and visual demonstrations of each function.
 
-## Further Reading 
+## Further Reading
 
-For more detailed information about ATSD, the underlying mechanics, or download instructions see the [ATSD Documentation](https://github.com/axibase/atsd). 
+For more detailed information about ATSD, the underlying mechanics, or download instructions see the [ATSD Documentation](https://github.com/axibase/atsd).
 
-Reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com) via email or [here](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page. 
+Reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com) via email or [here](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page.
 
-For a complete list of metrics stored in **TRENDS**, see the following [index](https://trends.axibase.com/public/reference.html). Good luck and happy data hunting!
+For a complete list of metrics stored in **Trends**, see the following [index](https://trends.axibase.com/public/reference.html). Good luck and happy data hunting!

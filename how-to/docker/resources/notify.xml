@@ -7,7 +7,7 @@
     <ignoreSslErrors>true</ignoreSslErrors>
     <method>POST</method>
     <contentType>application/json</contentType>
-    <url>https://docker_webhook_receiver:8443</url>
+    <url>${ENV.NOTIFY_URL}</url>
     <headers></headers>
     <body>{&#xd;
   &quot;build_history&quot;: {&#xd;
@@ -26,7 +26,7 @@
     &quot;pusher&quot;: &quot;${user}&quot;&#xd;
   },&#xd;
   &quot;repository&quot;: {&#xd;
-    &quot;status&quot;: &quot;Failed&quot;,&#xd;
+    &quot;status&quot;: &quot;${status_desc}&quot;,&#xd;
     &quot;repo_url&quot;: &quot;https://hub.docker.com/r/${repository}&quot;,&#xd;
     &quot;owner&quot;: &quot;${user}&quot;,&#xd;
     &quot;name&quot;: &quot;${name}&quot;,&#xd;

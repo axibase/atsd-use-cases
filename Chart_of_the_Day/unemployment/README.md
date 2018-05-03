@@ -3,7 +3,7 @@
 ![](images/unemp-title.png)
 [![](images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
-*Fig 1.* The upper chart in the **TRENDS** visualization above tracks U.S. unemployment and GDP, while the lower charts track percent change in unemployment and GDP value, respectively. 
+*Fig 1.* The upper chart in the **TRENDS** visualization above tracks U.S. unemployment and GDP, while the lower charts track percent change in unemployment and GDP value, respectively.
 
 > For specific configuration information about any of the visualizations in this article, see the [Configuration](#configuration) section towards the end of this page.
 
@@ -50,9 +50,9 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   replace-value = value/100
   style = stroke-width:3
 ```
-* [`format`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/format-settings/) setting is used to display numerical information without insignificant figures. 
-```sql  
-[series]      
+* [`format`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/format-settings/) setting is used to display numerical information without insignificant figures.
+```sql
+[series]
   value = fred.MonthlyChange('base')
   alias = month
   display = false
@@ -61,16 +61,16 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 ```sql
 [series]
   value = avg('month')
-  format = %    
+  format = %
   style = opacity: 0.5
 [series]
-  value = avg('month', '.25 year')        
-  format = %   
+  value = avg('month', '.25 year')
+  format = %
 ```
 * [`avg()`](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) statistical function is used with one or two arguments representing the `alias` of series to be averaged and the `period` across which the average should be calculated, respectively.
 
 * *Fig. 2* (for full configuration settings open the **TRENDS** visualization [above](#when-has-the-us-seen-full-employment))
-```sql      
+```sql
 ## [configuration] level settings have been removed for brevity.
 
 [series]
@@ -81,7 +81,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   alert-style = if (alert > 0.10) return 'color: red'
   alert-style = if (alert < 0.05) return 'color: green'
 ```
-* [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) may be created and customized using `alert-style` setting, where 
+* [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) may be created and customized using `alert-style` setting, where
 ```sql
 [threshold]
    value = 0.10
@@ -105,13 +105,13 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   color = green
   axis = right
   value = avg('m-gdp', '.25 year')
-  style = opacity: 0.25  
+  style = opacity: 0.25
 ```
 * [`axis`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting is used to enable dual-axis functionality when comparing two series of different orders of magnitude.
 
 ### Resources
 
-The **TRENDS** service relies on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) for data-storage and processing tasks. All of the data from the above article has been loaded into a publicly-accessible instance of the **TRENDS** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) or any of the configuration settings explained in this article. 
+The **TRENDS** service relies on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) for data-storage and processing tasks. All of the data from the above article has been loaded into a publicly-accessible instance of the **TRENDS** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) or any of the configuration settings explained in this article.
 
 To create your own chart using the existing data, open an empty **TRENDS** [instance](https://trends.axibase.com/).
 

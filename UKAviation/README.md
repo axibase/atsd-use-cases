@@ -38,7 +38,7 @@ CAA aviation trends are published quarterly. These reports date back to 2008 and
 
 [https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Aviation-Trends/](https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Aviation-Trends/)
 
-Below is an table of terminal passengers at UK airports from [AviationTrends_2008_Q4](https://www.caa.co.uk/uploadedFiles/CAA/Content/Standard_Content/Data_and_analysis/Analysis_reports/Aviation_trends/AviationTrends_2008_Q4.pdf). In the attached text, terminal passengers are described as "those travelers who board or disembark an aircraft on a commercial flight at a reporting UK airport." The data is shown for scheduled and chartered flights for London and Regional airports. Quantities of travelers and growth percentages are presented comparing, in this case, Q4-2008 to Q4-2007, and the rolling dates of Q1 through Q4 of 2007 and 2008, respectively.    
+Below is an table of terminal passengers at UK airports from [AviationTrends_2008_Q4](https://www.caa.co.uk/uploadedFiles/CAA/Content/Standard_Content/Data_and_analysis/Analysis_reports/Aviation_trends/AviationTrends_2008_Q4.pdf). In the attached text, terminal passengers are described as "those travelers who board or disembark an aircraft on a commercial flight at a reporting UK airport." The data is shown for scheduled and chartered flights for London and Regional airports. Quantities of travelers and growth percentages are presented comparing, in this case, Q4-2008 to Q4-2007, and the rolling dates of Q1 through Q4 of 2007 and 2008, respectively.
 
 ![Figure 2](Images/Figure2.png)
 
@@ -70,7 +70,7 @@ Using the ATSD default portal for CAA metrics, the user has the ability to filte
 
 * First filter: Sorts by CAA metric. **228** different CAA airport aviation metrics can be filtered for. These metrics may be found in the [Appendix](#appendix-caa-metric-list). The figure below shows the first metric in the first dropdown: terminal passengers totals for January 2015 to February 2016.
 * Second filter: Filters 55 different UK airports. In this case, all airports have been selected.
-* Third filter: Filters by airport groups (London area, other UK, or no UK reporting airports). In this case, all groups have been selected.  
+* Third filter: Filters by airport groups (London area, other UK, or no UK reporting airports). In this case, all groups have been selected.
 
 ![Figure 4](Images/Figure4.png)
 
@@ -80,7 +80,7 @@ This figure shows total freight (in tons) for 2015 for all 55 airports from Janu
 
 Here, you can explore the complete dataset for CAA aviation statistics by clicking below on the default portal:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/972babb9)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/972babb9)
 
 ### Creating Custom Portals
 ---------------------------
@@ -110,7 +110,7 @@ Once you've installed ATSD, navigate to the metric list to see the corresponding
 
     ![Figure 7](Images/Figure7.png)
 
-4.  Select **2016-06-01 00:00:00**.  
+4.  Select **2016-06-01 00:00:00**.
 
     ![Figure 8](Images/Figure8.png)
 
@@ -120,7 +120,7 @@ Once you've installed ATSD, navigate to the metric list to see the corresponding
 
 6.  Navigate back to the portal. Use a `metric` setting and paste the copied metric name from the metrics list.
 7.  Since we are comparing 2015 and 2016 values, enter `starttime = current_year` and `endtime = next_year`.
-8.  As we will be looking at total domestic travel, enter `group-statistic = sum` and change mode from `column-stack` to `column`. The `group-statistic = sum` command calculates the total number of passengers for all airports in a given month, and the `column` will only show the total number of passengers together as one column per month.  
+8.  As we will be looking at total domestic travel, enter `group-statistic = sum` and change mode from `column-stack` to `column`. The `group-statistic = sum` command calculates the total number of passengers for all airports in a given month, and the `column` will only show the total number of passengers together as one column per month.
 
     Your configuration should now look like the image below.
 
@@ -150,7 +150,7 @@ Once you've installed ATSD, navigate to the metric list to see the corresponding
 
 Here you can explore this configuration in Chart Lab:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/cca64be9)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/cca64be9)
 
 ### Example 2
 -------------
@@ -159,7 +159,7 @@ Now that we are familiar with the CAA entity and different available metrics, as
 
 The default ChartLab portal can be found here:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab)
 
 1.  Press the ChartLab link above.
 2.  Change the source to **ATSD** and select **calendar** from the Widget dropdown.
@@ -206,7 +206,7 @@ Additionally, we can see observe outliers for Scatsta and Wick John O Groats for
 
 You can explore this portal by clicking on the link below.
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/8dc941e3)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/8dc941e3)
 
 `[widget]`-level settings may be used for overall modification of any ChartLab visualization.
 
@@ -226,7 +226,7 @@ Your new figure should look like the image below.
 
 You can explore this portal by clicking on the link below.
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/1f9f05a1/4)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/1f9f05a1/4)
 
 ### Example 3
 -------------
@@ -245,9 +245,9 @@ Let's `var baseAirport` to `MANCHESTER`. Below is an image with passenger traffi
 
 ![Figure 26](Images/Figure26.png)
 
-You can explore this portal by clicking on the link below.     
+You can explore this portal by clicking on the link below.
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/e6822a69/5/)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/e6822a69/5/)
 
 ### Action Items
 ----------------
@@ -268,7 +268,7 @@ If you require assistance in installing this software or have any questions, ple
 
 ### Appendix: CAA Metric List
 --------------------------
-```
+```txt
 uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_scheduled_uk <br />
 uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_charter_foreign_eu <br />
 uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_charter_foreign_non_eu <br />

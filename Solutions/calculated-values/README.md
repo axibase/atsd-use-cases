@@ -5,14 +5,14 @@ Analyzing Econometric Datasets with Calculated Series
 
 ### Summary
 
-Using [calculated values](../../Support/Add-Calculated-Value/README.md) in the [ChartLab](https://apps.axibase.com) interface
+Using [calculated values](../../Support/Add-Calculated-Value/README.md) in the [ChartLab](https://apps.axibase.com/chartlab) interface
 is useful for creating multiple outputs from one set of underlying data. [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 supports a range of in-built functions which allow end-users to manipulate a dataset to derive the desired meaning from it.
 
-The St. Louis branch of the Federal Reserve branch maintains FRED, short for [Federal Reserve Economic Data](https://fred.stlouisfed.org/), an 
+The St. Louis branch of the Federal Reserve branch maintains FRED, short for [Federal Reserve Economic Data](https://fred.stlouisfed.org/), an
 open-access platform for analyzing the data collected and published by the Federal Reserve. One important metric tracked
 by FRED is the **CPIAUCSL** - [Consumer Price Index](https://fred.stlouisfed.org/series/CPIAUCSL#0), shortened as CPI. The Consumer Price
-Index is used to track inflation by measuring the costs of goods relative to some year. 
+Index is used to track inflation by measuring the costs of goods relative to some year.
 
 ### Problem Brief
 
@@ -56,7 +56,7 @@ data from 1947 onward, small scale differences are expected in the outputs of ea
 
 #### Consumer Price Index
 
-The Consumer Price Index is one of the most relevant metrics used to calculate the rate and severity of inflation. 
+The Consumer Price Index is one of the most relevant metrics used to calculate the rate and severity of inflation.
 
 **Figure 1**: Consumer Price Index for Baseline Year 1982 (1947-2017) **FRED**
 
@@ -76,7 +76,7 @@ Return to the [Index](#index)
 
 The index is the year used as a baseline for all other years' values. Years which showed an increase in the cost of consumer
 goods will therefore be greater than 100.00 while years which saw deflation in the cost of consumer goods will be less than
-100.00. 
+100.00.
 
 **Figure 2.2**: CPI Calculated from a Variable Baseline (1990-07-01) **FRED**
 
@@ -93,18 +93,18 @@ goods will therefore be greater than 100.00 while years which saw deflation in t
 > In ChartLab, use the dropdown menu at the top of the visualization to select the year to be used as a baseline, or hardcode
 a year not included in the dropdown by modifying one of the dates in the `keyDates` list.
 
-**Key Components of This Visualization**: 
+**Key Components of This Visualization**:
 
-> Open the ChartLab visualization shown above and view the Editor window to see these features of the chart. 
+> Open the ChartLab visualization shown above and view the Editor window to see these features of the chart.
 
 * The list `keyDates` contains the same dates as the FRED chart referenced in the [Problem Brief](#problem-brief):
 
 ```javascript
-list keyDates = 1970-11-01, 
+list keyDates = 1970-11-01,
   1973-11-01, 1975-03-01,
-  1980-01-01, 1980-07-01, 
+  1980-01-01, 1980-07-01,
   1981-07-01, 1982-11-01,
-  1990-07-01, 1991-03-01, 
+  1990-07-01, 1991-03-01,
   2001-03-01, 2001-11-01,
   2007-12-01, 2009-06-01
 endlist
@@ -126,7 +126,7 @@ history. The syntax for this chart's dropdown menu is shown below:
 > For more information about the above syntax see the following [documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/).
 
 By modifying any of the dates contained in the `keyDates` list above, the user can select any desired date to set as the
-baseline value, and the `value` equation contained in the `[option]` portion of the `[dropdown]` configuration above uses 
+baseline value, and the `value` equation contained in the `[option]` portion of the `[dropdown]` configuration above uses
 a simple formula to establish the new index. The `on-change` setting defines this newly calculated series, and is explained
 piecewise below:
 
@@ -208,7 +208,7 @@ The monthly percentile change in CPI value over the entire observed period.
 
 ![](images/cpi5.png)
 
-[![](images/button.png)](https://apps.axibase.com/chartlab/ab06efab/#fullscreen) 
+[![](images/button.png)](https://apps.axibase.com/chartlab/ab06efab/#fullscreen)
 
 **Underlying Formula**:
 
@@ -295,7 +295,7 @@ value = ( Math.log(value("cpi")) - Math.log(previous("cpi")) ) * 100
 Return to the [Index](#index)
 
 #### Continuously Compounded Annual Rate of Change
- 
+
  The annual rate of change compounded continuously for the observed period.
 
 **Figure 9.1**: Continuously Compounded Annual Rate of Change (1947-2017) **FRED**
@@ -333,9 +333,9 @@ Each value's logarithm to base of the mathematical constant _e_
 ![](images/cpi10.png)
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/d2ced747/#fullscreen)
- 
+
  **Underlying Formula**:
- 
+
 ```javascript
 value = Math.log(value("cpi"))
 ```
@@ -366,7 +366,7 @@ Return to the [Index](#index)
 
 ### Summary
 
-These visualizations demonstrate the capabilities of the ChartLab interface which uses declarative syntax to create derived series. 
+These visualizations demonstrate the capabilities of the ChartLab interface which uses declarative syntax to create derived series.
 Any of these formulas or settings can be applied to any time series dataset in order to enable customizable transformations
 of the underlying data. Contact [Axibase](https://axibase.com/feedback) with any questions regarding the above
 information.

@@ -8,21 +8,21 @@ Follow this process to upload a forecast configuration to your local ATSD instan
 
 1. Expand the **Data** menu and select **Forecasts**.
 
-![](images/forecast-1.png)
+    ![](images/forecast-1.png)
 
 2. From the **Forecasts** page, expand the split button and click **Import**.
 
-![](images/forecast-2.png)
+    ![](images/forecast-2.png)
 
 3. Select the appropriate XML file from you local machine and click **Import**.
 
-![](images/forecast-3.png)
+    ![](images/forecast-3.png)
 
 4. Your forecast configuration has been uploaded to ATSD.
 
 Return to the **Forecasts** page where the newly configured forecast settings will be visible.
 
-### Uploading Multiple Configuration Files
+## Uploading Multiple Configuration Files
 
 Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
 

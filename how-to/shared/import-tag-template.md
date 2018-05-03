@@ -8,21 +8,21 @@ Follow this process to upload a tag template to your local ATSD instance.
 
 1. Expand the **Settings** menu and select **Tag Templates**.
 
-![](images/settings-tag-templates.png)
+    ![](images/settings-tag-templates.png)
 
 2. From the **Tag Templates** page, expand the split button, click **Import**
 
-![](images/split-import.png)
+    ![](images/split-import.png)
 
 3. Select the appropriate XML file from your local machine, click **Import**.
 
-![](images/import-tag-template.png)
+    ![](images/import-tag-template.png)
 
-Your tag template has been uploaded to ATSD. 
+Your tag template has been uploaded to ATSD.
 
 Return to the **Tag Templates** page where the newly configured template will be visible.
 
-### Uploading Multiple Configuration Files
+## Uploading Multiple Configuration Files
 
 Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
 

@@ -18,18 +18,18 @@ This market value is at once a speculative metric, upon which a given debt is tr
 predictions and observations can be made about the overall health of an economy. Traditionally "good debt," that which is
 expected to be repaid on time and in full, demands a lower market cost relative to its true value than debt that is unlikely to
 be paid in a timely manner, or without some kind of additional financial machinations, accounting for the higher risk involved
-in the position. The absolute value of the market price of U.S. Federal Debt has been rising steadily alongside the value 
-of U.S. GDP and other important financial metrics, with the difference between the debt's absolute value and traded value 
+in the position. The absolute value of the market price of U.S. Federal Debt has been rising steadily alongside the value
+of U.S. GDP and other important financial metrics, with the difference between the debt's absolute value and traded value
 being reasonably stable.
 
 However, since the Great Recession of 2009, a different and more sinister trend has taken place, while the Fed keeps interest
 rates at historically low levels the value of the market value of the federal debt continues to rise relative to the debt itself,
-indicating speculation and volatility. The result is a new kind of bubble that could rattle the U.S. Economy far worse than 
+indicating speculation and volatility. The result is a new kind of bubble that could rattle the U.S. Economy far worse than
 the downturn of 2009, which saw a loss of about a third of the average family's household wealth ([1](#sources)).
 
 ### Analysis
 
-**Figure 1**: United States GDP, Gross Debt, and Gross Debt Market Valuation 
+**Figure 1**: United States GDP, Gross Debt, and Gross Debt Market Valuation
 
 ![](images/fig1.png)
 
@@ -41,7 +41,7 @@ The above visualization, made using the non-relational [Axibase Time Series Data
 tracks the growth of the United States GDP, Gross Debt, and Gross Debt Market Valuation. Since August 2011, the market value of the
 government's debt has outstripped the value of the GDP meaning that the United States' debt is worth more than the country
 is producing, that is, the traditionally safe United States index is primed to lose its position as the place to hold money
-for reliable growth. Because the debt market value also considers the interest rate at which the debt was created it is considered a 
+for reliable growth. Because the debt market value also considers the interest rate at which the debt was created it is considered a
 more accurate indicator of the overall state of American debt ([2](#sources)) which is becoming more and more itself an indicator
 of the state of the entire U.S. economy.
 
@@ -75,7 +75,7 @@ is shrinking and is still nowhere near the levels observed pre-recession.
 _Source_: [Federal Reserve Economic Data](#sources)
 
 When placed on an synchronous x-axis the relationship of the two metrics shows that even as the margin between GDP and debt
-decreases, the margin between the debt and its market value increases. 
+decreases, the margin between the debt and its market value increases.
 
 **Figure 4**: Difference in Gross Debt and Gross Debt Market Value Compared to U.S. GDP vs. Debt
 
@@ -105,7 +105,7 @@ without completely suffocating the American economy.
 
 Low interest rates are of course a double-edged sword. While good for borrowers who are not eager to see all of their money
 used to simply pay down the interest of the debt, without doing anything to the debt itself, for savers, low interest rates
-mean diminishing returns on their savings especially in the face of the consumer price index, which has more than doubled since 1990 ([5]()).
+mean diminishing returns on their savings especially in the face of the consumer price index, which has more than doubled since 1990 ([5](#5)).
 
 ### The Bubble
 
@@ -126,11 +126,11 @@ debt.
 The stage is perfectly laid now for American economic hegemony to be challenged as the cost of not raising interest rates
 is continued unchecked inflation sapping consumer savings, while the cost of raising interest rates may cause the U.S. government
 to default on its outstanding debt. However, keeping interests rates lower than inflation can have the effect of
-stagnating the fragile economy as consumers are reluctant to use their saving, resulting in the economy collapsing from the bottom up, 
+stagnating the fragile economy as consumers are reluctant to use their saving, resulting in the economy collapsing from the bottom up,
 and not the top down-- as in the Spanish Price Revolution of the 17th century ([8](#sources)).
 
-Raising interest rates even just 1%, to roughly 2%, would double the required annual payment by the United States Government 
-to almost a trillion dollars. Such an increase would effectively double the budget deficit overnight. For comparison, of 
+Raising interest rates even just 1%, to roughly 2%, would double the required annual payment by the United States Government
+to almost a trillion dollars. Such an increase would effectively double the budget deficit overnight. For comparison, of
 historical Fed Rates vs. U.S. Government payments are shown below:
 
 **Figure 7**: Fed Fund Rate and Federal Debt Payments During 1980s Recession
@@ -182,7 +182,7 @@ age of Neo-liberalism.
 
 3. Federal Reserve Economic Data: [U.S. GDP](https://fred.stlouisfed.org/series/GDP), [U.S. Gross Debt](https://fred.stlouisfed.org/series/FYGFD), [U.S. Gross Debt Market Value](https://fred.stlouisfed.org/series/MVGFD027MNFRBDAL),
  [U.S. Payments Towards Federal Debt](https://fred.stlouisfed.org/series/A091RC1Q027SBEA), [Federal Fund Rate](https://fred.stlouisfed.org/series/FEDFUNDS)
- 
+
 4. [Brookings Institution](https://www.brookings.edu/blog/ben-bernanke/2015/03/30/why-are-interest-rates-so-low/); 2015; Bernake, Ben
 
 5. [Axibase Research](../../Solutions/calculated-values/README.md); 2017; Hamilton, Kenneth

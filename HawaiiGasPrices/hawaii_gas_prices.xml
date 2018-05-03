@@ -2,7 +2,7 @@
   <com.axibase.collector.model.job.socrata.SocrataJobConfig>
     <name>Hawaii AAA Fuel Prices</name>
     <cronExpression>0 0 8 * * ?</cronExpression>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <jobType>SOCRATA</jobType>
     <defaultTags/>
     <checkLastTime>false</checkLastTime>

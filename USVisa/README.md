@@ -7,16 +7,16 @@ In 2015, the United States was the [second most](https://en.wikipedia.org/wiki/W
 what are their reasons for coming to the United States?
 
 In this article we will analyze a dataset from [travel.state.gov](https://travel.state.gov) looking at non-immigrant visa figures from 1997 through 2015. This research article illustrates
-how publicly available data collected by government organizations can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](http://axibase.com/products/axibase-time-series-database/)
+how publicly available data collected by government organizations can be easily loaded into the non-relational [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 for interactive analysis. Additionally, this article illustrates some of the capabilities of [Redash](https://redash.io/), an open-source data visualization tool that is integrated with ATSD. We’ll walk through how to make SQL queries in ATSD and create visualizations in Redash. Additionally,
-this article contains instructions on how to install your own ATSD instance and populate it with the raw data.  
+this article contains instructions on how to install your own ATSD instance and populate it with the raw data.
 
 ### U.S. Visa Dataset
 ---------------------
 
 Let's take a look at the dataset from travel.state.gov, which can be accessed via our archive located in the [Resources](../USVisaRefusal/Resources/visas.tar.gz) folder in this repository. Alternatively, you can
 download the Excel file from the [travel.state.gov](https://travel.state.gov) website and save each year as its
-own separate CSV file. The title of the Excel file on the travel.state.gov website is **Nonimmigrant Visa Issuances by Visa Class and by Nationality FY1997-2015 NIV Detail Table**.    
+own separate CSV file. The title of the Excel file on the travel.state.gov website is **Nonimmigrant Visa Issuances by Visa Class and by Nationality FY1997-2015 NIV Detail Table**.
 
 This dataset contains yearly totals for non-immigrant visas issued from 1997 through 2015. Totals were collected for 84 different visa
 types. You can find the complete list of all the visa types included in this dataset [here](../USVisaRefusal/Resources/visalist.txt). You can find descriptions of all visa types on
@@ -24,7 +24,7 @@ the [U.S. Department of State](https://travel.state.gov) website.
 
 Visa figures were collected for 200 countries, 7 continents, and for unknown national origins. You can find a complete list of all the countries included in this dataset [here](../USVisaRefusal/Resources/countrylist.txt).
 
-As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use the following two aspects of [Axibase Time Series Database (ATSD)](http://axibase.com/products/axibase-time-series-database/) to look into this dataset: tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) and interactive graphs from [Chart Lab](../ChartLabIntro/README.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
+As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use the following two aspects of [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) to look into this dataset: tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) and interactive graphs from [Chart Lab](../ChartLabIntro/README.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
@@ -40,7 +40,7 @@ to Indian nationals from 1997 to 2015, which increased from **31,684** in 1997 t
 
 You can explore this portal by clicking on the below button:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/8c9bb9cc#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/8c9bb9cc#fullscreen)
 
 This next portal allows you to sort between continents and visa types. You can toggle between different continents in the first dropdown, and by visa type in the second dropdown.
 The below images is an output for H-1B visas issued to the continent of Asia as a whole. We can see that the number of visas issued increased from **47,726** in 1997 to **149,788**
@@ -51,7 +51,7 @@ to the rest of Asia as a whole.
 
 You can explore this portal by right-clicking on the below button:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/3c55ada0#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/3c55ada0#fullscreen)
 
 ### Delving Further into U.S. Visas
 ------------------------------------
@@ -67,24 +67,24 @@ to our first Chart Lab portal, we can see that the total number of visas for the
 
 You can explore this portal by clicking on the below button:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/3a320d35#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/3a320d35#fullscreen)
 
 Below is an image for the total visas issued for the countries included in Trump administration's revised [travel ban](https://www.washingtonpost.com/graphics/national/immigration-order-explainer/)
 (which has since been lifted). These countries included Iran, Libya, Somalia, Sudan, Syria, and Yemen. After the September 11th terrorist attacks, the number of visas issued
 to these countries dropped to only **16,076** in 2003 but climbed back up to **62,464** in 2015. Visas to the United States are generally priced at [$160](https://travel.state.gov),
-which amounted to **$10 million** in revenue in 2015.    
+which amounted to **$10 million** in revenue in 2015.
 
 ![Figure4](Images/Figure4.png)
 
 You can explore this portal by clicking on the below button:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/16c6e667/3/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/16c6e667/3/#fullscreen)
 
 According to a recent article published by [Reuters](http://www.reuters.com/article/us-eu-usa-visa-idUSKBN1691Q9), the [European Union](https://en.wikipedia.org/wiki/European_Union) (EU) becoming increasingly insistent on requiring American citizens to
 obtain travel visas to visit Europe (currently, Americans do not need visas). This is in response to Washington refusing to grant visa-free access to 5 EU countries: Poland, Croatia,
 Bulgaria, Romania, and Cyprus. All EU countries except for these 5 may travel to the US without needing to obtain a travel visa. The following image shows the number of B-1 and B-2 visas
 from these countries between 1997 and 2015. The early to mid 2000's saw the peak of the total number of B-1 and B-2 visas issued to these countries, but in recent years
-these numbers has dropped off, falling to 9,977 in 2015 ($1,596,320 in revenue at $160 per visa).  
+these numbers has dropped off, falling to 9,977 in 2015 ($1,596,320 in revenue at $160 per visa).
 
 ![Figure15](Images/Figure15.png)
 
@@ -94,7 +94,7 @@ At $160 per visa, this would have come to about **$2.24 and $2.239 billion**, a 
 
 You can explore this portal by clicking on the below button:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/82d4e825#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/82d4e825#fullscreen)
 
 This below figure shows how many dependents come with each primary visa holder. Saudi Arabian visa holders are currently bringing in the most dependents. Below are some ratios (in %)
 for Saudi nationals showing the number of dependent travelers coming to the United States per primary visa holder.
@@ -108,7 +108,7 @@ for Saudi nationals showing the number of dependent travelers coming to the Unit
 
 You can explore this portal by clicking on the below button:
 
-[![](Images/button.png)](https://apps.axibase.com/chartlab/1bc51064/2/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/1bc51064/2/#fullscreen)
 
 ### SQL Queries
 ---------------
@@ -236,7 +236,7 @@ ORDER BY 3 DESC
 ```
 
 Total revenue for travel visas (in millions of USD) for the state department at $160 per visa from 1997 to 2015. Revenues from visas in this time period has more than doubled, from
-**$491.3 million** in 1997 to **$1.152 billion** in 2015.  
+**$491.3 million** in 1997 to **$1.152 billion** in 2015.
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "year", sum(value) * 160 / power(10, 6) AS "Visa Fees, $M"
@@ -277,7 +277,6 @@ SQL queries are a great tool for searching for and displaying specific informati
 not able to show these tables as some kind graphical output. Axibase is partnered with [Redash](https://redash.io/), an open-source data visualization tool.
 You can plug your query results into Redash, and with a few simple steps, create graphical outputs from your SQL queries. Begin by walking through [setting up Redash through ATSD](https://redash.io/help/data-sources/axibase_tsd.html). The setup should take you about 10 minutes.
 
-
 Let's begin by preparing a visualization for our last SQL query looking at worldwide visa issuances.
 
 1. After completing the walkthrough, from the 'Queries' dropdown select 'New Queries', as shown in the image below.
@@ -306,7 +305,7 @@ Let's begin by preparing a visualization for our last SQL query looking at world
 
 Below is the output from our query. You can toggle over any column to see what the visa issuances were for that particular visa type in 2015. By selecting the 'Save' button,
 you can save the configuration and come back to it anytime. By selecting the 'Publish' button, you can make this configuration available to anybody else who shares the same
-system credentials with you. As opposed to looking only at a tabular output from an SQL query, we can quickly see the scale of things looking at this output.  
+system credentials with you. As opposed to looking only at a tabular output from an SQL query, we can quickly see the scale of things looking at this output.
 
 ![Figure14](Images/Figure14.png)
 
@@ -323,40 +322,40 @@ rate in this 10-years period was **30.2%**, which came in 2nd only behind Brazil
 
 Travellers have come to America from all over the world. With over 200 countries and 84 visa types included in this dataset, the possibilities for travel documents seem endless.
 Using ATSD can help you make sense of all this information. You can use Chart Lab to create interactive graphs which allow you to gain a general view of the situation, SQL queries
-to search for specific information contained within the dataset, and Redash to display this specifically searched for information in a clear and concise manner.  
+to search for specific information contained within the dataset, and Redash to display this specifically searched for information in a clear and concise manner.
 
 ### Action Items
 ----------------
 
-Below are the summarized steps to follow to install local configurations of ATSD for analyzing United States visa statistics:   
+Below are the summarized steps to follow to install local configurations of ATSD for analyzing United States visa statistics:
 
 1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
 2. Install Redash using the following command.
 
-   ```sh
-      git clone https://github.com/getredash/redash
-      cd redash
-      docker-compose -f docker-compose.production.yml run --rm server create_db to setup the database
-      docker-compose -f docker-compose.production.yml up -d
-   ```
+```sh
+  git clone https://github.com/getredash/redash
+  cd redash
+  docker-compose -f docker-compose.production.yml run --rm server create_db to setup the database
+  docker-compose -f docker-compose.production.yml up -d
+```
 
    For more details on Redash click [here](https://redash.io/help-onpremise/setup/setting-up-redash-instance.html).
 
 3. Install the ATSD database on your local configuration using the following command.
 
-   ```sql
-    docker run \
-      --detach \
-      --name=atsd \
-      --restart=always \
-      --publish 8088:8088 \
-      --publish 8443:8443 \
-      --publish 8081:8081 \
-      --publish 8082:8082/udp \
-      axibase/atsd:latest
-   ```
+```sh
+docker run \
+  --detach \
+  --name=atsd \
+  --restart=always \
+  --publish 8088:8088 \
+  --publish 8443:8443 \
+  --publish 8081:8081 \
+  --publish 8082:8082/udp \
+  axibase/atsd:latest
+```
 
-4. Login into ATSD and configure the pre-defined administrator account.
+4. Log in to ATSD and configure the pre-defined administrator account.
 5. Import the [`travel_visas.xml`](../USVisaRefusal/Resources/travel_visas.xml) file into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
 6. Import the [`visas.tar.gz`](../USVisaRefusal/Resources/visas.tar.gz) file into ATSD using the above-mentioned parser.
 7. Navigate to the Docker machine IP at port 5000, where you should see a Redash login screen.

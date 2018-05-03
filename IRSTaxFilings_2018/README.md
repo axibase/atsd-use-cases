@@ -1,8 +1,8 @@
-# Tax Day 2018: Americans Reverse the Late-Filing Trend 
+# Tax Day 2018: Americans Reverse the Late-Filing Trend
 
 ## Summary
 
-Interim 2018 tax filing statistics bring hope that Americans have returned to a timely filing schedule. 
+Interim 2018 tax filing statistics bring hope that Americans have returned to a timely filing schedule.
 
 ### Introduction
 
@@ -10,9 +10,9 @@ Each year the Internal Revenue Service (IRS) releases [public data](https://www.
 
 We [analyzed](../IRSTaxFilings/README.md) IRS filing statistics after Tax Day 2017 saw a higher number of people filing [later than usual](https://www.reuters.com/article/us-money-taxes-delays/u-s-taxpayers-procrastinate-on-filing-returns-this-year-idUSKBN16L18C) or [not at all](https://www.bloomberg.com/news/articles/2017-04-17/millions-of-americans-still-haven-t-filed-their-taxes) according to Reuters and Bloomberg, respectively. The income tax makes up roughly [half](https://www.nationalpriorities.org/budget-basics/federal-budget-101/revenues/) of the federal government's annual revenue (around $1.48 trillion) so a surge in late or missing filings would wreak havoc on the U.S. budget for the subsequent year.
 
-### Objectives 
+### Objectives
 
-* Visualize public data using [ChartLab](https://apps.axibase.com);
+* Visualize public data using [ChartLab](https://apps.axibase.com/chartlab);
 * Query data using **SQL console**;
 * Compare and contrast previous-year filing statistics with current-year data via chart configurations and queries.
 
@@ -25,7 +25,7 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 ![](images/tax-2018-title.png)
 [![](images/button.png)](https://apps.axibase.com/chartlab/fd986f58)
 
-*Fig 1.* Tax filing data for the 2017 and 2018 superimposed over previous-year data. 
+*Fig 1.* Tax filing data for the 2017 and 2018 superimposed over previous-year data.
 
 **Configuration Settings:**
 
@@ -45,22 +45,22 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
      color = rgb(@{128 + ofs * 4},@{112 + ofs * 4},@{128 + ofs * 4})
      label = @{2018-ofs}
      time-offset = @{ofs} year
-     style = stroke-opacity: @{0.5-ofs*0.05}; stroke-width: 20; stroke-linecap: round ; stroke-linejoin: round   
+     style = stroke-opacity: @{0.5-ofs*0.05}; stroke-width: 20; stroke-linecap: round ; stroke-linejoin: round
   endfor
-      
+
   [series]
-     label = 2017 
+     label = 2017
      time-offset = 1 year
-     color = steelblue  
-   
+     color = steelblue
+
   [series]
-     label = 2018   
+     label = 2018
      color = #d00
 ```
 
 **Configuration Features:**
 
-* `disconnect-interval`: data with missing points, or gaps in the time series, are highlighted by specifying a user-defined data gap. Compare this [example](https://apps.axibase.com/chartlab/8234982b) which features a `disconnect-interval` setting to [this one](https://apps.axibase.com/chartlab/2f06ecee) where the setting is disabled, or [here](https://apps.axibase.com/chartlab/bb9e34e8) where the `disconnect-value` setting has been given a non-zero value. 
+* `disconnect-interval`: data with missing points, or gaps in the time series, are highlighted by specifying a user-defined data gap. Compare this [example](https://apps.axibase.com/chartlab/8234982b) which features a `disconnect-interval` setting to [this one](https://apps.axibase.com/chartlab/2f06ecee) where the setting is disabled, or [here](https://apps.axibase.com/chartlab/bb9e34e8) where the `disconnect-value` setting has been given a non-zero value.
 
 * `var`: ChartLab configurations may include JavaScript objects and functions as well as built-in [control structures](https://axibase.com/products/axibase-time-series-database/visualization/widgets/control-structures/). Here a variable called `offsets` is created using a `range(x,y)` function to control the settings for multiple `[series]` at once representing previous-year data. The index begins at `0`.
 
@@ -81,21 +81,21 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 [widget]
   type = chart
   mode = column
-   
+
   [series]
      alias = 2018
-     label = 2018   
+     label = 2018
      color = #d00
      style = stroke-width: 5
      alert-expression = value('2018') > value('2017')
-     alert-style = fill:green      
+     alert-style = fill:green
 ```
 
 **Configuration Features:**
 
 * `alert-expression`: user-defined thresholds may be created via `[threshold]` series, or comparison to other series in the visualization. Here, the two colored series are assigned an `alias` according to their year and compared. When the condition is satisfied, that is, the value of 2018 tax return filings is greater than the value of 2017 tax filings for the same period, the `alert-style` setting is activated, in this case coloring that period's representative bar green.
 
-* `mode`: time charts feature several display [modes](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) to quickly change visualization styles. 
+* `mode`: time charts feature several display [modes](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) to quickly change visualization styles.
 
 #### Configuration 3: Box-and-Whisker Plot
 
@@ -113,10 +113,10 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 [widget]
   type = box
   title = Individual Income Tax Returns Received: 2018 compared to prior years
-  
+
 [widget]
   var offsets = range(6,2)
-  for ofs in offsets  
+  for ofs in offsets
 ```
 
 **Configuration Features:**
@@ -147,11 +147,11 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 **Configuration Features:**
 
 * [`percentiles`](https://apps.axibase.com/chartlab/7f906511/7/): the percentile range for each bar may be set to a user-configured value when observing irregular series. Here, percentile values are `20, 40, 60, 80, 99`.
-* `bar-count`: modify the number of bars displayed in the visualization. 
+* `bar-count`: modify the number of bars displayed in the visualization.
 
 ### SQL
 
-Although ATSD is a non-relational database it offers a SQL-like syntax with time-series extensions such as interpolation functions. It also provides a built-in **SQL Console** for ad-hoc data exploration.
+Although ATSD is a non-relational database it offers a SQL-like syntax with time series extensions such as interpolation functions. It also provides a built-in **SQL Console** for ad-hoc data exploration.
 
 The following queries will be shown here:
 
@@ -186,18 +186,18 @@ ORDER BY date_format(time, 'MM-dd')
 
 **Result:**
 
-```
-| Year | Date   | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % | 
-|------|--------|----------------|----------------|-----------------|---------------| 
-| 2011 | Mar-30 | 87.59          |                |                 |               | 
-| 2012 | Mar-30 | 91.07          | 87.59          | 3.48            | 3.98          | 
-| 2013 | Mar-30 | 89.46          | 91.07          | -1.61           | -1.76         | 
-| 2014 | Mar-30 | 93.36          | 89.46          | 3.89            | 4.35          | 
-| 2015 | Mar-30 | 94.03          | 93.36          | 0.67            | 0.72          | 
-| 2016 | Mar-30 | 95.28          | 94.03          | 1.26            | 1.34          | 
-| 2017 | Mar-30 | 92.47          | 95.28          | -2.81           | -2.95         | 
-| 2018 | Mar-30 | 94.14          | 92.47          | 1.67            | 1.80          | 
-```
+
+| Year | Date   | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % |
+|------|--------|----------------|----------------|-----------------|---------------|
+| 2011 | Mar-30 | 87.59          |                |                 |               |
+| 2012 | Mar-30 | 91.07          | 87.59          | 3.48            | 3.98          |
+| 2013 | Mar-30 | 89.46          | 91.07          | -1.61           | -1.76         |
+| 2014 | Mar-30 | 93.36          | 89.46          | 3.89            | 4.35          |
+| 2015 | Mar-30 | 94.03          | 93.36          | 0.67            | 0.72          |
+| 2016 | Mar-30 | 95.28          | 94.03          | 1.26            | 1.34          |
+| 2017 | Mar-30 | 92.47          | 95.28          | -2.81           | -2.95         |
+| 2018 | Mar-30 | 94.14          | 92.47          | 1.67            | 1.80          |
+
 
 #### Year-on-year change based on calendar index position
 
@@ -225,18 +225,18 @@ ORDER BY "Day in Year", time
 
 **Result:**
 
-```
-| Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % | 
-|------|--------|-------------|----------------|----------------|-----------------|---------------| 
-| 2011 | Mar-30 | 89.00       | 87.59          |                |                 |               | 
-| 2012 | Mar-29 | 89.00       | 90.08          | 87.59          | 2.49            | 2.85          | 
-| 2013 | Mar-30 | 89.00       | 89.46          | 90.08          | -0.62           | -0.68         | 
-| 2014 | Mar-30 | 89.00       | 93.36          | 89.46          | 3.89            | 4.35          | 
-| 2015 | Mar-30 | 89.00       | 94.03          | 93.36          | 0.67            | 0.72          | 
-| 2016 | Mar-29 | 89.00       | 94.11          | 94.03          | 0.08            | 0.09          | 
-| 2017 | Mar-30 | 89.00       | 92.47          | 94.11          | -1.64           | -1.74         | 
-| 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          | 
-```
+
+| Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % |
+|------|--------|-------------|----------------|----------------|-----------------|---------------|
+| 2011 | Mar-30 | 89.00       | 87.59          |                |                 |               |
+| 2012 | Mar-29 | 89.00       | 90.08          | 87.59          | 2.49            | 2.85          |
+| 2013 | Mar-30 | 89.00       | 89.46          | 90.08          | -0.62           | -0.68         |
+| 2014 | Mar-30 | 89.00       | 93.36          | 89.46          | 3.89            | 4.35          |
+| 2015 | Mar-30 | 89.00       | 94.03          | 93.36          | 0.67            | 0.72          |
+| 2016 | Mar-29 | 89.00       | 94.11          | 94.03          | 0.08            | 0.09          |
+| 2017 | Mar-30 | 89.00       | 92.47          | 94.11          | -1.64           | -1.74         |
+| 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          |
+
 
 SQL console supports the [`ROUND`](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
 

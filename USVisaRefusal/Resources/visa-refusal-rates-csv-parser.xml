@@ -13,7 +13,7 @@
     <timestampType>PATTERN</timestampType>
     <processEvents>false</processEvents>
     <writeProperty>false</writeProperty>
-    <enabled>false</enabled>
+    <enabled>true</enabled>
     <discardNan>true</discardNan>
     <ignoreParseErrors>true</ignoreParseErrors>
     <tagColumns class="linked-hash-set"/>

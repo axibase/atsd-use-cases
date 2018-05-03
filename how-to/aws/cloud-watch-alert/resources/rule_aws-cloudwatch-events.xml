@@ -65,7 +65,7 @@ https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#Instances:search=i-0
 <cancel-screenshot>false</cancel-screenshot>
 <repeat-as-open>true</repeat-as-open>
 <cancel-as-open>true</cancel-as-open>
-<recipients>dev@axibase.com</recipients>
+<recipients>dev@example.org</recipients>
 <first-subject>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.</first-subject>
 <repeat-subject>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.</repeat-subject>
 <cancel-subject>AWS: ${tags.message.detail-type} : ${tags.message.source} in ${region}.</cancel-subject>

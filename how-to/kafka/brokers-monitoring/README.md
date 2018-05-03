@@ -15,7 +15,7 @@ This guide describes how to monitor availability and performance of [Apache Kafk
 
 Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts:
 
-```
+```sh
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
     --name=atsd-sandbox \
     --volume /var/run/docker.sock:/var/run/docker.sock \
@@ -30,7 +30,7 @@ The Collector instance installed in the sandbox container is used to retrieve Ka
 
 Wait until the sandbox is initialized and 'All applications started.' message is displayed.
 
-```
+```sh
 docker logs -f atsd-sandbox
 ```
 
