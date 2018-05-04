@@ -28,7 +28,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
 If you would like to automatically configure Slack Messaging Service at runtime, use the following ATSD Sandbox launch command:
 
 ```sh
-docker run -d -p 8443:8443 -p 9443:9443 \
+docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
   --env START_COLLECTOR=off \
   --env SERVER_URL=https://atsd.company_name.com:8443 \

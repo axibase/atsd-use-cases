@@ -17,8 +17,9 @@ While the default email notifications delivered by GitHub provide a convenient w
 Launch an [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on Docker:
 
 ```sh
-docker run -d -p 8443:8443 -p 9443:9443 \
+docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
+  --env START_COLLECTOR=off \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-issue-open.xml' \
@@ -30,7 +31,7 @@ Replace the `SERVER_URL` parameter in the command above with the public DNS name
 Alternatively, you can launch an ATSD sandbox instance which is pre-configured for integration with a Slack Workspace:
 
 ```sh
-docker run -d -p 8443:8443 -p 9443:9443 \
+docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
   --env START_COLLECTOR=off \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
