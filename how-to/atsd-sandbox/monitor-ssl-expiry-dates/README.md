@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Axibase Collector](https://github.com/axibase/axibase-collector/#overview) provides tools to collect information about SSL certificates. The data stored in [ATSD](https://github.com/axibase/atsd) can be useful to monitor SSL certificates of the subdomains of a top domain and notify a user via [Slack](https://slack.com/) using web notifications triggered by the [rule engine](https://github.com/axibase/atsd/tree/master/rule-engine#overview) that inform when the certificate's expiry date is approaching or when the date has been changed. The list of subdomains can be queried using SQL from the database used by [crt.sh](https://crt.sh) portal created by [Comodo](https://www.comodo.com) Group.
+[Axibase Collector](https://github.com/axibase/axibase-collector/#overview) provides tools to collect information about SSL certificates. The data stored in [ATSD](https://github.com/axibase/atsd) can be useful to monitor SSL certificates for the subdomains of a top domain and notify a user via [Slack](https://slack.com/) using web notifications triggered by the [rule engine](https://github.com/axibase/atsd/tree/master/rule-engine#overview) that norify when the certificate's expiry date is approaching or when the date has been changed. The list of subdomains can be queried using SQL from the database used by [crt.sh](https://crt.sh) portal created by [Comodo](https://www.comodo.com) Group.
 
 ### Tools and resources
 
@@ -40,9 +40,9 @@ touch slack.properties && printf "token=xoxb-************-**********************
 
 ### Configure and launch ATSD Sandbox
 
-Current job file contains placeholder `${ENV.TOP_DOMAIN}` domain name instead of a real domain name. Set `TOP_DOMAIN` environment variable to real domain name and *Collector* will replace it with variable name during import process. In the following command changes `TOP.DOMAIN` is set to [axibase.com](https://axibase.com) for example:
+Current job file contains placeholder `${ENV.TOP_DOMAIN}` domain name instead of a real domain name. Set `TOP_DOMAIN` environment variable to real domain name and *Collector* will replace it with variable name during import process. In the following command changes `TOP.DOMAIN` is set to [axibase.com](https://axibase.com).
 
-Start *ATSD Sandbox* passing procedure to the configuration's files paths by pre-defining [environment variables](https://github.com/axibase/dockers/tree/atsd-sandbox#container-parameters) in the sandbox launch command as shown below:
+Start *ATSD Sandbox* passing procedure to the configuration's files paths by pre-defining [environment variables](https://github.com/axibase/dockers/tree/atsd-sandbox#container-parameters) in the sandbox launch command:
 
 ```bash
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
@@ -55,7 +55,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   axibase/atsd-sandbox:latest
 ```
 
-### Receive notification
+### Receive Notifications
 
 If the procedure was properly completed, ATSD will send a test notification to Slack.
 
@@ -73,11 +73,12 @@ If certificate's expiration is approaching and number of remaining days is less 
 
 ![Expiration rule](images/expiration-approaching.png)
 
-#### Disable not necessary notifications
+#### Disable Unnecessary Notifications
 
-To disable notifications for a list of domains you should edit the collection containing a blacklist.
+To disable notifications for a list of domains, edit the collection containing the blacklist.
 
 To open the collection login to the *ATSD* interface located on [https://localhost:8443]() with default credentials:
+
 ```properties
 user=axibase
 password=axibase
@@ -91,7 +92,7 @@ contains two elements: `example.axibase.com`, `dev.axibase.com`. And after savin
 
 ## Troubleshooting
 
-If you didn't receive any notifications in 1-2 minutes, review *ATSD Sandbox* `start.log` file with the following command.
+If you didn't receive any notifications within 1-2 minutes, review *ATSD Sandbox* `start.log` file with the following command to ensure proper execution.
 
 ```bash
 docker logs atsd-sandbox
