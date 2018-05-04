@@ -3,11 +3,11 @@
 ![](images/pm-title.png)
 [![](images/button-new.png)](https://trends.axibase.com/54f3afeb)
 
-*Fig 1.* Open the **Trends** explorer above to navigate through the visualization of the data used to for a recent AEI article written by economist Mike J. Perry. 
+*Fig 1.* Open the **Trends** explorer above to navigate through the visualization of the data used to for a recent AEI article written by economist Mike J. Perry.
 
 ### Data Overview
 
-The [American Enterprise Institute](http://www.aei.org/) is Washington D.C.-based think tank that is dedicated to researching issues of government, politics, economics, and social welfare. Recently they published an [article](http://www.aei.org/publication/the-public-thinks-the-average-company-makes-a-36-profit-margin-which-is-about-5x-too-high-part-ii/) which described the average American's perception of the profit margins that companies from various industries are able to make on a consistent basis.
+The [American Enterprise Institute](http://www.aei.org/) is Washington D.C.-based think tank that is dedicated to researching issues of government, politics, economics, and social welfare. Recently, they published an article titles: *The Public Thinks the Average Company Makes a 35% Profit Margin Which is about 5x Too High*, which described the average American's perception of the profit margins that companies from various industries are able to make on a consistent basis.
 
 The article drew information from a variety of polling agencies who had sampled large groups of the population and came away with the conclusion that the average American believes most companies, regardless of industry are consistently making profits on the order of 36%. Using data from NYU professor and researcher [Aswath Damodaran](http://people.stern.nyu.edu/adamodar/New_Home_Page/home.htm) AEI came to the conclusion that the average American's estimation was off by about 500%. They concluded that the average company makes around 7.9% after taxes and an entire percent lower, 6.9% if the financial industry is excluded.
 
@@ -46,25 +46,25 @@ Using the [**Trends**](https://trends.axibase.com/) service and SQL Console tool
 Query:
 
 ```sql
-SELECT tags.industry_name AS "Industry", 
+SELECT tags.industry_name AS "Industry",
   value * 100 AS "Profit Margin (%)"
 FROM "cogs/sales"
 ORDER BY value DESC
 LIMIT 10
 ```
 
-| Industry                    | Profit Margin (%) | 
-|-----------------------------|-------------------| 
-| Farming/Agriculture         | 88.98             | 
-| Engineering/Construction    | 88.85             | 
-| Auto & Truck                | 87.78             | 
-| Oilfield Svcs/Equip.        | 86.95             | 
-| Healthcare Support Services | 85.66             | 
-| Reinsurance                 | 84.11             | 
-| Steel                       | 83.95             | 
-| Food Wholesalers            | 83.04             | 
-| Auto Parts                  | 82.36             | 
-| Paper/Forest Products       | 81.03             | 
+| Industry                    | Profit Margin (%) |
+|-----------------------------|-------------------|
+| Farming/Agriculture         | 88.98             |
+| Engineering/Construction    | 88.85             |
+| Auto & Truck                | 87.78             |
+| Oilfield Svcs/Equip.        | 86.95             |
+| Healthcare Support Services | 85.66             |
+| Reinsurance                 | 84.11             |
+| Steel                       | 83.95             |
+| Food Wholesalers            | 83.04             |
+| Auto Parts                  | 82.36             |
+| Paper/Forest Products       | 81.03             |
 
 ### Creating Value
 
@@ -76,7 +76,7 @@ LIMIT 10
 Query:
 
 ```sql
-SELECT tags.industry_name AS "Industry", 
+SELECT tags.industry_name AS "Industry",
   value * 100 AS "Gross Margin (%)"
 FROM "gross_margin"
 ORDER BY value DESC
@@ -84,18 +84,18 @@ LIMIT 10
 ```
 
 
-| Industry                               | Gross Margin (%) | 
-|----------------------------------------|-------------------| 
-| Bank (Money Center)                    | 100.00            | 
-| Banks (Regional)                       | 99.77             | 
-| Financial Svcs. (Non-bank & Insurance) | 81.50             | 
-| Drugs (Biotechnology)                  | 72.99             | 
-| Drugs (Pharmaceutical)                 | 70.96             | 
-| Investments & Asset Management         | 69.81             | 
-| Brokerage & Investment Banking         | 69.02             | 
-| Software (Internet)                    | 66.93             | 
-| Software (System & Application)        | 66.61             | 
-| Software (Entertainment)               | 66.18             | 
+| Industry                               | Gross Margin (%) |
+|----------------------------------------|-------------------|
+| Bank (Money Center)                    | 100.00            |
+| Banks (Regional)                       | 99.77             |
+| Financial Svcs. (Non-bank & Insurance) | 81.50             |
+| Drugs (Biotechnology)                  | 72.99             |
+| Drugs (Pharmaceutical)                 | 70.96             |
+| Investments & Asset Management         | 69.81             |
+| Brokerage & Investment Banking         | 69.02             |
+| Software (Internet)                    | 66.93             |
+| Software (System & Application)        | 66.61             |
+| Software (Entertainment)               | 66.18             |
 
 ### Developing Value
 
@@ -107,25 +107,25 @@ LIMIT 10
 Query:
 
 ```sql
-SELECT tags.industry_name AS "Industry", 
+SELECT tags.industry_name AS "Industry",
   value * 100 AS "Profit Margin (%)"
 FROM "r&d/sales"
 ORDER BY value DESC
 LIMIT 10
 ```
 
-| Industry                        | Profit Margin (%) | 
-|---------------------------------|-------------------| 
-| Drugs (Biotechnology)           | 31.79             | 
-| Software (Entertainment)        | 18.73             | 
-| Drugs (Pharmaceutical)          | 18.09             | 
-| Software (System & Application) | 17.95             | 
-| Semiconductor                   | 17.82             | 
-| Software (Internet)             | 16.02             | 
-| Telecom. Equipment              | 12.24             | 
-| Electronics (Consumer & Office) | 12.05             | 
-| Semiconductor Equip             | 10.96             | 
-| Healthcare Products             | 7.41              | 
+| Industry                        | Profit Margin (%) |
+|---------------------------------|-------------------|
+| Drugs (Biotechnology)           | 31.79             |
+| Software (Entertainment)        | 18.73             |
+| Drugs (Pharmaceutical)          | 18.09             |
+| Software (System & Application) | 17.95             |
+| Semiconductor                   | 17.82             |
+| Software (Internet)             | 16.02             |
+| Telecom. Equipment              | 12.24             |
+| Electronics (Consumer & Office) | 12.05             |
+| Semiconductor Equip             | 10.96             |
+| Healthcare Products             | 7.41              |
 
 ### Market Totals
 
@@ -139,36 +139,36 @@ Query:
 ```sql
 SELECT metric AS "Profitability Metric", value * 100 AS "Profit Margin (%)"
 FROM atsd_series
-WHERE metric IN metrics ('stern.nyu.edu') 
+WHERE metric IN metrics ('stern.nyu.edu')
    AND (tags.industry_name = 'Total Market')
 ORDER BY value DESC
 ```
 
-| Profitability Metric                  | Profit Margin (%) | 
-|---------------------------------------|-------------------| 
-| cogs/sales                            | 63.43             | 
-| gross_margin                          | 36.57             | 
-| ebitdasg&a/sales                      | 31.34             | 
-| ebitdar&d/sales                       | 17.41             | 
-| sg&a/_sales                           | 16.32             | 
-| ebitda/sales                          | 15.02             | 
-| pre-tax_lease_&_r&d_adj_margin        | 10.70             | 
-| pre-tax_unadjusted_operating_margin   | 10.66             | 
-| pre-tax_lease_adjusted_margin         | 10.56             | 
-| after-tax_lease_&_r&d_adj_margin      | 9.64              | 
-| after-tax_unadjusted_operating_margin | 9.59              | 
-| after-tax_lease_adjusted_margin       | 9.50              | 
-| net_margin                            | 7.90              | 
-| r&d/sales                             | 2.39              | 
-| lease_expense/sales                   | 1.45              | 
-| stock-based_compensation/sales        | 0.98              | 
+| Profitability Metric                  | Profit Margin (%) |
+|---------------------------------------|-------------------|
+| cogs/sales                            | 63.43             |
+| gross_margin                          | 36.57             |
+| ebitdasg&a/sales                      | 31.34             |
+| ebitdar&d/sales                       | 17.41             |
+| sg&a/_sales                           | 16.32             |
+| ebitda/sales                          | 15.02             |
+| pre-tax_lease_&_r&d_adj_margin        | 10.70             |
+| pre-tax_unadjusted_operating_margin   | 10.66             |
+| pre-tax_lease_adjusted_margin         | 10.56             |
+| after-tax_lease_&_r&d_adj_margin      | 9.64              |
+| after-tax_unadjusted_operating_margin | 9.59              |
+| after-tax_lease_adjusted_margin       | 9.50              |
+| net_margin                            | 7.90              |
+| r&d/sales                             | 2.39              |
+| lease_expense/sales                   | 1.45              |
+| stock-based_compensation/sales        | 0.98              |
 
 ### Top Ten Industries with the Highest Profit Margin
 
 ![](images/top-ten-by-sector.png)
 [![](images/button-new.png)](https://trends.axibase.com/f2a850a5#fullscreen)
 
-*Fig 6.* The top ten industries with the highest profit margin with all factors considered are shown here. Use the drop-down menu to navigate through all metrics and see the top ten or bottom ten sectors for each one, or select the `*` wildcard character to view them all together. When doing so it is recommended to apply the setting `horizontal = true` by removing the `#` comment character from the configuration window.**Metric:** `net_margin`
+*Fig 6.* The top ten industries with the highest profit margin with all factors considered are shown here. Use the drop-down menu to navigate through all metrics and see the top ten or bottom ten sectors for each one, or select the `*` wildcard character to view them all together. When doing so it is recommended to apply the setting `horizontal = true` by removing the `#` comment character from the configuration window. **Metric:** `net_margin`
 
 Query:
 
@@ -180,18 +180,18 @@ ORDER BY value DESC
 LIMIT 10
 ```
 
-| Industry                               | Profit Margin (%) | 
-|----------------------------------------|-------------------| 
-| Tobacco                                | 43.37             | 
-| Financial Svcs. (Non-bank & Insurance) | 26.46             | 
-| Bank (Money Center)                    | 26.03             | 
-| R.E.I.T.                               | 24.44             | 
-| Software (Internet)                    | 23.83             | 
-| Banks (Regional)                       | 23.82             | 
-| Investments & Asset Management         | 22.54             | 
-| Beverage (Alcoholic)                   | 21.18             | 
-| Semiconductor Equip                    | 18.74             | 
-| Transportation (Railroads)             | 18.68             | 
+| Industry                               | Profit Margin (%) |
+|----------------------------------------|-------------------|
+| Tobacco                                | 43.37             |
+| Financial Svcs. (Non-bank & Insurance) | 26.46             |
+| Bank (Money Center)                    | 26.03             |
+| R.E.I.T.                               | 24.44             |
+| Software (Internet)                    | 23.83             |
+| Banks (Regional)                       | 23.82             |
+| Investments & Asset Management         | 22.54             |
+| Beverage (Alcoholic)                   | 21.18             |
+| Semiconductor Equip                    | 18.74             |
+| Transportation (Railroads)             | 18.68             |
 
 ### Resources
 
