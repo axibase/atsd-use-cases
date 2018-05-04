@@ -1,11 +1,10 @@
-Projected Baltimore Employment Figures (2001-2040)
-===
+# Projected Baltimore Employment Figures (2001-2040)
 
 [Data Source](https://github.com/axibase/open-data-catalog/blob/master/datasets/5w8e-5mc3.md)
 
 [SQL Console](https://axibase.com/) and [ChartLab](https://apps.axibase.com/) from Axibase
 
-#### Total Projected Employment Numbers (2001-2040)
+## Total Projected Employment Numbers (2001-2040)
 
 ```sql
 SELECT datetime AS "Year", value/1000 AS "Total Jobs (Thousand)"
@@ -16,7 +15,6 @@ ORDER BY 'Year' ASC
   LIMIT 20
 ```
 
-```ls
 | Year       | Total Jobs (Thousand) |
 |------------|-----------------------|
 | 2001-01-01 | 467.00                |
@@ -38,13 +36,12 @@ ORDER BY 'Year' ASC
 | 2030-01-01 | 562.30                |
 | 2035-01-01 | 570.80                |
 | 2040-01-01 | 579.90                |
-```
 
 ![](Images/BMD_1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/19d89e95/2/#fullscreen)
 
-#### Most Populous Industries (2001)
+## Most Populous Industries (2001)
 
 ```sql
 SELECT metric.label AS "Job Field", first(value)/1000 AS "2001 Total (Thousand)"
@@ -55,7 +52,6 @@ ORDER BY '2001 Total (Thousand)' DESC
   LIMIT 10
 ```
 
-```ls
 | Job Field                             | 2001 Total (Thousand) |
 |---------------------------------------|-----------------------|
 | Retail trade                          | 61.61                 |
@@ -68,13 +64,12 @@ ORDER BY '2001 Total (Thousand)' DESC
 | Construction                          | 29.79                 |
 | Local                                 | 29.37                 |
 | Finance and insurance                 | 27.71                 |
-```
 
 ![](Images/BMD_9.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/fa80759c/7/#fullscreen)
 
-#### Most Populous Industries (2040)
+## Most Populous Industries (2040)
 
 ```sql
 SELECT metric.label AS "Job Field", last(value)/1000 AS "2040 Total (Thousand)"
@@ -85,7 +80,6 @@ ORDER BY '2040 Total (Thousand)' DESC
   LIMIT 10
 ```
 
-```ls
 | Job Field                                    | 2040 Total (Thousand) |
 |----------------------------------------------|-----------------------|
 | Health care and social assistance            | 90.40                 |
@@ -98,13 +92,12 @@ ORDER BY '2040 Total (Thousand)' DESC
 | Construction                                 | 40.00                 |
 | Accommodation and food services              | 34.80                 |
 | Other services, except public administration | 34.30                 |
-```
 
 ![](Images/BMD_10.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/fa80759c/8/#fullscreen)
 
-#### Most Populous Industries (Average) (2001-2040)
+## Most Populous Industries (Average) (2001-2040)
 
 ```sql
 SELECT metric.label AS "Job Field", avg(value)/1000 AS "Average Total (Thousand)"
@@ -115,7 +108,6 @@ ORDER BY 'Average Total (Thousand)' DESC
   LIMIT 10
 ```
 
-```ls
 | Job Field                             | Average Total (Thousand) |
 |---------------------------------------|--------------------------|
 | Health care and social assistance     | 72.04                    |
@@ -128,13 +120,12 @@ ORDER BY 'Average Total (Thousand)' DESC
 | Construction                          | 33.92                    |
 | Local                                 | 29.96                    |
 | Accommodation and food services       | 29.79                    |
-```
 
 ![](Images/BMD_4.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/56ce84ce/5/#fullscreen)
 
-#### Most Positive Job Outlook (2001-2040)
+## Most Positive Job Outlook (2001-2040)
 
 > Job Outlook is a measurement used by economists to describe the tendency of a particular industry to see growth in
 employment numbers over a given period of time.
@@ -148,7 +139,6 @@ ORDER BY 'Average Total (Thousand)' DESC
   LIMIT 10
 ```
 
-```ls
 | Job Field                                    | Average Total (Thousand) |
 |----------------------------------------------|--------------------------|
 | Health care and social assistance            | 35.33                    |
@@ -161,7 +151,6 @@ ORDER BY 'Average Total (Thousand)' DESC
 | Real estate and rental and leasing           | 9.12                     |
 | Accommodation and food services              | 8.25                     |
 | Arts, entertainment, and recreation          | 6.96                     |
-```
 
 ![](Images/BMD_3.png)
 
@@ -169,7 +158,7 @@ ORDER BY 'Average Total (Thousand)' DESC
 
 > The delta value is shown for each of the ten fields above
 
-#### Least Populous Industries (2001)
+## Least Populous Industries (2001)
 
 ```sql
 SELECT metric.label AS "Job Field", first(value)/1000 AS "Average Total (Thousand)"
@@ -180,7 +169,6 @@ ORDER BY 'Average Total (Thousand)' ASC
   LIMIT 10
 ```
 
-```ls
 | Job Field                                        | Average Total (Thousand) |
 |--------------------------------------------------|--------------------------|
 | Mining                                           | 0.36                     |
@@ -193,11 +181,10 @@ ORDER BY 'Average Total (Thousand)' ASC
 | Educational services                             | 9.25                     |
 | Transportation and warehousing                   | 10.38                    |
 | Arts, entertainment, and recreation              | 10.45                    |
-```
 
 ![](Images/BMD_11.png)
 
-#### Least Populous Industries (2040)
+## Least Populous Industries (2040)
 
 ```sql
 SELECT metric.label AS "Job Field", last(value)/1000 AS "Average Total (Thousand)"
@@ -208,7 +195,6 @@ ORDER BY 'Average Total (Thousand)' ASC
   LIMIT 10
 ```
 
-```ls
 | Job Field                                        | Average Total (Thousand) |
 |--------------------------------------------------|--------------------------|
 | Forestry, fishing, related activities, and other | 0.40                     |
@@ -221,11 +207,10 @@ ORDER BY 'Average Total (Thousand)' ASC
 | Employment State                                 | 11.20                    |
 | Transportation and warehousing                   | 12.80                    |
 | Federal, civilian                                | 13.30                    |
-```
 
 ![](Images/BMD_12.png)
 
-#### Least Populous Industries (Average) (2001-2040)
+## Least Populous Industries (Average) (2001-2040)
 
 ```sql
 SELECT metric.label AS "Job Field", avg(value)/1000 AS "Average Total (Thousand)"
@@ -236,7 +221,6 @@ ORDER BY 'Average Total (Thousand)' ASC
   LIMIT 10
 ```
 
-```ls
 | Job Field                                        | Average Total (Thousand) |
 |--------------------------------------------------|--------------------------|
 | Forestry, fishing, related activities, and other | 0.43                     |
@@ -249,13 +233,12 @@ ORDER BY 'Average Total (Thousand)' ASC
 | Transportation and warehousing                   | 11.79                    |
 | Employment State                                 | 11.91                    |
 | Arts, entertainment, and recreation              | 12.93                    |
-```
 
 ![](Images/BMD_6.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/56ce84ce/7/#fullscreen)
 
-#### Least Positive Job Outlook (2001-2040)
+## Least Positive Job Outlook (2001-2040)
 
 ```sql
 SELECT metric.label AS "Job Field", delta(value)/1000 AS "Average Total (Thousand)"
@@ -266,7 +249,6 @@ ORDER BY 'Average Total (Thousand)' ASC
   LIMIT 10
 ```
 
-```ls
 | Job Field                             | Average Total (Thousand) |
 |---------------------------------------|--------------------------|
 | Manufacturing                         | -19.42                   |
@@ -279,7 +261,6 @@ ORDER BY 'Average Total (Thousand)' ASC
 | Military                              | -1.03                    |
 | State and local                       | -0.75                    |
 | Farm employment                       | -0.53                    |
-```
 
 ![](Images/BMD_5.png)
 

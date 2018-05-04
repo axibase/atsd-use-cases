@@ -1,10 +1,10 @@
-Bank of Israel Debt, 1997-2016
-==
+# Bank of Israel Debt, 1997-2016
+
 ChartLab and SQL Console in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 > Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics/Pages/Default.aspx)
 
-##### Debt Balances (NIS Billion, current value)
+## Debt Balances (NIS Billion, current value)
 
 ![](Images/CBI_9.png)
 
@@ -17,7 +17,6 @@ GROUP BY 'Date', pd.value, gd.value, dd.value, fd.value
   ORDER BY 'Date'
 ```
 
-```ls
 | Date | Public Debt | Government Debt | Domestic Debt | Foreign Debt |
 |------|-------------|-----------------|---------------|--------------|
 | 1997 | 372         | 360             | 268           | 92           |
@@ -40,9 +39,8 @@ GROUP BY 'Date', pd.value, gd.value, dd.value, fd.value
 | 2014 | 729         | 716             | 610           | 106          |
 | 2015 | 746         | 728             | 629           | 99           |
 | 2016 | 760         | 740             | 643           | 97           |
-```
 
-##### Debt Balances as Percent GDP
+## Debt Balances as Percent GDP
 
 ![](Images/CBI_3.png)
 
@@ -55,7 +53,6 @@ GROUP BY 'Date', pd.value, gd.value, dd.value, fd.value
   ORDER BY 'Date'
 ```
 
-```ls
 | Date | Public Debt Percent GDP | Government Debt Percent GDP | Domestic Debt Percent GDP | Foreign Debt Percent GDP |
 |------|-------------------------|-----------------------------|---------------------------|--------------------------|
 | 1997 | 94                      | 91                          | 68                        | 23                       |
@@ -78,18 +75,16 @@ GROUP BY 'Date', pd.value, gd.value, dd.value, fd.value
 | 2014 | 66                      | 65                          | 55                        | 10                       |
 | 2015 | 64                      | 63                          | 54                        | 8                        |
 | 2016 | 62                      | 60                          | 53                        | 8                        |
-```
 
 ![](Images/CBI_6.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/7b59b331/8/#fullscreen)
 
-##### Government Debt Balance by Type of Indexation
+## Government Debt Balance by Type of Indexation
 
 ![](Images/CBI_7.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/3/#fullscreen)
-
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", cpi.value AS "CPI-Indexed", ui1.value AS "Unindexed, Fixed or Zero", ui2.value AS "Inindexed, Variable", di.value AS "Dollar-Indexed", fcd.value AS "Foreign-Currency Denominated"
@@ -98,7 +93,6 @@ GROUP BY 'Date', cpi.value, ui1.value, ui2.value, di.value, fcd.value
   ORDER BY 'Date'
 ```
 
-```ls
 | Date | CPI-Indexed | Unindexed, Fixed or Zero | Inindexed, Variable | Dollar-Indexed | Foreign-Currency Denominated |
 |------|-------------|--------------------------|---------------------|----------------|------------------------------|
 | 1997 | 64          | 3                        | 4                   | 3              | 26                           |
@@ -121,12 +115,10 @@ GROUP BY 'Date', cpi.value, ui1.value, ui2.value, di.value, fcd.value
 | 2014 | 50          | 29                       | 6                   | 0              | 15                           |
 | 2015 | 50          | 30                       | 6                   | 0              | 14                           |
 | 2016 | 51          | 30                       | 6                   | 0              | 13                           |
-```
 
 ![](Images/CBI_10.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/040c4e03/2/#fullscreen)
-
 
 ![](Images/CBI_8.png)
 

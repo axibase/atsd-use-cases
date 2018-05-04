@@ -1,5 +1,4 @@
-500 Cities: Local Data for Better Health
-===
+# 500 Cities: Local Data for Better Health
 
 Learning about your favorite city's local health has never been easier. With help from
 [data](https://github.com/axibase/open-data-catalog/blob/master/datasets/dxpw-cm5u.md) released by [The Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) plus
@@ -29,7 +28,6 @@ GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
 LIMIT 25
 ```
 
-```sql
 | tags.placename | tags.stateabbr | last(VALUE) |
 |----------------|----------------|-------------|
 | Youngstown     | OH             | 19.8        |
@@ -58,8 +56,6 @@ LIMIT 25
 | Miami          | FL             | 16.9        |
 | Albany         | GA             | 16.9        |
 
-```
-
 What about the least physically healthy cities?
 
 ![](Images/CDC2.png)
@@ -74,7 +70,6 @@ GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
 LIMIT 25
 ```
 
-```sql
 | tags.placename  | tags.stateabbr | last(VALUE) |
 |-----------------|----------------|-------------|
 | Plymouth        | MN             | 6.8         |
@@ -102,7 +97,6 @@ LIMIT 25
 | Rochester       | MN             | 8.1         |
 | Lawrence        | KS             | 8.1         |
 | Cary            | NC             | 8.1         |
-```
 
 Of course, physical health is only half of the total picture; mental health is another\
 important metric for gauging overall public health, so which city has the most
@@ -113,15 +107,14 @@ the lowest level of mental health?
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/1e6f3425/5/#fullscreen)
 
-````sql
+```sql
 SELECT TAGS.placename, TAGS.stateabbr, LAST (VALUE)
   FROM mhlth_crudeprev
 GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
   ORDER BY VALUE DESC
 LIMIT 25
-````
+```
 
-````sql
 | tags.placename | tags.stateabbr | last(VALUE) |
 |----------------|----------------|-------------|
 | Reading        | PA             | 18.4        |
@@ -150,24 +143,20 @@ LIMIT 25
 | Hartford       | CT             | 16.2        |
 | Muncie         | IN             | 16.1        |
 
-````
-
-
 And it wouldn't be any fun with the bottom twenty-five as well, included below:
 
 ![](Images/CDC4.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/1e6f3425/4/#fullscreen)
 
-````sql
+```sql
 SELECT TAGS.placename, TAGS.stateabbr, LAST (VALUE)
   FROM mhlth_crudeprev
 GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
   ORDER BY VALUE ASC
 LIMIT 25
-````
+```
 
-````sql
 | tags.placename    | tags.stateabbr | last(VALUE) |
 |-------------------|----------------|-------------|
 | Plymouth          | MN             | 7.2         |
@@ -195,7 +184,6 @@ LIMIT 25
 | Fremont           | CA             | 8.6         |
 | Alexandria        | VA             | 8.7         |
 | Olathe            | KS             | 8.7         |
-````
 
 The CDC has included over a dozen such metrics, ranging from diabetes to dental
 health, and asthma to arthritis. Open ChartLab with the button below any of the charts

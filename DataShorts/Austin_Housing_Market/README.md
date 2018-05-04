@@ -1,15 +1,14 @@
-Comprehensive Housing Market Analysis: City of Austin (2014)
-===
+# Comprehensive Housing Market Analysis: City of Austin (2014)
 
-> Source Data: [City of Austin Report](http://www.austintexas.gov/sites/default/files/files/NHCD/2014_Comprehensive_Housing_Market_Analysis_-_Document_reduced_for_web.pdf)
+* Source Data: [City of Austin Report](http://www.austintexas.gov/sites/default/files/files/NHCD/2014_Comprehensive_Housing_Market_Analysis_-_Document_reduced_for_web.pdf)
 
-> Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in the[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+* Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in the[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
-> Visualization: [ChartLab](https://apps.axibase.com/chartlab)
+* Visualization: [ChartLab](https://apps.axibase.com/chartlab)
 
 ![](Images/hma-000.png)
 
-#### Index
+## Index
 
 The following table contains the entire set of included metrics as well as their corresponding visualization figure for easy navigation.
 Use the clickable links in the Figure column to jump between visualizations and in ChartLab, use the drop-down menus to toggle
@@ -42,18 +41,16 @@ between metrics.
 | transportation_related | Metric name shortened for index, percent (%) | [Figure 2.1: Transportation Statistics](#Transportation-Statistics) |
 | unemployment | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#Socioeconomic-Statistics) |
 
-#### Home Cost Statistics:
+## Home Cost Statistics
 
 The following ChartLab visualization displays information related to the changing cost of both owning and renting a home.
 
-**Local Metrics**:
+**Local Metrics**: Stored in ATSD with the following labels.
 
 * change_in_median_home_value_2000_2012
 * change_in_median_rent_2000_2012
 * median_home_value
 * median_rent
-
-**Figure 1.1**
 
 ![](Images/hma-001.png)
 
@@ -63,31 +60,29 @@ The following ChartLab visualization displays information related to the changin
 
 Return to the [Index](#Index)
 
-#### Transportation Statistics:
+## Transportation Statistics
 
 The following ChartLab visualization displays information related to transportation cost in the city of Austin.
 
-**Local Metrics**:
+**Local Metrics**: Stored in ATSD with the following labels.
 
 * average_monthly_transportation_cost
 * percentage_of_homes_within_1_4_mi_of_transit_stop
 * percentage_of_housing_and_transportation_costs_that_is_transportation_related
 
-**Figure 2.1**
-
 ![](Images/hma-002.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/0964c838/2/#fullscreen)
 
-> Use the drop-down menu to toggle between metrics
+> Use the dropdown to toggle between metrics
 
 Return to the [Index](#Index)
 
-#### Socioeconomic Statistics:
+## Socioeconomic Statistics
 
 The following ChartLab visualization displays information related to the socioeconomic conditions of Austin residents.
 
-**Local Metrics**:
+**Local Metrics**: Stored in ATSD with the following labels.
 
 * change_in_percentage_of_population_below_poverty_2000_2012
 * homes_affordable_to_people_earning_less_than_50_000
@@ -96,71 +91,69 @@ The following ChartLab visualization displays information related to the socioec
 * rentals_affordable_to_people_earning_less_than_25_000
 * unemployment
 
-**Figure 3.1**
-
 ![](Images/hma-0031.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/4/#fullscreen)
 
-> Use the drop-down menu to toggle between metrics
+> Use the dropdown to toggle between metrics
 
 Return to the [Index](#Index)
 
-#### Accessibility Statistics:
+## Accessibility Statistics
 
 The following ChartLab visualization displays information related to the accessibility of both owning and renting a home
 in Austin. **Figure 4.1** deals with ownership statistics, whereas **Figure 4.2** deals with home rental statistics.
 
-**Local Metrics**:
+**Local Metrics**: stored in ATSD with the following labels.
 
-_Figure 4.1_
+Figure 4.1
+
 * owner_units_affordable_to_average_artist
 * owner_units_affordable_to_average_retail_service_worker
 * owner_units_affordable_to_average_teacher
 * owner_units_affordable_to_average_tech_worker
 
-_Figure 4.2_
+Figure 4.2
 
 * rental_units_affordable_to_average_artist
 * rental_units_affordable_to_average_retail_service_worker
 * rental_units_affordable_to_average_teacher
 * rental_units_affordable_to_average_tech_worker
 
-**Figure 4.1**
+Figure 4.1
 
 ![](Images/hma-0041.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/2/#fullscreen)
 
-> Use the dropdown menu to toggle between metrics
+> Use the dropdown to toggle between metrics
 
-**Figure 4.2**
+Figure 4.2
 
 ![](Images/hma-0042.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/3/#fullscreen)
 
-> Use the dropdown menu to toggle between metrics
+> Use the dropdown to toggle between metrics
 
 Return to the [Index](#Index)
 
-#### Quality of Housing Statistics
+## Quality of Housing Statistics
 
 The following ChartLab visualization displays information related to the quality of housing in the City of Austin.
 
-
-**Local Metrics**:
+**Local Metrics**: Stored in ATSD with the following labels.
 
 * percent_change_in_number_of_housing_units_2000_2012
 * percentage_of_rental_units_in_poor_condition
 * rent_restricted_units
 
-**Figure 5.1**
+Figure 5.1
 
 ![](Images/hma-005.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/5/#fullscreen)
 
-> Use the dropdown menu to toggle between metrics
+> Use the dropdown to toggle between metrics
 
 Return to the [Index](#Index)

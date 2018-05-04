@@ -1,9 +1,8 @@
-The Consumer Price Index Versus Your Savings Account
-===
+# The Consumer Price Index Versus Your Savings Account
 
 ![](Images/CPI_1.1.png)
 
-#### Introduction
+## Introduction
 
 The [Consumer Price Index](https://www.bls.gov/cpi/home.htm) (CPI) is a weighted measurement of the average price for various types of consumer goods and services.
 The CPI of a given set of goods like transportation, food costs, or medical care is a strong indicator of inflation and deflation
@@ -34,13 +33,11 @@ then submit the new, derived series back in to ATSD:
 * [Pentaho Report Designer](https://github.com/axibase/atsd/blob/master/integration/pentaho/report-designer/README.md)
 * [MatLab](https://github.com/axibase/atsd/blob/master/integration/matlab/README.md)
 
-#### Data
+## Data
 
 The following visualization will be the primary subject of analysis, it tracks the overall price levels compared to 2017
 values and is shown below:
 
-
-**Figure 1.1**
 ![](Images/CPI_4.1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f322562c/10/#fullscreen)
@@ -52,12 +49,11 @@ other methods of computer-assisted computation by allowing mathematical function
 used as guides for visualization. These tools will be used to showcase the inflation Israeli consumers face as a result of
 local CPI values.
 
-**Figure 1.2**
 ![](Images/CPI_2.1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f322562c/7/#fullscreen)
 
-Shown above is **Figure 1.2**, the percent change of almost half of century's worth of CPI data tracked by the Bank of Israel. The hyperinflation that resulted
+Shown above is the percent change of almost half of century's worth of CPI data tracked by the Bank of Israel. The hyperinflation that resulted
 in the establishment of Israel's contemporary currency, the New Israeli Shekel (NIS), in 1985 is detailed by the absolute maxima
 seen here. The value shown is a calculated percentile based on the following script, which is visible in
 the Editor window:
@@ -66,16 +62,13 @@ the Editor window:
 
 Where,
 
-`
-replace-value = F(X),
-value = X,
-previousValue = previous value of X
-`
+`replace-value` = F(X),
+`value` = X,
+`previousValue` = previous value of X
 
-This script simply replaces the value stored in the database with the value calculated by the equation, which returns the
-change in CPI. In order to smooth the variance of the curve, the following script can be added to the Editor:
+This script simply replaces the value stored in the database with the value calculated by the equation, which returns the change in CPI. In order to smooth the variance of the curve, the following script can be added to the Editor:
 
-```sql
+```ls
 [series]
   label = CPI (Adjusted)
   value = movavg ('cpi', 4)
@@ -87,8 +80,6 @@ the [`movavg`](https://axibase.com/products/axibase-time-series-database/visuali
 method, built in to ChartLab. Moving average is an aggregation of a variable number of years, set by the user as the second
 parameter in the brackets, with the first indicating the alias to be averaged. The resulting graph is shown below:
 
-
-**Figure 1.3**
 ![](Images/CPI_3.1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f322562c/8/#fullscreen)
@@ -104,8 +95,6 @@ Since its first printing in the eighties, the NIS has grown to become a stable, 
 mean that it has become immune to the effects of inflation. Shown below is the Gross Yield of cash holdings in shekels since
 the early nineties to present day, contrasted against the percent change of the Consumer Price Index:
 
-
-**Figure 2.1**
 ![](Images/CPI_5.1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f322562c/13/#fullscreen)
@@ -119,7 +108,7 @@ in the observed year).
 Using the derived series `CPI (Smoothed)` in a new function, the value of cash's Real Yield can be calculated by adding the
 following script in the Editor window:
 
-```sql
+```ls
 [series]
   label = Real Yield
   value = value('nominal_yield') - value('cpi_smoothed')
@@ -128,49 +117,38 @@ following script in the Editor window:
 Here, an entirely new series is calculated by subtracting the value of the CPI (Smoothed) function from the value of Cash's
 Annual Nominal Yield and the series is named Real Yield to reflect that it has been adjusted to include calculated CPI values.
 
-**Figure 3.1**
 ![](Images/CPI_6.1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f322562c/12/#fullscreen)
 
-Although similar to the **Figure 2.1**, the above visualization details the real yield of cash (makam) and not just the absolute,
+The above visualization details the real yield of cash (makam) and not just the absolute,
 or gross, yield. Looking closely from 2010 to present day highlights the differences in visualization:
-
-**Figure 2.2**
 
 ![](Images/CPI_5.2.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f322562c/16/#fullscreen)
 
-**Figure 3.2**
-
 ![](Images/CPI_6.2.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f322562c/18/#fullscreen)
 
-#### Conclusions
+## Conclusions
 
-Comparing **Figures 2.2** and **3.2** above, the difference in cash's absolute gross yield and calculated real yield is shown
-compared to the percent change in Consumer Price Index (**2.2**) and calculated average Consumer Price Index (**3.2**).
-Judging from the line in **Figure 2.2**, the slope of the line of gross yield is approaching zero. As noted above,
+Comparing the visualizations above, the difference in cash's absolute gross yield and calculated real yield is shown
+compared to the percent change in Consumer Price Index and calculated average Consumer Price Index.
+In the gross yield visualization, the slope of the line is approaching zero. As noted above,
 a true zero-slope gross yield line would represent cash value that is not inflating or deflating each year. However, the value of CPI
 shows that in fact, inflation and deflation is occurring, and the prices of consumer goods are affected by that.
 
-Using **Figure 3.2**, more detailed conclusions can be drawn, for example, the interaction between CPI (Smoothed) and the Real Yield
-of cash is shown to be closely related in recent years. In fact, the cyclical nature of CPI is shown to be occurring in parallel
+The interaction between CPI (Smoothed) and the Real Yield of cash is shown to be closely related in recent years. In fact, the cyclical nature of CPI is shown to be occurring in parallel
 to the now-cyclical real yield in cash value. The stability of Israel's economy during recent years is highlighted by low inflation and deflation
 and stable CPI.
-
-**Figure 4.1**
 
 ![](Images/CPI_7.1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f322562c/19/#fullscreen)
 
-**Figure 4.1** includes all visualizations discussed in this report, with emphasis added to the calculated metrics from **Figures
-2.1** and **3.1**, and **Table 1.1** below shows how this information applies in a real-world example:
-
-**Table 1.1**
+This visualization includes all visualizations discussed in this report, with emphasis added to the calculated metrics. The table below shows how this information applies in a real-world example:
 
 | Initial Cash Value (1992) | Cash Value (2000) | Cash Value (2010) | Cash Value (2015) | Cash Value (2017) |
 |-----------------------------|----------------------|----------------------|----------------------|----------------------|

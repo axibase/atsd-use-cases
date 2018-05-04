@@ -1,5 +1,4 @@
-What Do Seattleites Have to Complain About?
-===
+# Complaints in the Emerald City
 
 ![](Images/SEA_COM1.png)
 

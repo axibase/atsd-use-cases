@@ -1,11 +1,10 @@
-The New Bubble: Fed Rates Stay Low While Debt Value Remains High
-===
+# The New Bubble: Fed Rates Stay Low While Debt Value Remains High
 
 ![](images/fig0.png)
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/25f3a4d2/2/#fullscreen)
 
-### Introduction
+## Introduction
 
 The interest rate paid by the United States on its outstanding debt is set by the Federal Reserve Bank of America, who is
 designated by the government to handle the central banking policy of the United States. This rate has a huge impact on the
@@ -27,7 +26,7 @@ rates at historically low levels the value of the market value of the federal de
 indicating speculation and volatility. The result is a new kind of bubble that could rattle the U.S. Economy far worse than
 the downturn of 2009, which saw a loss of about a third of the average family's household wealth ([1](#sources)).
 
-### Analysis
+## Analysis
 
 **Figure 1**: United States GDP, Gross Debt, and Gross Debt Market Valuation
 
@@ -107,7 +106,7 @@ Low interest rates are of course a double-edged sword. While good for borrowers 
 used to simply pay down the interest of the debt, without doing anything to the debt itself, for savers, low interest rates
 mean diminishing returns on their savings especially in the face of the consumer price index, which has more than doubled since 1990 ([5](#5)).
 
-### The Bubble
+## The Bubble
 
 **Figure 6**: Fed Fund Rate and Federal Debt Payments
 
@@ -158,7 +157,7 @@ a true default has never occurred and it could have any number of effects both p
 the American government to address its spending problem before the floor gives out and investors, smelling blood in the water,
 move their resources to something more stable.
 
-### Conclusion
+## Conclusion
 
 The difference in debt market value and actual gross debt shows just how active trading is becoming around U.S. treasuries
 markets. The inflation in value of U.S. government debt indicates the presence of another bubble, and not one that is confined
@@ -172,7 +171,7 @@ in the road, as the nature of such an event is inherently rooted in upheaval, tu
 investors have their hands full as the American government tries to keep a lid on the Pandora's Box of bottomless debt in the
 age of Neo-liberalism.
 
-### Sources
+## Sources
 
 > All charts from this article can be viewed together at the following [ChartLab Portal](https://apps.axibase.com/chartlab/c91957c0/2/).
 

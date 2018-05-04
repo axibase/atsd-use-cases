@@ -1,7 +1,6 @@
-![TitlePhoto](Images/TitlePhoto.png)
+# Visa Travel to America. Identifying Trends and Outliers with Charts, SQL and Redash
 
-Visa Travel to America. Identifying Trends and Outliers with Charts, SQL and Redash
-===================================================
+![TitlePhoto](Images/TitlePhoto.png)
 
 In 2015, the United States was the [second most](https://en.wikipedia.org/wiki/World_Tourism_rankings) visited country in the world. Where do all of these travelers come from and
 what are their reasons for coming to the United States?
@@ -11,8 +10,7 @@ how publicly available data collected by government organizations can be easily 
 for interactive analysis. Additionally, this article illustrates some of the capabilities of [Redash](https://redash.io/), an open-source data visualization tool that is integrated with ATSD. We’ll walk through how to make SQL queries in ATSD and create visualizations in Redash. Additionally,
 this article contains instructions on how to install your own ATSD instance and populate it with the raw data.
 
-### U.S. Visa Dataset
----------------------
+## U.S. Visa Dataset
 
 Let's take a look at the dataset from travel.state.gov, which can be accessed via our archive located in the [Resources](../USVisaRefusal/Resources/visas.tar.gz) folder in this repository. Alternatively, you can
 download the Excel file from the [travel.state.gov](https://travel.state.gov) website and save each year as its
@@ -28,8 +26,7 @@ As opposed to analyzing the dataset in Excel, it is much more convenient to inte
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
-### Visa Travel by Country, Continent, and Visa Type
-----------------------------------------------------
+## Visa Travel by Country, Continent, and Visa Type
 
 Let's begin by taking a look at travel by country. The portal shown below allows you to sort by country and visa type. You can toggle between different countries in the first
 dropdown, and by visa type in the second dropdown. The below image output shows an output for H-1B visas, which are temporary work visas for workers in specialty occupations, issued
@@ -53,8 +50,7 @@ You can explore this portal by right-clicking on the below button:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/3c55ada0#fullscreen)
 
-### Delving Further into U.S. Visas
-------------------------------------
+## Delving Further into U.S. Visas
 
 By looking at the two Chart Lab instances above, we can gain an understanding of the general situation of non-immigrant travel to the United States. Let's begin by taking a look
 at some of the more specialized visa types, beginning with the O-1 visa.
@@ -110,8 +106,7 @@ You can explore this portal by clicking on the below button:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/1bc51064/2/#fullscreen)
 
-### SQL Queries
----------------
+## SQL Queries
 
 In addition to outputs from Chart Lab, ATSD is also capable of performing [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview),
 which can be used to search for specific information contained in this dataset. You can read more about our SQL syntax [here](https://github.com/axibase/atsd/blob/master/sql/README.md#syntax).
@@ -270,8 +265,7 @@ GROUP BY datetime
 | 2015  | 1152.0        |
 ```
 
-### Data Visualization with Redash
-----------------------------------
+## Data Visualization with Redash
 
 SQL queries are a great tool for searching for and displaying specific information from a dataset in tabular format. One of the biggest drawbacks from SQL outputs is that you are
 not able to show these tables as some kind graphical output. Axibase is partnered with [Redash](https://redash.io/), an open-source data visualization tool.
@@ -325,12 +319,11 @@ Using ATSD can help you make sense of all this information. You can use Chart La
 to search for specific information contained within the dataset, and Redash to display this specifically searched for information in a clear and concise manner.
 
 ### Action Items
-----------------
 
 Below are the summarized steps to follow to install local configurations of ATSD for analyzing United States visa statistics:
 
-1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
-2. Install Redash using the following command.
+* Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
+* Install Redash using the following command.
 
 ```sh
   git clone https://github.com/getredash/redash
@@ -341,7 +334,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 
    For more details on Redash click [here](https://redash.io/help-onpremise/setup/setting-up-redash-instance.html).
 
-3. Install the ATSD database on your local configuration using the following command.
+* Install the ATSD database on your local configuration using the following command.
 
 ```sh
 docker run \
@@ -355,22 +348,21 @@ docker run \
   axibase/atsd:latest
 ```
 
-4. Log in to ATSD and configure the pre-defined administrator account.
-5. Import the [`travel_visas.xml`](../USVisaRefusal/Resources/travel_visas.xml) file into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
-6. Import the [`visas.tar.gz`](../USVisaRefusal/Resources/visas.tar.gz) file into ATSD using the above-mentioned parser.
-7. Navigate to the Docker machine IP at port 5000, where you should see a Redash login screen.
-8. Follow the steps in [ATSD data source guide](https://redash.io/help/data-sources/axibase_tsd.html) to create a read-only account in ATSD and add a new ATSD data source in Redash.
-9. Create a sample query configuration, and execute the following query to validate the integration:
+* Log in to ATSD and configure the pre-defined administrator account.
+* Import the [`travel_visas.xml`](../USVisaRefusal/Resources/travel_visas.xml) file into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
+* Import the [`visas.tar.gz`](../USVisaRefusal/Resources/visas.tar.gz) file into ATSD using the above-mentioned parser.
+* Navigate to the Docker machine IP at port 5000, where you should see a Redash login screen.
+* Follow the steps in [ATSD data source guide](https://redash.io/help/data-sources/axibase_tsd.html) to create a read-only account in ATSD and add a new ATSD data source in Redash.
+* Create a sample query configuration, and execute the following query to validate the integration:
 
    ```sql
    SELECT * FROM jvm_memory_free LIMIT 10
    ```
 
-10. You are all set! Continue creating query configurations described in this article.
+* You are all set! Continue creating query configurations described in this article.
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
-### Sources
------------
+## Sources
 
-Title Photo: http://www.siam-legal.com/US_Visa/k1-visa-thailand.php
+[Title Photo](http://www.siam-legal.com/US_Visa/k1-visa-thailand.php)

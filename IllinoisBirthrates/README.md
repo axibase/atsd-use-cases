@@ -1,9 +1,9 @@
-Modeling Falling Birthrates in the Prairie State
-===
+# Modeling Falling Birthrates in the Prairie State
 
 ![](Images/ILL1.jpg)
 
-### Introduction
+## Introduction
+
 Long-considered to be a bellwether for trends in the rest of the country, the nation's
 21st state has grown from a tiny, sparsely-populated part of the Northwest Territory to
 the home of Chicago, the third-largest city in the country. Illinois holds the headquarters
@@ -29,17 +29,16 @@ the emergence of the Internet to name a few.
 Using the [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and the open source modelling software [Fityk](http://fityk.nieto.pl/),
 the ICHS data can be visualized, modeled, and analyzed to extract valuable information from free public data.
 
-### Data
+## Data
 
 Analysis of these data has been divided into three sections, the first uses visualization to capture
 the information as a whole, the second queries the data in the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md), and the third uses curve
 fitting to anticipate future birth rates.
 
-#### Visualizations
+### Visualizations
 
 Illinois contains 102 counties, the top ten most populous of which will be observed here.
 They are:
-
 
 | Rank | County | County Seat | Population (Million) |
 |------|--------|-------------|----------------------|
@@ -113,7 +112,7 @@ to 2009:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/8/#fullscreen)
 
-#### SQL Queries
+### SQL Queries
 
 The data is difficult to work with because of the way it is stored. Typically, time information is
 stored within a given metric, but in this case, each year is a metric in and of itself. This
@@ -123,15 +122,15 @@ working with, and analyzing even unideal data is well within the scope of possib
 
 Birth numbers can be gathered in five-year steps:
 
-##### 1989:
+#### 1989
 
-````sql
+```sql
 SELECT VALUE/1000 AS "Live Births (1000)", tags.county_name AS "County"
   FROM 1989 WHERE 'County' NOT IN ('Chicago', 'Suburban Cook')
 GROUP BY tags.county_name, VALUE
   ORDER BY VALUE DESC, tags.county_name
 LIMIT 11
-````
+```
 
 | Live Births (1000) | County         |
 |--------------------|----------------|
@@ -147,15 +146,15 @@ LIMIT 11
 | 3                  | MCHENRY        |
 | 3                  | PEORIA         |
 
-##### 1994:
+#### 1994
 
-````sql
+```sql
 SELECT VALUE/1000 AS "Live Births (1000)", tags.county_name AS "County"
   FROM 1994 WHERE 'County' NOT IN ('Chicago', 'Suburban Cook')
 GROUP BY tags.county_name, VALUE
   ORDER BY VALUE DESC, tags.county_name
 LIMIT 11
-````
+```
 
 | Live Births (1000) | County         |
 |--------------------|----------------|
@@ -171,15 +170,15 @@ LIMIT 11
 | 3                  | MADISON        |
 | 3                  | PEORIA         |
 
-##### 1999:
+#### 1999
 
-````sql
+```sql
 SELECT VALUE/1000 AS "Live Births (1000)", tags.county_name AS "County"
   FROM 1999 WHERE 'County' NOT IN ('Chicago', 'Suburban Cook')
 GROUP BY tags.county_name, VALUE
   ORDER BY VALUE DESC, tags.county_name
 LIMIT 11
-````
+```
 
 | Live Births (1000) | County         |
 |--------------------|----------------|
@@ -195,17 +194,15 @@ LIMIT 11
 | 3                  | MADISON        |
 | 3                  | PEORIA         |
 
+#### 2004
 
-##### 2004:
-
-````sql
+```sql
 SELECT VALUE/1000 AS "Live Births (1000)", tags.county_name AS "County"
   FROM 2004 WHERE 'County' NOT IN ('Chicago', 'Suburban Cook')
 GROUP BY tags.county_name, VALUE
   ORDER BY VALUE DESC, tags.county_name
 LIMIT 11
-````
-
+```
 
 | Live Births (1000) | County         |
 |--------------------|----------------|
@@ -221,8 +218,7 @@ LIMIT 11
 | 3                  | MADISON        |
 | 3                  | PEORIA         |
 
-
-##### 2009:
+#### 2009
 
 ```sql
 SELECT VALUE/1000 AS "Live Births (1000)", tags.county_name AS "County"
@@ -231,7 +227,6 @@ GROUP BY tags.county_name, VALUE
   ORDER BY VALUE DESC, tags.county_name
 LIMIT 11
 ```
-
 
 | Live Births (1000) | County         |
 |--------------------|----------------|
@@ -247,21 +242,19 @@ LIMIT 11
 | 3                  | MADISON        |
 | 3                  | PEORIA         |
 
-
 Likewise, county totals can be gathered using the same five-year steps, but evaluating for
 the entire observed time and not one-year segments:
 
-##### 1989 - 1993:
+#### 1989 - 1993
 
-````sql
+```sql
 SELECT (t1.VALUE + t2.VALUE + t3.VALUE + t4.VALUE + t5.VALUE)/1000 AS "Live Births (1000)", t1.tags.county_name AS "County"
   FROM 1989 t1 JOIN 1990 t2 JOIN 1991 t3 JOIN 1992 t4 JOIN 1993 t5
 WHERE t1.tags.county_name = t2.tags.county_name AND t1.tags.county_name NOT IN ('Chicago','Suburban Cook')
   GROUP BY t1.tags.county_name, t1.VALUE, t2.VALUE, t3.VALUE, t4.VALUE, t5.VALUE
 ORDER BY t1.VALUE DESC, t1.tags.county_name
   LIMIT 11
-````
-
+```
 
 | Live Births (1000) | County         |
 |--------------------|----------------|
@@ -277,8 +270,7 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
 | 16                 | MCHENRY        |
 | 14                 | PEORIA         |
 
-
-##### 1994 - 1998:
+#### 1994 - 1998
 
 ```sql
 SELECT (t1.VALUE + t2.VALUE + t3.VALUE + t4.VALUE + t5.VALUE)/1000 AS "Live Births (1000)", t1.tags.county_name AS "County"
@@ -303,17 +295,16 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
 | 17                 | MADISON        |
 | 13                 | PEORIA         |
 
-##### 1999 - 2003:
+#### 1999 - 2003
 
-````sql
+```sql
 SELECT (t1.VALUE + t2.VALUE + t3.VALUE + t4.VALUE + t5.VALUE)/1000 AS "Live Births (1000)", t1.tags.county_name AS "County"
   FROM 1999 t1 JOIN 2000 t2 JOIN 2001 t3 JOIN 2002 t4 JOIN 2003 t5
 WHERE t1.tags.county_name = t2.tags.county_name AND t1.tags.county_name NOT IN ('Chicago','Suburban Cook')
   GROUP BY t1.tags.county_name, t1.VALUE, t2.VALUE, t3.VALUE, t4.VALUE, t5.VALUE
 ORDER BY t1.VALUE DESC, t1.tags.county_name
   LIMIT 11
-````
-
+```
 
 | Live Births (1000) | County         |
 |--------------------|----------------|
@@ -329,8 +320,7 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
 | 17                 | MADISON        |
 | 13                 | PEORIA         |
 
-
-##### 2004 - 2008
+#### 2004 - 2008
 
 ```sql
 SELECT (t1.VALUE + t2.VALUE + t3.VALUE + t4.VALUE + t5.VALUE)/1000 AS "Live Births (1000)", t1.tags.county_name AS "County"
@@ -340,7 +330,6 @@ WHERE t1.tags.county_name = t2.tags.county_name AND t1.tags.county_name NOT IN (
 ORDER BY t1.VALUE DESC, t1.tags.county_name
   LIMIT 11
 ```
-
 
 | Live Births (1000) | County         |
 |--------------------|----------------|
@@ -356,10 +345,9 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
 | 17                 | MADISON        |
 | 13                 | PEORIA         |
 
-
 Information can also be collected on a desired county, for the entire period:
 
-##### Cook County Live Births (1989 - 2009)
+#### Cook County Live Births (1989 - 2009)
 
 ```sql
 SELECT DATE_FORMAT(TIME, 'yyyy') AS "Year", tags.county_name AS "County", VALUE/100000 AS "Live Births (100000)"
@@ -368,7 +356,6 @@ WHERE 'County' = 'COOK'
   GROUP BY 'County', VALUE, 'Year'
 ORDER BY 'Year'
 ```
-
 
 | Year | County | Live Births (100000) |
 |------|--------|---------------------|
@@ -394,8 +381,7 @@ ORDER BY 'Year'
 | 2008 | COOK   | 0.78                |
 | 2009 | COOK   | 0.76                |
 
-
-#### Curve Fitting
+### Curve Fitting
 
 Data points can also be collected using an SQL query.
 
@@ -408,7 +394,6 @@ WHERE 'County' = 'ILLINOIS TOTAL'
   GROUP BY 'County', VALUE, 'Year'
 ORDER BY 'Year'
 ```
-
 
 | Year | County         | Live Births (1000) |
 |------|----------------|--------------------|
@@ -434,8 +419,7 @@ ORDER BY 'Year'
 | 2008 | ILLINOIS TOTAL | 177                |
 | 2009 | ILLINOIS TOTAL | 171                |
 
-
-The data set used for modeling is as follows:
+The dataset used for modeling is as follows:
 
 | Year | X | Y |
 |------|---|---|
@@ -463,7 +447,7 @@ The data set used for modeling is as follows:
 
 Using [Fityk](http://fityk.nieto.pl/) to create a best-fit model for this data:
 
-##### Model 1
+#### Model 1
 
 ![](Images/ILL21.png)
 
@@ -479,7 +463,7 @@ Moving the window to the right estimates the total live births for years not inc
 
 Excluding the final data point from the series, which deviated significantly, creates a less extreme model:
 
-##### Model 2
+#### Model 2
 
 ![](Images/ILL23.png)
 
@@ -516,7 +500,8 @@ training data, Model 1 begins to lose effectiveness about fifteen years outside 
 underlining the importance of constantly updating and maintaining such models with new information.
 
 When updated to include the latest figures, the model looks like this:
-##### Model 3
+
+#### Model 3
 
 ![](Images/ILL25.png)
 
@@ -535,7 +520,7 @@ year 2038, but some of the older data can now be excluded, in order to reflect t
 last decade while excluding data that is two decades old and reflects the trends of a society
 that has experienced a wide array of dramatic changes:
 
-##### Model 4
+#### Model 4
 
 ![](Images/ILL27.png)
 
@@ -562,7 +547,7 @@ Using model 4 to predict United States Census numbers for the next two Censuses 
 The instability that afflicted Model 1 too far outside the training data, appears to be at work
 here as well.
 
-### Conclusions
+## Conclusions
 
 The falling Illinois birthrates have been noted by [policy groups](https://www.illinoispolicy.org/illinois-losing-1-resident-every-4-6-minutes-could-fall-behind-pennsylvania-in-population/)
 and [investment firms](https://www.illinoispolicy.org/heres-why-moodys-is-warning-of-an-illinois-death-spiral/) that have
@@ -578,9 +563,9 @@ The only true certainty is that any such modeling should be taken with a grain o
 with the understanding that such predictions are based on the continuation of current trends
 which can change quite quickly and sometimes unpredictably.
 
-### Appendix
+## Appendix
 
-#### Creating a [Dropdown Menu](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/) in [ChartLab](https://apps.axibase.com/chartlab/6402f01c)
+### Creating a [Dropdown Menu](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/) in [ChartLab](https://apps.axibase.com/chartlab/6402f01c)
 
 Using the below chart as an example:
 
@@ -594,7 +579,7 @@ The `LIST` Setting is used to declare the desired list, in this case, the variou
 years of included in the data and the [`[DROPDOWN]`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/)
 clause is used to declare the functionality of the menu itself.
 
-### Action Items
+## Action Items
 
 1. Download [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 2. Download the [`docker-compose.yml`](Resources/docker-compose.yml) file to launch the ATSD container bundle.

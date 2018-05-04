@@ -1,9 +1,8 @@
+# Norway: Electric Vehicles Close the Gap with Diesel in 2016
+
 ![TitlePhoto](Images/TitlePhoto.png)
 
-Norway: Electric Vehicles Close the Gap with Diesel in 2016.
-==============
-
-The Norway's central statistical agency, [SSB](https://www.ssb.no/statistikkbanken/selecttable/hovedtabellHjem.asp?KortNavnWeb=bilreg&CMSSubjectArea=transport-og-reiseliv&PLanguage=1&checked=true), released its annual car registration statistics on March 28, 2017. While the key trends such as the rotation out of gasoline models were still in place, the dataset delivered a few surprises.
+Norway's central statistical agency, [SSB](https://www.ssb.no/statistikkbanken/selecttable/hovedtabellHjem.asp?KortNavnWeb=bilreg&CMSSubjectArea=transport-og-reiseliv&PLanguage=1&checked=true), released its annual car registration statistics on March 28, 2017. While the key trends such as the rotation out of gasoline models were still in place, the dataset delivered a few surprises.
 
 * The electric vehicles (EVs) continued to gain ground however the pace of growth has slowed down. The installed base of EVs reached **100K** units, the annual increase was 29179 vehicles compared to 31271 vehicles in 2015.
 * The unit growth of the EV installed base is getting closer to being on par with the diesel segment: 29179/42824 or **68%** in 2016 versus 31271/64708 or **48%** in 2015.
@@ -12,7 +11,7 @@ The Norway's central statistical agency, [SSB](https://www.ssb.no/statistikkbank
 
 ---
 
-### Total Registered Vehicles
+## Total Registered Vehicles
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year",
@@ -24,7 +23,6 @@ FROM nor.registered_vehicles
   GROUP BY time
 ```
 
-```ls
 | Year | Vehicles | Change | Change, % |
 |------|----------|--------|-----------|
 | 2008 | 3352344  | null   | null      |
@@ -36,11 +34,10 @@ FROM nor.registered_vehicles
 | 2014 | 3817783  | 70294  | 1.9       |
 | 2015 | 3894267  | 76484  | 2         |
 | 2016 | 3969612  | 75345  | 1.9       |
-```
 
 ---
 
-### Registered Electric Vehicles
+## Registered Electric Vehicles
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year",
@@ -56,7 +53,6 @@ ORDER BY time
 
 * Electricity
 
-```ls
 | Year | Electric Vehicles | Change | Change, % |
 |------|-------------------|--------|-----------|
 | 2008 | 2834              | null   | null      |
@@ -68,11 +64,9 @@ ORDER BY time
 | 2014 | 42467             | 21455  | 102.1     |
 | 2015 | 73738             | 31271  | 73.6      |
 | 2016 | 102917            | 29179  | 39.6      |
-```
 
 * Diesel
 
-```ls
 | Year | Diesel Vehicles | Change | Change, % |
 |------|-----------------|--------|-----------|
 | 2008 | 1288795         | null   | null      |
@@ -84,11 +78,10 @@ ORDER BY time
 | 2014 | 1946693         | 83506  | 4.5       |
 | 2015 | 2011401         | 64708  | 3.3       |
 | 2016 | 2054225         | 42824  | 2.1       |
-```
 
 ---
 
-### Total Vehicle Registrations by Fuel Type
+## Total Vehicle Registrations by Fuel Type
 
 ![](Images/chart-total.png)
 
@@ -96,7 +89,7 @@ ORDER BY time
 
 ---
 
-### Installed Base Changes by Make over a 5-year period
+## Installed Base Changes by Make over a 5-year period
 
 ![](Images/chart-winner-losers.png)
 
@@ -104,8 +97,7 @@ ORDER BY time
 
 ---
 
-### Tesla Motors Performance
-
+## Tesla Motors Performance
 
 ![](Images/chart-tesla.png)
 
@@ -140,25 +132,25 @@ look at the statistics by following the below steps to install your own [Axibase
     ORDER BY datetime
   ```
 
-8. Execute SQL queries for `nor.registered_vehicles` and `nor.registered_vehicles_by_make` to analyze statistics in tabular format using [SQL](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) syntax implemented in ATSD.
-9. Create new [visualizations](https://axibase.com/products/axibase-time-series-database/visualization/) on **Configuration > Portals** page using chart configurations from the ChartLab examples above.
+* Execute SQL queries for `nor.registered_vehicles` and `nor.registered_vehicles_by_make` to analyze statistics in tabular format using [SQL](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) syntax implemented in ATSD.
+* Create new [visualizations](https://axibase.com/products/axibase-time-series-database/visualization/) on **Configuration > Portals** page using chart configurations from the ChartLab examples above.
 
 > Feel free to contact us with installation and technical support issues via the [feedback](https://axibase.com/feedback/) form.
 
-----
+---
 
 ### Exporting data from StatBank
 
 1. Registered motor vehicles, by type of transport and type of fuel (M).
-  - Configuration Form: [link](https://www.ssb.no/statistikkbanken/selectvarval/Define.asp?subjectcode=&ProductId=&MainTable=RegKjoretoy2&nvl=&PLanguage=1&nyTmpVar=true&CMSSubjectArea=transport-og-reiseliv&KortNavnWeb=bilreg&StatVariant=&checked=true)
-  - Format: Matrix TSV
-  - Summation: by Contents
+* Configuration Form: [link](https://www.ssb.no/statistikkbanken/selectvarval/Define.asp?subjectcode=&ProductId=&MainTable=RegKjoretoy2&nvl=&PLanguage=1&nyTmpVar=true&CMSSubjectArea=transport-og-reiseliv&KortNavnWeb=bilreg&StatVariant=&checked=true)
+  * Format: Matrix TSV
+  * Summation: by Contents
 
   ![TitlePhoto](Images/table-total.png)
 
-2. Registered vehicles, by type of vehicle and trade mark (M).
+1. Registered vehicles, by type of vehicle and trade mark (M).
 
-  * Configuration Form: [link](https://www.ssb.no/statistikkbanken/selectvarval/Define.asp?subjectcode=&ProductId=&MainTable=RegKjoretoy&nvl=&PLanguage=1&nyTmpVar=true&CMSSubjectArea=transport-og-reiseliv&KortNavnWeb=bilreg&StatVariant=&checked=true)
+* Configuration Form: [link](https://www.ssb.no/statistikkbanken/selectvarval/Define.asp?subjectcode=&ProductId=&MainTable=RegKjoretoy&nvl=&PLanguage=1&nyTmpVar=true&CMSSubjectArea=transport-og-reiseliv&KortNavnWeb=bilreg&StatVariant=&checked=true)
   * Format: Matrix TSV
 
   ![TitlePhoto](Images/table-by-make.png)

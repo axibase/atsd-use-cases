@@ -31,7 +31,7 @@ Data is visualized using **TRENDS** service from Axibase, a public data reposito
 
 ## Visualization
 
-**Working Population as a Portion of Total Population**
+### Working Population as a Portion of Total Population
 
 Open the TRENDS visualization and use the drop-down menu to navigate through time to compare working-aged population to the United States total population.
 
@@ -40,7 +40,7 @@ Open the TRENDS visualization and use the drop-down menu to navigate through tim
 
 *Fig 2.*: The portion of the population eligible for work (aged between 15 and 64) is shown in purple, while the remaining ineligible population is shown in red.
 
-**Births per 1000 / Population Over 65**
+### Births per 1000 / Population Over 65
 
 The upper histogram plots the frequency of each value of annual crude births per one thousand persons and the lower histogram tracks the 65+ population in percentile terms. Deceptively, the data seems to show that the average amount of births outperforms the aging population, but when scaled to 100, in fact, the aged population severely outnumbers the amount of crude births which are occurring.
 
@@ -49,7 +49,7 @@ The upper histogram plots the frequency of each value of annual crude births per
 
 *Fig 3.*: Open the TRENDS visualization and modify the number of bars in either histogram using a [`bar-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/#tab-id-1) setting for more granularized data visualization.
 
-**Diminishing Working Population**
+### Diminishing Working Population
 
 Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized. This setting is shown here.
 

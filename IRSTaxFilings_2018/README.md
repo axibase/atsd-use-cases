@@ -27,9 +27,9 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 
 *Fig 1.* Tax filing data for the 2017 and 2018 superimposed over previous-year data.
 
-**Configuration Settings:**
+Configuration Settings:
 
-*Configuration has been shortened to include only relevant settings for brevity, open ChartLab visualization to view the entire configuration.*
+Configuration has been shortened to include only relevant settings for brevity, open ChartLab visualization to view the entire configuration.
 
 ```sql
 [configuration]
@@ -58,7 +58,7 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
      color = #d00
 ```
 
-**Configuration Features:**
+Configuration Features:
 
 * `disconnect-interval`: data with missing points, or gaps in the time series, are highlighted by specifying a user-defined data gap. Compare this [example](https://apps.axibase.com/chartlab/8234982b) which features a `disconnect-interval` setting to [this one](https://apps.axibase.com/chartlab/2f06ecee) where the setting is disabled, or [here](https://apps.axibase.com/chartlab/bb9e34e8) where the `disconnect-value` setting has been given a non-zero value.
 
@@ -73,9 +73,9 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 
 *Fig 2.* The same data displayed with different settings.
 
-**Configuration Settings:**
+Configuration Settings:
 
-*Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.*
+Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.
 
 ```sql
 [widget]
@@ -104,12 +104,11 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 
 *Fig 3.* Average filing numbers for the entire observed period show that the total number of Americans filing a tax return has diminished in recent years.
 
-**Configuration Settings:**
+Configuration Settings:
 
-*Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.*
+Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.
 
 ```sql
-
 [widget]
   type = box
   title = Individual Income Tax Returns Received: 2018 compared to prior years
@@ -119,7 +118,7 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
   for ofs in offsets
 ```
 
-**Configuration Features:**
+Configuration Features:
 
 * `type`: a variety of visualization widgets are available in ChartLab, see the full list [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
 * `range(y,x)`: in order to show chronological data, a reverse-ordered range setting may be used where the more recent parameter is the second argument instead of the first as seen above.
@@ -131,9 +130,9 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 
 *Fig 4.* A histogram shows the distribution of values for the given datasets. Assuming all series were equally-distributed the slope of the stacked boxes should be zero.
 
-**Configuration Settings:**
+Configuration Settings:
 
-*Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.*
+Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.
 
 ```sql
 [widget]
@@ -144,7 +143,7 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
   percentiles = 20, 40, 60, 80, 99
 ```
 
-**Configuration Features:**
+Configuration Features:
 
 * [`percentiles`](https://apps.axibase.com/chartlab/7f906511/7/): the percentile range for each bar may be set to a user-configured value when observing irregular series. Here, percentile values are `20, 40, 60, 80, 99`.
 * `bar-count`: modify the number of bars displayed in the visualization.
@@ -162,7 +161,7 @@ The following queries will be shown here:
 
 Here, the query will return the number of filed tax returns for the same calendar day (March 30) each year.
 
-**Query:**
+Query:
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year",
@@ -178,14 +177,13 @@ WHERE tags.section = 'Individual Income Tax Returns' AND tags.type = 'Total Retu
 ORDER BY date_format(time, 'MM-dd')
 ```
 
-**Syntax Features:**
+Syntax Features:
 
 * [`date_format`](https://github.com/axibase/atsd/blob/master/sql/README.md#date-functions): date function which converts Unix millisecond time to a user-defined format.
 * [`LAG(columnName)`](https://github.com/axibase/atsd/blob/master/sql/README.md#lag): value function which returns the previous data point for the selected column. Very useful for time-on-time comparisons such as the one shown here.
 * [`INTERPOLATE(period)`](https://github.com/axibase/atsd/blob/master/sql/README.md#functions): value function which is used to fill gaps for irregular series. Used in this example to regularize data which has a timestamp other than the observed date.
 
-**Result:**
-
+Result:
 
 | Year | Date   | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % |
 |------|--------|----------------|----------------|-----------------|---------------|
@@ -198,12 +196,11 @@ ORDER BY date_format(time, 'MM-dd')
 | 2017 | Mar-30 | 92.47          | 95.28          | -2.81           | -2.95         |
 | 2018 | Mar-30 | 94.14          | 92.47          | 1.67            | 1.80          |
 
-
 #### Year-on-year change based on calendar index position
 
 Here, the query will return the number of filed tax returns for the same calendar index position. Calendar years with unequal number of days (leap years) will have different index positions for the same day.
 
-**Query:**
+Query:
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year",
@@ -220,11 +217,11 @@ WHERE tags.section = 'Individual Income Tax Returns' AND tags.type = 'Total Retu
 ORDER BY "Day in Year", time
 ```
 
-**Syntax Features:**
+Syntax Features:
+
 * [`CAST`](https://github.com/axibase/atsd/blob/master/sql/README.md#cast): value function which changes a number into a string or vice versa. Time values are cast as numbers so they may be interpolated.
 
 **Result:**
-
 
 | Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % |
 |------|--------|-------------|----------------|----------------|-----------------|---------------|
@@ -236,7 +233,6 @@ ORDER BY "Day in Year", time
 | 2016 | Mar-29 | 89.00       | 94.11          | 94.03          | 0.08            | 0.09          |
 | 2017 | Mar-30 | 89.00       | 92.47          | 94.11          | -1.64           | -1.74         |
 | 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          |
-
 
 SQL console supports the [`ROUND`](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
 

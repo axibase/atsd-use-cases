@@ -1,9 +1,8 @@
-Analyzing Econometric Datasets with Calculated Series
-===
+# Analyzing Econometric Datasets with Calculated Series
 
 ![](images/FRED_logo.jpg)
 
-### Summary
+## Summary
 
 Using [calculated values](../../Support/Add-Calculated-Value/README.md) in the [ChartLab](https://apps.axibase.com/chartlab) interface
 is useful for creating multiple outputs from one set of underlying data. [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
@@ -14,7 +13,7 @@ open-access platform for analyzing the data collected and published by the Feder
 by FRED is the **CPIAUCSL** - [Consumer Price Index](https://fred.stlouisfed.org/series/CPIAUCSL#0), shortened as CPI. The Consumer Price
 Index is used to track inflation by measuring the costs of goods relative to some year.
 
-### Problem Brief
+## Problem Brief
 
 Using a number of functions supported in the ChartLab interface, the [following visualization](https://fred.stlouisfed.org/series/CPIAUCSL#0)
 can be replicated in ATSD. Explore the FRED visualization with the _EDIT GRAPH_ button by selecting the desired
@@ -34,13 +33,13 @@ FRED interface is shown below:
 
 * Modify any sub-features of the transformation necessary for the required output.
 
-### Solution
+## Solution
 
 A side-by-side comparison of each feature of the Consumer Price Index transformation is shown below, as well as links to the accompanying
 visualizations. Because ATSD supports storing historical data from the year 1970 onward while the Federal Reserve tracks
 data from 1947 onward, small scale differences are expected in the outputs of each graph.
 
-#### Index
+## Index
 
 * [Consumer Price Index](#consumer-price-index)
 * [Monthly Change](#monthly-change)
@@ -54,7 +53,7 @@ data from 1947 onward, small scale differences are expected in the outputs of ea
 * [Natural Logarithm of CPI](#natural-logarithm-of-cpi)
 * [Max Index](#max-index)
 
-#### Consumer Price Index
+### Consumer Price Index
 
 The Consumer Price Index is one of the most relevant metrics used to calculate the rate and severity of inflation.
 
@@ -72,7 +71,7 @@ The Consumer Price Index is one of the most relevant metrics used to calculate t
 
 Return to the [Index](#index)
 
-#### CPI Calculated from a Variable Baseline
+### CPI Calculated from a Variable Baseline
 
 The index is the year used as a baseline for all other years' values. Years which showed an increase in the cost of consumer
 goods will therefore be greater than 100.00 while years which saw deflation in the cost of consumer goods will be less than
@@ -93,7 +92,7 @@ goods will therefore be greater than 100.00 while years which saw deflation in t
 > In ChartLab, use the dropdown menu at the top of the visualization to select the year to be used as a baseline, or hardcode
 a year not included in the dropdown by modifying one of the dates in the `keyDates` list.
 
-**Key Components of This Visualization**:
+Key Components of This Visualization:
 
 > Open the ChartLab visualization shown above and view the Editor window to see these features of the chart.
 
@@ -110,8 +109,7 @@ list keyDates = 1970-11-01,
 endlist
 ```
 
-* These dates are fed into the dropdown menu which represent the official start dates of several recessions throughout U.S.
-history. The syntax for this chart's dropdown menu is shown below:
+* These dates are fed into the dropdown menu which represent the official start dates of several recessions throughout U.S. history. The syntax for this chart's dropdown menu is shown below:
 
 ```ls
   [dropdown]
@@ -130,17 +128,13 @@ baseline value, and the `value` equation contained in the `[option]` portion of 
 a simple formula to establish the new index. The `on-change` setting defines this newly calculated series, and is explained
 piecewise below:
 
-* `widget.config.series[0]` selects the series to be replaced. Series are indexed beginning with 0 and increasing by a single
-step for each additional series (0,1,2,3....). There is only one underlying series in this visualization.
-* `value = this.value` assigns a user-defined value, that is, the option selected in the dropdown menu, as the value for
-the series defined in the the `widget.config` portion of the script. `this` defines the specific object to be modified, in this
-case the dropdown menu.
-* `widget.replaceSeries(widget.config.series)` replaces the underlying values of the original series defined as a parameter
-of the function, with the newly calculated values defined in the `[option]` setting.
+* `widget.config.series[0]` selects the series to be replaced. Series are indexed beginning with 0 and increasing by a single step for each additional series (0,1,2,3....). There is only one underlying series in this visualization.
+* `value = this.value` assigns a user-defined value, that is, the option selected in the dropdown menu, as the value for the series defined in the the `widget.config` portion of the script. `this` defines the specific object to be modified, in this case the dropdown menu.
+* `widget.replaceSeries(widget.config.series)` replaces the underlying values of the original series defined as a parameter of the function, with the newly calculated values defined in the `[option]` setting.
 
 Return to the [Index](#index)
 
-#### Monthly Change
+### Monthly Change
 
 The monthly numerical change in CPI value over the observed period.
 
@@ -156,7 +150,7 @@ The monthly numerical change in CPI value over the observed period.
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/5267b4a7/2/#fullscreen)
 
-**Underlying Formula**:
+Underlying Formula:
 
 ```javascript
 value = delta("cpi", "1 month")
@@ -166,7 +160,7 @@ value = delta("cpi", "1 month")
 
 Return to the [Index](#index)
 
-#### Change From a Year Ago
+### Change From a Year Ago
 
 The numerical change in CPI value from the same month of the previous year.
 
@@ -182,19 +176,17 @@ The numerical change in CPI value from the same month of the previous year.
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/5267b4a7/#fullscreen)
 
-**Underlying Formula**:
+Underlying Formula:
 
 ```javascript
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p != null && v != null) return v - p;
 ```
 
-* This setting uses a second underlying series which is not enabled, to select values of the Consumer Price Index from one year
-ago using a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting,
-and comparing them to the current year's values.
+* This setting uses a second underlying series which is not enabled, to select values of the Consumer Price Index from one year ago using a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting,and comparing them to the current year's values.
 
 Return to the [Index](#index)
 
-#### Monthly Percent Change
+### Monthly Percent Change
 
 The monthly percentile change in CPI value over the entire observed period.
 
@@ -210,17 +202,17 @@ The monthly percentile change in CPI value over the entire observed period.
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/ab06efab/#fullscreen)
 
-**Underlying Formula**:
+Underlying Formula:
 
 ```javascript
 value = (value("cpi") / previous("cpi") - 1) * 100
 ```
 
-* This setting uses the newly-supported [`previous()`](https://github.com/axibase/charts/blob/master/syntax/functions.md) function
+* This setting uses the newly-supported [`previous()`](https://github.com/axibase/charts/blob/master/syntax/functions.md) function.
 
 Return to the [Index](#index)
 
-#### Monthly Percent Change From a Year Ago
+### Monthly Percent Change From a Year Ago
 
 The percentile change in CPI from the same month of the previous year.
 
@@ -236,7 +228,7 @@ The percentile change in CPI from the same month of the previous year.
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/4f192b00/#fullscreen)
 
-**Underlying Formula**:
+Underlying Formula:
 
 ```javascript
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return (v / p - 1) * 100
@@ -244,7 +236,7 @@ value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) 
 
 Return to the [Index](#index)
 
-#### Compounded Annual Rate of Change
+### Compounded Annual Rate of Change
 
 The mean annual rate of change for the Consumer Price Index.
 
@@ -260,7 +252,7 @@ The mean annual rate of change for the Consumer Price Index.
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/f6fee48e/#fullscreen)
 
-**Underlying Formula**:
+Underlying Formula:
 
 ```javascript
 value = (Math.pow(( value("cpi") / previous("cpi") ), 12) - 1) * 100
@@ -270,7 +262,7 @@ value = (Math.pow(( value("cpi") / previous("cpi") ), 12) - 1) * 100
 
 Return to the [Index](#index)
 
-#### Continuously Compounded Rate of Change
+### Continuously Compounded Rate of Change
 
 The mean rate of change for the Consumer Price Index compounded continuously.
 
@@ -286,7 +278,7 @@ The mean rate of change for the Consumer Price Index compounded continuously.
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/cae3b970/#fullscreen)
 
-**Underlying Formula**:
+Underlying Formula:
 
 ```javascript
 value = ( Math.log(value("cpi")) - Math.log(previous("cpi")) ) * 100
@@ -294,7 +286,7 @@ value = ( Math.log(value("cpi")) - Math.log(previous("cpi")) ) * 100
 
 Return to the [Index](#index)
 
-#### Continuously Compounded Annual Rate of Change
+### Continuously Compounded Annual Rate of Change
 
  The annual rate of change compounded continuously for the observed period.
 
@@ -310,7 +302,7 @@ Return to the [Index](#index)
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/225e74f9/#fullscreen)
 
-**Underlying Formula**:
+Underlying Formula:
 
 ```javascript
 value = ( Math.log(value("cpi")) - Math.log(previous("cpi")) ) * 100 * 12
@@ -318,7 +310,7 @@ value = ( Math.log(value("cpi")) - Math.log(previous("cpi")) ) * 100 * 12
 
 Return to the [Index](#index)
 
-#### Natural Logarithm of CPI
+### Natural Logarithm of CPI
 
 Each value's logarithm to base of the mathematical constant _e_
 
@@ -334,7 +326,7 @@ Each value's logarithm to base of the mathematical constant _e_
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/d2ced747/#fullscreen)
 
- **Underlying Formula**:
+ Underlying Formula:
 
 ```javascript
 value = Math.log(value("cpi"))
@@ -342,7 +334,7 @@ value = Math.log(value("cpi"))
 
 Return to the [Index](#index)
 
-#### Max Index
+### Max Index
 
 Indexes the Consumer Price Index by its maximum and most recent value.
 
@@ -356,7 +348,7 @@ Indexes the Consumer Price Index by its maximum and most recent value.
 
 ![](images/cpi11.png)
 
-**Underlying Formula**:
+Underlying Formula:
 
 ```javascript
 value = value("cpi") / value("cpi_max") * 100 || null
@@ -364,7 +356,7 @@ value = value("cpi") / value("cpi_max") * 100 || null
 
 Return to the [Index](#index)
 
-### Summary
+## Conclusion
 
 These visualizations demonstrate the capabilities of the ChartLab interface which uses declarative syntax to create derived series.
 Any of these formulas or settings can be applied to any time series dataset in order to enable customizable transformations

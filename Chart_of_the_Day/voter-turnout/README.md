@@ -1,13 +1,12 @@
-United States Voter Turnout Since 1970
-===
+# United States Voter Turnout Since 1970
 
 ![](Images/vote1.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/499e5c3b/#fullscreen)
 
-> Data Source: [The Institute for Democracy and Electoral Assistance](http://www.idea.int/data-tools/question-countries-view/521/295/ctr)
+* Data Source: [The Institute for Democracy and Electoral Assistance](http://www.idea.int/data-tools/question-countries-view/521/295/ctr)
 
-> Visualization Tool: [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+* Visualization Tool: [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 One of the key indicators of a healthy democracy is active participation by its citizenry, who are responsible for electing
 officials to implement the will of the people. Tracking this data since the 1970 elections shows a steadily decreasing voter
@@ -35,4 +34,3 @@ rates:
 | 1980 | Jimmy Carter (D) <br> John B. Anderson (I) <br> Ronald Reagan (R) | Ronald Reagan |
 | 1976 | Gerald Ford (R) <br> Jimmy Carter (D) <br> | Jimmy Carter |
 | 1972 | George McGovern (D) <br> Richard Nixon (R) | Richard Nixon |
-

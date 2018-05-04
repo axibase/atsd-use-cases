@@ -1,5 +1,4 @@
-United States Dollar International Exchange Rate (2012-2017)
-===
+# United States Dollar International Exchange Rate (2012-2017)
 
 Data Source: [Federal Reserve Economic Data (FRED)](https://fred.stlouisfed.org/categories/94)
 
@@ -35,14 +34,12 @@ favorable while the lower 25th percentile is considered less than favorable. The
 
 ## Europe
 
-#### USD v. Euro
+### USD v. Euro
 
 As the amount of debt carried by various EU member countries grew to increasingly worrisome heights, the Euro plunged in 2015
 losing ground against the dollar. Further, as oil prices slumped the European Central Bank began to compensate by launching a
 program of government bond purchases. The combination of these factors and the growth of the dollar post-recession have all
 contributed to the currently favorable exchange rate enjoyed by the dollar.
-
-**Query 1.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
@@ -50,9 +47,6 @@ SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
 GROUP BY PERIOD(1 YEAR)
 ```
 
-**Table 1.1**
-
-```ls
 | Date | Average Value |
 |------|---------------|
 | 2012 | 1.28          |
@@ -61,19 +55,16 @@ GROUP BY PERIOD(1 YEAR)
 | 2015 | 1.11          |
 | 2016 | 1.11          |
 | 2017 | 1.09          |
-```
-
-**Figure 1.1**
 
 ![](Images/de-01.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/5/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
-#### USD v. Swiss Franc
+### USD v. Swiss Franc
 
 During the worst of the [European Debt Crisis](../EU_Debt/README.md) which saw [European Union per capita debt](../EU_Debt_percap/README.md)
 grow at unprecedented rates across the continent, EU investors sought refuge in the stability of the Swiss Franc, backed by the
@@ -81,17 +72,12 @@ world-renowned Swiss banking system. Further, the Swiss National Bank removed th
 surge in 2015, clearly visible in the visualization below as a sudden change from a favorable exchange rate for dollar holders
 to an all-time low for the observed time period.
 
-**Query 1.2**
-
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
   FROM dexszus
 GROUP BY PERIOD(1 YEAR)
 ```
 
-**Table 1.2**
-
-```ls
 | Date | Average Value |
 |------|---------------|
 | 2012 | 0.94          |
@@ -100,24 +86,19 @@ GROUP BY PERIOD(1 YEAR)
 | 2015 | 0.96          |
 | 2016 | 0.98          |
 | 2017 | 0.99          |
-```
-
-**Figure 1.2**
 
 ![](Images/de-02.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/9/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
-#### USD v. Great British Pound
+### USD v. Great British Pound
 
 Largely influenced by the divisive Brexit vote, the value of the Pound has remained relatively low since the referendum in
 late June of 2016, which aligns perfectly with the Pound's slight depreciation in value against the dollar on the chart below.
-
-**Query 1.3**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
@@ -125,9 +106,6 @@ SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
 GROUP BY PERIOD(1 YEAR)
 ```
 
-**Table 1.3**
-
-```ls
 | Date | Average Value |
 |------|---------------|
 | 2012 | 1.60          |
@@ -136,23 +114,20 @@ GROUP BY PERIOD(1 YEAR)
 | 2015 | 1.53          |
 | 2016 | 1.36          |
 | 2017 | 1.27          |
-```
 
 > Average Exchange Rate: 1.50
-
-**Figure 1.3**
 
 ![](Images/de-03.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/6/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
 ## Asia
 
-#### USD v. Japanese Yen
+### USD v. Japanese Yen
 
 After purchasing trillions of Yen worth of Japanese national debt from the private sector three years ago, the Central Bank
 of Japan has been watching the gradual decrease in value of the Yen against the dollar. Most analysts, see this
@@ -161,17 +136,12 @@ than they already have. However, the Yen's rise much also be managed as the sudd
 an increase in loan defaults because industries which have taken loans at current Yen prices would be paying them back at a
 much higher rate.
 
-**Query 2.1**
-
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
   FROM dexjpus
 GROUP BY PERIOD(1 YEAR)
 ```
 
-**Table 2.1**
-
-```ls
 | Date | Average Value |
 |------|---------------|
 | 2012 | 80.05         |
@@ -180,26 +150,21 @@ GROUP BY PERIOD(1 YEAR)
 | 2015 | 121.05        |
 | 2016 | 108.66        |
 | 2017 | 112.33        |
-```
-
-**Figure 2.1**
 
 ![](Images/de-041.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/4/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
-#### USD v. Chinese Yuan
+### USD v. Chinese Yuan
 
 To prevent dramatic internal inflation, the People's Bank of China closely regulates local, or onshore, trading of the Yuan
 by fixing the price each day. Although independent officially, the international, or offshore, price of the Yuan usually
 remains fairly close to its onshore value. Additionally, the PBoC carefully controls the outflow of capital and often hedges
 their own currency by maintaining positions in international currencies.
-
-**Query 2.2**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
@@ -207,9 +172,6 @@ SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
 GROUP BY PERIOD(1 YEAR)
 ```
 
-**Table 2.2**
-
-```ls
 | Date | Average Value |
 |------|---------------|
 | 2012 | 6.28          |
@@ -218,24 +180,19 @@ GROUP BY PERIOD(1 YEAR)
 | 2015 | 6.28          |
 | 2016 | 6.64          |
 | 2017 | 6.86          |
-```
-
-**Figure 2.2**
 
 ![](Images/de-05.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/2/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
-#### USD v. Hong Kong Dollar
+### USD v. Hong Kong Dollar
 
 The Hong Kong Dollar is officially pegged to the value of the United States Dollar so any change in relative
 value is planned. The "Miracle of the Orient" continues to be one of the most dominant financial markets in the world.
-
-**Query 2.3**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
@@ -243,9 +200,6 @@ SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
 GROUP BY PERIOD(1 YEAR)
 ```
 
-**Table 2.3**
-
-```ls
 | Date | Average Value |
 |------|---------------|
 | 2012 | 7.75          |
@@ -254,26 +208,21 @@ GROUP BY PERIOD(1 YEAR)
 | 2015 | 7.75          |
 | 2016 | 7.76          |
 | 2017 | 7.78          |
-```
-
-**Figure 2.3**
 
 ![](Images/de-06.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/3/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
-#### USD v. Singapore Dollar
+### USD v. Singapore Dollar
 
 One of the financial centers of the world, Singapore is home to the second-busiest port in the world and one of the largest
 oil refining industries worldwide as well. With one of the highest per capita GDP values, Singapore has cemented its
 place of international importance despite inexplicably loose financial policy whereby the Monetary Authority of Singapore
 does not regulate their currency's value by adjusting interest rates, as is common with most central banking systems.
-
-**Query 2.4**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
@@ -281,9 +230,6 @@ SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
 GROUP BY PERIOD(1 YEAR)
 ```
 
-**Table 2.4**
-
-```ls
 | Date | Average Value |
 |------|---------------|
 | 2012 | 1.23          |
@@ -292,27 +238,22 @@ GROUP BY PERIOD(1 YEAR)
 | 2015 | 1.37          |
 | 2016 | 1.38          |
 | 2017 | 1.40          |
-```
-
-**Figure 2.4**
 
 ![](Images/de-07.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/8/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
 ## North America
 
-#### USD v. Canadian Dollar
+### USD v. Canadian Dollar
 
 Relative to the USD, the Canadian dollar has been making a bit of a resurgence in 2017 as United States GDP numbers missed
 its targets in quarter two. Although dependent on the price of oil due to their large natural reserves, the diverse Canadian
 economy is one of the few globally-active nations with a significant trade surplus, although that too have been reduced in recent years.
-
-**Query 3.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
@@ -320,9 +261,6 @@ SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
 GROUP BY PERIOD(1 YEAR)
 ```
 
-**Table 3.1**
-
-```ls
 | Date | Average Value |
 |------|---------------|
 | 2012 | 0.99          |
@@ -331,19 +269,16 @@ GROUP BY PERIOD(1 YEAR)
 | 2015 | 1.28          |
 | 2016 | 1.32          |
 | 2017 | 1.33          |
-```
-
-**Figure 3.1**
 
 ![](Images/de-08.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)
 
-#### USD v. Mexican Peso
+### USD v. Mexican Peso
 
 Boasting the highest per capita income of Latin America, the Mexican economy has continued to demonstrate healthy growth over
 the last several decades. North America's number one producer of automobiles also enjoys a $46 billion trade surplus with the
@@ -352,17 +287,12 @@ ability to spur dramatic internal growth that has led to the creation of a boomi
 certain amount of reliance on the United States as roughly half of the country's imports and exports originate or end up
 on U.S. soil.
 
-**Query 3.2**
-
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
   FROM dexmxus
 GROUP BY PERIOD(1 YEAR)
 ```
 
-**Table 3.2**
-
-```ls
 | Date | Average Value |
 |------|---------------|
 | 2012 | 13.00         |
@@ -371,14 +301,11 @@ GROUP BY PERIOD(1 YEAR)
 | 2015 | 15.87         |
 | 2016 | 18.67         |
 | 2017 | 19.18         |
-```
-
-**Figure 3.2**
 
 ![](Images/de-09.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/7/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different country's currency.
 
 > Return to the [Index](#index)

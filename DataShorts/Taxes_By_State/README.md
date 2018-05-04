@@ -1,13 +1,10 @@
-Tax Rates by State: Corporate, Individual, Sales (2017)
-==
+# Tax Rates by State: Corporate, Individual, Sales (2017)
 
->Visualization and analysis tools from [Axibase](https://axibase.com)
+Visualization and analysis tools from [Axibase](https://axibase.com)
 
->Source: [State of Maryland](https://github.com/axibase/open-data-catalog/blob/master/datasets/t833-r94z.md)
+Source: [State of Maryland](https://github.com/axibase/open-data-catalog/blob/master/datasets/t833-r94z.md)
 
-#### State Level Individual Income Tax Rate
-
-**Figure 1.1**
+## State Level Individual Income Tax Rate
 
 ![](Images/Taxes_1.png)
 
@@ -19,9 +16,7 @@ SELECT tags.state AS "State", value AS "Individual Income Tax Rate (%)"
 GROUP BY 'State', value
   ORDER BY value desc
 ```
-**Table 1.1**
 
-```ls
 | State           | Individual Income Tax Rate (%) |
 |-----------------|--------------------------------|
 | California      | 13.30                          |
@@ -75,11 +70,8 @@ GROUP BY 'State', value
 | Nevada          | 0.00                           |
 | Texas           | 0.00                           |
 | Alaska          | 0.00                           |
-```
 
-#### State Level Corporate Income Tax Rate
-
-**Figure 2.1**
+## State Level Corporate Income Tax Rate
 
 ![](Images/Taxes_2.png)
 
@@ -92,9 +84,6 @@ GROUP BY 'State', value
   ORDER BY value desc
 ```
 
-**Table 2.1**
-
-```ls
 | State           | Corporate Income Tax Rate (%) |
 |-----------------|-------------------------------|
 | Iowa            | 12.00                         |
@@ -148,11 +137,8 @@ GROUP BY 'State', value
 | South Dakota    | 0.00                          |
 | Nevada          | 0.00                          |
 | Texas           | 0.00                          |
-```
 
-##### State Level Sales Tax Rate
-
-**Figure 3.1**
+## State Level Sales Tax Rate
 
 ![](Images/Taxes_3.png)
 
@@ -165,9 +151,6 @@ GROUP BY 'State', value
   ORDER BY value desc
 ```
 
-**Figure 3.1**
-
-```ls
 | State           | Sales Tax Rate (%) |
 |-----------------|--------------------|
 | California      | 7.25               |
@@ -221,12 +204,10 @@ GROUP BY 'State', value
 | Montana         | 0.00               |
 | Alaska          | 0.00               |
 | New Hampshire   | 0.00               |
-```
 
-#### State and Local Tax Revenue Expressed as a Percent of the Average Income
+## State and Local Tax Revenue Expressed as a Percent of the Average Income
+
 > This is the percent of their income the average filer in a given state can expect to pay out through state and local taxes.
-
-**Figure 4.1**
 
 ![](Images/Taxes_4.png)
 
@@ -234,14 +215,11 @@ GROUP BY 'State', value
 
 ```sql
 SELECT tags.state AS "State", value AS "Total Tax Rate (%)"
-  FROM 	state_local_tax_revenue_perc_income
+  FROM state_local_tax_revenue_perc_income
 GROUP BY 'State', value
   ORDER BY value desc
 ```
 
-**Table 4.1**
-
-```ls
 | State           | Total Tax Rate (%) |
 |-----------------|--------------------|
 | North Dakota    | 17.90              |
@@ -295,7 +273,6 @@ GROUP BY 'State', value
 | Florida         | 8.30               |
 | South Dakota    | 8.30               |
 | Tennessee       | 8.00               |
-```
 
 >Any of these tables or charts can be freely reproduced without the express permission of the author.
 

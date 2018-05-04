@@ -1,7 +1,6 @@
-Curve Smoothing Using Moving Averages
-==
+# Curve Smoothing Using Moving Averages
 
-### Problem Overview
+## Problem Overview
 
 Working with highly-granularized data presents a number of unique challenges to the entire range of data users. Sometimes
 the data is stored incorrectly, creating the need for [modification upon import](../Schema-Parser-Mod-Pre-Import/README.md),
@@ -23,7 +22,7 @@ four decades worth of data would be regarded equally.
 Enter [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
 setting.
 
-### Data
+## Data
 
 The tonnage dataset is visualized below. Because of the differences in the ranges of the data, it has been split into two charts so that the high level
 of variance is visible for each metric:
@@ -61,8 +60,6 @@ The syntax required to modify the dataset to reflect the moving average is two p
 the `[widget]` field to modify all available series, or placed under an individual `[series]` field to modify only one desired
 series.
 
-**Setting 1**
-
 ```sql
   statistic = wtavg
   period = 1 year
@@ -74,7 +71,7 @@ per selected period. Additionally, this type of ad-hoc modification does nothing
 to at any time. Read detailed documentation about the `wtavg` setting as well as other supported aggregation functions
 [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/).
 
-### Implementation
+## Implementation
 
 Applying the moving, or weighted, average to **Figures 1.1** and **1.2** is shown below:
 
@@ -102,7 +99,7 @@ produces the following:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/897c0429/#fullscreen)
 
-**Scale Modification**:
+Scale Modification:
 
 ```javascript
 enplanements = value/100
@@ -114,7 +111,7 @@ enplanements = value/100
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/0de58b58/#fullscreen)
 
-**Scale Modification**:
+Scale Modification:
 
 ```javascript
 enplanements = value/10000
@@ -127,14 +124,9 @@ ineffective, but misleading. Instead, months should be compared across different
 included no additional calculations need be performed (such as attempts to correct for overall increases and decreases in
 airport traffic) because they are now included in the underlying data.
 
-**Figure 2.5**
-
 ![](Images/ra-009.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/6b3e4ed6/#fullscreen)
-
-**Figure 2.6**
-
 
 ![](Images/ra-010.png)
 

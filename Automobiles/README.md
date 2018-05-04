@@ -1,5 +1,4 @@
-The Slow Death of the American Automobile Industry
-===
+# The Slow Death of the American Automobile Industry
 
 ![](images/title.png)
 
@@ -7,7 +6,7 @@ The Slow Death of the American Automobile Industry
 
 > Open the ChartLab visualization above and use the dropdown menus to navigate through time.
 
-### Introduction
+## Introduction
 
 One of the first industries that was pioneered and perfected in America was that of the personal automobile. The roots of
 industry date back to the turn of the nineteenth century, when the first internal combustion engine was invented and patented
@@ -27,7 +26,7 @@ employees more than [4 million Americans](https://www.bls.gov/iag/tgs/iagauto.ht
 and Viper household names the world over, but it seems that even despite administration attempts to revive the dilapidated
 industry, foreign imports are slowly but surely pushing American producers out of their own market.
 
-### Data
+## Data
 
 **Figure 1**: Motor Vehicle Retail Sales (1994-2017)
 
@@ -69,7 +68,7 @@ In stark contrast to falling domestic sales figures, imported motor vehicle sale
 recovery and more promising long-term potential. Only five of the top twenty best-selling cars in America for [May 2017](http://www.goodcarbadcar.net/2017/06/top-20-best-selling-cars-in-america-may.html)
 came from American producers.
 
-### Analysis
+## Analysis
 
 **Figure 4**: Imported Vs. Domestic Motor Vehicle Sales by Unit
 
@@ -97,7 +96,7 @@ Further, the above chart details the Consumer Price Index (CPI) for four types o
 system ranks vehicles by size and load. The only class of vehicle which showed a significant increase in overall cost during
 the observed period was the D Class, mostly populated by sport utility type vehicles.
 
-### Conclusion
+## Conclusion
 
 Overall automobile sales are growing smaller and smaller in the United States and amid that reduction, the market is being
 further and further dominated by import manufacturers. Certainly, some of these manufacturers maintain local plants in the

@@ -1,10 +1,8 @@
+# Data Visualization with Chart Lab
+
 ![Titlephoto](Images/Titlephoto.png)
 
-Data Visualization with Chart Lab
-==================================
-
-### Introduction
-------------------
+## Introduction
 
 Are you looking for clear and concise graphical presentations for datasets?
 
@@ -16,8 +14,7 @@ registration and allows you to experiment with different layouts and widget sett
 
 The purpose of this article is to walk the new user through the whole process and showcase all of the different features of ChartLab.
 
-### Chart Lab Features###
-------------------------
+## Chart Lab Features
 
 A blank, customizable ChartLab portal for can be found here:
 
@@ -36,10 +33,7 @@ Below is an image of the standard default ChartLab configuration.
 
 ![Figure 1](Images/Figure1.png)
 
-This guide will go through each of the features of ChartLab, starting with **Source**.
-
-### Source
-------------
+## Source
 
 ChartLab supports two data sources:
 
@@ -53,11 +47,10 @@ this function returns a floating-point, pseudo-random number in the range [0,1],
 be scaled to fit any desired dataset. These numbers have no meaning; every 60 seconds new random numbers are generated with the goal of merely
 providing different ranges for visualization purposes. In ChartLab, it may be used to quickly design visualization or portal templates for use with real data later on.
 
-ATSD data is live data collected by Axibase from a variety of sources, including server equipment, network devices, and online resources. Using ChartLab, a user is able to draw upon a publicly-accessible ATSD instance operated by Axibase. Once a user installs ATSD, they will be able to visualize
+ATSD data is actual data collected by Axibase from a variety of sources, including server equipment, network devices, and online resources. Using ChartLab, a user is able to draw upon a publicly-accessible ATSD instance operated by Axibase. Once a user installs ATSD, they will be able to visualize
 their own data, updated in real time as new incoming data is processed.
 
-### Widget
-------------
+## Widget
 
 ChartLab contains each of the following **Widgets**, shown in the image below.
 
@@ -71,14 +64,12 @@ To add a Widget template to the Editor window, click the Widget dropdown and sel
 
 ![Figure 19](Images/Figure19.png)
 
-### Run
----------
+## Run
 
 Once a **Source** and **Widget** have been defined, click **Run** to render a visualization. This will display a portal based on the current
 Editor window configuration.
 
-### Widget Settings
-------------
+## Widget Settings
 
 We will now run through several settings for Widgets in ChartLab.
 
@@ -102,7 +93,7 @@ of these values from 2 to 4, the following visualization will be rendered.
 
 Single-line comment start with **#**. Text on the same line after a **#** will be ignored.
 
-Multi-line comments start with / * and end with * /. Any text between / * and * / will be ignored.
+Multi-line comments start with `/*` and end with `*/`. Any text between `/*` and `*/` will be ignored.
 
 The figure below shows two histogram Widgets. The histogram on the left has the right and top axis commented out.
 
@@ -121,61 +112,59 @@ Press Ctrl + A to select all the text, then Shift + Tab to align the text.
 
 ![Figure 22](Images/Figure22.png)
 
-### Save
-----------
+## Save
 
 After a visualization has been created, the user has the option of selecting **Save** to save the current configuration as a new revision in the current
 directory. After pressing **Save**, the current configuration will be assigned a unique URL and a revision number. We will run through a quick example to
 demonstrate this process.
 
-1.	Open a blank ChartLab portal.
-2.	Select **Random** as the Source.
-3.	Select **Run** to create a visualization.
-4.	At this point, the current visualization and configuration may be saved to the current directory by clicking **Save** or cloned to a new directly by clicking **Clone**.
+1. Open a blank ChartLab portal.
+1. Select **Random** as the Source.
+1. Select **Run** to create a visualization.
+1. At this point, the current visualization and configuration may be saved to the current directory by clicking **Save** or cloned to a new directly by clicking **Clone**.
 
-	After a save, our configuration has been assigned a unique URL and revision number, in this case:
+After a save, our configuration has been assigned a unique URL and revision number, in this case:
 
-	**[https://apps.axibase.com/chartlab/a9977177](https://apps.axibase.com/chartlab/a9977177)** with revision number **1**.
+**[https://apps.axibase.com/chartlab/a9977177](https://apps.axibase.com/chartlab/a9977177)** with revision number **1**.
 
-	![Figure 4](Images/Figure4.png)
+![Figure 4](Images/Figure4.png)
 
-	It is worth noting that for a Random Source, because of the math.random() javascript function, specific, unique values will not end up being saved. The configuration
-	has been saved, but regardless new random values will continue to be output after every 60 seconds.
+It is worth noting that for a Random Source, because of the math.random() javascript function, specific, unique values will not end up being saved. The configuration
+has been saved, but regardless new random values will continue to be output after every 60 seconds.
 
-	Let's continue with saving a second revision.
+Let's continue with saving a second revision.
 
-5.	Change Source to **ATSD**.
-6.	Select **Save**.
+1. Change Source to **ATSD**.
+1. Select **Save**.
 
-	After saving for a second time, this second configuration has been assigned a unique URL and revision number, in this case:
+After saving for a second time, this second configuration has been assigned a unique URL and revision number, in this case:
 
-	**[https://apps.axibase.com/chartlab/a9977177/2/](https://apps.axibase.com/chartlab/a9977177/2/)** and revision number **2**.
+**[https://apps.axibase.com/chartlab/a9977177/2/](https://apps.axibase.com/chartlab/a9977177/2/)** and revision number **2**.
 
-	![Figure 5](Images/Figure5.png)
+![Figure 5](Images/Figure5.png)
 
-	Since ATSD, which contains real data, was selected as the Source, the saved configuration will query the same data. Future access to this visualization will access the same information.
+Since ATSD, which contains real data, was selected as the Source, the saved configuration will query the same data. Future access to this visualization will access the same information.
 
-	Let's continue with saving a third revision.
+Let's continue with saving a third revision.
 
-7.	Change the **max-range** from 100 to 80.
+1. Change the **max-range** from 100 to 80.
 
-	![Figure 6](Images/Figure6.png)
+![Figure 6](Images/Figure6.png)
 
-8.	Select **Save**.
+* Select **Save**.
 
-	After saving for a third time, this third configuration has been assigned a unique URL and revision number, in this case:
+After saving for a third time, this third configuration has been assigned a unique URL and revision number, in this case:
 
-	**[https://apps.axibase.com/chartlab/a9977177/3/](https://apps.axibase.com/chartlab/a9977177/3/)** and revision number **3**.
+**[https://apps.axibase.com/chartlab/a9977177/3/](https://apps.axibase.com/chartlab/a9977177/3/)** and revision number **3**.
 
-	![Figure 7](Images/Figure7.png)
+![Figure 7](Images/Figure7.png)
 
-	Now the user has the options of toggling between each of the three saved revisions. These three unique URLs will be stored permanently within the ChartLab application.
-	The user has the option of coming back to these examples at any time.
+Now the user has the options of toggling between each of the three saved revisions. These three unique URLs will be stored permanently within the ChartLab application.
+The user has the option of coming back to these examples at any time.
 
-	![Figure 8](Images/Figure8.png)
+![Figure 8](Images/Figure8.png)
 
-### Clone
------------
+## Clone
 
 By selecting **Clone**, a user may save the current configuration in a new directory. For example, if we clone the third revision from the previous section,
 a new unique URL will be generated, separate from the previous nested example.
@@ -188,16 +177,14 @@ In this unique case, the URL that was generated is listed below:
 
 All the features of the cloned output are the same as the original, with the noteworthy point being that an entirely new directory was created as a result. This is a useful feature for final edition publishing, where earlier versions of the final visualization should not be accessed by end users.
 
-### Editor
-------------
+## Editor
 
 By selecting **Editor**, a user may display their configuration in fullscreen. By appending #fullscreen at the end of the Chart Lab URL
 you can open the configuration in full-screen mode directly from a link. To revert back to the standard view, click the **Editor** button once more.
 
 ![Figure 9](Images/Figure9.png)
 
-### Miscellaneous Features
---------------------------------------
+## Miscellaneous Features
 
 In the upper right hand corner of the portal are three additional features that may be used to edit your visualization.
 
@@ -212,8 +199,7 @@ By clicking **Full Screen**, a user may display their visualization in fullscree
 Clicking the information icon takes you to **[Portal Settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/)** documentation.
 This tab contains configuration settings and examples.
 
-### Action Items
-------------------
+## Action Items
 
 If this guide has been interesting to you, create an example and send it over to us. If you have any comments, questions, or concerns please do not hesitate
 to [contact us](https://axibase.com/feedback/)!

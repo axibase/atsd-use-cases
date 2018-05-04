@@ -1,5 +1,4 @@
-New York City's Most Crowded Industries
-===
+# New York City's Most Crowded Industries
 
 ![NY1](Images/NY_Jobs1.png)
 
@@ -24,8 +23,8 @@ Additionally, the number of working government positions in the city has increas
 and using the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) from the [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/),
 New York City figures can be compared to New York State figures:
 
-### New York State
-```sql
+## New York State
+
 | tags.industry                                                            | total     |
 |--------------------------------------------------------------------------|-----------|
 | Health Care and Social Assistance                                        | 1490611.0 |
@@ -50,8 +49,6 @@ New York City figures can be compared to New York State figures:
 | Utilities                                                                | 37302.0   |
 | Mining, Quarrying, and Oil and Gas Extraction                            | 4708.0    |
 
-```
-
 >The above table was produced with the following query:
 
 ```sql
@@ -62,10 +59,8 @@ WHERE date_format(time, 'yyyy') = '2015'
 ORDER BY total DESC
 ```
 
+## New York City
 
-### New York City
-
-```sql
 | tags.industry                                                            | total    |
 |--------------------------------------------------------------------------|----------|
 | Health Care and Social Assistance                                        | 703232.0 |
@@ -89,7 +84,6 @@ ORDER BY total DESC
 | Utilities                                                                | 15246.0  |
 | Agriculture, Forestry, Fishing and Hunting                               | 560.0    |
 | Mining, Quarrying, and Oil and Gas Extraction                            | 64.0     |
-```
 
 >The above table was produced with the following query:
 

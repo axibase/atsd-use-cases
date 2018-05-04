@@ -1,5 +1,4 @@
-United States Census Bureau Regions
-===================================
+# United States Census Bureau Regions
 
 | Region | Region Name | States included in Region |
 |---|---------------|-------------------------------------------------------------------------------------------------------|

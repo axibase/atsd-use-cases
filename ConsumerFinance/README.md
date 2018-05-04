@@ -1,8 +1,7 @@
-Consumer Finance Protection: League Tables
-==============
+# Consumer Finance Protection: League Tables
 
 * Reporting Agency: Bureau of Consumer Financial Protection
-* Dataset: https://catalog.data.gov/dataset/consumer-complaint-database
+* [Dataset](https://catalog.data.gov/dataset/consumer-complaint-database)
 
 ## Complaints by Banking Product or Service
 
@@ -66,7 +65,6 @@ ORDER BY COUNT(*) DESC
 | Portfolio Recovery Associates, Inc.    | 4946     |
 | Citizens Financial Group, Inc.         | 3967     |
 | Barclays PLC                           | 3929     |
-
 
 ## Bank of America: Annual Complaint Counts
 
@@ -144,9 +142,6 @@ ORDER BY COUNT(*) DESC
 | Other financial service | 69       |
 | Prepaid card            | 54       |
 | Payday loan             | 14       |
-
-
----
 
 ## Running SQL Queries Locally
 

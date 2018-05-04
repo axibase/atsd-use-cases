@@ -1,5 +1,4 @@
-Island Living is Recession Proof
-===
+# Island Living is Recession Proof
 
 ![](Images/HI_GDP_1.png)
 

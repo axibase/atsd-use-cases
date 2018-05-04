@@ -82,15 +82,13 @@ Although the 2016 election was one of the more contentious in recent U.S. histor
 
 The European debt crisis was a financial debacle that was inflamed by the so called P.I.G.S. countries (Portugal, Ireland, Greece, and Spain) coming dangerously close to defaulting on their outrageously high government debts. Tracking several events alongside the EPU index reflects the panic and uncertainty of the multi-year crisis, bailout, and recovery process. Using the following 7 events to chronicle the timeline:
 
-1. Jan 1, 2002: Euro banknotes and coins begin circulation.
-2. Nov 27, 2008: European Union stimulus package totalling 200 billion Euro is proposed and eventually approved.
-3. Feb 9, 2010: The first of three austerity packages are introduced to combat out of control debt growth in Greece.
-4. May 2, 2010: European Union announces a 110 billion Euro bailout for Greece.
-5. Nov 28, 2010: European Union announces an 85 billion Euro bailout for the Republic of Ireland.
-6. Mar 13, 2012: A second bailout for Greece is proposed and approved for and additional 130 billion Euro after further
-inspection of government financial records reveal the depth and severity of the problem is even worse than originally
-understood.
-7. July 1, 2014: The end of the EU bailout policy, and completion of funds distribution.
+* Jan 1, 2002: Euro banknotes and coins begin circulation.
+* Nov 27, 2008: European Union stimulus package totalling 200 billion Euro is proposed and eventually approved.
+* Feb 9, 2010: The first of three austerity packages are introduced to combat out of control debt growth in Greece.
+* May 2, 2010: European Union announces a 110 billion Euro bailout for Greece.
+* Nov 28, 2010: European Union announces an 85 billion Euro bailout for the Republic of Ireland.
+* Mar 13, 2012: A second bailout for Greece is proposed and approved for and additional 130 billion Euro after further inspection of government financial records reveal the depth and severity of the problem is even worse than originally understood.
+* July 1, 2014: The end of the EU bailout policy, and completion of funds distribution.
 
 The following SQL query will return the [average value](https://github.com/axibase/atsd/blob/master/sql/README.md#aggregation-functions) of the EPU index for the Eurozone for the period from 2002 until 2018 and will consolidate the information using a [`round` expression](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions).
 

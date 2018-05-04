@@ -24,15 +24,18 @@ ATSD functionality and features applied to real-world public data to solve commo
 Walkthrough guides for ATSD integration with various IT infrastructure systems and services.
 
 ### Amazon Web Services
+
 - [Build Availability Report for AWS Route53](how-to/aws/route53-health-checks)
 - [Configure Launch Notifications for AWS Resources](how-to/aws/cloud-watch-alert)
 - [Route53 Health Status Alarms](how-to/aws/route53-email-notifications)
 
 ### Apache Kafka
+
 - [Monitoring Kafka Brokers](how-to/kafka/brokers-monitoring)
 - [Monitoring Kafka Consumer Lag](how-to/kafka/consumers-monitoring)
 
 ### GitHub
+
 - [Notifications for New GitHub Issues](how-to/github/issue-notification.md)
 - [Notifications for New GitHub Project Releases](how-to/github/project-release-notification.md)
 - [Notifications for New GitHub Pull Requests](how-to/github/pr-notification.md)
@@ -40,9 +43,11 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 - [Notifications for a New GitHub Repository Push](how-to/github/push-notification.md)
 
 ### Marathon
+
 - [How to Monitor Marathon Applications as Services](how-to/marathon/capacity-and-usage)
 
 ### ATSD
+
 - [Historizing Metrics Stored in Database](how-to/database/historize)
 - [Using TRENDS](how-to/shared/trends.md)
 - [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)

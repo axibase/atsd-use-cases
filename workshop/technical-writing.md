@@ -60,13 +60,13 @@ Picture the operating instructions for the most widely-used or popular programma
 
 The presentation of writing is nearly as important as the writing itself. A great document published with an oppressive design forces readers to pre-suppose an overly-complex and esoteric document which may discourage a thorough reading of the piece. A technical document of any length should be well-indexed and annotated but presenting a first-time reader with a multi-paged list of every feature available to end users will often serve only to frustrate. Don't let a well-written piece go un-read because it looks like a legal document.
 
-*Empowering Presentation*
+Empowering Presentation
 
 ![](images/good-tech.png)
 
 > Links, formatting, and visibility are all features of cohesive technical writing.
 
-*Oppressive Presentation*
+Oppressive Presentation
 
 ![](images/bad-tech.png)
 
@@ -84,13 +84,13 @@ Write technical documentation with the world in mind. Whether this means simplif
 
 **Thesaurus Syndrome:** Avoid overuse of the thesaurus. Demonstrating a well-ranged vocabulary is important, but conveying clear information is even more important. Don't be afraid of using the same word several times if it applies to several situations. Common words are the place to use the thesaurus. Using too many variations of a word can easily create a confusing sentence that neither proposes a solution nor offers an explanation.
 
-*Good Thesaurus Usage*
+Good Thesaurus Usage
 
 * "After the user has done the installation process, they need to do the set-up procedure, then do the operation."
 
 * "After the user has executed the installation process, they need to perform the set-up procedure, then complete the operation."
 
-*Bad Thesaurus Usage*
+Bad Thesaurus Usage
 
 * "A device operating on a secure network is able to easily connect with other devices using the network as well. Network traffic among devices may be monitored and throttled using IPv6 protocol."
 
@@ -120,13 +120,13 @@ No technical writing guide would be complete without a technical explanation of 
 
 **The Passive Voice:** It is generally recommended to avoid the passive voice in technical writing other than using it to soften the accusatory tone of a particular expression. Some situations require the passive voice, in which case, its use is perfectly acceptable for example to include the mention of an activity or process in which the reader has no part.
 
-*Accusation*
+Accusation
 
 * "If launch fails to initiate, the *user did not* complete the installation process correctly."
 
 * "If launch fails to initate, the *installation was not* completed correctly."
 
-*Non-Participation*
+Non-Participation
 
 * " *SQL Console is used* to query data stored in ATSD using a convenient syntax."
 
@@ -162,7 +162,7 @@ sudo apt-get update && sudo apt-get install atsd
 
 Many large corporations operate a blog or journal of their activities. Sometimes this is one publication, as is the case with the [IBM Analytics Community](https://www.ibm.com/communities/analytics/cognos-analytics/blog/) or [Redmine Blog](http://www.redmineblog.com/), who document software updates and changes in the same place as use cases and research articles.
 
-*Strengths of the Unified Resource*
+Strengths of the Unified Resource
 
 * Ease-of-Access
 
@@ -172,7 +172,7 @@ Many large corporations operate a blog or journal of their activities. Sometimes
 
 Other corporations separate the two publications, as with [Apple Newsroom](https://www.apple.com/newsroom/) and [Apple Support](https://support.apple.com/en-us/HT208067)
 
-*Strengths of Separate Resources*
+Strengths of Separate Resources
 
 * Ease-of-Navigation
 
@@ -180,11 +180,9 @@ Other corporations separate the two publications, as with [Apple Newsroom](https
 
 * Lack of Advertising
 
-*Additional Corporate Blogs for Consideration*
+Additional Corporate Blogs for Consideration
 
 * [GitHub Developer Blog](https://developer.github.com/changes/)
-
-* [Kali Linux Blog](https://www.kali.org/blog/)
 
 * [Microsoft Windows Blog](https://blogs.windows.com/)
 

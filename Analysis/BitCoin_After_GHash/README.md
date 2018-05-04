@@ -1,9 +1,9 @@
-Bitcoin After the GHash.IO Era
-===
+# Bitcoin After the GHash.IO Era
 
 > _Visualizations made using [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), author
 has no position in Bitcoin_
-### Introduction
+
+## Introduction
 
 Since its introduction by the enigmatic figure known only as Satoshi Nakamoto, Bitcoin has transformed from a fringe investment
 security used by speculators and dark web consumers to the world's premier cryptocurrency with market capitalization of
@@ -54,7 +54,7 @@ Not long after Bitcoin's establishment, mining pools formed to more effectively 
 One of the more successful outfits called GHash.IO soon established a dominant position on the Bitcoin market and within a year
 of its establishment was approaching 51% control of the Bitcoin hash rate, potentially giving them unprecedented power over the market.
 
-### Outcome
+## Outcome
 
 Eventually, GHash.IO was disbanded, the operators of the mining group understood the implications of a 51% hash rate
 shareholder: they could effectively counterfeit bitcoins through double spending of coins, a problem created by a loophole
@@ -77,7 +77,7 @@ _Source_: Quandl - [Market Capitalization](https://www.quandl.com/data/BCHAIN/MK
 
 > Open the ChartLab visualization above and navigate through time using the dropdown menus at the top of the screen.
 
-### The Future of Cryptocurrency
+## The Future of Cryptocurrency
 
 The number of transactions occurring each day using Bitcoin has reached impressive levels since its emergence in 2009 and despite
 a contraction in recent months, the figure remains strong with over 200,000 unique transactions occurring each day. Additionally,
@@ -122,7 +122,7 @@ not as common in its current incarnation. Fluctuations in price of several hundr
 were common in Bitcoin's early years, though they appear quite insignificant when seen alongside the jumps in value that Bitcoin
 has showed of late, in fact they happened much less predictably that current Bitcoin fluctuations.
 
-### Conclusion
+## Conclusion
 
 The near future has a lot in store for Bitcoin and Bitcoin users, hundreds of new CryptoCurrencies have appeared on the modern
 market, some of them more successfully then others, to challenge Bitcoin's supremacy in the world of digital currency. But

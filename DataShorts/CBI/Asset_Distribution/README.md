@@ -1,11 +1,10 @@
-Distribution of the Public Asset Portfolio, 1998-2017
-===
+# Distribution of the Public Asset Portfolio, 1998-2017
 
 [ChartLab](https://apps.axibase.com/chartlab) and SQL Console in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 > Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics)
 
-##### Value of the Public Portfolio (NIS Billion)
+## Value of the Public Portfolio (NIS Billion)
 
 ![](Images/AD-1.png)
 
@@ -18,7 +17,6 @@ GROUP BY 'Date', tv.value
   ORDER BY 'Date'
 ```
 
-```ls
 | Date    | Total Value (NIS Billion) |
 |---------|---------------------------|
 | 1998-01 | 725                       |
@@ -41,13 +39,12 @@ GROUP BY 'Date', tv.value
 | 2015-01 | 3190                      |
 | 2016-01 | 3306                      |
 | 2017-01 | 3429                      |
-```
 
 ![](Images/AD-5.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/24b59799/6/#fullscreen)
 
->Months with negative growth are shown in red, and months with positive growth exceeding 25 billion NIS are shown in dark blue.
+> Months with negative growth are shown in red, and months with positive growth exceeding 25 billion NIS are shown in dark blue.
 
 ```sql
 SELECT date_format(time, 'yyyy-MM') AS "Date", ROUND(tv.value, 1) AS "Total Value (NIS Billion)", ROUND((tv.value/3428.9)*100, 1) AS "Percent of Current Value", ROUND(tv.value - LAG(tv.value), 1) AS "Delta"
@@ -56,7 +53,6 @@ GROUP BY 'Date', tv.value
   ORDER BY 'Date'
 ```
 
-```ls
 | Date    | Total Value (NIS Billion) | Percent of Current Value | Delta |
 |---------|---------------------------|--------------------------|-------|
 | 1998-01 | 725.1                     | 21.1                     | null  |
@@ -79,14 +75,12 @@ GROUP BY 'Date', tv.value
 | 2015-01 | 3189.5                    | 93                       | 215.2 |
 | 2016-01 | 3305.5                    | 96.4                     | 116   |
 | 2017-01 | 3428.9                    | 100                      | 123.4 |
-```
 
-##### Distributions of Assets by Type (Percent)
+## Distributions of Assets by Type (Percent)
 
 ![](Images/AD-3.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/040c4e03/5/#fullscreen)
-
 
 ```sql
 SELECT date_format(time, 'MM-yyyy') AS "Date",  cd.value AS "Cash and Deposits", gbn.value AS "Government Bonds (Non-Tradeable)", gbt.value AS "Government Bonds (Tradeable)", cbn.value AS "Corporate Bonds (Non-Tradeable)", cbt.value AS "Corporate Bonds (Tradeable)", cm.value AS "Cash (Makam)", i.value AS "Shares in Israel", iad.value AS "Investments Abroad (Deposits)", iab.value AS "Investments Abroad (Bonds)", ias.value AS "Investments Abroad (Shares)", iao.value AS "Investments Abroard (Other)"
@@ -95,7 +89,6 @@ GROUP BY 'Date', cd.value, gbn.value, gbt.value, cbn.value, cbt.value, cm.value,
   ORDER BY 'Date'
 ```
 
-```ls
 | Date    | Cash and Deposits | Government Bonds (Non-Tradeable) | Government Bonds (Tradeable) | Corporate Bonds (Non-Tradeable) | Corporate Bonds (Tradeable) | Cash (Makam) | Shares in Israel | Investments Abroad (Deposits) | Investments Abroad (Bonds) | Investments Abroad (Shares) | Investments Abroard (Other) |
 |---------|-------------------|----------------------------------|------------------------------|---------------------------------|-----------------------------|--------------|------------------|-------------------------------|----------------------------|-----------------------------|-----------------------------|
 | 01-1998 | 44.7              | 13.5                             | 12.9                         | 0.8                             | 1.2                         | 2            | 15.9             | 0.9                           | 2.2                        | 0                           | 5.9                         |
@@ -118,7 +111,6 @@ GROUP BY 'Date', cd.value, gbn.value, gbt.value, cbn.value, cbt.value, cm.value,
 | 01-2015 | 32.2              | 10.1                             | 12.7                         | 1.6                             | 7.8                         | 3            | 15               | 0.7                           | 5.3                        | 8.4                         | 3.4                         |
 | 01-2016 | 33.9              | 9.9                              | 11.9                         | 1.3                             | 8.3                         | 2            | 14.5             | 0.8                           | 5.4                        | 7.9                         | 4                           |
 | 01-2017 | 35.3              | 9.6                              | 11.1                         | 1.1                             | 9                           | 1.5          | 14               | 0.5                           | 5.3                        | 7.9                         | 4.6                         |
-```
 
 ![](Images/AD-4.png)
 

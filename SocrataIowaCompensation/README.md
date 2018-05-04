@@ -1,18 +1,18 @@
+# Country Living - Analyzing and Combining Iowa Employment and Consumer Price Index Datasets
+
 ![TitlePhoto](Images/TitlePhoto.png)
 
-Country Living - Analyzing and Combining Iowa Employment and Consumer Price Index Datasets
-==========================================================================================
-
-### Introduction
-----------------
+## Introduction
 
 Pigs. Fields of corn. Open prairie. Small towns. These are some of the first things that come to mind when thinking about life in Iowa. While many may see this as a simpleton and
 boring way of life, Iowa is one of the most financially diverse and stable states in America. Below are some quick facts on the Iowa economy:
 
 * From [2005 to 2015](http://www.deptofnumbers.com/gdp/iowa/), the Iowa GDP per capita grew 8.1%, compared to 3.6% for the US as a whole.
 * According to [CNBC's America's Top States for Business 2016](http://www.cnbc.com/2016/07/12/top-states-for-business-9-iowa.html),
+
 Iowa was ranked as the 9th best state for business in the country. The state was ranked as #2 for the cost of doing business, #12 for cost of
 living, #15 for business friendliness, and #17 for education.
+
 * According to the [US Bureau of Labor Statistics](http://www.bls.gov/news.release/laus.nr0.htm), as of September 2016, Iowa's unemployment rate of 4.2% is lower than then US average of 5.0%.
 * [From September of 2015 to September 2016](http://www.bls.gov/news.release/laus.t05.htm), the state of Iowa added 29,600 non-farm jobs to bring the number of non-farm employed persons in the state to 1,587,800. This amounted to a growth rate of 1.9%. The US as a whole for this same period experienced a slightly lower growth rate of 1.8%.
 
@@ -24,8 +24,7 @@ by the US Federal government, 25 US states, 300+ US cities, and contains 4,000+ 
 A powerful capability of the Axibase Time Series Database (ATSD) is the **ability to combine multiple datasets** in one ATSD portal. We will begin by looking at several foundational state of Iowa datasets. Next, we will look at inflation statistics
 from the [Bureau of Labor Statistics (BLS)](http://www.bls.gov/home.htm). With a few simple, straightforward steps, we will then show you how combine these different datasets and compute supplementary metrics to create additional, more in depth layers of analytics.
 
-### Iowa Employee Compensation Dataset
---------------------------------------
+## Iowa Employee Compensation Dataset
 
 Let us take a look at the dataset **Employee Financial Compensation by Industry in Iowa** from data.gov, which looks at employee compensation by industry in Iowa.
 
@@ -39,15 +38,18 @@ their work during the period. Data is published for each of the following 3 indu
 
 In turn, each of these industries is broken down into the following subcategories:
 
-**Farm**:
+Farm:
+
 * Farm
 
-**Government and government enterprises**:
+Government and government enterprises:
+
 * Federal, civilian
 * Military
 * State and local
 
-**Private non-farm**:
+Private non-farm:
+
 * Administrative and support of waste management and remediation services
 * Accommodation and food services
 * Arts, entertainment, and recreation
@@ -70,10 +72,9 @@ In turn, each of these industries is broken down into the following subcategorie
 
 On the data.gov website, datasets can be downloaded as a CSV, RDF, JSON, or a XML file. This dataset can easily be parsed using the JSON job in Axibase.
 
-### Axibase Time Series Database
---------------------------------
+## Axibase Time Series Database
 
-The processing of datasets using Axibase Time Series Database (ATSD) is straight forward.  Processing the same data with ATSD is less time consuming
+Processing datasets using Axibase Time Series Database (ATSD) is straight forward.  Processing the same data with ATSD is less time consuming
 because its collection tool has built-in heuristics to handle the format in which data.gov datasets are published, namely the Socrata Open Data Format.
 When loading data for a particular dataset the collector uses Socrata metadata to understand the meaning of columns and automatically extract dates, times,
 and categories from the data files. Besides, ATSD stores the data in the user's own database so that this public data can be combined with internal data
@@ -156,8 +157,7 @@ You can explore this portal here:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/8323be2f/5/)
 
-### Additional Iowa Datasets - State of Iowa Employment by Month and Industry
------------------------------------------------------------------------------
+## Additional Iowa Datasets - State of Iowa Employment by Month and Industry
 
 In order to provide context to the above dataset, we will quickly look at adding additional datasets to ATSD. By looking at additional information,
 we can see how the rise and fall of total statewide employee compensation corresponds to other metrics. For example, does the rise or fall of total statewide employee compensation correspond to a rise or fall of the gross number
@@ -185,17 +185,20 @@ Data is published for each of the following industry types: **Goods producing**,
 
 In turn, each of these industries is broken down into the following subcategories:
 
-**Goods producing**:
+Goods producing:
+
 * Construction
 * Manufacturing
 * Mining and Logging
 
-**Government**:
+Government:
+
 * Federal Government
 * Local Government
 * State Government
 
-**Service providing**:
+Service providing:
+
 * Education and Health Services
 * Financial Activities
 * Information
@@ -299,8 +302,7 @@ To summarize, the **Great Recession** seems to have had the following effects on
 * Decrease in total number of non-farm employees in the state of Iowa
 * Increase in total of unemployment insurance benefit payments for the state of Iowa
 
-### A Closer look at Iowa's Economy
------------------------------------
+## A Closer look at Iowa's Economy
 
 We just looked at the datasets **Employee Financial Compensation by Industry in Iowa** and **Iowa Seasonally Adjusted Non-Farm Employment by Month and Industry**, which provided some insightful information
 into the general state of the economic situation in the state of Iowa over time. However, what does all of this information mean for your average worker in Iowa? A powerful capability of ATSD is the ability to combine datasets in one ATSD portal. We can take these 2 datasets and,
@@ -375,8 +377,7 @@ You can explore this portal here:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/1ac33603/3/)
 
-### Consumer Price Index (CPI) Dataset
---------------------------------------
+## Consumer Price Index (CPI) Dataset
 
 The initial dataset looking at total employee compensation was not adjusted for inflation. We will now add another dataset to this analysis: consumer price index (CPI) statistics.
 
@@ -438,8 +439,7 @@ the trends of the unadjusted to the adjusted values over time, we can see that t
 industry can go through volatility as other fields (such as farming, construction, and manufacturing) experience. Axibase's ability to easily combine multiple datasets, regardless of standard
 or non-standard formats, into one instance makes comparing employee average compensation simple and straightforward, and provides outputs that are easy to interpret.
 
-### Action Items
-----------------
+## Action Items
 
 Here is a link to our article on [Hawaii gas prices](../HawaiiGasPrices/README.md). The [action items](../HawaiiGasPrices/README.md#action-items) in that article show the steps for installing ATSD.
 
@@ -452,7 +452,6 @@ Below are the steps to follow and create figures for Iowa employment metrics:
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
-### References
---------------
+## References
 
 Article Title Photo Source: [http://kids.nationalgeographic.com/explore/states/iowa/#iowa-corn.jpg](http://kids.nationalgeographic.com/explore/states/iowa/#iowa-corn.jpg)

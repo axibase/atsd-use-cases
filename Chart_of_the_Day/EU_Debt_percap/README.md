@@ -1,11 +1,8 @@
-European Union Debt by Country Per Capita (2005-2016)
-==
+# European Union Debt by Country Per Capita (2005-2016)
 
 Data Source: [EuroStat](http://ec.europa.eu/eurostat)
 
 Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
-
-**Figure 1.1**
 
 ![](Images/eudpc-003.png)
 
@@ -22,8 +19,6 @@ government's gross debt is represented by individual citizens of that particular
 The visualization above shows the growth of per capita debt in the European Union over the entire observed period of time,
 sorted by member country and below that same information is displayed in one year increments.
 
-**Figure 1.2**
-
 ![](Images/eudpc-002.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/d38e750e/#fullscreen)
@@ -36,8 +31,6 @@ with a lot of debt is considered equal to small country with only a little debt 
 to gross government debt is being considered.
 
 The following visualization tracks debt growth by country from 2006 to 2016:
-
-**Figure 1.3**
 
 ![](Images/eudpc-013.png)
 

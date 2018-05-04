@@ -1,9 +1,8 @@
-The Average American Debt Profile
-===
+# The Average American Debt Profile
 
 ![](Images/fed000.jpg)
 
-### Introduction
+## Introduction
 
 Debt is a complicated concept. After the sub-prime mortgage crisis of the late 2000s, modern Americans are all too familiar
 with the problems of irresponsible spending on credit. Student loan recipients who queue up to drop off another application
@@ -19,12 +18,10 @@ The United States Federal Reserve is the central banking system of the United St
 financial climate and enacting policy that supports the American economy and American consumers. They maintain a number of statistics
 about these consumers and their monetary practices to better inform their decisions and practices.
 
-### Data
+## Data
 
 Provided by the [Federal Reserve](https://www.federalreserve.gov/), this [dataset](https://www.federalreserve.gov/datadownload/Download.aspx?rel=FOR&series=91e0f9a6b8e6a4b1ef334ce2eaf22860&filetype=csv&label=include&layout=seriescolumn&from=01/01/1980&to=12/31/2017)
 must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interpret (`Q/q` letter is not supported). We also need to discard metadata lines contained in the multi-line header. This can be accomplished with a [schema-based parser](https://axibase.com/products/axibase-time-series-database/writing-data/csv/) that provides granular control over the document's rows and columns using RFC 7111 selectors and Javascript:
-
-**Script 1.1**
 
 ```javascript
 /*
@@ -55,14 +52,12 @@ metric(cell(6,col));
 
 For step-by-step instructions on data customization with schema based parsing, see this [support tutorial](../Support/Schema-Parser-Mod-Pre-Import).
 
-#### Financial Obligation Ratio:
+### Financial Obligation Ratio
 
 The Financial Obligation Ratio (FOR) is an estimate of the ratio of required debt payments to disposable income. This is a broad
 calculation and includes all kinds of debt:  mortgage payments, credit cards, property tax and lease payments. Each of these
 metrics can be expanded further to include associated costs, such as homeowner's insurance for example. The Federal Reserve
 releases this number each quarter.
-
-**Figure 1.1**
 
 ![](Images/fed-001.png)
 
@@ -74,17 +69,12 @@ to observe a desired period.
 The data can also be queried with a structured query language in the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md).
 The data will be aggregated annually, derived from the average value of each quarter within a given year:
 
-**Query 1.1**
-
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", AVG(value) AS "Average FOR"
   FROM "dtf%ypd.q"
 GROUP BY date_format(time, 'yyyy')
 ```
 
-**Table 1.1**
-
-```ls
 | Year | Average FOR |
 |------|-------------|
 | 1980 | 15.32       |
@@ -125,10 +115,10 @@ GROUP BY date_format(time, 'yyyy')
 | 2015 | 15.40       |
 | 2016 | 15.45       |
 | 2017 | 15.47       |
-```
+
 > All values are shown as a percent of one hundred, where the whole is representative of the total income of the average person.
 
-#### Debt Service Ratio:
+### Debt Service Ratio
 
 The Debt Service Ratio (DSR) is more specific than the Financial Obligation Ratio in that it typically does not include
 non-essential debt payments. Here, it has been parsed into two categories, mortgage debt and consumer debt. These numbers represent
@@ -139,13 +129,9 @@ Typically the DSR is an initial calculation performed to determine a person's el
 of less than 48% is generally preferred, meaning that with a particular mortgage plus other credit obligations at least 52%
 of a person's gross monthly earning would still be available to them after making the required payments.
 
-**Figure 2.1**
-
 ![](Images/fed-002.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/85522dd3/#fullscreen)
-
-**Query 2.1**
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", AVG(value) AS "Average FOR"
@@ -153,9 +139,6 @@ SELECT date_format(time, 'yyyy') AS "Year", AVG(value) AS "Average FOR"
 GROUP BY date_format(time, 'yyyy')
 ```
 
-**Table 2.1**
-
-```ls
 | Year | Average FOR |
 |------|-------------|
 | 1980 | 10.46       |
@@ -196,16 +179,13 @@ GROUP BY date_format(time, 'yyyy')
 | 2015 | 9.99        |
 | 2016 | 10.02       |
 | 2017 | 10.04       |
-```
 
-### Analysis
+## Analysis
 
 Because the FOR value includes the DSR value plus additional non-essential credit values, and the DSR value is parsed into both consumer and mortgage
 related debt, these three values can be shown in a new visualization that creates a typical consumer profile of the average
 American. By using the calculated value setting shown below, additional data not specifically included in the set can be
 displayed:
-
-**Script 2.1**
 
 ```ls
     [series]
@@ -227,15 +207,11 @@ Shown below is the debt profile of the average American consumer from 1980 to 20
 menus at the top of the screen to select a desired span of time and compare how bearing debt has changed over the course of
 the last three decades.
 
-**Figure 3.1**
-
 ![](Images/fed-003.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f25de723/#fullscreen)
 
 The visualization can also be organized to show the amount of each type of debt as it relates to the others:
-
-**Figure 3.2**
 
 ![](Images/fed-004.png)
 
@@ -243,15 +219,11 @@ The visualization can also be organized to show the amount of each type of debt 
 
 Additionally, these values can be compared on an annual basis as shown in the visualization below:
 
-**Figure 3.3**
-
 ![](Images/fed-005.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/81ea0ea0/#fullscreen)
 
 To view the distribution of these values across time, a histogram is shown below:
-
-**Figure 3.4**
 
 ![](Images/fed-006.png)
 
@@ -261,8 +233,6 @@ In the following box diagram, explore time with the dropdown menus at the top of
 shows the distribution of debt values as a percentage of total income, with the initial time period set to include the
 entire data set:
 
-**Figure 3.5**
-
 ![](Images/fed-007.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/20ff0ade/#fullscreen)
@@ -271,17 +241,12 @@ The following SQL query will detail the above visualizations in one table, displ
 described above: non-essential credit payments, mortgage credit payments, and consumer credit payments, as well as the Financial
 Obligation Ratio (FOR), or total debt obligations.
 
-**Query 3.1**
-
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", AVG(dsrM.value) AS "Mortgage", AVG(dsrC.value) AS "Consumer", AVG(for.value - dsr.value) AS "Non-Essential", AVG(for.value) AS "Total"
   FROM "dtfm%ypd.q" AS dsrM JOIN "dtfc%ypd.q" AS dsrC JOIN "dtf%ypd.q" AS for JOIN "dtfd%ypd.q" AS dsr
 GROUP BY date_format(time, 'yyyy')
 ```
 
-**Table 3.1**
-
-```ls
 | Year | Mortgage | Consumer | Non-Essential | Total |
 |------|----------|----------|---------------|-------|
 | 1980 | 4.49     | 5.97     | 4.86          | 15.32 |
@@ -322,7 +287,6 @@ GROUP BY date_format(time, 'yyyy')
 | 2015 | 4.57     | 5.42     | 5.41          | 15.40 |
 | 2016 | 4.47     | 5.55     | 5.43          | 15.45 |
 | 2017 | 4.42     | 5.63     | 5.43          | 15.47 |
-```
 
 The above dataset can illuminate a number of features of the American economy and a number of characteristics of the average
 American consumer. While modern Americans are quick to denounce the zeitgeist of living outside of one's means, the data
@@ -335,8 +299,6 @@ of the [Saint Louis Branch of the Federal Reserve](https://www.stlouisfed.org/),
 per year in 2015 USD. This number can be applied to the above table and visualized in [ChartLab](https://apps.axibase.com/chartlab)
 to create more comprehensive data.
 
-**Figure 3.6**
-
 ![](Images/fed-008.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/da132e01/11/#fullscreen)
@@ -348,17 +310,12 @@ metric over the entire period of time in 2015 USD by obligation amount per quart
 The following query summons the same data shown above, but further parses it to show annual average monthly payments instead
 of quarterly values in 2015 USD for a person making the 2015 median United States income of $56,516 a year.
 
-**Query 4.3**
-
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", AVG((56516 * (dsrM.value/100))/4) AS "Mortgage", AVG((56516 * (dsrC.value/100))/4) AS "Consumer", AVG((56516 *(((for.value - dsr.value)/100)))/4) AS "Non-Essential", AVG((56516 * (for.value/100))/4) AS "Total"
   FROM "dtfm%ypd.q" AS dsrM JOIN "dtfc%ypd.q" AS dsrC JOIN "dtf%ypd.q" AS for JOIN "dtfd%ypd.q" AS dsr
 GROUP BY date_format(time, 'yyyy')
 ```
 
-**Table 3.2**
-
-```ls
 | Year | Mortgage | Consumer | Non-Essential | Total   |
 |------|----------|----------|---------------|---------|
 | 1980 | 634.66   | 843.18   | 686.24        | 2164.09 |
@@ -399,9 +356,8 @@ GROUP BY date_format(time, 'yyyy')
 | 2015 | 645.60   | 765.92   | 764.57        | 2176.08 |
 | 2016 | 631.26   | 784.32   | 767.62        | 2183.20 |
 | 2017 | 623.89   | 794.83   | 767.67        | 2186.39 |
-```
 
-#### Conclusions
+## Conclusions
 
 As it turns out, the idea that your parents paid less for their house than you will is only true in absolute terms. When
 compared with current numbers and controlled for inflation, the average 2017 consumer will pay roughly the same portion of their

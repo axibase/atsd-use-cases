@@ -1,5 +1,4 @@
-The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment
-===
+# The Rising Federal Funds Rate in the Current Low Long-Term Interest Rate Environment
 
 Source Document: [FRED Research](https://research.stlouisfed.org/publications/economic-synopses/2017/06/30/the-rising-federal-funds-rate-in-the-current-low-long-term-interest-rate-environment/)
 
@@ -7,7 +6,7 @@ Source Authors: YiLi Chien and Paul Morris
 
 Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
-**Treasury Yields and the Federal Funds Rate (1998-2017)**
+## Treasury Yields and the Federal Funds Rate (1998-2017)
 
 ![](Images/fedf-03.png)
 
@@ -21,7 +20,7 @@ The following visualization tracks the last seven years of data (2010-2017) to h
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/9183d77b/9/#fullscreen)
 
-_From the source document:_
+### From the Source Document
 
 "After keeping the federal funds rate close to zero for seven years, the Federal Open Market Committee (FOMC) increased
 its target rate by 25 basis points in December 2015. Additional 25-basis-point hikes followed in December 2016, March 2017,

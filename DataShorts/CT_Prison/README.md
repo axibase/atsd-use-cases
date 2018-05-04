@@ -1,5 +1,4 @@
-Connecticut Prison Populations
-===
+# Connecticut Prison Populations
 
 [Source Dataset](https://github.com/axibase/open-data-catalog/blob/master/datasets/f8ar-pgu4.md)
 
@@ -7,7 +6,7 @@ Connecticut Prison Populations
 
 [ChartLab](https://apps.axibase.com/chartlab) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
-### Total Connecticut Prison Population by Quarter (2009 - 2017)
+## Total Connecticut Prison Population by Quarter (2009 - 2017)
 
 ![](Images/CTP2.2.png)
 
@@ -20,7 +19,6 @@ GROUP BY time
   ORDER BY time, 'Total Population (1000 Persons)'
 ```
 
-```ls
 | Time    | Total Population (1000 Persons) |
 |---------|---------------------------------|
 | 2009-09 | 18.83                           |
@@ -56,9 +54,8 @@ GROUP BY time
 | 2016-09 | 15.12                           |
 | 2016-12 | 14.12                           |
 | 2017-03 | 13.87                           |
-```
 
-### Average Connecticut Prison Population by Facility (2009 - 2017)
+## Average Connecticut Prison Population by Facility (2009 - 2017)
 
 ![](Images/CTP8.1.png)
 
@@ -71,7 +68,6 @@ GROUP BY 'Facility Name'
    ORDER BY 'Population' DESC, 'Facility Name'
 ```
 
-```ls
 | Facility Name      | Population |
 |--------------------|------------|
 | MacDougall/Walker  | 2069       |
@@ -93,7 +89,6 @@ GROUP BY 'Facility Name'
 | Northern           | 279        |
 | Gates*             | 205        |
 | Webster*           | 22         |
-```
 
 > \* Bergin, Gates, Niantic Annex, and Webster Prisons closed in 2011, 2011, 2016, and 2010
 respectively.
@@ -102,7 +97,7 @@ respectively.
 
 [![](../../DataShorts/CT_Prison/Images/button.png)](https://apps.axibase.com/chartlab/bff45f46/9/#fullscreen)
 
-### Current Connecticut Prison Population by Facility (2017)
+## Current Connecticut Prison Population by Facility (2017)
 
 ![](Images/CTP7.1.png)
 
@@ -115,7 +110,6 @@ GROUP BY 'Facility Name'
    ORDER BY 'Facility Name', 'Population'
  ```
 
-```ls
 | Facility Name      | Population |
 |--------------------|------------|
 | Bergin             | 0          |
@@ -136,10 +130,9 @@ GROUP BY 'Facility Name'
 | Osborn             | 1392       |
 | Webster            | 0          |
 | Willard-Cybulski   | 1145       |
-| York               | 1005       |
-```
+| York   | 1005       |
 
-### Average Connecticut Prison Population Density by Facility (2009 - 2017)
+## Average Connecticut Prison Population Density by Facility (2009 - 2017)
 
 > Density is defined as [(Number of Prisoners)/(Number of Beds)]
 
@@ -155,7 +148,6 @@ WHERE tags.facility_name NOT IN ('Bergin', 'Gates', 'Niantic Annex', 'Webster')
 ORDER BY 'Density' DESC
 ```
 
-```ls
 | Facility Name      | Density |
 |--------------------|---------|
 | Hartford           | 109     |
@@ -173,7 +165,6 @@ ORDER BY 'Density' DESC
 | Garner             | 79      |
 | MYI                | 78      |
 | Northern           | 48      |
-```
 
 > Non-operational prisons have been removed from this query.
 
@@ -183,7 +174,7 @@ ORDER BY 'Density' DESC
 
 > The five most densely-populated Connecticut prisons are shown above.
 
-###Current Connecticut Prison Population Density by Facility (2017)
+## Current Connecticut Prison Population Density by Facility (2017)
 
 > Density is defined as [(Number of Prisoners)/(Number of Beds)]
 
@@ -195,7 +186,6 @@ WHERE tags.facility_name NOT IN ('Bergin', 'Gates', 'Niantic Annex', 'Webster')
 ORDER BY 'Density' DESC, 'Facility Name'
 ```
 
-```ls
 | Facility Name      | Density |
 |--------------------|---------|
 | Brooklyn           | 100     |
@@ -213,4 +203,3 @@ ORDER BY 'Density' DESC, 'Facility Name'
 | Cheshire           | 86      |
 | Garner             | 82      |
 | Northern           | 49      |
-```

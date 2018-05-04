@@ -83,6 +83,7 @@ ORDER BY value DESC
 LIMIT 10
 ```
 
+
 | Industry                               | Gross Margin (%) | 
 |----------------------------------------|-------------------| 
 | Bank (Money Center)                    | 100.00            | 

@@ -1,17 +1,16 @@
-European Union Debt by Country Per Capita (2005-2016)
-==
+# European Union Debt by Country Per Capita (2005-2016)
 
-> Debt Data Source: [EuroStat](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=teina225&plugin=1)
+Debt Data Source: [EuroStat](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=teina225&plugin=1)
 
-> Population Data Source: [EuroStat](http://ec.europa.eu/eurostat/web/population-demography-migration-projections/population-data)
+Population Data Source: [EuroStat](http://ec.europa.eu/eurostat/web/population-demography-migration-projections/population-data)
 
-> Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
+Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
 
-> Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
 This entry is an expansion of an earlier entry titled [European Union Debt by Country](../EU_Debt/README.md).
 
-### Year Index:
+## Year Index
 
 Per capita debt indexed by country and year from 2005 to 2016.
 
@@ -31,13 +30,9 @@ Per capita debt indexed by country and year from 2005 to 2016.
 
 ### 2005
 
-**Figure 1.01**
-
 ![](Images/eudpc-001.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/#fullscreen)
-
-**Query 1.01**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -51,9 +46,6 @@ WHERE date_format(time, 'yyyy') = 2005
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.01**
-
-```ls
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 21100                  |
@@ -84,19 +76,14 @@ ORDER BY debt.tags.geo
 | Spain          | 9000                   |
 | Sweden         | 16800                  |
 | United Kingdom | 13300                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2006
 
-**Figure 1.02**
-
 ![](Images/eudpc-002.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/2/#fullscreen)
-
-**Query 1.02**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -110,9 +97,6 @@ WHERE date_format(time, 'yyyy') = 2006
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.02**
-
-```ls
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 21700                  |
@@ -143,19 +127,14 @@ ORDER BY debt.tags.geo
 | Spain          | 8800                   |
 | Sweden         | 16500                  |
 | United Kingdom | 14600                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2007
 
-**Figure 1.03**
-
 ![](Images/eudpc-003.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/3/#fullscreen)
-
-**Query 1.03**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -169,9 +148,6 @@ WHERE date_format(time, 'yyyy') = 2007
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.03**
-
-```sql
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 22200                  |
@@ -202,19 +178,14 @@ ORDER BY debt.tags.geo
 | Spain          | 8500                   |
 | Sweden         | 14900                  |
 | United Kingdom | 14300                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2008
 
-**Figure 1.04**
-
 ![](Images/eudpc-004.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/4/#fullscreen)
-
-**Query 1.04**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -228,9 +199,6 @@ WHERE date_format(time, 'yyyy') = 2008
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.04**
-
-```sql
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 24200                  |
@@ -261,19 +229,14 @@ ORDER BY debt.tags.geo
 | Spain          | 9600                   |
 | Sweden         | 12700                  |
 | United Kingdom | 13300                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2009
 
-**Figure 1.05**
-
 ![](Images/eudpc-005.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/5/#fullscreen)
-
-**Query 1.05**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -287,9 +250,6 @@ WHERE date_format(time, 'yyyy') = 2009
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.05**
-
-```sql
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 27500                  |
@@ -320,19 +280,14 @@ ORDER BY debt.tags.geo
 | Spain          | 12300                  |
 | Sweden         | 14200                  |
 | United Kingdom | 17700                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2010
 
-**Figure 1.06**
-
 ![](Images/eudpc-006.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/6/#fullscreen)
-
-**Query 1.06**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -346,9 +301,6 @@ WHERE date_format(time, 'yyyy') = 2010
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.06**
-
-```sql
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 29200                  |
@@ -379,19 +331,14 @@ ORDER BY debt.tags.geo
 | Spain          | 14000                  |
 | Sweden         | 16000                  |
 | United Kingdom | 22100                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2011
 
-**Figure 1.07**
-
 ![](Images/eudpc-007.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/7/#fullscreen)
-
-**Query 1.07**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -405,9 +352,6 @@ WHERE date_format(time, 'yyyy') = 2011
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.07**
-
-```sql
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 30400                  |
@@ -438,19 +382,14 @@ ORDER BY debt.tags.geo
 | Spain          | 15900                  |
 | Sweden         | 16300                  |
 | United Kingdom | 25100                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2012
 
-**Figure 1.08**
-
 ![](Images/eudpc-008.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/8/#fullscreen)
-
-**Query 1.08**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -464,9 +403,6 @@ WHERE date_format(time, 'yyyy') = 2012
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.08**
-
-```ls
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 30900                  |
@@ -497,19 +433,14 @@ ORDER BY debt.tags.geo
 | Spain          | 19100                  |
 | Sweden         | 17000                  |
 | United Kingdom | 27400                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2013
 
-**Figure 1.09**
-
 ![](Images/eudpc-009.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/9/#fullscreen)
-
-**Query 1.09**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -523,9 +454,6 @@ WHERE date_format(time, 'yyyy') = 2013
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.09**
-
-```ls
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 30900                  |
@@ -556,19 +484,14 @@ ORDER BY debt.tags.geo
 | Spain          | 21000                  |
 | Sweden         | 17900                  |
 | United Kingdom | 28100                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2014
 
-**Figure 1.10**
-
 ![](Images/eudpc-010.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/10/#fullscreen)
-
-**Query 1.10**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -582,9 +505,6 @@ WHERE date_format(time, 'yyyy') = 2014
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.10**
-
-```ls
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 32700                  |
@@ -615,19 +535,14 @@ ORDER BY debt.tags.geo
 | Spain          | 22400                  |
 | Sweden         | 19600                  |
 | United Kingdom | 31900                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2015
 
-**Figure 1.11**
-
 ![](Images/eudpc-011.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/11/#fullscreen)
-
-**Query 1.11**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -641,9 +556,6 @@ WHERE date_format(time, 'yyyy') = 2015
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.11**
-
-```ls
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 33600                  |
@@ -674,17 +586,12 @@ ORDER BY debt.tags.geo
 | Spain          | 23100                  |
 | Sweden         | 20400                  |
 | United Kingdom | 34900                  |
-```
 
 * Return to the [Index](#year-index)
 
 ### 2016
 
-**Figure 1.12**
-
 ![](Images/eudpc-012.png)
-
-**Query 1.12**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -698,9 +605,6 @@ WHERE date_format(time, 'yyyy') = 2016
 ORDER BY debt.tags.geo
 ```
 
-**Table 1.12**
-
-```ls
 | Country        | Per Capita Debt (Euro) |
 |----------------|------------------------|
 | Austria        | 33900                  |
@@ -731,21 +635,16 @@ ORDER BY debt.tags.geo
 | Spain          | 23800                  |
 | Sweden         | 19200                  |
 | United Kingdom | 30800                  |
-```
 
 * Return to the [Index](#year-index)
 
-### Debt Growth:
+### Debt Growth
 
 Per capita debt growth indexed by country from 2006 to 2016.
-
-**Figure 2.01**
 
 ![](Images/eudpc-013.png)
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/d38e750e/6/#fullscreen)
-
-**Query 2.01**
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS Country,
@@ -762,8 +661,6 @@ WHERE datetime BETWEEN '2006-01-01T00:00:00Z' AND '2016-01-01T00:00:00Z'
   GROUP BY debt.entity, Country
 ORDER BY Country
 ```
-
-**Table 2.01**
 
 | Country        | 2006, € | 2016, € | New Debt, € | New Debt, % |
 |----------------|---------|---------|-------------|-------------|

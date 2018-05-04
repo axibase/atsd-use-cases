@@ -27,7 +27,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
 
 Replace the `SERVER_URL` parameter in the command above with the public DNS name of the Docker host where the sandbox container will be running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
 
-If you would like to automatically configure Slack Messaging Service at runtime, use the following ATSD Sandbox launch command:
+Alternatively, you can launch an ATSD sandbox instance which is pre-configured for integration with a Slack Workspace:
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 \
@@ -103,19 +103,19 @@ If you launched ATSD with the pre-configured `SLACK_CONFIG` variable, the setup 
 
 #### Detailed Slack Notifications from ATSD
 
-Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding the following environment variable to the atsd-sandbox container above:
+Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or an environment variable to the atsd-sandbox container above:
 
 ```sh
    --env SLACK_CONFIG="slack.properties"
 ```
 
-Bind the `slack.properties` file to the sandbox container with the following:
+Bind the `slack.properties` file to the sandbox container:
 
 ```sh
    --volume /home/user/slack.properties:/slack.properties
 ```
 
-The bound volume should at least contain the following required parameters:
+The bound volume should at least contain the required parameters:
 
 ```txt
 token=xoxb-************-************************
@@ -124,19 +124,19 @@ channels=general
 
 #### Detailed Telegram Notifications from ATSD
 
-Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding the following environment variable to the atsd-sandbox container above:
+Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding an environment variable to the atsd-sandbox container command:
 
 ```sh
    --env TELEGRAM_CONFIG="telegram.properties"
 ```
 
-Bind the `telegram.properties` file to the sandbox container with the following:
+Bind the `telegram.properties` file to the sandbox container:
 
 ```sh
    --volume /home/user/telegram.properties:/telegram.properties
 ```
 
-The bound volume should at least contain the following required parameters:
+The bound volume should at least contain the required parameters:
 
 ```txt
 bot_id=*********:***********************************
