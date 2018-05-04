@@ -28,11 +28,10 @@ Create a directory where the tutorial's files will be stored and in the terminal
 mkdir tutorial && cd ./tutorial
 ```
 
-
 ### Configure Slack Notifications
 
 ATSD Sandbox may pass a path to a file containing web notification properties as the parameters.
-Specify actual Bot User OAuth Access `token` and `channels` for notifications in `slack.properties` file. For more information about the configuration, you can follow this [reference](https://github.com/axibase/dockers/tree/atsd-sandbox#web-notifications-configuration). 
+Specify actual Bot User OAuth Access `token` and `channels` for notifications in `slack.properties` file. For more information about the configuration, you can follow this [reference](https://github.com/axibase/dockers/tree/atsd-sandbox#web-notifications-configuration).
 
 ```bash
 touch slack.properties && printf "token=xoxb-************-************************\nchannels=general\n" > slack.properties
@@ -77,7 +76,7 @@ If certificate's expiration is approaching and number of remaining days is less 
 
 To disable notifications for a list of domains, edit the collection containing the blacklist.
 
-To open the collection login to the *ATSD* interface located on [https://localhost:8443]() with default credentials:
+To open the collection login to the *ATSD* interface located on `https://localhost:8443` with default credentials:
 
 ```properties
 user=axibase
