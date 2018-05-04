@@ -68,7 +68,7 @@ Follow the quick [launch procedure](#launch-sandbox-with-automated-slack-and-ema
 
 ### Launch ATSD Sandbox
 
-Follow this procedure to send AWS CloudWatch events into ATSD to enrich standard SNS notifications with additional resource details and AWS console links.
+Follow this procedure to send AWS CloudWatch events into ATSD to enrich standard SNS notifications with additional resource details and AWS console links. Before launching the sandbox, add the desired variables and bind the needed volumes to the sandbox launch command below based on your preferences in [Custom Launch Preferences](#custom-launch-preferences).
 
 * Launch an [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox):
 
@@ -81,8 +81,6 @@ docker run -d -p 8443:8443 \
 ```
 
 This command will start the sandbox applications, import the [rule](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) needed for integration, and generate an incoming webhook for AWS SNS subscriptions.
-
-Customized the launch command based on your preferences using the instructions in [Custom Launch Preferences](#custom-launch-preferences)
 
 Watch the start log for progress:
 
@@ -151,11 +149,11 @@ Confirm that your new subscription is active by checking that the **Subscriber**
 
 ![](images/sns-6.png)
 
-ATSD is ready to be configured to notify you via [**Slack Team Messaging**](https://slack.com/) and email.
+ATSD is ready to notify you via [**Slack Team Messaging**](https://slack.com/) and email.
 
 ## Custom Launch Preferences
 
-Customize the generic ATSD launch command with your preferences from these options. After customizing the launch command and executing, return to the [Create SNS Subscription](#create-sns-subscription) section to complete the procedure.
+Customize the generic ATSD launch command with your preferences from these options. After customizing the launch command and executing, return to the [Create SNS Subscription](#create-sns-subscription) section to complete the set-up procedure.
 
 ### Email Notifications from ATSD
 
