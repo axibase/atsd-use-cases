@@ -3,13 +3,13 @@
 ![](images/pm-title.png)
 [![](images/button-new.png)](https://trends.axibase.com/54f3afeb)
 
-*Fig 1.* Open the **TRENDS** explorer above to navigate through the visualization of the data used to for a recent AEI article written by economist Mike J. Perry. 
+*Fig 1.* Open the **Trends** explorer above to navigate through the visualization of the data used to for a recent AEI article written by economist Mike J. Perry. 
 
 ### Data Overview
 
 The [American Enterprise Institute](http://www.aei.org/) is Washington D.C.-based think tank that is dedicated to researching issues of government, politics, economics, and social welfare. Recently they published an [article](http://www.aei.org/publication/the-public-thinks-the-average-company-makes-a-36-profit-margin-which-is-about-5x-too-high-part-ii/) which described the average American's perception of the profit margins that companies from various industries are able to make on a consistent basis.
 
-The article drew information from a variety of polling agencies who had sampled large groups of the population and came away with the conclusion that the average American believes most companies, regardless of industry are consistently making profits on the order of 36%. Using data from NYU professor and researcher [Aswath Damodaran](http://people.stern.nyu.edu/adamodar/New_Home_Page/home.htm) AEI came to the conclusion that the average American's estimation was off by about 500%. They concluded that the average company makes around 7.9% after taxes and about 10 points lower, 6.9% if the financial industry is excluded.
+The article drew information from a variety of polling agencies who had sampled large groups of the population and came away with the conclusion that the average American believes most companies, regardless of industry are consistently making profits on the order of 36%. Using data from NYU professor and researcher [Aswath Damodaran](http://people.stern.nyu.edu/adamodar/New_Home_Page/home.htm) AEI came to the conclusion that the average American's estimation was off by about 500%. They concluded that the average company makes around 7.9% after taxes and an entire percent lower, 6.9% if the financial industry is excluded.
 
 ### Metrics Legend
 
@@ -34,7 +34,7 @@ The metrics stored in [ATSD](https://axibase.com/products/axibase-time-series-da
 |`sg&a/_sales`| The sales, general, and administrative costs associated with each industry.|
 |`stock-based_compensation/sales`| The amount of profit re-purposed as stock options for eligible employees. |
 
-Using the [**TRENDS**](https://trends.axibase.com/) sandbox environment and SQL Console tool, these data may be visualized and queried.
+Using the [**Trends**](https://trends.axibase.com/) service and SQL Console tool, these data may be visualized and queried.
 
 ### Trading Value
 
@@ -43,7 +43,7 @@ Using the [**TRENDS**](https://trends.axibase.com/) sandbox environment and SQL 
 
 *Fig 2.* The above industries logged the highest profit margin based purely on marking up the price of their product relative to the cost it took to create and distribute it. **Metric:** `cogs/sales`.
 
-**Query:**
+Query:
 
 ```sql
 SELECT tags.industry_name AS "Industry", 
@@ -73,17 +73,17 @@ LIMIT 10
 
 *Fig 3.* The above industries trade in goods that are intrinsically valueless but are deployed in such as way as to create value based on real-world transaction. Note that R.E.I.T. is an abbreviation for the real estate, investment, and trust industry. **Metric:** `gross_margin`.
 
-**Query:**
+Query:
 
 ```sql
 SELECT tags.industry_name AS "Industry", 
-  value * 100 AS "Profit Margin (%)"
+  value * 100 AS "Gross Margin (%)"
 FROM "gross_margin"
 ORDER BY value DESC
 LIMIT 10
 ```
 
-| Industry                               | Profit Margin (%) | 
+| Industry                               | Gross Margin (%) | 
 |----------------------------------------|-------------------| 
 | Bank (Money Center)                    | 100.00            | 
 | Banks (Regional)                       | 99.77             | 
@@ -103,7 +103,7 @@ LIMIT 10
 
 *Fig 4.* The above industries leverage complex development processes to use existing products in new and innovative ways to develop increased value. A new pharmecutical product, for example, may spend more than 10 years in clinical trials and development before it is approved to be used by the public. **Metric:** `r&d/sales`.
 
-**Query:**
+Query:
 
 ```sql
 SELECT tags.industry_name AS "Industry", 
@@ -133,7 +133,7 @@ LIMIT 10
 
 *Fig 5.* The above visualization tracks market totals across all observed metrics. Use the drop-down menu to narrow the displayed metrics to the top ten, bottom ten, or use the `*` wildcard symbol to show them all. **Metric:** `*`.
 
-**Query:**
+Query:
 
 ```sql
 SELECT metric AS "Profitability Metric", value * 100 AS "Profit Margin (%)"
@@ -169,7 +169,7 @@ ORDER BY value DESC
 
 *Fig 6.* The top ten industries with the highest profit margin with all factors considered are shown here. Use the drop-down menu to navigate through all metrics and see the top ten or bottom ten sectors for each one, or select the `*` wildcard character to view them all together. When doing so it is recommended to apply the setting `horizontal = true` by removing the `#` comment character from the configuration window.**Metric:** `net_margin`
 
-**Query:**
+Query:
 
 ```sql
 SELECT tags.industry_name AS "Industry", 
@@ -194,7 +194,7 @@ LIMIT 10
 
 ### Resources
 
-* For an introduction to the **TRENDS** service, see the following [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md);
+* For an introduction to the **Trends** service, see the following [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md);
 
 * For complete SQL Console documentation, including syntax, clauses, and functions not show here, view the [Axibase SQL Repository](https://github.com/axibase/atsd/tree/master/sql#overview) on GitHub;
 
