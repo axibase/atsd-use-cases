@@ -30,6 +30,7 @@ Replace the `SERVER_URL` parameter with the public DNS name of the Docker host w
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 \
   --name=atsd-sandbox \
+  --env START_COLLECTOR=off \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
   --env SLACK_CONFIG=slack.properties \

@@ -119,6 +119,7 @@ To automatically configure an email client in the ATSD sandbox container:
 docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
+  --env START_COLLECTOR=off \
   --env WEBHOOK=aws-cw \
   --env SLACK_CONFIG=slack.properties \
   --env EMAIL_CONFIG=mail.properties \

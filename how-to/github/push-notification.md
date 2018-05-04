@@ -19,6 +19,7 @@ Launch a local ATSD instance using the following sandbox image:
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 \
   --name=atsd-sandbox \
+  --env START_COLLECTOR=off \
   --env SERVER_URL=https://example.com \
   --env WEBHOOK=github \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-push.xml' \
