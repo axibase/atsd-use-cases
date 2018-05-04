@@ -5,13 +5,13 @@
 
 *Fig 1.* Open the **Trends** explorer above to navigate through the visualization of the data used to for a recent AEI article written by economist Mike J. Perry.
 
-### Data Overview
+## Data Overview
 
-The [American Enterprise Institute](http://www.aei.org/) is Washington D.C.-based think tank that is dedicated to researching issues of government, politics, economics, and social welfare. Recently, they published an article titles: *The Public Thinks the Average Company Makes a 35% Profit Margin Which is about 5x Too High*, which described the average American's perception of the profit margins that companies from various industries are able to make on a consistent basis.
+The **American Enterprise Institute** is a Washington D.C.-based think tank that is dedicated to researching issues of government, politics, economics, and social welfare. Recently, they published an article titles: *The Public Thinks the Average Company Makes a 35% Profit Margin Which is about 5x Too High*, which described the average American's perception of the profit margins that companies from various industries are able to make on a consistent basis.
 
 The article drew information from a variety of polling agencies who had sampled large groups of the population and came away with the conclusion that the average American believes most companies, regardless of industry are consistently making profits on the order of 36%. Using data from NYU professor and researcher [Aswath Damodaran](http://people.stern.nyu.edu/adamodar/New_Home_Page/home.htm) AEI came to the conclusion that the average American's estimation was off by about 500%. They concluded that the average company makes around 7.9% after taxes and an entire percent lower, 6.9% if the financial industry is excluded.
 
-### Metrics Legend
+## Metrics Legend
 
 The metrics stored in [ATSD](https://axibase.com/products/axibase-time-series-database/) follow the same naming patters as the [raw data](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html) stored on Dr. Damodaran's website and are abbreviated as follows:
 
@@ -36,7 +36,7 @@ The metrics stored in [ATSD](https://axibase.com/products/axibase-time-series-da
 
 Using the [**Trends**](https://trends.axibase.com/) service and SQL Console tool, these data may be visualized and queried.
 
-### Trading Value
+## Trading Value
 
 ![](images/trading-value.png)
 [![](images/button-new.png)](https://trends.axibase.com/2eb832d7#fullscreen)
@@ -66,7 +66,7 @@ LIMIT 10
 | Auto Parts                  | 82.36             |
 | Paper/Forest Products       | 81.03             |
 
-### Creating Value
+## Creating Value
 
 ![](images/creating-value.png)
 [![](images/button-new.png)](https://trends.axibase.com/407829bc#fullscreen)
@@ -83,7 +83,6 @@ ORDER BY value DESC
 LIMIT 10
 ```
 
-
 | Industry                               | Gross Margin (%) |
 |----------------------------------------|-------------------|
 | Bank (Money Center)                    | 100.00            |
@@ -97,7 +96,7 @@ LIMIT 10
 | Software (System & Application)        | 66.61             |
 | Software (Entertainment)               | 66.18             |
 
-### Developing Value
+## Developing Value
 
 ![](images/developing-value.png)
 [![](images/button-new.png)](https://trends.axibase.com/be5ff3c6#fullscreen)
@@ -127,7 +126,7 @@ LIMIT 10
 | Semiconductor Equip             | 10.96             |
 | Healthcare Products             | 7.41              |
 
-### Market Totals
+## Market Totals
 
 ![](images/market-totals.png)
 [![](images/button-new.png)](https://trends.axibase.com/c78e4e04#fullscreen)
@@ -163,7 +162,7 @@ ORDER BY value DESC
 | lease_expense/sales                   | 1.45              |
 | stock-based_compensation/sales        | 0.98              |
 
-### Top Ten Industries with the Highest Profit Margin
+## Top Ten Industries with the Highest Profit Margin
 
 ![](images/top-ten-by-sector.png)
 [![](images/button-new.png)](https://trends.axibase.com/f2a850a5#fullscreen)
@@ -173,8 +172,8 @@ ORDER BY value DESC
 Query:
 
 ```sql
-SELECT tags.industry_name AS "Industry", 
-  value * 100 AS "Profit Margin (%)"
+SELECT tags.industry_name AS "Industry",
+value * 100 AS "Profit Margin (%)"
 FROM "net_margin"
 ORDER BY value DESC
 LIMIT 10
@@ -193,15 +192,13 @@ LIMIT 10
 | Semiconductor Equip                    | 18.74             |
 | Transportation (Railroads)             | 18.68             |
 
-### Resources
+## Resources
 
 * For an introduction to the **Trends** service, see the following [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md);
 
 * For complete SQL Console documentation, including syntax, clauses, and functions not show here, view the [Axibase SQL Repository](https://github.com/axibase/atsd/tree/master/sql#overview) on GitHub;
 
 * To access the raw data used for this article, visit [Dr. Damodaran's page](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html);
-
-* To view the AEI article which inspired these visualizations, follow this [link](http://www.aei.org/publication/the-public-thinks-the-average-company-makes-a-36-profit-margin-which-is-about-5x-too-high-part-ii/);
 
 * For more use cases like this one, check out the [Axibase Use Cases Repository](https://github.com/axibase/atsd-use-cases) on GitHub;
 
