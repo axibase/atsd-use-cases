@@ -68,7 +68,7 @@ Follow the quick [launch procedure](#launch-sandbox-with-automated-slack-and-ema
 
 ### Launch ATSD Sandbox
 
-Follow this procedure to send AWS CloudWatch events into ATSD to enrich standard SNS notifications with additional resource details and AWS console links. Before launching the sandbox, add the desired variables and bind the needed volumes to the sandbox launch command below based on your preferences in [Custom Launch Preferences](#custom-launch-preferences).
+Follow this procedure to send AWS CloudWatch events into ATSD to enrich standard SNS notifications with additional resource details and AWS console links.
 
 * Launch an [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox):
 
@@ -153,7 +153,7 @@ ATSD is ready to notify you via [**Slack Team Messaging**](https://slack.com/) a
 
 ## Custom Launch Preferences
 
-Customize the generic ATSD launch command with your preferences from these options. After customizing the launch command and executing, return to the [Create SNS Subscription](#create-sns-subscription) section to complete the set-up procedure.
+Customize the generic ATSD launch command with your preferences from these options. After customizing the launch command and executing, return to the [Create SNS Subscription](#create-sns-subscription) section to complete the setup procedure.
 
 ### Email Notifications from ATSD
 
