@@ -606,7 +606,7 @@ GROUP BY tags.$TAG_NAME$, PERIOD(1 MONTH)
   ORDER BY tags.$TAG_NAME$, datetime
 ```
 
-Using this generic model, a series of queries can be performed in the [SQL Console](https://nur.axibase.com/sql/console).
+Using this generic model, a series of queries can be performed in the [SQL Console](https://github.com/axibase/atsd/tree/master/sql#overview).
 
 The `tags.$TAG_NAME$` corresponds to the metric the user is interested in querying.
 
