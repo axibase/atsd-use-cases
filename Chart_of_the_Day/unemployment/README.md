@@ -3,7 +3,7 @@
 ![](images/unemp-title.png)
 [![](images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
-*Fig 1.* The upper chart in the **TRENDS** visualization above tracks U.S. unemployment and GDP, while the lower charts track percent change in unemployment and GDP value, respectively.
+*Fig 1.* The upper chart in the **Trends** visualization above tracks U.S. unemployment and GDP, while the lower charts track percent change in unemployment and GDP value, respectively.
 
 > For specific configuration information about any of the visualizations in this article, see the [Configuration](#configuration) section towards the end of this page.
 
@@ -22,7 +22,7 @@ Since the 1980s, the United States has almost always been on the wrong side of t
 
 *Fig 2.* Periods of full employment are highlighted in green and periods of over 10% unemployment are highlighted in red. Full-employment and 10%-unemployment `[threshold]` series are used to highlight upper and lower value limits.
 
-The **TRENDS** chart above tracks periods with full employment using an `alert-expression`. The exceptionally high unemployment period during the early 1980s may be explained by the then-ongoing worldwide recession which began in 1979 amid a global energy crisis caused by the Iranian oil embargo and subsequent Iran-Iraq war, combined with extreme Fed monetary policy meant to combat double-digit inflation. Ironically, the global oil supply only contracted about 4% during the embargo, but speculation, panic, and commodity runs caused a huge price surge which wouldn't be reversed for almost twenty years.
+The **Trends** chart above tracks periods with full employment using an `alert-expression`. The exceptionally high unemployment period during the early 1980s may be explained by the then-ongoing worldwide recession which began in 1979 amid a global energy crisis caused by the Iranian oil embargo and subsequent Iran-Iraq war, combined with extreme Fed monetary policy meant to combat double-digit inflation. Ironically, the global oil supply only contracted about 4% during the embargo, but speculation, panic, and commodity runs caused a huge price surge which wouldn't be reversed for almost twenty years.
 
 ### The Relationship Between GDP and Unemployment
 
@@ -37,9 +37,9 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 ## Configuration
 
-* Read this brief [guide](../../how-to/shared/trends.md) about working in the **TRENDS** sandbox if you are unfamiliar with this service.
+* Read this brief [guide](../../how-to/shared/trends.md) about working in the **Trends** sandbox if you are unfamiliar with this service.
 
-* *Fig 1.* (for full configuration settings open the **TRENDS** visualization [above](#us-approaching-3-year-mark-for-full-employment))
+* *Fig 1.* (for full configuration settings open the **Trends** visualization [above](#us-approaching-3-year-mark-for-full-employment))
 
 ```sql
 ## [configuration] level settings have been removed for brevity.
@@ -74,7 +74,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * [`avg()`](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) statistical function is used with one or two arguments representing the `alias` of series to be averaged and the `period` across which the average should be calculated, respectively.
 
-* *Fig. 2* (for full configuration settings open the **TRENDS** visualization [above](#full-employment-in-the-united-states))
+* *Fig. 2* (for full configuration settings open the **Trends** visualization [above](#full-employment-in-the-united-states))
 
 ```sql
 ## [configuration] level settings have been removed for brevity.
@@ -107,7 +107,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * `[threshold]` series are used to define upper and lower limits for particular values.
 
-* *Fig. 3* (for full configuration settings open the **TRENDS** visualization [above](#the-relationship-between-gdp-and-full-employment))
+* *Fig. 3* (for full configuration settings open the **Trends** visualization [above](#the-relationship-between-gdp-and-full-employment))
 
 ```sql
 [series]
@@ -121,9 +121,9 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 ## Resources
 
-The **TRENDS** service relies on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) for data-storage and processing tasks. All of the data from the above article has been loaded into a publicly-accessible instance of the **TRENDS** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) or any of the configuration settings explained in this article.
+The **Trends** service relies on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) for data-storage and processing tasks. All of the data from the above article has been loaded into a publicly-accessible instance of the **Trends** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) or any of the configuration settings explained in this article.
 
-To create your own chart using the existing data, open an empty **TRENDS** [instance](https://trends.axibase.com/).
+To create your own chart using the existing data, open an empty **Trends** [instance](https://trends.axibase.com/).
 
 For questions, technical support, or to suggest a dataset that you would like to see visualized, visit our repository and [raise an issue](https://github.com/axibase/atsd-use-cases/issues).
 
