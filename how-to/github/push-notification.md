@@ -142,8 +142,8 @@ Bind the `telegram.properties` file to the sandbox container with the following:
 The bound volume should at least contain the following required parameters:
 
 ```txt
-token=xoxb-************-************************
-channels=general
+bot_id=*********:***********************************
+chat_id=-NNNNNNNNN
 ```
 
 ## Configure Alert Rule to Process GitHub Webhook Requests
