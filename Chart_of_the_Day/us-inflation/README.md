@@ -34,7 +34,7 @@ Currently, the Federal Reserve's stated target inflation level is around 2%. Fed
 
 ## Configuration
 
-This section of the article discusses the underlying settings used for the chart above. For introductory information on using **TRENDS**, see this [guide](../../how-to/shared/trends.md).
+This section of the article discusses the underlying settings used for the chart above. For introductory information on using **Trends**, see this [guide](../../how-to/shared/trends.md).
 
 The configuration for the above chart is shown here:
 
@@ -99,7 +99,7 @@ There are five series in this configuration, defined by their `alias` setting:
 
 * **s-1**: United States Experimental CPI value for all items, sourced from the United States Federal Reserve [FRED API](https://fred.stlouisfed.org/series/CPIEALL). This series has a `display = false` expression so that it will not be shown in the final version of the visualization but may still be used for deriving a new series. When displayed, the series will be placed on the right axis using a [dual-axis](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting, which is helpful when visualizing series with dramatically different orders of magnitude.
 
-* **s-2**: A derived series which uses a collection of functions implemented in the `fred.js` library to calculate percent change from a year ago. This is a set of [user-defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md) and must be imported using the `import fred = fred.js` expression at the **[configuration]** level. This functionality may be extended with built-in JavaScript [`Math`](../../Solutions/calculated-values/README.md) functions, which are supported in **TRENDS** charts. An `alert-expression` is defined for this series. Wherever the condition is satisfied, the bar corresponding to the date of the alert is modified with `alert-style`, in this case, a specific color.
+* **s-2**: A derived series which uses a collection of functions implemented in the `fred.js` library to calculate percent change from a year ago. This is a set of [user-defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md) and must be imported using the `import fred = fred.js` expression at the **[configuration]** level. This functionality may be extended with built-in JavaScript [`Math`](../../Solutions/calculated-values/README.md) functions, which are supported in **Trends** charts. An `alert-expression` is defined for this series. Wherever the condition is satisfied, the bar corresponding to the date of the alert is modified with `alert-style`, in this case, a specific color.
 
 * **t-1**: The upper-limit threshold is defined with a `value` setting, `value = percentile(90, 's-2', '10 year')`, where the first argument is the desired percentile, the second argument is the series from which the value should be calculated, and the third is the time period for applying the statistic.
 
