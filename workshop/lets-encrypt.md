@@ -2096,7 +2096,7 @@ Since custom CA is in the Java trust store, URL connections complete without err
   Connection OK
 ```
 
-If the certificate were untrusted, we would see the following error:
+If the certificate were untrusted, we would see this error:
 
 ```txt
 Exception in thread "main" javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No name matching www.uber.com found

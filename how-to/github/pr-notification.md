@@ -25,7 +25,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
   axibase/atsd-sandbox:latest
 ```
 
-If you would like to automatically configure Slack Messaging Service at runtime, use the following ATSD Sandbox launch command:
+If you would like to automatically configure Slack Messaging Service at runtime, launch a pre-configured ATSD:
 
 ```sh
 docker run -d -p 8443:8443 \
@@ -48,7 +48,7 @@ channels=general
 
 Replace the `SERVER_URL` parameter in the command above with the public DNS name of the Docker host where the sandbox container will be running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
 
-For advanced launch settings refer to the following [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
+For advanced launch settings refer to this [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
 Watch the sandbox container logs for `All applications started` line.
 
@@ -110,13 +110,13 @@ Configure your local ATSD instance to send messages to **Slack Messenger** by fo
    --env SLACK_CONFIG="slack.properties"
 ```
 
-Bind the `slack.properties` file to the sandbox container with the following:
+Bind the `slack.properties` file to the sandbox container:
 
 ```sh
    --volume /home/user/slack.properties:/slack.properties
 ```
 
-The bound volume should at least contain the following required parameters:
+The bound volume should at least contain these required parameters in plaintext:
 
 ```txt
 token=xoxb-************-************************
@@ -133,13 +133,13 @@ Configure your local ATSD instance to send messages to **Telegram Messenger** by
    --env TELEGRAM_CONFIG="telegram.properties"
 ```
 
-Bind the `telegram.properties` file to the sandbox container with the following:
+Bind the `telegram.properties` file to the sandbox container:
 
 ```sh
    --volume /home/user/telegram.properties:/telegram.properties
 ```
 
-The bound volume should at least contain the following required parameters:
+The bound volume should at least contain these required parameters in plaintext:
 
 ```txt
 bot_id=*********:***********************************

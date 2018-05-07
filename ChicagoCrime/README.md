@@ -26,9 +26,13 @@ where the crime occurred, and by the specific crime type. For example, for the c
 of cocaine, manufacturing and delivering heroin, soliciting narcotics etc). Each crime type has its own number of locations and specific violations that it may be sorted for.
 
 Given the size of the dataset, you cannot load it in Excel. It is much more convenient to interact with the data once it is loaded into a database. The
-[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to look into this dataset: interactive graphs from [Chart Lab](../ChartLabIntro/README.md) and tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).
+[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use two capabilities of ATSD to explore this dataset: 
 
-You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
+* Interactive graphs from [Chart Lab](../ChartLabIntro/README.md);
+
+* Tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).
+
+You can load the dataset into an ATSD instance by following the steps provided at the [end of the article](#action-items).
 
 ## Homicide Numbers
 
@@ -221,7 +225,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
    curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/ChicagoCrime/resources/docker-compose.yml
    ```
 
-3. Launch containers with the following command:
+3. Launch containers:
 
    ```bash
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d

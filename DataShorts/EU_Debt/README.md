@@ -34,7 +34,7 @@ the European Union debt as a percent of GDP, used as a baseline for reference.
 
 ## Data
 
-Use the following index to navigate between countries, the numerical data associated with the above [ChartLab](https://apps.axibase.com/chartlab)
+Use the index to navigate between countries, the numerical data associated with the above [ChartLab](https://apps.axibase.com/chartlab)
 visualizations and their corresponding SQL queries are shown below:
 
 European Union Countries Index:

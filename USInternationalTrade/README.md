@@ -15,14 +15,19 @@ as well as instructions on how to install your own ATSD instance and populate it
 
 America's International Trade Dataset
 
-Let's take a look at a dataset on America's international trade from [census.gov](https://www.census.gov/foreign-trade/balance/index.html).  The dataset is available as an Excel file at the following [link](https://www.census.gov/foreign-trade/balance/country.xlsx).
+Let's take a look at a dataset on America's international trade from [census.gov](https://www.census.gov/foreign-trade/balance/index.html).  The dataset is available as an Excel file [here](https://www.census.gov/foreign-trade/balance/country.xlsx).
 
 This dataset contains import and export statistics collected monthly from 1985 to the present time for the United States and 259 locations. These locations include countries,
 world regions (such as Europe and Asia), trade unions (such as the European Union or NAFTA), as well as various other organizations (such as [OPEC](https://en.wikipedia.org/wiki/OPEC)).
 
 While Excel can provide quick answers to simple questions, when it comes to complex analysis it is much more convenient to interact with the data once it is loaded into a database. The
-[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to look into this dataset: interactive graphs from [Chart Lab](../ChartLabIntro/README.md) and tabular outputs from analytical SQL queries with support for [partitioning](https://github.com/axibase/atsd/blob/master/sql/README.md#partitioning).
-You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
+[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to look into this dataset: 
+
+* Interactive graphs from [Chart Lab](../ChartLabIntro/README.md);
+
+* Tabular outputs from analytical SQL queries with support for [partitioning](https://github.com/axibase/atsd/blob/master/sql/README.md#partitioning).
+
+You can load the dataset into any ATSD instance by following the steps provided at the [end of the article](#action-items).
 
 The BLS file format presents a number of challenges when loading the data. In particular, it requires the parser to handle columns that combine both metric names (E - export, I - import), as well as partial dates (3-letter months).
 
@@ -44,7 +49,7 @@ You can explore this portal by clicking on the below button:
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/552d7a44/2/#fullscreen)
 
 In addition to looking at graphical outputs, we can also perform [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview), which can be used
-to search for specific information contained in this dataset. From the following query, we can see that, within the time range of our dataset, 1991 was the year which had the least negative trade balance of **-$66.7 billion**.
+to search for specific information contained in this dataset. From the query below it may be observed that within the dataset time range, 1991 was the year which had the least negative trade balance of **-$66.7 billion**.
 
 ```sql
 SELECT date_format(e.time, 'yyyy') AS "year", e.tags.ctyname AS country,
@@ -342,7 +347,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 2. [Install the ATSD database](https://github.com/axibase/atsd/blob/master/installation/docker.md#option-2-configure-collector-account-manually) on in your local Docker configuration.
 3. Save the [Excel file](https://www.census.gov/foreign-trade/balance/country.xlsx) in CSV format.
 4. Log in to ATSD by navigating to `https://docker_host:8443/`.
-5. Import the `us-trade-ie-csv-parser.xml` file into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
+5. Import the `us-trade-ie-csv-parser.xml` file into ATSD. For a more detailed description, refer to step 9 from this [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
 6. Upload the Excel file saved in `.csv` format into ATSD. Refer to step 10 from this same walkthrough.
 7. Import the `us-trade-balance-2016`, `us-trade-balance-rank-2016`, `world-gdp`, and `world-population` replacement tables into ATSD. Refer to steps 7 and 8 from this same walkthrough.
 8. Navigate to the SQL tab in ATSD and begin writing your queries!

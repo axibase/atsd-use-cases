@@ -112,7 +112,7 @@ Where,
 | 2014 | 19748.30            | 0.17                 |
 | 2015 | 20525.20            | 3.93                 |
 
-The `replace-value` setting visible in the Editor window in ChartLab produces the following visualization:
+The `replace-value` setting visible in the Editor window in ChartLab produces this visualization:
 
 ![](Images/acv-002.png)
 
@@ -153,7 +153,7 @@ SELECT AVG(value) AS "Debt (Million Euro)"
 |---------------------|
 | 12175.6             |
 
-This value can be hardcoded into the following query to return the desired result set:
+This value can be hardcoded into the query to return the desired result set:
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt (Million Euro)", (100*((value)/12175.6-1)) AS "Percent Change (AVB)"

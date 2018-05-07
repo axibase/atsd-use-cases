@@ -201,7 +201,7 @@ You can explore this portal by clicking on the link below.
 
 `[widget]`-level settings may be used for overall modification of any ChartLab visualization.
 
-1. Under the `[widget]` heading, change the `type` setting from `calendar` to `pie`. Use the following settings: `summarize-period = 1 month` and `color-range = blue`.
+1. Under the `[widget]` heading, change the `type` setting from `calendar` to `pie`. Use these settings: `summarize-period = 1 month` and `color-range = blue`.
 1. Change from `starttime = 2015-01-01T00:00:00Z` to `starttime = current year`.
 1. Apply a limit settings using a `display` parameter: `display = value > top(15)` will limit the visualization to contain on the top 15 results.
 1. To show a legend with the figure, enter `legend-position = top`.

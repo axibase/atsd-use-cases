@@ -47,7 +47,7 @@ The `value` expression using to derive the above series is shown here:
 value = var v = value('x'); var p = value('y'); if(p!=null && v!=null) return v - p
 ```
 
-To create such a series in a local **Trends** instance, use the following syntax as a template:
+To create such a series in a local **Trends** instance, use this syntax as a template:
 
 ```ls
 [group]

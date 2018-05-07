@@ -218,7 +218,7 @@ Log in to ATSD at `https://docker_host:8443` with [default](https://github.com/a
 
 Open **Alerts > Web Notifications** page. Open `dockerhub-webhook-sender` notification. Click Test to verify connection.
 
-Open **Data > Data Entry** page in the main menu. Submit the following command to emulate a build failure detected by Axibase Collector.
+Open **Data > Data Entry** page in the main menu. Submit this command to emulate a build failure detected by Axibase Collector.
 
 ```ls
 message e:docker.hub t:build_code=abc t:last_updated=2019-01-01T00:00:00Z t:dockertag_name=latest t:name=my-image t:cause=TRIGGERED_VIA_API t:id=11111111 t:created_date=2019-01-01T00:00:00Z t:source=docker.hub t:repository=test/my-image t:type=build t:user=test t:status=-1
@@ -230,7 +230,7 @@ Check that the `dockerhub-webhook-sender` status is `OK`.
 
 ![](images/sender-status.png)
 
-The target service should now receive the following JSON payload:
+The target service should now receive the JSON payload:
 
 ```json
 {

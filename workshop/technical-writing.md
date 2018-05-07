@@ -134,13 +134,13 @@ Non-Participation
 
 **Articles:** More often than in traditional English writing, some articles may be omitted in places they would otherwise register as required. This is especially true of short, imperative sentences. Both examples below are correct, but because ATSD is a well-known product, and the sentence is written in the imperative, omitting the article sounds more professional.
 
-* "Launch *the* Axibase Time Series Database using the following command:
+* "Launch *the* Axibase Time Series Database:
 
 ```sh
 sudo apt-get update && sudo apt-get install atsd
 ```
 
-* Launch Axibase Time Series Database using the following command:
+* Launch Axibase Time Series Database using:
 
 ```sh
 sudo apt-get update && sudo apt-get install atsd

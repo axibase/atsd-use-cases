@@ -50,7 +50,7 @@ Once you have completed creating a new subscription, click **Confirm Subscriptio
 
 ![](images/confirm-email.png)
 
-After confirming, you will be shown the following notification indicating that the email address was successfully confirmed.
+After confirming, you will be shown this notification indicating that the operation was successful.
 
 ![](images/email-confirm.png)
 
@@ -182,13 +182,13 @@ Configure your local ATSD instance to send messages to **Slack Messenger** by fo
    --env SLACK_CONFIG="slack.properties"
 ```
 
-Bind the `slack.properties` file to the sandbox container with the following:
+Bind the `slack.properties` file to the sandbox container:
 
 ```sh
    --volume /home/user/slack.properties:/slack.properties
 ```
 
-The bound volume should at least contain the following required parameters:
+The bound volume should at least contain these required parameters in plaintext:
 
 ```txt
 token=xoxb-************-************************
@@ -209,13 +209,13 @@ Configure your local ATSD instance to send messages to **Telegram Messenger** by
    --env TELEGRAM_CONFIG="telegram.properties"
 ```
 
-Bind the `telegram.properties` file to the sandbox container with the following:
+Bind the `telegram.properties` file to the sandbox container:
 
 ```sh
    --volume /home/user/telegram.properties:/telegram.properties
 ```
 
-The bound volume should at least contain the following required parameters:
+The bound volume should at least contain the required parameters in plaintext:
 
 ```txt
 bot_id=*********:***********************************

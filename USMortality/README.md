@@ -1347,7 +1347,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
    curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/USMortality/resources/docker-compose.yml
    ```
 
-3. In Terminal, launch containers with the following command:
+3. In Terminal, launch containers:
 
    ```sh
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d

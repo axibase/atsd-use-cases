@@ -194,7 +194,7 @@ LIMIT 10
 
 ## Resources
 
-* For an introduction to the **Trends** service, see the following [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md);
+* For an introduction to the **Trends** service, see this [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md);
 
 * For complete SQL Console documentation, including syntax, clauses, and functions not show here, view the [Axibase SQL Repository](https://github.com/axibase/atsd/tree/master/sql#overview) on GitHub;
 

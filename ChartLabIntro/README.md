@@ -20,7 +20,7 @@ A blank, customizable ChartLab portal for can be found here:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/)
 
-The ChartLab menu contains the following items:
+The ChartLab menu contains these items:
 
 * Editor - Toggle configuration editor;
 * Run - Apply and view a portal based on the current configuration in the Editor window;
@@ -52,11 +52,11 @@ their own data, updated in real time as new incoming data is processed.
 
 ## Widget
 
-ChartLab contains each of the following **Widgets**, shown in the image below.
+ChartLab contains each of these **Widgets**, shown in this image.
 
 ![Figure 3](Images/Figure3.png)
 
-These visualizations can be found at the following link:
+These visualizations can be found at here:
 
 [https://axibase.com/products/axibase-time-series-database/visualization/widgets/](https://axibase.com/products/axibase-time-series-database/visualization/widgets/)
 
@@ -87,7 +87,7 @@ If we add a second group (as shown in the below image) and hit Run, the below vi
 ![Figure 15](Images/Figure15.png)
 
 In order to fit more Widgets in a single view, you may change the **height-units** and **width-units** settings in the Editor window. For example, if we change both
-of these values from 2 to 4, the following visualization will be rendered.
+of these values from 2 to 4, this visualization will be rendered:
 
 ![Figure 16](Images/Figure16.png)
 

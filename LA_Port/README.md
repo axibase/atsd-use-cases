@@ -104,7 +104,7 @@ Using the previous year as a baseline, the percent change for each year is shown
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/0f8b70ab/7/#fullscreen)
 
-The SQL query for this metric returns the following values:
+The SQL returns this result set:
 
 | Year | NOx (Tons Per Year) |
 |------|---------------------|

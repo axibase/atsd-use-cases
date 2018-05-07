@@ -49,7 +49,7 @@ New York City figures can be compared to New York State figures:
 | Utilities                                                                | 37302.0   |
 | Mining, Quarrying, and Oil and Gas Extraction                            | 4708.0    |
 
->The above table was produced with the following query:
+>The above table was produced with this query:
 
 ```sql
 SELECT tags.industry, sum(value) as total
@@ -85,7 +85,7 @@ ORDER BY total DESC
 | Agriculture, Forestry, Fishing and Hunting                               | 560.0    |
 | Mining, Quarrying, and Oil and Gas Extraction                            | 64.0     |
 
->The above table was produced with the following query:
+>The above table was produced with this query:
 
 ```sql
 SELECT tags.industry, sum(value) as total

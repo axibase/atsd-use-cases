@@ -45,7 +45,7 @@ between metrics.
 
 The following ChartLab visualization displays information related to the changing cost of both owning and renting a home.
 
-**Local Metrics**: Stored in ATSD with the following labels.
+Local Metrics:
 
 * change_in_median_home_value_2000_2012
 * change_in_median_rent_2000_2012
@@ -64,7 +64,7 @@ Return to the [Index](#Index)
 
 The following ChartLab visualization displays information related to transportation cost in the city of Austin.
 
-**Local Metrics**: Stored in ATSD with the following labels.
+Local Metrics:
 
 * average_monthly_transportation_cost
 * percentage_of_homes_within_1_4_mi_of_transit_stop
@@ -82,7 +82,7 @@ Return to the [Index](#Index)
 
 The following ChartLab visualization displays information related to the socioeconomic conditions of Austin residents.
 
-**Local Metrics**: Stored in ATSD with the following labels.
+Local Metrics:
 
 * change_in_percentage_of_population_below_poverty_2000_2012
 * homes_affordable_to_people_earning_less_than_50_000
@@ -104,7 +104,7 @@ Return to the [Index](#Index)
 The following ChartLab visualization displays information related to the accessibility of both owning and renting a home
 in Austin. **Figure 4.1** deals with ownership statistics, whereas **Figure 4.2** deals with home rental statistics.
 
-**Local Metrics**: stored in ATSD with the following labels.
+Local Metrics:
 
 Figure 4.1
 
@@ -142,7 +142,7 @@ Return to the [Index](#Index)
 
 The following ChartLab visualization displays information related to the quality of housing in the City of Austin.
 
-**Local Metrics**: Stored in ATSD with the following labels.
+Local Metrics:
 
 * percent_change_in_number_of_housing_units_2000_2012
 * percentage_of_rental_units_in_poor_condition

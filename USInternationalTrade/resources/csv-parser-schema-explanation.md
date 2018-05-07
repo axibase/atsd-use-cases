@@ -41,7 +41,7 @@ select('#row=2-*')
 This method selects elements from the table based on the above expression.
 In this case, `'#row=2-*'`  means that we want to select all rows starting with row Index 2 (which will ignore the first row).
 
-After execution, we will work with the following table's cells:
+After execution, we will work with the table's cells:
 
 |  Index | 1   | 2    | 3    | 4    |5-14 | 15   | 16    | 17   |18-27|   28|  29   |
 |------|------|------|------|------|-----|------|-------|------|-----|------|-------|
@@ -102,13 +102,13 @@ We discard the column with the header `IYR` from our cells and we will work with
 
 ## Filter Last Missing Data
 
-We want to discard data for December 2016. We will use the following filter to do so:
+We want to discard data for December 2016. We will use this filter:
 
 ```javascript
 filter(cell(row,1) != 2016 || cell(1,col).substring(1) != 'DEC')
 ```
 
-For example, in the first iteration we will check when the following condition equates to true:
+For example, in the first iteration we will check when this condition resolves to true:
 
 ```javascript
 filter((1985 != 2016) || ('JAN' != 'DEC'))
@@ -169,7 +169,7 @@ which then will be parsed by a timestamp pattern. We accomplish this by using th
 
 In our case, we can pass a string that is the result of concatenated values of the first column in the row and a substring of the current column's header.
 
-For example, for our first iteration we get a series with the following fields:
+For example, for our first iteration we get a series with these fields:
 
 | Date                 | Metric          | Entity | Tags                             | Value |
 |----------------------|-----------------|--------|----------------------------------|-------|

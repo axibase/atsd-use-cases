@@ -315,13 +315,14 @@ down and establish a less-than-average call wait time that meets the selected ta
 ### Model 1: Maintain Abandonment Rate <= 1.56%
 
 Suppose the company is content to maintain the 1.56% call abandonment rate and is simply interested in finding the typical
-client's limit to wait before their call is fielded or abandoned. By averaging the wait time for only months which demonstrated a call
-abandonment rate of greater than 1.56% we arrive at the following table:
+client's limit to wait before their call is fielded or abandoned. By averaging the wait time for only months which demonstrated a call abandonment rate of greater than 1.56% with this query:
 
 ```sql
 SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "Call Wait Time"
   FROM "call_abandonment_rate" AS car JOIN "average_speed_of_answer_in_secs" AS cat WHERE car.value > 1.56 AND datetime < '2016-01-01 00:00:00'
 ```
+
+This result set is returned:
 
 | Date       | Call Abandonment Rate | Call Wait Time |
 |------------|-----------------------|----------------|
@@ -445,7 +446,7 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "C
 | 2017-05-01 | 0.8                   | 16             |
 | 2017-06-01 | 1.9                   | 32             |
 
-To create confusion matrices, the following table details true positives (p,t), true negatives (n,t), false positives (p,t),
+To create confusion matrices, this table details true positives (p,t), true negatives (n,t), false positives (p,t),
 and false negatives (n,f):
 
 Confusion Matrices

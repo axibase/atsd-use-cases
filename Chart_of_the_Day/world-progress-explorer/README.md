@@ -34,7 +34,7 @@ Axibase [Charts API](https://axibase.com/products/axibase-time-series-database/v
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return (v / p - 1) * 100
 ```
 
-To implement this function, the following syntax is used:
+To implement this function, the this setting is used:
 
 ```javascript
 value = fred.PercentChangeFromYearAgo('raw')
@@ -57,7 +57,7 @@ ORDER BY "Life Expectancy" DESC
   LIMIT 10
 ```
 
-Query uses the following clauses:
+Query uses these clauses:
 
 * [`FROM`](https://github.com/axibase/atsd/blob/master/sql/README.md#virtual-table)
 * [Alias / `AS`](https://github.com/axibase/atsd/blob/master/sql/README.md#aliases)

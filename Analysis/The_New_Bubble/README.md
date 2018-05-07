@@ -173,7 +173,7 @@ age of Neo-liberalism.
 
 ## Sources
 
-> All charts from this article can be viewed together at the following [ChartLab Portal](https://apps.axibase.com/chartlab/c91957c0/2/).
+> All charts from this article can be viewed together [here](https://apps.axibase.com/chartlab/c91957c0/2/).
 
 1. [Smithsonian Magazine](http://www.smithsonianmag.com/smart-news/average-american-household-lost-third-their-net-worth-during-recession-180952191/); 2014; Shultz, Colin.
 

@@ -55,7 +55,7 @@ local CPI values.
 
 Shown above is the percent change of almost half of century's worth of CPI data tracked by the Bank of Israel. The hyperinflation that resulted
 in the establishment of Israel's contemporary currency, the New Israeli Shekel (NIS), in 1985 is detailed by the absolute maxima
-seen here. The value shown is a calculated percentile based on the following script, which is visible in
+seen here. The value shown is a calculated percentile based on this setting, which is visible in
 the Editor window:
 
 `replace-value = (value/previousValue-1)*100`
@@ -66,7 +66,7 @@ Where,
 `value` = X,
 `previousValue` = previous value of X
 
-This script simply replaces the value stored in the database with the value calculated by the equation, which returns the change in CPI. In order to smooth the variance of the curve, the following script can be added to the Editor:
+This script simply replaces the value stored in the database with the value calculated by the equation, which returns the change in CPI. In order to smooth the variance of the curve, this setting may be added to the Editor:
 
 ```ls
 [series]

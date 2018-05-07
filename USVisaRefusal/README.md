@@ -29,7 +29,10 @@ website and download each file individually; however these files are only availa
 visas are issued for individuals seeking entry for business purposes, while B-2 visas are issued for tourism and non-business purposes. In this article, in order to come up with a total
 monetary value for visa refusal fees, we will apply these refusal rates to all visa types.
 
-As opposed to analyzing this information in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use the following two aspects of ATSD to look into this dataset: interactive graphs from [Chart Lab](../ChartLabIntro/README.md) and tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).
+As opposed to analyzing this information in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of ATSD to look into this dataset: 
+
+* Interactive graphs from [Chart Lab](../ChartLabIntro/README.md);
+* Tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
@@ -495,7 +498,7 @@ look at the U.S. visa refusal rates by following the below actions items to inst
 
 Below are the summarized steps to follow to install local configurations of ATSD for analyzing United States visa statistics:
 
-* Install the ATSD database on your local configuration using the following command.
+* Install the ATSD database on your local configuration:
 
 ```sh
 docker run \
@@ -510,7 +513,7 @@ docker run \
 ```
 
 * Log in to ATSD and configure the pre-defined administrator account.
-* Import the [`travel_visas.xml`](Resources/travel_visas.xml) and [`visa-refusal-rates-csv-parser.xml`](Resources/visa-refusal-rates-csv-parser.xml) files into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
+* Import the [`travel_visas.xml`](Resources/travel_visas.xml) and [`visa-refusal-rates-csv-parser.xml`](Resources/visa-refusal-rates-csv-parser.xml) files into ATSD. For a more detailed description, refer to step 9 from this [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
 * Import the [`visas.tar.gz`](Resources/visas.tar.gz) file into ATSD using the `travel_visas.xml` parser. For a more detailed description, refer to step 10 from the walkthrough mentioned in the previous step.
 * Import the [`visa-refusal.csv`](Resources/visa-refusal.csv) using the `visa-refusal-rates-csv-parser.xml` parser.
 * To check that data has correctly been imported, navigate to the metrics page in ATSD, and check that the metrics with the names `state.non-immigrant-visa` and `state.visa-refusal-rate` have appeared.

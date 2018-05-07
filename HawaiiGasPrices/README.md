@@ -5,12 +5,12 @@
 ## Introduction
 
 Hawaii. Sunshine. Beautiful beaches. Mai Tais. These are a few of the great motivators for moving to one of America's favorite vacation destinations. However,
-Hawaii has some of the most expensive consumer products in the nation. According to [expastistan.com](https://www.expatistan.com/cost-of-living/comparison/new-york-city/honolulu),
-in comparison to New York City, Honolulu is more expensive by the following percentages for each of the following items:
+Hawaii has some of the most expensive consumer products in the nation. According to [expatistan.com](https://www.expatistan.com/cost-of-living/comparison/new-york-city/honolulu),
+when compared to New York City, goods in Honolulu are more expensive:
 
-* 1 liter of whole fat milk: 41%
-* 1 kg (2 lbs) of apples: 68%
-* Bread for 2 people for 1 day: 67%
+* 1 liter of whole fat milk: +41%
+* 1 kg (2 lbs) of apples: +68%
+* Bread for 2 people for 1 day: +67%
 
 In addition to exorbitant food prices, Hawaii currently holds the crown of having the highest fuel prices in the entire United States, according to [gasbuddy.com](https://www.gasbuddy.com/USA). The Aloha state has long held the
 reputation of having the most expensive fuel in the land. However, until recently, such trends have been difficult to quantify.  In order to better analyze datasets such as Hawaiian fuel prices,
@@ -25,11 +25,11 @@ Federal government, 25 US states, 300+ US cities, and contains 4,000+ datasets f
 
 Let us take a look at a dataset from [data.gov](https://www.data.gov/) which looks at Hawaiian fuel prices.
 
-From 2006 to 2012, the State of Hawaii compiled AAA fuel prices for each of the following fuel types:
+From 2006 to 2012, the State of Hawaii compiled AAA fuel prices for each of these fuel types:
 
 **Diesel**, **Gasoline - Regular**, **Gasoline - Midgrade**, **Gasoline - Premium**
 
-In turn, each of these fuel prices were recorded for the following locations:
+In turn, each of these fuel prices were recorded for these locations:
 
 **Hilo**, **Honolulu**, **Wailuku**, **US**, **State of Hawaii**
 
@@ -67,8 +67,8 @@ location), and the **Price** as the y axis.
 ![Figure 3](Images/Figure3.png)
 
 The output will look as is shown below. The graph is relatively easy to interpret. The user can see that Gasoline - Regular fuel prices in Hawaii have for the last 6
-years steadily remained more expensive than US average prices. The main drawback of using plotly to process datasets from data.gov seems to be the extensive
-time and effort it would take to create outputs for each of the following fuel types. The same time consuming steps would have to be taken for analyzing Diesel,
+years steadily remained more expensive than US average prices. The main drawback of using plotly to process datasets from data.gov is the extensive
+time and effort it would take to create outputs for each of every fuel types. The same time-consuming steps would have to be taken for analyzing Diesel,
 Gasoline - Midgrade, and Gasoline - Premium between all 5 locations. The same cumbersome process would have to be followed for comparing fuel types for each particular location. Additionally,
 data in plotly is static, that is every time the data is updated, everything will need to be re-plotted.
 
@@ -126,7 +126,7 @@ We will walk through a brief example on how to customize the default dataset to 
 
   ![Figure 11](Images/Figure11.png)
 
-* Copy the following code into the blank portal. Paste directly under **group**.
+* Copy these settings to the blank portal under the `[group]` level.
 
   ```python
   [widget]
@@ -208,11 +208,11 @@ an anomaly, but quite possibly a trend.
 
 From the data.gov website, let us choose [Hawaii electricity prices](https://catalog.data.gov/dataset/hi-electricity-prices-815fa) as our second dataset.
 
-From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/kwh) for each of the following Hawaiian islands:
+From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/kwh) for each of the Hawaiian islands:
 
 **Hawaii**, **Kauai**, **Lanai**, **Maui**, **Molokai**, **Oahu**
 
-In turn, each island had it's electricity broken into the following  sectors:
+In turn, each island had it's electricity broken into these sectors:
 
 **All Sectors**, **Commercial**, **Residential**, **Street Lights**
 

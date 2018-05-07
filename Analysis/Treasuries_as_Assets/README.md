@@ -156,7 +156,7 @@ dollar accompanied by increased Federal Reserve interest rates, needed to counte
 on the public marketplace.
 
 **Figure 11** below tracks Federal Reserve interest rates by 1-year, 10-year, and 30-year averages and includes the daily
-Federal Fund rate. For further explanation of these metrics, see the following [analysis](../FedFund_FedInterest/README.md).
+Federal Fund rate. For further explanation of these metrics, see this [analysis](../FedFund_FedInterest/README.md).
 
 **Figure 11**: Federal Reserve Interest Rates
 

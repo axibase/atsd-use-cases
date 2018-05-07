@@ -138,7 +138,7 @@ ORDER BY "Days to File" DESC, time
 
 ## Summary
 
-By normalizing the raw data collected by IRS we're observing the following percentage changes for the 2017/16 filing season.
+By normalizing the raw data collected by IRS these percentage changes are observed for the 2017/16 filing season.
 
 | Case | 2017/2016 Year-on-Year Change, %   |
 |------|-------:|

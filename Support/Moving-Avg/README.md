@@ -91,7 +91,7 @@ Applying the moving, or weighted, average to **Figures 1.1** and **1.2** is show
 
 The analyst is now able to more accurately judge the relationship between the two datasets because of the equal rate of
 granularization. Combining the JFK and LGA elements from each of the two datasets, and using the `mode = column` setting,
-produces the following:
+produces:
 
 **Figure 2.3**: JFK Cargo Tonnage vs. Passenger Enplanement (1997-2015)
 

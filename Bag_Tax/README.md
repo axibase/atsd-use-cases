@@ -29,7 +29,7 @@ data from the [2010 United States Census](https://www.census.gov/2010census/data
 of plastic bags and assess whether the last five years have shown a decrease in plastic bag usage as the city intended. Because
 the official Census was performed in 2010, and local population estimates exist for 2015 an average step amount must be calculated
 in order to determine yearly population totals. Averaging the difference in population numbers provides a approximate per year
-increase value (+14,503 persons) which gives the following estimates:
+increase value (+14,503 persons) which gives these estimates:
 
 | Year | Population |
 |------|------------|

@@ -149,7 +149,7 @@ The above query uses a [`CAST`](https://github.com/axibase/atsd/blob/master/sql/
 
 The data published by the Federal Register requires an intermediate ETL step in order to be available for analysis. This extraction-transformation-loading procedure is implemented by a [web crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler#irs-expatriation-statistics-data-crawler) built specifically for the task of tracking Federal Register publications for new expatriation data releases.
 
-The Web Crawler operates according to the following workflow:
+The Web Crawler operates according to this workflow:
 
 ![](Images/crawler-flow.png)
 

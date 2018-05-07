@@ -22,7 +22,10 @@ the [U.S. Department of State](https://travel.state.gov) website.
 
 Visa figures were collected for 200 countries, 7 continents, and for unknown national origins. You can find a complete list of all the countries included in this dataset [here](../USVisaRefusal/Resources/countrylist.txt).
 
-As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use the following two aspects of [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) to look into this dataset: tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) and interactive graphs from [Chart Lab](../ChartLabIntro/README.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
+As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) to look into this dataset: 
+
+* Tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview);
+* Interactive graphs from [Chart Lab](../ChartLabIntro/README.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
@@ -323,7 +326,7 @@ to search for specific information contained within the dataset, and Redash to d
 Below are the summarized steps to follow to install local configurations of ATSD for analyzing United States visa statistics:
 
 * Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
-* Install Redash using the following command.
+* Install Redash:
 
 ```sh
   git clone https://github.com/getredash/redash
@@ -334,7 +337,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 
    For more details on Redash click [here](https://redash.io/help-onpremise/setup/setting-up-redash-instance.html).
 
-* Install the ATSD database on your local configuration using the following command.
+* Install the ATSD database on your local configuration:
 
 ```sh
 docker run \
@@ -349,11 +352,11 @@ docker run \
 ```
 
 * Log in to ATSD and configure the pre-defined administrator account.
-* Import the [`travel_visas.xml`](../USVisaRefusal/Resources/travel_visas.xml) file into ATSD. For a more detailed description, refer to step 9 from the following [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
+* Import the [`travel_visas.xml`](../USVisaRefusal/Resources/travel_visas.xml) file into ATSD. For a more detailed description, refer to step 9 from this [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).
 * Import the [`visas.tar.gz`](../USVisaRefusal/Resources/visas.tar.gz) file into ATSD using the above-mentioned parser.
 * Navigate to the Docker machine IP at port 5000, where you should see a Redash login screen.
 * Follow the steps in [ATSD data source guide](https://redash.io/help/data-sources/axibase_tsd.html) to create a read-only account in ATSD and add a new ATSD data source in Redash.
-* Create a sample query configuration, and execute the following query to validate the integration:
+* Create a sample query configuration, and execute this query to validate integration:
 
    ```sql
    SELECT * FROM jvm_memory_free LIMIT 10

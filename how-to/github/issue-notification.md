@@ -49,7 +49,7 @@ token=xoxb-************-************************
 channels=general
 ```
 
-For advanced launch settings refer to the following [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
+For advanced launch settings refer to this [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
 Watch the sandbox container logs for `All applications started` line.
 

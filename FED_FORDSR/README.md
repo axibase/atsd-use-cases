@@ -229,7 +229,7 @@ To view the distribution of these values across time, a histogram is shown below
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/9f74c179/#fullscreen)
 
-In the following box diagram, explore time with the dropdown menus at the top of the visualization screen. The visualization
+Use the box diagram to explore time with the dropdown menus at the top of the visualization screen. The visualization
 shows the distribution of debt values as a percentage of total income, with the initial time period set to include the
 entire data set:
 

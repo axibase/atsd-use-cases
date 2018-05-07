@@ -121,7 +121,7 @@ endlist
     endfor
 ```
 
-> For more information about the above syntax see the following [documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/).
+> For more information about the above syntax see the [documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/).
 
 By modifying any of the dates contained in the `keyDates` list above, the user can select any desired date to set as the
 baseline value, and the `value` equation contained in the `[option]` portion of the `[dropdown]` configuration above uses

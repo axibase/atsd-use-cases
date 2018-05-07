@@ -296,7 +296,7 @@ You can explore this portal here:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/08e6e6f0)
 
-To summarize, the **Great Recession** seems to have had the following effects on each of the datasets:
+To summarize the effects of the Great Recession in three parts: 
 
 * Decrease in total compensation for the state of Iowa
 * Decrease in total number of non-farm employees in the state of Iowa
@@ -402,7 +402,7 @@ it is basically the same configuration as with the unadjusted compensation for e
 
 ![Figure 22](Images/Figure22.png)
 
-In our portal, we now have the following outputs:
+In our portal, we now have these outputs:
 
 * Federal government head count and total compensation
 * Federal government compensation per employee
@@ -427,7 +427,7 @@ You can explore this portal here:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/6019ae9c)
 
-In conclusion, we can draw the following from our outputs:
+We can draw these conclusions from the output data:
 
 * Unadjusted federal government compensation per employee: **$50,211** in March of 1998 to **$92,078** in September of 2016
 * Adjusted federal government compensation per employee: **$74,608** in March of 1998 to **$92,078** in September of 2016

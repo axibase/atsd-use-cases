@@ -22,7 +22,7 @@ In the **Editor** window you will see the configuration for the current portal. 
 
 * **[widget]**: Widget represents a chart. Define the [type](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) of chart and its parameters such as title, timespan, formatting.
 
-For detailed information about **[widget]** level settings, see the following [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/#series).
+For detailed information about **[widget]** level settings, see this [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/#series).
 
 * **[series]**: Each widget must have at least one series. A series is a ordered and timestamped array of observations loaded from the database and visualized by the widget. **[series]** settings include the metric name, entity name, optional tags as well as any series-specific transformations.
 
@@ -180,4 +180,4 @@ For more detailed information about ATSD, the underlying mechanics, or download 
 
 Reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com) via email or [here](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page.
 
-For a complete list of metrics stored in **Trends**, see the following [index](https://trends.axibase.com/public/reference.html). Good luck and happy data hunting!
+For a complete list of metrics stored in **Trends**, see the [Index](https://trends.axibase.com/public/reference.html). Good luck and happy data hunting!

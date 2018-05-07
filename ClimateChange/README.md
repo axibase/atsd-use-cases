@@ -160,7 +160,7 @@ Users can replicate data analysis shown here.
 
 * Download the [`docker-compose.yml`](resources/docker-compose.yml) file to launch the ATSD container bundle.
 
-* Launch containers with the following command:
+* Launch containers:
 
 ![ContainerCommand](Images/containercommand.png)
 

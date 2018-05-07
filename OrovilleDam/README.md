@@ -125,7 +125,7 @@ for the next several days.
 
 Is there any way we can predict how quickly the dam will fill up for a given amount of rainfall? Another very helpful tool in ATSD is the capability to perform
 [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview), which can be used to search for specific information contained in this dataset.
-Using the following query, we are able to obtain an estimate for the volume added (acre-foot) to the storage level of the reservoir per inch of rainfall.
+Using this query, we are able to obtain an estimate for the volume added (acre-foot) to the storage level of the reservoir per inch of rainfall.
 
 ```sql
 SELECT
@@ -169,7 +169,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
    curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/OrovilleDam/resources/docker-compose.yml
    ```
 
-3. In Terminal, launch containers with the following command:
+3. In Terminal, launch containers:
 
    ```txt
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d

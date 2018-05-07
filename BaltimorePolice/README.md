@@ -52,7 +52,7 @@ a deeper understanding of the information.
 
 ### Location of Homicides
 
-To organize the data so that the location of the incident is considered, the following SQL query
+To organize the data so that the location of the incident is considered, this SQL query
 is used:
 
 ```sql
@@ -99,7 +99,7 @@ The results from the first query can also be visualized as shown below, by preci
 
 ### Nature of Homicides
 
-To organize the data so that the nature of the incident is considered, the following SQL query
+To organize the data so that the nature of the incident is considered, this SQL query
 is used:
 
 ```sql
@@ -137,7 +137,7 @@ altercation:
 
 ### Date of Homicides
 
-To organize the data so that the year of the incident is considered, the following SQL query is
+To organize the data so that the year of the incident is considered, this SQL query is
 used:
 
 ```sql
@@ -157,7 +157,7 @@ This query's results are displayed as follows:
 | 2014-01-01 | 34       |
 | 2015-01-01 | 22       |
 
-To organize the data so that the month of the incident is considered, the following SQL query is
+To organize the data so that the month of the incident is considered, this SQL query is
 used:
 
 ```sql
@@ -221,7 +221,7 @@ This data can be further visualized in ChartLab:
 Because the nature of the visualization is such that the omission of empty months
 would distort the chronology of the data, interpolation is used once again.
 
-To organize the data so that the week of the incident is considered, the following SQL
+To organize the data so that the week of the incident is considered, this SQL
 query is used:
 
 ```sql
@@ -237,8 +237,7 @@ These results can also be visualized in ChartLab:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/21/)
 
-The day of the week of these incidents can also be considered using the following
-query:
+The day of the week of these incidents can also be considered using this query:
 
 ```sql
 SELECT date_format(time, 'u'), count(*)
@@ -276,8 +275,7 @@ below
 
 ### District of Homicides
 
-To organize the data so that the location of the incident is considered,
-the following SQL query is used:
+To organize the data so that the location of the incident is considered, this SQL query is used:
 
 ```sql
 SELECT tags.district, count(*)
@@ -321,7 +319,7 @@ someone with whom they come in contact.
 ### Weapon of Homicides
 
 The City of Baltimore includes figures that consider the weapon used in the commission of
-recorded homicides, to query the SQL Console about this information, the following syntax
+recorded homicides, to query the SQL Console about this information, this syntax
 is used:
 
 ```sql
@@ -344,7 +342,7 @@ These results can be shown graphically as well:
 
 ![MethodOfAttack](Images/WeaponRing.png)
 
-To organize the data so that the year of the incident is considered, the following SQL query
+To organize the data so that the year of the incident is considered, this SQL query
 is used:
 
 ```sql
@@ -365,7 +363,7 @@ Because of the way the data is stored, modifications need to be made to the way 
 reads the data for effective use, see the [Action Items](#Action-Items) below for the assignment code
 needed.
 
-To organize the data so that the month of the incident is considered, the following SQL
+To organize the data so that the month of the incident is considered, this SQL
 query is used:
 
 ```sql
@@ -431,8 +429,7 @@ a spike in the number of homicides.
 Notice that in ChartLab, the `endtime` command has to be modified to reflect the
 difference in observation periods of the two data sets.
 
-Additionally, the following syntax can be used so that the day of the week of the homicide
-is considered:
+Additionally, this syntax can be used so that the day of the week of the homicide is considered:
 
 ```sql
 SELECT date_format(time, 'u'), count(*)
