@@ -21,11 +21,11 @@ This data is sourced from the Center for Disease Control and Prevention.
 
 * [NCHS - Death rates and life expectancy at birth](https://catalog.data.gov/dataset/age-adjusted-death-rates-and-life-expectancy-at-birth-all-races-both-sexes-united-sta-1900)
 
-Data is visualized using **TRENDS** service from Axibase, a public data repository with subsets of public data from organizations like the United States Federal Reserve, SEC, FCC, the Central Bank of Israel, and other government agencies. In order to replicate data visualizations in a local ATSD instance see the [Resources](#resources) section of this article.
+Data is visualized using **Trends** service from Axibase, a public data repository with subsets of public data from organizations like the United States Federal Reserve, SEC, FCC, the Central Bank of Israel, and other government agencies. In order to replicate data visualizations in a local ATSD instance see the [Resources](#resources) section of this article.
 
 ## Methodology
 
-1. Visualize Datasets using [TRENDS](https://trends.axibase.com/);
+1. Visualize Datasets using [Trends](https://trends.axibase.com/);
 2. Implement formulas to derive calculated series;
 3. Use built-in [Statistical Functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions.md#statistical-functions) to transform the dataset.
 4. Compare the original and transformed datasets in one visualization.
@@ -34,7 +34,7 @@ Data is visualized using **TRENDS** service from Axibase, a public data reposito
 
 ### Change in Age Expectancy from Previous Decade
 
-Open the TRENDS visualization to toggle secondary datasets on and off using the labeled buttons along the top of the visualization.
+Open the Trends visualization to toggle secondary datasets on and off using the labeled buttons along the top of the visualization.
 
 ![](images/life-ex-10.png)
 [![](images/button-new.png)](https://trends.axibase.com/172ff342#fullscreen)
@@ -47,7 +47,7 @@ The `value` expression using to derive the above series is shown here:
 value = var v = value('x'); var p = value('y'); if(p!=null && v!=null) return v - p
 ```
 
-To create such a series in a local **TRENDS** instance, use the following syntax as a template:
+To create such a series in a local **Trends** instance, use the following syntax as a template:
 
 ```ls
 [group]
@@ -185,7 +185,7 @@ The diminishing increase in United States life expectancy indicates that this ra
 ![](images/life-ex-comb.png)
 [![](images/button-new.png)](https://trends.axibase.com/feeee62f#fullscreen)
 
-*Fig 6.* Open the **TRENDS** visualization above and disable the series as shown to reproduce the above visualization showing that allow life expectancy continues to increase, the derivative rate of increase is approaching zero.
+*Fig 6.* Open the **Trends** visualization above and disable the series as shown to reproduce the above visualization showing that allow life expectancy continues to increase, the derivative rate of increase is approaching zero.
 
 Under the assumption that human life expectancy will increase roughly 1.4 years each decade and calculating from the current combined life expectancy value (78.9 years), American life expectancy will reach 100 years in roughly 151 years. Stay tuned for updates.
 
@@ -193,6 +193,6 @@ Under the assumption that human life expectancy will increase roughly 1.4 years 
 
 The following tools may be used to replicate these results in a local ATSD instance:
 
-* Instructional [guide](../../how-to/shared/trends.md) for using **TRENDS**;
+* Instructional [guide](../../how-to/shared/trends.md) for using **Trends**;
 * [Death rates and life expectancy data](#data);
 * Use this [guide](../../SocrataPython/README.md) to quickly upload data.gov datasets to a local ATSD instance.
