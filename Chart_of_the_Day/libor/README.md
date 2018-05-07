@@ -57,7 +57,7 @@ Previous values may be targeted with [`LAG`](https://github.com/axibase/atsd/tre
 
 Each of the LIBOR-denominated rates may be explored by changing the [`FROM`](https://github.com/axibase/atsd/tree/master/sql#select-expression) expression to the desired metric name, stored in [ATSD](https://axibase.com/products/axibase-time-series-database/).
 
-The returnset is shown here:
+The result set is shown here:
 
 ```txt
 | Date       | 1-Month Rate | Change from Previous Value | Log Return | Log Return Change |
