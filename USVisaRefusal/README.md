@@ -29,7 +29,7 @@ website and download each file individually; however these files are only availa
 visas are issued for individuals seeking entry for business purposes, while B-2 visas are issued for tourism and non-business purposes. In this article, in order to come up with a total
 monetary value for visa refusal fees, we will apply these refusal rates to all visa types.
 
-As opposed to analyzing this information in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of ATSD to look into this dataset: 
+As opposed to analyzing this information in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of ATSD to explore this dataset:
 
 * Interactive graphs from [Chart Lab](../ChartLabIntro/README.md);
 * Tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).

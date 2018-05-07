@@ -296,7 +296,7 @@ You can explore this portal here:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/08e6e6f0)
 
-To summarize the effects of the Great Recession in three parts: 
+To summarize the effects of the Great Recession in three parts:
 
 * Decrease in total compensation for the state of Iowa
 * Decrease in total number of non-farm employees in the state of Iowa

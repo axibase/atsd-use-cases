@@ -22,7 +22,7 @@ the [U.S. Department of State](https://travel.state.gov) website.
 
 Visa figures were collected for 200 countries, 7 continents, and for unknown national origins. You can find a complete list of all the countries included in this dataset [here](../USVisaRefusal/Resources/countrylist.txt).
 
-As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) to look into this dataset: 
+As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) to explore this dataset:
 
 * Tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview);
 * Interactive graphs from [Chart Lab](../ChartLabIntro/README.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
