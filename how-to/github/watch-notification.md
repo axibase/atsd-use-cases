@@ -14,16 +14,7 @@ While the default email notifications delivered by GitHub provide a convenient w
 
 ## Launch ATSD Sandbox
 
-Execute the `docker run` command below to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
-
-Create a `slack.properties` file to pass Slack [notification settings](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) into the container.
-
-```txt
-token=xoxb-************-************************
-channels=general
-```
-
-Specify the correct path to the `slack.properties` file in the `--volume` parameter.
+Execute the `docker run` command to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
 
 Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container will be running. The URL should be externally accessible to receive webhook notifications from GitHub.
 
@@ -33,8 +24,8 @@ docker run -d -p 8443:8443 \
   --env START_COLLECTOR=off \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
-  --env SLACK_CONFIG=slack.properties \
-  --volume /path/to/slack.properties:/slack.properties \
+  --env SLACK_TOKEN=xoxb-************-************************ \
+  --env SLACK_CHANNELS=general,devops \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-watch.xml' \
   axibase/atsd-sandbox:latest
 ```
@@ -63,9 +54,9 @@ Select the **Webhooks** tab from the left-side menu and click **Add Webhook**.
 On the **Add Webhook** page, configure the following settings:
 
 * **Payload URL**: Copy the GitHub webhook URL from the Docker log.
-* **Content Type**: Make sure you select `application/json`.
+* **Content Type**: Select `application/json`.
 * Click **Disable SSL Verification** and confirm the setting.
-* Select 'Send me everything', under **Which events would you like to trigger this webhook?** and select **Watches**.
+* Select **Send me everything**, under **Which events would you like to trigger this webhook?**.
 
 ![](images/webhook-config.png)
 
@@ -87,21 +78,33 @@ On the **Webhook Requests** page, you will see your newly-configured webhook. Un
 
 ![](images/webhook-confirm.png)
 
-You're ready to begin receiving notifications to your Slack Workspace.
+If you launched ATSD with the pre-configured `SLACK_CONFIG` variable, the setup process is complete. You'll receive a test message from ATSD:
 
-## Configure Alert Rule to Process GitHub Webhook Requests
+![](images/ping-message.png)
 
-Navigate to the **Rules** page as shown here.
+You're ready to begin receiving notifications to the defined Slack Workspace.
 
-![](images/alerts-rules.png)
+## Alternative Launch Options
 
-Open the rule configuration by clicking the link in the **Name** column.
+### Detailed Slack Notifications from ATSD
 
-![](images/open-watch-rule.png)
+Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding an environment variable to the atsd-sandbox container above:
 
-On the **Web Notifications** tab, enable the rule. Click **Save**.
+```sh
+  --env SLACK_TOKEN=xoxb-************-************************ \
+  --env SLACK_CHANNELS=channel_name \
+```
 
-![](images/wn-watch.png)
+### Detailed Telegram Notifications from ATSD
+
+Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding an environment variable to the atsd-sandbox container command:
+
+```sh
+  --env TELEGRAM_BOT_TOKEN=*********:*********************************** \
+  --env TELEGRAM_CHAT_ID=@channel_name \
+```
+
+---
 
 You'll begin receiving messenger notifications the next time a new subscriber begins to watch your GitHub repository.
 

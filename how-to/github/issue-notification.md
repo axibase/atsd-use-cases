@@ -36,17 +36,10 @@ docker run -d -p 8443:8443 \
   --env START_COLLECTOR=off \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
-  --env SLACK_CONFIG="slack.properties" \
-  --volume /home/user/slack.properties:/slack.properties \
+  --env SLACK_TOKEN=xoxb-************-************************ \
+  --env SLACK_CHANNELS=general,devops \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-issue-open.xml' \
   axibase/atsd-sandbox:latest
-```
-
-The bound volume should at least contain at least the required parameters seen below and be stored as a plaintext file at the defined location on your local machine or URL.
-
-```txt
-token=xoxb-************-************************
-channels=general
 ```
 
 For advanced launch settings refer to this [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
@@ -77,9 +70,9 @@ Select the **Webhooks** tab from the left-side menu and click **Add Webhook**.
 On the **Add Webhook** page, configure the following settings:
 
 * **Payload URL**: Copy the GitHub webhook URL from the Docker log.
-* **Content Type**: Make sure you select `application/json`.
+* **Content Type**: Select `application/json`.
 * Click **Disable SSL Verification** and confirm the setting.
-* Select 'Send me everything', under **Which events would you like to trigger this webhook?**.
+* Select **Send me everything**, under **Which events would you like to trigger this webhook?**.
 
 ![](images/webhook-config.png)
 
@@ -89,7 +82,7 @@ Once your ATSD server and webhook have been properly configured, confirm connect
 
 ![](images/recent-delivery.png)
 
-### Confirm Connectivity
+## Confirm Connectivity
 
 In the ATSD environment, open the left-side **Settings** menu, navigate to **Diagnostics** and click **Webhook Requests**.
 
@@ -99,65 +92,33 @@ On the **Webhook Requests** page, you will see your newly-configured webhook. Un
 
 ![](images/webhook-confirm.png)
 
-If you launched ATSD with the pre-configured `SLACK_CONFIG` variable, the setup process is complete. You're ready to begin receiving notifications to the defined Slack Workspace.
+If you launched ATSD with the pre-configured `SLACK_CONFIG` variable, the setup process is complete. You'll receive a test message from ATSD:
 
-### Configure Web Notification
+![](images/ping-message.png)
 
-#### Detailed Slack Notifications from ATSD
+You're ready to begin receiving notifications to the defined Slack Workspace.
 
-Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or an environment variable to the atsd-sandbox container above:
+## Alternative Launch Options
 
-```sh
-   --env SLACK_CONFIG="slack.properties"
-```
+### Detailed Slack Notifications from ATSD
 
-Bind the `slack.properties` file to the sandbox container:
+Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding an environment variable to the atsd-sandbox container above:
 
 ```sh
-   --volume /home/user/slack.properties:/slack.properties
+  --env SLACK_TOKEN=xoxb-************-************************ \
+  --env SLACK_CHANNELS=channel_name \
 ```
 
-The bound volume should at least contain the required parameters:
-
-```txt
-token=xoxb-************-************************
-channels=general
-```
-
-#### Detailed Telegram Notifications from ATSD
+### Detailed Telegram Notifications from ATSD
 
 Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding an environment variable to the atsd-sandbox container command:
 
 ```sh
-   --env TELEGRAM_CONFIG="telegram.properties"
+  --env TELEGRAM_BOT_TOKEN=*********:*********************************** \
+  --env TELEGRAM_CHAT_ID=@channel_name \
 ```
 
-Bind the `telegram.properties` file to the sandbox container:
-
-```sh
-   --volume /home/user/telegram.properties:/telegram.properties
-```
-
-The bound volume should at least contain the required parameters:
-
-```txt
-bot_id=*********:***********************************
-chat_id=-NNNNNNNNN
-```
-
-### Configure Alert Rule to Process GitHub Webhook Requests
-
-Navigate to the **Rules** page as shown here.
-
-![](images/alerts-rules.png)
-
-Open the rule configuration by clicking the link in the **Name** column.
-
-![](images/open-issue-rule.png)
-
-On the **Web Notifications** tab, enable the rule. Click **Save**.
-
-![](images/wn-issue.png)
+---
 
 You'll begin receiving messenger notifications the next time an issue is raised on your GitHub repository.
 
