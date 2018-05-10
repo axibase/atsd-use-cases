@@ -12,6 +12,8 @@ Repositories with collaborators working across the globe are difficult to monito
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to track new pushes can be better accomplished using programmatic integration leveraging GitHub webhook functionality.
 
+Webhook functionality is constantly evolving to include new options , explore the GitHub development team's latest pursuits on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/) for an insight into coming features.
+
 ## Launch ATSD Sandbox
 
 Execute the `docker run` command to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
@@ -69,19 +71,7 @@ Once your server and webhook have been configured, confirm connectivity at the b
 
 ![](images/recent-delivery.png)
 
-## Confirm Connectivity
-
-In the ATSD environment, open the left-side **Settings** menu, navigate to **Diagnostics** and click **Webhook Requests**.
-
-![](images/webhook-diag.png)
-
-On the **Webhook Requests** page, you will see your newly-configured webhook. Under the **Details** column, click the **View** link to see detailed information about the webhook request.
-
-![](images/webhook-confirm.png)
-
-You'll receive a test message from ATSD:
-
-![](images/ping-message.png)
+See the [Troubleshooting](troubleshooting.md) for connectivity issues.
 
 ---
 
