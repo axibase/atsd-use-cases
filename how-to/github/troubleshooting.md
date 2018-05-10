@@ -34,7 +34,7 @@ The ATSD should respond with the following message:
 < Vary: Accept-Encoding, User-Agent
 < Transfer-Encoding: chunked
 < Server: Jetty(9.4.z-SNAPSHOT)
-< 
+<
 * Connection #0 to host atsd.company.com left intact
 ```
 
