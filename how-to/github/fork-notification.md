@@ -8,9 +8,11 @@ This guide shows how to configure GitHub to alert you when someone forks your re
 
 ## Purpose
 
-GitHub runs on open-source code. Companies and individuals around the world collaborate to improve their programs. Keep an eye on what others are doing with your repositories with **Fork Notifications**.
+Github is a great place for open-source projects, companies and individuals around the world are collaborating to improve their code. Keep an eye on what others are doing with your repositories with **Fork Notifications**.
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to track new repository forks can be better accomplished using programmatic integration leveraging GitHub webhook functionality.
+
+Webhook functionality is constantly evolving to include new options , explore the GitHub development team's latest pursuits on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/) for an insight into coming features.
 
 ## Launch ATSD Sandbox
 
@@ -25,7 +27,7 @@ docker run -d -p 8443:8443 \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
   --env SLACK_TOKEN=xoxb-************-************************ \
-  --env SLACK_CHANNELS=general,devops \
+  --env SLACK_CHANNELS=general \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-fork.xml' \
   axibase/atsd-sandbox:latest
 ```
@@ -70,19 +72,7 @@ Once your server and webhook have been configured, confirm connectivity at the b
 
 ![](images/recent-delivery.png)
 
-## Confirm Connectivity
-
-In the ATSD environment, open the left-side **Settings** menu, navigate to **Diagnostics** and click **Webhook Requests**.
-
-![](images/webhook-diag.png)
-
-On the **Webhook Requests** page, you will see your newly-configured webhook. Under the **Details** column, click the **View** link to see detailed information about the webhook request.
-
-![](images/webhook-confirm.png)
-
-You'll receive a test message from ATSD:
-
-![](images/ping-message.png)
+See the [Troubleshooting](troubleshooting.md) for connectivity issues.
 
 ---
 
@@ -90,4 +80,4 @@ You'll begin receiving messenger notifications the next time someone creates a n
 
 ![](images/fork-message.png)
 
-**Repository**, **User**, and **New Repo** links will redirect you to the original repository, the user who forked it, and the newly-created repository, respectively.
+**Repository**, **User**, and **New Repository** links will redirect you to the original repository, the user who forked it, and the newly-created repository, respectively.
