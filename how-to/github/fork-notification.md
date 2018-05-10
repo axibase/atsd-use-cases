@@ -20,6 +20,8 @@ Execute the `docker run` command below to launch a local ATSD [sandbox](https://
 
 Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container will be running. The URL should be externally accessible to receive webhook notifications from GitHub.
 
+To acquire the Bot User Token, open the [Slack API](https://api.slack.com/apps), select the application which you would like to use for integration, and navigate to the **Install App** tab. The `Bot User OAuth Access Token` field contains the needed information. Note that you must be a collaborator for the application which you would like to integrate.
+
 ```sh
 docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
