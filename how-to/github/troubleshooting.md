@@ -1,6 +1,6 @@
 # Troubleshooting
 
-Correct common problems with GitHub webhooks.
+Correct common problems with ATSD and GitHub webhooks.
 
 ## Confirm Connectivity
 
