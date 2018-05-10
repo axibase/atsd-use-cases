@@ -41,6 +41,3 @@ The ATSD should respond with the following message:
 ```json
 {"entity":"github","type":"webhook","source":"github","severity":null,"tags":{"ping":"true","request_ip":"10.10.10.10"},"date":"2018-05-10T07:27:03.819Z"}
 ```
-
-
-
