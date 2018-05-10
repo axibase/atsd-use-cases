@@ -27,7 +27,7 @@ docker run -d -p 8443:8443 \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
   --env SLACK_TOKEN=xoxb-************-************************ \
-  --env SLACK_CHANNELS=general,devops \
+  --env SLACK_CHANNELS=general \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-watch.xml' \
   axibase/atsd-sandbox:latest
 ```
