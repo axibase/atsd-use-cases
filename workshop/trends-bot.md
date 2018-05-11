@@ -525,7 +525,7 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
 
 ### Portal
 
-Create template portal:
+Create [template](https://github.com/axibase/atsd/blob/master/portals/portals-overview.md#portal-types) portal:
 
 ```ls
 [configuration]
@@ -551,7 +551,7 @@ Create template portal:
 
 ### Rule
 
-Finally we need to create and configure new rule. As mentioned above we will collect "Parent Category", "Category", "Frequency", "Seasonal Adjustment" to find the metrics and "Chart Type" to allow user customize portal. The window will be in 'OPEN' and 'REPEAT' statuses until user selects chart type and ATSD receives the "Chart Type Selected".
+Finally we need to create and configure new rule. As mentioned above we will collect "Parent Category", "Category", "Frequency", "Seasonal Adjustment" to find the metrics and "Chart Type" to allow user customize portal. The window will be in 'OPEN' and 'REPEAT' status until the user selects chart type and ATSD receives the "Chart Type Selected".
 
 ```
 Data Type: message
@@ -571,7 +571,7 @@ channel = ifEmpty(tags.payload.channel.id, tags.channel_id)
 usr = ifEmpty(tags.payload.user.id, tags.user_id)
 ```
 
-If user have specified all search settings query the message records stored within last 30 seconds for the current channel and user.
+If user has specified all search settings, query the message records stored within last 30 seconds for the current channel and user.
 ```
 url = "https://API_USER:API_USER@localhost:8443/api/v1/"
 start = "now - 30 * SECOND"
@@ -579,7 +579,7 @@ query = ["params":["entity": "slack","endDate": "now","startDate":start,"type":"
 msgs = message!='Chart Type Selected'?null:queryPost(url+"messages/query",query).content
 ```
 
-Prepare query string (for example, `entity:fred.stlouisfed.org AND (category_id:32417 AND parent_category_id:9 AND frequency:"Monthly" AND seasonal_adjustment_short:"SA"`)).
+Prepare query string (for example, `entity:fred.stlouisfed.org AND (category_id:32417 AND parent_category_id:9 AND frequency:"Monthly" AND seasonal_adjustment_short:"SA")`).
 ```
 option = 'tags[\"payload.actions[0].selected_options[0].value\"]'
 prms = jsonToMaps(msgs)
@@ -591,7 +591,7 @@ Search metrics matching specified tags using `/api/v1/search` endpoint.
 search = q=''?'':queryGet(url+'search?query='+urlencode(q)+'&limit=5').content
 ```
 
-Prepare metrics string to be sent as parameter for portal (for example, `cbr54093wva647ncen, cbr38073nda647ncen`)
+Prepare metrics string to be sent as parameter for portal (for example, `cbr54093wva647ncen, cbr38073nda647ncen`).
 ```
 metrics = search!=''?concat(jsonPathFilter(search, "$.data[*][0]")):''
 ```
@@ -659,7 +659,7 @@ At the Web Notifications tab configure triggers for custom and built-in integrat
        
 2. Custom
 
-Since the [`addPortal`](https://github.com/axibase/atsd/blob/master/rule-engine/functions-portal.md#syntax) function can only be used in built-in chat notifications we need to configure it.
+Since the [`addPortal`](https://github.com/axibase/atsd/blob/master/rule-engine/functions-portal.md#syntax) function can only be used in the built-in chat notifications we need to configure it.
 
  * On Cancel
  
