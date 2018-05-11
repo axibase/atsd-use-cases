@@ -21,7 +21,7 @@
 <userExpressions>
 <expression><![CDATA[ifEmpty(tags.payload.channel.id, tags.channel_id) AS channel]]></expression>
 <expression><![CDATA[ifEmpty(tags.payload.user.id, tags.user_id) AS usr]]></expression>
-<expression><![CDATA["https://axibase:Refk856a@localhost:8443/api/v1/" AS url]]></expression>
+<expression><![CDATA["https://user:password@localhost:8443/api/v1/" AS url]]></expression>
 <expression><![CDATA["now - 30 * SECOND" AS start]]></expression>
 <expression><![CDATA[["params":["entity": "slack","endDate": "now","startDate":start,"type":"webhook","source":"axibase-bot","tags":["payload.channel.id":channel,"payload.user.id":usr]]] AS query]]></expression>
 <expression><![CDATA[message!='Chart Type Selected'?null:queryPost(url+"messages/query",query).content AS msgs]]></expression>
