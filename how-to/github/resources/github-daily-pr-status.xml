@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>github-daily-pr-status</name>
+<metric>timer_1h</metric>
+<tagsGroupingStrategy>ALL_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[now.getHourOfDay() == 5]]></expression>
+<window>length(1)</window>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<lastUpdated>1525337541242</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>false</loadHistory>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner>Axibase</owner>
+<description><![CDATA[Daily email report for open Pull Requests on GitHub.]]></description>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<timeFilter>
+<intervalCount>1</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<webNotification>
+<disabled>true</disabled>
+<rule-name>github-daily-pr-status</rule-name>
+<repeat-interval>
+<type>NONE</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=649</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<webNotificationConfigName>Slack</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>disable_notification</key>
+<value/>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>disable_web_page_preview</key>
+<value/>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>details_table_format</key>
+<value>ascii</value>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>text</key>
+<value>GitHub PR status:&#13;
+&#13;
+${addTable(jsonToLists(queryConfig('github-graphql-pr_status', ['owner': 'axibase', 'repository': 'atsd-api-test']).content), 'ascii', true)}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>disable_notification</key>
+<value/>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>disable_web_page_preview</key>
+<value/>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>details_table_format</key>
+<value>ascii</value>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>GitHub PR status:&#13;
+&#13;
+${addTable(jsonToLists(queryConfig('github-graphql-pr_status', ['owner': 'axibase', 'repository': 'atsd-api-test']).content), 'ascii', true)}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>disable_notification</key>
+<value/>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>disable_web_page_preview</key>
+<value/>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>details_table_format</key>
+<value>ascii</value>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>GitHub PR status:&#13;
+&#13;
+${addTable(jsonToLists(queryConfig('github-graphql-pr_status', ['owner': 'axibase', 'repository': 'atsd-api-test']).content), 'ascii', true)}</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>false</repeat-enabled>
+<cancel-enabled>false</cancel-enabled>
+</webNotification>
+<emailNotification>
+<disabled>false</disabled>
+<rule-name>github-daily-pr-status</rule-name>
+<repeat-interval>
+<type>ALL</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Email Notification id=650</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<recipients>Add Subscribers Here</recipients>
+<first-subject>GitHub PR status.</first-subject>
+<repeat-subject>GitHub PR status.</repeat-subject>
+<cancel-subject>GitHub PR status.</cancel-subject>
+<merge>false</merge>
+<priority>0</priority>
+<body-first>${addTable(&#13;
+  jsonToLists(&#13;
+    jsonPathFilter(&#13;
+      queryConfig('github-graphql-table',&#13;
+        ['GQL_query': lookup('graphql-queries', 'issue-list')]&#13;
+      ).content,&#13;
+      "$..pullRequests.nodes[*]"&#13;
+    )&#13;
+  )&#13;
+, 'html', true)}</body-first>
+<body-repeat>${addTable(&#13;
+  jsonToLists(&#13;
+    jsonPathFilter(&#13;
+      queryConfig('github-graphql-table',&#13;
+        ['GQL_query': lookup('graphql-queries', 'issue-list')]&#13;
+      ).content,&#13;
+      "$..pullRequests.nodes[*]"&#13;
+    )&#13;
+  )&#13;
+, 'html', true)}</body-repeat>
+<body-cancel>${addTable(&#13;
+  jsonToLists(&#13;
+    jsonPathFilter(&#13;
+      queryConfig('github-graphql-table',&#13;
+        ['GQL_query': lookup('graphql-queries', 'issue-list')]&#13;
+      ).content,&#13;
+      "$..pullRequests.nodes[*]"&#13;
+    )&#13;
+  )&#13;
+, 'html', true)}</body-cancel>
+</emailNotification>
+<ruleTable/>
+<alertLoggerName>atsd.alert.default</alertLoggerName>
+<derivedCommand>series e:${entity} m:metric_123=${100 - value} ${commandTags}</derivedCommand>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>

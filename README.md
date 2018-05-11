@@ -36,6 +36,8 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 
 ### GitHub
 
+- [Daily Pull Request Report for GitHub Organizations](how-to/github/pr-report.md)
+- [Notifications for New GitHub Repository Forks](how-to/github/fork-notification.md)
 - [Notifications for New GitHub Issues](how-to/github/issue-notification.md)
 - [Notifications for New GitHub Project Releases](how-to/github/project-release-notification.md)
 - [Notifications for New GitHub Pull Requests](how-to/github/pr-notification.md)
