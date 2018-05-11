@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>Trends Bot</name>
+<metric>message</metric>
+<tags>payload.user.id, user_id</tags>
+<tagsGroupingStrategy>DEFINED_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[message != 'Chart Type Selected']]></expression>
+<window>length(1)</window>
+<filter>type='webhook' &amp;&amp; source='axibase-bot' &amp;&amp; tags.event.subtype != 'bot_message' &amp;&amp; tags.event.username != 'axibase_bot'</filter>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<userExpressions>
+<expression><![CDATA[ifEmpty(tags.payload.channel.id, tags.channel_id) AS channel]]></expression>
+<expression><![CDATA[ifEmpty(tags.payload.user.id, tags.user_id) AS usr]]></expression>
+<expression><![CDATA["https://axibase:Refk856a@localhost:8443/api/v1/" AS url]]></expression>
+<expression><![CDATA["now - 30 * SECOND" AS start]]></expression>
+<expression><![CDATA[["params":["entity": "slack","endDate": "now","startDate":start,"type":"webhook","source":"axibase-bot","tags":["payload.channel.id":channel,"payload.user.id":usr]]] AS query]]></expression>
+<expression><![CDATA[message!='Chart Type Selected'?null:queryPost(url+"messages/query",query).content AS msgs]]></expression>
+<expression><![CDATA['tags[\"payload.actions[0].selected_options[0]]]><![CDATA[.value\"]' AS option]]></expression>
+<expression><![CDATA[jsonToMaps(msgs) AS prms]]></expression>
+<expression><![CDATA[!prms.isEmpty() && prms.size()=4 ? 'entity:fred.stlouisfed.org AND ('+prms[0].get(option)+' AND '+prms[1]]]><![CDATA[.get(option)+' AND '+prms[2].get(option)+' AND '+prms[3]]]><![CDATA[.get(option)+')':'' AS q]]></expression>
+<expression><![CDATA[q=''?'':queryGet(url+'search?query='+urlencode(q)+'&limit=5').content AS search]]></expression>
+<expression><![CDATA[search!=''?concat(jsonPathFilter(search, "$.data[*][0]]]><![CDATA[")):'' AS metrics]]></expression>
+</userExpressions>
+<lastUpdated>1525978115891</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>false</leavingEvents>
+<loadHistory>false</loadHistory>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner>Anna Striganova</owner>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<groupFilter>axibase-bot-entities</groupFilter>
+<timeFilter>
+<intervalCount>1</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>Trends Bot</rule-name>
+<repeat-interval>
+<type>ALL</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=1</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>false</cancel-as-open>
+<webNotificationConfigName>Slack Custom</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>attachments</key>
+<value>@if{message == '/chart'}&#13;
+   ${replacementTable('slack').parent_category}&#13;
+@else{message == 'Parent Category Selected'}&#13;
+   ${replacementTable('slack').category}&#13;
+@else{message == 'Category Selected'}&#13;
+   ${replacementTable('slack').frequency}&#13;
+@else{message == 'Frequency Selected'}&#13;
+   ${replacementTable('slack').seasonal_adj}  &#13;
+@else{message == 'Seasonal Adj. Selected'}&#13;
+   ${replacementTable('slack').chart_type}  &#13;
+@else{}&#13;
+null&#13;
+@end{}</value>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>channel</key>
+<value>${channel}</value>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>text</key>
+<value>@if{message == '/chart'}&#13;
+   Hello, &lt;@${usr}&gt;! Tell me a little bit about the chart you want to see.&#13;
+@else{}&#13;
+&#13;
+@end{}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>attachments</key>
+<value>@if{message == '/chart'}&#13;
+   ${replacementTable('slack').parent_category}&#13;
+@else{message == 'Parent Category Selected'}&#13;
+   ${replacementTable('slack').category}&#13;
+@else{message == 'Category Selected'}&#13;
+   ${replacementTable('slack').frequency}&#13;
+@else{message == 'Frequency Selected'}&#13;
+   ${replacementTable('slack').seasonal_adj}  &#13;
+@else{message == 'Seasonal Adj. Selected'}&#13;
+   ${replacementTable('slack').chart_type}  &#13;
+@else{}&#13;
+null&#13;
+@end{}</value>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>channel</key>
+<value>${channel}</value>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>@if{message == '/chart'}&#13;
+   Hello, &lt;@${usr}&gt;! Tell me a little bit about the chart you want to see.&#13;
+@else{}&#13;
+&#13;
+@end{}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>attachments</key>
+<value>null</value>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>channel</key>
+<value>${channel}</value>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>Searching for metrics...</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>true</repeat-enabled>
+<cancel-enabled>true</cancel-enabled>
+</webNotification>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>Trends Bot</rule-name>
+<repeat-interval>
+<type>NONE</type>
+<intervalCount>3</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=3</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>false</repeat-as-open>
+<cancel-as-open>false</cancel-as-open>
+<webNotificationConfigName>Slack</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>channels</key>
+<value>general</value>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>text</key>
+<value/>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>channels</key>
+<value>general</value>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value/>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>channels</key>
+<value>${channel}</value>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>@if{metrics!=''} &#13;
+   ${addPortal('Axibase Bot Portal','fred.stlouisfed.org','',['type':tags["payload.actions[0].value"],'metrics':metrics])}&#13;
+@else{}&#13;
+   No metrics are found. Try again.&#13;
+@end{}</value>
+</cancelWebConfigParameters>
+<first-enabled>false</first-enabled>
+<repeat-enabled>false</repeat-enabled>
+<cancel-enabled>true</cancel-enabled>
+</webNotification>
+<ruleTable/>
+<alertLoggerName>atsd.alert.default</alertLoggerName>
+<derivedCommand>series e:${entity} m:metric_123=${100 - value} ${commandTags}</derivedCommand>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>
