@@ -18,6 +18,8 @@
 
 This document describes how to create a bot that sends a portal with metrics and the type specified by users through Slack Interactive messages [framework](https://api.slack.com/interactive-messages#building_workflows). The metrics are stored in ATSD from [trends](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#using-trends) sandbox.
 
+![](images/trends_bot_7.png) 
+
 ## Data Specifics
 
 Features of [metrics](https://trends.axibase.com/public/reference.html) stored in the trends ATSD:
