@@ -12,13 +12,13 @@ Repositories with collaborators working across the globe are difficult to monito
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to track new pushes can be better accomplished using programmatic integration leveraging GitHub webhook functionality.
 
-Webhook functionality is constantly evolving to include new options , explore the GitHub development team's latest pursuits on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/) for an insight into coming features.
+Webhook functionality is constantly evolving to include new options, explore the GitHub development team's latest pursuits on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/) for an insight into coming features.
 
 ## Launch ATSD Sandbox
 
-Execute the `docker run` command to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
+Execute the `docker run` command to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance. Log in to ATSD using the [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials).
 
-Replace the `SERVER_URL` parameter in the command above with the public DNS name of the Docker host where the sandbox container will be running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
+Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container will be running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 \
@@ -33,7 +33,7 @@ docker run -d -p 8443:8443 -p 9443:9443 \
 
 > For advanced launch settings refer to this [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
-Watch the sandbox container logs for `All applications started` line.
+Watch the sandbox container logs for `All applications started`.
 
 ```sh
 docker logs -f atsd-sandbox
