@@ -63,9 +63,33 @@ The ATSD host will be present in the logs as a clickable link:
 [ATSD] https://atsd_hostname:8443
 ```
 
+## Generating OAuth Access Token
+
+The GitHub API may be accessed [several ways](https://developer.github.com/v3/auth/#other-authentication-methods). This tool uses an [OAuth Personal Token](https://blog.github.com/2013-05-16-personal-api-tokens/) to query the API without sending user login information. Follow these instructions to generate a personal token and store it in the local ATSD instance.
+
+While logged in to GitHub, click your profile picture in the upper-right corner from any page, then click **Settings**
+
+![](images/developer-settings.png)
+
+Open the **Developer Settings** page and navigate to the **Personal Access Tokens** tab.
+
+![](images/personal-access-tokens.png)
+
+Click **Generate New Token**, you will prompted to enter your password.
+
+![](images/read-org.png)
+
+Configure the token to grant **read:org** permissions in the **admin:org** section. This scope grants read-only organization access to any user bearing this token, keep it confidential. For more information about token scopes, see [GitHub Developer Documentation](https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/).
+
+Log in to ATSD using the [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials). Navigate to the **Web Notifications** page from the **Alerts** menu.
+
+![](images/alerts-web-notifications.png)
+
+Under **Network Settings**, the **Headers** field will contain the placeholder `Authorization: bearer ****************************************`. Replace the asterisk template with legitimate token credentials and save.
+
 ## Adding Subscribers
 
-Log in to ATSD using the [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials). Open the **Alerts** menu and select **Rules**.
+Any number of email subscribers may be notified when a new Pull Request Report is generated. Open the **Alerts** menu and select **Rules**.
 
 ![](images/alerts-rules.png)
 
@@ -73,7 +97,7 @@ Open the `github-daily-pr-status` rule and navigate to the **Email Notifications
 
 ![](images/email-notifications.png)
 
-> The system will prevent malformed email addresses from being saved and return a warning.
+> The system will prevent malformed email addresses from being saved and return a warning if one is entered.
 
 ## Configuring Report Delivery
 
@@ -83,7 +107,7 @@ Open the **Settings** menu and select **System Information** to view system time
 
 ![](images/settings-system-information.png)
 
-Modify delivery time by opening the `github-daily-pr-status` rule. The `Condition` field contains:
+Modify delivery time by opening the `github-daily-pr-status` rule from the **Rules** page. The `Condition` field contains:
 
 ```java
 now.getHourOfDay == 5
@@ -105,13 +129,13 @@ Open the **Data** menu and select **Replacement Tables**.
 
 ![](images/data-replacement-tables.png)
 
-In the `value` field, the GraphQL query will be present. The `organization` clause contains the placeholder value `your-organization-name` surrounded by quotation marks. Within the quotation marks, replace the placeholder information with the case-sensitive name of the GitHub organization whose repositories will be monitored. For information about creating a new organization, see the [GitHub Help Documentation](https://help.github.com/articles/creating-a-new-organization-from-scratch/).
+The GraphQL query will be present in the `value` field. The `organization` clause contains the placeholder value `your-organization-name` surrounded by quotation marks. Without deleting the quotation marks, replace the template information with the case-sensitive name of the GitHub organization whose repositories will be monitored. For information about creating a new organization, see the [GitHub Help Documentation](https://help.github.com/articles/creating-a-new-organization-from-scratch/).
 
 ## Notification Payload
 
-The `github-daily-pr-status` rule contains this payload, found in the **Text** field of the **Email Notifications** tab:
+The `github-daily-pr-status` rule builds an HTML table with information returned by the GQL query, according to the following configuration found in the **Text** field of the **Email Notifications** tab:
 
-```json
+```txt
 ${addTable(
   jsonToLists(
     jsonPathFilter(
@@ -124,9 +148,7 @@ ${addTable(
 , 'html', true)}
 ```
 
-The `queryConfig` clause calls the `github-graphql-table` web notification setting which queries the [GraphQL API v4](https://developer.github.com/v4/guides/forming-calls/#the-graphql-endpoint) via POST method and returns open Pull Request information in JSON format. Inspect this configuration by opening the **Alerts** menu and selecting **Web Notifications**.
-
-![](images/alerts-web-notifications.png)
+The `queryConfig` clause calls `github-graphql-table` which queries the [GraphQL API v4](https://developer.github.com/v4/guides/forming-calls/#the-graphql-endpoint) via POST method and returns open Pull Request information in JSON format.
 
 The `'GQL_query'` variable is delivered as the outgoing query and returns the `pullRequests` [node](https://developer.github.com/v4/guides/intro-to-graphql/#node), which is a JSON list of open Pull Requests.
 
@@ -136,9 +158,11 @@ Before report delivery, ensure all parameters have been correctly configured:
 
 * ATSD web client is able to resolve outgoing email server (See **Settings** > **Mail Client** to send test messages);
 
-* [Email subscriber](#adding-subscribers) list defined.
+* [OAuth access token](#generating-oauth-access-token) created and inserted;
 
-* [GraphQL query](#configure-graphql-query) targets the appropriate organization. Any organization's public repositories may be queried by GraphQL.
+* [Email subscribers](#adding-subscribers) defined;
+
+* [GraphQL query](#configure-graphql-query) targets the appropriate organization. Any organization's public repositories may be queried by GitHub GraphQL API.
 
 A sample report from [**Siemens**](https://github.com/siemens) repositories:
 
