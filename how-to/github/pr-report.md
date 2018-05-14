@@ -12,7 +12,7 @@ Large organizations maintain large GitHub libraries with many repositories. Keep
 
 GitHub features email notifications for individual repositories, but the task of tracking Pull Requests across many repositories may be better accomplished using programmatic integration leveraging the [GraphQL](https://graphql.org/) API query language, featured in the GitHub API.
 
-In contrast to the [GitHub v3 REST API](https://developer.github.com/v3/), the latest API offers more flexibility by replacing multiple REST requests with a single call to fetch all relevant data.
+In contrast to the [GitHub v3 REST API](https://developer.github.com/v3/), the latest [GitHub v4 GraphQL API](https://developer.github.com/v4/) offers more flexibility by replacing multiple REST requests with a single call to fetch all relevant data.
 
 ## Launch ATSD Sandbox
 
@@ -25,13 +25,18 @@ docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
   --env START_COLLECTOR=off \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
+  --env ORGANIZATION=MyOrganization \
+  --env TOKEN=**************************************** \
+  --env SUBSCRIBERS=myuser@example.org \
   --env EMAIL_CONFIG=mail.properties \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-daily-pr-status.xml' \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-graphql-table.xml' \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/graphql-queries.xml' \
+  --env ATSD_IMPORT_PATH=https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-daily-pr-status.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/github-graphql-table.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/how-to/github/resources/graphql-queries.xml \
   --volume /home/user/mail.properties:/mail.properties \
   axibase/atsd-sandbox:latest
 ```
+
+The `ORGANIZATION` variable should contain the case-sensitive name of the organization whose repositories should be queried when generating the daily report. The `TOKEN` variable should contain the [GitHub OAuth token](#generating-oauth-access-token) which must be generated to query repositories using the GraphQL API. The `SUBSCRIBERS` variable should contain the comma-separated list of email addresses who will be subscribed to the daily report.
+
+For information about creating a new organization, see the [GitHub Help Documentation](https://help.github.com/articles/creating-a-new-organization-from-scratch/).
 
 The bound volume should point to the **absolute path** where a plaintext file is stored containing the following parameters:
 
@@ -42,12 +47,12 @@ port=587
 sender=notify@axibase.com
 user=myuser@example.org
 password=secret
-auth=true
-ssl=true
-upgrade_ssl=true
+test_email=myuser@example.org
 ```
 
-This file defines the mail server which will host outgoing reports. The Simple Mail Transfer Protocol (SMTP) documentation for any mail server will contain information on the correct `port` to expose, typically `587`, and the name of the server. Replace `server`, `user`, and `password` fields with legitimate credentials.
+This file defines the mail server which will send outgoing reports. The Simple Mail Transfer Protocol (SMTP) documentation for any mail server will contain information on the correct `port` to expose, typically `587`, and the name of the server. Replace `server`, `user`, `password`, and `test_email` fields with legitimate credentials. The `test_email` parameter defines to whom ATSD will send a test message upon launch to confirm connectivity and may differ from `user` if desired.
+
+![](images/test-email.png)
 
 > For advanced launch settings refer to this [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
@@ -75,21 +80,15 @@ Open the **Developer Settings** page and navigate to the **Personal Access Token
 
 ![](images/personal-access-tokens.png)
 
-Click **Generate New Token**, you will prompted to enter your password.
+Click **Generate New Token**, you will be prompted to enter your password.
 
 ![](images/read-org.png)
 
-Configure the token to grant **read:org** permissions in the **admin:org** section. This scope grants read-only organization access to any user bearing this token, keep it confidential. For more information about token scopes, see [GitHub Developer Documentation](https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/).
+Configure the token to grant **read:org** permissions in the **admin:org** section. This scope grants read-only organization access to any user with this token, keep it confidential. For more information about token scopes, see [GitHub Developer Documentation](https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/).
 
-Log in to ATSD using the [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials). Navigate to the **Web Notifications** page from the **Alerts** menu.
+## Adding Additional Subscribers
 
-![](images/alerts-web-notifications.png)
-
-Under **Network Settings**, the **Headers** field will contain the placeholder `Authorization: bearer ****************************************`. Replace the asterisk template with legitimate token credentials and save.
-
-## Adding Subscribers
-
-Any number of email subscribers may be notified when a new Pull Request Report is generated. Open the **Alerts** menu and select **Rules**.
+Any number of email subscribers may be notified when a new Pull Request Report is generated. If additional subscribers need to be added after launch, log in to ATSD using the [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials). Open the **Alerts** menu and select **Rules**.
 
 ![](images/alerts-rules.png)
 
@@ -110,26 +109,16 @@ Open the **Settings** menu and select **System Information** to view system time
 Modify delivery time by opening the `github-daily-pr-status` rule from the **Rules** page. The `Condition` field contains:
 
 ```java
-now.getHourOfDay == 5
+now.getHourOfDay() == 5
 ```
 
 Change the value of this expression to the integer UTC 24-hour time when the report should be delivered.
 
-Minute granularity may be applied by extending the expression:
-
 ```java
-now.getHourOfDay == 18 && now.getMinuteOfHour == 30
+now.getHourOfDay() == 18
 ```
 
-Report delivery will be scheduled for 6:30 PM UTC time.
-
-## Configure GraphQL Query
-
-Open the **Data** menu and select **Replacement Tables**.
-
-![](images/data-replacement-tables.png)
-
-The GraphQL query will be present in the `value` field. The `organization` clause contains the placeholder value `your-organization-name` surrounded by quotation marks. Without deleting the quotation marks, replace the template information with the case-sensitive name of the GitHub organization whose repositories will be monitored. For information about creating a new organization, see the [GitHub Help Documentation](https://help.github.com/articles/creating-a-new-organization-from-scratch/).
+Report delivery will be scheduled for 6:00 PM UTC time.
 
 ## Notification Payload
 
@@ -156,13 +145,13 @@ The `'GQL_query'` variable is delivered as the outgoing query and returns the `p
 
 Before report delivery, ensure all parameters have been correctly configured:
 
-* ATSD web client is able to resolve outgoing email server (See **Settings** > **Mail Client** to send test messages);
+* ATSD web client is able to resolve outgoing email server (See **Settings** > **Mail Client** to send additional test messages after launch);
 
-* [OAuth access token](#generating-oauth-access-token) created and inserted;
+* Valid [OAuth access token](#generating-oauth-access-token) created and inserted into launch command;
 
 * [Email subscribers](#adding-subscribers) defined;
 
-* [GraphQL query](#configure-graphql-query) targets the appropriate organization. Any organization's public repositories may be queried by GitHub GraphQL API.
+* GraphQL query targets the appropriate organization. Any organization's public repositories may be queried by GitHub GraphQL API.
 
 A sample report from [**Siemens**](https://github.com/siemens) repositories:
 

@@ -131,7 +131,7 @@ ${addTable(jsonToLists(queryConfig('github-graphql-pr_status', ['owner': 'axibas
 <cancel-screenshot>false</cancel-screenshot>
 <repeat-as-open>true</repeat-as-open>
 <cancel-as-open>true</cancel-as-open>
-<recipients>Add Subscribers Here</recipients>
+<recipients><![CDATA[${ENV.SUBSCRIBERS}]]></recipients>
 <first-subject>GitHub PR status.</first-subject>
 <repeat-subject>GitHub PR status.</repeat-subject>
 <cancel-subject>GitHub PR status.</cancel-subject>

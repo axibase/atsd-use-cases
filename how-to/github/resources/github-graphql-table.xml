@@ -7,7 +7,7 @@
     <method>POST</method>
     <contentType>application/json</contentType>
     <url>https://api.github.com/graphql</url>
-    <headers>Authorization: bearer ****************************************</headers>
+    <headers>Authorization: bearer <![CDATA[${ENV.TOKEN}]]></headers>
     <body>{&quot;query&quot;:&quot;${GQL_query}&quot;}</body>
     <authType>NONE</authType>
     <exposedTableModelParams class="empty-set"/>

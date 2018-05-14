@@ -12,11 +12,11 @@ Project management functionality in GitHub has evolved to enable users to design
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of watching new projects as they are created can be better accomplished using programmatic integration leveraging GitHub webhook functionality.
 
-Webhook functionality is constantly evolving to include new options, explore the GitHub development team's latest pursuits on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/) for an insight into coming features.
+GitHub webhook functionality is prominently featured on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/), explore the GitHub team's latest developments and gain an insight into coming features.
 
 ## Launch ATSD Sandbox
 
-Execute the `docker run` command to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance. Log in to ATSD using the [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials).
+Execute the `docker run` command to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
 
 Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container will be running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
 
@@ -81,3 +81,13 @@ You'll begin receiving messenger notifications the next time a project is create
 ![](images/slack_project.png)
 
 **Repository**, **User**, and **Project** links will redirect you to the repository where the Project was created, the GitHub profile of the user who opened the PR, and the Project page itself, respectively.
+
+## Explore ATSD
+
+The ATSD host will be present in the logs as a clickable link:
+
+```txt
+[ATSD] https://atsd_hostname:8443
+```
+
+Log in to ATSD using the [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials) to explore the database.

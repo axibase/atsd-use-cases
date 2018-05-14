@@ -2,7 +2,7 @@
   <com.axibase.tsd.model.ReplacementTable>
     <lookupName>graphql-queries</lookupName>
     <items>issue-list=query { \
-	organization(login: &quot;your-organization-name&quot;) {\
+	organization(login: &quot;<![CDATA[${ENV.ORGANIZATION}]]>&quot;) {\
         repositories(first: 100, orderBy: {field: PUSHED_AT, direction: DESC}) {\
         nodes {\
             #name\
