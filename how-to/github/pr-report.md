@@ -18,7 +18,10 @@ In contrast to the [GitHub v3 REST API](https://developer.github.com/v3/), the l
 
 Execute the `docker run` command to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
 
+The launch command must be modified to include legitimate.
+
 Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container will be running.
+The `ORGANIZATION` variable should contain the case-sensitive name of the organization whose repositories should be queried when generating the daily report. The `TOKEN` variable should contain the [GitHub OAuth token](#generating-oauth-access-token) which must be generated to query repositories using the GraphQL API. The `SUBSCRIBERS` variable should contain the comma-separated list of email addresses who will be subscribed to the daily report.
 
 ```sh
 docker run -d -p 8443:8443 \
@@ -34,11 +37,9 @@ docker run -d -p 8443:8443 \
   axibase/atsd-sandbox:latest
 ```
 
-The `ORGANIZATION` variable should contain the case-sensitive name of the organization whose repositories should be queried when generating the daily report. The `TOKEN` variable should contain the [GitHub OAuth token](#generating-oauth-access-token) which must be generated to query repositories using the GraphQL API. The `SUBSCRIBERS` variable should contain the comma-separated list of email addresses who will be subscribed to the daily report.
-
 For information about creating a new organization, see the [GitHub Help Documentation](https://help.github.com/articles/creating-a-new-organization-from-scratch/).
 
-The bound volume should point to the **absolute path** where a plaintext file is stored containing the following parameters:
+Mail configuration has several required parameters, passing them into the container via mounted file is the simplest solution. The `volume` variable should point to the **absolute path** where a plaintext file is stored containing the following parameters:
 
 ```txt
 server_name=ATSD-sandbox
@@ -54,6 +55,8 @@ This file defines the mail server which will send outgoing reports. The Simple M
 
 ![](images/test-email.png)
 
+After initial launch, if **Mail Client** settings need to be reconfigured, follow these [instructions](https://github.com/axibase/atsd/blob/master/administration/mail-client.md#mail-client).
+
 > For advanced launch settings refer to this [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
 Watch the sandbox container logs for `All applications started`.
@@ -62,11 +65,7 @@ Watch the sandbox container logs for `All applications started`.
 docker logs -f atsd-sandbox
 ```
 
-The ATSD host will be present in the logs as a clickable link:
-
-```txt
-[ATSD] https://atsd_hostname:8443
-```
+ATSD web interface is accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports).
 
 ## Generating OAuth Access Token
 
@@ -100,9 +99,9 @@ Open the `github-daily-pr-status` rule and navigate to the **Email Notifications
 
 ## Configuring Report Delivery
 
-By default, the `github-daily-pr-status` rule is configured to deliver a report every morning at 5 AM UTC time, which may differ from local time.
+By default, the `github-daily-pr-status` rule is configured to deliver a report every morning at 5 AM server local time.
 
-Open the **Settings** menu and select **System Information** to view system time.
+Open the **Settings** menu and select **System Information** to view server local time.
 
 ![](images/settings-system-information.png)
 
@@ -118,13 +117,13 @@ Change the value of this expression to the integer UTC 24-hour time when the rep
 now.getHourOfDay() == 18
 ```
 
-Report delivery will be scheduled for 6:00 PM UTC time.
+Report delivery will be scheduled for 6:00 PM server local time.
 
 ## Notification Payload
 
 The `github-daily-pr-status` rule builds an HTML table with information returned by the GQL query, according to the following configuration found in the **Text** field of the **Email Notifications** tab:
 
-```txt
+```javascript
 ${addTable(
   jsonToLists(
     jsonPathFilter(
@@ -140,6 +139,52 @@ ${addTable(
 The `queryConfig` clause calls `github-graphql-table` which queries the [GraphQL API v4](https://developer.github.com/v4/guides/forming-calls/#the-graphql-endpoint) via POST method and returns open Pull Request information in JSON format.
 
 The `'GQL_query'` variable is delivered as the outgoing query and returns the `pullRequests` [node](https://developer.github.com/v4/guides/intro-to-graphql/#node), which is a JSON list of open Pull Requests.
+
+Consider this query:
+
+```javascript
+query {
+  organization(login: "apache") {
+        repositories(first: 5, orderBy: {field: PUSHED_AT, direction: DESC}) {
+        nodes {
+            #name
+            pullRequests(first: 5, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) {
+                nodes {
+                    headRepository { nameWithOwner }
+                    url
+                    author {
+                    ... on User {
+                        login name
+                        }
+                    }
+                    mergeable
+                    baseRefName
+                    headRefName
+                    title
+                    #milestone { title }
+                    #labels(first: 3) { nodes{name} }
+                    ... on PullRequest {
+                        pullRequestcommits: commits(last: 1) {
+                            #totalCount
+                            nodes {
+                                commit {
+                                    #url
+                                    status { state contexts { context description createdAt targetUrl } }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }
+}
+```
+
+This query targets [The Apache Software Foundation](https://github.com/apache) repositories and returns a daily report with the first five Pull Requests from the first five repositories in their GitHub library, alphabetically. These settings may be configured by modifying the `pullRequests(first: 5, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) {` and `repositories(first:5, orderBy: {field: PUSHED_AT, direction: DESC}) {` clauses, respectively.
+
+For additional GraphQL query syntax, view the [documentation](https://graphql.org/learn/queries/).
 
 ## Report Delivery
 

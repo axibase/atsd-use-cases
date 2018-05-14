@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><rules>
 <rule>
 <name>github-daily-pr-status</name>
-<metric>timer_1h</metric>
+<metric>timer_1m</metric>
 <tagsGroupingStrategy>ALL_TAGS</tagsGroupingStrategy>
-<expression><![CDATA[now.getHourOfDay() == 5]]></expression>
-<window>length(1)</window>
+<expression><![CDATA[count() == 0 || now.getHourOfDay() == 5]]></expression>
+<window>length(2)</window>
 <severity>WARNING</severity>
 <alertOpenMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
 <alertMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
@@ -16,7 +16,7 @@
 <intervalCount>5</intervalCount>
 <intervalUnit>MINUTE</intervalUnit>
 </alertStrategy>
-<lastUpdated>1525337541242</lastUpdated>
+<lastUpdated>1526309010972</lastUpdated>
 <enabled>true</enabled>
 <disableEntityGrouping>false</disableEntityGrouping>
 <leavingEvents>true</leavingEvents>
@@ -56,53 +56,17 @@
 <cancel-as-open>true</cancel-as-open>
 <webNotificationConfigName>Slack</webNotificationConfigName>
 <firstWebConfigParameters>
-<key>disable_notification</key>
-<value/>
-</firstWebConfigParameters>
-<firstWebConfigParameters>
-<key>disable_web_page_preview</key>
-<value/>
-</firstWebConfigParameters>
-<firstWebConfigParameters>
-<key>details_table_format</key>
-<value>ascii</value>
-</firstWebConfigParameters>
-<firstWebConfigParameters>
 <key>text</key>
 <value>GitHub PR status:&#13;
 &#13;
 ${addTable(jsonToLists(queryConfig('github-graphql-pr_status', ['owner': 'axibase', 'repository': 'atsd-api-test']).content), 'ascii', true)}</value>
 </firstWebConfigParameters>
 <repeatWebConfigParameters>
-<key>disable_notification</key>
-<value/>
-</repeatWebConfigParameters>
-<repeatWebConfigParameters>
-<key>disable_web_page_preview</key>
-<value/>
-</repeatWebConfigParameters>
-<repeatWebConfigParameters>
-<key>details_table_format</key>
-<value>ascii</value>
-</repeatWebConfigParameters>
-<repeatWebConfigParameters>
 <key>text</key>
 <value>GitHub PR status:&#13;
 &#13;
 ${addTable(jsonToLists(queryConfig('github-graphql-pr_status', ['owner': 'axibase', 'repository': 'atsd-api-test']).content), 'ascii', true)}</value>
 </repeatWebConfigParameters>
-<cancelWebConfigParameters>
-<key>disable_notification</key>
-<value/>
-</cancelWebConfigParameters>
-<cancelWebConfigParameters>
-<key>disable_web_page_preview</key>
-<value/>
-</cancelWebConfigParameters>
-<cancelWebConfigParameters>
-<key>details_table_format</key>
-<value>ascii</value>
-</cancelWebConfigParameters>
 <cancelWebConfigParameters>
 <key>text</key>
 <value>GitHub PR status:&#13;
@@ -117,9 +81,9 @@ ${addTable(jsonToLists(queryConfig('github-graphql-pr_status', ['owner': 'axibas
 <disabled>false</disabled>
 <rule-name>github-daily-pr-status</rule-name>
 <repeat-interval>
-<type>ALL</type>
-<intervalCount>6</intervalCount>
-<intervalUnit>MINUTE</intervalUnit>
+<type>INTERVAL</type>
+<intervalCount>1</intervalCount>
+<intervalUnit>HOUR</intervalUnit>
 </repeat-interval>
 <name>Email Notification id=650</name>
 <use-in-threshold-only>false</use-in-threshold-only>

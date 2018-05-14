@@ -84,10 +84,6 @@ You'll begin receiving messenger notifications the next time someone creates a n
 
 ## Explore ATSD
 
-The ATSD host will be present in the logs as a clickable link:
-
-```txt
-[ATSD] https://atsd_hostname:8443
-```
+ATSD web interface is accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports).
 
 Log in to ATSD using the [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials) to explore the database.
