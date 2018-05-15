@@ -48,10 +48,9 @@ port=587
 sender=notify@axibase.com
 user=myuser@example.org
 password=secret
-test_email=myuser@example.org
 ```
 
-This file defines the mail server which will send outgoing reports. The Simple Mail Transfer Protocol (SMTP) documentation for any mail server will contain information on the correct `port` to expose, typically `587`, and the name of the server. Replace `server`, `user`, `password`, and `test_email` fields with legitimate credentials. The `test_email` parameter defines to whom ATSD will send a test message upon launch to confirm connectivity and may differ from `user` if desired.
+This file defines the mail server which will send outgoing reports. The Simple Mail Transfer Protocol (SMTP) documentation for any mail server will contain information on the correct `port` to expose, typically `587`, and the name of the server. Replace `server`, `user`, and `password` fields with legitimate credentials. Upon launch, the **Mail Client** will automatically send the user defined in the `sender` parameter a confirmation email to ensure functionality.
 
 ![](images/test-email.png)
 
