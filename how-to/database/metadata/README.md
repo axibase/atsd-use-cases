@@ -1,3 +1,0 @@
-# Leveraging Metadata in ATSD
-
-Even medium-scale deployments of any time series database are likely to interact with hundreds of thousands, if not millions of series on any given day; whether they are pruning old data or collecting and inserting new data, keeping track of the what is going in and going out is important. Controlling this massive two-way flow of information is most readily accomplished with metadata identifiers. 
