@@ -36,6 +36,7 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 
 ### GitHub
 
+- [Notifications for New GitHub Repository Forks](how-to/github/fork-notification.md)
 - [Notifications for New GitHub Issues](how-to/github/issue-notification.md)
 - [Notifications for New GitHub Project Releases](how-to/github/project-release-notification.md)
 - [Notifications for New GitHub Pull Requests](how-to/github/pr-notification.md)
@@ -48,6 +49,7 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 
 ### ATSD
 
+- [Accessing Metadata in ATSD](how-to/database/metadata/README.md)
 - [Historizing Metrics Stored in Database](how-to/database/historize)
 - [Using Trends](how-to/shared/trends.md)
 - [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
