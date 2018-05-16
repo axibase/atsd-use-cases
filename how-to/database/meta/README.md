@@ -101,7 +101,7 @@ Consider the example of profitability data collected by the entity `stern.nyu.go
 
 ![](images/series-tags.png)
 
-**Series Tags** must either be added upon data import via [CSV Parser](https://github.com/axibase/atsd/blob/master/parsers/csv/README.md), to existing data through the [**Data API**](#data-api) section of the User Interface, or to incoming data via [Collector Job](https://github.com/axibase/axibase-collector#job-types) if [Axibase Collector](https://github.com/axibase/axibase-collector#axibase-collector) is uploading data to the database. 
+**Series Tags** must either be added upon data import via [CSV Parser](https://github.com/axibase/atsd/blob/master/parsers/csv/README.md), to existing data through the [**Data API**](#data-api) section of the User Interface, or to incoming data via [Collector Job](https://github.com/axibase/axibase-collector#job-types) if [Axibase Collector](https://github.com/axibase/axibase-collector#axibase-collector) is uploading data to the database.
 
 ### Tag Templates
 
