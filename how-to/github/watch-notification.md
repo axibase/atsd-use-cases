@@ -12,7 +12,7 @@ Many repositories contain a broad range of code and documentation to which end-u
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to track new subscribers can be better accomplished using programmatic integration leveraging GitHub webhook functionality.
 
-Webhook functionality is constantly evolving to include new options , explore the GitHub development team's latest pursuits on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/) for an insight into coming features.
+GitHub webhook functionality is prominently featured on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/), explore the GitHub team's latest developments and gain an insight into coming features.
 
 ## Launch ATSD Sandbox
 
@@ -36,7 +36,7 @@ docker run -d -p 8443:8443 \
 
 > For advanced launch settings refer to this [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
-Watch the container logs for `All applications started` line.
+Watch the container logs for `All applications started`.
 
 ```sg
 docker logs -f atsd-sandbox
@@ -83,3 +83,9 @@ You'll begin receiving messenger notifications the next time a new subscriber be
 ![](images/-slack-watch.png)
 
 **Repository** and **User** links will redirect you to the newly-watched repository and the newly-subscribed user, respectively.
+
+## Explore ATSD
+
+ATSD web interface is accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports).
+
+Log in to ATSD using the [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials) to explore the database.
