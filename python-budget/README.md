@@ -8,20 +8,20 @@
 
 The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) of the St. Louis Federal Reserve publishes open-source data on a range of topics from macroeconomic trends like Gross Domestic Product to microeconomic phenomena such as unemployment and producer / consumer price indices.
 
-While native FRED visualization tools have a number of built-in manipulation and export features, meaningful data munging and preparation requires a third-party resource. With the ATSD Client for Python and pandas library, data may be queried using SQL and visualized for external use or analysis. This article will focus on the [net lending / borrowing](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) of the United States Government for the past several decades and explore the way these three tools may intersect to facilitate the data processing, storage, and exploration functionalities for true Big Data projects.
+While native FRED visualization tools have a number of built-in manipulation and export features, meaningful data munging and preparation requires a third-party resource. With the ATSD Client for Python and pandas library, data may be queried using SQL and visualized for external use or analysis. This article will focus on the [net lending / borrowing](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) of the United States Government for the past several decades and explore the way these three tools intersect to facilitate data processing, storage, and exploration functionalities for true Big Data projects.
 
-### Setup
+## Setup
 
 Confirm these programs are present on the local machine:
 
-* Python: `apt-get install python2.7` (alternatively, `python3` may be used);
+* Python: `apt-get install python3` (alternatively, `python2.7` may be used);
 * ATSD Client: `pip install atsd_client`.
 
 > ATSD Client will import the `pandas` library upon installation.
 
 For detailed installation instructions, this [guide](https://github.com/axibase/atsd-api-python/blob/master/README.md) offers troubleshooting, launch examples, and a step-by-step walkthrough.
 
-## Querying Federal Reserve Data with Inline SQL 
+### Querying Federal Reserve Data with Inline SQL
 
 After [setup](https://github.com/axibase/atsd-api-python#sql-queries), SQL queries may be performed from the Python command line. The FRED data is quarterly, use this query to track federal budget data from the final quarter for each recorded year:
 
@@ -31,7 +31,7 @@ FROM "ad01rc1q027sbea"
 GROUP BY date_format(time,'yyyy')
 ```
 
-For multi-line queries in the Python interface, define a variable `q = """`, Then multi-line queries may be made. Close the query with `"""`. The complete query will be thus:
+For multi-line queries in the Python interface, define a variable `q = """`, so multi-line queries may be made. Close the query with `"""`. The complete query will be:
 
 ```python
 >>> q = """
@@ -42,7 +42,8 @@ For multi-line queries in the Python interface, define a variable `q = """`, The
 >>> ...
 ```
 
-The result set is shown here:
+<details><summary>View the result set here:</summary>
+<p>
 
 ```txt
 | Year  Deficit / Surplus (Billion USD)     |
@@ -97,6 +98,9 @@ The result set is shown here:
 | 47  2017                           14.676 |
 ```
 
+</p>
+</details>
+
 To refine the query and show only data where the United States had an annual surplus, use this query:
 
 ```sql
@@ -106,7 +110,10 @@ WHERE value > 0
 GROUP BY date_format(time,'yyyy')
 ```
 
-The result set shows only four years since 1970 when the United States achieved a net surplus:
+The result set shows only four years since 1970 when the United States achieved a net surplus.
+
+<details><summary>View the result set here:</summary>
+<p>
 
 ```txt
 | Year          Surplus (Billion USD)      |
@@ -116,6 +123,11 @@ The result set shows only four years since 1970 when the United States achieved 
 | 2  2001                           18.484 |
 | 3  2017                           14.676 |
 ```
+
+</p>
+</details>
+
+When pandas and Python are used alongside ATSD, there is no need to import and filter data for robust SQL queries. Data is readily available and stored on-hand in ATSD and passed directly into the Python interface via ATSD Python Client.
 
 For the first time since 2001, the United States Government has announced a positive budget balance. Much of the government's budget was subject to extensive refurbishment during the current administration's first year in office.
 
@@ -129,7 +141,10 @@ ORDER BY LAST(value) ASC
 LIMIT 10
 ```
 
-The result set shows the years with the highest annual budget deficits:
+The result set shows the years with the highest annual budget deficits.
+
+<details><summary>View the result set here:</summary>
+<p>
 
 ```txt
 | Year  Deficit (Billion USD)    |
@@ -146,15 +161,41 @@ The result set shows the years with the highest annual budget deficits:
 | 9  2003               -650.718 |
 ```
 
+</p>
+</details>
+
 It's no surprise that each of the years leading into and immediately following the Great Recession and housing market collapse are among those which saw the largest growing in government borrowing.
 
-### Data Visualizations with `matplotlib` and the Trends Service
+### Data Visualizations with `matplotlib` and **Trends** Service
 
 The `matplotlib` library is a Matlab-like tool which offers an inline visualization solution for the Python interface. Follow the integration instructions [here](https://github.com/axibase/atsd-api-python#graphing-results) to import the library and work with it from the Python command line. Using government lending / borrowing data, a simple visualization may be created inline, using data which is stored in ATSD.
 
 ![](images/matplotlib-demo.png)
 
 While lacking some of the detail of a more robust visualization service, the `matplotlib` tool is helpful for visualizing data transformations inline.
+
+In order to create this visualization, queue the desired data following [these instructions](https://github.com/axibase/atsd-api-python#querying-data).
+
+<details><summary>View command line syntax to convert the queued data to a pandas-readable series for visualization:</summary>
+<p>
+
+```python
+## 'series' previously defined as series to be converted.
+>>> ts = series.to_pandas_series()
+
+## Confirm successful conversion.
+>>> print(ts)
+
+## Import tools and plot queued data.
+>>> import matplotlib.pyplot as plt
+>>> series.plot()
+
+## Display newly-created visualization.
+>>> plt.show()
+```
+
+</p>
+</details>
 
 Using the same data in the [**Trends**](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md) service, which is a graphical environment supported by ATSD, more robust visualizations may be created with far less user input:
 
@@ -164,4 +205,10 @@ Using the same data in the [**Trends**](https://github.com/axibase/atsd-use-case
 
 *Fig 1.* This visualization leverages [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) to display both the raw data as well as monthly change in value using a [dual-axis](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting and `[threshold]` series.
 
-Using **Trends** is an alternate solution to native `matplotlib` functionality in Python. Trends offers a convenient and well-documented [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) that supports *ad hoc* data modifications that do not change the underlying dataset.
+Using **Trends** is an alternate solution to native `matplotlib` functionality in Python. **Trends** offers a convenient and well-documented [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) that supports *ad hoc* data modifications that do not change the underlying dataset.
+
+## Conclusion
+
+Python programming language offers a convenient syntax for inline SQL queries. Using **ATSD Client** alongside other Python libraries improves upon native functionality by reducing the workload during data preparation. ATSD manages all data storage tasks and provides a client which makes data quickly available without loading it via Python.
+
+**Trends** visualizaton services, supported by ATSD data storage and processing, support and enhance these features by offering a more robust graphical output with a less tedious syntactical input.
