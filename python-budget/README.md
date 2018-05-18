@@ -8,7 +8,13 @@
 
 The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) of the St. Louis Federal Reserve publishes open-source data on a range of topics from macroeconomic trends like Gross Domestic Product to microeconomic phenomena such as unemployment and producer / consumer price indices.
 
-While native FRED visualization tools have a number of built-in manipulation and export features, meaningful data munging and preparation requires a third-party resource. With the ATSD Client for Python and pandas library, data may be queried using SQL and visualized for external use or analysis. This article will focus on the [net lending / borrowing](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) of the United States Government for the past several decades and explore the way these three tools intersect to facilitate data processing, storage, and exploration functionalities for true Big Data projects.
+While native FRED visualization tools have a number of built-in manipulation and export features, meaningful data munging and preparation requires a third-party resource. With the ATSD Client for Python and Pandas library, data may be queried using SQL and visualized for external use or analysis. This article will focus on the [net lending / borrowing](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) of the United States Government for the past several decades and explore the way these three tools intersect to facilitate data processing, storage, and exploration functionalities for true Big Data projects.
+
+## Accessing Data
+
+The dataset used for this article is stored in the **Trends** instance of ATSD. If you would like access credentials to the database to recreate the queries shown here, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](mailto:hello@axibase.com?subject=Trends%20Crendentials&body=Please%20send%20Trends%20credentials%20I'd%20like%20to%20use%20the%20database!), we're happy to provide them.
+
+If you have access to your own instance of ATSD, upload the [FRED data crawler](https://github.com/axibase/atsd-data-crawlers/blob/master/crawlers/fred-category-crawler/README.md#fred-category-crawler). The data crawler can upload the needed dataset along with all metadata information.
 
 ## Setup
 
@@ -23,26 +29,56 @@ For detailed installation instructions, this [guide](https://github.com/axibase/
 
 ### Querying Federal Reserve Data with Inline SQL
 
-After [setup](https://github.com/axibase/atsd-api-python#sql-queries), SQL queries may be performed from the Python command line. The FRED data is quarterly, use this query to track federal budget data from the final quarter for each recorded year:
+After [setup](https://github.com/axibase/atsd-api-python/blob/master/README.md#axibase-time-series-database-client-for-python), SQL queries may be performed from the Python command line. Download the [Quick Start](resources/quickstart.py) program to establish connectivity, input a query, and return the results. Note that placeholder credentials must be replaced with authentic ones.
+
+The FRED data is quarterly, this query tracks federal budget data from the final quarter for each recorded year:
 
 ```sql
-SELECT date_format(time, 'yyyy'), LAST(value)
+SELECT datetime "Year",LAST(value) "Net Lending/Borrowing"
 FROM "ad01rc1q027sbea"
-GROUP BY date_format(time,'yyyy')
+GROUP BY period(1 year)
+ORDER BY datetime DESC
+limit 18
 ```
 
 For multi-line queries in the Python interface, define a variable `q = """`, so multi-line queries may be made. Close the query with `"""`. The complete query will be:
 
 ```python
 >>> q = """
-... SELECT date_format(time, 'yyyy'), LAST(value)
+... SELECT datetime "Year",LAST(value) "Net Lending/Borrowing"
 ... FROM "ad01rc1q027sbea"
-... GROUP BY date_format(time,'yyyy')
+... GROUP BY period(1 year)
+... ORDER BY datetime DESC
+... limit 18
 ... """
->>> ...
 ```
 
-<details><summary>View the result set here:</summary>
+The most recent samples:
+
+```txt
+| 30  2000                           51.488 |
+| 31  2001                         -253.246 |
+| 32  2002                         -588.672 |
+| 33  2003                         -650.718 |
+| 34  2004                         -628.160 |
+| 35  2005                         -537.567 |
+| 36  2006                         -376.840 |
+| 37  2007                         -594.622 |
+| 38  2008                        -1357.509 |
+| 39  2009                        -1838.034 |
+| 40  2010                        -1727.036 |
+| 41  2011                        -1635.086 |
+| 42  2012                        -1402.966 |
+| 43  2013                         -812.007 |
+| 44  2014                         -868.867 |
+| 45  2015                         -736.282 |
+| 46  2016                         -949.905 |
+| 47  2017                           14.676 |
+```
+
+The [`LIMIT`](https://github.com/axibase/atsd/tree/master/sql#limiting) clause may be removed from the query to return all data.
+
+<details><summary>View the complete result set here:</summary>
 <p>
 
 ```txt
@@ -104,67 +140,55 @@ For multi-line queries in the Python interface, define a variable `q = """`, so 
 To refine the query and show only data where the United States had an annual surplus, use this query:
 
 ```sql
-SELECT date_format(time, 'yyyy') as "Year", LAST(value) AS "Surplus (Billion USD)"
+SELECT datetime "Year",LAST(value) "Net Lending/Borrowing"
 FROM "ad01rc1q027sbea"
 WHERE value > 0
-GROUP BY date_format(time,'yyyy')
+GROUP BY period(1 year)
 ```
 
 The result set shows only four years since 1970 when the United States achieved a net surplus.
 
-<details><summary>View the result set here:</summary>
-<p>
-
 ```txt
 | Year          Surplus (Billion USD)      |
 |------------------------------------------|
-| 0  1999                            6.352 |
-| 1  2000                           51.488 |
-| 2  2001                           18.484 |
-| 3  2017                           14.676 |
+| 0  1999                            6.35  |
+| 1  2000                           51.49  |
+| 2  2001                           18.48  |
+| 3  2017                           14.67  |
 ```
-
-</p>
-</details>
 
 When pandas and Python are used alongside ATSD, there is no need to import and filter data for robust SQL queries. Data is readily available and stored on-hand in ATSD and passed directly into the Python interface via ATSD Python Client.
 
-For the first time since 2001, the United States Government has announced a positive budget balance. Much of the government's budget was subject to extensive refurbishment during the current administration's first year in office.
+Although it certainly appears that the United States government has achieved a budget surplus this quarter, in fact the nature of the data is such that it only seems that way. The dataset here is annualized, meaning that each quarter's data is plotted as if the trends remaining constant for the entire year. Thus, the administration's $250 billion tax relief is considered as $1 trillion due to annualization calculations. See [Non-Annualized Data](#non-annualized-data) for raw data examples.
 
 The highest annual budget deficits incurred may be gathered with this query:
 
 ```sql
-SELECT date_format(time, 'yyyy') as "Year", LAST(value) AS "Deficit (Billion USD)"
+SELECT datetime "Year", LAST(value) "Deficit (Billion USD)"
 FROM "ad01rc1q027sbea"
-GROUP BY date_format(time,'yyyy')
+GROUP BY PERIOD(1 year)
 ORDER BY LAST(value) ASC
 LIMIT 10
 ```
 
 The result set shows the years with the highest annual budget deficits.
 
-<details><summary>View the result set here:</summary>
-<p>
-
 ```txt
 | Year  Deficit (Billion USD)    |
 |--------------------------------|
-| 0  2009              -1838.034 |
-| 1  2010              -1727.036 |
-| 2  2011              -1635.086 |
-| 3  2012              -1402.966 |
-| 4  2008              -1357.509 |
-| 5  2016               -949.905 |
-| 6  2014               -868.867 |
-| 7  2013               -812.007 |
-| 8  2015               -736.282 |
-| 9  2003               -650.718 |
+| 0  2009              -1838.03  |
+| 1  2010              -1727.04  |
+| 2  2011              -1635.09  |
+| 3  2012              -1402.97  |
+| 4  2008              -1357.51  |
+| 5  2016              -949.90   |
+| 6  2014              -868.87   |
+| 7  2013              -812.01   |
+| 8  2015              -736.28   |
+| 9  2003              -650.72   |
 ```
 
-</p>
-</details>
-
-It's no surprise that each of the years leading into and immediately following the Great Recession and housing market collapse are among those which saw the largest growing in government borrowing.
+It's no surprise that each of the years leading into, during, and immediately following the Great Recession and housing market collapse are among those which saw the largest growth in annualized government borrowing.
 
 ### Data Visualizations with `matplotlib` and **Trends** Service
 
@@ -206,6 +230,76 @@ Using the same data in the [**Trends**](https://github.com/axibase/atsd-use-case
 *Fig 1.* This visualization leverages [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) to display both the raw data as well as monthly change in value using a [dual-axis](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting and `[threshold]` series.
 
 Using **Trends** is an alternate solution to native `matplotlib` functionality in Python. **Trends** offers a convenient and well-documented [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) that supports *ad hoc* data modifications that do not change the underlying dataset.
+
+### Non-Annualized Data
+
+As noted above, this dataset is annualized. This section of the article shows how to revert this transformation and present raw data:
+
+```sql
+SELECT datetime "Year",SUM(value/4) "Net Lending/Borrowing"
+FROM "ad01rc1q027sbea"
+GROUP BY period(1 year)
+ORDER BY datetime DESC
+```
+
+Simply dividing by the number of annualized factors, in this case four quarters, and then summing them returns raw data.
+
+| Year       | Net Lending/Borrowing |
+|------------|-----------------------|
+| 2017-01-01 | -685.56               |
+| 2016-01-01 | -931.36               |
+| 2015-01-01 | -781.12               |
+| 2014-01-01 | -851.12               |
+| 2013-01-01 | -913.30               |
+| 2012-01-01 | -1447.01              |
+| 2011-01-01 | -1666.73              |
+| 2010-01-01 | -1818.96              |
+| 2009-01-01 | -1847.06              |
+| 2008-01-01 | -1054.96              |
+| 2007-01-01 | -535.13               |
+| 2006-01-01 | -429.80               |
+| 2005-01-01 | -556.31               |
+| 2004-01-01 | -675.52               |
+| 2003-01-01 | -684.35               |
+| 2002-01-01 | -523.37               |
+| 2001-01-01 | -149.72               |
+| 2000-01-01 | 81.14                 |
+| 1999-01-01 | -2.84                 |
+| 1998-01-01 | -37.36                |
+| 1997-01-01 | -139.61               |
+| 1996-01-01 | -244.25               |
+| 1995-01-01 | -319.11               |
+| 1994-01-01 | -330.87               |
+| 1993-01-01 | -406.51               |
+| 1992-01-01 | -441.19               |
+| 1991-01-01 | -352.32               |
+| 1990-01-01 | -296.46               |
+| 1989-01-01 | -225.68               |
+| 1988-01-01 | -217.87               |
+| 1987-01-01 | -237.38               |
+| 1986-01-01 | -270.47               |
+| 1985-01-01 | -248.06               |
+| 1984-01-01 | -224.12               |
+| 1983-01-01 | -242.26               |
+| 1982-01-01 | -201.48               |
+| 1981-01-01 | -113.69               |
+| 1980-01-01 | -115.53               |
+| 1979-01-01 | -67.98                |
+| 1978-01-01 | -73.20                |
+| 1977-01-01 | -80.50                |
+| 1976-01-01 | -96.37                |
+| 1975-01-01 | -123.55               |
+| 1974-01-01 | -51.64                |
+| 1973-01-01 | -39.21                |
+| 1972-01-01 | -52.12                |
+| 1971-01-01 | -63.07                |
+| 1970-01-01 | -49.26                |
+
+Because annualized data assumes full-year totals based on single-quarter information, the current administration's $250 billion tax relief act is in fact counted as $1 trillion. This visualization removes that consideration.
+
+![](images/non-annualized.png)
+
+[![](images/button-new.png)](https://trends.axibase.com/107eef06#fullscreen)
 
 ## Conclusion
 
