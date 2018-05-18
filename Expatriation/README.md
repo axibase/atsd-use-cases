@@ -169,9 +169,9 @@ time-offset = 1 year
 
 A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported by ChartLab, and [user-defined functions](../how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
 
-![](Images/previous-year.png)
+![](Images/2018-q2-7.png)
 
-[![](Images/btn.png)](https://apps.axibase.com/chartlab/a14a69a4#fullscreen)
+[![](Images/btn.png)](https://apps.axibase.com/chartlab/1ae83460#fullscreen)
 
 Visualization uses the `PercentChangeFromYearAgo` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually observed several years ago.
 
@@ -189,15 +189,15 @@ value = fred.PercentChangeFromYearAgo('raw')
 
 > View the complete [`fred.js`](../how-to/shared/trends.md#fred-library) UDF library here.
 
-#### Alert Expressions
+#### Alert Expression
 
 Customized data monitoring in ATSD is possible using [`alert-expressions`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14) whereby user-specified parameters may be defined to trigger alarms based on incoming data.
 
-Here, alert expressions are applied to static data, but they may be easily applied to dynamic data and used for systems monitoring as seen in this [example](https://apps.axibase.com/chartlab/67aa3b61) which is monitoring one of the Axibase servers right now.
+Here, alert expressions are applied to static data, but they also may be easily applied to dynamic data and used for systems monitoring as seen in this [example](https://apps.axibase.com/chartlab/67aa3b61) which is monitoring one of the Axibase servers right now.
 
-![](Images/percent-change.png)
+![](Images/2018-q2-6.png)
 
-[![](Images/btn.png)](https://apps.axibase.com/chartlab/95617f2b)
+[![](Images/btn.png)](https://apps.axibase.com/chartlab/8828458c#fullscreen)
 
 The `alert-expression` used here highlights quarters where the percent change from the previous year was greater than 50% in red, and quarters where it was less than -10% in green.
 
