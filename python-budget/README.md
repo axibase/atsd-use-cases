@@ -12,7 +12,7 @@ While native FRED visualization tools have a number of built-in manipulation and
 
 ## Accessing Data
 
-The dataset used for this article is stored in the **Trends** instance of ATSD. If you would like access credentials to the database to recreate the queries shown here, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](mailto:hello@axibase.com?subject=Trends%20Crendentials&body=Please%20send%20Trends%20credentials%20I'd%20like%20to%20use%20the%20database!), we're happy to provide them.
+The dataset used for this article is stored in the **Trends** instance of ATSD. If you would like access credentials to the database to recreate the queries shown here, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
 
 If you have access to your own instance of ATSD, upload the [FRED data crawler](https://github.com/axibase/atsd-data-crawlers/blob/master/crawlers/fred-category-crawler/README.md#fred-category-crawler). The data crawler can upload the needed dataset along with all metadata information.
 
