@@ -3,7 +3,7 @@
 <name>github-daily-pr-status</name>
 <metric>timer_1m</metric>
 <tagsGroupingStrategy>ALL_TAGS</tagsGroupingStrategy>
-<expression><![CDATA[count() == 0 || now.getHourOfDay() == 5]]></expression>
+<expression><![CDATA[count() == 1 || now.getHourOfDay() == 5]]></expression>
 <window>length(2)</window>
 <severity>WARNING</severity>
 <alertOpenMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
