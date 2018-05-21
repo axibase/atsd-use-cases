@@ -8,19 +8,17 @@ The [Internal Revenue Service](https://www.irs.gov/) (IRS) of the United States 
 
 Ostensibly, the tax bureau maintains these records instead of [Citizenship and Immigration Services](https://www.uscis.gov/) (CIS) because the IRS uses that information to adjudicate decisions regarding those expatriating citizens upon whom the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) should be levied.
 
-The criteria for being among the unlucky few to fall within the IRS crosshairs are as follows:
+Previous articles tracking United States expatriation:
 
-* Your average annual net income tax for the 5 years ending before the date of expatriation or termination of residency is more than a specified amount that is adjusted for inflation ($151,000 for 2012, $155,000 for 2013, $157,000 for 2014, and $160,000 for 2015).
-* Your net worth is $2 million or more on the date of your expatriation or termination of residency.
-* You fail to certify on Form 8854 that you have complied with all U.S. federal tax obligations for the 5 years preceding the date of your expatriation or termination of residency.
-
-At the end of 2017, it seemed that the trend of record high annual expatriations observed during the previous years had begun to wane but as the [first quarter report](https://www.federalregister.gov/documents/2018/05/08/2018-09709/quarterly-publication-of-individuals-who-have-chosen-to-expatriate-as-required-by-section-6039g) published on May 8th, 2018 indicates, perhaps it only seemed that way.
+* [2017 Q2](2017-1.md)
+* [2017 Q3](2017-2.md)
+* [2017 Q4](2017-3.md)
 
 ---
 
 ## Expatriation Review
 
-Axibase [tracked](2018-1.md) record-high expatriation during 2017; in the fourth quarter of last year however, it seemed that expatriation levels had begun to normalize once again. Naturally, the number of expatriating citizens is far lower than the amount of number of new citizens due to naturalization, but the trend remains interesting nonetheless. This trend has been noted by such publications as the [Washington Post](https://www.washingtonpost.com/news/worldviews/wp/2017/02/10/a-potentially-historic-number-of-people-are-giving-up-their-u-s-citizenship/?noredirect=on&utm_term=.5a0d04f0ffb5) as far back as early 2017, when Axibase published our [first article](https://github.com/axibase/atsd-use-cases/blob/master/Expatriation/2017.md) citing the trend.
+Axibase [tracked](2017-3.md) record-high expatriation during 2017; in the fourth quarter of last year however, it seemed that expatriation levels had begun to normalize once again. Naturally, the number of expatriating citizens is far lower than the amount of number of new citizens due to naturalization, but the trend remains interesting nonetheless. This trend has been noted by such publications as the [Washington Post](https://www.washingtonpost.com/news/worldviews/wp/2017/02/10/a-potentially-historic-number-of-people-are-giving-up-their-u-s-citizenship/?noredirect=on&utm_term=.5a0d04f0ffb5) as far back as early 2017, when Axibase published our [first article](2017-1.md) citing the trend.
 
 ---
 
@@ -38,36 +36,34 @@ SELECT date_format(time+365*24*60*60000, 'yyyy') AS "Year",
   count(value)-lag(count(value)) AS "Y-o-Y Change",
   100*(count(value)-lag(count(value)))/lag(count(value)) AS "Y-o-Y Change, %"
 FROM "us-expatriate-counter"
-  WHERE entity = 'us.irs' AND datetime <= '2018-07-30T00:00:00Z'
+  WHERE entity = 'us.irs' AND datetime <= '2018-03-31T00:00:00Z'
 GROUP BY period(1 YEAR, END_TIME)
   ORDER BY period(1 YEAR, END_TIME)
 ```
 
 | Year | Year Total | Y-o-Y Change | Y-o-Y Change, % |
 |------|------------|--------------|-----------------|
-| 2000 | 273        | null         | null            |
-| 2001 | 502        | 229          | 84              |
-| 2002 | 322        | -180         | -36             |
-| 2003 | 646        | 324          | 101             |
-| 2004 | 474        | -172         | -27             |
-| 2005 | 911        | 437          | 92              |
-| 2006 | 351        | -560         | -61             |
-| 2007 | 368        | 17           | 5               |
-| 2008 | 394        | 26           | 7               |
-| 2009 | 166        | -228         | -58             |
-| 2010 | 1395       | 1229         | 740             |
-| 2011 | 1812       | 417          | 30              |
-| 2012 | 1412       | -400         | -22             |
-| 2013 | 2091       | 679          | 48              |
-| 2014 | 2766       | 675          | 32              |
-| 2015 | 3626       | 860          | 31              |
-| 2016 | 4143       | 517          | 14              |
-| 2017 | 6807       | 2664         | 64              |
-| 2018 | 3157       | ----         | ----            |
+| 2000 | 184        | null         | null            |
+| 2001 | 470        | 286          | 155             |
+| 2002 | 373        | -97          | -21             |
+| 2003 | 507        | 134          | 36              |
+| 2004 | 545        | 38           | 7               |
+| 2005 | 645        | 100          | 18              |
+| 2006 | 724        | 79           | 12              |
+| 2007 | 285        | -439         | -61             |
+| 2008 | 485        | 200          | 70              |
+| 2009 | 174        | -311         | -64             |
+| 2010 | 853        | 679          | 390             |
+| 2011 | 1850       | 997          | 117             |
+| 2012 | 1742       | -108         | -6              |
+| 2013 | 1151       | -591         | -34             |
+| 2014 | 3319       | 2168         | 188             |
+| 2015 | 3743       | 424          | 13              |
+| 2016 | 4096       | 353          | 9               |
+| 2017 | 5557       | 1461         | 36              |
+| 2018 | 4913       | -644         | -12             |
 
 Year-on-Year absolute and percentage changes have been omitted from current year data since the collected dataset remains incomplete, however, it's plain to see that 2018 expatriation numbers are on-track to potentially surpass the record-setting numbers of 2017.
-
-Worth nothing here is that although 2018 data technically contains two full quarters of data, one of those quarters occurred in 2017. Q1 data for each year is logged on January 1, and thus contains one quarter's worth of data from the previous year. Nonetheless, with just two quarters of data, the current year is already poised to at least meet if not exceed the previous year's data.
 
 [**ChartLab**](../ChartLabIntro/README.md) is a visualization service which is supported by data processing and storage tasks in ATSD. **ChartLab** features a wide-range of output features without robust syntax. Used here, expatriation data may be visualized to support the above SQL query.
 
