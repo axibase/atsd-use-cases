@@ -48,6 +48,7 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 
 ### ATSD
 
+- [Accessing Metadata in ATSD](how-to/database/metadata/README.md)
 - [Historizing Metrics Stored in Database](how-to/database/historize)
 - [Using Trends](how-to/shared/trends.md)
 - [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
