@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The [Internal Revenue Service](https://www.irs.gov/) (IRS) of the United States releases quarterly reports tracking the number of expatriated citizens processed in the previous three-month period. They publish these reports via the [Federal Register](https://www.federalregister.gov/) which is the primary publication medium of the federal government and used by a number of agencies as an outreach arm to the public.
+The [Internal Revenue Service](https://www.irs.gov/) (IRS) of the United States releases quarterly reports tracking the number of expatriated citizens processed in the previous three-month period. The reports are announced via the [Federal Register](https://www.federalregister.gov/) which is the primary publication medium of the federal government and used by a number of agencies as an outreach arm to the public.
 
 Ostensibly, the tax bureau maintains these records instead of [Citizenship and Immigration Services](https://www.uscis.gov/) (CIS) because the IRS uses that information to adjudicate decisions regarding those expatriating citizens upon whom the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) should be levied.
 
@@ -24,11 +24,11 @@ Axibase [tracked](2017-3.md) record-high expatriation during 2017; in the fourth
 
 ## Current Data
 
-Annual and quarterly data may be queried to return samples stored in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) using SQL Console in the user interface.
+The underlying IRS report contains the names of the individuals who expatriated in the first quarter of 2018.
+
+Support for date aggregations in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) SQL syntax allows reporting on both the annual and quarterly basis.
 
 ### Annual Data
-
-Using [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) to track recent expatriation trends:
 
 ```sql
 SELECT date_format(time+365*24*60*60000, 'yyyy') AS "Year",
@@ -63,15 +63,13 @@ GROUP BY period(1 YEAR, END_TIME)
 | 2017 | 5557       | 1461         | 36              |
 | 2018 | 4913       | -644         | -12             |
 
-[**ChartLab**](../ChartLabIntro/README.md) is a visualization service which is supported by data processing and storage tasks in ATSD. **ChartLab** features a wide-range of output features without robust syntax. Used here, expatriation data may be visualized to support the above SQL query.
+[**ChartLab**](../ChartLabIntro/README.md) is a visualization service which can display ATSD data as charts. **ChartLab** features a wide range of widgets which can be created using a declarative syntax. 
 
 ![](Images/new-yoy.png)
 
 [![](Images/btn.png)](https://apps.axibase.com/chartlab/ad0f3f03#fullscreen)
 
 ### Quarterly Data
-
-Data may remain un-grouped as seen in [Annual Data](#annual-data) and shown as it is actually collected and stored. The [`CEIL`](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions) clause in the [`SELECT`](https://github.com/axibase/atsd/blob/master/sql/README.md#select-expression) expression is used to apply quarter assignments for each of the datapoints. Thus, 2018 contains only one quarter of data since the official Q2 data truly applies to the first four months of 2018 and Q1 applies applies to the last four months of 2017.
 
 ```sql
 SELECT CEIL(CAST(date_format(time, 'M') AS NUMBER)/3) AS "Quarter", date_format(time, 'yyyy') AS "Year",
@@ -118,7 +116,7 @@ Using **ChartLab** for data visualization of the quarterly samples:
 
 ## On-Loading Expatriation Data
 
-The data published by the Federal Register requires an intermediate ETL step in order to be available for analysis. This extraction-transformation-loading procedure is implemented by a web crawler built specifically for the task of tracking Federal Register publications for new expatriation data releases.
+The data published by the Federal Register requires an intermediate ETL step in order to be available for analysis. This extraction-transformation-loading procedure is implemented by a [web crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler) built specifically for the task of tracking Federal Register publications for new expatriation data releases.
 
 The Web Crawler operates according to this workflow:
 
@@ -130,34 +128,32 @@ The Web Crawler reads incoming data from the Federal Register and parses it into
 series d:{iso-date} e:{entity} t:{tag-1}={val-1} m:{metric-1}={number}
 ```
 
-In the case of expatriation data here, the entity is the publishing body, `irs.org` and the metric is `us-expatriate-counter`. Because the IRS tracks so many unique metrics, creating a new series with only the data that will be visualized simplifies rendering in **ChartLab**. The raw data does not feature tag-level differentiation, but it could be something like `us-born-citizens` versus `naturalized-citizens`, if the data were tracked that specifically.
+In the case of expatriation data here, the entity is the publishing body, `us.irs` and the metric is `us-expatriate-counter`.
 
 SQL result set with raw data output no grouping, and entity / metric labels included:
 
 ```sql
-SELECT datetime, metric.name, entity.name, value
-FROM "us-expatriate-counter"
-  WHERE entity = 'us.irs'
-ORDER BY datetime DESC
+SELECT datetime, tags.first_name, tags.middle_name, tags.last_name
+  FROM "us-expatriate-counter"
+WHERE entity = 'us.irs'
+  ORDER BY datetime DESC
 LIMIT 10
 ```
 
 ```txt
-| datetime            | metric.name           | entity.name | value |
-|---------------------|-----------------------|-------------|-------|
-| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
-| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
-| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
-| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
-| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
-| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
-| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
-| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
-| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
-| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+| datetime              | tags.first_name  | tags.middle_name  | tags.last_name | 
+|-----------------------|------------------|-------------------|----------------| 
+| 2018-03-31T00:00:00Z  | DARSHAM          | EVA               | VOOGT          | 
+| 2018-03-31T00:00:00Z  | MAX-DOMINIC      | GRAFBEISSEL       | VONGYMNICH     | 
+| 2018-03-31T00:00:00Z  | JORRIT           | FRISCO            | VANDERVEEN     | 
+| 2018-03-31T00:00:00Z  | HATTAN           | KHALED            | UJAIMI         | 
+| 2018-03-31T00:00:00Z  | KANAE            | -                 | TSURUGA        | 
+| 2018-03-31T00:00:00Z  | ELTJE            | FREDERIKA         | TOLLENAAR      | 
+| 2018-03-31T00:00:00Z  | GUYSLAINE        | AIMEE             | THALMANN       | 
+| 2018-03-31T00:00:00Z  | ZHENGPING        | -                 | TAN            | 
+| 2018-03-31T00:00:00Z  | MOTOKI           | -                 | TAKAHASHI      | 
+| 2018-03-31T00:00:00Z  | AASIYA           | -                 | TAHIR          | 
 ```
-
-The complete list and operation instructions of other supported Axibase data crawlers is hosted [here](https://github.com/axibase/atsd-data-crawlers).
 
 ---
 
@@ -171,16 +167,11 @@ Data may also be compared using `time_offset` features whereby variable time-off
 
 [![](Images/btn.png)](https://apps.axibase.com/chartlab/f3b0e94f#fullscreen)
 
-Additionally, a [`SUM`](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) value function may be applied to aggregate annual data and group it together using a [`period`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting. The abbreviated configuration settings that support the above visualizations are shown here:
+Additionally, a [`SUM`](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) value function may be applied to aggregate quarterly samples into annual totals using a [`period`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting.
 
 ```javascript
- period = 1 year
+period = 1 year
 statistics = SUM
-```
-
-And
-
-```javascript
 time-offset = 1 year
 ```
 
@@ -208,15 +199,13 @@ value = fred.PercentChangeFromYearAgo('raw')
 
 > View the complete [`fred.js`](../how-to/shared/trends.md#fred-library) UDF library here.
 
-#### Alert Expression
+#### Highlights
 
-Customized data monitoring in ATSD is possible using [`alert-expressions`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14) whereby user-specified parameters may be defined to trigger alarms based on incoming data.
+The charts library provides settings quarters where the percent change from the previous year was greater than 50% in red, and quarters where it was less than -10% in green.
 
 ![](Images/2018-q2-6.png)
 
 [![](Images/btn.png)](https://apps.axibase.com/chartlab/8828458c#fullscreen)
-
-The `alert-expression` used here highlights quarters where the percent change from the previous year was greater than 50% in red, and quarters where it was less than -10% in green.
 
 The syntax for the `alert-expression` above is shown here:
 
