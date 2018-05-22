@@ -10,7 +10,7 @@ conn = connect_url('https://trends.axibase.com:8443/', 'username', 'password')
 from atsd_client.services import *
 svc = SeriesService(conn)
 
-## Insert FRED data from ATSD.
+## Access FRED data in ATSD.
 
 from atsd_client.models import *
 

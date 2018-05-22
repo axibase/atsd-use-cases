@@ -10,13 +10,13 @@ The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) o
 
 While native FRED visualization tools have a number of built-in manipulation and export features, meaningful data munging and preparation requires a third-party resource. With the ATSD Client for Python and Pandas library, data may be queried using SQL and visualized for external use or analysis. This article will focus on the [net lending / borrowing](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) of the United States Government for the past several decades and explore the way these three tools intersect to facilitate data processing, storage, and exploration functionalities for true Big Data projects.
 
-### Additional Dataset Considerations
+### Special Item
 
 Because the dataset is annualized, each quarterly value is multiplied by a factor of four. This calculation is used to show theoretical annual data should a specific quarter's trends be replicated over the course of the year. During the final quarter of 2017, a $250 billion tax relief plan is therefore considered $1 trillion using annualized transformation. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
 
 ![](images/fred-chart.png)
 
-Data processing tools in ATSD may perform *ad hoc* data transformations such as the removal of this and other distortions. The same dataset is visualized using **Trends** service and applies a [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting to remove the erroneous $1 trillion datapoint and replace it without the transformation. The original data and new data are shown together.
+Data processing tools in ATSD may perform *ad hoc* data transformations such as the removal of this and other distortions. The same dataset is visualized using **Trends** service and applies a [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting to remove the special item and replace it without the transformation. The original data and new data are shown together.
 
 ![](images/non-annualized.png)
 
@@ -32,7 +32,7 @@ This setting targets a defined date, available by mousing over the desired datap
 
 ### Accessing Data
 
-The dataset used for this article is stored in the **Trends** instance of ATSD. If you would like access credentials to the database to recreate the queries shown here, test drive the ATSD Python Client, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
+The dataset used for this article is stored in the **Trends** instance of ATSD. If you would like read-only credentials to the database to recreate the queries shown here, test drive the ATSD Python Client, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
 
 If you have access to your own instance of ATSD, upload the [FRED data crawler](https://github.com/axibase/atsd-data-crawlers/blob/master/crawlers/fred-category-crawler/README.md#fred-category-crawler). The data crawler can upload the needed dataset along with all metadata information.
 
@@ -40,16 +40,16 @@ If you have access to your own instance of ATSD, upload the [FRED data crawler](
 
 Confirm these programs are present on the local machine:
 
-* Python: `apt-get install python3` (alternatively, `python2.7` may be used);
+* Python: `apt-get install python3` (alternatively, [`python2.7`](https://github.com/axibase/atsd-api-python#requirements) may be used);
 * ATSD Client: `pip install atsd_client`.
 
 > ATSD Client will import the `pandas` library upon installation.
 
-For detailed installation instructions, this [guide](https://github.com/axibase/atsd-api-python/blob/master/README.md) offers troubleshooting, launch examples, and a step-by-step walkthrough.
+For detailed installation instructions, this [guide](https://github.com/axibase/atsd-api-python/blob/master/README.md#installation) offers troubleshooting, launch examples, and a step-by-step walkthrough.
 
 ### Querying Federal Reserve Data with Inline SQL
 
-After [setup](https://github.com/axibase/atsd-api-python/blob/master/README.md#axibase-time-series-database-client-for-python), SQL queries may be performed from the Python command line. Download the [Quick Start](resources/quickstart.py) program to establish connectivity, input a query, and return the results. Note that placeholder credentials must be replaced with authentic ones.
+After [setup](https://github.com/axibase/atsd-api-python/blob/master/README.md#axibase-time-series-database-client-for-python), SQL queries may be performed from the Python command line. Download the [Quick Start](resources/quickstart.py) program to automatically establish connectivity, input a query, and return the results. Note that placeholder credentials must be replaced with authentic ones.
 
 The FRED data is quarterly, this query tracks federal budget data from the final quarter for each recorded year:
 
@@ -61,7 +61,7 @@ ORDER BY datetime DESC
 limit 18
 ```
 
-For multi-line queries in the Python interface, define a variable `q = """`, so multi-line queries may be made. Close the query with `"""`. The complete query will be:
+For multi-line queries in the Python interface, define a variable `q = """`. Close the query with `"""`. The complete query will be:
 
 ```python
 >>> q = """
@@ -266,54 +266,54 @@ Simply dividing by the number of annualized factors, in this case four quarters,
 
 | Year       | Net Lending/Borrowing |
 |------------|-----------------------|
-| 2017-01-01 | -685.56               |
-| 2016-01-01 | -931.36               |
-| 2015-01-01 | -781.12               |
-| 2014-01-01 | -851.12               |
-| 2013-01-01 | -913.30               |
-| 2012-01-01 | -1447.01              |
-| 2011-01-01 | -1666.73              |
-| 2010-01-01 | -1818.96              |
-| 2009-01-01 | -1847.06              |
-| 2008-01-01 | -1054.96              |
-| 2007-01-01 | -535.13               |
-| 2006-01-01 | -429.80               |
-| 2005-01-01 | -556.31               |
-| 2004-01-01 | -675.52               |
-| 2003-01-01 | -684.35               |
-| 2002-01-01 | -523.37               |
-| 2001-01-01 | -149.72               |
-| 2000-01-01 | 81.14                 |
-| 1999-01-01 | -2.84                 |
-| 1998-01-01 | -37.36                |
-| 1997-01-01 | -139.61               |
-| 1996-01-01 | -244.25               |
-| 1995-01-01 | -319.11               |
-| 1994-01-01 | -330.87               |
-| 1993-01-01 | -406.51               |
-| 1992-01-01 | -441.19               |
-| 1991-01-01 | -352.32               |
-| 1990-01-01 | -296.46               |
-| 1989-01-01 | -225.68               |
-| 1988-01-01 | -217.87               |
-| 1987-01-01 | -237.38               |
-| 1986-01-01 | -270.47               |
-| 1985-01-01 | -248.06               |
-| 1984-01-01 | -224.12               |
-| 1983-01-01 | -242.26               |
-| 1982-01-01 | -201.48               |
-| 1981-01-01 | -113.69               |
-| 1980-01-01 | -115.53               |
-| 1979-01-01 | -67.98                |
-| 1978-01-01 | -73.20                |
-| 1977-01-01 | -80.50                |
-| 1976-01-01 | -96.37                |
-| 1975-01-01 | -123.55               |
-| 1974-01-01 | -51.64                |
-| 1973-01-01 | -39.21                |
-| 1972-01-01 | -52.12                |
-| 1971-01-01 | -63.07                |
-| 1970-01-01 | -49.26                |
+| 2017       | -685.56               |
+| 2016       | -931.36               |
+| 2015       | -781.12               |
+| 2014       | -851.12               |
+| 2013       | -913.30               |
+| 2012       | -1447.01              |
+| 2011       | -1666.73              |
+| 2010       | -1818.96              |
+| 2009       | -1847.06              |
+| 2008       | -1054.96              |
+| 2007       | -535.13               |
+| 2006       | -429.80               |
+| 2005       | -556.31               |
+| 2004       | -675.52               |
+| 2003       | -684.35               |
+| 2002       | -523.37               |
+| 2001       | -149.72               |
+| 2000       | 81.14                 |
+| 1999       | -2.84                 |
+| 1998       | -37.36                |
+| 1997       | -139.61               |
+| 1996       | -244.25               |
+| 1995       | -319.11               |
+| 1994       | -330.87               |
+| 1993       | -406.51               |
+| 1992       | -441.19               |
+| 1991       | -352.32               |
+| 1990       | -296.46               |
+| 1989       | -225.68               |
+| 1988       | -217.87               |
+| 1987       | -237.38               |
+| 1986       | -270.47               |
+| 1985       | -248.06               |
+| 1984       | -224.12               |
+| 1983       | -242.26               |
+| 1982       | -201.48               |
+| 1981       | -113.69               |
+| 1980       | -115.53               |
+| 1979       | -67.98                |
+| 1978       | -73.20                |
+| 1977       | -80.50                |
+| 1976       | -96.37                |
+| 1975       | -123.55               |
+| 1974       | -51.64                |
+| 1973       | -39.21                |
+| 1972       | -52.12                |
+| 1971       | -63.07                |
+| 1970       | -49.26                |
 
 [`CASE`](https://github.com/axibase/atsd/tree/master/sql#case-expression) expressions may be used to replicate `if-else` statements in SQL console:
 
@@ -346,6 +346,45 @@ The result set for the previous 12 quarters:
 | 2015-07-01 | -895.39                       |
 | 2015-04-01 | -720.79                       |
 | 2015-01-01 | -772.01                       |
+
+Using a similar `CASE` expression for modifying annual data:
+
+```sql
+SELECT datetime "Year",
+  CASE
+  WHEN datetime = '2017-01-01' THEN (SUM(value/4) - 1000)
+  ELSE SUM(value/4)
+  END AS "Annual Lending / Borrowing"
+FROM "ad01rc1q027sbea"
+GROUP BY period(1 year)
+ORDER BY datetime DESC
+LIMIT 18
+```
+
+The result set from 2000 onward:
+
+```txt
+| Year       | Annual Lending / Borrowing |
+|------------|----------------------------|
+| 2017       | -1685.56                   |
+| 2016       | -931.36                    |
+| 2015       | -781.12                    |
+| 2014       | -851.12                    |
+| 2013       | -913.30                    |
+| 2012       | -1447.01                   |
+| 2011       | -1666.73                   |
+| 2010       | -1818.96                   |
+| 2009       | -1847.06                   |
+| 2008       | -1054.96                   |
+| 2007       | -535.13                    |
+| 2006       | -429.80                    |
+| 2005       | -556.31                    |
+| 2004       | -675.52                    |
+| 2003       | -684.35                    |
+| 2002       | -523.37                    |
+| 2001       | -149.72                    |
+| 2000       | 81.14                      |
+```
 
 ## Conclusion
 
