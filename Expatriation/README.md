@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The [Internal Revenue Service](https://www.irs.gov/) (IRS) of the United States releases quarterly reports tracking the number of expatriated citizens processed in the previous four-month period. They publish these reports via the [Federal Register](https://www.federalregister.gov/) which is the primary publication medium of the federal government and used by a number of agencies as an outreach arm to the public.
+The [Internal Revenue Service](https://www.irs.gov/) (IRS) of the United States releases quarterly reports tracking the number of expatriated citizens processed in the previous three-month period. They publish these reports via the [Federal Register](https://www.federalregister.gov/) which is the primary publication medium of the federal government and used by a number of agencies as an outreach arm to the public.
 
 Ostensibly, the tax bureau maintains these records instead of [Citizenship and Immigration Services](https://www.uscis.gov/) (CIS) because the IRS uses that information to adjudicate decisions regarding those expatriating citizens upon whom the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) should be levied.
 
@@ -24,7 +24,7 @@ Axibase [tracked](2017-3.md) record-high expatriation during 2017; in the fourth
 
 ## Current Data
 
-Annual and quarterly data may be queried to return samples stored in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) using an SQL emulator in the user interface.
+Annual and quarterly data may be queried to return samples stored in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) using SQL Console in the user interface.
 
 ### Annual Data
 
@@ -63,13 +63,11 @@ GROUP BY period(1 YEAR, END_TIME)
 | 2017 | 5557       | 1461         | 36              |
 | 2018 | 4913       | -644         | -12             |
 
-Year-on-Year absolute and percentage changes have been omitted from current year data since the collected dataset remains incomplete, however, it's plain to see that 2018 expatriation numbers are on-track to potentially surpass the record-setting numbers of 2017.
-
 [**ChartLab**](../ChartLabIntro/README.md) is a visualization service which is supported by data processing and storage tasks in ATSD. **ChartLab** features a wide-range of output features without robust syntax. Used here, expatriation data may be visualized to support the above SQL query.
 
-![](Images/2018-q2.png)
+![](Images/new-yoy.png)
 
-[![](Images/btn.png)](https://apps.axibase.com/chartlab/7c5c7780#fullscreen)
+[![](Images/btn.png)](https://apps.axibase.com/chartlab/ad0f3f03#fullscreen)
 
 ### Quarterly Data
 
@@ -132,7 +130,32 @@ The Web Crawler reads incoming data from the Federal Register and parses it into
 series d:{iso-date} e:{entity} t:{tag-1}={val-1} m:{metric-1}={number}
 ```
 
-Once the data is stored in the database, the date (`d:`) parameter may be referenced in ISO format, or modified to output human-readable date information such as those seen in the SQL queries of this article. Tags (`t:`), metrics (`m:`), and entities (`e:`) are identifying features of a particular set of data. In the case of expatriation data here, the entity is the publishing body, the IRS and the metric is the number of expatriates. The raw data does not feature tag-level differentiation, but it could be something like `us-born-citizens` versus `naturalized-citizens`, if the data were tracked that specifically.
+In the case of expatriation data here, the entity is the publishing body, `irs.org` and the metric is `us-expatriate-counter`. Because the IRS tracks so many unique metrics, creating a new series with only the data that will be visualized simplifies rendering in **ChartLab**. The raw data does not feature tag-level differentiation, but it could be something like `us-born-citizens` versus `naturalized-citizens`, if the data were tracked that specifically.
+
+SQL result set with raw data output no grouping, and entity / metric labels included:
+
+```sql
+SELECT datetime, metric.name, entity.name, value
+FROM "us-expatriate-counter"
+  WHERE entity = 'us.irs'
+ORDER BY datetime DESC
+LIMIT 10
+```
+
+```txt
+| datetime            | metric.name           | entity.name | value |
+|---------------------|-----------------------|-------------|-------|
+| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+| 2018-03-31 00:00:00 | us-expatriate-counter | us.irs      | 1     |
+```
 
 The complete list and operation instructions of other supported Axibase data crawlers is hosted [here](https://github.com/axibase/atsd-data-crawlers).
 
@@ -144,9 +167,9 @@ The complete list and operation instructions of other supported Axibase data cra
 
 Data may also be compared using `time_offset` features whereby variable time-offsets may be applied to a dataset so that it may be compared to itself during a different time period, useful when working with time series data.
 
-![](Images/2018-q2-3.png)
+![](Images/new-qoq.png)
 
-[![](Images/btn.png)](https://apps.axibase.com/chartlab/a5f1d608)
+[![](Images/btn.png)](https://apps.axibase.com/chartlab/f3b0e94f#fullscreen)
 
 Additionally, a [`SUM`](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) value function may be applied to aggregate annual data and group it together using a [`period`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting. The abbreviated configuration settings that support the above visualizations are shown here:
 
@@ -188,8 +211,6 @@ value = fred.PercentChangeFromYearAgo('raw')
 #### Alert Expression
 
 Customized data monitoring in ATSD is possible using [`alert-expressions`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14) whereby user-specified parameters may be defined to trigger alarms based on incoming data.
-
-Here, alert expressions are applied to static data, but they also may be easily applied to dynamic data and used for systems monitoring as seen in this [example](https://apps.axibase.com/chartlab/67aa3b61) which is monitoring one of the Axibase servers right now.
 
 ![](Images/2018-q2-6.png)
 
