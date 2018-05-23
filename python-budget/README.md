@@ -2,21 +2,23 @@
 
 ## Introduction
 
-[Python](https://www.python.org/) is an easy-to-use and versatile programming language that boasts code readability and functionality for tasks of any size. [Pandas](http://pandas.pydata.org/) is an open-source data analytics library designed for Python which offers the functional solutions of a more purpose-specific language like R (`https://www.r-project.org/`) within the Python interface. [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is an enterprise-level data storage and processing environment that features a rule engine, SQL, and visualization functionality. Using these three tools, data analysis tasks may be approached from the ground up to unlock meaningful results within a single interface.
+[Python](https://www.python.org/) is an easy-to-use and versatile programming language that boasts code readability and functionality for tasks of any size. [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is an enterprise-level data storage and processing environment that features a rule engine, SQL, and visualization functionality. Using these two tools, data analysis tasks may be approached from the ground up to unlock meaningful results within a single interface.
 
 ## Dataset
 
-The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) of the St. Louis Federal Reserve publishes open-source data on a range of topics from macroeconomic trends such as Gross Domestic Product to microeconomic phenomena like unemployment and producer / consumer price indices.
+The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) of the St. Louis Federal Reserve publishes publicly available data on a range of topics related to macroeconomic trends such as GDP, employment and national statistics.
 
-While native FRED visualization tools have a number of built-in manipulation and export features, meaningful data munging and preparation requires a third-party resource. With the ATSD Client for Python and Pandas library, data may be queried using SQL and visualized for external use or analysis. This article will focus on the [net lending / borrowing](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) of the United States Government for the past several decades and explore the way these three tools intersect to facilitate data processing, storage, and exploration functionalities for true Big Data projects.
+While native FRED visualization tools have a number of built-in manipulation and export features, meaningful data wrangling requires specialized capabilities. With the ATSD [API Client for Python](https://github.com/axibase/atsd-api-python), data may be queried using SQL and visualized for ad-hoc analysis. This article will focus on the [net lending / borrowing](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) of the United States Government for the past several decades and explore the way these three tools intersect to facilitate data processing.
 
-### Special Item
+### Handling Special Items
 
-Because the dataset is annualized, each quarterly value is multiplied by a factor of four. This calculation is used to show theoretical annual data should a specific quarter's trends be replicated over the course of the year. During the final quarter of 2017, a $250 billion tax relief plan is therefore considered $1 trillion using annualized transformation. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
+The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by a factor of four to arrive at the annual estimate. This calculation is used to show the annual total should a specific quarter's trends be replicated over the course of the year. During the final quarter of 2017, a $250 billion windfall from the corporate expatriation tax was added to the total by virtue of the annualized calculation. In fact, the $250 billion extra income translated to a $1 trillion. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
 
 ![](images/fred-chart.png)
 
-Data processing tools in ATSD may perform *ad hoc* data transformations such as the removal of this and other distortions. The same dataset is visualized using **Trends** service and applies a [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting to remove the special item and replace it without the transformation. The original data and new data are shown together.
+We will now illustrate how the declarative graphics library in ATSD can be utilized to perform *ad hoc* data transformations such as the removal of this and other special items. The same dataset is visualized using **Trends** service and applies a [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting to remove the special budget revenue item from the annual total. 
+
+The original data and new data are shown together. The range of conclusions one can draw from these two series are vastly different.
 
 ![](images/non-annualized.png)
 
@@ -28,37 +30,19 @@ The `replace-value` setting used in the visualization:
  replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-1000 : value
 ```
 
-This setting targets a defined date, available by mousing over the desired datapoint, and fires an `if-else` statement which subtracts $1 trillion from the defined date or else returns the inserted value.
+This setting targets a defined date, and evaluates an `if-else` expression which subtracts $1 trillion from the defined date's value or else returns the original value.
 
-### Accessing Data
+### Querying FRED Data with SQL
 
-The dataset used for this article is stored in the **Trends** instance of ATSD. If you would like read-only credentials to the database to recreate the queries shown here, test drive the ATSD Python Client, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
-
-If you have access to your own instance of ATSD, upload the [FRED data crawler](https://github.com/axibase/atsd-data-crawlers/blob/master/crawlers/fred-category-crawler/README.md#fred-category-crawler). The data crawler can upload the needed dataset along with all metadata information.
-
-## Setup
-
-Confirm these programs are present on the local machine:
-
-* Python: `apt-get install python3` (alternatively, [`python2.7`](https://github.com/axibase/atsd-api-python#requirements) may be used);
-* ATSD Client: `pip install atsd_client`.
-
-> ATSD Client will import the `pandas` library upon installation.
-
-For detailed installation instructions, this [guide](https://github.com/axibase/atsd-api-python/blob/master/README.md#installation) offers troubleshooting, launch examples, and a step-by-step walkthrough.
-
-### Querying Federal Reserve Data with Inline SQL
-
-After [setup](https://github.com/axibase/atsd-api-python/blob/master/README.md#axibase-time-series-database-client-for-python), SQL queries may be performed from the Python command line. Download the [Quick Start](resources/quickstart.py) program to automatically establish connectivity, input a query, and return the results. Note that placeholder credentials must be replaced with authentic ones.
+Similar to graphs, the same analysis and data cleanup may be performed by executing SQL queries using the ATSD Python client.
 
 The FRED data is quarterly, this query tracks federal budget data from the final quarter for each recorded year:
 
 ```sql
 SELECT datetime "Year",LAST(value) "Net Lending/Borrowing"
-FROM "ad01rc1q027sbea"
+  FROM "ad01rc1q027sbea"
 GROUP BY period(1 year)
-ORDER BY datetime DESC
-limit 18
+  ORDER BY datetime DESC
 ```
 
 For multi-line queries in the Python interface, define a variable `q = """`. Close the query with `"""`. The complete query will be:
@@ -69,20 +53,12 @@ For multi-line queries in the Python interface, define a variable `q = """`. Clo
 ... FROM "ad01rc1q027sbea"
 ... GROUP BY period(1 year)
 ... ORDER BY datetime DESC
-... limit 18
 ... """
 ```
 
-The most recent samples:
+The ten most recent years are presented below:
 
 ```txt
-| 30  2000                           51.488 |
-| 31  2001                         -253.246 |
-| 32  2002                         -588.672 |
-| 33  2003                         -650.718 |
-| 34  2004                         -628.160 |
-| 35  2005                         -537.567 |
-| 36  2006                         -376.840 |
 | 37  2007                         -594.622 |
 | 38  2008                        -1357.509 |
 | 39  2009                        -1838.034 |
@@ -95,8 +71,6 @@ The most recent samples:
 | 46  2016                         -949.905 |
 | 47  2017                           14.676 |
 ```
-
-The [`LIMIT`](https://github.com/axibase/atsd/tree/master/sql#limiting) clause may be removed from the query to return all data.
 
 <details><summary>View the complete result set here:</summary>
 <p>
@@ -157,58 +131,25 @@ The [`LIMIT`](https://github.com/axibase/atsd/tree/master/sql#limiting) clause m
 </p>
 </details>
 
-To refine the query and show only data where the United States had an annual surplus, use this query:
+To refine the query and show only quarters where the United States had an annual surplus, use this query:
 
 ```sql
-SELECT datetime "Year",LAST(value) "Net Lending/Borrowing"
-FROM "ad01rc1q027sbea"
-WHERE value > 0
-GROUP BY period(1 year)
+SELECT date_format(time, 'yyyy'), SUM(value)/4
+  FROM "ad01rc1q027sbea"
+  GROUP BY period(1 year)
+HAVING SUM(value) > 0
 ```
 
 The result set shows only four years since 1970 when the United States achieved a net surplus.
 
 ```txt
-| Year          Surplus (Billion USD)      |
-|------------------------------------------|
 | 0  1999                            6.35  |
 | 1  2000                           51.49  |
 | 2  2001                           18.48  |
 | 3  2017                           14.67  |
 ```
 
-When Pandas and Python are used alongside ATSD, there is no need to import and filter data for robust SQL queries. Data is readily available and stored on-hand in ATSD and passed directly into the Python interface via ATSD Python Client.
-
-Although it certainly appears that the United States government has achieved a budget surplus this quarter, in fact the nature of the data is such that it only seems that way. The dataset here is annualized, meaning that each quarter's data is plotted as if the trends remain constant for the entire year. Thus, the administration's $250 billion tax relief is considered as $1 trillion due to annualization calculations. See [Non-Annualized Data](#non-annualized-data) for raw data examples.
-
-The highest annual budget deficits incurred may be gathered with this query:
-
-```sql
-SELECT datetime "Year", LAST(value) "Deficit (Billion USD)"
-FROM "ad01rc1q027sbea"
-GROUP BY PERIOD(1 year)
-ORDER BY LAST(value) ASC
-LIMIT 10
-```
-
-The result set shows the years with the highest annual budget deficits.
-
-```txt
-| Year  Deficit (Billion USD)    |
-|--------------------------------|
-| 0  2009              -1838.03  |
-| 1  2010              -1727.04  |
-| 2  2011              -1635.09  |
-| 3  2012              -1402.97  |
-| 4  2008              -1357.51  |
-| 5  2016              -949.90   |
-| 6  2014              -868.87   |
-| 7  2013              -812.01   |
-| 8  2015              -736.28   |
-| 9  2003              -650.72   |
-```
-
-It's no surprise that each of the years leading into, during, and immediately following the Great Recession and housing market collapse are among those which saw the largest growth in annualized government borrowing.
+Although it appears that the United States government has finally achieved a budget surplus in the recent financial history, in fact the nature of the data is such that it only seems that way. The dataset here is annualized, meaning that each quarter's data is plotted as if the trends remain constant for the entire year. Thus, the administration's $250 billion tax relief is considered as $1 trillion due to annualization calculations. See [Non-Annualized Data](#non-annualized-data) for raw data examples.
 
 ### Data Visualizations with `matplotlib` and **Trends** Service
 
@@ -216,11 +157,11 @@ The `matplotlib` library is a Matlab-like tool which offers an inline visualizat
 
 ![](images/matplotlib-demo.png)
 
-While lacking some of the detail of a more robust visualization service, the `matplotlib` tool is helpful for visualizing data transformations inline.
+While lacking the web-based presentation capability, the `matplotlib` tool is helpful for visualizing data transformations inline.
 
-In order to create this visualization, queue the desired data following [these instructions](https://github.com/axibase/atsd-api-python#querying-data).
+In order to create this visualization, query the desired data using the [SQLService](https://github.com/axibase/atsd-api-python#querying-data).
 
-<details><summary>View command line syntax to convert the queued data to a pandas-readable series for visualization:</summary>
+<details><summary>View command line examples to convert the data to a pandas data frame:</summary>
 <p>
 
 ```python
@@ -249,17 +190,15 @@ Using the same data in the [**Trends**](https://github.com/axibase/atsd-use-case
 
 *Fig 1.* This visualization leverages [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) to display both the raw data as well as monthly change in value using a [dual-axis](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting and `[threshold]` series.
 
-Using **Trends** is an alternate solution to native `matplotlib` functionality in Python. **Trends** offers a convenient and well-documented [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) that supports *ad hoc* data modifications that do not change the underlying dataset.
-
 ### Non-Annualized Data
 
 As noted previously, this dataset is annualized. This section of the article shows how to revert this transformation and present raw data via SQL query:
 
 ```sql
-SELECT datetime "Year",SUM(value/4) "Net Lending/Borrowing"
-FROM "ad01rc1q027sbea"
+SELECT datetime "Year", SUM(value/4) "Net Lending/Borrowing"
+  FROM "ad01rc1q027sbea"
 GROUP BY period(1 year)
-ORDER BY datetime DESC
+  ORDER BY datetime DESC
 ```
 
 Simply dividing by the number of annualized factors, in this case four quarters, and then summing them returns raw annual data.
@@ -385,6 +324,24 @@ The result set from 2000 onward:
 | 2001       | -149.72                    |
 | 2000       | 81.14                      |
 ```
+
+
+### Accessing Data
+
+The dataset used for this article is stored in the **Trends** instance of ATSD. If you would like read-only credentials to the database to recreate the queries shown here, test drive the ATSD Python Client, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
+
+If you have access to your own instance of ATSD, upload the [FRED data crawler](https://github.com/axibase/atsd-data-crawlers/blob/master/crawlers/fred-category-crawler/README.md#fred-category-crawler). The data crawler can upload the needed dataset along with all metadata information.
+
+## Setup
+
+Confirm these programs are present on the local machine:
+
+* Python: `apt-get install python3` (alternatively, [`python2.7`](https://github.com/axibase/atsd-api-python#requirements) may be used);
+* ATSD Client: `pip install atsd_client`.
+
+> ATSD Client will import the `pandas` library upon installation.
+
+For detailed installation instructions, this [guide](https://github.com/axibase/atsd-api-python/blob/master/README.md#installation) offers troubleshooting, launch examples, and a step-by-step walkthrough.
 
 ## Conclusion
 
