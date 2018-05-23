@@ -63,7 +63,7 @@ GROUP BY period(1 YEAR, END_TIME)
 | 2017 | 5557       | 1461         | 36              |
 | 2018 | 4913       | -644         | -12             |
 
-[**ChartLab**](../ChartLabIntro/README.md) is a visualization service which can display ATSD data as charts. **ChartLab** features a wide range of widgets which can be created using a declarative syntax. 
+[**ChartLab**](../ChartLabIntro/README.md) is a visualization service which can display ATSD data as charts. **ChartLab** features a wide range of widgets which can be created using a declarative syntax.
 
 ![](Images/new-yoy.png)
 
@@ -141,18 +141,18 @@ LIMIT 10
 ```
 
 ```txt
-| datetime              | tags.first_name  | tags.middle_name  | tags.last_name | 
-|-----------------------|------------------|-------------------|----------------| 
-| 2018-03-31T00:00:00Z  | DARSHAM          | EVA               | VOOGT          | 
-| 2018-03-31T00:00:00Z  | MAX-DOMINIC      | GRAFBEISSEL       | VONGYMNICH     | 
-| 2018-03-31T00:00:00Z  | JORRIT           | FRISCO            | VANDERVEEN     | 
-| 2018-03-31T00:00:00Z  | HATTAN           | KHALED            | UJAIMI         | 
-| 2018-03-31T00:00:00Z  | KANAE            | -                 | TSURUGA        | 
-| 2018-03-31T00:00:00Z  | ELTJE            | FREDERIKA         | TOLLENAAR      | 
-| 2018-03-31T00:00:00Z  | GUYSLAINE        | AIMEE             | THALMANN       | 
-| 2018-03-31T00:00:00Z  | ZHENGPING        | -                 | TAN            | 
-| 2018-03-31T00:00:00Z  | MOTOKI           | -                 | TAKAHASHI      | 
-| 2018-03-31T00:00:00Z  | AASIYA           | -                 | TAHIR          | 
+| datetime              | tags.first_name  | tags.middle_name  | tags.last_name |
+|-----------------------|------------------|-------------------|----------------|
+| 2018-03-31T00:00:00Z  | DARSHAM          | EVA               | VOOGT          |
+| 2018-03-31T00:00:00Z  | MAX-DOMINIC      | GRAFBEISSEL       | VONGYMNICH     |
+| 2018-03-31T00:00:00Z  | JORRIT           | FRISCO            | VANDERVEEN     |
+| 2018-03-31T00:00:00Z  | HATTAN           | KHALED            | UJAIMI         |
+| 2018-03-31T00:00:00Z  | KANAE            | -                 | TSURUGA        |
+| 2018-03-31T00:00:00Z  | ELTJE            | FREDERIKA         | TOLLENAAR      |
+| 2018-03-31T00:00:00Z  | GUYSLAINE        | AIMEE             | THALMANN       |
+| 2018-03-31T00:00:00Z  | ZHENGPING        | -                 | TAN            |
+| 2018-03-31T00:00:00Z  | MOTOKI           | -                 | TAKAHASHI      |
+| 2018-03-31T00:00:00Z  | AASIYA           | -                 | TAHIR          |
 ```
 
 ---
