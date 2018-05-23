@@ -1,4 +1,4 @@
-# United States Expatriation Counter
+# First Quarter Expatriation Shows Marked Decrease After Post-Election Turmoil
 
 ![](Images/title1-2018.png)
 
