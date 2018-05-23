@@ -8,6 +8,7 @@ The **Use Cases** repository contains [Research Articles](#research-articles) de
 
 ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. See older articles in the [Archive](#archive).
 
+1. [First Quarter Expatriation Shows Marked Decrease After Post-Election Turmoil](Expatriation/README.md)
 1. [Technical Writing for Software Developers](workshop/technical-writing.md)
 1. [WebGL: Hello, World and Integration Examples](workshop/WebGL.md)
 1. [Tracking Expatriation with ChartLab, SQL, and Web Crawler in ATSD](Expatriation/README.md)
@@ -17,7 +18,6 @@ ATSD functionality and features applied to real-world public data to solve commo
 1. [Analyzing Econometric Datasets with Calculated Series](Solutions/calculated-values/README.md)
 1. [Slow Growth is Becoming a Human Trend Too](Chart_of_the_Day/life-expectancy/README.md)
 1. [Aging America: Modeling Birth Trends in the United States](aging-america/README.md)
-1. [The Slow Death of the American Auto Industry](Automobiles/README.md)
 
 ## How-To
 
@@ -48,7 +48,8 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 
 ### ATSD
 
-- [Historizing Metrics Stored in Database](how-to/database/historize)
+- [Computing Series Delta Values in ATSD](how-to/database/subtract-subsequent-values/README.md)
+- [Historizing Metrics Stored in Database](how-to/database/historize/README.md)
 - [Using Trends](how-to/shared/trends.md)
 - [Calculated Values With Schema-Based Parsing](Support/Schema-Parser-Mod-Pre-Import/README.md)
 - [Curve Smoothing Using Moving Averages](Support/Moving-Avg/README.md)
@@ -106,6 +107,7 @@ Visualizations and SQL queries that are indexed by topic to form the Axibase Dat
 
 Older ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. Some features may have been updated or function differently, see our latest features and functionality used in more recent [Research Articles](#research-articles) or the [Chart of the Day](#chart-of-the-day).
 
+1. [The Slow Death of the American Auto Industry](Automobiles/README.md)
 1. [Who is Dropping Out in the State with the Fewest Dropouts?](Chart_of_the_Day/IA_Dropouts/README.md)
 1. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
 1. [Debt Profile of the Average American](FED_FORDSR/README.md)
@@ -127,7 +129,7 @@ Older ATSD functionality and features applied to real-world public data to solve
 1. [Quantifying Public Health: The American Fitness Index](FitnessIndex/README.md)
 1. [Violence Begets Violence: An Analysis of the Baltimore Police Force and Baltimore Homicide Data](BaltimorePolice/README.md)
 1. [Climate Change: Back to the Drawing Board](ClimateChange/README.md)
-1. [U.S. Expatriation Statistics](Expatriation/2017.md)
+1. [U.S. Expatriation Statistics](Expatriation/2017-1.md)
 1. [Consumer Finance Complaints](ConsumerFinance/README.md)
 1. [Tax Day 2017: Are U.S. Tax Payers Procrastinating?](IRSTaxFilings/README.md)
 1. [Norway Car Registrations](NorwayCars/README.md)
