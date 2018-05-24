@@ -12,22 +12,28 @@ While native FRED visualization tools have a number of built-in manipulation and
 
 ### Handling Special Items
 
-The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by a factor of four to arrive at the annual estimate. This calculation is used to show the annual total should a specific quarter's trends be replicated over the course of the year. During the final quarter of 2017, a $250 billion windfall from the corporate expatriation tax was added to the total by virtue of the annualized calculation. In fact, the $250 billion extra income translated to a $1 trillion. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
+The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by a factor of four to arrive at the annual estimate. This calculation is used to show the annual total should a specific quarter's trends be replicated over the course of the year. During the final quarter of 2017, a potential $250 billion windfall from one-time corporate repatriation taxes was added to the total by virtue of annualized calculation. In fact, the $250 billion extra income translated to a $1 trillion. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
 
 ![](images/fred-chart.png)
 
-We will now illustrate how the declarative graphics library in ATSD can be utilized to perform *ad hoc* data transformations such as the removal of this and other special items. The same dataset is visualized using **Trends** service and applies a [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting to remove the special budget revenue item from the annual total. 
+We will now illustrate how the declarative graphics library in ATSD can be utilized to perform *ad hoc* data transformations such as the removal of this and other special items. The same dataset is visualized using **Trends** service and applies a [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting to remove the special budget revenue item from the annual total. Additionally, a third visualization will be shown where the one-time $250 billion addition remains, but only the annualized $750 billion is removed.
 
-The original data and new data are shown together. The range of conclusions one can draw from these two series are vastly different.
+The original data and new data are shown together. The range of conclusions one can draw from these three series are vastly different.
 
-![](images/non-annualized.png)
+![](images/ad-hoc.png)
 
-[![](images/button-new.png)](https://trends.axibase.com/107eef06#fullscreen)
+[![](images/button-new.png)](https://trends.axibase.com/04b1ad9f#fullscreen)
 
-The `replace-value` setting used in the visualization:
+The `replace-value` settings used in the visualization:
 
 ```javascript
- replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-1000 : value
+# remove extraordinary item completely.
+replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-1000 : value
+```
+
+```javascript
+# remove extraordinary annualization calculation, leave expected repatriation tax.
+replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-750 : value
 ```
 
 This setting targets a defined date, and evaluates an `if-else` expression which subtracts $1 trillion from the defined date's value or else returns the original value.
@@ -267,7 +273,7 @@ ORDER BY datetime DESC
 LIMIT 12
 ```
 
-Just as with the altered visualization [above](#additional-considerations), the desired date is targeted using a `CASE` expression and then modified to remove the annualized $1 trillion addition.
+Just as with the altered visualization [above](#handling-special-items), the desired date is targeted using a `CASE` expression and then modified to remove the annualized $1 trillion addition.
 
 The result set for the previous 12 quarters:
 
@@ -325,14 +331,80 @@ The result set from 2000 onward:
 | 2000       | 81.14                      |
 ```
 
+In order to remove the annualized portion of the re-patriation tax, but leave the estimated $250 billion the tax itself is likely to generate, a similar set of queries may be used.
 
-### Accessing Data
+```sql
+SELECT datetime "Year",
+  CASE
+  WHEN datetime = '2017-10-01' THEN value - 750
+  ELSE value
+  END AS "Quarterly Lending / Borrowing"
+FROM "ad01rc1q027sbea"
+ORDER BY datetime DESC
+LIMIT 12
+```
 
-The dataset used for this article is stored in the **Trends** instance of ATSD. If you would like read-only credentials to the database to recreate the queries shown here, test drive the ATSD Python Client, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
+The 12-quarter result set:
+
+| Year       | Quarterly Lending / Borrowing | 
+|------------|-------------------------------| 
+| 2017-10-01 | -735.324                      | 
+| 2017-07-01 | -927.836                      | 
+| 2017-04-01 | -918.892                      | 
+| 2017-01-01 | -910.173                      | 
+| 2016-10-01 | -949.905                      | 
+| 2016-07-01 | -905.616                      | 
+| 2016-04-01 | -915.026                      | 
+| 2016-01-01 | -954.873                      | 
+| 2015-10-01 | -736.282                      | 
+| 2015-07-01 | -895.39                       | 
+| 2015-04-01 | -720.787                      | 
+| 2015-01-01 | -772.013                      | 
+
+The same transformation applied to annual data:
+
+```sql
+SELECT datetime "Year",
+  CASE
+  WHEN datetime = '2017-01-01' THEN (SUM(value/4) - 750)
+  ELSE SUM(value/4)
+  END AS "Annual Lending / Borrowing"
+FROM "ad01rc1q027sbea"
+GROUP BY period(1 year)
+ORDER BY datetime DESC
+LIMIT 18
+```
+
+The 18-year result set:
+
+| Year       | Annual Lending / Borrowing | 
+|------------|----------------------------| 
+| 2017-01-01 | -1435.56                   | 
+| 2016-01-01 | -931.36                    | 
+| 2015-01-01 | -781.12                    | 
+| 2014-01-01 | -851.12                    | 
+| 2013-01-01 | -913.30                    | 
+| 2012-01-01 | -1447.01                   | 
+| 2011-01-01 | -1666.73                   | 
+| 2010-01-01 | -1818.96                   | 
+| 2009-01-01 | -1847.06                   | 
+| 2008-01-01 | -1054.96                   | 
+| 2007-01-01 | -535.13                    | 
+| 2006-01-01 | -429.80                    | 
+| 2005-01-01 | -556.31                    | 
+| 2004-01-01 | -675.52                    | 
+| 2003-01-01 | -684.35                    | 
+| 2002-01-01 | -523.37                    | 
+| 2001-01-01 | -149.72                    | 
+| 2000-01-01 | 81.14                      | 
+
+## Accessing Data
+
+The dataset used for this article is stored in the **Trends** instance of ATSD. If you would like read-only credentials to the database to recreate the queries shown here, test drive the **ATSD Python Client**, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
 
 If you have access to your own instance of ATSD, upload the [FRED data crawler](https://github.com/axibase/atsd-data-crawlers/blob/master/crawlers/fred-category-crawler/README.md#fred-category-crawler). The data crawler can upload the needed dataset along with all metadata information.
 
-## Setup
+### Setup
 
 Confirm these programs are present on the local machine:
 
