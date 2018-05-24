@@ -129,7 +129,7 @@ Older ATSD functionality and features applied to real-world public data to solve
 1. [Quantifying Public Health: The American Fitness Index](FitnessIndex/README.md)
 1. [Violence Begets Violence: An Analysis of the Baltimore Police Force and Baltimore Homicide Data](BaltimorePolice/README.md)
 1. [Climate Change: Back to the Drawing Board](ClimateChange/README.md)
-1. [U.S. Expatriation Statistics](Expatriation/2017.md)
+1. [U.S. Expatriation Statistics](Expatriation/2017-1.md)
 1. [Consumer Finance Complaints](ConsumerFinance/README.md)
 1. [Tax Day 2017: Are U.S. Tax Payers Procrastinating?](IRSTaxFilings/README.md)
 1. [Norway Car Registrations](NorwayCars/README.md)
