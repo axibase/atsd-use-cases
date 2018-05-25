@@ -140,20 +140,17 @@ The ten most recent years are presented below:
 To refine the query and show only quarters where the United States had an annual surplus, use this query:
 
 ```sql
-SELECT date_format(time, 'yyyy'), SUM(value)/4
+SELECT date_format(time, 'yyyy') "year", SUM(value)/4 "surplus"
   FROM "ad01rc1q027sbea"
   GROUP BY period(1 year)
 HAVING SUM(value) > 0
 ```
 
-The result set shows only four years since 1970 when the United States achieved a net surplus.
+The result set shows only one year since 1970 when the United States achieved a net lending surplus:
 
-```txt
-| 0  1999                            6.35  |
-| 1  2000                           51.49  |
-| 2  2001                           18.48  |
-| 3  2017                           14.67  |
-```
+| year | surplus |
+|------|---------|
+| 2000 | 81.14   |
 
 Although it appears that the United States government has finally achieved a budget surplus in the recent financial history, in fact the nature of the data is such that it only seems that way. The dataset here is annualized, meaning that each quarter's data is plotted as if the trends remain constant for the entire year. Thus, the administration's $250 billion tax relief is considered as $1 trillion due to annualization calculations. See [Non-Annualized Data](#non-annualized-data) for raw data examples.
 
@@ -261,38 +258,6 @@ Simply dividing by the number of annualized factors, in this case four quarters,
 | 1970       | -49.26                |
 
 [`CASE`](https://github.com/axibase/atsd/tree/master/sql#case-expression) expressions may be used to replicate `if-else` statements in SQL console:
-
-```sql
-SELECT datetime "Year",
-  CASE
-  WHEN datetime = '2017-10-01' THEN value - 1000
-  ELSE value
-  END AS "Quarterly Lending / Borrowing"
-FROM "ad01rc1q027sbea"
-ORDER BY datetime DESC
-LIMIT 12
-```
-
-Just as with the altered visualization [above](#handling-special-items), the desired date is targeted using a `CASE` expression and then modified to remove the annualized $1 trillion addition.
-
-The result set for the previous 12 quarters:
-
-| Year       | Quarterly Lending / Borrowing |
-|------------|-------------------------------|
-| 2017-10-01 | -985.32                       |
-| 2017-07-01 | -927.84                       |
-| 2017-04-01 | -918.89                       |
-| 2017-01-01 | -910.17                       |
-| 2016-10-01 | -949.90                       |
-| 2016-07-01 | -905.62                       |
-| 2016-04-01 | -915.03                       |
-| 2016-01-01 | -954.87                       |
-| 2015-10-01 | -736.28                       |
-| 2015-07-01 | -895.39                       |
-| 2015-04-01 | -720.79                       |
-| 2015-01-01 | -772.01                       |
-
-Using a similar `CASE` expression for modifying annual data:
 
 ```sql
 SELECT datetime "Year",
