@@ -1,87 +1,125 @@
-# First Quarter Expatriation Shows Marked Decrease After Post-Election Turmoil
+# Tracking Expatriation with ChartLab, SQL, and Web Crawler in ATSD
 
-![](Images/title1-2018.png)
+![](Images/expat-title.png)
 
 ## Introduction
 
-The [Internal Revenue Service](https://www.irs.gov/) (IRS) of the United States releases quarterly reports tracking the number of expatriated citizens processed in the previous three-month period. The reports are announced via the [Federal Register](https://www.federalregister.gov/) which is the primary publication medium of the federal government and used by a number of agencies as an outreach arm to the public.
+Each year the Internal Revenue Service of the United States releases expatriation information about American citizens who have decided to renounce their citizenship via the [Federal Register](https://www.federalregister.gov/), the government's official journal. The reason the IRS publishes this information is to levy the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) upon those citizens with enough wealth to incur the tax at the time of their renunciation. The tax doesn't apply to just anyone who decides to leave the country for good, only to those soon-to-be-former citizens who qualify as "covered expatriates".
 
-Ostensibly, the tax bureau maintains these records instead of [Citizenship and Immigration Services](https://www.uscis.gov/) (CIS) because the IRS uses that information to adjudicate decisions regarding those expatriating citizens upon whom the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) should be levied.
+A covered expatriate must meet any one of the following criteria:
 
-Previous articles tracking United States expatriation:
+* Your average annual net income tax for the 5 years ending before the date of expatriation or termination of residency is more than a specified amount that is adjusted for inflation ($151,000 for 2012, $155,000 for 2013, $157,000 for 2014, and $160,000 for 2015).
+* Your net worth is $2 million or more on the date of your expatriation or termination of residency.
+* You fail to certify on Form 8854 that you have complied with all U.S. federal tax obligations for the 5 years preceding the date of your expatriation or termination of residency.
 
-* [2017 Q2](2017-1.md)
-* [2017 Q3](2017-2.md)
-* [2017 Q4](2017-3.md)
+[IRS Form 8854](https://www.irs.gov/pub/irs-pdf/f8854.pdf) is a statement that confirms that up to the date of your expatriation, you have complied with United States Federal Tax Code to the letter of the law. Failing to correctly complete this document means that you are obligated to pay the Expatriation Tax, even if you do not meet either of the previous criteria.
 
----
+As observed [last year](2017-2.md), citizens from the United States were leaving the country at previously unseen levels against the backdrop of one of the more contentious recent presidential elections.
 
-## Expatriation Review
+![](Images/expat-title-2.png)
+[![](Images/btn.png)](https://apps.axibase.com/chartlab/61a855b0/3/#fullscreen)
 
-Axibase [tracked](2017-3.md) record-high expatriation during 2017; in the fourth quarter of last year however, it seemed that expatriation levels had begun to normalize once again. Naturally, the number of expatriating citizens is far lower than the amount of number of new citizens due to naturalization, but the trend remains interesting nonetheless. This trend has been noted by such publications as the [Washington Post](https://www.washingtonpost.com/news/worldviews/wp/2017/02/10/a-potentially-historic-number-of-people-are-giving-up-their-u-s-citizenship/?noredirect=on&utm_term=.5a0d04f0ffb5) as far back as early 2017, when Axibase published our [first article](2017-1.md) citing the trend.
+*Fig 1.* The top chart uses a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting to show a quarter-on-quarter comparison, while the annual totals are shown in the bottom chart.
 
----
+## ChartLab
 
-## Current Data
+Both of the above graphs were prepared with Axibase ChartLab which is a visualization sandbox that features convenient syntax with different types of charts. The above visualizations may be modified to produce several projections of the same dataset stored in Axibase Time Series Database (ATSD).
 
-The underlying IRS report contains the names of the individuals who expatriated in the first quarter of 2018.
+A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported by ChartLab, and [user-defined functions](../how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
 
-Support for date aggregations in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) SQL syntax allows reporting on both the annual and quarterly basis.
+![](Images/previous-year.png)
+[![](Images/btn.png)](https://apps.axibase.com/chartlab/a14a69a4#fullscreen)
 
-### Annual Data
+*Fig 2.* The above visualization uses the `ChangeFromPreviousYear` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually observed several years ago.
+
+While the underlying function may be quite verbose:
+
+```ls
+value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return (v / p - 1) * 100
+```
+
+The syntax required in the ChartLab configuration is simple:
+
+```ls
+value = fred.PercentChangeFromYearAgo('raw')
+```
+
+> View the complete [`fred.js`](../how-to/shared/trends.md#fred-library) UDF library here.
+
+Customized data monitoring in ATSD is possible using [`alert-expressions`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14) whereby user-specified parameters may be defined to trigger alarms based on incoming data.
+
+Here, alert expressions are applied to static data, but they may be easily applied to dynamic data and used for systems monitoring as seen in this [example](https://apps.axibase.com/chartlab/67aa3b61) which is monitoring one of the Axibase servers right now.
+
+![](Images/percent-change.png)
+[![](Images/btn.png)](https://apps.axibase.com/chartlab/95617f2b)
+
+*Fig 3.* The `alert-expression` used here highlights quarters where the percent change from the previous year was greater than 50% in red, and quarters where it was less than -10% in green.
+
+The syntax for the `alert-expression` above is shown here:
+
+```ls
+    alert-expression = value > 50 ? 4000 : value < -10 ? -100 : 0
+    alert-style = if (alert > 50) return 'color:red'
+    alert-style = if (alert < -10) return 'color:green'
+```
+
+When using a two-parameter `alert-expression`, three arguments are needed: an upper bound, lower bound, and median value separated by `:` delimiter.
+
+For more information about ChartLab syntax or to explore other features which may be used in the example above, see the complete [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+
+## SQL
+
+In addition to ChartLab, the Axibase Time Series Database includes a web-based [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) which can be used for ad-hoc data exploration.
 
 ```sql
-SELECT date_format(time+365*24*60*60000, 'yyyy') AS "Year",
+SELECT date_format(time, 'yyyy') AS "Year",
   count(value) AS "Year Total",
   count(value)-lag(count(value)) AS "Y-o-Y Change",
   100*(count(value)-lag(count(value)))/lag(count(value)) AS "Y-o-Y Change, %"
 FROM "us-expatriate-counter"
-  WHERE entity = 'us.irs' AND datetime <= '2018-03-31T00:00:00Z'
+  WHERE entity = 'us.irs' AND datetime <= '2018-01-01T00:00:00Z'
 GROUP BY period(1 YEAR, END_TIME)
   ORDER BY period(1 YEAR, END_TIME)
 ```
 
 | Year | Year Total | Y-o-Y Change | Y-o-Y Change, % |
-|------|------------|--------------|-----------------|
-| 2000 | 184        | null         | null            |
-| 2001 | 470        | 286          | 155             |
-| 2002 | 373        | -97          | -21             |
-| 2003 | 507        | 134          | 36              |
-| 2004 | 545        | 38           | 7               |
-| 2005 | 645        | 100          | 18              |
-| 2006 | 724        | 79           | 12              |
-| 2007 | 285        | -439         | -61             |
-| 2008 | 485        | 200          | 70              |
-| 2009 | 174        | -311         | -64             |
-| 2010 | 853        | 679          | 390             |
-| 2011 | 1850       | 997          | 117             |
-| 2012 | 1742       | -108         | -6              |
-| 2013 | 1151       | -591         | -34             |
-| 2014 | 3319       | 2168         | 188             |
-| 2015 | 3743       | 424          | 13              |
-| 2016 | 4096       | 353          | 9               |
-| 2017 | 5557       | 1461         | 36              |
-| 2018 | 4913       | -644         | -12             |
+|------|-----------:|-------------:|----------------:|
+| 2000 | 430        | null         | null            |
+| 2001 | 488        | 58.00        | 13.49           |
+| 2002 | 503        | 15.00        | 3.07            |
+| 2003 | 550        | 47.00        | 9.34            |
+| 2004 | 631        | 81.00        | 14.73           |
+| 2005 | 745        | 114.00       | 18.07           |
+| 2006 | 279        | -466.00      | -62.55          |
+| 2007 | 470        | 191.00       | 68.46           |
+| 2008 | 229        | -241.00      | -51.28          |
+| 2009 | 741        | 512.00       | 223.58          |
+| 2010 | 1531       | 790.00       | 106.61          |
+| 2011 | 1780       | 249.00       | 16.26           |
+| 2012 | 932        | -848.00      | -47.64          |
+| 2013 | 2999       | 2067.00      | 221.78          |
+| 2014 | 3411       | 412.00       | 13.74           |
+| 2015 | 4273       | 862.00       | 25.27           |
+| 2016 | 5398       | 1125.00      | 26.33           |
+| 2017 | 5128       | -270.00      | -5.00           |
 
-[**ChartLab**](../ChartLabIntro/README.md) is a visualization service which can display ATSD data as charts. **ChartLab** features a wide range of widgets which can be created using a declarative syntax.
+*Fig 4.* The table above shows the results of a query which tracks absolute and percentile year-on-year change in expatriate numbers, similar to the *Fig 2* and *Fig 3* above.
 
-![](Images/new-yoy.png)
+The above query uses the [`LAG`](https://github.com/axibase/atsd/blob/master/sql/README.md#lag) function to select the previous value, offset by one index position, when creating comparative tables like the one shown here.
 
-[![](Images/btn.png)](https://apps.axibase.com/chartlab/ad0f3f03#fullscreen)
-
-### Quarterly Data
+Likewise, data may be tracked by quarter using the query below:
 
 ```sql
 SELECT CEIL(CAST(date_format(time, 'M') AS NUMBER)/3) AS "Quarter", date_format(time, 'yyyy') AS "Year",
   count(value) AS "Quarter Total"
 FROM "us-expatriate-counter"
-  WHERE entity = 'us.irs' AND date_format(time, 'yyyy-MM') >= '2014-01' AND datetime <= now
+  WHERE entity = 'us.irs' AND date_format(time, 'yyyy-MM') >= '2013-01' AND datetime <= now
 GROUP BY period(1 QUARTER)
   ORDER BY period(1 QUARTER)
 ```
 
 | Quarter | Year | Quarter Total |
-|---------|------|---------------|
+|---------|------|--------------:|
 | 1       | 2013 | 679           |
 | 2       | 2013 | 1129          |
 | 3       | 2013 | 560           |
@@ -102,21 +140,14 @@ GROUP BY period(1 QUARTER)
 | 2       | 2017 | 1756          |
 | 3       | 2017 | 1374          |
 | 4       | 2017 | 685           |
-| 1       | 2018 | 1098          |
 
-Although lower than 2017 Q1, 2018 Q1 data is on the order of recent, record-setting years for expatriation numbers.
+*Fig 5.* Tracked by quarter, expatriation data since 2013 is shown in the table above.
 
-Using **ChartLab** for data visualization of the quarterly samples:
+The above query uses a [`CAST`](https://github.com/axibase/atsd/blob/master/sql/README.md#cast) clause and [`CEIL`](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions) function to rename each quarter.
 
-![](Images/2018-q2-2.png)
+## Web Crawler
 
-[![](Images/btn.png)](https://apps.axibase.com/chartlab/ae048be8#fullscreen)
-
----
-
-## On-Loading Expatriation Data
-
-The data published by the Federal Register requires an intermediate ETL step in order to be available for analysis. This extraction-transformation-loading procedure is implemented by a [web crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler) built specifically for the task of tracking Federal Register publications for new expatriation data releases.
+The data published by the Federal Register requires an intermediate ETL step in order to be available for analysis. This extraction-transformation-loading procedure is implemented by a [web crawler](https://github.com/axibase/atsd-data-crawlers/tree/irs-expatriation-data-crawler#irs-expatriation-statistics-data-crawler) built specifically for the task of tracking Federal Register publications for new expatriation data releases.
 
 The Web Crawler operates according to this workflow:
 
@@ -128,93 +159,14 @@ The Web Crawler reads incoming data from the Federal Register and parses it into
 series d:{iso-date} e:{entity} t:{tag-1}={val-1} m:{metric-1}={number}
 ```
 
-In the case of expatriation data here, the entity is the publishing body, `us.irs` and the metric is `us-expatriate-counter`.
+Once the data is stored in the database, the date (`d:`) parameter may be referenced in ISO format, or modified to output human-readable date information such as that seen in the [SQL](#sql) section of this article. Tags (`t:`), metrics (`m:`), and entities (`e:`) are identifying features of a particular set of data. In the case of expatriation data here, the entity is the publishing body, the IRS and the metric is the number of expatriates. The raw data does not feature tag-level differentiation, but it could be something like `us-born-citizens` versus `naturalized-citizens`, if the data were tracked that specifically.
 
-SQL result set with raw data output no grouping, and entity / metric labels included:
+The complete list and operation instructions of other supported Axibase data crawlers is hosted [here](https://github.com/axibase/atsd-data-crawlers).
 
-```sql
-SELECT datetime, tags.first_name, tags.middle_name, tags.last_name
-  FROM "us-expatriate-counter"
-WHERE entity = 'us.irs'
-  ORDER BY datetime DESC
-LIMIT 10
-```
+## Conclusion
 
-```txt
-| datetime              | tags.first_name  | tags.middle_name  | tags.last_name |
-|-----------------------|------------------|-------------------|----------------|
-| 2018-03-31T00:00:00Z  | DARSHAM          | EVA               | VOOGT          |
-| 2018-03-31T00:00:00Z  | MAX-DOMINIC      | GRAFBEISSEL       | VONGYMNICH     |
-| 2018-03-31T00:00:00Z  | JORRIT           | FRISCO            | VANDERVEEN     |
-| 2018-03-31T00:00:00Z  | HATTAN           | KHALED            | UJAIMI         |
-| 2018-03-31T00:00:00Z  | KANAE            | -                 | TSURUGA        |
-| 2018-03-31T00:00:00Z  | ELTJE            | FREDERIKA         | TOLLENAAR      |
-| 2018-03-31T00:00:00Z  | GUYSLAINE        | AIMEE             | THALMANN       |
-| 2018-03-31T00:00:00Z  | ZHENGPING        | -                 | TAN            |
-| 2018-03-31T00:00:00Z  | MOTOKI           | -                 | TAKAHASHI      |
-| 2018-03-31T00:00:00Z  | AASIYA           | -                 | TAHIR          |
-```
+An unusually large number of expatriates renouncing their United States citizenship was observed during the last half-decade, with an exceptionally high number leaving the country during 2016-2107. While the most recent figures show that this number has markedly decreased, it still remains higher than it ever was pre-2010. There's probably not a very simple answer to the question of 'Why?' but BBC recently wrote a brief [exposé](http://www.bbc.com/capital/story/20170123-meet-the-people-leaving-trumps-america) discussing the Americans who chose to leave the country in response to the recent presidential elections.
 
----
+Whatever the reason, it's unlikely that the roughly 5000 citizens leaving the country will have much of an impact on the overall demographics or population of the country as the United States is constantly host to some 750,000 newly naturalized citizens each year.
 
-### Additional Visualizations
-
-#### `time_offset`
-
-Data may also be compared using `time_offset` features whereby variable time-offsets may be applied to a dataset so that it may be compared to itself during a different time period, useful when working with time series data.
-
-![](Images/new-qoq.png)
-
-[![](Images/btn.png)](https://apps.axibase.com/chartlab/f3b0e94f#fullscreen)
-
-Additionally, a [`SUM`](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) value function may be applied to aggregate quarterly samples into annual totals using a [`period`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting.
-
-```javascript
-period = 1 year
-statistics = SUM
-time-offset = 1 year
-```
-
-#### `fred.PercentChangeFromYearAgo`
-
-A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported by ChartLab, and [user-defined functions](../how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
-
-![](Images/2018-q2-7.png)
-
-[![](Images/btn.png)](https://apps.axibase.com/chartlab/1ae83460#fullscreen)
-
-Visualization uses the `PercentChangeFromYearAgo` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually observed several years ago.
-
-While the underlying function may be quite verbose:
-
-```ls
-value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return (v / p - 1) * 100
-```
-
-The syntax required in the ChartLab configuration is simple:
-
-```ls
-value = fred.PercentChangeFromYearAgo('raw')
-```
-
-> View the complete [`fred.js`](../how-to/shared/trends.md#fred-library) UDF library here.
-
-#### Highlights
-
-The charts library provides settings quarters where the percent change from the previous year was greater than 50% in red, and quarters where it was less than -10% in green.
-
-![](Images/2018-q2-6.png)
-
-[![](Images/btn.png)](https://apps.axibase.com/chartlab/8828458c#fullscreen)
-
-The syntax for the `alert-expression` above is shown here:
-
-```ls
-    alert-expression = value > 50 ? 4000 : value < -10 ? -100 : 0
-    alert-style = if (alert > 50) return 'color:red'
-    alert-style = if (alert < -10) return 'color:green'
-```
-
-When using a two-parameter `alert-expression`, three arguments are needed: an upper bound, lower bound, and median value separated by `:` delimiter.
-
-For more information about ChartLab syntax or to explore other features which may be used in the example above, see the complete [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+For more information about any of the data in this article, instructions on using any of the tools featured here, or suggestions and comments about articles you'd like to see in the future, raise an [issue](https://github.com/axibase/atsd-use-cases/issues/new) on our GitHub repository.
