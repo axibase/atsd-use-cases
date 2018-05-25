@@ -35,4 +35,3 @@ A set of common econometrics used for modifying FRED, or other, economic data is
 [![](images/button-new.png)](https://trends.axibase.com/b3acc1ea#fullscreen)
 
 Using the `ChangeFromPreviousYear` function, data samples may be compared to the same `datetime` value from the previous year. This is a useful technique for mapping relative growth of a metric. The bold trend lines here have been averaged by quarter using `group-statistic` and `group-period` settings to account for the high month-to-month volatility in advanced technologies sales.
-
