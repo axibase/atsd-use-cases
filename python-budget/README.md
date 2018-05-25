@@ -33,7 +33,7 @@ replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-1000 
 
 ```javascript
 # remove extraordinary annualization calculation, leave expected repatriation tax.
-replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-750 : value
+replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-(1000+250) : value
 ```
 
 These settings targets a defined date, and evaluate an `if-else` expression which subtracts $1 trillion or $750 billion from the defined date's value or else returns the original value.
