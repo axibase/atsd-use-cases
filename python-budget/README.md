@@ -297,7 +297,7 @@ Using a similar `CASE` expression for modifying annual data:
 ```sql
 SELECT datetime "Year",
   CASE
-  WHEN datetime = '2017-01-01' THEN (SUM(value/4) - 1000)
+  WHEN datetime = '2017-01-01' THEN (SUM(value/4) - LAST(value/4)) + ((LAST(value) -1000)/4)
   ELSE SUM(value/4)
   END AS "Annual Lending / Borrowing"
 FROM "ad01rc1q027sbea"
@@ -311,27 +311,27 @@ The result set from 2000 onward:
 ```txt
 | Year       | Annual Lending / Borrowing |
 |------------|----------------------------|
-| 2017       | -1685.56                   |
-| 2016       | -931.36                    |
-| 2015       | -781.12                    |
-| 2014       | -851.12                    |
-| 2013       | -913.30                    |
-| 2012       | -1447.01                   |
-| 2011       | -1666.73                   |
-| 2010       | -1818.96                   |
-| 2009       | -1847.06                   |
-| 2008       | -1054.96                   |
-| 2007       | -535.13                    |
-| 2006       | -429.80                    |
-| 2005       | -556.31                    |
-| 2004       | -675.52                    |
-| 2003       | -684.35                    |
-| 2002       | -523.37                    |
-| 2001       | -149.72                    |
-| 2000       | 81.14                      |
+| 2017-01-01 | -935.56                    |
+| 2016-01-01 | -931.36                    |
+| 2015-01-01 | -781.12                    |
+| 2014-01-01 | -851.12                    |
+| 2013-01-01 | -913.30                    |
+| 2012-01-01 | -1447.01                   |
+| 2011-01-01 | -1666.73                   |
+| 2010-01-01 | -1818.96                   |
+| 2009-01-01 | -1847.06                   |
+| 2008-01-01 | -1054.96                   |
+| 2007-01-01 | -535.13                    |
+| 2006-01-01 | -429.80                    |
+| 2005-01-01 | -556.31                    |
+| 2004-01-01 | -675.52                    |
+| 2003-01-01 | -684.35                    |
+| 2002-01-01 | -523.37                    |
+| 2001-01-01 | -149.72                    |
+| 2000-01-01 | 81.14                      |
 ```
 
-In order to remove the annualized portion of the re-patriation tax, but leave the estimated $250 billion the tax itself is likely to generate, a similar set of queries may be used.
+In order to remove the annualized portion of the repatriation tax, but leave the estimated $250 billion the tax itself is likely to generate, a similar set of queries may be used.
 
 ```sql
 SELECT datetime "Year",
@@ -366,7 +366,7 @@ The same transformation applied to annual data:
 ```sql
 SELECT datetime "Year",
   CASE
-  WHEN datetime = '2017-01-01' THEN (SUM(value/4) - 750)
+  WHEN datetime = '2017-01-01' THEN (SUM(value/4) - LAST(value/4)) + (((LAST(value) -1000) + 250)/4)
   ELSE SUM(value/4)
   END AS "Annual Lending / Borrowing"
 FROM "ad01rc1q027sbea"
@@ -379,7 +379,7 @@ The 18-year result set:
 
 | Year       | Annual Lending / Borrowing |
 |------------|----------------------------|
-| 2017-01-01 | -1435.56                   |
+| 2017-01-01 | -873.06                    |
 | 2016-01-01 | -931.36                    |
 | 2015-01-01 | -781.12                    |
 | 2014-01-01 | -851.12                    |
