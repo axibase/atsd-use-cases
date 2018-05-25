@@ -1,22 +1,20 @@
-# SQL Queries and Data Visualization with Python and ATSD
+# Wrangling Federal Reserve Macroeconomic Indicators with SQL and Declarative Graphics
 
 ## Introduction
 
-[Python](https://www.python.org/) is an easy-to-use and versatile programming language that boasts code readability and functionality for tasks of any size. [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is an enterprise-level data storage and processing environment that features a rule engine, SQL, and visualization functionality. Using these two tools, data analysis tasks may be approached from the ground up to unlock meaningful results within a single interface.
+The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/)(FRED) of the St. Louis Federal Reserve publishes publicly available data on a range of topics related to macroeconomic trends such as GDP, employment and national statistics.
 
-## Dataset
-
-The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) of the St. Louis Federal Reserve publishes publicly available data on a range of topics related to macroeconomic trends such as GDP, employment and national statistics.
-
-While native FRED visualization tools have a number of built-in manipulation and export features, meaningful data wrangling requires specialized capabilities. With the ATSD [API Client for Python](https://github.com/axibase/atsd-api-python), data may be queried using SQL and visualized for ad-hoc analysis. This article will focus on the [net lending / borrowing](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) of the United States Government for the past several decades and explore the way these tools intersect to facilitate data processing.
+This article will focus on the [`AD01RC1Q027SBEA`](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) series which accounts for net lending / borrowing of the United States Government.
 
 ### Handling Special Items
 
-The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by a factor of four to arrive at an annual estimate. This calculation is used to show the annual total should a specific quarter's trends be replicated over the course of the year. During the final quarter of 2017, a potential `$250` billion windfall from one-time corporate repatriation taxes was added to the total by virtue of annualized calculation. As a result, the `$250` billion extra quarterly income was translated into $1 trillion after transformation. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
+The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by `4` to arrive at an annual estimate. This calculation is used to show the annual total should a specific quarter's trends be replicated over the course of the year. During the final quarter of 2017, a **potential** `$250` billion windfall from one-time corporate repatriation taxes was added to the total by virtue of annualized calculation. As a result, the `$250` billion extra quarterly income was translated into $1 trillion after transformation. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
 
 ![](images/fred-chart.png)
 
-This article illustrates how the declarative graphics library in ATSD can be utilized to perform ad hoc data transformations such as the removal of this and other special items from any dataset. This same dataset is visualized using **Trends** service and applies a [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting to remove the special budget revenue item from the annual total. Additionally, a third visualization is shown where the one-time `$250` billion addition remains, but the annualized `$750` billion is removed.
+As a result of this transformation, the annual budget of the U.S. government is estimated to be positive `$14.68` million, an accomplishment that was last reported in 2001.
+
+This article illustrates how the declarative graphics library in ATSD can be utilized to perform ad-hoc data transformations such as the removal of special items using a simple [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting. Additionally, a third series is shown where the one-time `$250` billion addition remains, but the phantom `$750` billion is removed.
 
 The original data and new data are shown together. The range of conclusions one can draw from these three series are vastly different.
 
@@ -42,7 +40,7 @@ These settings targets a defined date, and evaluate an `if-else` expression whic
 
 Similar to graphs, the same data cleanup may be performed by executing SQL queries using the ATSD API Client for Python.
 
-By de-annualizing quarterly values and aggregating them back into annual totals, the effect of the phantom `$750B` is removed from the annual series.
+By de-annualizing quarterly values and aggregating them back into annual totals using [date aggregations](https://axibase.com/docs/atsd/sql/#period) in ATSD SQL, the effect of the phantom `$750B` is removed from the annual series.
 
 ```sql
 SELECT date_format(time, 'yyyy') "Year", SUM(value/4) "Net Lending/Borrowing"
@@ -69,7 +67,7 @@ The ten most recent years of federal government lending / borrowing:
 
 As a result, the estimated annual budget balance is a deficit of `$685` billion, a number that is materially different from the estimated surplus of `$15` million.
 
-For multi-line queries in the Python interface, define a variable `q = """`. Close the query with `"""`. The complete query will be:
+The above query may be executed in the ATSD web console or the [ATSD API Client for Python](https://github.com/axibase/atsd-api-python), where the data may be queried using SQL and visualized for ad-hoc analysis. For multi-line queries in the Python interface, define a variable `q = """`. Close the query with `"""`. The complete query will be:
 
 ```python
 >>> q = """
@@ -145,29 +143,15 @@ SELECT date_format(time, 'yyyy') "year", SUM(value)/4 "surplus"
 HAVING SUM(value) > 0
 ```
 
-Using the [`HAVING`](https://github.com/axibase/atsd/tree/master/sql#having-filter) condition to filter returned samples, the result set shows only one year since 1970 when the United States achieved a net lending surplus:
+Using the [`HAVING`](https://axibase.com/docs/atsd/sql/#having-filter) condition to filter returned samples, the result set shows only one year since 1970 when the United States achieved a net lending surplus:
 
 | year | surplus |
 |------|---------|
 | 2000 | 81.14   |
 
-Although in the FRED visualization it appeared that the United States government has finally achieved a budget surplus, in fact the nature of the data is such that it only seems that way. The dataset here is annualized, meaning that each quarter's data is plotted as if the trend were to remain constant for the entire year. Thus, the administration's `$250` billion tax relief is considered as `$1` trillion due to annualization calculations. See [Non-Annualized Data](#non-annualized-data) for further data transformation examples.
+Although in the FRED visualization it appeared that the United States government has finally achieved a budget surplus, in fact the nature of the data is such that it only seems that way. The dataset here is annualized, meaning that each quarter's data is plotted as if the trend were to remain constant for the entire year. Thus, the administration's `$250` billion tax relief is considered as `$1` trillion due to annualization calculations.
 
-### Data Visualizations with **Trends** Service
-
-Using the same data in the [**Trends**](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md) service, which is a graphical environment supported by ATSD, robust visualizations may be created with far less user input:
-
-![](images/trends-budg.png)
-
-[![](images/button-new.png)](https://trends.axibase.com/224fd492)
-
-*Fig 1.* This visualization leverages [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) to display both the raw data as well as monthly change in value using a [dual-axis](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting and several `[threshold]` series.
-
-### Non-Annualized Data
-
-As noted previously, this dataset is annualized. The non-annualized data set shown above still considered the extraordinary budget revenue item. This section of the article details how to remove and recalculate this datapoint. 
-
-[`CASE`](https://github.com/axibase/atsd/tree/master/sql#case-expression) expressions may be used to replicate `if-else` statements in SQL console:
+The special item can be completely removed from the series using the [`CASE`](https://axibase.com/docs/atsd/sql/#case-expression) expression:
 
 ```sql
 SELECT date_format(time, 'yyyy') "Year",
@@ -197,25 +181,20 @@ The result set from 2007 onward:
 | 2008 | -1054.96                   |
 | 2007 | -535.13                    |
 
+### Data Visualizations with **Trends** Service
+
+Using the same data in the [**Trends**](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md) service, which is a graphical environment supported by ATSD, robust visualizations may be created with far less user input:
+
+![](images/trends-budg.png)
+
+[![](images/button-new.png)](https://trends.axibase.com/224fd492)
+
+*Fig 1.* This visualization leverages [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) to display both the raw data as well as monthly change in value using a [dual-axis](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting and several `[threshold]` series.
+
 ## Accessing Data
 
-The dataset used for this article is stored in the **Trends** instance of ATSD. If you would like read-only credentials to the database to recreate the queries shown here, test drive the **ATSD API Client for Python**, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
+The dataset used for this article is stored in the **Trends** instance of ATSD.
 
-If you have access to your own instance of ATSD, upload the [FRED data crawler](https://github.com/axibase/atsd-data-crawlers/blob/master/crawlers/fred-category-crawler/README.md#fred-category-crawler). The data crawler can upload the needed dataset along with all metadata information.
+If you [installed](https://axibase.com/docs/atsd/installation/) your own ATSD instance, upload the [FRED data crawler](https://github.com/axibase/atsd-data-crawlers/blob/master/crawlers/fred-category-crawler/README.md#fred-category-crawler). The data crawler can upload the needed dataset along with all metadata information.
 
-### Setup
-
-Confirm these programs are present on the local machine:
-
-* Python: `apt-get install python3` (alternatively, [`python2.7`](https://github.com/axibase/atsd-api-python#requirements) may be used);
-* ATSD Client: `pip install atsd_client`.
-
-> ATSD Client will import the `pandas` library upon installation.
-
-For detailed installation instructions, this [guide](https://github.com/axibase/atsd-api-python/blob/master/README.md#installation) offers troubleshooting, launch examples, and a step-by-step walkthrough.
-
-## Conclusion
-
-Python programming language offers a convenient syntax for inline SQL queries. Using **ATSD API Client for Python** alongside other libraries improves upon native functionality by reducing the workload during data preparation. ATSD manages all data storage tasks and provides a client which makes data quickly available without loading it via Python.
-
-**Trends** visualizaton services, supported by ATSD data storage and processing, support and enhance these features by offering a more robust graphical output with a less tedious syntactical input.
+If you would like read-only credentials to the database to recreate the queries shown here, test drive the **ATSD API Client for Python**, or query any of the other [datasets](https://trends.axibase.com/public/reference.html) stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
