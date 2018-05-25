@@ -36,6 +36,8 @@ replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-(1000
 
 These settings target a specific date, and evaluate an `if-else` expression which subtracts `$1` trillion or `$750` billion from the defined date's value.
 
+The data is presented using our [**Trends**](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md) service.
+
 ### Querying FRED Data with SQL
 
 Similar to graphs, the same data cleanup may be performed with SQL.
@@ -181,16 +183,6 @@ The result set from 2007 onward:
 | 2009 | -1847.06                   |
 | 2008 | -1054.96                   |
 | 2007 | -535.13                    |
-
-### Data Visualizations with **Trends** Service
-
-Using the same data in the [**Trends**](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md) service, which is a graphical environment supported by ATSD, robust visualizations may be created with far less user input:
-
-![](images/trends-budg.png)
-
-[![](images/button-new.png)](https://trends.axibase.com/224fd492)
-
-*Fig 1.* This visualization leverages [user-defined functions](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#user-defined-functions) to display both the raw data as well as monthly change in value using a [dual-axis](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting and several `[threshold]` series.
 
 ## Accessing Data
 
