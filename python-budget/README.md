@@ -2,25 +2,25 @@
 
 ## Introduction
 
-The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/)(FRED) of the St. Louis Federal Reserve publishes publicly available data on a range of topics related to macroeconomic trends such as GDP, employment and national statistics.
+The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/)(FRED) of the St. Louis Federal Reserve publishes publicly available data on a range of topics related to macroeconomic trends such as GDP, employment and other national statistics.
 
-This article will focus on the [`AD01RC1Q027SBEA`](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) series which accounts for net lending / borrowing of the United States Government.
+This article will focus on the [`AD01RC1Q027SBEA`](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) series which tracks net lending and borrowing of the United States Government.
 
 ### Handling Special Items
 
-The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by `4` to arrive at an annual estimate. This calculation is used to show the annual total should a specific quarter's trends be replicated over the course of the year. During the final quarter of 2017, a **potential** `$250` billion windfall from one-time corporate repatriation taxes was added to the total by virtue of annualized calculation. As a result, the `$250` billion extra quarterly income was translated into $1 trillion after transformation. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
+The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by `4` to arrive at an annual estimate. This calculation is used to show the annual total should a specific quarter's trends be replicated over the course of the year. During the final quarter of 2017, a **potential** `$250` billion windfall from one-time corporate repatriation taxes was added to the total by virtue of annualized calculation. As a result, the `$250` billion extra quarterly income was translated into `$1` trillion after transformation. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
 
 ![](images/fred-chart.png)
 
-As a result of this transformation, the annual budget of the U.S. government is estimated to be positive `$14.68` million, an accomplishment that was last reported in 2001.
+As a result of this transformation, the annual budget of the U.S. government is estimated to be a positive `$14.68` million, an accomplishment that was last reported in 2001.
 
 This article illustrates how SQL and the declarative graphics library in ATSD can be utilized to perform ad-hoc data transformations such as the removal of special items.
 
 The original data and new data are shown together. The range of conclusions one can draw from these three series are vastly different.
 
-![](images/ad-hoc.png)
+![](images/xo-graph.png)
 
-[![](images/button-new.png)](https://trends.axibase.com/04b1ad9f#fullscreen)
+[![](images/button-new.png)](https://trends.axibase.com/2b56345c#fullscreen)
 
 The special item was removed using a simple [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting:
 
@@ -29,20 +29,24 @@ The special item was removed using a simple [`replace-value`](https://axibase.co
 replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-1000 : value
 ```
 
-```javascript
-# remove extraordinary annualization calculation, leave expected repatriation tax.
-replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-(1000+250) : value
-```
+This setting targets a specific date, and evaluates an `if-else` expression which subtracts `$1` trillion or `$750` billion from the defined date's value.
 
-These settings target a specific date, and evaluate an `if-else` expression which subtracts `$1` trillion or `$750` billion from the defined date's value.
+The `group-period` and `group-statistic` settings are used to return non-annualized data, which still includes the `$250` billion extraordinary item, but doesn't include the additional `$750` billion from annualization.
+
+```javascript
+# remove annualization factor from raw data, group by annual period, sum samples for actual results.
+replace-value = value/4
+group-period = 1 year
+group-statistic = sum
+```
 
 The data is presented using our [**Trends**](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md) service.
 
 ### Querying FRED Data with SQL
 
-Similar to graphs, the same data cleanup may be performed with SQL.
+Similar to the above visualizations, data cleanup may be performed with SQL.
 
-By de-annualizing quarterly values and aggregating them back into annual totals using [date aggregations](https://axibase.com/docs/atsd/sql/#period) in ATSD SQL, the effect of the phantom `$750B` is removed from the annual series.
+By de-annualizing quarterly values and aggregating them back into annual totals using [date aggregation](https://axibase.com/docs/atsd/sql/#period) in ATSD SQL, the effect of the phantom `$750B` is removed from the annual series.
 
 ```sql
 SELECT date_format(time, 'yyyy') "Year", SUM(value/4) "Net Lending/Borrowing"
@@ -67,7 +71,7 @@ The ten most recent years of federal government lending / borrowing:
 | 2008 | -1054.96              |
 | 2007 | -535.13               |
 
-As a result, the estimated annual budget balance is now a deficit of `$685` billion, a number that is materially different from the estimated surplus of `$15` million.
+As a result, the estimated annual budget balance is now a deficit of `$685` billion, a number that is materially different from the estimated surplus of `$15` billion.
 
 The above query may be executed in the ATSD web console or using the [ATSD API Client for Python](https://github.com/axibase/atsd-api-python), where the data may be queried using SQL and converted to `pandas` dataframes for further analysis.
 
