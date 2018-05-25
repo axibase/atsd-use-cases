@@ -33,10 +33,10 @@ replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-1000 
 
 ```javascript
 # remove extraordinary annualization calculation, leave expected repatriation tax.
-replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-750 : value
+replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-(1000+250) : value
 ```
 
-This setting targets a defined date, and evaluates an `if-else` expression which subtracts $1 trillion from the defined date's value or else returns the original value.
+This calculation targets a defined date by evaluating an `if-else` expression to subtracts $1 trillion from the defined date's value.
 
 ### Querying FRED Data with SQL
 
@@ -152,7 +152,7 @@ The result set shows only one year since 1970 when the United States achieved a 
 |------|---------|
 | 2000 | 81.14   |
 
-Although it appears that the United States government has finally achieved a budget surplus in the recent financial history, in fact the nature of the data is such that it only seems that way. The dataset here is annualized, meaning that each quarter's data is plotted as if the trends remain constant for the entire year. Thus, the administration's $250 billion tax relief is considered as $1 trillion due to annualization calculations. See [Non-Annualized Data](#non-annualized-data) for raw data examples.
+Although it appears that the United States government has finally achieved a budget surplus in the recent financial history, in fact the nature of the data is such that it only seems that way. The dataset here is annualized, meaning that each quarter's data is plotted as if the trends remain constant for the entire year. Thus, the administration's $250 billion tax windfall is translated into $1 trillion due to annualization calculations. See [Non-Annualized Data](#non-annualized-data) for raw data examples.
 
 ### Data Visualizations with `matplotlib` and **Trends** Service
 
