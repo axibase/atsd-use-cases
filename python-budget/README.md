@@ -1,4 +1,4 @@
-# Wrangling Federal Reserve Macroeconomic Indicators with SQL and Declarative Graphics
+# Wrangling Federal Reserve Economic Data with SQL and Declarative Graphics
 
 ## Introduction
 
@@ -14,7 +14,7 @@ The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore
 
 As a result of this transformation, the annual budget of the U.S. government is estimated to be positive `$14.68` million, an accomplishment that was last reported in 2001.
 
-This article illustrates how the declarative graphics library in ATSD can be utilized to perform ad-hoc data transformations such as the removal of special items using a simple [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting. Additionally, a third series is shown where the one-time `$250` billion addition remains, but the phantom `$750` billion is removed.
+This article illustrates how SQL and the declarative graphics library in ATSD can be utilized to perform ad-hoc data transformations such as the removal of special items.
 
 The original data and new data are shown together. The range of conclusions one can draw from these three series are vastly different.
 
@@ -22,7 +22,7 @@ The original data and new data are shown together. The range of conclusions one 
 
 [![](images/button-new.png)](https://trends.axibase.com/04b1ad9f#fullscreen)
 
-The `replace-value` settings used in the visualization:
+The special item was removed using a simple [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting:
 
 ```javascript
 # remove extraordinary item completely.
@@ -34,11 +34,11 @@ replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-1000 
 replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-(1000+250) : value
 ```
 
-These settings targets a defined date, and evaluate an `if-else` expression which subtracts `$1` trillion or `$750` billion from the defined date's value or else returns the original value.
+These settings target a specific date, and evaluate an `if-else` expression which subtracts `$1` trillion or `$750` billion from the defined date's value.
 
 ### Querying FRED Data with SQL
 
-Similar to graphs, the same data cleanup may be performed by executing SQL queries using the ATSD API Client for Python.
+Similar to graphs, the same data cleanup may be performed with SQL.
 
 By de-annualizing quarterly values and aggregating them back into annual totals using [date aggregations](https://axibase.com/docs/atsd/sql/#period) in ATSD SQL, the effect of the phantom `$750B` is removed from the annual series.
 
@@ -65,9 +65,9 @@ The ten most recent years of federal government lending / borrowing:
 | 2008 | -1054.96              |
 | 2007 | -535.13               |
 
-As a result, the estimated annual budget balance is a deficit of `$685` billion, a number that is materially different from the estimated surplus of `$15` million.
+As a result, the estimated annual budget balance is now a deficit of `$685` billion, a number that is materially different from the estimated surplus of `$15` million.
 
-The above query may be executed in the ATSD web console or the [ATSD API Client for Python](https://github.com/axibase/atsd-api-python), where the data may be queried using SQL and visualized for ad-hoc analysis. For multi-line queries in the Python interface, define a variable `q = """`. Close the query with `"""`. The complete query will be:
+The above query may be executed in the ATSD web console or using the [ATSD API Client for Python](https://github.com/axibase/atsd-api-python), where the data may be queried using SQL and converted to `pandas` dataframes for further analysis.
 
 ```python
 >>> q = """
@@ -134,16 +134,17 @@ The above query may be executed in the ATSD web console or the [ATSD API Client 
 </p>
 </details>
 
-To refine the query and show only years where the United States had an annual lending surplus, use this query:
+To show only years where the United States had an annual lending surplus, execute this query with the [`HAVING`](https://axibase.com/docs/atsd/sql/#having-filter) condition:
 
 ```sql
 SELECT date_format(time, 'yyyy') "year", SUM(value)/4 "surplus"
   FROM "ad01rc1q027sbea"
+  WHERE datetime >= '1970'
   GROUP BY period(1 year)
 HAVING SUM(value) > 0
 ```
 
-Using the [`HAVING`](https://axibase.com/docs/atsd/sql/#having-filter) condition to filter returned samples, the result set shows only one year since 1970 when the United States achieved a net lending surplus:
+The result set shows only one year since 1970 when the United States achieved a net lending surplus:
 
 | year | surplus |
 |------|---------|
