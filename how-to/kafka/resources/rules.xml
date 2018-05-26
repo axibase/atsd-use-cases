@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>Broker Failed Fetch Requests &gt; 0</name>
+<metric>jmx.kafka.server.brokertopicmetrics.failedfetchrequestspersec.oneminuterate</metric>
+<tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[value > 0]]></expression>
+<window>length(1)</window>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertCancellationMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<lastUpdated>1518079415093</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>false</loadHistory>
+<logOutput>false</logOutput>
+<owner>User</owner>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<timeFilter>
+<intervalCount>1</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<emailNotification>
+<disabled>false</disabled>
+<rule-name>Broker Failed Fetch Requests &gt; 0</rule-name>
+<repeat-interval>
+<type>INTERVAL</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>HOUR</intervalUnit>
+</repeat-interval>
+<name>Email Notification id=525</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>true</first-screenshot>
+<repeat-screenshot>true</repeat-screenshot>
+<cancel-screenshot>true</cancel-screenshot>
+<first-portal-ids>175</first-portal-ids>
+<repeat-portal-ids>175</repeat-portal-ids>
+<cancel-portal-ids>175</cancel-portal-ids>
+<recipients>mailbox@example.com</recipients>
+<first-subject>Broker Failed Fetch Requests &gt; 0</first-subject>
+<repeat-subject>Broker Failed Fetch Requests &gt; 0</repeat-subject>
+<cancel-subject>Broker Failed Fetch Requests &gt; 0</cancel-subject>
+<merge>false</merge>
+<priority>0</priority>
+</emailNotification>
+<ruleTable/>
+<derivedCommand>series e:${entity} m:metric_123=${100 - value} ${commandTags}</derivedCommand>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>

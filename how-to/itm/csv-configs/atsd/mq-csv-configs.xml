@@ -1,0 +1,1139 @@
+<list>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMANAGER</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.managers.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.managers</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>MQ_Manager_Type</string>
+            <string>Message_Security</string>
+            <string>MQSeries_Release</string>
+            <string>Alter_Date_and_Time</string>
+            <string>Command_Server_Queue_Name</string>
+            <string>MQ_Manager_Status</string>
+            <string>Interval_Time</string>
+            <string>Application_Identifier_Count</string>
+            <string>Offload_Task_Status</string>
+            <string>Start_Date_End_Time</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMCHANNEL</name>
+        <putType>PROPERTY</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.channel_definitions.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.channel_definitions</defaultType>
+        <filter>Channel_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Channel_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Connection_Name</string>
+            <string>Channel_Description</string>
+            <string>Alter_Date_and_Time</string>
+            <string>Channel_Description_U</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Channel_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMCHANS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.channel_statistics.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.channel_statistics</defaultType>
+        <filter>Channel_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Channel_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Connection_Name</string>
+            <string>Channel_Type</string>
+            <string>Channel_Status</string>
+            <string>In-Doubt_Status</string>
+            <string>Interval_Time</string>
+            <string>Transport_Type</string>
+            <string>Current_Action_State</string>
+            <string>MCA_Status</string>
+            <string>Start_Date_End_Time</string>
+            <string>Currently_Defined</string>
+            <string>QSG_Disposition</string>
+            <string>Current_Message_Sequence_Number</string>
+            <string>Default_Header_Compression_Value</string>
+            <string>Default_Message_Compression_Value</string>
+            <string>Last_Header_Compression_Value</string>
+            <string>Last_Message_Compression_Value</string>
+            <string>Sequence_Number_Last_Committed</string>
+            <string>User_Stop_Request</string>
+            <string>Last_Message_Date_And_Time</string>
+            <string>ssl_key_reset_date_and_time</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Channel_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMCHAN_SUM</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.channel_summary.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.channel_summary</defaultType>
+        <filter>Channel_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Channel_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Channel_Type</string>
+            <string>Summary_Type</string>
+            <string>Latest_Message_Date_End_Time</string>
+            <string>Earliest_Start_Date_End_Time</string>
+            <string>maximum_instances</string>
+            <string>maximum_instances_per_client</string>
+            <string>maximum_sharing_conversations</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Channel_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMCH_DATA</name>
+        <putType>PROPERTY</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.channel_data.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.channel_data</defaultType>
+        <filter>Channel_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Channel_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Connection_Name</string>
+            <string>Alter_Date_and_Time</string>
+            <string>Channel_Description_U</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Channel_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMCONNAPP</name>
+        <putType>PROPERTY</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.application_connections.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.application_connections</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Connection_Identifier</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Application_Tag</string>
+            <string>UOW_Start_Date_and_Time</string>
+            <string>USER_Identifier</string>
+            <string>Connection_Identifier_Prefix</string>
+            <string>Connection_Identifier_Suffix</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Connection_Identifier</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMCONNOBJ</name>
+        <putType>PROPERTY</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.connection_objects.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.connection_objects</defaultType>
+        <filter>Object_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Connection_Identifier</string>
+            <string>Object_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Open_Options</string>
+            <string>Connection_Identifier_Prefix</string>
+            <string>Connection_Identifier_Suffix</string>
+            <string>Handle_Status</string>
+            <string>Object_Type</string>
+            <string>Asynchronous_State</string>
+            <string>Subscription_Identifier</string>
+            <string>QSG_Disposition</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Connection_Identifier</string>
+            <string>Object_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMCURSTAT</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.current_queue_manager_status.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.current_queue_manager_status</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Recovery_Log_Path</string>
+            <string>MQ_Manager_Status</string>
+            <string>Channel_Initiator_Status</string>
+            <string>Command_Server_Status</string>
+            <string>Permit_Standby</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMLSSTATUS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.listener_status.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.listener_status</defaultType>
+        <filter>Listener_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Listener_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>TCP_IP_Address</string>
+            <string>Start_Date_and_Time</string>
+            <string>Process_Identifier</string>
+            <string>Status</string>
+            <string>Transport_Type</string>
+            <string>Netbios_Adapter</string>
+            <string>SPX_Socket</string>
+            <string>start/stop_control</string>
+            <string>tcp_port</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Listener_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMPUBSUB</name>
+        <putType>PROPERTY</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.publish_subscribe_status.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.publish_subscribe_status</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Publish_Subscribe_Type</string>
+            <string>Publish_Subscribe_Status</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMQUEUE</name>
+        <putType>PROPERTY</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.queue_definitions.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.queue_definitions</defaultType>
+        <filter>Queue_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Queue_Description</string>
+            <string>Create_Date_and_Time</string>
+            <string>Alter_Date_and_Time</string>
+            <string>Queue_Description_U</string>
+            <string>Target_or_Remote_Queue</string>
+            <string>Remote_Queue_Manager</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMQUEUES</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.queue_statistics.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.queue_statistics</defaultType>
+        <filter>Queue_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Create_Date_and_Time</string>
+            <string>Last_Read_Date_and_Time</string>
+            <string>Last_Put_Date_and_Time</string>
+            <string>Queue_Description_U</string>
+            <string>Put_Status</string>
+            <string>Definition_Type</string>
+            <string>Get_Status</string>
+            <string>Trigger_Type</string>
+            <string>Interval_Time</string>
+            <string>Queue_Type</string>
+            <string>Currently_Defined</string>
+            <string>Currently_Opened_Exclusive</string>
+            <string>QSG_Disposition</string>
+            <string>Trigger_Control</string>
+            <string>Trigger_Depth</string>
+            <string>Trigger_Priority</string>
+            <string>queue_usage</string>
+            <string>high_depth_threshold</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMQ_DATA</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.queue_data.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.queue_data</defaultType>
+        <filter>Queue_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Create_Date_and_Time</string>
+            <string>Alter_Date_and_Time</string>
+            <string>Queue_Description_U</string>
+            <string>Target_or_Remote_Queue</string>
+            <string>Remote_Queue_Manager</string>
+            <string>Queue_Type</string>
+            <string>Put_Status</string>
+            <string>Definition_Type</string>
+            <string>Cluster_Queue_Type</string>
+            <string>Trigger_Type</string>
+            <string>Get_Status</string>
+            <string>Cluster_Date_and_Time</string>
+            <string>Default_Persistence</string>
+            <string>Default_Priority</string>
+            <string>QSG_Disposition</string>
+            <string>Trigger_Control</string>
+            <string>Trigger_Depth</string>
+            <string>Trigger_Priority</string>
+            <string>High_Depth_Threshold_Percent</string>
+            <string>Maximum_Depth</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Queue_Name</string>
+            <string>MQ_Manager_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMQ_HDL_ST</name>
+        <putType>PROPERTY</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.queue_handle_status.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.queue_handle_status</defaultType>
+        <filter>Queue_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+            <string>Application_Tag</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>User_Identifier</string>
+            <string>Application_Type</string>
+            <string>Process_Identifier</string>
+            <string>Thread_Identifier</string>
+            <string>Address_Space_Identifier</string>
+            <string>CICS_Transaction_Identifier</string>
+            <string>RRS_Unit_of_Recovery_Identifier</string>
+            <string>Queue_Manager_Unit_of_Recovery_Identifier</string>
+            <string>External_Unit_of_Recovery_Identifier</string>
+            <string>External_Unit_of_Recovery_Type</string>
+            <string>Handle_Status</string>
+            <string>Asynchronous_State</string>
+            <string>QSG_Disposition</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+            <string>Application_Tag</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMQ_QU_ST</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.queue_status.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.queue_status</defaultType>
+        <filter>Queue_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Last_Get_Date_and_Time</string>
+            <string>Last_Put_Date_and_Time</string>
+            <string>QSG_Disposition</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMQ_STAT</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.mq_queue_statistics.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.mq_queue_statistics</defaultType>
+        <filter>Queue_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Interval_Start_Date_and_Time</string>
+            <string>Interval_End_Date_and_Time</string>
+            <string>Create_Date_and_Time</string>
+            <string>Query_Type</string>
+            <string>Queue_Type</string>
+            <string>Queue_Definition_Type</string>
+            <string>Interval_Time</string>
+            <string>Command_Level</string>
+            <string>Sample_Handle</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Queue_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMSUBDEF</name>
+        <putType>PROPERTY</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.subscription_definitions.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.subscription_definitions</defaultType>
+        <filter>Subscription_Name_U NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Subscription_Identifier</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Subscription_Name_U</string>
+            <string>Topic_String_U</string>
+            <string>Create_Date_and_Time</string>
+            <string>Alter_Date_and_Time</string>
+            <string>Destination_Correlation_Identifier</string>
+            <string>Message_Property_Type</string>
+            <string>Subscription_Type</string>
+            <string>Search_Status</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Subscription_Identifier</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMSUBST</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.subscription_status.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.subscription_status</defaultType>
+        <filter>Subscription_Name_U NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Subscription_ID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Subscription_Name_U</string>
+            <string>Subscription_User</string>
+            <string>Last_Date_and_Time</string>
+            <string>Recent_Date_and_Time</string>
+            <string>Subscription_Type</string>
+            <string>Durable</string>
+            <string>Connection_Id</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Subscription_ID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMTPCDEF</name>
+        <putType>PROPERTY</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.topic_definitions.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.topic_definitions</defaultType>
+        <filter>Topic_Name NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Topic_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Topic_String_U</string>
+            <string>Alter_Date_and_Time</string>
+            <string>Topic_Description_U</string>
+            <string>Durable_Subscription_Model_Queue</string>
+            <string>Non-Durable_Subscription_Model_Queue</string>
+            <string>Topic_Type</string>
+            <string>Message_Put_Response_Type</string>
+            <string>Search_Status</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Topic_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>QMTPCST</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Host_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>WRITETIME</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>mq.topic_status.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>mq.topic_status</defaultType>
+        <filter>Topic_String_U NOT LIKE &apos;SYSTEM.*&apos;</filter>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Topic_String_U</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>Origin_Node</string>
+            <string>Administration_Node</string>
+            <string>Durable_Subscription_Model_Queue</string>
+            <string>Non_Durable_Subscription_Model_Queue</string>
+            <string>Message_Put_Response_Type</string>
+            <string>Topic_Universal_Identifier</string>
+            <string>Search_Status</string>
+            <string>Message_Priority</string>
+            <string>Message_Persistence</string>
+            <string>Durable_Subscription</string>
+            <string>Publication_Enabled</string>
+            <string>Subscription_Enabled</string>
+            <string>Persistent_Message_Delivery</string>
+            <string>Non-Persistent_Message_Delivery</string>
+            <string>Retained_Publication</string>
+            <string>Publication_Scope</string>
+            <string>Subscription_Scope</string>
+            <string>Maximum_Returned_Rows</string>
+            <string>Query_String_U</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>MQ_Manager_Name</string>
+            <string>Topic_String_U</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+</list>

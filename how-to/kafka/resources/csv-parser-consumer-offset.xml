@@ -1,0 +1,39 @@
+<list>
+  <com.axibase.tsd.model.csv.CsvConfiguration>
+    <name>consumer-offset</name>
+    <putType>METRIC</putType>
+    <delimiter>,</delimiter>
+    <recordDelimiter>
+</recordDelimiter>
+    <padding>�</padding>
+    <comment>�</comment>
+    <textQualifier>&quot;</textQualifier>
+    <entityColumn/>
+    <timestampType>MILLISECONDS</timestampType>
+    <processEvents>false</processEvents>
+    <writeProperty>false</writeProperty>
+    <enabled>true</enabled>
+    <discardNan>true</discardNan>
+    <ignoreParseErrors>true</ignoreParseErrors>
+    <tagColumns class="linked-hash-set"/>
+    <excludedColumns class="linked-hash-set"/>
+    <propertyColumns class="linked-hash-set"/>
+    <propertyKeyColumns class="linked-hash-set"/>
+    <entityTags class="linked-hash-set"/>
+    <metricTags class="linked-hash-set"/>
+    <defaultTags class="linked-hash-map"/>
+    <renamedColumns class="linked-hash-map"/>
+    <header/>
+    <decimalSeparator>.</decimalSeparator>
+    <groupingSeparator>�</groupingSeparator>
+    <schema>select(&quot;#row=1-*&quot;).select(&quot;#col=4&quot;).&#xd;
+addSeries().&#xd;
+entity(&apos;kafka&apos;).&#xd;
+metric(&apos;consumer_offset&apos;).&#xd;
+tag(&apos;groupId&apos;, cell(row,1)).&#xd;
+tag(&apos;topic&apos;, cell(row,2)).&#xd;
+tag(&apos;partition&apos;, cell(row,3)).&#xd;
+timestamp(cell(row,5));</schema>
+    <skipLines>0</skipLines>
+  </com.axibase.tsd.model.csv.CsvConfiguration>
+</list>

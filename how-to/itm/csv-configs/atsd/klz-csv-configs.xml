@@ -1,0 +1,2272 @@
+<list>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZCPU</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZCPU.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZCPU</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>CPU_ID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>CPU_ID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZCPUAVG</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZCPUAVG.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZCPUAVG</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+            <string>Days_to_CPU_Upgrade</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZDISK</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZDISK.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZDISK</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Disk_Name</string>
+            <string>Mount_Point</string>
+            <string>Mount_Options</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+            <string>FS_Type</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Disk_Name</string>
+            <string>Mount_Point</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZDSKIO</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZDSKIO.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZDSKIO</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Dev_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Dev_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZDU</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZDU.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZDU</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Disk_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+            <string>Highwater_Time</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Disk_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZIOEXT</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZIOEXT.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZIOEXT</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Device_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Device_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZLOGIN</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZLOGIN.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZLOGIN</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Line</string>
+            <string>User_Name</string>
+            <string>Idle_Time</string>
+            <string>From_Hostname</string>
+            <string>Login_Time</string>
+            <string>Login_PID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Login_PID</string>
+            <string>Login_Time</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZNET</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZNET.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZNET</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Network_Interface_Name</string>
+            <string>Interface_IP_Address</string>
+            <string>MAC_Address</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Network_Interface_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZNFS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZNFS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZNFS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZPASCAP</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Server_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZPASCAP.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZPASCAP</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>PAS_ID</string>
+            <string>PAS_Agent_Name</string>
+            <string>Agent_Type</string>
+            <string>Agent_Path</string>
+            <string>Start_Script</string>
+            <string>Stop_Script</string>
+            <string>Status_Script</string>
+            <string>Config_Script</string>
+            <string>Operating_System</string>
+            <string>Operating_System_Version</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+            <string>Policy_File_Timestamp</string>
+            <string>Process_Name</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>PAS_Agent_Name</string>
+            <string>Policy_File_Timestamp</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZPASMGMT</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Server_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZPASMGMT.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZPASMGMT</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>PAS_Agent_Name</string>
+            <string>Build_Number</string>
+            <string>Build_Date</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>PAS_Agent_Name</string>
+            <string>Build_Number</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZPASSTAT</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Server_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZPASSTAT.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZPASSTAT</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>PAS_Agent_Name</string>
+            <string>Process_Name</string>
+            <string>Last_Health_Check</string>
+            <string>IP_Address</string>
+            <string>Command_Line</string>
+            <string>User_Name</string>
+            <string>Instance_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+            <string>Agent_Host_Name</string>
+            <string>Policy_File_Timestamp</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>PAS_Agent_Name</string>
+            <string>Agent_Host_Name</string>
+            <string>Policy_File_Timestamp</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZPROC</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZPROC.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZPROC</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Process_ID</string>
+            <string>Parent_Process_ID</string>
+            <string>Process_Command_Name</string>
+            <string>Proc_CMD_Line</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+            <string>Time</string>
+            <string>User_CPU_Time</string>
+            <string>System_CPU_Time</string>
+            <string>Total_CPU_Time</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Process_ID</string>
+            <string>Process_Command_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZPUSR</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZPUSR.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZPUSR</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Process_Command_Name</string>
+            <string>Process_Command_Line</string>
+            <string>Real_User_Name</string>
+            <string>Eff_User_Name</string>
+            <string>Saved_User_Name</string>
+            <string>FS_User_Name</string>
+            <string>Real_Group</string>
+            <string>Eff_Group</string>
+            <string>Saved_Group</string>
+            <string>File_Sys_Group</string>
+            <string>Terminal_Device</string>
+            <string>Process_ID</string>
+            <string>Real_User_ID</string>
+            <string>Eff_User_ID</string>
+            <string>Saved_User_ID</string>
+            <string>FS_User_ID</string>
+            <string>Real_Group_ID</string>
+            <string>Eff_Group_ID</string>
+            <string>Saved_Group_ID</string>
+            <string>File_Sys_Group_ID</string>
+            <string>Session_ID</string>
+            <string>Parent_Process_ID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Process_Command_Name</string>
+            <string>Process_ID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZRPC</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZRPC.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZRPC</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZSOCKD</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZSOCKD.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZSOCKD</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Local_Address</string>
+            <string>Local_Service</string>
+            <string>Local_Port</string>
+            <string>Foreign_Address</string>
+            <string>Foreign_Port</string>
+            <string>Socket_Owner_Name</string>
+            <string>Socket_Owner_Name_U</string>
+            <string>Socket_UID</string>
+            <string>Linux_VM_ID</string>
+            <string>Socket_Protocol</string>
+            <string>Socket_State</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Local_Address</string>
+            <string>Local_Port</string>
+            <string>Foreign_Address</string>
+            <string>Foreign_Port</string>
+            <string>Local_Service</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZSOCKS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZSOCKS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZSOCKS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZSWPRT</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZSWPRT.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZSWPRT</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZSYS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZSYS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZSYS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZTCP</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZTCP.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZTCP</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZUSR</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZUSR.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZUSR</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Process_Command_Name</string>
+            <string>Process_Command_Line</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Process_Command_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KLZVM</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KLZVM.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KLZVM</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+        <entityLookupName>klz_entity</entityLookupName>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXCPU</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXCPU.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXCPU</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>CPU_ID</string>
+            <string>Linux_VM_ID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>CPU_ID</string>
+            <string>Linux_VM_ID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXCPUAVG</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXCPUAVG.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXCPUAVG</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXCPUCON</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXCPUCON.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXCPUCON</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Vendor_ID</string>
+            <string>Model_Name</string>
+            <string>CPU_ID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>CPU_ID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXDISK</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;.&apos;S</timestampFormat>
+        <metricPrefix>LNXDISK.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXDISK</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Disk_Name</string>
+            <string>Mount_Point</string>
+            <string>FS_Type</string>
+            <string>Mount_Point_U</string>
+            <string>Linux_VM_ID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Disk_Name</string>
+            <string>Mount_Point</string>
+            <string>FS_Type</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXDSKIO</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXDSKIO.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXDSKIO</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Dev_Name</string>
+            <string>Linux_VM_ID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Dev_Name</string>
+            <string>Linux_VM_ID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXDU</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXDU.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXDU</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Disk_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+            <string>Highwater_Time</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Disk_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXFILCMP</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXFILCMP.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXFILCMP</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>File_Name_1</string>
+            <string>File_Name_2</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>File_Name_1</string>
+            <string>File_Name_2</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXFILE</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXFILE.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXFILE</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Path_U</string>
+            <string>File_Name_U</string>
+            <string>Owner_U</string>
+            <string>Group_U</string>
+            <string>Last_Changed_Time</string>
+            <string>Last_Accessed_Time</string>
+            <string>Type</string>
+            <string>Link_Name_U</string>
+            <string>Mode</string>
+            <string>Last_Attr_Chg_Time</string>
+            <string>Checksum</string>
+            <string>Checksum_Algorithm</string>
+            <string>Fully_Qualified_File_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Path_U</string>
+            <string>File_Name_U</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXFILPAT</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXFILPAT.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXFILPAT</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>File_Name</string>
+            <string>Match_Pattern</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>File_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXGROUP</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXGROUP.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXGROUP</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Group_Name</string>
+            <string>Group_ID</string>
+            <string>Group_ID_64</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Group_Name</string>
+            <string>Group_ID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXIOEXT</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXIOEXT.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXIOEXT</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Device_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Device_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXIPADDR</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXIPADDR.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXIPADDR</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Network_Interface_Name</string>
+            <string>IP_Address</string>
+            <string>DNS_Name</string>
+            <string>IP_Version</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Network_Interface_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXLOGIN</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXLOGIN.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXLOGIN</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>User_Name</string>
+            <string>Line</string>
+            <string>Login_Time</string>
+            <string>Idle_time</string>
+            <string>From_Hostname</string>
+            <string>User_Name_U</string>
+            <string>Login_PID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>User_Name</string>
+            <string>Login_PID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXMACHIN</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXMACHIN.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXMACHIN</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Hostname</string>
+            <string>Hardware_Brand</string>
+            <string>Hardware_Model</string>
+            <string>BIOS_Release</string>
+            <string>Machine_Serial</string>
+            <string>System_Board_UUID</string>
+            <string>BIOS_Version</string>
+            <string>Number_Of_Processors_Configured</string>
+            <string>Number_Of_Processors_Online</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Machine_Serial</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXNET</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXNET.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXNET</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Network_Interface_Name</string>
+            <string>Interface_IP_Address</string>
+            <string>MAC_Address</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Network_Interface_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXNFS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXNFS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXNFS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXOSCON</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXOSCON.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXOSCON</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>OS_Name</string>
+            <string>OS_Version</string>
+            <string>gcc_version</string>
+            <string>OS_Vendor</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>OS_Name</string>
+            <string>OS_Version</string>
+            <string>OS_Vendor</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXPROC</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss&apos;.&apos;S</timestampFormat>
+        <metricPrefix>LNXPROC.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXPROC</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Process_Command_Name</string>
+            <string>Proc_CMD_Line</string>
+            <string>Proc_CMD_Line_U</string>
+            <string>Process_Command_Name_U</string>
+            <string>Parent_Process_ID</string>
+            <string>Process_ID</string>
+            <string>Session_ID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Process_ID</string>
+            <string>Proc_CMD_Line</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXPUSR</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXPUSR.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXPUSR</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Real_User_Name</string>
+            <string>Eff_User_name</string>
+            <string>Saved_User_Name</string>
+            <string>FS_User_name</string>
+            <string>Real_Group</string>
+            <string>Eff_group</string>
+            <string>Saved_Group</string>
+            <string>File_Sys_Group</string>
+            <string>Real_User_ID</string>
+            <string>Eff_User_ID</string>
+            <string>Saved_User_ID</string>
+            <string>FS_User_ID</string>
+            <string>Real_Group_ID</string>
+            <string>Eff_Group_ID</string>
+            <string>Saved_Group_ID</string>
+            <string>File_Sys_Group_ID</string>
+            <string>Real_User_Name_U</string>
+            <string>Eff_User_name_U</string>
+            <string>Saved_User_Name_U</string>
+            <string>FS_User_name_U</string>
+            <string>Real_Group_U</string>
+            <string>Eff_group_U</string>
+            <string>Saved_Group_U</string>
+            <string>File_Sys_Group_U</string>
+            <string>Linux_VM_ID</string>
+            <string>Session_ID</string>
+            <string>Parent_Process_ID</string>
+            <string>Proc_CMD_Line_U</string>
+            <string>Process_Command_Name_U</string>
+            <string>Terminal_Device</string>
+            <string>Process_ID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Real_User_Name</string>
+            <string>Real_User_ID</string>
+            <string>Linux_VM_ID</string>
+            <string>Session_ID</string>
+            <string>Process_ID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXRPC</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXRPC.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXRPC</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXSOCKD</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXSOCKD.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXSOCKD</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Local_Address</string>
+            <string>Local_Service</string>
+            <string>Local_Port</string>
+            <string>Foreign_Address</string>
+            <string>Foreign_Port</string>
+            <string>Socket_Owner_Name</string>
+            <string>Socket_Owner_Name_U</string>
+            <string>Socket_UID</string>
+            <string>Linux_VM_ID</string>
+            <string>Socket_Protocol</string>
+            <string>Socket_State</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Local_Address</string>
+            <string>Local_Service</string>
+            <string>Local_Port</string>
+            <string>Foreign_Address</string>
+            <string>Foreign_Port</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXSOCKS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXSOCKS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXSOCKS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXSWPRT</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXSWPRT.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXSWPRT</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXSYS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXSYS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXSYS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>LNXVM</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>System_Name</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>LNXVM.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>LNXVM</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+</list>

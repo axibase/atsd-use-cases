@@ -27,7 +27,7 @@ Data is visualized using **Trends** service from Axibase, a public data reposito
 
 1. Visualize Datasets using [Trends](https://trends.axibase.com/);
 2. Implement formulas to derive calculated series;
-3. Use built-in [Statistical Functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions.md#statistical-functions) to transform the dataset.
+3. Use statistical functions to transform the dataset.
 4. Compare the original and transformed datasets in one visualization.
 
 ## Visualization
@@ -169,7 +169,7 @@ The configuration above may be used a template for additional user-derived serie
     endfor
 ```
 
-Instead of using a wildcard to access each tag for the given series, this configuration uses the [`getSeries`](https://github.com/axibase/charts/blob/master/syntax/functions.md) method to load tag combinations from the server.
+Instead of using a wildcard to access each tag for the given series, this configuration uses the `getSeries` function to load tag combinations from the server.
 
 Compare the combined life expectancy data for both sexes and racial categories on one chart to see the effects of smoothing:
 

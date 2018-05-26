@@ -60,6 +60,7 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 
 Sometimes data tell their own story and ChartLab visualizations can grab reader attention to make a statement. The Chart of the Day is reproduced in a variety of publications.
 
+1. [London Inter-Bank Offered Rate (LIBOR)](Chart_of_the_Day/libor/README.md)
 1. [Profit Margin by Industry Explorer](Chart_of_the_Day/profit-margin/README.md)
 1. [Using Thresholds to Track United States Inflation](Chart_of_the_Day/us-inflation/README.md)
 1. [The Creeping Overnight Fund Rate](Chart_of_the_Day/overnight-fund-rate/README.md)
@@ -69,12 +70,12 @@ Sometimes data tell their own story and ChartLab visualizations can grab reader 
 1. [Outstanding Students Loan Debt Continues to Exceed One Trillion Dollars](Chart_of_the_Day/Student_Loan/README.md)
 1. [United States Voter Turnout Since 1970](Chart_of_the_Day/voter-turnout/README.md)
 1. [International Students in America by Country of Origin](Chart_of_the_Day/International_Students/README.md)
-1. [European Union Per Capita Debt by Country](Chart_of_the_Day/EU_Debt_percap/README.md)
 
 ## Analysis
 
 Detailed use cases that feature in-depth data exploration and complex functionality used to solve the world's modern data problems.
 
+1. [SQL Queries and Data Visualization with Python and ATSD](python-budget/README.md)
 1. [The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions](Chart_of_the_Day/world-progress-explorer/README.md)
 1. [United States Federal Reserve: The Economic Policy Uncertainty Index](Analysis/Economic_Policy_Uncertainty/README.md)
 1. [The New Bubble: Fed Rates Stay Low While Debt Value Remains High](Analysis/The_New_Bubble/README.md)
@@ -84,7 +85,6 @@ Detailed use cases that feature in-depth data exploration and complex functional
 1. [CPI vs. PPI: Producers are Spending Less While Consumers are Paying More](Analysis/CPI_PPI/README.md)
 1. [Bitcoin After the GHash.IO Era](Analysis/BitCoin_After_GHash/README.md)
 1. [Visa Travel to the United States with Charts, SQL, and Redash](USVisa/README.md)
-1. [Analyzing UK Aviation Statistics using CAA Datasets](UKAviation/README.md)
 
 ## Data Library
 
@@ -108,6 +108,8 @@ Visualizations and SQL queries that are indexed by topic to form the Axibase Dat
 
 Older ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. Some features may have been updated or function differently, see our latest features and functionality used in more recent [Research Articles](#research-articles) or the [Chart of the Day](#chart-of-the-day).
 
+1. [Analyzing UK Aviation Statistics using CAA Datasets](UKAviation/README.md)
+1. [European Union Per Capita Debt by Country](Chart_of_the_Day/EU_Debt_percap/README.md)
 1. [Who is Dropping Out in the State with the Fewest Dropouts?](Chart_of_the_Day/IA_Dropouts/README.md)
 1. [The Port of Los Angeles: Sustainable Progress for the Future of the City](LA_Port/README.md)
 1. [Debt Profile of the Average American](FED_FORDSR/README.md)
@@ -129,7 +131,7 @@ Older ATSD functionality and features applied to real-world public data to solve
 1. [Quantifying Public Health: The American Fitness Index](FitnessIndex/README.md)
 1. [Violence Begets Violence: An Analysis of the Baltimore Police Force and Baltimore Homicide Data](BaltimorePolice/README.md)
 1. [Climate Change: Back to the Drawing Board](ClimateChange/README.md)
-1. [U.S. Expatriation Statistics](Expatriation/2017.md)
+1. [U.S. Expatriation Statistics](Expatriation/2017-1.md)
 1. [Consumer Finance Complaints](ConsumerFinance/README.md)
 1. [Tax Day 2017: Are U.S. Tax Payers Procrastinating?](IRSTaxFilings/README.md)
 1. [Norway Car Registrations](NorwayCars/README.md)

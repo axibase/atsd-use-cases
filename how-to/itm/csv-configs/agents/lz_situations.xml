@@ -1,0 +1,31 @@
+<PRIVATECONFIGURATION>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_CPU"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_CPU_Averages"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_Disk"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_Disk_IO"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_Disk_Usage_Trends"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_IO_Ext"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_Network"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_NFS_Statistics"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_LPAR"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_Process"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_Process_User_Info"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_RPC_Statistics"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_System_Statistics"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_Sockets_Detail"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_Sockets_Status"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_Swap_Rate"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_TCP_Statistics"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_User_Login"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="KLZ_VM_Stats"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="Linux_All_Users"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="Linux_CPU_Config"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="Linux_Group"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="Linux_IP_Address"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="Linux_Machine_Information"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="Linux_OS_Config"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="Linux_File_Comparison"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="Linux_File_Information"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="Linux_File_Pattern"></HISTORY>
+    <HISTORY Interval="1" Export="1" RETAIN="1" USE="A" Table="Linux_Host_Availability"></HISTORY>
+</PRIVATECONFIGURATION>

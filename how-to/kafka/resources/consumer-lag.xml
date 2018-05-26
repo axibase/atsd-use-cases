@@ -1,0 +1,54 @@
+<list>
+  <com.axibase.tsd.service.portal.PortalServiceImpl_-PortalConfigAndAssignedEntityGroups>
+    <portalConfig>
+      <name>Consumer Lag</name>
+      <enabled>true</enabled>
+      <showInMenu>true</showInMenu>
+      <displayIndex>0</displayIndex>
+      <content>[configuration]
+  offset-right = 100
+  height-units = 2
+  width-units = 1
+  server-aggregate = true
+  multiple-series = true
+  entities = *  
+  disconnect-interval = 3 minute
+  server-aggregate = true
+  interpolate = PREVIOUS
+  interpolate-fill = true
+     
+ [group]
+  [widget]
+    type = chart
+    title = Consumer Lag: difference between message writes and reads
+    period = 1 minute
+    statistics = last
+    merge-fields = tags.topic
+    axis = right
+    format = numeric
+
+    [tags]
+      topic = topic-name
+    
+    [series]
+      metric =  kafka.consumer_offset
+      label = consumer offset
+      alias = csm
+
+    [series]
+      metric =  jmx.kafka.log.log.logendoffset.value  
+      label = producer endoffset
+      alias = prd
+      
+    [series]
+      mode = column
+      label = Consumer Lag
+      axis = left
+      value = Math.abs(value(&apos;prd&apos;) - value(&apos;csm&apos;))
+</content>
+      <lastModified>2018-02-13 15:05:25.78 UTC</lastModified>
+      <guestAccess>false</guestAccess>
+    </portalConfig>
+    <groupsAssignedToPortal/>
+  </com.axibase.tsd.service.portal.PortalServiceImpl_-PortalConfigAndAssignedEntityGroups>
+</list>

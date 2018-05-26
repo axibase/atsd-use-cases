@@ -240,6 +240,8 @@ subject= /O=Digital Signature Trust Co./CN=DST Root CA X3
 ls /usr/share/ca-certificates/mozilla/
 ```
 
+<details><summary><b>View Ubuntu 14.04 CAs</b></summary>
+
 ```css
 ACCVRAIZ1.crt                                                       Global_Chambersign_Root_-_2008.crt
 ACEDICOM_Root.crt                                                   GlobalSign_ECC_Root_CA_-_R4.crt
@@ -316,6 +318,8 @@ GeoTrust_Primary_Certification_Authority_-_G3.crt                   VeriSign_Uni
 GeoTrust_Universal_CA_2.crt                                         Visa_eCommerce_Root.crt
 GeoTrust_Universal_CA.crt                                           XRamp_Global_CA_Root.crt
 ```
+
+</details>
 
 The list of root CAs is updated through the `ca-certificates` package.
 
@@ -447,7 +451,7 @@ public class CertListCA {
 
 ---
 
-OpenJDK 1.8.0_162:
+<details><summary><b>View OpenJDK 1.8.0_162 CAs</b></summary>
 
 ```ls
      trust.path= /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/cacerts
@@ -620,11 +624,15 @@ OpenJDK 1.8.0_162:
      CN = XRamp Global Certification Authority
 ```
 
+</details>
+
 ---
 
 OpenJDK 9
 
 Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](http://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html#JDK-8189131) binary for Linux x64 contains an **empty** `cacerts` keystore.
+
+<details><summary><b>View OpenJDK 9 CAs</b></summary>
 
 ```ls
      trust.path= /usr/lib/jvm/java-9-openjdk-amd64/lib/security/cacerts
@@ -779,6 +787,8 @@ Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](http://ww
      CN = XRamp Global Certification Authority
 ```
 
+</details>
+
 ---
 
 ```sh
@@ -829,7 +839,7 @@ Removed CAs in OpenJDK 8 -> 9:
 
 ---
 
-Oracle OpenJDK 1.8.0_131:
+<details><summary><b>View Oracle OpenJDK 1.8.0_131 CAs</b></summary>
 
 ```txt
      trust.path= /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts
@@ -939,6 +949,8 @@ Oracle OpenJDK 1.8.0_131:
      CN = VeriSign Universal Root Certification Authority
      CN = XRamp Global Certification Authority
 ```
+
+</details>
 
 ## Trust Inheritance
 
@@ -1872,6 +1884,7 @@ cat atsd_axibase_com.conf
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+extendedKeyUsage=serverAuth
 subjectAltName = @alt_names
 
 [alt_names]
