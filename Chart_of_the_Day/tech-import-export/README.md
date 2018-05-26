@@ -1,6 +1,6 @@
 # Going from Advanced Tech Exporter to Importer
 
-The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) of the St. Louis Federal Reserve tracks import and export statistics for the United States and other countries. The trade deficit has been in the spotlight recently as one of the current administration's primary talking points and working spaces, with the goal of reversing the otherwise never-ending growth of America's overseas expenditures. [Axibase](https://axibase.com/) covered this phenomena back in [2017](../../USInternationalTrade/README.md), but a recent FRED [blog](https://fredblog.stlouisfed.org/2018/05/the-high-tech-trade-balance/) post, and all the attention the trade deficit has been receiving lately, certainly makes revisiting the topic relevant today.
+The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) of the St. Louis Federal Reserve tracks import and export statistics for the United States and other countries. The trade deficit has been in the spotlight recently as one of the current administration's primary talking points and working spaces, with the goal of reversing the otherwise never-ending growth of America's overseas expenditures. We covered this phenomena back in [2017](../../USInternationalTrade/README.md), but a recent FRED [blog](https://fredblog.stlouisfed.org/2018/05/the-high-tech-trade-balance/) post, and all the attention the trade deficit has been receiving lately, certainly makes revisiting the topic relevant today.
 
 ![](images/trade-balance.png)
 
@@ -24,7 +24,7 @@ This visualization uses `alias` settings to capture raw data and `value` setting
 
 ## Tracking the Growth in Imports Against the Decline in Exports
 
-**Trends** visualization service supports [user-defined functions](../../how-to/shared/trends.md#user-defined-functions) for ad hoc data transformations that may be performed inline without modifying the underlying data stored in [ATSD](https://axibase.com/products/axibase-time-series-database/).
+**Trends** visualization service supports [user-defined functions](../../how-to/shared/trends.md#user-defined-functions) for ad hoc data transformations that may be performed inline without modifying the underlying data stored in [ATSD](https://axibase.com/docs/atsd).
 
 ### `fred.js` Library
 
