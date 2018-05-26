@@ -1,0 +1,13 @@
+<PRIVATECONFIGURATION>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="Channel_Data"></HISTORY>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="Channel_Definitions"></HISTORY>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="Channel_Status"></HISTORY>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="Listener_Status"></HISTORY>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="Managers"></HISTORY>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="Message_Statistics"></HISTORY>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="Queue_Data"></HISTORY>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="Queue_Definitions"></HISTORY>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="Queue_Statistics"></HISTORY>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="KLZ_Process"></HISTORY>
+    <HISTORY Interval="10" Export="10" RETAIN="1" USE="A" Table="Queue_Status"></HISTORY>
+</PRIVATECONFIGURATION>

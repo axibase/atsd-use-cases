@@ -208,7 +208,7 @@ Underlying Formula:
 value = (value("cpi") / previous("cpi") - 1) * 100
 ```
 
-* This setting uses the newly-supported [`previous()`](https://github.com/axibase/charts/blob/master/syntax/functions.md) function.
+* This setting uses the `previous()` function.
 
 Return to the [Index](#index)
 

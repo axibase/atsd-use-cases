@@ -72,7 +72,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   format = %
 ```
 
-* [`avg()`](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) statistical function is used with one or two arguments representing the `alias` of series to be averaged and the `period` across which the average should be calculated, respectively.
+* `avg()` statistical function is used with one or two arguments representing the `alias` of series to be averaged and the `period` across which the average should be calculated, respectively.
 
 * *Fig. 2* (for full configuration settings open the **Trends** visualization [above](#full-employment-in-the-united-states))
 

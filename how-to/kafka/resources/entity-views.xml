@@ -1,0 +1,114 @@
+<linked-list>
+  <com.axibase.tsd.model.EntityView>
+    <name>Kafka</name>
+    <entityGroup>Kafka</entityGroup>
+    <columns>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PORTALS_COLUMN</type>
+        <header>Portals</header>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTIES_COLUMN</type>
+        <header>Properties</header>
+        <value>jmx.kafka.app-info</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>NAME_COLUMN</type>
+        <header>Name</header>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Broker State</header>
+        <value>jmx.kafka.kafkaserver:name=BrokerState:value</value>
+        <formatting>value == &apos;3&apos; ? &apos;Running&apos; : value == &apos;0&apos; ? &apos;Not Running&apos; : value</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Messages In/sec</header>
+        <value>jmx.kafka.server.brokertopicmetrics.messagesinpersec.oneminuterate</value>
+        <link>CHART</link>
+        <formatting>formatNumber(value, &apos;0.0&apos;)</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Bytes In/min</header>
+        <value>jmx.kafka.server.brokertopicmetrics.bytesinpersec.oneminuterate</value>
+        <link>CHART</link>
+        <formatting>formatNumber(value, &apos;0.0&apos;)</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Bytes Out/min</header>
+        <value>jmx.kafka.server.brokertopicmetrics.bytesoutpersec.oneminuterate</value>
+        <link>CHART</link>
+        <formatting>formatNumber(value, &apos;0.0&apos;)</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>ZooKeeper Latency, ms</header>
+        <value>jmx.kafka.server.zookeeperclientmetrics.zookeeperrequestlatencyms.count</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Under Replicated Partitions</header>
+        <value>jmx.kafka.server.replicamanager.underreplicatedpartitions.value</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Active Controllers</header>
+        <value>jmx.kafka.kafkacontroller:name=ActiveControllerCount:value</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Controller State</header>
+        <value>jmx.kafka.kafkacontroller:name=ControllerState:value</value>
+        <formatting>value == &apos;0&apos; ? &apos;Idle&apos; : value == &apos;8&apos; ? &apos;Controlled Shutdown&apos; : value == &apos;12&apos; ? &apos;Controller Shutdown&apos; : value</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Global Partitions</header>
+        <value>jmx.kafka.kafkacontroller:name=GlobalPartitionCount:value</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Global Topics</header>
+        <value>jmx.kafka.kafkacontroller:name=GlobalTopicCount:value</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Offline Partitions</header>
+        <value>jmx.kafka.kafkacontroller:name=OfflinePartitionsCount:value</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Cluster</header>
+        <value>jmx.kafka.kafkaserver:name=ClusterId:value</value>
+        <link>PROPERTY</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Version</header>
+        <value>jmx.kafka.app-info::version</value>
+        <link>PROPERTY</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>METRICS_COLUMN</type>
+        <header>Last Insert</header>
+        <value>jmx.kafka.controller.kafkacontroller.controllerstate.value:600</value>
+        <formatting>formatIntervalShort(elapsedTime(value))</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+    </columns>
+    <pageSize>100</pageSize>
+    <enabled>true</enabled>
+    <menu>false</menu>
+    <filters class="java.util.Arrays$ArrayList">
+      <a class="com.axibase.tsd.model.EntityView$EntityViewFilter-array"/>
+    </filters>
+    <grouping>jmx.kafka.kafkaserver:name=ClusterId:value</grouping>
+    <displayIndex>3</displayIndex>
+    <multiEntityPortalName>Kafka</multiEntityPortalName>
+    <icon>pt-icon-exchange</icon>
+  </com.axibase.tsd.model.EntityView>
+</linked-list>

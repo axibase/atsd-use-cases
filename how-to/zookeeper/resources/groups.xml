@@ -1,0 +1,12 @@
+<list>
+  <com.axibase.tsd.model.EntityGroup>
+    <name>Zookeeper Nodes</name>
+    <tags/>
+    <portals>
+      <long>171</long>
+    </portals>
+    <entityTags/>
+    <expression>properties(&apos;jmx.zookeeper.conf&apos;).size() &gt; 0</expression>
+    <enabled>true</enabled>
+  </com.axibase.tsd.model.EntityGroup>
+</list>

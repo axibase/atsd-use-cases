@@ -1884,6 +1884,7 @@ cat atsd_axibase_com.conf
 authorityKeyIdentifier=keyid,issuer
 basicConstraints=CA:FALSE
 keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+extendedKeyUsage=serverAuth
 subjectAltName = @alt_names
 
 [alt_names]

@@ -1,0 +1,205 @@
+<list>
+  <com.axibase.tsd.service.portal.PortalServiceImpl_-PortalConfigAndAssignedEntityGroups>
+    <portalConfig>
+      <name>Zookeeper Cluster</name>
+      <enabled>true</enabled>
+      <showInMenu>false</showInMenu>
+      <displayIndex>0</displayIndex>
+      <content>[configuration]
+  width-units = 2
+  height-units = 2
+  update-interval = 15 second
+  offset-right = 50
+  entities = *
+    
+[group]
+  [widget]
+    type = chart
+    title = Average latency
+    timespan = 15 minute
+    multiple-series = true
+    label-format=entity
+    alert-expression = (new Date()).getTime() - time &gt; 120 * 1000
+    alert-style = background-color: red
+    
+    [series]
+      metric = jmx.zookeeper.avgrequestlatency
+      [tags]
+        cluster = ${cluster}
+
+    [widget]
+    type = table
+    title = Last online
+    column-time = Last online
+    column-metric = null
+    column-value = null
+    multiple-series = true
+    
+    alert-expression = (new Date()).getTime() - time &gt; 120 * 1000
+    alert-style = background-color: red
+
+    [series]
+      metric = jmx.zookeeper.packetsreceived
+      [tags]
+        cluster = ${cluster}
+
+[group]
+  widgets-per-row = 1
+
+  [widget]
+    width-units = 2
+	type = property
+    expand-tags = true
+    transpose = true
+    hide-column = column.key.indexOf(&apos;version&apos;) == 0 || column.key.indexOf(&apos;quorumaddress&apos;) == 0
+    title = jmx.zookeeper.conf
+	[property]
+	  type = jmx.zookeeper.conf
+      [tags]
+        cluster = ${cluster}</content>
+      <lastModified>2018-02-15 07:48:45.284 UTC</lastModified>
+      <guestAccess>false</guestAccess>
+    </portalConfig>
+    <groupsAssignedToPortal/>
+  </com.axibase.tsd.service.portal.PortalServiceImpl_-PortalConfigAndAssignedEntityGroups>
+  <com.axibase.tsd.service.portal.PortalServiceImpl_-PortalConfigAndAssignedEntityGroups>
+    <portalConfig>
+      <name>Zookeeper Node</name>
+      <enabled>true</enabled>
+      <showInMenu>false</showInMenu>
+      <displayIndex>0</displayIndex>
+      <content>[configuration]
+  width-units = 2
+  height-units = 2
+  update-interval = 15 second
+  timespan = 1 day
+  offset-right = 50
+  entity = ${entity}
+
+[group]
+  [widget]
+    type = chart
+    title = Latency: ${entity}
+    multiple-series = true
+    
+    [series]
+      label = Min
+      metric = jmx.zookeeper.minrequestlatency
+      
+    [series]
+      label = Max
+      metric =  jmx.zookeeper.maxrequestlatency
+
+    [series]
+      label = Average
+      metric = jmx.zookeeper.avgrequestlatency
+      
+  [widget]
+    type = chart
+    title = Network I/O: ${entity}
+    mode = column-stack
+
+    [series]
+      metric = jmx.zookeeper.packetsreceived
+      alias = packets_received
+      statistic = delta
+      display = false
+      
+    [series]
+      value = Math.max(value(&apos;packets_received&apos;), 0)
+      label = Packets received
+      
+    [series]
+      metric = jmx.zookeeper.packetssent
+      alias = packets_sent
+      replace-value = -value
+      statistic = delta
+      display = false
+      
+    [series]
+      value = Math.min(value(&apos;packets_sent&apos;), 0)
+      series-type = detail
+      label = Packets sent
+
+[group]
+  [widget]
+    type = chart
+    title = Outstanding requests: ${entity}
+    mode = column-stack
+    
+    [series]
+      metric = jmx.zookeeper.outstandingrequests
+      label = Outstanding requests
+    
+  [widget]
+    type = chart
+    title = Connections: ${entity}
+
+    [series]
+      metric = jmx.zookeeper.numaliveconnections
+      label = Alive connections</content>
+      <lastModified>2018-02-14 14:00:36.710 UTC</lastModified>
+      <guestAccess>false</guestAccess>
+    </portalConfig>
+    <groupsAssignedToPortal>
+      <string>Zookeeper Nodes</string>
+    </groupsAssignedToPortal>
+  </com.axibase.tsd.service.portal.PortalServiceImpl_-PortalConfigAndAssignedEntityGroups>
+  <com.axibase.tsd.service.portal.PortalServiceImpl_-PortalConfigAndAssignedEntityGroups>
+    <portalConfig>
+      <name>Zookeeper Nodes</name>
+      <enabled>true</enabled>
+      <showInMenu>false</showInMenu>
+      <displayIndex>0</displayIndex>
+      <content>[configuration]
+  width-units = 2
+  height-units = 2
+  update-interval = 15 second
+  offset-right = 50
+  entities = ${entities}
+    
+[group]
+  [widget]
+    type = chart
+    title = Average latency
+    timespan = 15 minute
+    multiple-series = true
+    label-format=entity
+    alert-expression = (new Date()).getTime() - time &gt; 120 * 1000
+    alert-style = background-color: red
+    
+    [series]
+      metric = jmx.zookeeper.avgrequestlatency
+
+    [widget]
+    type = table
+    title = Last online
+    column-time = Last online
+    column-metric = null
+    column-value = null
+    multiple-series = true
+    
+    alert-expression = (new Date()).getTime() - time &gt; 120 * 1000
+    alert-style = background-color: red
+
+    [series]
+      metric = jmx.zookeeper.packetsreceived
+
+[group]
+  widgets-per-row = 1
+
+  [widget]
+    width-units = 2
+	type = property
+    expand-tags = true
+    transpose = true
+    hide-column = column.key.indexOf(&apos;version&apos;) == 0 || column.key.indexOf(&apos;quorumaddress&apos;) == 0
+    title = jmx.zookeeper.conf
+	[property]
+	  type = jmx.zookeeper.conf</content>
+      <lastModified>2018-02-15 14:13:01.88 UTC</lastModified>
+      <guestAccess>false</guestAccess>
+    </portalConfig>
+    <groupsAssignedToPortal/>
+  </com.axibase.tsd.service.portal.PortalServiceImpl_-PortalConfigAndAssignedEntityGroups>
+</list>

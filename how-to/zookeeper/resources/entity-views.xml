@@ -1,0 +1,123 @@
+<linked-list>
+  <com.axibase.tsd.model.EntityView>
+    <name>Zookeeper</name>
+    <entityGroup>Zookeeper Nodes</entityGroup>
+    <columns>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PORTALS_COLUMN</type>
+        <header>Portals</header>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTIES_COLUMN</type>
+        <header>Properties</header>
+        <value>jmx.zookeeper.conf</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>NAME_COLUMN</type>
+        <header>Name</header>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Cluster</header>
+        <value>jmx.zookeeper.conf::cluster</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Version</header>
+        <value>jmx.zookeeper.conf::version</value>
+        <formatting>keepBefore(value, &quot;-&quot;)</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Mode</header>
+        <value>jmx.zookeeper.replica::state</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Replica</header>
+        <value>jmx.zookeeper.conf::name1</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>NAME_COLUMN</type>
+        <header>Viewer</header>
+        <label>★</label>
+        <linkTemplate>/portal/name/emv?entity=${entity}&amp;metric=jmx.zookeeper.*</linkTemplate>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Latency, Avg</header>
+        <value>jmx.zookeeper.avgrequestlatency</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Latency, Max</header>
+        <value>jmx.zookeeper.maxrequestlatency</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Node Count</header>
+        <value>jmx.zookeeper.nodecount</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Packets Received per Minute</header>
+        <value>jmx.zookeeper.packetsreceived.counter</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Packets Sent per Minute</header>
+        <value>jmx.zookeeper.packetssent.counter</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Watch Count</header>
+        <value>jmx.zookeeper.watchcount</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Outstanding Requests</header>
+        <value>jmx.zookeeper.outstandingrequests</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>SERIES_VALUE</type>
+        <header>Alive Connections</header>
+        <value>jmx.zookeeper.numaliveconnections</value>
+        <link>CHART</link>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>PROPERTY_TAG</type>
+        <header>Max Client Conns per Host</header>
+        <value>jmx.zookeeper.conf::maxclientcnxnsperhost</value>
+      </com.axibase.tsd.model.EntityViewColumn>
+      <com.axibase.tsd.model.EntityViewColumn>
+        <type>METRICS_COLUMN</type>
+        <header>Last Insert</header>
+        <value>jmx.zookeeper.avgrequestlatency:300</value>
+        <formatting>formatIntervalShort(elapsedTime(value))</formatting>
+      </com.axibase.tsd.model.EntityViewColumn>
+    </columns>
+    <pageSize>100</pageSize>
+    <enabled>true</enabled>
+    <menu>false</menu>
+    <filters class="java.util.Arrays$ArrayList">
+      <a class="com.axibase.tsd.model.EntityView$EntityViewFilter-array">
+        <com.axibase.tsd.model.EntityView_-EntityViewFilter>
+          <name>Cluster filter</name>
+          <expression>tags[&apos;jmx.zookeeper.conf::cluster&apos;] != &apos;&apos;</expression>
+        </com.axibase.tsd.model.EntityView_-EntityViewFilter>
+      </a>
+    </filters>
+    <filter reference="../filters/a/com.axibase.tsd.model.EntityView_-EntityViewFilter"/>
+    <grouping>Cluster</grouping>
+    <displayIndex>0</displayIndex>
+    <multiEntityPortalName>Zookeeper Nodes</multiEntityPortalName>
+    <icon>pt-icon-eye-open</icon>
+  </com.axibase.tsd.model.EntityView>
+</linked-list>

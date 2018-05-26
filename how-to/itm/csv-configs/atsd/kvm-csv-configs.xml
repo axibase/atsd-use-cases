@@ -1,0 +1,1401 @@
+<list>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMALARMS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMALARMS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMALARMS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Alarm_Status</string>
+            <string>Alarm_Triggered_Time</string>
+            <string>Alarm_Name</string>
+            <string>Description</string>
+            <string>Triggered_Entity</string>
+            <string>Affected_Entity</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Alarm_Status</string>
+            <string>Alarm_Triggered_Time</string>
+            <string>Alarm_Name</string>
+            <string>Description</string>
+            <string>Triggered_Entity</string>
+            <string>Affected_Entity</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMCLTRDST</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMCLTRDST.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMCLTRDST</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Cluster</string>
+            <string>Datastore</string>
+            <string>Overall_Status</string>
+            <string>Type</string>
+            <string>Remote_Host_Address</string>
+            <string>Remote_Path</string>
+            <string>MSN</string>
+            <string>NodeID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Cluster</string>
+            <string>Datastore</string>
+            <string>Overall_Status</string>
+            <string>Type</string>
+            <string>Remote_Host_Address</string>
+            <string>Remote_Path</string>
+            <string>MSN</string>
+            <string>NodeID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMCLTRRPS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMCLTRRPS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMCLTRRPS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>DataCenter</string>
+            <string>Cluster_Name</string>
+            <string>Pool_Name</string>
+            <string>Overall_Status</string>
+            <string>NodeID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>DataCenter</string>
+            <string>Cluster_Name</string>
+            <string>Pool_Name</string>
+            <string>Overall_Status</string>
+            <string>NodeID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMCLTRSRV</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMCLTRSRV.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMCLTRSRV</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>DataCenter</string>
+            <string>Cluster_Name</string>
+            <string>Server_Hostname</string>
+            <string>MSN_Name</string>
+            <string>Overall_Status</string>
+            <string>NodeID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>DataCenter</string>
+            <string>Cluster_Name</string>
+            <string>Server_Hostname</string>
+            <string>MSN_Name</string>
+            <string>Overall_Status</string>
+            <string>NodeID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMCLTRVMS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMCLTRVMS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMCLTRVMS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>DataCenter</string>
+            <string>Cluster_Name</string>
+            <string>VM_Name</string>
+            <string>MSN_Name</string>
+            <string>Overall_Status</string>
+            <string>NodeID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>DataCenter</string>
+            <string>Cluster_Name</string>
+            <string>VM_Name</string>
+            <string>MSN_Name</string>
+            <string>Overall_Status</string>
+            <string>NodeID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMCLUSTRT</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMCLUSTRT.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMCLUSTRT</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>DataCenter</string>
+            <string>Cluster_Name</string>
+            <string>Overall_Status</string>
+            <string>Datacenter_MORef</string>
+            <string>Cluster_MORef</string>
+            <string>NodeID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>DataCenter</string>
+            <string>Overall_Status</string>
+            <string>Datacenter_MORef</string>
+            <string>Cluster_MORef</string>
+            <string>NodeID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMDAG</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMDAG.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMDAG</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Subnode_MSN</string>
+            <string>Subnode_Affinity</string>
+            <string>Subnode_Type</string>
+            <string>Subnode_Resource_Name</string>
+            <string>Subnode_Version</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Subnode_MSN</string>
+            <string>Subnode_Type</string>
+            <string>Subnode_Resource_Name</string>
+            <string>Subnode_Version</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMDCNETS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMDCNETS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMDCNETS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Network</string>
+            <string>Overall_Status</string>
+            <string>Network_Type</string>
+            <string>Distributed_Switch</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Network</string>
+            <string>Overall_Status</string>
+            <string>Network_Type</string>
+            <string>Distributed_Switch</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMDCTRS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMDCTRS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMDCTRS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Overall_Status</string>
+            <string>NodeID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Overall_Status</string>
+            <string>NodeID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMDIRE</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMDIRE.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMDIRE</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>UseTEPCredential</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>UseTEPCredential</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMDSHSD</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMDSHSD.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMDSHSD</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>DataCenter</string>
+            <string>Host</string>
+            <string>Datastore</string>
+            <string>Disk</string>
+            <string>NodeID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>DataCenter</string>
+            <string>Host</string>
+            <string>Datastore</string>
+            <string>Disk</string>
+            <string>NodeID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMDSTORES</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMDSTORES.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMDSTORES</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Name</string>
+            <string>Datacenter</string>
+            <string>Type</string>
+            <string>Overall_Status</string>
+            <string>Remote_Host_Address</string>
+            <string>Remote_Path</string>
+            <string>URL</string>
+            <string>MSN</string>
+            <string>Datastore_MORef</string>
+            <string>NetApp_Volume_Name</string>
+            <string>NodeID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Name</string>
+            <string>Datacenter</string>
+            <string>Type</string>
+            <string>Overall_Status</string>
+            <string>Remote_Host_Address</string>
+            <string>Remote_Path</string>
+            <string>URL</string>
+            <string>MSN</string>
+            <string>Datastore_MORef</string>
+            <string>NetApp_Volume_Name</string>
+            <string>NodeID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMDVPGRPS</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMDVPGRPS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMDVPGRPS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Switch_Name</string>
+            <string>Portgroup_Name</string>
+            <string>Overall_Status</string>
+            <string>Type</string>
+            <string>Blocked</string>
+            <string>Inbound_Shaping_Enabled</string>
+            <string>Outbound_Shaping_Enabled</string>
+            <string>VLAN_Type</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Switch_Name</string>
+            <string>Portgroup_Name</string>
+            <string>Overall_Status</string>
+            <string>Type</string>
+            <string>Blocked</string>
+            <string>Inbound_Shaping_Enabled</string>
+            <string>Outbound_Shaping_Enabled</string>
+            <string>VLAN_Type</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMDVSWTCH</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMDVSWTCH.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMDVSWTCH</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Switch_Name</string>
+            <string>Overall_Status</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Switch_Name</string>
+            <string>Overall_Status</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMNETSERV</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMNETSERV.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMNETSERV</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Network</string>
+            <string>Switch</string>
+            <string>Server_Hostname</string>
+            <string>Subnode_MSN</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Network</string>
+            <string>Switch</string>
+            <string>Server_Hostname</string>
+            <string>Subnode_MSN</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMNETVM</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMNETVM.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMNETVM</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Network</string>
+            <string>Switch</string>
+            <string>Server_Hostname</string>
+            <string>Virtual_Machine</string>
+            <string>VM_NIC</string>
+            <string>Subnode_MSN</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Network</string>
+            <string>Switch</string>
+            <string>Server_Hostname</string>
+            <string>Virtual_Machine</string>
+            <string>VM_NIC</string>
+            <string>Subnode_MSN</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMNVSWITC</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMNVSWITC.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMNVSWITC</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Server_Hostname</string>
+            <string>Switch</string>
+            <string>Network</string>
+            <string>Subnode_MSN</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Server_Hostname</string>
+            <string>Switch</string>
+            <string>Network</string>
+            <string>Subnode_MSN</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMNVSWITCH</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMNVSWITCH.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMNVSWITCH</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Server_Hostname</string>
+            <string>Switch</string>
+            <string>Network</string>
+            <string>Subnode_MSN</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Server_Hostname</string>
+            <string>Switch</string>
+            <string>Network</string>
+            <string>Subnode_MSN</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMPOBJST</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMPOBJST.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMPOBJST</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Query_Name</string>
+            <string>Object_Name</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+            <string>Last_Collection_Start</string>
+            <string>Last_Collection_Finished</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Query_Name</string>
+            <string>Object_Name</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMSERVERE</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMDCNETS.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMDCNETS</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Server_Hostname</string>
+            <string>UserId</string>
+            <string>Event_Time</string>
+            <string>Event</string>
+            <string>Compute_Resource</string>
+            <string>Datacenter</string>
+            <string>Virtual_Machine</string>
+            <string>Virtual_Machine_UUID</string>
+            <string>ESX_Server_UUID</string>
+            <string>Category</string>
+            <string>Event_Type</string>
+            <string>Event_Text</string>
+            <string>Event_Type_ID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Server_Hostname</string>
+            <string>UserId</string>
+            <string>Event_Time</string>
+            <string>Event</string>
+            <string>Compute_Resource</string>
+            <string>Datacenter</string>
+            <string>Virtual_Machine</string>
+            <string>Virtual_Machine_UUID</string>
+            <string>ESC_Server_UUID</string>
+            <string>Category</string>
+            <string>Event_Type</string>
+            <string>Event_Text</string>
+            <string>Event_Type_ID</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator>�</groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMSTOPO</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMSTOPO.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMSTOPO</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>NodeName</string>
+            <string>NodeID</string>
+            <string>NodeType</string>
+            <string>NodeStatus</string>
+            <string>ConnectToNode</string>
+            <string>ConnectionType</string>
+            <string>MSN</string>
+            <string>Datacenter</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>NodeID</string>
+            <string>NodeType</string>
+            <string>NodeStatus</string>
+            <string>ConnectToNode</string>
+            <string>ConnectionType</string>
+            <string>MSN</string>
+            <string>Datacenter</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMTHPLST</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMTHPLST.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMTHPLST</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set"/>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMTOPO</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMTOPO.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMTOPO</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>NodeName</string>
+            <string>NodeID</string>
+            <string>NodeType</string>
+            <string>NodeStatus</string>
+            <string>ConnectToNode</string>
+            <string>ConnectionType</string>
+            <string>MSN</string>
+            <string>Datacenter</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>NodeID</string>
+            <string>NodeType</string>
+            <string>ConnectToNode</string>
+            <string>ConnectionType</string>
+            <string>MSN</string>
+            <string>Datacenter</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMVCENTER</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMVCENTER.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMVCENTER</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Configured_Address</string>
+            <string>FQDN</string>
+            <string>IP_Address</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Configured_Address</string>
+            <string>FQDN</string>
+            <string>IP_Address</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMVMDSUTL</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMVMDSUTL.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <processEvents>false</processEvents>
+        <writeProperty>false</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>false</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Name</string>
+            <string>DataCenter</string>
+            <string>Virtual_Machine</string>
+            <string>NodeID</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set"/>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+    <com.axibase.tsd.model.csv.CsvConfiguration>
+        <name>KVMVSWITCH</name>
+        <putType>METRIC</putType>
+        <delimiter>,</delimiter>
+        <recordDelimiter>
+        </recordDelimiter>
+        <padding></padding>
+        <comment></comment>
+        <textQualifier>&quot;</textQualifier>
+        <entityColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Node</string>
+            </a>
+        </entityColumn>
+        <timestampColumn class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+                <string>Timestamp</string>
+            </a>
+        </timestampColumn>
+        <timestampFormat>yyyy-MM-dd&apos;T&apos;HH:mm:ss</timestampFormat>
+        <metricPrefix>KVMVSWITCH.</metricPrefix>
+        <timestampType>PATTERN</timestampType>
+        <timeZoneDiffColumn>TMZDIFF</timeZoneDiffColumn>
+        <defaultType>KVMVSWITCH</defaultType>
+        <processEvents>false</processEvents>
+        <writeProperty>true</writeProperty>
+        <enabled>true</enabled>
+        <discardNan>true</discardNan>
+        <ignoreParseErrors>false</ignoreParseErrors>
+        <tagColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Server_Hostname</string>
+            <string>Switch</string>
+            <string>Network</string>
+            <string>Subnode_MSN</string>
+        </tagColumns>
+        <excludedColumns class="linked-hash-set">
+            <string>WRITETIME</string>
+        </excludedColumns>
+        <propertyColumns class="linked-hash-set"/>
+        <propertyKeyColumns class="linked-hash-set">
+            <string>Datacenter</string>
+            <string>Server_Hostname</string>
+            <string>Switch</string>
+            <string>Network</string>
+            <string>Subnode_MSN</string>
+        </propertyKeyColumns>
+        <defaultTags class="linked-hash-map"/>
+        <renamedColumns class="linked-hash-map"/>
+        <header/>
+        <decimalSeparator>.</decimalSeparator>
+        <groupingSeparator></groupingSeparator>
+    </com.axibase.tsd.model.csv.CsvConfiguration>
+</list>
