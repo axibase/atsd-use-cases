@@ -66,7 +66,7 @@ releases this number each quarter.
 > Use the dropdown menus at the top of the visualization screen to navigate through time, selecting the `starttime` and `endtime` values
 to observe a desired period.
 
-The data can also be queried with a structured query language in the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md).
+The data can also be queried with a structured query language in the [SQL Console](https://axibase.com/docs/atsd/sql/).
 The data will be aggregated annually, derived from the average value of each quarter within a given year:
 
 ```sql

@@ -45,7 +45,7 @@ increase value (+14,503 persons) which gives these estimates:
 
 Because of the 2012 implementation date of the Montgomery County Bag Tax, records about businesses' bag usage before 2012
 are scarce. However, tracking from 2012 until 2016 is possible and can be used to grade plastic bag usage using the
-[SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview):
+[SQL Console](https://axibase.com/docs/atsd/sql/):
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", sum(value)/1000000 AS "Bag Count (Million)"

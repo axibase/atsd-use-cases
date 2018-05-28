@@ -1016,7 +1016,7 @@ public class CertListChain {
 
 #### Self-Signed Certificate Chain
 
-[Self-Signed](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) certificates have no chain.
+[Self-Signed](https://axibase.com/docs/atsd/administration/ssl-self-signed.html) certificates have no chain.
 
 The subject is the same as the issuer.
 
@@ -1028,7 +1028,7 @@ The subject is the same as the issuer.
 
 #### CA-Signed Certificate Chain
 
-[CA-Signed](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) Certificate.
+[CA-Signed](https://axibase.com/docs/atsd/administration/ssl-ca-signed.html) Certificate.
 
 ```txt
   Subject = CN=*.axibase.com, OU=PositiveSSL Wildcard, OU=Domain Control Validated
@@ -1194,7 +1194,7 @@ No TRUSTED root certificate found for CN=atsd.axibase.com, OU=Unknown, O=Unknown
 
 ### Self-Signed Certificate
 
-Use [keytool](https://github.com/axibase/atsd/blob/master/administration/ssl-self-signed.md#generate-certificate) to generate and install a self-signed certificate.
+Use [keytool](https://axibase.com/docs/atsd/administration/ssl-self-signed.html#generate-certificate) to generate and install a self-signed certificate.
 
 The default certificate in ATSD is issued for 'atsd' CN and 'atsd' alias.
 
@@ -1675,7 +1675,7 @@ Certificate details including DNS names are now publicly available even if the c
 
 Publicly-accessible certificate database.
 
-Table schema is available on [github](https://github.com/crtsh/certwatch_db/blob/master/create_schema.sql).
+Table schema is available on [GitHub](https://github.com/crtsh/certwatch_db/blob/master/create_schema.sql).
 
 ```ls
 Database.URL = jdbc:postgresql://crt.sh:5432/certwatch

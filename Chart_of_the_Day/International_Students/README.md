@@ -2,7 +2,7 @@
 
 * Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
 
-* Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md)
+* Structured Query Language: [SQL Console](https://axibase.com/docs/atsd/installation/)
 
 ![](Images/is-001.png)
 

@@ -81,7 +81,7 @@ Upon successful completion, the **Mail Client** will automatically send subscrib
 
 ![](images/test-email.png)
 
-After initial launch, if **Mail Client** settings need to be reconfigured, follow these [instructions](https://github.com/axibase/atsd/blob/master/administration/mail-client.md#mail-client).
+After initial launch, if **Mail Client** settings need to be reconfigured, follow these [instructions](https://axibase.com/docs/atsd/administration/mail-client.html).
 
 ATSD web interface is accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports).
 
@@ -382,7 +382,7 @@ This query targets [Apache Software Foundation](https://github.com/apache) repos
 </p>
 </details>
 
-The GraphQL query returns a JSON list of Pull Requests based on `MERGEABLE` status. Among the five returned Pull Requests, one has `'SUCCESS'` state, two have `'FAILURE'` state, and two have `'PENDING'` state. ATSD [Rule Engine](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) filters these results with `JSONPath` syntax:
+The GraphQL query returns a JSON list of Pull Requests based on `MERGEABLE` status. Among the five returned Pull Requests, one has `'SUCCESS'` state, two have `'FAILURE'` state, and two have `'PENDING'` state. ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) filters these results with `JSONPath` syntax:
 
 ```ls
 $..pullRequests.nodes[?(@.mergeable == 'MERGEABLE' && @.pullRequestcommits.nodes[0].commit.status.state == 'SUCCESS')]
@@ -519,7 +519,7 @@ Each of these JSONPaths will return a unique JSON list which ATSD Rule Engine wi
 </p>
 </details>
 
-ATSD [Rule Engine](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) receives incoming JSON result sets and converts them into human-readable HTML reports. Rule Engine generates reports based on [Conditions](https://github.com/axibase/atsd/tree/master/rule-engine#condition-checking), in this case, immediately after the first sandbox launch and then daily at 5:00 AM server local time. The report is created by [Email Action](https://github.com/axibase/atsd/blob/master/rule-engine/email.md#email-action) which convert the JSON output into HTML table via [`jsonToLists`](https://github.com/axibase/atsd/blob/master/rule-engine/functions-table.md#jsontolists) function.
+ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) receives incoming JSON result sets and converts them into human-readable HTML reports. Rule Engine generates reports based on [Conditions](https://axibase.com/docs/atsd/rule-engine/#condition-checking), in this case, immediately after the first sandbox launch and then daily at 5:00 AM server local time. The report is created by [Email Action](https://axibase.com/docs/atsd/rule-engine/email.html) which convert the JSON output into HTML table via [`jsonToLists`](https://axibase.com/docs/atsd/rule-engine/functions-table.html#jsontolists) function.
 
 The above JSON result sets will be converted to two outgoing email reports, sent to the defined subscriber list.
 

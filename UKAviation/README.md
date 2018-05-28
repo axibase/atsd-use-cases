@@ -242,7 +242,7 @@ You can explore this portal by clicking on the link below.
 
 Below are the steps to follow to install ATSD and create figures for CAA metrics:
 
-1. [Install the database](https://github.com/axibase/atsd/tree/master/installation#installation) on a virtual machine or Linux container.
+1. [Install the database](https://axibase.com/docs/atsd/installation/) on a virtual machine or Linux container.
 2. [Install Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/installation.md#axibase-collector-installation) and configure it to write data into your ATSD instance.
 3. Import the [csv-configs.xml](csv-configs.xml) into Axibase Collector.
 4. Import the [jobs.xml](jobs.xml) into Axibase Collector.

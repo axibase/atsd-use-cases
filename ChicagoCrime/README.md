@@ -30,7 +30,7 @@ Given the size of the dataset, you cannot load it in Excel. It is much more conv
 
 * Interactive graphs from [Chart Lab](../ChartLabIntro/README.md);
 
-* Tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).
+* Tabular outputs from analytical [SQL queries](https://axibase.com/docs/atsd/sql/).
 
 You can load the dataset into an ATSD instance by following the steps provided at the [end of the article](#action-items).
 
@@ -56,7 +56,7 @@ Click on this button to explore this Chart Lab portal:
 
 [![](../BaltimorePolice/Images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/16/#fullscreen)
 
-In addition to looking at graphical outputs, we can also perform [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview), which can be used to search for specific
+In addition to looking at graphical outputs, we can also perform [SQL queries](https://axibase.com/docs/atsd/sql/), which can be used to search for specific
 information contained in this dataset. For example, we can see that 2016 months totals are greater than the previous years as a whole. But what were the average monthly totals for the last several
 years before the city experienced the horrific spike of 2016?
 

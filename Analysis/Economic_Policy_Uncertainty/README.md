@@ -9,7 +9,7 @@
 
 **Visualization Tool**: [Axibase ChartLab](https://apps.axibase.com/chartlab)
 
-**Structured Query Language (SQL)**: [Axibase SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview)
+**Structured Query Language (SQL)**: [Axibase SQL Console](https://axibase.com/docs/atsd/sql/)
 
 ## Introduction
 
@@ -90,14 +90,14 @@ The European debt crisis was a financial debacle that was inflamed by the so cal
 * Mar 13, 2012: A second bailout for Greece is proposed and approved for and additional 130 billion Euro after further inspection of government financial records reveal the depth and severity of the problem is even worse than originally understood.
 * July 1, 2014: The end of the EU bailout policy, and completion of funds distribution.
 
-The following SQL query will return the [average value](https://github.com/axibase/atsd/blob/master/sql/README.md#aggregation-functions) of the EPU index for the Eurozone for the period from 2002 until 2018 and will consolidate the information using a [`round` expression](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions).
+The following SQL query will return the [average value](https://axibase.com/docs/atsd/sql/#aggregation-functions) of the EPU index for the Eurozone for the period from 2002 until 2018 and will consolidate the information using a [`round` expression](https://axibase.com/docs/atsd/sql/#mathematical-functions).
 
 ```sql
 SELECT ROUND(AVG(value), 0) AS "average-epu" FROM EUEPUINDXM_
   WHERE datetime  >= '2002-01'
 ```
 
-> The `datetime` column can be compared with literal dates specified in [various date formats](https://github.com/axibase/atsd/blob/master/sql/README.md#interval-condition) including ISO 8601 and short dates such as `yyyy-MM`.
+> The `datetime` column can be compared with literal dates specified in [various date formats](https://axibase.com/docs/atsd/sql/#interval-condition) including ISO 8601 and short dates such as `yyyy-MM`.
 
 This query returns a single-entry table:
 
@@ -112,7 +112,7 @@ SELECT datetime, ROUND(value,0) FROM EUEPUINDXM_
   WHERE datetime  IN ('2002-01','2008-11','2010-02','2010-05','2010-11','2012-03','2014-07')
 ```
 
-Multiple `datetime` values can be conveniently enumerated as a list using an [`IN`](https://github.com/axibase/atsd/blob/master/sql/README.md#in-expression) expression. The above query returns these values for each of the targeted months:
+Multiple `datetime` values can be conveniently enumerated as a list using an [`IN`](https://axibase.com/docs/atsd/sql/#in-expression) expression. The above query returns these values for each of the targeted months:
 
 |Event|EPU Index Value|
 |---|:-:|
@@ -133,7 +133,7 @@ SELECT datetime, ROUND(value, 0) AS "top-epu" FROM EUEPUINDXM_
   --ORDER BY value desc LIMIT 7
 ```
 
-This query shows that none of the expected entries appear among the greatest EPU index values during the examined time period in descending order using an [`ORDER BY`](https://github.com/axibase/atsd/blob/master/sql/README.md#where-clause) expression in the `WHERE` clause.
+This query shows that none of the expected entries appear among the greatest EPU index values during the examined time period in descending order using an [`ORDER BY`](https://axibase.com/docs/atsd/sql/#ordering) expression in the `WHERE` clause.
 
 |Date|EPU Index Value|
 |---|:-:|
@@ -161,7 +161,7 @@ Using SQL queries and visualization tools, predictive algorithms and compiled in
 
 Use the following tools to recreate any of the visualizations seen here.
 
-* Install an ATSD instance on your local Linux system [here](https://github.com/axibase/atsd/blob/master/installation/README.md).
+* Install an ATSD instance on your local Linux system [here](https://axibase.com/docs/atsd/installation/).
 * Visit [FRED](https://fred.stlouisfed.org/) for any of the data used in this article.
 * Access the ChartLab sandbox, and other Axibase applications, [here](https://apps.axibase.com/) and comprehensive documentation [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
 * Download this [parser job file](resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface. Use this [walkthrough](../../how-to/shared/import-csv-parser.md) for help uploading the XML file to ATSD.

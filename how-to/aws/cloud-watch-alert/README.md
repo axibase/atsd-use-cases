@@ -80,7 +80,7 @@ docker run -d -p 8443:8443 \
   axibase/atsd-sandbox:latest
 ```
 
-This command will start the sandbox applications, import the [rule](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) needed for integration, and generate an incoming webhook for AWS SNS subscriptions.
+This command will start the sandbox applications, import the [rule](https://axibase.com/docs/atsd/rule-engine/) needed for integration, and generate an incoming webhook for AWS SNS subscriptions.
 
 Watch the start log for progress:
 
@@ -142,7 +142,7 @@ Navigate to the **Topics** section of the **Simple Notification Service** page o
 
 Return to the **Create Subscription** form, and paste the Webhook URL in the **Endpoint** field. Be sure that the **Protocol** drop-down menu is showing **HTTPS**.
 
-AWS SNS notifications over HTTPS protocol do not support destination endpoints with self-signed SSL certificates. If your ATSD instance is running on a self-signed certificate, switch to the HTTP protocol or install a [CA-signed SSL certificate](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) into ATSD.
+AWS SNS notifications over HTTPS protocol do not support destination endpoints with self-signed SSL certificates. If your ATSD instance is running on a self-signed certificate, switch to the HTTP protocol or install a [CA-signed SSL certificate](https://axibase.com/docs/atsd/administration/ssl-self-signed.html) into ATSD.
 
 ![](images/sns-4.png)
 
@@ -158,7 +158,7 @@ Customize the generic ATSD launch command with your preferences from these optio
 
 ### Email Notifications from ATSD
 
-Configure the [mail client](https://github.com/axibase/atsd/blob/master/administration/mail-client.md) by following the instructions here or by following the alternative launch instructions above.
+Configure the [mail client](https://axibase.com/docs/atsd/administration/mail-client.html) by following the instructions here or by following the alternative launch instructions above.
 
 Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule will be named `aws-cloudwatch-events`. Open the rule editor by clicking the rule name link. Select the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like email notification to be delivered.
 
@@ -174,7 +174,7 @@ ATSD email notifications contain context-aware links to the newly launched AWS r
 
 ### Detailed Slack Notifications from ATSD
 
-Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or adding the following environment variable to the atsd-sandbox container above:
+Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html) or adding the following environment variable to the atsd-sandbox container above:
 
 ```sh
    --env SLACK_CONFIG="slack.properties"
@@ -201,7 +201,7 @@ A sample status change Slack message is shown here.
 
 ### Detailed Telegram Notifications from ATSD
 
-Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md) or adding the following environment variable to the atsd-sandbox container above:
+Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://axibase.com/docs/atsd/rule-engine/notifications/telegram.html) or adding the following environment variable to the atsd-sandbox container above:
 
 ```sh
    --env TELEGRAM_CONFIG="telegram.properties"

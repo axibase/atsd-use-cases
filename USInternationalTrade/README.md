@@ -25,7 +25,7 @@ While Excel can provide quick answers to simple questions, when it comes to comp
 
 * Interactive graphs from [Chart Lab](../ChartLabIntro/README.md);
 
-* Tabular outputs from analytical SQL queries with support for [partitioning](https://github.com/axibase/atsd/blob/master/sql/README.md#partitioning).
+* Tabular outputs from analytical SQL queries with support for [partitioning](https://axibase.com/docs/atsd/sql/#partitioning).
 
 You can load the dataset into any ATSD instance by following the steps provided at the [end of the article](#action-items).
 
@@ -33,7 +33,7 @@ The BLS file format presents a number of challenges when loading the data. In pa
 
 ![csv-structure](Images/csv-structure.png)
 
-ATSD handles this by implementing a [schema-based](https://github.com/axibase/atsd/blob/master/parsers/csv/csv-schema.md) parser which can be configured to load records from non-standard CSV files, such as the BLS report.
+ATSD handles this by implementing a [schema-based](https://axibase.com/docs/atsd/parsers/csv/csv-schema.html) parser which can be configured to load records from non-standard CSV files, such as the BLS report.
 
 ## Overview
 
@@ -48,7 +48,7 @@ You can explore this portal by clicking on the below button:
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/552d7a44/2/#fullscreen)
 
-In addition to looking at graphical outputs, we can also perform [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview), which can be used
+In addition to looking at graphical outputs, we can also perform [SQL queries](https://axibase.com/docs/atsd/sql/), which can be used
 to search for specific information contained in this dataset. From the query below it may be observed that within the dataset time range, 1991 was the year which had the least negative trade balance of **-$66.7 billion**.
 
 ```sql

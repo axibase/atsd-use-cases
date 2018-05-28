@@ -52,7 +52,7 @@ This completes the verification stage. You now have data which can be reported o
 
 ## Reports
 
-Since we need a flexible way of filtering, grouping, and formatting results, we will rely on [SQL](https://github.com/axibase/atsd/blob/master/sql/README.md) implemented in Axibase Time Series Database to prepare reports, including time series extensions for time-zone aggregations.
+Since we need a flexible way of filtering, grouping, and formatting results, we will rely on [SQL](https://axibase.com/docs/atsd/sql/) implemented in Axibase Time Series Database to prepare reports, including time series extensions for time-zone aggregations.
 
 In ATSD, SQL queries can be executed via web-based console, an external reporting tool using a JDBC/ODBC driver, or with the built-in report generator with email delivery, web publishing, and file generation options. We will rely on the web-based SQL console to test and fine-tune these queries.
 
@@ -83,7 +83,7 @@ The output includes the list of health check IDs and the average percentage heal
 
 The 'Sample Count' column is present for data quality control purposes. Since checks are reported every minute, the number of samples in the report should be equal to the number of hours in the reporting interval multiplied by `60`. In the above case, the number of hours was `24` and therefore the sample count is `24*60 = 1440`.
 
-You can adjust the start and end date of the reporting interval using convenient [calendar](https://github.com/axibase/atsd/blob/master/shared/calendar.md) syntax. For example, to view availability for the previous quarter, specify the date condition as follows:
+You can adjust the start and end date of the reporting interval using convenient [calendar](https://axibase.com/docs/atsd/shared/calendar.html) syntax. For example, to view availability for the previous quarter, specify the date condition as follows:
 
 * Last 24-hours:
 
@@ -132,7 +132,7 @@ GROUP BY entity
 
 ### Filtering By Property
 
-The report can be filtered by an entity tag using [string operators](https://github.com/axibase/atsd/blob/master/sql/README.md#where-clause) such as `=`, `!=`, and `LIKE`.
+The report can be filtered by an entity tag using [string operators](https://axibase.com/docs/atsd/sql/#where-clause) such as `=`, `!=`, and `LIKE`.
 
 ```sql
 SELECT entity.tags.url AS URL, entity.tags.protocol AS "Protocol",

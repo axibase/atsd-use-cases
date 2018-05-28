@@ -18,7 +18,7 @@ The visualization above highlights one of the main reasons that "Public Utility"
 circles. Opponents of city-managed utilities claim government mismanagement leads to increased prices that would be positively
 affected by introducing competitors whereas proponents of regulation say just the opposite, electricity is more than a business
 it is a modern necessity, and government regulation ensures access for everyone. Using a structured query language in the
-[SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), the numerical information associated with the above visualization is shown:
+[SQL Console](https://axibase.com/docs/atsd/sql/) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), the numerical information associated with the above visualization is shown:
 
 ```sql
 SELECT tags.customer_class AS "Customer Class", AVG(value) AS "Avg KWH (Cents)"

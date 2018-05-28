@@ -29,7 +29,7 @@ However, the PATH Act alone cannot explain the drop in filings in the second hal
 
 Such nation-wide calendar changes, even by a few days, are worth a closer look since they affect not just the trivial events such as proverbial lines at USPS offices but have the potential to change travel patterns and even suppress retail traffic around the tax weekend. They certainly make year-on-year comparisons more tricky.
 
-To normalize the year-on-year data reported by IRS we will load the data into Axibase Time Series Database and apply the [`LAG`](https://github.com/axibase/atsd/blob/master/sql/README.md#lag) and [`INTERPOLATE`](https://github.com/axibase/atsd/blob/master/sql/README.md#regularization) functions to calculate the yearly change in both the absolute and percentage terms under three different behavioral scenarios.
+To normalize the year-on-year data reported by IRS we will load the data into Axibase Time Series Database and apply the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) and [`INTERPOLATE`](https://axibase.com/docs/atsd/sql/#regularization) functions to calculate the yearly change in both the absolute and percentage terms under three different behavioral scenarios.
 
 Note that the IRS reports reference two dates used for year-on-year comparison, for example:
 
@@ -90,7 +90,7 @@ WHERE tags.section = 'Individual Income Tax Returns' AND tags.type = 'Total Retu
 ORDER BY "Day in Year", time
 ```
 
-The [`date_format`](https://github.com/axibase/atsd/blob/master/sql/README.md#date-formatting-functions) function can be conveniently used to perform date- and calendar-based filtering.
+The [`date_format`](https://axibase.com/docs/atsd/sql/#date-functions) function can be conveniently used to perform date- and calendar-based filtering.
 
 | Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | Year-on-Year Change, Mln | Year-on-Year Change, % |
 |------|--------|------------:|----------------------:|-------------------:|------------------:|----------------:|
@@ -230,7 +230,7 @@ You can also use [ChartLab](https://apps.axibase.com/chartlab/) to create, save,
 ## References
 
 * Title Image: [1920 Tax Season](https://upload.wikimedia.org/wikipedia/commons/archive/8/81/20060827235737%211920_tax_forms_IRS.jpg)
-* Axibase Time Series Database [SQL Documentation](https://github.com/axibase/atsd/blob/master/sql/README.md#overview)
+* Axibase Time Series Database [SQL Documentation](https://axibase.com/docs/atsd/sql/)
 * IRS [2017 and Prior Year Filing Season Statistics](https://www.irs.gov/uac/2017-and-prior-year-filing-season-statistics)
 * Reuters: "[U.S. taxpayers procrastinate on filing returns this year](http://www.reuters.com/article/us-money-taxes-delays-idUSKBN16L18C)"
 * Time: "[Fewer Americans Are Filing Their Tax Returns This Year Than in 2016](http://time.com/money/4697931/fewer-americans-filing-tax-returns/)"

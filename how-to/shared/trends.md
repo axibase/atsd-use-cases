@@ -176,7 +176,7 @@ Open any of the visualizations above to see syntax and visual demonstrations of 
 
 ## Further Reading
 
-For more detailed information about ATSD, the underlying mechanics, or download instructions see the [ATSD Documentation](https://github.com/axibase/atsd).
+For more detailed information about ATSD, the underlying mechanics, or download instructions see the [ATSD Documentation](https://axibase.com/docs/atsd/).
 
 Reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com) via email or [here](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page.
 

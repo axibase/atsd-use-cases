@@ -24,7 +24,7 @@ Visa figures were collected for 200 countries, 7 continents, and for unknown nat
 
 As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) to explore this dataset:
 
-* Tabular outputs from analytical [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview);
+* Tabular outputs from analytical [SQL queries](https://axibase.com/docs/atsd/sql/);
 * Interactive graphs from [Chart Lab](../ChartLabIntro/README.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
@@ -111,8 +111,8 @@ You can explore this portal by clicking on the below button:
 
 ## SQL Queries
 
-In addition to outputs from Chart Lab, ATSD is also capable of performing [SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview),
-which can be used to search for specific information contained in this dataset. You can read more about our SQL syntax [here](https://github.com/axibase/atsd/blob/master/sql/README.md#syntax).
+In addition to outputs from Chart Lab, ATSD is also capable of performing [SQL queries](https://axibase.com/docs/atsd/sql/),
+which can be used to search for specific information contained in this dataset. You can read more about our SQL syntax [here](https://axibase.com/docs/atsd/sql/#syntax).
 
 This query shows the number of the most popular visas issued worldwide, except for B (travel), C (transit), G (government), and A (diplomatic). We can see that by far the greatest
 number of visas issued in 2015 (except for the above mentioned visa types) was for F-1 (student visa), for which 644,233 were issued.

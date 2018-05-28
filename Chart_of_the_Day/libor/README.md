@@ -47,15 +47,15 @@ FROM "USD1MTD156N"
 WHERE date_format(time, 'dd') = '01'
 ```
 
-The [`WHERE`](https://github.com/axibase/atsd/tree/master/sql#where-clause) clause is used so that only one data point is used from each month, the LIBOR is a daily index so the number of returned value would be quite large without some limitations. The addition of a second [`WHERE`](https://github.com/axibase/atsd/tree/master/sql#where-clause) clause can target a specific year for a more narrowed returnset.
+The [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause is used so that only one data point is used from each month, the LIBOR is a daily index so the number of returned value would be quite large without some limitations. The addition of a second [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause can target a specific year for a more narrowed result set.
 
 ```sql
 WHERE date_format(time, yyyy) = '2015'
 ```
 
-Previous values may be targeted with [`LAG`](https://github.com/axibase/atsd/tree/master/sql#lag) statements and supported [mathematical functions](https://github.com/axibase/atsd/tree/master/sql#mathematical-functions) may be used in [`SELECT`](https://github.com/axibase/atsd/tree/master/sql#select-expression), `WHERE`, [`GROUP BY`](https://github.com/axibase/atsd/tree/master/sql#group-by-columns), or [`ORDER BY`](https://github.com/axibase/atsd/tree/master/sql#ordering) clauses.
+Previous values may be targeted with [`LAG`](https://axibase.com/docs/atsd/sql/#lag) statements and supported [mathematical functions](https://axibase.com/docs/atsd/sql/#mathematical-functions) may be used in [`SELECT`](https://axibase.com/docs/atsd/sql/#select-expression), `WHERE`, [`GROUP BY`](https://axibase.com/docs/atsd/sql/#group-by-columns), or [`ORDER BY`](https://axibase.com/docs/atsd/sql/#ordering) clauses.
 
-Each of the LIBOR-denominated rates may be explored by changing the [`FROM`](https://github.com/axibase/atsd/tree/master/sql#select-expression) expression to the desired metric name, stored in [ATSD](https://axibase.com/products/axibase-time-series-database/).
+Each of the LIBOR-denominated rates may be explored by changing the [`FROM`](https://axibase.com/docs/atsd/sql/#select-expression) expression to the desired metric name, stored in [ATSD](https://axibase.com/products/axibase-time-series-database/).
 
 The result set is shown here:
 
@@ -82,6 +82,6 @@ Note that months whose first day fell on a weekend or bank holiday will be exclu
 
 * For detailed instructions on using the **Trends** service, see this [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#using-trends);
 
-* Complete [ATSD Documentation](https://github.com/axibase/atsd/blob/master/README.md);
+* Complete [ATSD Documentation](https://axibase.com/docs/atsd/);
 
-* Complete ATSD [SQL Documentation](https://github.com/axibase/atsd/tree/master/sql).
+* Complete ATSD [SQL Documentation](https://axibase.com/docs/atsd/sql/).

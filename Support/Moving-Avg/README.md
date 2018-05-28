@@ -132,6 +132,6 @@ airport traffic) because they are now included in the underlying data.
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/a4d77c47/#fullscreen)
 
-Download the Community Edition of Axibase [here](https://github.com/axibase/atsd/blob/master/installation/README.md#installation),
+Download the Community Edition of Axibase [here](https://axibase.com/docs/atsd/installation/),
 view prepared public datasets [here](https://github.com/axibase/open-data-catalog), and contact [Axibase](https://axibase.com)
 with any questions [here](https://axibase.com/feedback/).

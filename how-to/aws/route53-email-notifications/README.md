@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide described how to configure email alerts when a URL monitored by Route53 health checks becomes inaccessible. It also provides information on how to enhance the alerts with availability portals and outage details using Axibase Time Series Database [rule engine](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine).
+This guide described how to configure email alerts when a URL monitored by Route53 health checks becomes inaccessible. It also provides information on how to enhance the alerts with availability portals and outage details using Axibase Time Series Database [rule engine](https://axibase.com/docs/atsd/rule-engine/).
 
 ## Initial Configuration
 
@@ -83,7 +83,7 @@ Complete the process below to enhance Route53 alarms with your local ATSD instan
     Webhook URL: https://aws-cw:PASSWORD@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
     ```
 
-2. Configure ATSD to accept HTTPS requests from AWS infrastructure servers with a [**CA-signed**](https://github.com/axibase/atsd/blob/master/administration/ssl-ca-signed.md) SSL certificate. Alternatively, use the HTTP protocol when configuring the SNS subscription URL.
+2. Configure ATSD to accept HTTPS requests from AWS infrastructure servers with a [**CA-signed**](https://axibase.com/docs/atsd/administration/ssl-self-signed.html) SSL certificate. Alternatively, use the HTTP protocol when configuring the SNS subscription URL.
 
 3. Open the **Services** drop-down menu and navigate to the **Simple Notification Service** page in the **Application Integration** section of the menu.
 
@@ -107,23 +107,23 @@ Complete the process below to enhance Route53 alarms with your local ATSD instan
 
 You're ready to start receiving detailed email notifications about endpoint health status alerts.
 
-Follow the optional steps below to further enhance this functionality to send context-rich messages to a [collaboration service](https://github.com/axibase/atsd/blob/master/rule-engine/web-notifications.md#web-notifications) such as Slack or Telegram.
+Follow the optional steps below to further enhance this functionality to send context-rich messages to a [collaboration service](https://axibase.com/docs/atsd/rule-engine/notifications/) such as Slack or Telegram.
 
 ### Alarm Notifications in Slack
 
-* Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md). Now, your alarm notifications will be sent via Slack messages as well as email.
+* Configure your local ATSD instance to send messages to **Slack Messenger** by following [this procedure](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html). Now, your alarm notifications will be sent via Slack messages as well as email.
 
 ![](images/route53-alert-slack.png)
 
 ### Alarm Notifications in Telegram
 
-* Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/telegram.md). Now, your alarm notifications will be sent via Telegram messages as well as email.
+* Configure your local ATSD instance to send messages to **Telegram Messenger** by following [this procedure](https://axibase.com/docs/atsd/rule-engine/notifications/telegram.html). Now, your alarm notifications will be sent via Telegram messages as well as email.
 
 ![](images/route53-tg-alert.png)
 
 ### Advanced Configuration
 
-* To configure advanced settings, expand the **Alerts** menu and select **Rules**. Follow the procedure described [here](https://github.com/axibase/atsd/blob/master/rule-engine/web-notifications.md#attachments) to include detailed reports and portals in your alert emails.
+* To configure advanced settings, expand the **Alerts** menu and select **Rules**. Follow the procedure described [here](https://axibase.com/docs/atsd/rule-engine/notifications/#attachments) to include detailed reports and portals in your alert emails.
 
 * Enable the **Attach Details** option to include detailed email reports upon alarm notification:
 

@@ -196,7 +196,7 @@ LIMIT 10
 
 * For an introduction to the **Trends** service, see this [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md);
 
-* For complete SQL Console documentation, including syntax, clauses, and functions not show here, view the [Axibase SQL Repository](https://github.com/axibase/atsd/tree/master/sql#overview) on GitHub;
+* For complete SQL Console documentation, including syntax, clauses, and functions not show here, view the [Axibase SQL Repository](https://axibase.com/docs/atsd/sql/) on GitHub;
 
 * To access the raw data used for this article, visit [Dr. Damodaran's page](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html);
 

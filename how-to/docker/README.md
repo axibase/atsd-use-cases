@@ -12,7 +12,7 @@ While the email option can serve as a work-around for build failures, it's diffi
 
 ![](images/docker-email.png)
 
-This guide describes a solution, based on the rule engine implemented in [Axibase Time Series Database](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine), which polls the Docker Hub build history using the Docker Hub v2 API and generates missing webhooks in case of **build failures** or if the build is queued for more than one hour (this threshold is configurable).
+This guide describes a solution, based on the rule engine implemented in [Axibase Time Series Database](https://axibase.com/docs/atsd/rule-engine/), which polls the Docker Hub build history using the Docker Hub v2 API and generates missing webhooks in case of **build failures** or if the build is queued for more than one hour (this threshold is configurable).
 
 Please note that this solution only applies to automated builds which are executed by Docker Hub itself.
 
@@ -194,11 +194,11 @@ In addition to sending build error notifications, the `dockerhub-build-fail` rul
 
     ![](images/docker-hub-trigger-rule.png)
 
-For a more robust implementation, create a [lookup table](https://github.com/axibase/atsd/blob/master/rule-engine/functions-lookup.md#lookup) to associate images in incoming failure events with trigger tokens.
+For a more robust implementation, create a [lookup table](https://axibase.com/docs/atsd/rule-engine/functions.html#lookup) to associate images in incoming failure events with trigger tokens.
 
 ### Send Alerts
 
-You can also customize the rule to send alerts into your preferred messaging service such as [Slack](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md) or Rocket.Chat.
+You can also customize the rule to send alerts into your preferred messaging service such as [Slack](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html) or Rocket.Chat.
 
 ![](images/rocket-alert.png)
 
@@ -262,6 +262,6 @@ The target service should now receive the JSON payload:
 
 ## References
 
-* Axibase Time Series Database [rule engine documentation](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine).
+* Axibase Time Series Database [rule engine documentation](https://axibase.com/docs/atsd/rule-engine/).
 * Axibase Collector [JSON job documentation](https://github.com/axibase/axibase-collector/blob/master/jobs/json.md).
 * Questions? Issues? Please contact us via an [issue](https://github.com/axibase/atsd-use-cases/issues/new) form.

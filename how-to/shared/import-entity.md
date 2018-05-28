@@ -2,7 +2,7 @@
 
 ![](images/entity-group.png)
 
-An entity configuration describes the monitored object. The [entity record](https://github.com/axibase/atsd/blob/master/api/meta/entity/list.md#fields) includes information about the object such as the name, label, and custom tags.
+An entity configuration describes the monitored object. The [entity record](https://axibase.com/docs/atsd/api/meta/entity/list.html#fields) includes information about the object such as the name, label, and custom tags.
 
 Follow this process to import entity records into your local ATSD instance.
 
