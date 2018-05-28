@@ -1735,7 +1735,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 122                     | -15.28           |
 | 2016 | 115                     | -5.74            |
 
-> Review [SQL Console Documentation](hhttps://axibase.com/docs/atsd/sql/#null) here to read about handling
+> Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
 
 Return to the [Country Index](#country-index-(regional))
