@@ -4,7 +4,7 @@ If you're a [Hetzner](https://hetzner.de) hosting customer in Germany or elsewhe
 
 ## Infrastructure Outage
 
-An outage of this type typically affects shared resources at the datacenter level. Since servers `DC07`, `DC10`, and `DC12` source power from the same grid in Falkenstein, any problems that may occur will affect all data centers simultaneously, which highlights the grid as a single point of failure.
+An outage of this type typically affects shared resources at the datacenter level. Since `DC07`, `DC10`, and `DC12` source power from the same grid in Falkenstein, any problems that may occur will affect all data centers simultaneously, which highlights the grid as a single point of failure.
 
 In this particular case the temporary voltage spike caused a shutdown of both the network gear and dedicated servers in Hetzner datacenters. The UPS backups failed to work for reasons to be investigated. While the network services were restarted relatively quickly, the outage lasted several days. Many dedicated servers, some of which went down during the power outage and others taken down by customers in a futile attempt to reboot the servers with hardware resets, failed to boot.
 
@@ -22,7 +22,7 @@ It was not starting any more so we had to replace it completely except for the d
 
 ## Hetzner Status
 
-The power outage was reported on May 24, 2018 at 09:30 UTC and affected many customers, both physical and virtual.
+The power outage was reported on May 24, 2018 at 09:30 UTC and affected many customers renting both virtual and dedicated servers.
 
 We filed our tickets for each affected server and watched the Hetzner status page, a saved PDF copy of which is linked [here](./resources/hetzner-status.pdf) for reference. As it became clear that the outage would last more than a few hours we started planning for the worst case scenario, at which point we needed to estimate how much time it could take Hetzner support to fix our machines given their processing rate. As the situation stabilized, Hetzner began releasing reports about pending outage tickets.
 
