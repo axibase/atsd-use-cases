@@ -60,6 +60,8 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 
 Sometimes data tell their own story and ChartLab visualizations can grab reader attention to make a statement. The Chart of the Day is reproduced in a variety of publications.
 
+1. [Hetzner May 2018 Outage](Chart_of_the_Day/hetzner-outage/README.md)
+1. [Going from Advanced Tech Exporter to Importer](Chart_of_the_Day/tech-import-export/README.md)
 1. [London Inter-Bank Offered Rate (LIBOR)](Chart_of_the_Day/libor/README.md)
 1. [Profit Margin by Industry Explorer](Chart_of_the_Day/profit-margin/README.md)
 1. [Using Thresholds to Track United States Inflation](Chart_of_the_Day/us-inflation/README.md)
@@ -69,7 +71,6 @@ Sometimes data tell their own story and ChartLab visualizations can grab reader 
 1. [Credit Card Loan Delinquency at 25 Year Low](Chart_of_the_Day/Credit_Delinquency/README.md)
 1. [Outstanding Students Loan Debt Continues to Exceed One Trillion Dollars](Chart_of_the_Day/Student_Loan/README.md)
 1. [United States Voter Turnout Since 1970](Chart_of_the_Day/voter-turnout/README.md)
-1. [International Students in America by Country of Origin](Chart_of_the_Day/International_Students/README.md)
 
 ## Analysis
 
@@ -108,6 +109,7 @@ Visualizations and SQL queries that are indexed by topic to form the Axibase Dat
 
 Older ATSD functionality and features applied to real-world public data to solve common data problems and demonstrate use cases with meaningful information. Some features may have been updated or function differently, see our latest features and functionality used in more recent [Research Articles](#research-articles) or the [Chart of the Day](#chart-of-the-day).
 
+1. [International Students in America by Country of Origin](Chart_of_the_Day/International_Students/README.md)
 1. [Analyzing UK Aviation Statistics using CAA Datasets](UKAviation/README.md)
 1. [European Union Per Capita Debt by Country](Chart_of_the_Day/EU_Debt_percap/README.md)
 1. [Who is Dropping Out in the State with the Fewest Dropouts?](Chart_of_the_Day/IA_Dropouts/README.md)
