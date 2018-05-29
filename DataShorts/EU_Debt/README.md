@@ -10,19 +10,10 @@
 
 ![](Images/eud-01.png)
 
-[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/e4e290d2/9/#fullscreen)
+[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/bfcc9660#fullscreen)
 
 > Open the ChartLab visualization above and use the drop-down menus to navigate between countries or select the European Union
 total. Use both charts to compare two countries, one country to the EU total, or any other desired combination.
-
-## Debt as Percent of GDP
-
-![](Images/eud-03.png)
-
-[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/5d6d6252/5/#fullscreen)
-
-> Open the ChartLab visualization above and use the drop-down menu to navigate between countries. The red line represents
-the European Union debt as a percent of GDP, used as a baseline for reference.
 
 ## Debt as a Portion of the European Union Total
 
