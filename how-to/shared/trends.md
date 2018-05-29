@@ -4,7 +4,7 @@
 
 ## Overview
 
-[**Trends**](https://trends.axibase.com/) is a data visualization sandbox based on the [Axibase Charts](https://axibase.com/docs/atsd/visualization/) library and the [Axibase Time Series Database](https://axibase.com/docs/atsd/) which provides essential data storage and processing tasks.
+[**Trends**](https://trends.axibase.com/) is a data visualization sandbox based on the [Axibase Charts](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) library and the [Axibase Time Series Database](https://axibase.com/docs/atsd/) which provides essential data storage and processing tasks.
 
 The **Trends** service enables users to interact with the data that they are reading about by creating their own visualizations as well as by modifying examples shared by other users.
 
@@ -12,7 +12,7 @@ The **Trends** service enables users to interact with the data that they are rea
 
 ## Syntax
 
-**Trends** uses a convenient [syntax](https://axibase.com/docs/atsd/visualization/widgets/) for creating graphs that will be briefly discussed in this guide. Feel free to ask questions or suggest datasets or topics by raising an issues on our [GitHub](https://github.com/axibase/atsd-use-cases/issues) page.
+**Trends** uses a convenient [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for creating graphs that will be briefly discussed in this guide. Feel free to ask questions or suggest datasets or topics by raising an issues on our [GitHub](https://github.com/axibase/atsd-use-cases/issues) page.
 
 In the **Editor** window you will see the configuration for the current portal. All portals have several levels of settings:
 
@@ -20,13 +20,13 @@ In the **Editor** window you will see the configuration for the current portal. 
 
 * **[group]**: Each row of widgets is defined as a group. **[group]** level settings are applied to an entire row.
 
-* **[widget]**: Widget represents a chart. Define the [type](https://axibase.com/docs/atsd/visualization/widgets/) of chart and its parameters such as title, timespan, formatting.
+* **[widget]**: Widget represents a chart. Define the [type](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) of chart and its parameters such as title, timespan, formatting.
 
-For detailed information about **[widget]** level settings, see this [guide](https://axibase.com/docs/atsd/visualization/widgets/configuring-the-widgets/#series).
+For detailed information about **[widget]** level settings, see this [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/#series).
 
 * **[series]**: Each widget must have at least one series. A series is a ordered and timestamped array of observations loaded from the database and visualized by the widget. **[series]** settings include the metric name, entity name, optional tags as well as any series-specific transformations.
 
-More information about selecting series can be found [here](https://axibase.com/docs/atsd/visualization/widgets/selecting-series/).
+More information about selecting series can be found [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/selecting-series/).
 
 > Some settings may be defined at multiple levels. Settings defined at the **[configuration]** level are inherited by nested levels: **[group]** > **[widget]** > **[series]**. Settings defined at the lower level override settings set at the upper level. For example, if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[series]** level for one chart you define a different entity `y`, entity `x` will be used for all widgets **EXCEPT** for the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
 
@@ -89,7 +89,7 @@ Using the chart above as a configuration example:
         style = stroke-width: 2
 ```
 
-Each of these settings may be modified and new settings may be added based on Charts syntax. Additionally, complex transformations may be performed according to this [guide](../../Solutions/calculated-values), which details common transformations. For more information about advanced portal configuration, use this [guide](https://axibase.com/docs/atsd/visualization/widgets/portal-settings/).
+Each of these settings may be modified and new settings may be added based on Charts syntax. Additionally, complex transformations may be performed according to this [guide](../../Solutions/calculated-values), which details common transformations. For more information about advanced portal configuration, use this [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/).
 
 Likewise, series may be derived from existing data according to this [guide](../../Support/Add-Calculated-Value), which shows each step from one series to another.
 
@@ -162,15 +162,15 @@ The `fred.js` library is available to any **Trends** user and contains the follo
 |------------------------------------|-----------------|-------------|
 | [`MonthlyChange`](https://trends.axibase.com/c5e043b5)                      | alias           | Month-on-month change |
 | [`ChangeFromYearAgo`](https://trends.axibase.com/34165ff1)                  | alias           | Year-on-year change |
-| [`ChangeByOffset`](https://trends.axibase.com/90cfadae)                     | alias, [interval](https://axibase.com/docs/atsd/visualization/end-time/) | Customizable interval-on-interval change |
+| [`ChangeByOffset`](https://trends.axibase.com/90cfadae)                     | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
 | [`MonthlyPercentChange`](https://trends.axibase.com/7bca24b2)               | alias           | Month-on-month percent change |
 | [`PercentChangeFromYearAgo`](https://trends.axibase.com/44627e1d)           | alias           | Year-on-year percent change |
-| [`PercentChangeByOffset`](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/docs/atsd/visualization/end-time/) | Customizable interval-on-interval change |
+| [`PercentChangeByOffset`](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
 | [`CompoundedAnnualRateOfChange`](https://trends.axibase.com/f04b65fc)       | alias           | Geometric-progression ratio which compounds change annually
 | [`ContinuouslyCompoundedRateOfChange`](https://trends.axibase.com/16ea90bf) | alias           | Geometric-progression ratio which continuously compounds change over an infinitesimally small interval
 | [`NaturalLog`](https://trends.axibase.com/897f53e1)                         | alias           | Natural Logarithm (`LOG` base constant `e`)
 | [`IndexMax`](https://trends.axibase.com/3db3bfa7)                           | alias           | Maximum series value is used as index value
-| [`Index`](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/docs/atsd/visualization/end-time/)     | User-selected value is used as index value
+| [`Index`](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/products/axibase-time-series-database/visualization/end-time/)     | User-selected value is used as index value
 
 Open any of the visualizations above to see syntax and visual demonstrations of each function.
 
