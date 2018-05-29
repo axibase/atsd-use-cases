@@ -179,9 +179,9 @@ ORDER BY date_format(time, 'MM-dd')
 
 Syntax Features:
 
-* [`date_format`](https://axibase.com/docs/atsd/sql/#date-functions): date function which converts Unix millisecond time to a user-defined format.
-* [`LAG(columnName)`](https://axibase.com/docs/atsd/sql/): value function which returns the previous data point for the selected column. Very useful for time-on-time comparisons such as the one shown here.
-* [`INTERPOLATE(period)`](https://axibase.com/docs/atsd/sql/examples/interpolate.html): value function which is used to fill gaps for irregular series. Used in this example to regularize data which has a timestamp other than the observed date.
+* [`date_format`](https://github.com/axibase/atsd/blob/master/sql/README.md#date-functions): date function which converts Unix millisecond time to a user-defined format.
+* [`LAG(columnName)`](https://github.com/axibase/atsd/blob/master/sql/README.md#lag): value function which returns the previous data point for the selected column. Very useful for time-on-time comparisons such as the one shown here.
+* [`INTERPOLATE(period)`](https://github.com/axibase/atsd/blob/master/sql/README.md#functions): value function which is used to fill gaps for irregular series. Used in this example to regularize data which has a timestamp other than the observed date.
 
 Result:
 
@@ -219,7 +219,7 @@ ORDER BY "Day in Year", time
 
 Syntax Features:
 
-* [`CAST`](https://axibase.com/docs/atsd/sql/#cast): value function which changes a number into a string or vice versa. Time values are cast as numbers so they may be interpolated.
+* [`CAST`](https://github.com/axibase/atsd/blob/master/sql/README.md#cast): value function which changes a number into a string or vice versa. Time values are cast as numbers so they may be interpolated.
 
 **Result:**
 
@@ -234,6 +234,6 @@ Syntax Features:
 | 2017 | Mar-30 | 89.00       | 92.47          | 94.11          | -1.64           | -1.74         |
 | 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          |
 
-SQL console supports the [`ROUND`](https://axibase.com/docs/atsd/sql/#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
+SQL console supports the [`ROUND`](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
 
 ![](images/dec-pre.png)

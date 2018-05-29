@@ -177,7 +177,7 @@ time-offset = 1 year
 
 #### `fred.PercentChangeFromYearAgo`
 
-A number of built-in [statistical functions](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) are already supported by ChartLab, and [user-defined functions](../how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
+A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported by ChartLab, and [user-defined functions](../how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
 
 ![](Images/2018-q2-7.png)
 

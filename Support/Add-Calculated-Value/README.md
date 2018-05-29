@@ -76,9 +76,9 @@ SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt (Million Euro)", 100*
 ORDER BY datetime
 ```
 
-This query makes use of the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function, which lets the user
+This query makes use of the [`LAG`](https://github.com/axibase/atsd/blob/master/sql/README.md#lag) function, which lets the user
 access the previous row of the same result set without robust syntax. When used with the first row in a given dataset, the `LAG` function returns
-a [`NULL`](https://axibase.com/docs/atsd/sql/#null) value.
+a [`NULL`](https://github.com/axibase/atsd/blob/master/sql/README.md#null) value.
 
 The underlying formula in this query is simple:
 
