@@ -54,11 +54,11 @@ This completes the verification stage. You now have data which can be reported o
 
 Since we need a flexible way of filtering, grouping, and formatting results, we will rely on [SQL](https://axibase.com/docs/atsd/sql/) implemented in Axibase Time Series Database to prepare reports, including time series extensions for time-zone aggregations.
 
-In ATSD, SQL queries can be executed via web-based console, an external reporting tool using a JDBC/ODBC driver, or with the built-in report generator with email delivery, web publishing, and file generation options. We will rely on the web-based SQL console to test and fine-tune these queries.
+In ATSD, SQL queries can be executed via web-based console, an external reporting tool using a JDBC/ODBC driver, or with the built-in report generator with email delivery, web publishing, and file generation options. We will rely on the web-based [SQL console](https://axibase.com/docs/atsd/sql/) to test and fine-tune these queries.
 
 ### Base Report
 
-To get started, open the web SQL console from the toolbar on the left and execute the sample SQL query below:
+To get started, open the web-based [SQL console](https://axibase.com/docs/atsd/sql/) interface in [ATSD](https://axibase.com/docs/atsd/) from the toolbar on the left and execute the sample SQL query below:
 
 ```sql
 SELECT entity AS ID, entity.tags.url AS URL,

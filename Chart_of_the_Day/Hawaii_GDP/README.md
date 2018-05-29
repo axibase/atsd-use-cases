@@ -10,7 +10,7 @@ knows something the rest of us don't.
 
 Using [data](https://catalog.data.gov/dataset/dbedt-hawaii-nominal-gross-domestic-product-2000-2010-59862)
 from the State of Hawaii's Department of Business, Economic Development, and Tourism, and
-the [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), the fiftieth state's economic
+the [Axibase Time Series Database](https://axibase.com/docs/atsd/), the fiftieth state's economic
 performance can be explored using a number of analytic tools. Shown above are two
 visualizations of Hawaii's economy: its percent growth from 2000 to 2010 and its nominal
 GDP value for the same years. GDP is generally considered to be the godfather of economic

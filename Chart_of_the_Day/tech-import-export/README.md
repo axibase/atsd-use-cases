@@ -64,6 +64,6 @@ With plans to increase munitions expenditures in its [next budget](https://www.d
 
 ### Accessing Data
 
-* Data is stored in the [**Trends**](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md) instance of ATSD. To work with this or [other](https://trends.axibase.com/public/reference.html) datasets stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
+* Data is stored in the [**Trends**](../../how-to/shared/trends.md) instance of ATSD. To work with this or [other](https://trends.axibase.com/public/reference.html) datasets stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
 * The original FRED [blog post](https://fredblog.stlouisfed.org/2018/05/the-high-tech-trade-balance/) and the three datasets used in this article: [BOPGTB](https://fred.stlouisfed.org/series/BOPGTB), [EXP0007](https://fred.stlouisfed.org/series/EXP0007), and [IMP0007](https://fred.stlouisfed.org/series/IMP0007).
 * Further [reading](https://www.brookings.edu/research/americas-advanced-industries-new-trends/) on growth in America's advanced technologies industries.

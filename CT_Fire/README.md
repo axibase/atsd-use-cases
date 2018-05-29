@@ -41,7 +41,7 @@ calls is increasing, and even less helpful in making predictions about future ca
 for those working in emergency services, and thanks to an increased focus on data tracking, that readiness can be buttressed
 by sound data analysis.
 
-Using the SQL Console in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) to query the dataset:
+Using the SQL Console in [Axibase Time Series Database](https://axibase.com/docs/atsd/) to query the dataset:
 
 ### Call Numbers by Year
 

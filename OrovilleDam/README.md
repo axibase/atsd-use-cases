@@ -15,7 +15,7 @@ Oroville dam.
 
 In this article we will analyze a dataset from the [California Department of Water Resources (CDWR)](https://cdec.water.ca.gov/index.html) looking at the several vital statistics for the
 Oroville dam. This article provides **realtime analysis** with Chart Lab graphs (updated **hourly** and **automatically** with data taken from the CDWR website), which show the current situation at the dam. Additionally, this article illustrates
-how publicly available data from the California DWR can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](https://axibase.com/products/axibase-time-series-database/)
+how publicly available data from the California DWR can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](https://axibase.com/docs/atsd/)
 for interactive analysis with graphical representation of open data published by government organizations.
 
 ## Oroville Dam Dataset

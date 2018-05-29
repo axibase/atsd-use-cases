@@ -4,7 +4,7 @@
 
 [SQL Console](https://axibase.com/docs/atsd/sql/)
 
-[ChartLab](https://apps.axibase.com/chartlab) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+[ChartLab](https://apps.axibase.com/chartlab) in [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 
 ## Total Connecticut Prison Population by Quarter (2009 - 2017)
 

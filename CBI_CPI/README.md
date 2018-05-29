@@ -17,11 +17,11 @@ stability during the worldwide recession of the late 2000's. The bank itself cre
 independently and its current Governor is considered among [the best central bankers in the world](https://d2tyltutevw8th.cloudfront.net/media/document/central-bankers-2016-1472776973.pdf).
 
 Using [data](http://www.boi.org.il/en/DataAndStatistics/Pages/Default.aspx) from the Bank of Israel, the phenomenon of
-liquid currency's decreasing intrinsic value over time can be observed and with analytics tools in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/),
+liquid currency's decreasing intrinsic value over time can be observed and with analytics tools in [Axibase Time Series Database](https://axibase.com/docs/atsd/),
 these changes can be tracked and interpreted to learn why simply holding your nest egg in
 a savings account is quickly becoming the modern-day equivalent of the shoebox of cash hidden underneath your bed.
 
-The [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is also developed for integration with a number of industry standard advanced analytics
+The [Axibase Time Series Database](https://axibase.com/docs/atsd/) is also developed for integration with a number of industry standard advanced analytics
 tools, if it is preferable to perform calculations in an interface that is already familiar to you, follow the integration
 examples in the documentation below to extract a series from ATSD, perform calculations in the interface of your choice, and
 then submit the new, derived series back in to ATSD:

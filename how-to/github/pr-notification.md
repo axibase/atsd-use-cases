@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide shows how to configure GitHub to alert you when anyone opens a new pull request in your repository. This feature allows you to monitor your repository and receive notifications the moment a new PR is opened. Follow the instructions to configure the notifications to be sent directly to repository collaborators through a third-party messenger service with [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/).
+This guide shows how to configure GitHub to alert you when anyone opens a new pull request in your repository. This feature allows you to monitor your repository and receive notifications the moment a new PR is opened. Follow the instructions to configure the notifications to be sent directly to repository collaborators through a third-party messenger service with [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
 ![](images/workflow-three.png)
 

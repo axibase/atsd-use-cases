@@ -9,7 +9,7 @@ desired to return to a time when America was producing more than it was taking i
 the United States represented **40%** of the world's GDP in **1960**. By 2015, that number had dropped to only **24%**. According to the [Bureau of Labor Statistics (BLS)](https://www.bls.gov/opub/mlr/2012/01/art4full.pdf), by 2020 the U.S. is predicted to have **5.7
 million** less manufacturing jobs than it had in 2000. Additionally, the percentage of Americans employed in manufacturing dropped from **19%** in 1980 to **8%** in 2016. In this article we will analyze a dataset from [census.gov](https://www.census.gov) looking at
 [America's international trade balance](https://www.census.gov/foreign-trade/balance/country.xlsx) from 1985 through the present day. This research article illustrates how
-publicly available data from census.gov can be easily loaded into the non-relational [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+publicly available data from census.gov can be easily loaded into the non-relational [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 for interactive analysis with SQL and graphical representation of open data published by government and multilateral organizations. This article provides both sample SQL queries and charts,
 as well as instructions on how to install your own ATSD instance and populate it with the underlying data.
 
@@ -21,7 +21,7 @@ This dataset contains import and export statistics collected monthly from 1985 t
 world regions (such as Europe and Asia), trade unions (such as the European Union or NAFTA), as well as various other organizations (such as [OPEC](https://en.wikipedia.org/wiki/OPEC)).
 
 While Excel can provide quick answers to simple questions, when it comes to complex analysis it is much more convenient to interact with the data once it is loaded into a database. The
-[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to work with this dataset:
+[Axibase Time Series Database](https://axibase.com/docs/atsd/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to work with this dataset:
 
 * Interactive graphs from [Chart Lab](../ChartLabIntro/README.md);
 
@@ -344,7 +344,7 @@ in this article? Download ATSD, explore this dataset, and make up your own mind.
 Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector and create SQL queries for analyzing America's trade balance statistics:
 
 1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
-2. [Install the ATSD database](https://github.com/axibase/atsd/blob/master/installation/docker.md#option-2-configure-collector-account-manually) on in your local Docker configuration.
+2. [Install the ATSD database](https://axibase.com/docs/atsd/installation/docker.html) on in your local Docker configuration.
 3. Save the [Excel file](https://www.census.gov/foreign-trade/balance/country.xlsx) in CSV format.
 4. Log in to ATSD by navigating to `https://docker_host:8443/`.
 5. Import the `us-trade-ie-csv-parser.xml` file into ATSD. For a more detailed description, refer to step 9 from this [step-by-step walkthrough](../USMortality/configuration.md) from our article on [U.S. mortality statistics](../USMortality/README.md).

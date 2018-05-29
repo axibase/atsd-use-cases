@@ -187,7 +187,7 @@ Given that a higher percentage (60+%) of early returns is submitted via tax prep
 ## Querying Data
 
 You can take a closer
-look at the IRS filing statistics by installing a local [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) instance and loading the data for interactive analysis with SQL and charts.
+look at the IRS filing statistics by installing a local [Axibase Time Series Database](https://axibase.com/docs/atsd/) instance and loading the data for interactive analysis with SQL and charts.
 
 The list of available series:
 

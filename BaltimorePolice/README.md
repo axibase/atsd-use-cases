@@ -319,8 +319,7 @@ someone with whom they come in contact.
 ### Weapon of Homicides
 
 The City of Baltimore includes figures that consider the weapon used in the commission of
-recorded homicides, to query the SQL Console about this information, this syntax
-is used:
+recorded homicides, queried in [SQL Console](https://axibase.com/docs/atsd/sql/):
 
 ```sql
 SELECT tags.weapon, count(*)
@@ -597,7 +596,7 @@ value for `total-value = x` needs to be added under the `[widget]` cluster as sh
 The default setting for the `[other]` command is `false` so if the `display = true` command
 is not entered, the visualization will lack the `total-value` information.
 
-### Performing Queries in the SQL Console
+### Performing Queries in SQL Console
 
 ```sql
 SELECT tags.$TAG_NAME$, count(*), datetime
@@ -606,7 +605,7 @@ GROUP BY tags.$TAG_NAME$, PERIOD(1 MONTH)
   ORDER BY tags.$TAG_NAME$, datetime
 ```
 
-Using this generic model, a series of queries can be performed in the [SQL Console](https://axibase.com/docs/atsd/sql/).
+Using this generic model, a series of queries can be performed in [SQL Console](https://axibase.com/docs/atsd/sql/).
 
 The `tags.$TAG_NAME$` corresponds to the metric the user is interested in querying.
 

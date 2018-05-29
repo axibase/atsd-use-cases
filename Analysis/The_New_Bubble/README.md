@@ -36,7 +36,7 @@ the downturn of 2009, which saw a loss of about a third of the average family's 
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
-The above visualization, made using the non-relational [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/),
+The above visualization, made using the non-relational [Axibase Time Series Database](https://axibase.com/docs/atsd/),
 tracks the growth of the United States GDP, Gross Debt, and Gross Debt Market Valuation. Since August 2011, the market value of the
 government's debt has outstripped the value of the GDP meaning that the United States' debt is worth more than the country
 is producing, that is, the traditionally safe United States index is primed to lose its position as the place to hold money

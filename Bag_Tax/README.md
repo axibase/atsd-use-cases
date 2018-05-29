@@ -44,7 +44,7 @@ increase value (+14,503 persons) which gives these estimates:
 ### Overall Bag Usage
 
 Because of the 2012 implementation date of the Montgomery County Bag Tax, records about businesses' bag usage before 2012
-are scarce. However, tracking from 2012 until 2016 is possible and can be used to grade plastic bag usage using the
+are scarce. However, tracking from 2012 until 2016 is possible and can be used to grade plastic bag usage using
 [SQL Console](https://axibase.com/docs/atsd/sql/):
 
 ```sql

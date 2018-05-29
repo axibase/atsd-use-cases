@@ -6,7 +6,7 @@
 
 * Data Source: [The Institute for Democracy and Electoral Assistance](http://www.idea.int/data-tools/question-countries-view/521/295/ctr)
 
-* Visualization Tool: [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+* Visualization Tool: [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 
 One of the key indicators of a healthy democracy is active participation by its citizenry, who are responsible for electing
 officials to implement the will of the people. Tracking this data since the 1970 elections shows a steadily decreasing voter

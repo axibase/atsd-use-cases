@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide shows how to configure GitHub to alert you when someone begins to watch your repository. This feature allows you to monitor your repository's followers. Follow the instructions to configure the notifications to be sent to you directly through a third-party messenger service with [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/).
+This guide shows how to configure GitHub to alert you when someone begins to watch your repository. This feature allows you to monitor your repository's followers. Follow the instructions to configure the notifications to be sent to you directly through a third-party messenger service with [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
 ![](images/workflow-two.png)
 

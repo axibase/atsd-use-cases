@@ -4,7 +4,7 @@ Source Document: [FRED Research](https://research.stlouisfed.org/publications/ec
 
 Source Authors: YiLi Chien and Paul Morris
 
-Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 
 ## Treasury Yields and the Federal Funds Rate (1998-2017)
 

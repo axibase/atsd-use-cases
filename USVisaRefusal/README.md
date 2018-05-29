@@ -9,7 +9,7 @@ visa applications?
 
 In this article we will analyze a dataset from [travel.state.gov](https://travel.state.gov) looking at non-immigrant visa figures from 1997 through 2015 together with visa refusal rates
 from 2006 to 2016 (also from [travel.state.gov](https://travel.state.gov)). This research article illustrates how publicly available data from travel.state.gov collected by government
-organizations can be easily loaded into the non-relational [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) for interactive analysis and
+organizations can be easily loaded into the non-relational [Axibase Time Series Database](https://axibase.com/docs/atsd/) for interactive analysis and
 visual outputs with Chart Lab charts and SQL queries. Additionally, this article contains instructions on how to install your own ATSD instance and populate it with raw data.
 
 ## U.S. Visa Dataset and Refusal Rates

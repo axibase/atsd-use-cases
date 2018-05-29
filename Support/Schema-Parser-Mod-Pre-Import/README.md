@@ -6,9 +6,9 @@ Data is not always recorded ideally for a given analysis. Perhaps the metrics th
 in a given file, or maybe calculations must be done with the given data in order to arrive to a dataset that better suits
 your current needs.
 
-With [Schema-Based Parsing](https://axibase.com/docs/atsd/parsers/csv/) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
-data can be modified upon import so that working with it in the [SQL Console](https://axibase.com/docs/atsd/sql/)
-or [ChartLab](https://apps.axibase.com/chartlab) is more useful.
+With [Schema-Based Parsing](https://axibase.com/docs/atsd/parsers/csv/) in [Axibase Time Series Database](https://axibase.com/docs/atsd/)
+data may be modified upon import so that working with it in [SQL Console](https://axibase.com/docs/atsd/sql/)
+or [ChartLab](https://apps.axibase.com/chartlab) is more meaningful.
 
 ## Data
 

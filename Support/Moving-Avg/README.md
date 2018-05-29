@@ -19,7 +19,7 @@ would destroy the fine granularization that was created by monthly collection ov
 average baseline calculated over the entire observation period would return results that neglected current trends because
 four decades worth of data would be regarded equally.
 
-Enter [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
+Enter [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
 setting.
 
 ## Data

@@ -4,7 +4,7 @@ _Source_: EuroStat [Immigration](http://ec.europa.eu/eurostat/tgm/table.do?tab=t
 
 _Visualization_: [ChartLab](https://apps.axibase.com/chartlab)
 
-_Database_: [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+_Database_: [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 
 Annual data recording immigration and emigration from member countries of the European Union, sorted by nation and shown alongside
 net migration data.

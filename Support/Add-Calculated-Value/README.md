@@ -17,7 +17,7 @@ as supporting evidence. Percent growth is much more broadly applicable when comp
 the differences in overall company worth and currency value in favor of relative rates of change.
 
 Thanks to the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting in [ChartLab](https://apps.axibase.com/chartlab) and support for on-the-fly value modification in [SQL Console](https://axibase.com/docs/atsd/sql/)
-in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), calculations derived from underlying data do not require a secondary support program.
+in [Axibase Time Series Database](https://axibase.com/docs/atsd/), calculations derived from underlying data do not require a secondary support program.
 Calculating a derived value and returning the results can be handled completely from within the ATSD or ChartLab user interface,
 and even exported for further use elsewhere.
 

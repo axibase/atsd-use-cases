@@ -13,7 +13,7 @@ The article drew information from a variety of polling agencies who had sampled 
 
 ## Metrics Legend
 
-The metrics stored in [ATSD](https://axibase.com/products/axibase-time-series-database/) follow the same naming patters as the [raw data](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html) stored on Dr. Damodaran's website and are abbreviated as follows:
+The metrics stored in [ATSD](https://axibase.com/docs/atsd/) follow the same naming patters as the [raw data](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html) stored on Dr. Damodaran's website and are abbreviated as follows:
 
 | Metric Name | Definition |
 |:---|:---|
@@ -34,7 +34,7 @@ The metrics stored in [ATSD](https://axibase.com/products/axibase-time-series-da
 |`sg&a/_sales`| The sales, general, and administrative costs associated with each industry.|
 |`stock-based_compensation/sales`| The amount of profit re-purposed as stock options for eligible employees. |
 
-Using the [**Trends**](https://trends.axibase.com/) service and SQL Console tool, these data may be visualized and queried.
+Using the [**Trends**](https://trends.axibase.com/) service and [SQL Console](https://axibase.com/docs/atsd/) tool, these data may be visualized and queried.
 
 ## Trading Value
 
@@ -194,9 +194,9 @@ LIMIT 10
 
 ## Resources
 
-* For an introduction to the **Trends** service, see this [guide](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md);
+* For an introduction to the **Trends** service, see this [guide](../../how-to/shared/trends.md);
 
-* For complete SQL Console documentation, including syntax, clauses, and functions not show here, view the [Axibase SQL Repository](https://axibase.com/docs/atsd/sql/) on GitHub;
+* View complete SQL Console [documentation](https://axibase.com/docs/atsd/sql);
 
 * To access the raw data used for this article, visit [Dr. Damodaran's page](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html);
 
