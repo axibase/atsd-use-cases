@@ -26,7 +26,7 @@ Axibase [tracked](2017-3.md) record-high expatriation during 2017; in the fourth
 
 The underlying IRS report contains the names of the individuals who expatriated in the first quarter of 2018.
 
-Support for date aggregations in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) SQL syntax allows reporting on both the annual and quarterly basis.
+Support for date aggregations in [Axibase Time Series Database](https://axibase.com/docs/atsd/) SQL syntax allows reporting on both the annual and quarterly basis.
 
 ### Annual Data
 
@@ -122,7 +122,7 @@ The Web Crawler operates according to this workflow:
 
 ![](Images/crawler-flow.png)
 
-The Web Crawler reads incoming data from the Federal Register and parses it into [`series` commands](https://github.com/axibase/atsd/blob/master/api/network/series.md), readable by [ATSD](https://axibase.com/products/axibase-time-series-database/), the database which hosts all the data used in this article and supports the background operations of SQL Console. A `series` command template is shown below:
+The Web Crawler reads incoming data from the Federal Register and parses it into [`series` commands](https://axibase.com/docs/atsd/api/network/series.html), readable by [ATSD](https://axibase.com/docs/atsd/), the database which hosts all the data used in this article and supports the background operations of [SQL Console](https://axibase.com/docs/atsd/sql/). A `series` command template is shown below:
 
 ```ls
 series d:{iso-date} e:{entity} t:{tag-1}={val-1} m:{metric-1}={number}
@@ -177,7 +177,7 @@ time-offset = 1 year
 
 #### `fred.PercentChangeFromYearAgo`
 
-A number of built-in [statistical functions](https://github.com/axibase/atsd/blob/master/rule-engine/functions-statistical.md) are already supported by ChartLab, and [user-defined functions](../how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
+A number of built-in [statistical functions](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) are already supported by ChartLab, and [user-defined functions](../how-to/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
 
 ![](Images/2018-q2-7.png)
 

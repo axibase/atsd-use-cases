@@ -8,7 +8,7 @@
 
 **Data Source**: [Federal Reserve Economic Data](https://fred.stlouisfed.org/series/DRCCLACBS#0)
 
-**Visualization Tool**: [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+**Visualization Tool**: [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 
 Since credit card loan delinquency rose to almost seven percent at the height of the most recent global recession, United States
 consumers have shown a positive trend in reducing the percent of consumers paying off their personal credit card debt delinquently.

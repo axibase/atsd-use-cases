@@ -6,14 +6,14 @@ Interim 2018 tax filing statistics bring hope that Americans have returned to a 
 
 ### Introduction
 
-Each year the Internal Revenue Service (IRS) releases [public data](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics) about the number of Americans who have filed their annual income tax paperwork. The data for 2018 shows that American filing practice is roughly in line with the previous several years although minor differences can always be detected between any two datasets. Open-source data may be visualized using [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and queried with [SQL console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview).
+Each year the Internal Revenue Service (IRS) releases [public data](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics) about the number of Americans who have filed their annual income tax paperwork. The data for 2018 shows that American filing practice is roughly in line with the previous several years although minor differences can always be detected between any two datasets. Open-source data may be visualized using [Axibase Time Series Database](https://axibase.com/docs/atsd/) and queried with [SQL console](https://axibase.com/docs/atsd/sql/).
 
 We [analyzed](../IRSTaxFilings/README.md) IRS filing statistics after Tax Day 2017 saw a higher number of people filing [later than usual](https://www.reuters.com/article/us-money-taxes-delays/u-s-taxpayers-procrastinate-on-filing-returns-this-year-idUSKBN16L18C) or [not at all](https://www.bloomberg.com/news/articles/2017-04-17/millions-of-americans-still-haven-t-filed-their-taxes) according to Reuters and Bloomberg, respectively. The income tax makes up roughly [half](https://www.nationalpriorities.org/budget-basics/federal-budget-101/revenues/) of the federal government's annual revenue (around $1.48 trillion) so a surge in late or missing filings would wreak havoc on the U.S. budget for the subsequent year.
 
 ### Objectives
 
 * Visualize public data using [ChartLab](https://apps.axibase.com/chartlab);
-* Query data using **SQL console**;
+* Query data using [**SQL console**](https://axibase.com/docs/atsd/sql/);
 * Compare and contrast previous-year filing statistics with current-year data via chart configurations and queries.
 
 ### Visualization
@@ -179,9 +179,9 @@ ORDER BY date_format(time, 'MM-dd')
 
 Syntax Features:
 
-* [`date_format`](https://github.com/axibase/atsd/blob/master/sql/README.md#date-functions): date function which converts Unix millisecond time to a user-defined format.
-* [`LAG(columnName)`](https://github.com/axibase/atsd/blob/master/sql/README.md#lag): value function which returns the previous data point for the selected column. Very useful for time-on-time comparisons such as the one shown here.
-* [`INTERPOLATE(period)`](https://github.com/axibase/atsd/blob/master/sql/README.md#functions): value function which is used to fill gaps for irregular series. Used in this example to regularize data which has a timestamp other than the observed date.
+* [`date_format`](https://axibase.com/docs/atsd/sql/#date-functions): date function which converts Unix millisecond time to a user-defined format.
+* [`LAG(columnName)`](https://axibase.com/docs/atsd/sql/): value function which returns the previous data point for the selected column. Very useful for time-on-time comparisons such as the one shown here.
+* [`INTERPOLATE(period)`](https://axibase.com/docs/atsd/sql/examples/interpolate.html): value function which is used to fill gaps for irregular series. Used in this example to regularize data which has a timestamp other than the observed date.
 
 Result:
 
@@ -219,7 +219,7 @@ ORDER BY "Day in Year", time
 
 Syntax Features:
 
-* [`CAST`](https://github.com/axibase/atsd/blob/master/sql/README.md#cast): value function which changes a number into a string or vice versa. Time values are cast as numbers so they may be interpolated.
+* [`CAST`](https://axibase.com/docs/atsd/sql/#cast): value function which changes a number into a string or vice versa. Time values are cast as numbers so they may be interpolated.
 
 **Result:**
 
@@ -234,6 +234,6 @@ Syntax Features:
 | 2017 | Mar-30 | 89.00       | 92.47          | 94.11          | -1.64           | -1.74         |
 | 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          |
 
-SQL console supports the [`ROUND`](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
+SQL console supports the [`ROUND`](https://axibase.com/docs/atsd/sql/#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
 
 ![](images/dec-pre.png)

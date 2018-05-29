@@ -27,7 +27,7 @@ a district is found to have witnessed an above average number of murders during 
 period, the alternative hypothesis will predict that the district will have also seen an
 above average number of incidents of police use of force.
 
-Both of these datasets can be analyzed in the Axibase Time Series Database which provides a built-in support for the [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md) Open Data format used by the majority of government agencies in the United States. ATSD also includes graphics capabilities to analyze the data with [SQL](https://github.com/axibase/atsd/blob/master/sql/README.md#overview)
+Both of these datasets can be analyzed in the Axibase Time Series Database which provides a built-in support for the [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md) Open Data format used by the majority of government agencies in the United States. ATSD also includes graphics capabilities to analyze the data with [SQL](https://axibase.com/docs/atsd/sql/)
 and visualize it with graphs.
 
 > For information about performing these steps in your own ATSD instance, see the [Action Items](#Action-Items)
@@ -267,7 +267,7 @@ an increase in police use of force? Do districts that see high levels of police 
 also see high levels of homicide? Is there a correlation at all?
 
 Similar to the first data set, [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md)
-should be used to compile the data in meaningful way and a [Structured Query Language](https://github.com/axibase/atsd/blob/master/sql/README.md#overview)
+should be used to compile the data in meaningful way and a [Structured Query Language](https://axibase.com/docs/atsd/sql/)
 should be used again.
 
 >For a more detailed explanation of performing SQL Queries, see the [Appendix](#Appendix)
@@ -319,8 +319,7 @@ someone with whom they come in contact.
 ### Weapon of Homicides
 
 The City of Baltimore includes figures that consider the weapon used in the commission of
-recorded homicides, to query the SQL Console about this information, this syntax
-is used:
+recorded homicides, queried in [SQL Console](https://axibase.com/docs/atsd/sql/):
 
 ```sql
 SELECT tags.weapon, count(*)
@@ -597,7 +596,7 @@ value for `total-value = x` needs to be added under the `[widget]` cluster as sh
 The default setting for the `[other]` command is `false` so if the `display = true` command
 is not entered, the visualization will lack the `total-value` information.
 
-### Performing Queries in the SQL Console
+### Performing Queries in SQL Console
 
 ```sql
 SELECT tags.$TAG_NAME$, count(*), datetime
@@ -606,7 +605,7 @@ GROUP BY tags.$TAG_NAME$, PERIOD(1 MONTH)
   ORDER BY tags.$TAG_NAME$, datetime
 ```
 
-Using this generic model, a series of queries can be performed in the [SQL Console](https://github.com/axibase/atsd/tree/master/sql#overview).
+Using this generic model, a series of queries can be performed in [SQL Console](https://axibase.com/docs/atsd/sql/).
 
 The `tags.$TAG_NAME$` corresponds to the metric the user is interested in querying.
 
@@ -637,7 +636,7 @@ GROUP BY period(1 day)
   ORDER BY datetime
 ```
 
-The period of observation can be modified on the third line using a myriad of [time units](https://github.com/axibase/atsd/blob/master/api/data/series/time-unit.md).
+The period of observation can be modified on the third line using a myriad of [time units](https://axibase.com/docs/atsd/api/data/series/time-unit.html).
 
 ### Monthly Police Incident Data Without Interpolation
 

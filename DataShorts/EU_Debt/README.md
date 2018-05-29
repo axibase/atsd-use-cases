@@ -4,7 +4,7 @@
 
 **Visualization**: [ChartLab](https://apps.axibase.com/chartlab)
 
-**Structured Query Language**: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+**Structured Query Language**: [SQL Console](https://axibase.com/docs/atsd/sql/) in [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 
 ## Debt Total
 

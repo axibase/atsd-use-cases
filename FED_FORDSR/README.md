@@ -21,7 +21,7 @@ about these consumers and their monetary practices to better inform their decisi
 ## Data
 
 Provided by the [Federal Reserve](https://www.federalreserve.gov/), this [dataset](https://www.federalreserve.gov/datadownload/Download.aspx?rel=FOR&series=91e0f9a6b8e6a4b1ef334ce2eaf22860&filetype=csv&label=include&layout=seriescolumn&from=01/01/1980&to=12/31/2017)
-must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interpret (`Q/q` letter is not supported). We also need to discard metadata lines contained in the multi-line header. This can be accomplished with a [schema-based parser](https://axibase.com/products/axibase-time-series-database/writing-data/csv/) that provides granular control over the document's rows and columns using RFC 7111 selectors and Javascript:
+must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interpret (`Q/q` letter is not supported). We also need to discard metadata lines contained in the multi-line header. This can be accomplished with a [schema-based parser](https://axibase.com/docs/atsd/parsers/csv/) that provides granular control over the document's rows and columns using RFC 7111 selectors and Javascript:
 
 ```javascript
 /*
@@ -66,7 +66,7 @@ releases this number each quarter.
 > Use the dropdown menus at the top of the visualization screen to navigate through time, selecting the `starttime` and `endtime` values
 to observe a desired period.
 
-The data can also be queried with a structured query language in the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md).
+The data can also be queried using the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) in [ATSD](https://axibase.com/docs/atsd/).
 The data will be aggregated annually, derived from the average value of each quarter within a given year:
 
 ```sql

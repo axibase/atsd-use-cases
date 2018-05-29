@@ -106,7 +106,7 @@ ORDER BY time
 ---
 
 You can take a closer
-look at the statistics by following the below steps to install your own [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) instance.
+look at the statistics by following the below steps to install your own [Axibase Time Series Database](https://axibase.com/docs/atsd/) instance.
 
 1. Install the ATSD database from a Docker image:
 
@@ -123,7 +123,7 @@ look at the statistics by following the below steps to install your own [Axibase
 4. Export files from Statbank in Matrix TSV format (see instructions at the end of this article) or upload prepared tsv files as outlined in steps 5 and 6 below.
 5. Upload the [`total.tsv`](Resources/total.tsv) file using the `nor-transport` parser.
 6. Upload the [`by-make-1.tsv`](Resources/by-make-1.tsv) and [`by-make-2.tsv`](Resources/by-make-2.tsv) files using the `nor-transport-make` parser.
-7. To check that data has been imported, open the SQL Console tab in the top menu and execute this query:
+7. To check that data has been imported, open the SQL Console tab from the side menu and execute this query:
 
   ```sql
   SELECT datetime, value
@@ -132,7 +132,7 @@ look at the statistics by following the below steps to install your own [Axibase
     ORDER BY datetime
   ```
 
-* Execute SQL queries for `nor.registered_vehicles` and `nor.registered_vehicles_by_make` to analyze statistics in tabular format using [SQL](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) syntax implemented in ATSD.
+* Execute SQL queries for `nor.registered_vehicles` and `nor.registered_vehicles_by_make` to analyze statistics in tabular format using [SQL](https://axibase.com/docs/atsd/sql/) syntax implemented in ATSD.
 * Create new [visualizations](https://axibase.com/products/axibase-time-series-database/visualization/) on **Configuration > Portals** page using chart configurations from the ChartLab examples above.
 
 > Feel free to contact us with installation and technical support issues via the [feedback](https://axibase.com/feedback/) form.

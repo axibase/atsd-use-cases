@@ -11,7 +11,7 @@ The United States provides retirement security for the elderly and disabled in a
 
 ## Objectives
 
-Using [**Forecasting**](https://github.com/axibase/atsd/blob/master/forecasting/README.md#data-forecasting) functionality from [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), current population figures and birth data, models may be created to predict trends in America's potential population crisis.
+Using [**Forecasting**](https://axibase.com/docs/atsd/forecasting/) functionality from [Axibase Time Series Database](https://axibase.com/docs/atsd/), current population figures and birth data, models may be created to predict trends in America's potential population crisis.
 
 ## Data
 

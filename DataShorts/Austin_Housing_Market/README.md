@@ -2,7 +2,7 @@
 
 * Source Data: [City of Austin Report](http://www.austintexas.gov/sites/default/files/files/NHCD/2014_Comprehensive_Housing_Market_Analysis_-_Document_reduced_for_web.pdf)
 
-* Structured Query Language: [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md) in the[Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+* Structured Query Language: [SQL Console](https://axibase.com/docs/atsd/sql/) in the[Axibase Time Series Database](https://axibase.com/docs/atsd/)
 
 * Visualization: [ChartLab](https://apps.axibase.com/chartlab)
 

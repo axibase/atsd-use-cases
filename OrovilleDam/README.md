@@ -15,7 +15,7 @@ Oroville dam.
 
 In this article we will analyze a dataset from the [California Department of Water Resources (CDWR)](https://cdec.water.ca.gov/index.html) looking at the several vital statistics for the
 Oroville dam. This article provides **realtime analysis** with Chart Lab graphs (updated **hourly** and **automatically** with data taken from the CDWR website), which show the current situation at the dam. Additionally, this article illustrates
-how publicly available data from the California DWR can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](https://axibase.com/products/axibase-time-series-database/)
+how publicly available data from the California DWR can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](https://axibase.com/docs/atsd/)
 for interactive analysis with graphical representation of open data published by government organizations.
 
 ## Oroville Dam Dataset
@@ -124,7 +124,7 @@ for the next several days.
 ![Figure 8](Images/Figure8.png)
 
 Is there any way we can predict how quickly the dam will fill up for a given amount of rainfall? Another very helpful tool in ATSD is the capability to perform
-[SQL queries](https://github.com/axibase/atsd/blob/master/sql/README.md#overview), which can be used to search for specific information contained in this dataset.
+[SQL queries](https://axibase.com/docs/atsd/sql/), which can be used to search for specific information contained in this dataset.
 Using this query, we are able to obtain an estimate for the volume added (acre-foot) to the storage level of the reservoir per inch of rainfall.
 
 ```sql

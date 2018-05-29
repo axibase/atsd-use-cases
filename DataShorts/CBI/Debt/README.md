@@ -1,6 +1,6 @@
 # Bank of Israel Debt, 1997-2016
 
-ChartLab and SQL Console in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+ChartLab and SQL Console in [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 
 > Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics/Pages/Default.aspx)
 

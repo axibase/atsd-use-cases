@@ -128,7 +128,7 @@ series e:prod-zoo-host1 m:jmx.zookeeper.avgrequestlatency=1400 t:cluster=prod
 
 To check `Zookeeper rate metrics` go to `Metrics` and verify that metrics `jmx.zookeeper.packetsreceived.counter` and `jmx.zookeeper.packetssent.counter` are collecting.
 
-For more information on Rule Engine, see [ATSD Rule Engine](https://github.com/axibase/atsd/tree/master/rule-engine).
+For more information on Rule Engine, see [ATSD Rule Engine](https://axibase.com/docs/atsd/rule-engine/).
 
 ### Import entity view
 

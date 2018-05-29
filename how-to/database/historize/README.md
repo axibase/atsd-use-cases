@@ -249,9 +249,9 @@ To view individual series, click on the **Series** icon and then on the chart li
 
 Now that you have data being continuously inserted into ATSD, you can:
 
-* Visualize data with [portals](https://github.com/axibase/atsd/blob/master/portals/README.md). Show hourly orders overlaid with previous day/week/etc.
+* Visualize data with [portals](https://axibase.com/docs/atsd/portals/). Show hourly orders overlaid with previous day/week/etc.
 
 ![](images/order-chart.png)
 
-* Build automated [forecasts](https://github.com/axibase/atsd/blob/master/forecasting/README.md).
-* Create Slack/email [alerts](https://github.com/axibase/atsd/blob/master/rule-engine/web-notifications.md#collaboration-services) using the [rule engine](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) to get notified when the order activity is abnormal.
+* Build automated [forecasts](https://axibase.com/docs/atsd/forecasting/).
+* Create Slack/email [alerts](https://axibase.com/docs/atsd/rule-engine/notifications/#creating-notifications) using the [rule engine](https://axibase.com/docs/atsd/rule-engine/) to get notified when the order activity is abnormal.

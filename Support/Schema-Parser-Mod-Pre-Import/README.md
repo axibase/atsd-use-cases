@@ -6,9 +6,9 @@ Data is not always recorded ideally for a given analysis. Perhaps the metrics th
 in a given file, or maybe calculations must be done with the given data in order to arrive to a dataset that better suits
 your current needs.
 
-With [Schema-Based Parsing](https://axibase.com/products/axibase-time-series-database/writing-data/csv/csv-schema/) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
-data can be modified upon import so that working with it in the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md)
-or [ChartLab](https://apps.axibase.com/chartlab) is more useful.
+With [Schema-Based Parsing](https://axibase.com/docs/atsd/parsers/csv/) in [Axibase Time Series Database](https://axibase.com/docs/atsd/)
+data may be modified upon import so that working with it in [SQL Console](https://axibase.com/docs/atsd/sql/)
+or [ChartLab](https://apps.axibase.com/chartlab) is more meaningful.
 
 ## Data
 
@@ -139,7 +139,7 @@ value(changeSeparator(cell(row, col)))
 By manually entering the actual values provided in the data set as a `var` group and writing a simple program to convert the percent change
 values into 2010 NIS values, before the data is submitted into the Axibase Time Series Database, a new value has been calculated and inserted,
 while keeping the original value as well. The script below the comment line (######) is the schema itself. For details about writing your own schema, visit
-the Axibase Schema-Based Parsing documentation, linked [here](https://axibase.com/products/axibase-time-series-database/writing-data/csv/csv-schema/).
+the Axibase Schema-Based Parsing documentation, linked [here](https://axibase.com/docs/atsd/parsers/csv/).
 
 Because ATSD supports schema-based parsing and javascript customization, your data can be modified before you submit it for storage and kept in a form
 that is exactly as needed. The enhanced SQL query and visualization are shown below, featuring the newly calculated values:

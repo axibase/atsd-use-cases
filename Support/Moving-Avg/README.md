@@ -19,7 +19,7 @@ would destroy the fine granularization that was created by monthly collection ov
 average baseline calculated over the entire observation period would return results that neglected current trends because
 four decades worth of data would be regarded equally.
 
-Enter [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
+Enter [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
 setting.
 
 ## Data
@@ -132,6 +132,6 @@ airport traffic) because they are now included in the underlying data.
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/a4d77c47/#fullscreen)
 
-Download the Community Edition of Axibase [here](https://github.com/axibase/atsd/blob/master/installation/README.md#installation),
+Download the Community Edition of Axibase [here](https://axibase.com/docs/atsd/installation/),
 view prepared public datasets [here](https://github.com/axibase/open-data-catalog), and contact [Axibase](https://axibase.com)
 with any questions [here](https://axibase.com/feedback/).

@@ -61,6 +61,7 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 
 Sometimes data tell their own story and ChartLab visualizations can grab reader attention to make a statement. The Chart of the Day is reproduced in a variety of publications.
 
+1. [Hetzner May 2018 Outage](Chart_of_the_Day/hetzner-outage/README.md)
 1. [Going from Advanced Tech Exporter to Importer](Chart_of_the_Day/tech-import-export/README.md)
 1. [London Inter-Bank Offered Rate (LIBOR)](Chart_of_the_Day/libor/README.md)
 1. [Profit Margin by Industry Explorer](Chart_of_the_Day/profit-margin/README.md)

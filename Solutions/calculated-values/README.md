@@ -5,7 +5,7 @@
 ## Summary
 
 Using [calculated values](../../Support/Add-Calculated-Value/README.md) in the [ChartLab](https://apps.axibase.com/chartlab) interface
-is useful for creating multiple outputs from one set of underlying data. [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+is useful for creating multiple outputs from one set of underlying data. [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 supports a range of in-built functions which allow end-users to manipulate a dataset to derive the desired meaning from it.
 
 The St. Louis branch of the Federal Reserve branch maintains FRED, short for [Federal Reserve Economic Data](https://fred.stlouisfed.org/), an

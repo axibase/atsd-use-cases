@@ -74,7 +74,7 @@ The numbers associated with **Figure 2.1** are shown below:
 | 2011 | 259.0                 |
 | 2012 | 185.0                 |
 
-> This dataset is queried using the [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) in [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/).
+> This dataset is queried using [SQL Console](https://axibase.com/docs/atsd/sql/) in [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
 To give these numbers perspective, when the study began in 2005, the Port of Los Angeles was responsible for 10% of
 all diesel particulate matter in the Los Angeles Basin: an area composed of part or all of the counties of Los Angeles,
@@ -218,8 +218,8 @@ earnest commitment to reducing harmful greenhouse gas production.
 ## Conclusions
 
 Starting in 2006, the Port of Los Angeles has pursued effective and aggressive means to reduce the production of the most
-harmful greenhouse gases and by objective standards they have succeeded. In fact, the according to the results of the [2012
-Inventory of Air Emissions](https://www.portoflosangeles.org/pdf/2012_Air_Emissions_Inventory.pdf), the Port has outperformed
+harmful greenhouse gases and by objective standards they have succeeded. In fact, the according to the results of the 2012
+Inventory of Air Emissions (`https://www.portoflosangeles.org/pdf/2012_Air_Emissions_Inventory.pdf`), the Port has outperformed
 the ambitious goals it set for itself almost half a decade ago. As the world pushes further ahead in the quest to reduce the
 human impact on our planet, organizations like the Port of Los Angeles show that making ardent strides forward is possible
 for industries of any type, location, and size.

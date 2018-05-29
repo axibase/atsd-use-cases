@@ -40,7 +40,7 @@ group-period = 1 year
 group-statistic = sum
 ```
 
-The data is presented using our [**Trends**](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md) service.
+The data is presented using our [**Trends**](../how-to/shared/trends.md) service.
 
 ### Querying FRED Data with SQL
 

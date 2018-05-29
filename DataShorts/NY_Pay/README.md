@@ -4,9 +4,9 @@
 
 * Visualizations: [ChartLab](https://apps.axibase.com/chartlab) from [Axibase](https://axibase.com)
 
-* Structured Query Language (SQL): [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview) from [Axibase](https://axibase.com)
+* Structured Query Language (SQL): [SQL Console](https://axibase.com/docs/atsd/sql/) from [Axibase](https://axibase.com)
 
-All data is stored in the [Axibase Time Series Database](https://axibase.com). Download the Community Version [here](https://github.com/axibase/atsd/blob/master/installation/README.md#installation).
+All data is stored in the [Axibase Time Series Database](https://axibase.com). Download the Community Version [here](https://axibase.com/docs/atsd/installation/).
 
 ## Adjusted Gross Income (AGI)
 

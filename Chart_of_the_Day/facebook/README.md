@@ -19,6 +19,6 @@ Ironically, competitor social media platform Twitter is now home to the #DeleteF
 ## Resources
 
 * [Nasdaq:FB Historical Data](https://finance.yahoo.com/quote/FB/history?p=FB) from Yahoo! Finance
-* Launch [ATSD](https://github.com/axibase/atsd/tree/master/installation#installation) on your local machine.
+* Launch [ATSD](https://axibase.com/docs/atsd/installation/) on your local machine.
 * Import this [parser job](resources/parser-job.xml) xml file for data handling.
 * [ChartLab](https://apps.axibase.com/) application and associated [documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/)

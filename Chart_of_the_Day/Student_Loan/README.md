@@ -8,7 +8,7 @@
 
 **Data Source**: [Federal Reserve Economic Data](https://fred.stlouisfed.org/series/FGCCSAQ027S)
 
-**Visualization Tool**: [Axibase Times Series Database](https://axibase.com/products/axibase-time-series-database/)
+**Visualization Tool**: [Axibase Times Series Database](https://axibase.com/docs/atsd/)
 
 The United States is carrying around about $20 trillion USD in outstanding debt right now, $14 trillion of which is being
 traded on various financial markets across the globe. The remaining amount is mostly held in Social Security assets ([1](../../Analysis/The_New_Bubble/README.md))

@@ -34,7 +34,7 @@ Is there a way to predict performance on the ACSM AFI, and by extension, overall
 health using this data?
 
 Publicly-available data allows for anyone with access to the correct analytics tools to pursue answers
-to their own questions and convey that information to any audience. The [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/)
+to their own questions and convey that information to any audience. The [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 is developed to work within the [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md)
 framework used by government agencies to publish data, so it was selected as the main tool for this project
 and calculations were done using the computational knowledge engine [WolframAlpha](https://www.wolframalpha.com/).
@@ -339,7 +339,7 @@ and statistical calculation shown in the [Analysis](#Analysis) section that high
 the same observation certain hypotheses can also be rejected: the size of the population of a given MSA has no meaningful ability to predict that city's public health, however there are states which can be modeled with known data to predict unknown data. Analysis of the political process and community engagement that may contribute to the existence or absence
 of such consistences is outside the scope of this experiment but well within the scope of the American College of Sports Medicine, as they go a step further and even provide custom-made action plans for each MSA, based on their performance in range of areas over a given period of time.
 
-The data observed here is objectively quite large, and effective management and presentation of such data is crucial to drawing meaningful conclusions from it, which is why the [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) is ideal for comprehensive and comprehensible solutions
+The data observed here is objectively quite large, and effective management and presentation of such data is crucial to drawing meaningful conclusions from it, which is why the [Axibase Time Series Database](https://axibase.com/docs/atsd/) is ideal for comprehensive and comprehensible solutions
 to a wide range of data science problems, a handful of which were demonstrated here.
 
 > Contact [us](https://axibase.com/feedback/) with any support issues.

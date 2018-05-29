@@ -2,7 +2,7 @@
 
 ![](images/metric.png)
 
-Metrics are numeric measurements stored in ATSD. The [metric record](https://github.com/axibase/atsd/blob/master/api/meta/metric/list.md#fields) includes information about the measured attribute including its name, a user-friendly label, measurement units etc.
+Metrics are numeric measurements stored in ATSD. The [metric record](https://axibase.com/docs/atsd/api/meta/metric/list.html#fields) includes information about the measured attribute including its name, a user-friendly label, measurement units etc.
 
 Follow this process to import metric definitions into your local ATSD instance.
 

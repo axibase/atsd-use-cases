@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide shows how to configure [ATSD](https://axibase.com/products/axibase-time-series-database/) to produce a daily report with all open Pull Requests across an organization's entire collection of repositories and email it to subscribed users. The report will have two parts: open Pull Requests that are able to be merged and passing all secondary status checks, and open Pull Requests that are not ready to be merged because they are failing one or more secondary status checks. Each report will be delivered separately. GitHub [webhook services](pr-notification.md) may be used to notify repository owners and administrators when a new Pull Request is opened, but for larger organizations with a large collection of repositories, individual Pull Requests may be missed and left open leading to potential conflicts or inaccurate code / documentation. This feature allows repository owners and administrators to monitor their work and receive a daily report with the status of all open Pull Requests across an entire repository library. Follow the instructions to configure the notifications to be sent directly to any group of subscribers via email with [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and the [GitHub v4 API](https://developer.github.com/v4/). Setup should take around 10 minutes.
+This guide shows how to configure [ATSD](https://axibase.com/docs/atsd/) to produce a daily report with all open Pull Requests across an organization's entire collection of repositories and email it to subscribed users. The report will have two parts: open Pull Requests that are able to be merged and passing all secondary status checks, and open Pull Requests that are not ready to be merged because they are failing one or more secondary status checks. Each report will be delivered separately. GitHub [webhook services](pr-notification.md) may be used to notify repository owners and administrators when a new Pull Request is opened, but for larger organizations with a large collection of repositories, individual Pull Requests may be missed and left open leading to potential conflicts or inaccurate code / documentation. This feature allows repository owners and administrators to monitor their work and receive a daily report with the status of all open Pull Requests across an entire repository library. Follow the instructions to configure the notifications to be sent directly to any group of subscribers via email with [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [GitHub v4 API](https://developer.github.com/v4/). Setup should take around 10 minutes.
 
 ![](images/pr-report-workflow.png)
 
@@ -81,7 +81,7 @@ Upon successful completion, the **Mail Client** will automatically send subscrib
 
 ![](images/test-email.png)
 
-After initial launch, if **Mail Client** settings need to be reconfigured, follow these [instructions](https://github.com/axibase/atsd/blob/master/administration/mail-client.md#mail-client).
+After initial launch, if **Mail Client** settings need to be reconfigured, follow these [instructions](https://axibase.com/docs/atsd/administration/mail-client.html).
 
 ATSD web interface is accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports).
 
@@ -382,7 +382,7 @@ This query targets [Apache Software Foundation](https://github.com/apache) repos
 </p>
 </details>
 
-The GraphQL query returns a JSON list of Pull Requests based on `MERGEABLE` status. Among the five returned Pull Requests, one has `'SUCCESS'` state, two have `'FAILURE'` state, and two have `'PENDING'` state. ATSD [Rule Engine](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) filters these results with `JSONPath` syntax:
+The GraphQL query returns a JSON list of Pull Requests based on `MERGEABLE` status. Among the five returned Pull Requests, one has `'SUCCESS'` state, two have `'FAILURE'` state, and two have `'PENDING'` state. ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) filters these results with `JSONPath` syntax:
 
 ```ls
 $..pullRequests.nodes[?(@.mergeable == 'MERGEABLE' && @.pullRequestcommits.nodes[0].commit.status.state == 'SUCCESS')]
@@ -519,7 +519,7 @@ Each of these JSONPaths will return a unique JSON list which ATSD Rule Engine wi
 </p>
 </details>
 
-ATSD [Rule Engine](https://github.com/axibase/atsd/tree/master/rule-engine#rule-engine) receives incoming JSON result sets and converts them into human-readable HTML reports. Rule Engine generates reports based on [Conditions](https://github.com/axibase/atsd/tree/master/rule-engine#condition-checking), in this case, immediately after the first sandbox launch and then daily at 5:00 AM server local time. The report is created by [Email Action](https://github.com/axibase/atsd/blob/master/rule-engine/email.md#email-action) which convert the JSON output into HTML table via [`jsonToLists`](https://github.com/axibase/atsd/blob/master/rule-engine/functions-table.md#jsontolists) function.
+ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) receives incoming JSON result sets and converts them into human-readable HTML reports. Rule Engine generates reports based on [Conditions](https://axibase.com/docs/atsd/rule-engine/#condition-checking), in this case, immediately after the first sandbox launch and then daily at 5:00 AM server local time. The report is created by [Email Action](https://axibase.com/docs/atsd/rule-engine/email.html) which convert the JSON output into HTML table via [`jsonToLists`](https://axibase.com/docs/atsd/rule-engine/functions-table.html#jsontolists) function.
 
 The above JSON result sets will be converted to two outgoing email reports, sent to the defined subscriber list.
 
@@ -551,4 +551,4 @@ A sample report from [**Siemens**](https://github.com/siemens) repositories usin
 
 Clickable URLs redirect to the Pull Request page.
 
-For additional setup information, raise an [issue](https://github.com/axibase/atsd/issues) on the ATSD GitHub repository. For other GitHub tools developed by Axibase, see our [Use Cases Repository](https://github.com/axibase/atsd-use-cases#github).
+For other GitHub tools developed by Axibase, see our [Use Cases Repository](https://github.com/axibase/atsd-use-cases#github).

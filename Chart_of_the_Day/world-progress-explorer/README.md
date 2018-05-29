@@ -44,7 +44,7 @@ Open the **Trends** visualization and use any of the supported user-defined func
 
 ## SQL Queries
 
-Although a non-relational database, ATSD supports an SQL-like feature called [SQL Console](https://github.com/axibase/atsd/blob/master/sql/README.md#overview), a convenient interface which lets users quickly query data.
+Although a non-relational database, ATSD supports an SQL-like feature called [SQL Console](https://axibase.com/docs/atsd/sql/), a convenient interface which lets users quickly query data.
 
 ### Greatest Life Expectancy for Year 2015
 
@@ -59,11 +59,11 @@ ORDER BY "Life Expectancy" DESC
 
 Query uses these clauses:
 
-* [`FROM`](https://github.com/axibase/atsd/blob/master/sql/README.md#virtual-table)
-* [Alias / `AS`](https://github.com/axibase/atsd/blob/master/sql/README.md#aliases)
-* [`WHERE`](https://github.com/axibase/atsd/blob/master/sql/README.md#where-clause)
-* [`LIMIT`](https://github.com/axibase/atsd/blob/master/sql/README.md#limiting)
-* [`ORDER BY`](https://github.com/axibase/atsd/blob/master/sql/README.md#ordering)
+* [`FROM`](https://axibase.com/docs/atsd/sql/#virtual-table)
+* [Alias / `AS`](https://axibase.com/docs/atsd/sql/#aliases)
+* [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause)
+* [`LIMIT`](https://axibase.com/docs/atsd/sql/#limiting)
+* [`ORDER BY`](https://axibase.com/docs/atsd/sql/#ordering)
 
 | Country           | Life Expectancy |
 |-------------------|-----------------|
@@ -121,8 +121,8 @@ FROM "life_expectancy_at_birth_by_country"
 
 Clauses used in this query:
 
-* [`FIRST`](https://github.com/axibase/atsd/blob/master/sql/examples/aggregate-first-last.md#aggregate-functions-first-and-last)
-* [`LAST`](https://github.com/axibase/atsd/blob/master/sql/examples/aggregate-first-last.md#aggregate-functions-first-and-last)
+* [`FIRST`](https://axibase.com/docs/atsd/sql/#first)
+* [`LAST`](https://axibase.com/docs/atsd/sql/#last)
 
 | Country                            | 1970 Value | 2015 Value | Change in Life Expectancy |
 |------------------------------------|------------|------------|---------------------------|
@@ -185,7 +185,7 @@ FROM "population_total_by_country"
 
 Clauses used in this query:
 
-* [`ROUND`](https://github.com/axibase/atsd/blob/master/sql/README.md#mathematical-functions)
+* [`ROUND`](https://axibase.com/docs/atsd/sql/#mathematical-functions)
 
 | Country       | Change in Population (Million) |
 |---------------|-----------------------------|

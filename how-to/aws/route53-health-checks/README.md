@@ -75,7 +75,7 @@ Route53 CloudWatch metrics are available only in the **us-east-1** region as spe
 
 ## Service Availability Dashboards
 
-Health check statistics may be offloaded to [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/) and used to create consolidated dashboards with custom thresholds for alerts and notifications.
+Health check statistics may be offloaded to [Axibase Time Series Database](https://axibase.com/docs/atsd/) and used to create consolidated dashboards with custom thresholds for alerts and notifications.
 
 ## Configuration
 

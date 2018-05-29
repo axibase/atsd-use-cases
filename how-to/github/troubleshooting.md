@@ -1,6 +1,6 @@
 # Incoming Webhook Troubleshooting
 
-Correct common problems with incoming [webhooks](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md).
+Correct common problems with incoming [webhooks](https://axibase.com/docs/atsd/api/data/messages/webhook.html).
 
 ## Confirm Connectivity
 

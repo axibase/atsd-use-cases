@@ -1,6 +1,6 @@
 # Bitcoin After the GHash.IO Era
 
-> _Visualizations made using [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database/), author
+> _Visualizations made using [Axibase Time Series Database](https://axibase.com/docs/atsd/), author
 has no position in Bitcoin_
 
 ## Introduction
