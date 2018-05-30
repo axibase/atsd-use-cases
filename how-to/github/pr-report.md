@@ -192,7 +192,7 @@ query {
 }
 ```
 
-This query targets [Apache Software Foundation](https://github.com/apache) repositories and returns a JSON list with the first five Pull Requests from the first repository in their GitHub library, alphabetically. These settings may be configured by modifying the `pullRequests(first: 5, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) {` and `repositories(first:1, orderBy: {field: PUSHED_AT, direction: DESC}) {` clauses, respectively.
+This query targets [Apache Software Foundation](https://github.com/apache) repositories and returns a JSON list with the first five Pull Requests from the first repository in their GitHub library, alphabetically. These settings may be configured by modifying the `pullRequests(first: 5, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) {` and `repositories(first:1, orderBy: {field: PUSHED_AT, direction: DESC}) {` clauses, respectively. These configurations may be modified in ATSD under **Data** > **Replacement Tables**, where the query will be imported in order to monitor more than the default 10 repositories.
 
 <details><summary>View the JSON results of the above GraphQL query.</summary>
 <p>
