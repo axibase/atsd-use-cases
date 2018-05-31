@@ -14,11 +14,11 @@ Use the Metric Index and Country Index below to navigate between countries and m
 
 ## Metric Index
 
-* [Businesses in Hong Kong with a Foreign Parent Company](#businesses-representing-parent-companies-outside-of-hong-kong,-sorted-by-country-(1996-2016))
-* [Foreign Businesses with a Local Branch in Hong Kong](#foreign-businesses-with-a-local-branch-in-hong-kong,-sorted-by-country-(2001-2016))
-* [Foreign Businesses with a Regional Branch in Hong Kong](#foreign-businesses-with-a-regional-branch-in-hong-kong,-sorted-by-country-(1991-2016))
+* [Businesses in Hong Kong with a Foreign Parent Company](#businesses-representing-parent-companies-outside-of-hong-kong-sorted-by-country-1996-2016)
+* [Foreign Businesses with a Local Branch in Hong Kong](#foreign-businesses-with-a-local-branch-in-hong-kong-sorted-by-country-2001-2016)
+* [Foreign Businesses with a Regional Branch in Hong Kong](#foreign-businesses-with-a-regional-branch-in-hong-kong-sorted-by-country-1991-2016)
 
-### Businesses Representing Parent Companies Outside of Hong Kong, Sorted by Country (1996-2016)
+### Businesses Representing Parent Companies Outside of Hong Kong Sorted by Country (1996-2016)
 
 ![](Images/hkb-01.png)
 
@@ -698,7 +698,7 @@ Return to the [Country Index](#country-index)
 
 Return to the [Metric Index](#metric-index)
 
-## Foreign Businesses With a Local Branch in Hong Kong, Sorted by Country (2001-2016)
+## Foreign Businesses With a Local Branch in Hong Kong Sorted by Country (2001-2016)
 
 ![](Images/hkb-02.png)
 
@@ -734,20 +734,20 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 ### Country Index (Local)
 
-* [Australia](#australia-(local))
-* [Canada](#cananda-(local))
-* [China](#china-(local))
-* [France](#france-(local))
-* [Germany](#germany-(local))
-* [Italy](#italy-(local))
-* [Japan](#japan-(local))
-* [Netherlands](#netherlands-(local))
-* [Singapore](#singapore-(local))
-* [Sweden](#sweden-(local))
-* [Switzerland](#switzerland-(local))
-* [Taiwan](#taiwan-(local))
-* [United Kingdom](#united-kingdom-(local))
-* [United States](#usa-(local))
+* [Australia](#australia-local)
+* [Canada](#cananda-local)
+* [China](#china-local)
+* [France](#france-local)
+* [Germany](#germany-local)
+* [Italy](#italy-local)
+* [Japan](#japan-local)
+* [Netherlands](#netherlands-local)
+* [Singapore](#singapore-local)
+* [Sweden](#sweden-local)
+* [Switzerland](#switzerland-local)
+* [Taiwan](#taiwan-local)
+* [United Kingdom](#united-kingdom-local)
+* [United States](#usa-local)
 
 ![](Images/hkb-04.png)
 
@@ -781,7 +781,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 94                      | 5.62             |
 | 2016 | 88                      | -6.38            |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -811,7 +811,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 61                      | 17.31            |
 | 2016 | 61                      | 0                |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -841,7 +841,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 772                     | 13.86            |
 | 2016 | 812                     | 5.18             |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -871,7 +871,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 143                     | 7.52             |
 | 2016 | 152                     | 6.29             |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -901,7 +901,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 132                     | 10.92            |
 | 2016 | 141                     | 6.82             |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -931,7 +931,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 58                      | 20.83            |
 | 2016 | 60                      | 3.45             |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -961,7 +961,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 673                     | -1.46            |
 | 2016 | 717                     | 6.54             |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -991,7 +991,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 92                      | 16.46            |
 | 2016 | 98                      | 6.52             |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1021,7 +1021,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 222                     | 5.71             |
 | 2016 | 240                     | 8.11             |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1051,7 +1051,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 127                     | 12.39            |
 | 2016 | 113                     | -11.02           |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1081,7 +1081,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 265                     | 5.58             |
 | 2016 | 247                     | -6.79            |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1111,7 +1111,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 285                     | 9.62             |
 | 2016 | 309                     | 8.42             |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1141,11 +1141,11 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 556                     | 4.71             |
 | 2016 | 587                     | 5.58             |
 
-Return to the [Country Index](#country-index-(local))
+Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
 
-## Foreign Businesses with a Regional Branch in Hong Kong, Sorted by Country (1991-2016)
+## Foreign Businesses with a Regional Branch in Hong Kong Sorted by Country (1991-2016)
 
 ![](Images/hkb-05.png)
 
@@ -1191,21 +1191,21 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 ### Country Index (Regional)
 
-* [Australia](#australia-(regional))
-* [Canada](#canada-(regional))
-* [China](#china-(regional))
-* [France](#france-(regional))
-* [Germany](#germany-(regional))
-* [Italy](#italy-(regional))
-* [Japan](#japan-(regional))
-* [Korea](#korea-(regional))
-* [Netherlands](#netherlands-(regional))
-* [Singapore](#singapore-(regional))
-* [Sweden](#sweden-(regional))
-* [Switzerland](#switzerland-(regional))
-* [Taiwan](#taiwan-(regional))
-* [United Kingdom](#united-kingdom-(regional))
-* [United States](#united-states-(regional))
+* [Australia](#australia-regional)
+* [Canada](#canada-regional)
+* [China](#china-regional)
+* [France](#france-regional)
+* [Germany](#germany-regional)
+* [Italy](#italy-regional)
+* [Japan](#japan-regional)
+* [Korea](#korea-regional)
+* [Netherlands](#netherlands-regional)
+* [Singapore](#singapore-regional)
+* [Sweden](#sweden-regional)
+* [Switzerland](#switzerland-regional)
+* [Taiwan](#taiwan-regional)
+* [United Kingdom](#united-kingdom-regional)
+* [United States](#united-states-regional)
 
 ![](Images/hkb-06.png)
 
@@ -1249,7 +1249,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 48                      | 2.13             |
 | 2016 | 54                      | 12.5             |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1289,7 +1289,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 31                      | 6.9              |
 | 2016 | 32                      | 3.23             |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1332,7 +1332,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 > Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1372,7 +1372,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 105                     | -4.55            |
 | 2016 | 109                     | 3.81             |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1412,7 +1412,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 121                     | -3.2             |
 | 2016 | 131                     | 8.26             |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1452,7 +1452,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 61                      | 0                |
 | 2016 | 64                      | 4.92             |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1492,7 +1492,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 447                     | -3.87            |
 | 2016 | 420                     | -6.04            |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1532,7 +1532,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 44                      | 10               |
 | 2016 | 41                      | -6.82            |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1572,7 +1572,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 62                      | -4.62            |
 | 2016 | 63                      | 1.61             |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1615,7 +1615,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 > Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1655,7 +1655,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 28                      | 0                |
 | 2016 | 29                      | 3.57             |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1695,7 +1695,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 82                      | -2.38            |
 | 2016 | 80                      | -2.44            |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1738,7 +1738,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 > Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1778,7 +1778,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 220                     | 7.84             |
 | 2016 | 223                     | 1.36             |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)
 
@@ -1818,6 +1818,6 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 505                     | 3.06             |
 | 2016 | 480                     | -4.95            |
 
-Return to the [Country Index](#country-index-(regional))
+Return to the [Country Index](#country-index-regional)
 
 Return to the [Metric Index](#metric-index)

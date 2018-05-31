@@ -541,7 +541,7 @@ Before report delivery, ensure all parameters have been correctly configured:
 
 * Valid [OAuth access token](#generating-oauth-access-token) created and inserted into launch command;
 
-* [Email subscribers](#adding-subscribers) defined;
+* Email subscribers defined;
 
 * GraphQL query targets the appropriate organization. Any organization's public repositories may be queried by GitHub GraphQL API.
 

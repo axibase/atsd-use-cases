@@ -104,7 +104,7 @@ without completely suffocating the American economy.
 
 Low interest rates are of course a double-edged sword. While good for borrowers who are not eager to see all of their money
 used to simply pay down the interest of the debt, without doing anything to the debt itself, for savers, low interest rates
-mean diminishing returns on their savings especially in the face of the consumer price index, which has more than doubled since 1990 ([5](#5)).
+mean diminishing returns on their savings especially in the face of the consumer price index, which has more than doubled since 1990 ([5](#sources)).
 
 ## The Bubble
 
