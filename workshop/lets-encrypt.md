@@ -1263,6 +1263,8 @@ Because any CA can sign **any** certificate it exposes clients to security risks
 
 ![](images/uber_chrome_ok.png)
 
+See [Appendix](#custom-ca) on how to create a custom CA and sign any certificate.
+
 ## Automated Certificate Issuance
 
 ### ACME Protocol
