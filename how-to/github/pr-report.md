@@ -2,15 +2,13 @@
 
 ## Overview
 
-This guide shows how to configure [ATSD](https://axibase.com/docs/atsd/) to produce a daily report with all open Pull Requests across an organization's entire collection of repositories and email it to subscribed users. The report will have two parts: open Pull Requests that are able to be merged and passing all secondary status checks, and open Pull Requests that are not ready to be merged because they are failing one or more secondary status checks. Each report will be delivered separately. GitHub [webhook services](pr-notification.md) may be used to notify repository owners and administrators when a new Pull Request is opened, but for larger organizations with a large collection of repositories, individual Pull Requests may be missed and left open leading to potential conflicts or inaccurate code / documentation. This feature allows repository owners and administrators to monitor their work and receive a daily report with the status of all open Pull Requests across an entire repository library. Follow the instructions to configure the notifications to be sent directly to any group of subscribers via email with [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [GitHub v4 API](https://developer.github.com/v4/). Setup should take around 10 minutes.
+Configure [ATSD](https://axibase.com/docs/atsd/) to produce a daily report with all open Pull Requests across an organization's entire collection of repositories and email it to subscribed users. The report will have two parts: open Pull Requests passing all secondary status checks, and open Pull Requests failing one or more secondary status checks. GitHub [webhook services](pr-notification.md) can notify repository owners and administrators upon new Pull Request, but for larger organizations with a large collection of repositories, use a more general tool. This feature allows repository owners and administrators to monitor their work and receive a daily report with the status of all open Pull Requests across an entire repository library. Follow the instructions to configure the notifications to be sent to a group of subscribers via email with [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [GitHub v4 API](https://developer.github.com/v4/). Setup takes around 10 minutes.
 
 ![](images/pr-report-workflow.png)
 
 ## Purpose
 
-Large organizations maintain large GitHub libraries with many repositories. Keeping track of many incoming Pull Requests is important to maintain accurate documentation and up-to-date code accessible to end users, but even attentive repository administrators may miss the occasional Pull Request. Stay on top of open Pull Requests with daily reports delivered to a list of subscribers.
-
-GitHub features email notifications for individual repositories, but the task of tracking Pull Requests across many repositories may be better accomplished using programmatic integration leveraging the [GraphQL](https://graphql.org/) API query language, featured in the GitHub API.
+GitHub features email notifications for individual repositories, but the task of tracking Pull Requests across many repositories is better accomplished using programmatic integration leveraging the [GraphQL](https://graphql.org/) API query language, featured in the GitHub API.
 
 In contrast to the [GitHub v3 REST API](https://developer.github.com/v3/), the latest [GitHub v4 GraphQL API](https://developer.github.com/v4/) offers more flexibility by replacing multiple REST requests with a single call to fetch all relevant data.
 
