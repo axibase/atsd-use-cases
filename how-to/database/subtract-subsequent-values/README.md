@@ -154,7 +154,7 @@ The `outage-tickets` dataset visualized in **ChartLab**:
 
 Outage ticket reports occurred during local business hours, use [`disconnect-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-12) to account for empty periods.  [Inheritance](https://axibase.com/products/axibase-time-series-database/visualization/widgets/inheritance/) eliminates redundant syntax when possible, define entity and metric at the `[configuration]` level to avoid repetition when creating multiple series. To display delta value, there are two options:
 
-1. Use the [`previous`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function and [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/):
+* Use the [`previous`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function and [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/):
 
 ```css
 [series]
@@ -163,7 +163,7 @@ replace-value = value - previousValue
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/af56007b#fullscreen)
 
-2. Apply [`aliases`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) to two series, raw data and previous data. Hide unneeded series with `display = false` setting. Create a derived third series to calculate delta:
+* Apply [`aliases`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) to two series, raw data and previous data. Hide unneeded series with `display = false` setting. Create a derived third series to calculate delta:
 
 ```javascript
   # raw series data
