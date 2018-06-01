@@ -10,7 +10,7 @@
 
 ## SQL Console
 
-**SQL Console** is a web-based interface to submit [SQL queries](../sql/README.md) to the database and display the results. This data is collected by entity `hetzner` as metric `outage-tickets` which is divided into three series tags (`DC=07`, `DC=10`, and `DC=12`), representing three unique data centers.
+**SQL Console** is a web-based interface to submit SQL queries to the database and display the results. This data is collected by entity `hetzner` as metric `outage-tickets` which is divided into three series tags (`DC=07`, `DC=10`, and `DC=12`), representing three unique data centers.
 
 ```sql
 SELECT datetime, value DC07, (value - LAG(value)) PREV
