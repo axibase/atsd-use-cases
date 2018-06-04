@@ -10,6 +10,7 @@ script:
   - spellcheck --single
   - linkcheck
   - stylecheck
+  - validate_anchors
 cache:
   directories:
     - $(npm config get prefix)/lib/node_modules

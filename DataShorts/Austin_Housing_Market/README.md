@@ -16,30 +16,30 @@ between metrics.
 
 | Metric | Comment | Figure |
 |:-------|:-------:|:-------|
-| average_monthly_transportation_cost | Dollars/month | [Figure 2.1: Transportation Statistics](#Transportation-Statistics) |
-| change_in_median_home_value_2000_2012 | Percent (%) | [Figure 1.1: Home Cost Statistics](#Home-Cost-Statistics) |
-| change_in_median_rent_2000_2012 | Percent (%) | [Figure 1.1: Home Cost Statistics](#Home-Cost-Statistics) |
-| change_in_percentage_of_population_below_poverty_2000_2012 | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#Socioeconomic-Statistics) |
-| homes_affordable_to_people_earning_less_than_50_000 | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#Socioeconomic-Statistics) |
-| median_home_value | Dollars | [Figure 1.1: Home Cost Statistics](#Home-Cost-Statistics) |
-| median_household_income | Dollars | [Figure 3.1: Socioeconomic Statistics](#Socioeconomic-Statistics) |
-| median_rent| Dollars/month | [Figure 1.1: Home Cost Statistics](#Home-Cost-Statistics) |
-| owner_units_affordable_to_average_artist| Percent (%) | [Figure 4.1: Accessibility Statistics](#Accessibility-Statistics) |
-| owner_units_affordable_to_average_retail_service_worker| Percent (%) | [Figure 4.1: Accessibility Statistics](#Accessibility-Statistics) |
-| owner_units_affordable_to_average_teacher | Percent (%) | [Figure 4.1: Accessibility Statistics](#Accessibility-Statistics) |
-| owner_units_affordable_to_average_tech_worker | Percent (%) | [Figure 4.1: Accessibility Statistics](#Accessibility-Statistics) |
-| percent_change_in_number_of_housing_units_2000_2012 | Percent (%) | [Figure 5.1: Quality of Housing Statistics](#Quality-of-Housing-Statistics) |
-| percentage_of_homes_within_1_4_mi_of_transit_stop | Percent (%) | [Figure 2.1: Transportation Statistics](#Transportation-Statistics) |
-| percentage_of_rental_units_in_poor_condition | Percent (%) | [Figure 5.1: Quality of Housing Statistics](#Quality-of-Housing-Statistics) |
-| population_below_poverty_level | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#Socioeconomic-Statistics) |
-| rent_restricted_units | Number of Units | [Figure 5.1: Quality of Housing Statistics](#Quality-of-Housing-Statistics) |
-| rental_units_affordable_to_average_artist | Percent (%) | [Figure 4.2: Accessibility Statistics](#Accessibility-Statistics) |
-| rental_units_affordable_to_average_retail_service_worker | Percent (%) | [Figure 4.2: Accessibility Statistics](#Accessibility-Statistics) |
-| rental_units_affordable_to_average_teacher | Percent (%) | [Figure 4.2: Accessibility Statistics](#Accessibility-Statistics) |
-| rental_units_affordable_to_average_tech_worker | Percent (%) | [Figure 4.2: Accessibility Statistics](#Accessibility-Statistics) |
-| rentals_affordable_to_people_earning_less_than_25_000 | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#Socioeconomic-Statistics) |
-| transportation_related | Metric name shortened for index, percent (%) | [Figure 2.1: Transportation Statistics](#Transportation-Statistics) |
-| unemployment | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#Socioeconomic-Statistics) |
+| average_monthly_transportation_cost | Dollars/month | [Figure 2.1: Transportation Statistics](#transportation-statistics) |
+| change_in_median_home_value_2000_2012 | Percent (%) | [Figure 1.1: Home Cost Statistics](#home-cost-statistics) |
+| change_in_median_rent_2000_2012 | Percent (%) | [Figure 1.1: Home Cost Statistics](#home-cost-statistics) |
+| change_in_percentage_of_population_below_poverty_2000_2012 | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#socioeconomic-statistics) |
+| homes_affordable_to_people_earning_less_than_50_000 | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#socioeconomic-statistics) |
+| median_home_value | Dollars | [Figure 1.1: Home Cost Statistics](#home-cost-statistics) |
+| median_household_income | Dollars | [Figure 3.1: Socioeconomic Statistics](#socioeconomic-statistics) |
+| median_rent| Dollars/month | [Figure 1.1: Home Cost Statistics](#home-cost-statistics) |
+| owner_units_affordable_to_average_artist| Percent (%) | [Figure 4.1: Accessibility Statistics](#accessibility-statistics) |
+| owner_units_affordable_to_average_retail_service_worker| Percent (%) | [Figure 4.1: Accessibility Statistics](#accessibility-statistics) |
+| owner_units_affordable_to_average_teacher | Percent (%) | [Figure 4.1: Accessibility Statistics](#accessibility-statistics) |
+| owner_units_affordable_to_average_tech_worker | Percent (%) | [Figure 4.1: Accessibility Statistics](#accessibility-statistics) |
+| percent_change_in_number_of_housing_units_2000_2012 | Percent (%) | [Figure 5.1: Quality of Housing Statistics](#quality-of-housing-statistics) |
+| percentage_of_homes_within_1_4_mi_of_transit_stop | Percent (%) | [Figure 2.1: Transportation Statistics](#transportation-statistics) |
+| percentage_of_rental_units_in_poor_condition | Percent (%) | [Figure 5.1: Quality of Housing Statistics](#quality-of-housing-statistics) |
+| population_below_poverty_level | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#socioeconomic-statistics) |
+| rent_restricted_units | Number of Units | [Figure 5.1: Quality of Housing Statistics](#quality-of-housing-statistics) |
+| rental_units_affordable_to_average_artist | Percent (%) | [Figure 4.2: Accessibility Statistics](#accessibility-statistics) |
+| rental_units_affordable_to_average_retail_service_worker | Percent (%) | [Figure 4.2: Accessibility Statistics](#accessibility-statistics) |
+| rental_units_affordable_to_average_teacher | Percent (%) | [Figure 4.2: Accessibility Statistics](#accessibility-statistics) |
+| rental_units_affordable_to_average_tech_worker | Percent (%) | [Figure 4.2: Accessibility Statistics](#accessibility-statistics) |
+| rentals_affordable_to_people_earning_less_than_25_000 | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#socioeconomic-statistics) |
+| transportation_related | Metric name shortened for index, percent (%) | [Figure 2.1: Transportation Statistics](#transportation-statistics) |
+| unemployment | Percent (%) | [Figure 3.1: Socioeconomic Statistics](#socioeconomic-statistics) |
 
 ## Home Cost Statistics
 
@@ -58,7 +58,7 @@ Local Metrics:
 
 > Use the drop-down menu to toggle between metrics
 
-Return to the [Index](#Index)
+Return to the [Index](#index)
 
 ## Transportation Statistics
 
@@ -76,7 +76,7 @@ Local Metrics:
 
 > Use the dropdown to toggle between metrics
 
-Return to the [Index](#Index)
+Return to the [Index](#index)
 
 ## Socioeconomic Statistics
 
@@ -97,7 +97,7 @@ Local Metrics:
 
 > Use the dropdown to toggle between metrics
 
-Return to the [Index](#Index)
+Return to the [Index](#index)
 
 ## Accessibility Statistics
 
@@ -136,7 +136,7 @@ Figure 4.2
 
 > Use the dropdown to toggle between metrics
 
-Return to the [Index](#Index)
+Return to the [Index](#index)
 
 ## Quality of Housing Statistics
 
@@ -156,4 +156,4 @@ Figure 5.1
 
 > Use the dropdown to toggle between metrics
 
-Return to the [Index](#Index)
+Return to the [Index](#index)

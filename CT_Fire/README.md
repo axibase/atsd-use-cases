@@ -505,7 +505,7 @@ The visualizations have been converted to display average monthly values.
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/0c2f51ef/2/#fullscreen)
 
-> Note the model error here is consistent with the error demonstrated in the [Validation](#Validation) section above.
+> Note the model error here is consistent with the error demonstrated in the [Validation](#validation) section above.
 
 The Forecast feature has the scalability to render predictions for any desired amount of time, in this case, the
 numerical predictions in ChartLab are given for the day so they are on the order of 10 x 10^0.

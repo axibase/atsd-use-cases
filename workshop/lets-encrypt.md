@@ -33,9 +33,9 @@
   * [Install Custom CA Certificate](#install-custom-ca-certificate)
 * [Custom CA Examples](#custom-ca-examples)
   * [ATSD Validated by Custom CA](#atsd-validated-by-custom-ca)
-  * [`www.uber.com` Validated by Custom CA](#www-uber-com-validated-by-custom-ca)
+  * [Any Site Validated by Custom CA](#any-site-validated-by-custom-ca)
 * [Miscellaneous](#miscellaneous)
-  * [`openssl s_connect` Utility](#openssl-s-connect-utility)
+  * [`openssl s_connect` Utility](#openssl-s_client-utility)
   * [Java Client Debugging](#java-client-debugging)
 
 ## Overview
@@ -1263,7 +1263,7 @@ Because any CA can sign **any** certificate it exposes clients to security risks
 
 ![](images/uber_chrome_ok.png)
 
-See [Appendix](#root-ca-installation) on how to create custom CA and sign any certificate.
+See [Appendix](#custom-ca) on how to create a custom CA and sign any certificate.
 
 ## Automated Certificate Issuance
 

@@ -30,7 +30,7 @@ above average number of incidents of police use of force.
 Both of these datasets can be analyzed in the Axibase Time Series Database which provides a built-in support for the [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md) Open Data format used by the majority of government agencies in the United States. ATSD also includes graphics capabilities to analyze the data with [SQL](https://axibase.com/docs/atsd/sql/)
 and visualize it with graphs.
 
-> For information about performing these steps in your own ATSD instance, see the [Action Items](#Action-Items)
+> For information about performing these steps in your own ATSD instance, see the [Action Items](#action-items)
 section below.
 
 ## Data
@@ -210,7 +210,7 @@ This query's results are displayed as follows:
 In order to maintain the chronology of the display, interpolation is used here to display
 those months without incident as well.
 
->To view this table without interpolation see the [Appendix](#Appendix)
+>To view this table without interpolation see the [Appendix](#appendix)
 
 This data can be further visualized in ChartLab:
 
@@ -270,7 +270,7 @@ Similar to the first data set, [Socrata](https://github.com/axibase/axibase-coll
 should be used to compile the data in meaningful way and a [Structured Query Language](https://axibase.com/docs/atsd/sql/)
 should be used again.
 
->For a more detailed explanation of performing SQL Queries, see the [Appendix](#Appendix)
+>For a more detailed explanation of performing SQL Queries, see the [Appendix](#appendix)
 below
 
 ### District of Homicides
@@ -359,7 +359,7 @@ The results of this query are displayed as follows:
 | 2014-01-01 | 204      |
 
 Because of the way the data is stored, modifications need to be made to the way the collector
-reads the data for effective use, see the [Action Items](#Action-Items) below for the assignment code
+reads the data for effective use, see the [Action Items](#action-items) below for the assignment code
 needed.
 
 To organize the data so that the month of the incident is considered, this SQL
@@ -476,7 +476,7 @@ number of incidents of police use of force.
 | Southwestern | 51 | 47 | 10 | 7 |
 | Western | 59 | 47 | 9 | 7 |
 
-The trend is effectively predicted using the model described in [Methodology](#Methodology).
+The trend is effectively predicted using the model described in [Methodology](#methodology).
 
 | Neighborhood | O1/E1 | O2/E2 |
 |--------------|-------|-------|
@@ -534,7 +534,7 @@ In order to display the total number of police homicides for the observed years,
 function can be used, only displaying the desired year's data, but still showing other data
 alongside for perspective.
 
->See the [Appendix](#Appendix) below for more detailed instructions.
+>See the [Appendix](#appendix) below for more detailed instructions.
 
 ![2014](Images/2014Other.png)
 
@@ -580,7 +580,7 @@ Contact [Axibase](https://axibase.com/feedback/) with any questions.
 
 ### Using the [`EXPAND`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
 
-In order to highlight specific data, as shown [here](#What-Was-the-Nature-of-These-Homicides?),
+In order to highlight specific data, as shown [here](#nature-of-homicides),
 use the command `expand = true` under the `[series]` which should be expanded:
 
 ![Expand1](Images/Expand1.png)

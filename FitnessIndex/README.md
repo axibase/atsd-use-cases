@@ -19,7 +19,7 @@ takes into account a number of factors they believe contribute to the overall he
 of a city and its surrounding area with the goal of informing policy makers of the
 reality of public health in their areas.
 
->A detailed explanation of how the ACSM assigns scores can be found in the [Appendix](#Appendix)
+>A detailed explanation of how the ACSM assigns scores can be found in the [Appendix](#appendix)
 
 The data compares ten Metropolitan Statistical Areas (MSAs) located primarily
 in the Southeast of the country, a region notorious for its problems with public health. Location notwithstanding, the data is otherwise quite diverse, representing MSAs from seven states and including the United States average values as well. Further, high-scoring MSAs like Atlanta, Georgia are shown alongside low-scoring MSAs like Oklahoma City, Oklahoma; with a five-year time period of observation (2011 to 2015), enough public data
@@ -58,7 +58,7 @@ who may be otherwise unfamiliar with the scoring system.
 This visualization looks at Year 2015 data and highlights those cities performing
 below the National Benchmark Average.
 
->For more information about using the `ALERT` Setting, see the [Appendix](#Appendix)
+>For more information about using the `ALERT` Setting, see the [Appendix](#appendix)
 
 This visualization can track city performance throughout the observed time period,
 establishing binary clusters, those cities which performed above the benchmark
@@ -78,7 +78,7 @@ The Benchmark Average, and by extension alert threshold, is modified for each ye
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/e926d483/51/)
 
->Even year (2012 and 2014) data can be found in the [Appendix](#Appendix)
+>Even year (2012 and 2014) data can be found in the [Appendix](#appendix)
 
 In order to observe trends in individual MSAs, finding an effective method to sort
 the data is needed. By organizing the data by city, chronologically, trends appear
@@ -147,7 +147,7 @@ of the state's population, in fact the Raleigh MSA is not even the largest Metro
 with an overall score of 37.4, ranks below the National Benchmark Average and
 significantly below its less-populous neighbor Raleigh.
 
-> This trend will be further explored in the [Analysis](#Analysis) section.
+> This trend will be further explored in the [Analysis](#analysis) section.
 
 The two highest performing MSAs, Raleigh, North Carolina and Atlanta, Georgia can
 also be displayed next to one another, and the Benchmark Average:
@@ -193,7 +193,7 @@ active data sets and sending subscribers alerts when a certain threshold value i
 
 [![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/e926d483/70/#fullscreen)
 
->Learn more about Gauge controls and explore the results of other MSAs in the [Appendix](#Appendix).
+>Learn more about Gauge controls and explore the results of other MSAs in the [Appendix](#appendix).
 
 Above, when examining capital cities, the case of the Raleigh MSA and Charlotte MSA was observed. That is, two cities in one state with vastly different
 population sizes and vastly different scores on the American Fitness Index rankings. Is there a correlation between population size and score on the AFI?
@@ -319,7 +319,7 @@ The uncertainty value for each state is considered individually:
 | Texas | 0.2055 | 3 | 0.025 |
 
 The failure of Tennessee to conform to the scoring model was noticed above when comparing MSA
-performance to the Baseline Average in the [Data](#Data) section. With such a high degree of
+performance to the Baseline Average in the [Data](#data) section. With such a high degree of
 uncertainty for that state, and the Charlotte/Raleigh case, only about a third of the states tested here conform to the standard, however, in a binary classification model as
 demonstrated here, the requirement is to determine one of two solutions: will MSAs in a
 particular state conform to the general public health standards of other MSAs in a particular state?
@@ -334,8 +334,8 @@ exists to effectively predict community health figures in MSAs where no such dat
 
 Using several standard methods of comparison, the data published by the City of New
 Orleans shows that most metropolitan statistical areas within one state follow a similar trend with respect to their public health. Using graphing tools shown in the
-[Data](#Data) section that portray this pattern in a number of states,
-and statistical calculation shown in the [Analysis](#Analysis) section that highlight
+[Data](#data) section that portray this pattern in a number of states,
+and statistical calculation shown in the [Analysis](#analysis) section that highlight
 the same observation certain hypotheses can also be rejected: the size of the population of a given MSA has no meaningful ability to predict that city's public health, however there are states which can be modeled with known data to predict unknown data. Analysis of the political process and community engagement that may contribute to the existence or absence
 of such consistences is outside the scope of this experiment but well within the scope of the American College of Sports Medicine, as they go a step further and even provide custom-made action plans for each MSA, based on their performance in range of areas over a given period of time.
 
@@ -420,7 +420,7 @@ setting in the `[WIDGET]` cluster, as shown below:
 ![Syntax1](Images/Syntax1.png)
 
 Because of the highlighted setting, data is separated by its `location` tag, but in
-the visualization shown in the [Data](#Data) section, the `GROUP = LOCATION` tag is ignored because of the [`SORT`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/bar-chart-widget/#[widget]-settings)
+the visualization shown in the [Data](#data) section, the `GROUP = LOCATION` tag is ignored because of the [`SORT`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/bar-chart-widget/#[widget]-settings)
 setting shown below:
 
 ![Syntax2](Images/Syntax2.png)
