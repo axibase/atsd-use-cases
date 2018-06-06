@@ -2,19 +2,19 @@
 
 ## Overview
 
-[AWS Route53](https://aws.amazon.com/route53) provides tools to automate DNS configuration in order to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, it provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
+[AWS Route 53](https://aws.amazon.com/route53) provides tools to automate DNS configuration in order to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, AWS provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
 
-A core Route53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) which monitor the health of an application and can route incoming traffic to its healthy endpoints.
+A core Route 53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) which monitor the health of an application and can route incoming traffic to healthy endpoints.
 
 ![](images/route53-1.png)
 
-An automation procedure, such as DNS fail-over or service restart, can be initiated once the health check status drops below a certain threshold.
+An automation procedure, such as DNS fail-over or service restart, can be initiated by Route 53 once the health check status drops below a certain threshold.
 
 ![](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/images/how-health-checks-work.png)
 
 ### Geographic Distribution
 
-Health checks are executed from different parts of the world so that the outage and latency can be independently verified. The latency and connection times collected by the checkers will vary widely depending on the geographic proximity of the monitored endpoint to one of the AWS regions used for health checking.
+Route 53 executes health checks from different parts of the world so that outage and latency are independently verified. The latency and connection times collected by the checkers vary widely depending on the geographic proximity of the monitored endpoint to one of the AWS regions used for health checking.
 
 * us-east-1
 * us-west-1
@@ -28,7 +28,7 @@ Health checks are executed from different parts of the world so that the outage 
 
 ### Access Security
 
-Amazon AWS publishes a list of IP ranges used by [health checker nodes](https://ip-ranges.amazonaws.com/ip-ranges.json). Your network administrators need to make sure that inbound traffic from `ROUTE53_HEALTHCHECKS` addresses are allowed.
+AWS publishes a list of IP ranges used by [health checker nodes](https://ip-ranges.amazonaws.com/ip-ranges.json). Your network administrators may need to allow inbound traffic from `ROUTE53_HEALTHCHECKS` addresses.
 
 ```json
 {
@@ -40,30 +40,30 @@ Amazon AWS publishes a list of IP ranges used by [health checker nodes](https://
 
 ### Healthy Endpoint
 
-For HTTP and HTTPS checks, the endpoint is considered healthy if the TCP connection was established within **ten** seconds and the endpoint returned an HTTP status code of `2xx` or `3xx` within **two** seconds.
+For HTTP and HTTPS checks, Route 53 considers the endpoint healthy if the service establishes a connection within **ten** seconds and the endpoint returns an HTTP status code of `2xx` or `3xx` within **two** seconds.
 
-For TCP checks, the endpoint status is determined as healthy if the TCP connection was established within **ten** seconds.
+For TCP checks, Route 53 determines the endpoint status is healthy if the service establishes TCP connection within **ten** seconds.
 
 The timeouts are **hardcoded**.
 
 ### Monitoring Frequency
 
-Health checkers in multiple regions are scheduled [independently](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating.html#health-checks-creating-values-request-interval) using the same monitoring interval of 30 or 10 seconds ('fast' mode).
+Route 53 schedules health checks in multiple regions [independently](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating.html#health-checks-creating-values-request-interval) using the same monitoring interval of 30 or 10 seconds (**Fast** mode).
 
 * 0.5 requests per second for standard frequency of 30 seconds.
-* 2.0 requests per second for 'fast' frequency of 10 seconds.
+* 2.0 requests per second for **Fast** mode frequency of 10 seconds.
 
-The individual checkers are not synchronized and the rate at which the requests arrive is uneven.
+Individual checkers are not synchronized, the rate at which requests arrive is uneven.
 
-Health checks are available for HTTP, HTTPS, and TCP protocols.
+Route 53 supports health checks HTTP, HTTPS, and TCP protocols.
 
-The endpoint is considered to be in a `Healthy` state when the specified percentage of checkers were able to establish a TCP connection and (for HTTP/S) received a 2xx/3xx response code from the server. The response should also contain the specified keyword if **String Matching** is enabled.
+The services considers the endpoint to be in a `Healthy` state when the specified percentage of checkers establish a TCP connection and (for HTTP/S) received a `2xx`/`3xx` response code from the server. The response should also contain the specified keyword if **String Matching** is enabled.
 
 When specifying paths for HTTP/S endpoints, factor in the increased traffic sent to the target service. The monitored URL should not cause excessive load on the server.
 
 ### HTTPS
 
-The health checks **cannot** be used to monitor validity of SSL certificates as part of HTTPS endpoint monitoring. In particular, they will report `Healthy` status even if the SSL certificate is expired, self-signed, or otherwise invalid.
+Health checks **cannot** be used to monitor validity of SSL certificates as part of HTTPS endpoint monitoring. Specifically, the service reports `Healthy` status even if the SSL certificate is expired, self-signed, or otherwise invalid.
 
 ### Metrics
 
@@ -71,18 +71,18 @@ Built-in monitoring charts display endpoint health statistics for a period of up
 
 ![](images/route53-monitoring.png)
 
-Route53 CloudWatch metrics are available only in the **us-east-1** region as specified in the [Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-monitor-view-status.html) (see section **To view Route 53 metrics on the CloudWatch console**).
+Route 53 CloudWatch metrics are available only in the **us-east-1** region as specified in the [Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-monitor-view-status.html) (see the section **To view Route 53 metrics on the CloudWatch console**).
 
 ## Service Availability Dashboards
 
-Health check statistics may be offloaded to [Axibase Time Series Database](https://axibase.com/docs/atsd/) and used to create consolidated dashboards with custom thresholds for alerts and notifications.
+Offload health check statistics to [Axibase Time Series Database](https://axibase.com/docs/atsd/) and create consolidated dashboards with custom thresholds for alerts and notifications.
 
 ## Configuration
 
 ### Prerequisites
 
 * Create an AWS [IAM account](https://github.com/axibase/axibase-collector/blob/master/jobs/aws-iam.md) to query CloudWatch statistics.
-* Make sure 4GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+* Make sure 4 GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
 
 ### Launch ATSD Sandbox
 
@@ -93,16 +93,16 @@ mkdir import
 cd import
 ```
 
-This directory will be mounted into the Docker container in order to pass AWS credentials to the CloudWatch data collector without exposing them as environment variables.
+Mount this directory to the Docker container in order to pass AWS credentials to the CloudWatch data collector without exposing them as environment variables.
 
-Create an `aws.propeties` file in the `import` directory and replace `KEY` and `SECRET` with AWS Access Key ID and Secret Access Key respectively.
+Create an `aws.propeties` file in the `import` directory and replace `KEY` and `SECRET` with **AWS Access Key ID** and **Secret Access Key** respectively.
 
 ```sh
 accessKeyId=KEY
 secretAccessKey=SECRET
 ```
 
-Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on a Docker host:
+Launch the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on a Docker host:
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
@@ -116,9 +116,9 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
 
-The Collector instance installed in the sandbox container will be used to retrieve Route53 statistics from AWS CloudWatch and store them in ATSD.
+Use the Collector instance in the sandbox container to retrieve Route 53 statistics from AWS CloudWatch and store them in ATSD.
 
-Wait until the sandbox is initialized and 'All applications started.' message is displayed.
+Wait until the sandbox is initialized and `All applications started` is displayed by the start logs.
 
 ```sh
 docker logs -f atsd-sandbox
@@ -136,17 +136,17 @@ docker logs -f atsd-sandbox
 All applications started
 ```
 
-Log in to ATSD user interface using `axibase` username and `axibase` password at `https://atsd_hostname:8443/`.
+Log in to ATSD using `axibase` username and `axibase` password at `https://atsd_hostname:8443/`.
 
-### Setup Health Check Attribute Copy
+### Health Check Setup Attribute Copy
 
-Configure a cron-scheduled task to copy health check attributes into ATSD sandbox as described [here](https://github.com/axibase/atsd-integration/tree/aws-route53)
+Configure a cron-scheduled task to copy health check attributes into ATSD sandbox as described by [ATSD Integration Documentation](https://github.com/axibase/atsd-integration/tree/aws-route53)
 
 ## Results
 
 ### Consolidated View
 
-All working Route53 health checks are now visible on the **AWS Route53** tab.
+View all working Route 53 health checks on the **AWS Route53** tab.
 
 ![](images/route53-entity-view.png)
 

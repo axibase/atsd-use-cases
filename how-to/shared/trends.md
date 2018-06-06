@@ -6,47 +6,47 @@
 
 [**Trends**](https://trends.axibase.com/) is a data visualization sandbox based on the [Axibase Charts](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) library and the [Axibase Time Series Database](https://axibase.com/docs/atsd/) which provides essential data storage and processing tasks.
 
-The **Trends** service enables users to interact with the data that they are reading about by creating their own visualizations as well as by modifying examples shared by other users.
+The **Trends** service enables users to interact with data by creating custom visualizations as well as modifying examples shared by other users.
 
-**Trends** doesn't require readers to be proficient in any programming language however a certain familiarity with key concepts and general schema is recommended.
+**Trends** does not require readers to be proficient in any programming language however a certain familiarity with key concepts and general schema is helpful.
 
 ## Syntax
 
-**Trends** uses a convenient [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for creating graphs that will be briefly discussed in this guide. Feel free to ask questions or suggest datasets or topics by raising an issues on our [GitHub](https://github.com/axibase/atsd-use-cases/issues) page.
+**Trends** uses a convenient [syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) to create graphs, briefly described by this guide. Feel free to ask questions or suggest datasets or topics by raising an issues on the [Axibase GitHub](https://github.com/axibase/atsd-use-cases/issues) page.
 
-In the **Editor** window you will see the configuration for the current portal. All portals have several levels of settings:
+In the **Editor** window you see the configuration for the current portal. All portals have several levels of settings:
 
-* **[configuration]**: Overall settings for the entire portal. Even the most complex visualizations will have one set of **[configuration]** settings. Define base parameters for the portal such as layout, offset, formatting, as well as the default parameters that will be inherited by all widgets contained in the portal.
+* **[configuration]**: Overall settings for the entire portal. Even the most complex visualizations have one set of **[configuration]** settings. Define base parameters for the portal such as layout, offset, formatting, as well as the default parameters that are inherited by all widgets in the portal.
 
-* **[group]**: Each row of widgets is defined as a group. **[group]** level settings are applied to an entire row.
+* **[group]**: **Trends** defines each row of widgets as a group. **[group]** level settings are applied to an entire row by the service.
 
-* **[widget]**: Widget represents a chart. Define the [type](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) of chart and its parameters such as title, timespan, formatting.
+* **[widget]**: Widget represents a chart. Define the [type](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) of chart and other parameters such as title, timespan, formatting.
 
-For detailed information about **[widget]** level settings, see this [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/#series).
+For detailed information about **[widget]** level settings, see additional [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/#series).
 
-* **[series]**: Each widget must have at least one series. A series is a ordered and timestamped array of observations loaded from the database and visualized by the widget. **[series]** settings include the metric name, entity name, optional tags as well as any series-specific transformations.
+* **[series]**: Each widget must have at least one series. A series is an ordered and timestamped array of samples loaded from the database and visualized by the widget. **[series]** settings include the metric name, entity name, optional tags, as well as any series-specific transformations.
 
-More information about selecting series can be found [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/selecting-series/).
+Read more about selecting series in the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/selecting-series/).
 
-> Some settings may be defined at multiple levels. Settings defined at the **[configuration]** level are inherited by nested levels: **[group]** > **[widget]** > **[series]**. Settings defined at the lower level override settings set at the upper level. For example, if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[series]** level for one chart you define a different entity `y`, entity `x` will be used for all widgets **EXCEPT** for the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
+> Configure some settings at multiple levels. Settings defined at the **[configuration]** level are inherited by nested levels: **[group]** > **[widget]** > **[series]**. Settings defined at the lower level override those set at the upper level. For example, if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[series]** level for one chart you define a different entity `y`, the service uses entity `x` for all widgets **EXCEPT** the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
 
 ## Metrics Reference Page
 
-For a [listing](https://trends.axibase.com/public/reference.html) of available metrics stored in ATSD and accessible to **Trends** users, click the **Reference** button in the top toolbar as seen here.
+For a [listing](https://trends.axibase.com/public/reference.html) of available metrics stored in ATSD and accessible to **Trends** users, click the **Reference** button in the top toolbar.
 
 ![](images/ref-button.png)
 
-On the **Reference** page, you'll see a list of all metrics that are usable in **Trends**.
+On the **Reference** page, you see a list of all metrics stored by **Trends**.
 
-Search available metrics in the **Search Bar**. The entire metric list is indexed and may be searched there.
+Search available metrics in the **Search Bar**.
 
 ![](images/ref-search.png)
 
-Dictionary columns may be filtered by value. Click the **Filter** icon to open the menu of available values.
+Filter dictionary columns by value. Click the **Filter** icon to open the menu of available values.
 
 ![](images/ref-filter.png)
 
-Each metric may be previewed using the **Portal** button. Click the icon to open a preview of the data associated with the particular metric.
+Preview metrics with the **Portal** icon. Click the icon to open a preview of the data associated with the particular metric.
 
 ![](images/ref-portal.png)
 
@@ -89,13 +89,13 @@ Using the chart above as a configuration example:
         style = stroke-width: 2
 ```
 
-Each of these settings may be modified and new settings may be added based on Charts syntax. Additionally, complex transformations may be performed according to this [guide](../../Solutions/calculated-values), which details common transformations. For more information about advanced portal configuration, use this [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/).
+Modify these settings or add new settings based on Charts syntax. Additionally, perform ad hoc transformations according to the [Calculated Values](../../Solutions/calculated-values) article, which details common transformations. For more information about advanced portal configuration, refer to the [Portal Layout Guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/).
 
-Likewise, series may be derived from existing data according to this [guide](../../Support/Add-Calculated-Value), which shows each step from one series to another.
+Likewise, derive new series from existing data according to [Managing Calculated Values](../../Support/Add-Calculated-Value), which shows each step from one series to another.
 
-For baselines and thresholds, data may be manually input using the `value = x` setting at the **[series]** level, where `x` is the constant value.
+For baselines and thresholds, manually input data using the `value = x` setting at the **[series]** level, where `x` is a constant value.
 
-Once you have modified a configuration, click the **Run** button to apply the new settings.
+Once you modify a configuration, click **Run** to apply the new settings.
 
 ![](images/run-button.png)
 
@@ -105,30 +105,31 @@ To save the portal under an entirely new URL click **Clone**.
 
 ![](images/save-clone-button.png)
 
-**Trends** is a sandbox for everyone, we encourage users to create their own charts and share it with others.
+**Trends** is a sandbox for everyone, create your own charts and share the chart with others.
 
 ## Pre-Defined Widgets
 
-Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections that may be used as a template for developing your custom widgets.
+Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections, use these widgets as templates for unqiue charts.
 
 ![](images/pre-def-func.png)
 
-The two pre-defined widgets are described here:
+The two pre-defined widgets are described below:
 
-* **Inflation Index**: Experimental Consumer Price Index (CPIE) is the measure of a particular basket of consumer goods. It is often used to track inflation across a given period of time or compare "today's" dollars to historic dollar values.
+* **Inflation Index**: Experimental Consumer Price Index (CPIE) is the measure of a particular basket of consumer goods. It is often used by economists to track inflation across a given period of time or compare current dollar value to historic dollar value.
 
 * **Annual Inflation**: Percentile inflation for the United States. Inflation is calculated by comparing CPI, money supply, gross domestic product (GDP), and average wages. This widget relies on calculated metrics to created a derived measurement.
 
 ## User-Defined Functions
 
-The Charts API supports user-defined functions, enabling users to store and re-use statistical functions which they apply on a regular basis.
+The Charts API supports user-defined functions, enabling users to store and re-use statistical functions.
 
 ![](images/fred-lib-demo.png)
+
 [![](images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 
-```sql
+```javascript
 ### On the [configuration] level, the 'import' command is used to load functions from the `fred.js` file
 ### The library is assigned the name 'fred'.
 ### Multiple function libraries may be imported into the same portal.
@@ -152,11 +153,11 @@ The above visualization applies user-defined functions for each of the series. A
   value = fred.MonthlyChange('base')
 ```
 
-Using two series, the monthly change is calculated as a new series with a `value` expression which applies `MonthlyChange` function from the `fred` library to the series identified with alias `base`.
+Using two series, **Trends** calculates the monthly change as a new series with a `value` expression which applies `MonthlyChange` function from the `fred` library to the series identified with alias `base`.
 
 ### `fred` Library
 
-The `fred.js` library is available to any **Trends** user and contains the following functions:
+Any **Trends** user may access the `fred.js` library, which contains the following functions:
 
 | Function Name                      | Arguments       | Description |
 |------------------------------------|-----------------|-------------|
@@ -178,6 +179,6 @@ Open any of the visualizations above to see syntax and visual demonstrations of 
 
 For more detailed information about ATSD, the underlying mechanics, or download instructions see the [ATSD Documentation](https://axibase.com/docs/atsd/).
 
-Reach out to us with questions, comments, or suggestions [here](mailto:hello@axibase.com) via email or [here](https://github.com/axibase/atsd-use-cases/issues) on our GitHub page.
+Reach out with questions, comments, or suggestions by raising an [issue](https://github.com/axibase/atsd-use-cases/issues) on the Axibase GitHub page.
 
 For a complete list of metrics stored in **Trends**, see the [Index](https://trends.axibase.com/public/reference.html). Good luck and happy data hunting!

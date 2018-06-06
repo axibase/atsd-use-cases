@@ -2,9 +2,9 @@
 
 ![](images/entity-group1.png)
 
-Entity Groups provide a way to organize similar entities into logical collections that can be operated on as aggregates when managing user permissions, filtering data, calculating statistics, etc.
+Entity Groups provide a way to organize similar entities into logical collections so these groups may be operated upon as aggregates by a user when managing permissions, filtering data, calculating statistics, etc.
 
-For more information on entity groups, see the [documentation](https://axibase.com/docs/atsd/configuration/entity_groups.html).
+For more information on entity groups, see the [ATSD Documentation](https://axibase.com/docs/atsd/configuration/entity_groups.html).
 
 Follow this procedure to import an Entity Group definition to your local ATSD instance.
 
@@ -20,10 +20,10 @@ Follow this procedure to import an Entity Group definition to your local ATSD in
 
     ![](images/import-entity.png)
 
-Your entity group has been uploaded to ATSD. Expand the **Settings** menu in the left tool bar and select **Entity Groups**, where you new entry will be visible.
+Expand the **Settings** menu in the left tool bar and select **Entity Groups**, where you can select your new Entity Group.
 
 ## Uploading Multiple Configuration Files
 
-Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form.
 
 ![](images/backup-import.png)

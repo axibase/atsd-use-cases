@@ -2,7 +2,7 @@
 
 ![](images/portal.png)
 
-A Portal is a collection of real-time data visualizations which are grouped together in one interface.
+A Portal is a collection of real-time data visualizations grouped together in one interface.
 
 Follow this process to upload a Portal to your local ATSD instance.
 
@@ -18,10 +18,10 @@ Follow this process to upload a Portal to your local ATSD instance.
 
     ![](images/portal-import-page.png)
 
-Your portal has been uploaded to ATSD. Expand the Portals menu from the top toolbar to navigate to this new page.
+Expand the **Portals** menu from the top toolbar to navigate to the newly-created Portal.
 
 ## Uploading Multiple Configuration Files
 
-Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form.
 
 ![](images/backup-import.png)

@@ -8,8 +8,8 @@ This guide describes how to monitor availability and performance of [Apache Kafk
 
 ### Prerequisites
 
-* Kafka brokers with enabled JMX
-* 4GB RAM for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+* Kafka brokers with enabled JMX.
+* 4 GB RAM for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
 
 ### Launch ATSD Sandbox
 
@@ -24,11 +24,11 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 axibase/atsd-sandbox:latest
 ```
 
-The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
+The sandbox container includes both [ATSD](https://axibase.com/docs/atsd/) and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
 
-The Collector instance installed in the sandbox container is used to retrieve Kafka statistics using JMX and store them in ATSD.
+Use the Collector instance installed in the sandbox container to retrieve Kafka statistics using JMX and store the statistics in ATSD.
 
-Wait until the sandbox is initialized and 'All applications started.' message is displayed.
+Monitor the logs for `All applications started`.
 
 ```sh
 docker logs -f atsd-sandbox
@@ -38,37 +38,37 @@ docker logs -f atsd-sandbox
 
 Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axibase` username and `axibase` password.
 
-Click `Jobs` and set job type `JMX`. Make sure that `kafka-jmx` job is visible on the page and enabled.
+Open the **Jobs** drop-down list and select **JMX**. Make sure you see the enabled `kafka-jmx` job.
 
 ![](images/check-kafka-job.png)
 
 This job uses `kafka-cluster-jmx` [Item List](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md#connection-parameters) with Kafka JMX connection settings.
-Replace default parameters in this list with actual broker JMX address. Click `Collections` -> `Item Lists`
+Replace default parameters in this list with actual broker JMX address. Open the **Collections** menu and select **Item Lists**.
 
 ![](images/kafka-item-list-1.png)
 
-Open `kafka-cluster-jmx`
+Open `kafka-cluster-jmx`:
 
 ![](images/kafka-item-list-2.png)
 
-Edit CSV-formatted items. Replace default parameters with actual JMX parameters. Set username and password if required. Click `Save`.
+Edit CSV-formatted items. Replace default parameters with actual JMX parameters. Set username and password if required. Click **Save**.
 
 ![](images/kafka-item-list-3.png)
 
-Make sure that connection settings are correct. Click `Jobs` -> `JMX` and find `kafka-jmx` job.
+Make sure that connection settings are correct. Open the **Jobs** menu, select **JMX** and find the `kafka-jmx` job.
 Click `kafka-series` configuration
 
 ![](images/kafka-job-check-1.png)
 
-At the bottom of the page click the `Test` button.
+At the bottom of the page click **Test**.
 
 ![](images/kafka-job-check-2.png)
 
-If connection parameters are correct, series commands will be shown. Select other brokers and repeat test.
+If connection parameters are correct, you see series commands. Select other brokers and repeat test.
 
 ![](images/kafka-job-check-3.png)
 
-Return to the Job page and run job.
+Return to the **Job** page and run the job.
 
 ![](images/kafka-job-run-1.png)
 
@@ -78,29 +78,29 @@ Return to the Job page and run job.
 
 Log in to ATSD instance at `https://atsd_hostname:8443` using `axibase` username and `axibase` password.
 
-Click `Entities` and make sure that Kafka nodes are created by collector with their hostnames
+Open the **Entities** tab and make sure Collector displays the Kafka nodes with hostnames
 
 ![](images/atsd-entities-check.png)
 
-Click `Portals` -> `Configure`
+Open the **Portals** menu and select **Configure**.
 
 ![](images/portals-enable-1.png)
 
-Select `Kafka Broker` and `Kafka Cluster` portals and enable them using button at the bottom of the page.
+Select **Kafka Broker** and **Kafka Cluster** portals via checkbox and enable these portals using the split button at the bottom of the page.
 
 ![](images/portals-enable-2.png)
 
-Check Kafka broker portal. Return to the entities page, find any kafka broker and click `Open portals`
+Check **Kafka Broker** portal. Return to the **Entities** page, find any kafka broker and click the **Portal** icon.
 
 ![](images/kafka-broker-portal-check-1.png)
 
 ![](images/kafka-broker-portal-check-2.png)
 
-Check Kafka cluster entity view and portal. Click `Entity Views` -> `Kafka`
+Check Kafka cluster entity view and portal. Open the **Entity Views** menu and select **Kafka**.
 
 ![](images/kafka-cluster-check-1.png)
 
-Entity View should be shown. Click `View Portal` to check Kafka Cluster portal
+Click the **Portal** icon to check the **Kafka Cluster** portal
 
 ![](images/kafka-cluster-check-2.png)
 

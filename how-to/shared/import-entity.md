@@ -2,7 +2,7 @@
 
 ![](images/entity-group.png)
 
-An entity configuration describes the monitored object. The [entity record](https://axibase.com/docs/atsd/api/meta/entity/list.html#fields) includes information about the object such as the name, label, and custom tags.
+An Entity configuration describes a monitored object. The [entity record](https://axibase.com/docs/atsd/api/meta/entity/list.html#fields) includes information about the object such as the name, label, and custom tags.
 
 Follow this process to import entity records into your local ATSD instance.
 
@@ -18,12 +18,10 @@ Follow this process to import entity records into your local ATSD instance.
 
     ![](images/entity-import1.png)
 
-Your entities have been imported to ATSD.
-
-Return to the **Entities** page where the newly imported entities will be visible.
+Return to the **Entities** page to view the newly-imported entities.
 
 ## Uploading Multiple Configuration Files
 
-Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form.
 
 ![](images/backup-import.png)

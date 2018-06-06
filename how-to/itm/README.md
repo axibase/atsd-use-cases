@@ -9,11 +9,11 @@ There are two options to integrate ATSD with IBM Tivoli Monitoring (ITM):
 
 This document describes the second option, which provides minimal latency at the expense of introducing additional overhead on the WPA server.
 
-In order to offload detailed data from ITM-managed systems with minimal latency you need to enable an ITM Warehouse Proxy Agent (WPA) to write incoming analytical data from ITM agents into CSV files on the local file system. The CSV directory is continuously monitored by an `inotify` script, which uploads new CSV files into ATSD the moment they are created.
+In order to offload detailed data from ITM-managed systems with minimal latency you need to enable an ITM Warehouse Proxy Agent (WPA) to write incoming analytical data from ITM agents into CSV files on the local file system. The CSV directory is continuously monitored by an `inotify` script, which uploads new CSV files into ATSD the moment these files are created by ITM agents.
 
-This integration enables ATSD to act as a long-term repository for historical data such as attribute groups with aggressive pruning settings like process tables, which are typically configured to only retain old data for an interval of 3 to 7 days.
+This integration enables ATSD to act as a long-term repository for historical data such as attribute groups with aggressive pruning settings like process tables, which are typically configured to only retain old data for an interval of three to seven days.
 
-Because statistics from ITM agents are received by ATSD with no delay, this type of integration can be used for real-time analytics and performance dashboards with no display latency.
+Because statistics from ITM agents are received by ATSD with no delay, use this type of integration for real-time analytics and performance dashboards with no display latency.
 
 ![](images/itm_diag.png "Warehouse Proxy Agent diagram")
 
@@ -21,7 +21,7 @@ Because statistics from ITM agents are received by ATSD with no delay, this type
 
 ### Configure ITM Warehouse Proxy Agent
 
-* Configure WPA to store analytical data received from agents into CSV files on the local file system as described [here](https://www.ibm.com/support/knowledgecenter/SSATHD_7.7.0/com.ibm.itm.doc_6.3fp2/adminuse/history_analytics_scenarios.htm "WPA").
+* Configure WPA to store analytical data received from agents into CSV files on the local file system as described in the [IBM Knowledge Center](https://www.ibm.com/support/knowledgecenter/SSATHD_7.7.0/com.ibm.itm.doc_6.3fp2/adminuse/history_analytics_scenarios.htm "WPA").
 
 * Set the `hd.ini` settings to activate private history streaming:
 
@@ -51,7 +51,7 @@ Because statistics from ITM agents are received by ATSD with no delay, this type
   * [VMware](csv-configs/agents/vm_situations.xml)
   * [WebSphere MQ](csv-configs/agents/mq_situations.xml)
 
-* Copy the configuration file to the `localconfig/${PRODUCT_CODE}/` directory on the agent machine, where `${PRODUCT_CODE}` is the agent product code. You can look up commonly used product codes [here](https://www.ibm.com/support/knowledgecenter/en/SS4EKN_7.2.0/com.ibm.itm.doc_6.3/install/pc_codes.htm).
+* Copy the configuration file to the `localconfig/${PRODUCT_CODE}/` directory on the agent machine, where `${PRODUCT_CODE}` is the agent product code. You can look up commonly used product codes in the [IBM Knowledge Center](https://www.ibm.com/support/knowledgecenter/en/SS4EKN_7.2.0/com.ibm.itm.doc_6.3/install/pc_codes.htm).
 
     > Agent situation files adhere to the following naming convention: ${PRODUCT_CODE}_situations.xml
 
@@ -75,10 +75,10 @@ Because statistics from ITM agents are received by ATSD with no delay, this type
 
 * Log in to the ATSD web interface.
 * Open the **Configuration > Parsers: CSV** page.
-* Click the [Create] drop-down, select [Import].
-* Upload the CSV parser xml files that you downloaded previously.
+* Open the split button and select **Import**.
+* Upload the CSV parser XML files.
 
-### Configure `inotify` Script to Read CSV files and Upload Them into ATSD
+### Configure `inotify` Script to Read CSV files and Upload into ATSD
 
 * Download [`inotify_sender`](inotify_sender.sh) script to your WPA server.
 
@@ -110,7 +110,7 @@ Because statistics from ITM agents are received by ATSD with no delay, this type
 
 * Review the logs in the `/tmp/itm/logs` directory.
 
-* Add script to auto-start. The auto-start configuration is specific on your operating system.
+* Add script to auto-start. The auto-start configuration is specific to your operating system.
 
 ## Verifying Data in ATSD
 

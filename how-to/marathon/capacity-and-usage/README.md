@@ -8,27 +8,27 @@ The primary concept implemented in Marathon is the [**Application**](https://mes
 
 The framework consists of the following components:
 
-* Marathon server to translate Application definitions into stateful services consisting of Mesos tasks.
+* Marathon server to translate **Application** definitions into stateful services consisting of Mesos tasks.
 * [REST API](http://mesosphere.github.io/marathon/api-console/index.html) for programmatic access and integration.
 * User Interface to create and manage Applications.
 
-_Marathon v1.5.6 user interface:_
+Marathon `v1.5.6` user interface:
 
-![Marathon v1.5.6 User Interface](images/marathon_ui.png)
+![](images/marathon_ui.png)
 
 ## Capacity
 
-Each container (or **task** in Marathon terms) is allocated a pre-defined amount of CPU, memory, and disk resources. The containers are launched on the underlying Mesos [nodes](http://mesos.apache.org/documentation/latest/architecture/) based on available system capacity.
+Each container (or **Task** in Marathon terms) is allocated a pre-defined amount of CPU, memory, and disk resources by the application which launches the containers on underlying Mesos [nodes](http://mesos.apache.org/documentation/latest/architecture/) based on available system capacity.
 
 ### Allocated Capacity
 
-Both the API and the user interface provide a way to view allocated capacity alongside the number of launched, healthy, and unhealthy tasks aggregated for each application. The health statuses of these applications are reported for tasks with enabled health checks.
+Both the API and the user interface provide a way to view allocated capacity alongside the number of launched, healthy, and unhealthy tasks aggregated for each application. Marathon reports the health statuses of these applications for tasks with enabled health checks.
 
 ![](images/monitor-marathon.png)
 
 ### Capacity Usage
 
-Integration with [Axibase Time Series Database](https://axibase.com/docs/atsd/) adds an additional level of visibility by collecting and aggregating CPU, memory, and disk usage at the **Application** level. This allows the user to achieve higher capacity utilization by correlating resource allocations with actual usage.
+Integration with [Axibase Time Series Database](https://axibase.com/docs/atsd/) adds an additional level of visibility by collecting and aggregating CPU, memory, and disk usage at the **Application** level which allows the user to achieve higher capacity utilization by correlating resource allocations with actual usage.
 
 ![](images/marathon-applications-label.png)
 
@@ -36,8 +36,8 @@ Integration with [Axibase Time Series Database](https://axibase.com/docs/atsd/) 
 
 ### Prerequisites
 
-* Access to Marathon server via REST API v2.
-* 4GB RAM for the ATSD Sandbox container.
+* Access to Marathon server via REST API `v2`.
+* 4 GB RAM for the ATSD Sandbox container.
 
 ### Launch ATSD Sandbox
 
@@ -55,13 +55,13 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   axibase/atsd-sandbox:latest
 ```
 
-The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances, and the command will upload the needed xml files to ATSD and Axibase Collector.
+The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances. The command uploads the needed XML files to ATSD and Axibase Collector.
 
-> If you would like to import files manually, follow these instructions for [manual upload](MANUAL-UPLOAD-README.md).
+> If you would like to import files manually, follow the instructions for [manual upload](MANUAL-UPLOAD-README.md).
 
-The Collector instance installed in the sandbox container will automatically start historizing statistics from the local Docker engine.
+The Collector instance installed in the sandbox container automatically starts historizing statistics from the local Docker engine.
 
-Wait until the sandbox is initialized and 'All applications started.' message is displayed.
+Wait until the sandbox initializes and you see `All applications started` in the logs.
 
 ```sh
 docker logs -f atsd-sandbox
@@ -75,7 +75,7 @@ https://atsd_hostname:8443/
 
 ### Launch Axibase Collectors containers
 
-Launch Collector instances on the other Docker hosts in the environment. The remote Collector instances will send Docker statistics into the centralized ATSD database running in the sandbox container that we previously launched.
+Launch Collector instances on the other Docker hosts in the environment. The remote Collector instances send Docker statistics into the centralized ATSD database running in the sandbox container that you previously launched.
 
 ![](images/marathon.png)
 
