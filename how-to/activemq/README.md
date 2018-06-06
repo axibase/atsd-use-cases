@@ -42,9 +42,7 @@ EOF
 
 * Modify JMX settings in the ActiveMQ JVM launch options.
 
-* Search for the `ACTIVEMQ_SUNJMX_START` setting and change the setting as specified below.
-Replace `activemq_hostname` with the full hostname or IP address of the ActiveMQ server.
-This is the same hostname that Axibase Collector uses when connecting to ActiveMQ server.
+* Search for the `ACTIVEMQ_SUNJMX_START` setting and replace `activemq_hostname` with the full hostname or IP address of the ActiveMQ server. This is the same hostname that Axibase Collector uses when connecting to ActiveMQ server.
 
 > For more information on configuring JMX in ActiveMQ, see [ActiveMQ JMX Notes](https://activemq.apache.org/jmx.html)
 

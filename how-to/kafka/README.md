@@ -20,11 +20,11 @@ This document describes how to monitor availability and performance of [Apache K
 1. Select `kafka-series` configuration.
 2. On the **JMX Configuration** page, enter the JMX connection parameters or use [Item List](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md#connection-parameters) with predefined kafka parameters:
 
-   * **Host**: Kafka hostname.
-   * **Port**: JMX port.
-   * **User Name**: JMX user name.
-   * **Password**: Password for JMX user.
-   * **Entity**: Optionally, specify the output of the hostname command on the Kafka server if it is different from `kafka_hostname` (for example if `kafka_hostname` represents a fully-qualified name).
+    * **Host**: Kafka hostname.
+    * **Port**: JMX port.
+    * **User Name**: JMX user name.
+    * **Password**: Password for JMX user.
+    * **Entity**: Optionally, specify the output of the hostname command on the Kafka server if it is different from `kafka_hostname` (for example if `kafka_hostname` represents a fully-qualified name).
     * Other parameters are optional. For more information on JMX configuration, see [JMX Job Documentation](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md).
 
 3. Click **Test** to validate the configuration.
