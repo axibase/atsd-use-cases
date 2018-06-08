@@ -24,4 +24,4 @@ services:
     container_name: axibase-collector
     restart: always
     environment:
-      - COLLECTOR_ARGS=-atsd-url=https://${C_USER}:${C_PASSWORD}@atsd:8443 -job-path=https://raw.githubusercontent.com/axibase/atsd-use-cases/master/baltimore-pd/resources/socrata-baltimorecity.xml -job-execute=socrata-baltimorecity
+      - COLLECTOR_ARGS=-atsd-url=https://${C_USER}:${C_PASSWORD}@atsd:8443 -job-path=https://raw.githubusercontent.com/axibase/atsd-use-cases/master/research/baltimore-pd/resources/socrata-baltimorecity.xml -job-execute=socrata-baltimorecity

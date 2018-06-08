@@ -166,7 +166,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 2. Download the [`docker-compose.yml`](resources/docker-compose.yml) file to launch the ATSD Collector container bundle.
 
    ```sql
-   curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/oroville-dam/resources/docker-compose.yml
+   curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/research/oroville-dam/resources/docker-compose.yml
    ```
 
 3. In Terminal, launch containers:
