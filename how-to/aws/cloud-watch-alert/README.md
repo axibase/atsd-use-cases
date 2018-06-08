@@ -4,7 +4,11 @@
 
 This guide shows how to configure automatic email notifications upon resource launch from an Amazon Web Services account. This feature enables real-time notifications that alert you of resource status change and prevent unauthorized use of your AWS account which can result in expensive fees from AWS and potentially harmful operations carried out by your account.
 
+<<<<<<< HEAD
 ![](images/aws-notifications-workflow.png)
+=======
+![](./images/new-flow.png)
+>>>>>>> origin/master
 
 Follow these instructions to set up default AWS email notifications or follow the advanced procedure to integrate [Axibase Time Series Database](https://axibase.com/docs/atsd/) and AWS CloudWatch Events for enhanced notifications delivered via email, or through your preferred messenger service such as Slack or Telegram.
 
@@ -12,55 +16,55 @@ Follow these instructions to set up default AWS email notifications or follow th
 
 From the **Console Home** page, open the **Services** menu and in the **Management Tools** section, select **CloudWatch**.
 
-![](images/cw-menu.png)
+![](./images/cw-menu.png)
 
 On the left toolbar, click **Rules**. On the **Rules** page, click **Create New Rule**.
 
-![](images/cw1.png)
+![](./images/cw1.png)
 
 On the following page, configure the rule to respond to an **Event Pattern** and in the **Build Event Pattern to Match...** drop-down list, select **All Events**. You can customize the filter later on.
 
-![](images/cw-2.png)
+![](./images/cw-2.png)
 
 ### Configure SNS Topic
 
 In a new tab or window, open the **Services** menu and under the **Application Integration** section, select **Simple Notification Services** (SNS).
 
-![](images/app-integration-sns.png)
+![](./images/app-integration-sns.png)
 
 From the **SNS Dashboard**, navigate to the **Topics** page from the menu on the left. Click **Create New Topic**. Complete the information on the **Create Topic** form and save it.
 
-![](images/sns-1.png)
+![](./images/sns-1.png)
 
 Click the **ARN** link of the newly-created topic to configure additional details.
 
-![](images/sns-2.png)
+![](./images/sns-2.png)
 
 ### Define Subscribers
 
 On the **Topic Details** page, click **Create Subscription**.
 
-![](images/sns-3.png)
+![](./images/sns-3.png)
 
 Define the email address to which you would like AWS to send status change notifications. Be sure to select **Email** from the **Protocol** drop-down list.
 
-![](images/email-subscription.png)
+![](./images/email-subscription.png)
 
 Once you have completed creating a new subscription, click **Confirm Subscription**. AWS sends the new subscriber an email similar to the one shown here:
 
-![](images/confirm-email.png)
+![](./images/confirm-email.png)
 
 After confirming, AWS notifies that the subscription is active.
 
-![](images/email-confirm.png)
+![](./images/email-confirm.png)
 
 Refresh the page. A confirmed email subscriber entry is shown here:
 
-![](images/confirmed-email.png)
+![](./images/confirmed-email.png)
 
 You are ready to receive native AWS status change notifications. See the sample email notification here:
 
-![](images/aws-default.png)
+![](./images/aws-default.png)
 
 ## ATSD Integration
 
@@ -149,11 +153,11 @@ Return to the **Create Subscription** form, and paste the Webhook URL in the **E
 
 AWS SNS notifications over HTTPS protocol do not support destination endpoints with self-signed SSL certificates. If your ATSD instance runs on a self-signed certificate, switch to the HTTP protocol or install a [CA-signed SSL certificate](https://axibase.com/docs/atsd/administration/ssl-self-signed.html) into ATSD.
 
-![](images/sns-4.png)
+![](./images/sns-4.png)
 
 Confirm that your new subscription is active by checking that the **Subscriber** column contains actual subscriber information and is not showing **Pending Confirmation** as seen here.
 
-![](images/sns-6.png)
+![](./images/sns-6.png)
 
 ATSD is ready to notify you via [**Slack Team Messaging**](https://slack.com/) and email.
 
@@ -167,15 +171,15 @@ Configure the [Mail Client](https://axibase.com/docs/atsd/administration/mail-cl
 
 Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule is named `aws-cloudwatch-events`. Open the rule editor by clicking the link in the **Name** column. Select the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like ATSD to deliver email notifications.
 
-![](images/my-email.png)
+![](./images/my-email.png)
 
 Now, ATSD sends detailed status notifications via email.
 
-![](images/atsd-event-alert.png)
+![](./images/atsd-event-alert.png)
 
 ATSD email notifications contain context-aware links to the newly-launched AWS resource for quick drilldown. Links redirect to the AWS Console, as seen here.
 
-![](images/atsd-advanced-alert.png)
+![](./images/atsd-advanced-alert.png)
 
 ### Detailed Slack Notifications from ATSD
 
@@ -202,7 +206,7 @@ Now, ATSD sends status change notifications via email and Slack messenger.
 
 A sample status change Slack message is shown here:
 
-![](images/-slack-notification.png)
+![](./images/-slack-notification.png)
 
 ### Detailed Telegram Notifications from ATSD
 
@@ -229,4 +233,4 @@ Now, ATSD sends status change notifications via email and Telegram.
 
 A sample Telegram message is shown below. Telegram notifications contain links to newly-launched resources, as seen here:
 
-![](images/telegram-alerts.png)
+![](./images/telegram-alerts.png)

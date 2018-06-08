@@ -4,7 +4,11 @@
 
 This guide shows how to configure GitHub to alert you when someone creates a new project in your repository. This feature allows you to monitor your repository and receive notifications the moment a project is created. Follow the instructions to configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) to send you the notifications directly through a third-party messenger service with.
 
+<<<<<<< HEAD
 ![](images/workflow_project.png)
+=======
+![](./images/workflow-four.png)
+>>>>>>> origin/master
 
 ## Purpose
 
@@ -55,7 +59,7 @@ Refer to [GitHub Developer Guide](https://developer.github.com/webhooks/) for ad
 
 Open the **Settings** menu of the GitHub repository for which you would like to create notifications.
 
-![](images/repo-settings.png)
+![](./images/repo-settings.png)
 
 Select the **Webhooks** tab from the left-side menu and click **Add Webhook**.
 
@@ -66,13 +70,13 @@ On the **Add Webhook** page, configure the following settings:
 * Click **Disable SSL Verification** and confirm the setting.
 * Select **Send me everything**, under **Which events would you like to trigger this webhook?** The rule engine filters other events.
 
-![](images/webhook-config.png)
+![](./images/webhook-config.png)
 
 Be sure that your server is reachable by GitHub servers. For more information about configuring GitHub webhooks use the [GitHub Developer Guide](https://developer.github.com/webhooks/configuring/).
 
 Once you configure your server and webhook, confirm connectivity at the bottom of the **Manage Webhook** page.
 
-![](images/recent-delivery.png)
+![](./images/recent-delivery.png)
 
 See [Troubleshooting](troubleshooting.md) for connectivity issues.
 
@@ -80,7 +84,7 @@ See [Troubleshooting](troubleshooting.md) for connectivity issues.
 
 You begin receiving messenger notifications the next time someone creates a project in your GitHub repository.
 
-![](images/slack_project.png)
+![](./images/slack_project.png)
 
 **Repository**, **User**, and **Project** links redirect you to the repository where the project was created, the user who created the project, and the project page itself, respectively.
 

@@ -15,7 +15,7 @@ This integration enables ATSD to act as a long-term repository for historical da
 
 Because statistics from ITM agents are received by ATSD with no delay, use this type of integration for real-time analytics and performance dashboards with no display latency.
 
-![](images/itm_diag.png "Warehouse Proxy Agent diagram")
+![](./images/itm_diag.png "Warehouse Proxy Agent diagram")
 
 ## Installation steps
 
@@ -119,19 +119,19 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 
   * `klz`
 
-  ![](images/klz_metrics.png)
+  ![](./images/klz_metrics.png)
 
   * `lnx`
 
-  ![](images/lnx_metrics.png)
+  ![](./images/lnx_metrics.png)
 
   * `kvm`
 
-  ![](images/kvm_metrics.png)
+  ![](./images/kvm_metrics.png)
 
   * `mq`
 
-  ![](images/mq_metrics.png)
+  ![](./images/mq_metrics.png)
 
 ## Viewing Data in ATSD
 
@@ -147,4 +147,4 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 
 * [ITM – Linux OS Portal](https://apps.axibase.com/chartlab/43f054ee)
 
-![](images/itm_linux_portal.png "itm_linux_portal")
+![](./images/itm_linux_portal.png "itm_linux_portal")

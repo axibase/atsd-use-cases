@@ -1,6 +1,6 @@
 # Using Trends
 
-![](images/portal.png)
+![](./images/portal.png)
 
 ## Overview
 
@@ -34,28 +34,28 @@ Read more about selecting series in the [Charts Documentation](https://axibase.c
 
 For a [listing](https://trends.axibase.com/public/reference.html) of available metrics stored in ATSD and accessible to **Trends** users, click the **Reference** button in the top toolbar.
 
-![](images/ref-button.png)
+![](./images/ref-button.png)
 
 On the **Reference** page, you see a list of all metrics stored by **Trends**.
 
 Search available metrics in the **Search Bar**.
 
-![](images/ref-search.png)
+![](./images/ref-search.png)
 
 Filter dictionary columns by value. Click the **Filter** icon to open the menu of available values.
 
-![](images/ref-filter.png)
+![](./images/ref-filter.png)
 
 Preview metrics with the **Portal** icon. Click the icon to open a preview of the data associated with the particular metric.
 
-![](images/ref-portal.png)
+![](./images/ref-portal.png)
 
 ## Modifying Portals
 
 Open the **Editor** window in the **Trends** interface by clicking the button in the top menu.
 
-![](images/editor-window.png)
-[![](images/button-new.png)](https://trends.axibase.com/e91b896e#fullscreen)
+![](./images/editor-window.png)
+[![](./images/button-new.png)](https://trends.axibase.com/e91b896e#fullscreen)
 
 Using the chart above as a configuration example:
 
@@ -89,21 +89,27 @@ Using the chart above as a configuration example:
         style = stroke-width: 2
 ```
 
+<<<<<<< HEAD
 Modify these settings or add new settings based on Charts syntax. Additionally, perform ad hoc transformations according to the [Calculated Values](../../Solutions/calculated-values) article, which details common transformations. For more information about advanced portal configuration, refer to the [Portal Layout Guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/).
 
 Likewise, derive new series from existing data according to [Managing Calculated Values](../../Support/Add-Calculated-Value), which shows each step from one series to another.
+=======
+Each of these settings may be modified and new settings may be added based on Charts syntax. Additionally, complex transformations may be performed according to this [guide](../../how-to/database/calculated-values), which details common transformations. For more information about advanced portal configuration, use this [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/).
+
+Likewise, series may be derived from existing data according to this [guide](../../how-to/database/add-calculated-value/README.md), which shows each step from one series to another.
+>>>>>>> origin/master
 
 For baselines and thresholds, manually input data using the `value = x` setting at the **[series]** level, where `x` is a constant value.
 
 Once you modify a configuration, click **Run** to apply the new settings.
 
-![](images/run-button.png)
+![](./images/run-button.png)
 
 If you would like to create a new version of the current portal by adding a version suffix to the current URL, click **Save**.
 
 To save the portal under an entirely new URL click **Clone**.
 
-![](images/save-clone-button.png)
+![](./images/save-clone-button.png)
 
 **Trends** is a sandbox for everyone, create your own charts and share the chart with others.
 
@@ -111,7 +117,7 @@ To save the portal under an entirely new URL click **Clone**.
 
 Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections, use these widgets as templates for unqiue charts.
 
-![](images/pre-def-func.png)
+![](./images/pre-def-func.png)
 
 The two pre-defined widgets are described below:
 
@@ -123,9 +129,14 @@ The two pre-defined widgets are described below:
 
 The Charts API supports user-defined functions, enabling users to store and re-use statistical functions.
 
+<<<<<<< HEAD
 ![](images/fred-lib-demo.png)
 
 [![](images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
+=======
+![](./images/fred-lib-demo.png)
+[![](./images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
+>>>>>>> origin/master
 
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 

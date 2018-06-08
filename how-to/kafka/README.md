@@ -13,7 +13,7 @@ This document describes how to monitor availability and performance of [Apache K
 7. Select a target ATSD database for storing data.
 8. Click **Save**.
 
-![JMX_JOB](images/jmx_job_to_configuration.png)
+![JMX_JOB](./images/jmx_job_to_configuration.png)
 
 ### Configure series collection
 
@@ -30,7 +30,7 @@ This document describes how to monitor availability and performance of [Apache K
 3. Click **Test** to validate the configuration.
 4. Click **Save**.
 
-    ![](images/series_config.png)
+    ![](./images/series_config.png)
 
 ### Configure properties collection
 
@@ -39,31 +39,40 @@ This document describes how to monitor availability and performance of [Apache K
 3. Click **Test** to validate the configuration.
 4. Click **Save**.
 
-    ![](images/properties_config.png)
+    ![](./images/properties_config.png)
 
 ## Step 2: Configure Kafka in ATSD
 
 1. Log in to the target Axibase Time Series Database instance at `https://atsd_hostname:8443`.
+<<<<<<< HEAD
 2. Go to the **Metrics** page and verify that `jmx.kafka.*` metrics are available.
 3. Go to the **Entities** page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
 4. Open the **Settings** menu, select **Entity Groups** and import [Kafka](resources/groups.xml) entity group.
 5. Open the **Portals** menu, select **Configure** and import [Kafka](resources/portal-configs.xml) portals (check on the **Auto-enable New Portals** check box).
 6. Open the ![](images/alerts.png) **Alerts** menu, select **Rules** and import [Kafka](resources/rules.xml) rules (check the **Auto-enable New Rules** check box).
 7. Open the ![](images/entity_views.png) **Entity Views** menu, select **Configure** and import [Kafka](resources/entity-views.xml) entity view.
+=======
+2. Go to the Metrics page and verify that `jmx.kafka.*` metrics are available.
+3. Go to the Entities page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
+4. Go to `Settings -> Entity Groups` and import [Kafka](resources/groups.xml) entity group.
+5. Go to `Portals -> Configure` and import [Kafka](resources/portal-configs.xml) portals (check on the Auto-enable New Portals check box).
+6. Go to ![](./images/alerts.png) `Alerts -> Rules` and import [Kafka](resources/rules.xml) rules (check on the Auto-enable New Rules check box).
+7. Go to ![](./images/entity_views.png) `Entity Views -> Configure` and import [Kafka](resources/entity-views.xml) entity view.
+>>>>>>> origin/master
 
 ## Step 3: Verification
 
 1. Select an open `Kafka` on the **Entity Views** menu:
 
-    ![](images/entity_view.png)
+    ![](./images/entity_view.png)
 
 2. Verify that the portal in the table header is available and refers to the Kafka portal:
 
-    ![](images/kafka_cluster.png)
+    ![](./images/kafka_cluster.png)
 
 3. Verify that portals for each entity refer to the Broker portal:
 
-    ![](images/kafka_broker.png)
+    ![](./images/kafka_broker.png)
 
 ## Consumer Lag
 
@@ -114,4 +123,10 @@ series e:nurswgvml702 m:kafka.consumer_offset=550 t:groupid="console-consumer-72
 1. Check that metric `kafka.consumer_offset` is available on the **Metrics** tab in ATSD.
 1. Import [Consumer Lag Portal](resources/consumer-lag.xml) into ATSD and change the topic name to view the consumer lag.
 
+<<<<<<< HEAD
 ![](images/consumer_lag.png)
+=======
+![](./images/consumer_lag.png)
+
+For additional Kafka integration, see [Brokers Monitoring](brokers-monitoring/README.md) and [Consumers Monitoring](consumers-monitoring/README.md).
+>>>>>>> origin/master

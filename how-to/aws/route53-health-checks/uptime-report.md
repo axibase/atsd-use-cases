@@ -21,7 +21,7 @@ In addition to connection parameters, which specify the DNS name or IP address, 
 
 The intervals of time when the endpoint is unavailable are captured by the `HealthCheckPercentageHealthy` metric. This metric measures the percentage of time in the given period when the endpoint was available from 0% to 100%. For example, if the value of the average statistic for the `HealthCheckPercentageHealthy` metric is 90% for the 10 minute period, the target was reachable for 9 minutes (`10 * 60 * 90% = 540 seconds`).  AWS CloudWatch stores these statistics  for a period of up two weeks.
 
-![](images/route53-sla.png)
+![](./images/route53-sla.png)
 
 Measuring uptime is important for a variety of use cases such as reviewing IT operations track records, or evaluating the quality of services delivered by a service provider.
 
@@ -38,15 +38,15 @@ Log in to ATSD user interface using `axibase` username and `axibase` password.
 
 Open the **Metrics** tab and search for the `aws_route53.healthcheckpercentagehealthy.average` metric.
 
-![](images/route53-search.png)
+![](./images/route53-search.png)
 
 Click **Series** icon to view monitored health checks.
 
-![](images/route53-series.png)
+![](./images/route53-series.png)
 
 Click one of the health check IDs under the **Entity** column to view properties. Verify that both the standard and custom resource tags are present in ATSD.
 
-![](images/route53-attributes.png)
+![](./images/route53-attributes.png)
 
 This completes the verification stage. You now have data which can be reported on by the database.
 
@@ -69,7 +69,7 @@ GROUP BY entity
   ORDER BY entity
 ```
 
-![](images/route53-base.png)
+![](./images/route53-base.png)
 
 The output includes the list of health check IDs and the average percentage healthy metric for each check for the **previous day**.
 
@@ -208,7 +208,7 @@ GROUP BY entity
 | EUR  | 99.923            |
 ```
 
-![](images/route53-conditional-email.png)
+![](./images/route53-conditional-email.png)
 
 ### Calendar Filtering
 

@@ -8,35 +8,35 @@ This guide describes how to configure email alerts when a URL monitored by Route
 
 1. From the AWS **Console Home** page, navigate to Route53 by opening the **Services** drop-down list in the upper toolbar and clicking **Route53** under the **Networking and Content Delivery** section.
 
-    ![](images/route53-locate.png)
+    ![](./images/route53-locate.png)
 
 2. Select **Health Checks** from the toolbar on the left and click **Create Health Check**. If you have not set up Route53 services with your AWS account, bypass the introductory screen by clicking **Get started now** under **Avaialability Monitoring**.
 
-    ![](images/route53-menu.png)
+    ![](./images/route53-menu.png)
 
 3. Configure a new endpoint health check on the form shown below. Specify the **Domain Name** to monitor the status of a specific website and define the path you would like to monitor. Click **Next**.
 
-    ![](images/route53-config.png)
+    ![](./images/route53-config.png)
 
 4. On the following page, configure an alarm based on the newly created health check.
 
-    ![](images/route53-alert.png)
+    ![](./images/route53-alert.png)
 
 5. Once you configure the new health check and alarm, the email address you indicated receives a confirmation email from AWS. Route53 does not execute the health check until you confirm the email address. Once the health check executes, be sure that the monitored site shows 100% health under the **Monitoring** tab.
 
-    ![](images/route53-githup-api.png)
+    ![](./images/route53-githup-api.png)
 
 6. Under the **Health Checkers** tab, review information in the **Status** column for each of the **Health Checker Regions** and resolve any issues.
 
-    ![](images/route53-region-error.png)
+    ![](./images/route53-region-error.png)
 
 7. If you have not already done so, configure the new alarm notification target by navigating to the **Alarms** tab and clicking the **Edit** button in the **Actions** column. Select the appropriate **Notification Target** from the drop-down list of existing targets.
 
-    ![](images/route53-alarm.png)
+    ![](./images/route53-alarm.png)
 
 8. If the endpoint becomes unhealthy and the alarm is triggered by Route 53, the specified email address receives an email notification from AWS similar to the one shown below:
 
-    ![](images/route53-alarm-github.png)
+    ![](./images/route53-alarm-github.png)
 
 Your health checks and alarms are fully-functioning.
 
@@ -87,11 +87,11 @@ Complete the process below to enhance Route 53 alarms with your local ATSD insta
 
 3. Open the **Services** drop-down list and navigate to the **Simple Notification Service** page in the **Application Integration** section of the menu.
 
-    ![](images/app-integration-sns.png)
+    ![](./images/app-integration-sns.png)
 
 4. Open the **Topics** page from the toolbar on the left, and click the **ARN** link of the alert to integrate.
 
-    ![](images/route53-slack-subscription.png)
+    ![](./images/route53-slack-subscription.png)
 
 5. In the **Subscriptions** section of the **Topic Details** page, click **Create Subscription** to enable enriched emails with contextual information. Click **Create Subscription** and use the webhook URL in the **Endpoint** field:
 
@@ -103,7 +103,7 @@ Complete the process below to enhance Route 53 alarms with your local ATSD insta
 
     Replace `atsd_hostname` with a valid hostname and update user password in the webhook URL above.
 
-    ![](images/route53-slack.png)
+    ![](./images/route53-slack.png)
 
 You are ready to start receiving detailed email notifications about endpoint health status alerts.
 
@@ -113,13 +113,13 @@ Follow the optional steps below to further enhance this functionality to send co
 
 * Configure your local ATSD instance to send messages to Slack Messenger by following the [Slack Notifications](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html) procedure. Now, ATSD sends alarm notifications via Slack Messenger as well as email.
 
-![](images/route53-alert-slack.png)
+![](./images/route53-alert-slack.png)
 
 ### Alarm Notifications in Telegram
 
 * Configure your local ATSD instance to send messages to Telegram Messenger by following the [Telegram Notifications](https://axibase.com/docs/atsd/rule-engine/notifications/telegram.html) procedure. Now, ATSD sends alarm notifications via Telegram Messenger as well as email.
 
-![](images/route53-tg-alert.png)
+![](./images/route53-tg-alert.png)
 
 ### Advanced Configuration
 
@@ -127,8 +127,8 @@ Follow the optional steps below to further enhance this functionality to send co
 
 * Enable the **Attach Details** option to include detailed email reports upon alarm notification:
 
-![](images/route53-alarm-email-detail.png)
+![](./images/route53-alarm-email-detail.png)
 
 * Enable the **Attach Portals** option to include complete health check portals upon alarm notification (not only unhealthy endpoints):
 
-![](images/route53-alarm-email-portal.png)
+![](./images/route53-alarm-email-portal.png)

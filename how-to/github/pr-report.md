@@ -4,7 +4,7 @@
 
 This guide shows how to configure [ATSD](https://axibase.com/docs/atsd/) to produce a daily report with all open Pull Requests across an organization's entire collection of repositories and email it to subscribed users. The report will have two parts: open Pull Requests that are able to be merged and passing all secondary status checks, and open Pull Requests that are not ready to be merged because they are failing one or more secondary status checks. Each report will be delivered separately. GitHub [webhook services](pr-notification.md) may be used to notify repository owners and administrators when a new Pull Request is opened, but for larger organizations with a large collection of repositories, individual Pull Requests may be missed and left open leading to potential conflicts or inaccurate code / documentation. This feature allows repository owners and administrators to monitor their work and receive a daily report with the status of all open Pull Requests across an entire repository library. Follow the instructions to configure the notifications to be sent directly to any group of subscribers via email with [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [GitHub v4 API](https://developer.github.com/v4/). Setup should take around 10 minutes.
 
-![](images/pr-report-workflow.png)
+![](./images/pr-report-workflow.png)
 
 ## Purpose
 
@@ -79,7 +79,7 @@ Confirm the validity of parameters in `mail.properties` file and relaunch.
 
 Upon successful completion, the **Mail Client** will automatically send subscribed users a confirmation email to confirm connectivity.
 
-![](images/test-email.png)
+![](./images/test-email.png)
 
 After initial launch, if **Mail Client** settings need to be reconfigured, follow these [instructions](https://axibase.com/docs/atsd/administration/mail-client.html).
 
@@ -93,15 +93,15 @@ The GitHub API may be accessed [several ways](https://developer.github.com/v3/au
 
 While logged in to GitHub, click your profile picture in the upper-right corner from any page, then click **Settings**
 
-![](images/developer-settings.png)
+![](./images/developer-settings.png)
 
 Open the **Developer Settings** page and navigate to the **Personal Access Tokens** tab.
 
-![](images/personal-access-tokens.png)
+![](./images/personal-access-tokens.png)
 
 Click **Generate New Token**, you will be prompted to enter your password.
 
-![](images/read:org.png)
+![](./images/read:org.png)
 
 Configure the token to grant **read:org** permissions in the **admin:org** section. This scope grants read-only organization access to any user with this token, keep it confidential. For more information about token scopes, see [GitHub Developer Documentation](https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/).
 
@@ -525,11 +525,11 @@ The above JSON result sets will be converted to two outgoing email reports, sent
 
 **Sample Apache Report for `MERGEABLE` Pull Requests with `SUCCESS` State**
 
-![](images/apache-report-success.png)
+![](./images/apache-report-success.png)
 
 **Sample Apache Report for `MERGEABLE` Pull Requests with `FAILURE` State**
 
-![](images/apache-report-failure.png)
+![](./images/apache-report-failure.png)
 
 For additional GraphQL query syntax, view the [documentation](https://graphql.org/learn/queries/).
 
@@ -547,7 +547,7 @@ Before report delivery, ensure all parameters have been correctly configured:
 
 A sample report from [**Siemens**](https://github.com/siemens) repositories using a wider scope:
 
-![](images/pr-report-delivery.png)
+![](./images/pr-report-delivery.png)
 
 Clickable URLs redirect to the Pull Request page.
 
