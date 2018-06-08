@@ -16,7 +16,7 @@ This challenge can be addressed by scheduling the execution of an analytical que
 
 The steps below describe how this type of monitoring can be enabled in Axibase Time Series Database.
 
-![](images/diagram.png)
+![](./images/diagram.png)
 
 ---
 
@@ -167,11 +167,11 @@ The [JDBC](https://github.com/axibase/axibase-collector/blob/master/jobs/jdbc.md
 
 To connect the Collector to a database, create a new data source connection on the `DataSources > Databases` page.
 
-![](images/data-source-mysql.png)
+![](./images/data-source-mysql.png)
 
 Click **Meta Data** to test the connection.
 
-![](images/data-source-meta.png)
+![](./images/data-source-meta.png)
 
 Execute a sample query to verify permissions.
 
@@ -181,13 +181,13 @@ Add `LIMIT n` clause to the test query in order to restrict the number of return
 SELECT * FROM stat_orders_hourly_total LIMIT 5
 ```
 
-![](images/data-source-test.png)
+![](./images/data-source-test.png)
 
 ### Create JDBC Job
 
 Now that the data source is configured and validated, create a new `JDBC` job on the **Jobs** tab.
 
-![images](images/jdbc-config.png)
+![images](./images/jdbc-config.png)
 
 To execute the job once per hour, set schedule as `0 0 * * * ?`.
 
@@ -211,7 +211,7 @@ This query doesn't have any text columns and as such doesn't require any series 
 series e:ops_db d:2018-04-18T10:24:08.493Z m:orders.total_amount=920 m:orders.total_count=1
 ```
 
-![](images/jdbc-total-test.png)
+![](./images/jdbc-total-test.png)
 
 * Configuration for `stat_orders_hourly_detail` view:
 
@@ -221,15 +221,15 @@ This query extracts customer name as an extra dimension which is captured with t
 series e:ops_db d:2018-04-18T10:25:10.126Z t:customer=eBank m:orders.customer_amount=920 m:orders.customer_count=1
 ```
 
-![](images/jdbc-detail-test.png)
+![](./images/jdbc-detail-test.png)
 
 At the final stage, make sure that the job is enabled.
 
-![](images/jdbc-config-complete.png)
+![](./images/jdbc-config-complete.png)
 
 Click **Run** to execute the job manually for the first time.
 
-![](images/jdbc-job-exec.png)
+![](./images/jdbc-job-exec.png)
 
 ## Locate Metrics in ATSD
 
@@ -237,13 +237,13 @@ The series collected by Collector can be located within ATSD in various ways: se
 
 Open the **Metrics** tab and search metrics by name or prefix.
 
-![](images/metrics_search.png)
+![](./images/metrics_search.png)
 
 To view individual series, click on the **Series** icon and then on the chart link.
 
-![](images/series-list.png)
+![](./images/series-list.png)
 
-![](images/series-portal.png)
+![](./images/series-portal.png)
 
 ## Monitoring Data
 
@@ -251,7 +251,7 @@ Now that you have data being continuously inserted into ATSD, you can:
 
 * Visualize data with [portals](https://axibase.com/docs/atsd/portals/). Show hourly orders overlaid with previous day/week/etc.
 
-![](images/order-chart.png)
+![](./images/order-chart.png)
 
 * Build automated [forecasts](https://axibase.com/docs/atsd/forecasting/).
 * Create Slack/email [alerts](https://axibase.com/docs/atsd/rule-engine/notifications/#creating-notifications) using the [rule engine](https://axibase.com/docs/atsd/rule-engine/) to get notified when the order activity is abnormal.

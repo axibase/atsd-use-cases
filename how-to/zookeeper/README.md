@@ -27,7 +27,7 @@ host3.com,9010,user,pass,prod-zoo-host3,prod
    **entity** — ATSD entity for Zookeeper node.
    **cluster** — ATSD series tag for indicating that nodes are in the same cluster.
 
-![](images/items_list_config.png)
+![](./images/items_list_config.png)
 
 Save changes.
 
@@ -45,14 +45,14 @@ Select a target ATSD database for storing data.
 
 Click **Save**.
 
-![JMX_JOB](images/jmx_job_configuration.png)
+![JMX_JOB](./images/jmx_job_configuration.png)
 
 Test job configurations. Click on `zookeeper-series`.
 
 If needed, change default parameters.
 For more information on JMX configuration, see [JMX](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md). Click **Test**.
 
-![](images/jmx_job_series_config.png)
+![](./images/jmx_job_series_config.png)
 
 Repeat test for `zookeeper-properties`.
 
@@ -64,13 +64,13 @@ Log in to the target Axibase Time Series Database instance at `https://atsd_host
 
 Go to **Metrics** page and verify that `jmx.zookeeper.*` metrics are available.
 
-![](images/metrics_collection_verification.png)
+![](./images/metrics_collection_verification.png)
 
 1. Go to **Entities** page and verify that `jmx.zookeeper.*` properties are available for entities from `zookeeper-properties` configuration.
 
-![](images/entities_collection_verification.png)
+![](./images/entities_collection_verification.png)
 
-![](images/properties_collection_verification.png)
+![](./images/properties_collection_verification.png)
 
 ## Step 2: Configure Zookeeper in ATSD
 
@@ -80,14 +80,14 @@ Go to **Metrics** page and verify that `jmx.zookeeper.*` metrics are available.
 1. Locate `Zookeeper Nodes` group, click on it
 1. Verify that entities were successfully imported.
 
-![](images/entity_group_check.png)
+![](./images/entity_group_check.png)
 
 ### Import portals
 
 1. Go to `Portals -> Configure` and import [portals](resources/portal-configs.xml) (check on the Auto-enable New Portals check box).
 2. Verify that new portals are displayed at `Portals -> Configure`.
 
-![](images/test_portals.png)
+![](./images/test_portals.png)
 
 ### Import rules
 
@@ -95,7 +95,7 @@ Go to `Alerts -> Rules` and import [rules](resources/rules.xml) (set the flag in
 
 Check that rules were imported
 
-![](images/rules_list.png)
+![](./images/rules_list.png)
 
 * `Zookeeper cluster high latency` - alert opens when more than 50% of the nodes in a cluster have average latency greater than 100 ms in 3 minutes.
 * `Zookeeper cluster not serving requests` - alert opens when node status is `leaderelection`, which means that nodes cannot choose leader.
@@ -107,7 +107,7 @@ Check that rules were imported
 
 Verify rule functionality. Stop one node and check that `Zookeeper dead node` and `Zookeeper dead nodes list` rule opens (it may take up to 2 minutes). Go to **Alerts -> Open Alerts** to see all open rules.
 
-![](images/rule_dead_node_test.png)
+![](./images/rule_dead_node_test.png)
 
 To check `Zookeeper cluster not serving requests` rule stop more than 50% of all active nodes (in this case 2 of 3, if Zookeeper quorum is default).
 
@@ -135,8 +135,8 @@ For more information on Rule Engine, see [ATSD Rule Engine](https://axibase.com/
 Go to `Entity Views -> Configure` and import the following [entity view](resources/entity-views.xml).
 Check entity view. Go to `Entity Views -> Zookeeper`
 
-![](images/entity_view.png)
+![](./images/entity_view.png)
 
 Click on `portal` link and check cluster portal
 
-![](images/cluster_portal.png)
+![](./images/cluster_portal.png)
