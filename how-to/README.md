@@ -36,7 +36,7 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 ## Docker
 
 - [Notifications for Docker Hub Build Failures](docker/README.md) (April 2018)
-- [ATSD + Docker for Anomaly Detection](docker/docker-engine.md) (September 2017)
+- [Docker Container Monitoring](docker/docker-engine.md) (September 2017)
 
 ## GitHub
 
