@@ -4,7 +4,7 @@
 
 This guide shows how to configure GitHub to alert you when someone forks your repository. This feature allows you to monitor activity related to your repository. Follow the instructions to configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) to send you the notifications directly through a third-party messenger service with.
 
-![](./images/fork-workflow.png)
+![](./images/workflow_fork.png)
 
 ## Purpose
 

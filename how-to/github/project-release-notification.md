@@ -4,7 +4,7 @@
 
 This guide shows how to configure GitHub to alert you when someone creates a new project in your repository. This feature allows you to monitor your repository and receive notifications the moment a project is created. Follow the instructions to configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) to send you the notifications directly through a third-party messenger service with.
 
-![](./images/workflow-four.png)
+![](./images/workflow_project.png)
 
 ## Purpose
 
