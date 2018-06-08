@@ -76,4 +76,4 @@ series e:kafka_host m:kafka.consumer_offset=550 t:groupid="console-consumer-7262
 Check that metric `kafka.consumer_offset` is available on the Metrics tab in ATSD.
 Log in to ATSD instance, click Metrics and type `kafka.consumer_offset` in search field
 
-![](images/kafka-check-consumer-offset.png)
+![](./images/kafka-check-consumer-offset.png)
