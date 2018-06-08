@@ -11,7 +11,7 @@ Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
 > Use the dropdown menus at the top of the visualization to navigate through time by selecting the desired start and end
 years for the observation period.
 
-Recently, [European Union Debt Data](../../data-lib/eu-debt/README.md) sorted by country was published
+Recently, [European Union Debt Data](../../research/data-lib/eu-debt/README.md) sorted by country was published
 in the [Axibase Data Library](https://axibase.com/blog/data-library/). After its release, there were a number of requests to explore
 that data considering population numbers to arrive at a modified debt per capita visualization, representing how much of a
 government's gross debt is represented by individual citizens of that particular country.
@@ -37,4 +37,4 @@ The following visualization tracks debt growth by country from 2006 to 2016:
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d38e750e/#fullscreen)
 
 This dataset is queried further and indexed in the [Data Library](https://axibase.com/blog/data-library/) using the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) in [ATSD](https://axibase.com/docs/atsd/).
-See the complete entry [here](../../data-lib/eu-debt-per-capita/README.md).
+See the complete entry in the [Data Library](../../research/data-lib/eu-debt-per-capita/README.md).

@@ -40,7 +40,7 @@ While you can manually analyze this information in a spreadsheet program, it is 
 
 The [Axibase Time Series Database](https://axibase.com/docs/atsd/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. This article will not focus on creating graphs and figures using ATSD, but
 rather on writing and running SQL queries. If you are interested in reading more on the visual presentation capabilities of ATSD, check out our articles on
-[employee compensation numbers in Iowa](../socrata/iowa-compensation/README.md) and
+[employee compensation numbers in Iowa](../../how-to/socrata/iowa-compensation/README.md) and
 [aviation statistics in the United Kingdom](../uk-aviation/README.md).
 
 Below is an output of the default configuration with all 122 U.S. cities parsed into ATSD.
@@ -1341,10 +1341,10 @@ wrote our own SQL queries, and were able to compute our own mortality statistics
 Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector and create SQL queries for analyzing CDC death statistics:
 
 1. Install Docker. A link for how to install Docker can be found [here](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
-2. Download the [`docker-compose.yml`](https://raw.githubusercontent.com/axibase/atsd-use-cases/master/us-mortality/resources/docker-compose.yml) file to launch the ATSD Collector container bundle.
+2. Download the `docker-compose.yml` file to launch the ATSD Collector container bundle.
 
    ```sh
-   curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/us-mortality/resources/docker-compose.yml
+   curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/research/us-mortality/resources/docker-compose.yml
    ```
 
 3. In Terminal, launch containers:

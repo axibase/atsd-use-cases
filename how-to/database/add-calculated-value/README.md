@@ -23,7 +23,7 @@ and even exported for further use elsewhere.
 
 ## Data
 
-Using excerpted data from [Eurostat](http://ec.europa.eu/eurostat) detailing [European Union Debt by Country](../../data-lib/eu-debt/README.md)
+Using excerpted data from [Eurostat](http://ec.europa.eu/eurostat) detailing [European Union Debt by Country](../../../research/data-lib/eu-debt/README.md)
 that has been catalogued in the [Axibase Data Library](https://axibase.com/data-library), the process of modifying numerical
 data is shown here:
 

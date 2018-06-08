@@ -441,7 +441,7 @@ or non-standard formats, into one instance makes comparing employee average comp
 
 ## Action Items
 
-Here is a link to our article on [Hawaii gas prices](../hawaii-prices/README.md). The [action items](../hawaii-prices/README.md#action-items) in that article show the steps for installing ATSD.
+Here is a link to our article on [Hawaii gas prices](../../../research/hawaii-prices/README.md). The [action items](../../../research/hawaii-prices/README.md#action-items) in that article show the steps for installing ATSD.
 
 Below are the steps to follow and create figures for Iowa employment metrics:
 

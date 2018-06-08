@@ -28,7 +28,7 @@ of cocaine, manufacturing and delivering heroin, soliciting narcotics etc). Each
 Given the size of the dataset, you cannot load it in Excel. It is much more convenient to interact with the data once it is loaded into a database. The
 [Axibase Time Series Database](https://axibase.com/docs/atsd/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use two capabilities of ATSD to explore this dataset:
 
-* Interactive graphs from [Chart Lab](../how-to/shared/chartlab.md);
+* Interactive graphs from [Chart Lab](../../how-to/shared/chartlab.md);
 
 * Tabular outputs from analytical [SQL queries](https://axibase.com/docs/atsd/sql/).
 

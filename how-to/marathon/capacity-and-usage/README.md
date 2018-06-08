@@ -57,7 +57,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances, and the command will upload the needed xml files to ATSD and Axibase Collector.
 
-> If you would like to import files manually, follow these instructions for [manual upload](manual-upload).
+> If you would like to import files manually, follow these instructions for [manual upload](manual-upload.md).
 
 The Collector instance installed in the sandbox container will automatically start historizing statistics from the local Docker engine.
 

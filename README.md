@@ -59,8 +59,8 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 
 ### Socrata
 
-* [From data.gov Dataset to Python DataFrame in 10 minutes](how-to/database/socrata/python/README.md) (February 2017)
-* [Analyzing Socrata Datasets for Iowa Compensation](how-to/database/socrata/iowa-compensation/README.md) (October 2016)
+* [From data.gov Dataset to Python DataFrame in 10 minutes](how-to/socrata/python/README.md) (February 2017)
+* [Analyzing Socrata Datasets for Iowa Compensation](how-to/socrata/iowa-compensation/README.md) (October 2016)
 
 View more [Examples](how-to/README.md)
 

@@ -4,7 +4,7 @@
 
 ## Summary
 
-Using [calculated values](../../how-to/database/add-calculated-value/README.md) in the [ChartLab](https://apps.axibase.com/chartlab) interface
+Using [calculated values](../add-calculated-value/README.md) in the [ChartLab](https://apps.axibase.com/chartlab) interface
 is useful for creating multiple outputs from one set of underlying data. [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 supports a range of in-built functions which allow end-users to manipulate a dataset to derive the desired meaning from it.
 
