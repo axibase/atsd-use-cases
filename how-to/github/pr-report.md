@@ -6,6 +6,8 @@ Configure [ATSD](https://axibase.com/docs/atsd/) to produce a daily report with 
 
 GitHub [webhook services](pr-notification.md) can notify repository owners and administrators of a new Pull Request, but for larger organizations with a large collection of repositories, use a tool with a wider scope. Configure notifications for a group of subscribers via email with [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [GitHub v4 API](https://developer.github.com/v4/). Setup takes around 10 minutes.
 
+![](./images/pr-report-workflow.png)
+
 ![](images/pr-report-workflow.png)
 
 Accomplish complete Pull Request management using programmatic integration leveraging the [GraphQL](https://graphql.org/) API query language, featured in the GitHub API.
@@ -82,7 +84,7 @@ Confirm parameters in `mail.properties` and relaunch.
 
 Upon successful completion, **Mail Client** sends subscribed users a confirmation email.
 
-![](images/test-email.png)
+![](./images/test-email.png)
 
 Reconfigure [**Mail Client**](https://axibase.com/docs/atsd/administration/mail-client.html) to modify subscriber list or change mail server. ATSD web interface is accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports).
 
@@ -94,15 +96,15 @@ This tool uses an [OAuth Personal Token](https://blog.github.com/2013-05-16-pers
 
 While logged in to GitHub, click the user profile picture in the upper-right corner and select **Settings**
 
-![](images/developer-settings.png)
+![](./images/developer-settings.png)
 
 Open the **Developer Settings** page and navigate to the **Personal Access Tokens** tab.
 
-![](images/personal-access-tokens.png)
+![](./images/personal-access-tokens.png)
 
 Click **Generate New Token**, enter password when prompted.
 
-![](images/read:org.png)
+![](./images/read:org.png)
 
 Configure the token to grant **read:org** permissions in the **admin:org** section. This scope grants read-only organization access to any user with this token, keep it confidential. For more information about token scopes, see [GitHub Developer Documentation](https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/).
 
@@ -526,11 +528,11 @@ Each of these `JSONPaths` correspond to a JSON list which **Rule Engine** conver
 
 **Sample Apache Report for `MERGEABLE` Pull Requests with `SUCCESS` State**
 
-![](images/apache-report-success.png)
+![](./images/apache-report-success.png)
 
 **Sample Apache Report for `MERGEABLE` Pull Requests with `FAILURE` State**
 
-![](images/apache-report-failure.png)
+![](./images/apache-report-failure.png)
 
 For additional GraphQL query syntax, view the [GraphQL Documentation](https://graphql.org/learn/queries/).
 
@@ -550,7 +552,7 @@ Define the following parameters in the launch command and execute to begin repor
 
 A sample report from [**Siemens**](https://github.com/siemens) repositories using a wider scope:
 
-![](images/pr-report-delivery.png)
+![](./images/pr-report-delivery.png)
 
 Clickable URLs redirect to Pull Request page.
 

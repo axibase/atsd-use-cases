@@ -14,7 +14,7 @@ The framework consists of the following components:
 
 _Marathon v1.5.6 user interface:_
 
-![Marathon v1.5.6 User Interface](images/marathon_ui.png)
+![Marathon v1.5.6 User Interface](./images/marathon_ui.png)
 
 ## Capacity
 
@@ -24,13 +24,13 @@ Each container (or **task** in Marathon terms) is allocated a pre-defined amount
 
 Both the API and the user interface provide a way to view allocated capacity alongside the number of launched, healthy, and unhealthy tasks aggregated for each application. The health statuses of these applications are reported for tasks with enabled health checks.
 
-![](images/monitor-marathon.png)
+![](./images/monitor-marathon.png)
 
 ### Capacity Usage
 
 Integration with [Axibase Time Series Database](https://axibase.com/docs/atsd/) adds an additional level of visibility by collecting and aggregating CPU, memory, and disk usage at the **Application** level. This allows the user to achieve higher capacity utilization by correlating resource allocations with actual usage.
 
-![](images/marathon-applications-label.png)
+![](./images/marathon-applications-label.png)
 
 ## Configuration
 
@@ -57,7 +57,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances, and the command will upload the needed xml files to ATSD and Axibase Collector.
 
-> If you would like to import files manually, follow these instructions for [manual upload](MANUAL-UPLOAD-README.md).
+> If you would like to import files manually, follow these instructions for [manual upload](manual-upload.md).
 
 The Collector instance installed in the sandbox container will automatically start historizing statistics from the local Docker engine.
 
@@ -77,7 +77,7 @@ https://atsd_hostname:8443/
 
 Launch Collector instances on the other Docker hosts in the environment. The remote Collector instances will send Docker statistics into the centralized ATSD database running in the sandbox container that we previously launched.
 
-![](images/marathon.png)
+![](./images/marathon.png)
 
 Replace `atsd_hostname` in the command below with the hostname or IP address where ATSD is running.
 
@@ -97,10 +97,10 @@ $ docker run -d -p 9443:9443 --restart=always \
 
 Click **Marathon Applications** on the menu to access the Entity View. This view displays all Marathon applications, the number of healthy tasks for each application, as well as aggregate resource utilization with breakdown by CPU, memory, and disk.
 
-![](images/marathon-applications.png)
+![](./images/marathon-applications.png)
 
 ### Resource Utilization Portal
 
 The built-in portal displays daily statistics on resource allocation and usage for all applications at once.
 
-![](images/marathon_portal.png)
+![](./images/marathon_portal.png)

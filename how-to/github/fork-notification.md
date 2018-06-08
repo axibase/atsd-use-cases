@@ -4,7 +4,7 @@
 
 This guide shows how to configure GitHub to alert you when someone forks your repository. This feature allows you to monitor activity related to your repository. Follow the instructions to configure the notifications to be sent to you directly through a third-party messenger service with [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
-![](images/fork-workflow.png)
+![](./images/fork-workflow.png)
 
 ## Purpose
 
@@ -53,7 +53,7 @@ Webhook URL: https://github:PdWnC1jF@atsd.company.com:8443/api/v1/messages/webho
 
 Open the **Settings** menu for the GitHub repository for which you would like to create notifications.
 
-![](images/repo-settings.png)
+![](./images/repo-settings.png)
 
 Select the **Webhooks** tab from the left-side menu and click **Add Webhook**.
 
@@ -64,7 +64,7 @@ On the **Add Webhook** page, configure the following settings:
 * Click **Disable SSL Verification** and confirm the setting.
 * Select **Send me everything**, under **Which events would you like to trigger this webhook?** The rule engine will filter other events.
 
-![](images/webhook-config.png)
+![](./images/webhook-config.png)
 
 Refer to [GitHub Developer Guide](https://developer.github.com/webhooks/) for additional information on outgoing webhooks.
 
@@ -72,7 +72,7 @@ Be sure that your server is reachable by GitHub servers. For more information ab
 
 Once your server and webhook have been configured, confirm connectivity at the bottom of the **Manage Webhook** page.
 
-![](images/recent-delivery.png)
+![](./images/recent-delivery.png)
 
 See the [Troubleshooting](troubleshooting.md) for connectivity issues.
 
@@ -80,7 +80,7 @@ See the [Troubleshooting](troubleshooting.md) for connectivity issues.
 
 You'll begin receiving messenger notifications the next time someone creates a new fork from your GitHub repository.
 
-![](images/fork-message.png)
+![](./images/fork-message.png)
 
 **Repository**, **User**, and **New Repository** links will redirect you to the original repository, the user who forked it, and the newly-created repository, respectively.
 

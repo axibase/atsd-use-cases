@@ -8,11 +8,11 @@ Log in to ATSD, open the **Settings** tab in the main menu, navigate to **Diagno
 
 The page contains a list of recently received webhook requests.
 
-![](images/webhook-diag.png)
+![](./images/webhook-diag.png)
 
 Under the **Details** column, click the **View** link to see webhook request parameters, the payload, and the generated ATSD message.
 
-![](images/webhook-confirm.png)
+![](./images/webhook-confirm.png)
 
 If the page does not contain the expected request, check the webhook URL manually:
 
