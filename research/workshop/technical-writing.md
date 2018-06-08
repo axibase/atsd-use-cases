@@ -508,3 +508,5 @@ Axibase Documentation is a proper noun, capitalize Axibase Documentation every t
 
 * For more information, see the [Axibase Documentation](https://axibase.com/docs/atsd/).
 * To install ATSD, read the [Installation article](https://axibase.com/docs/atsd/installation/).
+
+> Return to the [Index](#index).
