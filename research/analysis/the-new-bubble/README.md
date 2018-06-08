@@ -184,7 +184,7 @@ age of Neo-liberalism.
 
 4. [Brookings Institution](https://www.brookings.edu/blog/ben-bernanke/2015/03/30/why-are-interest-rates-so-low/); 2015; Bernake, Ben
 
-5. [Axibase Research](../../../../how-to/database/calculated-values/README.md); 2017; Hamilton, Kenneth
+5. [Axibase Research](../../../how-to/database/calculated-values/README.md); 2017; Hamilton, Kenneth
 
 6. [Axibase Research](../../cbisrael-cpi/README.md); 2017; Hamilton, Kenneth
 

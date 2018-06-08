@@ -148,10 +148,10 @@ ORDER BY COUNT(*) DESC
 Below are the summarized steps to follow to install local instances of Axibase Time Series Database for analyzing this data.gov dataset with SQL.
 
 1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
-2. Download the [`docker-compose.yml`](https://raw.githubusercontent.com/axibase/atsd-use-cases/master/consumer-finance/resources/docker-compose.yml) file to launch the container bundle.
+2. Download the `docker-compose.yml` file to launch the container bundle.
 
    ```bash
-   curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/consumer-finance/resources/docker-compose.yml
+   curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/research/consumer-finance/resources/docker-compose.yml
    ```
 
 3. Launch containers.

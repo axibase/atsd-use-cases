@@ -219,10 +219,10 @@ Click here to explore this Chart Lab portal:
 Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector and create SQL queries for analyzing Chicago crime statistics:
 
 1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
-2. Download the [`docker-compose.yml`](https://raw.githubusercontent.com/axibase/atsd-use-cases/master/chicago-crime-stats/resources/docker-compose.yml) file to launch the ATSD / Axibase Collector container bundle.
+2. Download the `docker-compose.yml` file to launch the ATSD / Axibase Collector container bundle.
 
    ```bash
-   curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/chicago-crime-stats/resources/docker-compose.yml
+   curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/research/chicago-crime-stats/resources/docker-compose.yml
    ```
 
 3. Launch containers:

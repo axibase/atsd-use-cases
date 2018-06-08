@@ -136,7 +136,7 @@ SELECT AVG(cpi.value) AS "Avg CPI", AVG(ppi.value) AS "Avg PPI", AVG(cpi.value -
 Using the [moving average](https://axibase.com/docs/atsd/sql/#aggregation-functions) function to aggregate the
 average values in annual increments instead of across the entire observed period smooths the MPV curve and shows the effects
 of the recession on producer profits. A detailed use case and syntax explanation of the weighted average function can be found
-[here](../../../../how-to/database/moving-avg/README.md).
+[here](../../../how-to/database/moving-avg/README.md).
 
 **Figure 4**: MPV Annual Aggregation
 
