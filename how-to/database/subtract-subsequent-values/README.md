@@ -2,15 +2,21 @@
 
 ## Purpose
 
-[**ATSD**](https://axibase.com/docs/atsd/) has several tools to perform ad hoc calculations, compute delta value with these three tools:
+[**ATSD**](https://axibase.com/docs/atsd/) has several tools to perform ad hoc calculations which allow you to compute delta values for a given series.
+
+This article explains delta-value calculation using three tools:
 
 * [**SQL Console**](https://axibase.com/docs/atsd/sql/)
 * [**Data API** Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html)
 * [**Charts** Functions](https://github.com/axibase/charts/blob/master/README.md)
 
+## Dataset
+
+The data in this article is collected by entity `hetzner` as metric `outage-tickets` which is divided into three series tags (`DC=07`, `DC=10`, and `DC=12`), representing three unique data centers which experienced loss of power.
+
 ## SQL Console
 
-**SQL Console** is a web-based interface to submit SQL queries to the database and display the results. This data is collected by entity `hetzner` as metric `outage-tickets` which is divided into three series tags (`DC=07`, `DC=10`, and `DC=12`), representing three unique data centers.
+**SQL Console** is a web-based interface to submit [SQL queries](https://axibase.com/docs/atsd/sql/sql-console.html) to the database and display the results.
 
 ```sql
 SELECT datetime, value DC07, (value - LAG(value)) PREV
@@ -19,7 +25,7 @@ WHERE entity = 'hetzner' AND tags.dc = 07
   ORDER BY datetime
 ```
 
-Compare values with the [LAG](https://axibase.com/docs/atsd/sql/#lag) function.
+Compare consecutive values with the [LAG](https://axibase.com/docs/atsd/sql/#lag) function.
 
 | datetime             | DC07 | PREV |
 |----------------------|------|------|
@@ -51,11 +57,13 @@ Compare values with the [LAG](https://axibase.com/docs/atsd/sql/#lag) function.
 | 2018-05-26T12:31:00Z | 86   | -19  |
 | 2018-05-26T13:38:00Z | 0    | -86  |
 
-For other data center tags, modify the [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause. When `LAG` encounters a non-existent sample, it returns [`null`](https://axibase.com/docs/atsd/sql/#null) value.
+When `LAG` encounters a non-existent sample, it returns [`null`](https://axibase.com/docs/atsd/sql/#null) value.
+
+> For other data center tags, modify the [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause.
 
 ## Series Query
 
-[**REST API Client**](https://axibase.com/docs/atsd/api/data/) queries series via JSON-formatted requests. [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) retrieves time series objects for the specified metric, entity, tag, and interval filters.
+The [REST API](https://axibase.com/docs/atsd/api/data/) lets you insert and retrieve series, properties, messages, and alerts from ATSD as well as manipulate metadata. [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) retrieves time series objects for the specified metric, entity, tag, and interval filters.
 
 ```json
 [{
@@ -98,7 +106,7 @@ For other data center tags, modify the [`WHERE`](https://axibase.com/docs/atsd/s
 {"d":"2018-05-26T13:38:00","v":0.0}]}]
 ```
 
-[Rate Processor](https://axibase.com/docs/atsd/api/data/series/rate.html) computes the difference between consecutive samples per unit of time (rate period).
+[Rate Processor](https://axibase.com/docs/atsd/api/data/series/rate.html) computes the difference between consecutive samples per unit of time (rate period). If you do not specify a rate period, the function returns the difference between consecutive samples.
 
 ```json
 [{
@@ -144,7 +152,7 @@ For other data center tags, modify the [`WHERE`](https://axibase.com/docs/atsd/s
 
 ## Charts Functions
 
-[**ChartLab**](../../../ChartLabIntro/README.md) uses data-processing, storage, and management tasks performed by ATSD to create visualizations.
+[**ChartLab**](../../shared/chartlab.md) is a graphing tool that uses the [Charts Syntax](https://github.com/axibase/charts/blob/master/README.md#axibase-charts) to create visualizations from data stored in ATSD.
 
 The `outage-tickets` dataset visualized in **ChartLab**:
 
@@ -152,7 +160,11 @@ The `outage-tickets` dataset visualized in **ChartLab**:
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d#fullscreen)
 
-Outage ticket reports occurred during local business hours, use [`disconnect-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-12) to account for empty periods.  [Inheritance](https://axibase.com/products/axibase-time-series-database/visualization/widgets/inheritance/) eliminates redundant syntax when possible, define entity and metric at the `[configuration]` level to avoid repetition when creating multiple series. To display delta value, there are two options:
+Outage ticket reports occurred during local business hours, leaving large time gaps between consecutive samples. Use [`disconnect-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-12) to account for empty periods.
+
+[Inheritance](https://axibase.com/products/axibase-time-series-database/visualization/widgets/inheritance/) eliminates redundant syntax when possible. Define the entity and metric at the `[configuration]` level to avoid repetition when creating multiple series from the same metric and entity.
+
+To display series delta values, there are two options:
 
 * Use the [`previous`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function and [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/):
 

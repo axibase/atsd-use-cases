@@ -16,7 +16,7 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 
 ## ATSD
 
-- [Computing Series Delta Values in ATSD](how-to/database/subtract-subsequent-values/README.md) (June 2018)
+- [Computing Series Delta Values in ATSD](database/subtract-subsequent-values/README.md) (June 2018)
 - [Historizing Metrics Stored in Database](database/historize/README.md) (April 2018)
 - [Using Trends](shared/trends.md) (April 2018)
 - [Import CSV Parser Configuration](shared/import-csv-parser.md) (March 2018)
