@@ -4,7 +4,7 @@
 
 This guide shows how to configure GitHub to alert you when anyone opens a new pull request in your repository. This feature allows you to monitor your repository and receive notifications the moment a new PR is opened. Follow the instructions to configure the notifications to be sent directly to repository collaborators through a third-party messenger service with [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
-![](images/workflow-three.png)
+![](./images/workflow-three.png)
 
 ## Purpose
 
@@ -55,7 +55,7 @@ Refer to [GitHub Developer Guide](https://developer.github.com/webhooks/) for ad
 
 Open the **Settings** menu for the GitHub repository for which you would like to create notifications.
 
-![](images/repo-settings.png)
+![](./images/repo-settings.png)
 
 Select the **Webhooks** tab from the left-side menu and click **Add Webhook**.
 
@@ -66,13 +66,13 @@ On the **Add Webhook** page, configure the following settings:
 * Click **Disable SSL Verification** and confirm the setting.
 * Select **Send me everything**, under **Which events would you like to trigger this webhook?** The rule engine will filter other events.
 
-![](images/webhook-config.png)
+![](./images/webhook-config.png)
 
 Be sure that your server is reachable by GitHub servers. For more information about configuring GitHub webhooks use the [developer guide](https://developer.github.com/webhooks/configuring/).
 
 Once your ATSD server and webhook have been configured, confirm connectivity at the bottom of the **Manage Webhook** page.
 
-![](images/recent-delivery.png)
+![](./images/recent-delivery.png)
 
 See the [Troubleshooting](troubleshooting.md) for connectivity issues.
 
@@ -80,7 +80,7 @@ See the [Troubleshooting](troubleshooting.md) for connectivity issues.
 
 You'll begin receiving messenger notifications the next time an PR is raised on your GitHub repository.
 
-![](images/slack-pr.png)
+![](./images/slack-pr.png)
 
 **Repository**, **User**, and **PR** links will redirect you to the repository where the PR was opened, the GitHub profile of the user who opened the PR, and the PR page itself, respectively.
 

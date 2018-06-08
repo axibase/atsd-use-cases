@@ -6,11 +6,11 @@ If you have images hosted on the [Docker Hub](https://hub.docker.com) registry, 
 
 While the Docker Hub provides the capability to trigger [outgoing webhooks](https://docs.docker.com/docker-hub/webhooks/), they'll only be executed when the automated build completes **successfully**. If the job fails or if becomes stuck in `Queued` status, webhooks are **not** fired and your team remains unaware of broken builds. This limitation is [known](https://forums.docker.com/t/docker-hub-webhook-on-build-failure/1166) but a fix is currently not available.
 
-![](images/docker-hub-notifications.png)
+![](./images/docker-hub-notifications.png)
 
 While the email option can serve as a work-around for build failures, it's difficult to rely on it for programmable integration with alerting and CI systems. Also, an email alert will **not be dispatched** when the build remains queued for a long period of time.
 
-![](images/docker-email.png)
+![](./images/docker-email.png)
 
 This guide describes a solution, based on the rule engine implemented in [Axibase Time Series Database](https://axibase.com/docs/atsd/rule-engine/), which polls the Docker Hub build history using the Docker Hub v2 API and generates missing webhooks in case of **build failures** or if the build is queued for more than one hour (this threshold is configurable).
 
@@ -22,17 +22,17 @@ Build failures come in different flavors - some are caused by human error while 
 
 Human Error:
 
-![](images/job-fail-branch.png)
+![](./images/job-fail-branch.png)
 
 Infrastructure Error:
 
-![](images/docker-fail-tls.png)
+![](./images/docker-fail-tls.png)
 
 ## Build History
 
 Build history, containing success and failure statuses, is accessible under the **Build Details** tab in Docker Hub. History is only available for automated builds. Images that are uploaded by external tools are out of scope.
 
-![](images/job-fail.png)
+![](./images/job-fail.png)
 
 The history is also available via [Docker Hub v2 API](https://hub.docker.com/v2/repositories/axibase/cadvisor/buildhistory/?page=1&page_size=5).
 
@@ -168,7 +168,7 @@ Let's verify that the webhook delivery is working as expected.
 
 Go to Docker Hub and open Build Settings for one of the projects (images). Trigger a build for one of the branches known to fail.
 
-![](images/docker-hub-trigger.png)
+![](./images/docker-hub-trigger.png)
 
 The webhook should arrive in less than 5 minutes, which is the collector polling interval.
 
@@ -184,15 +184,15 @@ In addition to sending build error notifications, the `dockerhub-build-fail` rul
 
 1. Create a new trigger token for a project on Docker Hub (projects with intermittent failures are good candidates for this).
 
-    ![](images/docker-hub-build-trigger.png)
+    ![](./images/docker-hub-build-trigger.png)
 
 2. Create a CUSTOM web notification to launch an automated build on Docker Hub.
 
-    ![](images/docker-hub-trigger-notify.png)
+    ![](./images/docker-hub-trigger-notify.png)
 
 3. Add a corresponding web notification action in the `dockerhub-build-fail` rule.
 
-    ![](images/docker-hub-trigger-rule.png)
+    ![](./images/docker-hub-trigger-rule.png)
 
 For a more robust implementation, create a [lookup table](https://axibase.com/docs/atsd/rule-engine/functions.html#lookup) to associate images in incoming failure events with trigger tokens.
 
@@ -200,7 +200,7 @@ For a more robust implementation, create a [lookup table](https://axibase.com/do
 
 You can also customize the rule to send alerts into your preferred messaging service such as [Slack](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html) or Rocket.Chat.
 
-![](images/rocket-alert.png)
+![](./images/rocket-alert.png)
 
 ## Troubleshooting
 
@@ -210,7 +210,7 @@ Log in to Collector at `https://docker_host:9443` with [default](https://github.
 
 Locate the `dockerhub-poller` job. Check that its status is 'Completed'.
 
-![](images/collector-job-status.png)
+![](./images/collector-job-status.png)
 
 ### Axibase Time Series Database
 
@@ -224,11 +224,11 @@ Open **Data > Data Entry** page in the main menu. Submit this command to emulate
 message e:docker.hub t:build_code=abc t:last_updated=2019-01-01T00:00:00Z t:dockertag_name=latest t:name=my-image t:cause=TRIGGERED_VIA_API t:id=11111111 t:created_date=2019-01-01T00:00:00Z t:source=docker.hub t:repository=test/my-image t:type=build t:user=test t:status=-1
 ```
 
-![](images/data-entry.png)
+![](./images/data-entry.png)
 
 Check that the `dockerhub-webhook-sender` status is `OK`.
 
-![](images/sender-status.png)
+![](./images/sender-status.png)
 
 The target service should now receive the JSON payload:
 
