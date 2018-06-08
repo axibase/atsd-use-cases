@@ -4,11 +4,7 @@
 
 This guide shows how to configure automatic email notifications upon resource launch from an Amazon Web Services account. This feature enables real-time notifications that alert you of resource status change and prevent unauthorized use of your AWS account which can result in expensive fees from AWS and potentially harmful operations carried out by your account.
 
-<<<<<<< HEAD
-![](images/aws-notifications-workflow.png)
-=======
 ![](./images/new-flow.png)
->>>>>>> origin/master
 
 Follow these instructions to set up default AWS email notifications or follow the advanced procedure to integrate [Axibase Time Series Database](https://axibase.com/docs/atsd/) and AWS CloudWatch Events for enhanced notifications delivered via email, or through your preferred messenger service such as Slack or Telegram.
 

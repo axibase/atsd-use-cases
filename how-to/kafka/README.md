@@ -44,21 +44,12 @@ This document describes how to monitor availability and performance of [Apache K
 ## Step 2: Configure Kafka in ATSD
 
 1. Log in to the target Axibase Time Series Database instance at `https://atsd_hostname:8443`.
-<<<<<<< HEAD
 2. Go to the **Metrics** page and verify that `jmx.kafka.*` metrics are available.
 3. Go to the **Entities** page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
 4. Open the **Settings** menu, select **Entity Groups** and import [Kafka](resources/groups.xml) entity group.
 5. Open the **Portals** menu, select **Configure** and import [Kafka](resources/portal-configs.xml) portals (check on the **Auto-enable New Portals** check box).
 6. Open the ![](images/alerts.png) **Alerts** menu, select **Rules** and import [Kafka](resources/rules.xml) rules (check the **Auto-enable New Rules** check box).
 7. Open the ![](images/entity_views.png) **Entity Views** menu, select **Configure** and import [Kafka](resources/entity-views.xml) entity view.
-=======
-2. Go to the Metrics page and verify that `jmx.kafka.*` metrics are available.
-3. Go to the Entities page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
-4. Go to `Settings -> Entity Groups` and import [Kafka](resources/groups.xml) entity group.
-5. Go to `Portals -> Configure` and import [Kafka](resources/portal-configs.xml) portals (check on the Auto-enable New Portals check box).
-6. Go to ![](./images/alerts.png) `Alerts -> Rules` and import [Kafka](resources/rules.xml) rules (check on the Auto-enable New Rules check box).
-7. Go to ![](./images/entity_views.png) `Entity Views -> Configure` and import [Kafka](resources/entity-views.xml) entity view.
->>>>>>> origin/master
 
 ## Step 3: Verification
 
@@ -123,10 +114,6 @@ series e:nurswgvml702 m:kafka.consumer_offset=550 t:groupid="console-consumer-72
 1. Check that metric `kafka.consumer_offset` is available on the **Metrics** tab in ATSD.
 1. Import [Consumer Lag Portal](resources/consumer-lag.xml) into ATSD and change the topic name to view the consumer lag.
 
-<<<<<<< HEAD
-![](images/consumer_lag.png)
-=======
 ![](./images/consumer_lag.png)
 
 For additional Kafka integration, see [Brokers Monitoring](brokers-monitoring/README.md) and [Consumers Monitoring](consumers-monitoring/README.md).
->>>>>>> origin/master

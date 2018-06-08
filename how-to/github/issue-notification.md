@@ -4,11 +4,7 @@
 
 This guide shows how to configure GitHub to alert you when someone raises an issue in your repository. This feature allows you to monitor your repository and receive notifications the moment an issue is raised. Follow the instructions to configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) to send you the notifications directly through a third-party messenger service with.
 
-<<<<<<< HEAD
-![](images/workflow_issue.png)
-=======
 ![](./images/workflow-1.png)
->>>>>>> origin/master
 
 ## Purpose
 

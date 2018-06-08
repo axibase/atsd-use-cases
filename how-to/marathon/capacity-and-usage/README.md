@@ -14,11 +14,7 @@ The framework consists of the following components:
 
 Marathon `v1.5.6` user interface:
 
-<<<<<<< HEAD
-![](images/marathon_ui.png)
-=======
 ![Marathon v1.5.6 User Interface](./images/marathon_ui.png)
->>>>>>> origin/master
 
 ## Capacity
 
@@ -61,11 +57,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances. The command uploads the needed XML files to ATSD and Axibase Collector.
 
-<<<<<<< HEAD
-> If you would like to import files manually, follow the instructions for [manual upload](MANUAL-UPLOAD-README.md).
-=======
-> If you would like to import files manually, follow these instructions for [manual upload](manual-upload.md).
->>>>>>> origin/master
+> If you would like to import files manually, follow the instructions for [manual upload](manual-upload.md).
 
 The Collector instance installed in the sandbox container automatically starts historizing statistics from the local Docker engine.
 

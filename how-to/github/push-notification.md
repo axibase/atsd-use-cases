@@ -4,11 +4,7 @@
 
 This guide shows how to configure GitHub to alert you when someone pushes to your repository. This feature allows you to monitor the dataflow in your repository. Follow the instructions to configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) to send you the notifications directly through a third-party messenger service with.
 
-<<<<<<< HEAD
-![](images/workflow_push.png)
-=======
 ![](./images/workflow-5.png)
->>>>>>> origin/master
 
 ## Purpose
 

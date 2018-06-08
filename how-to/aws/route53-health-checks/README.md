@@ -4,11 +4,7 @@
 
 [AWS Route 53](https://aws.amazon.com/route53) provides tools to automate DNS configuration in order to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, AWS provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
 
-<<<<<<< HEAD
 A core Route 53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) which monitor the health of an application and can route incoming traffic to healthy endpoints.
-=======
-A core Route 53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) which monitor the health of an application and can route incoming traffic to its healthy endpoints.
->>>>>>> origin/master
 
 ![](./images/route53-1.png)
 
@@ -75,11 +71,7 @@ Built-in monitoring charts display endpoint health statistics for a period of up
 
 ![](./images/route53-monitoring.png)
 
-<<<<<<< HEAD
-Route 53 CloudWatch metrics are available only in the **us-east-1** region as specified in the [Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-monitor-view-status.html) (see the section **To view Route 53 metrics on the CloudWatch console**).
-=======
 Route 53 CloudWatch metrics are available only in the **us-east-1** region as specified in the [Developer Guide](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-monitor-view-status.html) (see section **To view Route 53 metrics on the CloudWatch console**).
->>>>>>> origin/master
 
 ## Service Availability Dashboards
 
@@ -124,11 +116,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
 
-<<<<<<< HEAD
 Use the Collector instance in the sandbox container to retrieve Route 53 statistics from AWS CloudWatch and store them in ATSD.
-=======
-The Collector instance installed in the sandbox container will be used to retrieve Route 53 statistics from AWS CloudWatch and store them in ATSD.
->>>>>>> origin/master
 
 Wait until the sandbox is initialized and `All applications started` is displayed by the start logs.
 
@@ -158,11 +146,7 @@ Configure a cron-scheduled task to copy health check attributes into ATSD sandbo
 
 ### Consolidated View
 
-<<<<<<< HEAD
 View all working Route 53 health checks on the **AWS Route53** tab.
-=======
-All working Route 53 health checks are now visible on the **AWS Route 53** tab.
->>>>>>> origin/master
 
 ![](./images/route53-entity-view.png)
 

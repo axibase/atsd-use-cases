@@ -89,15 +89,9 @@ Using the chart above as a configuration example:
         style = stroke-width: 2
 ```
 
-<<<<<<< HEAD
-Modify these settings or add new settings based on Charts syntax. Additionally, perform ad hoc transformations according to the [Calculated Values](../../Solutions/calculated-values) article, which details common transformations. For more information about advanced portal configuration, refer to the [Portal Layout Guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/).
+Modify these settings or add new settings based on Charts syntax. Additionally, perform ad hoc transformations according to the [Calculated Values](../../how-to/database/calculated-values), which details common transformations. which details common transformations. For more information about advanced portal configuration, refer to the [Portal Layout Guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/).
 
-Likewise, derive new series from existing data according to [Managing Calculated Values](../../Support/Add-Calculated-Value), which shows each step from one series to another.
-=======
-Each of these settings may be modified and new settings may be added based on Charts syntax. Additionally, complex transformations may be performed according to this [guide](../../how-to/database/calculated-values), which details common transformations. For more information about advanced portal configuration, use this [guide](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/).
-
-Likewise, series may be derived from existing data according to this [guide](../../how-to/database/add-calculated-value/README.md), which shows each step from one series to another.
->>>>>>> origin/master
+Likewise, derive new series from existing data according to [Managing Calculated Values](../../how-to/database/add-calculated-value/README.md), which shows each step from one series to another.
 
 For baselines and thresholds, manually input data using the `value = x` setting at the **[series]** level, where `x` is a constant value.
 
@@ -129,14 +123,9 @@ The two pre-defined widgets are described below:
 
 The Charts API supports user-defined functions, enabling users to store and re-use statistical functions.
 
-<<<<<<< HEAD
-![](images/fred-lib-demo.png)
-
-[![](images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
-=======
 ![](./images/fred-lib-demo.png)
+
 [![](./images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
->>>>>>> origin/master
 
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 

@@ -139,8 +139,4 @@ Check entity view.  Open the **Entity Views** menu and ensure you see **Zookeepe
 
 Click the **Portal** icon and check cluster portal.
 
-<<<<<<< HEAD
-![](images/cluster_portal.png)
-=======
 ![](./images/cluster_portal.png)
->>>>>>> origin/master

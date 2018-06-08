@@ -24,8 +24,4 @@ Return to the **Scheduled Queries** page, to view the newly-configured Scheduled
 
 Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form.
 
-<<<<<<< HEAD
-![](images/backup-import.png)
-=======
 ![](./images/backup-import.png)
->>>>>>> origin/master
