@@ -1645,7 +1645,7 @@ CT servers store immutable logs of certificate issuance events which contain the
 
 The CT servers also accept events from crawlers when they identify a new certificate.
 
-[crt.sh](https://crt.sh) is a front-end to a database of issued certificates, maintained by COMODO CA.
+crt.sh (`https://crt.sh`) is a front-end to a database of issued certificates, maintained by COMODO CA.
 
 Certificate chain for our old wildcard certificate:
 
@@ -1656,18 +1656,18 @@ Certificate chain for our old wildcard certificate:
       issued by  AddTrust External CA Root [ROOT]
 ```
 
-* [6871548](https://crt.sh/?id=6871548)
-* `--` [1455](https://crt.sh/?caid=1455)
-* `----` [3509153](https://crt.sh/?id=3509153)
-* `------`  [1044348](https://crt.sh/?id=1044348)
+* 6871548 (`https://crt.sh/?id=6871548`)
+* `--` 1455 (`https://crt.sh/?caid=1455`)
+* `----` 3509153 (`https://crt.sh/?id=3509153`)
+* `------`  1044348 (`https://crt.sh/?id=1044348`)
 
 Certificate details including DNS names are now publicly available even if the certificate was issued for an internal server:
 
 * [trends.axibase.com](https://ct.googleapis.com/logs/argon2018/ct/v1/get-entries?start=115175247&end=115175247) CT log
 
-[crt.sh](https://crt.sh) maintained by one of the CAs, COMODO, allows searching a consolidated log from multiple CT servers for certificates using wildcards.
+crt.sh (`https://crt.sh`) maintained by one of the CAs, COMODO, allows searching a consolidated log from multiple CT servers for certificates using wildcards.
 
-* [axibase.com certificates](https://crt.sh/?Identity=%.axibase.com)
+* axibase.com certificates (`https://crt.sh/?Identity=%.axibase.com`)
 
 ![](./images/ct_hostname_disclosure.png)
 
