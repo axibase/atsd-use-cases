@@ -25,7 +25,7 @@ Data is visualized using **Trends** service from Axibase, a public data reposito
 
 ## Methodology
 
-1. Visualize Datasets using [Trends](https://trends.axibase.com/);
+1. Visualize Datasets using [**Trends**](https://trends.axibase.com/);
 2. Implement formulas to derive calculated series;
 3. Use statistical functions to transform the dataset.
 4. Compare the original and transformed datasets in one visualization.
@@ -34,7 +34,7 @@ Data is visualized using **Trends** service from Axibase, a public data reposito
 
 ### Change in Age Expectancy from Previous Decade
 
-Open the Trends visualization to toggle secondary datasets on and off using the labeled buttons along the top of the visualization.
+Open the **Trends** visualization to toggle secondary datasets on and off using the labeled buttons along the top of the visualization.
 
 ![](./images/life-ex-10.png)
 [![](./images/button-new.png)](https://trends.axibase.com/172ff342#fullscreen)

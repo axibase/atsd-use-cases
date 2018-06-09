@@ -25,7 +25,7 @@ Visa figures were collected for 200 countries, 7 continents, and for unknown nat
 As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of [Axibase Time Series Database](https://axibase.com/docs/atsd/) to explore this dataset:
 
 * Tabular outputs from analytical [SQL queries](https://axibase.com/docs/atsd/sql/);
-* Interactive graphs from [Chart Lab](../../how-to/shared/chartlab.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
+* Interactive graphs from [**ChartLab**](../../how-to/shared/chartlab.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 
@@ -44,7 +44,7 @@ You can explore this portal by clicking on the below button:
 
 This next portal allows you to sort between continents and visa types. You can toggle between different continents in the first dropdown, and by visa type in the second dropdown.
 The below images is an output for H-1B visas issued to the continent of Asia as a whole. We can see that the number of visas issued increased from **47,726** in 1997 to **149,788**
-in 2015. Recalling from the previous Chart Lab portal, the number of H-1B visas issued to China and India in 2015 was 138,258, meaning that only **11,530** H-1B visas were issued
+in 2015. Recalling from the previous **ChartLab** portal, the number of H-1B visas issued to China and India in 2015 was 138,258, meaning that only **11,530** H-1B visas were issued
 to the rest of Asia as a whole.
 
 ![Figure2](./images/Figure2.png)
@@ -55,12 +55,12 @@ You can explore this portal by right-clicking on the below button:
 
 ## Delving Further into U.S. Visas
 
-By looking at the two Chart Lab instances above, we can gain an understanding of the general situation of non-immigrant travel to the United States. Let's begin by taking a look
+By looking at the two **ChartLab** instances above, we can gain an understanding of the general situation of non-immigrant travel to the United States. Let's begin by taking a look
 at some of the more specialized visa types, beginning with the O-1 visa.
 
 The below output shows countries with the greatest number of O-1 visa, which is a work visa for individuals with exceptional abilities. The brain-drain from other countries has
 steadily grown over the years, especially from the U.K., which in 2015 had **2,630** O-1 visas issued. In comparison, China only had **515** O-1 visas issued in 2015. Going back
-to our first Chart Lab portal, we can see that the total number of visas for the U.K. actually fell by **61%** form 1997 to 2015.
+to our first **ChartLab** portal, we can see that the total number of visas for the U.K. actually fell by **61%** form 1997 to 2015.
 
 ![Figure3](./images/Figure3.png)
 
@@ -111,7 +111,7 @@ You can explore this portal by clicking on the below button:
 
 ## SQL Queries
 
-In addition to outputs from Chart Lab, ATSD is also capable of performing [SQL queries](https://axibase.com/docs/atsd/sql/),
+In addition to outputs from **ChartLab**, ATSD is also capable of performing [SQL queries](https://axibase.com/docs/atsd/sql/),
 which can be used to search for specific information contained in this dataset. You can read more about our SQL syntax [here](https://axibase.com/docs/atsd/sql/#syntax).
 
 This query shows the number of the most popular visas issued worldwide, except for B (travel), C (transit), G (government), and A (diplomatic). We can see that by far the greatest
@@ -318,7 +318,7 @@ rate in this 10-years period was **30.2%**, which came in 2nd only behind Brazil
 ![Figure13](./images/Figure13.png)
 
 Travellers have come to America from all over the world. With over 200 countries and 84 visa types included in this dataset, the possibilities for travel documents seem endless.
-Using ATSD can help you make sense of all this information. You can use Chart Lab to create interactive graphs which allow you to gain a general view of the situation, SQL queries
+Using ATSD can help you make sense of all this information. You can use **ChartLab** to create interactive graphs which allow you to gain a general view of the situation, SQL queries
 to search for specific information contained within the dataset, and Redash to display this specifically searched for information in a clear and concise manner.
 
 ### Action Items

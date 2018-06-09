@@ -4,7 +4,7 @@ To perform this process using a single command, see the [abbreviated walkthrough
 
 ## Launch Axibase Sandbox
 
-Launch ATSD and Axibase Collector instances. The default username and password will be `axibase`.
+Launch [ATSD](https://axibase.com/docs/atsd/) and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/README.md#axibase-collector) instances. The default username and password are `axibase`.
 
 ```sh
 $ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
@@ -19,25 +19,25 @@ Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axib
 
 Import the attached [job configuration](resources/marathon-jobs.xml) XML file.
 
-The **marathon_apps** JSON job will query the Marathon `/v2/apps` API endpoint for Application definitions and health status, then offload this data into ATSD.
+The **marathon_apps** JSON job queries the Marathon `/v2/apps` API endpoint for Application definitions and health status, then offload this data into ATSD.
 
 ![](./images/import_job.png)
 
 ### Configure Marathon API Connection
 
-In the **Jobs** drop-down menu, select **JSON** jobs.
+In the **Jobs** drop-down list, select **JSON** jobs.
 
-> By default, the **marathon_apps** job is not enabled and therefore not visible. Be sure that the **Status** drop-down menu is displaying all jobs to proceed.
+> By default, the **marathon_apps** job is not enabled and therefore not visible. Be sure that the **Status** drop-down list displays all jobs to proceed.
 
 Open the **JSON Job** page, then open the **JSON Configuration** page by clicking the **apps** link. On the **JSON Configuration** page, open **HTTP Pool** settings.
 
 ![](./images/http_pool.png)
 
-Specify 'Server', 'Username' and 'Password' for a Marathon user with API query permissions.
+Specify **Server**, **Username** and **Password** for a Marathon user with API query permissions.
 
 ![](./images/http_pool_config_.png)
 
-Confirm connectivity by clicking the **Test** button. Click **Save**.
+Confirm connectivity by clicking **Test**. Click **Save**.
 
 From the **JSON Job** page, enable the **marathon_apps** job. Click **Save**.
 

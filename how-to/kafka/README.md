@@ -1,14 +1,14 @@
-# Kafka
+# Kafka Integration
 
-This document describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) using Axibase Time Series Database.
+This document describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) using [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
 ## Step 1: Configure Axibase Collector
 
 1. Log in to Axibase Collector at `https://collector_hostname:9443`
-2. Select the Jobs tab in the top menu and click the **Import** button.
-3. Import the following [kafka-jmx](resources/job_jmx_kafka-jmx.xml) job.
+2. From the **Jobs** page select **Import** by opening the split button below the table.
+3. Import the [`kafka-jmx`](resources/job_jmx_kafka-jmx.xml) job.
 4. Locate the newly-imported `kafka-jmx` job on the **Jobs** page.
-5. On the JMX Job page, enable the job status by setting the flag in the **Enabled** checkbox.
+5. On the **JMX Job** page, enable the job status by setting the flag in the **Enabled** checkbox.
 6. Adjust the cron expression if required. For more information on cron expressions, see [Scheduling](https://github.com/axibase/axibase-collector/blob/master/scheduling.md).
 7. Select a target ATSD database for storing data.
 8. Click **Save**.
@@ -17,15 +17,15 @@ This document describes how to monitor availability and performance of [Apache K
 
 ### Configure series collection
 
-1. Select 'kafka-series' configuration.
-2. On the JMX Configuration page, enter the JMX connection parameters or use [Item List](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md#connection-parameters) with predefined kafka parameters:
+1. Select `kafka-series` configuration.
+2. On the **JMX Configuration** page, enter the JMX connection parameters or use [Item List](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md#connection-parameters) with predefined kafka parameters:
 
-   **Host** — Kafka hostname.
-   **Port** — JMX port.
-   **User Name** — JMX user name.
-   **Password** — Password for JMX user.
-   **Entity** — Optionally, specify the output of the hostname command on the Kafka server if it is different from `kafka_hostname` (for example if `kafka_hostname` represents a fully qualified name).
-Other parameters are optional. For more information on JMX configuration, see [JMX](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md).
+    * **Host**: Kafka hostname.
+    * **Port**: JMX port.
+    * **User Name**: JMX user name.
+    * **Password**: Password for JMX user.
+    * **Entity**: Optionally, specify the output of the hostname command on the Kafka server if it is different from `kafka_hostname` (for example if `kafka_hostname` represents a fully-qualified name).
+    * Other parameters are optional. For more information on JMX configuration, see [JMX Job Documentation](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md).
 
 3. Click **Test** to validate the configuration.
 4. Click **Save**.
@@ -34,8 +34,8 @@ Other parameters are optional. For more information on JMX configuration, see [J
 
 ### Configure properties collection
 
-1. Select 'kafka-properties' configuration.
-2. Set Host, Port, User Name, Password, and Entity fields as described in the previous section.
+1. Select `kafka-properties` configuration.
+2. Set **Host**, **Port**, **User Name**, **Password**, and **Entity** fields as described in the previous section.
 3. Click **Test** to validate the configuration.
 4. Click **Save**.
 
@@ -44,20 +44,20 @@ Other parameters are optional. For more information on JMX configuration, see [J
 ## Step 2: Configure Kafka in ATSD
 
 1. Log in to the target Axibase Time Series Database instance at `https://atsd_hostname:8443`.
-2. Go to the Metrics page and verify that `jmx.kafka.*` metrics are available.
-3. Go to the Entities page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
-4. Go to `Settings -> Entity Groups` and import [Kafka](resources/groups.xml) entity group.
-5. Go to `Portals -> Configure` and import [Kafka](resources/portal-configs.xml) portals (check on the Auto-enable New Portals check box).
-6. Go to ![](./images/alerts.png) `Alerts -> Rules` and import [Kafka](resources/rules.xml) rules (check on the Auto-enable New Rules check box).
-7. Go to ![](./images/entity_views.png) `Entity Views -> Configure` and import [Kafka](resources/entity-views.xml) entity view.
+2. Go to the **Metrics** page and verify that `jmx.kafka.*` metrics are available.
+3. Go to the **Entities** page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
+4. Open the **Settings** menu, select **Entity Groups** and import [Kafka](resources/groups.xml) entity group.
+5. Open the **Portals** menu, select **Configure** and import [Kafka](resources/portal-configs.xml) portals (check on the **Auto-enable New Portals** check box).
+6. Open the ![](images/alerts.png) **Alerts** menu, select **Rules** and import [Kafka](resources/rules.xml) rules (check the **Auto-enable New Rules** check box).
+7. Open the ![](images/entity_views.png) **Entity Views** menu, select **Configure** and import [Kafka](resources/entity-views.xml) entity view.
 
 ## Step 3: Verification
 
-1. Select an open `Kafka` on the `Entity Views` menu:
+1. Select an open `Kafka` on the **Entity Views** menu:
 
     ![](./images/entity_view.png)
 
-2. Verify that the portal in the table header is available and refer to Kafka portal:
+2. Verify that the portal in the table header is available and refers to the Kafka portal:
 
     ![](./images/kafka_cluster.png)
 
@@ -82,15 +82,15 @@ Download the [script](resources/send_offset.sh) into Kafka `bin` directory.
 chmod +x /opt/kafka_2.12-1.0.0/bin/send_offset.sh
 ```
 
-For Kafka versions before 0.10.2.0 use `--zookeeper` option instead `bootstrap-server` in the script.
+For Kafka versions before `0.10.2.0` use `--zookeeper` option instead `bootstrap-server` in the script.
 
 Replace `ATSD_HOST` and `TCP_PORT` with actual values and launch the script.
 
 > The default ATSD TCP command port is `8081`.
 
-The script will read topic offsets and send them to ATSD under the hostname entity.
+The script reads and sends topic offsets to ATSD under the hostname entity.
 
-Launch the script.
+Launch the script:
 
 ```sh
 nohup /opt/kafka_2.12-1.0.0/bin/send_offset.sh ATSD_HOST TCP_PORT &
@@ -102,7 +102,7 @@ If the hostname is different from the entity name used in the JMX job, specify t
 nohup /opt/kafka_2.12-1.0.0/bin/send_offset.sh ATSD_HOST TCP_PORT ENTITY &
 ```
 
-The script will continuously read consumer offsets from Kafka and send the offsets to ATSD as `series` commands. The commands will also be copied to `stdout` for debugging.
+The script continuously reads consumer offsets from Kafka and sends the offsets to ATSD as `series` commands. Kafka also copies the commands `stdout` for debugging.
 
 ```ls
 series e:nurswgvml702 m:kafka.consumer_offset=455 t:groupid="console-consumer-72620" t:topic="test" t:partition=0 ms:1519893731570
@@ -111,8 +111,8 @@ series e:nurswgvml702 m:kafka.consumer_offset=492 t:groupid="console-consumer-72
 series e:nurswgvml702 m:kafka.consumer_offset=550 t:groupid="console-consumer-72620" t:topic="test" t:partition=0 ms:1519893746570
 ```
 
-1. Check that metric `kafka.consumer_offset` is available on the Metrics tab in ATSD.
-1. Import [consumer lag portal](resources/consumer-lag.xml) into ATSD and change the topic name to view the consumer lag.
+1. Check that metric `kafka.consumer_offset` is available on the **Metrics** tab in ATSD.
+1. Import [Consumer Lag Portal](resources/consumer-lag.xml) into ATSD and change the topic name to view the consumer lag.
 
 ![](./images/consumer_lag.png)
 

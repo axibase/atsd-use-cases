@@ -91,7 +91,7 @@ We will walk through a brief example on how to customize the default portal to c
 
     ![Figure 5](./images/Figure5.png)
 
-2. Next, we want to select the one `metric` which we would like to filter. The first dropdown in Chart Lab only contains the shortened version of the metric names. This text file which contains the full raw metric names: [uk-caa-metrics.txt](uk-caa-metrics.txt). A complete list of metrics is also available in the [Appendix](#appendix-caa-metric-list).
+2. Next, we want to select the one `metric` which we would like to filter. The first dropdown in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [uk-caa-metrics.txt](uk-caa-metrics.txt). A complete list of metrics is also available in the [Appendix](#appendix-caa-metric-list).
 
     ![Figure 21](./images/Figure21.png)
 
@@ -141,13 +141,13 @@ We will walk through a brief example on how to customize the default portal to c
 
     ![Figure 19](./images/Figure19.png)
 
-Here you can explore this configuration in Chart Lab:
+Here you can explore this configuration in **ChartLab**:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/cca64be9)
 
 ### Example 2
 
-Now that we are familiar with the CAA entity and different available metrics, as an alternative to building a configuration from the default portal, create a configuration from the generic widget settings in Chart Lab. Let's walk through building a calendar Widget to show the total international passengers traveling from UK airports within the last year.
+Now that we are familiar with the CAA entity and different available metrics, as an alternative to building a configuration from the default portal, create a configuration from the generic widget settings in **ChartLab**. Let's walk through building a calendar Widget to show the total international passengers traveling from UK airports within the last year.
 
 The default ChartLab portal can be found here:
 

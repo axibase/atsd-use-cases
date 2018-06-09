@@ -10,7 +10,7 @@ visa applications?
 In this article we will analyze a dataset from [travel.state.gov](https://travel.state.gov) looking at non-immigrant visa figures from 1997 through 2015 together with visa refusal rates
 from 2006 to 2016 (also from [travel.state.gov](https://travel.state.gov)). This research article illustrates how publicly available data from travel.state.gov collected by government
 organizations can be easily loaded into the non-relational [Axibase Time Series Database](https://axibase.com/docs/atsd/) for interactive analysis and
-visual outputs with Chart Lab charts and SQL queries. Additionally, this article contains instructions on how to install your own ATSD instance and populate it with raw data.
+visual outputs with **ChartLab** charts and SQL queries. Additionally, this article contains instructions on how to install your own ATSD instance and populate it with raw data.
 
 ## U.S. Visa Dataset and Refusal Rates
 
@@ -31,7 +31,7 @@ monetary value for visa refusal fees, we will apply these refusal rates to all v
 
 As opposed to analyzing this information in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of ATSD to explore this dataset:
 
-* Interactive graphs from [Chart Lab](../../how-to/shared/chartlab.md);
+* Interactive graphs from [**ChartLab**](../../how-to/shared/chartlab.md);
 * Tabular outputs from analytical [SQL queries](https://axibase.com/docs/atsd/sql/).
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
@@ -82,7 +82,7 @@ You can explore this portal by clicking on the below button:
 
 ## SQL Queries
 
-In addition to outputs from Chart Lab, ATSD is also capable of performing [SQL queries](https://axibase.com/docs/atsd/sql/),
+In addition to outputs from **ChartLab**, ATSD is also capable of performing [SQL queries](https://axibase.com/docs/atsd/sql/),
 which can be used to search for specific information contained in this dataset. You can read more about our SQL syntax [here](https://axibase.com/docs/atsd/sql/#syntax).
 
 This first query shows countries were refusals have increased most over the last 10 years. Surprisingly, two countries that have long been considered U.S. allies, Canada and Norway,

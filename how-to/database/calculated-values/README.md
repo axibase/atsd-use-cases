@@ -109,7 +109,7 @@ list keyDates = 1970-11-01,
 endlist
 ```
 
-* These dates are fed into the dropdown menu which represent the official start dates of several recessions throughout U.S. history. The syntax for this chart's dropdown menu is shown below:
+* These dates are fed into the dropdown menu which represent the official start dates of several recessions throughout U.S. history. The syntax for this drop-down list is shown below:
 
 ```ls
   [dropdown]
@@ -182,7 +182,7 @@ Underlying Formula:
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p != null && v != null) return v - p;
 ```
 
-* This setting uses a second underlying series which is not enabled, to select values of the Consumer Price Index from one year ago using a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting,and comparing them to the current year's values.
+* This setting uses a second underlying series which is not enabled, to select values of the Consumer Price Index from one year ago using a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting,and comparing the data to the current year values.
 
 Return to the [Index](#index)
 
@@ -312,7 +312,7 @@ Return to the [Index](#index)
 
 ### Natural Logarithm of CPI
 
-Each value's logarithm to base of the mathematical constant _e_
+The logarithm of each value set to base of the mathematical constant _e_
 
 **Figure 10.1**: Natural Logarithm of CPI (1947-2017) **FRED**
 
@@ -336,7 +336,7 @@ Return to the [Index](#index)
 
 ### Max Index
 
-Indexes the Consumer Price Index by its maximum and most recent value.
+Indexes the Consumer Price Index by maximum and most recent value.
 
 **Figure 11.1**: CPI with Most Recent Data as Index (1947-2017) **FRED**
 
