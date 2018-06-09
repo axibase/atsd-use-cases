@@ -1,4 +1,4 @@
-# How to Create Uptime Reports for AWS Route53 Health Checks
+# How to Create Uptime Reports for AWS Route 53 Health Checks
 
 ## Overview
 
@@ -111,7 +111,7 @@ You can adjust the start and end date of the reporting interval using convenient
 
 ### Displaying Health Check Properties
 
-Entity tags displayed on the Entity editor page above can be added to the list of displayed columns by accessing them as `entity.tags.{tag_name}`.
+Entity tags displayed on the Entity editor page above can be added to the list of displayed columns by accessing the data as `entity.tags.{tag_name}`.
 
 ```sql
 SELECT entity.tags.url AS URL, entity.tags.protocol AS "Protocol",

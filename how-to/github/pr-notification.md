@@ -10,7 +10,7 @@ This guide shows how to configure GitHub to alert you when anyone opens a new pu
 
 Use Pull Request functionality in GitHub for repository quality control. Only repository owners or other credentialed users may commit visible changes to repositories. Manage the pull requests of repository collaborators from anywhere with an internet connection without logging in to GitHub.
 
-While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to quickly handle new pull requests or make them known to specific collaborators can be better accomplished by programmatic integration leveraging GitHub webhook functionality.
+While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to quickly handle new pull requests or make the relevant information known to specific collaborators can be better accomplished by programmatic integration leveraging GitHub webhook functionality.
 
 GitHub webhook functionality is prominently featured on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/), explore the latest developments from the GitHub Team and gain an insight into coming features.
 

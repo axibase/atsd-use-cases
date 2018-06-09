@@ -51,7 +51,7 @@ Replace `ATSD_HOST` and `TCP_PORT` with actual values and launch the script.
 
 > The default ATSD TCP command port is `8081`.
 
-The script reads topic offsets and sends them to ATSD under the hostname entity.
+The script reads topic offsets and sends the offsets to ATSD under the hostname entity.
 
 ```sh
 # launch the script
@@ -64,7 +64,7 @@ If the hostname is different from the entity name used in the JMX job, specify t
 nohup /opt/kafka_2.12-1.0.0/bin/send_offset.sh ATSD_HOST TCP_PORT ENTITY &
 ```
 
-The script continuously reads consumer offsets from Kafka and sends the offsets to ATSD as series commands. Kafka also copies the commands and sends them to `stdout` for debugging.
+The script continuously reads consumer offsets from Kafka and sends the offsets to ATSD as series commands. Kafka also copies and sends the commands to `stdout` for debugging.
 
 ```ls
 series e:kafka_host m:kafka.consumer_offset=455 t:groupid="console-consumer-72620" t:topic="test" t:partition=0 ms:1519893731570

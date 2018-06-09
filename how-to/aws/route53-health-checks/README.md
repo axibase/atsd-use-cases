@@ -93,7 +93,7 @@ mkdir import
 cd import
 ```
 
-Mount this directory to the Docker container in order to pass AWS credentials to the CloudWatch data collector without exposing them as environment variables.
+Mount this directory to the Docker container in order to pass AWS credentials to the CloudWatch data collector without exposing sensitive information as environment variables.
 
 Create an `aws.propeties` file in the `import` directory and replace `KEY` and `SECRET` with **AWS Access Key ID** and **Secret Access Key** respectively.
 
@@ -116,7 +116,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 
 The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
 
-Use the Collector instance in the sandbox container to retrieve Route 53 statistics from AWS CloudWatch and store them in ATSD.
+Use the Collector instance in the sandbox container to retrieve Route 53 statistics from AWS CloudWatch and store the statistics in ATSD.
 
 Wait until the sandbox is initialized and `All applications started` is displayed by the start logs.
 

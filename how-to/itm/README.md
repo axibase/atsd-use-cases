@@ -1,4 +1,4 @@
-# IBM Tivoli Monitoring
+# IBM Tivoli Monitoring Integration
 
 ## Overview
 

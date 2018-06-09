@@ -1,4 +1,4 @@
-# Kafka
+# Kafka Integration
 
 This document describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) using [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
@@ -88,7 +88,7 @@ Replace `ATSD_HOST` and `TCP_PORT` with actual values and launch the script.
 
 > The default ATSD TCP command port is `8081`.
 
-The script reads topic offsets and sends them to ATSD under the hostname entity.
+The script reads and sends topic offsets to ATSD under the hostname entity.
 
 Launch the script:
 

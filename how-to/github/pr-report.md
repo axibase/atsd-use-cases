@@ -37,7 +37,7 @@ docker run -d -p 8443:8443 \
 
 For information about creating a new organization, see the [GitHub Help Documentation](https://help.github.com/articles/creating-a-new-organization-from-scratch/).
 
-Mail configuration has several required parameters, passing them into the container via mounted file is the simplest solution. The `volume` variable should point to the **absolute path** where a plaintext file is stored containing the following parameters:
+Mail configuration has several required parameters, passing these parameters into the container via mounted file is the simplest solution. The `volume` variable should point to the **absolute path** where a plaintext file is stored containing the following parameters:
 
 ```ls
 server=smtp.example.org
@@ -519,7 +519,7 @@ Each of these JSONPaths will return a unique JSON list which ATSD Rule Engine wi
 </p>
 </details>
 
-ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) receives incoming JSON result sets and converts them into human-readable HTML reports. Rule Engine generates reports based on [Conditions](https://axibase.com/docs/atsd/rule-engine/#condition-checking), in this case, immediately after the first sandbox launch and then daily at 5:00 AM server local time. The report is created by [Email Action](https://axibase.com/docs/atsd/rule-engine/email.html) which convert the JSON output into HTML table via [`jsonToLists`](https://axibase.com/docs/atsd/rule-engine/functions-table.html#jsontolists) function.
+ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) receives incoming JSON results and converts the information into human-readable HTML reports. Rule Engine generates reports based on [Conditions](https://axibase.com/docs/atsd/rule-engine/#condition-checking), in this case, immediately after the first sandbox launch and then daily at 5:00 AM server local time. The report is created by [Email Action](https://axibase.com/docs/atsd/rule-engine/email.html) which convert the JSON output into HTML table via [`jsonToLists`](https://axibase.com/docs/atsd/rule-engine/functions-table.html#jsontolists) function.
 
 The above JSON result sets will be converted to two outgoing email reports, sent to the defined subscriber list.
 
@@ -551,4 +551,4 @@ A sample report from [**Siemens**](https://github.com/siemens) repositories usin
 
 Clickable URLs redirect to the Pull Request page.
 
-For other GitHub tools developed by Axibase, see our [Use Cases Repository](https://github.com/axibase/atsd-use-cases#github).
+For other GitHub tools developed by Axibase, see the [Use Cases Repository](https://github.com/axibase/atsd-use-cases#github).

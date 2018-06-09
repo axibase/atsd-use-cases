@@ -18,7 +18,7 @@ For this particular exercise, we'll import the data on the [New York State Solar
 curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/socrata/python/docker-compose.yml
 ```
 
-The [`docker-compose.yml`](docker-compose.yml) file configures Axibase Time Series Database (ATSD) and Axibase Collector services along with the required dependencies. The Collector's role is to automatically download and parse a specific data.gov JSON file while ATSD serves as the SQL-enabled database.
+The [`docker-compose.yml`](docker-compose.yml) file configures Axibase Time Series Database (ATSD) and Axibase Collector services along with the required dependencies. The role of the Collector is to automatically download and parse a specific data.gov JSON file while ATSD serves as the SQL-enabled database.
 
 ### Launch containers
 

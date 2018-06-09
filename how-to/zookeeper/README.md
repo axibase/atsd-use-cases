@@ -1,4 +1,4 @@
-# Zookeeper
+# Zookeeper Integration
 
 This guide describes how to monitor availability and performance of an [Apache Zookeeper](https://zookeeper.apache.org/) cluster (3 nodes) using [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 

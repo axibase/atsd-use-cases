@@ -1,4 +1,4 @@
-# ActiveMQ
+# ActiveMQ Integration
 
 This document describes the process of configuring ActiveMQ for availability and performance monitoring with [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
