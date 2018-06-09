@@ -34,6 +34,7 @@
   * [File Names](#file-names)
   * [Product Names](#product-names)
   * [Documentation Names](#documentation-names)
+  * [Issue Names](#issue-names)
   
 ## Introduction
 
@@ -508,5 +509,14 @@ Axibase Documentation is a proper noun, capitalize Axibase Documentation every t
 
 * For more information, see the [Axibase Documentation](https://axibase.com/docs/atsd/).
 * To install ATSD, read the [Installation article](https://axibase.com/docs/atsd/installation/).
+
+### Issue Names
+
+Axibase tracks issues in Redmine. Follow these guidelines for proper issue reporting:
+
+* Use prefixes for specific ticket subjects. If `rest-api` is too general a category, add **Python API Client** prefix to the issue subject.
+* Use the imperative for new features.
+* Use descriptive sentences for describing bugs.
+* Link to the relevant documentation.
 
 > Return to the [Index](#index).
