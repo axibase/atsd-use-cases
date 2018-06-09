@@ -105,6 +105,6 @@ You can view the collected metrics under the Entity and Metrics tabs in ATSD.
 
 ### Built-in Portals
 
-| **Cadvisor Host**                                | **Cadvisor Disk Detail**                    | **Docker Host Portal**               | **Cadvisor Multi-Host**                    |
-| ------------------------------------------------ | ------------------------------------------- | ------------------------------------ | ------------------------------------------ |
+| **Cadvisor Host**                              | **Cadvisor Disk Detail**                    | **Docker Host Portal**               | **Cadvisor Multi-Host**                    |
+| ---------------------------------------------- | ------------------------------------------- | ------------------------------------ | ------------------------------------------ |
 | ![](./images/container_disk_detail_portal.png) | ![](./images/container_overview_portal.png) | ![](./images/docker_host_portal.png) | ![](./images/docker_multi_host_portal.png) |
