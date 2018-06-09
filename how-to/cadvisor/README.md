@@ -33,8 +33,7 @@ docker run \
 
 It may take up to 15 minutes to initialize the database.
 
-For more options, see [ATSD Docker installation manual]
-(https://axibase.com/docs/atsd/installation/docker.html).
+For more options, see [ATSD Docker installation manual](https://axibase.com/docs/atsd/installation/docker.html).
 
 ### Launch cAdvisor with ATSD storage driver
 
@@ -82,7 +81,7 @@ docker run \
 
 ## Verify Installation
 
-* Login into ATSD web interface on http://atsd_host:8088. 
+* Login into ATSD web interface on `http://atsd_host:8088`. 
 * Configure the built-in administrative account.
 * Click on Entities tab in the top menu, click on Portal icons to view default portals.
 
