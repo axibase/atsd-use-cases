@@ -1,14 +1,17 @@
-# Axibase Time Series Database as the backend for cAdvisor 
+# Axibase Time Series Database as the backend for cAdvisor
 
-[Axibase Time Series Database](http://axibase.com/docs/atsd) can collect Linux container metrics through cAdvisor for long-term retention, alerting, and visualization.
+[Axibase Time Series Database](http://axibase.com/docs/atsd) can collect Linux container metrics through cAdvisor for 
+long-term retention, alerting, and visualization.
 
-## Single Host Installation 
+## Single Host Installation
 
-In this configuration ATSD collects metrics from the underlying Docker host retrieved by a cAdvisor container running on the same server.
+In this configuration ATSD collects metrics from the underlying Docker host retrieved by a cAdvisor container running 
+on the same server.
 
 ## Multiple Host Installation
 
-To consolidate metrics from multiple Docker hosts configure cAdvisor containers to send data to a centralized ATSD server. This type of setup enables centralized performance monitoring.
+To consolidate metrics from multiple Docker hosts configure cAdvisor containers to send data to a centralized ATSD 
+server. This type of setup enables centralized performance monitoring.
 
 ![Distributed Docker Infrastructure](./images/docker_distributed.png)
 
@@ -30,7 +33,8 @@ docker run \
 
 It may take up to 15 minutes to initialize the database.
 
-For more options, see [ATSD Docker installation manual](https://github.com/axibase/atsd-docs/blob/master/installation/docker.md).
+For more options, see [ATSD Docker installation manual]
+(https://axibase.com/docs/atsd/installation/docker.html).
 
 ### Launch cAdvisor with ATSD storage driver
 
@@ -52,7 +56,9 @@ docker run \
   --housekeeping_interval=15s 
 ```
 
-In case you're using http/https protocol when writing data into a remote ATSD server, make sure that you create a collector account with restricted permissions as described [here](https://github.com/axibase/axibase-collector-docs/blob/master/collector-account.md).
+In case you're using http/https protocol when writing data into a remote ATSD server, make sure that you create a 
+collector account with restricted permissions as described 
+[here](https://axibase.com/docs/atsd/administration/collector-account.html).
 
 ```bash
 docker run \
@@ -71,7 +77,7 @@ docker run \
   --storage_driver_user=${ATSD_COLLECTOR_ACCOUNT_NAME} \
   --storage_driver_password=${ATSD_COLLECTOR_ACCOUNT_PASSWORD} \
   --storage_driver_buffer_duration=15s \
-  --housekeeping_interval=15s 
+  --housekeeping_interval=15s
 ```
 
 ## Verify Installation
@@ -102,4 +108,4 @@ You can view the collected metrics under the Entity and Metrics tabs in ATSD.
 
 | **Cadvisor Host**                                | **Cadvisor Disk Detail**                    | **Docker Host Portal**               | **Cadvisor Multi-Host**                    |
 | ------------------------------------------------ | ------------------------------------------- | ------------------------------------ | ------------------------------------------ |
-| [![](./images/container_disk_detail_portal.png)](./images/container_disk_detail_portal.png) | ![](./images/container_overview_portal.png) | ![](./images/docker_host_portal.png) | ![](./images/docker_multi_host_portal.png) |
+| ![](./images/container_disk_detail_portal.png) | ![](./images/container_overview_portal.png) | ![](./images/docker_host_portal.png) | ![](./images/docker_multi_host_portal.png) |
