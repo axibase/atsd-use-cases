@@ -33,7 +33,7 @@ Data is visualized using **Trends** service from Axibase, a public data reposito
 
 ### Working Population as a Portion of Total Population
 
-Open the Trends visualization and use the drop-down menu to navigate through time to compare working-aged population to the United States total population.
+Open the **Trends** visualization and use the drop-down menu to navigate through time to compare working-aged population to the United States total population.
 
 ![](./images/working-population.png)
 [![](./images/button-new.png)](https://trends.axibase.com/2228bbde#fullscreen)
@@ -47,7 +47,7 @@ The upper histogram plots the frequency of each value of annual crude births per
 ![](./images/population-histogram.png)
 [![](./images/button-new.png)](https://trends.axibase.com/df87fe0c#fullscreen)
 
-*Fig 3.*: Open the Trends visualization and modify the number of bars in either histogram using a [`bar-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/#tab-id-1) setting for more granularized data visualization.
+*Fig 3.*: Open the **Trends** visualization and modify the number of bars in either histogram using a [`bar-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/#tab-id-1) setting for more granularized data visualization.
 
 ### Diminishing Working Population
 
@@ -87,7 +87,7 @@ Using a `value` expression, calculated series may be created using existing data
 # Calculated series has no metric value as it is only derived. Alert expression is entered based on information provided by box graph
 ```
 
-Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in Trends / ChartLab, see this [guide](../../how-to/database/calculated-values/README.md).
+Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in **Trends** or **ChartLab**, see the [Calculated Series article](../../how-to/database/calculated-values/README.md).
 
 ![](./images/working-population-charts.png)
 [![](./images/button-new.png)](https://trends.axibase.com/68f93899#fullscreen)

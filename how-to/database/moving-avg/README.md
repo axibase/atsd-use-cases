@@ -52,8 +52,7 @@ The passenger enplanement data, aggregated annually is shown below:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/00cf9be3/#fullscreen)
 
-Not only is the granularization mismatched but the observed periods differ by twenty years. The latter problem's solution is
-quick enough, modify the observation period using the dropdowns in ChartLab or hardcode the desired timespan in the editor
+Not only is the granularization mismatched but the observed periods differ by twenty years. The latter problem has a quick-enough solution, modify the observation period using the dropdowns in ChartLab or hardcode the desired timespan in the editor
 window with the `starttime` setting, but the former doesn't offer such an obvious solution.
 
 The syntax required to modify the dataset to reflect the moving average is two parts and shown below. It can be placed under
@@ -66,7 +65,7 @@ series.
 ```
 
 The `period` feature of the setting is user-assigned and can be set as low as millisecond granularity and as high as any
-number of years. This two line syntax calculates the average of each year's inputs and aggregates them to return one value
+number of years. This two line syntax calculates the average of each annual input and aggregates the value to return one value
 per selected period. Additionally, this type of ad-hoc modification does nothing to the underlying data, so it may be returned
 to at any time. Read detailed documentation about the `wtavg` setting as well as other supported aggregation functions
 [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/).
@@ -117,12 +116,12 @@ Scale Modification:
 enplanements = value/10000
 ```
 
-Once the comparison is complete, removing the `statistic` setting from the editor window returns the data to its original
+Once the comparison is complete, removing the `statistic` setting from the editor window returns the data to the original
 state without additional computation. Alternatively, it may be helpful to compare the modified chart with the original to
 calculate concrete monthly baselines. Airport traffic and use is hugely seasonal, comparing values month to month is not only
 ineffective, but misleading. Instead, months should be compared across different years and with the moving average calculation
 included no additional calculations need be performed (such as attempts to correct for overall increases and decreases in
-airport traffic) because they are now included in the underlying data.
+airport traffic) because the information is now included in the underlying data.
 
 ![](./images/ra-009.png)
 

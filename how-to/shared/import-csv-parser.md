@@ -2,7 +2,7 @@
 
 ![](./images/parser.png)
 
-CSV parser is a collection of rules of how to read and translate CSV files into series, properties, and message commands inserted into the database. The parser contains instructions which columns contain entity names, metric names, timestamps, and command tags.
+CSV Parser is a collection of rules that describe how to read and translate CSV files into series, properties, and message commands inserted into the database. The parser contains instructions which columns contain entity names, metric names, timestamps, and command tags.
 
 Follow this process to upload a CSV Parser configuration to your local ATSD instance.
 
@@ -18,12 +18,10 @@ Follow this process to upload a CSV Parser configuration to your local ATSD inst
 
 ![](./images/import-parser-config.png)
 
-Your parser configuration has been uploaded to ATSD.
-
-Return to the **CSV** page where the newly configured portal will be visible.
+Return to the **CSV** page to view the newly-uploaded CSV Parser.
 
 ## Uploading Multiple Configuration Files
 
-Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form.
 
 ![](./images/backup-import.png)

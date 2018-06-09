@@ -2,23 +2,23 @@
 
 ## Overview
 
-If you have images hosted on the [Docker Hub](https://hub.docker.com) registry, you need to monitor automated build jobs on Docker Hub to make sure that the images are successfully published and your CI pipeline remains healthy.
+If you have images hosted on the [Docker Hub](https://hub.docker.com) registry, you need to monitor automated build jobs on Docker Hub to make sure that the images you successfully publish new images and your CI pipeline remains healthy.
 
-While the Docker Hub provides the capability to trigger [outgoing webhooks](https://docs.docker.com/docker-hub/webhooks/), they'll only be executed when the automated build completes **successfully**. If the job fails or if becomes stuck in `Queued` status, webhooks are **not** fired and your team remains unaware of broken builds. This limitation is [known](https://forums.docker.com/t/docker-hub-webhook-on-build-failure/1166) but a fix is currently not available.
+While the Docker Hub provides the capability to trigger [outgoing webhooks](https://docs.docker.com/docker-hub/webhooks/), the webhooks only execute when the automated build completes **successfully**. If the job fails or becomes stuck at **Queued** status, Docker Hub does not fire webhooks and your team remains unaware of broken builds. This limitation is [known](https://forums.docker.com/t/docker-hub-webhook-on-build-failure/1166) but a fix is not yet available.
 
 ![](./images/docker-hub-notifications.png)
 
-While the email option can serve as a work-around for build failures, it's difficult to rely on it for programmable integration with alerting and CI systems. Also, an email alert will **not be dispatched** when the build remains queued for a long period of time.
+While the email option serves as a workaround for build failures, do not rely on it for programmable integration with alerting and CI systems. Also, Docker Hub does not dispatch an email alert when the build remains queued for a long period of time.
 
 ![](./images/docker-email.png)
 
-This guide describes a solution, based on the rule engine implemented in [Axibase Time Series Database](https://axibase.com/docs/atsd/rule-engine/), which polls the Docker Hub build history using the Docker Hub v2 API and generates missing webhooks in case of **build failures** or if the build is queued for more than one hour (this threshold is configurable).
+This guide describes a solution, based on the Rule Engine implemented in [Axibase Time Series Database](https://axibase.com/docs/atsd/rule-engine/), which polls the Docker Hub build history using the Docker Hub `v2` API and generates missing webhooks in case of **build failures** or if the build is queued for more than one hour (you can configure this threshold).
 
-Please note that this solution only applies to automated builds which are executed by Docker Hub itself.
+Note that this solution only applies to automated builds which are executed by Docker Hub itself.
 
 ## Build Failures
 
-Build failures come in different flavors - some are caused by human error while others occur due to infrastructure changes outside of our control. Your team needs to fix these failure regardless of the cause.
+Build failures come in different flavors - some are caused by human error while others occur due to infrastructure changes outside of human control. Your team needs to fix these failures regardless of the cause.
 
 Human Error:
 
@@ -30,15 +30,15 @@ Infrastructure Error:
 
 ## Build History
 
-Build history, containing success and failure statuses, is accessible under the **Build Details** tab in Docker Hub. History is only available for automated builds. Images that are uploaded by external tools are out of scope.
+Access build history, containing success and failure statuses, under the **Build Details** tab in Docker Hub. History is only available for automated builds. Images that are uploaded by external tools are out of scope.
 
 ![](./images/job-fail.png)
 
 The history is also available via [Docker Hub v2 API](https://hub.docker.com/v2/repositories/axibase/cadvisor/buildhistory/?page=1&page_size=5).
 
-The build has failed if its status is not 0 (`Queued`), 2 or 3 (`Building`), or 10 (`Success`).
+The build fails if the status is not `0` (**Queued**), `2` or `3` (**Building**), or `10` (**Success**).
 
-In the example below, the status is `-1` which is reported as `! Error` on Docker Hub.
+In the example below, the status is `-1`, reported as **`! Error`** by Docker Hub.
 
 ```json
 {
@@ -54,11 +54,11 @@ In the example below, the status is `-1` which is reported as `! Error` on Docke
 
 ## Webhook Solution
 
-The proposed solution retrieves the most recent record from the Docker Hub build history for all projects in the specified namespace and sends an HTTP notification to the consuming web service that you specify if the build status is not `2`, `3` or `10`, as well as when the status remains at `0` (Queued) for more than one hour.
+The proposed solution retrieves the most recent record from the Docker Hub build history for all projects in the specified namespace and sends an HTTP notification to the consuming web service that you specify if the build status is not `2`, `3` or `10`, as well as when the status remains at `0` (**Queued**) for more than one hour.
 
 ### Webhook Payload `on-success`
 
-A sample request payload generated by the Docker Hub webhook when the build succeeds is shown below. These notifications will continue to be generated by Docker Hub.
+A sample request payload generated by the Docker Hub webhook when the build succeeds is shown below. These notifications continue to be generated by Docker Hub.
 
 ```json
 {
@@ -93,7 +93,7 @@ A sample request payload generated by the Docker Hub webhook when the build succ
 
 A sample notification produced by an ATSD webhook when a new build failure is detected is shown below.
 
-As you can see, the synthetic `on-error` payload is similar to the native `on-success` webhook above except the `repository.status` field is set to `Failed` (in case of build failure) or `Queued` (in case of hanging build). An extra `build_history` object is injected for additional detail.
+As you can see, the synthetic `on-error` payload is similar to the native `on-success` webhook above except the `repository.status` field is set to **Failed** (in case of build failure) or **Queued** (in case of hanging build). An extra `build_history` object is injected for additional detail.
 
 ```json
 {
@@ -131,13 +131,13 @@ Set `NAMESPACE` variable in the command below to your Docker Hub namespace, for 
   --env NAMESPACE='google' \
 ```
 
-Set `NOTIFY_URL` variable to a request URL where `on-error` webhook notifications will be sent, for example:
+Set `NOTIFY_URL` variable to a request URL where `on-error` webhook notifications may be sent, for example:
 
 ```sh
   --env NOTIFY_URL='https://host01:10443/jenkins/plugin?token=123' \
 ```
 
-The notification URL may include `Basic` authorization credentials, for example `https://usr:pwd@host01:10443/`. SSL certificate validation is disabled by default.
+The notification URL may include **Basic** authorization credentials, for example `https://usr:pwd@host01:10443/`. SSL certificate validation is disabled by default.
 
 Execute the command below to launch an [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
 
@@ -151,42 +151,42 @@ docker run -d -p 8443:8443 -p 9443:9443 \
   axibase/atsd-sandbox:latest
 ```
 
-Watch the container start log for `All applications started` message.
+Watch the container start logs for `All applications started`.
 
 ```sh
 docker logs -f atsd-sandbox
 ```
 
-The sandbox runs two front-facing applications which may be accessed using [default](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials) credentials:
+The sandbox runs two front-facing applications which may be accessed using [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials):
 
 * ATSD at `https://docker_host:8443`
 * Axibase Collector at `https://docker_host:9443`
 
 ## Verification
 
-Let's verify that the webhook delivery is working as expected.
+Verify that the webhook delivery is working as expected.
 
-Go to Docker Hub and open Build Settings for one of the projects (images). Trigger a build for one of the branches known to fail.
+Go to Docker Hub and open **Build Settings** for one of the projects (images). Trigger a build for one of the branches known to fail.
 
 ![](./images/docker-hub-trigger.png)
 
 The webhook should arrive in less than 5 minutes, which is the collector polling interval.
 
-If you don't have a good failure candidate handy, send a test `message` command for `test/my-image` project as described below.
+If you do not have a good failure candidate handy, send a test `message` command for `test/my-image` project as described below.
 
-You can adjust the frequency in the collector UI at `https://docker_host:8443`. Open `dockerhub-poller` job and set Cron Expression to `0 * * * * ?` in order to run the data collection every minute.
+Adjust the frequency in Collector web interface at `https://docker_host:8443`. Open `dockerhub-poller` job and set the **Cron Expression** to `0 * * * * ?` in order to run the data collection every minute.
 
 ## Automation
 
 ### Retry Failed Builds
 
-In addition to sending build error notifications, the `dockerhub-build-fail` rule in ATSD can be programmed to retry a failed build using Docker Hub [Remote Build Triggers](https://docs.docker.com/docker-hub/builds/#remote-build-triggers). The remote triggers allow you to initiate an automated build by sending a `POST` request to an endpoint on Docker Hub.
+In addition to sending build error notifications, you can program the `dockerhub-build-fail` rule in ATSD to retry a failed build using Docker Hub [Remote Build Triggers](https://docs.docker.com/docker-hub/builds/#remote-build-triggers). The remote triggers allow you to initiate an automated build by sending a `POST` request to an endpoint on Docker Hub.
 
 1. Create a new trigger token for a project on Docker Hub (projects with intermittent failures are good candidates for this).
 
     ![](./images/docker-hub-build-trigger.png)
 
-2. Create a CUSTOM web notification to launch an automated build on Docker Hub.
+2. Create a **CUSTOM** web notification to launch an automated build on Docker Hub.
 
     ![](./images/docker-hub-trigger-notify.png)
 
@@ -206,19 +206,19 @@ You can also customize the rule to send alerts into your preferred messaging ser
 
 ### Axibase Collector
 
-Log in to Collector at `https://docker_host:9443` with [default](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials) credentials.
+Log in to Collector at `https://docker_host:9443` with [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials).
 
-Locate the `dockerhub-poller` job. Check that its status is 'Completed'.
+Locate the `dockerhub-poller` job. Check that the status is **Completed**.
 
 ![](./images/collector-job-status.png)
 
 ### Axibase Time Series Database
 
-Log in to ATSD at `https://docker_host:8443` with [default](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials) credentials.
+Log in to ATSD at `https://docker_host:8443` with [default credentials](https://github.com/axibase/dockers/tree/atsd-sandbox#default-credentials).
 
-Open **Alerts > Web Notifications** page. Open `dockerhub-webhook-sender` notification. Click Test to verify connection.
+Open the **Alerts > Web Notifications** page. Open the `dockerhub-webhook-sender` notification. Click **Test** to verify connection.
 
-Open **Data > Data Entry** page in the main menu. Submit this command to emulate a build failure detected by Axibase Collector.
+Open the **Data > Data Entry** page in the main menu. Submit this command to emulate a build failure detected by Axibase Collector.
 
 ```ls
 message e:docker.hub t:build_code=abc t:last_updated=2019-01-01T00:00:00Z t:dockertag_name=latest t:name=my-image t:cause=TRIGGERED_VIA_API t:id=11111111 t:created_date=2019-01-01T00:00:00Z t:source=docker.hub t:repository=test/my-image t:type=build t:user=test t:status=-1
@@ -226,7 +226,7 @@ message e:docker.hub t:build_code=abc t:last_updated=2019-01-01T00:00:00Z t:dock
 
 ![](./images/data-entry.png)
 
-Check that the `dockerhub-webhook-sender` status is `OK`.
+Check that the `dockerhub-webhook-sender` status is **OK**.
 
 ![](./images/sender-status.png)
 
@@ -262,6 +262,6 @@ The target service should now receive the JSON payload:
 
 ## References
 
-* Axibase Time Series Database [rule engine documentation](https://axibase.com/docs/atsd/rule-engine/).
-* Axibase Collector [JSON job documentation](https://github.com/axibase/axibase-collector/blob/master/jobs/json.md).
-* Questions? Issues? Please contact us via an [issue](https://github.com/axibase/atsd-use-cases/issues/new) form.
+* Axibase Time Series Database [Rule Engine Documentation](https://axibase.com/docs/atsd/rule-engine/).
+* Axibase Collector [JSON Job Documentation](https://github.com/axibase/axibase-collector/blob/master/jobs/json.md).
+* Questions? Problems? Contact us by raising an [issue](https://github.com/axibase/atsd-use-cases/issues/new).

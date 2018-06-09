@@ -2,7 +2,7 @@
 
 ![](./images/tag-templates.png)
 
-A Tag Template is a set of pre-defined formatting rules applied in the rule editor or metric editor for matching entities or metrics correspondingly. The tag template formats the information displayed in the editor in a way, that is customized for the given record.
+A Tag Template is a set of pre-defined formatting rules applied in the rule editor or metric editor for matching entities or metrics correspondingly. The Tag Template formats the information displayed in the editor in a customized way for the given record.
 
 Follow this process to upload a tag template to your local ATSD instance.
 
@@ -18,12 +18,10 @@ Follow this process to upload a tag template to your local ATSD instance.
 
     ![](./images/import-tag-template.png)
 
-Your tag template has been uploaded to ATSD.
-
-Return to the **Tag Templates** page where the newly configured template will be visible.
+Return to the **Tag Templates** page to view the newly-configured Tag Template.
 
 ## Uploading Multiple Configuration Files
 
-Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form.
 
 ![](./images/backup-import.png)
