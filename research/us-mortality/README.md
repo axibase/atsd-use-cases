@@ -428,14 +428,14 @@ struck the Gulf coast of the United States, with New Orleans taking the brunt of
 natural disaster in U.S. history." FEMA estimated the total damage from the hurricane amounted to $108 billion dollars, making it the "costliest hurricane in U.S. history." Approximately 1,833 people
 are estimated to have died in the storm, with 1,577 of those deaths occurring in the New Orleans area. This number of deaths would clearly put New Orleans, so why is it not showing up?
 
-Below is a Chart Lab output for the number of deaths for New Orleans from 1970 to 2016.
+Below is a **ChartLab** output for the number of deaths for New Orleans from 1970 to 2016.
 
 ![Figure 47](./images/Figure47.png)
 
 We can clearly see that there is quite a noticeable gap in the data collection history from the city. From August 20th, 2005, to December 8th, 2012, New Orleans did not collect death total statistics.
 Since the hurricane occurred on August 29th, 2005, these sky high death totals do not show up in our list.
 
-You can explore the death totals for New Orleans in the Chart Lab instance below.
+You can explore the death totals for New Orleans in the **ChartLab** instance below.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3d07088c/2/)
 

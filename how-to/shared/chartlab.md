@@ -30,7 +30,7 @@ The **ChartLab** menu has the following components:
 
 ![Figure 2](./images/Figure2.png)
 
-The Random Data Generator is a non-existent dataset which invokes the `math.random()` javascript function. 
+The Random Data Generator is a non-existent dataset which invokes the `math.random()` javascript function.
 
 >For more information see the [Mozilla Developer Network Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random).
 

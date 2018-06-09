@@ -15,4 +15,4 @@
 * [Calculated Values With Schema-Based Parsing](schema-based-parser-mod/README.md)
 * [Curve Smoothing Using Moving Averages](moving-avg/README.md)
 * [Creating Calculated Metrics in ChartLab and SQL Console](add-calculated-value/README.md)
-* [Data Visualization with Chart Lab](../shared/chartlab.md)
+* [Data Visualization with **ChartLab**](../shared/chartlab.md)

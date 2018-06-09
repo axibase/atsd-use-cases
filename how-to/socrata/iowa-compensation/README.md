@@ -249,7 +249,7 @@ Below is an image of the output in **ChartLab**:
 ![Figure 16](./images/Figure16.png)
 
 Over time, in spite the fact that the total number of employees has decreased, the total employee compensation has increased. The number of federal government employees in the state decreased from 20,300 to 17,700 but the total compensation increased from $999,528,000 to
-$1,629,778,000. Next, compute the average federal government compensation per employee. 
+$1,629,778,000. Next, compute the average federal government compensation per employee.
 
 Below is an image of the configuration in **ChartLab**:
 

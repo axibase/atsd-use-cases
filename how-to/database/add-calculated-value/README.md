@@ -45,11 +45,12 @@ SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt (Million Euro)"
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82713e8a/#fullscreen)
 
 To calculate the percent growth of Lithuanian debt over the 20-year observation period, use common baselines. Three common baselines are as follows:
+
 * Previous Year Baseline (PYB)
 * Average Value Baseline (AVB)
 * Final Year Baseline (FYB)
 
-#### Previous Year Baseline
+### Previous Year Baseline
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt (Million Euro)", 100*((value)/LAG(value)-1) AS "Percent Change (PYB)"
@@ -113,7 +114,7 @@ alert-style = fill: green
 This setting renders all incidences of negative debt growth (or debt growth less than 0) as green, while positive debt growth
 is rendered in red.
 
-#### Average Value Baseline
+### Average Value Baseline
 
 ```sql
 SELECT AVG(value) AS "Debt (Million Euro)"
@@ -168,7 +169,7 @@ Apply an `alert-expression` to track years by percent deviation from the calcula
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82713e8a/4/#fullscreen)
 
-#### Final Year Baseline
+### Final Year Baseline
 
 In order to calculate debt growth using a FYB, the following queries are used:
 

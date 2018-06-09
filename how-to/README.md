@@ -35,7 +35,7 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 * [Calculated Values With Schema-Based Parsing](database/schema-based-parser-mod/README.md)
 * [Curve Smoothing Using Moving Averages](database/moving-avg/README.md)
 * [Creating Calculated Metrics in ChartLab and SQL Console](database/add-calculated-value/README.md)
-* [Data Visualization with Chart Lab](shared/chartlab.md)
+* [Data Visualization with **ChartLab**](shared/chartlab.md)
 
 ## Docker
 
@@ -46,7 +46,7 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 
 * [Daily Pull Request Report for GitHub Organizations](github/pr-report.md)
 * [Notifications for New GitHub Repository Forks](github/fork-notification.md)
-* [Notifications for New GitHub Issues](github/issue-notification.md) 
+* [Notifications for New GitHub Issues](github/issue-notification.md)
 * [Notifications for New GitHub Project Releases](github/project-release-notification.md)
 * [Notifications for New GitHub Pull Requests](github/pr-notification.md)
 * [Notifications for New GitHub Repository Subscriptions](github/watch-notification.md)
@@ -59,8 +59,8 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 ## Kafka
 
 * [Kafka Integration](kafka/README.md)
-* [Brokers Monitoring](broker-monitoring/README.md)
-* [Consumers Monitoring](consumers-monitoring/README.md)
+* [Brokers Monitoring](kafka/broker-monitoring/README.md)
+* [Consumers Monitoring](kafka/consumers-monitoring/README.md)
 
 ## Marathon
 

@@ -28,7 +28,7 @@ of cocaine, manufacturing and delivering heroin, soliciting narcotics etc). Each
 Given the size of the dataset, you cannot load it in Excel. It is much more convenient to interact with the data once it is loaded into a database. The
 [Axibase Time Series Database](https://axibase.com/docs/atsd/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use two capabilities of ATSD to explore this dataset:
 
-* Interactive graphs from [Chart Lab](../../how-to/shared/chartlab.md);
+* Interactive graphs from [**ChartLab**](../../how-to/shared/chartlab.md);
 
 * Tabular outputs from analytical [SQL queries](https://axibase.com/docs/atsd/sql/).
 
@@ -42,7 +42,7 @@ down as winter approaches.
 
 ![Figure 1](./images/Figure1.png)
 
-Click on the Chart Lab button below to take a closer look at these numbers, as well as monthly totals for 31 other crime types, including weapons violations, prostitution, robbery, assault, and
+Click on the **ChartLab** button below to take a closer look at these numbers, as well as monthly totals for 31 other crime types, including weapons violations, prostitution, robbery, assault, and
 domestic violence, among many others.
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba#fullscreen)
@@ -52,7 +52,7 @@ line chart, we can see that murder totals were higher almost across the board fo
 
 ![Figure 5](./images/Figure5.png)
 
-Click on this button to explore this Chart Lab portal:
+Click on this button to explore this **ChartLab** portal:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/16/#fullscreen)
 
@@ -110,7 +110,7 @@ was exactly same at 68%.
 
 ![Figure 6](./images/Figure6.png)
 
-Click on this button to explore the Chart Lab portal for the top five locations for homicides in 2015 and 2016:
+Click on this button to explore the **ChartLab** portal for the top five locations for homicides in 2015 and 2016:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/d5c04002/6/#fullscreen)
 
@@ -160,7 +160,7 @@ There actually has been a long term decrease in crime as a whole in Chicago, as 
 
 ![Figure 3](./images/Figure3.png)
 
-Click on the button below to explore this Chart Lab portal:
+Click on the button below to explore this **ChartLab** portal:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/4/#fullscreen)
 
@@ -168,7 +168,7 @@ Below is a figure showing the change from 2015 to 2016 for each of the crime typ
 
 ![Figure 4](./images/Figure4.png)
 
-Click here to check out these percentage changes in Chicago crime in Chart Lab:
+Click here to check out these percentage changes in Chicago crime in **ChartLab**:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/d5c04002/7/#fullscreen)
 
@@ -210,7 +210,7 @@ as a result less willing to go out, fight crime, make arrests, and make a differ
 
 ![Figure 8](./images/Figure8.png)
 
-Click here to explore this Chart Lab portal:
+Click here to explore this **ChartLab** portal:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/8/#fullscreen)
 
