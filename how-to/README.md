@@ -42,6 +42,10 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 * [Notifications for Docker Hub Build Failures](docker/README.md)
 * [Docker Container Monitoring](docker/docker-engine.md)
 
+## cAdvisor
+
+* [ATSD as the backend for cAdvisor](cadvisor/README.md)
+
 ## GitHub
 
 * [Daily Pull Request Report for GitHub Organizations](github/pr-report.md)
