@@ -14,7 +14,7 @@ for the next several days. With a water surface area of 15,810 acres, the differ
 Oroville dam.
 
 In this article we will analyze a dataset from the [California Department of Water Resources (CDWR)](https://cdec.water.ca.gov/index.html) looking at the several vital statistics for the
-Oroville dam. This article provides **realtime analysis** with Chart Lab graphs (updated **hourly** and **automatically** with data taken from the CDWR website), which show the current situation at the dam. Additionally, this article illustrates
+Oroville dam. This article provides **realtime analysis** with **ChartLab** graphs (updated **hourly** and **automatically** with data taken from the CDWR website), which show the current situation at the dam. Additionally, this article illustrates
 how publicly available data from the California DWR can be easily loaded into the non-relational [Axibase Time Series Database (ATSD)](https://axibase.com/docs/atsd/)
 for interactive analysis with graphical representation of open data published by government organizations.
 
@@ -155,8 +155,8 @@ dam storage to reach threshold capacity for a given amount of rainfall per day.
 | 2 inch per day | +131,547          | 307,145           | 2.334 days ~ 56 hours   |
 | 3 inch per day | +268,337.5        | 307,145           | 1.144 days ~ 27 hours   |
 
-Come back to these Chart Lab portals in the coming days and look at our **realtime analysis** for updates on the Oroville dam. **You do not need to install ATSD** to continue to monitor
-the situation. Simply by clicking on each of the **Chart Lab buttons**, you can keep up to date on dam storage levels, dam inflow, dam outflow, spillway outflow, and precipitation.
+Come back to these **ChartLab** portals in the coming days and look at our **realtime analysis** for updates on the Oroville dam. **You do not need to install ATSD** to continue to monitor
+the situation. Simply by clicking on each of the ****ChartLab** buttons**, you can keep up to date on dam storage levels, dam inflow, dam outflow, spillway outflow, and precipitation.
 
 ### Action Items
 

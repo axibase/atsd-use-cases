@@ -4,51 +4,41 @@
 
 ## Introduction
 
-Are you looking for clear and concise graphical presentations for datasets?
+**ChartLab** is a versatile online tool which allows users to test drive [Axibase Time Series Database](https://axibase.com/docs/atsd/) (ATSD) visualization capabilities. **ChartLab** does not require any registration and allows you to experiment with different layouts and widget settings prior to deploying it in your own ATSD instance. For front-end developers familiar with [jsfiddle](http://jsfiddle.net/da1rosy8/), **ChartLab** shares many of the same properties and characteristics.
 
-Do you want to explore different graphical outputs **all in one place**?
+This article shows basic features and functionality of the **ChartLab** service.
 
-Chart Lab is a versatile online tool which allows users to test drive Axibase Time Series Database (ATSD) visualization capabilities. Chart Lab doesn't require any kind of
-registration and allows you to experiment with different layouts and widget settings prior to deploying it in your own ATSD instance. For front-end developers familiar with
-[`jsfiddle.net`](http://jsfiddle.net/da1rosy8/), Chart Lab shares many of the same properties and characteristics.
+## ChartLab Features
 
-The purpose of this article is to walk the new user through the whole process and showcase all of the different features of ChartLab.
+To start, open a blank [**ChartLab**](https://apps.axibase.com/chartlab/) page.
 
-## Chart Lab Features
+The **ChartLab** menu has the following components:
 
-A blank, customizable ChartLab portal for can be found here:
-
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/)
-
-The ChartLab menu contains these items:
-
-* Editor - Toggle configuration editor;
-* Run - Apply and view a portal based on the current configuration in the Editor window;
-* Save - Save the current configuration under as new version in the current directory;
-* Clone - Save current configuration in a new directory;
-* Widget - Append a widget template to the current desired configuration;
-* Source - Switch between data sources: Random or ATSD.
-
-Below is an image of the standard default ChartLab configuration.
-
-![Figure 1](./images/Figure1.png)
+* **Editor**: Toggle configuration editor.
+* **Run**" Apply and view a portal based on the current configuration in the Editor window.
+* **Save**: Save the current configuration under as new version in the current directory;
+* **Clone**: Save current configuration in a new directory;
+* **Widget**: Append widget template to the current desired configuration;
+* **Source**: Switch between data sources: Random or ATSD.
 
 ## Source
 
-ChartLab supports two data sources:
+**ChartLab** supports two data sources:
 
-1. Random Data Generator;
-2. Axibase Time Series Database.
+1. Random Data Generator
+2. Axibase Time Series Database
 
 ![Figure 2](./images/Figure2.png)
 
-The Random data generator is a non-existent dataset which invokes the math.random() javascript function. As defined by the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random),
-this function returns a floating-point, pseudo-random number in the range [0,1], which is inclusive from 0 up to but not including 1. This range can
-be scaled to fit any desired dataset. These numbers have no meaning; every 60 seconds new random numbers are generated with the goal of merely
-providing different ranges for visualization purposes. In ChartLab, it may be used to quickly design visualization or portal templates for use with real data later on.
+The Random Data Generator is a non-existent dataset which invokes the `math.random()` javascript function.
 
-ATSD data is actual data collected by Axibase from a variety of sources, including server equipment, network devices, and online resources. Using ChartLab, a user is able to draw upon a publicly-accessible ATSD instance operated by Axibase. Once a user installs ATSD, they will be able to visualize
-their own data, updated in real time as new incoming data is processed.
+>For more information see the [Mozilla Developer Network Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random).
+
+This function returns a floating-point, pseudo-random number in the range `[0,1]`, which includes all number from zero up to, but not including, 1. These numbers have no meaning, the functions generates a new random number every 60 seconds.
+
+Use the Randon Data Generator to explore different widgets and layouts available in **ChartLab**
+
+ATSD data is data stored in ATSD from a variety of sources including server equipment, network devices, and online resources. Use **ChartLab** to access public data stored by ATSD and [install](https://axibase.com/docs/atsd/installation/) the databast to begin uploading your own.
 
 ## Widget
 
@@ -56,150 +46,129 @@ ChartLab contains each of these **Widgets**, shown in this image.
 
 ![Figure 3](./images/Figure3.png)
 
-These visualizations can be found at here:
+See the [Axibase website](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for complete information about available widgets.
 
-[https://axibase.com/products/axibase-time-series-database/visualization/widgets/](https://axibase.com/products/axibase-time-series-database/visualization/widgets/)
-
-To add a Widget template to the Editor window, click the Widget dropdown and select a widget from the list.
-
-![Figure 19](./images/Figure19.png)
+To add a Widget template to the **Editor** window, open the **Widget** drop-down list and select a widget.
 
 ## Run
 
-Once a **Source** and **Widget** have been defined, click **Run** to render a visualization. This will display a portal based on the current
-Editor window configuration.
+Once you define a **Source** and **Widget**, click **Run** to render the visualization.
 
 ## Widget Settings
 
-We will now run through several settings for Widgets in ChartLab.
-
-Widgets are always added to the bottom of the configuration. In the figure below, a chart Widget was initially added, followed by a histogram Widget.
+Widgets are visualized chronologically, from top to bottom, based on the order in the **Editor** window. The figure below displays a Chart and Histogram widget, respectively.
 
 ![Figure 13](./images/Figure13.png)
 
-As a default, Widgets are arranged in a single horizontal row. In order to split the Widgets up into several different row, you must add
-a new `[group]` clause to the configuration. In the image below, a third pie chart Widget was added in the ChartLab configuration.
+By default, widgets are arranged in a single horizontal row. Add a new `[group]` clause to modify this feature.
 
-![Figure 14](./images/Figure14.png)
-
-If we add a second group (as shown in the below image) and hit Run, the below visualization will be rendered.
+In the image below, a Pie Chart widget is created by adding a new `[group]`.
 
 ![Figure 15](./images/Figure15.png)
 
-In order to fit more Widgets in a single view, you may change the **height-units** and **width-units** settings in the Editor window. For example, if we change both
-of these values from 2 to 4, this visualization will be rendered:
+Change **height-units** and **width-units** settings in the **Editor** window to resize the widgets.
 
 ![Figure 16](./images/Figure16.png)
 
-Single-line comment start with **#**. Text on the same line after a **#** will be ignored.
+**ChartLab** supports commenting:
 
-Multi-line comments start with `/*` and end with `*/`. Any text between `/*` and `*/` will be ignored.
+* Single-line comment begin `#`.
+* Multi-line comments begin `/*` and end `*/`.
 
-The figure below shows two histogram Widgets. The histogram on the left has the right and top axis commented out.
-
-![Figure 17](./images/Figure17.png)
-
-By selecting Ctrl + Space in the Chart Lab portal, a drop-down menu will appear. This dropdown contains the key sections of the configuration. Press
-to select one of the sections.
-
-![Figure 20](./images/Figure20.png)
-
-If you have a configuration that looks like the image below, there is a quick fix for this.
-
-![Figure 21](./images/Figure21.png)
-
-Press Ctrl + A to select all the text, then Shift + Tab to align the text.
-
-![Figure 22](./images/Figure22.png)
+Quickly reformat all text shown in the **Editor** window. Select all text and use `ctrl + tab`.
 
 ## Save
 
-After a visualization has been created, the user has the option of selecting **Save** to save the current configuration as a new revision in the current
-directory. After pressing **Save**, the current configuration will be assigned a unique URL and a revision number. We will run through a quick example to
-demonstrate this process.
+If you would like to create a new version of the current portal by adding a version suffix to the current URL, click **Save**.
 
-1. Open a blank ChartLab portal.
-1. Select **Random** as the Source.
-1. Select **Run** to create a visualization.
-1. At this point, the current visualization and configuration may be saved to the current directory by clicking **Save** or cloned to a new directly by clicking **Clone**.
-
-After a save, our configuration has been assigned a unique URL and revision number, in this case:
-
-**[https://apps.axibase.com/chartlab/a9977177](https://apps.axibase.com/chartlab/a9977177)** with revision number **1**.
-
-![Figure 4](./images/Figure4.png)
-
-It is worth noting that for a Random Source, because of the math.random() javascript function, specific, unique values will not end up being saved. The configuration
-has been saved, but regardless new random values will continue to be output after every 60 seconds.
-
-Let's continue with saving a second revision.
-
-1. Change Source to **ATSD**.
-1. Select **Save**.
-
-After saving for a second time, this second configuration has been assigned a unique URL and revision number, in this case:
-
-**[https://apps.axibase.com/chartlab/a9977177/2/](https://apps.axibase.com/chartlab/a9977177/2/)** and revision number **2**.
-
-![Figure 5](./images/Figure5.png)
-
-Since ATSD, which contains real data, was selected as the Source, the saved configuration will query the same data. Future access to this visualization will access the same information.
-
-Let's continue with saving a third revision.
-
-1. Change the **max-range** from 100 to 80.
-
-![Figure 6](./images/Figure6.png)
-
-* Select **Save**.
-
-After saving for a third time, this third configuration has been assigned a unique URL and revision number, in this case:
-
-**[https://apps.axibase.com/chartlab/a9977177/3/](https://apps.axibase.com/chartlab/a9977177/3/)** and revision number **3**.
-
-![Figure 7](./images/Figure7.png)
-
-Now the user has the options of toggling between each of the three saved revisions. These three unique URLs will be stored permanently within the ChartLab application.
-The user has the option of coming back to these examples at any time.
+Use the **Versions** drop-down list to select a specific iteration of a given chart.
 
 ![Figure 8](./images/Figure8.png)
 
 ## Clone
 
-By selecting **Clone**, a user may save the current configuration in a new directory. For example, if we clone the third revision from the previous section,
-a new unique URL will be generated, separate from the previous nested example.
+To save the portal under an entirely new URL click **Clone**.
 
 ![Figure 12](./images/Figure12.png)
 
-In this unique case, the URL that was generated is listed below:
-
-[https://apps.axibase.com/chartlab/3fa686a5](https://apps.axibase.com/chartlab/3fa686a5)
-
-All the features of the cloned output are the same as the original, with the noteworthy point being that an entirely new directory was created as a result. This is a useful feature for final edition publishing, where earlier versions of the final visualization should not be accessed by end users.
+The cloned portal is identical to the original with a unique URL. Use this feature to publish a final addition so that earlier versions remain hidden.
 
 ## Editor
 
-By selecting **Editor**, a user may display their configuration in fullscreen. By appending #fullscreen at the end of the Chart Lab URL
-you can open the configuration in full-screen mode directly from a link. To revert back to the standard view, click the **Editor** button once more.
-
-![Figure 9](./images/Figure9.png)
+Show or hide the **Editor** window by clicking **Editor**.
 
 ## Miscellaneous Features
 
-In the upper right hand corner of the portal are three additional features that may be used to edit your visualization.
+Use the toolbar at the top of the screen to further customize your visualization.
 
 ![Figure 10](./images/Figure10.png)
 
-By clicking **Theme**, a black background will appear behind your visualization. Click **Theme** once more to remove the background.
+**Theme** applies one of the available **ChartLab** themes
 
 ![Figure 11](./images/Figure11.png)
 
-By clicking **Full Screen**, a user may display their visualization in fullscreen. Fullscreen hides the Editor window with ChartLab features. To return to the standard Chart Lab view, press **Esc**.
+**Fullscreen** toggles the view between standard and fullscreen.
 
-Clicking the information icon takes you to **[Portal Settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/)** documentation.
-This tab contains configuration settings and examples.
+Access [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/) by clicking **Information**.
 
-## Action Items
+## User-Defined Functions
 
-If this guide has been interesting to you, create an example and send it over to us. If you have any comments, questions, or concerns please do not hesitate
-to [contact us](https://axibase.com/feedback/)!
+**ChartLab** supports user-defined functions, enabling users to store and re-use statistical functions.
+
+![](./images/fred-lib-demo.png)
+
+[![](./images/button.png)](https://trends.axibase.com/c9311303#fullscreen)
+
+The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
+
+```javascript
+### On the [configuration] level, the 'import' command is used to load functions from the `fred.js` file
+### The library is assigned the name 'fred'.
+### Multiple function libraries may be imported into the same portal.
+
+[configuration]
+  import fred = fred.js
+
+  offset-right = 50
+  height-units = 2
+  width-units = 1
+  start-time = 1980
+
+  entity = fred.stlouisfed.org
+  metric = unrate
+
+[series]
+  alias = base
+  display = false
+
+[series]
+  value = fred.MonthlyChange('base')
+```
+
+Using two series, **ChartLab** calculates the monthly change as a new series with a `value` expression which applies `MonthlyChange` function from the `fred` library to the series identified with alias `base`.
+
+### `fred` Library
+
+Any **ChartLab** user may access the `fred.js` library, which contains the following functions:
+
+| Function Name                      | Arguments       | Description |
+|------------------------------------|-----------------|-------------|
+| [`MonthlyChange`](https://trends.axibase.com/c5e043b5)                      | alias           | Month-on-month change |
+| [`ChangeFromYearAgo`](https://trends.axibase.com/34165ff1)                  | alias           | Year-on-year change |
+| [`ChangeByOffset`](https://trends.axibase.com/90cfadae)                     | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
+| [`MonthlyPercentChange`](https://trends.axibase.com/7bca24b2)               | alias           | Month-on-month percent change |
+| [`PercentChangeFromYearAgo`](https://trends.axibase.com/44627e1d)           | alias           | Year-on-year percent change |
+| [`PercentChangeByOffset`](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
+| [`CompoundedAnnualRateOfChange`](https://trends.axibase.com/f04b65fc)       | alias           | Geometric-progression ratio which compounds change annually
+| [`ContinuouslyCompoundedRateOfChange`](https://trends.axibase.com/16ea90bf) | alias           | Geometric-progression ratio which continuously compounds change over an infinitesimally small interval
+| [`NaturalLog`](https://trends.axibase.com/897f53e1)                         | alias           | Natural Logarithm (`LOG` base constant `e`)
+| [`IndexMax`](https://trends.axibase.com/3db3bfa7)                           | alias           | Maximum series value is used as index value
+| [`Index`](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/products/axibase-time-series-database/visualization/end-time/)     | User-selected value is used as index value
+
+Open any of the visualizations above to see syntax and visual demonstrations of each function.
+
+## Further Reading
+
+For more detailed information about ATSD, the underlying mechanics, or download instructions see the [ATSD Documentation](https://axibase.com/docs/atsd/).
+
+Reach out with questions, comments, or suggestions by raising an [issue](https://github.com/axibase/atsd-use-cases/issues) on the Axibase GitHub page.

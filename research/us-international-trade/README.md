@@ -23,7 +23,7 @@ world regions (such as Europe and Asia), trade unions (such as the European Unio
 While Excel can provide quick answers to simple questions, when it comes to complex analysis it is much more convenient to interact with the data once it is loaded into a database. The
 [Axibase Time Series Database](https://axibase.com/docs/atsd/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to work with this dataset:
 
-* Interactive graphs from [Chart Lab](../../how-to/shared/chartlab.md);
+* Interactive graphs from [**ChartLab**](../../how-to/shared/chartlab.md);
 
 * Tabular outputs from analytical SQL queries with support for [partitioning](https://axibase.com/docs/atsd/sql/#partitioning).
 
@@ -134,7 +134,7 @@ GROUP BY e.period(1 year), e.tags -- group values by year, tags (include country
 
 How did 2016 look for the United States? Below is a figure of the top countries for U.S. export and imports in 2016. The table to the right of the below graphs provides
 monetary values for exports, imports, and the trade balance (export minus import) between the U.S. and each respective country, continent, or organization. The table is sorted by
-trade balance, with the highest negative trade balances showing at the top. You may sort the table as you wish by accessing the Chart Lab portal (button below) and clicking
+trade balance, with the highest negative trade balances showing at the top. You may sort the table as you wish by accessing the **ChartLab** portal (button below) and clicking
 on the column headers.
 
 In 2016, the locations with which the United States had the highest negative and positive trade balances were China / Hong Kong at **-$319 billion** and **$25.1 billion**,
@@ -178,7 +178,7 @@ GROUP BY e.period(1 year), e.tags
 | Sub Saharan Africa         | 0019  | 12.4    | 18.2    | -5.8          |
 ```
 
-In addition to tables output from SQL queries, we can display these continental relationships in Chart Lab graphs. Below is an image for U.S. trade export and import numbers with South and
+In addition to tables output from SQL queries, we can display these continental relationships in **ChartLab** graphs. Below is an image for U.S. trade export and import numbers with South and
 Central America, Asia, Africa, Europe, and North America for 2016. Lines are drawn going from (exports) and coming back to (imports) the U.S. The heavier the lines
 are between the U.S. and the respective continent, the greater the dollar amount in trade. We can see that 2016 exports from the U.S. to North America totaled
 **$457 billion**, while imports from North America into the US totaled **$525 billion**, resulting in a trade balance deficit of **-$68 billion**. Additionally, we can see that the
@@ -186,7 +186,7 @@ heaviest lines were between the U.S. and Asia, indicating that these two have th
 
 ![Figure 3](./images/Figure3.png)
 
-You can explore this figures, as well as trade balances for 2006 and 1997, in Chart Lab by clicking on the button below:
+You can explore this figures, as well as trade balances for 2006 and 1997, in **ChartLab** by clicking on the button below:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b9f27b14/2/#fullscreen)
 

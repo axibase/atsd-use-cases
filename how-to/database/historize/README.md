@@ -6,15 +6,15 @@ The following article describes the process of calculating and historizing opera
 
 ## Scenario
 
-Consider a scenario where we have a relational database where one of the tables contains a list of customer orders. The number of daily records is very high and for performance reasons the records from this table are moved to a warehouse database as part of the pruning procedure. Let's assume now that the operations analysts would like to monitor incoming orders to spot deviations from a baseline as quickly as possible. The hourly baseline is calculated by averaging the number of orders received from customers during the same hour on the same weekday 1, 2, and 4 weeks ago.
+Consider a scenario where you have a relational database and one of the tables contains a list of customer orders. The number of daily records is very high and for performance reasons you plan to move the records from this table to a warehouse database as part of the pruning procedure. Assume now that Operations Analysts would like to monitor incoming orders to spot deviations from a baseline as quickly as possible. These analysts calculate the baseline by averaging the number of orders received from customers during the same hour on the same weekday one, two, and four weeks ago.
 
-Since the intraday records and historical records are stored in different databases it's not possible to run a single query that would return the number of orders spanning several weeks. Moreover, the query against the warehouse table may be too expensive to run on a continuous basis. In addition, if the operations table were to be queried by multiple monitoring tools this may introduce overhead that the operations team is not willing to allow.
+Since the company stores intraday and historical records in different databases it is not possible to run a single query that returns the number of orders spanning several weeks. Moreover, the query against the warehouse table may be too expensive to run on a continuous basis. Even further, if the analysts were to query the operations table with multiple monitoring tools this may introduce overhead that the operations team is not willing to allow.
 
 ## Solution
 
-This challenge can be addressed by scheduling the execution of an analytical query (one that calculates aggregate statistics) and persisting its results in a separate table. Operational databases are often locked down to serve only primary applications and therefore storing hourly order statistics in the same database may not be advisable or allowed. For added protection, it is recommended that the analytical query is executed under a read-only user account with a permission to SELECT data from a specific view encapsulating the query business logic.
+Address this challenge by scheduling the execution of an analytical query (one that calculates aggregate statistics) and persisting the results in a separate table. Operational databases often only serve primary applications and therefore storing hourly order statistics in the same database may not be advisable or allowed. For added protection, execute the analytical query under a read-only user account with the permission to `SELECT` data from a specific view encapsulating the query business logic.
 
-The steps below describe how this type of monitoring can be enabled in Axibase Time Series Database.
+The steps below describe how to enable this type of monitoring in [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
 ![](./images/diagram.png)
 
@@ -22,14 +22,14 @@ The steps below describe how this type of monitoring can be enabled in Axibase T
 
 ### Analyze Raw Data
 
-It's important to understand the available data in order to determine useful statistics for the end users (operations analysts in our case). For the purpose of this guide, lets assume that incoming orders are stored in the `daily_orders` table.
+It is important to understand the available data in order to determine useful statistics for end users (Operations Analysts in this case). For the purpose of this guide, assume the Operations Database stores incoming orders in the `daily_orders` table.
 
 ```sql
 CREATE TABLE daily_orders
   (customer VARCHAR(64), amount DECIMAL(9,2), received timestamp DEFAULT CURRENT_TIMESTAMP)
 ```
 
-The records are continuously added to the table as customers place new orders.
+The database continuously adds new records to the table as customers place new orders.
 
 ```sql
 INSERT INTO daily_orders (customer, amount) VALUES ('Pizza 101', 90.00)
@@ -53,7 +53,7 @@ SELECT * FROM daily_orders
 | eBank       | 920    | 2018-04-18T09:16:25Z |
 ```
 
-The orders received during the last hour can be selected by adding a time condition.
+Select the orders received during the last hour by adding a time condition.
 
 ```sql
 SELECT * FROM daily_orders
@@ -64,7 +64,7 @@ SELECT * FROM daily_orders
 
 ### Calculate Statistics with Analytical Queries
 
-The operations analysts are not interested in specific orders, instead they need to know the total number and dollar amount of orders received during the last hour.
+The Operations Analysts are not interested in specific orders, but rather the total number and dollar amount of orders received during the last hour.
 
 ```sql
 SELECT SUM(amount), COUNT(amount)
@@ -78,7 +78,7 @@ WHERE received > NOW() - INTERVAL 1 HOUR
 | 920         | 1             |
 ```
 
-In addition, they might be interested in tracking the top customers during the given hour and therefore another query grouping orders by customer is necessary.
+In addition, the analysts might be interested in tracking the top customers during the given hour and therefore another query grouping orders by customer is necessary:
 
 ```sql
 SELECT customer, SUM(amount), COUNT(amount)
@@ -95,9 +95,9 @@ WHERE received > NOW() - INTERVAL 1 HOUR
 
 ### Preparing Queries for Historical Retention
 
-To differentiate between collected metrics by name, we need to assign aliases to each column.
+To differentiate between collected metrics by name, you need to assign aliases to each column.
 
-For the summary statistics (without `GROUP BY` customer clause) we will adopt the `total_` prefix.
+For the summary statistics (without `GROUP BY` customer clause), adopt the `total_` prefix.
 
 ```sql
 SELECT SUM(amount) AS total_amount, COUNT(amount) AS total_count
@@ -105,7 +105,7 @@ SELECT SUM(amount) AS total_amount, COUNT(amount) AS total_count
 WHERE received > NOW() - INTERVAL 1 HOUR
 ```
 
-For the detailed statistics (grouped by customer) we will adopt the `customer_` prefix and will add the customer name to the list of column in the `SELECT` expression.
+For detailed statistics (grouped by customer), adopt the `customer_` prefix and add the customer name to the list of column in the `SELECT` expression.
 
 ```sql
 SELECT customer, SUM(amount) AS customer_amount, COUNT(amount) AS customer_count
@@ -116,7 +116,7 @@ WHERE received > NOW() - INTERVAL 1 HOUR
 
 ## Creating Views and Granting Permissions
 
-Creating views is an optional step but recommended to prevent the monitoring account under which the queries will be executed from customizing the query text, thus inadvertently retrieving more data than necessary for monitoring purposes.
+Creating views is optional but recommended to prevent the monitoring account under which the queries are executed from customizing the query text, thus inadvertently retrieving more data than necessary for monitoring purposes.
 
 ```sql
 CREATE VIEW stat_orders_hourly_total AS
@@ -133,7 +133,7 @@ CREATE VIEW stat_orders_hourly_detail AS
     GROUP BY customer
 ```
 
-We can then create a read-only account and restrict it to executing `SELECT` queries on specific views.
+You can then create a read-only account and restrict it to executing `SELECT` queries on specific views.
 
 ```sql
 GRANT SELECT ON mysql.stat_orders_hourly_total TO 'axibase-readonly'@'%';
@@ -161,11 +161,11 @@ GRANT SELECT ON mysql.stat_orders_hourly_detail TO 'axibase-readonly'@'%';
 
 ## Scheduling Job in Axibase Collector
 
-The [JDBC](https://github.com/axibase/axibase-collector/blob/master/jobs/jdbc.md) job in Axibase Collector allows you to execute any query against wide range of databases and persist its results in the Axibase Time Series Database for visualization, alerting, and forecasting.
+The [JDBC Job](https://github.com/axibase/axibase-collector/blob/master/jobs/jdbc.md) in Axibase Collector executes any query against wide range of databases and persist the results in Axibase Time Series Database for visualization, alerting, and forecasting.
 
 ### Create Data Source
 
-To connect the Collector to a database, create a new data source connection on the `DataSources > Databases` page.
+To connect the Collector to a database, create a new data source connection on the **Data Sources > Databases** page.
 
 ![](./images/data-source-mysql.png)
 
@@ -191,21 +191,21 @@ Now that the data source is configured and validated, create a new `JDBC` job on
 
 To execute the job once per hour, set schedule as `0 0 * * * ?`.
 
-Each query requires a separate configuration in the `JDBC` job. The configurations within the same job are executed sequentially to help minimize the load on the database.
+Each query requires a separate configuration in the `JDBC` job. The job executes configurations within one job sequentially to minimize the load on the database.
 
 The configuration determines rules for mapping results of the query to ATSD schema.
 
-The ATSD schema requires that each series has an entity name, a metric name, time, and value. Series tags are optional and are set for series with extra dimensions.
+The ATSD schema requires that each series has an entity name, a metric name, time, and value. Optionally, set series tags for series with extra dimensions.
 
-Both of the below queries will store data under the manually specified 'ops_db' value.
+Both of the below queries store data under the manually-specified `ops_db` value.
 
-A common 'orders.' metric prefix is set so that these series can be distinguished from other similarly named metrics (avoid naming collision).
+Set a common `orders.` metric prefix so that these series can be distinguished from other similarly-named metrics (avoid naming collision).
 
-> The same result can be accomplished by modifying column aliases which is less convenient in case of `SELECT *` queries.
+> Accomplish the same result by modifying column aliases, which is less convenient in case of `SELECT *` queries.
 
 * Configuration for `stat_orders_hourly_total` view:
 
-This query doesn't have any text columns and as such doesn't require any series tags.
+This query does not have any text columns and as such does not require any series tags.
 
 ```ls
 series e:ops_db d:2018-04-18T10:24:08.493Z m:orders.total_amount=920 m:orders.total_count=1
@@ -233,13 +233,13 @@ Click **Run** to execute the job manually for the first time.
 
 ## Locate Metrics in ATSD
 
-The series collected by Collector can be located within ATSD in various ways: series search, metrics for entity, metrics by name, etc.
+Locate the series collected by Collector in ATSD using series search, metrics for entity, metrics by name, etc.
 
 Open the **Metrics** tab and search metrics by name or prefix.
 
 ![](./images/metrics_search.png)
 
-To view individual series, click on the **Series** icon and then on the chart link.
+To view individual series, click the **Series** icon and then the chart link.
 
 ![](./images/series-list.png)
 
@@ -247,11 +247,11 @@ To view individual series, click on the **Series** icon and then on the chart li
 
 ## Monitoring Data
 
-Now that you have data being continuously inserted into ATSD, you can:
+Now that you have data being continuously inserted into ATSD by Collector, you can:
 
 * Visualize data with [portals](https://axibase.com/docs/atsd/portals/). Show hourly orders overlaid with previous day/week/etc.
 
 ![](./images/order-chart.png)
 
 * Build automated [forecasts](https://axibase.com/docs/atsd/forecasting/).
-* Create Slack/email [alerts](https://axibase.com/docs/atsd/rule-engine/notifications/#creating-notifications) using the [rule engine](https://axibase.com/docs/atsd/rule-engine/) to get notified when the order activity is abnormal.
+* Create Slack/email [alerts](https://axibase.com/docs/atsd/rule-engine/notifications/#creating-notifications) using the [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) which notifies when the order activity is abnormal.
