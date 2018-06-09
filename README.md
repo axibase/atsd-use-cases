@@ -1,6 +1,6 @@
 # ATSD Use Cases
 
-**Use Cases** documentation contains [Research](#research) demonstrating solutions to real-world data problems using ATSD, [How To](#examples) guides for programmatic integration instructions with some of the most commonly-used enterprise softwares and services, our [Chart of the Day](#chart-of-the-day) publications, a [Data Library](#data-library) with in-depth SQL guides, and [Analysis](#analysis) of complex data problems faced on the modern data science landscape.
+**Use Cases** documentation contains [Research](#research) demonstrating solutions to real-world data problems using ATSD, [How To](#examples) guides for programmatic integration instructions with some of the most commonly-used enterprise softwares and services, and the [Chart of the Day](#chart-of-the-day) publications.
 
 ## Research
 

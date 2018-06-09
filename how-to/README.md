@@ -59,7 +59,7 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 ## Kafka
 
 * [Kafka Integration](kafka/README.md)
-* [Brokers Monitoring](kafka/broker-monitoring/README.md)
+* [Brokers Monitoring](kafka/brokers-monitoring/README.md)
 * [Consumers Monitoring](kafka/consumers-monitoring/README.md)
 
 ## Marathon
