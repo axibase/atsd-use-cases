@@ -1,16 +1,16 @@
 # Axibase Time Series Database as the backend for cAdvisor
 
-[Axibase Time Series Database](http://axibase.com/docs/atsd) can collect Linux container metrics through cAdvisor for 
+[Axibase Time Series Database](http://axibase.com/docs/atsd) can collect Linux container metrics through cAdvisor for
 long-term retention, alerting, and visualization.
 
 ## Single Host Installation
 
-In this configuration ATSD collects metrics from the underlying Docker host retrieved by a cAdvisor container running 
+In this configuration ATSD collects metrics from the underlying Docker host retrieved by a cAdvisor container running
 on the same server.
 
 ## Multiple Host Installation
 
-To consolidate metrics from multiple Docker hosts configure cAdvisor containers to send data to a centralized ATSD 
+To consolidate metrics from multiple Docker hosts configure cAdvisor containers to send data to a centralized ATSD
 server. This type of setup enables centralized performance monitoring.
 
 ![Distributed Docker Infrastructure](./images/docker_distributed.png)
@@ -52,11 +52,11 @@ docker run \
   --storage_driver_atsd_protocol=tcp \
   --storage_driver_host=atsd \
   --storage_driver_buffer_duration=15s \
-  --housekeeping_interval=15s 
+  --housekeeping_interval=15s
 ```
 
-In case you're using http/https protocol when writing data into a remote ATSD server, make sure that you create a 
-collector account with restricted permissions as described 
+In case you're using http/https protocol when writing data into a remote ATSD server, make sure that you create a
+collector account with restricted permissions as described
 [here](https://axibase.com/docs/atsd/administration/collector-account.html).
 
 ```bash
@@ -81,7 +81,7 @@ docker run \
 
 ## Verify Installation
 
-* Login into ATSD web interface on `http://atsd_host:8088`. 
+* Login into ATSD web interface on `http://atsd_host:8088`.
 * Configure the built-in administrative account.
 * Click on Entities tab in the top menu, click on Portal icons to view default portals.
 
