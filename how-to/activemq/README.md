@@ -1,12 +1,12 @@
-# ActiveMQ
+# ActiveMQ Integration
 
-This document describes the process of configuring ActiveMQ for availability and performance monitoring with Axibase Time Series Database.
+This document describes the process of configuring ActiveMQ for availability and performance monitoring with [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
 Requirements
 
-* ActiveMQ 5.x.+
+* ActiveMQ `5.x.+`
 
-## Configure ActiveMQ Server
+## Configuring ActiveMQ Server
 
 ### Step 1: Enable JMX and Log Aggregator
 
@@ -17,7 +17,7 @@ Requirements
 cd /opt/apache-activemq-5.13.1
 ```
 
-* Download log aggregation filter .jar files to the ActiveMQ lib directory:
+* Download `.jar` log aggregation filter files to the ActiveMQ `lib` directory:
 
 ```sh
 wget --content-disposition -P ./lib/ \
@@ -38,16 +38,15 @@ log4j.appender.logfile.filter.COLLECTOR.writerHost=atsd_hostname
 EOF
 ```
 
-See [Aggregation Log Filter](https://github.com/axibase/aggregation-log-filter) for additional configuration options.
+> See [Aggregation Log Filter](https://github.com/axibase/aggregation-log-filter) for additional configuration options.
 
 * Modify JMX settings in the ActiveMQ JVM launch options.
 
-Search for the `ACTIVEMQ_SUNJMX_START` setting and change it as specified below.
-Replace `activemq_hostname` with the full hostname or IP address of the ActiveMQ server.
-This should be the same hostname that Axibase Collector use when connecting to ActiveMQ server.
-For more information on configuring JMX in ActiveMQ, see [ActiveMQ JMX notes](https://activemq.apache.org/jmx.html)
+* Search for the `ACTIVEMQ_SUNJMX_START` setting and replace `activemq_hostname` with the full hostname or IP address of the ActiveMQ server. This is the same hostname that Axibase Collector uses when connecting to ActiveMQ server.
 
-ActiveMQ 5.11.x and later:
+> For more information on configuring JMX in ActiveMQ, see [ActiveMQ JMX Notes](https://activemq.apache.org/jmx.html)
+
+ActiveMQ `5.11.x` and later:
 
 ```sh
 vi ./bin/env
@@ -63,7 +62,7 @@ ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote.pas
 ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF}/jmx.access"
 ```
 
-ActiveMQ 5.10.x and earlier:
+ActiveMQ `5.10.x` and earlier:
 
 ```sh
 vi ./bin/activemq
@@ -79,7 +78,7 @@ ACTIVEMQ_SUNJMX_START="-Dcom.sun.management.jmxremote \
    -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_BASE}/conf/jmx.access"
 ```
 
-The result should be the same as shown in the image below:
+Either result should be the same as shown in the image below:
 
 ![SUN_JMX_START_IMAGE](https://axibase.com/wp-content/uploads/2016/03/very_new_screen.png)
 
@@ -117,12 +116,12 @@ chmod 600 ./conf/jmx.password
 
 ### Step 2: View Collected Logs in ATSD
 
-1. Log in to the ATSD web interface at `https://atsd_hostname:8443`
-2. Click the Entities tab in the main menu
-3. Locate the ActiveMQ host in the Entities list or enter its name in the Name Mask field at the bottom of the list;
-4. Click the Portals icon next to the host.
+1. Log in to the ATSD web interface at `https://atsd_hostname:8443`.
+2. Open the **Entities** tab.
+3. Locate the ActiveMQ host in the **Entities** list or enter the entity name in the **Search Bar** above the list.
+4. Click the **Portal** icon next to the host.
 
-![](https://axibase.com/wp-content/uploads/2016/03/enitites_list_full.png)
+![](images/hostname-portal-icon.png)
 
 An example of the collected log data displayed in the ATSD portal is shown in the image below:
 
@@ -130,32 +129,31 @@ An example of the collected log data displayed in the ATSD portal is shown in th
 
 ## Configuring Statistics Collection
 
-## Before You Begin
+## Before Beginning
 
-Log in to Axibase Collector via SSH and verify that the ActiveMQ server can be reached on `activemq_hostname` (as specified in Step 1 above).
+Log in to Axibase Collector via SSH and verify that the ActiveMQ server is reachable on `activemq_hostname` (see Step 1).
 If the `activemq_hostname` cannot be resolved, add it to `/etc/hosts` manually.
 
 ### Step 3: Configure ActiveMQ JMX Job
 
-1. Log in to Axibase Collector at `https://collector_hostname:9443`
-2. Click the Jobs tab in the top menu.
-3. Locate the `jmx-activemq` job.
-4. On the JMX Job page, enable collection by setting the flag in the Enabled check box.
-5. Adjust the cron expression if needed. By default, the job will be executed every 10 seconds. For more information on cron expressions, see [Scheduling](https://github.com/axibase/axibase-collector/blob/master/scheduling.md).
+1. Log in to Axibase Collector at `https://collector_hostname:9443`.
+2. From the **Jobs** page, locate the `jmx-activemq` job.
+3. On the **JMX Job** page, enable collection by setting the flag in the **Enabled** check box, click **Save**.
+4. Adjust the cron expression if needed. By default, Collector executes the job every ten seconds. For more information on cron expressions, see [Scheduling](https://github.com/axibase/axibase-collector/blob/master/scheduling.md).
 
 ![JMX_JOB](https://axibase.com/wp-content/uploads/2016/03/jmx_job_to_configuration.png)
 
 ### Configuring Series Collection
 
 1. Select `activemq-series` configuration.
-2. On the JMX Configuration page, enter the JMX connection parameters as specified in Step 1.6 above:
+2. On the **JMX Configuration** page, enter the JMX connection parameters, specified in Step 1.6 above:
 
-   **Host** — ActiveMQ hostname. Must be the same as the `activemq_hostname`.
-   **Port** — JMX port.
-   **User Name** — JMX user name such as `monitorRole`. Read-only permissions are sufficient.
-   **Password** — Password for JMX user.
-   **Entity** — Optionally, specify the output of the hostname command on the ActiveMQ server if it’s different from `activemq_hostname` (for example if `activemq_hostname` represents a fully qualified name).
-Other parameters are optional. For more information on JMX configuration, see [JMX](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md).
+    * **Host**: ActiveMQ hostname. Must be the same as the `activemq_hostname`.
+    * **Port**: JMX port.
+    * **User Name**: JMX user name such as `monitorRole`. Read-only permissions are sufficient.
+    * **Password**: Password for JMX user.
+    * **Entity**: Optionally, specify the output of the hostname command on the ActiveMQ server if the hostname differs from `activemq_hostname` (for example, if `activemq_hostname` represents a fully-qualified name).
+    * Other parameters are optional. For more information on JMX configuration, see [JMX](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md).
 
 3. Click **Test** to validate the configuration. If the existing configuration passes, this indicates that there are no errors or empty fields in the test results.
 4. Click **Save**.
@@ -164,20 +162,20 @@ Other parameters are optional. For more information on JMX configuration, see [J
 
 ### Configuring Property Collection
 
-1. From the table on the JMX Job page, click **Edit** next to the `activemq-property` configuration.
+1. From the table on the **JMX Job** page, click **Edit** next to the `activemq-property` configuration.
 2. Set Host, Port, User Name, Password, and Entity fields as described in the previous section.
 3. Click **Test** to validate the configuration.
 4. Click **Save**.
 
 ### Step 4: View ActiveMQ Statistics in ATSD
 
-1. Log in to ATSD web interface at `https://atsd_hostname:8443`
-2. Click the Entities tab in the top menu.
-3. Locate the ActiveMQ host in the Entities list or enter its name in Name Mask field at the bottom of the list.
-4. Click the Portals icon next to the host.
+1. Log in to ATSD web interface at `https://atsd_hostname:8443`.
+2. Open the **Entities** tab.
+3. Locate the ActiveMQ host in the **Entities** list or enter the name in **Search Bar** above the list.
+4. Click the **Portal** icon next to the host.
 
-![](https://axibase.com/wp-content/uploads/2016/03/enitites_list_full-450x132.png)
+![](images/hostname-portal-icon.png)
 
-An example of the collected log data displayed in the ATSD portal is shown in the image below:
+See example collected log data displayed in an ATSD portal in the image below:
 
 ![](https://axibase.com/wp-content/uploads/2016/03/log_portal_example.png)

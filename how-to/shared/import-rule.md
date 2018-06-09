@@ -2,7 +2,7 @@
 
 ![](./images/rules.png)
 
-A rule is evaluated by the ATSD rule engine in order to trigger an alert or to execute a corrective action when the specified  condition is satisfied.
+A Rule is evaluated by the ATSD rule engine in order to trigger an alert or to execute a corrective action when the specified  condition is satisfied.
 
 Follow this process to upload a rule to you local ATSD instance.
 
@@ -18,10 +18,10 @@ Follow this process to upload a rule to you local ATSD instance.
 
     ![](./images/import-rule.png)
 
-Your new rule has been uploaded to ATSD. Return to the **Rules** page where the newly configured rule will be visible.
+Return to the **Rules** page to view the newly-configured rule.
 
 ## Uploading Multiple Configuration Files
 
-Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form to which you will be directed.
+Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form.
 
 ![](./images/backup-import.png)
