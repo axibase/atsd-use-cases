@@ -26,12 +26,12 @@ tools, if it is preferable to perform calculations in an interface that is alrea
 examples in the documentation below to extract a series from ATSD, perform calculations in the interface of your choice, and
 then submit the new, derived series back in to ATSD:
 
-* [Alteryx Designer](https://axibase.com/docs/atsd/integrations/alteryx/)
-* [IBM SPSS Modeler](https://axibase.com/docs/atsd/integrations/spss/modeler/)
-* [IBM SPSS Statistics](https://axibase.com/docs/atsd/integrations/spss/statistics/)
-* [Pentaho Data Integration](https://axibase.com/docs/atsd/integrations/pentaho/data-integration/#pentaho-data-integration)
-* [Pentaho Report Designer](https://axibase.com/docs/atsd/integrations/pentaho/report-designer/#pentaho-report-designer)
-* [MatLab](https://axibase.com/docs/atsd/integrations/matlab/)
+* [Alteryx Designer](https://axibase.com/docs/atsd/integration/alteryx/)
+* [IBM SPSS Modeler](https://axibase.com/docs/atsd/integration/spss/modeler/)
+* [IBM SPSS Statistics](https://axibase.com/docs/atsd/integration/spss/statistics/)
+* [Pentaho Data Integration](https://axibase.com/docs/atsd/integration/pentaho/data-integration/#pentaho-data-integration)
+* [Pentaho Report Designer](https://axibase.com/docs/atsd/integration/pentaho/report-designer/#pentaho-report-designer)
+* [MatLab](https://axibase.com/docs/atsd/integration/matlab/)
 
 ## Data
 
