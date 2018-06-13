@@ -1,4 +1,4 @@
-# Integration
+# Integrations
 
 Walkthrough guides for ATSD integration with third-party systems and services.
 
