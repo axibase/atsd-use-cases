@@ -37,7 +37,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 ## Configuration
 
-* Read this brief [guide](../../integration/shared/trends.md) about working in the **Trends** sandbox if you are unfamiliar with this service.
+* Read this brief [guide](../../integrations/shared/trends.md) about working in the **Trends** sandbox if you are unfamiliar with this service.
 
 * *Fig 1.* (for full configuration settings open the **Trends** visualization [above](#us-approaching-3-year-mark-for-full-employment))
 

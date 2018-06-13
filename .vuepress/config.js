@@ -8,7 +8,7 @@ const topNavMenu = [
     { text: 'Research', link: '/research/' },
     { text: 'Chart of the Day', link: '/chart-of-the-day/' },
     { text: 'Trends', link: '/trends/' },
-    { text: 'Integration', link: '/integration/' },
+    { text: 'Integrations', link: '/integrations/' },
     { text: 'Tutorials', link: '/tutorials/' },
 ]
 
@@ -35,7 +35,7 @@ const researchMenu = [
     },
 ];
 
-const integrationMenu = [
+const integrationsMenu = [
     {
         title: "Integration", children: [
             ['activemq/', 'ActiveMQ'],
@@ -82,7 +82,7 @@ module.exports = {
             '/chart-of-the-day/': chartofthedayMenu,
             '/research/': researchMenu,
             '/tutorials/': tutorialsMenu,
-            '/integration/': integrationMenu,
+            '/integrations/': integrationsMenu,
             // Keep it last
             '/': landingPageMenu,
             '': [],

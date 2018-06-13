@@ -75,7 +75,7 @@ Follow this procedure to send AWS CloudWatch events into ATSD to enrich standard
 ```sh
 docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
   --env WEBHOOK=aws-cw \
   axibase/atsd-sandbox:latest
 ```
@@ -121,7 +121,7 @@ To configure an email client in the ATSD sandbox container:
 ```sh
 docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/aws/cloud-watch-alert/resources/rule_aws-cloudwatch-events.xml' \
   --env START_COLLECTOR=off \
   --env WEBHOOK=aws-cw \
   --env SLACK_CONFIG=slack.properties \

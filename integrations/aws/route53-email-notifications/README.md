@@ -61,8 +61,8 @@ Complete the process below to enhance Route 53 alarms with your local ATSD insta
     docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
       --name=atsd-sandbox \
       --volume=$(pwd)/import:/import \
-      --env ATSD_IMPORT_PATH='https://github.com/axibase/atsd-use-cases/raw/master/integration/aws/route53-health-checks/resources/aws-route53-xml.zip,https://github.com/axibase/atsd-use-cases/raw/master/integration/aws/route53-email-notifications/resources/rule-aws-cloudwatch-alarm.xml' \
-      --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/aws/route53-health-checks/resources/job_aws_aws-route53.xml' \
+      --env ATSD_IMPORT_PATH='https://github.com/axibase/atsd-use-cases/raw/master/integrations/aws/route53-health-checks/resources/aws-route53-xml.zip,https://github.com/axibase/atsd-use-cases/raw/master/integrations/aws/route53-email-notifications/resources/rule-aws-cloudwatch-alarm.xml' \
+      --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/aws/route53-health-checks/resources/job_aws_aws-route53.xml' \
       --env COLLECTOR_CONFIG='job_aws_aws-route53.xml:aws.properties' \
       axibase/atsd-sandbox:latest \
       --env EMAIL_CONFIG=mail.properties \

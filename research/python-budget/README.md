@@ -40,7 +40,7 @@ group-period = 1 year
 group-statistic = sum
 ```
 
-The data is presented using our [**Trends**](../../integration/shared/trends.md) service.
+The data is presented using our [**Trends**](../../integrations/shared/trends.md) service.
 
 ### Querying FRED Data with SQL
 

@@ -49,8 +49,8 @@ Replace `marathon_hostname`, `my-user`, and `my-password` in the command below w
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
   --volume /var/run/docker.sock:/var/run/docker.sock \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/marathon/capacity-and-usage/resources/atsd-marathon-xml.zip' \
-  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/marathon/capacity-and-usage/resources/marathon-jobs.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/marathon/capacity-and-usage/resources/atsd-marathon-xml.zip' \
+  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/marathon/capacity-and-usage/resources/marathon-jobs.xml' \
   --env COLLECTOR_CONFIG='marathon-jobs.xml:server=marathon_hostname,port=8080,userName=my-user,password=my-password' \
   axibase/atsd-sandbox:latest
 ```

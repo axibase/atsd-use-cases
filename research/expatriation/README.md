@@ -63,7 +63,7 @@ GROUP BY period(1 YEAR, END_TIME)
 | 2017 | 5557       | 1461         | 36              |
 | 2018 | 4913       | -644         | -12             |
 
-[**ChartLab**](../../integration/shared/chartlab.md) is a visualization service which can display ATSD data as charts. **ChartLab** features a wide range of widgets which can be created using a declarative syntax.
+[**ChartLab**](../../integrations/shared/chartlab.md) is a visualization service which can display ATSD data as charts. **ChartLab** features a wide range of widgets which can be created using a declarative syntax.
 
 ![](./images/new-yoy.png)
 
@@ -177,7 +177,7 @@ time-offset = 1 year
 
 #### `fred.PercentChangeFromYearAgo`
 
-A number of built-in [statistical functions](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) are already supported by ChartLab, and [user-defined functions](../../integration/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
+A number of built-in [statistical functions](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) are already supported by ChartLab, and [user-defined functions](../../integrations/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
 
 ![](./images/2018-q2-7.png)
 
@@ -197,7 +197,7 @@ The syntax required in the ChartLab configuration is simple:
 value = fred.PercentChangeFromYearAgo('raw')
 ```
 
-> View the complete [`fred.js`](../../integration/shared/trends.md#fred-library) UDF library here.
+> View the complete [`fred.js`](../../integrations/shared/trends.md#fred-library) UDF library here.
 
 #### Highlights
 

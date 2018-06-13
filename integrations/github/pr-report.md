@@ -30,7 +30,7 @@ docker run -d -p 8443:8443 \
   --env TOKEN=**************************************** \
   --env SUBSCRIBERS=myuser@example.org \
   --env EMAIL_CONFIG=mail.properties \
-  --env ATSD_IMPORT_PATH=https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/github/resources/github-daily-pr-status.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/github/resources/github-graphql-table.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/github/resources/graphql-queries.xml \
+  --env ATSD_IMPORT_PATH=https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/github-daily-pr-status.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/github-graphql-table.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/graphql-queries.xml \
   --volume /home/user/mail.properties:/mail.properties \
   axibase/atsd-sandbox:latest
 ```

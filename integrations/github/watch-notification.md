@@ -1,16 +1,16 @@
-# Configuring Slack/Telegram Notifications for a New GitHub Push
+# Configuring Slack Notifications for New GitHub Repository Subscriptions
 
 ## Overview
 
-This guide shows how to configure GitHub to alert you when someone pushes to your repository. This feature allows you to monitor the dataflow in your repository. Follow the instructions to configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) to send you the notifications directly through a third-party messenger service with.
+This guide shows how to configure GitHub to alert you when someone begins to watch your repository. This feature allows you to monitor your repository followers. Follow the instructions to configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) to send you the notifications directly through a third-party messenger service with.
 
-![](./images/workflow_push.png)
+![](./images/workflow_watch.png)
 
 ## Purpose
 
-Repositories with collaborators working across the globe are difficult to monitor. Before the time to squash a PR and merge two branches, the input of several team members is usually needed and when these operators are working from a third-party GUI client, most commits are appended in the form of a repository push.
+Many repositories contain a broad range of code and documentation to which end-users may positively respond by subscribing. Turn your public repositories into product-to-market validation tools with **Subscription Notifications**.
 
-While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to track new pushes can be better accomplished by programmatic integration leveraging GitHub webhook functionality.
+While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to track new subscribers can be better accomplished by programmatic integration leveraging GitHub webhook functionality.
 
 GitHub webhook functionality is prominently featured on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/), explore the latest developments from the GitHub Team and gain an insight into coming features.
 
@@ -18,26 +18,27 @@ GitHub webhook functionality is prominently featured on the [Platform Roadmap](h
 
 Execute the `docker run` command to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
 
-Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container is running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
+Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container is running. The URL should be externally accessible to receive webhook notifications from GitHub.
 
 To acquire the **Bot User Token**, open the [Slack API](https://api.slack.com/apps), select the application to use for integration, and navigate to the **Install App** tab. The **Bot User OAuth Access Token** field contains the needed information. Note that you must be a collaborator for the application which you want to integrate.
 
 ```sh
-docker run -d -p 8443:8443 -p 9443:9443 \
+docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
+  --env START_COLLECTOR=off \
   --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env WEBHOOK=github \
   --env SLACK_TOKEN=xoxb-************-************************ \
   --env SLACK_CHANNELS=general \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/github/resources/github-push.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/github-watch.xml' \
   axibase/atsd-sandbox:latest
 ```
 
 > For advanced launch settings refer to the [ATSD Sandbox Documentation](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
-Watch the sandbox container logs for `All applications started`.
+Watch the container logs for `All applications started`.
 
-```sh
+```sg
 docker logs -f atsd-sandbox
 ```
 
@@ -77,11 +78,11 @@ See [Troubleshooting](troubleshooting.md) for connectivity issues.
 
 ---
 
-You begin receiving messenger notifications the next time someone pushes to your GitHub repository.
+You begin receiving messenger notifications the next time someone watches your GitHub repository.
 
-![](./images/slack_push.png)
+![](./images/-slack-watch.png)
 
-**Repository** and **User** links redirect you to the repository where the push occurred and user who made the push, respectively.
+**Repository** and **User** links redirect you to the newly-watched repository and the newly-subscribed user, respectively.
 
 ## Explore ATSD
 

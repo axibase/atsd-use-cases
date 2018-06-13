@@ -146,8 +146,8 @@ docker run -d -p 8443:8443 -p 9443:9443 \
   --name=atsd-sandbox \
   --env NAMESPACE='google' \
   --env NOTIFY_URL='https://webhook.site/71fd9feb-8751-4afd-9e13-16072a34b259' \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/docker/resources/notify.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/docker/resources/rule.xml' \
-  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/docker/resources/job.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/docker/resources/notify.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/docker/resources/rule.xml' \
+  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/docker/resources/job.xml' \
   axibase/atsd-sandbox:latest
 ```
 

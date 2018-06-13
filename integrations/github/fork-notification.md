@@ -1,24 +1,24 @@
-# Configuring Slack/Telegram Notifications for New GitHub Project Releases
+# Configuring Slack Notifications for New GitHub Repository Forks
 
 ## Overview
 
-This guide shows how to configure GitHub to alert you when someone creates a new project in your repository. This feature allows you to monitor your repository and receive notifications the moment a project is created. Follow the instructions to configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) to send you the notifications directly through a third-party messenger service with.
+This guide shows how to configure GitHub to alert you when someone forks your repository. This feature allows you to monitor activity related to your repository. Follow the instructions to configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) to send you the notifications directly through a third-party messenger service with.
 
-![](./images/workflow_project.png)
+![](./images/workflow_fork.png)
 
 ## Purpose
 
-The GitHub Team has developed Project functionality to enable users to design, execute, and complete the projects associated with code stored on GitHub without the need for an external plug-in. Many GitHub repositories contain thousands of lines of code and handle a large number of projects, especially those associated with larger organizations with employees across the globe.
+Github is a great place for open-source projects. Companies and individuals around the world are collaborating to improve code. Keep an eye on what others are doing with your repositories with **Fork Notifications**.
 
-While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of watching new projects from creation can be better accomplished by programmatic integration leveraging GitHub webhook functionality.
+While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of tracking new repository forks can be better accomplished by programmatic integration leveraging GitHub webhook functionality.
 
 GitHub webhook functionality is prominently featured on the [Platform Roadmap](https://developer.github.com/early-access/platform-roadmap/), explore the latest developments from the GitHub Team and gain an insight into coming features.
 
 ## Launch ATSD Sandbox
 
-Execute the `docker run` command to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
+Execute the `docker run` command below to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
 
-Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container is running. The Docker host should be externally accessible to receive webhook notifications from GitHub servers.
+Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container is running. The URL should be externally accessible to receive webhook notifications from GitHub.
 
 To acquire the **Bot User Token**, open the [Slack API](https://api.slack.com/apps), select the application to use for integration, and navigate to the **Install App** tab. The **Bot User OAuth Access Token** field contains the needed information. Note that you must be a collaborator for the application which you want to integrate.
 
@@ -30,15 +30,15 @@ docker run -d -p 8443:8443 \
   --env WEBHOOK=github \
   --env SLACK_TOKEN=xoxb-************-************************ \
   --env SLACK_CHANNELS=general \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integration/github/resources/github-project-create.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/github-fork.xml' \
   axibase/atsd-sandbox:latest
 ```
 
 > For advanced launch settings refer to the [ATSD Sandbox Documentation](https://github.com/axibase/dockers/tree/atsd-sandbox).
 
-Watch the sandbox container logs for `All applications started`.
+Watch the container logs for `All applications started`.
 
-```sh
+```sg
 docker logs -f atsd-sandbox
 ```
 
@@ -78,11 +78,11 @@ See [Troubleshooting](troubleshooting.md) for connectivity issues.
 
 ---
 
-You begin receiving messenger notifications the next time someone creates a project in your GitHub repository.
+You begin receiving messenger notifications the next time someone creates a new fork from your GitHub repository.
 
-![](./images/slack_project.png)
+![](./images/fork-message.png)
 
-**Repository**, **User**, and **Project** links redirect you to the repository where the project was created, the user who created the project, and the project page itself, respectively.
+**Repository**, **User**, and **New Repository** links redirect you to the original repository, the user who forked it, and the newly-created repository, respectively.
 
 ## Explore ATSD
 
