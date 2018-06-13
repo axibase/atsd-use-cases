@@ -78,7 +78,7 @@ module.exports = {
 
         sidebarDepth: 1,
         sidebar: {
-            '/chart-of-the-day/trends/' :trendsMenu,
+            '/trends/': trendsMenu,
             '/chart-of-the-day/': chartofthedayMenu,
             '/research/': researchMenu,
             '/tutorials/': tutorialsMenu,
@@ -86,7 +86,7 @@ module.exports = {
             // Keep it last
             '/': landingPageMenu,
             '': [],
-        },        
+        },
 
         searchMaxSuggestions: 10,
 

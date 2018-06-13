@@ -9,7 +9,6 @@ Detailed use cases that feature in-depth data exploration and complex functional
 1. [SQL Queries and Data Visualization with Python and ATSD](python-budget/README.md) (May 2018)
 1. [The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions](../chart-of-the-day/world-progress-explorer/README.md) (April 2018)
 1. [Tax Day 2018: Americans Reverse the Late-Filing Trend](irs-tax-filings/README.md) (April 2018)
-1. [Let's Encrypt SSL Certificates for Java Developers](workshop/lets-encrypt.md) (April 2018)
 1. [U.S. Approaching 3-Year Mark for Full Employment](../chart-of-the-day/unemployment/README.md) (April 2018)
 1. [Aging America: Modeling Birth Trends in the United States](aging-america/README.md) (April 2018)
 1. [United States Federal Reserve: The Economic Policy Uncertainty Index](analysis/economic-policy-uncertainty/README.md) (March 2018)
@@ -66,11 +65,3 @@ Visualizations and SQL queries that are indexed by topic to form the Axibase Dat
 1. [Connecticut Prison Population Statistics (2009-2017)](data-lib/connecticut-prison-pop/README.md) (July 2017)
 1. [New York Insurance Asset Versus Liability Data (2014-2015)](data-lib/ny-insurance-profits/README.md) (July 2017)
 1. [New York City Income by Adjusted Gross Income (AGI) Range (2014)](data-lib/ny-income/README.md) (June 2017)
-
-## Workshops
-
-Our semi-regular seminar series creates educational materials to contribute to the public knowledge.
-
-1. [Technical Writing for Software Developers](workshop/technical-writing.md) (May 2018)
-1. [Tracking Expatriation with ChartLab, SQL, and Web Crawler in ATSD](expatriation/README.md) (May 2018)
-1. [WebGL: Hello, World and Integration Examples](workshop/webgl.md) (April 2018)

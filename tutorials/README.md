@@ -24,3 +24,9 @@
 
 * [Data Visualization with **ChartLab**](shared/chartlab.md)
 * [Using Trends](shared/trends.md)
+
+## Workshops
+
+1. [Technical Writing for Software Developers](workshop/technical-writing.md) (May 2018)
+1. [Let's Encrypt SSL Certificates for Java Developers](workshop/lets-encrypt.md) (May 2018)
+1. [WebGL: Hello, World and Integration Examples](workshop/webgl.md) (April 2018)
