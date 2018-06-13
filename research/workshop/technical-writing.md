@@ -55,9 +55,9 @@ Follow these guidelines to remain in-sync with Axibase principles:
 * For other file types and extensions, fence the text, use lowercase letters, and include a period ebfore the abbreviation.
   * `.jar`, `.yml`, `.bashrc`, `.exe`
 
-Fence HTTP request methods:
+Fence `HTTP` request methods:
 
-* HTTP Request Methods:
+* `HTTP` Request Methods:
   * `GET`
   * `POST`
   * `PUT`
@@ -65,20 +65,20 @@ Fence HTTP request methods:
 
 Use "etc." with a period. Do not use "e.g." or "i.e.".
 
-Other abbreviations such as API, UTC, or EST should not be fenced.
+Other abbreviations such as API, UTC, or EST should not be fenced. Abbreviations such as `HTTP` and `HTTPS` should be fenced.
 
 A good rule of thumb: if you say the abbreviation by reading each letter, do not fence the text. If you say the abbreviation as a word, fence the text.
 
 ### Active Voice
 
-Maintain active voice for technical documentation. Unless absolutely nessesary, avoid passive voice. When you need to use passive voice, include a second clause which describes who or what performs the action taking place in the passive. Passive voice makes it difficult to understand who or what performs the action taking places.
+Maintain active voice for technical documentation. Unless absolutely necessary, avoid passive voice. When you need to use passive voice, include a second clause which describes who or what performs the action taking place in the passive. Passive voice makes it difficult to understand who or what performs the action taking place.
 
 * The query is saved in the database.
   * Who saves the query? The database? The user?
 * The data is loaded from CSV file.
   * By whom?
 
-Instead, describe both the actor and the action.
+Instead, describe both the actor and the action, or use the imperative to instruct a user.
 
 * Save the query in the database.
 * ATSD will load the data from the CSV file.
@@ -109,7 +109,7 @@ For more information, see [**Pronouns**](#pronouns).
 
 ### Plurals in Parentheses
 
-Avoid using **plural(s)** in parentheses. This creates ambiguity in technical documentation because a reader is unsure if multiple units are required or optional.
+Avoid using **plural(s)** in parentheses. This creates ambiguity in technical documentation because a reader is unsure if multiple units are required or optional. If you have to indicate that there are one or multiple options, use both singular and plural form.
 
 Avoid:
 
@@ -117,7 +117,7 @@ Avoid:
 
 Instead use:
 
-* The database parses the files into human-readable format.
+* The database parses the file or files into human-readable format.
 
 ### Possessives
 
@@ -156,7 +156,7 @@ Specify:
 
 * This command launches ATSD and Axibase Collector. Collector logs errors in the file `axibase-collector.log`.
 
-The above example is not as ambiguous as possible, because the subject doing the logging is named in the `.log` file. Other sentences, however, do not offer such a straightforward solution:
+The above example is not as ambiguous as possible, because the subject doing the logging is named in the `.log` file. Other sentences however, do not offer such a straightforward solution:
 
 * The script will continuously read consumer offsets from Kafka and send the offsets to ATSD as series commands. It can copy the commands to `stdout` for debugging.
   * Are you talking about the script, Kafka, or ATSD?
@@ -203,7 +203,7 @@ Use colons to separate a list title from the meaning.
 
 ### Commas
 
-Commas can create ambiguous sentences when two clauses of one sentence contain different actors. Similar to the ambiguity descibed by the [Pronouns](#pronouns) section, commas may create more problems than solutions.
+Commas can create ambiguous sentences when two clauses of one sentence contain different actors. Similar to the ambiguity described by the [Pronouns](#pronouns) section, commas may create more problems than solutions.
 
 Do not use:
 
@@ -252,11 +252,11 @@ Not recommended:
 
 * Name - what people call you.
 * Age - laps around the sun.
-* Hobbies: what you do for fun.
+* Hobbies - what you do for fun.
 
 ### Parentheses
 
-Use parentheses for parenthetical statements. That is, do not include important information in parentheses. Use parentheses to provide an exampe as to why a reader may do something.
+Use parentheses for parenthetical statements. That is, do not include important information in parentheses. Use parentheses to provide an example as to why a reader may do something.
 
 * Modify the query (for example, remove [`LIMIT`](https://axibase.com/docs/atsd/sql/#limiting)), select a file format, and optionally include [metadata](https://axibase.com/docs/atsd/sql/#sql-report-metadata)
 
@@ -268,7 +268,7 @@ Not recommended:
 
 ### Quotation Marks
 
-Write commas and periods inside quotation marks unless doing so would be aesthetically inadvisable. Do not use quotation marks to designate user interface elements or processes.
+Write commas and periods inside quotation marks unless doing so would be aesthetically inadvisable. Do not use quotation marks to designate user [interface elements](#interface-elements) or features.
 
 Write quoted text as follows:
 
@@ -278,11 +278,9 @@ Do not use:
 
 * Click "Save" and then "Export".
 
-For more information about designating parts of the user interface, see [Interface Elements](#interface-elements).
-
 ### Slashes
 
-Do not use slashes to distinguish between two choices. Use slashes in code.
+Do not use slashes to distinguish between two choices.
 
 Avoid:
 
@@ -298,7 +296,7 @@ Instead use:
 
 ### Dates and Times
 
-Different countries use different date and time formats. Avoid ambiguity in technical writing by using the complete date. Fence machine output so readers know the date follows a well-known structure such as UTC time.
+Different countries use different date and time formats. Avoid ambiguity in technical writing by using the complete date. Fence machine output so readers know the date is written in a structure such as UTC time.
 
 The correct way:
 
@@ -316,7 +314,7 @@ The incorrect way:
 
 ### Headings and Titles
 
-Avoid using fenced text in headings. Capitalize the words in a heading except for "a", "to", "the", "in", "for", "from", "with", or "by." If these words are the first word of the heading, capitalize the word.
+Avoid using fenced text in headings. Capitalize the words in a heading prepositions and articles. If these words are the first word of the heading, capitalize the word.
 
 Recommended format:
 
@@ -338,7 +336,7 @@ If a list follows a step-by-step procedure, use numbers:
 
 If a list contains multiple choices for one decision, use bullet points:
 
-There are three ways to remove a Docker Container:
+There are several ways to remove a Docker Container:
 
 * Use `docker rm -vf` plus the container ID.
 * Use `docker rm -vf` plus the image name.
@@ -368,17 +366,17 @@ Include notes when needed but separate the note so as not to lead a reader to be
 
 > For more information about uploading CSV files, see the [Axibase Documentation](https://axibase.com/docs/atsd/parsers/csv/).
 
-General notes that do not refer to a specific part of a process but are relevant nonetheless should be appended to the end of an article by the author.
+General notes that do not refer to a specific part of a process but are relevant nonetheless should be appended to the end of a document by the author.
 
 ### Numbers
 
-Unless the number is part of machine output, write out numbers one through ten. If the number applies to a version number, write the number itself regardless of value. Do not write ordinal numbers. Add commas to numbers greater than 1,000 (excluding machine output).
+Unless the number is part of machine output, write out numbers one through ten. If the number applies to a version number, write the number itself regardless of value. Write out ordinal numbers. Add commas to numbers greater than 1,000 (excluding machine output).
 
 Recommended:
 
 * Download the [ATSD Python Client](https://axibase.com/docs/atsd/api/clients/#python) for the following Python versions:
   * Python `v2.7.9` or later.
-  * Python `v3` all versions
+  * Python `v3` all versions.
 
 Fence version numbers and HTTP status codes to maintain consistency.
 
@@ -404,7 +402,7 @@ Do not fence memory units or associated numbers.
 
 ### Code in Text
 
-Fence code in documentation. Use the appropriate label so Markdown properly colors all included code.
+Fence code in documentation. Use the appropriate label so Markdown properly displays all included code.
 
 Javascript:
 
@@ -463,7 +461,7 @@ If an article or document describes a third-party software or service, link to t
 
 ### Interface Elements
 
-Interface elements should be **bold**. When describing interface elements include the type of element, unless that element is a button. Do not say **click on** something, **click** something.
+Interface elements should be **bold**. When describing interface elements include the type of element, unless that element is a button. Do not say **click on** something, rather **click** something.
 
 * Open the **Portal** menu and click **Configure**.
 * The **Job** page contains the list of available Collector Jobs.
@@ -494,7 +492,7 @@ Not recommended:
 
 For brevity, you may shorten Axibase product names. The product name should remain capitalized unless you refer to a general concept in place of the product name. Articles may be omitted in most cases.
 
-* Start the Collector with the following command:
+* Start Collector with the following command:
 
 ```sh
 ./axibase-collector/bin/start-collector.sh
@@ -505,7 +503,7 @@ For brevity, you may shorten Axibase product names. The product name should rema
 
 ### Documentation Names
 
-Axibase Documentation is a proper noun, capitalize Axibase Documentation every time. When referring to a specific document or guide, you may leave the type of document lowercase..
+Axibase Documentation is a proper noun, capitalize Axibase Documentation every time. When referring to a specific document or guide, you may leave the type of document lowercase.
 
 * For more information, see the [Axibase Documentation](https://axibase.com/docs/atsd/).
 * To install ATSD, read the [Installation article](https://axibase.com/docs/atsd/installation/).
