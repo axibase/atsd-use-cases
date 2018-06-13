@@ -1,4 +1,4 @@
-# Axibase Time Series Database as the backend for cAdvisor
+# Axibase Time Series Database as the Backend for cAdvisor
 
 [Axibase Time Series Database](http://axibase.com/docs/atsd) can collect Linux container metrics through cAdvisor for
 long-term retention, alerting, and visualization.

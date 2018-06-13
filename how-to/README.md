@@ -18,33 +18,14 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 * [Monitoring Kafka Brokers](kafka/brokers-monitoring/README.md)
 * [Monitoring Kafka Consumer Lag](kafka/consumers-monitoring/README.md)
 
-## ATSD
+## cAdvisor
 
-* [Historizing Metrics Stored in Database](database/historize/README.md)
-* [Using Trends](shared/trends.md)
-* [Import CSV Parser Configuration](shared/import-csv-parser.md)
-* [Import Entity Group](shared/import-entity-group.md)
-* [Import Entity View](shared/import-entity-view.md)
-* [Import Entity](shared/import-entity.md)
-* [Import Forecast Configuration](shared/import-forecast.md)
-* [Import Metric](shared/import-metric.md)
-* [Import Portal Configuration](shared/import-portal.md)
-* [Import Rule Configuration](shared/import-rule.md)
-* [Import Schedule SQL Query Configuration](shared/import-scheduled-sql-query.md)
-* [Import Tag Template Configuration](shared/import-tag-template.md)
-* [Calculated Values With Schema-Based Parsing](database/schema-based-parser-mod/README.md)
-* [Curve Smoothing Using Moving Averages](database/moving-avg/README.md)
-* [Creating Calculated Metrics in ChartLab and SQL Console](database/add-calculated-value/README.md)
-* [Data Visualization with **ChartLab**](shared/chartlab.md)
+* [ATSD as the Backend for cAdvisor](cadvisor/README.md)
 
 ## Docker
 
 * [Notifications for Docker Hub Build Failures](docker/README.md)
 * [Docker Container Monitoring](docker/docker-engine.md)
-
-## cAdvisor
-
-* [ATSD as the backend for cAdvisor](cadvisor/README.md)
 
 ## GitHub
 

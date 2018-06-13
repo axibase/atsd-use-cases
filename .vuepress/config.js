@@ -7,6 +7,7 @@ const githubSettings = {
 const topNavMenu = [
     { text: 'Research', link: '/research/' },
     { text: 'Chart of the Day', link: '/chart-of-the-day/' },
+    { text: 'Trends', link: '/chart-of-the-day/trends/' },
     { text: 'Integration', link: '/how-to/' },
     { text: 'Tutorials', link: '/how-to/database/' },
 ]
@@ -39,6 +40,7 @@ const integrationMenu = [
         title: "Integration", children: [
             ['activemq/', 'ActiveMQ'],
             ['aws/', 'AWS'],
+            ['cadvisor/', 'cAdvisor'],
             ['docker/', 'Docker'],
             ['github/', 'GitHub'],
             ['itm/', 'IBM Tivoli Monitoring'],
@@ -52,6 +54,14 @@ const integrationMenu = [
 
 const tutorialsMenu = [
     '',
+];
+
+const trendsMenu = [
+    {
+        title: "Trends", children: [
+            ['2018.md', '2018'],
+        ]
+    },
 ];
 
 module.exports = {
@@ -68,10 +78,11 @@ module.exports = {
 
         sidebarDepth: 1,
         sidebar: {
+            '/chart-of-the-day/trends/' :trendsMenu,
             '/chart-of-the-day/': chartofthedayMenu,
             '/research/': researchMenu,
-            '/how-to/': integrationMenu,
             '/how-to/database/': tutorialsMenu,
+            '/how-to/': integrationMenu,
             // Keep it last
             '/': landingPageMenu,
             '': [],
