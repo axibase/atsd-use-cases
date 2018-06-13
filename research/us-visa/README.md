@@ -25,7 +25,7 @@ Visa figures were collected for 200 countries, 7 continents, and for unknown nat
 As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of [Axibase Time Series Database](https://axibase.com/docs/atsd/) to explore this dataset:
 
 * Tabular outputs from analytical [SQL queries](https://axibase.com/docs/atsd/sql/);
-* Interactive graphs from [**ChartLab**](../../how-to/shared/chartlab.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
+* Interactive graphs from [**ChartLab**](../../integration/shared/chartlab.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
 

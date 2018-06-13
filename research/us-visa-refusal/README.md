@@ -31,7 +31,7 @@ monetary value for visa refusal fees, we will apply these refusal rates to all v
 
 As opposed to analyzing this information in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of ATSD to explore this dataset:
 
-* Interactive graphs from [**ChartLab**](../../how-to/shared/chartlab.md);
+* Interactive graphs from [**ChartLab**](../../integration/shared/chartlab.md);
 * Tabular outputs from analytical [SQL queries](https://axibase.com/docs/atsd/sql/).
 
 You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).

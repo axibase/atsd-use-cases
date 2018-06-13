@@ -23,7 +23,7 @@ world regions (such as Europe and Asia), trade unions (such as the European Unio
 While Excel can provide quick answers to simple questions, when it comes to complex analysis it is much more convenient to interact with the data once it is loaded into a database. The
 [Axibase Time Series Database](https://axibase.com/docs/atsd/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to work with this dataset:
 
-* Interactive graphs from [**ChartLab**](../../how-to/shared/chartlab.md);
+* Interactive graphs from [**ChartLab**](../../integration/shared/chartlab.md);
 
 * Tabular outputs from analytical SQL queries with support for [partitioning](https://axibase.com/docs/atsd/sql/#partitioning).
 

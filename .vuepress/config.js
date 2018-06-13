@@ -7,9 +7,9 @@ const githubSettings = {
 const topNavMenu = [
     { text: 'Research', link: '/research/' },
     { text: 'Chart of the Day', link: '/chart-of-the-day/' },
-    { text: 'Trends', link: '/chart-of-the-day/trends/' },
-    { text: 'Integration', link: '/how-to/' },
-    { text: 'Tutorials', link: '/how-to/database/' },
+    { text: 'Trends', link: '/trends/' },
+    { text: 'Integration', link: '/integration/' },
+    { text: 'Tutorials', link: '/tutorials/' },
 ]
 
 const landingPageMenu = [
@@ -81,8 +81,8 @@ module.exports = {
             '/chart-of-the-day/trends/' :trendsMenu,
             '/chart-of-the-day/': chartofthedayMenu,
             '/research/': researchMenu,
-            '/how-to/database/': tutorialsMenu,
-            '/how-to/': integrationMenu,
+            '/tutorials/': tutorialsMenu,
+            '/integration/': integrationMenu,
             // Keep it last
             '/': landingPageMenu,
             '': [],
