@@ -52,16 +52,16 @@ Follow these guidelines to remain in-sync with Axibase principles:
 
 * For common file types, simply abbreviate using capital letters.
   * XLSX, CSV, JSON, XML.
-* For other file types and extensions, fence the text, use lowercase letters, and include a period ebfore the abbreviation.
+* For other file types and extensions, fence the text, use lowercase letters, and include a period before the abbreviation.
   * `.jar`, `.yml`, `.bashrc`, `.exe`
 
-Fence `HTTP` request methods:
+Do not fence HTTP request methods:
 
-* `HTTP` Request Methods:
-  * `GET`
-  * `POST`
-  * `PUT`
-  * `DELETE`
+* HTTP Request Methods:
+  * GET
+  * POST
+  * PUT
+  * DELETE
 
 Use "etc." with a period. Do not use "e.g." or "i.e.".
 
@@ -256,7 +256,7 @@ Not recommended:
 
 ### Parentheses
 
-Use parentheses for parenthetical statements. That is, do not include important information in parentheses. Use parentheses to provide an example as to why a reader may do something.
+Do not use parentheses. If you need to make a parenthetical note, use the [Notes](#notes) guidelines.
 
 * Modify the query (for example, remove [`LIMIT`](https://axibase.com/docs/atsd/sql/#limiting)), select a file format, and optionally include [metadata](https://axibase.com/docs/atsd/sql/#sql-report-metadata)
 
@@ -268,7 +268,7 @@ Not recommended:
 
 ### Quotation Marks
 
-Write commas and periods inside quotation marks unless doing so would be aesthetically inadvisable. Do not use quotation marks to designate user [interface elements](#interface-elements) or features.
+Do not use quotation marks to designate user [interface elements](#interface-elements), machine output, or features.
 
 Write quoted text as follows:
 
