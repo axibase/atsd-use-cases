@@ -121,7 +121,7 @@ chmod 600 ./conf/jmx.password
 3. Locate the ActiveMQ host in the **Entities** list or enter the entity name in the **Search Bar** above the list.
 4. Click the **Portal** icon next to the host.
 
-![](images/hostname-portal-icon.png)
+![](./images/hostname-portal-icon.png)
 
 An example of the collected log data displayed in the ATSD portal is shown in the image below:
 
@@ -174,7 +174,7 @@ If the `activemq_hostname` cannot be resolved, add it to `/etc/hosts` manually.
 3. Locate the ActiveMQ host in the **Entities** list or enter the name in **Search Bar** above the list.
 4. Click the **Portal** icon next to the host.
 
-![](images/hostname-portal-icon.png)
+![](./images/hostname-portal-icon.png)
 
 See example collected log data displayed in an ATSD portal in the image below:
 
