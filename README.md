@@ -6,7 +6,7 @@
 
 Interactive visualizations tracking interesting datasets from a variety of sources.
 
-## Integration
+## Integrations
 
 Walkthrough guides for ATSD integration with various IT infrastructure systems and services.
 
