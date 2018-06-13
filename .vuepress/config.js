@@ -7,7 +7,8 @@ const githubSettings = {
 const topNavMenu = [
     { text: 'Research', link: '/research/' },
     { text: 'Chart of the Day', link: '/chart-of-the-day/' },
-    { text: 'Examples', link: '/how-to/' }
+    { text: 'Integration', link: '/how-to/' },
+    { text: 'Tutorials', link: '/how-to/database/' },
 ]
 
 const landingPageMenu = [
@@ -33,11 +34,10 @@ const researchMenu = [
     },
 ];
 
-const examplesMenu = [
+const integrationMenu = [
     {
-        title: "Examples", children: [
+        title: "Integration", children: [
             ['activemq/', 'ActiveMQ'],
-            ['database/', 'ATSD'],
             ['aws/', 'AWS'],
             ['docker/', 'Docker'],
             ['github/', 'GitHub'],
@@ -48,6 +48,10 @@ const examplesMenu = [
             ['zookeeper/', 'Zookeeper'],
         ]
     },
+];
+
+const tutorialsMenu = [
+    '',
 ];
 
 module.exports = {
@@ -66,7 +70,8 @@ module.exports = {
         sidebar: {
             '/chart-of-the-day/': chartofthedayMenu,
             '/research/': researchMenu,
-            '/how-to/': examplesMenu,
+            '/how-to/': integrationMenu,
+            '/how-to/database/': tutorialsMenu,
             // Keep it last
             '/': landingPageMenu,
             '': [],

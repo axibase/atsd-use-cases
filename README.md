@@ -36,7 +36,7 @@ Short publications tracking interesting datasets from a variety of sources. The 
 
 View more [Charts](chart-of-the-day/README.md).
 
-## Examples
+## Integration
 
 Walkthrough guides for ATSD integration with various IT infrastructure systems and services.
 
@@ -50,11 +50,6 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 * [Monitoring Kafka Brokers](how-to/kafka/brokers-monitoring/README.md)
 * [Monitoring Kafka Consumer Lag](how-to/kafka/consumers-monitoring/README.md)
 
-### ATSD
-
-* [Historizing Metrics Stored in Database](how-to/database/historize/README.md)
-* [Using Trends](how-to/shared/trends.md)
-
 ### Docker
 
 * [Notifications for Docker Hub Build Failures](how-to/docker/README.md)
@@ -65,4 +60,18 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 * [Daily Pull Request Report for GitHub Organizations](how-to/github/pr-report.md)
 * [Notifications for New GitHub Repository Subscriptions](how-to/github/watch-notification.md)
 
-View more [Examples](how-to/README.md).
+View other [Integrations](how-to/README.md).
+
+## Tutorials
+
+### Services
+
+* [Using Trends](how-to/shared/trends.md)
+* [Data Visualization with **ChartLab**](how-to/shared/chartlab.md)
+
+### Data
+
+* [Historizing Metrics Stored in Database](how-to/database/historize/README.md)
+* [Calculated Values With Schema-Based Parsing](how-to/database/schema-based-parser-mod/README.md)
+
+See more [Tutorials](how-to/database/README.md).
