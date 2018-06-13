@@ -22,6 +22,7 @@
   * [Slashes](#slashes)
 * [Formatting and Organization](#formatting-and-organization)
   * [Dates and Times](#dates-and-times)
+  * [Fenced Text](#fenced-text)
   * [Headings and Titles](#headings-and-titles)
   * [Lists](#lists)
   * [Notes](#notes)
@@ -81,7 +82,7 @@ Maintain active voice for technical documentation. Unless absolutely necessary, 
 Instead, describe both the actor and the action, or use the imperative to instruct a user.
 
 * Save the query in the database.
-* ATSD will load the data from the CSV file.
+* ATSD loads the data from the CSV file.
 
 ### Capitalization
 
@@ -158,12 +159,12 @@ Specify:
 
 The above example is not as ambiguous as possible, because the subject doing the logging is named in the `.log` file. Other sentences however, do not offer such a straightforward solution:
 
-* The script will continuously read consumer offsets from Kafka and send the offsets to ATSD as series commands. It can copy the commands to `stdout` for debugging.
+* The script continuously reads consumer offsets from Kafka and send the offsets to ATSD as series commands. It can copy the commands to `stdout` for debugging.
   * Are you talking about the script, Kafka, or ATSD?
 
 Specify:
 
-* The script will continuously read consumer offsets from Kafka and send the offsets to ATSD as series commands. Kafka copies the commands to `stdout` for debugging.
+* The script continuously reads consumer offsets from Kafka and send the offsets to ATSD as series commands. Kafka copies the commands to `stdout` for debugging.
 
 ### Second Person
 
@@ -270,10 +271,6 @@ Not recommended:
 
 Do not use quotation marks to designate user [interface elements](#interface-elements), machine output, or features.
 
-Write quoted text as follows:
-
-* "This is the way to use quotation marks."
-
 Do not use:
 
 * Click "Save" and then "Export".
@@ -311,6 +308,16 @@ The incorrect way:
 * 08/06/18
 * 18/08/06
 * 18/06/08
+
+### Fenced Text
+
+The following types of text should be surrounded by backticks:
+
+* Machine output such as `All Applications started` and Unix epoch time `1524960000`.
+* Fields which contain code such as a **Condition** field which contains `count == 1`.
+* Interface elements with irregular names such as a job titled `activemq_health_status`.
+* HTTP status codes.
+* Software like `curl` and command languages like `bash`.
 
 ### Headings and Titles
 
@@ -467,7 +474,7 @@ Interface elements should be **bold**. When describing interface elements includ
 * The **Job** page contains the list of available Collector Jobs.
 * When you finish configuring the rule, click **Save**.
 
-Do not bold program names such as Axibase Collector or ATSD, but do bold service names such as **ChartLab** and **Trends**.
+Do not bold product names such as Axibase Collector or ATSD, but do bold service names such as **ChartLab** and **Trends**.
 
 Axibase products contain drop-down **lists**, not drop-down **menus**.
 
