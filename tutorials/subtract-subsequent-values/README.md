@@ -63,7 +63,7 @@ When `LAG` encounters a non-existent sample, it returns literal [`null`](https:/
 
 ## Series Query
 
-The [REST API](https://axibase.com/docs/atsd/api/data/) allows you insert and retrieve series, properties, messages, and alerts from ATSD as well as query and mangage metadata. [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) retrieves time series objects for the specified metric, entity, tag, and interval filters.
+The [REST API](https://axibase.com/docs/atsd/api/data/) allows you insert and retrieve series, properties, messages, and alerts from ATSD as well as query and manage metadata. [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) retrieves time series objects for the specified metric, entity, tag, and interval filters.
 
 ```json
 [{
@@ -152,7 +152,7 @@ The [REST API](https://axibase.com/docs/atsd/api/data/) allows you insert and re
 
 ## Charts Functions
 
-[**ChartLab**](../../shared/chartlab.md) is a graphing tool that uses the [Charts Syntax](https://github.com/axibase/charts/blob/master/README.md#axibase-charts) to create visualizations from data stored in ATSD.
+[**ChartLab**](../shared/chartlab.md) is a graphing tool that uses the [Charts Syntax](https://github.com/axibase/charts/blob/master/README.md#axibase-charts) to create visualizations from data stored in ATSD.
 
 The `outage-tickets` dataset visualized in **ChartLab**:
 
