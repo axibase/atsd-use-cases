@@ -1,4 +1,4 @@
-# Introduction
+# ATSD Use Cases
 
 **Use Cases** documentation demonstrates solutions to real-world data problems using [ATSD](https://axibase.com/docs/atsd/) and contains in-depth guides for programmatic integration instructions with some of the most commonly-used enterprise softwares and services, as well as tutorials for data transformation, and visualizations created with ATSD.
 
