@@ -7,7 +7,9 @@ const githubSettings = {
 const topNavMenu = [
     { text: 'Research', link: '/research/' },
     { text: 'Chart of the Day', link: '/chart-of-the-day/' },
-    { text: 'Examples', link: '/how-to/' }
+    { text: 'Trends', link: '/trends/' },
+    { text: 'Integrations', link: '/integrations/' },
+    { text: 'Tutorials', link: '/tutorials/' },
 ]
 
 const landingPageMenu = [
@@ -33,12 +35,12 @@ const researchMenu = [
     },
 ];
 
-const examplesMenu = [
+const integrationsMenu = [
     {
-        title: "Examples", children: [
+        title: "Integration", children: [
             ['activemq/', 'ActiveMQ'],
-            ['database/', 'ATSD'],
             ['aws/', 'AWS'],
+            ['cadvisor/', 'cAdvisor'],
             ['docker/', 'Docker'],
             ['github/', 'GitHub'],
             ['itm/', 'IBM Tivoli Monitoring'],
@@ -50,8 +52,20 @@ const examplesMenu = [
     },
 ];
 
+const tutorialsMenu = [
+    '',
+];
+
+const trendsMenu = [
+    {
+        title: "Trends", children: [
+            ['2018.md', '2018'],
+        ]
+    },
+];
+
 module.exports = {
-    base: '/docs/atsd-use-cases/',
+    base: '/use-cases/',
     title: 'ATSD Use Cases',
     description: "Use Cases and Walkthrough Guides for Axibase® Time Series Database",
     head: [
@@ -64,13 +78,15 @@ module.exports = {
 
         sidebarDepth: 1,
         sidebar: {
+            '/trends/': trendsMenu,
             '/chart-of-the-day/': chartofthedayMenu,
             '/research/': researchMenu,
-            '/how-to/': examplesMenu,
+            '/tutorials/': tutorialsMenu,
+            '/integrations/': integrationsMenu,
             // Keep it last
             '/': landingPageMenu,
             '': [],
-        },        
+        },
 
         searchMaxSuggestions: 10,
 

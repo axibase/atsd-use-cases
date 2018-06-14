@@ -1,12 +1,8 @@
 # Chart of the Day
 
-Short publications tracking interesting datasets from a variety of sources. The Chart of the Day uses [ChartLab](../how-to/shared/chartlab.md) or [Trends](../how-to/shared/trends.md) services, which are visualization tools supported by data processing and management tasks performed by [ATSD](https://axibase.com/docs/atsd/).
+Interactive visualizations tracking interesting datasets from a variety of sources.
 
 1. [Hetzner May 2018 Outage](hetzner-outage/README.md) (May 2018)
-1. [Going from Advanced Tech Exporter to Importer](tech-import-export/README.md) (May 2018)
-1. [London Inter-Bank Offered Rate (LIBOR)](libor/README.md) (May 2018)
-1. [Profit Margin by Industry Explorer](profit-margin/README.md) (May 2018)
-1. [Using Thresholds to Track United States Inflation](us-inflation/README.md) (April 2018)
 1. [The Creeping Overnight Fund Rate](overnight-fund-rate/README.md) (March 2018)
 1. [The Fall of Facebook](facebook/README.md) (March 2018)
 1. [Food Insecurity in America (2009-2013)](us-food-insecurity/README.md) (October 2017)

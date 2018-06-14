@@ -8,9 +8,9 @@
 
 ## Total Maryland Deaths Per 100,000 Persons (1992 - 2011)
 
-![MD2](images/MD_DEATH3.png)
+![MD2](./images/MD_DEATH3.png)
 
-[![View in ChartLab](images/button.png)](https://apps.axibase.com/chartlab/bb18ecdc/5/#fullscreen)
+[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bb18ecdc/5/#fullscreen)
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value as 'Total Deaths per 100,000 Persons'
@@ -49,9 +49,9 @@ ORDER BY date_format(time, 'yyyy')
 
 ### Maryland Deaths Per 100,000 Persons by Cause (1992 - 2011)
 
-![MD](images/MD_DEATH4.png)
+![MD](./images/MD_DEATH4.png)
 
-[![View in ChartLab](images/button.png)](https://apps.axibase.com/chartlab/bb18ecdc/6/#fullscreen)
+[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bb18ecdc/6/#fullscreen)
 
 ```sql
 SELECT metric.label AS 'Cause of Death', sum(value) AS 'Total'
@@ -86,9 +86,9 @@ Querying these data for death information by cause and year is shown below.
 
 ### Total Deaths Per 100,000 Persons by Cause and Year (1992, 1998, 2004, 2010)
 
-![MD](images/MD_DEATH1.png)
+![MD](./images/MD_DEATH1.png)
 
-[![View in ChartLab](images/button.png)](https://apps.axibase.com/chartlab/bb18ecdc/7/#fullscreen)
+[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bb18ecdc/7/#fullscreen)
 
 #### Total Deaths Per 100,000 Persons (1992)
 
@@ -119,7 +119,7 @@ ORDER BY date_format(time, 'yyyy'), metric.label
 | 1992 | Nephritis, Nephrotic Syndrome, and Nephrosis           | 15    |
 | 1992 | Septicemia                                             | 18    |
 
-![](images/MD_DEATH5.png)
+![](./images/MD_DEATH5.png)
 
 #### Total Deaths Per 100,000 Persons (1998)
 
@@ -150,7 +150,7 @@ ORDER BY date_format(time, 'yyyy'), metric.label
 | 1998 | Nephritis, Nephrotic Syndrome, and Nephrosis           | 12    |
 | 1998 | Septicemia                                             | 19    |
 
-![](images/MD_DEATH6.png)
+![](./images/MD_DEATH6.png)
 
 #### Total Deaths Per 100,000 Persons (2004)
 
@@ -181,7 +181,7 @@ ORDER BY date_format(time, 'yyyy'), metric.label
 | 2004 | Nephritis, Nephrotic Syndrome, and Nephrosis           | 13    |
 | 2004 | Septicemia                                             | 20    |
 
-![](images/MD_DEATH7.png)
+![](./images/MD_DEATH7.png)
 
 #### Total Deaths Per 100,000 Persons (2010)
 
@@ -212,4 +212,4 @@ ORDER BY date_format(time, 'yyyy'), metric.label
 | 2010 | Nephritis, Nephrotic Syndrome, and Nephrosis           | 14    |
 | 2010 | Septicemia                                             | 15    |
 
-![](images/MD_DEATH8.png)
+![](./images/MD_DEATH8.png)

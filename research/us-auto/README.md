@@ -36,7 +36,7 @@ industry, foreign imports are slowly but surely pushing American producers out o
 
 _Source_: [Federal Reserve Economic Data](https://fred.stlouisfed.org/series/LAUTONSA)
 
-Using the [moving average](../../how-to/database/moving-avg/README.md) function to seasonally-adjust the underlying data more elegantly captures
+Using the [moving average](../../tutorials//moving-avg/README.md) function to seasonally-adjust the underlying data more elegantly captures
 the trend of declining automobile sales. The above mentioned production downturn of the late 2000's is clearly visible, as is
 the recent trend indicating less and less cars being sold.
 
@@ -49,7 +49,7 @@ the recent trend indicating less and less cars being sold.
 _Source_: Federal Reserve Economic Data - [Domestic Motor Vehicle Production](https://fred.stlouisfed.org/series/DAUPSA), [Domestic Motor Vehicle Sales](https://fred.stlouisfed.org/series/DAUTOSA)
 
 The second part of the above visualization tracks the difference in domestic automobile production and sales which has remained
-within a range of roughly 100,000 units and was derived from the underlying data using an [ad-hoc calculation](../../how-to/database/add-calculated-value/README.md)
+within a range of roughly 100,000 units and was derived from the underlying data using an [ad-hoc calculation](../../tutorials//add-calculated-value/README.md)
 in the ChartLab interface. This value has been averaged over each observed year, and is an excellent metric to gauge trends
 in production output. Because sales are likely a much larger factor in deciding production, then production is a factor in
 predicting sales, this line shows that declining sales are being met with declining production. But more than that, production

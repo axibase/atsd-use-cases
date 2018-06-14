@@ -38,7 +38,7 @@ Tracking the EPU Index for the People's Republic of China alongside more concret
 
 *Fig. 3*: Economic Policy Uncertainty Index and PRC Treasury Securities Rates (2000-2017), bi-annually and quarterly.
 
-The above figure was creating using the [`weighted average`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) statistical tool. This tool may be used to creating a rolling average value for a specific time period. For more information about using this statistical tool, see this [guide](../../../how-to/database/moving-avg/README.md).
+The above figure was creating using the [`weighted average`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) statistical tool. This tool may be used to creating a rolling average value for a specific time period. For more information about using this statistical tool, see this [guide](../../../tutorials//moving-avg/README.md).
 
 ### Dual Axis
 
@@ -164,4 +164,4 @@ Use the following tools to recreate any of the visualizations seen here.
 * Install an ATSD instance on your local Linux system [here](https://axibase.com/docs/atsd/installation/).
 * Visit [FRED](https://fred.stlouisfed.org/) for any of the data used in this article.
 * Access the ChartLab sandbox, and other Axibase [applications](https://apps.axibase.com/) and view the complete [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
-* Download this [parser job file](resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface. Use the [Import Walkthrough](../../../how-to/shared/import-csv-parser.md) for help uploading the XML file to ATSD.
+* Download this [parser job file](resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface. Use the [Import Walkthrough](../../../integrations/shared/import-csv-parser.md) for help uploading the XML file to ATSD.
