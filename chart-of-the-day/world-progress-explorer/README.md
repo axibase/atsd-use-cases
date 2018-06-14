@@ -19,11 +19,11 @@ Open the **Trends** visualization above and use the drop-down menus to navigate 
 |life_expectancy_at_birth_by_country|Number of years a newborn is predicted to live given constant mortality figures|
 |population_total_by_country| Recorded number of people living in a given country|
 
-For detailed information about using the **Trends** service, read this [guide](../../how-to/shared/trends.md).
+For detailed information about using the **Trends** service, read this [guide](../../integrations/shared/trends.md).
 
 ## Visualization
 
-The visualizations in the chart above demonstrate a [user-defined function](../../how-to/shared/trends.md#user-defined-functions) which sets the year 1990 as the baseline using the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js) library. Using the `PercentChangeFromYearAgo` function instead creates the visualization below. Open the **Trends** interface and explore the data using the same drop-down menus to navigate between countries and metrics.
+The visualizations in the chart above demonstrate a [user-defined function](../../integrations/shared/trends.md#user-defined-functions) which sets the year 1990 as the baseline using the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js) library. Using the `PercentChangeFromYearAgo` function instead creates the visualization below. Open the **Trends** interface and explore the data using the same drop-down menus to navigate between countries and metrics.
 
 ![](./images/wps-1.png)
 [![](./images/button-new.png)](https://trends.axibase.com/5d0563d2/2#fullscreen)
@@ -40,7 +40,7 @@ To implement this function, the this setting is used:
 value = fred.PercentChangeFromYearAgo('raw')
 ```
 
-Open the **Trends** visualization and use any of the supported user-defined functions from the [`fred.js` library](../../how-to/shared/trends.md#fred-library).
+Open the **Trends** visualization and use any of the supported user-defined functions from the [`fred.js` library](../../integrations/shared/trends.md#fred-library).
 
 ## SQL Queries
 
