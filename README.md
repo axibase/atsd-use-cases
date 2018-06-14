@@ -1,5 +1,6 @@
 # Introduction
 
+<<<<<<< HEAD
 [Axibase Time Series Database](https://axibase.com/docs/atsd/)  is a non-relational database optimized for collecting, storing, and analyzing temporal data from IT infrastructure, industrial equipment, smart meters, and IoT devices.
 
 ATSD is developed by [Axibase Corporation](https://axibase.com/about-us/), established in 2004, based on our decade-long experience with IT infrastructure management systems. We sought to build a specialized database with a focus on data quality where historical data was treated like a first-class citizen. More specifically, ATSD was designed to overcome challenges with write-heavy warehouse systems such as Tivoli DW, which suffered from all kinds of data collection issues.
@@ -42,14 +43,32 @@ Walkthrough guides for ATSD integration with various IT infrastructure systems a
 
 * [Historizing Metrics Stored in Database](how-to/database/historize/README.md) (April 2018)
 * [Using Trends](how-to/shared/trends.md) (April 2018)
+=======
+**Use Cases** documentation demonstrates solutions to real-world data problems using [ATSD](https://axibase.com/docs/atsd/) and contains in-depth guides for programmatic integration instructions with some of the most commonly-used enterprise softwares and services, as well as tutorials for data transformation, and visualizations created with ATSD.
 
-### Docker
+## Chart of the Day
 
+Interactive visualizations tracking interesting datasets from a variety of sources.
+
+## Integrations
+
+Walkthrough guides for ATSD integration with various IT infrastructure systems and services.
+
+## Research
+>>>>>>> origin/master
+
+Detailed use cases that feature in-depth data exploration and ATSD tools used to solve modern data problems.
+
+<<<<<<< HEAD
 * [Notifications for Docker Hub Build Failures](how-to/docker/README.md) (April 2018)
 * [ATSD + Docker for Anomaly Detection](how-to/docker/docker-engine.md) (September 2017)
+=======
+## Trends
+>>>>>>> origin/master
 
-### GitHub
+A publicly accessible ATSD instance which contains [Federal Reserve Economic Data](https://fred.stlouisfed.org/).
 
+<<<<<<< HEAD
 * [Daily Pull Request Report for GitHub Organizations](how-to/github/pr-report.md) (June 2018)
 * [Notifications for New GitHub Repository Subscriptions](how-to/github/watch-notification.md) (April 2018)
 
@@ -72,3 +91,8 @@ ATSD functionality and features applied to real-world public data to solve commo
 * [Tracking Expatriation with ChartLab, SQL, and Web Crawler in ATSD](research/expatriation/README.md) (May 2018)
 
 View the complete [Research Repository](research/README.md).
+=======
+## Tutorials
+
+Step-by-step instructions to perform data transformation, import configuration files, and other tasks in ATSD.
+>>>>>>> origin/master
