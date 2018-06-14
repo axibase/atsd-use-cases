@@ -18,31 +18,9 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 * [Monitoring Kafka Brokers](kafka/brokers-monitoring/README.md)
 * [Monitoring Kafka Consumer Lag](kafka/consumers-monitoring/README.md)
 
-<<<<<<< HEAD:how-to/README.md
-## ATSD
-
-* [Computing Series Delta Values in ATSD](database/subtract-subsequent-values/README.md) (June 2018)
-* [Historizing Metrics Stored in Database](database/historize/README.md) (April 2018)
-* [Using Trends](shared/trends.md) (April 2018)
-* [Import CSV Parser Configuration](shared/import-csv-parser.md) (March 2018)
-* [Import Entity Group](shared/import-entity-group.md) (March 2018)
-* [Import Entity View](shared/import-entity-view.md) (March 2018)
-* [Import Entity](shared/import-entity.md) (March 2018)
-* [Import Forecast Configuration](shared/import-forecast.md) (March 2018)
-* [Import Metric](shared/import-metric.md) (March 2018)
-* [Import Portal Configuration](shared/import-portal.md) (March 2018)
-* [Import Rule Configuration](shared/import-rule.md) (March 2018)
-* [Import Schedule SQL Query Configuration](shared/import-scheduled-sql-query.md) (March 2018)
-* [Import Tag Template Configuration](shared/import-tag-template.md) (March 2018)
-* [Calculated Values With Schema-Based Parsing](database/schema-based-parser-mod/README.md) (August 2017)
-* [Curve Smoothing Using Moving Averages](database/moving-avg/README.md) (August 2017)
-* [Creating Calculated Metrics in ChartLab and SQL Console](database/add-calculated-value/README.md) (August 2017)
-* [Data Visualization with Chart Lab](shared/chartlab.md) (September 2016)
-=======
 ## cAdvisor
 
 * [ATSD as the Backend for cAdvisor](cadvisor/README.md)
->>>>>>> origin/master:integrations/README.md
 
 ## Docker
 

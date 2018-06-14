@@ -2,9 +2,9 @@
 
 ## Purpose
 
-[**ATSD**](https://axibase.com/docs/atsd/) has several tools to perform ad hoc calculations which allow you to compute delta values for a given series.
+[Axibase Time Series Database](https://axibase.com/docs/atsd/) (ATSD) has several tools to perform ad hoc calculations which allow you to compute delta values for a given series.
 
-This article explains delta-value calculation using three tools:
+This article explains delta value calculation using three tools:
 
 * [**SQL Console**](https://axibase.com/docs/atsd/sql/)
 * [**Data API** Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html)
@@ -25,7 +25,7 @@ WHERE entity = 'hetzner' AND tags.dc = 07
   ORDER BY datetime
 ```
 
-Compare consecutive values with the [LAG](https://axibase.com/docs/atsd/sql/#lag) function.
+Compare consecutive values with the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function.
 
 | datetime             | DC07 | PREV |
 |----------------------|------|------|
@@ -57,13 +57,13 @@ Compare consecutive values with the [LAG](https://axibase.com/docs/atsd/sql/#lag
 | 2018-05-26T12:31:00Z | 86   | -19  |
 | 2018-05-26T13:38:00Z | 0    | -86  |
 
-When `LAG` encounters a non-existent sample, it returns [`null`](https://axibase.com/docs/atsd/sql/#null) value.
+When `LAG` encounters a non-existent sample, it returns literal [`null`](https://axibase.com/docs/atsd/sql/#null) value.
 
 > For other data center tags, modify the [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause.
 
 ## Series Query
 
-The [REST API](https://axibase.com/docs/atsd/api/data/) lets you insert and retrieve series, properties, messages, and alerts from ATSD as well as manipulate metadata. [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) retrieves time series objects for the specified metric, entity, tag, and interval filters.
+The [REST API](https://axibase.com/docs/atsd/api/data/) allows you insert and retrieve series, properties, messages, and alerts from ATSD as well as query and mangage metadata. [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) retrieves time series objects for the specified metric, entity, tag, and interval filters.
 
 ```json
 [{
