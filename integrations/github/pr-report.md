@@ -108,15 +108,15 @@ Upon successful completion, **Mail Client** sends subscribed users a confirmatio
 
 After initial launch, you may modify the list of subscribers at any time. Log in to the ATSD web interface, accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports). Open the **Alerts** menu and select **Rules**.
 
-![](images/alerts-rules.png)
+![](./images/alerts-rules.png)
 
 Search for the `github-daily-pr-status` with the available filters and rule and open the **Rule Editor** by clicking the link in the **Name** column.
 
-![](images/search-rule.png)
+![](./images/search-rule.png)
 
 Open the **Email Notifications** tab in the **Rule Editor** and modify the **Recipients** field. Emails must be comma-separated.
 
-![](images/add-new-email.png)
+![](./images/add-new-email.png)
 
 ## Configuring Report Delivery
 
