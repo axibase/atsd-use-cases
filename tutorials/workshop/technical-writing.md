@@ -23,7 +23,7 @@ Each section contains links to the corresponding section of [Google Style Guides
   * [Slashes](#slashes)
 * [Formatting and Organization](#formatting-and-organization)
   * [Dates and Times](#dates-and-times)
-  * [Fenced Text](#fenced-text)
+  * [Backticks](#backticks)
   * [Headings and Titles](#headings-and-titles)
   * [Lists](#lists)
   * [Notes](#notes)
@@ -194,19 +194,23 @@ See [Google Style Guides](https://developers.google.com/style/slashes)
 
 ### Dates and Times
 
-Avoid ambiguity when writing dates by writting out the data instead of using numbers.
+Avoid ambiguity when writing dates by writing out the data instead of using numbers.
 
 See [Google Style Guides](https://developers.google.com/style/dates-times).
 
-### Fenced Text
+### Backticks
 
-The following types of text should be surrounded by backticks:
+Apply single backticks to the following:
 
-* Machine output such as `All Applications started` and Unix epoch time `1524960000`.
-* Fields which contain code such as a **Condition** field which contains `count == 1`.
-* Interface elements with irregular names such as a job titled `activemq_health_status`.
-* HTTP status codes.
-* Software like `curl` and command languages like `bash`.
+* File names.
+* Program names.
+* HTTP Methods.
+* API Endpoint paths.
+* Parameter names, field names, variables.
+
+Exceptions:
+
+* Do not use backticks in headings.
 
 ### Headings and Titles
 
@@ -256,7 +260,7 @@ See [Code in Text](https://developers.google.com/style/code-in-text).
 
 ### Interface Elements
 
-Interface elements should be **bold**. When describing interface elements include the type of element, unless that element is a button. 
+Interface elements should be **bold**. When describing interface elements include the type of element, unless that element is a button.
 
 For complete guidelines, see [Google Style Guides](https://developers.google.com/style/ui-elements)
 
