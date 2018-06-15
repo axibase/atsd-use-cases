@@ -14,9 +14,9 @@ This article demonstrates this calculation using three methods:
 
 The sample dataset in this article is represented by:
 
-- Entity `hetzner`
-- Metric `outage-tickets`
-- Series tags: `DC=07`, `DC=10`, and `DC=12`
+* Entity `hetzner`
+* Metric `outage-tickets`
+* Series tags: `DC=07`, `DC=10`, and `DC=12`
 
 The `outage-tickets` metric measures the number of tickets open in the service provider's support desk during a power outage incident.
 
@@ -182,9 +182,9 @@ replace-value = value - previousValue
 
 ### Derived Series Using Aliases
 
-Create a derived series using the [`previois(alias)`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
+Create a derived series using the [`previous(alias)`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
 
-```css
+```ls
   # raw series data
   [series]
    alias = raw
