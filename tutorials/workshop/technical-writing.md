@@ -7,14 +7,19 @@ Refer to [Google Developer Documentation Style Guide](https://developers.google.
 > [GDG: abbreviations](https://developers.google.com/style/abbreviations).
 
 * Abbreviate if the acronym is known to the target audience.
-* Do not backtick acronyms.
-* Always abbreviate:
-  * Common data formats: CSV, JSON, XLS, XML, XLS.
-  * Protocols: HTTP, HTTPS, TCP, UDP, SSH.
-  * Widely known terms: SQL, API, REST, JVM.
-  * ATSD when used in our docs repositories: atsd, atsd-use-cases, axibase-collector.
-* If an acronym is new, introduce it in the beginning and re-use thereafter.
-  * "Axibase Time Series Database (ATSD) is a non-relational database. ATSD is fast."
+
+:no_entry: **Do not backtick acronyms.**
+
+:white_check_mark: **Always abbreviate.**
+
+* Common data formats: CSV, JSON, XLS, XML, XLS.
+* Protocols: HTTP, HTTPS, TCP, UDP, SSH.
+* Widely known terms: SQL, API, REST, JVM.
+* ATSD when used in our docs repositories: atsd, atsd-use-cases, axibase-collector.
+
+:exclamation: **If an acronym is new, introduce it in the beginning and re-use thereafter.**
+
+* "Axibase Time Series Database (ATSD) is a non-relational database. ATSD is fast."
   
 ## Contractions
 
