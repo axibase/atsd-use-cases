@@ -4,7 +4,7 @@ Refer to [Google Developer Documentation Style Guide](https://developers.google.
 
 ## Abbreviations
 
-* Adhere to [GDG: abbreviations](https://developers.google.com/style/abbreviations).
+* Follow [GDG: abbreviations](https://developers.google.com/style/abbreviations).
 * Abbreviate if the acronym is known to the target audience.
 * Do not backtick acronyms.
 * Replace "i.e." or "e.g." with "for example".
@@ -22,11 +22,14 @@ Refer to [Google Developer Documentation Style Guide](https://developers.google.
 
 ## Capitalization
 
-* Adhere to [GDG: capitalization](https://developers.google.com/style/capitalization).
-* Capitalize heading content, other than prepositions and articles.
-* Do not capitalize general terms like "the database."
-* Do not capitalize the first word of a list, after the heading:
-  * Capitalize Title: but not content.
+* Follow [GDG: capitalization](https://developers.google.com/style/capitalization).
+* Do not capitalize program names such as `curl`.
+* Use title case in headers, except prepositions, articles, and program names.
+  * "### Import Data from Archive using curl"
+* Do not capitalize the first word after the colon in a list.
+  * Step 3: unzip files.
+* Do not capitalize file extensions.
+  * ".png", ".xml", ".jar"  
 
 ## Contractions
 
@@ -69,18 +72,35 @@ Do not use parentheses. If you need to make a parenthetical note, use the [Notes
 
 Apply single backticks to the following:
 
-* File names.
-* Program names.
-* HTTP Methods.
-* API Endpoint paths.
-* Parameter names, field names, variables.
+* File names: `atsd.log`
+* Directory and file paths: `/opt/atsd/atsd/conf/server.properties`
+* File extensions: `.png`, `.xml`
+* Program names: `curl`, `wget`
+* HTTP Methods: `POST`, `GET.`
+* URI paths and query strings: `/api/v1/{entity}/metrics`
+* Header names and values.
+  * Set `Content-Type` header to `application/json`.
+* Function and procedure names.
+* Reserved SQL keywords and clauses.
+  * Add condition to the `HAVING` clause.
+* Parameter, field, and variable names.
+  * "Reset `queue.policy` to `BLOCK`"
+  * "Local the `github-notify` rule on the **Alerts** page"
+* Parameter, field, and variable values, including boolean values and numbers.
+  * "Set `limit` field to `16`"
+* Usernames.
+  * "Switch to `axibase` user"
+* Port numbers.
+  * "Make sure ATSD is listening on port `8443`"
 
 Exceptions:
 
 * Do not use backticks in headings.
 
-### Headings and Titles
+### Headers
 
+* Use title case in headers. Anything prefixed with markdown hash is a header.
+  * "Import Data from File"
 * For bullet points with sub-units, indent the sub-unit using two spaces, not with four spaces, not with a tab.
 
 ### Notes
