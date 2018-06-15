@@ -119,7 +119,7 @@ enplanements = value/10000
 Once the comparison is complete, removing the `statistic` setting from the editor window returns the data to the original
 state without additional computation. Alternatively, it may be helpful to compare the modified chart with the original to
 calculate concrete monthly baselines. Airport traffic and use is hugely seasonal, comparing values month to month is not only
-ineffective, but misleading. Instead, months should be compared across different years and with the moving average calculation
+ineffective, but misleading. Instead, months must be compared across different years and with the moving average calculation
 included no additional calculations need be performed (such as attempts to correct for overall increases and decreases in
 airport traffic) because the information is now included in the underlying data.
 

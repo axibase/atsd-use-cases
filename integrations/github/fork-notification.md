@@ -18,7 +18,7 @@ GitHub webhook functionality is prominently featured on the [Platform Roadmap](h
 
 Execute the `docker run` command below to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
 
-Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container is running. The URL should be externally accessible to receive webhook notifications from GitHub.
+Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container is running. The URL must be externally accessible to receive webhook notifications from GitHub.
 
 To acquire the **Bot User Token**, open the [Slack API](https://api.slack.com/apps), select the application to use for integration, and navigate to the **Install App** tab. The **Bot User OAuth Access Token** field contains the needed information. Note that you must be a collaborator for the application which you want to integrate.
 

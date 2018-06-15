@@ -158,7 +158,7 @@ Users can replicate data analysis shown here.
 
 * Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
-* Download the [`docker-compose.yml`](resources/docker-compose.yml) file to launch the ATSD container bundle.
+* Download the [`docker-compose.yml`](https://github.com/axibase/atsd-use-cases/blob/master/research/paris-accords/resources/docker-compose.yml) file to launch the ATSD container bundle.
 
 * Launch containers:
 

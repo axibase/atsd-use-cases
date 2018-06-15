@@ -565,11 +565,11 @@ available that allows them to do just that.
 ## Action Items
 
 1. Download [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
-2. Download the [`docker-compose.yml`](resources/docker-compose.yml) file to launch the ATSD container bundle.
+2. Download the [`docker-compose.yml`](https://github.com/axibase/atsd-use-cases/blob/master/research/baltimore-pd/resources/docker-compose.yml) file to launch the ATSD container bundle.
 3. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
 
 ```sh
-   export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
+export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
 ```
 
 Note that both data sets have been collected under one Socrata job.
@@ -580,7 +580,7 @@ Contact [Axibase](https://axibase.com/feedback/) with any questions.
 
 ### Using the [`EXPAND`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
 
-In order to highlight specific data, as shown [here](#nature-of-homicides),
+In order to highlight specific data, as shown in the [Nature of the Homicides](#nature-of-homicides) section,
 use the command `expand = true` under the `[series]` which should be expanded:
 
 ![Expand1](./images/Expand1.png)

@@ -457,7 +457,7 @@ loadAtsdCpuBusyData.then(data => {
         let columnGeometry = new THREE.BoxGeometry(0.8, 0.8, value);
         let columnMaterial = new THREE.MeshPhongMaterial({color: 0x3366EE});
         let column = new THREE.Mesh(columnGeometry, columnMaterial);
-        // By default column will be half below the plane, so we lift it
+        // By default column is half below the plane, so we lift it
         column.position.z = value / 2;
         column.position.x = (col * 2 + 1) - 3;
         col++;

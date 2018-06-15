@@ -80,7 +80,7 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 
 ### Configure `inotify` Script to Read CSV files and Upload into ATSD
 
-* Download [`inotify_sender`](inotify_sender.sh) script to your WPA server.
+* Download [`inotify_sender`](https://github.com/axibase/atsd-use-cases/blob/master/integrations/itm/inotify_sender.sh) script to your WPA server.
 
 * Specify the ATSD hostname by editing the following line:
 

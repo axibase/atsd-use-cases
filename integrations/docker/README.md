@@ -170,7 +170,7 @@ Go to Docker Hub and open **Build Settings** for one of the projects (images). T
 
 ![](./images/docker-hub-trigger.png)
 
-The webhook should arrive in less than 5 minutes, which is the collector polling interval.
+The webhook arrives in less than 5 minutes, which is the collector polling interval.
 
 If you do not have a good failure candidate handy, send a test `message` command for `test/my-image` project as described below.
 
@@ -230,7 +230,7 @@ Check that the `dockerhub-webhook-sender` status is **OK**.
 
 ![](./images/sender-status.png)
 
-The target service should now receive the JSON payload:
+The target service now receives the JSON payload:
 
 ```json
 {

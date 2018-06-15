@@ -12,7 +12,7 @@ The governments at the federal, state, city, and county level publish datasets i
 
 Using [Axibase Time Series Database](https://axibase.com/docs/atsd/), you can combine datasets from multiple entities in one portal.
 
-This artcle uses data collected from the [Bureau of Labor Statistics](http://www.bls.gov/home.htm).
+This article uses data collected from the [Bureau of Labor Statistics](http://www.bls.gov/home.htm).
 
 ## Iowa Employee Compensation Dataset
 
@@ -170,7 +170,7 @@ Explore specific metrics in the **Iowa Seasonally Adjusted Non-Farm Employment b
 
 ![Figure 11](./images/Figure11.png)
 
-The same decline correlating with the recession period is highlighed the figures above.
+The same decline correlating with the recession period is highlighted the figures above.
 
 Below is a table of datasets from `data.iowa.gov` already available in **ChartLab**. Modify configuration in the **Editor** window to compare data across entities. For more information about **ChartLab** syntax or selecting series, see the [ChartLab Introduction](../../shared/chartlab.md).
 
@@ -225,7 +225,7 @@ To summarize the effects of the Great Recession in three parts:
 ## A Closer look at the Iowa Economy
 
 A powerful capability of ATSD is the ability to combine datasets from multiple entities in a single portal. Take these 2 datasets and
-compute additional metrics to create more in-depth level of analysis. The following sections will explore compensation per employee,
+compute additional metrics to create more in-depth level of analysis. The following sections explore compensation per employee,
 adjusted with consumer price index (CPI) statistics to account for inflation for employees in the federal government working in the state of Iowa.
 
 The image below shows year-on-year growth experienced by the **government and government enterprises** industry in Iowa. While growth has slowed slightly over recent

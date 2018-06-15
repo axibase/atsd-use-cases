@@ -20,7 +20,7 @@ If the page does not contain the expected request, check the webhook URL manuall
 curl -v "https://usr:pwd@atsd_hostname:8443/api/v1/messages/webhook/github?ping=true&debug=true"
 ```
 
-The ATSD should respond with the following message:
+ATSD responds with the following message:
 
 ```txt
 < HTTP/1.1 200 OK
