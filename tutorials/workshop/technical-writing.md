@@ -1,58 +1,34 @@
-# Technical Writing for Axibase Developers
+# Axibase Developer Documentation Style Guide
 
-Each section contains links to the corresponding section of [Google Style Guides](https://developers.google.com/style/). Refer there for general guidelines.
+Refer to [Google Developer Documentation Style Guide](https://developers.google.com/style/) (GDG) for more details.
 
-## Index
+## Abbreviations
 
-* [Language and Grammar](#language-and-grammar)
-  * [Abbreviations](#abbreviations)
-  * [Active Voice](#active-voice)
-  * [Capitalization](#capitalization)
-  * [Contractions](#contractions)
-  * [Possessives](#possessives)
-* [Punctuation](#punctuation)
-  * [Colons](#colons)
-  * [Commas](#commas)
-  * [Hyphens](#hyphens)
-  * [Parentheses](#parentheses)
-  * [Quotation Marks](#quotation-marks)
-* [Formatting and Organization](#formatting-and-organization)
-  * [Backticks](#backticks)
-  * [Headings and Titles](#headings-and-titles)
-  * [Lists](#lists)
-  * [Notes](#notes)
-  * [Numbers](#numbers)
-* [Computer Interfaces](#computer-interfaces)
-  * [Code in Text](#code-in-text)
-  * [Linking to External Sites](#linking-to-external-sites)
-  * [Interface Elements](#interface-elements)
-* [Names and Meaning](#names-and-meaning)
-  * [File Names](#file-names)
-  * [Product Names](#product-names)
-  * [Documentation Names](#documentation-names)
-  * [Issue Names](#issue-names)
-
-## Language and Grammar
-
-### Abbreviations
-
+* Adhere to [GDG: abbreviations](https://developers.google.com/style/abbreviations).
 * Abbreviate if the acronym is known to the target audience.
 * Do not backtick acronyms.
+* Replace "i.e." or "e.g." with "for example".
+* Always abbreviate:
+  - ATSD (if used in our docs repositories).
+  - Common data formats: CSV, JSON, XLS, XML, XLS.
+  - Widely known terms: SSH, SQL, API, HTTP, REST, JVM.
+* If an acronym is new, introduce it in the beginning and re-use thereafter.
+  - "Axibase Time Series Database (ATSD) is a non-relational database."
 
-### Active Voice
+## Active Voice
 
 * Maintain active voice for technical documentation.
 * Describe both the actor and the action, or use the imperative to instruct a user.
 
-### Capitalization
+## Capitalization
 
 * Capitalize proper nouns, headings, and interface elements.
 
-### Contractions
+## Contractions
 
 * Do not use contractions.
 
-### Possessives
+## Possessives
 
 * Do not use possessives.
 
