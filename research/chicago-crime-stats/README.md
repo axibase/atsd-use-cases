@@ -1,6 +1,6 @@
-![](./images/TitlePhoto.png)
-
 # Analyzing Chicago Crime Statistics
+
+![](./images/TitlePhoto.png)
 
 ## Introduction
 
