@@ -4,11 +4,9 @@
 
 Configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) (ATSD) to produce a daily report with all open Pull Requests across a collection of repositories and email the report to subscribed users. The report has two parts: open Pull Requests passing all status checks, and open Pull Requests failing one or more status checks.
 
-GitHub [webhook services](pr-notification.md) can notify repository owners and administrators of a new Pull Request, but for teams with a large collection of repositories, use the **Daily Pull Request Report** to provide a consolidated report for all Pull Request activities. **Daily Pull Request Report** uses programmatic integration with the [GraphQL](https://graphql.org/) API query language.
+GitHub [webhook services](pr-notification.md) can notify repository owners and administrators of a new Pull Request, but for teams with a large collection of repositories, use the **Daily Pull Request Report** to provide a consolidated report for all Pull Request activities. **Daily Pull Request Report** uses programmatic integration with the [GraphQL](https://graphql.org/) API query language. Setup takes around 10 minutes.
 
 ![](./images/pr-report-workflow.png)
-
-In contrast to the [GitHub v3 REST API](https://developer.github.com/v3/), the [GitHub v4 GraphQL API](https://developer.github.com/v4/) offers more flexibility by replacing multiple REST API requests with a single call to fetch all relevant data. Setup takes around 10 minutes.
 
 ## Generate OAuth Access Token
 
