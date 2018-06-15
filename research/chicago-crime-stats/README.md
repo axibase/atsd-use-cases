@@ -1,4 +1,4 @@
- <img src="images/TitlePhoto.png" width="650" >
+![](./images/TitlePhoto.png)
 
 # Analyzing Chicago Crime Statistics
 
@@ -18,7 +18,7 @@ and populate it with the raw data.
 
 Let's take a look at the dataset titled **Crimes - 2001 to present** from [data.gov](https://www.data.gov/).
 
-This dataset can be found [here](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4). On the data.gov website, this dataset can be downloaded as a CSV (1.4 GB), RDF, JSON (**2.8 GB**), or a
+This dataset can be found on [data.gov](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4). On the data.gov website, this dataset can be downloaded as a CSV (1.4 GB), RDF, JSON (**2.8 GB**), or a
 XML file. This dataset can easily be parsed using the JSON job in Axibase Collector.
 
 This dataset contains crime statistics collected daily from 2001 to the present time. This dataset is continuously updated with a time lag of 7 days. Statistics are available for **32 different crime types**. Furthermore, these crimes may be filtered by the location
