@@ -4,17 +4,15 @@
 
 Configure [Axibase Time Series Database](https://axibase.com/docs/atsd/) (ATSD) to produce a daily report with all open Pull Requests across a collection of repositories and email the report to subscribed users. The report has two parts: open Pull Requests passing all status checks, and open Pull Requests failing one or more status checks.
 
-GitHub [webhook services](pr-notification.md) can notify repository owners and administrators of a new Pull Request, but for larger organizations with a large collection of repositories, use the **Daily PR Report** to achieve a wider scope. Configure notifications for a group of subscribers via email with ATSD and the [GitHub v4 API](https://developer.github.com/v4/). Setup takes around 10 minutes.
+GitHub [webhook services](pr-notification.md) can notify repository owners and administrators of a new Pull Request, but for teams with a large collection of repositories, use the **Daily Pull Request Report** to provide a consolidated report for all Pull Request activities. **Daily Pull Request Report** uses programmatic integration with the [GraphQL](https://graphql.org/) API query language.
 
 ![](./images/pr-report-workflow.png)
 
-Accomplish complete Pull Request management using programmatic integration leveraging the [GraphQL](https://graphql.org/) API query language, featured in the GitHub API.
-
-In contrast to the [GitHub v3 REST API](https://developer.github.com/v3/), the latest [GitHub v4 GraphQL API](https://developer.github.com/v4/) offers more flexibility by replacing multiple REST requests with a single call to fetch all relevant data.
+In contrast to the [GitHub v3 REST API](https://developer.github.com/v3/), the [GitHub v4 GraphQL API](https://developer.github.com/v4/) offers more flexibility by replacing multiple REST API requests with a single call to fetch all relevant data. Setup takes around 10 minutes.
 
 ## Generate OAuth Access Token
 
-The **Daily PR Report** uses an [OAuth Personal Token](https://blog.github.com/2013-05-16-personal-api-tokens/) to query the GitHub API without transmitting user login information.
+The **Daily Pull Request Report** uses an [OAuth Personal Token](https://blog.github.com/2013-05-16-personal-api-tokens/) to query the GitHub API without transmitting user login information.
 
 While logged in to GitHub, click the user profile picture in the upper-right corner and select **Settings**.
 
@@ -28,9 +26,11 @@ Click **Generate New Token** and enter the account password when prompted.
 
 ![](./images/read:org.png)
 
-Configure the token to grant **read:org** permissions in the **admin:org** section by checking the appropriate box. This scope grants read-only organization access to any user with this token, so keep it confidential. For more information about token scopes, see [GitHub Developer Documentation](https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/).
+Configure the token to grant **read:org** permissions in the **admin:org** section by checking the appropriate box. This scope grants read-only organization access to any user with this token, keep the contents confidential.
 
-Define the token in the `TOKEN` parameter of the [sandbox launch command](#launch-atsd-sandbox).
+Copy the token to the `TOKEN` parameter of the [sandbox launch command](#launch-atsd-sandbox).
+
+> For more information about token scopes, see [GitHub Developer Documentation](https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/).
 
 ## Launch ATSD Sandbox
 
@@ -38,8 +38,8 @@ Execute the `docker run` command shown below to launch an ATSD [sandbox](https:/
 
 Modify the launch command to include legitimate information:
 
-* The `ORGANIZATION` variable specifies the case-sensitive name of the organization to monitor.
-* Specify `TOKEN` variable as [GitHub OAuth token](#generate-oauth-access-token), generated in GitHub.
+* The `ORGANIZATION` variable specifies the case-sensitive name of the organization on GitHub to monitor.
+* Specify the `TOKEN` variable as [GitHub OAuth token](#generate-oauth-access-token), generated in GitHub.
 * The `SUBSCRIBERS` variable contains the comma-separated list of email addresses subscribed to the daily report.
 * Bind `mail.properties` file via `volume`.
 
@@ -56,8 +56,6 @@ docker run -d -p 8443:8443 \
   axibase/atsd-sandbox:latest
 ```
 
-> For information about creating an organization, see the [GitHub Help Documentation](https://help.github.com/articles/creating-a-new-organization-from-scratch/).
-
 Mail configuration has several required parameters, passing these parameters into the container via mounted file is the simplest solution. The `volume` variable should point to the absolute path where a plaintext file exists containing the following parameters:
 
 ```ls
@@ -66,7 +64,7 @@ user=myuser@example.org
 password=secret
 ```
 
-This file contains mail server connection settings for the mail server by which the PR report is sent. Replace `server`, `user`, and `password` parameters with legitimate information. If the outgoing mail server uses a different port than `587` for SMTP queries, define it as an additional parameter:
+This file contains mail server connection settings for the mail server by which the Pull Request report is sent. Replace `server`, `user`, and `password` parameters with legitimate information. If the outgoing mail server uses a different port than `587` for SMTP queries, define it as an additional parameter:
 
 ```ls
 port=465
@@ -110,7 +108,7 @@ After initial launch, you may modify the list of subscribers at any time. Log in
 
 ![](./images/alerts-rules.png)
 
-Search for the `github-daily-pr-status` with the available filters and rule and open the **Rule Editor** by clicking the link in the **Name** column.
+Search for the `github-daily-pr-status` with the available filters and open the **Rule Editor** by clicking the link in the **Name** column.
 
 ![](./images/search-rule.png)
 
@@ -136,7 +134,7 @@ now.getHourOfDay() == 18
 
 Report delivery now occurs at 6:00 PM server local time.
 
-## Notification Payload
+## Report Contents
 
 The `github-daily-pr-status` rule builds an HTML table with information returned by the GQL query according to the configuration found in the **Text** field of the **Email Notifications** tab:
 
@@ -540,32 +538,12 @@ ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) receives incoming
 
 The above JSON result sets will be converted to two outgoing email reports, sent to the defined subscriber list.
 
-**Sample Apache Report for `MERGEABLE` Pull Requests with `SUCCESS` State**
+Sample Apache Report for `MERGEABLE` Pull Requests with `SUCCESS` State:
 
 ![](./images/apache-report-success.png)
 
-**Sample Apache Report for `MERGEABLE` Pull Requests with `FAILURE` State**
+Sample Apache Report for `MERGEABLE` Pull Requests with `FAILURE` State:
 
 ![](./images/apache-report-failure.png)
 
-For additional GraphQL query syntax, view the [GraphQL Documentation](https://graphql.org/learn/queries/).
-
-## Final Confirmation
-
-Define the following parameters in the launch command and execute to begin reporting:
-
-* Organization to monitor (`ORGANIZATION`).
-
-* [OAuth access token](#generate-oauth-access-token) (`TOKEN`).
-
-* Email subscribers (`SUBSCRIBERS`).
-
-* Location of `mail.properties` file (`volume`).
-
-A sample report from [**Siemens**](https://github.com/siemens) repositories using a wider scope:
-
-![](./images/pr-report-delivery.png)
-
-Clickable URLs redirect to Pull Request page.
-
-For other GitHub tools developed by Axibase, see the [Use Cases Repository](https://github.com/axibase/atsd-use-cases#github).
+For other GitHub tools developed by Axibase, see the [Use Cases Repository](../../README.md).
