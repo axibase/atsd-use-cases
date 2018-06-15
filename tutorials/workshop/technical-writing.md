@@ -17,6 +17,7 @@ Refer to [Google Developer Documentation Style Guide](https://developers.google.
 
 ## Active Voice
 
+* Follow [GDG: active voice](https://developers.google.com/style/voice)
 * Maintain active voice for technical documentation.
 * Describe both the actor and the action, or use the imperative to instruct a user.
 
@@ -34,15 +35,19 @@ Refer to [Google Developer Documentation Style Guide](https://developers.google.
 ## Contractions
 
 * Do not use contractions.
+  * "don't", "can't", "hasn't", "isn't", "didn't"
 
 ## Possessives
 
 * Do not use possessives.
+  * Modify server properties, not modify the server's properties.
+  * The contents of the file, not the file's contents.
 
 ## Punctuation
 
 ### Colons
 
+* Follow [GDG: colons](https://developers.google.com/style/colons)
 * Begin lists with colons (:), but use the appropriate formatting.
 * Separate list titles from their content with a colon.
 
@@ -53,6 +58,7 @@ Refer to [Google Developer Documentation Style Guide](https://developers.google.
 
 ### Hyphens
 
+* Follow [GDG: hyphens](https://developers.google.com/style/hyphens)
 * Hyphenate compound adjectives that do not have a component which ends in "-ly" (adverb-adjective compounds).
 * hyphenate compound adjectives that begin with "self."
 * hyphenate words a reader may otherwise confuse without a hyphen.
@@ -112,21 +118,29 @@ Exceptions:
 
 * Backtick version numbers and HTTP status codes.
 * When describing amounts of memory, write literal numbers and separate the number from the unit.
+  * 8 GB, 128 MB, etc.
+* Write out numbers one through ten, unless they pertain to amounts of memory:
+  * There are three ways to perform this calculation
+* Write out ordinal numbers:
+  * First, second, third, etc.
+* For numbers greater than 1,000 use commas where appropriates.
+  * Do not use commas for machine output such as Unix epoch time: `1529074796`
 
 ## Computer Interfaces
 
 ### Code in Text
 
+* Follow [GDG: code in text](https://developers.google.com/style/code-in-text)
 * Fence code in documentation.
-* When describing implementations or tools, fence the name.
-  * `curl`
-  * `bash`
-* Do not fence program names, fields contents, or interface features unless there is code or non-standard naming present.
+* Use the correct heading such as `javascript`, or `python`
 
 ### Interface Elements
 
 * Interface elements should be **bold**.
 * When describing interface elements include the type of element, unless that element is a button.
+* Axibase products have drop-down lists.
+* Dialogs are windows which open within a page.
+* The **Top Menu** appears along the top of the user interface while the **Left Menu** appears on the left side of the page.
 
 ## Names and Meaning
 
@@ -148,6 +162,9 @@ Exceptions:
 ### Issue Names
 
 * Use prefixes for specific ticket subjects. If `rest-api` is too general a category, add **Python API Client** prefix to the issue subject.
+  * "UI: SQL Query Statistics page error."
 * Use the imperative for new features.
+  * "Implement Data Consistency page."
 * Use descriptive sentences for describing bugs.
+  * "`nmon` property record is not updated."
 * Link to the relevant documentation.
