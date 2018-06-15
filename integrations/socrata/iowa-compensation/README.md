@@ -170,7 +170,7 @@ Explore specific metrics in the **Iowa Seasonally Adjusted Non-Farm Employment b
 
 ![Figure 11](./images/Figure11.png)
 
-The same decline correlating with the recession period is highlighed the figures above.
+The same decline correlating with the recession period is highlighted the figures above.
 
 Below is a table of datasets from `data.iowa.gov` already available in **ChartLab**. Modify configuration in the **Editor** window to compare data across entities. For more information about **ChartLab** syntax or selecting series, see the [ChartLab Introduction](../../shared/chartlab.md).
 
