@@ -156,9 +156,9 @@ To filter data for another `datacenter` series tag, modify the `tags.dc` conditi
 
 The `outage-tickets` dataset visualized in **ChartLab**:
 
-![](images/dc07.png)
+![](./images/dc07.png)
 
-[![](images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d#fullscreen)
+[![](./images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d#fullscreen)
 
 To display the difference between consecutive series values, there are two options.
 
@@ -171,7 +171,7 @@ Use the [`previous`](https://github.com/axibase/charts/blob/master/syntax/functi
 replace-value = value - previousValue
 ```
 
-[![](images/button.png)](https://apps.axibase.com/chartlab/af56007b#fullscreen)
+[![](./images/button.png)](https://apps.axibase.com/chartlab/af56007b#fullscreen)
 
 ### Derived Series Using Aliases
 
@@ -194,10 +194,10 @@ Apply [`aliases`](https://axibase.com/products/axibase-time-series-database/visu
    value = value('raw') - value('prev')
 ```
 
-[![](images/button.png)](https://apps.axibase.com/chartlab/a7b29712)
+[![](./images/button.png)](https://apps.axibase.com/chartlab/a7b29712)
 
 Both methods create the same visualization.
 
-![](images/dc07-delta1.png)
+![](./images/dc07-delta1.png)
 
 > View additional [Charts Functions](https://github.com/axibase/charts/blob/master/syntax/functions.md#-functions).
