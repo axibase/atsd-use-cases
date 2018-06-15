@@ -569,7 +569,7 @@ available that allows them to do just that.
 3. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
 
 ```sh
-   export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
+export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
 ```
 
 Note that both data sets have been collected under one Socrata job.

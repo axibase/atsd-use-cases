@@ -12,7 +12,7 @@ The governments at the federal, state, city, and county level publish datasets i
 
 Using [Axibase Time Series Database](https://axibase.com/docs/atsd/), you can combine datasets from multiple entities in one portal.
 
-This artcle uses data collected from the [Bureau of Labor Statistics](http://www.bls.gov/home.htm).
+This article uses data collected from the [Bureau of Labor Statistics](http://www.bls.gov/home.htm).
 
 ## Iowa Employee Compensation Dataset
 
