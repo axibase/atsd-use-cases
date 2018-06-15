@@ -117,7 +117,7 @@ Exceptions:
 
 ### Code in Text
 
-* Fence code in documentation. 
+* Fence code in documentation.
 * When describing implementations or tools, fence the name.
   * `curl`
   * `bash`
