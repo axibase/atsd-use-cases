@@ -1,32 +1,33 @@
-# Computing Series Delta Values in ATSD
+# Calculating the Difference Between Consecutive Series Values in ATSD
 
 ## Purpose
 
-[Axibase Time Series Database](https://axibase.com/docs/atsd/) (ATSD) has several tools to perform ad hoc calculations which allow you to compute delta values for a given series.
+[ATSD](https://axibase.com/docs/atsd/) has several alternatives to perform ad hoc calculations such as computing the difference between consecutive values for a given series.
 
-This article explains delta value calculation using three tools:
+This article demonstrates this calculation using three methods:
 
 * [**SQL Console**](https://axibase.com/docs/atsd/sql/)
 * [**Data API** Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html)
-* [**Charts** Functions](https://github.com/axibase/charts/blob/master/README.md)
+* [Charts Functions](https://github.com/axibase/charts/blob/master/README.md)
 
 ## Dataset
 
-The data in this article is collected by entity `hetzner` as metric `outage-tickets` which is divided into three series tags (`DC=07`, `DC=10`, and `DC=12`), representing three unique data centers which experienced loss of power.
+The sample dataset in this article is collected by entity `hetzner` as metric `outage-tickets` which is divided into three `datacenter` series tags (`DC=07`, `DC=10`, and `DC=12`), representing three unique datacenters which experienced a loss of power.
 
 ## SQL Console
 
-**SQL Console** is a web-based interface to submit [SQL queries](https://axibase.com/docs/atsd/sql/sql-console.html) to the database and display the results.
+**SQL Console** is a web-based interface to submit [SQL queries](https://axibase.com/docs/atsd/sql/sql-console.html) to ATSD and display the results.
 
 ```sql
 SELECT datetime, value DC07, (value - LAG(value)) PREV
   FROM "outage-tickets"
-WHERE entity = 'hetzner' AND tags.dc = 07
+WHERE entity = 'hetzner' AND tags.dc = '07'
   ORDER BY datetime
 ```
 
-Compare consecutive values with the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function.
+Compute the difference between consecutive values with the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function. When `LAG` encounters a non-existent sample, it returns [`null`](https://axibase.com/docs/atsd/sql/#null) value.
 
+```txt
 | datetime             | DC07 | PREV |
 |----------------------|------|------|
 | 2018-05-24T10:43:00Z | 237  | null |
@@ -56,14 +57,13 @@ Compare consecutive values with the [`LAG`](https://axibase.com/docs/atsd/sql/#l
 | 2018-05-26T11:22:00Z | 105  | -12  |
 | 2018-05-26T12:31:00Z | 86   | -19  |
 | 2018-05-26T13:38:00Z | 0    | -86  |
+```
 
-When `LAG` encounters a non-existent sample, it returns literal [`null`](https://axibase.com/docs/atsd/sql/#null) value.
-
-> For other data center tags, modify the [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause.
+To filter data for another `datacenter` series tag, modify the `tags.dc` condition in the [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause.
 
 ## Series Query
 
-The [REST API](https://axibase.com/docs/atsd/api/data/) allows you insert and retrieve series, properties, messages, and alerts from ATSD as well as query and manage metadata. [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) retrieves time series objects for the specified metric, entity, tag, and interval filters.
+[Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) retrieves time series objects for the specified metric, entity, tag, and interval filters.
 
 ```json
 [{
@@ -106,7 +106,7 @@ The [REST API](https://axibase.com/docs/atsd/api/data/) allows you insert and re
 {"d":"2018-05-26T13:38:00","v":0.0}]}]
 ```
 
-[Rate Processor](https://axibase.com/docs/atsd/api/data/series/rate.html) computes the difference between consecutive samples per unit of time (rate period). If you do not specify a rate period, the function returns the difference between consecutive samples.
+[Rate Processor](https://axibase.com/docs/atsd/api/data/series/rate.html) computes the difference between consecutive samples per unit of time, or rate period. If you do not specify a rate period, the function returns the difference between consecutive samples.
 
 ```json
 [{
@@ -160,13 +160,11 @@ The `outage-tickets` dataset visualized in **ChartLab**:
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d#fullscreen)
 
-Outage ticket reports occurred during local business hours, leaving large time gaps between consecutive samples. Use [`disconnect-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-12) to account for empty periods.
+To display the difference between consecutive series values, there are two options.
 
-[Inheritance](https://axibase.com/products/axibase-time-series-database/visualization/widgets/inheritance/) eliminates redundant syntax when possible. Define the entity and metric at the `[configuration]` level to avoid repetition when creating multiple series from the same metric and entity.
+### Derived Series Using replace-value
 
-To display series delta values, there are two options:
-
-* Use the [`previous`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function and [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/):
+Use the [`previous`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function and [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/):
 
 ```css
 [series]
@@ -175,9 +173,11 @@ replace-value = value - previousValue
 
 [![](images/button.png)](https://apps.axibase.com/chartlab/af56007b#fullscreen)
 
-* Apply [`aliases`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) to two series, raw data and previous data. Hide unneeded series with `display = false` setting. Create a derived third series to calculate delta:
+### Derived Series Using Aliases
 
-```javascript
+Apply [`aliases`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) to two series, raw data and previous data. Hide unneeded series with `display = false` setting. Create a derived third series to calculate the difference between each datapoint for these two series:
+
+```css
   # raw series data
   [series]
    alias = raw
@@ -200,4 +200,4 @@ Both methods create the same visualization.
 
 ![](images/dc07-delta1.png)
 
-> View additional [functions](https://github.com/axibase/charts/blob/master/syntax/functions.md#-functions).
+> View additional [Charts Functions](https://github.com/axibase/charts/blob/master/syntax/functions.md#-functions).
