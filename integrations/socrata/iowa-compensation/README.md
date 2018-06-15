@@ -225,7 +225,7 @@ To summarize the effects of the Great Recession in three parts:
 ## A Closer look at the Iowa Economy
 
 A powerful capability of ATSD is the ability to combine datasets from multiple entities in a single portal. Take these 2 datasets and
-compute additional metrics to create more in-depth level of analysis. The following sections will explore compensation per employee,
+compute additional metrics to create more in-depth level of analysis. The following sections explore compensation per employee,
 adjusted with consumer price index (CPI) statistics to account for inflation for employees in the federal government working in the state of Iowa.
 
 The image below shows year-on-year growth experienced by the **government and government enterprises** industry in Iowa. While growth has slowed slightly over recent

@@ -78,7 +78,7 @@ ACTIVEMQ_SUNJMX_START="-Dcom.sun.management.jmxremote \
    -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_BASE}/conf/jmx.access"
 ```
 
-Either result should be the same as shown in the image below:
+Either result is the same as shown in the image below:
 
 ![SUN_JMX_START_IMAGE](https://axibase.com/wp-content/uploads/2016/03/very_new_screen.png)
 

@@ -191,7 +191,7 @@ Bind the `slack.properties` file to the sandbox container:
    --volume /home/user/slack.properties:/slack.properties
 ```
 
-The bound volume should contain these required parameters in plaintext:
+The bound volume must contain these required parameters in plaintext:
 
 ```txt
 token=xoxb-************-************************
@@ -218,7 +218,7 @@ Bind the `telegram.properties` file to the sandbox container:
    --volume /home/user/telegram.properties:/telegram.properties
 ```
 
-The bound volume should at least contain the required parameters in plaintext:
+The bound volume contains the required parameters in plaintext:
 
 ```txt
 bot_id=*********:***********************************

@@ -73,8 +73,8 @@ Return to the [Index](#index)
 
 ### CPI Calculated from a Variable Baseline
 
-The index is the year used as a baseline for all other years' values. Years which showed an increase in the cost of consumer
-goods will therefore be greater than 100.00 while years which saw deflation in the cost of consumer goods will be less than
+The index is the year used as a baseline for all other year values. Years which showed an increase in the cost of consumer
+goods are therefore greater than 100.00 while years which saw deflation in the cost of consumer goods are less than
 100.00.
 
 **Figure 2.2**: CPI Calculated from a Variable Baseline (1990-07-01) **FRED**

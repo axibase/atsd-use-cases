@@ -1257,7 +1257,7 @@ This is how we obtained certificates in 2015.
 
 ### Custom CA-Signed Certificate
 
-Creating a custom CA and signing 'end entity' certificates is possible but is of limited practical value given that such custom CA certificate will not be present in the clients' trust stores.
+Creating a custom CA and signing 'end entity' certificates is possible but is of limited practical value given that such custom CA certificate is not present in the client trust stores.
 
 Because any CA can sign **any** certificate it exposes clients to security risks (man-in-the-middle attack).
 
@@ -1351,7 +1351,7 @@ cd /etc/letsencrypt/live/atsd.axibase.com
 #### Renewal
 
 * The certificate is issued only for 90 days.
-* Port 80 must remain open (or should be open using pre-hook) for renewals to work.
+* Port `80` must remain open, or already be open using pre-hook, for renewals to work.
 * The certbot adds a cron task to renew the certificate automatically.
 * Auto-renewal is triggered by cron every 12 hours with some jitter.
 
@@ -1385,7 +1385,7 @@ The initial integration of the ACME protocol in ATSD contained essentially the s
 
 We implemented HTTP and TLS challenges. The TLS challenge was then discontinued.
 
-We estimate that most of our enterprise customers will adopt a centralized approach to automated certificate issuance using DNS challenge. The deployment of certbot on end nodes (hosts) will not be necessary.
+We estimate that most of our enterprise customers do not plan to adopt a centralized approach to automated certificate issuance using DNS challenge. The deployment of certbot on end nodes (hosts) is not necessary.
 
 ![](./images/certbot-workflow.png)
 
@@ -1412,7 +1412,7 @@ sudo curl -k -u cert-renew:********** -X POST https://locahost:8443/admin/certif
    -F "privkey=@privkey.pem" -F "fullchain=@fullchain.pem" -w "\n%{http_code}\n"
 ```
 
-ATSD will validate the certificate and install it without restarting the server.
+ATSD validates the certificate and install it without restarting the server.
 
 We had to upgrade Jetty to version **9.4** to support SSLContent reloading without reboot.
 
@@ -1737,13 +1737,13 @@ ChartLab [crt.sh](https://apps.axibase.com/chartlab/0ffbd30b/6#fullscreen) Porta
 
 ### Generate Custom CA Certificate
 
-Generate private key file for the new custom CA which will be manually added to the trust stores. This key needs to guarded as **top secret**.
+Generate private key file for the new custom CA which is manually added to the trust stores. This key needs to guarded as **top secret**.
 
 ```sh
 openssl genrsa -des3 -out axibase_root_ca.key 2048
 ```
 
-Generate root CA certificate. This certificate will be used to sign (validate) end entity certificates.
+Generate root CA certificate. This certificate is used to sign (validate) end entity certificates.
 
 ```sh
 openssl req -x509 -new -nodes -key axibase_root_ca.key -sha256 -days 90 -out axibase_root_ca.pem
@@ -1783,7 +1783,7 @@ These browsers inherit root CAs from the operating system trust store.
 
 * Firefox Browser
 
-Firefox will display 'Unknown Identity' error.
+Firefox displays an 'Unknown Identity' error.
 
 Import 'Axibase Root CA' via **Settings > Security and Privacy**.
 
@@ -1988,7 +1988,7 @@ The `atsd.axibase.com` domain is trusted because its certificate is signed by 'A
 
 ![](./images/chrome_root_ca_ok.png)
 
-Firefox will display 'Unknown Identity' error.
+Firefox displays an 'Unknown Identity' error.
 
 ![](./images/firefox_root_ca_error.png)
 
