@@ -9,11 +9,11 @@ Refer to [Google Developer Documentation Style Guide](https://developers.google.
 * Do not backtick acronyms.
 * Replace "i.e." or "e.g." with "for example".
 * Always abbreviate:
-  - ATSD (if used in our docs repositories).
-  - Common data formats: CSV, JSON, XLS, XML, XLS.
-  - Widely known terms: SSH, SQL, API, HTTP, REST, JVM.
+  * ATSD (if used in our docs repositories).
+  * Common data formats: CSV, JSON, XLS, XML, XLS.
+  * Widely known terms: SSH, SQL, API, HTTP, REST, JVM.
 * If an acronym is new, introduce it in the beginning and re-use thereafter.
-  - "Axibase Time Series Database (ATSD) is a non-relational database."
+  * "Axibase Time Series Database (ATSD) is a non-relational database."
 
 ## Active Voice
 
@@ -22,7 +22,11 @@ Refer to [Google Developer Documentation Style Guide](https://developers.google.
 
 ## Capitalization
 
-* Capitalize proper nouns, headings, and interface elements.
+* Adhere to [GDG: capitalization](https://developers.google.com/style/capitalization).
+* Capitalize heading content, other than prepositions and articles.
+* Do not capitalize general terms like "the database."
+* Do not capitalize the first word of a list, after the heading:
+  * Capitalize Title: but not content.
 
 ## Contractions
 
