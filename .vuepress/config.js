@@ -13,7 +13,11 @@ const topNavMenu = [
 ]
 
 const landingPageMenu = [
-    '',
+    ['/research/', 'Research'],
+    [ '/chart-of-the-day/', 'Chart of the Day'],
+    [ '/trends/',  'Trends' ],
+    [ '/integrations/', 'Integrations' ],
+    [ '/tutorials/', 'Tutorials' ],
 ];
 
 const chartofthedayMenu = [
@@ -66,7 +70,7 @@ const trendsMenu = [
 
 module.exports = {
     base: '/use-cases/',
-    title: 'ATSD Use Cases',
+    title: 'Axibase Time Series Database Use Cases',
     description: "Use Cases and Walkthrough Guides for Axibase® Time Series Database",
     head: [
         ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]

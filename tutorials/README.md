@@ -6,6 +6,7 @@
 * [Creating Calculated Metrics in ChartLab and SQL Console](add-calculated-value/README.md)
 * [Curve Smoothing Using Moving Averages](moving-avg/README.md)
 * [Historizing Metrics Stored in Database](historize/README.md)
+* [Computing Series Delta Values](subtract-subsequent-values/README.md)
 
 ## Configuration Import
 

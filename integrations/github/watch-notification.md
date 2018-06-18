@@ -38,7 +38,7 @@ docker run -d -p 8443:8443 \
 
 Watch the container logs for `All applications started`.
 
-```sg
+```sh
 docker logs -f atsd-sandbox
 ```
 

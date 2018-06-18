@@ -174,7 +174,7 @@ The webhook arrives in less than 5 minutes, which is the collector polling inter
 
 If you do not have a good failure candidate handy, send a test `message` command for `test/my-image` project as described below.
 
-Adjust the frequency in Collector web interface at `https://docker_host:8443`. Open `dockerhub-poller` job and set the **Cron Expression** to `0 * * * * ?` in order to run the data collection every minute.
+Adjust the frequency in Collector web interface at `https://docker_host:8443`. Open `dockerhub-poller` job and set the **`cron` Expression** to `0 * * * * ?` in order to run the data collection every minute.
 
 ## Automation
 

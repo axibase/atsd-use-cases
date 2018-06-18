@@ -1352,8 +1352,8 @@ cd /etc/letsencrypt/live/atsd.axibase.com
 
 * The certificate is issued only for 90 days.
 * Port `80` must remain open, or already be open using pre-hook, for renewals to work.
-* The certbot adds a cron task to renew the certificate automatically.
-* Auto-renewal is triggered by cron every 12 hours with some jitter.
+* The certbot adds a `cron`task to renew the certificate automatically.
+* Auto-renewal is triggered by `cron` every 12 hours with some jitter.
 
 View certbot renewal command
 
@@ -1783,9 +1783,9 @@ These browsers inherit root CAs from the operating system trust store.
 
 * Firefox Browser
 
-Firefox displays an 'Unknown Identity' error.
+Firefox displays an **Unknown Identity** error.
 
-Import 'Axibase Root CA' via **Settings > Security and Privacy**.
+Import **Axibase Root CA** via **Settings > Security and Privacy**.
 
 #### Java
 

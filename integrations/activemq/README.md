@@ -139,7 +139,7 @@ If the `activemq_hostname` cannot be resolved, add it to `/etc/hosts` manually.
 1. Log in to Axibase Collector at `https://collector_hostname:9443`.
 2. From the **Jobs** page, locate the `jmx-activemq` job.
 3. On the **JMX Job** page, enable collection by setting the flag in the **Enabled** check box, click **Save**.
-4. Adjust the cron expression if needed. By default, Collector executes the job every ten seconds. For more information on cron expressions, see [Scheduling](https://github.com/axibase/axibase-collector/blob/master/scheduling.md).
+4. Adjust the `cron` expression if needed. By default, Collector executes the job every ten seconds. For more information on `cron` expressions, see [Scheduling](https://github.com/axibase/axibase-collector/blob/master/scheduling.md).
 
 ![JMX_JOB](https://axibase.com/wp-content/uploads/2016/03/jmx_job_to_configuration.png)
 

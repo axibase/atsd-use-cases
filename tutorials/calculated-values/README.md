@@ -4,39 +4,41 @@
 
 ## Summary
 
-Using [calculated values](../add-calculated-value/README.md) in the [ChartLab](https://apps.axibase.com/chartlab) interface
-is useful for creating multiple outputs from one set of underlying data. [Axibase Time Series Database](https://axibase.com/docs/atsd/)
-supports a range of in-built functions which allow end-users to manipulate a dataset to derive the desired meaning from it.
+[Calculated values](../add-calculated-value/README.md) in [**ChartLab**](https://apps.axibase.com/chartlab)
+are useful for creating multiple visualizations from one set data. [Axibase Time Series Database](https://axibase.com/docs/atsd/)
+supports a range of in-built functions which allow end-users to manipulate a dataset.
 
-The St. Louis branch of the Federal Reserve branch maintains FRED, short for [Federal Reserve Economic Data](https://fred.stlouisfed.org/), an
+The St. Louis branch of the Federal Reserve branch maintains [Federal Reserve Economic Data](https://fred.stlouisfed.org/) (FRED), an
 open-access platform for analyzing the data collected and published by the Federal Reserve. One important metric tracked
-by FRED is the **CPIAUCSL** - [Consumer Price Index](https://fred.stlouisfed.org/series/CPIAUCSL#0), shortened as CPI. The Consumer Price
-Index is used to track inflation by measuring the costs of goods relative to some year.
+by FRED is **CPIAUCSL**: [Consumer Price Index](https://fred.stlouisfed.org/series/CPIAUCSL#0), or CPI. The Consumer Price Index tracks inflation by measuring the costs of goods.
 
 ## Problem Brief
 
-Using a number of functions supported in the ChartLab interface, the [following visualization](https://fred.stlouisfed.org/series/CPIAUCSL#0)
-can be replicated in ATSD. Explore the FRED visualization with the _EDIT GRAPH_ button by selecting the desired
-output. To learn more about how any of the metrics are calculated from the underlying data, the [following page](https://fredhelp.stlouisfed.org/fred/data/understanding-the-data/formulas-calculate-growth-rates/)
-provides information about the formulas used to modify the original series. A brief tutorial on data modification in the
-FRED interface is shown below:
+Replicate and modify the FRED [CPI visualization](https://fred.stlouisfed.org/series/CPIAUCSL#0) using **ChartLab**.
+
+Modify the FRED visualization by clicking **EDIT GRAPH** and selecting the desired transformation. To learn more about how any of the metrics are calculated from the underlying data, [What Formulas are Used to Calculate Growth Rates?](https://fredhelp.stlouisfed.org/fred/data/understanding-the-data/formulas-calculate-growth-rates/)
+provides information about the underlying mathematics.
+
+A brief tutorial on data modification in the FRED interface is shown below:
 
 ![](./images/tut-1.png)
 
-* Open the transformation interface by clicking the highlighted _EDIT GRAPH_ button above.
+* Open the transformation interface by clicking **EDIT GRAPH**.
 
 ![](./images/tut-2.png)
 
-* Under the _Units_ dropdown, select the desired transformation.
+* From the **Units** drop-down list, select the desired transformation.
 
 ![](./images/tut-3.png)
 
-* Modify any sub-features of the transformation necessary for the required output.
+* Modify any sub-features of the transformation as needed.
 
 ## Solution
 
 A side-by-side comparison of each feature of the Consumer Price Index transformation is shown below, as well as links to the accompanying
-visualizations. Because ATSD supports storing historical data from the year 1970 onward while the Federal Reserve tracks
+visualizations.
+
+Note that because ATSD supports storing historical data from the year 1970 onward while the Federal Reserve tracks
 data from 1947 onward, small scale differences are expected in the outputs of each graph.
 
 ## Index
@@ -55,8 +57,6 @@ data from 1947 onward, small scale differences are expected in the outputs of ea
 
 ### Consumer Price Index
 
-The Consumer Price Index is one of the most relevant metrics used to calculate the rate and severity of inflation.
-
 **Figure 1**: Consumer Price Index for Baseline Year 1982 (1947-2017) **FRED**
 
 ![](./images/cpi-1.1.png)
@@ -73,9 +73,8 @@ Return to the [Index](#index)
 
 ### CPI Calculated from a Variable Baseline
 
-The index is the year used as a baseline for all other year values. Years which showed an increase in the cost of consumer
-goods are therefore greater than 100.00 while years which saw deflation in the cost of consumer goods are less than
-100.00.
+The index is the baseline year when performing calculations. Years showing an increase in the cost of consumer
+goods are therefore greater than 100.00 while years exhibiting deflation in the cost of consumer goods based on the index are less than 100.00.
 
 **Figure 2.2**: CPI Calculated from a Variable Baseline (1990-07-01) **FRED**
 
@@ -89,7 +88,7 @@ goods are therefore greater than 100.00 while years which saw deflation in the c
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/978c79b4/4/#fullscreen)
 
-> In ChartLab, use the dropdown menu at the top of the visualization to select the year to be used as a baseline, or hardcode
+In **ChartLab**, use the drop-down list at the top of the visualization to select the year to be used as a baseline, or hardcode
 a year not included in the dropdown by modifying one of the dates in the `keyDates` list.
 
 Key Components of This Visualization:
@@ -109,7 +108,9 @@ list keyDates = 1970-11-01,
 endlist
 ```
 
-* These dates are fed into the dropdown menu which represent the official start dates of several recessions throughout U.S. history. The syntax for this drop-down list is shown below:
+* These dates are displayed in the drop-down list. The dates represent the official start dates of recessions throughout U.S. history. 
+
+The syntax for this drop-down list is shown below:
 
 ```ls
   [dropdown]
@@ -121,15 +122,16 @@ endlist
     endfor
 ```
 
-> For more information about the above syntax see the [documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/).
+> For more information about the above syntax see the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/).
 
 By modifying any of the dates contained in the `keyDates` list above, the user can select any desired date to set as the
 baseline value, and the `value` equation contained in the `[option]` portion of the `[dropdown]` configuration above uses
-a simple formula to establish the new index. The `on-change` setting defines this newly calculated series, and is explained
-piecewise below:
+a simple formula to establish the new index.
 
-* `widget.config.series[0]` selects the series to be replaced. Series are indexed beginning with 0 and increasing by a single step for each additional series (0,1,2,3....). There is only one underlying series in this visualization.
-* `value = this.value` assigns a user-defined value, that is, the option selected in the dropdown menu, as the value for the series defined in the the `widget.config` portion of the script. `this` defines the specific object to be modified, in this case the dropdown menu.
+The `on-change` setting defines this newly calculated series, and is explained piecewise below:
+
+* `widget.config.series[0]` selects the series to be replaced. Series are indexed beginning with `0` and increasing by a single step for each additional series (`0`,`1`,`2`,`3`....). There is only one underlying series in this visualization.
+* `value = this.value` assigns a user-defined value, the option selected in the drop-down list, as the value for the series defined in the the `widget.config` portion of the script. `this` defines the specific object to be modified, in this case the drop-down list.
 * `widget.replaceSeries(widget.config.series)` replaces the underlying values of the original series defined as a parameter of the function, with the newly calculated values defined in the `[option]` setting.
 
 Return to the [Index](#index)
@@ -182,7 +184,7 @@ Underlying Formula:
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p != null && v != null) return v - p;
 ```
 
-* This setting uses a second underlying series which is not enabled, to select values of the Consumer Price Index from one year ago using a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting,and comparing the data to the current year values.
+* This setting uses a second underlying series to select values of the Consumer Price Index from one year ago using a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting and comparing the data to the current year values.
 
 Return to the [Index](#index)
 
@@ -258,7 +260,7 @@ Underlying Formula:
 value = (Math.pow(( value("cpi") / previous("cpi") ), 12) - 1) * 100
  ```
 
-* This setting uses the built-in [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) javascript object.
+* This setting uses the built-in [`Math`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) javascript object.
 
 Return to the [Index](#index)
 
@@ -355,10 +357,3 @@ value = value("cpi") / value("cpi_max") * 100 || null
 ```
 
 Return to the [Index](#index)
-
-## Conclusion
-
-These visualizations demonstrate the capabilities of the ChartLab interface which uses declarative syntax to create derived series.
-Any of these formulas or settings can be applied to any time series dataset in order to enable customizable transformations
-of the underlying data. Contact [Axibase](https://axibase.com/feedback) with any questions regarding the above
-information.

@@ -9,7 +9,7 @@ This document describes how to monitor availability and performance of [Apache K
 3. Import the [`kafka-jmx`](resources/job_jmx_kafka-jmx.xml) job.
 4. Locate the newly-imported `kafka-jmx` job on the **Jobs** page.
 5. On the **JMX Job** page, enable the job status by setting the flag in the **Enabled** checkbox.
-6. Adjust the cron expression if required. For more information on cron expressions, see [Scheduling](https://github.com/axibase/axibase-collector/blob/master/scheduling.md).
+6. Adjust the `cron` expression if required. For more information on `cron` expressions, see [Scheduling](https://github.com/axibase/axibase-collector/blob/master/scheduling.md).
 7. Select a target ATSD database for storing data.
 8. Click **Save**.
 

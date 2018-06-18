@@ -2,29 +2,22 @@
 
 ## Problem Overview
 
-Working with highly-granularized data presents a number of unique challenges to the entire range of data users. Sometimes
-the data is stored incorrectly, creating the need for [modification upon import](../schema-based-parser-mod/README.md),
-and sometimes the nature of the data makes it difficult to work with. Take the following example: an analyst is presented
-with two possibly-related datasets, [cargo tonnage data](https://github.com/axibase/open-data-catalog/blob/master/datasets/nthh-fhwt.md) from
-the two largest airports in the New York City Metropolitan Area and [passenger enplanement data](https://github.com/axibase/open-data-catalog/blob/master/datasets/vpv5-zd4k.md)
-from the same airports.
+An operations analyst has with two possibly-related datasets, [cargo tonnage data](https://github.com/axibase/open-data-catalog/blob/master/datasets/nthh-fhwt.md) from the two largest airports in the New York City Metropolitan Area and [passenger enplanement data](https://github.com/axibase/open-data-catalog/blob/master/datasets/vpv5-zd4k.md)
+from the same airports. The analyst must create a relational model between the two datasets for a major airline looking to expand their presence
+at either LaGuardia or John F. Kennedy Airport in order to facilitate the maximum number of passengers and cargo. 
 
-The analyst is asked to create a relational model between the two datasets for a major airline looking to expand their presence
-at either LaGuardia or John F. Kennedy Airport in order to facilitate the maximum number of passengers and cargo. The first
-data set, collected by the [Port Authority of New York and New Jersey](http://www.panynj.gov/) is aggregated monthly while the second dataset from
+The first dataset, collected by the [Port Authority of New York and New Jersey](http://www.panynj.gov/) is aggregated monthly while the second dataset from
 the [New York Department of Transportation](https://www.dot.ny.gov/index) is aggregated annually.
 
-The analyst knows that the data must be modified somehow, but using a schema based parser to aggregate the Port Authority Cargo data
-would destroy the fine granularization that was created by monthly collection over the entire observation period and using an
-average baseline calculated over the entire observation period would return results that neglected current trends because
-four decades worth of data would be regarded equally.
+* Annually aggregating the Port Authority Cargo data would destroy the granularization that was created by monthly collection over the observation period.
+* Using an average baseline calculated over the entire observation period would return results that neglected current trends because four decades worth of data would be regarded equally.
 
-Enter [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
-setting.
+With [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
+setting, data with differing granularization is easily comparable.
 
 ## Data
 
-The tonnage dataset is visualized below. Because of the differences in the ranges of the data, it has been split into two charts so that the high level
+The tonnage dataset is visualized below. Because of the differences in the ranges of the data, there are two charts so that the high level
 of variance is visible for each metric:
 
 **Figure 1.1**: JFK Cargo Tonnage (1977-2015)
@@ -39,11 +32,6 @@ of variance is visible for each metric:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f36262ee/#fullscreen)
 
-Averaging cargo data across the entire observed period would return results that considered data from almost
-half a century ago as equal to data recorded two years ago. While potentially helpful in another analysis, for the purposes
-described above, such aggregation would not only be unhelpful, but most likely detrimental to the desired outcome, which is
-dependant on current trends.
-
 The passenger enplanement data, aggregated annually is shown below:
 
 **Figure 1.3**: LGA and JFK Passenger Enplanement Data (1997-2015)
@@ -52,8 +40,8 @@ The passenger enplanement data, aggregated annually is shown below:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/00cf9be3/#fullscreen)
 
-Not only is the granularization mismatched but the observed periods differ by twenty years. The latter problem has a quick-enough solution, modify the observation period using the dropdowns in ChartLab or hardcode the desired timespan in the editor
-window with the `starttime` setting, but the former doesn't offer such an obvious solution.
+The granularization is mismatched and the observed periods differ by twenty years. The latter problem has a simple solution, modify the observation period using the drop-down lists in **ChartLab** or hardcode the desired timespan in the editor
+window with the `starttime` setting, but the former does not offer such an obvious solution.
 
 The syntax required to modify the dataset to reflect the moving average is two parts and shown below. It can be placed under
 the `[widget]` field to modify all available series, or placed under an individual `[series]` field to modify only one desired
@@ -64,11 +52,11 @@ series.
   period = 1 year
 ```
 
-The `period` feature of the setting is user-assigned and can be set as low as millisecond granularity and as high as any
+The `period` is set by the user and able to be as low as millisecond granularity and as high as any
 number of years. This two line syntax calculates the average of each annual input and aggregates the value to return one value
-per selected period. Additionally, this type of ad-hoc modification does nothing to the underlying data, so it may be returned
-to at any time. Read detailed documentation about the `wtavg` setting as well as other supported aggregation functions
-[here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/).
+per selected period. Additionally, this type of ad hoc modification does nothing to the underlying data.
+
+Read detailed documentation about the `wtavg` setting and other supported [aggregation functions](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/).
 
 ## Implementation
 
@@ -90,7 +78,7 @@ Applying the moving, or weighted, average to **Figures 1.1** and **1.2** is show
 
 The analyst is now able to more accurately judge the relationship between the two datasets because of the equal rate of
 granularization. Combining the JFK and LGA elements from each of the two datasets, and using the `mode = column` setting,
-produces:
+produces the following visualizations:
 
 **Figure 2.3**: JFK Cargo Tonnage vs. Passenger Enplanement (1997-2015)
 
@@ -116,12 +104,12 @@ Scale Modification:
 enplanements = value/10000
 ```
 
-Once the comparison is complete, removing the `statistic` setting from the editor window returns the data to the original
-state without additional computation. Alternatively, it may be helpful to compare the modified chart with the original to
-calculate concrete monthly baselines. Airport traffic and use is hugely seasonal, comparing values month to month is not only
-ineffective, but misleading. Instead, months must be compared across different years and with the moving average calculation
-included no additional calculations need be performed (such as attempts to correct for overall increases and decreases in
-airport traffic) because the information is now included in the underlying data.
+Once the comparison is complete, remove the `statistic` setting from the **Editor** window to return the data to the original
+state.
+
+Alternatively, it may be helpful to compare the modified chart with the original to calculate concrete monthly baselines. Airport traffic and use is seasonal, so comparing values month to month may be misleading.
+
+With the moving average calculation included year-on-year monthly data is calculated.
 
 ![](./images/ra-009.png)
 
@@ -131,6 +119,4 @@ airport traffic) because the information is now included in the underlying data.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/a4d77c47/#fullscreen)
 
-Download the Community Edition of Axibase [here](https://axibase.com/docs/atsd/installation/),
-view prepared public datasets [here](https://github.com/axibase/open-data-catalog), and contact [Axibase](https://axibase.com)
-with any questions [here](https://axibase.com/feedback/).
+For more information, see the [ATSD Documentation](https://axibase.com/docs/atsd/).

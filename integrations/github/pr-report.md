@@ -2,30 +2,49 @@
 
 ## Overview
 
-This guide shows how to configure [ATSD](https://axibase.com/docs/atsd/) to produce a daily report with all open Pull Requests across an organization's entire collection of repositories and email it to subscribed users. The report will have two parts: open Pull Requests that are able to be merged and passing all secondary status checks, and open Pull Requests that are not ready to be merged because they are failing one or more secondary status checks. Each report will be delivered separately. GitHub [webhook services](pr-notification.md) may be used to notify repository owners and administrators when a new Pull Request is opened, but for larger organizations with a large collection of repositories, individual Pull Requests may be missed and left open leading to potential conflicts or inaccurate code / documentation. This feature allows repository owners and administrators to monitor their work and receive a daily report with the status of all open Pull Requests across an entire repository library. Follow the instructions to configure the notifications to be sent directly to any group of subscribers via email with [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [GitHub v4 API](https://developer.github.com/v4/). Setup should take around 10 minutes.
+Configure ATSD to produce a daily report with all open Pull Requests across multiple repositories and email the consolidated report to subscribers. The report has two parts: open Pull Requests passing all status checks, and open Pull Requests failing one or more status checks.
+
+While GitHub [webhook integration](pr-notification.md) can notify repository owners of new Pull Requests, the number of real-time notifications for teams with a large collection of repositories maybe overwhelming. Use this guide to deliver a consolidated report for all Pull Request activities on GitHub using programmatic integration with the GitHub [GraphQL](https://graphql.org/) service.
 
 ![](./images/pr-report-workflow.png)
 
-## Purpose
+## Generate OAuth Access Token
 
-Large organizations maintain large GitHub libraries with many repositories. Keeping track of many incoming Pull Requests is important to maintain accurate documentation and up-to-date code accessible to end users, but even attentive repository administrators may miss the occasional Pull Request. Stay on top of open Pull Requests with daily reports delivered to a list of subscribers.
+The report uses an [OAuth Personal Token](https://blog.github.com/2013-05-16-personal-api-tokens/) to query the GitHub API without transmitting user login information.
 
-GitHub features email notifications for individual repositories, but the task of tracking Pull Requests across many repositories may be better accomplished using programmatic integration leveraging the [GraphQL](https://graphql.org/) API query language, featured in the GitHub API.
+While logged in to GitHub, click the user profile picture in the upper-right corner and select **Settings**.
 
-In contrast to the [GitHub v3 REST API](https://developer.github.com/v3/), the latest [GitHub v4 GraphQL API](https://developer.github.com/v4/) offers more flexibility by replacing multiple REST requests with a single call to fetch all relevant data.
+![](./images/developer-settings.png)
+
+Open the **Developer Settings** page and navigate to the **Personal Access Tokens** tab.
+
+![](./images/personal-access-tokens.png)
+
+Click **Generate New Token** and enter the account password when prompted.
+
+![](./images/read:org.png)
+
+Configure the token to grant **read:org** permissions in the **admin:org** section by checking the appropriate box. This scope grants read-only organization access to any user with this token, keep the contents confidential.
+
+Copy the token to the `TOKEN` parameter of the [sandbox launch command](#launch-atsd-sandbox).
+
+> For more information about token scopes, see [GitHub Developer Documentation](https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/).
 
 ## Launch ATSD Sandbox
 
-Execute the `docker run` command to launch a local ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
+Execute the `docker run` command shown below to launch an ATSD [sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) instance.
 
-The launch command must be modified to include legitimate information: replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container will be running.
-The `ORGANIZATION` variable should contain the case-sensitive name of the organization whose repositories should be queried when generating the daily report. The `TOKEN` variable should contain the [GitHub OAuth token](#generating-oauth-access-token) which must be generated to query repositories using the GraphQL API. The `SUBSCRIBERS` variable should contain the comma-separated list of email addresses who will be subscribed to the daily report.
+Modify the launch command to include your particular settings:
+
+* The `ORGANIZATION` variable specifies the case-sensitive name of the organization on GitHub to monitor.
+* Copy [GitHub OAuth token](#generate-oauth-access-token), generated before, to the `TOKEN` variable.
+* The `SUBSCRIBERS` variable contains the comma-separated list of email addresses subscribed to the daily report.
+* Bind `/home/user/mail.properties` file via `volume`.
 
 ```sh
 docker run -d -p 8443:8443 \
   --name=atsd-sandbox \
   --env START_COLLECTOR=off \
-  --env SERVER_URL=https://atsd.company_name.com:8443 \
   --env ORGANIZATION=MyOrganization \
   --env TOKEN=**************************************** \
   --env SUBSCRIBERS=myuser@example.org \
@@ -35,9 +54,7 @@ docker run -d -p 8443:8443 \
   axibase/atsd-sandbox:latest
 ```
 
-For information about creating a new organization, see the [GitHub Help Documentation](https://help.github.com/articles/creating-a-new-organization-from-scratch/).
-
-Mail configuration has several required parameters, passing these parameters into the container via mounted file is the simplest solution. The `volume` variable should point to the **absolute path** where a plaintext file is stored containing the following parameters:
+Mail configuration has several required parameters, passing these parameters into the container via mounted file is the simplest solution. The `volume` variable must point to the absolute path to a file containing the following parameters:
 
 ```ls
 server=smtp.example.org
@@ -45,87 +62,65 @@ user=myuser@example.org
 password=secret
 ```
 
-This `mail.properties` file defines the mail server which will send outgoing reports. Replace `server`, `user`, and `password` parameters with legitimate credentials. If your outgoing mail server uses a different port than 587 for SMTP queries, define it as an additional parameter in the `mail.properties` file.
+Replace `server`, `user`, and `password` parameters with actual values. If the outgoing mail server uses a different port than `587` for SMTP messages, define it as an additional parameter:
 
 ```ls
 port=465
 ```
 
-Watch the sandbox container logs for `All applications started` and `Mail Client configured`.
+Watch the sandbox container logs for `All applications started` and `Mail Client configured` messages.
 
 ```sh
 docker logs -f atsd-sandbox
 ```
 
-If **Mail Client** is successfully configured, ATSD will notify:
+The log file prints the following message if **Mail Client** configuration is successful:
 
 ```txt
 Mail Client test successful.
 ```
 
-If invalid parameters are provided or the connection test otherwise fails, ATSD with provide a warning:
-
-```txt
-Mail Client test failed: Invalid email address
-```
-
-Upon failure, stop the container:
-
-```sh
-docker rm -vf atsd-sandbox
-```
-
-Confirm the validity of parameters in `mail.properties` file and relaunch.
-
-Upon successful completion, the **Mail Client** will automatically send subscribed users a confirmation email to confirm connectivity.
+Upon successful completion, **Mail Client** in ATSD sends subscribed users a confirmation email.
 
 ![](./images/test-email.png)
 
-After initial launch, if **Mail Client** settings need to be reconfigured, follow these [instructions](https://axibase.com/docs/atsd/administration/mail-client.html).
+> For advanced launch settings refer to [Sandbox Documentation](https://github.com/axibase/dockers/tree/atsd-sandbox#overview).
 
-ATSD web interface is accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports).
+## Configure Subscriber List
 
-> For advanced launch settings refer to this [guide](https://github.com/axibase/dockers/tree/atsd-sandbox).
+After initial launch, you may modify the list of subscribers at any time. Log in to the ATSD web interface, accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports). Open the **Alerts** menu and select **Rules**.
 
-## Generating OAuth Access Token
+![](./images/alerts-rules.png)
 
-The GitHub API may be accessed [several ways](https://developer.github.com/v3/auth/#other-authentication-methods). This tool uses an [OAuth Personal Token](https://blog.github.com/2013-05-16-personal-api-tokens/) to query the API without sending user login information. Follow these instructions to generate a personal token and store it in the local ATSD instance.
+Search for the `github-daily-pr-status` rule and open the **Rule Editor** by clicking the link in the **Name** column.
 
-While logged in to GitHub, click your profile picture in the upper-right corner from any page, then click **Settings**
+![](./images/search-rule.png)
 
-![](./images/developer-settings.png)
+Open the **Email Notifications** tab in the **Rule Editor** and modify the **Recipients** field. Emails must be comma-separated.
 
-Open the **Developer Settings** page and navigate to the **Personal Access Tokens** tab.
-
-![](./images/personal-access-tokens.png)
-
-Click **Generate New Token**, you will be prompted to enter your password.
-
-![](./images/read:org.png)
-
-Configure the token to grant **read:org** permissions in the **admin:org** section. This scope grants read-only organization access to any user with this token, keep it confidential. For more information about token scopes, see [GitHub Developer Documentation](https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/).
+![](./images/add-new-email.png)
 
 ## Configuring Report Delivery
 
-By default, the `github-daily-pr-status` rule is configured to deliver a report upon launch and then again every morning at 5:00 AM server local time. Open the **Settings** menu in ATSD interface and select **System Information** to view server local time.
+By default, the `github-daily-pr-status` rule delivers a report upon launch and then again every morning at 5:00 AM server local time. Open the **Settings** menu in ATSD and select **System Information** to view server local time.
 
-Modify delivery time by opening the `github-daily-pr-status` rule from the **Rules** page. The `Condition` field contains:
+Modify delivery time by opening the `github-daily-pr-status` rule from the **Rules** page. The **Condition** field contains:
 
 ```java
 now.getHourOfDay() == 5
 ```
 
-Change the value of this expression to the integer UTC 24-hour time when the report should be delivered.
+Change the value of this expression to the integer 24-hour time when ATSD must deliver the report.
 
 ```java
 now.getHourOfDay() == 18
 ```
 
-Report delivery will be scheduled for 6:00 PM server local time.
+Report delivery now occurs at 6:00 PM server local time.
 
-## Notification Payload
+## Report Contents
 
-The `github-daily-pr-status` rule builds an HTML table with information returned by the GQL query, according to the following configuration found in the **Text** field of the **Email Notifications** tab:
+The `github-daily-pr-status` rule builds an HTML table with information returned by the GraphQL query according to the configuration found in the **Text** field of the **Email Notifications** tab:
 
 ```javascript
 ${addTable(
@@ -140,15 +135,15 @@ ${addTable(
 , 'html', true)}
 ```
 
-> The `FAILURE` email report uses an identical configuration with the exception of the `JSONPath`, which instead evaluates `state == 'FAILURE'`.
+> The report with failed Pull Requests uses an identical configuration with the exception of the `JSONPath`, which instead evaluates `state == 'FAILURE'`.
 
-The `queryConfig` clause calls `github-graphql-table` which queries the [GraphQL API v4](https://developer.github.com/v4/guides/forming-calls/#the-graphql-endpoint) via POST method and returns open Pull Request information in JSON format.
+Table Function [`jsonToLists`](https://axibase.com/docs/atsd/rule-engine/functions-table.html#jsontolists) converts JSON file to string list. Table function [`jsonPathFilter`](https://axibase.com/docs/atsd/rule-engine/functions-table.html#jsonpathfilter) parses the original document based on `JSONPath` defined as `"$..pullRequests.nodes[?...]"`.
 
-The `'GQL_query'` variable is delivered as the outgoing query and returns the `pullRequests` [node](https://developer.github.com/v4/guides/intro-to-graphql/#node), which is a JSON list of open Pull Requests.
+> For additional Table Functions, view [ATSD Documentation](https://axibase.com/docs/atsd/rule-engine/functions-table.html).
 
-[GitHub Developer Documentation](https://developer.github.com/v4/guides/forming-calls/#example-query) offers a step-by-step walkthrough for forming each part of a query using the v4 API.
+The [`queryConfig`](https://axibase.com/docs/atsd/rule-engine/functions-web-query.html#queryconfig) function queries the [GraphQL API v4](https://developer.github.com/v4/guides/forming-calls/#the-graphql-endpoint) returns Pull Request information in JSON format.
 
-Consider this query:
+[GitHub Developer Documentation](https://developer.github.com/v4/guides/forming-calls/#example-query) offers a step-by-step guide to form each part of a query using the `v4` API.
 
 ```graphql
 query {
@@ -190,9 +185,11 @@ query {
 }
 ```
 
-This query targets [Apache Software Foundation](https://github.com/apache) repositories and returns a JSON list with the first five Pull Requests from the first repository in their GitHub library, alphabetically. These settings may be configured by modifying the `pullRequests(first: 5, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) {` and `repositories(first:1, orderBy: {field: PUSHED_AT, direction: DESC}) {` clauses, respectively.
+The above query targets [Apache Software Foundation](https://github.com/apache) repositories and returns a JSON list with the first five Pull Requests from the first repository of the Apache GitHub library, alphabetically.
 
-<details><summary>View the JSON results of the above GraphQL query.</summary>
+Configure these settings by modifying the `pullRequests(first: 5, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC})` and `repositories(first:1, orderBy: {field: PUSHED_AT, direction: DESC})` clauses, respectively. Modify this query on the **Data > Replacement Tables** page.
+
+<details><summary>View the JSON results of the GraphQL query.</summary>
 <p>
 
 ```json
@@ -382,21 +379,19 @@ This query targets [Apache Software Foundation](https://github.com/apache) repos
 </p>
 </details>
 
-The GraphQL query returns a JSON list of Pull Requests based on `MERGEABLE` status. Among the five returned Pull Requests, one has `'SUCCESS'` state, two have `'FAILURE'` state, and two have `'PENDING'` state. ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) filters these results with `JSONPath` syntax:
+The GraphQL query returns a JSON list of Pull Requests based on `MERGEABLE` status. Among the five returned Pull Requests, one has `'SUCCESS'` state, two have `'FAILURE'` state, and two have `'PENDING'` state. ATSD [**Rule Engine**](https://axibase.com/docs/atsd/rule-engine/) filters these results with `JSONPath` syntax:
 
 ```ls
 $..pullRequests.nodes[?(@.mergeable == 'MERGEABLE' && @.pullRequestcommits.nodes[0].commit.status.state == 'SUCCESS')]
 ```
 
-And
-
 ```ls
 $..pullRequests.nodes[?(@.mergeable == 'MERGEABLE' && @.pullRequestcommits.nodes[0].commit.status.state == 'FAILURE')]
 ```
 
-The result sets are used to create two unique reports. One report tracks `MERGEABLE` Pull Requests which have passed all secondary checks identified by `state == 'SUCCESS'`, and the second report tracks `MERGEABLE` pull requests which have failed one or more secondary checks identified by `state == 'FAILURE'`.
+The database uses the results to create two reports. One report tracks `MERGEABLE` Pull Requests which have passed all secondary checks identified by `state == 'SUCCESS'`, and the second report tracks `MERGEABLE` pull requests which have failed one or more secondary checks identified by `state == 'FAILURE'`.
 
-Each of these JSONPaths will return a unique JSON list which ATSD Rule Engine will convert into an HTML table.
+Each of these `JSONPaths` correspond to a JSON list which **Rule Engine** converts into an HTML table.
 
 <details><summary>View the <code>state == 'SUCCESS'</code> JSON result set.</summary>
 <p>
@@ -521,34 +516,12 @@ Each of these JSONPaths will return a unique JSON list which ATSD Rule Engine wi
 
 ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) receives incoming JSON results and converts the information into human-readable HTML reports. Rule Engine generates reports based on [Conditions](https://axibase.com/docs/atsd/rule-engine/#condition-checking), in this case, immediately after the first sandbox launch and then daily at 5:00 AM server local time. The report is created by [Email Action](https://axibase.com/docs/atsd/rule-engine/email.html) which convert the JSON output into HTML table via [`jsonToLists`](https://axibase.com/docs/atsd/rule-engine/functions-table.html#jsontolists) function.
 
-The above JSON result sets will be converted to two outgoing email reports, sent to the defined subscriber list.
+The above JSON result sets are be converted to two outgoing email reports, sent to the defined subscriber list.
 
-**Sample Apache Report for `MERGEABLE` Pull Requests with `SUCCESS` State**
+Sample Apache Report for `MERGEABLE` Pull Requests with `SUCCESS` State:
 
 ![](./images/apache-report-success.png)
 
-**Sample Apache Report for `MERGEABLE` Pull Requests with `FAILURE` State**
+Sample Apache Report for `MERGEABLE` Pull Requests with `FAILURE` State:
 
 ![](./images/apache-report-failure.png)
-
-For additional GraphQL query syntax, view the [documentation](https://graphql.org/learn/queries/).
-
-## Report Delivery
-
-Before report delivery, ensure all parameters have been correctly configured:
-
-* ATSD web client is able to resolve outgoing email server (See **Settings** > **Mail Client** to send additional test messages after launch);
-
-* Valid [OAuth access token](#generating-oauth-access-token) created and inserted into launch command;
-
-* Email subscribers defined;
-
-* GraphQL query targets the appropriate organization. Any organization's public repositories may be queried by GitHub GraphQL API.
-
-A sample report from [**Siemens**](https://github.com/siemens) repositories using a wider scope:
-
-![](./images/pr-report-delivery.png)
-
-Clickable URLs redirect to the Pull Request page.
-
-For other GitHub tools developed by Axibase, see the [Use Cases Repository](https://github.com/axibase/atsd-use-cases#github).
