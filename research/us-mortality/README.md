@@ -1230,7 +1230,7 @@ LIMIT 5
 ```
 
 We can also look at determining mortality rate by age group in New York City. We grabbed age group population statistics from [nyc1.gov](http://www1.nyc.gov/site/planning/data-maps/nyc-population/census-2010.page)
-as part of the 2010 U.S. census. The `new-york-city-2010-population` file can be found on [GitHub](https://github.com/axibase/atsd-use-cases/blob/master/research/us-mortality/resources/new-york-city-2010-population) in this repository.
+as part of the 2010 U.S. census. The `new-york-city-2010-population` file can be found on [GitHub](./resources/new-york-city-2010-population.txt).
 
 ```sql
 SELECT CAST(LOOKUP('new-york-city-2010-population', 'total')) AS "population",
@@ -1270,7 +1270,7 @@ There are two noteworthy points regarding this query:
 2) `SUM` aggregation is divided by the size of the corresponding age group, retrieved with a lookup function, and multiplied by 1000 since mortality is measured in deaths per 1000 people.<br />
 
 As the final query in this article, let us take a look at mortality rates by age group in Youngstown. We determined population figures with help from `places.mooseroots.com`
-as part of the 2010 U.S. Census. The `youngstown-2010-population` file can be found on [GitHub](https://github.com/axibase/atsd-use-cases/blob/master/research/us-mortality/resources/youngstown-2010-population).
+as part of the 2010 U.S. Census. The `youngstown-2010-population` file can be found on [GitHub](./resources/youngstown-2010-population.txt).
 
 ```sql
 SELECT CAST(LOOKUP('youngstown-2010-population', 'total')) AS "population",

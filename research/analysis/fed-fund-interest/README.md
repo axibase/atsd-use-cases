@@ -8,17 +8,17 @@ Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase T
 
 ## Treasury Yields and the Federal Funds Rate (1998-2017)
 
-![](Images/fedf-03.png)
+![](./images/fedf-03.png)
 
-[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/9183d77b/8/#fullscreen)
+[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/9183d77b/8/#fullscreen)
 
 > Open the ChartLab visualization above to navigate through time by selecting the desired years in the dropdown menus at the top of screen. Note that debt balances are shown as negative values.
 
 The following visualization tracks the last seven years of data (2010-2017) to highlight post-recession changes:
 
-![](Images/fedf-02.png)
+![](./images/fedf-02.png)
 
-[![View in ChartLab](Images/button.png)](https://apps.axibase.com/chartlab/9183d77b/9/#fullscreen)
+[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/9183d77b/9/#fullscreen)
 
 ### From the Source Document
 
