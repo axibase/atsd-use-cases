@@ -34,14 +34,14 @@ Below is a step-by-step guide for setting up local instances of the Axibase Time
 
    ![Figure 20](./images/Figure20.png)
 
-8. Copy and paste the files included in this repository ([`city-size`](resources/city-size), [`us-regions`](resources/us-regions),
-   [`new-york-city-2010-population`](resources/new-york-city-2010-population), and [`youngstown-2010-population`](resources/youngstown-2010-population))
+8. Copy and paste the files included in this repository ([`city-size`](./resources/city-size), [`us-regions`](./resources/us-regions),
+   [`new-york-city-2010-population`](./resources/new-york-city-2010-population), and [`youngstown-2010-population`](./resources/youngstown-2010-population))
    into the Replacement Table. Click **Save**. `city-size` contains 2015 population figures for each of the 122 cities included in this dataset. `us-regions` is a list of all of the regions
    (i.e. 1=New-England, 2=Middle-Atlantic etc.). `new-york-city-2010-population` and `youngstown-2010-population` will be used to compute mortality statistics.
 
    ![Figure 21](./images/Figure21.png)
 
-9. Navigate to **Configuration -> Parsers:CSV** and import the [`parser.xml`](resources/parser.xml) file.
+9. Navigate to **Configuration -> Parsers:CSV** and import the [`parser.xml`](./resources/parser.xml) file.
 
    ![Figure 22](./images/Figure22.png)
 
@@ -49,7 +49,7 @@ Below is a step-by-step guide for setting up local instances of the Axibase Time
 
    ![Figure 24](./images/Figure24.png)
 
-10. After the parser has been added, we will proceed to uploading our [`us.population.csv`](resources/us.population.csv) file.
+10. After the parser has been added, we will proceed to uploading our [`us.population.csv`](./resources/us.population.csv) file.
 
     This file contains population estimates from [census.gov](http://www.census.gov/data.html) for all 122 cities for 1960, 1970, 1980, 1990, 2000, 2010,
     and 2015. **Save** a local copy of this file. Click on the **Parsers:CSV** dropdown, and then on the **Upload** button and select our `us.population.csv` file.

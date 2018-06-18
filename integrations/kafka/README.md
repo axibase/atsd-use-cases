@@ -6,7 +6,7 @@ This document describes how to monitor availability and performance of [Apache K
 
 1. Log in to Axibase Collector at `https://collector_hostname:9443`
 2. From the **Jobs** page select **Import** by opening the split button below the table.
-3. Import the [`kafka-jmx`](resources/job_jmx_kafka-jmx.xml) job.
+3. Import the [`kafka-jmx`](./resources/job_jmx_kafka-jmx.xml) job.
 4. Locate the newly-imported `kafka-jmx` job on the **Jobs** page.
 5. On the **JMX Job** page, enable the job status by setting the flag in the **Enabled** checkbox.
 6. Adjust the `cron` expression if required. For more information on `cron` expressions, see [Scheduling](https://axibase.com/docs/axibase-collector/scheduling.html).
@@ -46,10 +46,10 @@ This document describes how to monitor availability and performance of [Apache K
 1. Log in to the target Axibase Time Series Database instance at `https://atsd_hostname:8443`.
 2. Go to the **Metrics** page and verify that `jmx.kafka.*` metrics are available.
 3. Go to the **Entities** page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
-4. Open the **Settings** menu, select **Entity Groups** and import [Kafka](resources/groups.xml) entity group.
-5. Open the **Portals** menu, select **Configure** and import [Kafka](resources/portal-configs.xml) portals (check on the **Auto-enable New Portals** check box).
-6. Open the ![](./images/alerts.png) **Alerts** menu, select **Rules** and import [Kafka](resources/rules.xml) rules (check the **Auto-enable New Rules** check box).
-7. Open the ![](./images/entity_views.png) **Entity Views** menu, select **Configure** and import [Kafka](resources/entity-views.xml) entity view.
+4. Open the **Settings** menu, select **Entity Groups** and import [Kafka](./resources/groups.xml) entity group.
+5. Open the **Portals** menu, select **Configure** and import [Kafka](./resources/portal-configs.xml) portals (check on the **Auto-enable New Portals** check box).
+6. Open the ![](./images/alerts.png) **Alerts** menu, select **Rules** and import [Kafka](./resources/rules.xml) rules (check the **Auto-enable New Rules** check box).
+7. Open the ![](./images/entity_views.png) **Entity Views** menu, select **Configure** and import [Kafka](./resources/entity-views.xml) entity view.
 
 ## Step 3: Verification
 
@@ -75,7 +75,7 @@ Consumer offset is collected using a Kafka console consumer reading events from 
 
 Log in to the Kafka server.
 
-Download the [shell script](resources/send_offset.sh) into Kafka `bin` directory.
+Download the [shell script](./resources/send_offset.sh) into Kafka `bin` directory.
 
 ```sh
 # assign execute permission
@@ -112,7 +112,7 @@ series e:nurswgvml702 m:kafka.consumer_offset=550 t:groupid="console-consumer-72
 ```
 
 1. Check that metric `kafka.consumer_offset` is available on the **Metrics** tab in ATSD.
-1. Import [Consumer Lag Portal](resources/consumer-lag.xml) into ATSD and change the topic name to view the consumer lag.
+1. Import [Consumer Lag Portal](./resources/consumer-lag.xml) into ATSD and change the topic name to view the consumer lag.
 
 ![](./images/consumer_lag.png)
 

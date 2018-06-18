@@ -23,7 +23,7 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 
 * Configure WPA to store analytical data received from agents into CSV files on the local file system as described in the [IBM Knowledge Center](https://www.ibm.com/support/knowledgecenter/SSATHD_7.7.0/com.ibm.itm.doc_6.3fp2/adminuse/history_analytics_scenarios.htm "WPA").
 
-* Set the [`hd.ini`](resources/hd.ini) settings to activate private history streaming:
+* Set the [`hd.ini`](./resources/hd.ini) settings to activate private history streaming:
 
   * Change to the `/opt/ITM directory` and append the following settings to the `config/hd.ini` file:
 
@@ -80,7 +80,7 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 
 ### Configure `inotify` Script to Read CSV files and Upload into ATSD
 
-* Download [`inotify_sender`](resources/inotify_sender.sh) script to your WPA server.
+* Download [`inotify_sender`](./resources/inotify_sender.sh) script to your WPA server.
 
 * Specify the ATSD hostname by editing the following line:
 
@@ -137,7 +137,7 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 
 ### Metrics
 
-* List of collected [ITM metrics](resources/metric-list.md)
+* List of collected [ITM metrics](./resources/metric-list.md)
 
 ### Entity Groups
 

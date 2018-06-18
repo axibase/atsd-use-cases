@@ -542,4 +542,4 @@ Often, such models are extremely case-sensitive and are unable to significantly 
 different set of data, but the techniques demonstrated above can be applied to a different instance of the same type of data,
 or even an entirely different dataset should the need arise.
 
-> Forecast settings used here are contained in the [Resources](Resources/forecastSettingsList.xml) folder. Launch the Forecast feature with the .xml file contained there by opening your instance of ATSD and following the path Configuration > Forecasts. At the bottom of the screen click `import` and launch the Forecast feature with the provided .xml file. Contact [Axibase](https://axibase.com) with any questions.
+> Forecast settings used here are contained in the [Resources](./resources/forecastSettingsList.xml) folder. Launch the Forecast feature with the .xml file contained there by opening your instance of ATSD and following the path Configuration > Forecasts. At the bottom of the screen click `import` and launch the Forecast feature with the provided .xml file. Contact [Axibase](https://axibase.com) with any questions.

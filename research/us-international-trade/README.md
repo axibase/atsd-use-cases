@@ -240,8 +240,8 @@ Now let's take a closer look at America's trading partners. Are there any shared
 A claim often made is that poor, developing countries are stealing American jobs and industry. If a country is poaching another country's jobs and industry, it is reasonable
 to assume that the afflicted country's trade balance would change as a result. For example, the more steel manufacturing jobs that leave the U.S. for Asia, the more steel the
 U.S. will need to import from Asia. In this instance, `2016_GDP_per_capita` was calculated from the following two replacement tables:
-[`world-population.txt`](resources/world-population.txt) and [`world-gdp.txt`](resources/world-gdp.txt). Results are sorted by the country's `2016_trade_balance_rank`. The
-more negative a country's trade balance, the higher its ranking. You can refer to the [`us-trade-balance-rank-2016.txt`](resources/us-trade-balance-rank-2016.txt) file to see these rankings.
+[`world-population.txt`](./resources/world-population.txt) and [`world-gdp.txt`](./resources/world-gdp.txt). Results are sorted by the country's `2016_trade_balance_rank`. The
+more negative a country's trade balance, the higher its ranking. You can refer to the [`us-trade-balance-rank-2016.txt`](./resources/us-trade-balance-rank-2016.txt) file to see these rankings.
 In order to separate rich and poor countries, we calculated an average world GDP. We divided the world population
 by the world's GDP to get a world GDP of $10,273. Any
 countries having a GDP less than this were considered poor countries, while countries with a greater GDP were considered rich.
@@ -352,7 +352,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 7. Import the `us-trade-balance-2016`, `us-trade-balance-rank-2016`, `world-gdp`, and `world-population` replacement tables into ATSD. Refer to steps 7 and 8 from this same walkthrough.
 8. Navigate to the SQL tab in ATSD and begin writing your queries!
 
-Check out our file on the describing our schema-based parser used for this dataset [here](resources/csv-parser-schema-explanation.md).
+Check out our file on the describing our schema-based parser used for this dataset [here](./resources/csv-parser-schema-explanation.md).
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 

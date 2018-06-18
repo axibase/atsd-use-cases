@@ -14,17 +14,17 @@ visual outputs with **ChartLab** charts and SQL queries. Additionally, this arti
 
 ## U.S. Visa Dataset and Refusal Rates
 
-Let's take a look at a dataset from travel.state.gov, which can be accessed via our archive located in the [resources](resources/visas.tar.gz) folder in this repository. Alternatively, you can
+Let's take a look at a dataset from travel.state.gov, which can be accessed via our archive located in the [resources](./resources/visas.tar.gz) folder in this repository. Alternatively, you can
 download the Excel file from the [travel.state.gov](https://travel.state.gov) website and save each separate year as its
 own individual CSV file. The title of the Excel file on the travel.state.gov website is **Nonimmigrant Visa Issuances by Visa Class and by Nationality FY1997-2015 NIV Detail Table**.
 
 This dataset contains yearly totals for non-immigrant visas issued from 1997 through 2015. Totals were collected for 84 different visa types. You can find the complete list of all
-the visa types included in this dataset [here](resources/visalist.txt). You can find descriptions of all visa types on the [U.S. Department of State](https://travel.state.gov) website.
+the visa types included in this dataset [here](./resources/visalist.txt). You can find descriptions of all visa types on the [U.S. Department of State](https://travel.state.gov) website.
 
-Visa figures were collected for 200 countries, 7 continents, and for unknown national origins. You can find a complete list of all the countries included in this dataset [here](resources/countrylist.txt).
+Visa figures were collected for 200 countries, 7 continents, and for unknown national origins. You can find a complete list of all the countries included in this dataset [here](./resources/countrylist.txt).
 
 Visa refusal rates were taken from the [travel.state.gov](https://travel.state.gov/content/dam/visas/Statistics/Non-Immigrant-Statistics/refusalratelanguage.pdf#3) website, and can be
-accessed via our archive located in the [resources](resources/visa-refusal.csv) as individual CSV files for each year. Alternatively, you can navigate to the travel.state.gov
+accessed via our archive located in the [resources](./resources/visa-refusal.csv) as individual CSV files for each year. Alternatively, you can navigate to the travel.state.gov
 website and download each file individually; however these files are only available in PDF format. These refusal rates are applied for only type [B visas](https://en.wikipedia.org/wiki/B_visa). Generally speaking, B-1
 visas are issued for individuals seeking entry for business purposes, while B-2 visas are issued for tourism and non-business purposes. In this article, in order to come up with a total
 monetary value for visa refusal fees, we will apply these refusal rates to all visa types.
@@ -513,9 +513,9 @@ docker run \
 ```
 
 * Log in to ATSD and configure the pre-defined administrator account.
-* Import the [`travel_visas.xml`](resources/travel_visas.xml) and [`visa-refusal-rates-csv-parser.xml`](resources/visa-refusal-rates-csv-parser.xml) files into ATSD. For a more detailed description, refer to step 9 from this [step-by-step walkthrough](../us-mortality/configuration.md) from our article on [U.S. mortality statistics](../us-mortality/README.md).
-* Import the [`visas.tar.gz`](resources/visas.tar.gz) file into ATSD using the `travel_visas.xml` parser. For a more detailed description, refer to step 10 from the walkthrough mentioned in the previous step.
-* Import the [`visa-refusal.csv`](resources/visa-refusal.csv) using the `visa-refusal-rates-csv-parser.xml` parser.
+* Import the [`travel_visas.xml`](./resources/travel_visas.xml) and [`visa-refusal-rates-csv-parser.xml`](./resources/visa-refusal-rates-csv-parser.xml) files into ATSD. For a more detailed description, refer to step 9 from this [step-by-step walkthrough](../us-mortality/configuration.md) from our article on [U.S. mortality statistics](../us-mortality/README.md).
+* Import the [`visas.tar.gz`](./resources/visas.tar.gz) file into ATSD using the `travel_visas.xml` parser. For a more detailed description, refer to step 10 from the walkthrough mentioned in the previous step.
+* Import the [`visa-refusal.csv`](./resources/visa-refusal.csv) using the `visa-refusal-rates-csv-parser.xml` parser.
 * To check that data has correctly been imported, navigate to the metrics page in ATSD, and check that the metrics with the names `state.non-immigrant-visa` and `state.visa-refusal-rate` have appeared.
 
 If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!

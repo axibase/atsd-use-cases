@@ -35,7 +35,7 @@ Click **Save**.
 
 Open the **Jobs**page. Expand the split button below the table and select **Import**.
 
-Import the [`zookeeper-jmx`](resources/jobs.xml) job.
+Import the [`zookeeper-jmx`](./resources/jobs.xml) job.
 
 Locate the `zookeeper-jmx` job in the **Jobs** list.
 
@@ -76,7 +76,7 @@ Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available
 
 ### Import entity group
 
-1. Open the **Settings** menu, select **Entity Groups** and import this [entity group](resources/groups.xml).
+1. Open the **Settings** menu, select **Entity Groups** and import this [entity group](./resources/groups.xml).
 1. Locate **Zookeeper Nodes** group and open the group by clicking the link in the **Name** column.
 1. Confirm that the database successfully imported the entities.
 
@@ -84,14 +84,14 @@ Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available
 
 ### Import portals
 
-1. Open the **Portals** menu, select **Configure** and import [portals](resources/portal-configs.xml) (set the flag in the **Auto-enable New Portals** check box).
+1. Open the **Portals** menu, select **Configure** and import [portals](./resources/portal-configs.xml) (set the flag in the **Auto-enable New Portals** check box).
 2. Verify that new portals are displayed by opening the **Portals** menu and searching for the newly-configured portal named **Zookeeper Cluster**.
 
 ![](./images/test_portals.png)
 
 ### Import rules
 
-Open the **Alerts** menu, select **Rules** and import [rules](resources/rules.xml) (set the flag in the **Auto-enable New Rules** check box).
+Open the **Alerts** menu, select **Rules** and import [rules](./resources/rules.xml) (set the flag in the **Auto-enable New Rules** check box).
 
 Confirm the database imported the desired rules
 
@@ -132,7 +132,7 @@ For more information about the Rule Engine, see [ATSD Rule Engine Documentation]
 
 ### Import entity view
 
-Open the **Entity Views** menu, select **Configure** and import the following [entity view](resources/entity-views.xml).
+Open the **Entity Views** menu, select **Configure** and import the following [entity view](./resources/entity-views.xml).
 Check entity view.  Open the **Entity Views** menu and ensure you see **Zookeeper** entity view.
 
 ![](./images/entity_view.png)
