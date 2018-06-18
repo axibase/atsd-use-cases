@@ -89,7 +89,7 @@ Only the percent change value without the raw figures is stored by this dataset.
 value can be applied to the above data set so that users can see concrete import and export figures shown by change in 2010
 NIS Million, instead of percent.
 
-In a local instance of ATSD open the **Data > CSV Parsers** page, scroll to the bottom of the page, expland the split button, and click **Create**. Copy the schema showed below to the **Schema** field.
+In a local instance of ATSD open the **Data > CSV Parsers** page, scroll to the bottom of the page, expand the split button, and click **Create**. Copy the schema showed below to the **Schema** field.
 
 ![](./images/SBP_2.1.png)
 

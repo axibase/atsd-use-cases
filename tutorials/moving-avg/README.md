@@ -4,7 +4,7 @@
 
 An operations analyst has with two possibly-related datasets, [cargo tonnage data](https://github.com/axibase/open-data-catalog/blob/master/datasets/nthh-fhwt.md) from the two largest airports in the New York City Metropolitan Area and [passenger enplanement data](https://github.com/axibase/open-data-catalog/blob/master/datasets/vpv5-zd4k.md)
 from the same airports. The analyst must create a relational model between the two datasets for a major airline looking to expand their presence
-at either LaGuardia or John F. Kennedy Airport in order to facilitate the maximum number of passengers and cargo. 
+at either LaGuardia or John F. Kennedy Airport in order to facilitate the maximum number of passengers and cargo.
 
 The first dataset, collected by the [Port Authority of New York and New Jersey](http://www.panynj.gov/) is aggregated monthly while the second dataset from
 the [New York Department of Transportation](https://www.dot.ny.gov/index) is aggregated annually.

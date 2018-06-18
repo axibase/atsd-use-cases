@@ -94,11 +94,11 @@ docker run \
 | `storage_driver_atsd_store_major_numbers` | false                                  | Include statistics for devices with all available major numbers                              |
 | storage_driver_atsd_property_interval   | 1m                                     | Container property (`host`, `id`, `namespace`) update interval. Must be >= `housekeeping_interval` |
 | `storage_driver_atsd_sampling_interval`   | housekeeping_interval value            | Series sampling interval. Must be >= `housekeeping_interval`                                |
-| `storage_driver_atsd_docker_host`         | Output of "/rootfs/etc/hostname" or "" | Hostname of the docker host, used as entity prefix                                           |
+| `storage_driver_atsd_docker_host`         | Output of `/rootfs/etc/hostname` or "" | Hostname of the docker host, used as entity prefix                                           |
 | `storage_driver_atsd_store_user_cgroups`  | false                                  | Include statistics for user `cgroups`, for example: `docker-host/user.*`                      |
 | `storage_driver_buffer_duration`          | 1m                                     | Time for which data is accumulated in a buffer before being sent into ATSD                   |
 | `storage_driver_atsd_buffer_limit`        | 1000000                                | Maximum network command count stored in buffer before being sent into ATSD                   |
-| `storage_driver_atsd_sender_thread_limit` | 4                                      | Maximum thread `goroutine` count sending data to ATSD server via tcp/udp                     |
+| `storage_driver_atsd_sender_thread_limit` | 4                                      | Maximum thread `goroutine` count sending data to ATSD server via `tcp/udp`                     |
 
 You can view the collected metrics under the Entity and Metrics tabs in ATSD.
 

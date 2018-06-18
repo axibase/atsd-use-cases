@@ -108,7 +108,7 @@ list keyDates = 1970-11-01,
 endlist
 ```
 
-* These dates are displayed in the drop-down list. The dates represent the official start dates of recessions throughout U.S. history. 
+* These dates are displayed in the drop-down list. The dates represent the official start dates of recessions throughout U.S. history.
 
 The syntax for this drop-down list is shown below:
 
