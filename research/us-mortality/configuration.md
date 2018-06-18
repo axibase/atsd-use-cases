@@ -34,7 +34,7 @@ Below is a step-by-step guide for setting up local instances of the Axibase Time
 
    ![Figure 20](./images/Figure20.png)
 
-8. Copy and paste the files included in this repository ([`city-size`](./resources/city-size), [`us-regions`](./resources/us-regions),
+8. Copy and paste the files included in this repository ([`city-size`](./resources/city-size.txt), [`us-regions`](./resources/us-regions.txt),
    [`new-york-city-2010-population`](./resources/new-york-city-2010-population), and [`youngstown-2010-population`](./resources/youngstown-2010-population))
    into the Replacement Table. Click **Save**. `city-size` contains 2015 population figures for each of the 122 cities included in this dataset. `us-regions` is a list of all of the regions
    (i.e. 1=New-England, 2=Middle-Atlantic etc.). `new-york-city-2010-population` and `youngstown-2010-population` will be used to compute mortality statistics.
