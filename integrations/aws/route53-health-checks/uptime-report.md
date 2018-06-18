@@ -52,7 +52,7 @@ This completes the verification stage. You now have data which can be reported o
 
 ## Reports
 
-Since you need a flexible way of filtering, grouping, and formatting results, rely on [SQL](https://axibase.com/docs/atsd/sql/) implemented in Axibase Time Series Database to prepare reports, including time series extensions for timezone aggregations.
+Since you need a flexible way of filtering, grouping, and formatting results, rely on [SQL](https://axibase.com/docs/atsd/sql/) implemented in Axibase Time Series Database to prepare reports, including time series extensions for time zone aggregations.
 
 In ATSD, execute SQL queries via web-based console, an external reporting tool using a JDBC/ODBC driver, or with the built-in report generator with email delivery, web publishing, and file generation options. This article relies on the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) to test and fine-tune these queries.
 
@@ -81,7 +81,7 @@ The output includes the list of health check IDs and the average percentage heal
 | 007cac9b-3573-493d-9c15-626ebf6a92bd  | tcp://10.102.0.1:443                      | 100.000            | 1440         |
 ```
 
-This querry includes the **Sample Count** column for data quality control purposes. Route 53 reports checks every minute, the number of samples in the report is equal to the number of hours in the reporting interval multiplied by `60`. In the above case, the number of hours is `24` and therefore the sample count is `24*60 = 1440`.
+This query includes the **Sample Count** column for data quality control purposes. Route 53 reports checks every minute, the number of samples in the report is equal to the number of hours in the reporting interval multiplied by `60`. In the above case, the number of hours is `24` and therefore the sample count is `24*60 = 1440`.
 
 You can adjust the start and end date of the reporting interval using convenient [calendar](https://axibase.com/docs/atsd/shared/calendar.html) syntax. For example, to view availability for the previous quarter, specify the date condition as follows:
 

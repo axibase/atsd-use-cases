@@ -137,7 +137,7 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 
 ### Metrics
 
-* List of collected [ITM metrics](metric-list.md)
+* List of collected [ITM metrics](resources/metric-list.md)
 
 ### Entity Groups
 
