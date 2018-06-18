@@ -8,7 +8,7 @@ your current needs.
 
 With [Schema-Based Parsing](https://axibase.com/docs/atsd/parsers/csv/) in [Axibase Time Series Database](https://axibase.com/docs/atsd/)
 data may be modified upon import so that working with it in [SQL Console](https://axibase.com/docs/atsd/sql/)
-or [ChartLab](https://apps.axibase.com/chartlab) is more meaningful.
+or [**ChartLab**](https://apps.axibase.com/chartlab) is more meaningful.
 
 ## Data
 
@@ -78,25 +78,22 @@ SELECT date_format(time, 'yyyy') AS "Year", im.value AS "Import Percent Change",
 | 2016 | 9.5                   | 3.0                   |
 
 The given dataset shows the annual change in 2010 New Israeli Shekel (NIS) amount of foreign trade done by Israel for each year
-from 1970 to 2016. These values are shown as a calculated percent and the following key is given for 2016 information:
+from 1970 to 2016. These values are a calculated percent and the following key applies for 2016 information:
 
 ```ls
 NIS Million at 2010 Prices:
 2016: Total Import: 367,246; Total Export: 341,267
 ```
 
-Only the percent change value without the raw figures is stored in this dataset. Using this method, the 2010 NIS Million
+Only the percent change value without the raw figures is stored by this dataset. Using this method, the 2010 NIS Million
 value can be applied to the above data set so that users can see concrete import and export figures shown by change in 2010
 NIS Million, instead of percent.
 
-In a local instance of ATSD follow the path **Configurations> Parsers: CSV**, scroll to the bottom of the page and click
-`Create`. Locate the `Schema` window in the lower-right hard portion of the configuration page, shown below:
+In a local instance of ATSD open the **Data > CSV Parsers** page, scroll to the bottom of the page, expland the split button, and click **Create**. Copy the schema showed below to the **Schema** field.
 
 ![](./images/SBP_2.1.png)
 
-The desired schema for this data set is shown below:
-
-```sql
+```css
 var dataPer2016 = ['2016',341267,319631,183461,135824,15268,367246,356431,10984,268057,89354,21465]; // numbers for 2016
 function calcAccumulatedPercent(row, col) {
     var accCoef = 1;
@@ -137,12 +134,13 @@ value(changeSeparator(cell(row, col)))
 ```
 
 By manually entering the actual values provided in the data set as a `var` group and writing a simple program to convert the percent change
-values into 2010 NIS values, before the data is submitted into the Axibase Time Series Database, a new value has been calculated and inserted,
-while keeping the original value as well. The script below the comment line (######) is the schema itself. For details about writing your own schema, visit
-the Axibase Schema-Based Parsing documentation, linked [here](https://axibase.com/docs/atsd/parsers/csv/).
+values into 2010 NIS values, before submitting the data into the Axibase Time Series Database, the CSV parser calculates and inserts a new value without destroying the original value.
 
-Because ATSD supports schema-based parsing and javascript customization, your data can be modified before you submit it for storage and kept in a form
-that is exactly as needed. The enhanced SQL query and visualization are shown below, featuring the newly calculated values:
+The script below the comment line `######` is the schema. For details about writing your own schema, read [ATSD Documentation](https://axibase.com/docs/atsd/parsers/csv/).
+
+Because ATSD supports schema-based parsing and javascript customization, modify your data before you submit it for storage and insert the data exactly as needed.
+
+An enhanced SQL query and visualization are shown below, featuring the newly calculated values:
 
 ![](./images/SBP_3.1.png)
 
