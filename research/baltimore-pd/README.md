@@ -27,7 +27,7 @@ a district is found to have witnessed an above average number of murders during 
 period, the alternative hypothesis will predict that the district will have also seen an
 above average number of incidents of police use of force.
 
-Both of these datasets can be analyzed in the Axibase Time Series Database which provides a built-in support for the [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md) Open Data format used by the majority of government agencies in the United States. ATSD also includes graphics capabilities to analyze the data with [SQL](https://axibase.com/docs/atsd/sql/)
+Both of these datasets can be analyzed in the Axibase Time Series Database which provides a built-in support for the [Socrata](https://axibase.com/docs/axibase-collector/jobs/socrata.html) Open Data format used by the majority of government agencies in the United States. ATSD also includes graphics capabilities to analyze the data with [SQL](https://axibase.com/docs/atsd/sql/)
 and visualize it with graphs.
 
 > For information about performing these steps in your own ATSD instance, see the [Action Items](#action-items)
@@ -266,7 +266,7 @@ instances of homicide by civilians on other civilians. Does an increase in homic
 an increase in police use of force? Do districts that see high levels of police use of force
 also see high levels of homicide? Is there a correlation at all?
 
-Similar to the first data set, [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md)
+Similar to the first data set, [Socrata](https://axibase.com/docs/axibase-collector/jobs/socrata.html)
 should be used to compile the data in meaningful way and a [Structured Query Language](https://axibase.com/docs/atsd/sql/)
 should be used again.
 
@@ -565,7 +565,7 @@ available that allows them to do just that.
 ## Action Items
 
 1. Download [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
-2. Download the [`docker-compose.yml`](https://github.com/axibase/atsd-use-cases/blob/master/research/baltimore-pd/resources/docker-compose.yml) file to launch the ATSD container bundle.
+2. Download the [`docker-compose.yml`](resources/docker-compose.yml) file to launch the ATSD container bundle.
 3. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
 
 ```sh

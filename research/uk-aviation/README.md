@@ -243,11 +243,11 @@ You can explore this portal by clicking on the link below.
 Below are the steps to follow to install ATSD and create figures for CAA metrics:
 
 1. [Install the database](https://axibase.com/docs/atsd/installation/) on a virtual machine or Linux container.
-2. [Install Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/installation.md#axibase-collector-installation) and configure it to write data into your ATSD instance.
+2. [Install Axibase Collector](https://axibase.com/docs/axibase-collector/#installation) and configure Collector to write data into your ATSD instance.
 3. Import the [csv-configs.xml](csv-configs.xml) into Axibase Collector.
 4. Import the [jobs.xml](jobs.xml) into Axibase Collector.
 5. Log in to your ATSD instance.
-6. Select your desired CAA metric and begin building your visualizations on the **Configuration: Portals** page!
+6. Select your desired CAA metric and begin building your visualizations on the **Portals** page.
 
 After installing ATSD and scrolling though the list of CAA metrics, create your own example and send it over to us.
 

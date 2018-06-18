@@ -9,7 +9,7 @@ This document describes how to monitor availability and performance of [Apache K
 3. Import the [`kafka-jmx`](resources/job_jmx_kafka-jmx.xml) job.
 4. Locate the newly-imported `kafka-jmx` job on the **Jobs** page.
 5. On the **JMX Job** page, enable the job status by setting the flag in the **Enabled** checkbox.
-6. Adjust the `cron` expression if required. For more information on `cron` expressions, see [Scheduling](https://github.com/axibase/axibase-collector/blob/master/scheduling.md).
+6. Adjust the `cron` expression if required. For more information on `cron` expressions, see [Scheduling](https://axibase.com/docs/axibase-collector/scheduling.html).
 7. Select a target ATSD database for storing data.
 8. Click **Save**.
 
@@ -18,14 +18,14 @@ This document describes how to monitor availability and performance of [Apache K
 ### Configure series collection
 
 1. Select `kafka-series` configuration.
-2. On the **JMX Configuration** page, enter the JMX connection parameters or use [Item List](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md#connection-parameters) with predefined kafka parameters:
+2. On the **JMX Configuration** page, enter the JMX connection parameters or use [Item List](https://axibase.com/docs/axibase-collector/jobs/jmx.html#connection-parameters) with predefined kafka parameters:
 
     * **Host**: Kafka hostname.
     * **Port**: JMX port.
     * **User Name**: JMX user name.
     * **Password**: Password for JMX user.
     * **Entity**: Optionally, specify the output of the hostname command on the Kafka server if it is different from `kafka_hostname` (for example if `kafka_hostname` represents a fully-qualified name).
-    * Other parameters are optional. For more information on JMX configuration, see [JMX Job Documentation](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md).
+    * Other parameters are optional. For more information on JMX configuration, see [JMX Job Documentation](https://axibase.com/docs/axibase-collector/jobs/jmx.html).
 
 3. Click **Test** to validate the configuration.
 4. Click **Save**.
@@ -75,7 +75,7 @@ Consumer offset is collected using a Kafka console consumer reading events from 
 
 Log in to the Kafka server.
 
-Download the [script](https://github.com/axibase/atsd-use-cases/blob/master/integrations/kafka/resources/send_offset.sh) into Kafka `bin` directory.
+Download the [shell script](resources/send_offset.sh) into Kafka `bin` directory.
 
 ```sh
 # assign execute permission

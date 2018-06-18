@@ -161,7 +161,7 @@ GRANT SELECT ON mysql.stat_orders_hourly_detail TO 'axibase-readonly'@'%';
 
 ## Scheduling Job in Axibase Collector
 
-The [JDBC Job](https://github.com/axibase/axibase-collector/blob/master/jobs/jdbc.md) in Axibase Collector executes any query against wide range of databases and persist the results in Axibase Time Series Database for visualization, alerting, and forecasting.
+The [JDBC Job](https://axibase.com/docs/axibase-collector/jobs/jdbc.html) in Axibase Collector executes any query against wide range of databases and persist the results in Axibase Time Series Database for visualization, alerting, and forecasting.
 
 ### Create Data Source
 

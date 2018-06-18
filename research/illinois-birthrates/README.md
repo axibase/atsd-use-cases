@@ -582,7 +582,7 @@ clause is used to declare the functionality of the menu itself.
 ## Action Items
 
 1. Download [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
-2. Download the [`docker-compose.yml`](https://github.com/axibase/atsd-use-cases/blob/master/research/illinois-birthrates/resources/docker-compose.yml) file to launch the ATSD container bundle.
+2. Download the [`docker-compose.yml`](resources/docker-compose.yml) file to launch the ATSD container bundle.
 3. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
 
 ```sh

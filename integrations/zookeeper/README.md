@@ -39,7 +39,7 @@ Import the [`zookeeper-jmx`](resources/jobs.xml) job.
 
 Locate the `zookeeper-jmx` job in the **Jobs** list.
 
-Adjust the `cron` expression if required. For more information on `cron` expressions, see [Scheduling](https://github.com/axibase/axibase-collector/blob/master/scheduling.md).
+Adjust the `cron` expression if required. For more information on `cron` expressions, see [Scheduling](https://axibase.com/docs/axibase-collector/scheduling.html).
 
 Select a target ATSD database for storing data.
 
@@ -50,7 +50,7 @@ Click **Save**.
 Test job configurations. Open `zookeeper-series` by clicking the link in **Name** column on the **Jobs** page.
 
 If needed, change default parameters.
-For more information on JMX configuration, see [JMX Job Documentation](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md). Click **Test**.
+For more information on JMX configuration, see [JMX Job Documentation](https://axibase.com/docs/axibase-collector/jobs/jmx.html). Click **Test**.
 
 ![](./images/jmx_job_series_config.png)
 

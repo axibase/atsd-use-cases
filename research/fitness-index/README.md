@@ -35,7 +35,7 @@ health using this data?
 
 Publicly-available data allows for anyone with access to the correct analytics tools to pursue answers
 to their own questions and convey that information to any audience. The [Axibase Time Series Database](https://axibase.com/docs/atsd/)
-is developed to work within the [Socrata](https://github.com/axibase/axibase-collector/blob/master/jobs/socrata.md)
+is developed to work within the [Socrata](https://axibase.com/docs/axibase-collector/jobs/socrata.html)
 framework used by government agencies to publish data, so it was selected as the main tool for this project
 and calculations were done using the computational knowledge engine [WolframAlpha](https://www.wolframalpha.com/).
 
@@ -348,7 +348,7 @@ to a wide range of data science problems, a handful of which were demonstrated h
 
 Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
-Download the [`docker-compose.yml`](https://github.com/axibase/atsd-use-cases/blob/master/research/fitness-index/resources/docker-compose.yml) file to launch the ATSD container bundle.
+Download the [`docker-compose.yml`](resources/docker-compose.yml) file to launch the ATSD container bundle.
 
 Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
 

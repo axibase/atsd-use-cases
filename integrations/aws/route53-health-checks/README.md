@@ -81,7 +81,7 @@ Offload health check statistics to [Axibase Time Series Database](https://axibas
 
 ### Prerequisites
 
-* Create an AWS [IAM account](https://github.com/axibase/axibase-collector/blob/master/jobs/aws-iam.md) to query CloudWatch statistics.
+* Create an AWS [IAM account](https://axibase.com/docs/axibase-collector/jobs/aws-iam.html) to query CloudWatch statistics.
 * Make sure 4 GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
 
 ### Launch ATSD Sandbox
@@ -114,7 +114,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   axibase/atsd-sandbox:latest
 ```
 
-The sandbox container includes both ATSD and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
+The sandbox container includes both ATSD and [Axibase Collector](https://axibase.com/docs/axibase-collector/jobs/docker.html) instances.
 
 Use the Collector instance in the sandbox container to retrieve Route 53 statistics from AWS CloudWatch and store the statistics in ATSD.
 
@@ -140,7 +140,7 @@ Log in to ATSD using `axibase` username and `axibase` password at `https://atsd_
 
 ### Health Check Setup Attribute Copy
 
-Configure a cron-scheduled task to copy health check attributes into ATSD sandbox as described by [ATSD Integration Documentation](https://github.com/axibase/atsd-integration/tree/aws-route53)
+Configure a `cron` scheduled task to copy health check attributes into ATSD sandbox as described by [ATSD Integration Documentation](https://github.com/axibase/atsd-integration/tree/aws-route53)
 
 ## Results
 

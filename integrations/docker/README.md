@@ -263,5 +263,5 @@ The target service now receives the JSON payload:
 ## References
 
 * Axibase Time Series Database [Rule Engine Documentation](https://axibase.com/docs/atsd/rule-engine/).
-* Axibase Collector [JSON Job Documentation](https://github.com/axibase/axibase-collector/blob/master/jobs/json.md).
+* Axibase Collector [JSON Job Documentation](https://axibase.com/docs/axibase-collector/jobs/json.html).
 * Questions? Problems? Contact us by raising an [issue](https://github.com/axibase/atsd-use-cases/issues/new).

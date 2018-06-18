@@ -8,7 +8,7 @@ ATSD continuously collects availability status, performance metrics and detailed
 
 ## Integration Overview
 
-The data is collected by [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances installed locally on each Docker host.
+The data is collected by [Axibase Collector](https://axibase.com/docs/axibase-collector/jobs/docker.html) instances installed locally on each Docker host.
 
 ![docker-local](./images/docker-local.png)
 
@@ -46,7 +46,7 @@ The data is collected by [Axibase Collector](https://github.com/axibase/axibase-
 
 ### Launch ATSD
 
-> For installation on Kubernetes refer to this [guide](https://github.com/axibase/axibase-collector/blob/master/installation-on-kubernetes.md).
+> For installation on Kubernetes refer to this [Kubernetes Installation Guide](https://axibase.com/docs/axibase-collector/installation-on-kubernetes.html).
 
 Start ATSD container on one of the Docker hosts.
 
@@ -78,7 +78,7 @@ docker logs -f atsd
 
 ### Launch Axibase Collectors
 
-Launch an [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instance on each Docker host.
+Launch an [Axibase Collector](https://axibase.com/docs/axibase-collector/jobs/docker.html) instance on each Docker host.
 
 Replace `cuser` and `cpassword` variables with collector credentials specified above.
 
@@ -122,7 +122,7 @@ Open **Configuration > Rules** and import alerting rules into the rule engine.
 
 ## Reference Information
 
-* [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md)
+* [Axibase Collector](https://axibase.com/docs/axibase-collector/jobs/docker.html)
 
 ## Discovery
 

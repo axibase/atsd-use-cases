@@ -31,7 +31,7 @@ While [How to Build Availability Report for AWS Route53](README.md) describes ho
 
 ## Preparation
 
-* Setup an [IAM account](https://github.com/axibase/axibase-collector/blob/master/jobs/aws-iam.md)
+* Setup an [IAM account](https://axibase.com/docs/axibase-collector/jobs/aws-iam.html)
 * Configure [Route53 & ATSD](README.md) integration. Make sure to copy health check attributes as described by the [ATSD Integration Documentation](https://github.com/axibase/atsd-integration/tree/aws-route53)
 
 Log in to ATSD user interface using `axibase` username and `axibase` password.

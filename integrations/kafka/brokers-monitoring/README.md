@@ -24,7 +24,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 axibase/atsd-sandbox:latest
 ```
 
-The sandbox container includes both [ATSD](https://axibase.com/docs/atsd/) and [Axibase Collector](https://github.com/axibase/axibase-collector/blob/master/jobs/docker.md) instances.
+The sandbox container includes both [ATSD](https://axibase.com/docs/atsd/) and [Axibase Collector](https://axibase.com/docs/axibase-collector/jobs/docker.html) instances.
 
 Use the Collector instance installed in the sandbox container to retrieve Kafka statistics using JMX and store the statistics in ATSD.
 
@@ -42,7 +42,7 @@ Open the **Jobs** drop-down list and select **JMX**. Make sure you see the enabl
 
 ![](./images/check-kafka-job.png)
 
-This job uses `kafka-cluster-jmx` [Item List](https://github.com/axibase/axibase-collector/blob/master/jobs/jmx.md#connection-parameters) with Kafka JMX connection settings.
+This job uses `kafka-cluster-jmx` [Item List](https://axibase.com/docs/axibase-collector/jobs/jmx.html#connection-parameters) with Kafka JMX connection settings.
 Replace default parameters in this list with actual broker JMX address. Open the **Collections** menu and select **Item Lists**.
 
 ![](./images/kafka-item-list-1.png)

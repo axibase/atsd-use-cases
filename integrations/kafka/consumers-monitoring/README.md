@@ -38,7 +38,7 @@ The consumer offset is collected by a Kafka console consumer reading events from
 
 Log in to the Kafka server.
 
-Download the [script](https://github.com/axibase/atsd-use-cases/blob/master/integrations/kafka/consumers-monitoring/resources/send_offset.sh) into Kafka `bin` directory.
+Download the [script](resources/send_offset.sh) into Kafka `bin` directory.
 
 ```sh
 # assign execute permission
