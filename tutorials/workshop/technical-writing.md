@@ -275,7 +275,7 @@ Exceptions:
 * Use curly brackets (`{}`) to designate a variable in URI path or query string:
   * :white_check_mark: `/api/{entity}/metrics`
   * :white_check_mark: `/api/metrics?id={metricId}`
-* Use camelCase in compound variable names in REST API:
+* Use camelCase for compound variable names in REST API:
   * :white_check_mark: `entityGroup`
   * :no_entry: `entity-group`
 * Add "the" article before the variables with types.
