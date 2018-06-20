@@ -25,8 +25,8 @@ The guide contains a compilation of grammar and punctuation rules for software d
 ## Contractions
 
 * Replace "i.e." or "e.g." with "for example".
-  * :white_check_mark: ``Specify the recipient, e.g. `test@example.org`.``
-  * :no_entry: ``Specify the recipient, for example `test@example.org`.``
+  * :no_entry: ``Specify the recipient, e.g. `test@example.org`.``
+  * :white_check_mark: ``Specify the recipient, for example `test@example.org`.``
 * "etc" is allowed.
 * Replace "don't", "can't", "hasn't", "isn't", "didn't" with "do not", "cannot", etc.
   * :white_check_mark: `The parameter is not valid.`
