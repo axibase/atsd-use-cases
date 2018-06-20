@@ -6,7 +6,7 @@ This guide shows how to configure automatic email notifications upon resource la
 
 ![](./images/cloudwatch-workflow.png)
 
-Follow these instructions to set up default AWS email notifications or follow the advanced procedure to integrate [Axibase Time Series Database](https://axibase.com/docs/atsd/) and AWS CloudWatch Events for enhanced notifications delivered via email, or through your preferred messenger service such as Slack or Telegram.
+Follow these instructions to set up default AWS email notifications or follow the advanced procedure to integrate ATSD and AWS CloudWatch Events for enhanced notifications delivered via email, or through your preferred messenger service such as Slack or Telegram.
 
 ### Configure a New CloudWatch Event
 

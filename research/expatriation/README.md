@@ -26,7 +26,7 @@ Axibase [tracked](2017-3.md) record-high expatriation during 2017; in the fourth
 
 The underlying IRS report contains the names of the individuals who expatriated in the first quarter of 2018.
 
-Support for date aggregations in [Axibase Time Series Database](https://axibase.com/docs/atsd/) SQL syntax allows reporting on both the annual and quarterly basis.
+Support for date aggregations in ATSD SQL syntax allows reporting on both the annual and quarterly basis.
 
 ### Annual Data
 

@@ -14,7 +14,7 @@ Since the company stores intraday and historical records in different databases 
 
 Address this challenge by scheduling the execution of an analytical query (one that calculates aggregate statistics) and persisting the results in a separate table. Operational databases often only serve primary applications and therefore storing hourly order statistics in the same database may not be advisable or allowed. For added protection, execute the analytical query under a read-only user account with the permission to `SELECT` data from a specific view encapsulating the query business logic.
 
-The steps below describe how to enable this type of monitoring in [Axibase Time Series Database](https://axibase.com/docs/atsd/).
+The steps below describe how to enable this type of monitoring in ATSD.
 
 ![](./images/diagram.png)
 

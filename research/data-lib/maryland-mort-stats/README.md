@@ -2,7 +2,7 @@
 
 [Source Dataset](https://github.com/axibase/open-data-catalog/blob/master/datasets/i4x2-3kc7.md)
 
-[SQL Console](https://axibase.com/docs/atsd/sql/) from [Axibase Time Series Database](https://axibase.com/docs/atsd/)
+[SQL Console](https://axibase.com/docs/atsd/sql/) from ATSD
 
 [ChartLab](https://apps.axibase.com/chartlab)
 

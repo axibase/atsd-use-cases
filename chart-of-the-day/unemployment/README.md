@@ -121,7 +121,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 ## Resources
 
-The **Trends** service relies on [Axibase Time Series Database](https://axibase.com/docs/atsd/) for data-storage and processing tasks. All of the data from the above article has been loaded into a publicly-accessible instance of the **Trends** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) or any of the configuration settings explained in this article.
+The **Trends** service relies on ATSD for data-storage and processing tasks. All of the data from the above article has been loaded into a publicly-accessible instance of the **Trends** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) or any of the configuration settings explained in this article.
 
 To create your own chart using the existing data, open an empty **Trends** [instance](https://trends.axibase.com/).
 

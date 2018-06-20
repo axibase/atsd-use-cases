@@ -28,7 +28,7 @@ Both the API and the user interface provide a way to view allocated capacity alo
 
 ### Capacity Usage
 
-Integration with [Axibase Time Series Database](https://axibase.com/docs/atsd/) adds an additional level of visibility by collecting and aggregating CPU, memory, and disk usage at the **Application** level which allows the user to achieve higher capacity utilization by correlating resource allocations with actual usage.
+Integration with ATSD adds an additional level of visibility by collecting and aggregating CPU, memory, and disk usage at the **Application** level which allows the user to achieve higher capacity utilization by correlating resource allocations with actual usage.
 
 ![](./images/marathon-applications-label.png)
 

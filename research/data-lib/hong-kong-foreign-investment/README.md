@@ -4,7 +4,7 @@ Data Source: [data.gov.hk](https://data.gov.hk/en-data/dataset/hk-censtatd-table
 
 Visualization: [ChartLab](https://apps.axibase.com/chartlab)
 
-Structured Query Language: [SQL Console](https://axibase.com/docs/atsd/sql/) in [Axibase Time Series Database](https://axibase.com/docs/atsd/)
+Structured Query Language: [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD
 
 The data records three types of foreign companies operating in Hong Kong: local companies with foreign parent companies,
 foreign companies with locals branches in Hong Kong, and foreign companies with regional branches in Hong Kong. The differences
