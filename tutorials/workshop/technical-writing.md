@@ -7,8 +7,6 @@ The guide contains a compilation of grammar and punctuation rules for software d
 * [Google Developer Documentation Style Guide](https://developers.google.com/style/).
 * [Salesforce Style Guide for Documentation and User Interface Text](https://developer.salesforce.com/docs/atlas.en-us.salesforce_pubs_style_guide.meta/salesforce_pubs_style_guide/overview.htm).
 
-----
-
 ## Abbreviations
 
 * Abbreviate if the acronym is known to the target audience.
@@ -23,11 +21,79 @@ The guide contains a compilation of grammar and punctuation rules for software d
   * Standards and organizations: ISO, ASCII, ANSI, W3C.
   * Time zones: UTC, EST, GMT.
   * ATSD in Axibase documentation repositories.
+  
+## Contractions
 
-## Active Voice
+* Replace "i.e." or "e.g." with "for example".
+  * :white_check_mark: ``Specify the recipient, e.g. `test@example.org`.``
+  * :no_entry: ``Specify the recipient, for example `test@example.org`.``
+* "etc" is allowed.
+* Replace "don't", "can't", "hasn't", "isn't", "didn't" with "do not", "cannot", etc.
+  * :white_check_mark: `The parameter is not valid.`
+  * :no_entry: `The parameter isn't valid.`
 
-* Maintain active voice for technical documentation.
-* Describe both the actor and the action, or use the imperative to instruct a user.
+## Capitalization
+
+* Use [title case](https://titlecase.com/) in headers.
+  * :white_check_mark: `## Import Data`.
+  * :no_entry: `## Import data`.
+* Do not capitalize program/file/function names such as `curl`, `atsd.log`, even in headers.
+  * :white_check_mark: `## Import Data with curl`.
+  * :no_entry: `## Import Data with Curl`.
+* Do not capitalize the first word after the colon in a list.
+  * :white_check_mark: `Step 3: unzip files`.
+* Do not capitalize file extensions.
+  * :white_check_mark: `.png`, `.xml`, `.jar`.
+* Keep original product capitalization.
+  * :white_check_mark: `SQL Server Database`, `Hadoop`, `HBase`.
+* In ambiguous cases, adhere to one option for consistency:
+  * :white_check_mark: Unix, bash, IPv4, IPv6, URL.
+  * :no_entry: UNIX, Bash, IP v4, IP v6, Url.
+
+## Parentheses
+
+* Do not use parentheses.
+  * :white_check_mark: ``Execute `SELECT 1` query to test the connection.``
+  * :no_entry: ``Execute any query (such as `SELECT 1`) to test the connection.``
+* Parentheses are allowed to spell out a number or character sequence.
+  * :white_check_mark: ``The field supports wildcards (`*`).``
+  * :white_check_mark: ``Up to nine (`9`) fractions are printed.``
+
+## Colons
+
+* Begin lists with colons (:).
+  * :white_check_mark: `Execute the following commands to stop the database:`
+* Separate list titles from their content with a colon.
+  * :white_check_mark: `Step 1: stop ATSD process.`
+
+## Quotation Marks
+
+* Do not use quotation marks.
+* To designate [UI elements](#interface-elements) use bold text.
+  * :white_check_mark: `Click **View** to proceed`.
+  * :no_entry: `Click on 'View' to proceed`.
+* To designate single-line machine output use bold text or backticks.
+  * :white_check_mark: `Watch the log file for **Start completed** message.`
+  * :white_check_mark: ``Watch the log file for `Start completed` message.``
+  * :no_entry: `Watch the log file for "Start completed" message.`  
+* To designate multiple-line machine output use code blocks with `txt` dialect.
+
+## Commas
+
+* Do not use a comma to separate clauses with multiple actors. Create separate sentences.
+  * :white_check_mark: `Submit the query. Review the results.`
+  * :no_entry: `Submit the query, the result is displayed.`
+
+## Hyphens
+
+* Hyphenate compound adjectives.
+  * :white_check_mark: `Cancel a long-running query`.
+* Do not hyphenate adverb adjectives that end with `ly`.
+  * :white_check_mark: `Review frequently used queries`.
+  * :no_entry: `Load data from the publicly-accessible service`.
+* Do not use a hyphen to separate title from meaning, use a [colon](#colons).
+  * :white_check_mark: `Meta Query: retrieves metadata from the service.`
+  * :no_entry: `Meta Query - retrieves metadata from the service.`
 
 ## Backticks
 
@@ -71,24 +137,6 @@ Exceptions:
 * Do not use backticks in headings.
   * :white_check_mark: `## Install Python 3.5 using curl`.
 
-## Capitalization
-
-* Use [title case](https://titlecase.com/) in headers.
-  * :white_check_mark: `## Import Data`.
-  * :no_entry: `## Import data`.
-* Do not capitalize program/file/function names such as `curl`, `atsd.log`, even in headers.
-  * :white_check_mark: `## Import Data with curl`.
-  * :no_entry: `## Import Data with Curl`.
-* Do not capitalize the first word after the colon in a list.
-  * :white_check_mark: `Step 3: unzip files`.
-* Do not capitalize file extensions.
-  * :white_check_mark: `.png`, `.xml`, `.jar`.
-* Keep original product capitalization.
-  * :white_check_mark: `SQL Server Database`, `Hadoop`, `HBase`.
-* In ambiguous cases, adhere to one option for consistency:
-  * :white_check_mark: Unix, bash, IPv4, IPv6, URL.
-  * :no_entry: UNIX, Bash, IP v4, IP v6, Url.
-
 ### Code Block
 
 * Fence code with triple backticks.
@@ -100,39 +148,52 @@ Exceptions:
   * Use `ls` for Charts configuration.
   * Use `javascript` for rule engine expressions.
 
-## Colons
+## Numbers
 
-* Begin lists with colons (:).
-  * :white_check_mark: `Execute the following commands to stop the database:`
-* Separate list titles from their content with a colon.
-  * :white_check_mark: `Step 1: stop ATSD process.`
+* Write out numbers one through ten, unless they have units.
+  * :white_check_mark: `There are three ways to perform this calculation`.
+* Write out ordinal numbers.
+  * :white_check_mark: `The first query causes the database to lock the table`.
+* Add thousands separator except for milliseconds and machine output.
+  * :white_check_mark: `Stop the query if the row count exceeds 1,000`.
+* Insert a space between a number and multiple-letter unit. Omit space for one-letter units.
+  * :white_check_mark: `8 GB`, `128 MB`, `2 CPUs`, `10%`.
 
-## Contractions
+## Time
 
-* Replace "i.e." or "e.g." with "for example".
-  * :white_check_mark: ``Specify the recipient, e.g. `test@example.org`.``
-  * :no_entry: ``Specify the recipient, for example `test@example.org`.``
-* "etc" is allowed.
-* Replace "don't", "can't", "hasn't", "isn't", "didn't" with "do not", "cannot", etc.
-  * :white_check_mark: `The parameter is not valid.`
-  * :no_entry: `The parameter isn't valid.`
+* Write time 24-hour format.
+* When needed, use Unix Time.
 
-## Commas
+## Possessives
 
-* Do not use a comma to separate clauses with multiple actors. Create separate sentences.
-  * :white_check_mark: `Submit the query. Review the results.`
-  * :no_entry: `Submit the query, the result is displayed.`
+* Do not use possessives.
+  * :white_check_mark: `Modify the file content` or `Modify the contents of the file`.
+  * :no_entry: `Modify the file's content`.
 
-## Dates
+## Headers
 
-* Spell out month if the format is ambiguous:
-  * :white_check_mark: `01/Jun/2018`.
-  * :no_entry: `06/01/2018`.
-* Don't use ordinal numbers in dates.
-  * :white_check_mark: `April 15`.
-  * :no_entry: `April 15th`.
-* Use commas with full dates.
-  * :white_check_mark: `The report was published on December 13, 2017`.
+* Use [title case](https://titlecase.com/) in headers.
+  * :white_check_mark: `## Import Data from File`.
+  * :no_entry: `## Import data from file`.
+* Do not use backticks in headers.
+  * :white_check_mark: `## Configure cron`.
+  * :no_entry: ``## Configure `cron` schedule``.
+* Do not terminate sentences in headers with dot.
+  * :no_entry: `## Import data from file.`
+* Avoid punctuation symbols in headers except colon (`:`).
+  * :no_entry: `## Import Data from File (Directory)`.
+
+## Variables
+
+* Use curly brackets (`{}`) to designate a variable in URI path or query string:
+  * :white_check_mark: `/api/{entity}/metrics`
+  * :white_check_mark: `/api/metrics?id={metricId}`
+* Use camelCase in compound variable names in REST API:
+  * :white_check_mark: `entityGroup`
+  * :no_entry: `entity-group`
+* Add "the" article before the variables with types.
+  * :white_check_mark: ``Open the `atsd.log` file.``
+  * :no_entry: ``Open the file `atsd.log`.``
 
 ## Example Names
 
@@ -151,29 +212,56 @@ Exceptions:
 * SSN: `000-00-0000`.
 * File path: `/path/to/new-dir`, `/path/to/new-file`. Replace `new-dir` and `new-file` to indicate the purpose, for example, `/path/to/backup-dir`.
 
-## Headers
+## Dates
 
-* Use [title case](https://titlecase.com/) in headers.
-  * :white_check_mark: `## Import Data from File`.
-  * :no_entry: `## Import data from file`.
-* Do not use backticks in headers.
-  * :white_check_mark: `## Configure cron`.
-  * :no_entry: ``## Configure `cron` schedule``.
-* Do not terminate sentences in headers with dot.
-  * :no_entry: `## Import data from file.`
-* Avoid punctuation symbols in headers except colon (`:`).
-  * :no_entry: `## Import Data from File (Directory)`.
+* Spell out month if the format is ambiguous:
+  * :white_check_mark: `01/Jun/2018`.
+  * :no_entry: `06/01/2018`.
+* Don't use ordinal numbers in dates.
+  * :white_check_mark: `April 15`.
+  * :no_entry: `April 15th`.
+* Use commas with full dates.
+  * :white_check_mark: `The report was published on December 13, 2017`.
 
-## Hyphens
+## Active Voice
 
-* Hyphenate compound adjectives.
-  * :white_check_mark: `Cancel a long-running query`.
-* Do not hyphenate adverb adjectives that end with `ly`.
-  * :white_check_mark: `Review frequently used queries`.
-  * :no_entry: `Load data from the publicly-accessible service`.
-* Do not use a hyphen to separate title from meaning, use a [colon](#colons).
-  * :white_check_mark: `Meta Query: retrieves metadata from the service.`
-  * :no_entry: `Meta Query - retrieves metadata from the service.`
+* Maintain active voice for technical documentation.
+* Describe both the actor and the action, or use the imperative to instruct a user.  
+
+## Present Tense
+
+* Do not use "will" and "was". Write in the present tense.
+
+## Blacklisted Words
+
+word | alternatives
+---|---
+`should` | use `must` or remove
+`could` | -
+`would` | -
+`may` | `can`
+`will` | use present tense
+`was` | use present tens
+`abort` | `stop`, `cancel`
+`kill` | `stop`, `cancel`
+`terminate` | `stop`, `cancel`
+`admin` | `administrator`
+`so, a lot` | use formal style
+`deselect` | `clear`
+`uncheck` | `clear`
+`flag` | `option`, `setting`
+`ingest` | `load`, `import`
+`lets` | -
+`please` | -
+`regex` | `regular expression`
+`Epoch time` | `Unix time`
+`datacenter` | `data center`
+`and/or` | clarify the meaning
+`in order to` | `to`
+`make sure` | `ensure`
+`end-point` | `endpoint`
+`click on` | `click`
+`robust` | avoid trite words
 
 ## Interface Elements
 
@@ -217,36 +305,6 @@ Exceptions:
 * Describe the linked document in the link title:
   * :white_check_mark: `Review [installation notes](install.md).`
   * :no_entry: `Click [here](install.md) to view installation notes.`
-
-## Numbers
-
-* Write out numbers one through ten, unless they have units.
-  * :white_check_mark: `There are three ways to perform this calculation`.
-* Write out ordinal numbers.
-  * :white_check_mark: `The first query causes the database to lock the table`.
-* Add thousands separator except for milliseconds and machine output.
-  * :white_check_mark: `Stop the query if the row count exceeds 1,000`.
-* Insert a space between a number and multiple-letter unit. Omit space for one-letter units.
-  * :white_check_mark: `8 GB`, `128 MB`, `2 CPUs`, `10%`.
-
-## Parentheses
-
-* Do not use parentheses.
-  * :white_check_mark: ``Execute `SELECT 1` query to test the connection.``
-  * :no_entry: ``Execute any query (such as `SELECT 1`) to test the connection.``
-* Parentheses are allowed to spell out a number or character sequence.
-  * :white_check_mark: ``The field supports wildcards (`*`).``
-  * :white_check_mark: ``Up to nine (`9`) fractions are printed.``
-
-## Possessives
-
-* Do not use possessives.
-  * :white_check_mark: `Modify the file content` or `Modify the contents of the file`.
-  * :no_entry: `Modify the file's content`.
-
-## Present Tense
-
-* Do not use "will" and "was". Write in the present tense.
 
 ## Product Names
 
