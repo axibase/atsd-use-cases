@@ -30,7 +30,7 @@ Cryptocurrency markets fluctuate at surprisingly similar rates when comparing mo
 
 ## Log Return
 
-The log return of a dataset is computed `log(value_t/value_t-1)`. By creating the argument using a [consecutive value calculation](../../tutorials/subtract-subsequent-values/README.md#charts-functions) and applying the [natural logarithm](#natural-logarithm) function, log returns may be used to quickly estimate and compare asset performance.
+The log return of a dataset is computed `log(value_t/value_t-1)`. By creating the argument using a [consecutive value calculation](../../tutorials/subtract-subsequent-values/README.md#charts-functions) and applying the natural logarithm function, log returns may be used to quickly estimate and compare asset performance.
 
 ![](./images/log-returns.png)
 
