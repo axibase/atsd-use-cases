@@ -46,9 +46,9 @@ The data is presented for scheduled and chartered flights for passengers from wi
 
 While the Aviation Trend PDF files can be helpful, they are not interactive and do not allow the user to easily move through different metrics and datasets. To gain a meaningful understanding of the data and trends over time, end users need to open multiple files at a time and compare data without visualization, which can be difficult and time consuming to work though.
 
-## Axibase Time Series Database (ATSD)
+## Axibase Time Series Database
 
-Processing of CAA datasets using Axibase Time Series Database (ATSD) is much simpler. Parsing the same data with ATSD is less time consuming because the user has the ability to easily toggle between different datasets and years, and filter for a specific airport location or metric. ATSD stores the data in the user's own database so that this public data can be combined with internal data sources as well as mixed and matched across different datasets. For example, you could combine the CAA datasets with weather patterns to see if there is any correlation between poor weather and flight delays; or with another country's aviation statistics to see how they compare to UK trends.
+Processing CAA datasets using ATSD is much simpler. Parsing the same data with ATSD is less time consuming because the user has the ability to easily toggle between different datasets and years, and filter for a specific airport location or metric. ATSD stores the data in the user's own database so that this public data can be combined with internal data sources as well as mixed and matched across different datasets. For example, you could combine the CAA datasets with weather patterns to see if there is any correlation between poor weather and flight delays; or with another country's aviation statistics to see how they compare to UK trends.
 
 Once you install ATSD, you **do not** have to:
 
