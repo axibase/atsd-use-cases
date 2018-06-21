@@ -12,7 +12,7 @@ The relevance of the technology, and the acceptance of digital currency in gener
 
 ## Bitcoin Index
 
-Crytocurrency movement against the dollar has always been volatile. This visualization tracks the value of Bitcoin against the other three cryptocurrencies showing that the same volatility is present when comparing cryptocurrencies with one another. Both Bitcoin Cash and Litecoin moved upwards or downwards 50% at least once in the 6-month observation period.
+Cryptocurrency movement against the dollar has always been volatile. This visualization tracks the value of Bitcoin against the other three cryptocurrencies showing that the same volatility is present when comparing cryptocurrencies with one another. Both Bitcoin Cash and Litecoin moved upwards or downwards more than 50% at least once in the 6-month observation period.
 
 ![](./images/bitcoin-index.png)
 
