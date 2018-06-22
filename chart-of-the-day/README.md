@@ -1,0 +1,21 @@
+# Chart of the Day
+
+Interactive visualizations tracking interesting datasets from a variety of sources.
+
+1. [Hetzner May 2018 Outage](hetzner-outage/README.md) (May 2018)
+1. [The Creeping Overnight Fund Rate](overnight-fund-rate/README.md) (March 2018)
+1. [The Fall of Facebook](facebook/README.md) (March 2018)
+1. [Food Insecurity in America (2009-2013)](us-food-insecurity/README.md) (October 2017)
+1. [City-wide LED Streetlight Savings (Los Angeles, CA)](la-lights/README.md) (October 2017)
+1. [Credit Card Loan Delinquency at 25 Year Low](credit-delinquency/README.md) (September 2017)
+1. [Outstanding Students Loan Debt Continues to Exceed One Trillion Dollars](student-loan-debt/README.md) (September 2017)
+1. [United States Voter Turnout Since 1970](voter-turnout/README.md) (September 2017)
+1. [The Cleanest Water in Washington State](wa-wqi/README.md) (September 2017)
+1. [Public Utilities and Private Industry in Austin](austin-power/README.md) (August 2017)
+1. [International Students in America by Country of Origin](international-students/README.md) (August 2017)
+1. [Who is Dropping Out in the State with the Fewest Dropouts?](iowa-dropouts/README.md) (July 2017)
+1. [What Do Seattlelites Have to Complain About?](seattle-complaint/README.md) (July 2017)
+1. [San Francisco Air Traffic Noise Complaints by the Numbers](sfo-noise/README.md) (July 2017)
+1. [Island Living is Recession Proof](hawaii-gdp/README.md) (July 2017)
+1. [500 Cities: Local Data for Better Health](cdc-top25/README.md) (June 2017)
+1. [New York City's Most Crowded Industries](ny-employment/README.md) (June 2017)

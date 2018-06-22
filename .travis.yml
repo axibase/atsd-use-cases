@@ -3,19 +3,16 @@ language: node_js
 node_js:
   - "8"
 install:
-  - npm install --global --production yaspeller markdown-link-check
-  # download dictionary from atsd repository for merging
-  - wget https://raw.githubusercontent.com/axibase/atsd/master/.spelling -O .spelling-atsd
-  # download functions from atsd repository
   - wget https://raw.githubusercontent.com/axibase/atsd/master/.travis-functions.sh && source .travis-functions.sh
-  - cat .spelling-atsd .dictionary > .spelling
-  - generate_yaspeller_dictionary .spelling
+  - install_checkers
 script:
   - print_modified_markdown_files
   - spellcheck --single
   - linkcheck
+  - stylecheck
+  - validate_anchors
 cache:
   directories:
     - $(npm config get prefix)/lib/node_modules
 notifications:
-  webhooks: https://apps.axibase.com/api/v1/messages/wk-travis-ci/travis-ci
+  webhooks: https://apps.axibase.com/api/v1/messages/wk-travis-ci/travis-ci?json.parse=payload&exclude=payload.id;payload.number;payload.config*;payload.repository*;payload.matrix*;payload.*commit*;payload.status_message;payload.result&include=payload.repository.name&command.message=payload.result_message

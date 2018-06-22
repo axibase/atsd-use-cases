@@ -1,0 +1,44 @@
+<list>
+  <com.axibase.tsd.model.ReplacementTable>
+    <lookupName>graphql-queries</lookupName>
+    <items>issue-list=query { \
+	organization(login: &quot;<![CDATA[${ENV.ORGANIZATION}]]>&quot;) {\
+        repositories(first: 10, orderBy: {field: PUSHED_AT, direction: DESC}) {\
+        nodes {\
+            #name\
+            pullRequests(first: 10, states: OPEN, orderBy: {field: UPDATED_AT, direction: DESC}) {\
+                nodes {\
+                    headRepository { nameWithOwner }\
+                    url\
+                    author {\
+                    ... on User {\
+                        login name\
+                        }\
+                    }       \
+                    mergeable\
+                    baseRefName\
+                    headRefName\
+                    title\
+                    #milestone { title }\
+                    #labels(first: 3) { nodes{name} }\
+                    ... on PullRequest {\
+                        pullRequestcommits: commits(last: 1) {\
+                            #totalCount	\
+                            nodes {\
+                                commit {\
+                                    #url \
+                                    status { state contexts { context description createdAt targetUrl } }\
+                                }\
+                            }\
+                        }\
+                    }\
+                }\
+            } \
+        }      \
+    }\
+  }\
+}</items>
+    <format>GRAPHQL</format>
+    <author>Axibase</author>
+  </com.axibase.tsd.model.ReplacementTable>
+</list>

@@ -1,0 +1,47 @@
+<list>
+  <com.axibase.collector.model.job.socrata.SocrataJobConfig>
+    <name>socrata-new-your-state-greenhouse</name>
+    <cronExpression>0 0/15 * * * ?</cronExpression>
+    <enabled>true</enabled>
+    <jobType>SOCRATA</jobType>
+    <defaultTags/>
+    <checkLastTime>false</checkLastTime>
+    <commitInterval>10</commitInterval>
+    <errorThreshold>0</errorThreshold>
+    <configurations>
+      <com.axibase.collector.model.job.socrata.SocrataConfiguration>
+        <name>Greenhouse Gas Emissions From Fuel Combustion, Million Metric Tons: Beginning 1990</name>
+        <path>https://data.ny.gov/api/views/djfn-trk4</path>
+        <ignoreDuplicates>true</ignoreDuplicates>
+        <settings>
+          <com.axibase.collector.model.job.socrata.SocrataConfigurationSetting>
+            <entityField>$.meta.view.id</entityField>
+            <timeEnabled>true</timeEnabled>
+            <timeField>year</timeField>
+            <timeFormat>yyyy</timeFormat>
+            <timeZone>UTC</timeZone>
+            <seriesEnabled>true</seriesEnabled>
+            <metricPrefix>nys.</metricPrefix>
+            <includedFields>
+              <string>*</string>
+            </includedFields>
+            <excludedFields/>
+            <annotationFields/>
+            <propertyEnabled>false</propertyEnabled>
+            <propertyTypeField>$.meta.view.name</propertyTypeField>
+            <propertyKeyFields/>
+            <propertyValueFields/>
+            <messageEnabled>false</messageEnabled>
+            <messageTypeField>$.meta.view.category</messageTypeField>
+            <messageSourceField>$.meta.view.attribution</messageSourceField>
+            <messageTagFields/>
+          </com.axibase.collector.model.job.socrata.SocrataConfigurationSetting>
+        </settings>
+        <customTags/>
+        <addRowNumber>false</addRowNumber>
+        <skipOldData>true</skipOldData>
+        <checkEachRow>false</checkEachRow>
+      </com.axibase.collector.model.job.socrata.SocrataConfiguration>
+    </configurations>
+  </com.axibase.collector.model.job.socrata.SocrataJobConfig>
+</list>

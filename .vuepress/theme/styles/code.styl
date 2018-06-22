@@ -1,0 +1,42 @@
+@require './config'
+
+.content
+  code
+    color #980e38
+    padding 0.25rem 0.2rem
+    margin 0
+    font-size 0.85em
+    border-radius 3px
+  a code
+    color $accentColor
+  table
+    code
+      white-space: nowrap;
+
+.content
+  pre, pre[class*="language-"]
+    background-color $codeBgColor
+    line-height 1.4
+    border-radius 6px
+    padding 1.25rem 1.5rem
+    margin 0.85rem 0
+    white-space pre
+    word-break break-word
+    overflow auto
+    position relative
+    code
+      color #fff
+      padding 0
+      background-color transparent
+      border-radius 0
+    &:before
+      position absolute
+      top 0.8em
+      right 1em
+      font-size 0.75rem
+      color rgba(255, 255, 255, 0.4)
+  .highlighted-line
+    background-color rgba(0, 0, 0, 66%)
+    display block
+    margin 0 -1.5rem
+    padding 0 1.5rem

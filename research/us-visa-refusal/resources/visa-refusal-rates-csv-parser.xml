@@ -1,0 +1,40 @@
+<list>
+  <com.axibase.tsd.model.csv.CsvConfiguration>
+    <name>visa-refusal-rate-parser</name>
+    <putType>METRIC</putType>
+    <delimiter>,</delimiter>
+    <recordDelimiter>
+</recordDelimiter>
+    <padding>�</padding>
+    <comment></comment>
+    <textQualifier>&quot;</textQualifier>
+    <entityColumn/>
+    <timestampFormat>yyyy</timestampFormat>
+    <timestampType>PATTERN</timestampType>
+    <processEvents>false</processEvents>
+    <writeProperty>false</writeProperty>
+    <enabled>true</enabled>
+    <discardNan>true</discardNan>
+    <ignoreParseErrors>true</ignoreParseErrors>
+    <tagColumns class="linked-hash-set"/>
+    <excludedColumns class="linked-hash-set"/>
+    <propertyColumns class="linked-hash-set"/>
+    <propertyKeyColumns class="linked-hash-set"/>
+    <entityTags class="linked-hash-set"/>
+    <metricTags class="linked-hash-set"/>
+    <defaultTags class="linked-hash-map"/>
+    <renamedColumns class="linked-hash-map"/>
+    <header/>
+    <decimalSeparator>.</decimalSeparator>
+    <groupingSeparator>�</groupingSeparator>
+    <schema>select(&quot;#row=2-*&quot;).&#xd;
+select(&quot;#col=2-*&quot;).&#xd;
+addSeries().&#xd;
+metric(&apos;state.visa-refusal-rate&apos;).&#xd;
+entity(&apos;travel.state.gov&apos;).&#xd;
+tag(cell(1,1), cell(row,1)).&#xd;
+tag(&apos;visa_type&apos;, &apos;Grand Total&apos;).&#xd;
+timestamp(cell(1, col))</schema>
+    <skipLines>0</skipLines>
+  </com.axibase.tsd.model.csv.CsvConfiguration>
+</list>
