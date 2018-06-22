@@ -5,7 +5,7 @@
 ## Summary
 
 [Calculated values](../add-calculated-value/README.md) in [**ChartLab**](https://apps.axibase.com/chartlab)
-are useful for creating multiple visualizations from one set data. [Axibase Time Series Database](https://axibase.com/docs/atsd/)
+are useful for creating multiple visualizations from one set data. ATSD
 supports a range of in-built functions which allow end-users to manipulate a dataset.
 
 The St. Louis branch of the Federal Reserve branch maintains [Federal Reserve Economic Data](https://fred.stlouisfed.org/) (FRED), an

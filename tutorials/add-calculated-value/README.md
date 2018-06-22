@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Raw data alone rarely contains enough information to answer meaningful questions. [ATSD](https://axibase.com/docs/atsd/) supports on the fly calculation in [**SQL Console**](https://axibase.com/docs/atsd/sql/) and [Charts](https://github.com/axibase/charts) services.
+Raw data alone rarely contains enough information to answer meaningful questions. ATSD supports on the fly calculation in [**SQL Console**](https://axibase.com/docs/atsd/sql/) and [Charts](https://github.com/axibase/charts) services.
 
 This article describes using the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) in [**ChartLab**](../shared/chartlab.md) and [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function in **SQL Console** to calculate percent change for a given dataset.
 

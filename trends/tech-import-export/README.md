@@ -24,7 +24,7 @@ This visualization uses `alias` settings to capture raw data and `value` setting
 
 ## Tracking the Growth in Imports Against the Decline in Exports
 
-**Trends** visualization service supports [user-defined functions](../../integrations/shared/trends.md#user-defined-functions) for ad hoc data transformations that may be performed inline without modifying the underlying data stored in [ATSD](https://axibase.com/docs/atsd).
+**Trends** visualization service supports [user-defined functions](../../integrations/shared/trends.md#user-defined-functions) for ad hoc data transformations that may be performed inline without modifying the underlying data stored in ATSD.
 
 ### `fred.js` Library
 

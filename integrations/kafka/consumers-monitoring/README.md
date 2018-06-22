@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes how to monitor [Apache Kafka](https://kafka.apache.org/) consumer offset using [Axibase Time Series Database](https://axibase.com/docs/atsd/).
+This document describes how to monitor [Apache Kafka](https://kafka.apache.org/) consumer offset using ATSD.
 
 ## Configuration
 

@@ -4,7 +4,7 @@ To perform this process using a single command, see the [abbreviated walkthrough
 
 ## Launch Axibase Sandbox
 
-Launch [ATSD](https://axibase.com/docs/atsd/) and [Axibase Collector](https://axibase.com/docs/axibase-collector/) instances. The default username and password are `axibase`.
+Launch ATSD and [Axibase Collector](https://axibase.com/docs/axibase-collector/) instances. The default username and password are `axibase`.
 
 ```sh
 $ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \

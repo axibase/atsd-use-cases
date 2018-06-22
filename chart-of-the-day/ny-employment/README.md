@@ -20,7 +20,7 @@ years in the Big Apple alone.
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/6402f01c/20/)
 
 Additionally, the number of working government positions in the city has increased by roughly 38,000
-and using the [SQL Console](https://axibase.com/docs/atsd/sql/) interface in [Axibase Time Series Database](https://axibase.com/docs/atsd/),
+and using the [SQL Console](https://axibase.com/docs/atsd/sql/) interface in ATSD,
 New York City figures can be compared to New York State figures:
 
 ## New York State

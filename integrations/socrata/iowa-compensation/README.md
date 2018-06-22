@@ -10,7 +10,7 @@ from agriculture and manufacturing, to healthcare and society.
 
 The governments at the federal, state, city, and county level publish datasets in [Socrata Open Data Format](https://socrata.com).
 
-Using [Axibase Time Series Database](https://axibase.com/docs/atsd/), you can combine datasets from multiple entities in one portal.
+Using ATSD, you can combine datasets from multiple entities in one portal.
 
 This article uses data collected from the [Bureau of Labor Statistics](http://www.bls.gov/home.htm).
 

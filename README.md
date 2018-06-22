@@ -1,23 +1,27 @@
 # ATSD Use Cases
 
-**Use Cases** documentation demonstrates solutions to real-world data problems using [ATSD](https://axibase.com/docs/atsd/) and contains in-depth guides for programmatic integration instructions with some of the most commonly-used enterprise softwares and services, as well as tutorials for data transformation, and visualizations created with ATSD.
+**Use Cases** documentation demonstrates solutions to real-world data problems using Axibase Time Series Database (ATSD) and contains in-depth guides for programmatic integration with commonly-used enterprise software systems and services, as well as tutorials for data transformation and visualizations created with ATSD.
 
 ## Chart of the Day
 
-Interactive visualizations tracking interesting datasets from a variety of sources.
-
-## Integrations
-
-Walkthrough guides for ATSD integration with various IT infrastructure systems and services.
+Interactive [visualizations](./chart-of-the-day/README.md) tracking interesting datasets from a variety of sources.
 
 ## Research
 
-Detailed use cases that feature in-depth data exploration and ATSD tools used to solve modern data problems.
+Detailed [research notes](./research/README.md) that feature in-depth data exploration and ATSD tools used to solve modern data problems.
 
 ## Trends
 
-A publicly accessible ATSD instance which contains [Federal Reserve Economic Data](https://fred.stlouisfed.org/).
+A publicly accessible ATSD instance with [national economic indicators](./trends/README.md).
+
+## Integrations
+
+Walkthrough [guides](./integrations/README.md) for ATSD integration with various IT infrastructure systems and services.
 
 ## Tutorials
 
-Step-by-step instructions to perform data transformation, import configuration files, and other tasks in ATSD.
+Step-by-step [instructions](./tutorials/README.md) to perform data transformation, import configuration files, and other tasks in ATSD.
+
+## Datasets
+
+Socrata-format [data catalog](https://axibase.com/datasets/) from [`data.gov`](https://www.data.gov/) featuring over 7,000 entities.

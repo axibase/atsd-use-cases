@@ -106,7 +106,7 @@ ORDER BY time
 ---
 
 You can take a closer
-look at the statistics by following the below steps to install your own [Axibase Time Series Database](https://axibase.com/docs/atsd/) instance.
+look at the statistics by following the below steps to install your own ATSD instance.
 
 1. Install the ATSD database from a Docker image:
 

@@ -74,9 +74,9 @@ data in plotly is static, that is every time the data is updated, everything wil
 
 ![Figure 4](./images/Figure4.png)
 
-## Axibase Time Series Database (ATSD)
+## Axibase Time Series Database
 
-The processing of datasets using Axibase Time Series Database (ATSD) is much less cumbersome.  Processing the same data with ATSD is less time consuming
+Processing datasets using ATSD is much less cumbersome.  Processing the same data with ATSD is less time consuming
 because its collection tool has built-in heuristics to handle the format in which data.gov datasets are published, namely the Socrata Open Data Format.
 When loading data for a particular dataset the collector uses Socrata metadata to understand the meaning of columns and automatically extract dates, times,
 and categories from the data files. Besides, ATSD stores the data in the user's own database so that this public data can be combined with internal data
