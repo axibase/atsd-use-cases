@@ -1,4 +1,4 @@
-# Cryptocurrency Value Tracker 
+# Cryptocurrency Value Tracker
 
 ![](./images/crypto-value-2018.png)
 
