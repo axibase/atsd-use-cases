@@ -9,13 +9,13 @@
 This tutorial uses the following tools:
 
 * [`crt.sh`](https://crt.sh): Certificate search engine to retrieve information about SSL certificates issued by Comodo Group. The portal provides open access to their database.
-* [`atsd-sandbox`](https://github.com/axibase/dockers/tree/atsd-sandbox#overview) - Docker image running *ATSD* and *Collector* on one machine.
+* [`atsd-sandbox`](https://github.com/axibase/dockers/tree/atsd-sandbox#overview): Docker image running ATSD and Collector.
 
 ## Procedure
 
 1. [Prepare job and rules for domain](#prepare-files-for-domain).
 2. [Configure and launch ATSD Sandbox](#configure-and-launch-atsd-sandbox).
-3. [Begin receiving notifications](#receive-notification).
+3. [Begin receiving notifications](#notifications).
 
 ### Prepare Files for Domain
 
@@ -53,23 +53,23 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   axibase/atsd-sandbox:latest
 ```
 
-### Receive Notifications
+### Notifications
 
 ATSD sends a test notification to Slack upon successful launch.
 
-![Test ATSD Notification](images/test-notification.png)
+![Test ATSD Notification](./images/test-notification.png)
 
 Collector starts the imported monitoring job and imports the data into ATSD. The database sends a message with the certificate expiry date of the monitored domain.
 
- ![Certificate's expiry date set](images/expiry-date-set.png)
+ ![Certificate's expiry date set](./images/expiry-date-set.png)
 
 Upon modification of SSL certificate expiry date, the database sends the following message:
 
-![Certificate's expiry date set](images/expiry-date-changed.png)
+![Certificate's expiry date set](./images/expiry-date-changed.png)
 
 If less than 30 days remain before SSL certificate expiry date, the database sends the following message:
 
-![Expiration rule](images/expiration-approaching.png)
+![Expiration rule](./images/expiration-approaching.png)
 
 ## Troubleshooting
 
