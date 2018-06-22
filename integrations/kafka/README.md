@@ -1,6 +1,6 @@
 # Kafka Integration
 
-This document describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) using [Axibase Time Series Database](https://axibase.com/docs/atsd/).
+This document describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) using ATSD.
 
 ## Step 1: Configure Axibase Collector
 

@@ -1,6 +1,6 @@
 # United States International Students
 
-* Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/docs/atsd/)
+* Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on ATSD
 
 * Structured Query Language: [SQL Console](https://axibase.com/docs/atsd/installation/)
 

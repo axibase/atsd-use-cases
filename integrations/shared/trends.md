@@ -4,7 +4,7 @@
 
 ## Overview
 
-[**Trends**](https://trends.axibase.com/) is a data visualization sandbox based on the [Axibase Charts](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) library and the [Axibase Time Series Database](https://axibase.com/docs/atsd/) which provides essential data storage and processing tasks.
+[**Trends**](https://trends.axibase.com/) is a data visualization sandbox based on the [Axibase Charts](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) library and the ATSD which provides essential data storage and processing tasks.
 
 The **Trends** service enables users to interact with data by creating custom visualizations as well as modifying examples shared by other users.
 

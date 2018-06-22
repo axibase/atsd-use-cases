@@ -36,5 +36,5 @@ The following visualization tracks debt growth by country from 2006 to 2016:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d38e750e/#fullscreen)
 
-This dataset is queried further and indexed in the [Data Library](https://axibase.com/blog/data-library/) using the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) in [ATSD](https://axibase.com/docs/atsd/).
+This dataset is queried further and indexed in the [Data Library](https://axibase.com/blog/data-library/) using the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD.
 See the complete entry in the [Data Library](../../research/data-lib/eu-debt-per-capita/README.md).

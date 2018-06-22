@@ -35,7 +35,7 @@ of the Great Recession, substantial producer losses are shown by unequal changes
 
 ![](./images/pro-2.png)
 
-Using [SQL Console](https://axibase.com/docs/atsd/sql/) in [Axibase Time Series Database](https://axibase.com/docs/atsd/),
+Using [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD,
 the underlying data can be explored to calculate producer losses during the worst year of the recession for American producers:
 
 ```sql

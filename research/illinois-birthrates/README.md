@@ -26,7 +26,7 @@ formative events of the 20th and 21st centuries: the fall of the Berlin Wall, th
 terrorist attacks, the Pathfinder mission to Mars, the completion of the Burj Khalifa, and
 the emergence of the Internet to name a few.
 
-Using the [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the open source modelling software [Fityk](http://fityk.nieto.pl/),
+Using the ATSD and the open source modelling software [Fityk](http://fityk.nieto.pl/),
 the ICHS data can be visualized, modeled, and analyzed to extract valuable information from free public data.
 
 ## Data
@@ -117,7 +117,7 @@ to 2009:
 The data is difficult to work with because of the way it is stored. Typically, time information is
 stored within a given metric, but in this case, each year is a metric in and of itself. This
 type of storage can present a number of challenges for less robust software, but using the
-[Axibase Time Series Database](https://axibase.com/docs/atsd/) and the supported [`JOIN`](https://axibase.com/docs/atsd/sql/#joins) clause,
+ATSD and the supported [`JOIN`](https://axibase.com/docs/atsd/sql/#joins) clause,
 working with, and analyzing even unideal data is well within the scope of possibility.
 
 Birth numbers can be gathered in five-year steps:

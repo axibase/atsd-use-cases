@@ -58,7 +58,7 @@ In ATSD, execute SQL queries via web-based console, an external reporting tool u
 
 ### Base Report
 
-To get started, open the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) interface in [ATSD](https://axibase.com/docs/atsd/) from the toolbar on the left and execute the sample SQL query below:
+To get started, open the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) interface in ATSD from the toolbar on the left and execute the sample SQL query below:
 
 ```sql
 SELECT entity AS ID, entity.tags.url AS URL,

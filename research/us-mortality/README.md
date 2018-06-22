@@ -8,7 +8,7 @@ According to [infoplease.com](http://www.infoplease.com/ipa/A0005148.html), life
 As reported by the [Center for Disease Control and Prevention (CDC)](http://www.cdc.gov/nchs/data/databriefs/db88.htm#x2013;2010%3C/a%3E>), the crude death rate in the United States fell from
 10.9 to 7.9 deaths per 1,000 people from 1935 to 2010, translating to a **27% decrease**. Mortality rates, however, are vastly different across different U.S. cities and age groups.
 In this article we will analyze a data.gov dataset looking at [death statistics for 122 U.S. cities](https://catalog.data.gov/dataset/deaths-in-122-u-s-cities-1962-2016-122-cities-mortality-reporting-system).
-This article will focus on Axibase Time Series Database (ATSD) [SQL query language capabilities](https://axibase.com/docs/atsd/sql/), which we will use to search for specific information contained in this dataset.
+This article will focus on ATSD [SQL query language capabilities](https://axibase.com/docs/atsd/sql/), which we will use to search for specific information contained in this dataset.
 
 ## Death Statistics for 122 U.S. Cities
 
@@ -38,7 +38,7 @@ While you can manually analyze this information in a spreadsheet program, it is 
 
 ## Axibase Time Series Database
 
-The [Axibase Time Series Database](https://axibase.com/docs/atsd/) is a powerful tool when it comes to storing, analyzing, and visualizing datasets. This article will not focus on creating graphs and figures using ATSD, but
+The ATSD is a powerful tool when it comes to storing, analyzing, and visualizing datasets. This article will not focus on creating graphs and figures using ATSD, but
 rather on writing and running SQL queries. If you are interested in reading more on the visual presentation capabilities of ATSD, check out our articles on
 [employee compensation numbers in Iowa](../../integrations/socrata/iowa-compensation/README.md) and
 [aviation statistics in the United Kingdom](../uk-aviation/README.md).

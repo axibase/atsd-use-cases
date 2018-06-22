@@ -1,6 +1,6 @@
 # Food Insecurity in America (2009-2013)
 
->Visualization Tool: [Axibase Time Series Database](https://axibase.com/docs/atsd/)
+>Visualization Tool: ATSD
 
 **Figure 1**: Average Food Insecurity Rates for Selected Counties.
 

@@ -12,7 +12,7 @@ the [New York Department of Transportation](https://www.dot.ny.gov/index) is agg
 * Annually aggregating the Port Authority Cargo data would destroy the granularization that was created by monthly collection over the observation period.
 * Using an average baseline calculated over the entire observation period would return results that neglected current trends because four decades worth of data would be regarded equally.
 
-With [Axibase Time Series Database](https://axibase.com/docs/atsd/) and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
+With ATSD and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
 setting, data with differing granularization is easily comparable.
 
 ## Data

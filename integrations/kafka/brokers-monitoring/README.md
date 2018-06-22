@@ -24,7 +24,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
 axibase/atsd-sandbox:latest
 ```
 
-The sandbox container includes both [ATSD](https://axibase.com/docs/atsd/) and [Axibase Collector](https://axibase.com/docs/axibase-collector/jobs/docker.html) instances.
+The sandbox container includes both ATSD and [Axibase Collector](https://axibase.com/docs/axibase-collector/jobs/docker.html) instances.
 
 Use the Collector instance installed in the sandbox container to retrieve Kafka statistics using JMX and store the statistics in ATSD.
 

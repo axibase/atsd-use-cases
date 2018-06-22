@@ -6,7 +6,7 @@ Population Data Source: [EuroStat](http://ec.europa.eu/eurostat/web/population-d
 
 Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
 
-Structured Query Language: [SQL Console](https://axibase.com/docs/atsd/sql/) in [Axibase Time Series Database](https://axibase.com/docs/atsd/)
+Structured Query Language: [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD
 
 This entry is an expansion of an earlier entry titled [European Union Debt by Country](../eu-debt/README.md).
 

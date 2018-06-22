@@ -10,6 +10,7 @@ const topNavMenu = [
     { text: 'Trends', link: '/trends/' },
     { text: 'Integrations', link: '/integrations/' },
     { text: 'Tutorials', link: '/tutorials/' },
+    { text: 'Docs', link: 'https://axibase.com/docs/atsd/' },
 ]
 
 const landingPageMenu = [

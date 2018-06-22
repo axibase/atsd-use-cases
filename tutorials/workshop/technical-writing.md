@@ -20,13 +20,13 @@ The guide contains a compilation of grammar and punctuation rules for software d
   * Protocols: HTTP, HTTPS, SSL, JMX, TCP, UDP, SSH, DNS.
   * Standards and organizations: ISO, ASCII, ANSI, W3C.
   * Time zones: UTC, EST, GMT.
-  * ATSD in Axibase docs repositories.
+  * ATSD in Axibase documentation repositories.
   
 ## Contractions
 
 * Replace "i.e." or "e.g." with "for example".
-  * :white_check_mark: ``Specify the recipient, e.g. `test@example.org`.``
-  * :no_entry: ``Specify the recipient, for example `test@example.org`.``
+  * :white_check_mark: ``Specify the recipient, for example `test@example.org`.``
+  * :no_entry: ``Specify the recipient, e.g. `test@example.org`.``
 * "etc" is allowed.
 * Replace "don't", "can't", "hasn't", "isn't", "didn't" with "do not", "cannot", etc.
   * :white_check_mark: `The parameter is not valid.`
@@ -35,29 +35,29 @@ The guide contains a compilation of grammar and punctuation rules for software d
 ## Capitalization
 
 * Use [title case](https://titlecase.com/) in headers.
-  * :white_check_mark: `## Import Data`
-  * :no_entry: `## Import data`
+  * :white_check_mark: `## Import Data`.
+  * :no_entry: `## Import data`.
 * Do not capitalize program/file/function names such as `curl`, `atsd.log`, even in headers.
-  * :white_check_mark: `## Import Data with curl`
-  * :no_entry: `## Import Data with Curl`
+  * :white_check_mark: `## Import Data with curl`.
+  * :no_entry: `## Import Data with Curl`.
 * Do not capitalize the first word after the colon in a list.
-  * :white_check_mark: `Step 3: unzip files`
+  * :white_check_mark: `Step 3: unzip files`.
 * Do not capitalize file extensions.
-  * :white_check_mark: `.png`, `.xml`, `.jar`
+  * :white_check_mark: `.png`, `.xml`, `.jar`.
 * Keep original product capitalization.
   * :white_check_mark: `SQL Server Database`, `Hadoop`, `HBase`.
 * In ambiguous cases, adhere to one option for consistency:
-  * :white_check_mark: Unix, bash, IPv4, IPv6, URL
-  * :no_entry: UNIX, Bash, IP v4, IP v6, Url
-  
+  * :white_check_mark: Unix, bash, IPv4, IPv6, URL.
+  * :no_entry: UNIX, Bash, IP v4, IP v6, Url.
+
 ## Parentheses
 
 * Do not use parentheses.
-  * :white_check_mark: ``Execute `SELECT 1` query to test the connection``
-  * :no_entry: ``Execute any query (such as `SELECT 1`) to test the connection``
+  * :white_check_mark: ``Execute `SELECT 1` query to test the connection.``
+  * :no_entry: ``Execute any query (such as `SELECT 1`) to test the connection.``
 * Parentheses are allowed to spell out a number or character sequence.
-  * :white_check_mark: ``The field supports wildcards (`*`)``
-  * :white_check_mark: ``Up to nine (`9`) fractions are printed``
+  * :white_check_mark: ``The field supports wildcards (`*`).``
+  * :white_check_mark: ``Up to nine (`9`) fractions are printed.``
 
 ## Colons
 
@@ -70,8 +70,8 @@ The guide contains a compilation of grammar and punctuation rules for software d
 
 * Do not use quotation marks.
 * To designate [UI elements](#interface-elements) use bold text.
-  * :white_check_mark: `Click **View** to proceed`
-  * :no_entry: `Click on 'View' to proceed`
+  * :white_check_mark: `Click **View** to proceed`.
+  * :no_entry: `Click on 'View' to proceed`.
 * To designate single-line machine output use bold text or backticks.
   * :white_check_mark: `Watch the log file for **Start completed** message.`
   * :white_check_mark: ``Watch the log file for `Start completed` message.``
@@ -87,7 +87,7 @@ The guide contains a compilation of grammar and punctuation rules for software d
 ## Hyphens
 
 * Hyphenate compound adjectives.
-  * :white_check_mark: `Cancel a long-running query`
+  * :white_check_mark: `Cancel a long-running query`.
 * Do not hyphenate adverb adjectives that end with `ly`.
   * :white_check_mark: `Review frequently used queries`.
   * :no_entry: `Load data from the publicly-accessible service`.
@@ -99,16 +99,16 @@ The guide contains a compilation of grammar and punctuation rules for software d
 
 Apply single backticks to the following:
 
-* File names: `atsd.log`
-* Directory and file paths: `/opt/atsd/atsd/conf/server.properties`
-* File extensions: `.png`, `.xml`
-* Program names: `curl`, `wget`, `cron`
-* Email addresses: `example@example.org`
-* Host names and IP addresses: `127.0.0.1`, `2001:db8::1`
-* HTTP methods: `POST`, `GET`
+* File names: `atsd.log`.
+* Directory and file paths: `/opt/atsd/atsd/conf/server.properties`.
+* File extensions: `.png`, `.xml`.
+* Program names: `curl`, `wget`, `cron`.
+* Email addresses: `example@example.org`.
+* Host names and IP addresses: `127.0.0.1`, `2001:db8::1`.
+* HTTP methods: `POST`, `GET`.
 * HTTP status codes: `200 OK`, `404`.
 * HTTP status code ranges: `2xx`, `3xx`.
-* URI paths and query strings: `/api/v1/{entity}/metrics`
+* URI paths and query strings: `/api/v1/{entity}/metrics`.
 * Header names and values.
   * Set `Content-Type` header to `application/json`.
 * Function and procedure names.
@@ -120,23 +120,23 @@ Apply single backticks to the following:
 * Parameter, field, and variable values, including boolean values and numbers.
   * ``Set `limit` field to `16` batches.``
 * Usernames.
-  * ``Switch to `axibase` user``
+  * ``Switch to `axibase` user.``
 * Port numbers.
   * ``Make sure ATSD is listening on port `8443`.``
 * Version numbers.
   * ``Python `3.5` is required for ATSD version `19420`.``
 * Single-line machine output. Bold text is also allowed.
   * :white_check_mark: ``Watch the log file for `Start completed` message.``
+* Shell commands: `su`, `chown`, `sudo`.
 
 Exceptions:
 
 * Do not backtick an acronym, unless it represents a field or parameter value.
-  * :white_check_mark: ``Select `GZIP` or `LZO` option in the **Codec** drop-down list``
-  * :no_entry: ``The file is exported in `CSV` format``
+  * :white_check_mark: ``Select `GZIP` or `LZO` option in the **Codec** drop-down list.``
+  * :no_entry: ``The file is exported in `CSV` format.``
 * Do not use backticks in headings.
-  * :white_check_mark: `## Install Python 3.5 using curl`
- 
-  
+  * :white_check_mark: `## Install Python 3.5 using curl`.
+
 ### Code Block
 
 * Fence code with triple backticks.
@@ -151,39 +151,39 @@ Exceptions:
 ## Numbers
 
 * Write out numbers one through ten, unless they have units.
-  * :white_check_mark: `There are three ways to perform this calculation`
+  * :white_check_mark: `There are three ways to perform this calculation`.
 * Write out ordinal numbers.
-  * :white_check_mark: `The first query causes the database to lock the table`  
+  * :white_check_mark: `The first query causes the database to lock the table`.
 * Add thousands separator except for milliseconds and machine output.
-  * :white_check_mark: `Stop the query if the row count exceeds 1,000`
+  * :white_check_mark: `Stop the query if the row count exceeds 1,000`.
 * Insert a space between a number and multiple-letter unit. Omit space for one-letter units.
   * :white_check_mark: `8 GB`, `128 MB`, `2 CPUs`, `10%`.
 
 ## Possessives
 
 * Do not use possessives.
-  * :white_check_mark: `Modify the file content` or `Modify the contents of the file`
-  * :no_entry: `Modify the file's content`
+  * :white_check_mark: `Modify the file content` or `Modify the contents of the file`.
+  * :no_entry: `Modify the file's content`.
 
 ## Headers
 
 * Use [title case](https://titlecase.com/) in headers.
-  * :white_check_mark: `## Import Data from File`
-  * :no_entry: `## Import data from file`
+  * :white_check_mark: `## Import Data from File`.
+  * :no_entry: `## Import data from file`.
 * Do not use backticks in headers.
-  * :white_check_mark: `## Configure cron`
-  * :no_entry: ``## Configure `cron` schedule``
+  * :white_check_mark: `## Configure cron`.
+  * :no_entry: ``## Configure `cron` schedule``.
 * Do not terminate sentences in headers with dot.
   * :no_entry: `## Import data from file.`
 * Avoid punctuation symbols in headers except colon (`:`).
-  * :no_entry: `## Import Data from File (Directory)`
+  * :no_entry: `## Import Data from File (Directory)`.
 
 ## Variables
 
-* Use curly brackets (`{}`) to designate a variable in URI path or query string
+* Use curly brackets (`{}`) to designate a variable in URI path or query string:
   * :white_check_mark: `/api/{entity}/metrics`
   * :white_check_mark: `/api/metrics?id={metricId}`
-* Use camelCase in compound variable names in REST API
+* Use camelCase in compound variable names in REST API:
   * :white_check_mark: `entityGroup`
   * :no_entry: `entity-group`
 * Add "the" article before the variables with types.
@@ -194,30 +194,33 @@ Exceptions:
 
 * IPv4 address: `192.0.2.1`, `198.51.100.1`, `203.0.113.0` per [RFC 5737](https://tools.ietf.org/html/rfc5737).
 * IPv4 address range: `192.0.2.0/24`, `198.51.100.0/24`, `203.0.113.0/24`.
-* IPv6 address: `2001:db8::1` per [RFC 3849](https://tools.ietf.org/html/rfc3849)
-* IPv6 address range: `2001:db8::/32`
+* IPv6 address: `2001:db8::1` per [RFC 3849](https://tools.ietf.org/html/rfc3849).
+* IPv6 address range: `2001:db8::/32`.
 * Phone number: `(800) 555-0100`.
 * Host name: `atsd_hostname`, `atsd_ip_address`.
 * DNS name: `example.org` per [RFC 2606](https://tools.ietf.org/html/rfc2606).
-* Subdomain: `test.example.org`, `atsd.example.org`
-* Email: `user@example.org`, `john.doe@example.org`
-* First name: `John`, `Jack`, `Jane`, `Mary`
-* Last name: `Doe`, `Smith`, `Jones`
-* Credentials: `username` and `password`
-* SSN: `000-00-0000`
-* File path: `/path/to/new-dir`, `/path/to/new-file`. Replace `new-dir` and `new-file` to indicate the purpose, for example, `/path/to/backup-dir`
+* Subdomain: `test.example.org`, `atsd.example.org`.
+* Email: `user@example.org`, `john.doe@example.org`.
+* First name: `John`, `Jack`, `Jane`, `Mary`.
+* Last name: `Doe`, `Smith`, `Jones`.
+* Credentials: `username` and `password`.
+* SSN: `000-00-0000`.
+* File path: `/path/to/new-dir`, `/path/to/new-file`. Replace `new-dir` and `new-file` to indicate the purpose, for example, `/path/to/backup-dir`.
 
-## Dates
+## Date and Time
 
-* Spell out month if the format is ambiguous
-  * :white_check_mark: `01/Jun/2018`
-  * :no_entry: `06/01/2018`
+* Spell out month if the format is ambiguous:
+  * :white_check_mark: `01/Jun/2018`.
+  * :no_entry: `06/01/2018`.
 * Don't use ordinal numbers in dates.
-  * :white_check_mark: `April 15`
-  * :no_entry: `April 15th`
+  * :white_check_mark: `April 15`.
+  * :no_entry: `April 15th`.
 * Use commas with full dates.
-  * :white_check_mark: `The report was published on December 13, 2017`
-
+  * :white_check_mark: `The report was published on December 13, 2017`.
+* Write time in 24-hour format.
+  * :white_check_mark: `April 15, 2018 at 20:30`.
+  * :no_entry: `April 15, 2018 at 8:30 pm`.
+  
 ## Active Voice
 
 * Maintain active voice for technical documentation.
@@ -225,7 +228,7 @@ Exceptions:
 
 ## Present Tense
 
-* Do not use "will" and "was". Write in present tense.
+* Do not use "will", "was", "were", "had". Write in the present tense.
 
 ## Blacklisted Words
 
@@ -236,7 +239,9 @@ word | alternatives
 `would` | -
 `may` | `can`
 `will` | use present tense
-`was` | use present tens
+`was` | use present tense
+`were` | use present tense
+`had` | use present tense
 `abort` | `stop`, `cancel`
 `kill` | `stop`, `cancel`
 `terminate` | `stop`, `cancel`
@@ -262,13 +267,13 @@ word | alternatives
 
 * Interface elements should be **bold**, exactly as they appear in the UI.
 * Add `>` to describe navigation sequences.
-  * :white_check_mark: `Open the **Alerts > Rules** page`
+  * :white_check_mark: `Open the **Alerts > Rules** page`.
 * Do not include types for named elements: button, split-button, checkbox, drop-down list, field, link, switch.
-  * :white_check_mark: `Click **Next**`
-  * :white_check_mark: ``Select `CSV` from **File Format**``
-  * :white_check_mark: `Open the **Rules** page`
-  * :no_entry: `Click **Next** button`
-  * :no_entry: ``Select `CSV` from the **File Format** drop-down list``  
+  * :white_check_mark: `Click **Next**`.
+  * :white_check_mark: ``Select `CSV` from **File Format**``.
+  * :white_check_mark: `Open the **Rules** page`.
+  * :no_entry: `Click **Next** button`.
+  * :no_entry: ``Select `CSV` from the **File Format** drop-down list``  .
 * Use consistent UI element types:
   * button
   * split-button (not multi-action button, drop-down button, combo-button)
@@ -291,13 +296,13 @@ word | alternatives
 
 ## Links
 
-* Use relative paths when linking markdown files in the same repository.
-  * :white_check_mark: `Initiate a [restart](../../administration/restarting.md)`
-  * :no_entry: `Initiate a [restart](/administration/restarting.md)`  
-* When linking to documents in the same repository, link to markdown files, and not to `https://axibase.com/` URLs.
-  * :white_check_mark: `Initiate a [restart](../../administration/restarting.md)`
-  * :no_entry: `Initiate a [restart](https://axibase.com/docs/atsd/administration/restarting.html)`
-* Describe the linked document in the link title
+* Use relative paths when linking markdown files in the same repository:
+  * :white_check_mark: `Initiate a [restart](../../administration/restarting.md)`.
+  * :no_entry: `Initiate a [restart](/administration/restarting.md)`.
+* When linking to documents in the same repository, link to markdown files, and not to `https://axibase.com/` URLs:
+  * :white_check_mark: `Initiate a [restart](../../administration/restarting.md)`.
+  * :no_entry: `Initiate a [restart](https://axibase.com/docs/atsd/administration/restarting.html)`.
+* Describe the linked document in the link title:
   * :white_check_mark: `Review [installation notes](install.md).`
   * :no_entry: `Click [here](install.md) to view installation notes.`
 
@@ -320,7 +325,7 @@ word | alternatives
 
 ## Style
 
-* Remove verbiage, such as "execute these steps", "follow the prompts", "perform these tasks", "by executing the following command"
+* Remove verbiage, such as "execute these steps", "follow the prompts", "perform these tasks", "by executing the following command."
   * :white_check_mark: `Create a Slack [workspace](https://slack.com/create).`
   * :no_entry: `Go to https://slack.com/create and follow the prompts to create a new workspace.`
   * :white_check_mark: ``Remove the ephemeral `/hbase` directory from Zookeeper cache.``  
@@ -330,6 +335,6 @@ word | alternatives
 * Describe what the command does.
   * :white_check_mark: ``Launch the `inotify` script to watch for file changes.``
   * :no_entry: `Run the script with the following command:`
-* Prefer `example` over `sample`
+* Favor `example` over `sample`.
   * :white_check_mark: `Example configuration:`
   * :no_entry: `Sample configuration:`

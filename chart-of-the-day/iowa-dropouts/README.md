@@ -2,7 +2,7 @@
 
 * Data Source: [The State of Iowa](https://www.iowa.gov/)
 
-* Visualizations: [ChartLab](https://apps.axibase.com/chartlab) based on [Axibase Time Series Database](https://axibase.com/docs/atsd/)
+* Visualizations: [ChartLab](https://apps.axibase.com/chartlab) based on ATSD
 
 **Figure 1.1**: Iowa State Total Dropouts
 
