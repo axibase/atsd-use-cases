@@ -2,24 +2,21 @@
 
 ## Overview
 
-[Axibase Collector](https://github.com/axibase/axibase-collector/#overview) provides tools to collect information about SSL certificates. The data stored in ATSD is useful to monitor SSL certificates for the subdomains of a top domain and notify a user via [Slack](https://axibase.com/docs/atsd/api/data/messages/webhook.html#slack) using web notifications triggered by the [Rule Engine](https://github.com/axibase/atsd/tree/master/rule-engine#overview) that notify when a certificate expiry date is approaching or modified. Query a list of domains using SQL in the [CRT Certificate Search](https://crt.sh) portal created by [Comodo Group](https://www.comodo.com).
+[Axibase Collector](https://github.com/axibase/axibase-collector/#overview) contains tools to collect information about SSL certificates. Monitor SSL certificates for the subdomains of some top domain and receive notifications via [Slack](https://slack.com/) triggered by the [Rule Engine](https://axibase.com/docs/atsd/rule-engine/). ATSD notifies when a certificate expiry date is approaching or modified. Query a list of domains using SQL in the [CRT Certificate Search](https://crt.sh) portal created by [Comodo Group](https://www.comodo.com).
 
-### Tools and resources
+### Tools and Resources
 
-This tutorial uses the following tools:
-
-* [`crt.sh`](https://crt.sh): Certificate search engine to retrieve information about SSL certificates issued by Comodo Group. The portal provides open access to their database.
-* [`atsd-sandbox`](https://github.com/axibase/dockers/tree/atsd-sandbox#overview): Docker image running ATSD and Collector.
+Certificate search engine [`crt.sh`](https://crt.sh) stores information about SSL certificates issued by Comodo Group. The portal provides open access to the database. [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox#overview) is the Docker image which runs ATSD and Axibase Collector instances used in this integration.
 
 ## Procedure
 
 1. [Prepare job and rules for domain](#prepare-files-for-domain).
 2. [Configure and launch ATSD Sandbox](#configure-and-launch-atsd-sandbox).
-3. [Begin receiving notifications](#notifications).
+3. [Receive notifications](#notifications).
 
 ### Prepare Files for Domain
 
-Create a directory to store tutorial files and navigate to the newly created directory from the terminal.
+Create a directory to store tutorial files and navigate to the newly created directory from the console.
 
 ```bash
 mkdir tutorial && cd ./tutorial
@@ -28,10 +25,10 @@ mkdir tutorial && cd ./tutorial
 ### Configure Slack Notifications
 
 ATSD Sandbox can pass a path to a file containing web notification properties as the parameters.
-Specify Bot User OAuth Access `token` and `channels` for notifications in `slack.properties` file.
+Specify Bot User OAuth Access `SLACK_TOKEN` and `SLACK_CHANNELS` for notifications in `slack.properties` file.
 
 ```bash
-touch slack.properties && printf "token=xoxb-************-************************\nchannels=general\n" > slack.properties
+touch slack.properties && printf "SLACK_TOKEN=xoxb-************-************************\nSLACK_CHANNELS=general\n" > slack.properties
 ```
 
 > See [Web Notifications Documentation](https://github.com/axibase/dockers/tree/atsd-sandbox#web-notifications-configuration) for more information.
