@@ -1,6 +1,6 @@
 # Data Flow Control in Time Series Database
 
-Time series databases specialize in collecting massive volumes of data at high frequency. With ingestion speeds reported at 100K to 1M inserts per second, TSDBs are substantially faster than relational databases and messaging middleware such as WebSphere MQ configured in message persistence mode.
+Time series databases specialize in collecting massive volumes of data at high frequency. With upload speeds reported at a hundred thousand to a million inserts per second, TSDBs are substantially faster than relational databases and messaging middleware such as WebSphere MQ configured in message persistence mode.
 
 Regardless of how fast the upload rate is, make an upfront decision about how the database operates if the amount of data received exceeds the amount of data committed to disk. This imbalance can occur due to a spike in received data or a drop in storage throughput.
 
