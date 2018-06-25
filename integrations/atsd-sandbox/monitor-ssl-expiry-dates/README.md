@@ -24,12 +24,8 @@ mkdir tutorial && cd ./tutorial
 
 ### Configure Slack Notifications
 
-ATSD Sandbox can pass a path to a file containing web notification properties as the parameters.
-Specify Bot User OAuth Access `SLACK_TOKEN` and `SLACK_CHANNELS` for notifications in `slack.properties` file.
+ATSD Sandbox can pass the `SLACK_TOKEN` for notifications as environment variable. 
 
-```bash
-touch slack.properties && printf "SLACK_TOKEN=xoxb-************-************************\nSLACK_CHANNELS=general\n" > slack.properties
-```
 
 > See [Web Notifications Documentation](https://github.com/axibase/dockers/tree/atsd-sandbox#web-notifications-configuration) for more information.
 
@@ -39,6 +35,7 @@ Job file contains placeholder `${ENV.TOP_DOMAIN}` instead of a real domain name.
 
 Start ATSD Sandbox with the required [environment variables](https://github.com/axibase/dockers/tree/atsd-sandbox#container-parameters):
 
+
 ```bash
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
@@ -46,7 +43,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --env TOP_DOMAIN=axibase.com \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/how-to/atsd-sandbox/monitor-ssl-expiry-dates/resources/ssl-certificates-files.tar.gz' \
   --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/how-to/atsd-sandbox/monitor-ssl-expiry-dates/resources/job_http_subdomains-ssl-certificates.xml' \
-  --env SLACK_CONFIG="slack.properties" \
+  --env SLACK_TOKEN={SLACK_TOCKEN}\
   axibase/atsd-sandbox:latest
 ```
 
