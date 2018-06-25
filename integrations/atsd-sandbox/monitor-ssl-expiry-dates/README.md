@@ -24,8 +24,7 @@ mkdir tutorial && cd ./tutorial
 
 ### Configure Slack Notifications
 
-ATSD Sandbox can pass the `SLACK_TOKEN` for notifications as environment variable. 
-
+ATSD Sandbox can pass the `SLACK_TOKEN` for notifications as environment variable.
 
 > See [Web Notifications Documentation](https://github.com/axibase/dockers/tree/atsd-sandbox#web-notifications-configuration) for more information.
 
@@ -34,7 +33,6 @@ ATSD Sandbox can pass the `SLACK_TOKEN` for notifications as environment variabl
 Job file contains placeholder `${ENV.TOP_DOMAIN}` instead of a real domain name. Set `TOP_DOMAIN` environment variable to an actual domain name. Collector replaces the placeholder with variable name during the import process. In the launch command shown below, `TOP.DOMAIN` is set to [axibase.com](https://axibase.com).
 
 Start ATSD Sandbox with the required [environment variables](https://github.com/axibase/dockers/tree/atsd-sandbox#container-parameters):
-
 
 ```bash
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
