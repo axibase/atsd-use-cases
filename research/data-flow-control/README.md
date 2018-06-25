@@ -2,7 +2,7 @@
 
 Time series databases specialize in collecting massive volumes of data at high frequency. With ingestion speeds reported at 100K to 1M inserts per second, TSDBs are substantially faster than relational databases and messaging middleware such as WebSphere MQ configured in message persistence mode.
 
-Regardless of how fast the upload rate is, make an upfront decision about how the database should operate if the amount of data received exceeds the amount of data committed to disk. This imbalance can occur due to a spike in received data or a drop in storage throughput.
+Regardless of how fast the upload rate is, make an upfront decision about how the database operates if the amount of data received exceeds the amount of data committed to disk. This imbalance can occur due to a spike in received data or a drop in storage throughput.
 
 The typical reasons for data storms include:
 
@@ -24,7 +24,7 @@ The setting that controls the choice between slowing down producers and discardi
 
 `series.queue.rejection.policy = BLOCK`
 
-The `BLOCK` policy means that once a series queue reaches the limit specified with the `series.queue.capacity` setting, the database stops receiving data from network commands, [Data API](https://axibase.com/docs/atsd/api/data/) insert requests, and file uploads. The database does not terminate connections, instead suspending reading data from sockets in blocking mode which cause cause collectors to block as well. Each upload thread that is not able to add series to the persistence queue, which is full, is blocked until there is space in the queue. This ensures that no data is lost while the database copes with a temporary imbalance.
+The `BLOCK` policy means that once a series queue reaches the limit specified with the `series.queue.capacity` setting, the database stops receiving data from network commands, [Data API](https://axibase.com/docs/atsd/api/data/) insert requests, and file uploads. The database does not break connections, instead suspending reading data from sockets in blocking mode which cause cause collectors to block as well. Each upload thread that is not able to add series to the persistence queue, which is full, is blocked until there is space in the queue. This ensures that no data is lost while the database copes with a temporary imbalance.
 
 The `DISCARD` policy means that once the queue limit is reached, newly received data is dropped by the database to protect itself from memory or disk shortage. Upload jobs return instantly and the producers is not be subject to any blocking.
 
@@ -44,8 +44,8 @@ The delta between received and written commands is large enough to quickly fill 
 
 The trade-off between these policies is clear: what is good for producers is bad for data integrity. Does that mean `BLOCK` policy is best everywhere? Not necessarily. There are situations where `DISCARD` makes for a reasonable design decision, including:
 
-* Value of delayed data is low. Consider real-time alerting or automated trading systems. By the time queued data makes it into a database, the data is of no use for real-time analytics because the metrics may have changed substantially since they observation.
-* Producers may fail if blocked. This applies to storage drivers where collection and transmission is done by the same thread. If the transmission code blocks, the storage driver either stops collecting data or buffered samples exhaust available memory.
+* Value of delayed data is low. Consider real-time alerting or automated trading systems. By the time queued data makes it into a database, the data is of no use for real-time analytics because the metrics potentially changed substantially since they observation.
+* Producers can fail if blocked. This applies to storage drivers where collection and transmission is done by the same thread. If the transmission code blocks, the storage driver either stops collecting data or buffered samples exhaust available memory.
 
 ## Queue Size
 
@@ -63,10 +63,10 @@ If `Xmx` exceeds 4 GB, a queue limit of 256 and higher is advisable.
 
 The database exposes the following metrics to ensure data integrity:
 
-* `series_pool_active_count`: Number of concurrent storage workers. Limited by `series.queue.pool.size`
+* `series_pool_active_count`: Number of concurrent storage workers. Limited by `series.queue.pool.size`.
 * `series_queue_size`: Number of series command batches in the queue. Limited by `series.queue.capacity`.
-* `series_rejected_count`: Number of series command batches discarded during the 15 second interval because queue was full
-* `metric_received_per_second`: Number of series commands received per second
+* `series_rejected_count`: Number of series command batches discarded during the 15 second interval because of full queue.
+* `metric_received_per_second`: Number of series commands received per second.
 * `metric_writes_per_second`: Number of series commands written to disk per second.
 
 ## [Rule Engine](https://axibase.com/docs/atsd/rule-engine/)
