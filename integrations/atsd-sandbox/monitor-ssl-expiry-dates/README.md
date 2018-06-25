@@ -34,6 +34,8 @@ Job file contains placeholder `${ENV.TOP_DOMAIN}` instead of a real domain name.
 
 Start ATSD Sandbox with the required [environment variables](https://github.com/axibase/dockers/tree/atsd-sandbox#container-parameters):
 
+Place your Slack token instead of `SLACK_TOKEN` placeholder.
+
 ```bash
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
@@ -41,7 +43,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --env TOP_DOMAIN=axibase.com \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/how-to/atsd-sandbox/monitor-ssl-expiry-dates/resources/ssl-certificates-files.tar.gz' \
   --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/how-to/atsd-sandbox/monitor-ssl-expiry-dates/resources/job_http_subdomains-ssl-certificates.xml' \
-  --env SLACK_TOKEN={SLACK_TOCKEN}\
+  --env SLACK_TOKEN={SLACK_TOKEN}\
   axibase/atsd-sandbox:latest
 ```
 
