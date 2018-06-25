@@ -7,6 +7,7 @@
 * [Curve Smoothing Using Moving Averages](moving-avg/README.md)
 * [Historizing Metrics Stored in Database](historize/README.md)
 * [Calculating the Difference Between Consecutive Series Values](subtract-subsequent-values/README.md)
+* [Composite Interval Queries in Axibase Enterprise Reporter](composite-intervals/README.md)
 
 ## Configuration Import
 
