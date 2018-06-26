@@ -2,12 +2,15 @@
 
 ## Data
 
+* [Data Flow Control in Time Series Database](data-flow-control/README.md)
 * [Calculated Values With Schema-Based Parsing](schema-based-parser-mod/README.md)
 * [Creating Calculated Metrics in ChartLab and SQL Console](add-calculated-value/README.md)
 * [Curve Smoothing Using Moving Averages](moving-avg/README.md)
 * [Historizing Metrics Stored in Database](historize/README.md)
+* [Allocating Resources to Containers](allocating-resources/README.md)
 * [Calculating the Difference Between Consecutive Series Values](subtract-subsequent-values/README.md)
 * [Monitoring Docker Containers](docker-monitoring/README.md)
+* [The Time Series Database is about Reducing Complexity](time-series-database/README.md)
 
 ## Configuration Import
 

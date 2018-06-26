@@ -33,6 +33,7 @@ Christi
 Clair
 CloudWatch
 CMDB
+CPUs
 CoinDesk
 Coliform
 Corrigan
@@ -128,6 +129,8 @@ McGovern
 McHenry
 Medicaid
 Mesos
+microservice
+microservices
 Midgrade
 Mihaylov
 Mln
@@ -243,6 +246,7 @@ cty
 ctyname
 curated
 d'Ivoire
+dashboarding
 datacenter
 datacenters
 datapoint
@@ -416,3 +420,8 @@ Cadvisor
 udp
 Litecoin
 camelCase
+TSDBs
+WebSphere MQ
+MapReduce
+upfront
+SharePoint
