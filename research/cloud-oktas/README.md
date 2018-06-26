@@ -16,7 +16,7 @@ Today, cloud cover is measured using automated weather stations, specifically ce
 
 You can learn more about automated weather stations in Australia on the official website of the [Bureau of Meteorology Australia](http://www.bom.gov.au/).
 
-Cloud cover measurements have many applications and benefits in weather forecasting and solar energy generation. For example, seasonal cloud cover statistics allow tourists to plan their holidays for sunnier weeks and months of the year. This information is also useful to mountain climbers planning an ascent, since the climbers need to choose seasons with less cloud cover, guaranteeing the best possible conditions for summit attempts. Photovoltaic energy generation hinges heavily on quality cloud cover data. Solar panels are most efficient when there are no clouds, so when building a solar power station, a company or government must analyze cloud oktas data. Because automated weather stations that measure this metric are distributed sparsely, the data is often not available. Below is a visualization comparing cloud cover with solar power generation for a particular station in Australia. It is readily apparent that the two metrics are interdependent.
+Cloud cover measurements have many applications and benefits in weather forecasting and solar energy generation. For example, seasonal cloud cover statistics allow tourists to plan their holidays for sunnier weeks and months of the year. This information is also useful to mountain climbers planning an ascent, since the climbers need to choose seasons with less cloud cover, guaranteeing the best possible conditions for summit attempts. Photovoltaic energy generation hinges heavily on quality cloud cover data. Solar panels are most efficient when there are no clouds, when building a solar power station, a company or government must analyze cloud oktas data. Because automated weather stations that measure this metric are distributed sparsely, the data is often not available. Below is a visualization comparing cloud cover with solar power generation for a particular station in Australia. It is readily apparent that the two metrics are interdependent.
 
 ![](./images/pv_cloud_correlation2.png)
 
@@ -70,7 +70,7 @@ Using the geographical coordinates of each station, each station location on the
 
 A simple method to detect clouds is used. Since clouds are cooler than the surface of the earth, clouds are rendered white on the satellite images, and the surface of the earth is black. Therefore, the brightness of the pixels in the images reflects cloudiness. Hence, calculate cloud cover for a given meteorological station as the average pixel brightness over a `3 x 3` square of pixels, centered over the station.
 
-Since one pixel on the image, depending on the location, covers an area from `5.5 x 3.9` to `5.5 x 5.6` square kilometers, it turns out that for the determination of cloudiness an area of about 230 square kilometers was analyzed.
+Since one pixel on the image, depending on the location, covers an area from `5.5 x 3.9` to `5.5 x 5.6` square kilometers; the determination of cloudiness of an area sized about 230 square kilometers is analyzed.
 
 Here is the key line from the R script used to calculate the `cloudiness_himawari_b13` metric from the satellite images:
 
@@ -114,12 +114,12 @@ The diurnal cycle is removed by subtracting the average of values of the last `n
 
 Data scientists sought to improve the correlation by adjusting the method for determining the cloudiness from an image.
 
-The following adjustments were made:
+The following adjustments are made:
 
 1. Average out the brightness over different areas of the images.
 2. Calculate a weighted average of brightness over large areas of the image, giving less weight to pixels more distant from the center of the area. Calculate the weights using geometrical principles, described below. Take into account the height of the lower edge of the cloud directly over a station. Meteorological stations measure the height of clouds and this data is available from the Australian Bureau of Meteorology. It seems that the lower the height of the cloud the greater the value of cloud cover.
 
-To be more concrete, here are example computations for eight meteorological stations. These stations were chosen because there are enough measurements of cloud cover and the stations are far from the overlaid white lines on the images.
+To be more concrete, here are example computations for eight meteorological stations. These stations are chosen because there are enough measurements of cloud cover and the stations are far from the overlaid white lines on the images.
 
 For each of the stations, five not-perfectly round disks are selected with radii of `0`, `3`, `5`, `10`, `20`, and `30` pixels:
 
@@ -127,7 +127,7 @@ For each of the stations, five not-perfectly round disks are selected with radii
 |:--:|:--:|:--:|:--:|:--:|:--:|
 ![](./images/stations_avg_0.png) | ![](./images/stations_avg_3.png) | ![](./images/stations_avg_5.png) | ![](./images/stations_avg_10.png) | ![](./images/stations_avg_20.png) | ![](./images/stations_avg_30.png)
 
-Averaged brightness over each disc is an estimation of the cloud cover. So we have 6 estimations, and their correlations with actual values of cloud cover are saved in columns **`avg0`** to **`avg30`** in these tables:
+Averaged brightness over each disc is an estimation of the cloud cover. There are six estimations, and the correlations with actual values of cloud cover are saved in columns **`avg0`** to **`avg30`** in these tables:
 
 **Averaged Brightness**:
 
@@ -143,7 +143,7 @@ Columns **`wavg0`** to **`wavg30`** display correlations between cloud cover and
 $w = \frac{h}{(d^2 + h^2)^{3/2}} = \frac{h}{l^3}.$
 ```
 
-In this equation, `d` is the distance between the center of the pixel and the given station (in meters) and `h` is the cloud height (in meters). So distant and high clouds have lower weights.
+In this equation, `d` is the distance between the center of the pixel and the given station (in meters) and `h` is the cloud height (in meters). Distant and high clouds have lower weights.
 
 Here is a code snippet from the R script used to calculate the weighted average of brightness for given disks:
 
@@ -181,7 +181,7 @@ To explain the reasoning behind using this formula, assume that clouds are flat 
 $s = \int_A w\ d\sigma \approx w\cdot A$, where $w = \frac{h}{(d^2 + h^2)^{3/2}} = \frac{h}{l^3}.$
 ```
 
-The measurement of a “solid angle” is equal to the area of intersection of this angle and the unit sphere centered in the angle vertex. So the contribution of a pixel to cloud cover is proportional to the `w` coefficient, because all pixels on an image cover nearly the same area equal to `A`. The exact statement is that the integral of `w` over the area `A` equals to the “solid angle.”
+The measurement of a “solid angle” is equal to the area of intersection of this angle and the unit sphere centered in the angle vertex. The contribution of a pixel to cloud cover is proportional to the `w` coefficient, because all pixels on an image cover nearly the same area equal to `A`. The exact statement is that the integral of `w` over the area `A` equals to the “solid angle.”
 
 The results show that none of the methods used to improve the correlation led to a significant increase.
 
