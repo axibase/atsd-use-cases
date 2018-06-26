@@ -55,11 +55,19 @@ https://api.stackexchange.com/2.2/tags/java/info?site=stackoverflow
 }
 ```
 
+The retrieved data can also be found in the Stack Overflow user interface by searching for each language tag:
+
+![](./images/java_so_questions1.png)
+
 ## Tools
 
 [Axibase Collector](https://axibase.com/docs/axibase-collector/) is used to collect the data. A [JSON job](https://axibase.com/docs/axibase-collector/jobs/json.html) in Axibase Collector collects data for each of the programming language tags and stores it in the ATSD for [analytics](https://axibase.com/docs/atsd/rule-engine/) and [visualization](https://axibase.com/products/axibase-time-series-database/visualization/).
 
+![](./images/so_collector_job.png)
+
 When viewing the portal, it is immediately noticeable that at some point in each day there is a negative change in question count.  After some investigating, it seems that this negative change is due to the cleanup of invalid or closed questions.
+
+![](./images/so_negative_changes.png)
 
 ## Conclusion
 
