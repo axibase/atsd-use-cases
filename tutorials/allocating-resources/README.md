@@ -6,7 +6,7 @@ Allocating resources to containers is important. Containers are less isolated th
 
 ## CPU
 
-Each container is assigned a share of CPU. By default, this is set to `1024`. By itself `1024` CPU share does not mean anything. When only a single container is running, the container uses all the available CPU resources. However, if you launch another container and they both have `1024` CPU share defined, then each container will claim at least 50% of CPU resources.
+Each container is assigned a share of CPU. By default, this is set to `1024`. By itself `1024` CPU share does not mean anything. When only a single container is running, the container uses all the available CPU resources. However, if you launch another container and they both have `1024` CPU share defined, then each container claims at least 50% of CPU resources.
 
 CPU share is set using the `-c` or `--cpu-shares` flag when launching a container:
 
@@ -14,7 +14,7 @@ CPU share is set using the `-c` or `--cpu-shares` flag when launching a containe
 docker run -ti -c 1024 ubuntu:14.04 /bin/bash
 ```
 
-Assume you have three containers running, two with `1024` CPU share and one with `512`. The two containers with `1024` CPU share can each use 40% of the available CPU, while the container with `512` CPU share will be limited to 20%. This scenario is only true for hosts operating under conditions where CPU resources are scarce. For an idle system running multiple containers, a single container with a small CPU share will be able to utilize 100% of the unused CPU capacity.
+Assume you have three containers running, two with `1024` CPU share and one with `512`. The two containers with `1024` CPU share can each use 40% of the available CPU, while the container with `512` CPU share is limited to 20%. This scenario is only applicable for hosts operating under conditions where CPU resources are scarce. For an idle system running multiple containers, a single container with a small CPU share are able to utilize 100% of the unused CPU capacity.
 
 Another option to setting CPU limits is CPU Completely Fair Scheduler (CFS). In this case, set **CPU Period** (100 ms by default) and **CPU Quota** (number of CPU ticks allocated to container):
 
