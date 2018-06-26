@@ -18,10 +18,11 @@ docker run \
   --name=cadvisor \
   axibase/cadvisor:latest \
   --storage_driver=atsd \
-  --storage_driver_atsd_protocol=http \
-  --storage_driver_host={ATSD_HOSTNAME}:8088 \
+  --storage_driver_atsd_protocol=https \
+  --storage_driver_host={ATSD_HOSTNAME}:8443 \
   --storage_driver_user={USERNAME} \
   --storage_driver_password={PASSWORD} \
   --storage_driver_buffer_duration=15s \
+  --storage_driver_atsd_skip_verify=true \
   --housekeeping_interval=15s
 ```
