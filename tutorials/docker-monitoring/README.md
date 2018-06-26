@@ -60,6 +60,8 @@ This expression groups all containers that support `metrics` service in producti
 
 Grouping based on metadata allows you to build roll-up portals. Below is an example of a portal for `API` service containers running in the `SVL` data center. You can see the API service broken down by container, which gives insight into the overall service performance and the performance of individual microservices.
 
+![](./images/api_service_portal_atsd1.png)
+
 See [Writing Docker Data](https://axibase.com/products/axibase-time-series-database/writing-data/docker/) for deployment instructions.
 
 ## Docker
@@ -70,11 +72,15 @@ Resource isolation features of the Linux kernel, such as `cgroups`, namespaces, 
 
 When comparing Linux containers with virtual machines, VMs require more resources but provide better isolation since VM Hypervisors emulate the full operating system stack including virtual hardware. Containers, on the other hand, run on a shared operating system. Containers leave most of the VM bulk behind, VM sizes can often reach tens of gigabytes, in favor of a miniature package that contains the application and dependencies. As a result, a Docker host can run many more applications on identical hardware.
 
+![](./images/docker_introduction.png)
+
 ## Linux Containers
 
 Containers are wrapped-up applications and pieces of software that include all dependencies but use a shared kernel with other containers. Essentially, containers are isolated sets of processes in the userspace on the host operating system. While Hypervisors abstract the entire device, containers just abstract the operating system kernel. One important limitation is the fact that all containers running on a single machine must use the same kernel, Host OS, whereas with Hypervisors each VM can run its own Guest OS with different kernels.
 
 Another key difference between containers and VMs is execution speed. Launching a VM can take several minutes and is often very resource intensive. As such, launching several VMs requires some planning and scheduling. You can launch multiple containers within seconds, as they are very lightweight. This kind of performance and scalability leads to a new type, or even a new generation, of distributed applications where containers are automatically launching and stopping depending on various factors like user traffic, events, queries, scheduled tasks, etc.
+
+![](./images/microservices_docker2.png)
 
 ### Micro-services and the Right Approach to Collecting Docker Performance Data
 
@@ -218,9 +224,13 @@ Axibase is focused on three crucial points with respect to performance monitorin
 
 The Axibase Time Series Database collects Docker metrics for long-term retention, analytics, and visualization. A single ATSD instance can collect metrics from many Docker hosts.
 
+![](./images/basic_arch2.png)
+
 ATSD stores metrics from local and remote Docker hosts for consolidated monitoring and analytics. This way, ATSD serves as a single point of access for performance monitoring and capacity planning.
 
 To enhance the data that ATSD retrieves from Docker, install `scollector`, `tcollector`, `collectd`, or `nmon` for a more in-depth look into system performance.
+
+![](./images/distributed_arch.png)
 
 To get started with Docker monitoring, continue reading ATSD setup and usage guide [Writing Docker Data](https://axibase.com/products/axibase-time-series-database/writing-data/docker/).
 
