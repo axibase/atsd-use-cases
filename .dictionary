@@ -236,6 +236,7 @@ cty
 ctyname
 curated
 d'Ivoire
+dashboarding
 datacenter
 datacenters
 datapoint
@@ -404,3 +405,4 @@ TSDBs
 WebSphere MQ
 MapReduce
 upfront
+SharePoint

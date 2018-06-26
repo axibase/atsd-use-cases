@@ -8,6 +8,7 @@
 * [Curve Smoothing Using Moving Averages](moving-avg/README.md)
 * [Historizing Metrics Stored in Database](historize/README.md)
 * [Calculating the Difference Between Consecutive Series Values](subtract-subsequent-values/README.md)
+* [The Time Series Database is about Reducing Complexity](time-series-database/README.md)
 
 ## Configuration Import
 
