@@ -8,7 +8,7 @@ Allocating resources to containers is important. Containers are less isolated th
 
 Each container is assigned a share of CPU. By default, this is set to `1024`. By itself `1024` CPU share does not mean anything. When only a single container is running, the container uses all the available CPU resources. However, if you launch another container and they both have `1024` CPU share defined, then each container claims at least 50% of CPU resources.
 
-CPU share is set using the `-c` or `--cpu-shares` flag when launching a container:
+CPU share is set using the `-c` or `--cpu-shares` setting when launching a container:
 
 ```sh
 docker run -ti -c 1024 ubuntu:14.04 /bin/bash
