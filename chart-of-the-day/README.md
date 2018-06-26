@@ -20,3 +20,4 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 1. [Island Living is Recession Proof](hawaii-gdp/README.md) (July 2017)
 1. [500 Cities: Local Data for Better Health](cdc-top25/README.md) (June 2017)
 1. [New York City's Most Crowded Industries](ny-employment/README.md) (June 2017)
+1. [DuckDuckGo Search Statistics](duck-duck-go/README.md) (July 2015)
