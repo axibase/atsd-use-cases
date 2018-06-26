@@ -32,6 +32,8 @@ Chien
 Christi
 Clair
 CloudWatch
+CMDB
+CPUs
 CoinDesk
 Coliform
 Corrigan
@@ -39,7 +41,9 @@ Cryptocurrency
 Curr
 Davidson
 DeleteFacebook
+DevOps
 Ditech
+Dockerfiles
 DoE
 DoF
 Dow
@@ -77,8 +81,11 @@ Heathrow
 Hendrix
 Hillary
 Hilo
+hostnames
 Hostway
 Humberside
+hypervisor
+hypervisors
 Iverson
 JPMorgan
 Javiar
@@ -122,6 +129,8 @@ McGovern
 McHenry
 Medicaid
 Mesos
+microservice
+microservices
 Midgrade
 Mihaylov
 Mln
@@ -190,6 +199,7 @@ Tacoma
 Tais
 Tesla
 Tesla's
+VMs
 TransUnion
 TreasuryDirect
 TrustManager
@@ -236,6 +246,7 @@ cty
 ctyname
 curated
 d'Ivoire
+dashboarding
 datacenter
 datacenters
 datapoint
@@ -280,10 +291,14 @@ kg
 kw
 lbs
 lighthearted
+lifespan
+lifespans
 ls
 makam
 meltdown
 mg
+microservice
+microservices
 minify
 minified
 nameserver
@@ -302,6 +317,7 @@ plotly
 pm
 policymakers
 preparers
+proactively
 proxied
 psql
 reacquire
@@ -316,6 +332,7 @@ screenshots
 seamlessly
 shoebox
 sifx
+siloed
 socioeconomic
 sourced
 sox
@@ -326,6 +343,7 @@ subdomain
 subprime
 sulfurous
 tafter
+thresholding
 timestamp
 tpy
 tradeable
@@ -340,6 +358,7 @@ unpredictably
 unselected
 untrusted
 uptick
+userspace
 vs
 watchlists
 weaponized
@@ -356,6 +375,7 @@ yoy
 ytnz
 yyyy
 DataFrame
+Datamine
 cryptocurrency
 cryptocurrencies
 gigawatt
@@ -403,3 +423,8 @@ camelCase
 SCOM
 vSphere
 vCenter
+TSDBs
+WebSphere MQ
+MapReduce
+upfront
+SharePoint
