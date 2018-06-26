@@ -6,7 +6,7 @@ This enables AER to merge statistics from multiple tables when the requested int
 
 ![](./images/composite_interval_query.png)
 
-For instance, if a user requests a two month chart from a detailed table which is pruned after two weeks, AER loads historical data for earlier periods from summarized tables: hourly, daily, and so forth.
+For instance, if a user requests a two month chart from a detailed table which is pruned after two weeks, AER loads historical data for earlier periods from summarized tables: hourly, daily, etc.
 
 These background queries are executed transparently for the end user and the choice of tables is based on history pruning settings defined in ITM.
 
