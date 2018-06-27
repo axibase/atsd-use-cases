@@ -66,7 +66,7 @@ The product of sliding window aggregation is not the same as periodic aggregatio
 
 Scenarios when it is beneficial to combine periodic and sliding aggregates in one representation exist.
 
-Consider the case of CPU utilization where you need to display hourly CPU averages over the last 24 hours and display values for the current hour since incoming data is streaming continuously. If you compute periodic aggregations, the average for the last and most current hour is quite volatile at the beginning of the hour because the grouping function would be computed for only the first few samples. As a result, end users would receive false alarms for sudden changes in monitored metrics at the start of every hour.
+Consider the case of CPU utilization where you need to display hourly CPU averages over the last 24 hours and display values for the current hour since incoming data is streaming continuously. If you compute periodic aggregations, the average for the last and most current hour is quite volatile at the beginning of the hour because the grouping function is computed for only the first few samples. As a result, end users receive false alarms for sudden changes in monitored metrics at the start of every hour.
 
 ![](./images/chartlab.png)
 
@@ -76,4 +76,4 @@ The solution is to implement a `moving-average` setting, which controls how the 
 
 [ChartLab](../shared/chartlab.md) is a data visualization service which uses ATSD for data monitoring and storage tasks which is tracking CPU utilization right now.
 
-[![](./images/button.png)](![](http://apps.axibase.com/chartlab/7edd79fe/5/))
+[![](./images/button.png)](http://apps.axibase.com/chartlab/7edd79fe/5/)
