@@ -234,7 +234,9 @@ blockchain
 cCPI
 cPPI
 caa
+cAdvisor
 cckp
+cgroup
 clickable
 codenamed
 comp
@@ -261,6 +263,7 @@ dexsius
 dexszus
 dexuseu
 dexusuk
+DuckDuckGo
 emp
 empl
 emps
@@ -317,11 +320,13 @@ plotly
 pm
 policymakers
 preparers
+prioritization
 proactively
 proxied
 psql
 reacquire
 real-time
+recomputation
 repopulate
 resizeable
 ridership
@@ -374,6 +379,7 @@ wqiturb
 yoy
 ytnz
 yyyy
+yml
 DataFrame
 Datamine
 cryptocurrency
@@ -420,6 +426,9 @@ Cadvisor
 udp
 Litecoin
 camelCase
+SCOM
+vSphere
+vCenter
 TSDBs
 WebSphere MQ
 MapReduce
@@ -431,3 +440,11 @@ eigenvectors
 ARIMA
 Rssa
 AirNow
+preemptible
+Xeon
+GHz
+IaaS
+T2
+vCPU
+MHz
+drawdown

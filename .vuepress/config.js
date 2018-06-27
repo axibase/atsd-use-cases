@@ -27,6 +27,7 @@ const chartofthedayMenu = [
         title: "Chart of the Day", children: [
             ['2018.md', '2018'],
             ['2017.md', '2017'],
+            ['2015.md', '2015'],
         ]
     },
 ];
