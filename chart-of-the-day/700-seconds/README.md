@@ -1,4 +1,4 @@
-# AWS EC2 T2 Instances: 700 seconds of Fame
+# AWS EC2 T2 Instances: 700 Seconds of Fame
 
 ![](./images/admin-ajax.png)
 
