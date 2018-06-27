@@ -30,14 +30,14 @@ Drawing in Web:
 ## Key Concepts
 
 * Based on OpenGL ES 2.0, (WebGL2 on OpenGL ES 3.0);
-* GPU-computation principle: execute simple commands for a lot of data in parallel;
+* GPU-computation principle: execute simple commands for a large amount data in parallel;
 * GPU-accelerated rendering using shaders: small programs for GPU (written in GLSL). WebGL supports 2 types of shaders: vertex shaders and fragment shaders.
 
 Pipeline (simplified):
 
 ![](https://kaidu1982.github.io/2013-jco-webgl/reveal.js-master/img/webgl_rendering_pipeline.png)
 
-Simplicity causes a reduced number of primitives to be rendered: WebGL can draw lines, points and triangles (polygons), but it can't draw cubes, spheres, circles etc.). To display other figures, they must be represented as a polygonal model.
+Simplicity causes a reduced number of primitives to be rendered: WebGL can draw lines, points and triangles (polygons), but it cannot draw cubes, spheres, circles etc.). To display other figures, they must be represented as a polygonal model.
 
 ![Utah teapot](./images/utah_teapot.jpg)
 

@@ -33,6 +33,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "tot*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 602                     | null             |
@@ -61,6 +62,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 1389                    | 0.73             |
 | 2015 | 1401                    | 0.86             |
 | 2016 | 1379                    | -1.57            |
+```
 
 ### Country Index
 
@@ -93,6 +95,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "aus*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 9                       | null             |
@@ -121,6 +124,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 37                      | 15.63            |
 | 2015 | 40                      | 8.11             |
 | 2016 | 37                      | -7.5             |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -133,6 +137,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "bel*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 0                       | null             |
@@ -161,6 +166,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 14                      | -6.67            |
 | 2015 | 18                      | 28.57            |
 | 2016 | 20                      | 11.11            |
+```
 
 > Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
@@ -176,6 +182,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "can*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 14                      | null             |
@@ -204,6 +211,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 16                      | -15.79           |
 | 2015 | 18                      | 12.5             |
 | 2016 | 17                      | -5.56            |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -216,6 +224,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "chi*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 0                       | null             |
@@ -244,6 +253,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 119                     | 4.39             |
 | 2015 | 133                     | 11.76            |
 | 2016 | 137                     | 3.01             |
+```
 
 > Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
@@ -259,6 +269,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "fra*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 25                      | null             |
@@ -287,6 +298,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 68                      | 3.03             |
 | 2015 | 67                      | -1.47            |
 | 2016 | 73                      | 8.96             |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -299,6 +311,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "ger*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 30                      | null             |
@@ -327,6 +340,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 91                      | 12.35            |
 | 2015 | 87                      | -4.4             |
 | 2016 | 85                      | -2.3             |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -339,6 +353,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "ita*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 11                      | null             |
@@ -367,6 +382,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 43                      | -2.27            |
 | 2015 | 40                      | -6.98            |
 | 2016 | 36                      | -10              |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -379,6 +395,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "jap*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 44                      | null             |
@@ -407,6 +424,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 240                     | -2.04            |
 | 2015 | 238                     | -0.83            |
 | 2016 | 239                     | 0.42             |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -419,6 +437,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "net*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 31                      | null             |
@@ -447,6 +466,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 43                      | -6.52            |
 | 2015 | 36                      | -16.28           |
 | 2016 | 29                      | -19.44           |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -459,6 +479,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "sin*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 0                       | null             |
@@ -487,6 +508,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 43                      | 4.88             |
 | 2015 | 42                      | -2.33            |
 | 2016 | 40                      | -4.76            |
+```
 
 > Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
@@ -502,6 +524,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "swe*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 14                      | null             |
@@ -530,6 +553,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 28                      | -3.45            |
 | 2015 | 28                      | 0                |
 | 2016 | 30                      | 7.14             |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -542,6 +566,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "swi*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 31                      | null             |
@@ -570,6 +595,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 45                      | 4.65             |
 | 2015 | 43                      | -4.44            |
 | 2016 | 51                      | 18.6             |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -582,6 +608,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "tai*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 0                       | null             |
@@ -610,6 +637,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 31                      | -6.06            |
 | 2015 | 26                      | -16.13           |
 | 2016 | 25                      | -3.85            |
+```
 
 > Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
@@ -625,6 +653,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "united_k*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 75                      | null             |
@@ -653,6 +682,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 120                     | -4.76            |
 | 2015 | 126                     | 5                |
 | 2016 | 124                     | -1.59            |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -665,6 +695,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "foreign-parent" WHERE entity LIKE "usa*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 258                     | null             |
@@ -693,6 +724,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 310                     | -1.9             |
 | 2015 | 307                     | -0.97            |
 | 2016 | 286                     | -6.84            |
+```
 
 Return to the [Country Index](#country-index)
 
@@ -713,6 +745,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "tot*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 1230                    | null             |
@@ -731,11 +764,12 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 3801                    | 5.17             |
 | 2015 | 4106                    | 8.02             |
 | 2016 | 4255                    | 3.63             |
+```
 
 ### Country Index (Local)
 
 * [Australia](#australia-local)
-* [Canada](#cananda-local)
+* [Canada](#canada-local)
 * [China](#china-local)
 * [France](#france-local)
 * [Germany](#germany-local)
@@ -743,11 +777,9 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 * [Japan](#japan-local)
 * [Netherlands](#netherlands-local)
 * [Singapore](#singapore-local)
-* [Sweden](#sweden-local)
 * [Switzerland](#switzerland-local)
 * [Taiwan](#taiwan-local)
 * [United Kingdom](#united-kingdom-local)
-* [United States](#usa-local)
 
 ![](./images/hkb-04.png)
 
@@ -762,6 +794,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "aus*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 32                      | null             |
@@ -780,6 +813,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 89                      | 14.1             |
 | 2015 | 94                      | 5.62             |
 | 2016 | 88                      | -6.38            |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -792,6 +826,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "can*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 14                      | null             |
@@ -810,6 +845,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 52                      | 10.64            |
 | 2015 | 61                      | 17.31            |
 | 2016 | 61                      | 0                |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -822,6 +858,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "chi*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 160                     | null             |
@@ -840,6 +877,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 678                     | 6.1              |
 | 2015 | 772                     | 13.86            |
 | 2016 | 812                     | 5.18             |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -852,6 +890,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "fra*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 51                      | null             |
@@ -870,6 +909,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 133                     | 4.72             |
 | 2015 | 143                     | 7.52             |
 | 2016 | 152                     | 6.29             |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -882,6 +922,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "ger*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 45                      | null             |
@@ -900,6 +941,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 119                     | 5.31             |
 | 2015 | 132                     | 10.92            |
 | 2016 | 141                     | 6.82             |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -912,6 +954,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "ita*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 10                      | null             |
@@ -930,6 +973,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 48                      | 11.63            |
 | 2015 | 58                      | 20.83            |
 | 2016 | 60                      | 3.45             |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -942,6 +986,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "jap*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 220                     | null             |
@@ -960,6 +1005,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 683                     | 3.48             |
 | 2015 | 673                     | -1.46            |
 | 2016 | 717                     | 6.54             |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -972,6 +1018,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "net*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 38                      | null             |
@@ -990,6 +1037,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 79                      | 6.76             |
 | 2015 | 92                      | 16.46            |
 | 2016 | 98                      | 6.52             |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -1002,6 +1050,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "sin*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 71                      | null             |
@@ -1020,6 +1069,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 210                     | 5                |
 | 2015 | 222                     | 5.71             |
 | 2016 | 240                     | 8.11             |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -1032,6 +1082,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "swi*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 45                      | null             |
@@ -1050,7 +1101,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 113                     | 13               |
 | 2015 | 127                     | 12.39            |
 | 2016 | 113                     | -11.02           |
-
+```
 Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)
@@ -1062,6 +1113,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "tai*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 60                      | null             |
@@ -1080,6 +1132,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 251                     | 0.8              |
 | 2015 | 265                     | 5.58             |
 | 2016 | 247                     | -6.79            |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -1092,6 +1145,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "uni*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 104                     | null             |
@@ -1110,6 +1164,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 260                     | 3.59             |
 | 2015 | 285                     | 9.62             |
 | 2016 | 309                     | 8.42             |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -1122,6 +1177,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "local-branch" WHERE entity LIKE "usa*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 2001 | 167                     | null             |
@@ -1140,6 +1196,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 531                     | 2.71             |
 | 2015 | 556                     | 4.71             |
 | 2016 | 587                     | 5.58             |
+```
 
 Return to the [Country Index](#country-index-local)
 
@@ -1160,6 +1217,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "tot*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 278                     | null             |
@@ -1188,6 +1246,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 2395                    | -2.48            |
 | 2015 | 2397                    | 0.08             |
 | 2016 | 2352                    | -1.88            |
+```
 
 ### Country Index (Regional)
 
@@ -1220,6 +1279,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "aus*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 5                       | null             |
@@ -1248,6 +1308,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 47                      | 9.3              |
 | 2015 | 48                      | 2.13             |
 | 2016 | 54                      | 12.5             |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1260,6 +1321,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "can*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 6                       | null             |
@@ -1288,6 +1350,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 29                      | -6.45            |
 | 2015 | 31                      | 6.9              |
 | 2016 | 32                      | 3.23             |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1300,6 +1363,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "the*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 0                       | null             |
@@ -1328,6 +1392,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 160                     | 8.11             |
 | 2015 | 186                     | 16.25            |
 | 2016 | 174                     | -6.45            |
+```
 
 > Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
@@ -1343,6 +1408,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "fra*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 7                       | null             |
@@ -1371,6 +1437,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 110                     | -3.51            |
 | 2015 | 105                     | -4.55            |
 | 2016 | 109                     | 3.81             |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1383,6 +1450,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "ger*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 12                      | null             |
@@ -1411,6 +1479,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 125                     | -6.02            |
 | 2015 | 121                     | -3.2             |
 | 2016 | 131                     | 8.26             |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1423,6 +1492,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "ita*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 11                      | null             |
@@ -1451,6 +1521,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 61                      | -11.59           |
 | 2015 | 61                      | 0                |
 | 2016 | 64                      | 4.92             |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1463,6 +1534,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "jap*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 61                      | null             |
@@ -1491,6 +1563,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 465                     | -3.93            |
 | 2015 | 447                     | -3.87            |
 | 2016 | 420                     | -6.04            |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1503,6 +1576,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "kor*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 0                       | null             |
@@ -1531,6 +1605,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 40                      | -6.98            |
 | 2015 | 44                      | 10               |
 | 2016 | 41                      | -6.82            |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1543,6 +1618,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "net*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 16                      | null             |
@@ -1571,6 +1647,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 65                      | -4.41            |
 | 2015 | 62                      | -4.62            |
 | 2016 | 63                      | 1.61             |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1583,6 +1660,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "sin*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 0                       | null             |
@@ -1611,6 +1689,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 90                      | 4.65             |
 | 2015 | 93                      | 3.33             |
 | 2016 | 102                     |                  |
+```
 
 > Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
@@ -1626,6 +1705,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "swe*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 12                      | null             |
@@ -1654,6 +1734,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 28                      | -9.68            |
 | 2015 | 28                      | 0                |
 | 2016 | 29                      | 3.57             |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1666,6 +1747,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "swi*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 18                      | null             |
@@ -1694,6 +1776,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 84                      | 15.07            |
 | 2015 | 82                      | -2.38            |
 | 2016 | 80                      | -2.44            |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1706,6 +1789,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "tai*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 0                       | null             |
@@ -1734,6 +1818,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 144                     | -13.25           |
 | 2015 | 122                     | -15.28           |
 | 2016 | 115                     | -5.74            |
+```
 
 > Review [SQL Console Documentation](https://axibase.com/docs/atsd/sql/#null) here to read about handling
 procedures for mathematical operations involving `0`, `null`, and `NaN`.
@@ -1749,6 +1834,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "united_k*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 25                      | null             |
@@ -1777,6 +1863,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 204                     | -2.39            |
 | 2015 | 220                     | 7.84             |
 | 2016 | 223                     | 1.36             |
+```
 
 Return to the [Country Index](#country-index-regional)
 
@@ -1789,6 +1876,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
   FROM "regional-branch" WHERE entity LIKE "united_s*"
 ```
 
+```txt
 | Year | Businesses in Hong Kong | Y-o-Y Change (%) |
 |------|-------------------------|------------------|
 | 1991 | 62                      | null             |
@@ -1817,6 +1905,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2014 | 490                     | -3.16            |
 | 2015 | 505                     | 3.06             |
 | 2016 | 480                     | -4.95            |
+```
 
 Return to the [Country Index](#country-index-regional)
 

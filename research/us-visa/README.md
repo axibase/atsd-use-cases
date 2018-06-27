@@ -5,117 +5,85 @@
 In 2015, the United States was the [second most](https://en.wikipedia.org/wiki/World_Tourism_rankings) visited country in the world. Where do all of these travelers come from and
 what are their reasons for coming to the United States?
 
-In this article we will analyze a dataset from [travel.state.gov](https://travel.state.gov) looking at non-immigrant visa figures from 1997 through 2015. This research article illustrates
-how publicly available data collected by government organizations can be easily loaded into the non-relational ATSD
-for interactive analysis. Additionally, this article illustrates some of the capabilities of [Redash](https://redash.io/), an open-source data visualization tool that is integrated with ATSD. We’ll walk through how to make SQL queries in ATSD and create visualizations in Redash. Additionally,
-this article contains instructions on how to install your own ATSD instance and populate it with the raw data.
+This article analyzes a dataset from [`travel.state.gov`](https://travel.state.gov) concerning non-immigrant visa figures from 1997 through 2015. Publicly available data collected by government organizations can be loaded into ATSD for interactive analysis. This article illustrates some of the capabilities of [Redash](https://redash.io/), an open-source data visualization tool that is integrated with ATSD. Make [SQL queries](https://axibase.com/docs/atsd/sql/) in ATSD and create visualizations in Redash. [Install](https://axibase.com/docs/atsd/installation/) a local ATSD distance and import the data from this article to recreate any of the visualization or queries here.
 
-## U.S. Visa Dataset
+## Dataset
 
-Let's take a look at the dataset from travel.state.gov, which can be accessed via our archive located in the [Resources](../us-visa-refusal/resources/visas.tar.gz) folder in this repository. Alternatively, you can
-download the Excel file from the [travel.state.gov](https://travel.state.gov) website and save each year as its
-own separate CSV file. The title of the Excel file on the travel.state.gov website is **Nonimmigrant Visa Issuances by Visa Class and by Nationality FY1997-2015 NIV Detail Table**.
+Take a look at the dataset from `travel.state.gov`, accessible in tarball form in the [Resources](../us-visa-refusal/resources/visas.tar.gz) directory or download the Excel file from [`travel.state.gov`](https://travel.state.gov) and save each year as a CSV file. The title of file on `travel.state.gov` website is **Nonimmigrant Visa Issuances by Visa Class and by Nationality FY1997-2015 NIV Detail Table**.
 
-This dataset contains yearly totals for non-immigrant visas issued from 1997 through 2015. Totals were collected for 84 different visa
-types. You can find the complete list of all the visa types included in this dataset [here](../us-visa-refusal/resources/visalist.txt). You can find descriptions of all visa types on
-the [U.S. Department of State](https://travel.state.gov) website.
+This dataset contains yearly totals for non-immigrant visas issued from 1997 through 2015. Totals are collected for 84 different visa
+types. The complete list of all the visa types included in this dataset is available as a `.txt` document in the [Resources](../us-visa-refusal/resources/visalist.txt) directory. The [U.S. Department of State](https://travel.state.gov) website contains detailed description of each of the available visas.
 
-Visa figures were collected for 200 countries, 7 continents, and for unknown national origins. You can find a complete list of all the countries included in this dataset [here](../us-visa-refusal/resources/countrylist.txt).
+Visa figures are collected for 200 countries, seven continents, and those of unknown national origin. The complete list of all tracked countries is available in `.txt` format in the [Resources](../us-visa-refusal/resources/countrylist.txt) directory.
 
-As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of ATSD to explore this dataset:
-
-* Tabular outputs from analytical [SQL queries](https://axibase.com/docs/atsd/sql/);
-* Interactive graphs from [**ChartLab**](../../integrations/shared/chartlab.md) which is similar to [`jsfiddle`](https://jsfiddle.net/).
-
-You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
+As opposed to analyzing the dataset in Excel, it is much more convenient to interact with the data once it is loaded into a database. Load the dataset into a local ATSD instance by following the steps provided in [Action Items](#action-items).
 
 ## Visa Travel by Country, Continent, and Visa Type
 
-Let's begin by taking a look at travel by country. The portal shown below allows you to sort by country and visa type. You can toggle between different countries in the first
-dropdown, and by visa type in the second dropdown. The below image output shows an output for H-1B visas, which are temporary work visas for workers in specialty occupations, issued
-to Indian nationals from 1997 to 2015, which increased from **31,684** in 1997 to **119,952** in 2015. The number of visas issued to mainland China grew from **3,206** in 1997 to
-**18,306** in 2015.
+The portal below sorts by country and visa type. Navigate between different countries with the first
+drop-down list and by visa type with the second. The visualization shows `H-1B` visas, which are temporary work visas for workers in specialty occupations, issued to Indian nationals from 1997 to 2015, which increased from **31,684** in 1997 to **119,952** in 2015. The number of visas issued to mainland China grew from **3,206** in 1997 to **18,306** in 2015.
 
 ![Figure1](./images/Figure1.png)
 
-You can explore this portal by clicking on the below button:
-
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8c9bb9cc#fullscreen)
 
-This next portal allows you to sort between continents and visa types. You can toggle between different continents in the first dropdown, and by visa type in the second dropdown.
-The below images is an output for H-1B visas issued to the continent of Asia as a whole. We can see that the number of visas issued increased from **47,726** in 1997 to **149,788**
-in 2015. Recalling from the previous **ChartLab** portal, the number of H-1B visas issued to China and India in 2015 was 138,258, meaning that only **11,530** H-1B visas were issued
-to the rest of Asia as a whole.
+The portal below allows you to sort between continents and visa types. Navigate between different continents with the first drop-down list, and by visa type with the second. The images below track `H-1B` visas issued to the those from Asia. The number of visas issued increased from **47,726** in 1997 to **149,788**
+in 2015. The number of `H-1B` visas issued to China and India in 2015 was 138,258, meaning that only **11,530** `H-1B` visas were issued
+to the rest of Asia.
 
 ![Figure2](./images/Figure2.png)
 
-You can explore this portal by right-clicking on the below button:
-
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3c55ada0#fullscreen)
 
-## Delving Further into U.S. Visas
+## Deeper Analysis
 
-By looking at the two **ChartLab** instances above, we can gain an understanding of the general situation of non-immigrant travel to the United States. Let's begin by taking a look
-at some of the more specialized visa types, beginning with the O-1 visa.
+The two **ChartLab** portals above foster a general understanding of the situation of non-immigrant travel to the United States. Broaden your understanding by examining more specialized visas, such as the `O-1` visa.
 
-The below output shows countries with the greatest number of O-1 visa, which is a work visa for individuals with exceptional abilities. The brain-drain from other countries has
-steadily grown over the years, especially from the U.K., which in 2015 had **2,630** O-1 visas issued. In comparison, China only had **515** O-1 visas issued in 2015. Going back
-to our first **ChartLab** portal, we can see that the total number of visas for the U.K. actually fell by **61%** form 1997 to 2015.
+The visualization below shows countries with the greatest number of `O-1` visa, which is a work visa for individuals with exceptional abilities. The brain drain from other countries has steadily grown over the years, especially from the U.K., which in 2015 had **2,630** `O-1` visas issued. In comparison, China only had **515** `O-1` visas issued in 2015. Going back
+to the first **ChartLab** portal, the total number of visas for the U.K. fell by **61%** form 1997 to 2015.
 
 ![Figure3](./images/Figure3.png)
 
-You can explore this portal by clicking on the below button:
-
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3a320d35#fullscreen)
 
-Below is an image for the total visas issued for the countries included in Trump administration's revised [travel ban](https://www.washingtonpost.com/graphics/national/immigration-order-explainer/)
-(which has since been lifted). These countries included Iran, Libya, Somalia, Sudan, Syria, and Yemen. After the September 11th terrorist attacks, the number of visas issued
+The visualization below tracks the total visas issued for the countries included in the revised [travel ban](https://www.washingtonpost.com/graphics/national/immigration-order-explainer/)
+of the current administration. The countries affected are Iran, Libya, Somalia, Sudan, Syria, and Yemen. After September 11th, the number of visas issued
 to these countries dropped to only **16,076** in 2003 but climbed back up to **62,464** in 2015. Visas to the United States are generally priced at [$160](https://travel.state.gov),
 which amounted to **$10 million** in revenue in 2015.
 
 ![Figure4](./images/Figure4.png)
 
-You can explore this portal by clicking on the below button:
-
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/16c6e667/3/#fullscreen)
 
-According to a recent article published by [Reuters](http://www.reuters.com/article/us-eu-usa-visa-idUSKBN1691Q9), the [European Union](https://en.wikipedia.org/wiki/European_Union) (EU) becoming increasingly insistent on requiring American citizens to
-obtain travel visas to visit Europe (currently, Americans do not need visas). This is in response to Washington refusing to grant visa-free access to 5 EU countries: Poland, Croatia,
-Bulgaria, Romania, and Cyprus. All EU countries except for these 5 may travel to the US without needing to obtain a travel visa. The following image shows the number of B-1 and B-2 visas
-from these countries between 1997 and 2015. The early to mid 2000's saw the peak of the total number of B-1 and B-2 visas issued to these countries, but in recent years
-these numbers has dropped off, falling to 9,977 in 2015 ($1,596,320 in revenue at $160 per visa).
+According to a recent article published by [Reuters](http://www.reuters.com/article/us-eu-usa-visa-idUSKBN1691Q9), the [European Union](https://en.wikipedia.org/wiki/European_Union) (EU) is becoming increasingly insistent on requiring American citizens to
+obtain travel visas to visit Europe. This is in response to Washington refusing to grant visa-free access to five EU countries: Poland, Croatia,
+Bulgaria, Romania, and Cyprus. All EU countries except for these five can travel to the United States without a travel visa. The following visualization shows the number of `B-1` and `B-2` visas
+from these countries between 1997 and 2015. The start of the new millennium saw the peak number of `B-1` and `B-2` visas issued to these countries, but in recent years
+these numbers have decreased dramatically, falling to 9,977 in 2015 ($1,596,320 in revenue at $160 per visa).
 
 ![Figure15](./images/Figure15.png)
 
-If the EU would require U.S. citizens to obtain travel visas, Washington would likely require the currently visa-exempt countries from the EU to begin obtaining visas to visit the country. The total
-[number of European travelers](https://en.wikipedia.org/wiki/Visa_Waiver_Program ) to the U.S. utilizing the visa waiver program was 14,043,823 and 13,997,570 in 2014 and 2015, respectively.
-At $160 per visa, this would have come to about **$2.24 and $2.239 billion**, a bill EU citizens may soon have to foot should the visa waiver program be lifted.
-
-You can explore this portal by clicking on the below button:
-
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82d4e825#fullscreen)
 
-This below figure shows how many dependents come with each primary visa holder. Saudi Arabian visa holders are currently bringing in the most dependents. Below are some ratios (in %)
-for Saudi nationals showing the number of dependent travelers coming to the United States per primary visa holder.
+If the EU required U.S. citizens to obtain travel visas, Washington would likely reciprocate the demand and require the currently visa-exempt countries of the EU to obtain visas to visit the country. The total
+[number of European travelers](https://en.wikipedia.org/wiki/Visa_Waiver_Program ) to the U.S. utilizing the visa waiver program was 14,043,823 and 13,997,570 in 2014 and 2015, respectively. At $160 per visa, this amounts to roughly **$2.24** and **$2.239 billion**, respectively.
 
-* H-4 (family members of H-1B visa holders) to H-1B (general temporary work visa): **170**
-* L-2 (spouse of L-1 visa holder) to L-1 (work visa available to employees of international companies with offices abroad and in the U.S.): **245**
-* F-2 (dependents of F-1 visa holders) to F-1 (student visa): **31**
-* J-2 (dependents of J-1 visa holders) to J-1 (research scholars, professors, exchange visitors): **79**
+This below figure shows how many dependents come with each primary visa holder. Saudi Arabian visa holders are currently bringing in the most dependents. Below are percentile ratios for Saudi nationals tracking the number of dependent travelers coming to the United States per primary visa holder.
+
+* `H-4` (family members of `H-1B` visa holders) to `H-1B` (general temporary work visa): **170**
+* `L-2` (spouse of `L-1` visa holder) to `L-1` (work visa available to employees of international companies with offices abroad and in the U.S.): **245**
+* `F-2` (dependents of `F-1` visa holders) to `F-1` (student visa): **31**
+* `J-2` (dependents of `J-1` visa holders) to `J-1` (research scholars, professors, exchange visitors): **79**
 
 ![Figure5](./images/Figure5.png)
-
-You can explore this portal by clicking on the below button:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1bc51064/2/#fullscreen)
 
 ## SQL Queries
 
-In addition to outputs from **ChartLab**, ATSD is also capable of performing [SQL queries](https://axibase.com/docs/atsd/sql/),
-which can be used to search for specific information contained in this dataset. You can read more about our SQL syntax [here](https://axibase.com/docs/atsd/sql/#syntax).
+In addition to outputs from **ChartLab**, ATSD also supports [SQL queries](https://axibase.com/docs/atsd/sql/) from the web-based [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html).
 
-This query shows the number of the most popular visas issued worldwide, except for B (travel), C (transit), G (government), and A (diplomatic). We can see that by far the greatest
-number of visas issued in 2015 (except for the above mentioned visa types) was for F-1 (student visa), for which 644,233 were issued.
+This query shows the number of the most popular visas issued worldwide, except for `B` (travel), `C` (transit), `G` (government), and `A` (diplomatic). By far the greatest number of visas issued in 2015 was the `F-1` student visa, of which 644,233 were issued.
 
 ```sql
 SELECT tags.visa_type, sum(value)
@@ -153,7 +121,7 @@ ORDER BY 2 DESC
 | M-1             | 11058      |
 ```
 
-This below query shows the top 15 largest countries by non-immigrant visas in 2015, for all visa types except B (travel), C (transit), G (government), and A (diplomatic).
+This query shows the top 15 largest countries by non-immigrant visas in 2015, for all visa types except `B` (travel), `C` (transit), `G` (government), and `A` (diplomatic).
 
 ```sql
 SELECT tags.country, sum(value)
@@ -189,8 +157,8 @@ LIMIT 15
 | Italy                               | 20603      |
 ```
 
-The query below shows some statistics for of B-1 and B-2 visas totals (which may be used for business or tourism). This query displays the number of these visas issued for 2005 and
-2010 totals, 10-year percentage change, as well as a compound annual growth rate (CAGR). The output is ordered by the number of visas issued in 2015.
+The query below shows statistics for `B-1` and `B-2` business and tourist visas. This query returns the number of these visas issued in 2005 and
+2010 totals, 10-year percentile change, and the compound annual growth rate. The table is ordered by the number of visas issued in 2015.
 
 ```sql
 SELECT tags.country, first(value) AS "2005",
@@ -233,7 +201,7 @@ ORDER BY 3 DESC
 | Costa Rica          | 35449.0   | 58139.0    | 64.0               | 4.6     |
 ```
 
-Total revenue for travel visas (in millions of USD) for the state department at $160 per visa from 1997 to 2015. Revenues from visas in this time period has more than doubled, from
+Total revenue for travel visas (USD million) for the state department at $160 per visa from 1997 to 2015. Revenues from visas in this time period has more than doubled, from
 **$491.3 million** in 1997 to **$1.152 billion** in 2015.
 
 ```sql
@@ -270,74 +238,69 @@ GROUP BY datetime
 
 ## Data Visualization with Redash
 
-SQL queries are a great tool for searching for and displaying specific information from a dataset in tabular format. One of the biggest drawbacks from SQL outputs is that you are
-not able to show these tables as some kind graphical output. Axibase is partnered with [Redash](https://redash.io/), an open-source data visualization tool.
-You can plug your query results into Redash, and with a few simple steps, create graphical outputs from your SQL queries. Begin by walking through [setting up Redash through ATSD](https://redash.io/help/data-sources/axibase_tsd.html). The setup should take you about 10 minutes.
+SQL queries are a great tool for searching for and displaying specific information from a dataset in tabular format. One of the biggest drawbacks of SQL is the lack of visualization. Axibase parners with [Redash](https://redash.io/), an open-source data visualization tool.
+Insert your query results into Redash and create visualizations using SQL result set data. To start, [integrate Redash and ATSD](https://redash.io/help/data-sources/axibase_tsd.html). Setup takes about 10 minutes.
 
-Let's begin by preparing a visualization for our last SQL query looking at worldwide visa issuances.
+Prepare a visualization for the last SQL query tracking worldwide visa issuances:
 
-1. After completing the walkthrough, from the 'Queries' dropdown select 'New Queries', as shown in the image below.
+1. After completing the walkthrough, from the **Queries** drop-down list select **New Queries**.
 
    ![Figure6](./images/Figure6.png)
 
-2. Copy and paste the SQL query configuration from above. Select `atsd nur.axibase.com` as your 'Data Source'.
+2. Copy and paste the SQL query configuration. Select `atsd nur.axibase.com` as **Data Source**.
 
    ![Figure7](./images/Figure7.png)
 
-3. Press `Execute`!
+3. Click **Execute**.
 
-4. After selecting `Execute`, you should see a table output like the image below. Click on 'New Visualization', as shown in the image below.
+4. After clicking **Execute**, a table appears as shown below. Click **New Visualization**.
 
    ![Figure8](./images/Figure8.png)
 
-5. Now, we can specify the details of our output. Select `tags.country` as the X Column and `tags.visa_type` as the Y Column. You can give your output a title by filling in the
-   'Visualization Name' box.
+5. Specify visualzation details. Select `tags.country` as the **X Column** and `tags.visa_type` as the **Y Column**. Give the visualization a title with the **Visualization Name** field.
 
    ![Figure9](./images/Figure9.png)
 
-6. Next, select the X Column tab. Select `Category` as the Scale, uncheck the `Sort Values` button, and modify the height of the column to fit all the country names. Click 'Save' in
-   the bottom right-hand corner.
+6. Select the **X Column** tab. Select **Category** as the **Scale**, clear the **Sort Values** checkbox, and modify the height of the column to fit all the country names. Click **Save**.
 
    ![Figure10](./images/Figure10.png)
 
-Below is the output from our query. You can toggle over any column to see what the visa issuances were for that particular visa type in 2015. By selecting the 'Save' button,
-you can save the configuration and come back to it anytime. By selecting the 'Publish' button, you can make this configuration available to anybody else who shares the same
-system credentials with you. As opposed to looking only at a tabular output from an SQL query, we can quickly see the scale of things looking at this output.
+Mouse over any column to show data for a particular visa type in 2015. Click **Save** to save the configuration and come back to it anytime. Click **Publish** to make configuration available to other users with the appropriate log in credentials.
 
 ![Figure14](./images/Figure14.png)
 
-Here are some additional Redash charts for some of the queries that were included earlier in this article.
+### Additional Redash Charts
 
-These two figures show the top 20 countries with the most B-1,2 visas issued for 2005 and 2015 (1st figure), as well as the compound annual growth rate for these countries (2nd figure). Looking at these
-outputs, we can see that Brazil and China have experienced tremendous growth in terms of the number of visas issued from 2005 to 2015, as well as the compound annual growth rate.
-What may not have stood out from the tabular SQL query output is that while the number of visas issued to Vietnam has remained relatively small, the compound annual growth
-rate in this 10-years period was **30.2%**, which came in 2nd only behind Brazil (which finished at 35.6%).
+These two visualizations show the top 20 countries issued the most `B-1` and `B-2` visas in 2005 and 2015, and the compound annual growth rate for these countries. Brazil and China experienced tremendous growth in the number of visas issued from 2005 to 2015, as well as the compound annual growth rate.
+
+What may have been missing in the tabular SQL query result set is the fact that the number of visas issued to Vietnamese citizens remained relatively small but the compound annual growth
+rate in this 10-years period was **30.2%**, less than only Brazil with 35.6%.
 
 ![Figure12](./images/Figure12.png)
 
 ![Figure13](./images/Figure13.png)
 
-Travellers have come to America from all over the world. With over 200 countries and 84 visa types included in this dataset, the possibilities for travel documents seem endless.
-Using ATSD can help you make sense of all this information. You can use **ChartLab** to create interactive graphs which allow you to gain a general view of the situation, SQL queries
-to search for specific information contained within the dataset, and Redash to display this specifically searched for information in a clear and concise manner.
+Using ATSD can make sense of large datasets. SQL queries
+ search for specific information contained in the dataset, and Redash displays information clearly and concisely.
 
 ### Action Items
 
-Below are the summarized steps to follow to install local configurations of ATSD for analyzing United States visa statistics:
+Install a local ATSD instance and recreate any of the queries of visualizations from this article:
 
 * Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
 * Install Redash:
 
-```sh
-  git clone https://github.com/getredash/redash
-  cd redash
-  docker-compose -f docker-compose.production.yml run --rm server create_db to setup the database
-  docker-compose -f docker-compose.production.yml up -d
-```
+  ```sh
+    git clone https://github.com/getredash/redash
+    cd redash
+    docker-compose -f docker-compose.production.yml run --rm server
+    create_db to setup the database
+    docker-compose -f docker-compose.production.yml up -d
+  ```
 
-   For more details on Redash click [here](https://redash.io/help-onpremise/setup/setting-up-redash-instance.html).
+   > For more details on Redash click [here](https://redash.io/help-onpremise/setup/setting-up-redash-instance.html).
 
-* Install the ATSD database on your local configuration:
+* [Install ATSD](https://axibase.com/docs/atsd/installation/):
 
 ```sh
 docker run \
@@ -351,21 +314,13 @@ docker run \
   axibase/atsd:latest
 ```
 
-* Log in to ATSD and configure the pre-defined administrator account.
-* Import the [`travel_visas.xml`](../us-visa-refusal/resources/travel_visas.xml) file into ATSD. For a more detailed description, refer to step 9 from this [step-by-step walkthrough](../us-mortality/configuration.md) from our article on [U.S. mortality statistics](../us-mortality/README.md).
-* Import the [`visas.tar.gz`](../us-visa-refusal/resources/visas.tar.gz) file into ATSD using the above-mentioned parser.
-* Navigate to the Docker machine IP at port 5000, where you should see a Redash login screen.
-* Follow the steps in [ATSD data source guide](https://redash.io/help/data-sources/axibase_tsd.html) to create a read-only account in ATSD and add a new ATSD data source in Redash.
+* Log in to ATSD and configure the administrator account.
+* Import the [`travel_visas.xml`](../us-visa-refusal/resources/travel_visas.xml) data into ATSD.
+* Import the [`visas.tar.gz`](../us-visa-refusal/resources/visas.tar.gz) tarball into ATSD.
+* Navigate to the Docker machine IP at port `5000`.
+* Follow the steps in the [ATSD Data Source Guide](https://redash.io/help/data-sources/axibase_tsd.html) to create a `read-only` account in ATSD and add a new ATSD data source in Redash.
 * Create a sample query configuration, and execute this query to validate integration:
 
    ```sql
    SELECT * FROM jvm_memory_free LIMIT 10
    ```
-
-* You are all set! Continue creating query configurations described in this article.
-
-If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
-
-## Sources
-
-[Title Photo](http://www.siam-legal.com/US_Visa/k1-visa-thailand.php)

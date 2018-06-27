@@ -127,7 +127,7 @@ other green technologies have been steadily making waves on the consumer market,
 making claims that they are the key to reducing greenhouse gas emission,
 however an examination of the residential emission data tells another story,
 showing that today's emissions by residents of the state
-are actually greater than the 1990 numbers.
+are greater than the 1990 numbers.
 To be fair, that uptick in consumer-level emission is a recent trend,
 with several years during the early 2010's showing slightly lower greenhouse gas emissions.
 Nonetheless, residential emissions make up just [12%](https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions)

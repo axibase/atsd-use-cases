@@ -56,11 +56,11 @@ Here you can explore the complete dataset for U.S. death totals:
 To query information from this dataset you will need to install both ATSD and Axibase Collector.
 
 You can set up local instances of ATSD and Axibase Collector using Docker by going through our [step-by-step walk through](../us-mortality/configuration.md).
-It should take you about 15 minutes.
+Setup takes about 15 minutes.
 
 ## ATSD Schema
 
-Before we get in to creating SQL queries, let us begin by running through the [data schema and models](https://axibase.com/products/axibase-time-series-database/data-model/) of ATSD.
+Before creating SQL queries, begin by running through the [data schema and models](https://axibase.com/products/axibase-time-series-database/data-model/) of ATSD.
 
 Below is a list and brief descriptions of some dataset schema terminology we will be using.
 
@@ -98,7 +98,7 @@ Now we will begin by introducing ourselves to this dataset and taking a look at 
 
    ![Figure 38](./images/Figure38.png)
 
-3. In **Metrics**, click on **Series** for `cdc.pneumonia_and _influenza_deaths`.
+3. In **Metrics**, click **Series** for `cdc.pneumonia_and _influenza_deaths`.
 
    ![Figure 39](./images/Figure39.png)
 
@@ -114,8 +114,8 @@ Below is an output for this data.
 
 ![Figure 42](./images/Figure42.png)
 
-Maneuvering through the entity and searching for our desired data for different cities, states, regions, age groups, and deaths types can be time consuming. Now, let us look some
-simple SQL queries which will do the work for us.
+Maneuvering through the entity and searching for our desired data for different cities, states, regions, age groups, and deaths types can be time consuming. Now, look some
+simple SQL queries which do the work.
 
 ## Basic SQL Queries
 
@@ -209,7 +209,7 @@ Looking at our query, we have each of the following clauses:
 * `ORDER BY` - specifies the order in which to return the rows. `DESC` means descending order, so the most recent results will be returned first.
 * `LIMIT` - specifies the number of rows to return. In our instance, the 10 most recent weekly readings are returned.
 
-Now let us walk though actually executing the query in ATSD.
+Instructions on querying the data in ATSD:
 
 1. Click on the **SQL** tab.
 
@@ -223,7 +223,7 @@ Below is an output of our queried data.
 
 ![Figure 45](./images/Figure45.png)
 
-Now, let us look at the latest pneumonia and influenza and total deaths for Boston, using the `JOIN` clause. This will pair the results we just queried for with the corresponding total
+Now, look at the latest pneumonia and influenza and total deaths for Boston, using the `JOIN` clause. This will pair the results we just queried for with the corresponding total
 number of deaths in the city.
 
 ```sql
@@ -533,7 +533,7 @@ In this example, the query sorts for rows for the city of Baton Rouge where the 
 | 2008-11-22T00:00:00.000Z  | 70.0   | N/A                 |
 ```
 
-Now let us look at several queries which delve into looking at the top 10 deadliest cities for total deaths and pneumonia and influenza deaths.
+Now look at several queries which delve into looking at the top 10 deadliest cities for total deaths and pneumonia and influenza deaths.
 
 Here is a query for filtering for the top 10 cities by all deaths in the current year (year to date).
 
@@ -820,7 +820,7 @@ ORDER BY sum(value) DESC
 ## Detailed SQL Example 3 - Calculating Mortality Rates
 
 We have spent some time looking at SQL queries to search for information from our dataset for the total number of deaths, percentages of deaths caused by pneumonia and influenza, and ranking
-these results in terms of the deadliest month, region, or city. Now let us delve into computing our own mortality statistics for our dataset. According to the [CIA World Factbook](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2066rank.html), mortality (or death)
+these results in terms of the deadliest month, region, or city. Now delve into computing our own mortality statistics for our dataset. According to the [CIA World Factbook](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2066rank.html), mortality (or death)
 rate is the average annual number of deaths during a year per 1,000 individuals in the population. As of 2016, the **United States** as a whole ranks 90th in the world, with a rate of **8.20**
 deaths per 1,000 individuals. Generally speaking, the higher the death rate, the worse. Below is a table from their website showing the top 5 death rates in the world.
 
@@ -1026,7 +1026,7 @@ Persons without health insurance, under age 65 (percent): **15.0%** vs 10.5%<br 
 Persons in poverty (percent): **38.3%** vs 13.5%<br />
 Per capita income in past 12 months (in 2015 dollars), 2011-2015: **$15,056** vs $28,930<br />
 
-Now, let us move to looking at mortality rates in New York City (fixed population size):
+Now, move on to looking at mortality rates in New York City (fixed population size):
 
 ```sql
 SELECT tot.datetime, tot.tags.city AS "city", tot.tags.state AS "state",
@@ -1269,7 +1269,7 @@ There are two noteworthy points regarding this query:
 1) All metrics with death numbers are joined (grouped by year) using the `SUM` aggregation.<br />
 2) `SUM` aggregation is divided by the size of the corresponding age group, retrieved with a lookup function, and multiplied by 1000 since mortality is measured in deaths per 1000 people.<br />
 
-As the final query in this article, let us take a look at mortality rates by age group in Youngstown. We determined population figures with help from `places.mooseroots.com`
+As the final query in this article, take a look at mortality rates by age group in Youngstown. We determined population figures with help from `places.mooseroots.com`
 as part of the 2010 U.S. Census. The `youngstown-2010-population` file can be found on [GitHub](./resources/youngstown-2010-population.txt).
 
 ```sql
@@ -1314,7 +1314,7 @@ Below is a table comparing mortality rates in 2010 in New York City and Youngsto
 | total          | 6.5            | 45.4        |
 
 ** As a quick note, figures for the population under the age of 1 year in Youngstown were not available at the time this article was written (numbers were only available starting with the 0 to 24 age
-group), so we were not able to calculate an infant mortality rate for the city. The value, therefore, for the 1-24 age group below for Youngstown is a little higher than it should be in reality.
+group), so we were not able to calculate an infant mortality rate for the city. The value, therefore, for the 1-24 age group below for Youngstown is a little higher than it is in reality.
 
 So what can explain these unbelievably high values in Youngstown? This is a complicated, multi-layered issue, with some experts spending years analyzing these problems. Two factors that may play into
 these high rates are an aging population, which has above average rates for a number of diseases. Below is a table comparing incident rates for [6 diseases in Mahoning County (Youngstown)](https://www.odh.ohio.gov/healthstats/vitalstats/deathstat.aspx) versus the
@@ -1360,7 +1360,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 
 Read the complete [Configuration Guide](../us-mortality/configuration.md).
 
-If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
+If you require assistance in installing this software or have any questions, feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
 ### Sources
 

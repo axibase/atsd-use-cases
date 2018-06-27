@@ -84,14 +84,14 @@ Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available
 
 ### Import portals
 
-1. Open the **Portals** menu, select **Configure** and import [portals](./resources/portal-configs.xml) (set the flag in the **Auto-enable New Portals** check box).
+1. Open the **Portals** menu, select **Configure** and import [portals](./resources/portal-configs.xml) (Enable the **Auto-enable New Portals** check box).
 2. Verify that new portals are displayed by opening the **Portals** menu and searching for the newly-configured portal named **Zookeeper Cluster**.
 
 ![](./images/test_portals.png)
 
 ### Import rules
 
-Open the **Alerts** menu, select **Rules** and import [rules](./resources/rules.xml) (set the flag in the **Auto-enable New Rules** check box).
+Open the **Alerts** menu, select **Rules** and import [rules](./resources/rules.xml) (Enable the **Auto-enable New Rules** check box).
 
 Confirm the database imported the desired rules
 

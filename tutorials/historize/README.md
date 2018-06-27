@@ -223,7 +223,7 @@ series e:ops_db d:2018-04-18T10:25:10.126Z t:customer=eBank m:orders.customer_am
 
 ![](./images/jdbc-detail-test.png)
 
-At the final stage, make sure that the job is enabled.
+Ensure that the job is enabled.
 
 ![](./images/jdbc-config-complete.png)
 

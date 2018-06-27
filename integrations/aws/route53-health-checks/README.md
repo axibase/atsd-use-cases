@@ -82,7 +82,7 @@ Offload health check statistics to ATSD and create consolidated dashboards with 
 ### Prerequisites
 
 * Create an AWS [IAM account](https://axibase.com/docs/axibase-collector/jobs/aws-iam.html) to query CloudWatch statistics.
-* Make sure 4 GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+* Ensure 4 GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
 
 ### Launch ATSD Sandbox
 

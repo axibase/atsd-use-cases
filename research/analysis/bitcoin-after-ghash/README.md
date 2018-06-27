@@ -124,7 +124,7 @@ has showed of late, in fact they happened much less predictably that current Bit
 
 ## Conclusion
 
-The near future has a lot in store for Bitcoin and Bitcoin users, hundreds of new CryptoCurrencies have appeared on the modern
+The near future has something in store for Bitcoin and Bitcoin users, hundreds of new CryptoCurrencies have appeared on the modern
 market, some of them more successfully then others, to challenge Bitcoin's supremacy in the world of digital currency. But
 Bitcoin has made moves to stay relevant as well, recently splitting the blockchain into unique entities, Bitcoin Classic
 and [Bitcoin Cash](https://news.bitcoin.com/what-every-bitcoiner-should-know-about-bitcoin-cash/) for those interested in

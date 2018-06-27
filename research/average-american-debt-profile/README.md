@@ -10,7 +10,7 @@ for a job in a field they did not study are quick to point to the trappings of d
 Politicians and voters on both sides of the aisle point to the ever-growing [United States Government debt](http://www.usdebtclock.org/)
 with anxiety for the future.
 
-And yet despite all the doom and gloom, the American financial system is one of the most stable and robust in the world, in
+And yet despite all the doom and gloom, the American financial system is one of the most stable in the world, in
 no small part thanks to ingenious monetary policy and hegemonic economic position organized over the entire course of the country's history,
 modern American consumers are among the wealthiest on the planet.
 
@@ -369,7 +369,7 @@ to create small changes that have a butterfly effect over time. Ultimately, the 
 always be something opaque and esoteric to the average man, leading to many people denouncing the Federal Reserve System entirely, occasionally
 opting for a return of the gold standard or leveling accusations of wrong-doing.
 
-However, after reviewing the data above, it seems that at least on a consumer level, the average American actually has more
+However, after reviewing the data above, it seems that at least on a consumer level, the average American has more
 today than they would have had thirty years ago, or even just five years ago. Of course, the Federal Reserve is not completely
 responsible for the wise consumer choices made in the current decades, but monetary policy enacted by the various branches of the Federal
 Reserve are responsible for maintaining the economic conditions that Americans, and consumers the world over, have come to expect

@@ -150,13 +150,13 @@ LIMIT 20
 | CHA PARKING LOT            | 2.3             |
 | TAVERN                     | 2.0             |
 
-If you would like to see more queries on this Chicago crime dataset, please go to the [Additional SQL Queries](#additional-sql-queries) section at the end of this article.
+If you would like to see more queries on this Chicago crime dataset, go to the [Additional SQL Queries](#additional-sql-queries) section at the end of this article.
 
 ## A Deeper Look at Crime in Chicago
 
 So, what caused this drastic increase in murders in Chicago in 2016? Did the city experience an overall increase in crime?
 
-There actually has been a long term decrease in crime as a whole in Chicago, as we can see in the figure below.
+There has been a long term decrease in crime as a whole in Chicago, as we can see in the figure below.
 
 ![Figure 3](./images/Figure3.png)
 
@@ -237,7 +237,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 
 ![Figure 10](./images/Figure10.png)
 
-If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
+If you require assistance in installing this software or have any questions, feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
 
 ## Sources
 

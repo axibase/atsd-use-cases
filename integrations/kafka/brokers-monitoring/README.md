@@ -38,7 +38,7 @@ docker logs -f atsd-sandbox
 
 Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axibase` username and `axibase` password.
 
-Open the **Jobs** drop-down list and select **JMX**. Make sure you see the enabled `kafka-jmx` job.
+Open the **Jobs** drop-down list and select **JMX**. Ensure you see the enabled `kafka-jmx` job.
 
 ![](./images/check-kafka-job.png)
 
@@ -55,7 +55,7 @@ Edit CSV-formatted items. Replace default parameters with actual JMX parameters.
 
 ![](./images/kafka-item-list-3.png)
 
-Make sure that connection settings are correct. Open the **Jobs** menu, select **JMX** and find the `kafka-jmx` job.
+Ensure that connection settings are correct. Open the **Jobs** menu, select **JMX** and find the `kafka-jmx` job.
 Click `kafka-series` configuration
 
 ![](./images/kafka-job-check-1.png)
@@ -78,7 +78,7 @@ Return to the **Job** page and run the job.
 
 Log in to ATSD instance at `https://atsd_hostname:8443` using `axibase` username and `axibase` password.
 
-Open the **Entities** tab and make sure Collector displays the Kafka nodes with hostnames
+Open the **Entities** tab and ensure Collector displays the Kafka nodes with hostnames
 
 ![](./images/atsd-entities-check.png)
 

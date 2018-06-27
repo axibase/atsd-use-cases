@@ -53,6 +53,7 @@ GROUP BY 'Date', tv.value
   ORDER BY 'Date'
 ```
 
+```txt
 | Date    | Total Value (NIS Billion) | Percent of Current Value | Delta |
 |---------|---------------------------|--------------------------|-------|
 | 1998-01 | 725.1                     | 21.1                     | null  |
@@ -75,6 +76,7 @@ GROUP BY 'Date', tv.value
 | 2015-01 | 3189.5                    | 93                       | 215.2 |
 | 2016-01 | 3305.5                    | 96.4                     | 116   |
 | 2017-01 | 3428.9                    | 100                      | 123.4 |
+```
 
 ## Distributions of Assets by Type (Percent)
 

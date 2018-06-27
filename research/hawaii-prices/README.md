@@ -49,11 +49,11 @@ location is allowed to be compared with only one fuel type at a time.
 
 We will quickly run through plotting this dataset in plotly.
 
-Once you click on the above dataset, you are given the option of choosing data.gov preview, plotly, or CartoDB. Choose **plotly**.
+Once you click the above dataset, you are given the option of choosing `data.gov` preview, plotly, or CartoDB. Choose **plotly**.
 
 ![ZZZ](./images/ZZZ.png)
 
-Once the raw data is opened via plotly, the user must select **Filter** from Data Tools, as shown below.
+Once the raw data is opened via plotly, the user must select **Filter** from **Data Tools**, as shown below.
 
 ![Figure 1](./images/Figure1.png)
 
@@ -143,11 +143,11 @@ We will walk through a brief example on how to customize the default dataset to 
 * Copy the entity name from the default portal into the blank portal (in this case **dqp6-3idi**).
 * In the blank portal enter **price** into metric. This will display the price of fuel as the y column.
 * In the blank portal enter in the county and fuel. In this case, enter **Hilo** for county and `*` for fuel (`*` is the wildcard symbol).
-* Your blank portal should now look as is shown below. Hit run to output your customized graph.
+* Your blank portal looks as is shown below. Click **Run** to output your customized graph.
 
 ![Figure 12](./images/Figure12.png)
 
-Your customized graph should look something like this:
+Your customized graph looks like this:
 
 ![Figure 13](./images/Figure13.png)
 
@@ -162,7 +162,7 @@ Now, we will quickly walk through creating a histogram to display the fuel price
 * Follow the first five steps in [Example 1](#example-1)
 
 * In the blank portal enter in the county and fuel. In this case, enter **Hilo** for county and **Diesel** for fuel.
-* Since we will be finding the difference between Hilo and US Diesel prices, we will need to make a second series. Copy and paste the existing series and change the name of the county to **US**. At this point your portal should look something like this:
+* Since we will be finding the difference between Hilo and US Diesel prices, we will need to make a second series. Copy and paste the existing series and change the name of the county to **US**. At this point your portal looks like this:
 
   ![Figure 14](./images/Figure14.png)
 
@@ -171,11 +171,11 @@ Next, we need to make a new series to find the difference between US and Hilo Di
 * In the Hilo series, enter in **alias = s1**. In the US series, enter in **alias = s2**. For both series enter **display = false**.
 * Create a new series. Enter **label = Hilo over US Diesel Surcharges** and **value = value(s1) - value(s2)**.
 
-At this point your portal should look something like this:
+At this point your portal looks something like this:
 
 ![Figure 15](./images/Figure15.png)
 
-Your custom graph should look like this:
+Your custom graph looks like this:
 
 ![Figure 16](./images/Figure16.png)
 
@@ -187,7 +187,7 @@ Now, you have the options of customizing your output further, by editing feature
 * Under configuration (at the very top) enter **height-units = 2** to increase the size of your graph.
 * Press **Run**.
 
-Your customized graph should look like this:
+Your customized graph looks like this:
 
 ![Figure 17](./images/Figure17.png)
 
@@ -206,7 +206,7 @@ more expensive in Wailuku than the other islands, or is this simply an anomaly? 
 consumer product in Hawaii. If the price of this second consumer item is also more expensive in Wailuku than in Hali and Honolulu, then we may not be dealing with
 an anomaly, but quite possibly a trend.
 
-From the data.gov website, let us choose [Hawaii electricity prices](https://catalog.data.gov/dataset/hi-electricity-prices-815fa) as our second dataset.
+From the data.gov website, choose [Hawaii electricity prices](https://catalog.data.gov/dataset/hi-electricity-prices-815fa) as our second dataset.
 
 From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/kwh) for each of the Hawaiian islands:
 
@@ -227,7 +227,7 @@ are marked in red in the figure below.
 
 ![HawaiiIslands](./images/HawaiiIslands.png)
 
-To briefly demonstrate our capabilities, let us compare Diesel prices at Honolulu, Wailuku, and Hilo with the Residential electricity rates at their
+To briefly demonstrate our capabilities, compare Diesel prices at Honolulu, Wailuku, and Hilo with the Residential electricity rates at their
 respective corresponding islands (Oahu, Maui, Hawaii).
 
 ![Figure 10](./images/Figure10.png)
@@ -266,7 +266,7 @@ Here is a table of additional datasets from data.gov that you can explore using 
 |Maryland |[Trips Taken on Public Transit by Transit Type - Monthly Total Trips](http://catalog.data.gov/dataset/trips-taken-on-public-transit-by-transit-type-4abd1)|[Portal](https://apps.axibase.com/chartlab/fd596ed9)|
 |Iowa |[Employee Compensation by Industry in Iowa](http://catalog.data.gov/dataset/employee-compensation-by-industry-in-iowa)|[Portal](https://apps.axibase.com/chartlab/f5eae012)|
 
-If you would like to view a data.gov dataset without installing the ATSD software, please [contact us](https://axibase.com/feedback/) and we would be happy to add it to this table!
+If you would like to view a data.gov dataset without installing the ATSD software, [contact us](https://axibase.com/feedback/) and we would be happy to add it to this table!
 
 ### Action Items
 
@@ -278,4 +278,4 @@ Below are the steps to follow to install ATSD:
 4. Add your desired data.gov dataset to the job to enable data collection. Click **Run** to collect data for the first time.
 5. Log in to ATSD and open a sample Socrata portal to explore the data.
 
-If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to help!
+If you require assistance in installing this software or have any questions, feel free to [contact us](https://axibase.com/feedback/) and we would be happy to help!

@@ -242,7 +242,7 @@ highlights this relationship further:
 
 Using an ad-hoc modification to align the origin of the two metrics shows the growing gap between oil prices and marginal profit
 indicating that while related to one another, high oil prices do not guarantee a high marginal profit. In fact, because of
-the reflection across the x-axis, as oil prices increase, the value of marginal profit actually decreases.
+the reflection across the x-axis, as oil prices increase, the value of marginal profit decreases.
 
 ## Conclusion
 

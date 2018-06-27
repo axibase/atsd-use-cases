@@ -6,7 +6,7 @@
 
 The [Internal Revenue Service](https://www.irs.gov/) (IRS) of the United States releases quarterly reports tracking the number of expatriated citizens processed in the previous three-month period. The reports are announced via the [Federal Register](https://www.federalregister.gov/) which is the primary publication medium of the federal government and used by a number of agencies as an outreach arm to the public.
 
-Ostensibly, the tax bureau maintains these records instead of [Citizenship and Immigration Services](https://www.uscis.gov/) (CIS) because the IRS uses that information to adjudicate decisions regarding those expatriating citizens upon whom the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) should be levied.
+Ostensibly, the tax bureau maintains these records instead of [Citizenship and Immigration Services](https://www.uscis.gov/) (CIS) because the IRS uses that information to adjudicate decisions regarding those expatriating citizens upon whom the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) is levied.
 
 Previous articles tracking United States expatriation:
 
@@ -41,6 +41,7 @@ GROUP BY period(1 YEAR, END_TIME)
   ORDER BY period(1 YEAR, END_TIME)
 ```
 
+```txt
 | Year | Year Total | Y-o-Y Change | Y-o-Y Change, % |
 |------|------------|--------------|-----------------|
 | 2000 | 184        | null         | null            |
@@ -62,6 +63,7 @@ GROUP BY period(1 YEAR, END_TIME)
 | 2016 | 4096       | 353          | 9               |
 | 2017 | 5557       | 1461         | 36              |
 | 2018 | 4913       | -644         | -12             |
+```
 
 [**ChartLab**](../../integrations/shared/chartlab.md) is a visualization service which can display ATSD data as charts. **ChartLab** features a wide range of widgets which can be created using a declarative syntax.
 
@@ -80,6 +82,7 @@ GROUP BY period(1 QUARTER)
   ORDER BY period(1 QUARTER)
 ```
 
+```txt
 | Quarter | Year | Quarter Total |
 |---------|------|---------------|
 | 1       | 2013 | 679           |
@@ -103,6 +106,7 @@ GROUP BY period(1 QUARTER)
 | 3       | 2017 | 1374          |
 | 4       | 2017 | 685           |
 | 1       | 2018 | 1098          |
+```
 
 Although lower than 2017 Q1, 2018 Q1 data is on the order of recent, record-setting years for expatriation numbers.
 
@@ -183,7 +187,7 @@ A number of built-in [statistical functions](https://github.com/axibase/charts/b
 
 [![](./images/btn.png)](https://apps.axibase.com/chartlab/1ae83460#fullscreen)
 
-Visualization uses the `PercentChangeFromYearAgo` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was actually observed several years ago.
+Visualization uses the `PercentChangeFromYearAgo` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was observed several years ago.
 
 While the underlying function may be quite verbose:
 

@@ -31,7 +31,7 @@ Data is collected hourly for the Oroville dam for the following metrics:
 * Spillway Outflow (cubic feet/second)
 * Rain (inches)
 
-Below is an image showing these CDWR metrics in ATSD. You can toggle between the different metrics by clicking on the dropdown.
+Below is an image showing these CDWR metrics in ATSD. You can toggle between the different metrics by clicking on the drop-down list.
 
 ![Figure 1](./images/Figure1.png)
 
@@ -145,8 +145,8 @@ WHERE t1.datetime >= '2017-01-01T00:00:00Z'
 
 Based off of our estimate, for every inch of rainfall at the Oroville dam, 136,790.5 acre-feet will be added to the reservoir. As of 5:00 am PT on February 15th, there was 307,145 af
 of space left in the reservoir before it reaches its threshold. The maximum outflow per day that the dam is able is push out is **142,034 afd**, which was achieved on [February 14th](https://apps.axibase.com/chartlab/dee79515/2#fullscreen).
-So, if we multiply the rainfall per day by our acre-feet rate (136,790.5) and subtract the maximum outflow, we should get a storage amount added per day. If we then divide the
-storage added per day, we should get a answer for how many days it would take for the storage to reach threshold capacity again. Below is a table showing the amount of time for the
+So, if we multiply the rainfall per day by our acre-feet rate (136,790.5) and subtract the maximum outflow, you get a storage amount added per day. If you then divide the
+storage added per day, you get an answer for how many days it would take for the storage to reach threshold capacity again. Below is a table showing the amount of time for the
 dam storage to reach threshold capacity for a given amount of rainfall per day.
 
 | Rainfall       | Storage Added/Day | Remaining Storage | Time to Reach Threshold |
@@ -179,4 +179,4 @@ Below are the summarized steps to follow to install local configurations of ATSD
 5. Navigate to Axibase Collector main page `https://docker_host:9443/` and manually run the following two jobs which were just imported by the docker-compose file: `cdec.water.ca.gov-shef-daily` and `cdec.water.ca.gov-shef-hourly`. You only need to run these jobs once, after which they will run on a specified schedule.
 6. Navigate to the ATSD 'Metrics' page `https://docker_host:8443/metrics` and check that the metrics with the prefix `ca.` are in existence.
 
-If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
+If you require assistance in installing this software or have any questions, feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!

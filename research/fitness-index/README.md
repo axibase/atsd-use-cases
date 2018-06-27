@@ -47,7 +47,7 @@ and calculations were done using the computational knowledge engine [WolframAlph
 
 Looking at an entire set of data at once is often unhelpful and overwhelming, but
 this visualization can be used to offer a wide lens through which to view what amounts
-to quite a lot of data over a long period of time. The grey Benchmark Average line
+to a large amount of data over a long period of time. The grey Benchmark Average line
 simplifies the visualization by establishing a standard and providing perspective to someone
 who may be otherwise unfamiliar with the scoring system.
 
@@ -88,7 +88,7 @@ that were not as obvious in the first visualization:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c43f580b)
 
->See [Appendix](#Appendix) for an alternative display of the above data
+>See [Appendix](#appendix) for an alternative display of the above data
 
 Using the same data but instead focusing the layout of the visualization
 on the trend across the observed MSAs for a given year, a third configuration is
@@ -244,7 +244,7 @@ given city and its likelihood to have a certain AFI score. The hypothesis sugges
 the Raleigh/Charlotte example seemed to indicate that two cities in one state of vastly
 different sizes score very differently on the AFI, with the smaller Raleigh MSA
 having a much higher rank and score than the larger Charlotte MSA. This relationship
-is shown to actually be the exception and not the norm: The trend supported by the data shows that cities within one state, regardless of their population size, seem
+is shown to be the exception and not the norm: The trend supported by the data shows that cities within one state, regardless of their population size, seem
 to score more closely to one another than cities from different states but similar
 population sizes. Compare the Nashville MSA (population 1.8 million) to the San Jose
 MSA (population 2.0 million), the Orlando MSA (population 2.2 million), and the
@@ -425,7 +425,7 @@ setting shown below:
 
 ![Syntax2](./images/Syntax2.png)
 
-> Please contact [Axibase](https://axibase.com/feedback/) with any questions.
+> Contact [Axibase](https://axibase.com/feedback/) with any questions.
 
 ### Modifying the Gauge to Display Other Cities
 

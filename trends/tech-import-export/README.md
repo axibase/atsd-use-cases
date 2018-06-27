@@ -8,7 +8,7 @@ The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) o
 
 ## Advanced Technologies Defined
 
-Advanced technologies are those technologies typically used by military or civilian government organizations for the purpose of national security. Put briefly, the three main industries covered by these data are aerospace technologies, nuclear technologies, and weaponry technologies. It seems logical that these industries should be homegrown, but increasing growth in advanced technologies imports has shown that the exact opposite has been true since late 2000.
+Advanced technologies are those technologies typically used by military or civilian government organizations for the purpose of national security. Put briefly, the three main industries covered by these data are aerospace technologies, nuclear technologies, and weaponry technologies. It seems logical that these industries be homegrown, but increasing growth in advanced technologies imports has shown that the exact opposite has been true since late 2000.
 
 ![](./images/tech-import-export.png)
 

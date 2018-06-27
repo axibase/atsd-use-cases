@@ -23,6 +23,7 @@ FROM nor.registered_vehicles
   GROUP BY time
 ```
 
+```txt
 | Year | Vehicles | Change | Change, % |
 |------|----------|--------|-----------|
 | 2008 | 3352344  | null   | null      |
@@ -34,6 +35,7 @@ FROM nor.registered_vehicles
 | 2014 | 3817783  | 70294  | 1.9       |
 | 2015 | 3894267  | 76484  | 2         |
 | 2016 | 3969612  | 75345  | 1.9       |
+```
 
 ---
 
@@ -53,6 +55,7 @@ ORDER BY time
 
 * Electricity
 
+```txt
 | Year | Electric Vehicles | Change | Change, % |
 |------|-------------------|--------|-----------|
 | 2008 | 2834              | null   | null      |
@@ -64,9 +67,11 @@ ORDER BY time
 | 2014 | 42467             | 21455  | 102.1     |
 | 2015 | 73738             | 31271  | 73.6      |
 | 2016 | 102917            | 29179  | 39.6      |
+```
 
 * Diesel
 
+```txt
 | Year | Diesel Vehicles | Change | Change, % |
 |------|-----------------|--------|-----------|
 | 2008 | 1288795         | null   | null      |
@@ -78,6 +83,7 @@ ORDER BY time
 | 2014 | 1946693         | 83506  | 4.5       |
 | 2015 | 2011401         | 64708  | 3.3       |
 | 2016 | 2054225         | 42824  | 2.1       |
+```
 
 ---
 

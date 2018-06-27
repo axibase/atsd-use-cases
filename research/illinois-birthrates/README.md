@@ -115,7 +115,7 @@ to 2009:
 
 The data is difficult to work with because of the way it is stored. Typically, time information is
 stored within a given metric, but in this case, each year is a metric in and of itself. This
-type of storage can present a number of challenges for less robust software, but using the
+type of storage can present a number of challenges for less detail-oriented software, but using the
 ATSD and the supported [`JOIN`](https://axibase.com/docs/atsd/sql/#joins) clause,
 working with, and analyzing even unideal data is well within the scope of possibility.
 

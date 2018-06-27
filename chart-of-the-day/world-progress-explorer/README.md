@@ -28,7 +28,7 @@ The visualizations in the chart above demonstrate a [user-defined function](../.
 ![](./images/wps-1.png)
 [![](./images/button-new.png)](https://trends.axibase.com/5d0563d2/2#fullscreen)
 
-Axibase [Charts API](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) uses a simple syntax with robust functionality. The underlying mechanics of the `PercentChangeFromYearAgo` function are shown here:
+Axibase [Charts API](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) uses a simple syntax with strong functionality. The underlying mechanics of the `PercentChangeFromYearAgo` function are shown here:
 
 ```javascript
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return (v / p - 1) * 100

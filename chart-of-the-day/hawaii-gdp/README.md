@@ -44,7 +44,7 @@ entity over the observed time period to show the annual growth rate if it were t
 rate is often used to judge investments with a compounding interest rate, however it can be adopted to these purposes to
 accurately provide average performance benchmarks for Hawaii and the United States.
 
-Even during the worst year of the eponymous Great Recession, the state of Hawaii actually continued
+Even during the worst year of the eponymous Great Recession, the state of Hawaii continued
 to see growth locally, and it was not until the final observed year that the United States
 GDP Growth was able to surpass a tiny economy built on [tourism and agriculture](https://www.bea.gov/regional/bearfacts/pdf.cfm?fips=15000&areatype=STATE&geotype=3),
 two notoriously volatile industries. Hawaii is also in the top 20 states when considering

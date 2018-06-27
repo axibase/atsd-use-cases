@@ -74,7 +74,7 @@ Local Metrics:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0964c838/2/#fullscreen)
 
-> Use the dropdown to toggle between metrics
+> Use the drop-down list to toggle between metrics
 
 Return to the [Index](#index)
 
@@ -95,7 +95,7 @@ Local Metrics:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/4/#fullscreen)
 
-> Use the dropdown to toggle between metrics
+> Use the drop-down list to toggle between metrics
 
 Return to the [Index](#index)
 
@@ -126,7 +126,7 @@ Figure 4.1
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/2/#fullscreen)
 
-> Use the dropdown to toggle between metrics
+> Use the drop-down list to toggle between metrics
 
 Figure 4.2
 
@@ -134,7 +134,7 @@ Figure 4.2
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/3/#fullscreen)
 
-> Use the dropdown to toggle between metrics
+> Use the drop-down list to toggle between metrics
 
 Return to the [Index](#index)
 
@@ -154,6 +154,6 @@ Figure 5.1
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/5/#fullscreen)
 
-> Use the dropdown to toggle between metrics
+> Use the drop-down list to toggle between metrics
 
 Return to the [Index](#index)

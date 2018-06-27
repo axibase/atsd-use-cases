@@ -63,7 +63,7 @@ Rather, you can configure a scheduled job to retrieve the file from the specifie
 
 Using the ATSD default portal for CAA metrics, the user has the ability to filter the CAA datasets to their liking. The following three filters are applied to the default portal:
 
-* First filter: Sorts by CAA metric. **228** different CAA airport aviation metrics can be filtered for. These metrics may be found in the [Appendix](#appendix-caa-metric-list). The figure below shows the first metric in the first dropdown: terminal passengers totals for January 2015 to February 2016.
+* First filter: Sorts by CAA metric. **228** different CAA airport aviation metrics can be filtered for. These metrics may be found in the [Appendix](#appendix-caa-metric-list). The figure below shows the first metric in the first drop-down list: terminal passengers totals for January 2015 to February 2016.
 * Second filter: Filters 55 different UK airports. In this case, all airports have been selected.
 * Third filter: Filters by airport groups (London area, other UK, or no UK reporting airports). In this case, all groups have been selected.
 
@@ -91,7 +91,7 @@ We will walk through a brief example on how to customize the default portal to c
 
     ![Figure 5](./images/Figure5.png)
 
-2. Next, we want to select the one `metric` which we would like to filter. The first dropdown in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [uk-caa-metrics.txt](uk-caa-metrics.txt). A complete list of metrics is also available in the [Appendix](#appendix-caa-metric-list).
+2. Next, we want to select the one `metric` which we would like to filter. The first drop-down list in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [uk-caa-metrics.txt](uk-caa-metrics.txt). A complete list of metrics is also available in the [Appendix](#appendix-caa-metric-list).
 
     ![Figure 21](./images/Figure21.png)
 
@@ -115,19 +115,15 @@ We will walk through a brief example on how to customize the default portal to c
 7. Since we are comparing 2015 and 2016 values, enter `starttime = current_year` and `endtime = next_year`.
 8. As we will be looking at total domestic travel, enter `group-statistic = sum` and change mode from `column-stack` to `column`. The `group-statistic = sum` command calculates the total number of passengers for all airports in a given month, and the `column` will only show the total number of passengers together as one column per month.
 
-    Your configuration should now look like the image below.
-
     ![Figure 11](./images/Figure11.png)
 
 9. Next, since we are looking at total domestic value, we need to select all airport and group names.  Create a new heading for `[tags]` below `[widget]` and enter `airport_name = *` and `group_name = *` (The asterisk `*` is one of the supported wildcard symbol in the Charts API).
 10. To display data for 2016, create a new `[series]` and enter `label = current year`.
 11. To display data for 2015, create a new `[series]` and enter `label = previous year`. Enter `time-offset = 1 year` and `color = orange`. The `time-offset = 1 year` command shifts historical data by the specific lag to the current time. In our case, data for the year 2015 is displayed as if it were data for 2016.
 
-    Your configuration should now look like the image below.
-
     ![Figure 12](./images/Figure12.png)
 
-12. Press **Run**, your figure should now look like the image below.
+12. Press **Run**, your figure looks like the image below.
 
     ![Figure 13](./images/Figure13.png)
 
@@ -135,9 +131,7 @@ We will walk through a brief example on how to customize the default portal to c
 
 13. Change the title to **UK Domestic Terminal Traffic on Scheduled Flights**.
 14. Under **metric** enter **format = numeric** to shorten the length of the output numbers.
-15. Press **Run**!
-
-    Your configuration should now look like the image below.
+15. Press **Run**.
 
     ![Figure 19](./images/Figure19.png)
 
@@ -154,7 +148,7 @@ The default ChartLab portal can be found here:
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab)
 
 1. Press the ChartLab link above.
-2. Change the source to **ATSD** and select **calendar** from the Widget dropdown.
+2. Change the source to **ATSD** and select **calendar** from the Widget drop-down list.
 3. Delete the section of the configuration as shown in the image below.
 
     ![Figure 14](./images/Figure14.png)
@@ -167,21 +161,15 @@ The default ChartLab portal can be found here:
 9. Modify the `summarize-period` line from 10 minutes to 1 month.
 10. To display airport names in our figure, enter `label-format = tags.airport_name`.
 
-    Your configuration should now look like the image below.
-
     ![Figure 15](./images/Figure15.png)
 
 11. Press **Run**.
-
-    Your figure should look like the image below.
 
     ![Figure 16](./images/Figure16.png)
 
 12. To create a figure title, enter a title setting like the one shown here: `title = UK International Terminal Passenger Traffic: Total Passenger`
 13. Modify size and offset settings by applying those settings. Under `[configuration]` change `offset-right` from 50 to 0 and height-units from 2 to 1.
 14. Press **Run**.
-
-    Your figure should look like the image below.
 
     ![Figure 17](./images/Figure17.png)
 
@@ -209,8 +197,6 @@ You can explore this portal by clicking on the link below.
 1. Pie charts in ChartLab support several visualization modes, for example: `mode = ring`.
 1. Change the title to **UK International Terminal Passenger Traffic: Top 15 Airports June 2016**.
 1. Press **Run**.
-
-Your new figure should look like the image below.
 
 ![Figure 18](./images/Figure18.png)
 
@@ -251,7 +237,7 @@ Below are the steps to follow to install ATSD and create figures for CAA metrics
 
 After installing ATSD and scrolling though the list of CAA metrics, create your own example and send it over to us.
 
-If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to help.
+If you require assistance in installing this software or have any questions, feel free to [contact us](https://axibase.com/feedback/) and we would be happy to help.
 
 ## Appendix: CAA Metric List
 

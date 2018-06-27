@@ -5,7 +5,7 @@
 ## Introduction
 
 The all too familiar notification that your phone call to almost any call center in the world is being recorded has been heard
-by so many people so many times that it's probably forgotten almost as quickly as it's understood. But that hasn't stopped
+by so many people so many times that it's probably forgotten almost as quickly as it's understood. But that has not stopped
 data analysts who work for the companies that operate these call centers from improving customer outcomes with these and
 other data that they record about client experiences.
 
@@ -477,7 +477,7 @@ practice for determining staffing and infrastructure requirements. With addition
 an analyst could determine the amount of time that any given call is likely to take, and then cross reference call volume
 numbers to staff numbers to determine the capacity of the call center at any given time and make informed decisions about
 times to increase or decrease operator numbers based on the results. Determining thresholds of caller patience is an essential
-first step in streamlining a company's workflow and demonstrates the intrinsic value of maintaining robust operations data.
+first step in streamlining a company's workflow and demonstrates the intrinsic value of maintaining detailed operations data.
 
 Seeing the different kinds of business optimization possible from easy to collect data such as these, corporate motivations to employ analysts and
 implement data solutions capable of increasing overall profitability are not simply understandable, but required to maintain a

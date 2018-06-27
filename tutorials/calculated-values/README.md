@@ -89,7 +89,7 @@ goods are therefore greater than 100.00 while years exhibiting deflation in the 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/978c79b4/4/#fullscreen)
 
 In **ChartLab**, use the drop-down list at the top of the visualization to select the year to be used as a baseline, or hardcode
-a year not included in the dropdown by modifying one of the dates in the `keyDates` list.
+a year not included in the drop-down list by modifying one of the dates in the `keyDates` list.
 
 Key Components of This Visualization:
 

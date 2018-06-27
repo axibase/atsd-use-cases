@@ -53,7 +53,7 @@ Dual axis visualizations are helpful for comparing data of different orders of m
 
 ## SQL Queries
 
-Election season is a notoriously uncertain economic time period for the United States, as elections have been known to represent dramatic changes in policy and personnel that reshape the face of American policy. Using the below SQL query to track the EPU Index during election years only, and comparing that data to the election results, it is expected that more contested elections should generate a higher EPU Index.
+Election season is a notoriously uncertain economic time period for the United States, as elections have been known to represent dramatic changes in policy and personnel that reshape the face of American policy. Using the below SQL query to track the EPU Index during election years only, and comparing that data to the election results, it is expected that more contested elections generate a higher EPU Index.
 
 ```sql
 SELECT year(time) AS Election, value AS EPU_Index

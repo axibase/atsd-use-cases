@@ -39,7 +39,7 @@ After the financial crisis, the federal funds rate remained low until the end of
 
 **Interest Rate (1 Year)**: "The interest rate differential between the federal funds rate and the 1-year Treasury yield has
 been small throughout the period. This is not surprising given that the federal funds rate is a very short-term interest rate.
-Overnight interest rates should be more closely related to the short-term Treasury yields than to the long-term yields.
+Overnight interest rates are more closely related to the short-term Treasury yields than to the long-term yields.
 In other words, the influence of the federal funds rate on Treasury yields diminishes with maturity"
 
 **Interest Rate (10 Year)**: The 10-year interest rate is medium-range measurement that is included to give the data context.

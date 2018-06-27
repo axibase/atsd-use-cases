@@ -52,7 +52,7 @@ Trust is established when the person installs software (OS, browser, Java Runtim
 
 CAs issue certificates which is a file, typically in [X509](https://tools.ietf.org/html/rfc5280) format, containing information about the issuer (CA), the subject or end entity, the certificate's validity dates, issuer signature, and the subject's public key.
 
-In cases of HTTPS connection, the certificate is presented by the web server (nginx, apache, tomcat, jetty) to the client (browser, curl, apache http client, java url connection) as part of an SSL handshake.
+In cases of HTTPS connection, the certificate is presented by the web server (nginx, apache, tomcat, jetty) to the client (browser, `curl`, apache http client, java url connection) as part of an SSL handshake.
 
 `*.axibase.com` old wildcard certificate:
 

@@ -89,7 +89,7 @@ of everyday purchases, measured by CPI as shown above. Additionally, gross yield
 or depreciation of the value of liquid currency. In a country experiencing serious hyperinflation, such as the Weimar Republic
 in the twenties, Japan in the forties, Israel in the eighties, or Russia in the nineties, the value of liquid currency can
 depreciate to the point of worthlessness very quickly. But this phenomenon is simply an accelerated version of the natural
-inflation that occurs in even the most dynamic and robust economies.
+inflation that occurs in even the most dynamic economies.
 
 Since its first printing in the eighties, the NIS has grown to become a stable, and freely-tradeable currency but that doesn't
 mean that it has become immune to the effects of inflation. Shown below is the Gross Yield of cash holdings in shekels since

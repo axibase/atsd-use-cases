@@ -66,6 +66,7 @@ Where,
 
 `x = current year debt amount, and y = previous year debt amount`
 
+```ls
 | Year | Debt (Million Euro) | Percent Change (PYB) |
 |------|---------------------|----------------------|
 | 1995 | 1632.00             | null                 |
@@ -89,6 +90,7 @@ Where,
 | 2013 | 19715.70            | -3.27                |
 | 2014 | 19748.30            | 0.17                 |
 | 2015 | 20525.20            | 3.93                 |
+```
 
 `LAG` function returns a [`NULL`](https://axibase.com/docs/atsd/sql/#null) value when no  data sample is found.
 

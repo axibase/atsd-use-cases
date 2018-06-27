@@ -173,7 +173,7 @@ Exceptions:
 * Do not use backticks in headers.
   * :white_check_mark: `## Configure cron`.
   * :no_entry: ``## Configure `cron` schedule``.
-* Do not terminate sentences in headers with dot.
+* Do not end sentences in headers with dot.
   * :no_entry: `## Import data from file.`
 * Avoid punctuation symbols in headers except colon (`:`).
   * :no_entry: `## Import Data from File (Directory)`.

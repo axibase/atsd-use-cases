@@ -66,7 +66,7 @@ Notice the time period is not set to calculate the break-down of police use of f
 
 This results of this query are as follows:
 
-```sql
+```txt
 | tags.district | count(*) |
 |---------------|----------|
 | null          | 3        |
@@ -83,7 +83,7 @@ This results of this query are as follows:
 
 The data has been sorted by district which names correspond to the Baltimore City Planning Map
 shown below. Data lacking location information has been displayed with the district tag `null`.
-Please notice that the Eastern District of the city is split into two Police Precincts
+Notice that the Eastern District of the city is split into two Police Precincts
 (Eastern and Southeastern), and the unlabeled blue area just below the Central District is
 considered to be Downtown for planning purposes but is patrolled by police from the Central
 Precinct, so that data will be included with other Central District data.
@@ -267,8 +267,8 @@ an increase in police use of force? Do districts that see high levels of police 
 also see high levels of homicide? Is there a correlation at all?
 
 Similar to the first data set, [Socrata](https://axibase.com/docs/axibase-collector/jobs/socrata.html)
-should be used to compile the data in meaningful way and a [Structured Query Language](https://axibase.com/docs/atsd/sql/)
-should be used again.
+is used to compile the data in meaningful way and a [Structured Query Language](https://axibase.com/docs/atsd/sql/)
+is used once again.
 
 >For a more detailed explanation of performing SQL Queries, see the [Appendix](#appendix)
 below
@@ -422,7 +422,7 @@ city of Baltimore can be done on a weekly basis:
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/23/)
 
 Here, the peaks in police use of force are further smoothed to indicate that the hypothetically
-resultant increase in police use of force actually occurs on a somewhat delayed basis after
+resultant increase in police use of force occurs on a somewhat delayed basis after
 a spike in the number of homicides.
 
 Notice that in ChartLab, the `endtime` command has to be modified to reflect the
@@ -505,8 +505,8 @@ is 1.0317 and the standard deviation is 0.3765.
 | Southwestern | 0.3404 | 1.2857 |
 | Western | 3.0638 | 0.5714 |
 
-The _p-value_ for the given series is 0.002, which is well within the acceptable range of
-significance, generally set around 0.05. Keep in mind, _p-value_ is used to reject the
+The p-value for the given series is 0.002, which is well within the acceptable range of
+significance, generally set around 0.05. Keep in mind, p-value is used to reject the
 null hypothesis but does not indicate the absolute validity of the alternative
 hypothesis.
 
@@ -581,7 +581,7 @@ Contact [Axibase](https://axibase.com/feedback/) with any questions.
 ### Using the [`EXPAND`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
 
 to highlight specific data, as shown in the [Nature of the Homicides](#nature-of-homicides) section,
-use the command `expand = true` under the `[series]` which should be expanded:
+use the command `expand = true` under the `[series]`:
 
 ![Expand1](./images/Expand1.png)
 
@@ -680,4 +680,4 @@ interpolation. This query's results are as shown below:
 | 2015-10-01 | 2        |
 | 2015-11-01 | 6        |
 
-Please contact [Axibase](https://axibase.com/feedback/) with any questions.
+Contact [Axibase](https://axibase.com/feedback/) with any questions.

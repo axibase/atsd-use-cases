@@ -8,7 +8,7 @@ This article will focus on the [`AD01RC1Q027SBEA`](https://fred.stlouisfed.org/s
 
 ### Handling Special Items
 
-The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by `4` to arrive at an annual estimate. This calculation is used to show the annual total should a specific quarter's trends be replicated over the course of the year. During the final quarter of 2017, a **potential** `$250` billion windfall from one-time corporate repatriation taxes was added to the total by virtue of annualized calculation. As a result, the `$250` billion extra quarterly income was translated into `$1` trillion after transformation. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
+The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by `4` to arrive at an annual estimate. This calculation is used to show the annual total if the trends of a specific quarter are replicated over the course of the year. During the final quarter of 2017, a **potential** `$250` billion windfall from one-time corporate repatriation taxes was added to the total by virtue of annualized calculation. As a result, the `$250` billion extra quarterly income was translated into `$1` trillion after transformation. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
 
 ![](./images/fred-chart.png)
 

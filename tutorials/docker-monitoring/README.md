@@ -56,7 +56,7 @@ tags['com.axibase.service'] == 'metrics' &amp;&amp; tags['com.axibase.environmen
 
 > Tags contain [ATSD](https://axibase.com/docs/atsd/) terms.
 
-This expression groups all containers that support `metrics` service in production. New containers are automatically added to the roll-up. When a container is terminated, it is not removed from the group, allowing you to see detailed historical data for the selected service.
+This expression groups all containers that support `metrics` service in production. New containers are automatically added to the roll-up. When a container is stopped, it is not removed from the group, allowing you to see detailed historical data for the selected service.
 
 Grouping based on metadata allows you to build roll-up portals. Below is an example of a portal for `API` service containers running in the `SVL` data center. You can see the API service broken down by container, which gives insight into the overall service performance and the performance of individual microservices.
 
@@ -86,7 +86,7 @@ Another key difference between containers and VMs is execution speed. Launching 
 
 Executing containers on Docker enables decomposition of applications into microservices which improves fault tolerance and manageability. However, the side effect is more challenging performance monitoring, since microservice life cycles are often very short. The lifespan of containers can be as short as just a few minutes – in some cases even seconds – while Virtual Machines can have lifespans measured in years. Treating containers like VMs might seem convenient, it is a misleading analogy.
 
-Container statistics are often gathered for a short timespan, meaning that traditional ways of monitoring are not applicable. Once the container is terminated, the data becomes obsolete for the purpose of troubleshooting, since the workload has been taken over by a new container. Instead of chasing individual container identifiers, consider monitoring applications and services based on labels: application name, type, role, function, etc. This can be accomplished by leveraging container labels to encode type, role, or function groups. To provide a meaningful amount of metadata about each micro-service, container labels needs to include:
+Container statistics are often gathered for a short timespan, meaning that traditional ways of monitoring are not applicable. Once the container is stopped, the data becomes obsolete for the purpose of troubleshooting, since the workload has been taken over by a new container. Instead of chasing individual container identifiers, consider monitoring applications and services based on labels: application name, type, role, function, etc. This can be accomplished by leveraging container labels to encode type, role, or function groups. To provide a meaningful amount of metadata about each micro-service, container labels needs to include:
 
 * Service or application name.
 * Function such as database, message-broker, http-server.
@@ -99,7 +99,7 @@ When such a naming conventions are enforced, monitoring and alerting tools can v
 * Number of logins for micro-services that execute the authentication function for web applications.
 * Total memory allocated and used by containers that are part of API applications hosted in a particular data center.
 
-The more metadata you have about each container, the easier to aggregate relevant information. With this approach you are not looking at statistics from terminated containers. Moreover, you see exactly what is happening at the microservice, service, and application level. You can look at the big picture or drilldown to the smallest details.
+The more metadata you have about each container, the easier to aggregate relevant information. With this approach you are not looking at statistics from stopped containers. Moreover, you see exactly what is happening at the microservice, service, and application level. You can look at the big picture or drilldown to the smallest details.
 
 ## Allocating Resources
 

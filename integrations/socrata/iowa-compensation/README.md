@@ -120,7 +120,7 @@ Insert an additional dataset into ATSD to give the above data context. For examp
 
 1. Navigate to [https://data.iowa.gov](https://data.iowa.gov).
 2. On the home page, select the **Employment** tab.
-3. Scroll to the bottom of the page and click on the **Topics** drop-down list. Select **Employment**.
+3. Scroll to the bottom of the page and open the **Topics** drop-down list. Select **Employment**.
 
    ![Figure 4](./images/Figure4.png)
 

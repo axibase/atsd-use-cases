@@ -128,7 +128,7 @@ Configuration Features:
 ![](./images/tax-2018-3.png)
 [![](./images/button.png)](https://apps.axibase.com/chartlab/bdab5fd8)
 
-*Fig 4.* A histogram shows the distribution of values for the given datasets. Assuming all series were equally-distributed the slope of the stacked boxes should be zero.
+*Fig 4.* A histogram shows the distribution of values for the given datasets. Assuming all series were equally-distributed the slope of the stacked boxes is zero.
 
 Configuration Settings:
 

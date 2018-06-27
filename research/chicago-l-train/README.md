@@ -262,8 +262,8 @@ T = Time in years, the difference in years between the current and calculated ye
 
 These calculations are meant to show two possible methods of predicting future ridership aboard the Chicago L train. The
 typical data would be within 1.62% of the previous year's ridership, and each year would represent one step from the annual
-average. This means that between any two given years, the difference should be roughly 1.49% multiplied
-by the number of years between them, and between any two given consecutive years, the ridership totals should be within 1.62% of
+average. This means that between any two given years, the difference is roughly 1.49% multiplied
+by the number of years between them, and between any two given consecutive years, the ridership totals is within 1.62% of
 each other. As the numbers are so close together, they can even be used in conjunction with one another, with the understanding
 that expected mean percentage error (MPE) will be on the order of 0.13% multiplied by the difference in years, or when speaking
 in terms of passengers, using the average amount for reference, two hundred thousand passengers times the difference in years.
