@@ -11,6 +11,7 @@
 * [Calculating the Difference Between Consecutive Series Values](subtract-subsequent-values/README.md)
 * [Composite Interval Queries in Axibase Enterprise Reporter](composite-intervals/README.md)
 * [Monitoring Docker Containers](docker-monitoring/README.md)
+* [Combining Periodic and Sliding Windows](combining-windows/README.md)
 * [The Time Series Database is about Reducing Complexity](time-series-database/README.md)
 
 ## Configuration Import
