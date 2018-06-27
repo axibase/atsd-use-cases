@@ -298,7 +298,7 @@ GROUP BY date_format(time, 'yyyy')
 
 The values have also been ranked, shown outside the table.
 
-In order to preserve 2016 and 2017 data as holdout data, the values used for modeling will exclude 2016 and 2017 data. The new baseline values
+to preserve 2016 and 2017 data as holdout data, the values used for modeling will exclude 2016 and 2017 data. The new baseline values
 are shown below:
 
 | Metric | Baseline |

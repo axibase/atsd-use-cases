@@ -8,7 +8,7 @@ The City of Los Angeles is keenly aware of the negative effects of greenhouse ga
 of working to counteract the effects of mass individual car ownership by reducing greenhouse gas emissions in other spheres of life.
 The Port of Los Angeles for example, was able to reduce the amount of a number of toxic emissions during their
 [2005-2012 green campaign](../../research/la-port/README.md). Additionally, the City has begun to retrofit their public lighting infrastructure
-with light-emitting diode (LED) bulbs in order to update the traditional incandescent bulbs, which are [shockingly less efficient](https://energy.gov/energysaver/how-energy-efficient-light-bulbs-compare-traditional-incandescents).
+with light-emitting diode (LED) bulbs to update the traditional incandescent bulbs, which are [shockingly less efficient](https://energy.gov/energysaver/how-energy-efficient-light-bulbs-compare-traditional-incandescents).
 
 The [ChartLab](https://apps.axibase.com/chartlab) visualization above, made possible by ATSD,
 tracks the government's progress with [public data](https://catalog.data.gov/dataset/citywide-led-streetlight-savings) and

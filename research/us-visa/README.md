@@ -87,7 +87,7 @@ these numbers has dropped off, falling to 9,977 in 2015 ($1,596,320 in revenue a
 
 ![Figure15](./images/Figure15.png)
 
-If the EU would require U.S. citizens to obtain travel visas, Washington would likely require the currently visa-exempt countries from the EU to begin obtaining visas in order to visit the country. The total
+If the EU would require U.S. citizens to obtain travel visas, Washington would likely require the currently visa-exempt countries from the EU to begin obtaining visas to visit the country. The total
 [number of European travelers](https://en.wikipedia.org/wiki/Visa_Waiver_Program ) to the U.S. utilizing the visa waiver program was 14,043,823 and 13,997,570 in 2014 and 2015, respectively.
 At $160 per visa, this would have come to about **$2.24 and $2.239 billion**, a bill EU citizens may soon have to foot should the visa waiver program be lifted.
 

@@ -75,7 +75,7 @@ generally seen a healthy resurgence in both usage and value.
 
 _Source_: Quandl - [Market Capitalization](https://www.quandl.com/data/BCHAIN/MKTCP-Bitcoin-Market-Capitalization), [Estimated Transaction Value](https://www.quandl.com/data/BCHAIN/ETRVU-Bitcoin-Estimated-Transaction-Volume-USD)
 
-> Open the ChartLab visualization above and navigate through time using the dropdown menus at the top of the screen.
+> Open the ChartLab visualization above and navigate through time using the drop-down lists at the top of the screen.
 
 ## The Future of Cryptocurrency
 

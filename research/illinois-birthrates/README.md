@@ -68,7 +68,7 @@ the display.
 >Learn more about creating a drop-down menu in ChartLab in the [Appendix](#appendix) below.
 
 Use the ChartLab model below to compare the Top 10 counties' live births against the
-whole of Illinois' live births. Toggle between observed years using the dropdown menu:
+whole of Illinois' live births. Toggle between observed years using the drop-down list:
 
 ![](./images/ILL3.png)
 
@@ -515,7 +515,7 @@ The forward-shift is shown below:
 ![](./images/ILL26.png)
 
 Intuitively, this model appears flawed as it shows Illinois live births dropping to zero around the
-year 2038, but some of the older data can now be excluded, in order to reflect the trends of the
+year 2038, but some of the older data can now be excluded, to reflect the trends of the
 last decade while excluding data that is two decades old and reflects the trends of a society
 that has experienced a wide array of dramatic changes:
 
@@ -564,7 +564,7 @@ which can change quite quickly and sometimes unpredictably.
 
 ## Appendix
 
-### Creating a [Dropdown Menu](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/) in [ChartLab](https://apps.axibase.com/chartlab/6402f01c)
+### Creating a [drop-down list](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/) in [ChartLab](https://apps.axibase.com/chartlab/6402f01c)
 
 Using the below chart as an example:
 

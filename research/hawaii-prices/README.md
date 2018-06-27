@@ -13,7 +13,7 @@ when compared to New York City, goods in Honolulu are more expensive:
 * Bread for 2 people for 1 day: +67%
 
 In addition to exorbitant food prices, Hawaii currently holds the crown of having the highest fuel prices in the entire United States, according to [gasbuddy.com](https://www.gasbuddy.com/USA). The Aloha state has long held the
-reputation of having the most expensive fuel in the land. However, until recently, such trends have been difficult to quantify.  In order to better analyze datasets such as Hawaiian fuel prices,
+reputation of having the most expensive fuel in the land. However, until recently, such trends have been difficult to quantify.  to better analyze datasets such as Hawaiian fuel prices,
 the US government in 2009 established a data collection website, [data.gov](https://www.data.gov/). Datasets are available online to conduct research, develop web applications, and design data visualizations,
 on a variety of topics ranging from agriculture, to manufacturing, to health, among many other.
 
@@ -80,7 +80,7 @@ Processing datasets using ATSD is much less cumbersome.  Processing the same dat
 because its collection tool has built-in heuristics to handle the format in which data.gov datasets are published, namely the Socrata Open Data Format.
 When loading data for a particular dataset the collector uses Socrata metadata to understand the meaning of columns and automatically extract dates, times,
 and categories from the data files. Besides, ATSD stores the data in the user's own database so that this public data can be combined with internal data
-sources as well as mixed and matched across different datasets. Once you install ATSD, you **don't** have to:
+sources as well as mixed and matched across different datasets. Once you install ATSD, you **do not** have to:
 
 * Add additional datasets from data.gov
 * Manipulate and design table schema

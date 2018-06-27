@@ -176,7 +176,7 @@ gl.deleteShader(fragmentShader);
 
 Passing data to and from the GPU is expensive, so we need to pass as much data as we can in as few trips as possible. We pass position and color info as a plaintext array through the _buffer object_ `vbo`. To tell the GPU which attribute is located at buffer, we call `gl.vertexAttribPointer`, passing the attribute location index from program, count, and type of attribute type vector (position is `vec2` and color is `vec3`), normalization flag, size of structure and field offset.
 
-We are drawing a single triangle, so we don't need index buffer.
+We are drawing a single triangle, so we do not need index buffer.
 
 ```js
 let vertices = new Float32Array([

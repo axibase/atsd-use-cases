@@ -4,7 +4,7 @@
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e6cf48b9/2/#fullscreen)
 
-> Open the [ChartLab](https://apps.axibase.com/chartlab) visualization above and use the dropdown menus to navigate through time.
+> Open the [ChartLab](https://apps.axibase.com/chartlab) visualization above and use the drop-down lists to navigate through time.
 
 **Data Source**: [Federal Reserve Economic Data](https://fred.stlouisfed.org/series/FGCCSAQ027S)
 
@@ -25,7 +25,7 @@ beginning to look more and more like the Federal Government will end up footing 
 loan borrowers are delinquent on their payments ([3](https://ifap.ed.gov/perkinscdrguide/attachments/1415PerkinsCDR.pdf)).
 
 The lower part of the above visualization shows that the rate of student loan debt growth is staying relatively constant,
-which isn't great news considering that this rate of increase is relatively more significant than the rate of GDP growth
+which is not great news considering that this rate of increase is relatively more significant than the rate of GDP growth
 produced by the United States. The number of economic troubles being juggled by the United States is significant at the moment,
 especially considering that the debt profile of the average American has managed to remain relatively consistent for the last
 several decades ([4](../../research/average-american-debt-profile/README.md)), it seems that the brunt of the damage has been inflicted on the system itself.

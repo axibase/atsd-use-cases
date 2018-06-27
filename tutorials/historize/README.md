@@ -22,7 +22,7 @@ The steps below describe how to enable this type of monitoring in ATSD.
 
 ### Analyze Raw Data
 
-It is important to understand the available data in order to determine useful statistics for end users (Operations Analysts in this case). For the purpose of this guide, assume the Operations Database stores incoming orders in the `daily_orders` table.
+It is important to understand the available data to determine useful statistics for end users (Operations Analysts in this case). For the purpose of this guide, assume the Operations Database stores incoming orders in the `daily_orders` table.
 
 ```sql
 CREATE TABLE daily_orders
@@ -175,7 +175,7 @@ Click **Meta Data** to test the connection.
 
 Execute a sample query to verify permissions.
 
-Add `LIMIT n` clause to the test query in order to restrict the number of returned rows, just in case.
+Add `LIMIT n` clause to the test query to restrict the number of returned rows, just in case.
 
 ```sql
 SELECT * FROM stat_orders_hourly_total LIMIT 5

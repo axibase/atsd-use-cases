@@ -7,7 +7,7 @@
 
 The LIBOR is a benchmark index that tracks the interest rates at which banks lend money to one another. Similar to the United States Federal Reserve's [Federal Fund and Interest Rates](../../research/analysis/fed-fund-interest/README.md), the LIBOR is often to used to appraise the current market climate and helps to inform investors of broad trends based on the amount of interest being collected. In the years leading up to the worldwide recession of 2009, the LIBOR moved frequently and dramatically, and its subordinate rates (measured daily, monthly, bi-monthly, tri-monthly, quarterly, and annually) often diverged significantly as member banks scrambled to hide losses or hedge positions.
 
-In 2012 it was revealed that many of these worldwide member banks, were in fact fraudulently inflating or deflating the rates in order to profit off of short-term trades and increase interest rates in their favor. What came to be known as the LIBOR crisis led to stricter government regulation of the associated member banks and the LIBOR as a whole. As seen in the figure above, the government's intervention has led to a marked stabilization of the various LIBOR-denominated rates.
+In 2012 it was revealed that many of these worldwide member banks, were in fact fraudulently inflating or deflating the rates to profit off of short-term trades and increase interest rates in their favor. What came to be known as the LIBOR crisis led to stricter government regulation of the associated member banks and the LIBOR as a whole. As seen in the figure above, the government's intervention has led to a marked stabilization of the various LIBOR-denominated rates.
 
 ---
 

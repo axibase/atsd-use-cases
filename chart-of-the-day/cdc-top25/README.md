@@ -3,7 +3,7 @@
 Learning about your favorite city's local health has never been easier. With help from
 data stored in the [Axibase Data Catalog](https://axibase.com/datasets/socrata/6vp6-wxuq.html) released by [The Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) plus
 visualization and querying tools in ATSD, spotting your city's place in the rankings
-isn't just for your health, but vital to informing your company's next health-related venture
+is not just for your health, but vital to informing your company's next health-related venture
 or enhancing your staff's already existing knowledge of such valuable public data.
 
 The [500 Cities Project](https://www.cdc.gov/500cities/index.htm) uses self-reporting and census-style data-gathering methodology
@@ -28,7 +28,7 @@ GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
 LIMIT 25
 ```
 
-| tags.placename | tags.stateabbr | last(VALUE) |
+| `tags.placename` | `tags.stateabbr` | `last(VALUE)` |
 |----------------|----------------|-------------|
 | Youngstown     | OH             | 19.8        |
 | Gary           | IN             | 19.5        |
@@ -70,7 +70,7 @@ GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
 LIMIT 25
 ```
 
-| tags.placename  | tags.stateabbr | last(VALUE) |
+| `tags.placename`  | `tags.stateabbr` | `last(VALUE)` |
 |-----------------|----------------|-------------|
 | Plymouth        | MN             | 6.8         |
 | Frisco          | TX             | 6.9         |
@@ -115,7 +115,7 @@ GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
 LIMIT 25
 ```
 
-| tags.placename | tags.stateabbr | last(VALUE) |
+| `tags.placename` | `tags.stateabbr` | `last(VALUE)` |
 |----------------|----------------|-------------|
 | Reading        | PA             | 18.4        |
 | New Bedford    | MA             | 18.2        |
@@ -157,7 +157,7 @@ GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
 LIMIT 25
 ```
 
-| tags.placename    | tags.stateabbr | last(VALUE) |
+| `tags.placename`    | `tags.stateabbr` | `last(VALUE)` |
 |-------------------|----------------|-------------|
 | Plymouth          | MN             | 7.2         |
 | Sugar Land        | TX             | 7.3         |
@@ -188,4 +188,4 @@ LIMIT 25
 The CDC has included over a dozen such metrics, ranging from diabetes to dental
 health, and asthma to arthritis. Open ChartLab with the button below any of the charts
 show above and navigate the rest of this analytical gold mine yourself to find your favorite
-(or least favorite) city using the dropdown menu at the top of the display to select the desired city and desired metric.
+(or least favorite) city using the drop-down list at the top of the display to select the desired city and desired metric.

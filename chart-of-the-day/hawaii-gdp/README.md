@@ -6,7 +6,7 @@
 
 Hawaii is not often considered among the economic powerhouses of the United States, but it
 seems the tiny archipelago two-and-a-half thousand miles from the California coastline
-knows something the rest of us don't.
+knows something the rest of us do not.
 
 Using [data](https://catalog.data.gov/dataset/dbedt-hawaii-nominal-gross-domestic-product-2000-2010-59862)
 from the State of Hawaii's Department of Business, Economic Development, and Tourism, and

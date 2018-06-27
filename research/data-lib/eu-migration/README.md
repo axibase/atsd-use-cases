@@ -13,7 +13,7 @@ net migration data.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/574349d5/3/#fullscreen)
 
-> Use the dropdown menu to navigate between countries.
+> Use the drop-down list to navigate between countries.
 
 Additional European Union datasets:
 

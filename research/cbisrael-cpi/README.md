@@ -42,7 +42,7 @@ values and is shown below:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f322562c/10/#fullscreen)
 
-> Open the dropdown menu in any of these visualizations to navigate through time.
+> Open the drop-down list in any of these visualizations to navigate through time.
 
 Calculation tools built in to the [ChartLab](https://apps.axibase.com/) interface make long-term analysis of complex data more simple than manual or
 other methods of computer-assisted computation by allowing mathematical functions determined by some underlying data to be
@@ -66,7 +66,7 @@ Where,
 `value` = X,
 `previousValue` = previous value of X
 
-This script simply replaces the value stored in the database with the value calculated by the equation, which returns the change in CPI. In order to smooth the variance of the curve, this setting may be added to the Editor:
+This script simply replaces the value stored in the database with the value calculated by the equation, which returns the change in CPI. to smooth the variance of the curve, this setting may be added to the Editor:
 
 ```ls
 [series]

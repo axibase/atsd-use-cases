@@ -4,7 +4,7 @@
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/8b23c4f8/#fullscreen)
 
-> Open the ChartLab visualization above and use the dropdown menus to navigate through time.
+> Open the ChartLab visualization above and use the drop-down lists to navigate through time.
 
 ## Introduction
 
@@ -111,8 +111,8 @@ to stay relevant when faced with competition from Asian and European automakers 
 If auto-makers in America are interested in keeping their hegemonic position at home, and indeed, their jobs in the future,
 a serious re-structuring of the way the industry does business needs to happen and it needs to happen now. Production costs aren't to blame, there are
 a number of international trade partnerships like NAFTA that allow producers to makes cars in countries with lower wages like
-Mexico and bring them into the United States tariff-free. Lack of consumer demand isn't to blame, despite decreasing sales numbers
-overall, what's left of the market is being gobbled up by foreign producers. Inflation isn't to blame, the CPI values for
+Mexico and bring them into the United States tariff-free. Lack of consumer demand is not to blame, despite decreasing sales numbers
+overall, what's left of the market is being gobbled up by foreign producers. Inflation is not to blame, the CPI values for
 automobiles of every size have been more stable than almost any other industry in the country. The blame lays squarely at the
 feet of the executive teams who have failed to create a product of value and are soon going to once again feel the cold sting
 of the free market if they cannot address the industry's current inadequacies.

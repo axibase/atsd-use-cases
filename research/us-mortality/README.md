@@ -1056,7 +1056,7 @@ ORDER BY tot.tags.city, tot.datetime
 
 Here are a few noteworthy points regarding this query:
 
-1) Multiple metrics are joined in order to provide a breakdown of all deaths by age group, using the `JOIN` clause.<br />
+1) Multiple metrics are joined to provide a breakdown of all deaths by age group, using the `JOIN` clause.<br />
 2) Observations are grouped by a period of 1 year to view total number of deaths in each age group in a given year.<br />
 3) The total mortality rate is calculated by dividing the number of all deaths by the 2015 New York City population size, which is retrieved from a replacement table for 2015 to simplify the query.<br />
 4) The data is limited to one city in the `WHERE` clause.<br />

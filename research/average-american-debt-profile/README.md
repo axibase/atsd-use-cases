@@ -63,7 +63,7 @@ releases this number each quarter.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/842f1dd9/#fullscreen)
 
-> Use the dropdown menus at the top of the visualization screen to navigate through time, selecting the `starttime` and `endtime` values
+> Use the drop-down lists at the top of the visualization screen to navigate through time, selecting the `starttime` and `endtime` values
 to observe a desired period.
 
 The data can also be queried using the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD.
@@ -229,7 +229,7 @@ To view the distribution of these values across time, a histogram is shown below
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/9f74c179/#fullscreen)
 
-Use the box diagram to explore time with the dropdown menus at the top of the visualization screen. The visualization
+Use the box diagram to explore time with the drop-down lists at the top of the visualization screen. The visualization
 shows the distribution of debt values as a percentage of total income, with the initial time period set to include the
 entire data set:
 
@@ -370,7 +370,7 @@ always be something opaque and esoteric to the average man, leading to many peop
 opting for a return of the gold standard or leveling accusations of wrong-doing.
 
 However, after reviewing the data above, it seems that at least on a consumer level, the average American actually has more
-today than they would have had thirty years ago, or even just five years ago. Of course, the Federal Reserve isn't completely
+today than they would have had thirty years ago, or even just five years ago. Of course, the Federal Reserve is not completely
 responsible for the wise consumer choices made in the current decades, but monetary policy enacted by the various branches of the Federal
 Reserve are responsible for maintaining the economic conditions that Americans, and consumers the world over, have come to expect
 from the United States economy.

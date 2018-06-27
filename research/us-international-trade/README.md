@@ -81,7 +81,7 @@ As marked in the figure below, we can see that the trade balance deficit between
 
 By clicking on the below button, you can explore the trade by any country included in this dataset. Simply click on the drop down tabs to scroll between different countries,
 as well as between continents or organizations. **Note**: there are separate filters for the top and bottom graphs. You need to select your desired location from the
-`US Import/Export` drop down, as well from `US Trade Balance` in order to filter.
+`US Import/Export` drop down, as well from `US Trade Balance` to filter.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/552d7a44#fullscreen)
 
@@ -242,7 +242,7 @@ to assume that the afflicted country's trade balance would change as a result. F
 U.S. will need to import from Asia. In this instance, `2016_GDP_per_capita` was calculated from the following two replacement tables:
 [`world-population.txt`](./resources/world-population.txt) and [`world-gdp.txt`](./resources/world-gdp.txt). Results are sorted by the country's `2016_trade_balance_rank`. The
 more negative a country's trade balance, the higher its ranking. You can refer to the [`us-trade-balance-rank-2016.txt`](./resources/us-trade-balance-rank-2016.txt) file to see these rankings.
-In order to separate rich and poor countries, we calculated an average world GDP. We divided the world population
+to separate rich and poor countries, we calculated an average world GDP. We divided the world population
 by the world's GDP to get a world GDP of $10,273. Any
 countries having a GDP less than this were considered poor countries, while countries with a greater GDP were considered rich.
 

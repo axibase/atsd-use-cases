@@ -234,7 +234,7 @@ GROUP BY entity
 | http://api.example.org:80/v1.12/srv-ping  | 63.636            |
 ```
 
-Similarly, calculate the availability for specific days of the week in order to locate patterns that might lead to enhanced change control, such as instituting a change freeze on Fridays.
+Similarly, calculate the availability for specific days of the week to locate patterns that might lead to enhanced change control, such as instituting a change freeze on Fridays.
 
 ```sql
 SELECT substr(date_format(time, 'u-EEE'), 3) AS day_of_week,

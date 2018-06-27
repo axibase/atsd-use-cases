@@ -2,7 +2,7 @@
 
 ## Overview
 
-[AWS Route 53](https://aws.amazon.com/route53) provides tools to automate DNS configuration in order to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, AWS provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
+[AWS Route 53](https://aws.amazon.com/route53) provides tools to automate DNS configuration to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, AWS provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
 
 A core Route 53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) which monitor the health of an application and can route incoming traffic to healthy endpoints.
 
@@ -93,7 +93,7 @@ mkdir import
 cd import
 ```
 
-Mount this directory to the Docker container in order to pass AWS credentials to the CloudWatch data collector without exposing sensitive information as environment variables.
+Mount this directory to the Docker container to pass AWS credentials to the CloudWatch data collector without exposing sensitive information as environment variables.
 
 Create an `aws.propeties` file in the `import` directory and replace `KEY` and `SECRET` with **AWS Access Key ID** and **Secret Access Key** respectively.
 

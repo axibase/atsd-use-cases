@@ -24,7 +24,7 @@ shown below using [data](https://ourworldindata.org/nuclear-weapons/) from a 201
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/62a380f8/2/#fullscreen)
 
-> Open the ChartLab visualization above and use the dropdown menu to navigate through time and observe the changing inventories
+> Open the ChartLab visualization above and use the drop-down list to navigate through time and observe the changing inventories
 of nuclear weapons among observed nations.
 
 Despite this however, the former Cold War rivals have also been the most proactive about self-disarmament and as permanent
@@ -54,7 +54,7 @@ World War Two.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/62a380f8/5/#fullscreen)
 
-> Open the ChartLab visualization to toggle between nations and navigate through time using the dropdown menus.
+> Open the ChartLab visualization to toggle between nations and navigate through time using the drop-down lists.
 
 Additionally, neighbors and on-again off-again rivals India and Pakistan maintain a contested border that has triggered armed
 military engagements as recently as 2016. Their nuclear arsenals are detailed below:

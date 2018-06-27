@@ -58,22 +58,22 @@ After execution, we will work with the table's cells:
 This expression `'#col=4-28''` means that we want select all columns with indexes from 4 to 28. After selection, we will work with the following cells:
 
 |  Index | 4    |5-14 | 15   | 16    | 17   |18-27|   28 |
-|-------|-------|-----|------|-------|------|-----|------|
-| **2** |  1733 | ... | 2426 | 22801 | 1033 | ... | 1186 |
-| **3** |  2631 | ... | 1327 | 19751 | 947  | ... | 813  |
-| **4** |  1344 | ... | 1883 | 23952 | 739  | ... | 1146 |
+|:-------:|:-------:|:-----:|:------:|:-------:|:------:|:-----:|:------:|
+| **2** |  1,733 | `...` | 2,426 | 22,801 | 1,033 | `...` | 1,186 |
+| **3** |  2,631 | `...` | 1,327 | 19,751 | 947  | `...` | 813  |
+| **4** |  1,344 | `...` | 1,883 | 23,952 | 739  | `...` | 1,146 |
 
 ## Filter Cells
 
-We don't want to select columns that are contained in a column which describes summary values for the year. The columns end with the `YR` suffix.
+Do not select columns that are contained in a column which describes summary values for the year. The columns end with the `YR` suffix.
 
 ```javascript
  filter(!cell(1,col).endsWith('YR'))
 ```
 
-For filtering cells, we can use the `filter` command that takes a boolean condition as a parameter. The method goes through every cell and checks it for this condition.
+For filtering cells, you can use the `filter` command that takes a boolean condition as a parameter. The method goes through every cell and checks it for this condition.
 
-Let us consider our instance.
+Consider the instance.
 
 ## Current Indexes: `row` and `col`
 

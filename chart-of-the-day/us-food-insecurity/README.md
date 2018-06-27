@@ -11,7 +11,7 @@
 > Use the drop-down menus to navigate through time or observe a specific county.
 
 The United States of America is considered by most of the world to be a land of plenty, but that doesn't mean that
-food security problems don't exist. In fact, an average one in seven persons is labeled as food insecure by the United States
+food security problems do not exist. In fact, an average one in seven persons is labeled as food insecure by the United States
 Department of Agriculture (USDA)([1](http://www.worldhunger.org/hunger-in-america-2016-united-states-hunger-poverty-facts/)). Such a person is considered to have unstable access to nutritious and varied food, though
 not necessarily starving. A full explanation of the definition of food insecurity can be found on the [USDA's website](https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-us/definitions-of-food-security/).
 

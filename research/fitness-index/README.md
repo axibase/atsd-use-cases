@@ -80,7 +80,7 @@ The Benchmark Average, and by extension alert threshold, is modified for each ye
 
 >Even year (2012 and 2014) data can be found in the [Appendix](#appendix)
 
-In order to observe trends in individual MSAs, finding an effective method to sort
+to observe trends in individual MSAs, finding an effective method to sort
 the data is needed. By organizing the data by city, chronologically, trends appear
 that were not as obvious in the first visualization:
 
@@ -105,13 +105,13 @@ present, tracing patterns year-to-year has become much easier than it was in the
 display. Notice that because data is only available for 2015 for Baton Rouge, Louisiana the remaining empty columns are still rendered for the sake of chronology.
 
 Using the [`DISPLAY`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/)
-setting, unneeded data can be masked in order to compare the best and worst performing MSAs over the observed period. Here, Oklahoma City, Oklahoma was the lowest-performing MSA and Raleigh, North Carolina was the highest-performing MSA based on averaged performance. Displayed next to one another, their absolute and relative differences can be underlined:
+setting, unneeded data can be masked to compare the best and worst performing MSAs over the observed period. Here, Oklahoma City, Oklahoma was the lowest-performing MSA and Raleigh, North Carolina was the highest-performing MSA based on averaged performance. Displayed next to one another, their absolute and relative differences can be underlined:
 
 ![BestAndWorst](./images/BVW.png)
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c43f580b/7/)
 
-In order to make observations about the performance of one MSA over the observed time,
+to make observations about the performance of one MSA over the observed time,
 a similar strategy can be used with a different method of visualization:
 
 ![Miami](./images/MVB.png)
@@ -170,7 +170,7 @@ important, this facet of the index oversimplifies the root factors that contribu
 to public health and cause the true goal of the AFI to be lost if other factors are ignored,
 making a thorough examination of the data even more important.
 
-In order to simultaneously analyze the ranking of each city and its individual performance,
+to simultaneously analyze the ranking of each city and its individual performance,
 the following [Box-and-Whisker](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/)
 graphic can be used:
 

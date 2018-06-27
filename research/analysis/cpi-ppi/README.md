@@ -17,7 +17,7 @@ a final product. Both are shown below from 1990 to 2017:
 
 [![View ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0b791490/#fullscreen)
 
-> Open any ChartLab visualization to navigate through time using the dropdown menus at the top of the screen.
+> Open any ChartLab visualization to navigate through time using the drop-down lists at the top of the screen.
 
 _Sources_: [Federal Reserve Economic Data (CPI)](https://fred.stlouisfed.org/series/CPIAUCSL), [Federal Reserve Economic Data (PPI)](https://fred.stlouisfed.org/series/PPIACO)
 
@@ -65,7 +65,7 @@ of the CPI less the value of the PPI.
 | 12-2008 | 211.4 | 170.9 | 40.5                  |
 ```
 
-In order to effectively contextualize this data, average Potential Profitability Values are shown below by year:
+to effectively contextualize this data, average Potential Profitability Values are shown below by year:
 
 ```sql
 SELECT YEAR(time) AS "Date", AVG(cpi.value) AS "Avg CPI", AVG(ppi.value) AS "Avg PPI", AVG(cpi.value - ppi.value) AS "Potential Profitability Value"
@@ -217,7 +217,7 @@ GROUP BY YEAR(time)
 
 [![View ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bae30175/#fullscreen)
 
-> Open any ChartLab visualization to navigate through time using the dropdown menus at the top of the screen.
+> Open any ChartLab visualization to navigate through time using the drop-down lists at the top of the screen.
 
 When the data is controlled to exclude volatile metrics such as energy and food production and consumption,
 a more accurate representation of the difference between production costs and consumer costs can be seen. To further

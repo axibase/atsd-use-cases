@@ -1275,7 +1275,7 @@ The ACME (v1, v2) protocol used by Let's Encrypt supports the following challeng
 * `TLS-SNI-01`. Certificate requester must respond to HTTPS request on the requested domain to port 443.
 * `DNS-01`. Certificate requester must add an expiring TXT record to its DNS records on a nameserver.
 
-The request must pass the challenge in order to receive the certificate.
+The request must pass the challenge to receive the certificate.
 
 The `TLS-SNI-01` challenge on port 443 is no longer supported by Let's Encrypt.
 

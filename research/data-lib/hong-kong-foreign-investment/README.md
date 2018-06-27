@@ -24,7 +24,7 @@ Use the Metric Index and Country Index below to navigate between countries and m
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/2/#fullscreen)
 
-> Open the visualization in ChartLab and use the dropdown menus at the top of the screen to select the desired observation period.
+> Open the visualization in ChartLab and use the drop-down lists at the top of the screen to select the desired observation period.
 
 Total Foreign Businesses Operating in Hong Kong Representing a Foreign Parent Company, by Country:
 

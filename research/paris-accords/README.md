@@ -146,7 +146,7 @@ as the clause in the Paris Agreement that relates to voluntary withdrawal states
 must give almost half a decade's notice to the other signatories,
 but some [legal experts](https://www.cfr.org/blog-post/vietnam-and-united-states-make-nice-now-disappointment-looms)
 have theorized that the President may be able to withdraw from the original 1992 framework
-in order to bypass the lengthy withdrawal process in as soon as a year. Further, most of the
+to bypass the lengthy withdrawal process in as soon as a year. Further, most of the
 mechanisms of the Paris Agreement were set to begin taking effect in 2020, making them mostly
 symbolic at present. In the meantime, however,
 public data provided by states like New York can offer a unique insight to the policies currently

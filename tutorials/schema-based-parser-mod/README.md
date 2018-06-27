@@ -3,7 +3,7 @@
 ## Introduction
 
 Data is not always recorded ideally for a given analysis. Perhaps the metrics that you would like to work with are not contained
-in a given file, or maybe calculations must be done with the given data in order to arrive to a dataset that better suits
+in a given file, or maybe calculations must be done with the given data to arrive to a dataset that better suits
 your current needs.
 
 With [Schema-Based Parsing](https://axibase.com/docs/atsd/parsers/csv/) in ATSD

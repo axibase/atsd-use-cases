@@ -121,7 +121,7 @@ Configuration has been shortened to include only non-repeated settings for brevi
 Configuration Features:
 
 * `type`: a variety of visualization widgets are available in ChartLab, see the full list [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
-* `range(y,x)`: in order to show chronological data, a reverse-ordered range setting may be used where the more recent parameter is the second argument instead of the first as seen above.
+* `range(y,x)`: to show chronological data, a reverse-ordered range setting may be used where the more recent parameter is the second argument instead of the first as seen above.
 
 #### Configuration 4: Histogram
 

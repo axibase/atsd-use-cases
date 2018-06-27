@@ -207,7 +207,7 @@ This query's results are displayed as follows:
 | 2015-10-01 | 2        |
 | 2015-11-01 | 6        |
 
-In order to maintain the chronology of the display, interpolation is used here to display
+to maintain the chronology of the display, interpolation is used here to display
 those months without incident as well.
 
 >To view this table without interpolation see the [Appendix](#appendix)
@@ -530,7 +530,7 @@ homicide made up 1.9% of total Baltimore homicides in 2013, and 1.8% of total Ba
 
 ![2013](./images/2013Other.png)
 
-In order to display the total number of police homicides for the observed years, the `[other]`
+to display the total number of police homicides for the observed years, the `[other]`
 function can be used, only displaying the desired year's data, but still showing other data
 alongside for perspective.
 
@@ -580,14 +580,14 @@ Contact [Axibase](https://axibase.com/feedback/) with any questions.
 
 ### Using the [`EXPAND`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
 
-In order to highlight specific data, as shown in the [Nature of the Homicides](#nature-of-homicides) section,
+to highlight specific data, as shown in the [Nature of the Homicides](#nature-of-homicides) section,
 use the command `expand = true` under the `[series]` which should be expanded:
 
 ![Expand1](./images/Expand1.png)
 
 ### Using the [`OTHER`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
 
-In order to display a full series of data, but only show detailed information for a desired
+to display a full series of data, but only show detailed information for a desired
 portion of that data, the `[other]` command needs to be included in the `[series]` cluster, and a
 value for `total-value = x` needs to be added under the `[widget]` cluster as shown below,
 

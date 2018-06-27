@@ -8,7 +8,7 @@ Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e92a4f6c/10/#fullscreen)
 
-> Use the dropdown menus at the top of the visualization to navigate through time by selecting the desired start and end
+> Use the drop-down lists at the top of the visualization to navigate through time by selecting the desired start and end
 years for the observation period.
 
 Recently, [European Union Debt Data](../../research/data-lib/eu-debt/README.md) sorted by country was published
@@ -23,7 +23,7 @@ sorted by member country and below that same information is displayed in one yea
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d38e750e/#fullscreen)
 
-> Open the visualization above and navigate through time with the dropdown menu.
+> Open the visualization above and navigate through time with the drop-down list.
 
 Per capita debt data does not represent the average amount of debt carried by an individual consumer but rather the debt of
 a given government distributed to every citizen of that country, whom the government officially represents. A large country

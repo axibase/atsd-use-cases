@@ -2,7 +2,7 @@
 
 ![](./images/rules.png)
 
-A Rule is evaluated by the ATSD rule engine in order to trigger an alert or to execute a corrective action when the specified  condition is satisfied.
+A Rule is evaluated by the ATSD rule engine to trigger an alert or to execute a corrective action when the specified  condition is satisfied.
 
 Follow this process to upload a rule to you local ATSD instance.
 

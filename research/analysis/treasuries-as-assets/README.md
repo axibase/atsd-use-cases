@@ -13,7 +13,7 @@ The United States Government currently bears $19.8 trillion dollars of gross deb
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/24f81638/#fullscreen)
 
-> Open any ChartLab visualization and navigate through time with the dropdown menu to observe any desired span of time.
+> Open any ChartLab visualization and navigate through time with the drop-down list to observe any desired span of time.
 
 Source: [Federal Reserve Economic Data (FRED)](https://fred.stlouisfed.org/series/FYGFD)
 
@@ -84,7 +84,7 @@ ORDER BY last(value) DESC
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/17d4a3dc/#fullscreen)
 
-> Open any ChartLab visualization and navigate through time with the dropdown menu to observe any desired span of time.
+> Open any ChartLab visualization and navigate through time with the drop-down list to observe any desired span of time.
 
 Source: [Department of the Treasury](https://www.treasury.gov/resource-center/data-chart-center/tic/Pages/ticsec2.aspx)
 
@@ -145,7 +145,7 @@ Countries which export oil are central to the global economy, and many of them m
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/17d4a3dc/9/#fullscreen)
 
-> Open any ChartLab visualization and navigate through time with the dropdown menu to observe any measured year.
+> Open any ChartLab visualization and navigate through time with the drop-down list to observe any measured year.
 
 Source: [Department of the Treasury](https://www.treasury.gov/resource-center/data-chart-center/tic/Pages/ticsec2.aspx)
 

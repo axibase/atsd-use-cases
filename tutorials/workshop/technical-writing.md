@@ -212,7 +212,7 @@ Exceptions:
 * Spell out month if the format is ambiguous:
   * :white_check_mark: `01/Jun/2018`.
   * :no_entry: `06/01/2018`.
-* Don't use ordinal numbers in dates.
+* Do not use ordinal numbers in dates.
   * :white_check_mark: `April 15`.
   * :no_entry: `April 15th`.
 * Use commas with full dates.
@@ -257,7 +257,7 @@ word | alternatives
 `Epoch time` | `Unix time`
 `datacenter` | `data center`
 `and/or` | clarify the meaning
-`in order to` | `to`
+`to` | `to`
 `make sure` | `ensure`
 `end-point` | `endpoint`
 `click on` | `click`

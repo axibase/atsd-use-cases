@@ -23,7 +23,7 @@ in to the already polluted Los Angeles air.
 ## Data
 
 The City of Los Angeles has released annually-aggregated [total emission data](https://catalog.data.gov/dataset/port-of-los-angeles-emission-from-port-operations-4912c)
-from a 2005 to 2012 study in order to document its progress with respect to reducing greenhouse gas emissions. Pollution is something taken
+from a 2005 to 2012 study to document its progress with respect to reducing greenhouse gas emissions. Pollution is something taken
 seriously in Los Angeles due to the magnitude of the problem, and the Port even allows individuals to [track live information](http://caap.airsis.com/CurrentData.aspx)
 about local air quality from their on-site air quality testing center.
 

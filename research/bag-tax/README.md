@@ -24,11 +24,11 @@ door and potentially, into the county's waterways.
 
 ## Data
 
-In order to measure the effectiveness of the bag tax as a method of reducing overall plastic bag use, the Montgomery County
+to measure the effectiveness of the bag tax as a method of reducing overall plastic bag use, the Montgomery County
 data from the [2010 United States Census](https://www.census.gov/2010census/data/) can be used to define a per capita usage
 of plastic bags and assess whether the last five years have shown a decrease in plastic bag usage as the city intended. Because
 the official Census was performed in 2010, and local population estimates exist for 2015 an average step amount must be calculated
-in order to determine yearly population totals. Averaging the difference in population numbers provides a approximate per year
+to determine yearly population totals. Averaging the difference in population numbers provides a approximate per year
 increase value (+14,503 persons) which gives these estimates:
 
 | Year | Population |
@@ -114,7 +114,7 @@ GROUP BY 'Year'
 | 2016 | 2.45                      |
 ```
 
-> Use the dropdown menu to view totals by year, month, or week.
+> Use the drop-down list to view totals by year, month, or week.
 
 ![](./images/BT_2.1.1.png)
 
@@ -232,7 +232,7 @@ LIMIT 20
 
 Even enormous national retailers like [Giant-Landover](https://giantfood.com/), [Whole Foods](http://www.wholefoodsmarket.com/), and [Safeway](http://www.safeway.com/)
 never recorded a significant amount of revenue from bag sales, though Giant-Landover held the top spot for every recorded year, with a
-five year total revenue of $670,000 (Don't worry too much though, that total accounts for about 0.02% of their recorded 2016 profits).
+five year total revenue of $670,000 (Do not worry too much though, that total accounts for about 0.02% of their recorded 2016 profits).
 
 ## Conclusions
 

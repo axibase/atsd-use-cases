@@ -171,7 +171,7 @@ Apply an `alert-expression` to track years by percent deviation from the calcula
 
 ### Final Year Baseline
 
-In order to calculate debt growth using a FYB, the following queries are used:
+to calculate debt growth using a FYB, the following queries are used:
 
 ```sql
 SELECT last(value) AS "Final Year Baseline"

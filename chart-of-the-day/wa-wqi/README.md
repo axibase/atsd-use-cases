@@ -38,7 +38,7 @@ conversions to qualitative words have also been provided below:
 
 >More information about the Water Quality Index, its methodology, or metrics, can be found [here](https://www.water-research.net/)
 
-Use the [ChartLab](https://apps.axibase.com/chartlab) visualization below, and the dropdown menus at the top of the screen to choose the desired metric, and compare
+Use the [ChartLab](https://apps.axibase.com/chartlab) visualization below, and the drop-down lists at the top of the screen to choose the desired metric, and compare
 the Top 10, Top 20, or Top 30, Bottom 10, Bottom 20, or Bottom 30 testing sites, or use the Wildcard option to view all
 available testing sites together.
 
