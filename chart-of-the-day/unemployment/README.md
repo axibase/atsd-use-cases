@@ -107,7 +107,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * `[threshold]` series are used to define upper and lower limits for particular values.
 
-* *Fig. 3* (for full configuration settings open the **Trends** visualization [above](#the-relationship-between-gdp-and-full-employment))
+* *Fig. 3* (for full configuration settings open the **Trends** visualization [above](#the-relationship-between-gdp-and-employment))
 
 ```sql
 [series]

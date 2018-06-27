@@ -20,7 +20,7 @@ This visualization tracks the growing divide in advanced technologies imported i
 
 [![](./images/button-new.png)](https://trends.axibase.com/31b5a64e#fullscreen)
 
-This visualization uses `alias` settings to capture raw data and `value` settings to create new calculated series. Periods with a trade deficit are highlighted in red usign an `alert-expression`. For detailed information about syntax in the **Trends** environment, see [Visualization Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+This visualization uses `alias` settings to capture raw data and `value` settings to create new calculated series. Periods with a trade deficit are highlighted in red using an `alert-expression`. For detailed information about syntax in the **Trends** environment, see [Visualization Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
 
 ## Tracking the Growth in Imports Against the Decline in Exports
 
@@ -42,7 +42,7 @@ By creating an additional layer of `[series]` configurations the difference betw
 
 ## Advanced Technologies as a Portion of the Whole
 
-Comparing overall trade balance data to advanced technologies shows that the deficit in advanced technologies industries has unarguably grown dramatically since 2004, when the United States became an overall importer of advanced technologies as opposed to an exporter.
+Comparing overall trade balance data to advanced technologies shows that the deficit in advanced technologies industries has inarguably grown dramatically since 2004, when the United States became an overall importer of advanced technologies as opposed to an exporter.
 
 ![](./images/compare2.png)
 

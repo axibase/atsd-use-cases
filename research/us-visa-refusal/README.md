@@ -464,7 +464,7 @@ group by t1.datetime
 ```
 
 The total amount of money earned from denied visa applications was **$411.4 million**, a little less than `1/4` of the amount earned
-from issued visas. These numbers are in line with the [2015 State Department Report](https://www.state.gov/documents/organization/249770.pdf), which stated that 10.9 million visas were issued at foreign posts. The total revenue eanred by U.S. consular services in 2015 was [$5.8 billion](https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249727.htm), meaning that the amount earned from
+from issued visas. These numbers are in line with the [2015 State Department Report](https://www.state.gov/documents/organization/249770.pdf), which stated that 10.9 million visas were issued at foreign posts. The total revenue earned by U.S. consular services in 2015 was [$5.8 billion](https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249727.htm), meaning that the amount earned from
 refusal fees is not just pocket change.
 
 ## Action Items

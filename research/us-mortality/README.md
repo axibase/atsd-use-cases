@@ -4,68 +4,57 @@
 
 ## Introduction
 
-According to [infoplease.com](http://www.infoplease.com/ipa/A0005148.html), life expectancy from 1935 to 2010 for both sexes in the U.S. increased from 61.7 to 78.7 years.
-As reported by the [Center for Disease Control and Prevention (CDC)](http://www.cdc.gov/nchs/data/databriefs/db88.htm#x2013;2010%3C/a%3E>), the crude death rate in the United States fell from
-10.9 to 7.9 deaths per 1,000 people from 1935 to 2010, translating to a **27% decrease**. Mortality rates, however, are vastly different across different U.S. cities and age groups.
-In this article we will analyze a data.gov dataset looking at [death statistics for 122 U.S. cities](https://catalog.data.gov/dataset/deaths-in-122-u-s-cities-1962-2016-122-cities-mortality-reporting-system).
-This article will focus on ATSD [SQL query language capabilities](https://axibase.com/docs/atsd/sql/), which we will use to search for specific information contained in this dataset.
+According to [`infoplease.com`](http://www.infoplease.com/ipa/A0005148.html), life expectancy from 1935 to 2010 for both sexes in the U.S. increased from 61.7 to 78.7 years.
+As reported by the [Center for Disease Control and Prevention](http://www.cdc.gov/nchs/data/databriefs/db88.htm#x2013;2010%3C/a%3E>) (CDC), the crude death rate in the United States fell from
+10.9 to 7.9 deaths per 1,000 people from 1935 to 2010, translating to a **27% decrease**. Mortality rates are vastly different across different U.S. cities and age groups.
+This article explores a `data.gov` dataset containing [mortality statistics for 122 U.S. cities](https://catalog.data.gov/dataset/deaths-in-122-u-s-cities-1962-2016-122-cities-mortality-reporting-system) using ATSD and [SQL Console](https://axibase.com/docs/atsd/sql/).
 
 ## Death Statistics for 122 U.S. Cities
 
-Let's take a look at the dataset titled **Deaths in 122 U.S. cities - 1962-2016. 122 Cities Mortality Reporting System** from [data.gov](https://www.data.gov/).
+Download this dataset from [`data.gov`](https://catalog.data.gov/dataset/deaths-in-122-u-s-cities-1962-2016-122-cities-mortality-reporting-system).
+On `data.gov`, datasets can be downloaded in CSV (16.7 MB), RDF, [JSON](https://data.cdc.gov/api/views/mr8w-325u/rows.json?accessType=DOWNLOAD) (66.2 MB), or XML format. Parse this dataset using the [JSON Job](https://axibase.com/docs/axibase-collector/jobs/json.html) in [Axibase Collector](https://axibase.com/docs/axibase-collector/).
 
-This dataset can be found here: [https://catalog.data.gov/dataset/deaths-in-122-u-s-cities-1962-2016-122-cities-mortality-reporting-system](https://catalog.data.gov/dataset/deaths-in-122-u-s-cities-1962-2016-122-cities-mortality-reporting-system).
-On the data.gov website, datasets can be downloaded as a CSV (16.7 MB), RDF, [JSON](https://data.cdc.gov/api/views/mr8w-325u/rows.json?accessType=DOWNLOAD) (66.2 MB), or a XML file. This dataset can easily be parsed using the JSON job in Axibase Collector.
+This file contains weekly mortality statistics from 1962 to 2016 in 122 U.S. cities until the system became obsolete on October 6th, 2016. The vital statistics offices of these cities across the United States reported the total number of death certificates processed and the number of those for which pneumonia or influenza was listed as the underlying
+or contributing cause of death by age group. The data is clustered by age group:
 
-This file contains data for weekly death totals collected from 1962 to 2016 in 122 U.S. cities. The system was retired on October 6th, 2016. While the system was running, the vital statistics
-offices of these cities across the United States reported the total number of death certificates processed and the number of those for which pneumonia or influenza was listed as the underlying
-or contributing cause of death by age group. Deaths in this dataset are split into the following categories:
+* 0 - 1 years (all causes of death).
+* 1 - 24 years (all causes of death).
+* 25 - 44 years (all causes of death).
+* 45 - 64 years (all causes of death).
+* 65 + years (all causes of death).
+* All deaths.
+* Pneumonia and influenza deaths.
 
-* 0 - 1 years (all causes of death)
-* 1 - 24 years (all causes of death)
-* 25 - 44 years (all causes of death)
-* 45 - 64 years (all causes of death)
-* 65 + years (all causes of death)
-* All deaths
-* Pneumonia and influenza deaths
-
-You can find a complete list of the cities (with their corresponding state) in our [city-list](city-list.md) file.
+You can find a complete list of the cities in [`city-list.md`](city-list.md).
 
 Additionally, these cities are be grouped by United States Census Bureau regions.
-You can find a table of these regions in our [region-table](region-table.md) file.
+These regions are enumerated in [`region-table.md`](region-table.md).
 
-While you can manually analyze this information in a spreadsheet program, it is much more convenient to interact with the data once it is loaded into a database.
+While possible to manually analyze this information in a spreadsheet program, it is much more convenient to interact with the data once it is loaded into a database.
 
 ## Axibase Time Series Database
 
-The ATSD is a powerful tool when it comes to storing, analyzing, and visualizing datasets. This article will not focus on creating graphs and figures using ATSD, but
-rather on writing and running SQL queries. If you are interested in reading more on the visual presentation capabilities of ATSD, check out our articles on
-[employee compensation numbers in Iowa](../../integrations/socrata/iowa-compensation/README.md) and
-[aviation statistics in the United Kingdom](../uk-aviation/README.md).
+ATSD is a non-relational database capable of storing, analyzing, and visualizing datasets. This article focuses on writing and running SQL queries using the web-based [**SQL Console**](https://axibase.com/docs/atsd/sql/)
 
-Below is an output of the default configuration with all 122 U.S. cities parsed into ATSD.
+Below is the output of the default configuration with all 122 U.S. cities parsed and imported into ATSD.
 
 ![Figure 2](./images/Figure2.png)
-
-Here you can explore the complete dataset for U.S. death totals:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3d07088c)
 
 ## Creating Local Configurations for ATSD and Axibase Collector using Docker
 
-To query information from this dataset you will need to install both ATSD and Axibase Collector.
+To query information from this dataset, install both [ATSD](https://axibase.com/docs/atsd/installation/) and [Axibase Collector](https://axibase.com/docs/axibase-collector/requirements.html).
 
-You can set up local instances of ATSD and Axibase Collector using Docker by going through our [step-by-step walk through](../us-mortality/configuration.md).
-Setup takes about 15 minutes.
+Alternatively run ATSD and Axibase Collector as a Docker [image](https://github.com/axibase/dockers/tree/atsd-sandbox#overview).
 
 ## ATSD Schema
 
-Before creating SQL queries, begin by running through the [data schema and models](https://axibase.com/products/axibase-time-series-database/data-model/) of ATSD.
+Before creating SQL queries, familiarize yourself with the ATSD [data schema and models](https://axibase.com/products/axibase-time-series-database/data-model/).
 
-Below is a list and brief descriptions of some dataset schema terminology we will be using.
+Below is a glossary of some dataset schema terminology used in this article.
 
-* Entity - name of the dataset that we loaded from data.gov, in our case `mr8w-325u`. It is equal to the Unique Identifier published on [data.gov](https://data.cdc.gov/api/views/mr8w-325u).
-  Each dataset from data.gov has only one entity.
+* **Entity**: Name of the dataset that loaded from `data.gov`, in this case `mr8w-325u`. Equivalent to the **Unique Identifier** used on [data.gov](https://data.cdc.gov/api/views/mr8w-325u). Each dataset from `data.gov` has one entity.
 
 ```json
   "id" : "mr8w-325u",
@@ -73,14 +62,14 @@ Below is a list and brief descriptions of some dataset schema terminology we wil
   "attribution" : "CDC, NCIRD, Influenza Division",
 ```
 
-* Metrics - a list of numeric columns contained in the dataset (for example: `pneumonia_and_influenza_deaths`). This particular dataset contains 7 metrics.
+* **Metric**: List of columns in the dataset such as  `pneumonia_and_influenza_deaths`. This dataset contains seven metrics.
 
 ```json
    "dataTypeName" : "number",
    "fieldName" : "pneumonia_and_influenza_deaths"
 ```
 
-* Series Tags - a list of text columns contained in the dataset (for example: `city`). The tag columns allow us to filter and group the data. This dataset contains 3 series tags: `city`, `state`, and `region`.
+* **Series Tag**: List of text columns contained in the dataset for example, `city`. The tag columns allow us to filter and group the data. This dataset contains 3 series tags: `city`, `state`, and `region`.
 
 ```json
    "name" : "City",
@@ -88,39 +77,37 @@ Below is a list and brief descriptions of some dataset schema terminology we wil
    "fieldName" : "city",
 ```
 
-Now we will begin by introducing ourselves to this dataset and taking a look at where exactly this information is stored.
+## Procedure
 
-1. Navigate to the **Entities** tab in ATSD. Click on the entity for our dataset, `mr8w-325u`.
+1. Navigate to the **Entities** tab in ATSD. Open the entity `mr8w-325u`.
 
    ![Figure 37](./images/Figure37.png)
 
-2. Click the **Metrics** button.
+2. Click **Metrics**.
 
    ![Figure 38](./images/Figure38.png)
 
-3. In **Metrics**, click **Series** for `cdc.pneumonia_and _influenza_deaths`.
+3. On the **Metrics** page, click **Series** for metric `cdc.pneumonia_and _influenza_deaths`.
 
    ![Figure 39](./images/Figure39.png)
 
-4. For Boston, select **Export**.
+4. For **Boston**, select **Export**.
 
    ![Figure 40](./images/Figure40.png)
 
-5. Let us export the last 20 years of data for pneumonia and influenza deaths. Click **Submit**.
+5. Export the last 20 years of data for pneumonia and influenza deaths. Click **Submit**.
 
    ![Figure 41](./images/Figure41.png)
 
-Below is an output for this data.
+The data is shown below.
 
 ![Figure 42](./images/Figure42.png)
 
-Maneuvering through the entity and searching for our desired data for different cities, states, regions, age groups, and deaths types can be time consuming. Now, look some
-simple SQL queries which do the work.
+## SQL Queries
 
-## Basic SQL Queries
+Below are simple SQL queries with descriptions. Detailed instructions for creating SQL queries can be found in the [Syntax Documentation](https://axibase.com/docs/atsd/sql/#syntax).
 
-Here are some basic SQL queries with brief descriptions included. Look these over to get yourself acclimated to the general format of SQL queries. In the example following this section, we will
-in detail walk through executing a query from start to finish. You can read more about our SQL syntax [here](https://axibase.com/docs/atsd/sql/#syntax).
+Select all metrics:
 
 ```sql
 SELECT *
@@ -128,7 +115,7 @@ SELECT *
 LIMIT 10
 ```
 
-The above query displays 10 rows for the metric to see which series tags are available.
+Select all metrics, and order by city name and date:
 
 ```sql
 SELECT *
@@ -137,7 +124,7 @@ SELECT *
 LIMIT 10
 ```
 
-The query orders rows by date and city, and limits the response to 10 rows.
+Select mortality statistics for Boston:
 
 ```sql
 SELECT *
@@ -147,7 +134,7 @@ WHERE tags.city = 'Boston'
 LIMIT 10
 ```
 
-This query serves to filter records for a particular city and orders rows by date, as well as setting the response limit to 10 rows.
+Select mortality statistcs for Boston since January 1, 2016
 
 ```sql
 SELECT datetime, value, tags.*
@@ -158,8 +145,7 @@ WHERE tags.city = 'Boston'
 LIMIT 10
 ```
 
-This next query filters records for a particular city (in this case Boston) and for a timespan (in this case retrieve samples from 2016 and older). With the `ORDER BY` clause, rows are sorted by date,
-and the response is restricted to 10 rows.
+Select and group monthly mortality statistics for Bostin since January 1, 2016
 
 ```sql
 SELECT date_format(period(1 MONTH)), sum(value), count(value)
@@ -170,27 +156,11 @@ GROUP BY period(1 MONTH)
   ORDER BY 1
 ```
 
-This query serves to filter records for a particular city and time. Weekly samples are aggregated into months, and the sum and count of samples are calculated for each month. Additionally, rows are ordered
-by the starting month, referring to the date in the column index.
+For additional SQL examples view [ATSD Documentation](https://axibase.com/docs/atsd/sql/examples/).
 
-```sql
-SELECT date_format(period(1 MONTH)), sum(value), count(value)
-  FROM cdc.all_deaths tot
-WHERE tags.city = 'Boston'
-  AND datetime >= '2016-01-01T00:00:00Z'
-GROUP BY period(1 MONTH)
-  HAVING count(value) >= 4
-ORDER BY datetime
-```
+## Pneumonia and Influenza Deaths in Boston
 
-This final example filters records for a particular city and time. Weekly samples are aggregated into months and the sum and count of samples in each month are calculated. With the line
-`HAVING count(value) >= 4`, months with less than 4 weekly samples are excluded (October 2016 has only 1 row).
-
-You can take a look at various other [SQL queries examples on our GitHub page](https://axibase.com/docs/atsd/sql/examples/).
-
-## Detailed SQL Example 1 - Pneumonia and Influenza Deaths in Boston
-
-Now that we have looked at the basics, let's get into a detailed example. Here is an SQL query looking at recent pneumonia and influenza deaths in Boston, Massachusetts.
+This SQL query tracks recent pneumonia and influenza deaths in Boston, Massachusetts.
 
 ```sql
 SELECT datetime, value, tags.*
@@ -200,31 +170,15 @@ WHERE tags.city = 'Boston'
 LIMIT 10
 ```
 
-Looking at our query, we have each of the following clauses:
+* [`SELECT`](https://axibase.com/docs/atsd/sql/#select-expression)
+* [`FROM`](https://axibase.com/docs/atsd/sql/#virtual-table)
+* [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause)
+* [`ORDER BY`](https://axibase.com/docs/atsd/sql/#ordering)
+* [`LIMIT`](https://axibase.com/docs/atsd/sql/#limiting)
 
-* `SELECT` - returns a result set of records from one or more tables. In this case, we would like to return the time the weekly death total was recorded (i.e. 2016-09-24T00:00:00.000Z), the value
-  (or number of deaths), and the tags (`tags.city`, `tags.region`, and `tags.state`). `*` is shorthand for all.
-* `FROM` - indicates the table(s) to retrieve data from. In this instance, we are filtering for `cdc.pneumonia_and_influenza_deaths`.
-* `WHERE` - specifies which rows to retrieve. Here, we are only looking for `'Boston'`.
-* `ORDER BY` - specifies the order in which to return the rows. `DESC` means descending order, so the most recent results will be returned first.
-* `LIMIT` - specifies the number of rows to return. In our instance, the 10 most recent weekly readings are returned.
+See [SQL Documentation](https://axibase.com/docs/atsd/sql/sql-console.html) for more information.
 
-Instructions on querying the data in ATSD:
-
-1. Click on the **SQL** tab.
-
-   ![Figure 43](./images/Figure43.png)
-
-2. Copy and paste the query into the dialogue box. Click **Execute**.
-
-   ![Figure 44](./images/Figure44.png)
-
-Below is an output of our queried data.
-
-![Figure 45](./images/Figure45.png)
-
-Now, look at the latest pneumonia and influenza and total deaths for Boston, using the `JOIN` clause. This will pair the results we just queried for with the corresponding total
-number of deaths in the city.
+Now, look at the latest pneumonia and influenza and total deaths for Boston, using the `JOIN` clause. This pairs the results with the corresponding total number of deaths in the city.
 
 ```sql
 SELECT *
@@ -250,7 +204,7 @@ LIMIT 10
 | mr8w-325u   | 2016-07-30T00:00:00.000Z  | 12.0       | Boston         | 1                | MA              | mr8w-325u   | 2016-07-30T00:00:00.000Z  | 120.0      | Boston         | 1                | MA             |
 ```
 
-The below query is the same as the first one we looked at, with the only difference being tags here are explicitly specified. Read more about [series tags here](https://axibase.com/docs/atsd/sql/#series-tag-columns).
+The query below explicitly specifies tags. See [Series Tags Documentation](https://axibase.com/docs/atsd/sql/#series-tag-columns) for more information abut using Series Tags.
 
 ```sql
 SELECT datetime, value, tags.city, tags.state, tags.region
@@ -260,9 +214,9 @@ WHERE tags.city = 'Boston'
 LIMIT 10
 ```
 
-This next query is again for latest pneumonia and influenza and total readings for Boston, but with region code translated to region name using one of our Replacement Tables (as mentioned in the [step-by-step walk through](../us-mortality/configuration.md)]). As a default, each region is listed
-by their corresponding number. In the case of Boston, it falls in region 1, which includes the states of Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont. Recall that we created a replacement table in ATSD where
-we entered in region names for each region number. In this instance, region 1 is named **New-England**. Read more about [replacement tables here](https://axibase.com/docs/atsd/sql/#lookup-functions).
+This query returns for latest `pneumonia and influenza` and `total` data for Boston, but with the region code translated to region name using [Replacement Tables](https://axibase.com/docs/atsd/sql/#lookup-functions). By default, each region is listed as a number. Boston is in `region 1`, which includes the states of Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont.
+
+There is a replacement table in ATSD with region names for each number. In this instance, `region 1` is **New-England**.
 
 ```sql
 SELECT datetime, value, tags.city, tags.state,
@@ -288,8 +242,8 @@ LIMIT 10
 | 2016-07-30T00:00:00.000Z  | 12.0   | Boston     | MA          | New-England |
 ```
 
-This next query looks at total pneumonia and influenza deaths for all cities in a given region using the `GROUP BY` clause, which combines rows having common values into a single row. The region
-specified in this query is **New-England**. Read more about the `GROUP BY` clause [here](https://axibase.com/docs/atsd/sql/#grouping).
+The query below returns total pneumonia and influenza deaths for all cities in a given region using the `GROUP BY` clause, which combines rows having common values into a single row. The region
+specified in this query is **New-England**.
 
 ```sql
 SELECT datetime, sum(value),
@@ -316,7 +270,7 @@ LIMIT 10
 | 2016-07-30T00:00:00.000Z  | 34.0        | New-England |
 ```
 
-Here, monthly pneumonia and influenza death are totaled for all cities in the **New-England** region for the time-range from January 1st, 2016, to October 1st, 2016.
+Monthly pneumonia and influenza death are totaled for all cities in the **New-England** region for the time-range from January 1st, 2016 to October 1st, 2016 with the query below.
 
 ```sql
 SELECT datetime, sum(value),
@@ -342,11 +296,11 @@ WHERE tags.region = '1'
 | 2016-01-01T00:00:00.000Z  | 214.0       | New-England |
 ```
 
-## Detailed SQL Example 2 - Best of the Best and Worst of the Worst
+## Best of the Best and Worst of the Worst
 
-Let us now look at some additional examples which delve into finding out which of our 122 cities have some of the deadliest and least deadly conditions.
+Some additional examples track the most and least fatal cities in the U.S.
 
-The below query examines the least deadly week for the total number of deaths by city.
+The least deadly week by city, based on total deaths.
 
 ```sql
 SELECT date_format(time, 'yyyy-MM-dd') AS "date",
@@ -360,9 +314,6 @@ FROM cdc.all_deaths
 ORDER BY 'date' DESC
   OPTION (ROW_MEMORY_THRESHOLD 500000)
 ```
-
-Here is an output of the above query. This query displays for results for all 122 cities in the dataset. The below table contains only the first couple of lines of the output. As a note, moving forward
-some of the remaining query results may show truncated tables for the sake of maintaining the general flow of the article.
 
 ```ls
 | date        | city              | state  | region              | all_deaths  | population |
@@ -381,14 +332,14 @@ some of the remaining query results may show truncated tables for the sake of ma
 | 2014-12-27  | New Bedford       | MA     | New-England         | 9.0         | 94958      |
 ```
 
-Here a few noteworthy points regarding this query.
+> This query displays for results for all 122 cities in the dataset. For the sake of brevity, only the top 12 results are shown.
 
-1) `tags.city IS NOT NULL` is specified to discard a few rows present in the dataset for older dates but collected without a reference to a city.<br />
-2) The line `WITH row_number ... <= 1` partitions rows by tags (city, state, region) and selects the row with the **MINIMUM** value for each partition using the `ORDER BY` value condition.<br />
-3) The `LOOKUP('us-region', tags.region)` function converts `tags.region` (number) into a string, for example, 3 -> East-North-Central.<br />
-4) `LOOKUP('city-size', concat(tags.city, ',', tags.state))` retrieves city size for the given city and state pair, concatenated to the {city},{state} pattern.<br />
+* `tags.city IS NOT NULL` is specified to discard a few rows present in the dataset for older dates collected without a reference city.
+* `WITH row_number ... <= 1` partitions rows by tags (city, state, region) and selects the row with the **MINIMUM** value for each partition using the `ORDER BY` value condition.
+* The `LOOKUP('us-region', tags.region)` function converts `tags.region` (number) into a string, for example, 3 -> East-North-Central.
+* `LOOKUP('city-size', concat(tags.city, ',', tags.state))` retrieves city size for the given city and state pair, concatenated to the `{city},{state}` pattern.
 
-Now, let's look at the deadliest week for the total number of deaths by city.
+The deadliest week by city, based on total deaths.
 
 ```sql
 SELECT date_format(time, 'yyyy-MM-dd') AS "date",
@@ -420,30 +371,26 @@ ORDER BY value desc
 | 2000-06-03  | Wichita       | KS     | West-North-Central  | 560.0       | 389965     |
 ```
 
-This query is the same as the above example, except for the fact that the line `WITH row_number ... <= 1` partitions rows by tags (city, state, region) and selects the row with the
-**MAXIMUM** value for each partition using the `ORDER BY` value `DESC` condition.
+The line `WITH row_number ... <= 1` partitions rows by tags (city, state, region) and selects the row with the **MAXIMUM** value for each partition using the `ORDER BY` value `DESC` condition.
 
-Noticeably absent in from the above list is the city of New Orleans, Louisiana. On August 29th, 2005, [Hurricane Katrina](http://edition.cnn.com/2013/08/23/us/hurricane-katrina-statistics-fast-facts/)
-struck the Gulf coast of the United States, with New Orleans taking the brunt of the storm's force. According to the Federal Emergency Management Agency (FEMA), Katrina was "the single most catastrophic
+Noticeably absent from the above list is New Orleans, Louisiana. On August 29th, 2005, [Hurricane Katrina](http://edition.cnn.com/2013/08/23/us/hurricane-katrina-statistics-fast-facts/)
+struck the Gulf coast of the United States, with New Orleans taking the brunt of the force. According to the Federal Emergency Management Agency (FEMA), Katrina was, "the single most catastrophic
 natural disaster in U.S. history." FEMA estimated the total damage from the hurricane amounted to $108 billion dollars, making it the "costliest hurricane in U.S. history." Approximately 1,833 people
-are estimated to have died in the storm, with 1,577 of those deaths occurring in the New Orleans area. This number of deaths would clearly put New Orleans, so why is it not showing up?
+are estimated to have died in the storm, with 1,577 of those deaths occurring in the New Orleans area, so where is New Orleans in the results above?
 
 Below is a **ChartLab** output for the number of deaths for New Orleans from 1970 to 2016.
 
 ![Figure 47](./images/Figure47.png)
 
-We can clearly see that there is quite a noticeable gap in the data collection history from the city. From August 20th, 2005, to December 8th, 2012, New Orleans did not collect death total statistics.
-Since the hurricane occurred on August 29th, 2005, these sky high death totals do not show up in our list.
-
-You can explore the death totals for New Orleans in the **ChartLab** instance below.
-
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3d07088c/2/)
 
-Another example of a city stopping data collection is Philadelphia, Pennsylvania. Looking at a [filtered output for Philadelphia](https://apps.axibase.com/chartlab/3d07088c/3/), we can see that the
-city has recently experienced a significant increase in deaths. The city recorded a death total of 1,063 on February 4th, 2012; however data collection was stopped on November 24th, 2012. So, using this
-particular dataset, we cannot say whether or not this is the highest weekly total in Philadelphia history, or if there was a higher occurrence happening after November 24th, 2012.
+There is quite a noticeable gap in the data collection history from the city. From August 20th, 2005, to December 8th, 2012, New Orleans did not collect death total statistics.
 
-Moving on, here is the deadliest week due to pneumonia and influenza by city.
+Another example of a city stopping data collection is Philadelphia, Pennsylvania. Looking at a [filtered output for Philadelphia](https://apps.axibase.com/chartlab/3d07088c/3/), you can see that the
+city has recently experienced a significant increase in deaths. The city recorded a death total of 1,063 on February 4th, 2012; however data collection was stopped on November 24th, 2012. Using this
+particular dataset, you cannot say whether or not this is the highest weekly total in Philadelphia history, or whether more occurred after November 24th, 2012.
+
+The deadliest week due to pneumonia and influenza by city:
 
 ```sql
 SELECT date_format(time, 'yyyy-MM-dd') AS "date",
@@ -467,8 +414,6 @@ ORDER BY value desc
 | 2000-03-04  | Chicago      | IL     | East-North-Central  | 83.0                        | 2720546    |
 | 1999-03-06  | Sacramento   | CA     | Pacific             | 77.0                        | 490712     |
 ```
-
-This query has the same structure as for the example directly above, but has a different metric specified: `cdc.pneumonia_and_influenza_deaths` instead of `cdc.all_deaths`.
 
 The deadliest pneumonia and influenza week as a percentage of all deaths:
 
@@ -502,14 +447,12 @@ FROM cdc.all_deaths tot
 | 2003-06-28  | Akron        | OH     | East-North-Central  | 2.0         | 2.0                         | 100.0                          | 197542     |
 ```
 
-A few noteworthy points regarding this query.
+* Two metrics are specified: `cdc.pneumonia_and_influenza_deaths` and `cdc.all_deaths`.
+* `JOIN` merges records with the same entity, tags, and time. Read more the `JOIN` clause in [SQL Documentation](https://axibase.com/docs/atsd/sql/#joins).
+* A derived metric, `pni.value/tot.value`, is calculated to show a percentage of the part to the total number of deaths.
+* Only weeks with greater than one `pneumonia and influenza` death are selected with the `AND pni.value > 1` condition.
 
-1) This query has the same structure as for the query directly above, but 2 metrics are specified: `cdc.pneumonia_and_influenza_deaths` **AND** `cdc.all_deaths`.<br />
-2) `JOIN` merges records with the same entity, tags, and time. Read more about the `JOIN` clause [here](https://axibase.com/docs/atsd/sql/#joins).<br />
-3) A derived metric, `pni.value/tot.value`, is calculated to show a percentage of the part to the total number of deaths.<br />
-4) Only weeks with more than 1 pneumonia and influenza deaths are selected with the `AND pni.value > 1` condition.<br />
-
-Moving onto the next query, `OUTER JOIN` can help find all instances when a city failed to report `pneumonia_and_influenza_deaths` (no data).
+`OUTER JOIN` finds all instances when a city failed to report `pneumonia_and_influenza_deaths`:
 
 ```sql
 SELECT tot.datetime, tot.value AS "total",
@@ -521,7 +464,7 @@ WHERE tot.entity = 'mr8w-325u'
   AND pni.value IS NULL
 ```
 
-In this example, the query sorts for rows for the city of Baton Rouge where the `pni.value is NULL`. Below is an example of this output.
+The query sorts for rows for the city of Baton Rouge where the `pni.value is NULL`.
 
 ```ls
 | tot.datetime              | total  | pneumonia/influenza |
@@ -533,9 +476,7 @@ In this example, the query sorts for rows for the city of Baton Rouge where the 
 | 2008-11-22T00:00:00.000Z  | 70.0   | N/A                 |
 ```
 
-Now look at several queries which delve into looking at the top 10 deadliest cities for total deaths and pneumonia and influenza deaths.
-
-Here is a query for filtering for the top 10 cities by all deaths in the current year (year to date).
+The top ten deadlist cities based on year-to-date deaths:
 
 ```sql
 SELECT tags.city AS "city", tags.state AS "state",
@@ -565,13 +506,9 @@ ORDER BY 'all_deaths' DESC
 | Dallas       | TX     | West-South-Central  | 8923.0      | 1300092    |
 ```
 
-This query has a similar structure to some of the examples we have already looked at. In this example, the `LIMIT` clause caps the number of rows that can be returned,
-which in this case is 10. The line `AND datetime > current_year` returns values from 2016-01-01T00:00:00.000Z to 2016-10-01T00:00:00.000Z.
+* The `LIMIT` clause caps the number of returned rows. `AND datetime > current_year` returns values from `2016-01-01T00:00:00.000Z` to `2016-10-01T00:00:00.000Z`.
 
-The [`OPTION (ROW_MEMORY_THRESHOLD {n})`](https://axibase.com/docs/atsd/sql/#row-memory-threshold-option) instructs the database to perform processing in memory as opposed to a temporary table if the number of rows is within the specified threshold {n}. If
-{n} is zero or negative, the results are processed using the temporary table.
-
-This next query examines the top 10 cities by pneumonia and influenza deaths in the current year (year to date).
+Top 10 cities by pneumonia and influenza year-to-date deaths in 2016.
 
 ```sql
 SELECT tags.city AS "city", tags.state AS "state",
@@ -601,9 +538,7 @@ ORDER BY 'pneumonia_influenza_deaths' DESC
 | Columbus      | OH     | East-North-Central  | 588.0                       | 850106     |
 ```
 
-This query has the same structure as for the example directly above, but has a different metric specified: `cdc.pneumonia_and_influenza_deaths` instead of `cdc.all_deaths`.
-
-This query shows the top 10 cities with the highest percentage of deaths caused by pneumonia and influenza in the current year (year-to-date).
+Top 10 cities with the highest percentage of year-to-date deaths caused by pneumonia and influenza in 2016:
 
 ```sql
 SELECT tot.tags.city AS "city", tot.tags.state AS "state",
@@ -621,8 +556,6 @@ GROUP BY tot.tags
   LIMIT 10
 ```
 
-In this query, we are able to calculate the percentage of pneumonia and influenza deaths using the line `sum(pni.value)/sum(tot.value)*100 AS "pneumonia_influenza_deaths, %",`.
-
 ```ls
 | city         | state  | region              | all_deaths  | pneumonia_influenza_deaths  | pneumonia_influenza_deaths, %  | population |
 |--------------|--------|---------------------|-------------|-----------------------------|--------------------------------|------------|
@@ -638,7 +571,7 @@ In this query, we are able to calculate the percentage of pneumonia and influenz
 | Los Angeles  | CA     | Pacific             | 11934.0     | 1147.0                      | 9.6                            | 3971883    |
 ```
 
-Here is a query for the top 10 cities with the highest percentage of deaths caused by pneumonia and influenza, for the last 12 months (trailing).
+Top 10 cities with the highest percentage of deaths caused by pneumonia and influenza, for the most recent 12 months.
 
 ```sql
 SELECT tot.tags.city AS "city", tot.tags.state AS "state",
@@ -656,8 +589,7 @@ GROUP BY tot.tags
   LIMIT 10
 ```
 
-The only difference between this query and the previous one is the specified time frame. Using the line `AND tot.datetime > now-1*YEAR AND tot.value > 0`, we are able to filter for the last
-12 months, as opposed to the previous example which only looked at the calendar year of 2016.
+* The line `AND tot.datetime > now-1*YEAR AND tot.value > 0` filters the most recent 12 months instead of calendar year.
 
 ```ls
 | city         | state  | region              | all_deaths  | pneumonia_influenza_deaths  | pneumonia_influenza_deaths, %  | population |
@@ -674,7 +606,7 @@ The only difference between this query and the previous one is the specified tim
 | Los Angeles  | CA     | Pacific             | 12787.0     | 1232.0                      | 9.6                            | 3971883    |
 ```
 
-Top 10 cities with the highest percentage of deaths caused by pneumonia and influenza, but for the entire period since 1970:
+Top 10 cities with the highest percentage of deaths caused by pneumonia and influenza, since 1970:
 
 ```sql
 SELECT tot.tags.city AS "city", tot.tags.state AS "state",
@@ -692,7 +624,7 @@ GROUP BY tot.tags
   OPTION (ROW_MEMORY_THRESHOLD 500000)
 ```
 
-In this example, we did not specify a line for `tot.datetime`, as we did in the previous example. Consequentially, results are returned for all times ranging back to the start of the dataset.
+In this example, there is no `tot.datetime`. As such, results are returned for all times ranging back to the start of the dataset.
 
 ```ls
 | city          | state  | region              | all_deaths  | pneumonia_influenza_deaths  | pneumonia_influenza_deaths, %  | population |
@@ -703,8 +635,6 @@ In this example, we did not specify a line for `tot.datetime`, as we did in the 
 | Boston        | MA     | New-England         | 407382.0    | 36691.0                     | 9.0                            | 667137     |
 | Grand Rapids  | MI     | East-North-Central  | 140092.0    | 12451.0                     | 8.9                            | 195097     |
 ```
-
-Below are a few more examples of pneumonia and influenza death queries.
 
 Number of pneumonia and influenza deaths per month in 2016 in the East-North-Central (`tags.region = '3'`) region:
 
@@ -734,7 +664,7 @@ ORDER BY datetime desc, tags.region
 | 2016 Jan  | East-North-Central  | 732.0                      |
 ```
 
-Total yearly pneumonia and influenza deaths in January for the East-North-Central region ranging back to 1970:
+Total yearly pneumonia and influenza deaths in January for the East-North-Central region ranging since 1970:
 
 ```sql
 SELECT date_format(time, 'yyyy MMM') AS "date",
@@ -764,7 +694,7 @@ ORDER BY datetime, tags.region
 | 1980 Jan  | East-North-Central  | 249.0                      |
 ```
 
-Top 3 deadliest pneumonia and influenza Januaries in the East-North-Central region:
+Top 3 deadliest Januaries from pneumonia and influenza in the East-North-Central region:
 
 ```sql
 SELECT date_format(time, 'yyyy MMM') AS "date",
@@ -817,26 +747,21 @@ ORDER BY sum(value) DESC
 | Sep    | Pacific  | 18611.0                    |
 ```
 
-## Detailed SQL Example 3 - Calculating Mortality Rates
+## Calculating Mortality Rates
 
-We have spent some time looking at SQL queries to search for information from our dataset for the total number of deaths, percentages of deaths caused by pneumonia and influenza, and ranking
-these results in terms of the deadliest month, region, or city. Now delve into computing our own mortality statistics for our dataset. According to the [CIA World Factbook](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2066rank.html), mortality (or death)
-rate is the average annual number of deaths during a year per 1,000 individuals in the population. As of 2016, the **United States** as a whole ranks 90th in the world, with a rate of **8.20**
-deaths per 1,000 individuals. Generally speaking, the higher the death rate, the worse. Below is a table from their website showing the top 5 death rates in the world.
+Compute mortality statistics using the `data.gov` dataset. **Mortality Rate** is the average annual number of deaths during a year per 1,000 individuals in the population. As of 2016, the **United States** as a whole ranks 90th in the world, with a rate of **8.20** deaths per 1,000 individuals. The table below enumerates the top 5 death rates in the world.
 
 | Rank | Country       | (Deaths/1,000 Population) | Date of Information |
 |------|---------------|---------------------------|---------------------|
-| 1    | Lesotho       | 14.90                     | 2016 est.           |
-| 2    | Bulgaria      | 14.50                     | 2016 est.           |
-| 3    | Lithuania     | 14.50                     | 2016 est.           |
-| 4    | Ukraine       | 14.40                     | 2016 est.           |
-| 5    | Latvia        | 14.40                     | 2016 est.           |
+| 1    | Lesotho       | 14.90                     | 2016            |
+| 2    | Bulgaria      | 14.50                     | 2016            |
+| 3    | Lithuania     | 14.50                     | 2016            |
+| 4    | Ukraine       | 14.40                     | 2016            |
+| 5    | Latvia        | 14.40                     | 2016            |
 
-To calculate our own mortality rates for a city in a given year, we need to simply divide the total number of deaths in the city by the population and multiply the result by 1,000. Additionally,
-this dataset does not include population numbers, so we need to pull in population figures to calculate mortality numbers. See [step 12](../us-mortality/configuration.md)
-in the step-by-step walk through for information on pulling in population statistics.
+To calculate your own mortality rates for a city in a given year, divide the total number of deaths in the city by the population and multiply the result by 1,000. This dataset does not include population numbers, see [Step 12](../us-mortality/configuration.md) in the **Configuration Guide** for guided data acquisition.
 
-Below is our SQL query for determining the cities with the highest mortality rate in 2015.
+Cities with the highest mortality rate in 2015:
 
 ```sql
 SELECT tags.city AS "city", tags.state AS "state",
@@ -851,13 +776,11 @@ GROUP BY tags
 ORDER BY mortality_rate DESC
 ```
 
-Our line in the query which calculates our mortality rate:
+The syntax responsible for calculating **Mortality Rate**.
 
 ```sql
 sum(value)/cast(LOOKUP('city-size', concat(tags.city, ',', tags.state)))*1000 AS "mortality_rate"
 ```
-
-Here is the output from our query looking at mortality rates in 2015.
 
 ```ls
 | city              | state  | region              | all_deaths  | population  | mortality_rate |
@@ -984,11 +907,10 @@ Here is the output from our query looking at mortality rates in 2015.
 | Des Moines        | IA     | West-North-Central  | 0.0         | 210330.0    | 0.0            |
 ```
 
-These results are pretty eye opening. Of the 122 cities in our dataset, 95 have higher mortality rates than the US average of 8.2. The highest 2015 mortality rate, in Youngstown, Ohio, is
-**6.65** and **3.65** times higher than the US national average and the rate in Lesotho (which has the highest number in the world). #2 on our list is Dayton, Ohio, whose mortality
-rate of 52.1 is not much lower than in Youngstown. How can these numbers be so high?
+Of the 122 cities in our dataset, 95 have a higher mortality rate than the US average of 8.2. The highest 2015 mortality rate is in Youngstown, Ohio
+**54.5**. Which is **6.56** times higher than the US national average and on par with the mortality rate in Lesotho, the highest in the world. Dayton, Ohio has a mortality rate of **52.1** which is much lower than in Youngstown.
 
-Below is a table comparing population estimates for top 6 cities with the highest 2015 mortality rates.
+Below is a table comparing population estimates for top six cities with the highest 2015 mortality rates.
 
 | City           |  1960 Population  |     2015 Population | Population Change (%)|
 |----------------|-------------------|---------------------| ---------------------|
@@ -999,34 +921,31 @@ Below is a table comparing population estimates for top 6 cities with the highes
 | Cleveland      |    876,050        |     388,072         | **(-)** 55.7         |
 | Rochester      |    318,611        |     209,802         | **(-)** 34.2         |
 
-How has the population of five of these six cities declined so dramatically?
-
-Four of these six cities are located in the Rust Belt of the United States (map shown below). According to [geography.about.com](http://geography.about.com/od/urbaneconomicgeography/a/Rust-Belt.htm),
+Four of these six cities are located in the infamous Rust Belt. According to [`geography.about.com`](http://geography.about.com/od/urbaneconomicgeography/a/Rust-Belt.htm),
 the Rust Belt is an area of the United States which once served as the hub of American industry. In the early to mid 20th century, abundant natural resources led to thriving coal, steel,
-and manufacturing industries. However, at the mid point of the century, many of these cities fell upon hard times, as manufacturing jobs went overseas, populations began to decline as a result.
-The website sums up the Rust Belt as a "landscape (that) is characterized by the presence of old factory towns and post-industrial skylines."
+and manufacturing industries. However, in the middle of the twentieth century many of these cities fell upon hard times, as manufacturing jobs went elsewhere or overseas, and populations began to decline as a result.
 
- <img src="images/Figure46.png" width="600" >
+![](./images/Figure46.png)
 
-Along with Detroit (MI) and Gary (IN), Youngstown (OH) is often used to showcase the rise and fall of manufacturing in the United States. Youngstown was once a city where steel was king. Steel
-dominated every aspect of life, and as this industry grew, so too did Youngstown. According to the [Hampton Institute](http://www.hamptoninstitution.org/youngstown.html#.WE6P3URVZhE), the
-population of Youngstown grew from 33,000 in 1890 to 170,000 in 1930. Youngstown became the center of Mahoning Valley, which became to be known as the "Steel Valley." By the 1930's, Youngstown
-ranked fifth in the nation in terms of home ownership. However, the glory of Youngstown was short lived. According to [encyclopedia.com](http://www.encyclopedia.com/places/united-states-and-canada/miscellaneous-us-geography/rust-belt):
+Along with Detroit, MI and Gary, IN, Youngstown, OH is often used to showcase the rise and fall of manufacturing in the United States. Youngstown was once a city where steel was king. Steel
+dominated every aspect of life, and as this industry grew, so did Youngstown. According to the [Hampton Institute](http://www.hamptoninstitution.org/youngstown.html#.WE6P3URVZhE), the
+population of Youngstown grew from 33,000 in 1890 to 170,000 in 1930. Youngstown became the center of Mahoning Valley, which became to be known as "Steel Valley." By the thirties, Youngstown
+ranked fifth in the nation in terms of home ownership. But the glory of Youngstown was short lived. According to [`encyclopedia.com`](http://www.encyclopedia.com/places/united-states-and-canada/miscellaneous-us-geography/rust-belt):
 
 "The U.S. worldwide market share of manufactured steel went from 20 percent in 1970 to 12 percent by 1990, and American employment in the industry dropped from 400,000 to 140,000 over the
 same period. Starting in the late 1970s, steel factories began closing. Among the hardest hit of the communities was Youngstown, Ohio, where the closure of three steel mills starting in
 1977 eliminated nearly 10,000 high-paying jobs."
 
-The loss of the manufacturing industry has been devastating for Youngstown. Large swaths of the population moved out. Crime soared in the city. The [crime rate](http://www.city-data.com/city/Youngstown-Ohio.html) in
-Youngstown in 2014 was **496.3**, compared to 287.5 for the U.S. as a whole.
+The loss of the manufacturing industry is devastating to Youngstown. Large swaths of the population moved out. Crime soared in the city. The [crime rate](http://www.city-data.com/city/Youngstown-Ohio.html) in
+Youngstown in 2014 was **496.3**, compared to **287.5** for the U.S. as a whole.
 
-Here are some numbers from [census.gov](http://www.census.gov/quickfacts/table/LFE041215/00,3988000) comparing Youngstown (OH) to the United States as a whole:
+Here are some numbers from [`census.gov`](http://www.census.gov/quickfacts/table/LFE041215/00,3988000) comparing Youngstown to the United States as a whole:
 
-Persons without health insurance, under age 65 (percent): **15.0%** vs 10.5%<br />
-Persons in poverty (percent): **38.3%** vs 13.5%<br />
-Per capita income in past 12 months (in 2015 dollars), 2011-2015: **$15,056** vs $28,930<br />
+* Persons without health insurance, under age 65 (percent): **15.0%** vs 10.5%.
+* Persons in poverty (percent): **38.3%** vs 13.5%.
+* Per capita income in past 12 months (in 2015 dollars), 2011-2015: **$15,056** vs $28,930.
 
-Now, move on to looking at mortality rates in New York City (fixed population size):
+Mortality rates in New York City which has a relatively fixed population:
 
 ```sql
 SELECT tot.datetime, tot.tags.city AS "city", tot.tags.state AS "state",
@@ -1054,15 +973,12 @@ GROUP BY tot.tags, tot.period(1 year)
 ORDER BY tot.tags.city, tot.datetime
 ```
 
-Here are a few noteworthy points regarding this query:
-
-1) Multiple metrics are joined to provide a breakdown of all deaths by age group, using the `JOIN` clause.<br />
-2) Observations are grouped by a period of 1 year to view total number of deaths in each age group in a given year.<br />
-3) The total mortality rate is calculated by dividing the number of all deaths by the 2015 New York City population size, which is retrieved from a replacement table for 2015 to simplify the query.<br />
-4) The data is limited to one city in the `WHERE` clause.<br />
-5) The timespan is limited to 2016-01-01 to exclude a not yet completed 2016 since the last observations end in October.<br />
-6) `other_deaths` is included to account for deaths which are not included in any of the age groups but are included in the `all_deaths`. This may be for instances when the age of a person
-   was unknown and therefore did not fit into any of the age categories.
+* Multiple metrics are joined to provide a breakdown of all deaths by age group, using the `JOIN` clause.
+* Observations are grouped by a period of one year to view total number of deaths in each age group in a given year.
+* The total mortality rate is calculated by dividing the number of all deaths by the 2015 New York City population size, which is retrieved from a replacement table for 2015 to simplify the query.
+* The data is limited to one city in the `WHERE` clause.
+* The timespan is limited to `2016-01-01` to exclude in complete 2016 data.
+* `other_deaths` is included to account for deaths which are not included in any of the age groups but are included in the `all_deaths`. This may be for instances when the age of a person was unknown.
 
 ```ls
 | tot.datetime              | city      | state  | region           | other_deaths  | infant_deaths  | 1-24_deaths  | 25-44_deaths  | 45-64_deaths  | 64+_deaths  | all_deaths  | population  | total_mortality_rate |
@@ -1115,16 +1031,15 @@ Here are a few noteworthy points regarding this query:
 | 2015-01-01T00:00:00.000Z  | New York  | NY     | Middle-Atlantic  | 11.0          | 517.0          | 727.0        | 2619.0        | 11118.0       | 39309.0     | 54301.0     | 8550405.0   | 6.4                  |
 ```
 
-We can see that the mortality rate in the city has declined considerably since the 1970's. According to their (since-removed) report on Population
-and Mortality in 2010, the City of New York had the following key findings:
+The mortality rate in the city has declined considerably since the seventies. According to their **`removed`** report on **Population
+and Mortality** in 2010, the City of New York made following key findings:
 
-* The 2010 New York City death rate reached a historic low of 6.4 deaths per 1,000 people in the population, a 14.7% decline from 2001.
+* The 2010 New York City death rate reached a historic low of 6.4 deaths per 1,000 people in the population, a 14.7% decline since 2001.
 * The 2009 New York City life expectancy reached a historic high of 80.6 years, a 3.7% (35 months) increase since 2000 and a 0.5% (5 months) increase since 2008.
-* Premature deaths (before age 65) accounted for 30% of all deaths in New York City.  The premature death rate decreased to 2.2 per 1,000 population, a 15.4% decline since 2001.
+* Premature deaths (before age 65) accounted for 30% of all deaths in New York City. The premature death rate decreased to 2.2 per 1,000 population, a 15.4% decline since 2001.
 
-The death rate for 2010 that was found in the report (6.4) does not match the value from our SQL query result. This is due to the fact that we were using a fixed population size from 2015 to calculate
-**all** of the mortality rates. Since we have population numbers for 1960, 1970, 1980, 1990, 2000, 2010, and 2015, we can compute much more accurate mortality rates for New York City using interpolated population
-sizes.
+The death rate for 2010 that was found in the report (6.4) does not match the value from the SQL query result. This is due to using the fixed population size from 2015 to calculate
+all of the mortality rates. Since population numbers for 1960, 1970, 1980, 1990, 2000, 2010, and 2015 are available you can compute much more accurate mortality rates for New York City using interpolated population sizes.
 
 ```sql
 SELECT tot.datetime, tot.tags.city AS "city", tot.tags.state AS "state",
@@ -1205,11 +1120,11 @@ WITH INTERPOLATE (1 WEEK, LINEAR, INNER, EXTEND, START_TIME)
 | 2015-01-01T00:00:00.000Z  | New York  | NY     | Middle-Atlantic  | 11.0          | 527.3          | 742.1        | 2680.3        | 11335.9       | 40083.7     | 55380.3     | 6.5                   | 8550405.0              |
 ```
 
-Using our interpolated population numbers, we can see that our death rate value for 2010 (6.4) matches the one found in the report by the City of New York.
+Using interpolated population numbers, the death rate value for 2010 (6.4) matches the one found in the report by the City of New York.
 
-Since numbers for `us.population` and the CDC metrics are collected at different frequencies (10 year vs 1 week), they have different collection periods. Therefore, it is necessary to
-calculate intermediate (weekly) population values to match the frequency of the CDC metrics. The `WITH INTERPOLATE` clause is set to 1 week to match the population periods to those of the
-CDC metrics. Read more about interpolation [here](https://axibase.com/docs/atsd/sql/#interpolation).
+Since numbers for `us.population` and the CDC metrics are collected at different frequencies (`10 year` compared to `1 week`), they have different collection periods. Therefore, it is necessary to
+calculate intermediate population values to match the frequency of the CDC metrics. The `WITH INTERPOLATE` clause is set to `1 week` to match the population periods to those of the
+CDC metrics. Read more about interpolation in [SQL Documentation](https://axibase.com/docs/atsd/sql/#interpolation).
 
 ```sql
 SELECT datetime, value
@@ -1229,8 +1144,8 @@ WITH INTERPOLATE (1 WEEK, LINEAR, INNER, EXTEND, START_TIME)
 LIMIT 5
 ```
 
-We can also look at determining mortality rate by age group in New York City. We grabbed age group population statistics from [nyc1.gov](http://www1.nyc.gov/site/planning/data-maps/nyc-population/census-2010.page)
-as part of the 2010 U.S. census. The `new-york-city-2010-population` file can be found on [GitHub](./resources/new-york-city-2010-population.txt).
+Determine mortality rate by age group in New York City using age group population statistics from [`nyc.gov`](http://www1.nyc.gov/site/planning/data-maps/nyc-population/census-2010.page)
+as part of the 2010 U.S. census. The `new-york-city-2010-population` file can be found in the [Resources](./resources/new-york-city-2010-population.txt) directory.
 
 ```sql
 SELECT CAST(LOOKUP('new-york-city-2010-population', 'total')) AS "population",
@@ -1264,13 +1179,11 @@ GROUP BY tot.period(1 YEAR)
 | 8175133.0   | 596.0          | 811.0        | 2571.0        | 11513.0       | 36953.0     | 52464.0     | 5.5                    | 0.3                  | 1.1                   | 5.8                   | 37.2                | 6.4                  |
 ```
 
-There are two noteworthy points regarding this query:
+* All metrics with death numbers are joined by year using the `SUM` aggregation function.
+* `SUM` aggregation is divided by the size of the corresponding age group, retrieved with a `LOOKUP` function, and multiplied by 1,000 since mortality is measured in deaths per 1,000 people.
 
-1) All metrics with death numbers are joined (grouped by year) using the `SUM` aggregation.<br />
-2) `SUM` aggregation is divided by the size of the corresponding age group, retrieved with a lookup function, and multiplied by 1000 since mortality is measured in deaths per 1000 people.<br />
-
-As the final query in this article, take a look at mortality rates by age group in Youngstown. We determined population figures with help from `places.mooseroots.com`
-as part of the 2010 U.S. Census. The `youngstown-2010-population` file can be found on [GitHub](./resources/youngstown-2010-population.txt).
+The query below calculates mortality rates by age group in Youngstown. Population figures are available from `places.mooseroots.com`
+as part of the 2010 U.S. Census. The `youngstown-2010-population` file is available in the [Resources](./resources/youngstown-2010-population.txt) directory.
 
 ```sql
 SELECT CAST(LOOKUP('youngstown-2010-population', 'total')) AS "population",
@@ -1302,7 +1215,7 @@ GROUP BY tot.period(1 YEAR)
 | 66982.0     | 16.0         | 40.0          | 493.0         | 2461.0      | 3039.0      | 0.7                  | 2.6                   | 27.5                  | 223.4               | 45.4                 |
 ```
 
-Below is a table comparing mortality rates in 2010 in New York City and Youngstown. We can see that mortality rates in Youngstown are higher almost across the whole board.
+Mortality rates are higher in Youngstown than New York City in almost every age group.
 
 |Mortality Rate  | New York City  | Youngstown  |
 |----------------|----------------|-------------|
@@ -1313,11 +1226,11 @@ Below is a table comparing mortality rates in 2010 in New York City and Youngsto
 | 65+ years      | 37.2           | 223.4       |
 | total          | 6.5            | 45.4        |
 
-** As a quick note, figures for the population under the age of 1 year in Youngstown were not available at the time this article was written (numbers were only available starting with the 0 to 24 age
-group), so we were not able to calculate an infant mortality rate for the city. The value, therefore, for the 1-24 age group below for Youngstown is a little higher than it is in reality.
+> Figures for the population under the age of 1 year in Youngstown are not available so it is impossible to calculate infant mortality rate. Thus the value, for the 1-24 age group for Youngstown is a little higher reality.
 
-So what can explain these unbelievably high values in Youngstown? This is a complicated, multi-layered issue, with some experts spending years analyzing these problems. Two factors that may play into
-these high rates are an aging population, which has above average rates for a number of diseases. Below is a table comparing incident rates for [6 diseases in Mahoning County (Youngstown)](https://www.odh.ohio.gov/healthstats/vitalstats/deathstat.aspx) versus the
+So what can explain these unbelievably high rates in Youngstown? This is a complicated, multi-layered issue, some experts spend years analyzing such questions.
+
+Two factors that may affect these high rates are the aging population, above average rates for a number of diseases. Below is a table comparing incident rates for [6 diseases in Mahoning County](https://www.odh.ohio.gov/healthstats/vitalstats/deathstat.aspx) versus the
 United States as a whole.
 
 | Rate (# Deaths / 100,000 Population) | Mahoning County (Youngstown) | United States |
@@ -1329,25 +1242,22 @@ United States as a whole.
 | Unintentional Injury (Accident)      | 50.7                         | [42.7](https://www.cdc.gov/nchs/fastats/accidental-injury.htm) |
 | Alzheimer's Disease                  | 30.8                         | [29.8](https://www.cdc.gov/nchs/fastats/alzheimers.htm) |
 
-We can see that Youngstown has higher incident rates for each disease. Additionally, according to the 2010 U.S. Census, the percentage of residents age 65 and older in Youngstown versus the United
-States was 16.44% versus 12.75%. These factors, along with a struggling economy and
-high poverty and crime rates, may have led to Youngstown having such high mortality rates.
-
-This may be a simplified conclusion to a complicated issue. However, we were able to get to this point using ATSD. We loaded a dataset from data.gov, pulled in population figures from census.gov,
-wrote our own SQL queries, and were able to compute our own mortality statistics. Using these capabilities of ATSD allows you gain a deeper understanding of complicated datasets and issues.
+Youngstown has higher incident rates for each disease. Additionally, according to the 2010 U.S. Census, the percentage of residents age 65 and older in Youngstown versus the United
+States was 16.44% versus 12.75%. Along with a struggling economy and
+high poverty and crime rates, probably result in Youngstown having such significant mortality rates.
 
 ### Action Items
 
-Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector and create SQL queries for analyzing CDC death statistics:
+Recreate this experiment in a local ATSD instance:
 
-1. Install Docker. A link for how to install Docker can be found on the [Docker website](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
+1. Install Docker according to the [Official Installation Instructions](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
 2. Download the `docker-compose.yml` file to launch the ATSD Collector container bundle.
 
    ```sh
    curl -o docker-compose.yml https://raw.githubusercontent.com/axibase/atsd-use-cases/master/research/us-mortality/resources/docker-compose.yml
    ```
 
-3. In Terminal, launch containers:
+3. In the console, launch containers:
 
    ```sh
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
@@ -1356,13 +1266,6 @@ Below are the summarized steps to follow to install local configurations of ATSD
 4. Import the `parser.xml` file into ATSD.
 5. Import the `us.population.csv` into ATSD.
 6. Import the `city-size`, `us-regions`, `new-york-city-2010-population`, and `youngstown-2010-population` replacement tables into ATSD.
-7. Navigate to the SQL tab in ATSD and begin writing your queries!
+7. Open the **SQL** tab and select **Console**.
 
-Read the complete [Configuration Guide](../us-mortality/configuration.md).
-
-If you require assistance in installing this software or have any questions, feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
-
-### Sources
-
-Article Title Photo: [http://www.governing.com/gov-data/pedestrian-deaths-poor-neighborhoods-report.html](http://www.governing.com/gov-data/pedestrian-deaths-poor-neighborhoods-report.html)<br />
-Rust Belt Photo: [http://fountainheadauto.blogspot.ru/2014/09/trivia-time.html](http://fountainheadauto.blogspot.ru/2014/09/trivia-time.html)<br />
+For complete installation instructions, see the [ATSD Documentation](https://axibase.com/docs/atsd/installation/).

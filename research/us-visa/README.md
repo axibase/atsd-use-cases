@@ -238,7 +238,7 @@ GROUP BY datetime
 
 ## Data Visualization with Redash
 
-SQL queries are a great tool for searching for and displaying specific information from a dataset in tabular format. One of the biggest drawbacks of SQL is the lack of visualization. Axibase parners with [Redash](https://redash.io/), an open-source data visualization tool.
+SQL queries are a great tool for searching for and displaying specific information from a dataset in tabular format. One of the biggest drawbacks of SQL is the lack of visualization. Axibase partners with [Redash](https://redash.io/), an open-source data visualization tool.
 Insert your query results into Redash and create visualizations using SQL result set data. To start, [integrate Redash and ATSD](https://redash.io/help/data-sources/axibase_tsd.html). Setup takes about 10 minutes.
 
 Prepare a visualization for the last SQL query tracking worldwide visa issuances:
