@@ -2,9 +2,9 @@
 
 ## References
 
-* [Dataset](https://github.com/axibase/open-data-catalog/blob/master/datasets/xek8-zfrt.md)
+* [Dataset](https://axibase.com/datasets/socrata/xek8-zfrt.html)
 * [SQL Syntax](https://axibase.com/docs/atsd/sql/)
-* Axibase [ChartLab](https://apps.axibase.com/)
+* Axibase [ChartLab](../../../tutorials/shared/chartlab.md)
 
 ## 2015 Insurance Assets (Top 10)
 

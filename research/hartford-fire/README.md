@@ -14,7 +14,7 @@ emergency services.
 
 ## Methodology
 
-Using [time series data](https://github.com/axibase/open-data-catalog/blob/master/datasets/izai-dug8.md) released by the
+Using data from [Axibase Dataset Catalog](https://axibase.com/datasets/socrata/izai-dug8.html) released by the
 City of Hartford, call volume to the local fire department can be analyzed and visualized to predict future infrastructural
 needs in one of the city's most vital sectors. The data is divided to indicate whether the call was about a fire incident
 or routed to the paramedics' Emergency Services Department, which includes Medical First Response and Emergency Medical Services

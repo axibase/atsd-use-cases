@@ -20,8 +20,7 @@ as some of the country's icons like former presidents Abraham Lincoln and
 Barack Obama, it's not hard to understand why Illinois is considered as diverse and
 unique as the country itself.
 
-The Illinois Center for Health Statistics has released [data](https://github.com/axibase/open-data-catalog/blob/master/datasets/9e74-xdvk.md) that covers two decades of
-live births in the state, from 1989 to 2009. This data has been kept through some of the
+Using data stored in [Axibase Dataset Catalog](https://axibase.com/datasets/socrata/9e74-xdvk.html) released by Illinois Center for Health Statistics that covers two decades of live births in the state, from 1989 to 2009. This data has been kept through some of the
 formative events of the 20th and 21st centuries: the fall of the Berlin Wall, the World Trade Center
 terrorist attacks, the Pathfinder mission to Mars, the completion of the Burj Khalifa, and
 the emergence of the Internet to name a few.

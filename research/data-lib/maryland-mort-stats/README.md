@@ -1,10 +1,10 @@
 # Maryland Mortality Statistics (1993-2015)
 
-[Source Dataset](https://github.com/axibase/open-data-catalog/blob/master/datasets/i4x2-3kc7.md)
+[Source Dataset](https://axibase.com/datasets/socrata/i4x2-3kc7.html)
 
 [SQL Console](https://axibase.com/docs/atsd/sql/) from ATSD
 
-[ChartLab](https://apps.axibase.com/chartlab)
+[ChartLab](../../../tutorials/shared/chartlab.md)
 
 ## Total Maryland Deaths Per 100,000 Persons (1992 - 2011)
 

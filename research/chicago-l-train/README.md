@@ -10,7 +10,7 @@ than 100 miles of tracks.
 
 ## Methodology
 
-Using [ridership data](https://github.com/axibase/open-data-catalog/blob/master/datasets/t2rn-p8d7.md) released by the City
+Using [ridership data](https://axibase.com/datasets/socrata/t2rn-p8d7.html) stored in the [Axibase Dataset Catalog](https://axibase.com/datasets/) released by the City
 of Chicago rider estimates can be made for the future. Analytics tools in ATSD
 can model current ridership trends to highlight patterns in transit system usage and Future Value models can be used to
 estimate future rider totals. The population of Chicago is falling, and it's the only major United
