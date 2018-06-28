@@ -4,15 +4,15 @@
 
 The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/)(FRED) of the St. Louis Federal Reserve publishes publicly available data on a range of topics related to macroeconomic trends such as GDP, employment and other national statistics.
 
-This article will focus on the [`AD01RC1Q027SBEA`](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) series which tracks net lending and borrowing of the United States Government.
+This article focuses on the [`AD01RC1Q027SBEA`](https://fred.stlouisfed.org/series/AD01RC1Q027SBEA) series which tracks net lending and borrowing of the United States Government.
 
 ### Handling Special Items
 
-The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by `4` to arrive at an annual estimate. This calculation is used to show the annual total if the trends of a specific quarter are replicated over the course of the year. During the final quarter of 2017, a **potential** `$250` billion windfall from one-time corporate repatriation taxes was added to the total by virtue of annualized calculation. As a result, the `$250` billion extra quarterly income was translated into `$1` trillion after transformation. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
+The `AD01RC1Q027SBEA` series is annualized and each quarterly value is therefore multiplied by `4` to arrive at an annual estimate. This calculation is used to show the annual total if the trends of a specific quarter are replicated over the course of the year. During the final quarter of 2017, a **potential** `$250` billion windfall from one-time corporate repatriation taxes is added to the total by virtue of annualized calculation. As a result, the `$250` billion extra quarterly income is translated into `$1` trillion after transformation. The original [FRED blog post](https://fredblog.stlouisfed.org/?s=surplus) discussing this data includes a visualization which considers this annualized value:
 
 ![](./images/fred-chart.png)
 
-As a result of this transformation, the annual budget of the U.S. government is estimated to be a positive `$14.68` million, an accomplishment that was last reported in 2001.
+As a result of this transformation, the annual budget of the U.S. government is estimated to be a positive `$14.68` million, an accomplishment last reported in 2001.
 
 This article illustrates how SQL and the declarative graphics library in ATSD can be utilized to perform ad-hoc data transformations such as the removal of special items.
 
@@ -22,16 +22,16 @@ The original data and new data are shown together. The range of conclusions one 
 
 [![](./images/button-new.png)](https://trends.axibase.com/2b56345c#fullscreen)
 
-The special item was removed using a simple [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting:
+The special item is removed using a [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting:
 
 ```javascript
 # remove extraordinary item completely.
 replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-1000 : value
 ```
 
-This setting targets a specific date, and evaluates an `if-else` expression which subtracts `$1` trillion or `$750` billion from the defined date's value.
+This setting targets a specific date, and evaluates an `if-else` expression which subtracts `$1` trillion or `$750` billion from the value of the defined date.
 
-The `group-period` and `group-statistic` settings are used to return non-annualized data, which still includes the `$250` billion extraordinary item, but doesn't include the additional `$750` billion from annualization.
+The `group-period` and `group-statistic` settings are used to return non-annualized data, which still includes the `$250` billion extraordinary item, but does not include the additional `$750` billion from annualization.
 
 ```javascript
 # remove annualization factor from raw data, group by annual period, sum samples for actual results.
@@ -40,7 +40,7 @@ group-period = 1 year
 group-statistic = sum
 ```
 
-The data is presented using our [**Trends**](../../integrations/shared/trends.md) service.
+The data is presented via the [**Trends**](../../integrations/shared/trends.md) service.
 
 ### Querying FRED Data with SQL
 
@@ -156,7 +156,7 @@ The result set shows only one year since 1970 when the United States achieved a 
 |------|---------|
 | 2000 | 81.14   |
 
-Although in the FRED visualization it appeared that the United States government has finally achieved a budget surplus, in fact the nature of the data is such that it only seems that way. The dataset here is annualized, meaning that each quarter's data is plotted as if the trend were to remain constant for the entire year. Thus, the administration's `$250` billion tax relief is considered as `$1` trillion due to annualization calculations.
+Although in the FRED visualization it appeared that the United States government has finally achieved a budget surplus, in fact the nature of the data is such that it only seems that way. The dataset here is annualized, meaning that quarterly data is plotted as if the trend remains constant for the entire year. Thus, the `$250` billion tax relief created by the current administration is considered as `$1` trillion due to annualization calculations.
 
 The special item can be completely removed from the series using the [`CASE`](https://axibase.com/docs/atsd/sql/#case-expression) expression:
 

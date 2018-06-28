@@ -43,7 +43,7 @@ Overnight interest rates are more closely related to the short-term Treasury yie
 In other words, the influence of the federal funds rate on Treasury yields diminishes with maturity"
 
 **Interest Rate (10 Year)**: The 10-year interest rate is medium-range measurement that is included to give the data context.
-It is not so dependent on the Federal Fund Rate set daily, nor is it too wide a lens like the 30-year interest rate making
+It is not as dependent on the Federal Fund Rate set daily, nor is it too wide a lens like the 30-year interest rate making
 it a dynamic metric that is included for reference.
 
 **Interest Rate (30 Year)**: "...the 30-year long-term yield declined consistently over the sample period... This slow

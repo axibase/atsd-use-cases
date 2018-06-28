@@ -50,7 +50,7 @@ CA is a trusted organization authorized to issue public key certificates to end 
 
 Trust is established when the person installs software (OS, browser, Java Runtime/Development Environment, python) containing a list of trusted CAs.
 
-CAs issue certificates which is a file, typically in [X509](https://tools.ietf.org/html/rfc5280) format, containing information about the issuer (CA), the subject or end entity, the certificate's validity dates, issuer signature, and the subject's public key.
+CAs issue certificates which is a file, typically in [X509](https://tools.ietf.org/html/rfc5280) format, containing information about the issuer (CA), the subject or end entity, the certificate validity dates, issuer signature, and the public key of the subject.
 
 In cases of HTTPS connection, the certificate is presented by the web server (nginx, apache, tomcat, jetty) to the client (browser, `curl`, apache http client, java url connection) as part of an SSL handshake.
 
@@ -163,11 +163,11 @@ The CA can delegate certificate issuance to other intermediate CAs.
 
 Both the Root CA and any of its intermediate CAs can issue a certificate to **any** subject.
 
-Trust is established when the issuer of the certificate is present in the client's trust store. Trust is also established when the issuer is an intermediate CA whose authority can be verified with a chain of certificates leading to a trusted CA certificate present in the client's trust store.
+Trust is established when the issuer of the certificate is present in the client trust store. Trust is also established when the issuer is an intermediate CA whose authority can be verified with a chain of certificates leading to a trusted CA certificate present in the client trust store.
 
 The certificates for intermediate CAs are bundled by web server into an ordered chain which is presented to the client during SSL handshake for verification.
 
-In case of the old `*.axibase.com` wildcard certificate, the chain was established as follows:
+In case of the old `*.axibase.com` wildcard certificate, the chain is established as follows:
 
 ```txt
 *.axibase.com
@@ -323,7 +323,7 @@ GeoTrust_Universal_CA.crt                                           XRamp_Global
 
 The list of root CAs is updated through the `ca-certificates` package.
 
-Search apt package manager history to view when the `ca-certificates` package was last updated.
+Search apt package manager history to view when the `ca-certificates` package is last updated.
 
 ```sh
 zgrep ca-certificates /var/log/apt/history*
@@ -954,7 +954,7 @@ Removed CAs in OpenJDK 8 -> 9:
 
 ## Trust Inheritance
 
-When establishing a secure connection based on X509 certificates, the client is presented not only with the server's own domain certificate, but also with a list of intermediate certificates leading to the root CA in the client's trust store.
+When establishing a secure connection based on X509 certificates, the client is presented not only with the domain certificate of the server, but also with a list of intermediate certificates leading to the root CA in the client trust store.
 
 The list of hierarchically validated certificates is called a **certificate chain**.
 
@@ -965,12 +965,12 @@ Domain Certificate (1)
        Root Certificate (4)
 ```
 
-The chain of client's trust is `(4) -> (3) -> (2) -> (1)`.
+The chain of client trust is `(4) -> (3) -> (2) -> (1)`.
 
-* The client trusts Root Certificate (4) because it's in the clients trust store
-* The client trusts Intermediate Certificate (3) because it was signed by Root Certificate (4).
-* The client trusts Intermediate Certificate (2), because it was signed by Intermediate Certificate (3).
-* The client trusts Domain Certificate (1), because it was signed by Intermediate Certificate (2).
+* The client trusts Root Certificate (4) because it is in the clients trust store
+* The client trusts Intermediate Certificate (3) because it is signed by Root Certificate (4).
+* The client trusts Intermediate Certificate (2), because it is signed by Intermediate Certificate (3).
+* The client trusts Domain Certificate (1), because it is signed by Intermediate Certificate (2).
 
 The client traverses the chain up until it finds a root CA in its trust store and verifies the validity of the chain using public keys and signatures embedded in each certificate.
 
@@ -1245,9 +1245,9 @@ Certificate authorities can perform various validation checks, from simple domai
 
 Before Let's Encrypt, this was accomplished by replying to a verification email sent to an inbox address recorded with the domain registrar (or from a shortlist).
 
-This is how we obtained certificates in 2015.
+This is the process to obtain certificates in 2015.
 
-> It was time consuming.
+> It is time consuming.
 
 ![](./images/globe_ssl_1.png)
 
@@ -1283,7 +1283,7 @@ The `TLS-SNI-01` challenge on port 443 is no longer supported by Let's Encrypt.
 
 #### Automation with certbot
 
-How we receive certificates in 2018 using Let's Encrypt plugins and `HOST-01` challenge.
+The process of obtaining certificates in 2018 using Let's Encrypt plugins and `HOST-01` challenge.
 
 ```sh
 sudo apt install software-properties-common
@@ -1313,9 +1313,9 @@ sudo certbot --nginx -d trends.axibase.com
 
 * The certificate is only issued for 90 days.
 * Port 80 must remain open for host challenge to succeed.
-* Our fix to port 80 exposure was to configure nginx to redirect from 80 to 443 using `301` status.
-* Port 80 exposure increases the risk of insecure cookie highjacking, for example in Redmine.
-* DNS validation is **NOT** possible for us since our hosting provider Hostway doesn't provide an API for managing DNS.
+* Fix to port `80` exposure is to configure nginx to redirect from `80` to `443` using `301` status.
+* Port `80` exposure increases the risk of insecure cookie highjacking, for example in RedMine.
+* DNS validation is **NOT** possible for Axibase since the hosting provider Hostway does not provide an API for managing DNS.
 
 #### Standalone Mode
 
@@ -1383,9 +1383,9 @@ The initial integration of the ACME protocol in ATSD contained essentially the s
 
 ![](./images/atsd-acme4j.png)
 
-We implemented HTTP and TLS challenges. The TLS challenge was then discontinued.
+Implement HTTP and TLS challenges. The TLS challenge was then discontinued.
 
-We estimate that most of our enterprise customers do not plan to adopt a centralized approach to automated certificate issuance using DNS challenge. The deployment of certbot on end nodes (hosts) is not necessary.
+Estimate that most Axibase enterprise customers do not plan to adopt a centralized approach to automated certificate issuance using DNS challenge. The deployment of certbot on end nodes (hosts) is not necessary.
 
 ![](./images/certbot-workflow.png)
 
@@ -1414,7 +1414,7 @@ sudo curl -k -u cert-renew:********** -X POST https://locahost:8443/admin/certif
 
 ATSD validates the certificate and install it without restarting the server.
 
-We had to upgrade Jetty to version **9.4** to support SSLContent reloading without reboot.
+Axibase upgraded Jetty to version `9.4` to support SSLContent reloading without reboot.
 
 ### Upload Permissions
 
@@ -1557,7 +1557,7 @@ Output from deploy.sh:
 Upload private key and certificate
 ```
 
-The script reports an error because the `curl` connection was **closed** when the SSL context is restarted. While all current SSL connections are closed, ATSD server itself is not restarted during this process.
+The script reports an error because the `curl` connection is **closed** when the SSL context is restarted. While all current SSL connections are closed, ATSD server itself is not restarted during this process.
 
 ```txt
 Error output from deploy.sh:
@@ -1641,13 +1641,13 @@ New certificate is now installed. No ATSD restart performed.
 
 Some CAs, including Lets Encrypt, voluntarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
 
-CT servers store immutable logs of certificate issuance events which contain the subject's CN (common name) and certificate details.
+CT servers store immutable logs of certificate issuance events which contain the subject CN (common name) and certificate details.
 
 The CT servers also accept events from crawlers when they identify a new certificate.
 
 crt.sh (`https://crt.sh`) is a front-end to a database of issued certificates, maintained by COMODO CA.
 
-Certificate chain for our old wildcard certificate:
+Certificate chain for the old wildcard certificate:
 
 ```txt
 *.axibase.com
@@ -1661,7 +1661,7 @@ Certificate chain for our old wildcard certificate:
 * `----` 3509153 (`https://crt.sh/?id=3509153`)
 * `------`  1044348 (`https://crt.sh/?id=1044348`)
 
-Certificate details including DNS names are now publicly available even if the certificate was issued for an internal server:
+Certificate details including DNS names are now publicly available even if the certificate is issued for an internal server:
 
 * [trends.axibase.com](https://ct.googleapis.com/logs/argon2018/ct/v1/get-entries?start=115175247&end=115175247) CT log
 
@@ -1925,7 +1925,7 @@ Default trust manager: certificate chain validated OK
 
 The `atsd_axibase_com` certificate, signed with 'Axibase Root CA' is now valid.
 
-If 'Axibase Root CA' were not present in the trust store, an exception is raised:
+If `Axibase Root CA` is not present in the trust store, an exception is raised:
 
 ```txt
 Certificate chain validatation failed: java.security.cert.CertPathValidatorException: Path does not chain with any of the trust anchors : null
@@ -2109,7 +2109,7 @@ Since custom CA is in the Java trust store, URL connections complete without err
   Connection OK
 ```
 
-If the certificate were untrusted, we would see this error:
+If the certificate is untrusted, you see this error:
 
 ```txt
 Exception in thread "main" javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No name matching www.uber.com found

@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Chicago's Elevated Train, or the L as it has come to be known, is a fixture of the city, with portions of the second-busiest transit system in the United States operating
+The Chicago Elevated Train, or the L as it is known, is a fixture of the city, with portions of the second-busiest transit system in the United States operating
 since 1892. The L sees close to a million passengers every day spread across its 145 stations and more
 than 100 miles of tracks.
 
@@ -13,13 +13,13 @@ than 100 miles of tracks.
 Using [ridership data](https://axibase.com/datasets/socrata/t2rn-p8d7.html) stored in the [Axibase Dataset Catalog](https://axibase.com/datasets/) released by the City
 of Chicago rider estimates can be made for the future. Analytics tools in ATSD
 can model current ridership trends to highlight patterns in transit system usage and Future Value models can be used to
-estimate future rider totals. The population of Chicago is falling, and it's the only major United
+estimate future rider totals. The population of Chicago is falling, and it is the only major United
 States metropolitan to experience such changes, but unfortunately, that is unlikely to mean an extra seat opening up on
 your commute home. Although currently in a period of growth stagnation, the City of Chicago has plans to fully update and
 re-brand the L to adapt it to the modern city landscape and help it to regain its relevance in the age of the mass car ownership.
 
-Four instances in time will be examined: 2001, 2006, 2011, and 2016, to establish standards of annual ridership. Month-to-month
-data will be visualized to show usage trends throughout the year and finally, future ridership predictions will be made
+Four instances in time are examined: 2001, 2006, 2011, and 2016, to establish standards of annual ridership. Month-to-month
+data is visualized to show usage trends throughout the year and finally, future ridership predictions are made
 for the years 2020 and 2025.
 
 ## Data
@@ -33,9 +33,9 @@ option to see all 145.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b6a1a2cc/7/#fullscreen)
 
-To establish annual ridership averages, passenger totals for the fifteen busiest stations will be used. Although these stations
-make up just 10% of the L's total stations, the passenger traffic between them accounted for a third of the total annual
-traffic. This is a dynamic group of stations, meaning that the busiest stations in 2001 were not necessarily the busiest
+To establish annual ridership averages, passenger totals for the fifteen busiest stations are used. Although these stations
+make up just 10% of the total stations of the L, the passenger traffic between them accounted for a third of the total annual
+traffic. This is a dynamic group of stations, meaning that the busiest stations in 2001 are not necessarily the busiest
 stations in 2016, however, the purpose of such partitioning is merely to sample a relevant section of the whole, not to
 comment on the features of a specific station.
 
@@ -72,7 +72,7 @@ GROUP BY date_format(time, 'yyyy')
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/4e2ef3cc/2/#fullscreen)
 
 While it is certainly possible that L ridership has peaked and will begin to decline in the future, a total of three such
-periods of stagnation were seen throughout the observation period of sixteen years leading to the conclusion that there are and always
+periods of stagnation are observable throughout the observation period of sixteen years leading to the conclusion that there are and always
 have been occasional decreases in annual ridership that are not necessarily indicative of true decline.
 
 #### 2001
@@ -261,13 +261,13 @@ T = Time in years, the difference in years between the current and calculated ye
 | AVB | - | 10.89 | +1.49% |
 
 These calculations are meant to show two possible methods of predicting future ridership aboard the Chicago L train. The
-typical data would be within 1.62% of the previous year's ridership, and each year would represent one step from the annual
+typical data would be within 1.62% of previous year ridership, and each year would represent one step from the annual
 average. This means that between any two given years, the difference is roughly 1.49% multiplied
 by the number of years between them, and between any two given consecutive years, the ridership totals is within 1.62% of
-each other. As the numbers are so close together, they can even be used in conjunction with one another, with the understanding
-that expected mean percentage error (MPE) will be on the order of 0.13% multiplied by the difference in years, or when speaking
+each other. As the numbers are close together, they can even be used in conjunction with one another, with the understanding
+that expected mean percentage error (MPE) is on the order of 0.13% multiplied by the difference in years, or when speaking
 in terms of passengers, using the average amount for reference, two hundred thousand passengers times the difference in years.
-This error will not be on an order higher that 10 x 10^-1 for these purposes, and merely speaks to the likelihood of the model to lose stability
+This error is not on an order higher that 10 x 10^-1 for these purposes, and merely speaks to the likelihood of the model to lose stability
 as it attempts to predict rider amounts further and further into the future without inputting new training data and pruning
 old training data.
 
@@ -283,7 +283,7 @@ aboard the Chicago L Train in the future.
 | 2025 (9) | 230.90 | +/- 1.17% (18,000 passengers)|
 
 Essentially, this model predicts the probable bounds of ridership aboard the Chicago L. As the amount of time between the
-training data and the prediction grows, so too does the model's uncertainty, which is reflected by the growing difference
+training data and the prediction grows, the uncertainty of the model does as well, which is reflected by the growing difference
 between the bounds of probable ridership.
 
 ### Analysis
@@ -292,7 +292,7 @@ While probably too broad a model to be used for serious funds allocation or city
 are fairly diverse. Future growth estimates are excellent for determining target values of a certain infrastructure and providing
 bounds for more specific calculations that can act as guidelines for the results. As time passes, the training data can be
 modified to provide more time-specific information. If for example, L ridership has indeed peaked and the rate of its coming
-decline were to be calculated, early 2000's training data could be excluded and more recent data could be included to predict
+decline are to be calculated, early 2000's training data could be excluded and more recent data could be included to predict
 future, lower ridership levels using a new average value baseline, and updating the average percent change in the previous
 year baseline number.
 

@@ -8,7 +8,7 @@ Obesity and heart disease have long-plagued the American people, with the Center
 However, one metric alone is never enough to make meaningful conclusions, and with National Institutes of Health [figures](https://www.niddk.nih.gov/health-information/health-statistics/overweight-obesity)
 that estimate two-thirds of Americans are classifiable as overweight, a more comprehensive
 understanding of public health is clearly needed if the nation is going to make
-meaningful strides towards a future that sees the resolution of the problem that is America's ever-growing waistline.
+meaningful strides towards a future that sees the resolution of the problem that is the ever-growing American waistline.
 
 ## Methodology
 
@@ -34,10 +34,10 @@ Is there a way to predict performance on the ACSM AFI, and by extension, overall
 health using this data?
 
 Publicly-available data allows for anyone with access to the correct analytics tools to pursue answers
-to their own questions and convey that information to any audience. The ATSD
+to their own questions and convey that information to any audience. ATSD
 is developed to work within the [Socrata](https://axibase.com/docs/axibase-collector/jobs/socrata.html)
-framework used by government agencies to publish data, so it was selected as the main tool for this project
-and calculations were done using the computational knowledge engine [WolframAlpha](https://www.wolframalpha.com/).
+framework used by government agencies to publish data, it is main tool for this project
+and calculations are done using the computational knowledge engine [WolframAlpha](https://www.wolframalpha.com/).
 
 ## Data
 
@@ -82,7 +82,7 @@ The Benchmark Average, and by extension alert threshold, is modified for each ye
 
 to observe trends in individual MSAs, finding an effective method to sort
 the data is needed. By organizing the data by city, chronologically, trends appear
-that were not as obvious in the first visualization:
+that are not as obvious in the first visualization:
 
 ![ByCityByYear](./images/ByCityByYear.png)
 
@@ -99,13 +99,13 @@ needed:
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/59/#fullscreen)
 
 Although the two charts are rendered almost identically with respect to the data,
-the key difference is how they are presented. Here we see the graph organized to show
+the key difference is how they are presented. Here graph is organized to show
 trends based on the year, and even though the same amount of data is still
-present, tracing patterns year-to-year has become much easier than it was in the previous
+present, tracing patterns `year-to-year` is much easier than in the previous
 display. Notice that because data is only available for 2015 for Baton Rouge, Louisiana the remaining empty columns are still rendered for the sake of chronology.
 
 Using the [`DISPLAY`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/)
-setting, unneeded data can be masked to compare the best and worst performing MSAs over the observed period. Here, Oklahoma City, Oklahoma was the lowest-performing MSA and Raleigh, North Carolina was the highest-performing MSA based on averaged performance. Displayed next to one another, their absolute and relative differences can be underlined:
+setting, unneeded data can be masked to compare the best and worst performing MSAs over the observed period. Here, Oklahoma City, Oklahoma is the lowest-performing MSA and Raleigh, North Carolina is the highest-performing MSA based on averaged performance. Displayed next to one another, their absolute and relative differences can be underlined:
 
 ![BestAndWorst](./images/BVW.png)
 
@@ -140,14 +140,13 @@ for the trends of the state itself:
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/67/)
 
 The population of these metropolitan areas often accounts for a significant amount
-of the state's total population. In the Atlanta Metropolitan Area for example, that number
-is as high as 57% of the state's roughly 10 million residents. On average, in the observed states, the Metropolitan areas observed make up around 30% of the state's
-total population, with the Raleigh MSA (population 1.3 million) being a low exception representing only 12%
-of the state's population, in fact the Raleigh MSA is not even the largest Metropolitan Area in North Carolina. Charlotte, North Carolina, an MSA with a population of roughly 2.3 million residents that ranked 43rd according to 2015 AFI scores published by `http://www.americanfitnessindex.org/2015-afi-report-archive/`
+of the total population of the state. In the Atlanta Metropolitan Area for example, that number
+is as high as 57% of the roughly 10 million residents of the state. On average, in the observed states, the Metropolitan areas observed make up around 30% of the total population of the state, with the Raleigh MSA (population 1.3 million) being a low exception representing only 12%
+of the state population, in fact the Raleigh MSA is not even the largest Metropolitan Area in North Carolina. Charlotte, North Carolina, an MSA with a population of roughly 2.3 million residents that ranked 43rd according to 2015 AFI scores published by `http://www.americanfitnessindex.org/2015-afi-report-archive/`
 with an overall score of 37.4, ranks below the National Benchmark Average and
 significantly below its less-populous neighbor Raleigh.
 
-> This trend will be further explored in the [Analysis](#analysis) section.
+> This trend is further explored in the [Analysis](#analysis) section.
 
 The two highest performing MSAs, Raleigh, North Carolina and Atlanta, Georgia can
 also be displayed next to one another, and the Benchmark Average:
@@ -178,11 +177,11 @@ graphic can be used:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/61/#fullscreen)
 
-Here the city's individual performance can be analyzed at the same time as its relative
+Here the individual performance of the city can be analyzed at the same time as its relative
 performance against other cities. The average score of each city over the course of
 the entire period is displayed along with its maximum and minimum values.
 Outlier data is loosely connected to the central box to indicate that it was
-atypical. When viewed in ChartLab, a detailed breakdown of the entity's data is visible when hovering the cursor over a box or its features.
+atypical. When viewed in **ChartLab**, a detailed breakdown of the data is visible when hovering the cursor over a box or its features.
 
 Average performance of the observed cities can also be displayed with a less ambiguous visualization using the [Gauge Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/gauge-chart/)
 that shows subjective performance standards, here the threshold has been set at 42
@@ -195,7 +194,7 @@ active data sets and sending subscribers alerts when a certain threshold value i
 
 >Learn more about Gauge controls and explore the results of other MSAs in the [Appendix](#appendix).
 
-Above, when examining capital cities, the case of the Raleigh MSA and Charlotte MSA was observed. That is, two cities in one state with vastly different
+Above, when examining capital cities, the case of the Raleigh MSA and Charlotte MSA is observed. That is, two cities in one state with vastly different
 population sizes and vastly different scores on the American Fitness Index rankings. Is there a correlation between population size and score on the AFI?
 
 The following table shows cities included in earlier data compared to cities not included, their Metropolitan populations, and also their score and rank on the 2017 American Fitness Index report at `http://www.americanfitnessindex.org/wp-content/uploads/2014/02/ACSM-AFI-Report-2017.pdf`:
@@ -221,7 +220,7 @@ The following table shows cities included in earlier data compared to cities not
 | Texas | Houston | 6.4 million | 39.0 | 40 |
 | Texas | San Antonio | 2.4 million | 34.7 | 44 |
 
-Using data from the above table, the average size, score, and rank plus standard deviation of those figures for each state's cities can be calculated. Those numbers are shown below:
+Using data from the above table, the average size, score, and rank plus standard deviation of those figures for each city can be calculated. Those numbers are shown below:
 
 | State | Average Population | Average Rank | Average Score | Standard Deviation of Population |Standard Deviation of Rank | Standard Deviation of Score|
 |-------|--------------------|--------------|---------------|----------------------------------|----------------------------|----------------------------|
@@ -280,9 +279,9 @@ Following the above procedure once again:
 
 In both of these examples, where cities with similar population sizes were
 consciously selected to test the Raleigh/Charlotte hypothesis, the standard deviation
-of their rank was 16, or twice the value of the average standard deviation shown
+of their rank is 16, or twice the value of the average standard deviation shown
 by cities when controlled for location. That contrast is even more vivid when comparing the raw score
-numbers, with size-controlled data showing a standard deviation of 13.2 and 14.7, both more than double the average standard deviation of 6.0 for location-controlled data. Uncertainty values for similarities within a given state being significant are calculated below, the expected value is the average value of the AFI score in the given MSA's state:
+numbers, with size-controlled data showing a standard deviation of 13.2 and 14.7, both more than double the average standard deviation of 6.0 for location-controlled data. Uncertainty values for similarities within a given state being significant are calculated below, the expected value is the average value of the AFI score in the given MSA state:
 
 | State |  Metropolitan Statistical Area | AFI Score (O1) | State Average (E1) | X^2 |
 |-------|--------------------------------|----------------|--------------------|-----|
@@ -306,7 +305,7 @@ numbers, with size-controlled data showing a standard deviation of 13.2 and 14.7
 | Texas | San Antonio | 43.2 | 44.5 | 0.0009 |
 
 Because the rank of an MSA is relative to the performance of other MSAs, it has been excluded
-from uncertainty testing, only the city's raw AFI score is considered.
+from uncertainty testing, only the raw AFI score of the city is considered.
 
 The uncertainty value for each state is considered individually:
 
@@ -318,10 +317,10 @@ The uncertainty value for each state is considered individually:
 | Tennessee | 0.1851 | 1 | \> 0.10 |
 | Texas | 0.2055 | 3 | 0.025 |
 
-The failure of Tennessee to conform to the scoring model was noticed above when comparing MSA
+The failure of Tennessee to conform to the scoring model is noticeable above when comparing MSA
 performance to the Baseline Average in the [Data](#data) section. With such a high degree of
 uncertainty for that state, and the Charlotte/Raleigh case, only about a third of the states tested here conform to the standard, however, in a binary classification model as
-demonstrated here, the requirement is to determine one of two solutions: will MSAs in a
+demonstrated here, the requirement is to determine one of two solutions: Do MSAs in a
 particular state conform to the general public health standards of other MSAs in a particular state?
 
 Since this type of profiling seeks to determine the likelihood of other cities in a given state to follow the public health trends observed and recorded in public databases, highly uncertain or irregular data merely suggests that, no, the AFI score of a given MSA in a particular state cannot be predicted based on the AFI scores of other MSAs in the same state and a different model, or different data,
@@ -336,11 +335,11 @@ Using several standard methods of comparison, the data published by the City of 
 Orleans shows that most metropolitan statistical areas within one state follow a similar trend with respect to their public health. Using graphing tools shown in the
 [Data](#data) section that portray this pattern in a number of states,
 and statistical calculation shown in the [Analysis](#analysis) section that highlight
-the same observation certain hypotheses can also be rejected: the size of the population of a given MSA has no meaningful ability to predict that city's public health, however there are states which can be modeled with known data to predict unknown data. Analysis of the political process and community engagement that may contribute to the existence or absence
+the same observation certain hypotheses can also be rejected: the size of the population of a given MSA has no meaningful ability to predict that public health of the city, however there are states which can be modeled with known data to predict unknown data. Analysis of the political process and community engagement that may contribute to the existence or absence
 of such consistences is outside the scope of this experiment but well within the scope of the American College of Sports Medicine, as they go a step further and even provide custom-made action plans for each MSA, based on their performance in range of areas over a given period of time.
 
 The data observed here is objectively quite large, and effective management and presentation of such data is crucial to drawing meaningful conclusions from it, which is why the ATSD is ideal for comprehensive and comprehensible solutions
-to a wide range of data science problems, a handful of which were demonstrated here.
+to a wide range of data science problems.
 
 > Contact [us](https://axibase.com/feedback/) with any support issues.
 
@@ -350,7 +349,7 @@ Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
 Download the [`docker-compose.yml`](./resources/docker-compose.yml) file to launch the ATSD container bundle.
 
-Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
+Launch containers by specifying the built-in collector account credentials used by Axibase Collector to insert data into ATSD.
 
 ```sh
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
@@ -374,7 +373,7 @@ where:
 * `n` = up to 15 for **Personal Health** or 16 for **Community and Environment** indicators are either present and counted, or not.
 * `n` = Metropolitan Statistical Area (MSA) Rank out of 50.
 * `w` = Weighted value of indicator, determined by ACSM internally.
-* `Max` = A hypothetical maximum score for the MSA if it were to rank best on both indicators.
+* `Max` = A hypothetical maximum score for the MSA ranked best on both indicators.
 
 >Source: `http://www.americanfitnessindex.org/methodology/` American Fitness Index
 

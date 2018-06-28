@@ -187,4 +187,4 @@ In conclusion, Big Data Analytics is an empowering tool that can put valuable in
 
 Often the exact source of air pollution, the way the pollutants interact in the air, and the dispersion of pollution cannot be determined. The lack of such information makes air pollution a difficult problem to tackle. However, the advances in modern technologies and the arrival of new Big Data solutions enable ATSD users to combine sensor data with meteorological satellite data to perform extensive analytics and forecasting. Big Data analytics makes it possible to pinpoint the pollution source and dispersion trends in advance.
 
-At Axibase, we sincerely believe that Big Data has a large role to play in tackling air pollution. We predict that in the coming years advanced data analytics can become a key factor influencing the decisions of government and possible changes in pollution regulations.
+Axibase sincerely believes that Big Data has a large role to play in tackling air pollution. The company predicts that in the coming years advanced data analytics can become a key factor influencing the decisions of government and possible changes in pollution regulations.

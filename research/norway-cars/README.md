@@ -2,9 +2,9 @@
 
 ![TitlePhoto](./images/TitlePhoto.png)
 
-Norway's central statistical agency, [SSB](https://www.ssb.no/statistikkbanken/selecttable/hovedtabellHjem.asp?KortNavnWeb=bilreg&CMSSubjectArea=transport-og-reiseliv&PLanguage=1&checked=true), released its annual car registration statistics on March 28, 2017. While the key trends such as the rotation out of gasoline models were still in place, the dataset delivered a few surprises.
+The central statistical agency of Norway, [SSB](https://www.ssb.no/statistikkbanken/selecttable/hovedtabellHjem.asp?KortNavnWeb=bilreg&CMSSubjectArea=transport-og-reiseliv&PLanguage=1&checked=true), released its annual car registration statistics on March 28, 2017. While the key trends such as the rotation out of gasoline models are still observable, the dataset delivered a few surprises.
 
-* The electric vehicles (EVs) continued to gain ground however the pace of growth has slowed down. The installed base of EVs reached **100K** units, the annual increase was 29179 vehicles compared to 31271 vehicles in 2015.
+* The electric vehicles (EVs) continued to gain ground however the pace of growth has slowed down. The installed base of EVs reached **100K** units, the annual increase is 29,179 vehicles compared to 31,271 vehicles in 2015.
 * The unit growth of the EV installed base is getting closer to being on par with the diesel segment: 29179/42824 or **68%** in 2016 versus 31271/64708 or **48%** in 2015.
 * The total number of registered Tesla Motors cars increased by 3361 units in 2016 compared to 3904 units in 2015, suggesting competition with less expensive EV models. Tesla's share in new EV registrations decreased to **11.5%** from **12.5%** in 2015 and from 18.7% in 2014.
 * Starting with 2016, hybrid cars are classified under the `Other fuel` category (hence 90077 y-o-y growth) making direct comparisons for the old Petrol category difficult.

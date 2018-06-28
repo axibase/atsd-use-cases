@@ -8,7 +8,7 @@ The following article describes the process of calculating and historizing opera
 
 Consider a scenario where you have a relational database and one of the tables contains a list of customer orders. The number of daily records is very high and for performance reasons you plan to move the records from this table to a warehouse database as part of the pruning procedure. Assume now that Operations Analysts would like to monitor incoming orders to spot deviations from a baseline as quickly as possible. These analysts calculate the baseline by averaging the number of orders received from customers during the same hour on the same weekday one, two, and four weeks ago.
 
-Since the company stores intraday and historical records in different databases it is not possible to run a single query that returns the number of orders spanning several weeks. Moreover, the query against the warehouse table may be too expensive to run on a continuous basis. Even further, if the analysts were to query the operations table with multiple monitoring tools this may introduce overhead that the operations team is not willing to allow.
+Since the company stores intraday and historical records in different databases it is not possible to run a single query that returns the number of orders spanning several weeks. Moreover, the query against the warehouse table may be too expensive to run on a continuous basis. Even further, if the analysts query the operations table with multiple monitoring tools this can introduce overhead that the operations team is not willing to allow.
 
 ## Solution
 
@@ -199,7 +199,7 @@ The ATSD schema requires that each series has an entity name, a metric name, tim
 
 Both of the below queries store data under the manually-specified `ops_db` value.
 
-Set a common `orders.` metric prefix so that these series can be distinguished from other similarly-named metrics (avoid naming collision).
+Set a common `orders.` metric prefix to distinguish these series from other similarly named metrics and avoid naming collision.
 
 > Accomplish the same result by modifying column aliases, which is less convenient in case of `SELECT *` queries.
 

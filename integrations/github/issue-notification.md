@@ -82,7 +82,7 @@ You begin receiving messenger notifications the next time someone raises an issu
 
 ![](./images/slack_issue.png)
 
-**Repository**, **User**, and **Issue** links redirect you to the repository where the issue was raised, the user who raised the issue, and the issue page itself, respectively.
+**Repository**, **User**, and **Issue** links redirect you to the repository where the issue is raised, the user who raised the issue, and the issue page itself, respectively.
 
 ## Explore ATSD
 

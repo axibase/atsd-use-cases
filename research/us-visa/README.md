@@ -2,7 +2,7 @@
 
 ![TitlePhoto](./images/TitlePhoto.png)
 
-In 2015, the United States was the [second most](https://en.wikipedia.org/wiki/World_Tourism_rankings) visited country in the world. Where do all of these travelers come from and
+In 2015, the United States is the [second most](https://en.wikipedia.org/wiki/World_Tourism_rankings) visited country in the world. Where do all of these travelers come from and
 what are their reasons for coming to the United States?
 
 This article analyzes a dataset from [`travel.state.gov`](https://travel.state.gov) concerning non-immigrant visa figures from 1997 through 2015. Publicly available data collected by government organizations can be loaded into ATSD for interactive analysis. This article illustrates some of the capabilities of [Redash](https://redash.io/), an open-source data visualization tool that is integrated with ATSD. Make [SQL queries](https://axibase.com/docs/atsd/sql/) in ATSD and create visualizations in Redash. [Install](https://axibase.com/docs/atsd/installation/) a local ATSD distance and import the data from this article to recreate any of the visualization or queries here.
@@ -28,7 +28,7 @@ drop-down list and by visa type with the second. The visualization shows `H-1B` 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8c9bb9cc#fullscreen)
 
 The portal below allows you to sort between continents and visa types. Navigate between different continents with the first drop-down list, and by visa type with the second. The images below track `H-1B` visas issued to the those from Asia. The number of visas issued increased from **47,726** in 1997 to **149,788**
-in 2015. The number of `H-1B` visas issued to China and India in 2015 was 138,258, meaning that only **11,530** `H-1B` visas were issued
+in 2015. The number of `H-1B` visas issued to China and India in 2015 is 138,258, meaning that only **11,530** `H-1B` visas were issued
 to the rest of Asia.
 
 ![Figure2](./images/Figure2.png)
@@ -66,7 +66,7 @@ these numbers have decreased dramatically, falling to 9,977 in 2015 ($1,596,320 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82d4e825#fullscreen)
 
 If the EU required U.S. citizens to obtain travel visas, Washington would likely reciprocate the demand and require the currently visa-exempt countries of the EU to obtain visas to visit the country. The total
-[number of European travelers](https://en.wikipedia.org/wiki/Visa_Waiver_Program ) to the U.S. utilizing the visa waiver program was 14,043,823 and 13,997,570 in 2014 and 2015, respectively. At $160 per visa, this amounts to roughly **$2.24** and **$2.239 billion**, respectively.
+[number of European travelers](https://en.wikipedia.org/wiki/Visa_Waiver_Program ) to the U.S. utilizing the visa waiver program is 14,043,823 and 13,997,570 in 2014 and 2015, respectively. At $160 per visa, this amounts to roughly **$2.24** and **$2.239 billion**, respectively.
 
 This below figure shows how many dependents come with each primary visa holder. Saudi Arabian visa holders are currently bringing in the most dependents. Below are percentile ratios for Saudi nationals tracking the number of dependent travelers coming to the United States per primary visa holder.
 
@@ -83,7 +83,7 @@ This below figure shows how many dependents come with each primary visa holder. 
 
 In addition to outputs from **ChartLab**, ATSD also supports [SQL queries](https://axibase.com/docs/atsd/sql/) from the web-based [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html).
 
-This query shows the number of the most popular visas issued worldwide, except for `B` (travel), `C` (transit), `G` (government), and `A` (diplomatic). By far the greatest number of visas issued in 2015 was the `F-1` student visa, of which 644,233 were issued.
+This query shows the number of the most popular visas issued worldwide, except for `B` (travel), `C` (transit), `G` (government), and `A` (diplomatic). By far the greatest number of visas issued in 2015 is the `F-1` student visa, of which 644,233 were issued.
 
 ```sql
 SELECT tags.visa_type, sum(value)
@@ -238,7 +238,7 @@ GROUP BY datetime
 
 ## Data Visualization with Redash
 
-SQL queries are a great tool for searching for and displaying specific information from a dataset in tabular format. One of the biggest drawbacks of SQL is the lack of visualization. Axibase parners with [Redash](https://redash.io/), an open-source data visualization tool.
+SQL queries are a great tool for searching for and displaying specific information from a dataset in tabular format. One of the biggest drawbacks of SQL is the lack of visualization. Axibase partners with [Redash](https://redash.io/), an open-source data visualization tool.
 Insert your query results into Redash and create visualizations using SQL result set data. To start, [integrate Redash and ATSD](https://redash.io/help/data-sources/axibase_tsd.html). Setup takes about 10 minutes.
 
 Prepare a visualization for the last SQL query tracking worldwide visa issuances:
@@ -274,7 +274,7 @@ Mouse over any column to show data for a particular visa type in 2015. Click **S
 These two visualizations show the top 20 countries issued the most `B-1` and `B-2` visas in 2005 and 2015, and the compound annual growth rate for these countries. Brazil and China experienced tremendous growth in the number of visas issued from 2005 to 2015, as well as the compound annual growth rate.
 
 What may have been missing in the tabular SQL query result set is the fact that the number of visas issued to Vietnamese citizens remained relatively small but the compound annual growth
-rate in this 10-years period was **30.2%**, less than only Brazil with 35.6%.
+rate in this 10-years period is **30.2%**, less than only Brazil with 35.6%.
 
 ![Figure12](./images/Figure12.png)
 

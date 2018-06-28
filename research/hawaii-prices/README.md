@@ -1,4 +1,4 @@
-# Pain at the Pump - a Closer Look at Hawaii's High Fuel Prices
+# Pain at the Pump - a Closer Look at Hawaiian High Fuel Prices
 
 ![Title Photo](./images/Title-Photo.png)
 
@@ -29,7 +29,7 @@ From 2006 to 2012, the State of Hawaii compiled AAA fuel prices for each of thes
 
 **Diesel**, **Gasoline - Regular**, **Gasoline - Midgrade**, **Gasoline - Premium**
 
-In turn, each of these fuel prices were recorded for these locations:
+In turn, each of these fuel prices are recorded for these locations:
 
 **Hilo**, **Honolulu**, **Wailuku**, **US**, **State of Hawaii**
 
@@ -47,7 +47,7 @@ Mapping software CartoDB does not support plotting datasets (in this case gas pr
 This visualization tool allows the user to display the relationship of gas prices over time; however, without extensively manipulating the raw data set, each
 location is allowed to be compared with only one fuel type at a time.
 
-We will quickly run through plotting this dataset in plotly.
+These instructions enumerate the process of using plotly to visualize the data.
 
 Once you click the above dataset, you are given the option of choosing `data.gov` preview, plotly, or CartoDB. Choose **plotly**.
 
@@ -57,20 +57,19 @@ Once the raw data is opened via plotly, the user must select **Filter** from **D
 
 ![Figure 1](./images/Figure1.png)
 
-Next, choose **Filter** by, in our case for example, Gasoline - Regular. You must click **choose as x** for **Fuel** so that plotly knows which column to filter.
+Next, select **Filter** by **Gasoline - Regular**. Click **choose as x** for **Fuel** to tell plotly which column to filter.
 
 ![Figure 2](./images/Figure2.png)
 
-Finally, to output the data, the user must select **Group By** and choose **Month_of_Price** as the x axis, **County** as G (this will separate the prices of fuel for each
-location), and the **Price** as the y axis.
+Finally, to output the data, the user must select **Group By** and choose **Month_of_Price** as the x axis, **County** as G (this separates the prices of fuel for each location), and the **Price** as the y axis.
 
 ![Figure 3](./images/Figure3.png)
 
-The output will look as is shown below. The graph is relatively easy to interpret. The user can see that Gasoline - Regular fuel prices in Hawaii have for the last 6
+The visualization is shown below. The graph is relatively easy to interpret. The user can see that Gasoline - Regular fuel prices in Hawaii have for the last 6
 years steadily remained more expensive than US average prices. The main drawback of using plotly to process datasets from data.gov is the extensive
 time and effort it would take to create outputs for each of every fuel types. The same time-consuming steps would have to be taken for analyzing Diesel,
-Gasoline - Midgrade, and Gasoline - Premium between all 5 locations. The same cumbersome process would have to be followed for comparing fuel types for each particular location. Additionally,
-data in plotly is static, that is every time the data is updated, everything will need to be re-plotted.
+Gasoline - Midgrade, and Gasoline - Premium between all 5 locations. The same cumbersome process must be followed for comparing fuel types for each particular location. Additionally,
+data in plotly is static, the addition of data necessitates regenerating the entire visualization.
 
 ![Figure 4](./images/Figure4.png)
 
@@ -79,7 +78,7 @@ data in plotly is static, that is every time the data is updated, everything wil
 Processing datasets using ATSD is much less cumbersome.  Processing the same data with ATSD is less time consuming
 because its collection tool has built-in heuristics to handle the format in which data.gov datasets are published, namely the Socrata Open Data Format.
 When loading data for a particular dataset the collector uses Socrata metadata to understand the meaning of columns and automatically extract dates, times,
-and categories from the data files. Besides, ATSD stores the data in the user's own database so that this public data can be combined with internal data
+and categories from the data files. ATSD stores the data in a local database, as such this public data can be combined with internal data
 sources as well as mixed and matched across different datasets. Once you install ATSD, you **do not** have to:
 
 * Add additional datasets from data.gov
@@ -88,7 +87,7 @@ sources as well as mixed and matched across different datasets. Once you install
 * Write programs to parse and digest these types of files.
 
 Rather, you can configure a scheduled job to retrieve the file from the specified endpoint and have ATSD parse it according to pre-defined rules. Once you
-have raw data in ATSD, creating and sharing reports with built-in widgets is fairly trivial. The reports will be continuously updated as new data comes in.
+have raw data in ATSD, creating and sharing reports with built-in widgets is fairly trivial. The reports are continuously updated as new data comes in.
 
 With ATSD, the user is able display the dataset in an easily understandable manner. The below figure shows each fuel type for each of the 5 locations.
 
@@ -101,7 +100,7 @@ comparing fuel types at Hilo and Diesel prices by location, respectively.
 
 ![Figure 7](./images/Figure7.png)
 
-Here, you can explore the complete dataset for Hawaiian fuel prices using our portal:
+Here, you can explore the complete dataset for the Hawaiian fuel prices portal:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ee379926)
 
@@ -116,8 +115,6 @@ at Hilo, you can customize your portal to only show that information without the
 A blank, customizable portal for your use can be found here: **[BLANK](https://apps.axibase.com/chartlab/)**
 
 The default portal, from which you can customize the dataset results, again can be found here: **[DEFAULT](https://apps.axibase.com/chartlab/ee379926)**
-
-We will walk through a brief example on how to customize the default dataset to only display fuel prices at Hilo.
 
 ### Example 1
 
@@ -141,7 +138,7 @@ We will walk through a brief example on how to customize the default dataset to 
   ```
 
 * Copy the entity name from the default portal into the blank portal (in this case **dqp6-3idi**).
-* In the blank portal enter **price** into metric. This will display the price of fuel as the y column.
+* In the blank portal enter **price** into metric. This displays the price of fuel as the y column.
 * In the blank portal enter in the county and fuel. In this case, enter **Hilo** for county and `*` for fuel (`*` is the wildcard symbol).
 * Your blank portal looks as is shown below. Click **Run** to output your customized graph.
 
@@ -155,18 +152,18 @@ Here, you can explore the this graph:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/06a95d7c)
 
-Now, we will quickly walk through creating a histogram to display the fuel price differences for Diesel fuel between Hilo and the US.
+**Example 2** creates a histogram to display the fuel price differences for Diesel fuel between Hilo and the US.
 
 ### Example 2
 
 * Follow the first five steps in [Example 1](#example-1)
 
 * In the blank portal enter in the county and fuel. In this case, enter **Hilo** for county and **Diesel** for fuel.
-* Since we will be finding the difference between Hilo and US Diesel prices, we will need to make a second series. Copy and paste the existing series and change the name of the county to **US**. At this point your portal looks like this:
+* To find the difference between Hilo and US Diesel prices, make a second series. Copy and paste the existing series and change the name of the county to **US**. At this point your portal looks like this:
 
   ![Figure 14](./images/Figure14.png)
 
-Next, we need to make a new series to find the difference between US and Hilo Diesel prices.
+Next, make a new series to find the difference between US and Hilo Diesel prices.
 
 * In the Hilo series, enter in **alias = s1**. In the US series, enter in **alias = s2**. For both series enter **display = false**.
 * Create a new series. Enter **label = Hilo over US Diesel Surcharges** and **value = value(s1) - value(s2)**.
@@ -201,18 +198,17 @@ Various additional settings may be applied to create outputs that fit your needs
 
 ### Adding/Combining a Second Dataset
 
-Exploring the complete dataset for fuel prices, we can see that, generally speaking, Wailuku is more expensive for any fuel type than Hilo and Honolulu. Are products generally
-more expensive in Wailuku than the other islands, or is this simply an anomaly? One way we can investigate further is to incorporate a second dataset with another
-consumer product in Hawaii. If the price of this second consumer item is also more expensive in Wailuku than in Hali and Honolulu, then we may not be dealing with
-an anomaly, but quite possibly a trend.
+Exploring the complete dataset for fuel prices, Wailuku is more expensive for any fuel type than Hilo and Honolulu. Are products generally
+more expensive in Wailuku than the other islands, or is this simply an anomaly? One way to investigate further is to incorporate a second dataset with another
+consumer product in Hawaii. If the price of this second consumer item is also more expensive in Wailuku than in Hali and Honolulu, then it may be evidence of a trend.
 
-From the data.gov website, choose [Hawaii electricity prices](https://catalog.data.gov/dataset/hi-electricity-prices-815fa) as our second dataset.
+From the `data.gov` website, choose [Hawaii Electricity Prices](https://catalog.data.gov/dataset/hi-electricity-prices-815fa) as the second dataset.
 
 From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/kwh) for each of the Hawaiian islands:
 
 **Hawaii**, **Kauai**, **Lanai**, **Maui**, **Molokai**, **Oahu**
 
-In turn, each island had it's electricity broken into these sectors:
+In turn, each island had the electricity metric broken into these sectors:
 
 **All Sectors**, **Commercial**, **Residential**, **Street Lights**
 
@@ -220,23 +216,20 @@ Here, you can explore the portal for this dataset:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/9e548f6b)
 
-Next, let's look at which areas we can compare.
-
-The specified locations for the 2 datasets are different: one compared cities, while the other compared islands. Areas for which we have both datasets
-are marked in red in the figure below.
+The specified locations for the 2 datasets are different: one compared cities, while the other compared islands. Areas for which both datasets
+exist are marked in red in the figure below.
 
 ![HawaiiIslands](./images/HawaiiIslands.png)
 
-To briefly demonstrate our capabilities, compare Diesel prices at Honolulu, Wailuku, and Hilo with the Residential electricity rates at their
+To briefly demonstrate the capabilities, compare Diesel prices at Honolulu, Wailuku, and Hilo with the Residential electricity rates at their
 respective corresponding islands (Oahu, Maui, Hawaii).
 
 ![Figure 10](./images/Figure10.png)
 
 Again, guidelines for setting up the various settings to create outputs can be found [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/).
 
-This graph is a standard distribution of the datasets plotted side by side. As was stated previously, Wailuku was found to generally have the most expensive fuel,
-which is shown here graphically. When looking at the electricity rates, we can see that the most expensive location is Hawaii island. So, based off our quick example,
-we cannot say that there is a trend of consumer products being more expensive in Wailuku (or Maui island) than others. However, this quickly shows the user
+This graph is a standard distribution of the datasets plotted side by side. As stated previously, Wailuku is found to generally have the most expensive fuel,
+which is shown here graphically. When looking at the electricity rates, the most expensive location is Hawaii island. It is impossible to say that there is a trend of consumer products being more expensive in Wailuku (or Maui island) than others. However, this quickly shows the user
 the possibilities of combining and comparing multiple datasets.
 
 Here you can explore the portal of this comparison:
@@ -245,7 +238,7 @@ Here you can explore the portal of this comparison:
 
 ### Additional Examples
 
-Here is a table of additional datasets from data.gov that you can explore using Axibase's portal:
+Here is a table of additional datasets from data.gov that you can explore using the **ChartLab** portal:
 
 |State|data.gov dataset|Axibase Portal|
 |-----------|-----------------------|-----------------------|
@@ -266,8 +259,6 @@ Here is a table of additional datasets from data.gov that you can explore using 
 |Maryland |[Trips Taken on Public Transit by Transit Type - Monthly Total Trips](http://catalog.data.gov/dataset/trips-taken-on-public-transit-by-transit-type-4abd1)|[Portal](https://apps.axibase.com/chartlab/fd596ed9)|
 |Iowa |[Employee Compensation by Industry in Iowa](http://catalog.data.gov/dataset/employee-compensation-by-industry-in-iowa)|[Portal](https://apps.axibase.com/chartlab/f5eae012)|
 
-If you would like to view a data.gov dataset without installing the ATSD software, [contact us](https://axibase.com/feedback/) and we would be happy to add it to this table!
-
 ### Action Items
 
 Below are the steps to follow to install ATSD:
@@ -277,5 +268,3 @@ Below are the steps to follow to install ATSD:
 3. Import [SOCRATA Job](./hawaii_gas_prices.xml) into Axibase Collector.
 4. Add your desired data.gov dataset to the job to enable data collection. Click **Run** to collect data for the first time.
 5. Log in to ATSD and open a sample Socrata portal to explore the data.
-
-If you require assistance in installing this software or have any questions, feel free to [contact us](https://axibase.com/feedback/) and we would be happy to help!

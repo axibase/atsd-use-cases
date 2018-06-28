@@ -19,7 +19,7 @@ The default list of regions where tests are performed is as follows:
 The test frequency is set to 30 second intervals, which may be reduced to 10 seconds for operation in **Fast** mode.
 In addition to connection parameters, which specify the DNS name or IP address, the port and the path for HTTP/S tests, you can specify retry logic to test the endpoint again if the connection fails. The specified number of retry attempts, executed by the service at the same frequency as the base test, determine how many successive failures Route 53 allows before the service determines an endpoint is unavailable.
 
-The intervals of time when the endpoint is unavailable are captured by the `HealthCheckPercentageHealthy` metric. This metric measures the percentage of time in the given period when the endpoint was available from 0% to 100%. For example, if the value of the average statistic for the `HealthCheckPercentageHealthy` metric is 90% for the 10 minute period, the target was reachable for 9 minutes (`10 * 60 * 90% = 540 seconds`).  AWS CloudWatch stores these statistics  for a period of up two weeks.
+The intervals of time when the endpoint is unavailable are captured by the `HealthCheckPercentageHealthy` metric. This metric measures the percentage of time in the given period when the endpoint is available from 0% to 100%. For example, if the value of the average statistic for the `HealthCheckPercentageHealthy` metric is 90% for the ten-minute period, the target is reachable for nine minutes (`10 * 60 * 90% = 540 seconds`).  AWS CloudWatch stores these statistics  for a period of up two weeks.
 
 ![](./images/route53-sla.png)
 

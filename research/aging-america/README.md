@@ -3,15 +3,15 @@
 ![](./images/aging-america-title.png)
 [![](./images/button-new.png)](https://trends.axibase.com/9703ea57#fullscreen)
 
-*Fig. 1*: The upper graph shows the growing senior population contrasted against the diminishing birth rate while the lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
+> The upper graph shows the growing senior population contrasted against the diminishing birth rate while the lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
 
 ## Overview
 
-The United States provides retirement security for the elderly and disabled in a number of ways: Medicaid, Medicare, and Social Security are the main components of the social welfare program. Each of these systems is financed primarily with payroll taxes called the Federal Insurance Contribution Act (FICA) tax. The underlying philosophy of this, and almost any, social welfare program is thus: the young should pay for the healthcare of those unable to do so themselves due to age or disability in the hopes that one day the next generation will do the same for them. Sound logic to be sure, but what happens when the previous generation failed to repopulate the nation in the same way their parents did? What happens when this trend is repeated through one, two, three, or four generations? For a long time analysts have been warning about the coming drought in the Social Security Administration's coffers, but more and more it's starting to appear that it may be just over the horizon.
+The United States provides retirement security for the elderly and disabled in a number of ways: Medicaid, Medicare, and Social Security are the main components of the social welfare program. Each of these systems is financed primarily with payroll taxes called the Federal Insurance Contribution Act (FICA) tax. The underlying philosophy of this, and almost any, social welfare program is thus: the young should pay for the healthcare of those unable to pay for themselves due to age or disability in the hopes that one day the next generation does the same for them. Sound logic to be sure, but what happens when the previous generation failed to repopulate the nation in the same way their parents did? What happens when this trend is repeated through one, two, three, or four generations? For a long time analysts have been warning about the coming drought in the Social Security Administration coffers, but more and more it is starting to appear that it may be just over the horizon.
 
 ## Objectives
 
-Using [**Forecasting**](https://axibase.com/docs/atsd/forecasting/) functionality from ATSD, current population figures and birth data, models may be created to predict trends in America's potential population crisis.
+Using [**Forecasting**](https://axibase.com/docs/atsd/forecasting/) functionality from ATSD, current population figures and birth data, models may be created to predict trends in the potential American population crisis.
 
 ## Data
 
@@ -92,7 +92,7 @@ Each of the target series is given an `alias` which is then used to create the c
 ![](./images/working-population-charts.png)
 [![](./images/button-new.png)](https://trends.axibase.com/68f93899#fullscreen)
 
-*Fig 4.*: The [box chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) and [histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/) establish the dataset's median value and range, which are then used in the [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14), which activates when a condition is satisfied. Here, the condition is set to color a bar red if it is greater than the calculated median value. This expression shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
+*Fig 4.*: The [box chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) and [histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/) establish the median and range values of the dataset, which are then used in the [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14), which activates when a condition is satisfied. Here, the condition is set to color a bar red if it is greater than the calculated median value. This expression shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
 
 ### Forecasting
 

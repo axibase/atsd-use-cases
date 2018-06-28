@@ -13,7 +13,7 @@ Since the 1980s, the United States has almost always been on the wrong side of t
 
 ### Frictional Unemployment
 
-[Frictional unemployment](https://www.economicshelp.org/blog/glossary/frictional-unemployment/) is the understanding that at any given time, some percentage of the population will be unemployed of their own volition. Whether it's because of a personal sabbatical, the desire to find a new job without working during the hunt, or other circumstantial factors, some part of the population will be counted as unemployed when perhaps they shouldn't be.
+[Frictional unemployment](https://www.economicshelp.org/blog/glossary/frictional-unemployment/) is the understanding that at any given time, some percentage of the population is unemployed of their own volition. Whether it is because of a personal sabbatical, the desire to find a new job without working during the hunt, or other circumstantial factors, some part of the population is counted as unemployed when perhaps they should not be.
 
 ### Full Employment in the United States
 
@@ -22,11 +22,11 @@ Since the 1980s, the United States has almost always been on the wrong side of t
 
 *Fig 2.* Periods of full employment are highlighted in green and periods of over 10% unemployment are highlighted in red. Full-employment and 10%-unemployment `[threshold]` series are used to highlight upper and lower value limits.
 
-The **Trends** chart above tracks periods with full employment using an `alert-expression`. The exceptionally high unemployment period during the early 1980s may be explained by the then-ongoing worldwide recession which began in 1979 amid a global energy crisis caused by the Iranian oil embargo and subsequent Iran-Iraq war, combined with extreme Fed monetary policy meant to combat double-digit inflation. Ironically, the global oil supply only contracted about 4% during the embargo, but speculation, panic, and commodity runs caused a huge price surge which wouldn't be reversed for almost twenty years.
+The **Trends** chart above tracks periods with full employment using an `alert-expression`. The exceptionally high unemployment period during the early 1980s may be explained by the then-ongoing worldwide recession which began in 1979 amid a global energy crisis caused by the Iranian oil embargo and subsequent Iran-Iraq war, combined with extreme Fed monetary policy meant to combat double-digit inflation. Ironically, the global oil supply only contracted about 4% during the embargo, but speculation, panic, and commodity runs caused a huge price surge which would not be reversed for almost twenty years.
 
 ### The Relationship Between GDP and Unemployment
 
-While correlation alone can never be used to prove causation, common sense tells us that the more unemployed there are in the population, the worse off the GDP will inevitably be. Compare the percent-change charts from above for unemployment and GDP when they are overlaid on one another.
+While correlation alone can never be used to prove causation, common sense tells us that the more unemployed there are in the population, the worse off the GDP inevitably is. Compare the percent-change charts from above for unemployment and GDP when they are overlaid on one another.
 
 ![](./images/compare-emp-gdp.png)
 [![](./images/button-new.png)](https://trends.axibase.com/2a9d8451#fullscreen)
@@ -74,7 +74,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * `avg()` statistical function is used with one or two arguments representing the `alias` of series to be averaged and the `period` across which the average is calculated, respectively.
 
-* *Fig. 2* (for full configuration settings open the **Trends** visualization [above](#full-employment-in-the-united-states))
+* For full configuration settings open the **Trends** visualization [above](#full-employment-in-the-united-states))
 
 ```sql
 ## [configuration] level settings have been removed for brevity.
@@ -107,7 +107,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * `[threshold]` series are used to define upper and lower limits for particular values.
 
-* *Fig. 3* (for full configuration settings open the **Trends** visualization [above](#the-relationship-between-gdp-and-full-employment))
+* For full configuration settings open the **Trends** visualization [above](#the-relationship-between-gdp-and-unemployment).
 
 ```sql
 [series]
@@ -125,7 +125,7 @@ The **Trends** service relies on ATSD for data-storage and processing tasks. All
 
 To create your own chart using the existing data, open an empty **Trends** [instance](https://trends.axibase.com/).
 
-For questions, technical support, or to suggest a dataset that you would like to see visualized, visit our repository and [raise an issue](https://github.com/axibase/atsd-use-cases/issues).
+For questions, technical support, or to suggest a dataset that you would like to see visualized, visit the Axibase GitHub repository and [raise an issue](https://github.com/axibase/atsd-use-cases/issues).
 
 Source data used for this article is linked here:
 

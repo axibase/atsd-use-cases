@@ -1,20 +1,20 @@
 # 500 Cities: Local Data for Better Health
 
-Learning about your favorite city's local health has never been easier. With help from
+Learning about the local health of your favorite city has never been easier. With help from
 data stored in the [Axibase Data Catalog](https://axibase.com/datasets/socrata/6vp6-wxuq.html) released by [The Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) plus
 visualization and querying tools in ATSD, spotting your city's place in the rankings
 is not just for your health, but vital to informing your company's next health-related venture
-or enhancing your staff's already existing knowledge of such valuable public data.
+or enhancing the already existing knowledge of your staff with such valuable public data.
 
 The [500 Cities Project](https://www.cdc.gov/500cities/index.htm) uses self-reporting and census-style data-gathering methodology
 to engage in the country-wide conversation about public health using small-area samples from the 500 largest cities in the nation.
 That means cities like Los Angeles and New York are broken up into smaller segments to give a better picture of
-any given location's public health indicators. The information is then presented in a straightforward
+the public health indicators of any given location. The information is then presented in a straightforward
 and easy to understand format that simply shows the percent of respondents who answered in the affirmative to a particular question,
 creating simple solutions for sometimes complex data problems.
 
 So which US city really is the healthiest? Well if you ask them, almost 20% of Youngstown,
-Ohio residents responded positively when asked in they were in good health.
+Ohio residents responded positively when asked in they are in good health.
 
 ![](./images/CDC1.png)
 
@@ -98,8 +98,8 @@ LIMIT 25
 | Lawrence        | KS             | 8.1         |
 | Cary            | NC             | 8.1         |
 
-Of course, physical health is only half of the total picture; mental health is another\
-important metric for gauging overall public health, so which city has the most
+Of course, physical health is only half of the total picture; mental health is another
+important metric for gauging overall public health, which city has the most
 stable demeanor, and perhaps more interestingly, what city considers itself to have
 the lowest level of mental health?
 
@@ -143,7 +143,7 @@ LIMIT 25
 | Hartford       | CT             | 16.2        |
 | Muncie         | IN             | 16.1        |
 
-And it wouldn't be any fun with the bottom twenty-five as well, included below:
+And it would not be any fun with the bottom twenty-five as well, included below:
 
 ![](./images/CDC4.png)
 

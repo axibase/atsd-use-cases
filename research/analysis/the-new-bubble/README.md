@@ -11,20 +11,20 @@ designated by the government to handle the central banking policy of the United 
 American economy as it controls the amount of interest the U.S. pays on its outstanding debt. Typically, increases in
 the Federal Fund Rate indicate a downturn in the market value of the gross federal debt because it suggests a probable slow down
 in government borrowing and repayment brought on by the higher rates. The market value of debt is inherently tied to the
-rate at which it was borrowed.
+borrowed rate.
 
 This market value is at once a speculative metric, upon which a given debt is traded, and a quantitative metric, based on which
 predictions and observations can be made about the overall health of an economy. Traditionally "good debt," that which is
 expected to be repaid on time and in full, demands a lower market cost relative to its true value than debt that is unlikely to
 be paid in a timely manner, or without some kind of additional financial machinations, accounting for the higher risk involved
 in the position. The absolute value of the market price of U.S. Federal Debt has been rising steadily alongside the value
-of U.S. GDP and other important financial metrics, with the difference between the debt's absolute value and traded value
+of U.S. GDP and other important financial metrics, with the difference between the absolute and traded value of the debt
 being reasonably stable.
 
 However, since the Great Recession of 2009, a different and more sinister trend has taken place, while the Fed keeps interest
 rates at historically low levels the value of the market value of the federal debt continues to rise relative to the debt itself,
 indicating speculation and volatility. The result is a new kind of bubble that could rattle the U.S. Economy far worse than
-the downturn of 2009, which saw a loss of about a third of the average family's household wealth ([1](#sources)).
+the downturn of 2009, which saw a loss of about a third of the household wealth of the average family ([1](#sources)).
 
 ## Analysis
 
@@ -37,10 +37,10 @@ the downturn of 2009, which saw a loss of about a third of the average family's 
 _Source_: [Federal Reserve Economic Data](#sources)
 
 The above visualization, made using the non-relational ATSD,
-tracks the growth of the United States GDP, Gross Debt, and Gross Debt Market Valuation. Since August 2011, the market value of the
-government's debt has outstripped the value of the GDP meaning that the United States' debt is worth more than the country
+tracks the growth of the United States GDP, Gross Debt, and Gross Debt Market Valuation. Since August 2011, the market value of
+government debt has outstripped the value of the GDP meaning that the United States' debt is worth more than the country
 is producing, that is, the traditionally safe United States index is primed to lose its position as the place to hold money
-for reliable growth. Because the debt market value also considers the interest rate at which the debt was created it is considered a
+for reliable growth. Because the debt market value also considers the interest rate at which the debt is created it is considered a
 more accurate indicator of the overall state of American debt ([2](#sources)) which is becoming more and more itself an indicator
 of the state of the entire U.S. economy.
 
@@ -116,7 +116,7 @@ mean diminishing returns on their savings especially in the face of the consumer
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
-While the government is able to make payments at a lower interest rate, consumers are seeing what's left of their savings accounts
+While the government is able to make payments at a lower interest rate, consumers are seeing what is left of their savings accounts
 slowly drained as the Consumer Price Index continues to affect the value of their personal wealth via inflation ([6](#sources)).
 Increased market activity surrounding Fed announcements ([7](#sources)), shows how ready investors are for a decision from
 the Fed to cave to public pressure, hike interest rates, and potentially trigger a huge sell-off and devaluation of American
@@ -150,9 +150,9 @@ _Source_: [Federal Reserve Economic Data](#sources)
 
 While the overall relationship between the Fed Rate and the amount paid towards the gross debt is similar, worth
 noticing is the substantial volatility in payments present in the most recent recession comparison, **Figure 6**. During earlier recessions,
-the brunt of the economic damage was exacted on consumers who were affected by inflation of costs and low returns on savings,
+the brunt of the economic damage exacted on consumers is affected by inflation of costs and low returns on savings,
 but during the most recent downturn it was the government itself who seemed to be struggling to make payments. While the United
-States has restructured or "partially defaulted" on its debt a least four times in the Republic's history ([9](#sources)),
+States has restructured or "partially defaulted" on its debt a least four times in the history of the Republic ([9](#sources)),
 a true default has never occurred and it could have any number of effects both predictable and not, underlining the essential and pressing need for
 the American government to address its spending problem before the floor gives out and investors, smelling blood in the water,
 move their resources to something more stable.
@@ -166,7 +166,7 @@ a Federal Reserve that is effectively powerless to pull its traditional levers o
 is firmly in the hands of the people that make up that economy.
 
 If Americans cannot recover, fiscally and mentally, from the challenges of the last decade, the torch of economic hegemony
-may be passed on to the world's next superpower. Historically speaking, this transition has never been without a few bumps
+may be passed on to the next world superpower. Historically speaking, this transition has never been without a few bumps
 in the road, as the nature of such an event is inherently rooted in upheaval, turmoil, and uncertainty. Without a doubt,
 investors have their hands full as the American government tries to keep a lid on the Pandora's Box of bottomless debt in the
 age of Neo-liberalism.

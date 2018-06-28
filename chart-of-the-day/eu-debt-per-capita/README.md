@@ -13,8 +13,7 @@ years for the observation period.
 
 Recently, [European Union Debt Data](../../research/data-lib/eu-debt/README.md) sorted by country was published
 in the [Axibase Dataset Library](https://axibase.com/datasets/). After its release, there were a number of requests to explore
-that data considering population numbers to arrive at a modified debt per capita visualization, representing how much of a
-government's gross debt is represented by individual citizens of that particular country.
+that data considering population numbers to arrive at a modified debt per capita visualization, representing how much of the gross debt of a government is represented by individual citizens of that particular country.
 
 The visualization above shows the growth of per capita debt in the European Union over the entire observed period of time,
 sorted by member country and below that same information is displayed in one year increments.

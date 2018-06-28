@@ -7,7 +7,7 @@ in a given file, or maybe calculations must be done with the given data to arriv
 your current needs.
 
 With [Schema-Based Parsing](https://axibase.com/docs/atsd/parsers/csv/) in ATSD
-data may be modified upon import so that working with it in [SQL Console](https://axibase.com/docs/atsd/sql/)
+data may be modified upon import, thus working with it in [SQL Console](https://axibase.com/docs/atsd/sql/)
 or [**ChartLab**](https://apps.axibase.com/chartlab) is more meaningful.
 
 ## Data
@@ -86,7 +86,7 @@ NIS Million at 2010 Prices:
 ```
 
 Only the percent change value without the raw figures is stored by this dataset. Using this method, the 2010 NIS Million
-value can be applied to the above data set so that users can see concrete import and export figures shown by change in 2010
+value can be applied to the above dataset. Thus users can see concrete import and export figures shown by change in 2010
 NIS Million, instead of percent.
 
 In a local instance of ATSD open the **Data > CSV Parsers** page, scroll to the bottom of the page, expand the split button, and click **Create**. Copy the schema showed below to the **Schema** field.

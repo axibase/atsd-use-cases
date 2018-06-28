@@ -18,7 +18,7 @@ The sample dataset in this article is represented by:
 * Metric `outage-tickets`
 * Series tags: `DC=07`, `DC=10`, and `DC=12`
 
-The `outage-tickets` metric measures the number of tickets open in the service provider's support desk during a power outage incident.
+The `outage-tickets` metric measures the number of tickets open in the service provider support desk during a power outage incident.
 
 ## SQL Console
 

@@ -22,7 +22,7 @@ a final product. Both are shown below from 1990 to 2017:
 _Sources_: [Federal Reserve Economic Data (CPI)](https://fred.stlouisfed.org/series/CPIAUCSL), [Federal Reserve Economic Data (PPI)](https://fred.stlouisfed.org/series/PPIACO)
 
 Both of the above metrics are indexed using the CPI and PPI value from the year 1982 as a baseline. This choice is somewhat
-arbitrary as such a decision simply sets that year's value at 100 and all other data points represent some proportion of that
+arbitrary as such a decision simply sets the value of the index year to 100 and all other data points represent some proportion of that
 value. A value of 50 would indicate proportionally half of the 1982 value, while a value of 150 would indicate a value
 1.5 times greater than the 1982 value. Because CPI and PPI have been converted to unitless values, they can be directly compared.
 

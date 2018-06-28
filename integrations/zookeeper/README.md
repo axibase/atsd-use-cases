@@ -99,10 +99,10 @@ Confirm the database imported the desired rules
 
 * **Zookeeper cluster high latency**: alert opens when more than 50% of the nodes in a cluster have average latency greater than 100 ms in 3 minutes.
 * **Zookeeper cluster not serving requests**: alert opens when node status is `leaderelection`, which means that nodes cannot choose leader.
-* **Zookeeper dead cluster**: opens when no data was collected from cluster in 2 minutes.
-* **Zookeeper dead node**: opens when no data was collected from a single node in 2 minutes.
+* **Zookeeper dead cluster**: opens when no data is collected from cluster in two minutes.
+* **Zookeeper dead node**: opens when no data is collected from a single node in two minutes.
 * **Zookeeper dead nodes list**: same as single dead node, but checks all nodes by timer.
-* **Zookeeper node high latency**: opens when node average latency is above 100 in 3 consecutive measurements.
+* **Zookeeper node high latency**: opens when node average latency is above 100 in three consecutive measurements.
 * **Zookeeper rate metrics**: always open. Used for transform `packetsreceived` and `packetssent` metrics from cumulative to difference (packets per minute) metrics. Uses derived commands.
 
 Verify rule functionality. Stop one node and check that **Zookeeper dead node** and **Zookeeper dead nodes list** rule opens (allow up to two minutes). Open the **Alerts** menu and select **Open Alerts** to view all open rules.

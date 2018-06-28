@@ -55,7 +55,7 @@ Download the dataset in CSV, RDF, JSON, or XML format.
 
 Processing datasets using ATSD is simple because the [Collector](https://axibase.com/docs/axibase-collector/) tool has built-in heuristics to handle the Socrata format which `data.gov` entities publish datasets.
 
-Collector uses Socrata metadata to interpret the meaning of columns and extract times, dates, and categories from the raw data. Additionally, ATSD stores data in a local database instance so you can easily combine this public dataset with those you generate locally.
+Collector uses Socrata metadata to interpret the meaning of columns and extract times, dates, and categories from the raw data. Additionally, ATSD stores data in a local database instance which allows you to combine this public dataset with those generated locally.
 
 The following tasks become trivial with ATSD:
 

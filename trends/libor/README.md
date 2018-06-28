@@ -5,9 +5,9 @@
 
 *Fig 1.* The LIBOR and its denominational rates are shown in the upper **Trends** visualization while the difference among each of the rates, compared to the annual lending rate, are shown in the lower visualization. A `[threshold]` series is set to 1, showing divergence of greater than a full percent among series.
 
-The LIBOR is a benchmark index that tracks the interest rates at which banks lend money to one another. Similar to the United States Federal Reserve's [Federal Fund and Interest Rates](../../research/analysis/fed-fund-interest/README.md), the LIBOR is often to used to appraise the current market climate and helps to inform investors of broad trends based on the amount of interest being collected. In the years leading up to the worldwide recession of 2009, the LIBOR moved frequently and dramatically, and its subordinate rates (measured daily, monthly, bi-monthly, tri-monthly, quarterly, and annually) often diverged significantly as member banks scrambled to hide losses or hedge positions.
+The LIBOR is a benchmark index that tracks the interest rates at which banks lend money to one another. Similar to the United States Federal Reserve [Federal Fund and Interest Rates](../../research/analysis/fed-fund-interest/README.md), the LIBOR is often to used to appraise the current market climate and helps to inform investors of broad trends based on the amount of interest being collected. In the years leading up to the worldwide recession of 2009, the LIBOR moved frequently and dramatically, and its subordinate rates (measured daily, monthly, bi-monthly, tri-monthly, quarterly, and annually) often diverged significantly as member banks scrambled to hide losses or hedge positions.
 
-In 2012 it was revealed that many of these worldwide member banks, were in fact fraudulently inflating or deflating the rates to profit off of short-term trades and increase interest rates in their favor. What came to be known as the LIBOR crisis led to stricter government regulation of the associated member banks and the LIBOR as a whole. As seen in the figure above, the government's intervention has led to a marked stabilization of the various LIBOR-denominated rates.
+In 2012 it was revealed that many of these worldwide member banks, fraudulently inflated or deflated the rates to profit off of short-term trades and increase interest rates in their favor. What came to be known as the LIBOR crisis led to stricter government regulation of the associated member banks and the LIBOR as a whole. As seen in the figure above, the government intervention has led to a marked stabilization of the various LIBOR-denominated rates.
 
 ---
 
@@ -47,7 +47,7 @@ FROM "USD1MTD156N"
 WHERE date_format(time, 'dd') = '01'
 ```
 
-The [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause is used so that only one data point is used from each month, the LIBOR is a daily index so the number of returned value would be quite large without some limitations. The addition of a second [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause can target a specific year for a more narrowed result set.
+The [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause is used to select only one data point from each month, the LIBOR is a daily index, as such the number of returned value would be quite large without some limitations. The addition of a second [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause can target a specific year for a more narrowed result set.
 
 ```sql
 WHERE date_format(time, yyyy) = '2015'
@@ -72,7 +72,7 @@ The result set is shown here:
 | 2015-12-01 | 0.24         | 0.05                       | -1.41      | 0.23              |
 ```
 
-Note that months whose first day fell on a weekend or bank holiday will be excluded here as the LIBOR rate is only set for working days.
+Note that months whose first day fell on a weekend or bank holiday are excluded here as the LIBOR rate is only set for working days.
 
 ---
 

@@ -19,6 +19,6 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 1. [San Francisco Air Traffic Noise Complaints by the Numbers](sfo-noise/README.md) (July 2017)
 1. [Island Living is Recession Proof](hawaii-gdp/README.md) (July 2017)
 1. [500 Cities: Local Data for Better Health](cdc-top25/README.md) (June 2017)
-1. [New York City's Most Crowded Industries](ny-employment/README.md) (June 2017)
+1. [The Most Crowded Industries in New York City](ny-employment/README.md) (June 2017)
 1. [DuckDuckGo Search Statistics](duck-duck-go/README.md) (July 2015)
 1. [AWS EC2 T2 Instances: 700 seconds of Fame](700-seconds/README.md) (May 2015)

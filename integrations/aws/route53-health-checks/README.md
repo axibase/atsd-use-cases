@@ -14,7 +14,7 @@ An automation procedure, such as DNS fail-over or service restart, can be initia
 
 ### Geographic Distribution
 
-Route 53 executes health checks from different parts of the world so that outage and latency are independently verified. The latency and connection times collected by the checkers vary widely depending on the geographic proximity of the monitored endpoint to one of the AWS regions used for health checking.
+Route 53 executes health checks from different parts of the world independently verify outage and latency information. The latency and connection times collected by the checkers vary widely depending on the geographic proximity of the monitored endpoint to one of the AWS regions used for health checking.
 
 * us-east-1
 * us-west-1
@@ -59,7 +59,7 @@ Route 53 supports health checks HTTP, HTTPS, and TCP protocols.
 
 The services considers the endpoint to be in a `Healthy` state when the specified percentage of checkers establish a TCP connection and (for HTTP/S) received a `2xx`/`3xx` response code from the server. The response also contains the specified keyword if **String Matching** is enabled.
 
-When specifying paths for HTTP/S endpoints, factor in the increased traffic sent to the target service so the monitored URL does not cause excessive load on the server.
+When specifying paths for HTTP/S endpoints, factor in the increased traffic sent to the target service to avoid causing excessive load on the server.
 
 ### HTTPS
 

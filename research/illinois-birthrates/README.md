@@ -4,8 +4,8 @@
 
 ## Introduction
 
-Long-considered to be a bellwether for trends in the rest of the country, the nation's
-21st state has grown from a tiny, sparsely-populated part of the Northwest Territory to
+Long-considered to be a bellwether for trends in the rest of the country, the
+ 21st state has grown from a tiny, sparsely-populated part of the Northwest Territory to
 the home of Chicago, the third-largest city in the country. Illinois holds the headquarters
 to some of the largest and most successful corporations in the United States including Boeing, Walgreens
 Boots Alliance, McDonald's, Sears Holdings, and United Continental. The University of
@@ -16,8 +16,8 @@ guilty of misuse of power since the 1920's and a number of other state officials
 also served time in prison as a result of their actions in office.
 
 Home to some of America's favorite anti-heroes like Charlie Birger and Al Capone as well
-as some of the country's icons like former presidents Abraham Lincoln and
-Barack Obama, it's not hard to understand why Illinois is considered as diverse and
+as icons like former presidents Abraham Lincoln and
+Barack Obama, it is not hard to understand why Illinois is considered as diverse and
 unique as the country itself.
 
 Using data stored in [Axibase Dataset Catalog](https://axibase.com/datasets/socrata/9e74-xdvk.html) released by Illinois Center for Health Statistics that covers two decades of live births in the state, from 1989 to 2009. This data has been kept through some of the
@@ -36,7 +36,7 @@ fitting to anticipate future birth rates.
 
 ### Visualizations
 
-Illinois contains 102 counties, the top ten most populous of which will be observed here.
+Illinois contains 102 counties, the top ten most populous of which are observed here.
 They are:
 
 | Rank | County | County Seat | Population (Million) |
@@ -52,7 +52,7 @@ They are:
 | 9 | Madison County | Edwardsville | 0.27 |
 | 10 | Champaign County* | Urbana | 0.20 |
 
-> \* Champaign County was the only top ten county by population to not appear as a top ten
+> \* Champaign County is the only top ten county by population not to appear as a top ten
 county by birthrate, consistently out-performed by the smaller Peoria County (Population: 0.19 million).
 
 ![](./images/ILL29.png)
@@ -466,7 +466,7 @@ Excluding the final data point from the series, which deviated significantly, cr
 
 ![](./images/ILL23.png)
 
-This model's formula is:
+The formula is shown here:
 
 ```javascript
 F(x) = 196 + -1.7*x + 0.0587*x^2 + -0.000794*x^3
@@ -488,7 +488,7 @@ and [WolframAlpha](https://www.wolframalpha.com/) can manage the computations.
 | 2013 | 164, 178 | 157 | 4.46%, 13.37% |
 | 2014 | 160, 178 | 159 | 6.29%, 11.95% |
 
-> \* Indicates a year in which the US Census was performed.
+> \* Indicates a year in which the US Census is performed.
 
 Model 1 more accurately predicts the results of recent live birth numbers, and the variance is reasonable, 0.7085.
 Model 2 less accurately predicts the results of recent live birth numbers and its variance is quite high, 4.4109. These numbers show the stability of the model
@@ -504,7 +504,7 @@ When updated to include the latest figures, the model looks like this:
 
 ![](./images/ILL25.png)
 
-This updated model's formula is shown here:
+The updated formula is shown here:
 
 ```javascript
 F(x) = 197 + -2.53*x + 0.189*x^2 + -0.006*x^3
@@ -523,7 +523,7 @@ that has experienced a wide array of dramatic changes:
 
 ![](./images/ILL27.png)
 
-This newly updated model's formula is shown here:
+The newly updated formula is shown here:
 
 ```javascript
 F(x) = 81.9 + 17.6*x + -0.929*x^2 + 0.0139*x^3
@@ -582,7 +582,7 @@ clause is used to declare the functionality of the menu itself.
 
 1. Download [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 2. Download the [`docker-compose.yml`](./resources/docker-compose.yml) file to launch the ATSD container bundle.
-3. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
+3. Launch containers by specifying the built-in collector account credentials used by Axibase Collector to insert data into ATSD.
 
 ```sh
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d

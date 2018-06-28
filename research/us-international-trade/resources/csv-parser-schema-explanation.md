@@ -39,9 +39,7 @@ select('#row=2-*')
 ```
 
 This method selects elements from the table based on the above expression.
-In this case, `'#row=2-*'`  means that we want to select all rows starting with row Index 2 (which will ignore the first row).
-
-After execution, we will work with the table's cells:
+In this case, `'#row=2-*'` means select all rows starting with row Index 2, ignoring the first row.
 
 |  Index | 1   | 2    | 3    | 4    |5-14 | 15   | 16    | 17   |18-27|   28|  29   |
 |------|------|------|------|------|-----|------|-------|------|-----|------|-------|
@@ -120,7 +118,7 @@ Use the `addSeries()` method to add series for each of the cells.
 addSeries()
 ```
 
-After filtering our cells, iterate through the cells and use the cell value as our `series` value. But first, specify the necessary series fields.
+After filtering the correct cells, iterate through the cells and use the cell value as the `series` value. But first, specify the necessary series fields.
 
 ## Series Fields
 
@@ -141,7 +139,7 @@ After filtering our cells, iterate through the cells and use the cell value as o
 ```
 
    Next, decide which metric to use for the series. The metric depends on the first letter in the column header. If the header starts with `'E'`,  use `'us-trade-export'`.
-   Otherwise, the name of metric will be `'us-trade-import'`.
+   Otherwise, the name of metric is `'us-trade-import'`.
 
 ## 3. Tags
 
@@ -165,10 +163,12 @@ which is parsed by a timestamp pattern. Accomplish this by using the `timestamp`
 
 ## Result
 
-In this case, pass a string that is the result of concatenated values of the first column in the row and a substring of the current column's header.
+In this case, pass a string that is the result of concatenated values of the first column in the row and a substring of the current column header.
 
 For example, the first iteration returns a series with these fields:
 
+```ls
 | Date                 | Metric          | Entity | Tags                             | Value |
 |----------------------|-----------------|--------|----------------------------------|-------|
 | 1985-01-01T00:00:00Z | us-trade-import | usa    | cty_code = 0001, ctyname = OPEC  | 1,733 |
+```

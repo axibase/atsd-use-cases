@@ -4,9 +4,8 @@
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/efc684ff/2/#fullscreen)
 
-Austin, Texas is the Lone Star State's capital city and one of the fastest growing cities in America. Home to the University
-of Texas at Austin, which produces thousands of well-qualified computer science graduates each year and funnels new talent into
-the city's largest employers. Dubbed "the Silicon Hills" for the high concentration of post-dot-com-boom and other newer
+Austin, Texas is the capital city of the Lone Star State and one of the fastest growing cities in America. Home to the University
+of Texas at Austin, which produces thousands of well-qualified computer science graduates each year and funnels new talent into largest employers in Austin. Dubbed "the Silicon Hills" for the high concentration of post-dot-com-boom and other newer
 high-tech companies that populate the city, Austin is seen as an all-around business friendly city.
 
 One of the tenets of good business is healthy competition but currently, Austin residents only have one choice for an electricity
@@ -36,7 +35,7 @@ GROUP BY tags.customer_class
 > Over the observed time period, residential customers paid an average $0.04 more per kilowatt hour (KWH) than industrial
 clients.
 
-While four cents an hour certainly doesn't seem like much, the table below shows the amount of revenue generated from each class of customer. Typically, business and industry
+While four cents an hour certainly does not seem like much, the table below shows the amount of revenue generated from each class of customer. Typically, business and industry
 pays the lion's share of utility costs because of the nature of their usage: large-scale power grids and 24/7 operation, but
 in Austin, the exact opposite is true. In fact, the industrial class paid an average 35% of the residential class over the
 observed period, which is detailed in the table below the visualization.

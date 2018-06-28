@@ -331,7 +331,7 @@ word | alternatives
   * :white_check_mark: ``Remove the ephemeral `/hbase` directory from Zookeeper cache.``  
   * :no_entry: ``Execute the command to remove the ephemeral `/hbase` directory from Zookeeper cache.``
   * :white_check_mark: `Add nmon to crontab to collect the data constantly.`
-  * :no_entry: `Setup crontab with the following commands so that nmon will collect the data constantly.`
+  * :no_entry: `Setup crontab with the following commands to enable nmon to collect data constantly.`
 * Describe what the command does.
   * :white_check_mark: ``Launch the `inotify` script to watch for file changes.``
   * :no_entry: `Run the script with the following command:`

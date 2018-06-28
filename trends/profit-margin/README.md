@@ -7,9 +7,9 @@
 
 ## Data Overview
 
-The **American Enterprise Institute** is a Washington D.C.-based think tank that is dedicated to researching issues of government, politics, economics, and social welfare. Recently, they published an article titles: *The Public Thinks the Average Company Makes a 35% Profit Margin Which is about 5x Too High*, which described the average American's perception of the profit margins that companies from various industries are able to make on a consistent basis.
+The **American Enterprise Institute** is a Washington D.C.-based think tank that is dedicated to researching issues of government, politics, economics, and social welfare. Recently, they published an article titles: **The Public Thinks the Average Company Makes a 35% Profit Margin Which is about 5x Too High**, which described the average American perception of the profit margins that companies from various industries are able to make on a consistent basis.
 
-The article drew information from a variety of polling agencies who had sampled large groups of the population and came away with the conclusion that the average American believes most companies, regardless of industry are consistently making profits on the order of 36%. Using data from NYU professor and researcher [Aswath Damodaran](http://people.stern.nyu.edu/adamodar/New_Home_Page/home.htm) AEI came to the conclusion that the average American's estimation was off by about 500%. They concluded that the average company makes around 7.9% after taxes and an entire percent lower, 6.9% if the financial industry is excluded.
+The article drew information from a variety of polling agencies who had sampled large groups of the population and came away with the conclusion that the average American believes most companies, regardless of industry are consistently making profits on the order of 36%. Using data from NYU professor and researcher [Aswath Damodaran](http://people.stern.nyu.edu/adamodar/New_Home_Page/home.htm) AEI came to the conclusion that the average American estimation is off by about 500%. They concluded that the average company makes around 7.9% after taxes and an entire percent lower, 6.9% if the financial industry is excluded.
 
 ## Metrics Legend
 
@@ -21,7 +21,7 @@ The metrics stored in ATSD follow the same naming patters as the [raw data](http
 |`after-tax_lease_adjusted_margin`| Profit margin, after deducting taxes and overhead costs.|
 |`after-tax_unadjusted_operating_margin`| Profit margin, after deducting only taxes.|
 |`cogs/sales`| Cost of goods versus sales comparisons. This figure does not consider operating costs like taxes, overhead, or research and development.|
-|`ebitda/sales`| Earnings before interest, taxes, depreciation, and amortization is abbreviated ABITDA. It refers to the net earnings of a company.|
+|`ebitda/sales`| Earnings before interest, taxes, depreciation, and amortization is abbreviated `ABITDA`. It refers to the net earnings of a company.|
 |`ebitdar&d/sales`| The net earnings of a company, not including research and development.|
 |`ebitdasg&a/sales`| The net earnings of a company not including sales, general, or administrative costs.|
 |`gross_margin`| Sales revenue minus cost of goods, divided by sales revenue. The amount of value that is created by the industry compared to the intrinsic value of the product. |
@@ -53,6 +53,7 @@ ORDER BY value DESC
 LIMIT 10
 ```
 
+```ls
 | Industry                    | Profit Margin (%) |
 |-----------------------------|-------------------|
 | Farming/Agriculture         | 88.98             |
@@ -65,6 +66,7 @@ LIMIT 10
 | Food Wholesalers            | 83.04             |
 | Auto Parts                  | 82.36             |
 | Paper/Forest Products       | 81.03             |
+```
 
 ## Creating Value
 
@@ -83,6 +85,7 @@ ORDER BY value DESC
 LIMIT 10
 ```
 
+```ls
 | Industry                               | Gross Margin (%) |
 |----------------------------------------|-------------------|
 | Bank (Money Center)                    | 100.00            |
@@ -95,6 +98,7 @@ LIMIT 10
 | Software (Internet)                    | 66.93             |
 | Software (System & Application)        | 66.61             |
 | Software (Entertainment)               | 66.18             |
+```
 
 ## Developing Value
 
@@ -113,6 +117,7 @@ ORDER BY value DESC
 LIMIT 10
 ```
 
+```ls
 | Industry                        | Profit Margin (%) |
 |---------------------------------|-------------------|
 | Drugs (Biotechnology)           | 31.79             |
@@ -125,6 +130,7 @@ LIMIT 10
 | Electronics (Consumer & Office) | 12.05             |
 | Semiconductor Equip             | 10.96             |
 | Healthcare Products             | 7.41              |
+```
 
 ## Market Totals
 
@@ -143,6 +149,8 @@ WHERE metric IN metrics ('stern.nyu.edu')
 ORDER BY value DESC
 ```
 
+
+```ls
 | Profitability Metric                  | Profit Margin (%) |
 |---------------------------------------|-------------------|
 | cogs/sales                            | 63.43             |
@@ -161,13 +169,14 @@ ORDER BY value DESC
 | r&d/sales                             | 2.39              |
 | lease_expense/sales                   | 1.45              |
 | stock-based_compensation/sales        | 0.98              |
+```
 
 ## Top Ten Industries with the Highest Profit Margin
 
 ![](./images/top-ten-by-sector.png)
 [![](./images/button-new.png)](https://trends.axibase.com/f2a850a5#fullscreen)
 
-*Fig 6.* The top ten industries with the highest profit margin with all factors considered are shown here. Use the drop-down menu to navigate through all metrics and see the top ten or bottom ten sectors for each one, or select the `*` wildcard character to view them all together. When doing so it is recommended to apply the setting `horizontal = true` by removing the `#` comment character from the configuration window. **Metric:** `net_margin`
+**Fig 6.** The top ten industries with the highest profit margin with all factors considered are shown here. Use the drop-down list to navigate through all metrics and see the top ten or bottom ten sectors for each one, or select the `*` wildcard character to view them all together. When doing this it is recommended to apply the setting `horizontal = true` by removing the `#` comment character from the configuration window. **Metric:** `net_margin`
 
 Query:
 
@@ -179,6 +188,7 @@ ORDER BY value DESC
 LIMIT 10
 ```
 
+```ls
 | Industry                               | Profit Margin (%) |
 |----------------------------------------|-------------------|
 | Tobacco                                | 43.37             |
@@ -191,6 +201,7 @@ LIMIT 10
 | Beverage (Alcoholic)                   | 21.18             |
 | Semiconductor Equip                    | 18.74             |
 | Transportation (Railroads)             | 18.68             |
+```
 
 ## Resources
 
@@ -202,4 +213,4 @@ LIMIT 10
 
 * For more use cases like this one, check out the [Axibase Use Cases Repository](https://github.com/axibase/atsd-use-cases) on GitHub;
 
-* For help using these services, to submit your own visualizations, or suggest a great dataset, [raise an issue](https://github.com/axibase/atsd-use-cases/issues/new) on our GitHub page.
+* For help using these services, to submit your own visualizations, or suggest a great dataset, [raise an issue](https://github.com/axibase/atsd-use-cases/issues/new) on the Axibase GitHub page.

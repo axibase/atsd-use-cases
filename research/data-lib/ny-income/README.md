@@ -13,7 +13,7 @@ All data is stored in the [Axibase Time Series Database](https://axibase.com). D
 "Adjusted Gross Income is defined as gross income minus adjustments to income." (Source: [Internal Revenue Service](https://www.irs.gov/uac/definition-of-adjusted-gross-income))
 
 A person's AGI reflects the total amount of money that they earned in a given fiscal year minus whatever deductions that
-filer will be making. The City of New York has collected information for all local tax filers, and aggregated them into ten
+filer makes. The City of New York has collected information for all local tax filers, and aggregated them into ten
 equally sized groups representing increasing 10th percentiles (called deciles here). The first decile represents the bottom
 10% of New York City wage earners by AGI while the tenth decile represents the top 10% of New York City wage earners by AGI.
 

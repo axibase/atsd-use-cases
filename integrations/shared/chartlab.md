@@ -91,7 +91,7 @@ To save the portal under an entirely new URL click **Clone**.
 
 ![Figure 12](./images/Figure12.png)
 
-The cloned portal is identical to the original with a unique URL. Use this feature to publish a final addition so that earlier versions remain hidden.
+The cloned portal is identical to the original with a unique URL. Use this feature to publish a final edition and earlier versions remain hidden.
 
 ## Editor
 

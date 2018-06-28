@@ -82,7 +82,7 @@ You begin receiving messenger notifications the next time someone creates a proj
 
 ![](./images/slack_project.png)
 
-**Repository**, **User**, and **Project** links redirect you to the repository where the project was created, the user who created the project, and the project page itself, respectively.
+**Repository**, **User**, and **Project** links redirect you to the repository where the project exists, the user who created the project, and the project page itself, respectively.
 
 ## Explore ATSD
 

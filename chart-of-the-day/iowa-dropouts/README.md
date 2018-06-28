@@ -14,8 +14,8 @@ For the 2014-2015 academic year, more than [90%](https://www2.ed.gov/admins/lead
 of eligible Iowa students successfully graduated high school making it the [highest
 performing state](https://nces.ed.gov/programs/coe/indicator_coi.asp) in the country with respect to graduation rate, and the
 first state in recent memory to see such results. Using publicly-available [education data](https://catalog.data.gov/dataset/2014-2015-public-school-district-dropout-rates)
-released by the State of Iowa, it can be seen that cities which account for just 17% of the state's three and a half million residents,
-also account for more than 30% of the state's high school dropouts.
+released by the State of Iowa, it can be seen that cities which account for just 17% of the three and a half million residents,
+also account for more than 30% of high school dropouts.
 
 **Table 1.1**: Iowa State population and dropout rate
 

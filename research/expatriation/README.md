@@ -18,7 +18,7 @@ Previous articles tracking United States expatriation:
 
 ## Expatriation Review
 
-Axibase [tracked](2017-3.md) record-high expatriation during 2017; in the fourth quarter of last year however, it seemed that expatriation levels had begun to normalize once again. Naturally, the number of expatriating citizens is far lower than the amount of number of new citizens due to naturalization, but the trend remains interesting nonetheless. This trend has been noted by such publications as the [Washington Post](https://www.washingtonpost.com/news/worldviews/wp/2017/02/10/a-potentially-historic-number-of-people-are-giving-up-their-u-s-citizenship/?noredirect=on&utm_term=.5a0d04f0ffb5) as far back as early 2017, when Axibase published our [first article](2017-1.md) citing the trend.
+Axibase [tracked](2017-3.md) record-high expatriation during 2017; in the fourth quarter of last year however, it seemed that expatriation levels had begun to normalize once again. Naturally, the number of expatriating citizens is far lower than the amount of number of new citizens due to naturalization, but the trend remains interesting nonetheless. This trend has been noted by such publications as the [Washington Post](https://www.washingtonpost.com/news/worldviews/wp/2017/02/10/a-potentially-historic-number-of-people-are-giving-up-their-u-s-citizenship/?noredirect=on&utm_term=.5a0d04f0ffb5) as far back as early 2017, when Axibase publishedthe [first article](2017-1.md) citing the trend.
 
 ---
 
@@ -165,7 +165,7 @@ LIMIT 10
 
 #### `time_offset`
 
-Data may also be compared using `time_offset` features whereby variable time-offsets may be applied to a dataset so that it may be compared to itself during a different time period, useful when working with time series data.
+Data may also be compared using `time_offset` features whereby variable time-offsets may be applied to a dataset which may be compared to itself during a different time period, useful when working with time series data.
 
 ![](./images/new-qoq.png)
 
@@ -187,7 +187,7 @@ A number of built-in [statistical functions](https://github.com/axibase/charts/b
 
 [![](./images/btn.png)](https://apps.axibase.com/chartlab/1ae83460#fullscreen)
 
-Visualization uses the `PercentChangeFromYearAgo` user-defined function. While the absolute value of U.S. expatriates was the greatest during 2016-2017, the greatest relative change was observed several years ago.
+Visualization uses the `PercentChangeFromYearAgo` user-defined function. While the absolute value of U.S. expatriates is greatest during 2016-2017, the greatest relative change is observed several years ago.
 
 While the underlying function may be quite verbose:
 
@@ -205,7 +205,7 @@ value = fred.PercentChangeFromYearAgo('raw')
 
 #### Highlights
 
-The charts library provides settings quarters where the percent change from the previous year was greater than 50% in red, and quarters where it was less than -10% in green.
+The charts library support `alert-expression` settings to display quarters where the percent change from the previous year is greater than 50% in red, and quarters where it is less than -10% in green.
 
 ![](./images/2018-q2-6.png)
 

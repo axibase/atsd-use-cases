@@ -8,18 +8,18 @@
 
 ## Introduction
 
-One of the first industries that was pioneered and perfected in America was that of the personal automobile. The roots of
+One of the first industries pioneered and perfected in America is the personal automobile. The roots of
 industry date back to the turn of the nineteenth century, when the first internal combustion engine was invented and patented
 in France. The first production automobile debuted less than a century later in Germany under the auspices of automobile
-engineer Karl Benz, whose company still produces cars under the Mercedes-Benz mark. However it was Henry Ford's Model T,
+engineer Karl Benz, whose company still produces cars under the Mercedes-Benz mark. However it is Henry Ford's Model T,
 which debuted in 1908, that changed the course of the personal automobile forever.
 
-The Model T revolutionized the automobile industry for a number of reasons. Ford's introduction of assembly line production
-dramatically reduced manufacturing costs which in turn lowered the car's price on the sales floor and made it affordable to
-the burgeoning American middle class. In modern times however, corporate mishandling of Ford's legacy ultimately reached a low point in 2008
-during the Great Recession, when the United States Government was all but forced to offer the "Big Three," that is Ford,
+The Model T revolutionized the automobile industry for a number of reasons. The introduction of assembly line production
+dramatically reduced manufacturing costs which in turn lowered the price of the car on the sales floor and made it affordable to
+the burgeoning American middle class. In modern times however, corporate mishandling of the legacy of Mr. Ford ultimately reached a low point in 2008
+during the Great Recession, when the United States Government offered the "Big Three," that is Ford,
 Chrysler, and General Motors, a bankruptcy-avoidance bailout to the tune of close to $80 billion, of which, more than $9 billion
-was eventually [chalked up to a loss](https://www.treasury.gov/initiatives/financial-stability/TARP-Programs/automotive-programs/pages/default.aspx).
+ eventually [became considered a loss](https://www.treasury.gov/initiatives/financial-stability/TARP-Programs/automotive-programs/pages/default.aspx).
 
 Economists and the American public generally view the bailout in a reluctantly positive light, after all the auto industry
 employees more than [4 million Americans](https://www.bls.gov/iag/tgs/iagauto.htm) and has made models like Mustang, Corvette,
@@ -48,8 +48,8 @@ the recent trend indicating less and less cars being sold.
 
 _Source_: Federal Reserve Economic Data - [Domestic Motor Vehicle Production](https://fred.stlouisfed.org/series/DAUPSA), [Domestic Motor Vehicle Sales](https://fred.stlouisfed.org/series/DAUTOSA)
 
-The second part of the above visualization tracks the difference in domestic automobile production and sales which has remained
-within a range of roughly 100,000 units and was derived from the underlying data using an [ad-hoc calculation](../../tutorials//add-calculated-value/README.md)
+The second part of the above visualization tracks the difference in domestic automobile production and sales which remained
+within a range of roughly 100,000 units and is derived from the underlying data using an [ad-hoc calculation](../../tutorials//add-calculated-value/README.md)
 in the ChartLab interface. This value has been averaged over each observed year, and is an excellent metric to gauge trends
 in production output. Because sales are likely a much larger factor in deciding production, then production is a factor in
 predicting sales, this line shows that declining sales are being met with declining production. But more than that, production
@@ -81,7 +81,7 @@ _Source_: See **Figures 2** and **3** above.
 The shrinking gap between domestic and imported automobile sales is shown above, with the lower portion of the visualization
 showing a derived series obtained by subtracting the number of imported vehicles sold from the number of domestically-made vehicles
 sold. Over the observed fifteen year period, the difference in sales has been reduced by more than half, which is no small feat
-considering the American automobile sector is one of the country's most important.
+considering the American automobile sector is one of the the most important in the country.
 
 **Figure 5**: Automobile Consumer Price Index (CPI)
 
@@ -94,7 +94,7 @@ _Source_: Federal Reserve Economic Data - [A Class CPI](https://fred.stlouisfed.
 
 Further, the above chart details the Consumer Price Index (CPI) for four types of common consumer vehicles. The categorization
 system ranks vehicles by size and load. The only class of vehicle which showed a significant increase in overall cost during
-the observed period was the D Class, mostly populated by sport utility type vehicles.
+the observed period is the D Class, mostly populated by sport utility type vehicles.
 
 ## Conclusion
 
@@ -109,10 +109,10 @@ Instead, despite the massively expensive bailout less than ten years ago, Americ
 to stay relevant when faced with competition from Asian and European automakers like Honda, Toyota, and Volkswagen.
 
 If auto-makers in America are interested in keeping their hegemonic position at home, and indeed, their jobs in the future,
-a serious re-structuring of the way the industry does business needs to happen and it needs to happen now. Production costs aren't to blame, there are
+a serious re-structuring of the way the industry does business needs to happen and it needs to happen now. Production costs are not to blame, there are
 a number of international trade partnerships like NAFTA that allow producers to makes cars in countries with lower wages like
 Mexico and bring them into the United States tariff-free. Lack of consumer demand is not to blame, despite decreasing sales numbers
-overall, what's left of the market is being gobbled up by foreign producers. Inflation is not to blame, the CPI values for
+overall, what is left of the market is being gobbled up by foreign producers. Inflation is not to blame, the CPI values for
 automobiles of every size have been more stable than almost any other industry in the country. The blame lays squarely at the
 feet of the executive teams who have failed to create a product of value and are soon going to once again feel the cold sting
-of the free market if they cannot address the industry's current inadequacies.
+of the free market if they cannot address the current inadequacies of the industry.

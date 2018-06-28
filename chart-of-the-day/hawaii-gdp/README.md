@@ -9,10 +9,10 @@ seems the tiny archipelago two-and-a-half thousand miles from the California coa
 knows something the rest of us do not.
 
 Using [data](https://catalog.data.gov/dataset/dbedt-hawaii-nominal-gross-domestic-product-2000-2010-59862)
-from the State of Hawaii's Department of Business, Economic Development, and Tourism, and
-the ATSD, the fiftieth state's economic
-performance can be explored using a number of analytic tools. Shown above are two
-visualizations of Hawaii's economy: its percent growth from 2000 to 2010 and its nominal
+from the State of Hawaii Department of Business, Economic Development, and Tourism, and
+the ATSD, the economic
+performance of the fiftieth state can be explored using a number of analytic tools. Shown above are two
+visualizations of the Hawaiian economy: its percent growth from 2000 to 2010 and its nominal
 GDP value for the same years. GDP is generally considered to be the godfather of economic
 indicators and with a state that imports [close to 90%](http://files.hawaii.gov/dbedt/op/spb/INCREASED_FOOD_SECURITY_AND_FOOD_SELF_SUFFICIENCY_STRATEGY.pdf)
 of its food, a dollar amount subtracted from the GDP and estimated by the State to be about three billion dollars,
@@ -40,16 +40,16 @@ decline that is significantly lower than the US Average. Compare the numbers bel
 
 Measuring this growth over the entire 11-year period to compare effective annual growth, Hawaii averaged a total of 4.96% per year
 effective growth compared to the United States' effective growth rate of just 1.86% per year. This metric averages the growth of each
-entity over the observed time period to show the annual growth rate if it were to remain constant. Effective growth (or interest)
+entity over the observed time period to show the annual growth rate if it remained constant. Effective growth (or interest)
 rate is often used to judge investments with a compounding interest rate, however it can be adopted to these purposes to
 accurately provide average performance benchmarks for Hawaii and the United States.
 
 Even during the worst year of the eponymous Great Recession, the state of Hawaii continued
 to see growth locally, and it was not until the final observed year that the United States
-GDP Growth was able to surpass a tiny economy built on [tourism and agriculture](https://www.bea.gov/regional/bearfacts/pdf.cfm?fips=15000&areatype=STATE&geotype=3),
+GDP Growth surpassed a tiny economy built on [tourism and agriculture](https://www.bea.gov/regional/bearfacts/pdf.cfm?fips=15000&areatype=STATE&geotype=3),
 two notoriously volatile industries. Hawaii is also in the top 20 states when considering
 per capita GDP, another popular economic indicator.
 
-Whether it's the warm sunshine, the clear water, or the endless beaches that are driving
-Hawaii's steady positive growth is unclear but economic stability and opportunity
+Whether the warm sunshine, the clear water, or the endless beaches drive
+Hawaiian growth is unclear but economic stability and opportunity
 can be added to the list of benefits of island living.

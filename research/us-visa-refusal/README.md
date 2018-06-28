@@ -14,7 +14,7 @@ Access the gzipped tarball in the [Resources](./resources/visas.tar.gz) director
 The dataset contains yearly totals for non-immigrant visas issued from 1997 through 2015. Totals are collected for 84 different visa types. You can find the complete list of all
 the visa types included in this dataset in the [Resources](./resources/visalist.txt) directory. Read descriptions of each visa type on the [U.S. Department of State](https://travel.state.gov) website.
 
-Visa figures were collected from 200 countries, 7 continents, and for those of unknown national origins. You can find a complete list of all the countries included in this dataset in the [Resources](./resources/countrylist.txt) directory.
+Visa figures are collected from 200 countries, 7 continents, and for those of unknown national origins. You can find a complete list of all the countries included in this dataset in the [Resources](./resources/countrylist.txt) directory.
 
 Visa refusal rates are taken from [`travel.state.gov`](https://travel.state.gov/content/dam/visas/Statistics/Non-Immigrant-Statistics/refusalratelanguage.pdf#3). Access the raw data in the [Resources](./resources/visa-refusal.csv) directory as individual CSV files for each year.
 
@@ -60,7 +60,7 @@ for nationals from Monaco has increased to **57%** in 2015 and Cuba has increase
 ## SQL Queries
 
 In addition **ChartLab** visualizations, ATSD supports [SQL queries](https://axibase.com/docs/atsd/sql/) from the web-based [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html),
-used to select specific information in the dataset. Read more about our SQL syntax in the [SQL Documentation](https://axibase.com/docs/atsd/sql/#syntax).
+used to select specific information in the dataset. Read more about SQL syntax in the [SQL Documentation](https://axibase.com/docs/atsd/sql/#syntax).
 
 The first query shows countries where refusals have increased the most over the last 10 years. Surprisingly, two countries that have long been considered U.S. allies, Canada and Norway,
 saw refusal rates considerably increase during the observed period. Refusal rate in Canada increased from **25.5%** in 2006 to **47.9%** in 2016, while in the same period the
@@ -463,8 +463,8 @@ group by t1.datetime
 | 2015  | 10.9        | 13.5               | 2.6            | 19.1         | 411.4               |
 ```
 
-The total amount of money earned from denied visa applications was **$411.4 million**, a little less than `1/4` of the amount earned
-from issued visas. These numbers are in line with the [2015 State Department Report](https://www.state.gov/documents/organization/249770.pdf), which stated that 10.9 million visas were issued at foreign posts. The total revenue eanred by U.S. consular services in 2015 was [$5.8 billion](https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249727.htm), meaning that the amount earned from
+The total amount of money earned from denied visa applications is **$411.4 million**, a little less than `1/4` of the amount earned
+from issued visas. These numbers are in line with the [2015 State Department Report](https://www.state.gov/documents/organization/249770.pdf), which stated that 10.9 million visas were issued at foreign posts. The total revenue earned by U.S. consular services in 2015 is [$5.8 billion](https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249727.htm), meaning that the amount earned from
 refusal fees is not just pocket change.
 
 ## Action Items

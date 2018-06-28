@@ -89,7 +89,7 @@ ORDER BY last(value) DESC
 Source: [Department of the Treasury](https://www.treasury.gov/resource-center/data-chart-center/tic/Pages/ticsec2.aspx)
 
 Purchase of public debt by foreign governments has a number of effects. In the case of Mainland China, whose debt positions
-are detailed below, maintaining a position in United States public debt ensures that the dollar will hold its value relative
+are detailed below, maintaining a position in United States public debt ensures that the dollar holds its value relative
 to the Yuan, keeping Chinese imports competitive and affordable on U.S. markets.
 
 **Figure 6**: Chinese Holdings of U.S. Public Debt
@@ -179,7 +179,7 @@ by China, in total, and less China:
 Two unique patterns are visible above. Chinese buying and selling of U.S. treasuries remains stable, indicating no change in
 position, from 2010 onward. While the second distinct pattern is shown by the black and grey lines and indicates that foreign
 governments continue to purchase positions in U.S. treasuries. The grey line, which is total ownership less China, resembles the
-black line more closely then it does the red, indicating that China's influence over United States markets may be less
+black line more closely then it does the red, indicating Chinese influence over United States markets may be less
 significant than some analysts indicate.
 
 Additionally, when displayed on an inverted axis with data from **Figure 11**, the pattern of Fed-set interest rates much more
@@ -228,6 +228,6 @@ in Cayman positions, shown below:
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c281e549/4/#fullscreen)
 
 Despite such hypotheses, the nature of the global economy is such that most countries are inherently reliant on one another
-for import or export needs, financial support, or a number of other metrics so true financial downturn would have long-reaching
-global effects, as seen during the recent Great Recession where the sub-prime mortgage crisis, which began in America, ultimately
+for import or export needs, financial support, or a number of other metrics. True financial downturn has long-reaching
+global effects, seen during the recent Great Recession where the sub-prime mortgage crisis, which began in America, ultimately
 resulted in a global contraction of gross domestic product (GDP).

@@ -1,6 +1,6 @@
 # Going from Advanced Tech Exporter to Importer
 
-The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) of the St. Louis Federal Reserve tracks import and export statistics for the United States and other countries. The trade deficit has been in the spotlight recently as one of the current administration's primary talking points and working spaces, with the goal of reversing the otherwise never-ending growth of America's overseas expenditures. We covered this phenomena back in [2017](../../research/us-international-trade/README.md), but a recent FRED [blog](https://fredblog.stlouisfed.org/2018/05/the-high-tech-trade-balance/) post, and all the attention the trade deficit has been receiving lately, certainly makes revisiting the topic relevant today.
+The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) of the St. Louis Federal Reserve tracks import and export statistics for the United States and other countries. The trade deficit has been in the spotlight recently as one of the primary talking points and working spaces of the current administration, with the goal of reversing the otherwise never-ending growth of American overseas expenditures. Axibase covered this phenomena back in [2017](../../research/us-international-trade/README.md), but a recent FRED [blog](https://fredblog.stlouisfed.org/2018/05/the-high-tech-trade-balance/) post, and all the attention the trade deficit has been receiving lately, certainly makes revisiting the topic relevant today.
 
 ![](./images/trade-balance.png)
 
@@ -20,7 +20,7 @@ This visualization tracks the growing divide in advanced technologies imported i
 
 [![](./images/button-new.png)](https://trends.axibase.com/31b5a64e#fullscreen)
 
-This visualization uses `alias` settings to capture raw data and `value` settings to create new calculated series. Periods with a trade deficit are highlighted in red usign an `alert-expression`. For detailed information about syntax in the **Trends** environment, see [Visualization Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+This visualization uses `alias` settings to capture raw data and `value` settings to create new calculated series. Periods with a trade deficit are highlighted in red using an `alert-expression`. For detailed information about syntax in the **Trends** environment, see [Visualization Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
 
 ## Tracking the Growth in Imports Against the Decline in Exports
 
@@ -38,11 +38,11 @@ Using the `ChangeFromPreviousYear` function, data samples may be compared to the
 
 ![](./images/change-from-last-year-diff.png)
 
-By creating an additional layer of `[series]` configurations the difference between monthly and quarterly data from the previous year's sample can give even more context to the dataset.
+By creating an additional layer of `[series]` configurations the difference between monthly and quarterly data from the previous year sample can give even more context to the dataset.
 
 ## Advanced Technologies as a Portion of the Whole
 
-Comparing overall trade balance data to advanced technologies shows that the deficit in advanced technologies industries has unarguably grown dramatically since 2004, when the United States became an overall importer of advanced technologies as opposed to an exporter.
+Comparing overall trade balance data to advanced technologies shows that the deficit in advanced technologies industries has inarguably grown dramatically since 2004, when the United States became an overall importer of advanced technologies as opposed to an exporter.
 
 ![](./images/compare2.png)
 
@@ -66,4 +66,4 @@ With plans to increase munitions expenditures in its [next budget](https://www.d
 
 * Data is stored in the [**Trends**](../../integrations/shared/trends.md) instance of ATSD. To work with this or [other](https://trends.axibase.com/public/reference.html) datasets stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
 * The original FRED [blog post](https://fredblog.stlouisfed.org/2018/05/the-high-tech-trade-balance/) and the three datasets used in this article: [BOPGTB](https://fred.stlouisfed.org/series/BOPGTB), [EXP0007](https://fred.stlouisfed.org/series/EXP0007), and [IMP0007](https://fred.stlouisfed.org/series/IMP0007).
-* Further [reading](https://www.brookings.edu/research/americas-advanced-industries-new-trends/) on growth in America's advanced technologies industries.
+* Further [reading](https://www.brookings.edu/research/americas-advanced-industries-new-trends/) on growth in American advanced technologies industries.

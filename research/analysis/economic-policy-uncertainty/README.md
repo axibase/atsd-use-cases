@@ -3,7 +3,7 @@
 ![](./images/epu_title.png)
 [![](./images/button.png)](https://apps.axibase.com/chartlab/59f36025#fullscreen)
 
-*Fig. 1*: The EPU Index for the United States, China, Russia, and Europe (Eurozone countries), superimposed over the quarterly average of the same value. Months where the EPU value was greater than the quarterly average are shown in red using an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/alert-expressions/).
+> The EPU Index for the United States, China, Russia, and Europe (Eurozone countries), superimposed over the quarterly average of the same value. Months where the EPU value is greater than the quarterly average are shown in red using an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/alert-expressions/).
 
 **Source Data**: [FRED Economic Data](https://fred.stlouisfed.org/categories/33201)
 
@@ -36,9 +36,9 @@ Tracking the EPU Index for the People's Republic of China alongside more concret
 ![](./images/epu-rates.png)
 [![](./images/button.png)](https://apps.axibase.com/chartlab/661d387e/#fullscreen)
 
-*Fig. 3*: Economic Policy Uncertainty Index and PRC Treasury Securities Rates (2000-2017), bi-annually and quarterly.
+> Economic Policy Uncertainty Index and PRC Treasury Securities Rates (2000-2017), bi-annually and quarterly.
 
-The above figure was creating using the [`weighted average`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) statistical tool. This tool may be used to creating a rolling average value for a specific time period. For more information about using this statistical tool, see this [guide](../../../tutorials//moving-avg/README.md).
+The above figure is made using the [`weighted average`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) statistical tool. This tool may be used to creating a rolling average value for a specific time period. For more information about using this statistical tool, see this [guide](../../../tutorials//moving-avg/README.md).
 
 ### Dual Axis
 
@@ -47,7 +47,7 @@ Using a time series chart with two axes, drastically different data may be compa
 ![](./images/epu-gdp-russia.png)
 [![](./images/button.png)](https://apps.axibase.com/chartlab/ebbe24c0/#fullscreen)
 
-*Fig. 4*: The left and right axis display different orders of value based on the `axis` setting. Open the Editor window in ChartLab to see the syntax for such expressions.
+> The left and right axis display different orders of value based on the `axis` setting. Open the Editor window in ChartLab to see the syntax for such expressions.
 
 Dual axis visualizations are helpful for comparing data of different orders of magnitude. In the above case for example the per capita GDP value tracks quite closely to the annual average EPU Index value for the Russian Federation.
 
@@ -76,11 +76,11 @@ Using [public data](https://www.britannica.com/topic/United-States-Presidential-
 ![](./images/election-results.png)
 [![](./images/button.png)](https://apps.axibase.com/chartlab/73ab0050/2/#fullscreen)
 
-*Fig. 5*: Historical election result data from recent U.S. presidential elections, the winning candidate has been separated from the remaining area using the [`expand`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/#tab-id-2) setting. Open the ChartLab sandbox to view the complete figure.
+> Historical election result data from recent U.S. presidential elections, the winning candidate has been separated from the remaining area using the [`expand`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/#tab-id-2) setting. Open the ChartLab sandbox to view the complete figure.
 
-Although the 2016 election was one of the more contentious in recent U.S. history, the EPU index immediately before the election was lower than the previous four elections.
+Although the 2016 election is one of the more contentious in recent U.S. history, the EPU index immediately before the election is lower than the previous four elections.
 
-The European debt crisis was a financial debacle that was inflamed by the so called P.I.G.S. countries (Portugal, Ireland, Greece, and Spain) coming dangerously close to defaulting on their outrageously high government debts. Tracking several events alongside the EPU index reflects the panic and uncertainty of the multi-year crisis, bailout, and recovery process. Using the following 7 events to chronicle the timeline:
+The European debt crisis was a financial debacle inflamed by the P.I.G.S. countries (Portugal, Ireland, Greece, and Spain) coming dangerously close to defaulting on their outrageously high government debts. Tracking several events alongside the EPU index reflects the panic and uncertainty of the multi-year crisis, bailout, and recovery process. Using the following 7 events to chronicle the timeline:
 
 * Jan 1, 2002: Euro banknotes and coins begin circulation.
 * Nov 27, 2008: European Union stimulus package totalling 200 billion Euro is proposed and eventually approved.
@@ -90,7 +90,7 @@ The European debt crisis was a financial debacle that was inflamed by the so cal
 * Mar 13, 2012: A second bailout for Greece is proposed and approved for and additional 130 billion Euro after further inspection of government financial records reveal the depth and severity of the problem is even worse than originally understood.
 * July 1, 2014: The end of the EU bailout policy, and completion of funds distribution.
 
-The following SQL query will return the [average value](https://axibase.com/docs/atsd/sql/#aggregation-functions) of the EPU index for the Eurozone for the period from 2002 until 2018 and will consolidate the information using a [`round` expression](https://axibase.com/docs/atsd/sql/#mathematical-functions).
+The following SQL query returns the [average value](https://axibase.com/docs/atsd/sql/#aggregation-functions) of the EPU index for the Eurozone for the period from 2002 until 2018 consolidates the information using a [`round` expression](https://axibase.com/docs/atsd/sql/#mathematical-functions).
 
 ```sql
 SELECT ROUND(AVG(value), 0) AS "average-epu" FROM EUEPUINDXM_
@@ -105,7 +105,7 @@ This query returns a single-entry table:
 |:-:|
 |152|
 
-The next query will target the months of each of the events above and so we can compare it to the index value from the birth of the Euro to the periods including the crisis, bailout, and eventual recovery.
+The next query targets the months of each of the events above and can be compared to the index value from the birth of the Euro to the periods including the crisis, bailout, and eventual recovery.
 
 ```sql
 SELECT datetime, ROUND(value,0) FROM EUEPUINDXM_

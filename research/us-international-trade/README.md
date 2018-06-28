@@ -4,8 +4,8 @@
 
 ## Introduction
 
-Voters in the 2016 U.S. presidential election wanted to return to a time when America was producing more than it was consuming. According to data published by the [World Bank](http://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2015&start=1960&view=chart&year_high_desc=true),
-the United States represented **40%** of the world's GDP in **1960**. By 2015, that number had dropped to only **24%**. According to the [Bureau of Labor Statistics](https://www.bls.gov/opub/mlr/2012/01/art4full.pdf) (BLS), by 2020 the U.S. is predicted to have **5.7
+Voters in the 2016 U.S. presidential election wanted to return to a time when America produced more than it consumed. According to data published by the [World Bank](http://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2015&start=1960&view=chart&year_high_desc=true),
+the United States represented **40%** of world GDP in **1960**. By 2015, that number had dropped to only **24%**. According to the [Bureau of Labor Statistics](https://www.bls.gov/opub/mlr/2012/01/art4full.pdf) (BLS), by 2020 the U.S. is predicted to have **5.7
 million** less manufacturing jobs than it had in 2000. Further, the percentage of Americans employed in manufacturing dropped from **19%** in 1980 to **8%** in 2016. This article analyzes data from [`census.gov`](https://www.census.gov) concerning
 the [international trade balance](https://www.census.gov/foreign-trade/balance/country.xlsx) of the United States of America from 1985 to 2016. Publicly available data from `census.gov` is loaded into the non-relational ATSD
 for interactive analysis with [SQL](https://axibase.com/docs/atsd/sql/) for [partitioning](https://axibase.com/docs/atsd/sql/#partitioning) and [**ChartLab**](../../tutorials/shared/chartlab.md). See [Installation Documentation](https://axibase.com/docs/atsd/installation/) to set up a local ATSD instance.
@@ -30,7 +30,7 @@ ATSD handles this with a [schema-based](https://axibase.com/docs/atsd/parsers/cs
 
 The image below shows import, export, and trade balance values from 1987 to 2016 between the U.S. and the sum of all countries included in this dataset.
 
-The upper image shows exports in blue and imports in pink. In 2016, imports into the United States totalled **$2 trillion**, while exports were **$1.3 trillion**. The lower figure shows trade balance, the dollar amount for exports minus imports. The trade balance deficit grew from **-$152 billion** in 1987 to **-$677 billion** in 2016.
+The upper image shows exports in blue and imports in pink. In 2016, imports into the United States totalled **$2 trillion**, while exports totalled **$1.3 trillion**. The lower figure shows trade balance, the dollar amount for exports minus imports. The trade balance deficit grew from **-$152 billion** in 1987 to **-$677 billion** in 2016.
 
 ![Figure 1](./images/Figure1.png)
 
@@ -122,7 +122,7 @@ How did 2016 look for the United States? Below is a figure of the top countries 
 monetary values for exports, imports, and the trade balance between the U.S. and each respective country, continent, or organization. The table is sorted by
 trade balance, with the highest negative trade balances showing at the top. Sort the table as needed by accessing the **ChartLab** portal and selecting the desired column headers.
 
-In 2016, the locations with which the United States had the highest negative and positive trade balances were China and Hong Kong at **-$319 billion** and **$25.1 billion**,
+In 2016, the locations with which the United States had the highest negative and positive trade balances are China and Hong Kong at **-$319 billion** and **$25.1 billion**,
 respectively.
 
 ![Figure 2](./images/Figure2.png)
