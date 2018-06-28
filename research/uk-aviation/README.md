@@ -107,7 +107,7 @@ The process below customizes the default portal to compare UK Domestic terminal 
 
     ![Figure 8](./images/Figure8.png)
 
-5. A list of availabe for the CAA entity is visible. In this case, UK Domestic terminal traffic for scheduled flights. Copy the seventh entry from the top of the page, `uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_scheduled_uk`.
+5. A list of available for the CAA entity is visible. In this case, UK Domestic terminal traffic for scheduled flights. Copy the seventh entry from the top of the page, `uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_scheduled_uk`.
 
     ![Figure 10](./images/Figure10.png)
 

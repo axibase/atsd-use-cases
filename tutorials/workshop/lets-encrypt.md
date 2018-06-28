@@ -1314,7 +1314,7 @@ sudo certbot --nginx -d trends.axibase.com
 * The certificate is only issued for 90 days.
 * Port 80 must remain open for host challenge to succeed.
 * Fix to port `80` exposure is to configure nginx to redirect from `80` to `443` using `301` status.
-* Port `80` exposure increases the risk of insecure cookie highjacking, for example in RedMine.
+* Port `80` exposure increases the risk of insecure cookie highjacking, for example in Redmine.
 * DNS validation is **NOT** possible for Axibase since the hosting provider Hostway does not provide an API for managing DNS.
 
 #### Standalone Mode
