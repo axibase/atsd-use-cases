@@ -194,7 +194,7 @@ In addition to sending build error notifications, you can program the `dockerhub
 
     ![](./images/docker-hub-trigger-rule.png)
 
-For a more detailed implementation, create a [lookup table](https://axibase.com/docs/atsd/rule-engine/functions.html#lookup) to associate images in incoming failure events with trigger tokens.
+For a more advanced implementation, create a [lookup table](https://axibase.com/docs/atsd/rule-engine/functions.html#lookup) to associate images in incoming failure events with trigger tokens.
 
 ### Send Alerts
 
