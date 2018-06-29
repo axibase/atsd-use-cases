@@ -87,13 +87,13 @@ GROUP BY 'Date', pd.value, gd.value, dd.value, fd.value
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/3/#fullscreen)
 
 ```sql
-SELECT date_format(time, 'yyyy') AS "Date", cpi.value AS "CPI-Indexed", ui1.value AS "Unindexed, Fixed or Zero", ui2.value AS "Inindexed, Variable", di.value AS "Dollar-Indexed", fcd.value AS "Foreign-Currency Denominated"
+SELECT date_format(time, 'yyyy') AS "Date", cpi.value AS "CPI-Indexed", ui1.value AS "Unindexed, Fixed or Zero", ui2.value AS "Unindexed, Variable", di.value AS "Dollar-Indexed", fcd.value AS "Foreign-Currency Denominated"
   FROM "cpi-indexed" AS cpi JOIN "unindexed,_fixed_or_zero_coupon" AS ui1 JOIN "unindexed,_variable_interest" AS ui2 JOIN "dollar-indexed" AS di JOIN "foreign-currency_denominated" AS fcd
 GROUP BY 'Date', cpi.value, ui1.value, ui2.value, di.value, fcd.value
   ORDER BY 'Date'
 ```
 
-| Date | CPI-Indexed | Unindexed, Fixed or Zero | Inindexed, Variable | Dollar-Indexed | Foreign-Currency Denominated |
+| Date | CPI-Indexed | Unindexed, Fixed or Zero | Unindexed, Variable | Dollar-Indexed | Foreign-Currency Denominated |
 |------|-------------|--------------------------|---------------------|----------------|------------------------------|
 | 1997 | 64          | 3                        | 4                   | 3              | 26                           |
 | 1998 | 60          | 4                        | 3                   | 4              | 28                           |

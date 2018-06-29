@@ -109,7 +109,7 @@ To save the portal under an entirely new URL click **Clone**.
 
 ## Pre-Defined Widgets
 
-Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections, use these widgets as templates for unqiue charts.
+Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections, use these widgets as templates for unique charts.
 
 ![](./images/pre-def-func.png)
 

@@ -13,7 +13,7 @@ The article drew information from a variety of polling agencies who had sampled 
 
 ## Metrics Legend
 
-The metrics stored in ATSD follow the same naming patters as the [raw data](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html) stored on Dr. Damodaran's website and are abbreviated as follows:
+The metrics stored in ATSD follow the same naming patters as the [raw data](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html) stored on Doctor Damodaran's website and are abbreviated as follows:
 
 | Metric Name | Definition |
 |:---|:---|
@@ -209,7 +209,7 @@ LIMIT 10
 
 * View complete SQL Console [documentation](https://axibase.com/docs/atsd/sql);
 
-* To access the raw data used for this article, visit [Dr. Damodaran's page](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html);
+* To access the raw data used for this article, visit [Doctor Damodaran's page](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html);
 
 * For more use cases like this one, check out the [Axibase Use Cases Repository](https://github.com/axibase/atsd-use-cases) on GitHub;
 
