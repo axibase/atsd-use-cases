@@ -4,171 +4,133 @@
 
 ## Introduction
 
-Are airports getting more and more crowded every year?
+Are airports more and more crowded every year?
 
-What some are the busiest airports in the United Kingdom?
+What are the busiest airports in the United Kingdom?
 
 How often are airplanes delayed?
 
-to answer questions like these, the Civil Aviation Authority (CAA) serves as an independent data specialist for the UK government. Established in 1972, the CAA collects and reports on key aviation metrics which quantify various activities at UK airports. According to their official [website](https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Datasets/UK-Airport-data/Airport-data-2016-06/), the CAA collects statistics from more than 60 UK airports. Data is collected on a variety of topics:
+To answer questions like these, the Civil Aviation Authority (CAA) serves as an independent data specialist for the British government. Established in 1972, the CAA collects and reports on key aviation metrics which quantify various activities at UK airports. According to the official [CAA website](https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Datasets/UK-Airport-data/Airport-data-2016-06/), data is collected for more than 60 UK airports. Data is collected on a variety of topics:
 
-* International passenger traffic to and from UK airports;
-* Terminal passenger totals at different UK airports;
+* International passenger traffic to and from British airports.
+* Terminal passenger totals at various UK airports.
 * International and domestic mail shipped to and from UK airports (tons).
-
-CAA datasets are available in two formats: raw datasets and aviation trends.
 
 ## CAA Raw Datasets
 
-CAA raw datasets are published every month, and are available all the way back to 1973. These reports are available in CSV and PDF format, although some reports are only stored in one form. These datasets contain raw data, that is they do not contain any information on analytics or trends, and do not contain any graphs or figures. A link to these raw datasets may be found here:
-
-[https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Datasets/UK-airport-data/](https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Datasets/UK-airport-data/)
-
-Below is an image of a typical raw data set, taken from [January 2016](https://www.caa.co.uk/uploadedFiles/CAA/Content/Standard_Content/Data_and_analysis/Datasets/Airport_stats/Airport_data_2016_01/Table_11_International_Air_Pax_Traffic_to_from_UK_by_Country.pdf)
+CAA maintains monthly data from 1973 available in CSV and PDF format. These datasets contain raw data and as such lack any kind of analytics, figures, or graphs. View the [raw data](https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Datasets/UK-airport-data/) at `caa.co.uk`.
 
 ![Figure 1](./images/Figure1.png)
 
 ## CAA Aviation Trends
 
-CAA aviation trends are published quarterly. These reports date back to 2008 and are published in PDF format. General information is included along with these detailed reports to help contextualize the data. Graphs and tables showing volumes and year on year (y-o-y) growth rates of datasets are published. These aviation trend files may be found at the below link:
+CAA aviation trends are published quarterly. These reports date back to 2008 and are published in PDF format. General information is included along with these detailed reports to contextualize the data. Graphs and tables tracking year-on-year growth rates are often included. These [reports and analytics](https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Aviation-Trends/) are also available at `caa.co.uk`
 
-[https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Aviation-Trends/](https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Aviation-Trends/)
+The table shown below is excerpted from the 2008 report [`AviationTrends_2008_Q4`](https://www.caa.co.uk/uploadedFiles/CAA/Content/Standard_Content/Data_and_analysis/Analysis_reports/Aviation_trends/AviationTrends_2008_Q4.pdf). Terminal passengers are defined as "those travelers who board or disembark an aircraft on a commercial flight at a reporting UK airport."
 
-Below is an table of terminal passengers at UK airports from [AviationTrends_2008_Q4](https://www.caa.co.uk/uploadedFiles/CAA/Content/Standard_Content/Data_and_analysis/Analysis_reports/Aviation_trends/AviationTrends_2008_Q4.pdf). In the attached text, terminal passengers are described as "those travelers who board or disembark an aircraft on a commercial flight at a reporting UK airport." The data is shown for scheduled and chartered flights for London and Regional airports. Quantities of travelers and growth percentages are presented comparing, in this case, Q4-2008 to Q4-2007, and the rolling dates of Q1 through Q4 of 2007 and 2008, respectively.
+The data tracks scheduled and chartered flights in London and other regional airports.
 
 ![Figure 2](./images/Figure2.png)
 
-Below is an table from the same report showing terminal passengers at UK airports by origin / destination.
+These reports also track destinations.
 
 ![Figure 3](./images/Figure3.png)
 
-The data is presented for scheduled and chartered flights for passengers from within the UK, Europe, North America, and the rest of the world. To summarize the graph: "Passenger numbers to all destination groups fell in quarter 4 2008, by around 8%, except for passengers numbers to the "Rest of the World" destination group, which fell by considerably less."
-
-While the Aviation Trend PDF files can be helpful, they are not interactive and do not allow the user to easily move through different metrics and datasets. To gain a meaningful understanding of the data and trends over time, end users need to open multiple files at a time and compare data without visualization, which can be difficult and time consuming to work though.
+From the report: "Passenger numbers to all destination groups fell in quarter 4 2008, by around 8%, except for passengers numbers to the **Rest of the World** destination group, which fell by considerably less."
 
 ## Axibase Time Series Database
 
-Processing CAA datasets using ATSD is much simpler. Parsing the same data with ATSD is less time consuming because the user has the ability to easily toggle between different datasets and years, and filter for a specific airport location or metric. Store data in a local ATSD instance to combine public data with internal data sources which can be mixed and matched across different datasets. For example, combine the CAA datasets with weather patterns to see if there is any correlation between poor weather and flight delays; or with aviation statistics from another country to see how they compare to UK trends.
+Loading this data into a database that supports data transformation and visualization, encourages users to more meaningfully interact with the information. ATSD supports dynamic [CSV parsing](https://axibase.com/docs/atsd/parsers/csv/#schema-based-parsing), to handle irregular datasets and because data is stored locally, you can combine open-source data with private or institutional data to enhance an analysis.
 
-Once you install ATSD, you **do not** have to:
+ATSD does not require you to design database table schema, provision an application server, or write parsing programs to import new data.
 
-* Add additional datasets from caa.co.uk
-* Manipulate and design table schema
-* Provision an application server
-* Write programs to parse and digest these types of files.
-
-Rather, you can configure a scheduled job to retrieve the file from the specified endpoint and have ATSD parse it according to pre-defined rules. Once you have raw data in ATSD, creating and sharing reports with built-in widgets is fairly trivial. The reports are continuously updated as new data comes in. Below is a image of the data flow of ATSD.
+Configure a scheduled [job](https://axibase.com/docs/axibase-collector/#jobs) to retrieve data from a specified endpoint import the data into ATSD according to [pre-defined rules](https://axibase.com/docs/atsd/rule-engine/). Once the data is stored in ATSD, creating and sharing reports and creating interactive visualizations with built-in widgets is trivial. Reports are continuously updated with the flow of incoming data.
 
 ![dataflow](./images/dataflow.png)
 
-Using the ATSD default portal for CAA metrics, the user has the ability to filter the CAA datasets to their liking. The following three filters are applied to the default portal:
+Explore the CAA dataset in the portal below. Filter data using the three drop-down lists along the top of the visualization:
 
-* First filter: Sorts by CAA metric. **228** different CAA airport aviation metrics can be filtered for. These metrics may be found in the [Appendix](#appendix-caa-metric-list). The figure below shows the first metric in the first drop-down list: terminal passengers totals for January 2015 to February 2016.
-* Second filter: Filters 55 different UK airports. In this case, all airports have been selected.
-* Third filter: Filters by airport groups (London area, other UK, or no UK reporting airports). In this case, all groups have been selected.
+* **CAA Metric**: Airport aviation metrics. See the complete list in the [Appendix](#appendix-caa-metric-list).
+* **Airport**: Navigate between all tracked UK airports.
+* **Regional Groups**: CAA additionally groups airports based on geographical location.
+
+### Total Passengers
 
 ![Figure 4](./images/Figure4.png)
 
-This figure shows total freight (in tons) for 2015 for all 55 airports from January 2015 to February 2016.
+### Total Cargo
 
 ![Figure 20](./images/Figure20.png)
 
-Here, you can explore the complete dataset for CAA aviation statistics by clicking below on the default portal:
+## Creating Custom Portals
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/972babb9)
+Create additional portals using the example as a template. **ChartLab** supports complete customization for all visualizations. See the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for complete instructions.
 
-### Creating Custom Portals
+### Year-On-Year Domestic Traffic
 
-Custom portals can be created from the default portal; users have the capability to change or display specific aspects of the dataset as needed. For example, the user may change graph styling, such as color, graph type, and other display options.
-
-Custom data visualizations mean that you can filter out unnecessary information without discarding relevant information. If, for example, you are interested in comparing UK Domestic terminal traffic for scheduled flights for different years, you can customize your portal from the default portal to only show that information.
-
-The process below customizes the default portal to compare UK Domestic terminal traffic for scheduled flights between 2015 and 2016.
-
-### Example 1
-
-1. Open the default portal and delete the configuration sections as shown in the image below. The goal is to show one series, there is no need for `multiple-series`, `series-limit`, `tags-dropdown`, `label-format`, `tags-dropdown-style`, or `dropdown` controls / settings.
+1. Modify the configuration as shown in the image below.
 
     ![Figure 5](./images/Figure5.png)
 
-2. Next, select the one `metric` which to filter. The first drop-down list in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [uk-caa-metrics.txt](uk-caa-metrics.txt). A complete list of metrics is also available in the [Appendix](#appendix-caa-metric-list).
+1. Select the desired `metric`. The first drop-down list in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [uk-caa-metrics.txt](uk-caa-metrics.txt).
 
     ![Figure 21](./images/Figure21.png)
 
-    Once you have installed ATSD, navigate to the metric list to see the corresponding names. You need to log in to your ATSD account to view the full raw metric names, which must be used in the configuration. The image below contains the standard view after you have logged in. Press **Entities**.
+    Metric information is also available in the ARSD web interface on the **Metrics** page.
 
-    ![Figure 6](./images/Figure6.png)
+    ![](./images/metrics.png)
 
-3. Enter **uk-caa** into **Name Mask** field. Press Apply.
+1. Enter `uk-caa` in the **Search Bar** along the top menu.
 
-    ![Figure 7](./images/Figure7.png)
+    ![](./images/search-bar.png)
 
-4. Select **2016-06-01 00:00:00**.
+1. A list of matching metrics is visible. The desired metric for this visualization is `uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_scheduled_uk`.
 
-    ![Figure 8](./images/Figure8.png)
+    ![Figure 10](./images/matched-metrics.png)
 
-5. A list of available for the CAA entity is visible. In this case, UK Domestic terminal traffic for scheduled flights. Copy the seventh entry from the top of the page, `uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_scheduled_uk`.
-
-    ![Figure 10](./images/Figure10.png)
-
-6. Navigate back to the portal. Use a `metric` setting and paste the copied metric name from the metrics list.
-7. To compare 2015 and 2016 values, enter `starttime = current_year` and `endtime = next_year`.
-8. For total domestic travel, enter `group-statistic = sum` and change mode from `column-stack` to `column`. The `group-statistic = sum` command calculates the total number of passengers for all airports in a given month, and the `column` shows the total number of passengers together as one column per month.
+1. Modify the `metric` setting to designate the `air-pax-by-type` metric.
+1. Use the settings `starttime = current_year` and `endtime = next_year` to define the timespan.
+1. For total domestic travel, enter `group-statistic = sum` and change mode from `column-stack` to `column`. The `group-statistic = sum` command calculates the total number of passengers for all airports in a given month, and the `column` shows the total number of passengers together as one column per month.
 
     ![Figure 11](./images/Figure11.png)
 
-9. To observe total domestic value select all airport and group names.  Create a new heading for `[tags]` below `[widget]` and enter `airport_name = *` and `group_name = *` (The asterisk `*` is one of the supported wildcard symbol in the Charts API).
-10. To display data for 2016, create a new `[series]` and enter `label = current year`.
-11. To display data for 2015, create a new `[series]` and enter `label = previous year`. Enter `time-offset = 1 year` and `color = orange`. The `time-offset = 1 year` command shifts historical data by the specific lag to the current time. In this case, data for the year 2015 is displayed as data for 2016.
+1. To track total domestic value select all airport and group names.  Create a new `[tags]` configuration group under `[widget]` and enter `airport_name = *` and `group_name = *` (Asterisk `*` is one of the supported [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/wildcards/) symbols in the Charts API).
+1. To display data for 2016, create a new `[series]` and enter `label = current year`.
+1. To display data for 2015, create a new `[series]` and enter `label = previous year`. Enter `time-offset = 1 year` and `color = orange`. The `time-offset = 1 year` command shifts historical data by the specific lag to the current time. In this case, data for the year 2015 is displayed as data for 2016.
 
     ![Figure 12](./images/Figure12.png)
 
-12. Press **Run**, your figure looks like the image below.
+1. Press **Run** to render the visualization.
 
     ![Figure 13](./images/Figure13.png)
 
-13. Change the title to **UK Domestic Terminal Traffic on Scheduled Flights**.
-14. Under **metric** enter **format = numeric** to shorten the length of the output numbers.
-15. Press **Run**.
-
-    ![Figure 19](./images/Figure19.png)
-
-Here you can explore this configuration in **ChartLab**:
-
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/cca64be9)
 
-### Example 2
+### [Calendar Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/calendar-chart-widget/)
 
-Moving beyond the CAA entity and different available metrics to building a configuration from the default portal, create a configuration from the generic widget settings in **ChartLab**. Open the default portal in **ChartLab**:
-
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab)
-
-1. Change the source to **ATSD** and select **calendar** from the Widget drop-down list.
+1. Open a [blank](https://apps.axibase.com/chartlab) **ChartLab** instance.
+1. Set **Data Source** to **ATSD** and select **calendar** from the **Widget** drop-down list.
 1. Delete the section of the configuration as shown in the image below.
 
     ![Figure 14](./images/Figure14.png)
 
-1. Change the entity name to **uk-caa** and the metric name to `uk-caa.eu-and-other-intl-passenger-traffic.total_pax_eu_last_period`, which is taken from the metric list in ATSD.
-1. To display international passenger figures for all available UK airports, create a **[tags]** heading. Under this heading, enter `airport_name = *`.
-1. In the `[configuration]` heading, enter `timezone = UTC`.
-1. Under the `[widget]` heading, delete the line `timespan = 3 hour`.
-1. To specific the new timespan, enter in `starttime = 2015-01-01T00:00:00z` and on the next line `endtime = current_month`.
-1. Modify the `summarize-period` line from 10 minutes to 1 month.
-1. To display airport names in the figure, enter `label-format = tags.airport_name`.
+1. Define the entity as `uk-caa` and `metric` as `uk-caa.eu-and-other-intl-passenger-traffic.total_pax_eu_last_period`.
+1. To display international passenger figures for all available UK airports, create a **[tags]** level configuration. Under the heading, select all airports using the wildcard setting `airport_name = *`.
+1. Under the `[configuration]` heading, define `timezone = UTC`.
+1. Under the `[widget]` heading, delete `timespan = 3 hour`.
+1. To define a new timespan, enter `starttime = 2015-01-01T00:00:00z` and `endtime = current_month`.
+1. Modify the `summarize-period` setting to `1 month`.
+1. Use the `label-format = tags.airport_name` setting to assign label names based on metadata information stored by ATSD in the underlying data.
 
     ![Figure 15](./images/Figure15.png)
 
-1. Press **Run**.
+1. Press **Run** to generate the visualization.
 
-    ![Figure 16](./images/Figure16.png)
+![Figure 16](./images/Figure16.png)
 
-1. To create a figure title, enter a title setting like the one shown here: `title = UK International Terminal Passenger Traffic: Total Passenger`
-1. Modify size and offset settings by applying those settings. Under `[configuration]` change `offset-right` from 50 to 0 and height-units from 2 to 1.
-1. Click **Run**.
+[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8dc941e3)
 
-    ![Figure 17](./images/Figure17.png)
-
-    A month-by-month breakdown of international passenger traffic from all UK airports. The calendar widget is useful for quickly gaining an understanding of the general trends of a particular dataset or observing outliers. In 2015 the most popular travel season is May to October, indicated by the clumping of lots of dark blue square shading. Additionally, most travel is taken from November to April.
+This configuration defines a month-to-month breakdown of international passenger traffic from all tracked UK airports. Use the calendar widget to gain an understanding of the general trends of a dataset. In 2015 the most popular travel season is May to October based on the visualization.
 
 Observe outliers in Shoreham and Oxford (Kidlington) for the months of January and February, respectively, as shown in the figure below.
 
@@ -178,59 +140,49 @@ Additionally, observe outliers for Scatsta and Wick John O Groats for the high t
 
 ![Figure 24](./images/Figure24.png)
 
-You can explore this portal by clicking on the link below.
+Use `[widget]` level settings to modify the nature of the visualization without affecting the underlying data.
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8dc941e3)
-
-`[widget]`-level settings may be used for overall modification of any ChartLab visualization.
-
-1. Under the `[widget]` heading, change the `type` setting from `calendar` to `pie`. Use these settings: `summarize-period = 1 month` and `color-range = blue`.
-1. Change from `starttime = 2015-01-01T00:00:00Z` to `starttime = current year`.
+1. Under the `[widget]` heading, change the `type` setting from `calendar` to `pie` and define additional settings: `summarize-period = 1 month` and `color-range = blue`.
+1. Change `starttime = 2015-01-01T00:00:00Z` to `starttime = current year`.
 1. Apply a limit settings using a `display` parameter: `display = value > top(15)` limits the visualization to contain on the top 15 results.
 1. To show a legend with the figure, enter `legend-position = top`.
 1. To display numeric values with the figure, enter `series-labels = connected`.
 1. Pie charts in ChartLab support several visualization modes, for example: `mode = ring`.
-1. Change the title to **UK International Terminal Passenger Traffic: Top 15 Airports June 2016**.
 1. Press **Run**.
 
 ![Figure 18](./images/Figure18.png)
 
-You can explore this portal by clicking on the link below.
-
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1f9f05a1/4)
 
-### Example 3
+### Passenger Traffic Distribution
 
-This is an advanced example using a graph Widget to show passenger traffic distribution between different UK airports for a given time period. This figure shows a single base airport and all of the associated destination airports, which are connected by flight path lines. These lines are drawn going from the base airport to airport "x", and from airport "x" back to the base airport. Additionally, values from the dataset are projected onto their respective flight-path lines. In the figure below, Heathrow is used as the base airport showing available flight paths to airports across the UK for May 2016. The heavier the flight path lines, the heavier the traffic between the two associated airports. The CAA dataset for this figure can be found [here](https://www.caa.co.uk/uploadedFiles/CAA/Content/Standard_Content/Data_and_analysis/Datasets/Airport_stats/Airport_data_2016_05/Table_12_3_Dom_Air_Pax_Route_Analysis_by_Each_Reporting_Airport_PDF.pdf).
+To show passenger traffic distribution between different UK airports for a given time period use the [Graph Widget](https://axibase.com/products/axibase-time-series-database/visualization/widgets/graph-widget/). This visualization tracks a base airport in relation to all associated destination airports, connected by flight path lines going from the base airport to airport `x`, and from airport `x` back to the base airport.
+
+In the example below, Heathrow is used as the base airport in relation to available flight paths to airports across the UK for May 2016. The heavier the flight paths, the greater the traffic between the two associated airports. The CAA dataset for this figure can be found on [`caa.co.uk`](https://www.caa.co.uk/uploadedFiles/CAA/Content/Standard_Content/Data_and_analysis/Datasets/Airport_stats/Airport_data_2016_05/Table_12_3_Dom_Air_Pax_Route_Analysis_by_Each_Reporting_Airport_PDF.pdf).
 
 ![Figure 22](./images/Figure22.png)
 
-The connections between Heathrow and Edinburgh are dark blue, which indicates heavy traffic. The total passengers in May 2016 from Heathrow to Edinburgh is 95,569, and 92,342 for the trip from Edinburgh to Heathrow. 48,566 passengers travelled from Heathrow to Aberdeen, and that 48,577 passengers travelled back from Aberdeen to Heathrow. Additionally, observing the figure, a user can observe the fact that there is **no** passenger traffic from several airports, including Coventry Shoreham, Prestwick, Exeter, and Humberside.
+The connections between Heathrow and Edinburgh are darker, which indicates heavier traffic. The total passengers in May 2016 from Heathrow to Edinburgh is 95,569, and 92,342 for the opposite trip from Edinburgh to Heathrow. 48,566 passengers traveled from Heathrow to Aberdeen, and 48,577 passengers made the opposite journey from Aberdeen to Heathrow.
 
-The user can change the base airport quite easily by modifying the configuration. You simply need to change the `var baseAirport` setting from `HEATHROW` to any airport for which you would like to see air passenger totals and connectivity.
+> Notice that there is no passenger traffic from several airports, including Coventry Shoreham, Prestwick, Exeter, and Humberside.
+
+Select a different base airport by modifying the configuration. Modify the variable `var baseAirport` setting from `HEATHROW` to any tracked airport.
 
 ![Figure 25](./images/Figure25.png)
 
-Set `var baseAirport` to `MANCHESTER`. Below is an image with passenger traffic distribution for Manchester to other UK airports for May 2016.
+Using `MANCHESTER` as the argument for the `var baseAirport` variable.
 
 ![Figure 26](./images/Figure26.png)
-
-You can explore this portal by clicking on the link below.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e6822a69/5/)
 
 ## Action Items
 
-Below are the steps to follow to install ATSD and create figures for CAA metrics:
-
-1. [Install the database](https://axibase.com/docs/atsd/installation/) on a virtual machine or Linux container.
+1. [Install ATSD](https://axibase.com/docs/atsd/installation/) on a virtual machine or Linux container.
 2. [Install Axibase Collector](https://axibase.com/docs/axibase-collector/#installation) and configure Collector to write data into your ATSD instance.
-3. Import the [csv-configs.xml](csv-configs.xml) into Axibase Collector.
-4. Import the [jobs.xml](jobs.xml) into Axibase Collector.
-5. Log in to your ATSD instance.
-6. Select your desired CAA metric and begin building your visualizations on the **Portals** page.
-
-After installing ATSD and scrolling though the list of CAA metrics, create your own example and send it over to us.
+3. Import [`csv-configs.xml`](csv-configs.xml) into Axibase Collector.
+4. Import [`jobs.xml`](jobs.xml) into Axibase Collector.
+5. Read the [ChartLab Tutorial](../../tutorials/shared/chartlab.md) to get started.
 
 ## Appendix: CAA Metric List
 

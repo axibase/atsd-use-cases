@@ -8,7 +8,7 @@ Although in existence since 2009, the world's first cryptocurrency Bitcoin did n
 
 Things have cooled off slightly for `BTC`, as its known on the digital currency news and analysis site [CoinDesk](https://www.coindesk.com/), but the sustained popularity of Bitcoin has led to the creation of hundreds of other similar products.
 
-The relevance of the technology, and the acceptance of digital currency in general, is given a significant boost because the Federal Reserve [announced](https://news.research.stlouisfed.org/2018/06/fred-adds-cryptocurrency-series/) that it would begin hosting cryptocurrency pricing data on its economic data website [FRED](https://research.stlouisfed.org/). The pursuit of recognition and legitimacy has always been central to the ability of cryptocurrency to meaningfully sidestep traditional brick and mortar financial institutions, the inclusion of value data by the largest central bank in the world should come as welcome news.
+The relevance of the technology, and the acceptance of digital currency in general, is given a significant boost because the Federal Reserve [announced](https://news.research.stlouisfed.org/2018/06/fred-adds-cryptocurrency-series/) that it now hosts cryptocurrency pricing data on its economic data website [FRED](https://research.stlouisfed.org/). The pursuit of recognition and legitimacy has always been central to the ability of cryptocurrency to meaningfully sidestep traditional brick and mortar financial institutions, the inclusion of value data by the largest central bank in the world should come as welcome news.
 
 ## Bitcoin Index
 
