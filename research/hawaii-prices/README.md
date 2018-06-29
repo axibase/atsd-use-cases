@@ -12,7 +12,7 @@ most Hawaiian good are more expensive than those of New York City:
 * Bread for 2 people for 1 day: +67%.
 
 In addition to exorbitant food prices, Hawaii also has highest fuel prices in the entire United States, according to [`gasbuddy.com`](https://www.gasbuddy.com/USA). The Aloha State has long had the
-dubious honor of the most expensive fuel in the nation but until recently quantifying additional metrics was difficult. To better analyze such datam in 2009 the US government established the data aggregation website [`data.gov`](https://www.data.gov/). Datasets are available online to conduct research, develop web applications, and design data visualizations on a variety of topics ranging from agriculture and manufacturing, to health and economics.
+dubious honor of the most expensive fuel in the nation but until recently quantifying additional metrics was difficult. To better analyze such data in 2009 the US government established the data aggregation website [`data.gov`](https://www.data.gov/). Datasets are available online to conduct research, develop web applications, and design data visualizations on a variety of topics ranging from agriculture and manufacturing, to health and economics.
 
 These datasets are published in the [Socrata Open Data Format](https://socrata.com/). Socrata is a Seattle-based company that develops software for government agencies to publish and manage their data in an open format. The Socrata Open Data Format is used by the US Federal Government, as well as 25 US states, and more than 300 cities. So far, more than 4,000 government datasets are published in Socrata format.
 
@@ -28,7 +28,7 @@ In turn, fuel prices are recorded for the following Hawaiian locales:
 
 **Hilo**, **Honolulu**, **Wailuku**, **US**, **State of Hawaii**
 
-> Access the raw dataset on (`data.gov`)http://catalog.data.gov/dataset/aaa-fuel-prices-52bf0).
+> Access the raw dataset on [`data.gov`](http://catalog.data.gov/dataset/aaa-fuel-prices-52bf0).
 
 `data.gov` supports data download in the following formats: CSV, RDF, JSON, and XML. `data.gov` also supports several visualization tools directly from the site: [CartoDB](https://carto.com/) and [plotly](https://plot.ly/) are currently available.
 
@@ -54,7 +54,7 @@ Open the **Group By** option and select **Month_of_Price** for the `x` axis, **C
 
 ![Figure 3](./images/Figure3.png)
 
-Using plotly to anayze datasets from `data.gov` is rendered inefficient due to the number of settings required to create a single visualization. Data in plotly is static and cannot be transformed using group statistics or aggregators.
+Using plotly to analyze datasets from `data.gov` is rendered inefficient due to the number of settings required to create a single visualization. Data in plotly is static and cannot be transformed using group statistics or aggregators.
 
 ![Figure 4](./images/Figure4.png)
 
