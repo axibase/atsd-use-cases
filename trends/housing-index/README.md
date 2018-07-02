@@ -26,7 +26,7 @@ Ideally, inflation grows at the same rate that housing prices inflate. The visua
 ![](./images/projects-permits.png)
 [![](./images/button-new.png)](https://trends.axibase.com/6b04d60e#fullscreen)
 
-The number of building permits issued for a period is related to the number of new projects. Allowing for some deviations, these numbers should be in relative sync with one another. The issuance of an increased number of residential building permits indicate tangible growth of both people and capital indicating solvency in the real estate market.
+The number of building permits issued for a period is related to the number of new projects. Accepting some deviations as normal, these numbers are in relative sync with one another. The issuance of an increased number of residential building permits indicate tangible growth of both people and capital indicating solvency in the real estate market.
 
 This visualization tracks the number of housing projects initiated against the number of permits issued compared to the value of the previous year, averaged by quarter, six months, and year. Percentile change calculation are performed using a [user-defined function](https://axibase.com/use-cases/tutorials/shared/trends.html#user-defined-functions) from the [`fred.js`](https://axibase.com/use-cases/tutorials/shared/trends.html#fred-library) library.
 
@@ -46,7 +46,7 @@ Import a custom library and call user-defined functions by name:
 
 [![](./images/button-new.png)](https://trends.axibase.com/bddf1518#fullscreen)
 
-Another important set of metrics track the start and end of housing projects. During growth period, you can see that the number of new projects consistently outstrips the number of completed projects, indicating a period a growth. During the housing crisis, this trend was reversed significantly. In fact, the difference was more negative than growth periods are positive, showing the severity of the crisis.
+Another important set of metrics track the start and end of housing projects. During growth period, you can see that the number of new projects consistently outstrips the number of completed projects, indicating a period a growth. During the housing crisis, this trend reversed significantly. In fact, the difference is more negative than growth periods are positive, showing the severity of the crisis.
 
 ```css
 [series]
