@@ -2,6 +2,7 @@
 
 ## Data
 
+* [Parsing Irregular Timestamps](irregular-timestamps/README.md)
 * [Data Flow Control in Time Series Database](data-flow-control/README.md)
 * [Calculated Values With Schema-Based Parsing](schema-based-parser-mod/README.md)
 * [Creating Calculated Metrics in ChartLab and SQL Console](add-calculated-value/README.md)
