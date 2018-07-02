@@ -17,11 +17,11 @@ Citywide | April | 2016 | 4.7
 Citywide | May | 2016| 4.7
 Citywide | June | 2016 | 4.8
 
-Because the timestamp is split across two columns, working with the data from within the `data.gov` portal is impossible because defining either part of the timpstamp as the `x` axis will erroneously group the data, considering either only the month or year of the data sample.
+Because the timestamp is split across two columns, working with the data from within the `data.gov` portal is impossible because defining either part of the timpstamp as the `x` axis erroneously groups the data, considering either only the month or year of the data sample.
 
 ![](./images/plotly-axis.png)
 
-Access the [ploty](https://plot.ly/external/?url=https://data.cityofnewyork.us/api/views/c87b-2j3i/rows.csv?accessType=DOWNLOAD) portal. Selecting either column creates an invalid visualization. The visualization sorted by `Month` is shown here:
+Access the [plotly](https://plot.ly/external/?url=https://data.cityofnewyork.us/api/views/c87b-2j3i/rows.csv?accessType=DOWNLOAD) portal. Selecting either column creates an invalid visualization. The visualization sorted by `Month` is shown here:
 
 ![](./images/plotly-visualization.png)
 

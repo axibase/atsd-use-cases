@@ -2,7 +2,7 @@
 
 ## Data
 
-* [Parsing Irregular Timestamps](irregular-timestamps/README.md)
+* [Parsing Irregular Timestamps](irregular-timestamp/README.md)
 * [Data Flow Control in Time Series Database](data-flow-control/README.md)
 * [Calculated Values With Schema-Based Parsing](schema-based-parser-mod/README.md)
 * [Creating Calculated Metrics in ChartLab and SQL Console](add-calculated-value/README.md)
@@ -37,5 +37,5 @@
 ## Workshops
 
 1. [Technical Writing for Software Developers](workshop/technical-writing.md) (May 2018)
-1. [Let's Encrypt SSL Certificates for Java Developers](workshop/lets-encrypt.md) (May 2018)
+1. [`Let's Encrypt` SSL Certificates for Java Developers](workshop/lets-encrypt.md) (May 2018)
 1. [WebGL: Hello, World and Integration Examples](workshop/webgl.md) (April 2018)
