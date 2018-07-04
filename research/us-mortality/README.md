@@ -939,7 +939,7 @@ same period. Starting in the late 1970s, steel factories began closing. Among th
 The loss of the manufacturing industry is devastating to Youngstown. Large swaths of the population moved out. Crime soared in the city. The [crime rate](http://www.city-data.com/city/Youngstown-Ohio.html) in
 Youngstown in 2014 is **496.3**, compared to **287.5** for the U.S. as a whole.
 
-Here are some numbers from [`census.gov`](http://www.census.gov/quickfacts/table/LFE041215/00,3988000) comparing Youngstown to the United States as a whole:
+Data from `census.gov` compares Youngstown to overall United States trends:
 
 * Persons without health insurance, under age 65 (percent): **15.0%** vs 10.5%.
 * Persons in poverty (percent): **38.3%** vs 13.5%.

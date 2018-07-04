@@ -103,7 +103,7 @@ Apply single backticks to the following:
 * Directory and file paths: `/opt/atsd/atsd/conf/server.properties`.
 * File extensions: `.png`, `.xml`.
 * Program names: `curl`, `wget`, `cron`.
-* Email addresses: `example@example.org`.
+* Email addresses: `user@example.org`.
 * Host names and IP addresses: `127.0.0.1`, `2001:db8::1`.
 * HTTP methods: `POST`, `GET`.
 * HTTP status codes: `200 OK`, `404`.

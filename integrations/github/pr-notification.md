@@ -8,7 +8,7 @@ This guide shows how to configure GitHub to alert you when anyone opens a new pu
 
 ## Purpose
 
-Use Pull Request functionality in GitHub for repository quality control. Only repository owners or other credentialed users may commit visible changes to repositories. Manage the pull requests of repository collaborators from anywhere with an internet connection without logging in to GitHub.
+Use Pull Request functionality in GitHub for repository quality control. Only repository owners or other credentialed users can commit visible changes to repositories. Manage the pull requests of repository collaborators from anywhere with an internet connection without logging in to GitHub.
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to quickly handle new pull requests or make the relevant information known to specific collaborators can be better accomplished by programmatic integration leveraging GitHub webhook functionality.
 
@@ -48,12 +48,12 @@ Copy the newly-created GitHub webhook URL from the log output once all applicati
 All applications started
 Webhooks created:
 Webhook user: github
-Webhook URL: https://github:PdWnC1jF@atsd.company.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
+Webhook URL: https://github:password@atsd.company.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
 ```
 
 Refer to [GitHub Developer Guide](https://developer.github.com/webhooks/) for additional information on outgoing webhooks.
 
-Open the **Settings** menu of the GitHub repository for which you would like to create notifications.
+Open the **Settings** menu of the GitHub repository to monitor.
 
 ![](./images/repo-settings.png)
 

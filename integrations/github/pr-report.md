@@ -47,7 +47,7 @@ docker run -d -p 8443:8443 \
   --env START_COLLECTOR=off \
   --env ORGANIZATION=MyOrganization \
   --env TOKEN=**************************************** \
-  --env SUBSCRIBERS=myuser@example.org \
+  --env SUBSCRIBERS=user@example.org \
   --env EMAIL_CONFIG=mail.properties \
   --env ATSD_IMPORT_PATH=https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/github-daily-pr-status.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/github-graphql-table.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/graphql-queries.xml \
   --volume /home/user/mail.properties:/mail.properties \
@@ -58,7 +58,7 @@ Mail configuration has several required parameters, passing these parameters int
 
 ```ls
 server=smtp.example.org
-user=myuser@example.org
+user=user@example.org
 password=secret
 ```
 
