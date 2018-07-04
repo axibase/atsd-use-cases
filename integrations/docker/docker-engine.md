@@ -50,13 +50,13 @@ The data is collected by [Axibase Collector](https://axibase.com/docs/axibase-co
 
 Start ATSD container on one of the Docker hosts.
 
-Replace `user` and `password` variables with custom credentials. These credentials are used by collectors to insert data into ATSD.
+Replace `username` and `password` variables with custom credentials. These credentials are used by collectors to insert data into ATSD.
 
 Minimum password length is 6 characters.
 
 ```sh
 $ docker run -d --name=atsd -p 8443:8443 -p 8081:8081 \
-  --env COLLECTOR_USER_NAME=user \
+  --env COLLECTOR_USER_NAME=username \
   --env COLLECTOR_USER_PASSWORD=password \
   --env COLLECTOR_USER_TYPE=api-rw \
   axibase/atsd:latest

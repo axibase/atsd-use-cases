@@ -39,5 +39,5 @@ ATSD responds with the following message:
 ```
 
 ```json
-{"entity":"github","type":"webhook","source":"github","severity":null,"tags":{"ping":"true","request_ip":"0.0.0.0"},"date":"2018-05-10T07:27:03.819Z"}
+{"entity":"github","type":"webhook","source":"github","severity":null,"tags":{"ping":"true","request_ip":"192.0.2.1"},"date":"2018-05-10T07:27:03.819Z"}
 ```
