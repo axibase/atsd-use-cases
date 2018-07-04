@@ -173,7 +173,7 @@ The `2015` dataset shows a significant decrease in water temperature without a p
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/cb2996e1#fullscreen)
 
-[Historical weather reports](https://www.timeanddate.com/weather/usa/chicago/historic?month=8&year=2015) show that during the trend, the recorded high temperature fell from 32° Celsius on August 17 to 24° on August 20 and the recorded low temperature fell from 22° to 16° during the same period. Several days of thunderstorms and a 30% drop in humidity are also recorded. The addition of rainwater and overall drop in atmospheric temperature likely contributed to the decrease in water temperature without an analogous increase in water turbidity. No other rainfall was recorded in the month of August in Chicago.
+[Historical weather reports](https://www.timeanddate.com/weather/usa/chicago/historic?month=8&year=2015) show that during the trend, the recorded high temperature fell from 32° Celsius on August 17 to 24° on August 20 and the recorded low temperature fell from 22° to 16° during the same period. Several days of thunderstorms and a 30% drop in humidity are also recorded. The addition of rainwater and overall drop in atmospheric temperature likely contributed to the decrease in water temperature without an analogous increase in water turbidity. No other rainfall is recorded in the month of August in Chicago.
 
 The `2016` dataset has two irregular incidents. Of the two noted above, the latter is likely the result of erroneous data input as mentioned in the introduction but the former requires a better explanation. The inclusion of the `Battery Life` metric showed that the surge in both metrics aligned perfectly with a sharp drop in battery life, perhaps indicating a temporary loss of power which flooded the recording device upon restart.
 
@@ -181,7 +181,7 @@ The `2016` dataset has two irregular incidents. Of the two noted above, the latt
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/5e4d1b0a#fullscreen)
 
-No other substantial fluctuation of battery life is recorded during the observation period so that is likely the cause of the erroneous data.
+No other substantial fluctuation of battery life is recorded during the observation period, that is likely the cause of the erroneous data.
 
 ## Validation
 
@@ -205,4 +205,4 @@ Average annual turbidity is shown here.
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/c046b3ba)
 
-Only one year had an annual average turbidity greater than 10 NTU.
+Only one year recorded an annual average turbidity greater than 10 NTU.
