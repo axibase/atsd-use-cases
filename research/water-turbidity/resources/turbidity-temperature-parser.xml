@@ -1,0 +1,41 @@
+<list>
+  <com.axibase.tsd.model.csv.CsvConfiguration>
+    <name>Beach Water Quality - Automated Sensors</name>
+    <putType>METRIC</putType>
+    <delimiter>,</delimiter>
+    <recordDelimiter>
+</recordDelimiter>
+    <padding>�</padding>
+    <comment>�</comment>
+    <textQualifier>&quot;</textQualifier>
+    <entityColumn/>
+    <timestampFormat>MM/dd/yyyy HH:mm:ss a</timestampFormat>
+    <timestampType>PATTERN</timestampType>
+    <processEvents>false</processEvents>
+    <writeProperty>false</writeProperty>
+    <enabled>true</enabled>
+    <discardNan>true</discardNan>
+    <ignoreParseErrors>true</ignoreParseErrors>
+    <timeZone>Etc/UTC</timeZone>
+    <tagColumns class="linked-hash-set">
+      <string>Beach Name</string>
+    </tagColumns>
+    <excludedColumns class="linked-hash-set"/>
+    <propertyColumns class="linked-hash-set"/>
+    <propertyKeyColumns class="linked-hash-set"/>
+    <entityTags class="linked-hash-set"/>
+    <metricTags class="linked-hash-set"/>
+    <defaultTags class="linked-hash-map"/>
+    <renamedColumns class="linked-hash-map"/>
+    <header/>
+    <decimalSeparator>.</decimalSeparator>
+    <groupingSeparator>�</groupingSeparator>
+    <schema>select(&apos;#row=2-*&apos;).select(&apos;#col=3-*&apos;).&#xd;
+addSeries().&#xd;
+timestamp(cell(row, 2)).&#xd;
+entity(&apos;data.cityofchicago.org&apos;).&#xd;
+metric(cell(1, col)).&#xd;
+tag(&apos;beach-name&apos;, cell(row, 1).toLowerCase());</schema>
+    <skipLines>0</skipLines>
+  </com.axibase.tsd.model.csv.CsvConfiguration>
+</list>

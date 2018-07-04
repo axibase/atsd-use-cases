@@ -6,6 +6,7 @@ ATSD functionality and features applied to real-world public data to solve commo
 
 Detailed use cases that feature in-depth data exploration and complex functionality used to solve modern data problems.
 
+1. [The Effect of Particulate Matter on Water Temperature](water-turbidity/README.md) (July 2018)
 1. [SQL Queries and Data Visualization with Python and ATSD](python-budget/README.md) (May 2018)
 1. [The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions](../chart-of-the-day/world-progress-explorer/README.md) (April 2018)
 1. [Tax Day 2018: Americans Reverse the Late-Filing Trend](irs-tax-filings/README.md) (April 2018)
