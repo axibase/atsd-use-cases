@@ -9,11 +9,11 @@
 
 The **American Enterprise Institute** is a Washington D.C.-based think tank that is dedicated to researching issues of government, politics, economics, and social welfare. Recently, they published an article titles: **The Public Thinks the Average Company Makes a 35% Profit Margin Which is about 5x Too High**, which described the average American perception of the profit margins that companies from various industries are able to make on a consistent basis.
 
-The article drew information from a variety of polling agencies who had sampled large groups of the population and came away with the conclusion that the average American believes most companies, regardless of industry are consistently making profits on the order of 36%. Using data from NYU professor and researcher [Aswath Damodaran](https://people.stern.nyu.edu/adamodar/New_Home_Page/home.htm) AEI came to the conclusion that the average American estimation is off by about 500%. They concluded that the average company makes around 7.9% after taxes and an entire percent lower, 6.9% if the financial industry is excluded.
+The article drew information from a variety of polling agencies who had sampled large groups of the population and came away with the conclusion that the average American believes most companies, regardless of industry are consistently making profits on the order of 36%. Using data from NYU professor and researcher [Aswath Damodaran](http://people.stern.nyu.edu/adamodar/New_Home_Page/home.htm) AEI came to the conclusion that the average American estimation is off by about 500%. They concluded that the average company makes around 7.9% after taxes and an entire percent lower, 6.9% if the financial industry is excluded.
 
 ## Metrics Legend
 
-The metrics stored in ATSD follow the same naming patters as the [raw data](https://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html) stored on Doctor Damodaran's website and are abbreviated as follows:
+The metrics stored in ATSD follow the same naming patters as the [raw data](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html) stored on Doctor Damodaran's website and are abbreviated as follows:
 
 | Metric Name | Definition |
 |:---|:---|
@@ -209,7 +209,7 @@ LIMIT 10
 
 * View complete SQL Console [documentation](https://axibase.com/docs/atsd/sql);
 
-* To access the raw data used for this article, visit [Doctor Damodaran's page](https://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html);
+* To access the raw data used for this article, visit [Doctor Damodaran's page](http://people.stern.nyu.edu/adamodar/New_Home_Page/datafile/margin.html);
 
 * For more use cases like this one, check out the [Axibase Use Cases Repository](https://github.com/axibase/atsd-use-cases) on GitHub;
 

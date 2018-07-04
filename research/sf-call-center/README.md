@@ -20,7 +20,7 @@ on the other line?
 ## Methodology
 
 Using public [call center data](https://catalog.data.gov/dataset/call-center-metrics-for-the-health-service-system) from the
-San Francisco [Health Service System](https://www.myhss.org/), which is an insurance provider to city employees, elected
+San Francisco [Health Service System](http://www.myhss.org/), which is an insurance provider to city employees, elected
 officials, and their families, call abandonment rates can be compared to call response times to establish baselines for call
 center performance and customer patience thresholds. These data are visualized in [**ChartLab**](https://apps.axibase.com/chartlab)
 and dissected with [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD

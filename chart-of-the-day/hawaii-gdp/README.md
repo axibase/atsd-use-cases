@@ -14,7 +14,7 @@ the ATSD, the economic
 performance of the fiftieth state can be explored using a number of analytic tools. Shown above are two
 visualizations of the Hawaiian economy: its percent growth from 2000 to 2010 and its nominal
 GDP value for the same years. GDP is generally considered to be the godfather of economic
-indicators and with a state that imports [close to 90%](https://files.hawaii.gov/dbedt/op/spb/INCREASED_FOOD_SECURITY_AND_FOOD_SELF_SUFFICIENCY_STRATEGY.pdf)
+indicators and with a state that imports [close to 90%](http://files.hawaii.gov/dbedt/op/spb/INCREASED_FOOD_SECURITY_AND_FOOD_SELF_SUFFICIENCY_STRATEGY.pdf)
 of its food, a dollar amount subtracted from the GDP and estimated by the State to be about three billion dollars,
 positive growth results amid global recession are no small feat.
 

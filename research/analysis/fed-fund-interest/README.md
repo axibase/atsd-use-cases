@@ -98,4 +98,4 @@ interest rates likely has more to do with increasing foreign demand for Treasury
 | All Others | $455.7 |
 | Total | $6123.6 |
 
-> Source: [United States Treasury](https://ticdata.treasury.gov/Publish/mfh.txt)
+> Source: [United States Treasury](http://ticdata.treasury.gov/Publish/mfh.txt)

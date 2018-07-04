@@ -1235,7 +1235,7 @@ United States as a whole.
 
 | Rate (# Deaths / 100,000 Population) | Mahoning County (Youngstown) | United States |
 |--------------------------------------|------------------------------|---------------|
-| Heart Disease                        | 203.6                        | [167.0](https://kff.org/other/state-indicator/number-of-deaths-due-to-diseases-of-the-heart-per-100000-population/?currentTimeframe=0) |
+| Heart Disease                        | 203.6                        | [167.0](http://kff.org/other/state-indicator/number-of-deaths-due-to-diseases-of-the-heart-per-100000-population/?currentTimeframe=0) |
 | Cancer                               | 190.5                        | [171.2](https://www.cancer.gov/about-cancer/understanding/statistics) |
 | Chronic Lower Respiratory Disease           | 47.7                         | [46.1](https://www.cdc.gov/nchs/fastats/copd.htm) |
 | Stroke                               | 49.9                         | [41.7](https://www.cdc.gov/nchs/fastats/stroke.htm) |
