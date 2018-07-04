@@ -11,7 +11,7 @@ Take a data source that is passive and non-standard. A data source that is passi
 
 An HMTL file hosted by a SharePoint reporting server returning HTML text in XLS format works well for this example, [`energinet.dk`](https://energinet.dk) market data reporting service fits the bill well.
 
-Energinet is an all-in-one energy regulator and operator in Denmark. Energinet performs research and development into sustainable energy, collects industry data, and participates in policy action. Download publicly available datasets from the Danish energy industry from the official [Energinet](http://energinet.dk/EN/El/Engrosmarked/Udtraek-af-markedsdata/Sider/default.aspx) website.
+Energinet is an all-in-one energy regulator and operator in Denmark. Energinet performs research and development into sustainable energy, collects industry data, and participates in policy action. Download publicly available datasets from the Danish energy industry from the official [Energinet](https://energinet.dk/EN/El/Engrosmarked/Udtraek-af-markedsdata/Sider/default.aspx) website.
 
 The recurring effort involved in analyzing this data and preparing a report is substantial.
 

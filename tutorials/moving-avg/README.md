@@ -6,7 +6,7 @@ An operations analyst has with two possibly related datasets, [cargo tonnage dat
 from the same airports both available in [Axibase Dataset Catalog](https://axibase.com/datasets/). The analyst must create a relational model between the two datasets for a major airline looking to expand their presence
 at either LaGuardia or John F. Kennedy Airport to facilitate the maximum number of passengers and cargo.
 
-The first dataset, collected by the [Port Authority of New York and New Jersey](http://www.panynj.gov/) is aggregated monthly while the second dataset from
+The first dataset, collected by the [Port Authority of New York and New Jersey](https://www.panynj.gov/) is aggregated monthly while the second dataset from
 the [New York Department of Transportation](https://www.dot.ny.gov/index) is aggregated annually.
 
 * Annually aggregating the Port Authority Cargo data would destroy the granularization that created by monthly collection over the observation period.

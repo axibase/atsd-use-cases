@@ -4,8 +4,8 @@
 
 ## Introduction
 
-According to [`infoplease.com`](http://www.infoplease.com/ipa/A0005148.html), life expectancy from 1935 to 2010 for both sexes in the U.S. increased from 61.7 to 78.7 years.
-As reported by the [Center for Disease Control and Prevention](http://www.cdc.gov/nchs/data/databriefs/db88.htm#x2013;2010%3C/a%3E>) (CDC), the crude death rate in the United States fell from
+According to [`infoplease.com`](https://www.infoplease.com/ipa/A0005148.html), life expectancy from 1935 to 2010 for both sexes in the U.S. increased from 61.7 to 78.7 years.
+As reported by the [Center for Disease Control and Prevention](https://www.cdc.gov/nchs/data/databriefs/db88.htm#x2013;2010%3C/a%3E>) (CDC), the crude death rate in the United States fell from
 10.9 to 7.9 deaths per 1,000 people from 1935 to 2010, translating to a **27% decrease**. Mortality rates are vastly different across different U.S. cities and age groups.
 This article explores a `data.gov` dataset containing [mortality statistics for 122 U.S. cities](https://catalog.data.gov/dataset/deaths-in-122-u-s-cities-1962-2016-122-cities-mortality-reporting-system) using ATSD and [SQL Console](https://axibase.com/docs/atsd/sql/).
 
@@ -373,7 +373,7 @@ ORDER BY value desc
 
 The line `WITH row_number ... <= 1` partitions rows by tags (city, state, region) and selects the row with the **MAXIMUM** value for each partition using the `ORDER BY` value `DESC` condition.
 
-Noticeably absent from the above list is New Orleans, Louisiana. On August 29th, 2005, [Hurricane Katrina](http://edition.cnn.com/2013/08/23/us/hurricane-katrina-statistics-fast-facts/)
+Noticeably absent from the above list is New Orleans, Louisiana. On August 29th, 2005, [Hurricane Katrina](https://edition.cnn.com/2013/08/23/us/hurricane-katrina-statistics-fast-facts/)
 struck the Gulf coast of the United States, with New Orleans taking the brunt of the force. According to the Federal Emergency Management Agency (FEMA), Katrina was, "the single most catastrophic
 natural disaster in U.S. history." FEMA estimated the total damage from the hurricane amounted to $108 billion dollars, making it the "costliest hurricane in U.S. history." Approximately 1,833 people
 are estimated to have died in the storm, with 1,577 of those deaths occurring in the New Orleans area, where is New Orleans in the results?
@@ -921,22 +921,22 @@ Below is a table comparing population estimates for top six cities with the high
 | Cleveland      |    876,050        |     388,072         | **(-)** 55.7         |
 | Rochester      |    318,611        |     209,802         | **(-)** 34.2         |
 
-Four of these six cities are located in the infamous Rust Belt. According to [`geography.about.com`](http://geography.about.com/od/urbaneconomicgeography/a/Rust-Belt.htm),
+Four of these six cities are located in the infamous Rust Belt. According to [`geography.about.com`](https://geography.about.com/od/urbaneconomicgeography/a/Rust-Belt.htm),
 the Rust Belt is an area of the United States which once served as the hub of American industry. In the early to mid 20th century, abundant natural resources led to thriving coal, steel,
 and manufacturing industries. However, in the middle of the twentieth century many of these cities fell upon hard times, as manufacturing jobs went elsewhere or overseas, and populations began to decline as a result.
 
 ![](./images/Figure46.png)
 
 Along with Detroit, MI and Gary, IN, Youngstown, OH is often used to showcase the rise and fall of manufacturing in the United States. Youngstown was once a city where steel was king. Steel
-dominated every aspect of life, and as this industry grew, Youngstown grew as well. According to the [Hampton Institute](http://www.hamptoninstitution.org/youngstown.html#.WE6P3URVZhE), the
+dominated every aspect of life, and as this industry grew, Youngstown grew as well. According to the [Hampton Institute](https://www.hamptoninstitution.org/youngstown.html#.WE6P3URVZhE), the
 population of Youngstown grew from 33,000 in 1890 to 170,000 in 1930. Youngstown became the center of Mahoning Valley, which became to be known as "Steel Valley." By the thirties, Youngstown
-ranked fifth in the nation in terms of home ownership. But the glory of Youngstown was short lived. According to [`encyclopedia.com`](http://www.encyclopedia.com/places/united-states-and-canada/miscellaneous-us-geography/rust-belt):
+ranked fifth in the nation in terms of home ownership. But the glory of Youngstown was short lived. According to [`encyclopedia.com`](https://www.encyclopedia.com/places/united-states-and-canada/miscellaneous-us-geography/rust-belt):
 
 "The U.S. worldwide market share of manufactured steel went from 20 percent in 1970 to 12 percent by 1990, and American employment in the industry dropped from 400,000 to 140,000 over the
 same period. Starting in the late 1970s, steel factories began closing. Among the hardest hit of the communities was Youngstown, Ohio, where the closure of three steel mills starting in
 1977 eliminated nearly 10,000 high-paying jobs."
 
-The loss of the manufacturing industry is devastating to Youngstown. Large swaths of the population moved out. Crime soared in the city. The [crime rate](http://www.city-data.com/city/Youngstown-Ohio.html) in
+The loss of the manufacturing industry is devastating to Youngstown. Large swaths of the population moved out. Crime soared in the city. The [crime rate](https://www.city-data.com/city/Youngstown-Ohio.html) in
 Youngstown in 2014 is **496.3**, compared to **287.5** for the U.S. as a whole.
 
 Data from `census.gov` compares Youngstown to overall United States trends:
@@ -1144,7 +1144,7 @@ WITH INTERPOLATE (1 WEEK, LINEAR, INNER, EXTEND, START_TIME)
 LIMIT 5
 ```
 
-Determine mortality rate by age group in New York City using age group population statistics from [`nyc.gov`](http://www1.nyc.gov/site/planning/data-maps/nyc-population/census-2010.page)
+Determine mortality rate by age group in New York City using age group population statistics from [`nyc.gov`](https://www1.nyc.gov/site/planning/data-maps/nyc-population/census-2010.page)
 as part of the 2010 U.S. census. The `new-york-city-2010-population` file can be found in the [Resources](./resources/new-york-city-2010-population.txt) directory.
 
 ```sql
@@ -1235,7 +1235,7 @@ United States as a whole.
 
 | Rate (# Deaths / 100,000 Population) | Mahoning County (Youngstown) | United States |
 |--------------------------------------|------------------------------|---------------|
-| Heart Disease                        | 203.6                        | [167.0](http://kff.org/other/state-indicator/number-of-deaths-due-to-diseases-of-the-heart-per-100000-population/?currentTimeframe=0) |
+| Heart Disease                        | 203.6                        | [167.0](https://kff.org/other/state-indicator/number-of-deaths-due-to-diseases-of-the-heart-per-100000-population/?currentTimeframe=0) |
 | Cancer                               | 190.5                        | [171.2](https://www.cancer.gov/about-cancer/understanding/statistics) |
 | Chronic Lower Respiratory Disease           | 47.7                         | [46.1](https://www.cdc.gov/nchs/fastats/copd.htm) |
 | Stroke                               | 49.9                         | [41.7](https://www.cdc.gov/nchs/fastats/stroke.htm) |

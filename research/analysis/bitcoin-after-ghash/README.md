@@ -22,7 +22,7 @@ _Source_: [CoinDesk](https://www.coindesk.com/price/)
 
 > Open the ChartLab visualization above and navigate through time using the drop-down menus at the top of the screen.
 
-In July 2014, a Bitcoin mining pool known as [GHash.IO](http://ghash.io/) breached an unspoken Bitcoin convention by achieving 51%
+In July 2014, a Bitcoin mining pool known as [GHash.IO](https://ghash.io/) breached an unspoken Bitcoin convention by achieving 51%
 of the total hash power for the first time in the short history of Bitcoin, which established what became the first Bitcoin trust.
 In the months leading to GHash.IO gaining control of the 51% majority of the total hash rate the Bitcoin market was rattled and owners began to dump what they had, causing the value of Bitcoin to plummet at the beginning of the year when speculation began to occur about
 when GHash.IO would reach the dreaded 51% mark. Though the number of transactions remained consistent, the value of those
@@ -93,7 +93,7 @@ wallets and beginning to invest themselves.
 _Source_: Quandl - [Number of Users](https://www.quandl.com/data/BCHAIN/NADDU-Bitcoin-Number-of-Unique-Bitcoin-Addresses-Used), [Number of Transactions](https://www.quandl.com/data/BCHAIN/NTRAN-Bitcoin-Number-of-Transactions)
 
 Of course, Bitcoin is utterly dwarfed in size when compared to other payment processors; Mastercard, for example, handles
-around [300 million unique transactions](http://www.techrepublic.com/blog/decision-central/process-300-million-transactions-a-day-without-going-crazy/)
+around [300 million unique transactions](https://www.techrepublic.com/blog/decision-central/process-300-million-transactions-a-day-without-going-crazy/)
 a day, but its relevance is growing all the time. Russian Deputy Minister of Finance Alexei Moiseyev recently announced that
 qualified investors can possibly [trade Bitcoin on the Moscow Stock Exchange](https://www.forbes.com/sites/kenrapoza/2017/08/30/moscow-stock-exchange-opens-to-crypto-currency-trade/#66b76e3426d1),
 and unnamed U.S. elected officials are currently striving to extend the same kind of legal protection to Bitcoin that

@@ -1,8 +1,8 @@
 # European Union Debt by Country Per Capita (2005-2016)
 
-Debt Data Source: [EuroStat](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=teina225&plugin=1)
+Debt Data Source: [EuroStat](https://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=teina225&plugin=1)
 
-Population Data Source: [EuroStat](http://ec.europa.eu/eurostat/web/population-demography-migration-projections/population-data)
+Population Data Source: [EuroStat](https://ec.europa.eu/eurostat/web/population-demography-migration-projections/population-data)
 
 Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
 

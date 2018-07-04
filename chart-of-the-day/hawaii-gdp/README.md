@@ -14,7 +14,7 @@ the ATSD, the economic
 performance of the fiftieth state can be explored using a number of analytic tools. Shown above are two
 visualizations of the Hawaiian economy: its percent growth from 2000 to 2010 and its nominal
 GDP value for the same years. GDP is generally considered to be the godfather of economic
-indicators and with a state that imports [close to 90%](http://files.hawaii.gov/dbedt/op/spb/INCREASED_FOOD_SECURITY_AND_FOOD_SELF_SUFFICIENCY_STRATEGY.pdf)
+indicators and with a state that imports [close to 90%](https://files.hawaii.gov/dbedt/op/spb/INCREASED_FOOD_SECURITY_AND_FOOD_SELF_SUFFICIENCY_STRATEGY.pdf)
 of its food, a dollar amount subtracted from the GDP and estimated by the State to be about three billion dollars,
 positive growth results amid global recession are no small feat.
 
@@ -36,7 +36,7 @@ decline that is significantly lower than the US Average. Compare the numbers bel
 | 2009 | -1.0% | -2.78% | 1.78% |
 | 2010 | 2.0% | 2.53% | -0.53% |
 
-> Source for US GDP Data: [The World Bank](http://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG).
+> Source for US GDP Data: [The World Bank](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG).
 
 Measuring this growth over the entire 11-year period to compare effective annual growth, Hawaii averaged a total of 4.96% per year
 effective growth compared to the United States' effective growth rate of just 1.86% per year. This metric averages the growth of each

@@ -55,7 +55,7 @@ which amounted to **$10 million** in revenue in 2015.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/16c6e667/3/#fullscreen)
 
-According to a recent article published by [Reuters](http://www.reuters.com/article/us-eu-usa-visa-idUSKBN1691Q9), the [European Union](https://en.wikipedia.org/wiki/European_Union) (EU) is becoming increasingly insistent on requiring American citizens to
+According to a recent article published by [Reuters](https://www.reuters.com/article/us-eu-usa-visa-idUSKBN1691Q9), the [European Union](https://en.wikipedia.org/wiki/European_Union) (EU) is becoming increasingly insistent on requiring American citizens to
 obtain travel visas to visit Europe. This is in response to Washington refusing to grant visa-free access to five EU countries: Poland, Croatia,
 Bulgaria, Romania, and Cyprus. All EU countries except for these five can travel to the United States without a travel visa. The following visualization shows the number of `B-1` and `B-2` visas
 from these countries between 1997 and 2015. The start of the new millennium saw the peak number of `B-1` and `B-2` visas issued to these countries, but in recent years

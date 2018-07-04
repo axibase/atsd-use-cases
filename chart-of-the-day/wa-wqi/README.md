@@ -10,7 +10,7 @@ option to view all available testing sites together.
 The visualization above shows the ranking of the results of the latest Water Quality Index tests performed by the State of Washington.
 Washington State is known for its scenic mountain ranges, diverse climate, and crystal clear water and has
 published the [following dataset](https://catalog.data.gov/dataset/annual-2015-water-quality-index-data), which tracks
-a number of metrics for the 2015 Water Quality tests performed by the [Department of Ecology](http://www.ecy.wa.gov/):
+a number of metrics for the 2015 Water Quality tests performed by the [Department of Ecology](https://www.ecy.wa.gov/):
 
 | Metric Abbreviation | Abbreviation Meaning | Metric Weight |
 |---------------------|----------------------|---------------|

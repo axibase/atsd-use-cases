@@ -25,7 +25,7 @@ formative events of the 20th and 21st centuries: the fall of the Berlin Wall, th
 terrorist attacks, the Pathfinder mission to Mars, the completion of the Burj Khalifa, and
 the emergence of the Internet to name a few.
 
-Using the ATSD and the open source modelling software [Fityk](http://fityk.nieto.pl/),
+Using the ATSD and the open source modelling software [Fityk](https://fityk.nieto.pl/),
 the ICHS data can be visualized, modeled, and analyzed to extract valuable information from free public data.
 
 ## Data
@@ -444,7 +444,7 @@ The dataset used for modeling is as follows:
 | 2008 | 20| 177 |
 | 2009 | 21| 171 |
 
-Using [Fityk](http://fityk.nieto.pl/) to create a best-fit model for this data:
+Using [Fityk](https://fityk.nieto.pl/) to create a best-fit model for this data:
 
 #### Model 1
 

@@ -13,7 +13,7 @@ meaningful strides towards a future that sees the resolution of the problem that
 ## Methodology
 
 [Data](https://catalog.data.gov/dataset/american-fitness-index-ranking-2010-present)
-originally released by the [American College of Sports Medicine](http://www.acsm.org/) and
+originally released by the [American College of Sports Medicine](https://www.acsm.org/) and
 partially-published by the City of New Orleans attempts to quantify the overall health of the fifty largest metropolitan areas in the United States every year. The 100-point ascending scale
 takes into account a number of factors they believe contribute to the overall health
 of a city and its surrounding area with the goal of informing policy makers of the

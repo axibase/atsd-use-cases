@@ -10,7 +10,7 @@ are partially staffed or entirely staffed by government employees and the third 
 is sure to include government staffers on the payroll as well. That is big news considering
 the annual budget for the current fiscal year (2017) of the state ranked second in the union at a whopping
 [$153 billion dollars](https://www.nysenate.gov/newsroom/articles/senate-passes-2017-18-state-budget-protects-taxpayers-provides-record-investments)
-and the City of New York has its own [local budget](http://council.nyc.gov/budget/) that totals about half that number as well.
+and the City of New York has its own [local budget](https://council.nyc.gov/budget/) that totals about half that number as well.
 New York City and State officials have stood behind the expansion and implementation of the Affordable Care Act
 locally, which has seen the health care and social assistance industry add over 100,000 new jobs over the past four
 years in the Big Apple alone.

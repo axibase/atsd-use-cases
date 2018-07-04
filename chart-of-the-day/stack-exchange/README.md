@@ -2,7 +2,7 @@
 
 ![](./images/final_portal_so2.png)
 
-[![](./images/button.png)](http://apps.axibase.com/chartlab/c1acecc0)
+[![](./images/button.png)](https://apps.axibase.com/chartlab/c1acecc0)
 
 The total number of questions asked shows that there are three programming languages far ahead of others in terms of popularity: Java, Javascript, and PHP.
 
@@ -16,7 +16,7 @@ Using Stack Exchange API to collect hourly data for the following programming la
 * [Python](https://www.python.org/)
 * [Ruby](https://www.ruby-lang.org/en/)
 * [Javascript](https://www.javascript.com/)
-* [PHP](http://php.net/)
+* [PHP](https://php.net/)
 * [Ruby on Rails](https://rubyonrails.org/)
 * [SQL](https://en.wikipedia.org/wiki/SQL)
 * [R](https://www.r-project.org/)
@@ -24,9 +24,9 @@ Using Stack Exchange API to collect hourly data for the following programming la
 
 ## Query
 
-The [Stack Exchange API V2.2](http://api.stackexchange.com/docs/) allows anyone to track the number of questions asked and answered for a particular topic using tags.
+The [Stack Exchange API V2.2](https://api.stackexchange.com/docs/) allows anyone to track the number of questions asked and answered for a particular topic using tags.
 
-The endpoint used to track programming language questions is: [/tags/{tags}/info](http://api.stackexchange.com/docs/tags-by-name)
+The endpoint used to track programming language questions is: [/tags/{tags}/info](https://api.stackexchange.com/docs/tags-by-name)
 
 This endpoint returns the total number of questions asked about a programming language tag. From the data, you can determine the number of new questions asked, the popularity of each language, and the growth in popularity for a particular language.
 

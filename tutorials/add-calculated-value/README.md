@@ -8,7 +8,7 @@ This article describes using the [`replace-value`](https://axibase.com/products/
 
 ## Data
 
-Data in this article is collected by entity [Eurostat](http://ec.europa.eu/eurostat) tracking [European Union Debt by Country](../../research/data-lib/eu-debt/README.md),
+Data in this article is collected by entity [Eurostat](https://ec.europa.eu/eurostat) tracking [European Union Debt by Country](../../research/data-lib/eu-debt/README.md),
 recorded in the [Axibase Data Library](https://axibase.com/use-cases/research/#data-library).
 
 ```sql

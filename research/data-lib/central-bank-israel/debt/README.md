@@ -2,7 +2,7 @@
 
 ChartLab and SQL Console in ATSD
 
-> Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics/Pages/Default.aspx)
+> Data Source: [Bank of Israel](https://www.boi.org.il/en/DataAndStatistics/Pages/Default.aspx)
 
 ## Debt Balances (NIS Billion, current value)
 

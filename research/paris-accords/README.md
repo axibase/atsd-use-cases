@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The [Paris Climate Accords](http://unfccc.int/files/essential_background/convention/application/pdf/english_paris_agreement.pdf) are the most recent iteration of the [United Nations Framework
+The [Paris Climate Accords](https://unfccc.int/files/essential_background/convention/application/pdf/english_paris_agreement.pdf) are the most recent iteration of the [United Nations Framework
 Convention on Climate Change](https://unfccc.int/resource/docs/convkp/conveng.pdf),
 a near-universally recognized treaty ratified by the General Assembly of the United Nations in 1992.
 Although non-binding, the Paris Agreement is designed to curb greenhouse gas emissions though diplomacy,
@@ -12,13 +12,13 @@ self-regulation, and what amounts to international peer pressure, while providin
 countries still developing their energy infrastructure.
 
 Proponents of the agreement see the non-binding nature of the pact
-as an improvement from the now defunct [Kyoto Protocol](http://unfccc.int/resource/docs/convkp/kpeng.pdf),
+as an improvement from the now defunct [Kyoto Protocol](https://unfccc.int/resource/docs/convkp/kpeng.pdf),
 which promised an imposed action plan for those not meeting their emissions reduction targets,
 but many of its detractors claim that this lack of enforceability
 creates lopsided results, with countries like America and Great Britain
 heavily investing in greener options at great personal expense while some of the largest
 producers of greenhouse gas emissions like China and India, will not even begin to see a [peak
-in their production](http://climateactiontracker.org/countries/china.html)
+in their production](https://climateactiontracker.org/countries/china.html)
 for up to ten years in the future.
 
 So, is the position of America as a green leader truly in jeopardy?

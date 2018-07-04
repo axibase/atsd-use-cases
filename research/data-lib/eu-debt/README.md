@@ -1,6 +1,6 @@
 # European Union Debt by Country (2005-2016)
 
-**Data Source**: [Eurostat](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=teina225&plugin=1)
+**Data Source**: [Eurostat](https://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=teina225&plugin=1)
 
 **Visualization**: [ChartLab](https://apps.axibase.com/chartlab)
 
@@ -60,7 +60,7 @@ European Union Countries Index:
 * [Sweden](#sweden)
 * [United Kingdom](#united-kingdom)
 
-Using additional [EuroStat population data](http://ec.europa.eu/eurostat/web/population-demography-migration-projections/population-data), this debt has been indexed by per capita value as well [here](../eu-debt-per-capita/README.md).
+Using additional [EuroStat population data](https://ec.europa.eu/eurostat/web/population-demography-migration-projections/population-data), this debt has been indexed by per capita value as well [here](../eu-debt-per-capita/README.md).
 
 ## European Union Total
 

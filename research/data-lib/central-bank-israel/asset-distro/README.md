@@ -2,7 +2,7 @@
 
 [ChartLab](https://apps.axibase.com/chartlab) and SQL Console in ATSD
 
-> Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics)
+> Data Source: [Bank of Israel](https://www.boi.org.il/en/DataAndStatistics)
 
 ## Value of the Public Portfolio (NIS Billion)
 

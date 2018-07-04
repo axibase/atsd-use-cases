@@ -65,7 +65,7 @@ in the likelihood of its eventual recovery.
 _Source_: Federal Reserve Economic Data - [Imported and Domestic Motor Vehicle Sales](https://fred.stlouisfed.org/series/LAUTONSA), by unit; [Imported Motor Vehicle Sales](https://fred.stlouisfed.org/series/B149RC1Q027SBEA), by dollar value
 
 In stark contrast to falling domestic sales figures, imported motor vehicle sales have shown both a quicker post-recession
-recovery and more promising long-term potential. Only five of the top twenty best-selling cars in America for [May 2017](http://www.goodcarbadcar.net/2017/06/top-20-best-selling-cars-in-america-may.html)
+recovery and more promising long-term potential. Only five of the top twenty best-selling cars in America for [May 2017](https://www.goodcarbadcar.net/2017/06/top-20-best-selling-cars-in-america-may.html)
 came from American producers.
 
 ## Analysis

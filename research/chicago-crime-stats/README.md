@@ -195,9 +195,9 @@ Click this button to check out narcotic arrests in Chicago:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/7/#fullscreen)
 
-According to [an article by the Chicago Tribune](http://www.chicagotribune.com/news/opinion/editorials/ct-chicago-crime-increase-causes-edit-0118-md-20170117-story.html),
+According to [an article by the Chicago Tribune](https://www.chicagotribune.com/news/opinion/editorials/ct-chicago-crime-increase-causes-edit-0118-md-20170117-story.html),
 the release of a video in November 2015 showing the police fatally shooting of a black teenager ([Laquan McDonald](https://en.wikipedia.org/wiki/Shooting_of_Laquan_McDonald)), the launch of a
-[Justice Department investigation](http://www.reuters.com/article/us-usa-police-trump-insight-idUSKBN15E106) of the Chicago Police Department
+[Justice Department investigation](https://www.reuters.com/article/us-usa-police-trump-insight-idUSKBN15E106) of the Chicago Police Department
 (which found that the Chicago Police routinely used excessive force and violated the constitutional rights of residents, particularly minorities), and a decline
 in the number of street stops by the police resulting from a new policy on street stops between the city of Chicago and the American Civil Liberties Union have had a drastic affect on policing in
 Chicago. According to [Vice News](https://news.vice.com/video/with-killings-on-the-rise-in-chicago-police-are-putting-their-hands-up), because of the Laquan McDonald shooting (as well as the other
@@ -239,7 +239,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 
 ## Sources
 
-[Title Photo](http://www.zerohedge.com/news/2016-08-23/chicagos-violent-crime-spreading-safe-north-side)
+[Title Photo](https://www.zerohedge.com/news/2016-08-23/chicagos-violent-crime-spreading-safe-north-side)
 
 ## Additional SQL Queries
 

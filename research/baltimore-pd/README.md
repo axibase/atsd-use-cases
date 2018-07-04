@@ -13,7 +13,7 @@ of the incident, the nature of the incident, and the date of the incident.
 Additionally, the City of Baltimore has recorded crime incidents in the city,
 including homicide rates during the years 2013 and 2014. Baltimore has one of the highest murder
 rates in the country, and even ranks 19th on the planet
-[for highest per capita murder rate](http://www.worldatlas.com/articles/most-dangerous-cities-in-the-world.html).
+[for highest per capita murder rate](https://www.worldatlas.com/articles/most-dangerous-cities-in-the-world.html).
 These two data sets can be compared and contrasted to underline a number of features
 regarding the nature and the scope of the violence that occurs against the backdrop of a nearly three hundred
 year old city less than forty miles from the Washington, DC.
@@ -89,7 +89,7 @@ Precinct, as such, that data is included with other Central District data.
 
 ![BaltimoreDistrictMap](./images/CityPlan.png)
 
-> [Source](http://cityview.baltimorecity.gov/planningmaps/index.html#/map/1389e1fceb374e1e98a82800e46a8a63):
+> [Source](https://cityview.baltimorecity.gov/planningmaps/index.html#/map/1389e1fceb374e1e98a82800e46a8a63):
 Baltimore City Planning Department.
 
 The results from the first query can also be visualized as shown below, by precinct:
@@ -516,7 +516,7 @@ protect and serve.
 
 Across the entire United States, official data on people killed by the police is surprisingly difficult to find.
 Police agencies are not obligated to provide this data and as a result many of them do not. There are several citizen-run
-operations that collect data but [the most reliable of these](http://www.killedbypolice.net/)
+operations that collect data but [the most reliable of these](https://www.killedbypolice.net/)
 did not begin operation until May of 2013. Based on their figures, which cite news stories for each killing they claim,
 777 Americans were killed in 2013 and 1,112 were killed in 2014 at the hands of the
 police. Fifteen of these victims were killed in the state of Maryland in 2013 and seventeen were killed in 2014.

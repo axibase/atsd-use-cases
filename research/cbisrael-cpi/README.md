@@ -10,13 +10,13 @@ because it tracks the amount that consumers are paying for various products as w
 over time. Government and Central Bank officials all over the globe use the Consumer Price Index to create effective fiscal policy that
 is beneficial to their people and attempt to control internal inflation with information gleaned from CPI values.
 
-The [Bank of Israel](http://www.boi.org.il/en/Pages/Default.aspx) is no stranger to managing inflation, after the 1983 Israeli bank stock crisis following a decade of economic stagnation,
+The [Bank of Israel](https://www.boi.org.il/en/Pages/Default.aspx) is no stranger to managing inflation, after the 1983 Israeli bank stock crisis following a decade of economic stagnation,
 the four largest banks in Israel were nationalized, following massive devaluation of their stock, to offset public investment
 losses. New, stricter banking regulations were eventually put in place as a result of the crisis, many of which afforded Israel relative
 stability during the worldwide recession of the late 2000's. The bank itself creates solutions and manages fiscal policy
 independently and its current Governor is considered among [the best central bankers in the world](https://d2tyltutevw8th.cloudfront.net/media/document/central-bankers-2016-1472776973.pdf).
 
-Using [data](http://www.boi.org.il/en/DataAndStatistics/Pages/Default.aspx) from the Bank of Israel, the phenomenon of
+Using [data](https://www.boi.org.il/en/DataAndStatistics/Pages/Default.aspx) from the Bank of Israel, the phenomenon of
 the decreasing intrinsic value of liquid currency over time can be observed and with analytics tools in ATSD,
 these changes can be tracked and interpreted to learn why simply holding your nest egg in
 a savings account is quickly becoming the modern-day equivalent of the shoebox of cash hidden underneath your bed.

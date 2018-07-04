@@ -44,7 +44,7 @@ docker run \
   axibase/atsd:latest
 ```
 
-Whether or not you manually assign container labels using deployment scripts or through orchestration frameworks such as [Kubernetes](http://kubernetes.io/) or [Mesos](http://mesos.apache.org/documentation/latest/docker-containerizer/) that manage containers on a large fleet of machines is an implementation detail that is specific to each organization.
+Whether or not you manually assign container labels using deployment scripts or through orchestration frameworks such as [Kubernetes](https://kubernetes.io/) or [Mesos](https://mesos.apache.org/documentation/latest/docker-containerizer/) that manage containers on a large fleet of machines is an implementation detail that is specific to each organization.
 
 Once you have container labeling in place, you can create roll-up dashboards and configure alerting without referring to hostnames or container ids and aliases.
 

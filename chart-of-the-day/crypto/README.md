@@ -84,4 +84,4 @@ Comparing Bitcoin monthly value change to the `sine` function demonstrates the s
 
 Comparing absolute returns, percent returns, and log returns shows that although each of the four selected cryptocurrencies are used by a variable number of consumers for a variable number of transactions, and valued on significantly different orders of magnitude, the patterns of returns are quite similar.
 
-Although it may prove not to be economically viable as a means of currency, blockchain technology is already [being implemented](http://fortune.com/2017/12/26/blockchain-tech-companies-ibm/) in a number of other industries to ensure data consistency and security.
+Although it may prove not to be economically viable as a means of currency, blockchain technology is already [being implemented](https://fortune.com/2017/12/26/blockchain-tech-companies-ibm/) in a number of other industries to ensure data consistency and security.
