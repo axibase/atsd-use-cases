@@ -140,7 +140,7 @@ Copy the incoming `aws-cw` webhook URL from the start log.
 [ATSD] Importing '/tmp/import/rule_aws-cloudwatch-events.xml' configuration
 [ATSD] Successfully imported '/tmp/import/rule_aws-cloudwatch-events.xml'
 aws-cw webhook created:
-https://username:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
+https://aws-cw:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
 ```
 
 Navigate to the **Topics** section of the **Simple Notification Service** page once again. On the same **Topic Details** page that establishes the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
