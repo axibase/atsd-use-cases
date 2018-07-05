@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # Modeling Falling Birthrates in the Prairie State
 
 ![](./images/ILL1.jpg)
@@ -585,7 +587,7 @@ clause is used to declare the functionality of the menu itself.
 3. Launch containers by specifying the built-in collector account credentials used by Axibase Collector to insert data into ATSD.
 
 ```sh
-   export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
+   export C_USER=username; export C_PASSWORD=password; docker-compose pull && docker-compose up -d
 ```
 
 Contact [Axibase](https://axibase.com/feedback/) with any questions.

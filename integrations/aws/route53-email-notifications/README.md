@@ -53,7 +53,7 @@ Complete the process below to enhance Route 53 alarms with your local ATSD insta
     ```txt
     server=mail.example.org
     port=587
-    user=myuser@example.org
+    user=john.doe@example.org
     password=secret
     ```
 
@@ -79,8 +79,8 @@ Complete the process below to enhance Route 53 alarms with your local ATSD insta
 
     ```txt
     Webhooks created:
-    Webhook user: aws-cw
-    Webhook URL: https://aws-cw:PASSWORD@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
+    Webhook user: username
+    Webhook URL: https://username:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
     ```
 
 2. Configure ATSD to accept HTTPS requests from AWS infrastructure servers with a [**CA-signed**](https://axibase.com/docs/atsd/administration/ssl-self-signed.html) SSL certificate. Alternatively, use the HTTP protocol when configuring the SNS subscription URL.
@@ -96,7 +96,7 @@ Complete the process below to enhance Route 53 alarms with your local ATSD insta
 5. In the **Subscriptions** section of the **Topic Details** page, click **Create Subscription** to enable enriched emails with contextual information. Click **Create Subscription** and use the webhook URL in the **Endpoint** field:
 
     ```elm
-    https://aws-cw:PASSWORD@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
+    https://username:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
     ```
 
     Switch to HTTP protocol and modify the port number (default is `8088`) if the ATSD is running on a self-signed SSL certificate.

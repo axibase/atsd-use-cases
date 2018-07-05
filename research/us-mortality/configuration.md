@@ -30,7 +30,7 @@ Below is a step-by-step guide for setting up local instances of the Axibase Time
 
    ![Figure 19](./images/Figure19.png)
 
-7. Click on **Configuration -> Replacement Tables**.
+7. Click **Configuration -> Replacement Tables**.
 
    ![Figure 20](./images/Figure20.png)
 
@@ -58,7 +58,7 @@ Below is a step-by-step guide for setting up local instances of the Axibase Time
 
     ![Figure 26](./images/Figure26.png)
 
-    Click on the **To submitted tasks** button.
+    Click **To submitted tasks** button.
 
     ![Figure 27](./images/Figure27.png)
 

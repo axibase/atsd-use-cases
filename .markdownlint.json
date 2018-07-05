@@ -1,0 +1,10 @@
+{
+  "default": true,
+  "MD013": false,
+  "MD022": true,
+  "MD024": false,
+  "MD033": false,
+  "MD040": true,
+  "MD045": false,
+  "MD102": false // blacklisted-words.js
+}

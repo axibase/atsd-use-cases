@@ -1,3 +1,6 @@
+<!-- markdownlint-disable MD101 -->
+<!-- markdownlint-disable MD105 -->
+
 # Axibase Documentation Guide
 
 The guide contains a compilation of grammar and punctuation rules for software developers. The formatting rules are targeted at markdown. To comply with general markdown syntax, use [markdownlint](https://www.npmjs.com/package/markdownlint).
@@ -103,7 +106,7 @@ Apply single backticks to the following:
 * Directory and file paths: `/opt/atsd/atsd/conf/server.properties`.
 * File extensions: `.png`, `.xml`.
 * Program names: `curl`, `wget`, `cron`.
-* Email addresses: `example@example.org`.
+* Email addresses: `user@example.org`.
 * Host names and IP addresses: `127.0.0.1`, `2001:db8::1`.
 * HTTP methods: `POST`, `GET`.
 * HTTP status codes: `200 OK`, `404`.

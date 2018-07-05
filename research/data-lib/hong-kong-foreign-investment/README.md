@@ -1102,6 +1102,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 | 2015 | 127                     | 12.39            |
 | 2016 | 113                     | -11.02           |
 ```
+
 Return to the [Country Index](#country-index-local)
 
 Return to the [Metric Index](#metric-index)

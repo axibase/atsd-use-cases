@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # Bitcoin After the GHash.IO Era
 
 > _Visualizations made using ATSD, author

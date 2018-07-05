@@ -32,7 +32,7 @@ AWS publishes a list of IP ranges used by [health checker nodes](https://ip-rang
 
 ```json
 {
-  "ip_prefix": "54.243.31.192/26",
+  "ip_prefix": "203.0.113.0/24",
   "region": "us-east-1",
   "service": "ROUTE53_HEALTHCHECKS"
 }

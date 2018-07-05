@@ -78,7 +78,7 @@ The output includes the list of health check IDs and the average percentage heal
 |---------------------------------------|-------------------------------------------|--------------------|--------------|
 | bd04c043-49a3-4618-bb3b-571d9f986d58  | http://api.example.org:80/v1.12/srv-ping  | 100.000            | 1440         |
 | 726bed8e-c205-47d7-9d26-f8e61799b1a3  | https://docs.example.org:443/poll         | 99.958             | 1440         |
-| 007cac9b-3573-493d-9c15-626ebf6a92bd  | tcp://10.102.0.1:443                      | 100.000            | 1440         |
+| 007cac9b-3573-493d-9c15-626ebf6a92bd  | tcp://192.0.2.6:443                      | 100.000            | 1440         |
 ```
 
 This query includes the **Sample Count** column for data quality control purposes. Route 53 reports checks every minute, the number of samples in the report is equal to the number of hours in the reporting interval multiplied by `60`. In the above case, the number of hours is `24` and therefore the sample count is `24*60 = 1440`.
@@ -127,7 +127,7 @@ GROUP BY entity
 |-------------------------------------------|-----------|-------------------|
 | http://api.example.org:80/v1.12/srv-ping  | HTTP      | 100.000           |
 | https://docs.example.org:443/poll         | HTTPS     | 99.958            |
-| tcp://10.102.0.1:443                      | TCP       | 100.000           |
+| tcp://192.0.2.6:443                      | TCP       | 100.000           |
 ```
 
 ### Filtering By Property
@@ -165,7 +165,7 @@ GROUP BY entity
 | URL                                       | Protocol  | Average Health, % |
 |-------------------------------------------|-----------|-------------------|
 | http://api.example.org:80/v1.12/srv-ping  | HTTP      | 100.000           |
-| tcp://10.102.0.1:443                      | TCP       | 100.000           |
+| tcp://192.0.2.6:443                      | TCP       | 100.000           |
 ```
 
 ### Grouping by Property
@@ -229,7 +229,7 @@ GROUP BY entity
 | URL                                       | Average Health, % |
 |-------------------------------------------|-------------------|
 | tcp://status.github.com:443               | 100.000           |
-| tcp://10.102.0.1:443                      | 99.447            |
+| tcp://192.0.2.6:443                      | 99.447            |
 | https://docs.example.org:443/poll         | 99.074            |
 | http://api.example.org:80/v1.12/srv-ping  | 63.636            |
 ```
@@ -272,7 +272,7 @@ GROUP BY entity
 | URL                                | Downtime Count |
 |------------------------------------|----------------|
 | https://docs.example.org:443/poll  | 5             |
-| tcp://10.102.0.1:443               | 1             |
+| tcp://192.0.2.6:443               | 1             |
 ```
 
 ### Downtime Incidents - Longest Incidents
@@ -304,6 +304,6 @@ WHERE "period_start" != 0
 ```ls
 | url                                | Incident Start       | Incident End         | Duration, min |
 |------------------------------------|----------------------|----------------------|---------------|
-| tcp://10.102.0.1:443               | 2018-03-14 16:42:00  | 2018-03-14 16:51:00  | 9             |
+| tcp://192.0.2.6:443               | 2018-03-14 16:42:00  | 2018-03-14 16:51:00  | 9             |
 | https://docs.example.org:443/poll  | 2018-03-14 16:41:00  | 2018-03-14 16:50:00  | 9             |
 ```

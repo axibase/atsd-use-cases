@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # Producers are Spending Less While Consumers are Paying More
 
 ## Introduction

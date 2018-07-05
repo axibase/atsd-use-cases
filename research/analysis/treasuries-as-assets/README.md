@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # United States Treasuries as International Assets: China's Role in the Federal Fund Rate
 
 Analyzing the make-up of foreign-held United States treasuries positions and the effects of large-scale ownership like that

@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # Analyzing Chicago Crime Statistics
 
 ![](./images/TitlePhoto.png)
@@ -37,7 +39,7 @@ down as winter approaches.
 
 ![Figure 1](./images/Figure1.png)
 
-Click on the **ChartLab** button below to take a closer look at these numbers, as well as monthly totals for 31 other crime types, including weapons violations, prostitution, robbery, assault, and
+Click **ChartLab** button below to take a closer look at these numbers, as well as monthly totals for 31 other crime types, including weapons violations, prostitution, robbery, assault, and
 domestic violence, among many others.
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba#fullscreen)
@@ -46,7 +48,7 @@ From the previous figure it is difficult to tell how monthly totals for 2016 com
 
 ![Figure 5](./images/Figure5.png)
 
-Click on this button to explore this **ChartLab** portal:
+Click this button to explore this **ChartLab** portal:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/16/#fullscreen)
 
@@ -108,7 +110,7 @@ is the same at 68%.
 
 ![Figure 6](./images/Figure6.png)
 
-Click on this button to explore the **ChartLab** portal for the top five locations for homicides in 2015 and 2016:
+Click this button to explore the **ChartLab** portal for the top five locations for homicides in 2015 and 2016:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/d5c04002/6/#fullscreen)
 
@@ -160,7 +162,7 @@ There has been a long term decrease in crime as a whole in Chicago.
 
 ![Figure 3](./images/Figure3.png)
 
-Click on the button below to explore this **ChartLab** portal:
+Click the button below to explore this **ChartLab** portal:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/4/#fullscreen)
 
@@ -228,7 +230,7 @@ Below are the summarized steps to follow to install local configurations of ATSD
 3. Launch containers:
 
    ```bash
-   export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
+   export C_USER=username; export C_PASSWORD=password; docker-compose pull && docker-compose up -d
    ```
 
 4. The dataset is over 3 gigabytes, give Axibase Collector 15-20 minutes to download, parse, and insert data into ATSD. You can monitor the progress on the Job Statistics page in Axibase Collector.

@@ -452,12 +452,14 @@ over the span of the entire observed period.
 
 ## Analysis
 
+<!-- markdownlint-disable MD101 -->
 The baseline average for number of homicides in a given Baltimore neighborhood was
 47 (47.33) for the given time period. The average number of incidents of police
 use of force is 7 (7.22) during the same time period. If the null hypothesis is to be
 rejected and the alternative hypothesis considered to be at least possibly true, an
 above average amount of homicides in a given neighborhood should predict an above average
 number of incidents of police use of force.
+<!-- markdownlint-enable MD101 -->
 
 | Neighborhood | O1 (Homicide) | E1 (Homicide) | O2(Police) | E2 (Police) |
 |--------------|---------------|---------------|------------|-------------|
@@ -538,7 +540,7 @@ careless casualty at the hands of a violent and overly-militarized police force,
 official inability to explain the incident clearly only frustrated those who
 felt that the problem was far from resolved by their internal investigations. Countless stories have been published
 by various media outlets that have both defended and defamed law enforcement officers and their actions.
-
+<!-- markdownlint-disable MD101 -->
 Using these two datasets, it can be shown that while there is certainly a strong correlation
 between police precincts that have a high rate of homicide and the number of incidents that
 involve police use of force, the classic paradigm of the chicken and its egg come to mind.
@@ -550,7 +552,7 @@ that precincts where the police use force to make an arrest are likely to have a
 following days is equally unsupported by the data here. Perhaps the only true conclusion
 that can be drawn using such comparison methods is one that has been made since biblical
 times, reiterated again during the Civil Rights Movement by Martin Luther King, Jr: "Violence begets more violence."
-
+<!-- markdownlint-enable MD101 -->
 A total of six officers would be indicted and charged in a second-degree murder case that would
 ultimately see all six either acquitted, released on a mistrial, or free to go because the
 charges against them were dropped. Now, as the incident fades into memory, questions still remain

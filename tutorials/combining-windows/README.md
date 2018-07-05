@@ -65,7 +65,7 @@ The product of sliding window aggregation is not the same as periodic aggregatio
 ## Combined Aggregation
 
 Scenarios when it is beneficial to combine periodic and sliding aggregates in one representation exist.
-
+<!-- markdownlint-disable MD101 -->
 Consider the case of CPU utilization where you need to display hourly CPU averages over the last 24 hours and display values for the current hour since incoming data is streaming continuously. If you compute periodic aggregations, the average for the last and most current hour is quite volatile at the beginning of the hour because the grouping function is computed for only the first few samples. As a result, end users receive false alarms for sudden changes in monitored metrics at the start of every hour.
 
 ![](./images/chartlab.png)

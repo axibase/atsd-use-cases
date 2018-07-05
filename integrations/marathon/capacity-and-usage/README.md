@@ -43,7 +43,7 @@ Integration with ATSD adds an additional level of visibility by collecting and a
 
 Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts.
 
-Replace `marathon_hostname`, `my-user`, and `my-password` in the command below with actual Marathon user credentials.
+Replace `marathon_hostname`, `username`, and `password` in the command below with actual Marathon user credentials.
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
@@ -51,7 +51,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --volume /var/run/docker.sock:/var/run/docker.sock \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/marathon/capacity-and-usage/resources/atsd-marathon-xml.zip' \
   --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/marathon/capacity-and-usage/resources/marathon-jobs.xml' \
-  --env COLLECTOR_CONFIG='marathon-jobs.xml:server=marathon_hostname,port=8080,userName=my-user,password=my-password' \
+  --env COLLECTOR_CONFIG='marathon-jobs.xml:server=marathon_hostname,port=8080,userName=username,password=password' \
   axibase/atsd-sandbox:latest
 ```
 

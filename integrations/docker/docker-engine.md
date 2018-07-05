@@ -50,14 +50,14 @@ The data is collected by [Axibase Collector](https://axibase.com/docs/axibase-co
 
 Start ATSD container on one of the Docker hosts.
 
-Replace `cuser` and `cpassword` variables with custom credentials. These credentials are used by collectors to insert data into ATSD.
+Replace `username` and `password` variables with custom credentials. These credentials are used by collectors to insert data into ATSD.
 
 Minimum password length is 6 characters.
 
 ```sh
 $ docker run -d --name=atsd -p 8443:8443 -p 8081:8081 \
-  --env COLLECTOR_USER_NAME=cuser \
-  --env COLLECTOR_USER_PASSWORD=cpassword \
+  --env COLLECTOR_USER_NAME=username \
+  --env COLLECTOR_USER_PASSWORD=password \
   --env COLLECTOR_USER_TYPE=api-rw \
   axibase/atsd:latest
 ```
@@ -80,9 +80,9 @@ docker logs -f atsd
 
 Launch an [Axibase Collector](https://axibase.com/docs/axibase-collector/jobs/docker.html) instance on each Docker host.
 
-Replace `cuser` and `cpassword` variables with collector credentials specified above.
+Replace `username` and `password` variables with collector credentials specified above.
 
-Replace `atsd_host` variable with the hostname of the Docker host where ATSD container is running.
+Replace `atsd_hostname` variable with the hostname of the Docker host where ATSD container is running.
 
 The hostname must be resolvable from the Docker host where collector is installed.
 
@@ -91,7 +91,7 @@ $ docker run -d --name axibase-collector \
    --volume /var/run/docker.sock:/var/run/docker.sock \
    --env=DOCKER_HOSTNAME=`hostname -f` \
   axibase/collector \
-   -atsd-url=https://cuser:cpassword@atsd_host:8443 \
+   -atsd-url=https://username:password@atsd_hostname:8443 \
    -job-enable=docker-socket
 ```
 
@@ -112,7 +112,7 @@ docker logs -f axibase-collector
 
 ### Verify Installation
 
-Log in to the ATSD web interface at `https://atsd_host:8443`.
+Log in to the ATSD web interface at `https://atsd_hostname:8443`.
 
 Create a built-in administrator account.
 

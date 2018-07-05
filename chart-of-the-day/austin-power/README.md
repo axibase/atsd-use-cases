@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # Public Utilities and Private Industry in Austin
 
 ![](./images/AP-001.png)

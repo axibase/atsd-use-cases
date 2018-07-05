@@ -149,7 +149,6 @@ WHERE metric IN metrics ('stern.nyu.edu')
 ORDER BY value DESC
 ```
 
-
 ```ls
 | Profitability Metric                  | Profit Margin (%) |
 |---------------------------------------|-------------------|

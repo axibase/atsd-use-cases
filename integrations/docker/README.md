@@ -137,7 +137,7 @@ Set `NOTIFY_URL` variable to a request URL where `on-error` webhook notification
   --env NOTIFY_URL='https://host01:10443/jenkins/plugin?token=123' \
 ```
 
-The notification URL may include **Basic** authorization credentials, for example `https://usr:pwd@host01:10443/`. SSL certificate validation is disabled by default.
+The notification URL may include **Basic** authorization credentials, for example `https://username:password@atsd_hostname:10443/`. SSL certificate validation is disabled by default.
 
 Execute the command below to launch an [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
 

@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # The Consumer Price Index Versus Your Savings Account
 
 ![](./images/CPI_1.1.png)

@@ -157,8 +157,9 @@ The certificate is presented to the client as part of the secure connection nego
 *  SSL certificate verify ok.
 ```
 
+<!-- markdownlint-disable MD101 -->
 The client uses its private trust store (`CAfile: /etc/ssl/certs/ca-certificates.crt` above) containing the list of trusted CA certificates. These trusted CA certificates are often called **Root** certificates.
-
+<!-- markdownlint-enable MD101 -->
 The CA can delegate certificate issuance to other intermediate CAs.
 
 Both the Root CA and any of its intermediate CAs can issue a certificate to **any** subject.
@@ -405,7 +406,9 @@ Applications can elect to utilize their own, built-in, trust store or utilize th
 
 The `Requests` module uses certificates from the [`certifi`](https://pypi.python.org/pypi/certifi) package.
 
+<!-- markdownlint-disable MD101 -->
 > [Certifi](https://pypi.python.org/pypi/certifi) is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project. Certifi updates its list based on Mozilla [certdata.txt](https://hg.mozilla.org/mozilla-central/raw-file/tip/security/nss/lib/ckfw/builtins/certdata.txt).
+<!-- markdownlint-enable MD101 -->
 
 * Java
 
@@ -966,12 +969,14 @@ Domain Certificate (1)
 ```
 
 The chain of client trust is `(4) -> (3) -> (2) -> (1)`.
+<!-- markdownlint-disable MD101 -->
 
 * The client trusts Root Certificate (4) because it is in the clients trust store
 * The client trusts Intermediate Certificate (3) because it is signed by Root Certificate (4).
 * The client trusts Intermediate Certificate (2), because it is signed by Intermediate Certificate (3).
 * The client trusts Domain Certificate (1), because it is signed by Intermediate Certificate (2).
 
+<!-- markdownlint-enable MD101 -->
 The client traverses the chain up until it finds a root CA in its trust store and verifies the validity of the chain using public keys and signatures embedded in each certificate.
 
 ### Viewing Certificate Chain in Java
@@ -1438,7 +1443,7 @@ A new trusted certificate can replace the currently installed trusted certificat
 
 To automate the certificate upload after certbot renewal, create `deploy.sh` script.
 
-> The certbot can be installed on the same machine as ATSD or on a remote machine in which case its IP address must be included in the ['Allow Access'](#upload-permissions) list.
+> The certbot can be installed on the same machine as ATSD or on a remote machine in which case its IP address must be included in the ["Allow Access"](#upload-permissions) list.
 
 ```sh
 #!/bin/bash
@@ -1639,7 +1644,7 @@ New certificate is now installed. No ATSD restart performed.
 
 ### Certificate Transparency Logs
 
-Some CAs, including Lets Encrypt, voluntarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
+Some CAs, including Let's Encrypt, voluntarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
 
 CT servers store immutable logs of certificate issuance events which contain the subject CN (common name) and certificate details.
 
@@ -1797,7 +1802,7 @@ List current root CA in JRE:
 keytool -list -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts
 ```
 
-Add 'Axibase Root CA' to root CAs (need root privilege).
+Add 'Axibase Root CA' to root CAs (need `root` privilege).
 
 ```sh
 sudo keytool -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts \
@@ -1874,7 +1879,9 @@ openssl x509 -req -in atsd_axibase_com.csr -CAcreateserial \
   -out atsd_axibase_com.crt -days 90 -sha256 -extfile atsd_axibase_com.conf
 ```
 
+<!-- markdownlint-disable MD101 -->
 Extended settings (`CA:FALSE`).
+<!-- markdownlint-enable MD101 -->
 
 ```sh
 cat atsd_axibase_com.conf

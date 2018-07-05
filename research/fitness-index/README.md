@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # Quantifying Public Health: The American Fitness Index
 
 ![Cover](./images/AFICover.jpg)

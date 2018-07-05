@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # The Average American Debt Profile
 
 ![](./images/fed000.jpg)

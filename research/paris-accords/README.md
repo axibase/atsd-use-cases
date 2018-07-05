@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # Climate Change: Back to the Drawing Board
 
 ![Earth](./images/Earth.jpg)

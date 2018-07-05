@@ -447,9 +447,9 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "C
 | 2017-05-01 | 0.8                   | 16             |
 | 2017-06-01 | 1.9                   | 32             |
 
-To create confusion matrices, this table details true positives (p,t), true negatives (n,t), false positives (p,t),
-and false negatives (n,f):
-
+<!-- markdownlint-disable MD101 -->
+To create confusion matrices, this table details true positives (p,t), true negatives (n,t), false positives (p,t), and false negatives (n,f):
+<!-- markdownlint-enable MD101 -->
 Confusion Matrices
 
 | Model | (p,t) | (n,t) | (p,f) | (n,f) |
