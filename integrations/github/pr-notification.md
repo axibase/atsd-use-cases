@@ -8,7 +8,7 @@ This guide shows how to configure GitHub to alert you when anyone opens a new pu
 
 ## Purpose
 
-Use Pull Request functionality in GitHub for repository quality control. Only repository owners or other credentialed users may commit visible changes to repositories. Manage the pull requests of repository collaborators from anywhere with an internet connection without logging in to GitHub.
+Use Pull Request functionality in GitHub for repository quality control. Only repository owners or other credentialed users can commit visible changes to repositories. Manage the pull requests of repository collaborators from anywhere with an internet connection without logging in to GitHub.
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of being able to quickly handle new pull requests or make the relevant information known to specific collaborators can be better accomplished by programmatic integration leveraging GitHub webhook functionality.
 
@@ -53,7 +53,7 @@ Webhook URL: https://github:password@atsd_hostname:8443/api/v1/messages/webhook/
 
 Refer to [GitHub Developer Guide](https://developer.github.com/webhooks/) for additional information on outgoing webhooks.
 
-Open the **Settings** menu of the GitHub repository for which you would like to create notifications.
+Open the **Settings** menu of the GitHub repository to monitor.
 
 ![](./images/repo-settings.png)
 

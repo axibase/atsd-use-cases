@@ -633,7 +633,7 @@ public class CertListCA {
 
 OpenJDK 9
 
-Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](http://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html#JDK-8189131) binary for Linux x64 contains an **empty** `cacerts` keystore.
+Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](https://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html#JDK-8189131) binary for Linux x64 contains an **empty** `cacerts` keystore.
 
 <details><summary><b>View OpenJDK 9 CAs</b></summary>
 
@@ -1820,7 +1820,7 @@ Valid from: Thu Apr 12 11:42:02 MSK 2018 until: Wed Jul 11 11:42:02 MSK 2018
 ...
 Extensions:
 
-#2: ObjectId: 2.5.29.19 Criticality=false
+#2: ObjectId: 2.5.29 Criticality=false
 BasicConstraints:[
   CA:true
   PathLen:2147483647

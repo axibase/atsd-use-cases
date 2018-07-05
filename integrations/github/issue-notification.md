@@ -53,7 +53,7 @@ Webhook URL: https://github:password@atsd_hostname:8443/api/v1/messages/webhook/
 
 Refer to [GitHub Developer Guide](https://developer.github.com/webhooks/) for additional information on outgoing webhooks.
 
-Open the **Settings** menu of the GitHub repository for which you would like to create notifications.
+Open the **Settings** menu of the GitHub repository to monitor.
 
 ![](./images/repo-settings.png)
 

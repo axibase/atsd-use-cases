@@ -300,9 +300,9 @@ year baseline number.
 
 ### Conclusion
 
-The City of Chicago pays close attention to L ridership levels and publishes [an annual report](http://www.transitchicago.com/performance/)
+The City of Chicago pays close attention to L ridership levels and publishes [an annual report](https://www.transitchicago.com/performance/)
 which details their own expectations for rider totals. For the reports available for 2017, the total number of riders
-has been lower than the targeted amount posted by the Chicago Transit Authority, shown in the following [DOCUMENT-REMOVED-FROM-SOURCE](http://www.transitchicago.com/),
+has been lower than the targeted amount posted by the Chicago Transit Authority, shown in the following [DOCUMENT-REMOVED-FROM-SOURCE](https://www.transitchicago.com/),
 however, several station experienced significant growth in rider totals and the CTA has plans to open several new stations
 before the year 2020. With respect to the falling population in Chicago, and [Illinois as a whole](../illinois-birthrates/README.md),
 several analysts have predicted that the population of the Second City will stabilize and even begin to grow again by 2020,

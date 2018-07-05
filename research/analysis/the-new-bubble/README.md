@@ -98,7 +98,7 @@ a decrease in U.S. debt market value.
 _Source_: [Federal Reserve Economic Data](#sources)
 
 Amid the increase in debt value, the actual of amount of wealth created in the United States, expressed by GDP, relative
-to the amount of money the federal government is using to pay down the massive, [$20 trillion](http://www.usdebtclock.org/) debt
+to the amount of money the federal government is using to pay down the massive, [$20 trillion](https://www.usdebtclock.org/) debt
 is sharply decreasing. Less than 2% of new wealth produced in the United States each year is allocated to paying down the debt.
 In fact, since the 2009 meltdown, the Fed has kept interest payments low to allow the government to continue paying down the debt,
 which skyrocketed during the recession due to now infamous government bailouts of several major financial institutions ([4](#sources)),
@@ -177,7 +177,7 @@ age of Neo-liberalism.
 
 > All charts from this article can be viewed together [here](https://apps.axibase.com/chartlab/c91957c0/2/).
 
-1. [Smithsonian Magazine](http://www.smithsonianmag.com/smart-news/average-american-household-lost-third-their-net-worth-during-recession-180952191/); 2014; Shultz, Colin.
+1. [Smithsonian Magazine](https://www.smithsonianmag.com/smart-news/average-american-household-lost-third-their-net-worth-during-recession-180952191/); 2014; Shultz, Colin.
 
 2. [Dallas Federal Reserve](https://www.dallasfed.org/research/econdata/govdebt); 2017 ; Mihaylov, Emil
 
@@ -192,6 +192,6 @@ age of Neo-liberalism.
 
 7. [Bloomberg Markets](https://www.bloomberg.com/news/articles/2017-08-25/gold-shaken-out-of-slumber-by-a-mysterious-2-million-ounce-trade); 2017; Barton, Susanne and Javiar, Luzi-Ann
 
-8. [World Atlas](http://www.worldatlas.com/articles/what-was-the-price-revolution.html); 2017 ; Kimutai, Kenneth
+8. [World Atlas](https://www.worldatlas.com/articles/what-was-the-price-revolution.html); 2017 ; Kimutai, Kenneth
 
-9. [Business Insider](http://www.businessinsider.com/econ-myth-busting-sorry-john-carney-the-us-is-not-a-default-virgin-2011-5); 2011; PolyCapitalist, The
+9. [Business Insider](https://www.businessinsider.com/econ-myth-busting-sorry-john-carney-the-us-is-not-a-default-virgin-2011-5); 2011; PolyCapitalist, The

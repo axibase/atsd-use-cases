@@ -5,18 +5,18 @@
 To grant easier access to public datasets such as **Employee Financial Compensation by Industry in Iowa**, the Unites States government established [data.gov](https://www.data.gov/). Datasets are available online to conduct research, develop web applications, and design data visualizations, on a variety of topics ranging
 from agriculture and manufacturing, to healthcare and society.
 
-* According to the [US Bureau of Labor Statistics](http://www.bls.gov/news.release/laus.nr0.htm), as of September 2016, Iowa had an unemployment rate of 4.2% which is lower than then US average of 5.0%.
-* [From September of 2015 to September 2016](http://www.bls.gov/news.release/laus.t05.htm), the state of Iowa added 29,600 non-farm jobs to bring the number of non-farm employed persons in the state to 1,587,800. This amounted to a growth rate of 1.9%. The US as a whole for this same period experienced a slightly lower growth rate of 1.8%.
+* According to the [US Bureau of Labor Statistics](https://www.bls.gov/news.release/laus.nr0.htm), as of September 2016, Iowa had an unemployment rate of 4.2% which is lower than then US average of 5.0%.
+* [From September of 2015 to September 2016](https://www.bls.gov/news.release/laus.t05.htm), the state of Iowa added 29,600 non-farm jobs to bring the number of non-farm employed persons in the state to 1,587,800. This amounted to a growth rate of 1.9%. The US as a whole for this same period experienced a slightly lower growth rate of 1.8%.
 
 The governments at the federal, state, city, and county level publish datasets in [Socrata Open Data Format](https://socrata.com).
 
 Using ATSD, you can combine datasets from multiple entities in one portal.
 
-This article uses data collected from the [Bureau of Labor Statistics](http://www.bls.gov/home.htm).
+This article uses data collected from the [Bureau of Labor Statistics](https://www.bls.gov/home.htm).
 
 ## Iowa Employee Compensation Dataset
 
-Explore the **Employee Financial Compensation by Industry in Iowa** on [`data.gov`](http://catalog.data.gov/dataset/employee-compensation-by-industry-in-iowa)
+Explore the **Employee Financial Compensation by Industry in Iowa** on [`data.gov`](https://catalog.data.gov/dataset/employee-compensation-by-industry-in-iowa)
 
 The state of Iowa collects estimated employee compensation values in non-adjusted dollar value. Compensation is the total remuneration, both monetary and in kind, payable by employers to employees in return for work during some period.
 
@@ -291,13 +291,13 @@ value = (value('comp')/(value('emps')+value('empl')))==0 ? null : (value('comp')
 
 Add another dataset to this analysis to adjust for inflation: the consumer price index (CPI).
 
-According to the [Bureau of Labor Statistics (BLS)](http://www.bls.gov/cpi/cpifaq.htm), CPI is a measure of the average change over time in the prices
+According to the [Bureau of Labor Statistics (BLS)](https://www.bls.gov/cpi/cpifaq.htm), CPI is a measure of the average change over time in the prices
 paid by urban consumers for a market basket of goods and services. This market basket includes a wide variety of consumer items such as chicken, bedroom furniture, jewelry, eyeglasses, college tuition,
 tobacco, and many more items. Use CPI to index the real value of average employee salaries change over time using current dollars.
 
 Calculate adjusted dollar value by multiplying unadjusted value and the current CPI divided the CPI at any specified time period to project that amount in current dollars. In other words, the rate of change for CPI creates a simple conversion factor for comparing dollar value through time using the amount of goods the same dollar can buy.
 
-Download the CPI dataset from the [Bureau of Labor Statistics](http://data.bls.gov/cgi-bin/surveymost). Data is available in XLSX format.
+Download the CPI dataset from the [Bureau of Labor Statistics](https://data.bls.gov/cgi-bin/surveymost). Data is available in XLSX format.
 
 Create a job Axibase Collector to download the tabular data from the Bureau of Labor Statistics file format and then upload the data into
 ATSD. Because the file format is nonstandard, configure ATSD to properly upload the data via [CSV Parser](https://axibase.com/docs/atsd/parsers/csv/).

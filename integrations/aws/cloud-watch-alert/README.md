@@ -99,7 +99,7 @@ To configure an email client in the ATSD sandbox container:
 
   ```txt
   server=mail.example.org
-  user=john.doe@example.org
+  user=user@example.org
   password=secret
   ```
 

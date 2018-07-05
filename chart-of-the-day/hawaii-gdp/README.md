@@ -36,7 +36,7 @@ decline that is significantly lower than the US Average. Compare the numbers bel
 | 2009 | -1.0% | -2.78% | 1.78% |
 | 2010 | 2.0% | 2.53% | -0.53% |
 
-> Source for US GDP Data: [The World Bank](http://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG).
+> Source for US GDP Data: [The World Bank](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG).
 
 Measuring this growth over the entire 11-year period to compare effective annual growth, Hawaii averaged a total of 4.96% per year
 effective growth compared to the United States' effective growth rate of just 1.86% per year. This metric averages the growth of each

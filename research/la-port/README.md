@@ -13,7 +13,7 @@ cranes, and 113 miles of on-port railways. [The Port employees](https://www.port
 worldwide. When ranked by cargo value, America's Port holds the top spot in the United States with a value that continues to
 grow each year. By volume, the port is ranked 16th in the world (or 9th if combined with the nearby Long Beach Port), and has
 recently had its [main navigational channel deepened](https://www.portoflosangeles.org/newsroom/2013_releases/news_040313_Main_Channel.asp)
-to 53 feet to accommodate the [newest line of super-sized international freighters](http://www.maersk.com/en/hardware/triple-e),
+to 53 feet to accommodate the [newest line of super-sized international freighters](https://www.maersk.com/en/hardware/triple-e),
 yet to debut in American port waters.
 
 Amongst all the traffic, the Port has managed to prioritize green initiatives to lower its internal greenhouse gas emissions
@@ -24,7 +24,7 @@ in to the already polluted Los Angeles air.
 
 The City of Los Angeles has released annually-aggregated [total emission data](https://catalog.data.gov/dataset/port-of-los-angeles-emission-from-port-operations-4912c)
 from a 2005 to 2012 study to document its progress with respect to reducing greenhouse gas emissions. Pollution is something taken
-seriously in Los Angeles due to the magnitude of the problem, and the Port even allows individuals to [track live information](http://caap.airsis.com/CurrentData.aspx)
+seriously in Los Angeles due to the magnitude of the problem, and the Port even allows individuals to [track live information](https://caap.airsis.com/CurrentData.aspx)
 about local air quality from their on-site air quality testing center.
 
 The pollutants recorded by the port are shown below:

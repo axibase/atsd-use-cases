@@ -1,6 +1,6 @@
 # Comprehensive Housing Market Analysis: City of Austin (2014)
 
-* Source Data: [City of Austin Report](http://www.austintexas.gov/sites/default/files/files/NHCD/2014_Comprehensive_Housing_Market_Analysis_-_Document_reduced_for_web.pdf)
+* Source Data: [City of Austin Report](https://www.austintexas.gov/sites/default/files/files/NHCD/2014_Comprehensive_Housing_Market_Analysis_-_Document_reduced_for_web.pdf)
 
 * Structured Query Language: [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD
 

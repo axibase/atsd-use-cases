@@ -180,7 +180,7 @@ Compare the combined life expectancy data for both sexes and racial categories o
 
 ## Conclusion
 
-The diminishing increase in United States life expectancy indicates that this rate of improvements may be as good as it gets for mankind. A number of [easily accessible](http://lmgtfy.com/?q=peak+life+expectancy) and recent resources have shown large research organizations coming to the same conclusion: sometime in the next 20 - 30 years we may see a complete flattening of that line. Despite the continuous increase in nutritional, performance-enhancing, and medical / surgical options, scientists are beginning to believe that current human life expectancy may not reach much higher than it already has.
+The diminishing increase in United States life expectancy indicates that this rate of improvements may be as good as it gets for mankind. A number of [easily accessible](https://lmgtfy.com/?q=peak+life+expectancy) and recent resources have shown large research organizations coming to the same conclusion: sometime in the next 20 - 30 years we may see a complete flattening of that line. Despite the continuous increase in nutritional, performance-enhancing, and medical / surgical options, scientists are beginning to believe that current human life expectancy may not reach much higher than it already has.
 
 ![](./images/life-ex-comb.png)
 [![](./images/button-new.png)](https://trends.axibase.com/feeee62f#fullscreen)

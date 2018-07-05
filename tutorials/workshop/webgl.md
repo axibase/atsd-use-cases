@@ -41,8 +41,6 @@ Simplicity causes a reduced number of primitives to be rendered: WebGL can draw 
 
 ![Utah teapot](./images/utah_teapot.jpg)
 
-![](http://caig.cs.nctu.edu.tw/course/CG2007/images/ex1_wireframe.jpg)
-
 To display this teapot:
 
 1. Initialize WebGL context;

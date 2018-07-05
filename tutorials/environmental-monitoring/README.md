@@ -19,9 +19,9 @@ This article focuses on an implemented use case, monitoring and analyzing air qu
 
 This process uses the data from more than 2,000 monitoring sensor stations located in over 300 cities across the United States. These stations generate hourly readings of several key air quality metrics.
 
-The data is gathered from the [AirNow API](http://www.airnowapi.org/), which is a [U.S. government EPA](http://www.epa.gov/) program that protects public health by providing forecast and real-time air quality information.
+The data is gathered from the [AirNow API](https://www.airnowapi.org/), which is a [U.S. government EPA](https://www.epa.gov/) program that protects public health by providing forecast and real-time air quality information.
 
-The two main collected metrics are [`PM2.5`](http://en.wikipedia.org/wiki/Particulates) and [`Ozone (o3)`](http://en.wikipedia.org/wiki/Ozone).
+The two main collected metrics are [`PM2.5`](https://en.wikipedia.org/wiki/Particulates) and [`Ozone (o3)`](https://en.wikipedia.org/wiki/Ozone).
 
 `PM2.5` is particulate matter that consists of particles less than 2.5 micrometers in diameter, often called fine particles. These particles are small enough that they can be detected only with an electron microscope. Sources of fine particles include all types of combustion, such as combustion in motor vehicles, power plants, residential wood burning, forest fires, agricultural burning, and industrial processes.
 
@@ -50,7 +50,7 @@ As a result of this finding, all data is collected with a 12-hour delay to incre
 
 [Axibase Collector](https://axibase.com/docs/axibase-collector/) is used to collect the data from the monitoring sensor stations and to stream the data into the ATSD. Collector is an effective tool for batch downloading of historical data and streaming fresh data as it becomes available.
 
-In Collector, set up a job to collect the data from the air monitoring sensor stations in Fresno, California. For this particular example, Fresno is used because the city is considered to be one of the most polluted in the United States, with [air quality warnings](http://www.fresnobee.com/news/local/news-columns-blogs/earth-log/article19529637.html) often issued to the public.
+In Collector, set up a job to collect the data from the air monitoring sensor stations in Fresno, California. For this particular example, Fresno is used because the city is considered to be one of the most polluted in the United States, with [air quality warnings](https://www.fresnobee.com/news/local/news-columns-blogs/earth-log/article19529637.html) often issued to the public.
 
 The [File Job](https://axibase.com/docs/axibase-collector/jobs/file.html) sets up a [`cron`](https://axibase.com/docs/axibase-collector/scheduling.html#cron-expressions) task that runs at a specified interval to collect the data and batch upload it to ATSD.
 
@@ -81,12 +81,12 @@ The [Rssa](https://cran.r-project.org/web/packages/Rssa/index.html) package is u
 Use the following resources to select parameters for SSA forecasting:
 
 * [Basic Singular Spectrum Analysis and Forecasting with R, Computational Statistics and Data Analysis, Volume 71, March 2014, Pages 934-954](https://arxiv.org/abs/1206.6910)
-* [Singular Spectrum Analysis for Time Series, SpringerBriefs in Statistics, 2013](http://www.springer.com/gp/book/9783642349126)
+* [Singular Spectrum Analysis for Time Series, SpringerBriefs in Statistics, 2013](https://www.springer.com/gp/book/9783642349126)
 
 When building a forecast, follow the recommended procedure:
 
 * Retrieve `PM2.5` series from ATSD using the [`executeSQLquery()`](https://axibase.com/docs/atsd/rule-engine/functions-sql.html#executesqlquery) function. 72 days of data are loaded from ATSD.
-* Build SSA decomposition with a window of 24 days and 100 [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page) triples:
+* Build SSA decomposition with a window of 24 days and 100 [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) triples:
 
 ```c++
 dec <- ssa(values, L = 24 * 24, neig = 100)
@@ -142,7 +142,7 @@ The next step is to create a competing forecast in ATSD using the built-in forec
 
 ### Visualizing the Results
 
-To visualize the data and forecasts, a portal is created using the [visualization](http://axibase.com/products/axibase-time-series-database/visualization/) features of ATSD.
+To visualize the data and forecasts, a portal is created using the [visualization](https://axibase.com/products/axibase-time-series-database/visualization/) features of ATSD.
 
 ![](./images/portal_air_quality1.png)
 
@@ -156,7 +156,7 @@ ATSD built-in forecasting produces more accurate results than one of the most ad
 
 Keep track of how these forecasts perform in comparison to the actual data in Axibase [ChartLab](../shared/chartlab.md).
 
-[![](./images/button.png)](http://apps.axibase.com/chartlab/d06179aa)
+[![](./images/button.png)](https://apps.axibase.com/chartlab/d06179aa)
 
 ### Alerts and Notifications
 
@@ -167,7 +167,7 @@ Analytical rules set in Rule Engine for metric `PM2.5`, alert raised if streamin
 Rule | Description
 --|--
 `value > 30` | Raise an alert if last metric value exceeds threshold.
-`forecast_deviation(avg()) > 2` | Raise an alert if the actual value exceeds the forecast by more than two [standard deviations](http://en.wikipedia.org/wiki/Normal_distribution). Smart rules capture extreme spikes in air pollution.
+`forecast_deviation(avg()) > 2` | Raise an alert if the actual value exceeds the forecast by more than two [standard deviations](https://en.wikipedia.org/wiki/Normal_distribution). Smart rules capture extreme spikes in air pollution.
 
 ![](./images/standard_deviation.png)
 
@@ -175,9 +175,9 @@ At this point the use case is fully implemented and functions autonomously. ATSD
 
 ## Results and Conclusions
 
-The results of this case can be [useful for travelers](http://www.telegraph.co.uk/travel/travelnews/10239362/Air-pollution-blamed-as-China-loses-tourists.html) who need to have an [accurate forecast of environmental and pollution related issues](resources/content_19087645.htm target=) that they are exposed to during the trip. This information can also be helpful to expats moving to a new city or country. [Studies have proven](http://www.euro.who.int/__data/assets/pdf_file/0006/189051/Health-effects-of-particulate-matter-final-Eng.pdf) that long-term exposure to high levels of `PM2.5` can lead to serious health issues.
+The results of this case can be [useful for travelers](https://www.telegraph.co.uk/travel/travelnews/10239362/Air-pollution-blamed-as-China-loses-tourists.html) who need to have an [accurate forecast of environmental and pollution related issues](resources/content_19087645.htm target=) that they are exposed to during the trip. This information can also be helpful to expats moving to a new city or country. [Studies have proven](http://www.euro.who.int/__data/assets/pdf_file/0006/189051/Health-effects-of-particulate-matter-final-Eng.pdf) that long-term exposure to high levels of `PM2.5` can lead to serious health issues.
 
-This research and environmental forecasting is especially valuable in regions like [China](http://aqicn.org/map/china/), where air pollution seriously affects the local population and visitors. In cities like [Shanghai](http://www.stateair.net/web/post/1/4.html), [Beijing](http://www.stateair.net/web/post/1/1.html), and [Guangzhou](http://www.stateair.net/web/post/1/3.html), `PM2.5` levels are constantly fluctuating from unhealthy to critical levels, yet accurate forecasting is limited. `PM2.5` forecasting is essential for travelers and tourists who need to plan trips during periods of lower pollution levels due to potential health risks of pollution exposure.
+This research and environmental forecasting is especially valuable in regions like [China](https://aqicn.org/map/china/), where air pollution seriously affects the local population and visitors. In cities like [Shanghai](http://www.stateair.net/web/post/1/4.html), [Beijing](http://www.stateair.net/web/post/1/1.html), and [Guangzhou](http://www.stateair.net/web/post/1/3.html), `PM2.5` levels are constantly fluctuating from unhealthy to critical levels, yet accurate forecasting is limited. `PM2.5` forecasting is essential for travelers and tourists who need to plan trips during periods of lower pollution levels due to potential health risks of pollution exposure.
 
 ![](./images/china_air_quality.png)
 

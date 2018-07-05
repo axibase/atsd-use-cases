@@ -1,6 +1,6 @@
 # European Union Debt by Country Per Capita (2005-2016)
 
-Data Source: [EuroStat](http://ec.europa.eu/eurostat)
+Data Source: [EuroStat](https://ec.europa.eu/eurostat)
 
 Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
 

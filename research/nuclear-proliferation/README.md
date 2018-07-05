@@ -28,7 +28,7 @@ shown below using [data](https://ourworldindata.org/nuclear-weapons/) from a 201
 of nuclear weapons among observed nations.
 
 Despite this however, the former Cold War rivals have also been the most proactive about self-disarmament and as permanent
-members of the [United Nations Security Council](http://www.un.org/en/sc/members/), have lead the world away from the atomic brink.
+members of the [United Nations Security Council](https://www.un.org/en/sc/members/), have lead the world away from the atomic brink.
 The visualization here traces the number of nuclear weapons held by the Russian Federation or Soviet Union and the United States over
 the last fifty years.
 
@@ -42,11 +42,11 @@ the last fifty years.
 
 Despite international efforts to reduce the nuclear arsenal and imminent danger of nuclear attack, the NPT has proven to be
 ineffective on a number of fronts. Most conspicuous among post-treaty nuclear powers, Israel maintains an international position of
-ambiguity although it is almost universally accepted that they have nuclear capabilities after the [Apollo Affair](http://nsarchive.gwu.edu/nukevault/ebb565-Was-U.S.-Nuclear-Weapons-Fuel-Diverted-to-Israel/),
+ambiguity although it is almost universally accepted that they have nuclear capabilities after the [Apollo Affair](https://nsarchive.gwu.edu/nukevault/ebb565-Was-U.S.-Nuclear-Weapons-Fuel-Diverted-to-Israel/),
 which saw an estimated 300 kilograms of enriched uranium disappear, allegedly having been transported illegally to Israel.
 
-The following visualization roughly estimates the expansion of the Israeli nuclear program over the last decades using [data](http://thebulletin.org/nuclear-notebook-multimedia)
-sourced from the [Bulletin of the Atomic Scientists](http://thebulletin.org/), a nuclear think tank formed by the members
+The following visualization roughly estimates the expansion of the Israeli nuclear program over the last decades using [data](https://thebulletin.org/nuclear-notebook-multimedia)
+sourced from the [Bulletin of the Atomic Scientists](https://thebulletin.org/), a nuclear think tank formed by the members
 of the Manhattan Project, who created the original atomic bomb used to force Japanese surrender after German defeat in
 World War Two.
 

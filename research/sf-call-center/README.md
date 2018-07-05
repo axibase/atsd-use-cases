@@ -10,7 +10,7 @@ data analysts who work for the companies that operate these call centers from im
 other data that they record about client experiences.
 
 One of the first obstacles to maintaining a successful call center is the ability to connect clients to an operator in a timely
-manner, nevermind the companies now trying to use [personality metrics](http://www.informationweek.com/big-data/big-data-analytics/big-data-matching-personalities-in-the-call-center/d/d-id/1319108)
+manner, nevermind the companies now trying to use [personality metrics](https://www.informationweek.com/big-data/big-data-analytics/big-data-matching-personalities-in-the-call-center/d/d-id/1319108)
 to connect clients to a similar operator or one they predict mesh with a given customer. A low call response time
 is essential to starting client interactions off on the right foot and sets the tone for the entire interaction.
 

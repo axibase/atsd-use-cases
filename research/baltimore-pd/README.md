@@ -13,7 +13,7 @@ of the incident, the nature of the incident, and the date of the incident.
 Additionally, the City of Baltimore has recorded crime incidents in the city,
 including homicide rates during the years 2013 and 2014. Baltimore has one of the highest murder
 rates in the country, and even ranks 19th on the planet
-[for highest per capita murder rate](http://www.worldatlas.com/articles/most-dangerous-cities-in-the-world.html).
+[for highest per capita murder rate](https://www.worldatlas.com/articles/most-dangerous-cities-in-the-world.html).
 These two data sets can be compared and contrasted to underline a number of features
 regarding the nature and the scope of the violence that occurs against the backdrop of a nearly three hundred
 year old city less than forty miles from the Washington, DC.

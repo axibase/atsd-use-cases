@@ -95,7 +95,7 @@ wallets and beginning to invest themselves.
 _Source_: Quandl - [Number of Users](https://www.quandl.com/data/BCHAIN/NADDU-Bitcoin-Number-of-Unique-Bitcoin-Addresses-Used), [Number of Transactions](https://www.quandl.com/data/BCHAIN/NTRAN-Bitcoin-Number-of-Transactions)
 
 Of course, Bitcoin is utterly dwarfed in size when compared to other payment processors; Mastercard, for example, handles
-around [300 million unique transactions](http://www.techrepublic.com/blog/decision-central/process-300-million-transactions-a-day-without-going-crazy/)
+around [300 million unique transactions](https://www.techrepublic.com/blog/decision-central/process-300-million-transactions-a-day-without-going-crazy/)
 a day, but its relevance is growing all the time. Russian Deputy Minister of Finance Alexei Moiseyev recently announced that
 qualified investors can possibly [trade Bitcoin on the Moscow Stock Exchange](https://www.forbes.com/sites/kenrapoza/2017/08/30/moscow-stock-exchange-opens-to-crypto-currency-trade/#66b76e3426d1),
 and unnamed U.S. elected officials are currently striving to extend the same kind of legal protection to Bitcoin that

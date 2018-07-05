@@ -9,7 +9,7 @@
 Debt is a complicated concept. After the sub-prime mortgage crisis of the late 2000s, modern Americans are all too familiar
 with the problems of irresponsible spending on credit. Student loan recipients who queue up to drop off another application
 for a job in a field they did not study are quick to point to the trappings of deficit spending as a means of wealth creation.
-Politicians and voters on both sides of the aisle point to the ever-growing [United States Government debt](http://www.usdebtclock.org/)
+Politicians and voters on both sides of the aisle point to the ever-growing [United States Government debt](https://www.usdebtclock.org/)
 with anxiety for the future.
 
 And yet despite all the doom and gloom, the American financial system is one of the most stable in the world, in

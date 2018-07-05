@@ -53,7 +53,7 @@ Complete the process below to enhance Route 53 alarms with your local ATSD insta
     ```txt
     server=mail.example.org
     port=587
-    user=john.doe@example.org
+    user=user@example.org
     password=secret
     ```
 

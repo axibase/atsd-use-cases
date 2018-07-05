@@ -2,14 +2,14 @@
 
 ## Overview
 
-[Marathon](https://mesosphere.github.io/marathon/) is a framework for automating the deployment of Linux containers on top of clusters managed by [Apache Mesos](http://mesos.apache.org/). The framework supports auto-scaling and fail-over based on built-in health checks.
+[Marathon](https://mesosphere.github.io/marathon/) is a framework for automating the deployment of Linux containers on top of clusters managed by [Apache Mesos](https://mesos.apache.org/). The framework supports auto-scaling and fail-over based on built-in health checks.
 
 The primary concept implemented in Marathon is the [**Application**](https://mesosphere.github.io/marathon/docs/application-basics.html), which is a resizeable collection of identical containers launched as a long-running service or a short-term batch processing job.
 
 The framework consists of the following components:
 
 * Marathon server to translate **Application** definitions into stateful services consisting of Mesos tasks.
-* [REST API](http://mesosphere.github.io/marathon/api-console/index.html) for programmatic access and integration.
+* [REST API](https://mesosphere.github.io/marathon/api-console/index.html) for programmatic access and integration.
 * User Interface to create and manage Applications.
 
 Marathon `v1.5.6` user interface:
@@ -18,7 +18,7 @@ Marathon `v1.5.6` user interface:
 
 ## Capacity
 
-Each container (or **Task** in Marathon terms) is allocated a pre-defined amount of CPU, memory, and disk resources by the application which launches the containers on underlying Mesos [nodes](http://mesos.apache.org/documentation/latest/architecture/) based on available system capacity.
+Each container (or **Task** in Marathon terms) is allocated a pre-defined amount of CPU, memory, and disk resources by the application which launches the containers on underlying Mesos [nodes](https://mesos.apache.org/documentation/latest/architecture/) based on available system capacity.
 
 ### Allocated Capacity
 

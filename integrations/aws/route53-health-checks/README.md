@@ -16,13 +16,13 @@ An automation procedure, such as DNS fail-over or service restart, can be initia
 
 Route 53 executes health checks from different parts of the world independently verify outage and latency information. The latency and connection times collected by the checkers vary widely depending on the geographic proximity of the monitored endpoint to one of the AWS regions used for health checking.
 
-* us-east-1
-* us-west-1
-* us-west-2
-* sa-east-1
-* ap-southeast-1
-* ap-southeast-2
-* ap-northeast-1
+* `us-east-1`
+* `us-west-1`
+* `us-west-2`
+* `sa-east-1`
+* `ap-southeast-1`
+* `ap-southeast-2`
+* `ap-northeast-1`
 
 ![](./images/route53-region.png)
 
@@ -32,7 +32,7 @@ AWS publishes a list of IP ranges used by [health checker nodes](https://ip-rang
 
 ```json
 {
-  "ip_prefix": "203.0.113.0/24",
+  "ip_prefix": "192.0.2.0/24",
   "region": "us-east-1",
   "service": "ROUTE53_HEALTHCHECKS"
 }
