@@ -306,4 +306,4 @@ has been lower than the targeted amount posted by the Chicago Transit Authority,
 however, several station experienced significant growth in rider totals and the CTA has plans to open several new stations
 before the year 2020. With respect to the falling population in Chicago, and [Illinois as a whole](../illinois-birthrates/README.md),
 several analysts have predicted that the population of the Second City will stabilize and even begin to grow again by 2020,
-so counting on the continued stagnation of transit riders in the city seems to be betting against the house.
+which means that counting on the continued stagnation of transit riders in the city seems to be betting against the house.

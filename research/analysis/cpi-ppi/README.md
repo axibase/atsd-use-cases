@@ -5,7 +5,7 @@
 ## Introduction
 
 The Consumer Price Index (CPI) is a metric that is most commonly associated with inflation. It tracks the average cost of goods,
-and by doing so, demonstrates the changing prices that consumers are paying for a typical basket of goods. Think about your
+and demonstrates the changing prices that consumers are paying for a typical basket of goods. Think about your
 favorite grandparent telling you about how much the movies cost when they were your age. To learn more about the effect of
 the CPI see this [analysis](../../cbisrael-cpi/README.md) that track how CPI affected the value of the Israeli Shekel over several
 decades.

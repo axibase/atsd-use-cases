@@ -8,7 +8,7 @@
 
 In 2016, Chicago, the 3rd most populous city in the United States, had more homicides
 than New York City and Los Angeles **combined**. In 2016, 753 murders occurred in the city, a **55% increase** from 486 in 2015 with 4,331 total shooting victims in 2016, compared to 2,939
-in 2015. From 2004 to 2015, the peak number of murders in the city was under 500. From 2011 to 2015, the city recorded less than 3,000 shooting victims per year. So what is the reason for this alarming
+in 2015. From 2004 to 2015, the peak number of murders in the city was under 500. From 2011 to 2015, the city recorded less than 3,000 shooting victims per year. What is the reason for this alarming
 increase in violence in Chicago? Was there an increase in all kinds of crime, or are the murders and shootings an exception? This article  analyzs a dataset from [`data.gov`](https://www.data.gov/)
 tracking [Chicago crime statistics](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4) from 2001 to the present time. This research article illustrates how publicly available data
 from data.gov can be easily loaded into the non-relational ATSD for interactive analysis and graphical
@@ -156,7 +156,7 @@ If you would like to see more queries on this Chicago crime dataset, go to the [
 
 ## A Deeper Look at Crime in Chicago
 
-So, what caused this drastic increase in murders in Chicago in 2016? Did the city experience an overall increase in crime?
+What caused this drastic increase in murders in Chicago in 2016? Did the city experience an overall increase in crime?
 
 There has been a long term decrease in crime as a whole in Chicago.
 

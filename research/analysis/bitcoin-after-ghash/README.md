@@ -60,8 +60,7 @@ of its establishment approached 51% control of the Bitcoin hash rate, potentiall
 
 Eventually, GHash.IO disbanded, the operators of the mining group understood the implications of a 51% hash rate
 shareholder: they could effectively counterfeit bitcoins through double spending of coins, a problem created by a loophole
-in the blockchain protocol methodology (whereby the user is effectively able to verify their own transaction and receive bitcoins
-for doing so, only to spend the original coin again because they now hold consecutive blocks unknown to anyone else), deny pending
+in the blockchain protocol methodology (whereby the user is effectively able to verify their own transaction and the transaction fee, only to spend the original coin again because they now hold consecutive blocks unknown to anyone else), deny pending
 transactions from other bitcoin miners because of their control of consecutive points in a given blockchain, and exercise
 the powers of a central monetary authority, something that those who established Bitcoin sought to avoid with its distributed
 levers of power.
