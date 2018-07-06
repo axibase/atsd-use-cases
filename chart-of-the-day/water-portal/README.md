@@ -47,7 +47,7 @@ The same 3-year period wrecked havoc on Bidwell Marina located on Lake Oroville 
 
 ![](./images/bidwell-marina.png)
 
-Despire heavy rainfall which sparked the [Oroville Dam crisis](../../research/oroville-dam/README.md), whereby the main and emergency spillways of the dam were heavily damaged, prompting almost 200 thousand citizens to be evacuated by local authorities,  water levels have continued to decline in Lake Oroville.
+Despite heavy rainfall which sparked the [Oroville Dam crisis](../../research/oroville-dam/README.md), whereby the main and emergency spillways of the dam were heavily damaged, prompting almost 200 thousand citizens to be evacuated by local authorities,  water levels have continued to decline in Lake Oroville.
 
 To compensate for the increased rainfall, use an [aggregation function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) to smooth the trend lines. Each marker denotes the user-defined period of `1 week`.
 
@@ -128,9 +128,9 @@ for offs in ofs
 
 ## Conclusion
 
-Historian and California resident Victor Davis Hanson writes [at length](http://victorhanson.com/wordpress/the-underbelly-of-the-california-drought/#more-8695) about the problems facing California should legislators choose to continue to ignore the potentially imminent water crisis. Each drought season appears to be worse than the previous as the population of the state continues to grow and the number of viable water resources decrease almost unchecked.
+Historian and California resident Victor Davis Hanson writes [at length](http://victorhanson.com/wordpress/the-underbelly-of-the-california-drought/#more-8695) about the problems facing California if legislators choose to continue to ignore the potentially imminent water crisis. Each drought season appears to be worse than the previous as the population of the state continues to grow and the number of viable water resources decrease almost unchecked.
 
-The dangers of a water shortage in one of the most populous states in the country (and home to Axibase Headquarters, no less) could bring to a grinding halt Silicon Valley, a place which has long considered itself above, or at least unaffected by, the machinations of the natural world.
+The dangers of a water shortage in one of the most populous states in the country (and home to Axibase Headquarters, no less) can bring to a grinding halt Silicon Valley, a place which has long considered itself above, or at least unaffected by, the machinations of the natural world.
 
 It seems that Mother Nature desires to remind Bay Area technocrats just how wrong they really are.
 

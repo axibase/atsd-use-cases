@@ -2,6 +2,7 @@
 
 Interactive visualizations tracking interesting datasets from a variety of sources.
 
+1. [California Water Portals](water-portal/README.md) (July 2018)
 1. [Tracking 2018 Cryptocurrency Value](crypto/README.md) (June 2018)
 1. [Hetzner May 2018 Outage](hetzner-outage/README.md) (May 2018)
 1. [The Creeping Overnight Fund Rate](overnight-fund-rate/README.md) (March 2018)
