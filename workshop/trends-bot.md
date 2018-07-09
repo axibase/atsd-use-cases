@@ -1,24 +1,24 @@
 # Real Slack Bot for Trends
 
- * [Data Specifics](#data-specifics)
- * [Webhook User](#webhook-user)
- * [Slack App Configuration](#slack-app-configuration)
-    
-    * [Interactive Components](#interactive-components)
-    * [Slash Commands](#slash-commands)
- 
- * [ATSD Configuration](#atsd-configuration)
-    
-    * [Outgoing Webhooks](#outgoing-webhooks)
-    * [Replacement Tables](#replacement-tables)
-    * [Portal](#portal)
-    * [Rule](#rule)
- 
+* [Data Specifics](#data-specifics)
+* [Webhook User](#webhook-user)
+* [Slack App Configuration](#slack-app-configuration)
+
+  * [Interactive Components](#interactive-components)
+  * [Slash Commands](#slash-commands)
+
+* [ATSD Configuration](#atsd-configuration)
+
+  * [Outgoing Webhooks](#outgoing-webhooks)
+  * [Replacement Tables](#replacement-tables)
+  * [Portal](#portal)
+  * [Rule](#rule)
+
 ## Overview
 
 This document describes how to create a bot that sends a portal with metrics and the type specified by user through Slack Interactive messages [framework](https://api.slack.com/interactive-messages#building_workflows). The metrics are stored in ATSD from [trends](../tutorials/shared/trends.md#using-trends) sandbox.
 
-![](images/trends_bot_7.png) 
+![](./images/trends_bot_7.png) 
 
 ## Data Specifics
 
@@ -28,9 +28,9 @@ Features of [metrics](https://trends.axibase.com/public/reference.html) stored i
 * metric names are not informative.
 
 Therefore, the user will be asked to select multiple tags: "Parent Category", "Category", "Frequency", "Seasonal Adjustment" and execute [search](https://github.com/axibase/atsd/tree/master/search#search) query using specified parameters.
-Each tag will contain no more than 10 values  to not overload the tutorial.
+Each tag will contain no more than 10 values to not overload the tutorial.
 
-![](images/trends_bot_6.png)
+![](./images/trends_bot_6.png)
 
 ## Webhook User
 
@@ -43,7 +43,7 @@ If necessary, create new Slack app with the bot user as described [here](https:/
 
 ### Interactive Components
 
-In order to allow the user to select options, use interactive messages [menus](https://api.slack.com/docs/message-menus) and [buttons](https://api.slack.com/docs/message-buttons). When user selects some item, ATSD receives a HTTP `POST` with a payload body parameter containing a urlencoded JSON object.
+To allow the user select options, use interactive messages [menus](https://api.slack.com/docs/message-menus) and [buttons](https://api.slack.com/docs/message-buttons). When user selects some item, ATSD receives a HTTP `POST` with a payload body parameter containing a urlencoded JSON object.
 
 <details><summary>Sample JSON sent by Slack Menu</summary>
 <p>
@@ -207,7 +207,6 @@ In order to allow the user to select options, use interactive messages [menus](h
 </p>
 </details>
 
-
 To convert JSONs into message tags, use [`jsonParse`](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#parse-parameters) parameter:
 
 ```elm
@@ -220,7 +219,7 @@ Objects `actions`,`original_message` do not need, [exclude](https://github.com/a
 exclude=payload.ac*;payload.or*
 ```
 
-The `"value"` fields will store items selected by user, so [include](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#filter-parameters) them:
+The `"value"` fields will store items selected by user, [include](https://github.com/axibase/atsd/blob/master/api/data/messages/webhook.md#filter-parameters) them:
 
 ```elm
 include=payload.actions[0].selected_options[0].value;payload.actions[0].value
@@ -240,11 +239,11 @@ https://username:password@atsd_hostname:8443/api/v1/messages/webhook/axibase-bot
 
 > Don't forget to replace source and entity.
 
-![](images/trends_bot_1.png)
+![](./images/trends_bot_1.png)
 
 ### Slash Commands
 
-In order to allow the user to call bot directly from Slack use [Slash Commands](https://api.slack.com/slash-commands).
+To allow the user to call bot directly from Slack use [Slash Commands](https://api.slack.com/slash-commands).
 
 In the case of a Slash Command, all is need to be done is figure out what exactly Slash Command is it:
 
@@ -258,9 +257,9 @@ Specify command and webhook url at the Slash Command Editor:
 https://username:password@atsd_hostname:8443/api/v1/messages/webhook/axibase-bot?entity=slack&message=/chart
 ```
 
-![](images/trends_bot_2.png)
+![](./images/trends_bot_2.png)
 
-![](images/trends_bot_3.png)
+![](./images/trends_bot_3.png)
 
 ## ATSD Configuration
 
@@ -271,7 +270,7 @@ Two Slack integrations must be configured in ATSD:
 * [built-in](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md#configure-web-notification-in-atsd)
 * [custom](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/custom.md#custom-notification)
 
-All fields of custom webhook should be specified as placeholders to be customizable in Rule Engine:
+All fields of custom webhook must be specified as placeholders to be customizable in Rule Engine:
 
 ```bash
 Endpoint URL: https://slack.com/api/chat.postMessage
@@ -285,7 +284,7 @@ Body: {
 
 `Channels` and `Text` fields in the built-in ATSD integration must be exposed to the Rule Engine too:
 
-![](images/trends_bot_4.png)
+![](./images/trends_bot_4.png)
 
 ### Replacement Tables
 
@@ -367,38 +366,38 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
 
 ```json
 [
-    { 
-      "text": "Select Frequency",
-      "color": "#3AA3E3",
-      "attachment_type": "default",
-      "callback_id": "Frequency Selected",
-      "actions": [
-        {
-          "name": "frequency_list",
-          "text": "Frequency...",
-          "type": "select",
-          "options": [
-            {
-              "text": "Daily",
-              "value": "frequency:\"Daily\""
-            },
-			{
-              "text": "Monthly",
-              "value": "frequency:\"Monthly\""
-            },            
-            {
-              "text": "Quarterly",
-              "value": "frequency:\"Quarterly\""
-            },
-            {
-              "text": "Annual",
-              "value": "frequency:\"Annual\""
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  {
+    "text": "Select Frequency",
+    "color": "#3AA3E3",
+    "attachment_type": "default",
+    "callback_id": "Frequency Selected",
+    "actions": [
+      {
+        "name": "frequency_list",
+        "text": "Frequency...",
+        "type": "select",
+        "options": [
+          {
+            "text": "Daily",
+            "value": "frequency:\"Daily\""
+          },
+          {
+            "text": "Monthly",
+            "value": "frequency:\"Monthly\""
+          },
+          {
+            "text": "Quarterly",
+            "value": "frequency:\"Quarterly\""
+          },
+          {
+            "text": "Annual",
+            "value": "frequency:\"Annual\""
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
 </p>
@@ -409,34 +408,34 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
 
 ```json
 [
-    { 
-      "text": "Seasonally Adjusted?",
-      "color": "#3AA3E3",
-      "attachment_type": "default",
-      "callback_id": "Seasonal Adj. Selected",
-      "actions": [
-        {
-          "name": "seasonal_adj_list",
-          "text": "Seasonal Adjustment...",
-          "type": "select",
-          "options": [
-            {
-              "text": "No",
-              "value": "seasonal_adjustment_short:\"NSA\""
-            },
-			{
-              "text": "Yes",
-              "value": "seasonal_adjustment_short:\"SA\""
-            },
-            {
-              "text": "Annual Rate",
-              "value": "seasonal_adjustment_short:\"SAAR\""
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  {
+    "text": "Seasonally Adjusted?",
+    "color": "#3AA3E3",
+    "attachment_type": "default",
+    "callback_id": "Seasonal Adj. Selected",
+    "actions": [
+      {
+        "name": "seasonal_adj_list",
+        "text": "Seasonal Adjustment...",
+        "type": "select",
+        "options": [
+          {
+            "text": "No",
+            "value": "seasonal_adjustment_short:\"NSA\""
+          },
+          {
+            "text": "Yes",
+            "value": "seasonal_adjustment_short:\"SA\""
+          },
+          {
+            "text": "Annual Rate",
+            "value": "seasonal_adjustment_short:\"SAAR\""
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 </p>
 </details>
@@ -446,38 +445,38 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
 
 ```json
 [
-    { 
-      "text": "Select Parent Category",
-      "color": "#3AA3E3",
-      "attachment_type": "default",
-      "callback_id": "Parent Category Selected",
-      "actions": [
-        {
-          "name": "parent_category_list",
-          "text": "Parent Category...",
-          "type": "select",
-          "options": [
-            {
-              "text": "Consumer Price Indexes (CPI and PCE)",
-              "value": "parent_category_id:9"
-            },
-            {
-              "text": "Production & Business Activity",
-              "value": "parent_category_id:33441"
-            },
-            {
-              "text": "National Income & Product Accounts",
-              "value": "parent_category_id:18"
-            },
-            {
-              "text": "Population, Employment, & Labor Markets",
-              "value": "parent_category_id:32999"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  {
+    "text": "Select Parent Category",
+    "color": "#3AA3E3",
+    "attachment_type": "default",
+    "callback_id": "Parent Category Selected",
+    "actions": [
+      {
+        "name": "parent_category_list",
+        "text": "Parent Category...",
+        "type": "select",
+        "options": [
+          {
+            "text": "Consumer Price Indexes (CPI and PCE)",
+            "value": "parent_category_id:9"
+          },
+          {
+            "text": "Production & Business Activity",
+            "value": "parent_category_id:33441"
+          },
+          {
+            "text": "National Income & Product Accounts",
+            "value": "parent_category_id:18"
+          },
+          {
+            "text": "Population, Employment, & Labor Markets",
+            "value": "parent_category_id:32999"
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 </p>
 </details>
@@ -549,8 +548,8 @@ Create [template](https://github.com/axibase/atsd/blob/master/portals/portals-ov
     multiple-series = true  
     list metrics = ${metrics}
   for m in metrics
-     [series] 
-	  metric = @{m}
+     [series]
+      metric = @{m}
   endfor
 ```
 
@@ -560,7 +559,7 @@ Create [template](https://github.com/axibase/atsd/blob/master/portals/portals-ov
 
 Finally create and configure new rule. Navigate to **Alerts > Rules**, click **Create** and use settings below.
 
-As mentioned above "Parent Category", "Category", "Frequency", "Seasonal Adjustment" settings will be collected to find the metrics and "Chart Type" to allow user customize portal. The window will be in 'OPEN' and 'REPEAT' status until the user selects chart type and ATSD receives the "Chart Type Selected":
+As mentioned above "Parent Category", "Category", "Frequency", "Seasonal Adjustment" settings are collected to find the metrics and "Chart Type" to allow user customize portal. The window will be in 'OPEN' and 'REPEAT' status until the user selects chart type and ATSD receives the "Chart Type Selected":
 
 ```ls
 Data Type: message
@@ -616,11 +615,10 @@ At the **Webhooks** tab configure triggers for custom and built-in integrations:
 
 1. **[CUSTOM]**
 
- * On Open
-        
-    * `attachments`
-    
-    ```
+* On Open
+  * `attachments`
+
+    ```ls
     @if{message == '/chart'}
        ${replacementTable('slack').parent_category}
     @else{message == 'Parent Category Selected'}
@@ -635,61 +633,56 @@ At the **Webhooks** tab configure triggers for custom and built-in integrations:
     null
     @end{}
     ```
-     
-    * `channel`
-    
-    ```
+
+  * `channel`
+
+    ```ls
     ${channel}
     ```
-    
-    * `text`
-    
-    ```
+  * `text`
+
+    ```ls
     @if{message == '/chart'}
        Hello, <@${usr}>! Tell me a little bit about the chart you want to see.
     @else{}
-    
+
     @end{}
     ```
-    
- * On Repeat = Same as 'On Open'
- * On Cancel
- 
-     * `attachments`
-     
-     ```
-     null
-     ```
-      
-     * `channel`
-     
-     ```
-     ${channel}
-     ```
-     
-     * `text`
-     
-     ```
-     Searching for metrics...
-     ```
-       
-2. **[SLACK]**
+
+* On Repeat = Same as 'On Open'
+* On Cancel
+  * `attachments`
+
+    ```ls
+    null
+    ```
+  * `channel`
+
+    ```ls
+    ${channel}
+    ```
+  * `text`
+
+    ```ls
+    Searching for metrics...
+    ```
+
+1. **[SLACK]**
 
 To use the [`addPortal`](https://github.com/axibase/atsd/blob/master/rule-engine/functions-portal.md#syntax) function configure built-in notification:
 
- * On Cancel
- 
-     * `Channels`
-     
-     ```
-     ${channel}
-     ```
-     * `Text`
-     
-     ```
-     @if{metrics!=''} 
-        ${addPortal('Axibase Bot Portal','fred.stlouisfed.org','',['type':tags["payload.actions[0].value"],'metrics':metrics])}
-     @else{}
-        No metrics have been found. Try again.
-     @end{}
-     ```
+* On Cancel
+  * `Channels`
+  
+    ```ls
+    ${channel}
+    ```
+  * `Text`
+
+    ```ls
+    @if{metrics!=''}
+      ${addPortal('Axibase Bot Portal','fred.stlouisfed.org','',['type':tags["payload.actions[0].value"],'metrics':metrics])}
+    @else{}
+      No metrics have been found. Try again.
+    @end{}
+    ```
