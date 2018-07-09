@@ -9,14 +9,14 @@
  
  * [ATSD Configuration](#atsd-configuration)
     
-    * [Configure Web Notifications](#configure-web-notifications)
+    * [Outgoing Webhooks](#outgoing-webhooks)
     * [Replacement Tables](#replacement-tables)
     * [Portal](#portal)
     * [Rule](#rule)
  
 ## Overview
 
-This document describes how to create a bot that sends a portal with metrics and the type specified by users through Slack Interactive messages [framework](https://api.slack.com/interactive-messages#building_workflows). The metrics are stored in ATSD from [trends](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#using-trends) sandbox.
+This document describes how to create a bot that sends a portal with metrics and the type specified by user through Slack Interactive messages [framework](https://api.slack.com/interactive-messages#building_workflows). The metrics are stored in ATSD from [trends](https://github.com/axibase/atsd-use-cases/blob/master/how-to/shared/trends.md#using-trends) sandbox.
 
 ![](images/trends_bot_7.png) 
 
@@ -27,8 +27,8 @@ Features of [metrics](https://trends.axibase.com/public/reference.html) stored i
 * there are 33,760 metrics;
 * metric names are not informative.
 
-Therefore, we will ask the user to select multiple tags: "Parent Category", "Category", "Frequency", "Seasonal Adjustment" and execute [search](https://github.com/axibase/atsd/tree/master/search#search) query using specified parameters.
-Each tag will contain no more than 10 values, so as not to overload the tutorial.
+Therefore, the user will be asked to select multiple tags: "Parent Category", "Category", "Frequency", "Seasonal Adjustment" and execute [search](https://github.com/axibase/atsd/tree/master/search#search) query using specified parameters.
+Each tag will contain no more than 10 values  to not overload the tutorial.
 
 ![](images/trends_bot_6.png)
 
@@ -43,7 +43,7 @@ If necessary, create new Slack app with the bot user as described [here](https:/
 
 ### Interactive Components
 
-In order to allow the user to select options, we will use interactive messages [menus](https://api.slack.com/docs/message-menus) and [buttons](https://api.slack.com/docs/message-buttons). When user selects some item ATSD receives a HTTP POST with a payload body parameter containing a urlencoded JSON object.
+In order to allow the user to select options, use interactive messages [menus](https://api.slack.com/docs/message-menus) and [buttons](https://api.slack.com/docs/message-buttons). When user selects some item, ATSD receives a HTTP `POST` with a payload body parameter containing a urlencoded JSON object.
 
 <details><summary>Sample JSON sent by Slack Menu</summary>
 <p>
@@ -226,16 +226,16 @@ The `"value"` fields will store items selected by user, so [include](https://git
 include=payload.actions[0].selected_options[0].value;payload.actions[0].value
 ```
 
-It is useful to distinguish between webhook messages, set message text to `payload.callback_id` value:
+It is important to distinguish between webhook messages, set message text to `payload.callback_id` value:
 
 ```elm
 command.message=payload.callback_id
 ```
 
-Set webhook url to the **Interactive Components > Request URL** filed:
+Set webhook url to the **Interactive Components > Request URL** field:
 
 ```http request
-https://user:password@atsd_hostname:8443/api/v1/messages/webhook/axibase-bot?entity=slack&json.parse=payload&exclude=payload.ac*;payload.or*&include=payload.actions[0].selected_options[0].value;payload.actions[0].value&command.message=payload.callback_id
+https://username:password@atsd_hostname:8443/api/v1/messages/webhook/axibase-bot?entity=slack&json.parse=payload&exclude=payload.ac*;payload.or*&include=payload.actions[0].selected_options[0].value;payload.actions[0].value&command.message=payload.callback_id
 ```
 
 > Don't forget to replace source and entity.
@@ -244,9 +244,9 @@ https://user:password@atsd_hostname:8443/api/v1/messages/webhook/axibase-bot?ent
 
 ### Slash Commands
 
-In order to allow the user to call bot directly from Slack we will use [Slash Commands](https://api.slack.com/slash-commands).
+In order to allow the user to call bot directly from Slack use [Slash Commands](https://api.slack.com/slash-commands).
 
-In the case of a Slash Command, all we need to do is figure out what exactly Slash Command it is:
+In the case of a Slash Command, all is need to be done is figure out what exactly Slash Command is it:
 
 ```elm
 message=/chart
@@ -255,7 +255,7 @@ message=/chart
 Specify command and webhook url at the Slash Command Editor:
 
 ```http request
-https://user:password@atsd_hostname:8443/api/v1/messages/webhook/axibase-bot?entity=slack&message=/chart
+https://username:password@atsd_hostname:8443/api/v1/messages/webhook/axibase-bot?entity=slack&message=/chart
 ```
 
 ![](images/trends_bot_2.png)
@@ -264,11 +264,14 @@ https://user:password@atsd_hostname:8443/api/v1/messages/webhook/axibase-bot?ent
 
 ## ATSD Configuration
 
-### Configure Web Notifications
+### Outgoing Webhooks
 
-Built-in ATSD integration for Slack doesn't provide the way to use attachments which are required to use Slack Interactive messages [framework](https://api.slack.com/interactive-messages).
+Two Slack integrations must be configured in ATSD:
 
-Therefore in addition to the [built-in](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md#configure-web-notification-in-atsd) integration we need to create [custom](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/custom.md#custom-notification). All fields should be specified as placeholders to be customizable in Rule Engine.
+* [built-in](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/slack.md#configure-web-notification-in-atsd)
+* [custom](https://github.com/axibase/atsd/blob/master/rule-engine/notifications/custom.md#custom-notification)
+
+All fields of custom webhook should be specified as placeholders to be customizable in Rule Engine:
 
 ```bash
 Endpoint URL: https://slack.com/api/chat.postMessage
@@ -278,15 +281,15 @@ Body: {
         "text": "${text}",
         "attachments":"${attachments}"
       }
-
 ```
-The built-in ATSD integration also will be used by bot, `Channels` and `Text` fields should be exposed to the Rule Engine.
+
+`Channels` and `Text` fields in the built-in ATSD integration must be exposed to the Rule Engine too:
 
 ![](images/trends_bot_4.png)
 
 ### Replacement Tables
 
-To send user buttons and menu we need to store preconfigured JSONs. ATSD Replacement Tables provide a convenient way of storing `key=value` pairs.
+To send user buttons and menu it is useful to store preconfigured JSONs. ATSD Replacement Tables provide a convenient way of storing `key=value` pairs.
 
 Navigate to **Data > Replacement Tables** page an create a table with JSON format and the following keys:
 
@@ -553,54 +556,65 @@ Create [template](https://github.com/axibase/atsd/blob/master/portals/portals-ov
 
 ### Rule
 
-Finally we need to create and configure new rule. As mentioned above we will collect "Parent Category", "Category", "Frequency", "Seasonal Adjustment" to find the metrics and "Chart Type" to allow user customize portal. The window will be in 'OPEN' and 'REPEAT' status until the user selects chart type and ATSD receives the "Chart Type Selected".
+> The full rule configuration available [here](images/trends-bot.xml).
 
-```
+Finally create and configure new rule. Navigate to **Alerts > Rules**, click **Create** and use settings below.
+
+As mentioned above "Parent Category", "Category", "Frequency", "Seasonal Adjustment" settings will be collected to find the metrics and "Chart Type" to allow user customize portal. The window will be in 'OPEN' and 'REPEAT' status until the user selects chart type and ATSD receives the "Chart Type Selected":
+
+```ls
 Data Type: message
 Condition: message != 'Chart Type Selected'
 ```
 
 To prevent ATSD react to messages for other source/type/entity and to messages sent by bot specify filters:
 
-```
+```ls
 Filter: type='webhook' && source='axibase-bot' && tags.event.subtype != 'bot_message' && tags.event.username != 'axibase_bot'
 Group Filter: axibase-bot-entities
 ```
 
-To answer the user to the same channel from which he called slash command and mention him in answer we need `channel` and `usr` variables:
-```
+To answer the user to the same channel from which he called slash command and mention him in answer use `channel` and `usr` variables:
+
+```ls
 channel = ifEmpty(tags.payload.channel.id, tags.channel_id)
 usr = ifEmpty(tags.payload.user.id, tags.user_id)
 ```
 
-If user has specified all search settings, query the message records stored within last 30 seconds for the current channel and user.
-```
-url = "https://API_USER:API_USER@localhost:8443/api/v1/"
-start = "now - 30 * SECOND"
-query = ["params":["entity": "slack","endDate": "now","startDate":start,"type":"webhook","source":"axibase-bot","tags":["payload.channel.id":channel,"payload.user.id":usr]]]
-msgs = message!='Chart Type Selected'?null:queryPost(url+"messages/query",query).content
+If user has specified all search settings, [retrieve](https://github.com/axibase/atsd/blob/master/rule-engine/functions-message.md#db_messages) the message records stored within last 30 seconds for the current channel and user:
+
+```ls
+tgs = ["payload.channel.id":channel,"payload.user.id":usr]
+msgs != 'Chart Type Selected'?null:db_messages('30 SECOND', 'webhook', 'axibase-bot', tgs, 'slack', 'message LIKE "*Selected"')
 ```
 
-Prepare query string (for example, `entity:fred.stlouisfed.org AND (category_id:32417 AND parent_category_id:9 AND frequency:"Monthly" AND seasonal_adjustment_short:"SA")`).
-```
-option = 'tags[\"payload.actions[0].selected_options[0].value\"]'
-prms = jsonToMaps(msgs)
-q = !prms.isEmpty() && prms.size()=4 ? 'entity:fred.stlouisfed.org AND ('+prms[0].get(option)+' AND '+prms[1].get(option)+' AND '+prms[2].get(option)+' AND '+prms[3].get(option)+')':''
+Prepare search [query](https://github.com/axibase/atsd/blob/master/search/README.md):
+
+```ls
+v = 'payload.actions[0].selected_options[0].value'
+q = msgs=null?'':'entity:fred.stlouisfed.org AND ('+msgs[0].tags[v]+' AND '+msgs[1].tags[v]+' AND '+msgs[2].tags[v]+' AND '+msgs[3].tags[v]+')'
+
+// Example for 'q':
+// entity:fred.stlouisfed.org AND (category_id:32417 AND parent_category_id:9 AND frequency:"Monthly" AND seasonal_adjustment_short:"SA")
 ```
 
-Search metrics matching specified tags using `/api/v1/search` endpoint.
-```
-search = q=''?'':queryGet(url+'search?query='+urlencode(q)+'&limit=5').content
+Retrieve five top metrics matching specified tags using `/api/v1/search` endpoint:
+
+```ls
+url = "https://username:password@localhost:8443/api/v1/search?limit=5&query="
+search = q=''?'':queryGet(url+urlencode(q)).content
 ```
 
-Prepare metrics string to be sent as parameter for portal (for example, `cbr54093wva647ncen, cbr38073nda647ncen`).
-```
+Prepare metrics string to be sent as parameter for portal using [`jsonPathFilter`](https://github.com/axibase/atsd/blob/5d0d53635ec149095296998c2da971035e37b453/rule-engine/functions-table.md#jsonpathfilter):
+
+```ls
+// For example, "cbr54093wva647ncen, cbr38073nda647ncen"
 metrics = search!=''?concat(jsonPathFilter(search, "$.data[*][0]")):''
 ```
 
-At the Web Notifications tab configure triggers for custom and built-in integrations:
+At the **Webhooks** tab configure triggers for custom and built-in integrations:
 
-1. Custom
+1. **[CUSTOM]**
 
  * On Open
         
@@ -659,9 +673,9 @@ At the Web Notifications tab configure triggers for custom and built-in integrat
      Searching for metrics...
      ```
        
-2. Custom
+2. **[SLACK]**
 
-Since the [`addPortal`](https://github.com/axibase/atsd/blob/master/rule-engine/functions-portal.md#syntax) function can only be used in the built-in chat notifications we need to configure it.
+To use the [`addPortal`](https://github.com/axibase/atsd/blob/master/rule-engine/functions-portal.md#syntax) function configure built-in notification:
 
  * On Cancel
  
@@ -676,8 +690,6 @@ Since the [`addPortal`](https://github.com/axibase/atsd/blob/master/rule-engine/
      @if{metrics!=''} 
         ${addPortal('Axibase Bot Portal','fred.stlouisfed.org','',['type':tags["payload.actions[0].value"],'metrics':metrics])}
      @else{}
-        No metrics are found. Try again.
+        No metrics have been found. Try again.
      @end{}
      ```
-     
- The full rule configuration available [here](images/trends-bot.xml).
