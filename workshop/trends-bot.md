@@ -18,7 +18,7 @@
 
 This document describes how to create a bot that sends a portal with metrics and the type specified by user through Slack Interactive messages [framework](https://api.slack.com/interactive-messages#building_workflows). The metrics are stored in ATSD from [trends](../tutorials/shared/trends.md#using-trends) sandbox.
 
-![](./images/trends_bot_7.png) 
+![](./images/trends_bot_7.png)
 
 ## Data Specifics
 
@@ -118,6 +118,7 @@ To allow the user select options, use interactive messages [menus](https://api.s
     "trigger_id": "13345224609.738474920.8088930838d88f008e0"
 }
 ```
+
 </p>
 </details>
 
@@ -233,7 +234,7 @@ command.message=payload.callback_id
 
 Set webhook url to the **Interactive Components > Request URL** field:
 
-```http request
+```elm
 https://username:password@atsd_hostname:8443/api/v1/messages/webhook/axibase-bot?entity=slack&json.parse=payload&exclude=payload.ac*;payload.or*&include=payload.actions[0].selected_options[0].value;payload.actions[0].value&command.message=payload.callback_id
 ```
 
@@ -253,7 +254,7 @@ message=/chart
 
 Specify command and webhook url at the Slash Command Editor:
 
-```http request
+```elm
 https://username:password@atsd_hostname:8443/api/v1/messages/webhook/axibase-bot?entity=slack&message=/chart
 ```
 
@@ -297,67 +298,68 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
 
 ```json
 [
-    { 
-      "text": "Select Category",
-      "color": "#3AA3E3",
-      "attachment_type": "default",
-      "callback_id": "Category Selected",
-      "actions": [
-        {
-          "name": "category_list",
-          "text": "Category...",
-          "type": "select",
-          "options": [
-            {
-              "text": "Apparel",
-              "value": "category_id:32417"
-            },
-            {
-              "text": "Construction",
-              "value": "category_id:32310"
-            },
-            {
-              "text": "Education and Health Services",
-              "value": "category_id:32322"
-            },
-            {
-              "text": "Food and Beverages",
-              "value": "category_id:32415"
-            },
-            {
-              "text": "GDP/GNP",
-              "value": "category_id:106"
-            },
-            {
-              "text": "Medical Care",
-              "value": "category_id:32419"
-            },
-            {
-              "text": "Labor Force",
-              "value": "category_id:32285"
-            },
-            {
-              "text": "Population",
-              "value": "category_id:32292"
-            },
-            {
-              "text": "Services",
-              "value": "category_id:33441"
-            },
-            {
-              "text": "Recreation",
-              "value": "category_id:32420"
-            },
-            {
-              "text": "Retail Trade",
-              "value": "category_id:6"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  {
+    "text": "Select Category",
+    "color": "#3AA3E3",
+    "attachment_type": "default",
+    "callback_id": "Category Selected",
+    "actions": [
+      {
+        "name": "category_list",
+        "text": "Category...",
+        "type": "select",
+        "options": [
+          {
+            "text": "Apparel",
+            "value": "category_id:32417"
+          },
+          {
+            "text": "Construction",
+            "value": "category_id:32310"
+          },
+          {
+            "text": "Education and Health Services",
+            "value": "category_id:32322"
+          },
+          {
+            "text": "Food and Beverages",
+            "value": "category_id:32415"
+          },
+          {
+            "text": "GDP/GNP",
+            "value": "category_id:106"
+          },
+          {
+            "text": "Medical Care",
+            "value": "category_id:32419"
+          },
+          {
+            "text": "Labor Force",
+            "value": "category_id:32285"
+          },
+          {
+            "text": "Population",
+            "value": "category_id:32292"
+          },
+          {
+            "text": "Services",
+            "value": "category_id:33441"
+          },
+          {
+            "text": "Recreation",
+            "value": "category_id:32420"
+          },
+          {
+            "text": "Retail Trade",
+            "value": "category_id:6"
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
+
 </p>
 </details>
 
@@ -437,6 +439,7 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
   }
 ]
 ```
+
 </p>
 </details>
 
@@ -478,6 +481,7 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
   }
 ]
 ```
+
 </p>
 </details>
 
@@ -522,10 +526,11 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
   }
 ]
 ```
+
 </p>
 </details>
 
-![](images/trends_bot_5.png)
+![](./images/trends_bot_5.png)
 
 ### Portal
 
