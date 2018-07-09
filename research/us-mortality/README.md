@@ -1228,7 +1228,7 @@ Mortality rates are higher in Youngstown than New York City in almost every age 
 
 > Figures for the population under the age of 1 year in Youngstown are not available, as such it is impossible to calculate infant mortality rate. Thus the value, for the 1-24 age group for Youngstown is a little higher reality.
 
-So what can explain these unbelievably high rates in Youngstown? This is a complicated, multi-layered issue, some experts spend years analyzing such questions.
+What can explain these unbelievably high rates in Youngstown? This is a complicated, multi-layered issue, some experts spend years analyzing such questions.
 
 Two factors that may affect these high rates are the aging population, above average rates for a number of diseases. Below is a table comparing incident rates for [6 diseases in Mahoning County](https://www.odh.ohio.gov/healthstats/vitalstats/deathstat.aspx) versus the
 United States as a whole.
