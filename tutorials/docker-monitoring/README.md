@@ -51,7 +51,7 @@ Once you have container labeling in place, you can create roll-up dashboards and
 Instead, containers can be grouped and filtered based on labels using expressions.
 
 ```sh
-tags['com.axibase.service'] == 'metrics' &amp;&amp; tags['com.axibase.environment'] == 'production'
+tags['com.axibase.service'] == 'metrics' && tags['com.axibase.environment'] == 'production'
 ```
 
 > Tags contain [ATSD](https://axibase.com/docs/atsd/) terms.
@@ -202,9 +202,9 @@ avg(value) / avg(value(time: '1 hour')) > 1.25
 
 This rule raises an alert if the 15-minute average exceeds the 1-hour average by more than 25%.
 
-These rules adapt to events and change over time. If your daily number of users is growing, the load on your infrastructure is growing as well. This rule takes that fact into account when calculating thresholds. This is where daily recalculation of forecasts in ATSD shows its strengths – it allows the database to determine new periods and new trends continuously. New forecasts are generated every night, taking into account all the recent developments and trends that have occurred. This kind of approach results in improved forecast accuracy and dynamic response to abnormal events and new trends.
+These rules adapt to events and change over time. If your daily number of users is growing, the load on your infrastructure is growing as well. This rule takes that fact into account when calculating thresholds. This is where daily recalculation of forecasts shows its strengths – it allows the database to determine new periods and new trends continuously. New forecasts are generated every night, taking into account all the recent developments and trends that have occurred. This kind of approach results in improved forecast accuracy and dynamic response to abnormal events and new trends.
 
-As a result of smart rules and advanced forecasting techniques, you can leave alerting and monitoring tasks in the capable hands of ATSD. Axibase Time Series Database informs you of critical events and negative forecasts. In addition, the database eliminates the need to revisit and adapt thresholds manually, which can be a time-consuming task itself. In short, automated thresholding is the future of performance monitoring.
+As a result of advanced forecasting techniques, you can delegate alerting and monitoring to Axibase Time Series Database (ATSD) which informs you of critical events and forecast deviations. In addition, the database eliminates the need to revisit and adapt thresholds manually, which can be a time-consuming task itself. In short, automated thresholding is the future of performance monitoring.
 
 ## Monitoring Linux Containers with the Axibase Time Series Database
 
@@ -222,7 +222,7 @@ Axibase is focused on three crucial points with respect to performance monitorin
 * Control
 * Automation
 
-The Axibase Time Series Database collects Docker metrics for long-term retention, analytics, and visualization. A single ATSD instance can collect metrics from many Docker hosts.
+ATSD collects Docker metrics for long-term retention, analytics, and visualization. A single ATSD instance can collect metrics from many Docker hosts.
 
 ![](./images/basic_arch2.png)
 

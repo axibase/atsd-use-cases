@@ -52,7 +52,7 @@ This completes the verification stage. You now have data which can be reported o
 
 ## Reports
 
-Since you need a flexible way of filtering, grouping, and formatting results, rely on [SQL](https://axibase.com/docs/atsd/sql/) implemented in Axibase Time Series Database to prepare reports, including time series extensions for time zone aggregations.
+Since you need a flexible way of filtering, grouping, and formatting results, rely on [SQL](https://axibase.com/docs/atsd/sql/) implemented in Axibase Time Series Database (ATSD) to prepare reports, including time series extensions for time zone aggregations.
 
 In ATSD, execute SQL queries via web-based console, an external reporting tool using a JDBC/ODBC driver, or with the built-in report generator with email delivery, web publishing, and file generation options. This article relies on the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) to test and fine-tune these queries.
 

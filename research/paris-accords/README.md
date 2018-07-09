@@ -160,12 +160,12 @@ Users can replicate data analysis shown here.
 
 * Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
-* Download the [`docker-compose.yml`](./resources/docker-compose.yml) file to launch the ATSD container bundle.
+* Download the [`docker-compose.yml`](./resources/docker-compose.yml) file to launch the Axibase Time Series Database (ATSD) container bundle.
 
 * Launch containers:
 
 ![ContainerCommand](./images/containercommand.png)
 
-* Open Axibase Time Series Database user interface and begin analyzing your data.
+* Open ATSD user interface and begin analyzing your data.
 
 [Contact Axibase](https://axibase.com/feedback/) with any questions here.

@@ -12,7 +12,7 @@ While the email option serves as a workaround for build failures, do not rely on
 
 ![](./images/docker-email.png)
 
-This guide describes a solution, based on the Rule Engine implemented in [Axibase Time Series Database](https://axibase.com/docs/atsd/rule-engine/), which polls the Docker Hub build history using the Docker Hub `v2` API and generates missing webhooks in case of **build failures** or if the build is queued for more than one hour (you can configure this threshold).
+This guide describes a solution, based on the Rule Engine implemented in [Axibase Time Series Database](https://axibase.com/docs/atsd/rule-engine/) (ATSD), which polls the Docker Hub build history using the Docker Hub `v2` API and generates missing webhooks in case of **build failures** or if the build is queued for more than one hour (you can configure this threshold).
 
 Note that this solution only applies to automated builds which are executed by Docker Hub itself.
 
@@ -262,6 +262,6 @@ The target service now receives the JSON payload:
 
 ## References
 
-* Axibase Time Series Database [Rule Engine Documentation](https://axibase.com/docs/atsd/rule-engine/).
+* ATSD [Rule Engine Documentation](https://axibase.com/docs/atsd/rule-engine/).
 * Axibase Collector [JSON Job Documentation](https://axibase.com/docs/axibase-collector/jobs/json.html).
 * Questions? Problems? Contact us by raising an [issue](https://github.com/axibase/atsd-use-cases/issues/new).

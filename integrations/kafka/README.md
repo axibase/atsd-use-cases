@@ -1,6 +1,6 @@
 # Kafka Integration
 
-This document describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) using ATSD.
+This document describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) using Axibase Time Series Database (ATSD).
 
 ## Step 1: Configure Axibase Collector
 
@@ -43,7 +43,7 @@ This document describes how to monitor availability and performance of [Apache K
 
 ## Step 2: Configure Kafka in ATSD
 
-1. Log in to the target Axibase Time Series Database instance at `https://atsd_hostname:8443`.
+1. Log in to the target ATSD instance at `https://atsd_hostname:8443`.
 2. Go to the **Metrics** page and verify that `jmx.kafka.*` metrics are available.
 3. Go to the **Entities** page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
 4. Open the **Settings** menu, select **Entity Groups** and import [Kafka](./resources/groups.xml) entity group.

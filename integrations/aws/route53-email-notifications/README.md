@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide describes how to configure email alerts when a URL monitored by Route53 health checks becomes inaccessible. It also provides information on how to enhance the alerts with availability portals and outage details using Axibase Time Series Database [Rule Engine](https://axibase.com/docs/atsd/rule-engine/).
+This guide describes how to configure email alerts when a URL monitored by Route53 health checks becomes inaccessible. It also provides information on how to enhance the alerts with availability portals and outage details using Axibase Time Series Database (ATSD) [Rule Engine](https://axibase.com/docs/atsd/rule-engine/).
 
 ## Initial Configuration
 

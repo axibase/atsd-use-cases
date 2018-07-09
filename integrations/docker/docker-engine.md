@@ -2,7 +2,7 @@
 
 ## Overview
 
-Axibase Time Series Database allows IT operations teams to monitor Linux containers in concert with existing management systems.
+Axibase Time Series Database (ATSD) allows IT operations teams to monitor Linux containers in concert with existing management systems.
 
 ATSD continuously collects availability status, performance metrics and detailed configurations from containers in a single repository and exposes the data to upstream tools (CMDB, monitoring, alerting, event management) via the API, notifications, and scheduled reporting. It provides operations teams the necessary visibility, control, and automation into Linux containers while delivering a unified view of container performance to development and QA teams.
 

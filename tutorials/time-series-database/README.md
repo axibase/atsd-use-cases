@@ -5,7 +5,7 @@ Axibase set out to build a time series database with two primary design objectiv
 1. Simplify the data collection process.
 2. Simplify dashboarding, reporting, and analytics.
 
-The Axibase Time Series Database is able to deliver on both counts, and here is an example:
+The Axibase Time Series Database (ATSD) is able to deliver on both counts, and here is an example:
 
 Take a data source that is passive and non-standard. A data source that is passive cannot be instrumented to stream data into ATSD on its own. A data source that is non-standard provides data in neither CSV nor JSON format.
 
@@ -17,7 +17,7 @@ The recurring effort involved in analyzing this data and preparing a report is s
 
 Enter the Axibase Time Series Database.
 
-With ATSD you do not have to stage a database, design table schema, provision an application server, and write programs to parse and upload this type of file. Instead, simply configure a scheduled job to fetch the file from a specified endpoint and have ATSD parse it according to pre-defined rules. Once you have raw data in ATSD, creating and sharing reports with built-in widgets is trivial. The reports are continuously updated as new data comes in.
+With ATSD you do not have to stage a database, design table schema, provision an application server, and write programs to parse and upload this type of file. Instead, simply configure a scheduled job to fetch the file from a specified endpoint and have ATSD parse it according to pre-defined rules. Once you have raw data in ATSD, creating and sharing reports with built-in widgets is simple. The reports are continuously updated as new data comes in.
 
 [Sample Raw Data](https://apps.axibase.com/chartlab/fcce7fb8)
 

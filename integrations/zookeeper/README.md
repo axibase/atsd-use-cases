@@ -1,6 +1,6 @@
 # Zookeeper Integration
 
-This guide describes how to monitor availability and performance of an [Apache Zookeeper](https://zookeeper.apache.org/) cluster (3 nodes) using ATSD.
+This guide describes how to monitor availability and performance of an [Apache Zookeeper](https://zookeeper.apache.org/) cluster (3 nodes) using Axibase Time Series Database (ATSD).
 
 ## Step 1: Configure Axibase Collector
 
@@ -60,7 +60,7 @@ On the **JMX Job** page set the **Enabled** checkbox and save the job.
 
 ### Check data collection
 
-Log in to the target Axibase Time Series Database instance at `https://atsd_hostname:8443`.
+Log in to the target ATSD instance at `https://atsd_hostname:8443`.
 
 Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available.
 

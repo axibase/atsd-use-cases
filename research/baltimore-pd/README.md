@@ -27,7 +27,7 @@ a district is found to have witnessed an above average number of murders during 
 period, the alternative hypothesis predicts that the district also sees an
 above average number of incidents of police use of force.
 
-Both of these datasets can be analyzed in the Axibase Time Series Database which provides a built-in support for the [Socrata](https://axibase.com/docs/axibase-collector/jobs/socrata.html) Open Data format used by the majority of government agencies in the United States. ATSD also includes graphics capabilities to analyze the data with [SQL](https://axibase.com/docs/atsd/sql/)
+Both of these datasets can be analyzed in the Axibase Time Series Database (ATSD) which provides a built-in support for the [Socrata](https://axibase.com/docs/axibase-collector/jobs/socrata.html) Open Data format used by the majority of government agencies in the United States. ATSD also includes graphics capabilities to analyze the data with [SQL](https://axibase.com/docs/atsd/sql/)
 and visualize it with graphs.
 
 > For information about performing these steps in your own ATSD instance, see the [Action Items](#action-items)

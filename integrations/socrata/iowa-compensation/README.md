@@ -57,7 +57,7 @@ Processing datasets using ATSD is simple because the [Collector](https://axibase
 
 Collector uses Socrata metadata to interpret the meaning of columns and extract times, dates, and categories from the raw data. Additionally, ATSD stores data in a local database instance which allows you to combine this public dataset with those generated locally.
 
-The following tasks become trivial with ATSD:
+The following tasks are simplified in ATSD:
 
 * Adding additional datasets from data.gov.
 * Manipulating and designing table schema.
