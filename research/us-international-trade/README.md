@@ -39,7 +39,7 @@ The upper image shows exports in blue and imports in pink. In 2016, imports into
 In addition to looking at graphical outputs, perform [SQL queries](https://axibase.com/docs/atsd/sql/) to search for specific information in this dataset. According to the query below, 1991 had the least negative trade balance of **-$66.7 billion**.
 
 ```sql
-SELECT date_format(e.time, 'yyyy') AS "year", e.tags.cityname AS country,
+SELECT date_format(e.time, 'yyyy') AS "year", e.tags.ctyname AS country,
   SUM(e.value)/1000 AS export,
   SUM(i.value)/1000 AS import,
   (SUM(e.value)-SUM(i.value))/1000 AS trade_balance

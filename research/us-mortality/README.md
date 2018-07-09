@@ -336,7 +336,7 @@ ORDER BY 'date' DESC
 
 * `tags.city IS NOT NULL` is specified to discard a few rows present in the dataset for older dates collected without a reference city.
 * `WITH row_number ... <= 1` partitions rows by tags (city, state, region) and selects the row with the **MINIMUM** value for each partition using the `ORDER BY` value condition.
-* The `LOOKUP('us-region', tags.region)` function converts `tags.region` (number) into a string, for example, 3 -> East-North-Central.
+* The `LOOKUP('us-region', tags.region)` function converts `tags.region` (number) into a string, for example, 3 becomes East-North-Central.
 * `LOOKUP('city-size', concat(tags.city, ',', tags.state))` retrieves city size for the given city and state pair, concatenated to the `{city},{state}` pattern.
 
 The deadliest week by city, based on total deaths.
