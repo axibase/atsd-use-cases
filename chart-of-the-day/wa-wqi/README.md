@@ -25,7 +25,7 @@ a number of metrics for the 2015 Water Quality tests performed by the [Departmen
 | `wqiturb` | **Turbidity**, a measurement which records the cloudiness of haziness of water in Nephelometric Turbidity Units (NTU) | 0.09 |
 
 These metrics all have individual weights applied based on their importance in the overall make-up of the health of a body of water,
-and have been converted to a 0-100 ascending scale. Such a scale can be ambiguous to the amateur viewer, and so
+and have been converted to a 0-100 ascending scale. Such a scale can be ambiguous to the amateur viewer, thus
 conversions to qualitative words have also been provided below:
 
 | Range | Quality |

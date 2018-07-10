@@ -222,7 +222,7 @@ Open the ChartLab visualization above to navigate through time or select a diffe
 One of the financial centers of the world, Singapore is home to the second-busiest port in the world and one of the largest
 oil refining industries worldwide as well. With one of the highest per capita GDP values, Singapore has cemented its
 place of international importance despite inexplicably loose financial policy whereby the Monetary Authority of Singapore
-does not regulate currency value by adjusting interest rates, as is common with most central banking systems.
+does not regulate currency value by adjusting interest rates, which is common with most central banking systems.
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"

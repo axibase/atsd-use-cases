@@ -12,9 +12,13 @@ How often are airplanes delayed?
 
 To answer questions like these, the Civil Aviation Authority (CAA) serves as an independent data specialist for the British government. Established in 1972, the CAA collects and reports on key aviation metrics which quantify various activities at UK airports. According to the official [CAA website](https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Datasets/UK-Airport-data/Airport-data-2016-06/), data is collected for more than 60 UK airports. Data is collected on a variety of topics:
 
+<!-- markdownlint-disable MD105 -->
+
 * International passenger traffic to and from British airports.
 * Terminal passenger totals at various UK airports.
 * International and domestic mail shipped to and from UK airports (tons).
+
+<!-- markdownlint-enable MD105 -->
 
 ## CAA Raw Datasets
 
@@ -26,7 +30,11 @@ CAA maintains monthly data from 1973 available in CSV and PDF format. These data
 
 CAA aviation trends are published quarterly. These reports date back to 2008 and are published in PDF format. General information is included along with these detailed reports to contextualize the data. Graphs and tables tracking year-on-year growth rates are often included. These [reports and analytics](https://www.caa.co.uk/Data-and-analysis/UK-aviation-market/Airports/Aviation-Trends/) are also available at `caa.co.uk`
 
+<!-- markdownlint-disable MD105 -->
+
 The table shown below is excerpted from the 2008 report [`AviationTrends_2008_Q4`](https://www.caa.co.uk/uploadedFiles/CAA/Content/Standard_Content/Data_and_analysis/Analysis_reports/Aviation_trends/AviationTrends_2008_Q4.pdf). Terminal passengers are defined as "those travelers who board or disembark an aircraft on a commercial flight at a reporting UK airport."
+
+<!-- markdownlint-enable MD105 -->
 
 The data tracks scheduled and chartered flights in London and other regional airports.
 

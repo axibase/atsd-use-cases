@@ -14,7 +14,7 @@ most Hawaiian good are more expensive than those of New York City:
 In addition to exorbitant food prices, Hawaii also has highest fuel prices in the entire United States, according to [`gasbuddy.com`](https://www.gasbuddy.com/USA). The Aloha State has long had the
 dubious honor of the most expensive fuel in the nation but until recently quantifying additional metrics was difficult. To better analyze such data in 2009 the US government established the data aggregation website [`data.gov`](https://www.data.gov/). Datasets are available online to conduct research, develop web applications, and design data visualizations on a variety of topics ranging from agriculture and manufacturing, to health and economics.
 
-These datasets are published in the [Socrata Open Data Format](https://socrata.com/). Socrata is a Seattle-based company that develops software for government agencies to publish and manage their data in an open format. The Socrata Open Data Format is used by the US Federal Government, as well as 25 US states, and more than 300 cities. So far, more than 4,000 government datasets are published in Socrata format.
+These datasets are published in the [Socrata Open Data Format](https://socrata.com/). Socrata is a Seattle-based company that develops software for government agencies to publish and manage their data in an open format. The Socrata Open Data Format is used by the US Federal Government, as well as 25 US states, and more than 300 cities. Thus far, more than 4,000 government datasets are published in Socrata format.
 
 ## Hawaiian Fuel Prices Dataset
 

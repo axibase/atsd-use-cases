@@ -30,7 +30,7 @@ This guide describes how to configure email alerts when a URL monitored by Route
 
     ![](./images/route53-region-error.png)
 
-7. If you have not already done so, configure the new alarm notification target by navigating to the **Alarms** tab and clicking the **Edit** button in the **Actions** column. Select the appropriate **Notification Target** from the drop-down list of existing targets.
+7. If you have not already, configure the new alarm notification target by navigating to the **Alarms** tab and clicking the **Edit** button in the **Actions** column. Select the appropriate **Notification Target** from the drop-down list of existing targets.
 
     ![](./images/route53-alarm.png)
 

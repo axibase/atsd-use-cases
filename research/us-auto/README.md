@@ -37,8 +37,7 @@ industry, foreign imports are slowly but surely pushing American producers out o
 _Source_: [Federal Reserve Economic Data](https://fred.stlouisfed.org/series/LAUTONSA)
 
 Using the [moving average](../../tutorials//moving-avg/README.md) function to seasonally-adjust the underlying data more elegantly captures
-the trend of declining automobile sales. The above mentioned production downturn of the late 2000's is clearly visible, as is
-the recent trend indicating less and less cars being sold.
+the trend of declining automobile sales. The above mentioned production downturn of the late 2000's is clearly visible alongside the recent trend indicating less and less cars being sold.
 
 **Figure 2**: Domestic Motor Vehicle Production and Sales (1994-2017)
 

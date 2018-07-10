@@ -13,7 +13,7 @@ the public health indicators of any given location. The information is then pres
 and easy to understand format that simply shows the percent of respondents who answered in the affirmative to a particular question,
 creating simple solutions for sometimes complex data problems.
 
-So which US city really is the healthiest? Well if you ask them, almost 20% of Youngstown,
+Which US city really is the healthiest? Well if you ask them, almost 20% of Youngstown,
 Ohio residents responded positively when asked in they are in good health.
 
 ![](./images/CDC1.png)
