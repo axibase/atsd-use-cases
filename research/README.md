@@ -4,7 +4,7 @@ ATSD functionality and features applied to real-world public data to solve commo
 
 ## Use Cases
 
-Detailed use cases that feature in-depth data exploration and complex functionality used to solve modern data problems. See older articles in the [Archive](#archive).
+Detailed use cases that feature in-depth data exploration and complex functionality used to solve modern data problems.
 
 1. [SQL Queries and Data Visualization with Python and ATSD](python-budget/README.md) (May 2018)
 1. [The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions](../chart-of-the-day/world-progress-explorer/README.md) (April 2018)

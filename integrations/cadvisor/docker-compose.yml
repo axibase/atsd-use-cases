@@ -1,0 +1,26 @@
+version: '2'
+services:
+  atsd:
+    image: axibase/atsd:latest
+    ports:
+      - "8088:8088"
+      - "8443:8443"
+      - "8081:8081"
+      - "8082:8082/udp"
+    container_name: atsd
+    hostname: atsd
+  cadvisor:
+    image: axibase/cadvisor:latest
+    command: -storage_driver=atsd -storage_driver_atsd_protocol=tcp -storage_driver_host=atsd -storage_driver_buffer_duration=15s -housekeeping_interval=15s
+    depends_on:
+      - atsd
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - "8080:8080"
+    container_name: cadvisor
+    links:
+      - atsd:atsd
