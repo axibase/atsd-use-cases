@@ -45,8 +45,8 @@ To collect more data, the analysis of images from a Japanese geostationary weath
 
 The Japan Meteorological Agency processes the satellite images and determines several parameters of the clouds. The results can viewed on the [Meteorological Satellite Center](http://www.data.jma.go.jp/mscweb/en/product/product/hcai/index.html) of the JMA website.
 
-The algorithms used by the JMA to process the images are complex. Read [Introduction of the Optimal Cloud Analysis
-for Himawari‐8/‐9](http://www.icare.univ-lille1.fr/crew/images/d/d7/Poster_CREW-4_Hayashi.pdf) to learn more about these algorithms.
+The algorithms used by the JMA to process the images are complex. Read **Introduction of the Optimal Cloud Analysis
+for Himawari‐8/‐9** to learn more about these algorithms.
 
 To determine cloud cover from Himawari images as simply as possible, only one band is analyzed. For this research project, [images](http://ds.data.jma.go.jp/mscweb/data/himawari/) of Australia available from the MSC JMA Real Time Image portal are used. The server keeps images for the past 24 hours. Images in infrared band 13 with wavelength equal to 10,400 nm are used.
 
@@ -205,4 +205,4 @@ Comparing the improved correlation results with solar power generation for the s
 
 ![](./images/improved_correlation_pvoutput.png)
 
-The results of this research project indicate that this algorithm can be used as a way to calculate cloud oktas with relative accuracy. The calculated cloud cover accuracy is high enough that the algorithm can be used to forecast and plan solar energy production. This conclusion is especially true for areas that are not covered by BOM meteorological weather stations, where there is no other real source of cloud cover data.
+The results of this research project indicate that this algorithm can be used as a way to calculate cloud oktas with relative accuracy. The calculated cloud cover accuracy is high enough that the algorithm can be used to forecast and plan solar energy production. This conclusion is especially relevant for areas that are not covered by BOM meteorological weather stations, where there is no other real source of cloud cover data.
