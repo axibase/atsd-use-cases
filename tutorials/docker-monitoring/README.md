@@ -89,7 +89,7 @@ Executing containers on Docker enables decomposition of applications into micros
 Container statistics are often gathered for a short timespan, meaning that traditional ways of monitoring are not applicable. Once the container is stopped, the data becomes obsolete for the purpose of troubleshooting, since the workload has been taken over by a new container. Instead of chasing individual container identifiers, consider monitoring applications and services based on labels: application name, type, role, function, etc. This can be accomplished by leveraging container labels to encode type, role, or function groups. To provide a meaningful amount of metadata about each micro-service, container labels needs to include:
 
 * Service or application name.
-* Function such as database, message-broker, http-server.
+* Function such as database, message-broker, HTTP server.
 * Environment such as testing, staging, production.
 * Data center topology: dc name, region, availability zone.
 

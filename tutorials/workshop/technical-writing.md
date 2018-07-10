@@ -1,5 +1,4 @@
-<!-- markdownlint-disable MD101 -->
-<!-- markdownlint-disable MD105 -->
+<!-- markdownlint-disable MD101 MD105 MD106-->
 
 # Axibase Documentation Guide
 

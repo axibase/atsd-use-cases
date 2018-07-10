@@ -53,7 +53,7 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 
 * Copy the configuration file to the `localconfig/${PRODUCT_CODE}/` directory on the agent machine, where `${PRODUCT_CODE}` is the agent product code. You can look up commonly used product codes in the [IBM Knowledge Center](https://www.ibm.com/support/knowledgecenter/en/SS4EKN_7.2.0/com.ibm.itm.doc_6.3/install/pc_codes.htm).
 
-    > Agent situation files adhere to the following naming convention: ${PRODUCT_CODE}_situations.xml
+    > Agent situation files adhere to the following naming convention: `${PRODUCT_CODE}_situations.xml`
 
 * Restart the agent:
 
