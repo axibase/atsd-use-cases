@@ -24,7 +24,11 @@ Click **Generate New Token** and enter the account password when prompted.
 
 ![](./images/read:org.png)
 
+<!-- markdownlint-disable MD105 -->
+
 Configure the token to grant **read:org** permissions in the **admin:org** section by checking the appropriate box. This scope grants read-only organization access to any user with this token, keep the contents confidential.
+
+<!-- markdownlint-enable MD105 -->
 
 Copy the token to the `TOKEN` parameter of the [sandbox launch command](#launch-atsd-sandbox).
 

@@ -35,7 +35,7 @@ Creating atsd
 Creating axibase-collector
 ```
 
-Tt may take several minutes to download the images and initialize the services. Monitor the progress by watching the container logs.
+Downloading the Docker image and initializing the services can take several minutes. Monitor the progress by watching the container logs.
 
 ```sh
 docker logs -f atsd
