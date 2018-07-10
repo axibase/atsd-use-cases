@@ -20,8 +20,6 @@ Cloud cover measurements have many applications and benefits in weather forecast
 
 ![](./images/pv_cloud_correlation2.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/8e2917e2)
-
 This research project is aimed at calculating cloudiness over Australia from satellite images. The goal is to use a simple method that can effectively determine the cloud cover without employing complex algorithms and machine learning. Afterwards, compare the results with actual data from ground weather stations. Data available from the Japan Meteorological Agency (JMA) and the Australian Bureau of Meteorology (BOM) made this research both interesting and feasible.
 
 ## Cloudiness Data
@@ -83,12 +81,6 @@ To store the results in ATSD:
 ```r
 save_series(series, metric_col = 2, metric_name = cloudiness_Himawari_b13", entity = entities[i], verbose = FALSE)
 ```
-
-Once the calculation results are stored in ATSD, view graphs of actual and calculated cloud cover in [ChartLab](../../tutorials/shared/chartlab.md). For example, the ChartLab portal for a weather station near the town of Oakey:
-
-[![](./images/button.png)](https://apps.axibase.com/chartlab/06a58e55)
-
-In this ChartLab portal the `cloudiness_himawari_b13` metric is the calculated cloud cover, and the `cloud_oktas` metric is cloud cover measured by the station.
 
 Stations that measure cloud cover at an average frequency of at least once every four hours are selected. The table below displays the [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient) between actual and calculated cloud cover for the selected stations:
 
@@ -199,10 +191,6 @@ This approach lead to an improvement in correlations. This approach also decreas
 * All values are scaled – divided by the upper brightness threshold.
 * Those values greater than `1` are set equal to `1`.
 
-View the live ChartLab Portal for Cloud Cover over the meteorological station near Oakey with improved correlation.
-
-[![](./images/button.png)](https://apps.axibase.com/chartlab/06a58e55/9/)
-
 ## Conclusion
 
 Comparing the calculated cloud oktas with solar power generation for a particular station, clearly this algorithm can be used as a basis of forecasting and power generation planning.
@@ -216,7 +204,5 @@ The above ChartLab portal compares the power generation of a solar power station
 Comparing the improved correlation results with solar power generation for the same station, the interdependency of the measurements is even more apparent. There is a strong correlation between the improved calculated cloud cover and solar power generation.
 
 ![](./images/improved_correlation_pvoutput.png)
-
-[![](./images/button.png)](https://apps.axibase.com/chartlab/8e2917e2/3/)
 
 The results of this research project indicate that this algorithm can be used as a way to calculate cloud oktas with relative accuracy. The calculated cloud cover accuracy is high enough that the algorithm can be used to forecast and plan solar energy production. This conclusion is especially true for areas that are not covered by BOM meteorological weather stations, where there is no other real source of cloud cover data.
