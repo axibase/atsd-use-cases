@@ -291,11 +291,11 @@ Install a local ATSD instance and recreate any of the queries of visualizations 
 * Install Redash:
 
   ```sh
-    git clone https://github.com/getredash/redash
-    cd redash
-    docker-compose -f docker-compose.production.yml run --rm server
-    create_db to setup the database
-    docker-compose -f docker-compose.production.yml up -d
+  git clone https://github.com/getredash/redash
+  cd redash
+  docker-compose -f docker-compose.production.yml run --rm server
+  create_db to setup the database
+  docker-compose -f docker-compose.production.yml up -d
   ```
 
    > For more details on Redash click [here](https://redash.io/help-onpremise/setup/setting-up-redash-instance.html).

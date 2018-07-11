@@ -205,9 +205,9 @@ the remaining months. However, in the late 2000's, the series shifted upward, hi
 Use a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting to compare previous year data.
 
 ```ls
-     [series]
-       time-offset = 1 year
-       color = silver
+[series]
+  time-offset = 1 year
+  color = silver
 ```
 
 2016 is the blue series and the 2015 is the grey series. The red box below highlights the dramatic difference when making year-on-year comparisons.

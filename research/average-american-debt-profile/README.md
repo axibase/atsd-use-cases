@@ -190,19 +190,19 @@ American. By using the calculated value setting shown below, additional data not
 displayed:
 
 ```ls
-    [series]
-      metric = dtfd%ypd.q
-      display = false
-      alias = dsr
+[series]
+  metric = dtfd%ypd.q
+  display = false
+  alias = dsr
 
-    [series]
-      metric = dtf%ypd.q
-      display = false
-      alias = for
+[series]
+  metric = dtf%ypd.q
+  display = false
+  alias = for
 
-    [series]
-      value = value('for') - value('dsr')
-      label = Non-Essential Debt Payment
+[series]
+  value = value('for') - value('dsr')
+  label = Non-Essential Debt Payment
 ```
 
 Shown below is the debt profile of the average American consumer from 1980 to 2017, navigate through time using the drop-down

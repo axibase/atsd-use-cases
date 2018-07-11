@@ -28,19 +28,19 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
   * Change to the `/opt/ITM directory` and append the following settings to the `config/hd.ini` file:
 
     ```ini
-            KHD_CSV_OUTPUT_ACTIVATE=Y
-            KHD_CSV_OUTPUT=/tmp/itm/csv
-            KHD_CSV_OUTPUT_TAGGED_ONLY=Y
-            KHD_CSV_ISO_DATE_FORMAT=Y
-            KHD_CSV_MAXSIZE=400
-            KHD_CSV_EVAL_INTERVAL=60
+    KHD_CSV_OUTPUT_ACTIVATE=Y
+    KHD_CSV_OUTPUT=/tmp/itm/csv
+    KHD_CSV_OUTPUT_TAGGED_ONLY=Y
+    KHD_CSV_ISO_DATE_FORMAT=Y
+    KHD_CSV_MAXSIZE=400
+    KHD_CSV_EVAL_INTERVAL=60
     ```
 
   * Restart WareHouse Proxy agent:
 
     ```sh
-            bin/itmcmd stop hd
-            bin/itmcmd start hd
+    bin/itmcmd stop hd
+    bin/itmcmd start hd
     ```
 
 ### Configure ITM Agents
@@ -58,11 +58,11 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 * Restart the agent:
 
 ```bash
-    bin/itmcmd stop ${PRODUCT_CODE}
+bin/itmcmd stop ${PRODUCT_CODE}
 ```
 
 ```bash
-    bin/itmcmd start ${PRODUCT_CODE}
+bin/itmcmd start ${PRODUCT_CODE}
 ```
 
 ### Download CSV Parsers for UX, VM, and MQ Product Codes
@@ -85,9 +85,9 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 * Specify the ATSD hostname by editing the following line:
 
 ```bash
-    if [ "$url" = "" ]; then
-        url="http://atsd_hostname:8088"
-    fi
+if [ "$url" = "" ]; then
+    url="http://atsd_hostname:8088"
+fi
 ```
 
 * Set username and password in the `inotify_sender.sh` script
@@ -99,13 +99,13 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 * Set permissions to execute the script:
 
 ```sh
-    chmod a+x inotify_sender.sh
+chmod a+x inotify_sender.sh
 ```
 
 * Launch the `inotify` wrapper script:
 
 ```sh
-    ./inotify_sender.sh
+./inotify_sender.sh
 ```
 
 * Review the logs in the `/tmp/itm/logs` directory.

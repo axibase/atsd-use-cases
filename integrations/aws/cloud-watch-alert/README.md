@@ -182,13 +182,13 @@ ATSD email notifications contain context-aware links to the newly-launched AWS r
 Configure your local ATSD instance to send messages to Slack Messenger by following the [Slack Notifications](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html) procedure or adding the following environment variable to the atsd-sandbox container above:
 
 ```sh
-   --env SLACK_CONFIG="slack.properties"
+--env SLACK_CONFIG="slack.properties"
 ```
 
 Bind the `slack.properties` file to the sandbox container:
 
 ```sh
-   --volume /home/user/slack.properties:/slack.properties
+--volume /home/user/slack.properties:/slack.properties
 ```
 
 The bound volume must contain these required parameters in plaintext:
@@ -209,13 +209,13 @@ A sample status change Slack message is shown here:
 Configure your local ATSD instance to send messages to Telegram Messenger by following the [Telegram Notifications](https://axibase.com/docs/atsd/rule-engine/notifications/telegram.html) procedure or adding the following environment variable to the atsd-sandbox container above:
 
 ```sh
-   --env TELEGRAM_CONFIG="telegram.properties"
+--env TELEGRAM_CONFIG="telegram.properties"
 ```
 
 Bind the `telegram.properties` file to the sandbox container:
 
 ```sh
-   --volume /home/user/telegram.properties:/telegram.properties
+--volume /home/user/telegram.properties:/telegram.properties
 ```
 
 The bound volume contains the required parameters in plaintext:

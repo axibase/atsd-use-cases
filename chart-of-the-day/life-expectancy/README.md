@@ -130,7 +130,7 @@ The moving average [statistical function](https://axibase.com/products/axibase-t
 To create such a series, add an additional **[series]** expression with a derived value using the Statistical Function syntax:
 
 ```ls
-      value = avg('series', 'time')
+value = avg('series', 'time')
 ```
 
 Where `series` is the `alias` of the series from which the new series is derived and `time` is the period for which the moving average is calculated.

@@ -117,11 +117,11 @@ look at the statistics by following the below steps to install your own ATSD ins
 1. Install the ATSD database from a Docker image:
 
    ```sql
-    docker run \
-      --detach \
-      --name=atsd \
-      --publish 8443:8443 \
-      axibase/atsd:latest
+   docker run \
+    --detach \
+    --name=atsd \
+    --publish 8443:8443 \
+    axibase/atsd:latest
    ```
 
 2. Log in to ATSD and configure the pre-defined administrator account.

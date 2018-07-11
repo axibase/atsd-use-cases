@@ -354,7 +354,7 @@ Download the [`docker-compose.yml`](./resources/docker-compose.yml) file to laun
 Launch containers by specifying the built-in collector account credentials used by Axibase Collector to insert data into ATSD.
 
 ```sh
-   export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
+export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
 ```
 
 Open ATSD web interface and begin exploring your data.
@@ -377,7 +377,7 @@ where:
 * `w` = Weighted value of indicator, determined by ACSM internally.
 * `Max` = A hypothetical maximum score for the MSA ranked best on both indicators.
 
->Source: `http://www.americanfitnessindex.org/methodology/` American Fitness Index
+> Source: `http://www.americanfitnessindex.org/methodology/` American Fitness Index
 
 ### Using the `ALERT` Setting
 

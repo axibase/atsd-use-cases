@@ -128,13 +128,13 @@ As you can see, the synthetic `on-error` payload is similar to the native `on-su
 Set `NAMESPACE` variable in the command below to your Docker Hub namespace, for example:
 
 ```sh
-  --env NAMESPACE='google' \
+--env NAMESPACE='google' \
 ```
 
 Set `NOTIFY_URL` variable to a request URL where `on-error` webhook notifications may be sent, for example:
 
 ```sh
-  --env NOTIFY_URL='https://host01:10443/jenkins/plugin?token=123' \
+--env NOTIFY_URL='https://host01:10443/jenkins/plugin?token=123' \
 ```
 
 The notification URL may include **Basic** authorization credentials, for example `https://username:password@atsd_hostname:10443/`. SSL certificate validation is disabled by default.

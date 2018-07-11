@@ -88,25 +88,25 @@ You can adjust the start and end date of the reporting interval using convenient
 * Last 24-hours:
 
 ```sql
-  WHERE datetime >= NOW - 24*hour AND datetime < NOW
+WHERE datetime >= NOW - 24*hour AND datetime < NOW
 ```
 
 * Previous week:
 
 ```sql
-  WHERE datetime >= previous_week AND datetime < current_week
+WHERE datetime >= previous_week AND datetime < current_week
 ```
 
 * Previous month:
 
 ```sql
-  WHERE datetime >= previous_month AND datetime < current_month
+WHERE datetime >= previous_month AND datetime < current_month
 ```
 
 * Previous quarter:
 
 ```sql
-  WHERE datetime >= previous_quarter AND datetime < current_quarter
+WHERE datetime >= previous_quarter AND datetime < current_quarter
 ```
 
 ### Displaying Health Check Properties

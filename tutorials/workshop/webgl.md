@@ -479,7 +479,6 @@ loadAtsdCpuBusyData.then(data => {
 WebGL does not support HTML rendering, but with `THREE.js`, work with DOM objects as if they are scene objects.
 
 ```javascript
-
 // Initialize graph scene
 let scene = new THREE.Scene();
 let renderer = new THREE.CSS3DRenderer();

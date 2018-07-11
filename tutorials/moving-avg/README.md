@@ -47,8 +47,8 @@ the `[widget]` field to modify all available series, or placed under an individu
 series.
 
 ```sql
-  statistic = wtavg
-  period = 1 year
+statistic = wtavg
+period = 1 year
 ```
 
 The `period` is set by the user and able to be as low as millisecond granularity and as high as any

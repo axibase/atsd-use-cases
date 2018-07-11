@@ -113,13 +113,13 @@ endlist
 The syntax for this drop-down list is shown below:
 
 ```ls
-  [dropdown]
-    on-change = widget.config.series[0].value = this.value; widget.replaceSeries(widget.config.series);
-    for date in keyDates
-      [option]
-        text = Index (Scale to 100 for @{date})
-        value = value("cpi") / value("cpi_@{date}") * 100 || null
-    endfor
+[dropdown]
+  on-change = widget.config.series[0].value = this.value; widget.replaceSeries(widget.config.series);
+  for date in keyDates
+    [option]
+      text = Index (Scale to 100 for @{date})
+      value = value("cpi") / value("cpi_@{date}") * 100 || null
+  endfor
 ```
 
 > For more information about the above syntax see the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/).

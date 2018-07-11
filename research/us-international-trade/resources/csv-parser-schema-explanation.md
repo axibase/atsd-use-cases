@@ -50,7 +50,7 @@ In this case, `'#row=2-*'` means select all rows starting with row Index 2, igno
 ## Select Columns
 
 ```javascript
- select('#col=4-28')
+select('#col=4-28')
 ```
 
 This expression `'#col=4-28''` selects all columns with indexes from 4 to 28. After selection, the following cells are created:
@@ -66,7 +66,7 @@ This expression `'#col=4-28''` selects all columns with indexes from 4 to 28. Af
 Do not select columns that are contained in a column which describes summary values for the year. The columns end with the `YR` suffix.
 
 ```javascript
- filter(!cell(1,col).endsWith('YR'))
+filter(!cell(1,col).endsWith('YR'))
 ```
 
 For filtering cells, use the `filter` command that takes a boolean condition as a parameter. The method checks every cell against this condition.
@@ -127,7 +127,7 @@ After filtering the correct cells, iterate through the cells and use the cell va
    Specify the entity with the `entity` method that takes the entity name as the string parameter.
 
 ```javascript
-    entity('usa')
+entity('usa')
 ```
 
 ## 2.  Metric
@@ -135,7 +135,7 @@ After filtering the correct cells, iterate through the cells and use the cell va
    To specify the metric, use the `metric` command.
 
 ```javascript
-    metric('us-trade-' + (cell(1,col).startsWith('E')?'export':'import') )
+metric('us-trade-' + (cell(1,col).startsWith('E')?'export':'import') )
 ```
 
    Next, decide which metric to use for the series. The metric depends on the first letter in the column header. If the header starts with `'E'`,  use `'us-trade-export'`.
@@ -146,8 +146,8 @@ After filtering the correct cells, iterate through the cells and use the cell va
    Specify tags by using the `tag` method which takes `key` and `value` of a tag as the parameter.
 
 ```javascript
-        tag('ctyname', cell(row, 3))
-        .tag('cty_code', cell(row,2))
+tag('ctyname', cell(row, 3))
+.tag('cty_code', cell(row,2))
 ```
 
    Using this method, tags are defined as `ctyname` and `cty_code`, respectively.
@@ -158,7 +158,7 @@ Choose the appropriate string that describes the time of the series sample,
 which is parsed by a timestamp pattern. Accomplish this by using the `timestamp` method:
 
 ```javascript
-   timestamp(cell(row,1)+'-'+cell(1,col).substring(1))
+timestamp(cell(row,1)+'-'+cell(1,col).substring(1))
 ```
 
 ## Result

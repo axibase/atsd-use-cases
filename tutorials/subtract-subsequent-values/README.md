@@ -185,20 +185,20 @@ replace-value = value - previousValue
 Create a derived series using the [`previous(alias)`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
 
 ```ls
-  # raw series data
-  [series]
-   alias = raw
-   display = false
+# raw series data
+[series]
+ alias = raw
+ display = false
 
-  # series where each value is equal to previous value
-  [series]
-   value = previous('raw')
-   alias = prev
-   display = false
+# series where each value is equal to previous value
+[series]
+ value = previous('raw')
+ alias = prev
+ display = false
 
-  # derived series that calculated the delta
-  [series]
-   value = value('raw') - value('prev')
+# derived series that calculated the delta
+[series]
+ value = value('raw') - value('prev')
 ```
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/a7b29712)

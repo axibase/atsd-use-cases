@@ -57,24 +57,24 @@ Below is a glossary of some dataset schema terminology used in this article.
 * **Entity**: Name of the dataset that loaded from `data.gov`, in this case `mr8w-325u`. Equivalent to the **Unique Identifier** used on [data.gov](https://data.cdc.gov/api/views/mr8w-325u). Each dataset from `data.gov` has one entity.
 
 ```json
-  "id" : "mr8w-325u",
-  "name" : "Deaths in 122 U.S. cities - 1962-2016. 122 Cities Mortality Reporting System",
-  "attribution" : "CDC, NCIRD, Influenza Division",
+"id" : "mr8w-325u",
+"name" : "Deaths in 122 U.S. cities - 1962-2016. 122 Cities Mortality Reporting System",
+"attribution" : "CDC, NCIRD, Influenza Division",
 ```
 
 * **Metric**: List of columns in the dataset such as  `pneumonia_and_influenza_deaths`. This dataset contains seven metrics.
 
 ```json
-   "dataTypeName" : "number",
-   "fieldName" : "pneumonia_and_influenza_deaths"
+"dataTypeName" : "number",
+"fieldName" : "pneumonia_and_influenza_deaths"
 ```
 
 * **Series Tag**: List of text columns contained in the dataset for example, `city`. The tag columns allow us to filter and group the data. This dataset contains 3 series tags: `city`, `state`, and `region`.
 
 ```json
-   "name" : "City",
-   "dataTypeName" : "text",
-   "fieldName" : "city",
+"name" : "City",
+"dataTypeName" : "text",
+"fieldName" : "city",
 ```
 
 ## Procedure

@@ -123,7 +123,7 @@ The certificate is presented to the client as part of the secure connection nego
 `curl` SSL handshake:
 
 ```txt
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to axibase.com (.....) port 443 (#0)
+0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to axibase.com (.....) port 443 (#0)
 * Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
 * successfully set certificate verify locations:
 *   CAfile: /etc/ssl/certs/ca-certificates.crt
@@ -455,6 +455,7 @@ public class CertListCA {
 ---
 
 <details><summary><b>View OpenJDK 1.8.0_162 CAs</b></summary>
+<!-- markdownlint-disable MD107 -->
 
 ```ls
      trust.path= /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/cacerts
@@ -627,6 +628,7 @@ public class CertListCA {
      CN = XRamp Global Certification Authority
 ```
 
+<!-- markdownlint-enable MD107 -->
 </details>
 
 ---
@@ -636,6 +638,7 @@ OpenJDK 9
 Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](https://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html#JDK-8189131) binary for Linux x64 contains an **empty** `cacerts` keystore.
 
 <details><summary><b>View OpenJDK 9 CAs</b></summary>
+<!-- markdownlint-disable MD107 -->
 
 ```ls
      trust.path= /usr/lib/jvm/java-9-openjdk-amd64/lib/security/cacerts
@@ -790,6 +793,7 @@ Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](https://w
      CN = XRamp Global Certification Authority
 ```
 
+<!-- markdownlint-enable MD107 -->
 </details>
 
 ---
@@ -801,16 +805,17 @@ diff --unchanged-line-format="" --old-line-format="" --new-line-format="%L" java
 New CAs in OpenJDK 8 -> 9:
 
 ```txt
-  no CN = OU=AC RAIZ FNMT-RCM, O=FNMT-RCM, C=ES
-     CN = Amazon Root CA 1
-     CN = Amazon Root CA 2
-     CN = Amazon Root CA 3
-     CN = Amazon Root CA 4
-     CN = LuxTrust Global Root 2
-     CN = TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1
+no CN = OU=AC RAIZ FNMT-RCM, O=FNMT-RCM, C=ES
+   CN = Amazon Root CA 1
+   CN = Amazon Root CA 2
+   CN = Amazon Root CA 3
+   CN = Amazon Root CA 4
+   CN = LuxTrust Global Root 2
+   CN = TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1
 ```
 
 Removed CAs in OpenJDK 8 -> 9:
+<!-- markdownlint-disable MD107 -->
 
 ```txt
      CN = AC Raíz Certicámara S.A.
@@ -840,9 +845,12 @@ Removed CAs in OpenJDK 8 -> 9:
      CN = WellsSecure Public Root Certificate Authority
 ```
 
+<!-- markdownlint-enable MD107 -->
+
 ---
 
 <details><summary><b>View Oracle OpenJDK 1.8.0_131 CAs</b></summary>
+<!-- markdownlint-disable MD107 -->
 
 ```txt
      trust.path= /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts
@@ -953,6 +961,7 @@ Removed CAs in OpenJDK 8 -> 9:
      CN = XRamp Global Certification Authority
 ```
 
+<!-- markdownlint-enable MD107 -->
 </details>
 
 ## Trust Inheritance
@@ -1026,9 +1035,9 @@ public class CertListChain {
 The subject is the same as the issuer.
 
 ```txt
-  Subject = CN=atsd, OU=Software Group, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
-   Issuer = CN=atsd, OU=Software Group, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
-    Valid = 2017-01-18 - 2017-04-18
+Subject = CN=atsd, OU=Software Group, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
+  Issuer = CN=atsd, OU=Software Group, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
+   Valid = 2017-01-18 - 2017-04-18
 ```
 
 #### CA-Signed Certificate Chain
@@ -1036,21 +1045,21 @@ The subject is the same as the issuer.
 [CA-Signed](https://axibase.com/docs/atsd/administration/ssl-ca-signed.html) Certificate.
 
 ```txt
-  Subject = CN=*.axibase.com, OU=PositiveSSL Wildcard, OU=Domain Control Validated
-   Issuer = CN=COMODO RSA Domain Validation Secure Server CA, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
-    Valid = 2015-03-17 - 2018-03-16
+Subject = CN=*.axibase.com, OU=PositiveSSL Wildcard, OU=Domain Control Validated
+  Issuer = CN=COMODO RSA Domain Validation Secure Server CA, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+   Valid = 2015-03-17 - 2018-03-16
 :::
-  Subject = CN=COMODO RSA Domain Validation Secure Server CA, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
-   Issuer = CN=COMODO RSA Certification Authority, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
-    Valid = 2014-02-12 - 2029-02-11
+Subject = CN=COMODO RSA Domain Validation Secure Server CA, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+  Issuer = CN=COMODO RSA Certification Authority, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+   Valid = 2014-02-12 - 2029-02-11
 :::
-  Subject = CN=COMODO RSA Certification Authority, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
-   Issuer = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
-    Valid = 2000-05-30 - 2020-05-30
+Subject = CN=COMODO RSA Certification Authority, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+  Issuer = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
+   Valid = 2000-05-30 - 2020-05-30
 :::
-  Subject = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
-   Issuer = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
-    Valid = 2000-05-30 - 2020-05-30
+Subject = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
+  Issuer = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
+   Valid = 2000-05-30 - 2020-05-30
 ```
 
 ### Trust Manager in Java
@@ -1060,16 +1069,16 @@ The subject is the same as the issuer.
 The client can traverse the chain up until it finds a root CA in its trust store.
 
 ```java
-        Enumeration<String> trustStoreAliases = trustStore.aliases();
-        while (trustStoreAliases.hasMoreElements()) {
-            String tAlias = trustStoreAliases.nextElement();
-            X509Certificate rc = (X509Certificate)keyStore.getCertificate(tAlias);
-            if (rc.getIssuerX500Principal().equals(searchCert.getIssuerX500Principal())) {
-                System.err.println("Root CA found by name: " + rc.getIssuerDN());
-                printCert(rootCert);
-                // Proceed to validate the certificate chain using public keys and signatures
-            }
-        }
+Enumeration<String> trustStoreAliases = trustStore.aliases();
+while (trustStoreAliases.hasMoreElements()) {
+    String tAlias = trustStoreAliases.nextElement();
+    X509Certificate rc = (X509Certificate)keyStore.getCertificate(tAlias);
+    if (rc.getIssuerX500Principal().equals(searchCert.getIssuerX500Principal())) {
+        System.err.println("Root CA found by name: " + rc.getIssuerDN());
+        printCert(rootCert);
+        // Proceed to validate the certificate chain using public keys and signatures
+    }
+}
 ```
 
 #### Validating Certificate Chain using TrustManager
@@ -1079,7 +1088,7 @@ Java provides `java.security.X509TrustManager` that implements the required func
 The following example overrides the default `X509TrustManager` with a `LoggingX509TrustManager`.
 
 ```java
-    trustManager.checkServerTrusted(chain, "ECDHE_RSA");
+trustManager.checkServerTrusted(chain, "ECDHE_RSA");
 ```
 
 ```java
@@ -1239,13 +1248,13 @@ Certificate authorities can perform various validation checks, from simple domai
 **Domain validation** is the easiest method to obtain an SSL certificate. It involves checks by the CA to prove that the requester has **full** control of a specific domain (range of domains in case of wildcard certificates).
 
 ```txt
-    Issuer: (CA ID: 1455)
-        commonName                = COMODO RSA Domain Validation Secure Server CA
-        ...
-    Subject:
-        commonName                = *.axibase.com
-        organizationalUnitName    = PositiveSSL Wildcard
-        organizationalUnitName    = Domain Control Validated
+Issuer: (CA ID: 1455)
+    commonName                = COMODO RSA Domain Validation Secure Server CA
+    ...
+Subject:
+    commonName                = *.axibase.com
+    organizationalUnitName    = PositiveSSL Wildcard
+    organizationalUnitName    = Domain Control Validated
 ```
 
 Before Let's Encrypt, this was accomplished by replying to a verification email sent to an inbox address recorded with the domain registrar (or from a shortlist).
@@ -1755,13 +1764,13 @@ openssl req -x509 -new -nodes -key axibase_root_ca.key -sha256 -days 90 -out axi
 ```
 
 ```txt
-  Country Name (2 letter code) [AU]:US
-  State or Province Name (full name) [Some-State]:CA
-  Locality Name (eg, city) []:Cupertino
-  Organization Name (eg, company) [Internet Widgits Pty Ltd]:Axibase Corporation
-  Organizational Unit Name (eg, section) []:SWG
-  Common Name (e.g. server FQDN or YOUR name) []:Axibase Root CA
-  Email Address []:
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:CA
+Locality Name (eg, city) []:Cupertino
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Axibase Corporation
+Organizational Unit Name (eg, section) []:SWG
+Common Name (e.g. server FQDN or YOUR name) []:Axibase Root CA
+Email Address []:
 ```
 
 Convert PEM file to CRT file.
@@ -1913,6 +1922,7 @@ keytool -importkeystore -srckeystore atsd_axibase_com.pkcs12 -srcstoretype PKCS1
 ```
 
 Check `atsd_axibase_com.keystore`: chain and trust.
+<!-- markdownlint-disable MD107 -->
 
 ```txt
         alias= atsd
@@ -1929,6 +1939,8 @@ keystore aliases= [atsd]
 Certificate chain validated OK
 Default trust manager: certificate chain validated OK
 ```
+
+<!-- markdownlint-enable MD107 -->
 
 The `atsd_axibase_com` certificate, signed with 'Axibase Root CA' is now valid.
 
@@ -2106,14 +2118,14 @@ nginx.1    | www.uber.com 172.17.0.1 - - [12/Apr/2018:10:55:30 +0000] "GET /api/
 Since custom CA is in the Java trust store, URL connections complete without errors as well.
 
 ```java
-  URL url = new URL("https://www.uber.com:443/");
-  HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-  conn.connect();
-  System.out.println("Connection OK");
+URL url = new URL("https://www.uber.com:443/");
+HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+conn.connect();
+System.out.println("Connection OK");
 ```
 
 ```txt
-  Connection OK
+Connection OK
 ```
 
 If the certificate is untrusted, you see this error:

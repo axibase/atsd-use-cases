@@ -140,8 +140,8 @@ In this equation, `d` is the distance between the center of the pixel and the gi
 Here is a code snippet from the R script used to calculate the weighted average of brightness for given disks:
 
 ```r
- sum <- 0
-  total_weight <- 0
+sum <- 0
+total_weight <- 0
 for (i in 1:length(pixels$x_shift)) {
     x_shift <- pixels$x_shift[i]
     y_shift <- pixels$y_shift[i]

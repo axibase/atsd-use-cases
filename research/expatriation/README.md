@@ -214,9 +214,9 @@ The charts library support `alert-expression` settings to display quarters where
 The syntax for the `alert-expression` above is shown here:
 
 ```ls
-    alert-expression = value > 50 ? 4000 : value < -10 ? -100 : 0
-    alert-style = if (alert > 50) return 'color:red'
-    alert-style = if (alert < -10) return 'color:green'
+alert-expression = value > 50 ? 4000 : value < -10 ? -100 : 0
+alert-style = if (alert > 50) return 'color:red'
+alert-style = if (alert < -10) return 'color:green'
 ```
 
 When using a two-parameter `alert-expression`, three arguments are needed: an upper bound, lower bound, and median value separated by `:` delimiter.
