@@ -179,7 +179,13 @@ Use the `rate` setting to calculate the difference between the current data samp
   rate-counter = false
 ```
 
-The `rate` setting defines the difference in index positions of the samples to be compared. `0` compares adjacent samples, `1` skips a single sample, etc.
+The `rate` setting defines the period to compare. `rate = 0` compares adjacent samples. The underlying formula is shown here:
+
+```css
+(value_1 - value_0) / (time_1 - time_0)
+```
+
+`rate = 1 minute` calculates the change in value per minute.
 
 `rate-counter` parameter ignores negative differences when set to `true`.
 
