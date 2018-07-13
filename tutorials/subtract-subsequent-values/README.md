@@ -167,13 +167,27 @@ The `outage-tickets` dataset visualized in **ChartLab**:
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d#fullscreen)
 
-To calculate and display the difference between consecutive values, there are two options.
+To calculate and display the difference between consecutive values, there are three options.
 
-### Create Derived Series Using replace-value
+### Rate Setting
 
-Use the `value` and `previousValue` fields in the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) function.
+Use the `rate` setting to calculate the difference between the current data sample and the subsequent sample and return the difference in place of the current data sample.
 
-```ls
+```css
+[series]
+  rate = 0
+  rate-counter = false
+```
+
+The `rate` setting defines the difference in index positions of the samples to be compared. `0` compares adjacent samples, `1` skips a single sample, etc.
+
+`rate-counter` parameter ignores negative differences when set to `true`.
+
+### Create Derived Series Using `replace-value`
+
+Use `value` and `previousValue` fields in the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) function.
+
+```css
 [series]
 replace-value = value - previousValue
 ```
@@ -184,26 +198,26 @@ replace-value = value - previousValue
 
 Create a derived series using the [`previous(alias)`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
 
-```ls
-# raw series data
+```css
+/* raw series data */
 [series]
  alias = raw
  display = false
 
-# series where each value is equal to previous value
+/* series where each value is equal to previous value */
 [series]
  value = previous('raw')
  alias = prev
  display = false
 
-# derived series that calculated the delta
+/* derived series that calculated the delta */
 [series]
  value = value('raw') - value('prev')
 ```
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/a7b29712)
 
-Both methods create the same visualization.
+All three methods create the same visualization.
 
 ![](./images/dc07-delta1.png)
 
