@@ -99,6 +99,7 @@ ping -c ${count} ${host}
 ```
 
 `ping.sh` requires two arguments, defined in the **Arguments** text field on the **Script** tab:
+
 * `${entity}` placeholder defines the server to ping.
 * `${count}` parameter defines how many times the server is pinged.
 
