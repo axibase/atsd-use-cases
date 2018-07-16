@@ -189,6 +189,14 @@ The `rate` setting defines the period to compare. `rate = 0` compares adjacent s
 
 `rate-counter` parameter ignores negative differences when set to `true`.
 
+The visualization created by the `rate` setting configuration is shown below. The visualization includes [`mode = column`](https://github.com/axibase/charts/blob/master/widgets/time-chart/README.md#widget-settings) setting.
+
+![](./images/rate-setting-visualization.png)
+
+[![](./images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d/2/)
+
+Use the `rate` setting to compare data samples within one series without creating a derived series.
+
 ### Create Derived Series Using `replace-value`
 
 Use `value` and `previousValue` fields in the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) function.
@@ -223,7 +231,7 @@ Create a derived series using the [`previous(alias)`](https://github.com/axibase
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/a7b29712)
 
-All three methods create the same visualization.
+Both methods create the same visualization.
 
 ![](./images/dc07-delta1.png)
 
