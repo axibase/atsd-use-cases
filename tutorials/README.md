@@ -2,6 +2,7 @@
 
 ## Data
 
+* [Creating Custom Rules](creating-rules/README.md)
 * [Parsing Irregular Timestamps](irregular-timestamp/README.md)
 * [Data Flow Control in Time Series Database](data-flow-control/README.md)
 * [Calculated Values With Schema-Based Parsing](schema-based-parser-mod/README.md)

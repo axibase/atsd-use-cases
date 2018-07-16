@@ -1,4 +1,4 @@
-# Creating Rules
+# Creating Custom Rules
 
 ## Overview
 
