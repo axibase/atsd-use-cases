@@ -112,7 +112,16 @@ The [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) AP
 {"d":"2018-05-26T13:38:00","v":0.0}]}]
 ```
 
-Add the [Rate Processor](https://axibase.com/docs/atsd/api/data/series/rate.html) to compute the difference between consecutive samples per unit of time, or rate period. Omit the rate period parameter to return the difference between consecutive samples.
+Add the [Rate Processor](https://axibase.com/docs/atsd/api/data/series/rate.html) to compute the difference between consecutive samples per unit of time, or rate period.
+
+```json
+"rate": {
+  "period": {"count": 1, "unit": "MINUTE"},
+  "counter": false
+}
+```
+
+Omit the rate `period` parameter, or set its count to zero, to return the difference between consecutive samples.
 
 ```json
 [{
@@ -167,13 +176,51 @@ The `outage-tickets` dataset visualized in **ChartLab**:
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d#fullscreen)
 
-To calculate and display the difference between consecutive values, there are two options.
+To calculate and display the difference between consecutive values, there are three options.
 
-### Create Derived Series Using replace-value
+### Rate Setting
 
-Use the `value` and `previousValue` fields in the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) function.
+Use the `rate` setting to calculate the difference between the current data sample and the previous sample and return the difference in place of the current data sample.
 
-```ls
+```css
+[series]
+  rate = 0 minute
+  rate-counter = false
+```
+
+The `rate` setting defines the period to pro-rate the change in value. The underlying formula is shown here:
+
+```javascript
+(value_1 - value_0) / (time_1 - time_0) * rate_period
+```
+
+* `value_1`: current value
+* `value_0`: previous value
+* `time_1`: current value in Unix milliseconds
+* `time_0`: previous value in Unix milliseconds
+* `rate_period`: rate period in Unix milliseconds
+
+For example, `rate = 1 minute` calculates the change in value (first derivative) per unit of time equal to **one** minute.
+
+If the rate period is zero, the formula is:
+
+```javascript
+(value_1 - value_0)
+```
+
+The `rate-counter` parameter ignores negative differences when set to `true`.
+
+The visualization created by the `rate` setting configuration is shown below.
+
+![](./images/rate-setting-visualization.png)
+
+[![](./images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d/2/)
+
+### Create Derived Series Using `replace-value`
+
+Use `value` and `previousValue` fields in the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) function.
+
+```css
 [series]
 replace-value = value - previousValue
 ```
@@ -184,19 +231,19 @@ replace-value = value - previousValue
 
 Create a derived series using the [`previous(alias)`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
 
-```ls
-# raw series data
+```css
+/* raw series data */
 [series]
  alias = raw
  display = false
 
-# series where each value is equal to previous value
+/* series where each value is equal to previous value */
 [series]
  value = previous('raw')
  alias = prev
  display = false
 
-# derived series that calculated the delta
+/* derived series that calculated the delta */
 [series]
  value = value('raw') - value('prev')
 ```
