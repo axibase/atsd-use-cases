@@ -112,7 +112,16 @@ The [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) AP
 {"d":"2018-05-26T13:38:00","v":0.0}]}]
 ```
 
-Add the [Rate Processor](https://axibase.com/docs/atsd/api/data/series/rate.html) to compute the difference between consecutive samples per unit of time, or rate period. Omit the rate period parameter to return the difference between consecutive samples.
+Add the [Rate Processor](https://axibase.com/docs/atsd/api/data/series/rate.html) to compute the difference between consecutive samples per unit of time, or rate period.
+
+```json
+"rate": {
+  "period": {"count": 1, "unit": "MINUTE"},
+  "counter": false
+}
+```
+
+Omit the rate `period` parameter, or set its count to zero, to return the difference between consecutive samples.
 
 ```json
 [{
@@ -171,31 +180,41 @@ To calculate and display the difference between consecutive values, there are th
 
 ### Rate Setting
 
-Use the `rate` setting to calculate the difference between the current data sample and the subsequent sample and return the difference in place of the current data sample.
+Use the `rate` setting to calculate the difference between the current data sample and the previous sample and return the difference in place of the current data sample.
 
 ```css
 [series]
-  rate = 0
+  rate = 0 minute
   rate-counter = false
 ```
 
-The `rate` setting defines the period to compare. `rate = 0` compares adjacent samples. The underlying formula is shown here:
+The `rate` setting defines the period to pro-rate the change in value. The underlying formula is shown here:
 
-```css
-(value_1 - value_0) / (time_1 - time_0)
+```javascript
+(value_1 - value_0) / (time_1 - time_0) * rate_period
 ```
 
-`rate = 1 minute` calculates the change in value per minute.
+* `value_1`: current value
+* `value_0`: previous value
+* `time_1`: current value in Unix milliseconds
+* `time_0`: previous value in Unix milliseconds
+* `rate_period`: rate period in Unix milliseconds
 
-`rate-counter` parameter ignores negative differences when set to `true`.
+For example, `rate = 1 minute` calculates the change in value (first derivative) per unit of time equal to **one** minute.
 
-The visualization created by the `rate` setting configuration is shown below. The visualization includes [`mode = column`](https://github.com/axibase/charts/blob/master/widgets/time-chart/README.md#widget-settings) setting.
+If the rate period is zero, the formula is:
+
+```javascript
+(value_1 - value_0)
+```
+
+The `rate-counter` parameter ignores negative differences when set to `true`.
+
+The visualization created by the `rate` setting configuration is shown below.
 
 ![](./images/rate-setting-visualization.png)
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d/2/)
-
-Use the `rate` setting to compare data samples within one series without creating a derived series.
 
 ### Create Derived Series Using `replace-value`
 
