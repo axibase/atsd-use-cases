@@ -33,7 +33,7 @@ to calculate concrete wait times that are likely to result in an abandoned call.
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b91c1140/2/#fullscreen)
 
 The visualization above shows the total number of calls received by the Health Service System over the entire observed period,
-which began in January 2011 and continues until June 2017. Abandoned calls are shown in orange. Retrieve data using the query below. See the complete dataset in the [Appendix](#call-abandonment-rate).
+which began in January 2011 and continues until June 2017. Abandoned calls are shown in orange. Retrieve data using the query below. See the complete dataset in the [Appendix](#call-abandonment-data).
 
 ```sql
 SELECT datetime AS "Date", ibc.value AS "Inbound Calls", abc.value AS "Abandoned Calls", car.value AS "Abandonment Rate"
