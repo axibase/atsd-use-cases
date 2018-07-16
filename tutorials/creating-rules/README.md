@@ -70,8 +70,8 @@ Select how Rule Engine should react to status changes:
 
 Set the appropriate switch to **On** to define behavior upon the occurrence of a particular rule event. Configure the behavior:
 
-* **Delay**: Time after event which email action is delayed. 
-  * Useful for handling false positives or momentary violations. 
+* **Delay**: Time after event which email action is delayed.
+  * Useful for handling `false positives` or momentary violations.
   * If condition evaluates to `false` again during **Delay** time, email alert is canceled for **On Open** and **On Repeat** behaviors.
   * Likewise if **On Cancel** delay is defined and condition once again evaluates to `true`, email notification is cancelled.
 * **Subject**: Email subject line which can contain [Window Field](https://axibase.com/docs/atsd/rule-engine/window-fields.html) placeholders, surrounded by `${}`.
@@ -81,7 +81,7 @@ Set the appropriate switch to **On** to define behavior upon the occurrence of a
 
 ## Execute Script
 
-If necessary, execute scripts that coincide with rule condition evaluation on open, repeat, or cancel. This rule evaluates excessive memory usage, so an **On Open** script only adds to the workload of the struggling machine. Once memory usage normalizes, verifying that the machine is operating as expected is one option.
+If necessary, execute scripts that coincide with rule condition evaluation on open, repeat, or cancel. This rule evaluates excessive memory usage, thus an **On Open** script only adds to the workload of the struggling machine. Once memory usage normalizes, verifying that the machine is operating as expected is one option.
 
 Set the **On Cancel** switch to **Yes** and clear the **Same as `On Open`** checkbox.
 
@@ -100,8 +100,8 @@ ping -c ${count} ${host}
 
 `ping.sh` requires two arguments, defined in the **Arguments** text field on the **Script** tab:
 
-* `${entity}` placeholder defines the server to ping.
-* `${count}` parameter defines how many times the server is pinged.
+* `${entity}` placeholder defines the server to `ping`.
+* `${count}` parameter defines how many times the server is `pinged`.
 
 After completing all required information click **Save** to store the rule in the database. The rule is visible on the **Rules** page.
 
