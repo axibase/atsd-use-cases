@@ -227,7 +227,6 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "C
   FROM "call_abandonment_rate" AS car JOIN "average_speed_of_answer_in_secs" AS cat WHERE car.value <= 1 AND datetime < '2016-01-01 00:00:00'
 ```
 
-
 ```ls
 | Date       | Call Abandonment Rate | Call Wait Time |
 |------------|-----------------------|----------------|
