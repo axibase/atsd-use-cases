@@ -6,11 +6,11 @@ ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) enables the autom
 
 Rule Engine behavior is governed by user-defined rules, which contain conditions for the database to evaluate and defined responses once rule conditions are met.
 
-This tutorial describes the configuration of a rule which monitors memory usage data, messages a subscribed group of users, and executes a `bash` script.
+This tutorial describes the configuration of a rule which monitors memory usage data, messages a subscribed group of users upon excessive load, and executes a `bash` script to ensure a crash has not occurred.
 
 ## Create a Rule
 
-Open the **Alert > Rules** page and select **Create** from the split button at the bottom of the page.
+Open the **Alerts > Rules** page and select **Create** from the split button at the bottom of the page.
 
 ![](./images/alert-rules.png)
 
