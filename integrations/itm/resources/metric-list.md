@@ -2,7 +2,7 @@
 
 ## Linux OS
 
-```ls
+```css
 klzcpu.busy_cpu
 klzcpu.busyc_whsc
 klzcpu.idle_cpu
@@ -538,7 +538,7 @@ lnxvm.virtual_storage_pct_used
 
 ## VMware
 
-```ls
+```css
 kvmcltrdst.accessible
 kvmcltrdst.capacity
 kvmcltrdst.connected_hosts
@@ -563,7 +563,7 @@ kvmcltrsrv.server_cpu_utilization
 
 ## WebSphere MQ
 
-```ls
+```css
 Name
 mq.channel_statistics.batches_complete
 mq.channel_statistics.buffers_received
