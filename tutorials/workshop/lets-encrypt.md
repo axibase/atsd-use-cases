@@ -243,7 +243,7 @@ ls /usr/share/ca-certificates/mozilla/
 
 <details><summary><b>View Ubuntu 14.04 CAs</b></summary>
 
-```css
+```ls
 ACCVRAIZ1.crt                                                       Global_Chambersign_Root_-_2008.crt
 ACEDICOM_Root.crt                                                   GlobalSign_ECC_Root_CA_-_R4.crt
 AC_RAIZ_FNMT-RCM.crt                                                GlobalSign_ECC_Root_CA_-_R5.crt
@@ -1184,7 +1184,7 @@ public class CertTrust {
 
 Validation results for Expired Certificate:
 
-```css
+```ls
 Certificate chain validation failed: java.security.cert.CertPathValidatorException: timestamp check failed :
   java.security.cert.CertificateExpiredException: NotAfter: Sat Mar 17 02:59:59 MSK 2018
 Default trust manager: certificate chain validation failed:
@@ -1195,7 +1195,7 @@ Default trust manager: certificate chain validation failed:
 
 Validation Results for Self-Signed Certificate:
 
-```css
+```ls
 Certificate chain validation failed: java.security.cert.CertPathValidatorException: Path does not chain with any of the trust anchors : null
 
 Default trust manager: certificate chain validation failed: sun.security.validator.ValidatorException: PKIX path building failed:
