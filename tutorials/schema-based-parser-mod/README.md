@@ -93,7 +93,7 @@ In a local instance of ATSD open the **Data > CSV Parsers** page, scroll to the 
 
 ![](./images/SBP_2.1.png)
 
-```css
+```ls
 var dataPer2016 = ['2016',341267,319631,183461,135824,15268,367246,356431,10984,268057,89354,21465]; // numbers for 2016
 function calcAccumulatedPercent(row, col) {
     var accCoef = 1;

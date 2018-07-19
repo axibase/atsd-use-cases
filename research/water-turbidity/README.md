@@ -78,7 +78,7 @@ The dataset is inconsistent. Some years lack data for certain locations, and oth
 
 View data from other years by modifying the `starttime` expression or isolate a series by clicking the `Beach Name` tag icons above the visualization to toggle the presence of the detector from that location.
 
-```css
+```ls
 [configuration]
   starttime = May 2016
 ```
@@ -101,7 +101,7 @@ The formula associated with Snell's law `n1/n2 =  sin(θ1)/sin(θ2)` states that
 
 Aggregating temperature and turbidity data by the day is a reasonable resolution to the problem of volatile samples considering the observed period is less than six months for each year.
 
-```css
+```ls
 [widget]
   group-period = 1 day
   group-statistic = avg
@@ -115,7 +115,7 @@ Aggregating temperature and turbidity data by the day is a reasonable resolution
 
 The `PercentChangeByOffset` function is used below to handle the difference in magnitude of the two metrics and compare relative changes. The `PercentChangeByOffset` function requires two arguments: the `alias` of the series to transform, and the `interval` of the offset.
 
-```css
+```ls
 [series]
   value = local.PercentChangeByOffset('raw-turb', '1 day')
 [series]
@@ -138,14 +138,14 @@ The converse relationship of turbidity and water temperature is visualized above
 
 The pattern is similar when comparing absolute daily average change but the `PercentChangeByOffset` is preferable since absolute turbidity changes are greater than absolute temperature changes. Converting the Celsius temperature values to Fahrenheit is one solution to increase variance.
 
-```css
+```ls
 [series]
   replace-value =  ((value - previousValue) * 9/5 + 32)
 ```
 
 Modifying the derived `value` expression in the visualization created using the `PercentChangeByOffset` function to reflect the `Water Temperature` line about the `x` axis and reducing the observed `time-span` generates a more coherent visualization of the relationship.
 
-```css
+```ls
 [configuration]
   time-span = 20 day
 

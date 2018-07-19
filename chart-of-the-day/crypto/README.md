@@ -30,13 +30,13 @@ Open the visualization and modify the `var positions` and `value` settings in th
 
 The default configuration tracks a custom investment of $100 Bitcoin, $400 Etherium, $100 Litecoin, and $400 Bitcoin Cash.
 
-```css
+```ls
 var positions = [['btc', 100], ['eth', 400], ['ltc', 100], ['bch', 400]]  
 ```
 
 Modify the `value` setting to customize the date of purchase. By default, the investment is purchased at `2018-01-01` prices.
 
-```css
+```ls
 value = +value('@{position[0]}')*@{position[1]}/fred.ValueForDate('@{position[0]}','2018-01-01')
 ```
 
