@@ -105,13 +105,13 @@ To calculate percent change per data sample, ChartLab supports `previousValue` s
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/c79abd79)
 
-<!-- markdownlint-disable MD102 -->
+<!-- markdownlint-disable MD102 MD105-->
 
 For the entire observed period, which is over a decade, both CPI and inflation growth outstripped growth in real wages. In some cases, dramatically so. That disparity has decreased in recent years, but the early part of the millennium experienced unequal growth on the order of several percent. Indeed, the only notable period when wage growth matched the increased in cost of living was during the Great Recession of 2009 when economic growth and inflation was almost at a standstill.
 
 Federal Reserve data resolutely shows that wages are not growing proportionally alongside the cost of living. If wages were indeed an investment, the fund manager who kept re-investing would probably already be out of a job.
 
-<!-- markdownlint-enable MD102 -->
+<!-- markdownlint-enable MD102 MD105-->
 
 The final visualization below combines all three metrics to show how much inflation is outgrowing real wages and CPI each year. Because the final data sample for CPI is recorded in April 2017, newer data is excluded from this visualization using the `endtime` setting.
 
