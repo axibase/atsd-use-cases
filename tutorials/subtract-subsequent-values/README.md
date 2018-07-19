@@ -182,7 +182,7 @@ To calculate and display the difference between consecutive values, there are th
 
 Use the `rate` setting to calculate the difference between the current data sample and the previous sample and return the difference in place of the current data sample.
 
-```css
+```ls
 [series]
   rate = 0 minute
   rate-counter = false
@@ -220,7 +220,7 @@ The visualization created by the `rate` setting configuration is shown below.
 
 Use `value` and `previousValue` fields in the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) function.
 
-```css
+```ls
 [series]
 replace-value = value - previousValue
 ```
@@ -231,7 +231,7 @@ replace-value = value - previousValue
 
 Create a derived series using the [`previous(alias)`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
 
-```css
+```ls
 /* raw series data */
 [series]
  alias = raw

@@ -29,7 +29,7 @@ The above photographs show the Folsom reservoir, the main reservoir responsible 
 
 This portal tracks Folsom reservoir levels using a `time-offset` setting to display variable year data together.
 
-```css
+```ls
 list ofs = 0, 1, 2, 3, 4, 5, 10
 for offs in ofs
   [series]
@@ -51,7 +51,7 @@ Despite heavy rainfall which sparked the [Oroville Dam crisis](../../research/or
 
 To compensate for the increased rainfall, use an [aggregation function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) to smooth the trend lines. Each marker denotes the user-defined period of `1 week`.
 
-```css
+```ls
 [widget]
   group-statistic = avg
   group-period = 1 week
@@ -115,7 +115,7 @@ The lake is dammed by the Monticello Dam, where detailed precipitation data is t
 
 Immediately visible is that current year data is barely noticeable among other samples. Use the `time period` labels at the top of the visualization to compare `10 years ago` and `0 years ago` or open the **ChartLab** portal where other data is excluded.
 
-```css
+```ls
 list ofs = 0, 10
 for offs in ofs
 ```

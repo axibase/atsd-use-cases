@@ -64,7 +64,7 @@ Using [**ChartLab**](../shared/chartlab.md), the DOP dataset is parsed to create
 
 The declarative [Charts Syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) defines the `entity` and `metric` created by the parser upon import:
 
-```css
+```ls
 [series]
   entity = data.cityofnewyork.us
   metric = juvenile_rearrest_rate
