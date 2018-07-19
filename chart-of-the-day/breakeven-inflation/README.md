@@ -2,7 +2,7 @@
 
 ## Overview
 
-The breakeven rate of a security is the percent gain which an asset must achieve in order to break even against inflation. The rate differentiates the nominal and real return on an investment, the former being the raw percentage of increase or decrease and the latter being that percentage with inflation factored in.
+The breakeven rate of a security is the percent gain which an asset must achieve to break even against inflation. The rate differentiates the nominal and real return on an investment, the former being the raw percentage of increase or decrease and the latter being that percentage with inflation factored in.
 
 But what if that investment is not a financial instrument at all, or at least not a financial instrument in the traditional sense?
 
@@ -67,7 +67,7 @@ To validate the calculation, see the Federal Reserve 10-Year Breakeven Inflation
 
 ## CPI and Median Wages
 
-[Consumer Price Index](../../research/analysis/cpi-ppi.png) is a metric which defines the cost of goods based on their cost during the index year, where the value is `100`. Real wages are inflation-adjusted wages. Both of these datasets are available in the `/resources` directory.
+[Consumer Price Index](../../research/analysis/cpi-ppi/README.md) is a metric which defines the cost of goods based on their cost during the index year, where the value is `100`. Real wages are inflation-adjusted wages. Both of these datasets are available in the `/resources` directory.
 
 [![](./images/button-download.png)](./resources/README.md)
 
@@ -105,9 +105,9 @@ To calculate percent change per data sample, ChartLab supports `previousValue` s
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/c79abd79)
 
-For the entire observed period, which is over a decade, both CPI and inflation growth outstripped growth in real wages. In some cases, dramatically so. That disparity has decreased in recent years, but the early part of the millennium experienced unequal growth on the order of several percent. Indeed, the only notable period when wage growth matched the increased in cost of living was during the Great Recession of 2009 when economic growth and inflation was almost at a standstill.
-
 <!-- markdownlint-disable MD102 -->
+
+For the entire observed period, which is over a decade, both CPI and inflation growth outstripped growth in real wages. In some cases, dramatically so. That disparity has decreased in recent years, but the early part of the millennium experienced unequal growth on the order of several percent. Indeed, the only notable period when wage growth matched the increased in cost of living was during the Great Recession of 2009 when economic growth and inflation was almost at a standstill.
 
 Federal Reserve data resolutely shows that wages are not growing proportionally alongside the cost of living. If wages were indeed an investment, the fund manager who kept re-investing would probably already be out of a job.
 
@@ -134,5 +134,5 @@ Reproduce the processes and calculations in this article using the same tools:
 1. Follow the ATSD [Installation Instructions](https://axibase.com/docs/atsd/installation/) or launch the [Docker Image](https://axibase.com/docs/atsd/installation/docker.html).
 1. Upload the data and CSV parser configurations used here from the [`/resources`](./resources/README.md) directory.
 1. Explore ChartLab syntax and features in the [Charts Documentation](https://github.com/axibase/charts/blob/master/README.md).
-1. Follow configuration instructions in the [ChartLab Tutorial](../../tutorials/chartlab.md).
+1. Follow configuration instructions in the [ChartLab Tutorial](../../tutorials/shared/chartlab.md).
 1. For additional ATSD features, see the [ATSD Documentation](https://axibase.com/docs/atsd/).
