@@ -59,7 +59,7 @@ Open the **Editor** window in the **Trends** interface by clicking the button in
 
 Using the chart above as a configuration example:
 
-```sql
+```sh
 [configuration]
   height-units = 2
   width-units = 1
@@ -129,7 +129,7 @@ The Charts API supports user-defined functions, enabling users to store and re-u
 
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 
-```javascript
+```sh
 ### On the [configuration] level, the 'import' command is used to load functions from the `fred.js` file
 ### The library is assigned the name 'fred'.
 ### Multiple function libraries may be imported into the same portal.

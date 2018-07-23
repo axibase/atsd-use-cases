@@ -59,7 +59,7 @@ Open the **Editor** window in the **Trends** interface by clicking the button in
 
 Using the chart above as a configuration example:
 
-```sql
+```ls
 [configuration]
   height-units = 2
   width-units = 1

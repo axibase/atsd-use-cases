@@ -43,7 +43,7 @@ Open the **Trends** visualization to toggle secondary datasets on and off using 
 
 The `value` expression using to derive the above series is shown here:
 
-```sql
+```ls
 value = var v = value('x'); var p = value('y'); if(p!=null && v!=null) return v - p
 ```
 

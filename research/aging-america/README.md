@@ -53,7 +53,7 @@ The upper histogram plots the frequency of each value of annual crude births per
 
 Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized. This setting is shown here.
 
-```sql
+```ls
 # Sample configuration for calculating and visualizing an ad-hoc derived series.
 
 [group]

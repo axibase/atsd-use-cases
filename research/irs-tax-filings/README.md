@@ -31,7 +31,7 @@ Configuration Settings:
 
 Configuration has been shortened to include only relevant settings for brevity, open ChartLab visualization to view the entire configuration.
 
-```sql
+```ls
 [configuration]
   disconnect-interval = 10 day
 
@@ -77,7 +77,7 @@ Configuration Settings:
 
 Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.
 
-```sql
+```ls
 [widget]
   type = chart
   mode = column
@@ -108,7 +108,7 @@ Configuration Settings:
 
 Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.
 
-```sql
+```ls
 [widget]
   type = box
   title = Individual Income Tax Returns Received: 2018 compared to prior years
@@ -134,7 +134,7 @@ Configuration Settings:
 
 Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.
 
-```sql
+```ls
 [widget]
   type = histogram
   mode = stack

@@ -46,7 +46,7 @@ The syntax required to modify the dataset to reflect the moving average is two p
 the `[widget]` field to modify all available series, or placed under an individual `[series]` field to modify only one desired
 series.
 
-```sql
+```ls
 statistic = wtavg
 period = 1 year
 ```
