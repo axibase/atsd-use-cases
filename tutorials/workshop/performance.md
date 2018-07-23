@@ -3,10 +3,10 @@
 ## Table of Contents
 
 * [Introduction](#introduction)
-* [JMH: Ultimate Java Benchmarking Tool](#jmh:-ultimate-java-benchmarking-tool)
+* [JMH: Ultimate Java Benchmarking Tool](#jmh-ultimate-java-benchmarking-tool)
   * [Date Formatters Performance Comparison](#date-formatters-performance-comparison)
 * [The Formatters Used by ATSD](#the-formatters-used-by-atsd)
-* [New at the Zoo: ATSD DatetimeProcessor](#new-at-the-zoo:-atsd-datetimeprocessor)
+* [New at the Zoo: ATSD DatetimeProcessor](#new-at-the-zoo-atsd-datetimeprocessor)
 * Supported Patterns
   * [Implementation](#implementation)
   * [Caching](#caching)
@@ -29,7 +29,7 @@ that affect the resulting numbers. Some of them are:
 [JMH](http://openjdk.java.net/projects/code-tools/jmh/) (Java Microbenchmarking Harness) is a Java harness for building, running, and analysing
 nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM.
 
-To use this tool, create a maven project from archetype.
+To use this tool, create a `maven` project from archetype.
 
 ```sh
 mvn archetype:generate \
@@ -83,7 +83,7 @@ public class CharIsDigitBenchmark {
 Here, each instrumented method is annotated with `@Benchmark` annotation.
 
 The `@State` annotation is used to mark the class that will contain benchmark state.
-It may be either the same class as the one containing benchmarked methods, or a separate class (
+It may be either the same class as the one containing instrumented methods, or a separate class (
 in this case the state object is provided to benchmark method as method parameter).
 
 `@Param` annotation is used to mark a parameterized field. The initialization values can be provided
@@ -244,9 +244,9 @@ Some performance considerations:
 
 ## Slides
 
-[Part 1](https://github.com/raipc/slides/perf-presentation)
+[Part 1](https://github.com/raipc/slides/tree/master/perf-presentation)
 
-[Part 2](https://github.com/raipc/slides/time-presentation)
+[Part 2](https://github.com/raipc/slides/tree/master/time-presentation)
 
 ## References
 
@@ -258,7 +258,7 @@ Some performance considerations:
 
 [`SimpleDateFormat` Pattern Reference](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
 
-[Joda Time Documentation](http://www.joda.org/joda-time/userguide.html)
+[`Joda Time` Documentation](http://www.joda.org/joda-time/userguide.html)
 
 [`DateTimeFormatter` Pattern Reference](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 
