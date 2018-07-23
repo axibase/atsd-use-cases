@@ -116,7 +116,7 @@ look at the statistics by following the below steps to install your own ATSD ins
 
 1. Install the ATSD database from a Docker image:
 
-   ```sql
+   ```sh
    docker run \
     --detach \
     --name=atsd \

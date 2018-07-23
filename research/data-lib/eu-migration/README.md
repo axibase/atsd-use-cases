@@ -1,8 +1,8 @@
 # European Union Net Migration by Country
 
-_Source_: EuroStat [Immigration](https://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tps00176&plugin=1) and [Emigration](https://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tps00177&plugin=1) Data
+**Source**: EuroStat [Immigration and Emigration Data](https://ec.europa.eu)
 
-_Visualization_: [ChartLab](https://apps.axibase.com/chartlab)
+**Visualization**: [ChartLab](https://apps.axibase.com/chartlab)
 
 _Database_: ATSD
 

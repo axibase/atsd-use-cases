@@ -41,7 +41,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * *Fig 1.* (for full configuration settings open the **Trends** visualization [above](#us-approaching-3-year-mark-for-full-employment))
 
-```sql
+```ls
 ## [configuration] level settings have been removed for brevity.
 
 [series]
@@ -53,7 +53,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * [`format`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/format-settings/) setting is used to display numerical information without insignificant figures.
 
-```sql
+```ls
 [series]
   value = fred.MonthlyChange('base')
   alias = month
@@ -62,7 +62,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * [`value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting can define series value without `entity` or `metric`. In this case, a [user-defined function](https://github.com/axibase/charts/blob/master/syntax/udf.md) is used for inline value calculation.
 
-```sql
+```ls
 [series]
   value = avg('month')
   format = %
@@ -76,7 +76,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * For full configuration settings open the **Trends** visualization [above](#full-employment-in-the-united-states))
 
-```sql
+```ls
 ## [configuration] level settings have been removed for brevity.
 
 [series]
@@ -90,7 +90,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) may be created and customized using `alert-style` setting, where
 
-```sql
+```ls
 [threshold]
    value = 0.10
    color = black
@@ -109,7 +109,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
 
 * For full configuration settings open the **Trends** visualization [above](#the-relationship-between-gdp-and-unemployment).
 
-```sql
+```ls
 [series]
   color = green
   axis = right
