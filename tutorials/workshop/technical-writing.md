@@ -36,7 +36,7 @@ The guide contains a compilation of grammar, punctuation, and Markdown formattin
 * [**Style**](#style)<br>
   * [Active Voice](#active-voice)<br>
   * [Blacklisted Words](#blacklisted-words)<br>
-  * [Example Names](#examples-names)<br>
+  * [Example Names](#example-names)<br>
   * [Interface Elements](#interface-elements)<br>
   * [Issue Subjects](#issue-subjects)<br>
   * [Functions](#functions)<br>
