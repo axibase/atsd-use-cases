@@ -29,7 +29,7 @@ of cocaine, manufacturing and delivering heroin, soliciting narcotics etc). Each
 Given the size of the dataset, you cannot load it in Excel. It is much more convenient to interact with the data once it is loaded into a database. The
 ATSD is a powerful tool when it comes to storing, analyzing, and visualizing datasets.
 
-You can load the dataset into an ATSD instance by following the steps provided at in [Action Items](#action-items).
+You can load the dataset into an ATSD instance by following the steps provided in [Action Items](#action-items).
 
 ## Homicide Numbers
 
