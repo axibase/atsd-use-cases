@@ -38,7 +38,7 @@ ATSD will execute [search](https://axibase.com/docs/atsd/api/meta/misc/search.ht
 * Create webhook user as described [here](https://axibase.com/docs/atsd/administration/user-authorization.html#webhook-user).
 * Copy webhook URL.
 
-To query messages and search series user also must have `API_DATA_READ` and `API_META_READ` roles, and `Read` permisson for bot entities:
+To query messages and search series user also must have `API_DATA_READ` and `API_META_READ` roles, and `Read` permission for bot entities:
 
 ![](./images/trends_bot_9.png)
 
@@ -427,7 +427,7 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
     "text": "Seasonally Adjusted?",
     "color": "#3AA3E3",
     "attachment_type": "default",
-    "callback_id": "Seasonal Adj. Selected",
+    "callback_id": "Seasonal Adjustment Selected",
     "actions": [
       {
         "name": "seasonal_adj_list",
@@ -548,6 +548,7 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
 ### Portal
 
 Create [template](https://axibase.com/docs/atsd/portals/portals-overview.html#template-portals) portal:
+<!-- markdownlint-disable MD010 -->
 
 ```ls
 [configuration]
@@ -571,9 +572,11 @@ Create [template](https://axibase.com/docs/atsd/portals/portals-overview.html#te
   endfor
 ```
 
-### Script 
+<!-- markdownlint-enable MD010 -->
 
-[ATSD Client for Python](https://github.com/axibase/atsd-api-python#axibase-time-series-database-client-for-python) provides convenient functionality for quering messages and searching series.
+### Script
+
+[ATSD Client for Python](https://github.com/axibase/atsd-api-python#axibase-time-series-database-client-for-python) provides convenient functionality for querying messages and searching series.
 Log in to ATSD server and ensure `atsd_client` version >= `2.2.6`:
 
 ```bash
@@ -633,13 +636,13 @@ ef = EntityFilter(entity='slack')
 df = DateFilter(interval={"count": 30, "unit": "SECOND"}, end_date='NOW')
 query = MessageQuery(entity_filter=ef, date_filter=df,
                      type='webhook', source='axibase-bot',
-                     tags={"payload.channel.id":args.channel, "payload.user.id":args.user}, 
+                     tags={"payload.channel.id":args.channel, "payload.user.id":args.user},
                      expression='message LIKE "*Selected" AND message NOT LIKE "Chart*"')
 messages = message_service.query(query)
 
 # Retrieve matched metrics using low level request wrapper from atsd_client
 selected_options = [m.tags['payload.actions[0].selected_options[0].value'] for m in messages]
-# Query example: 
+# Query example:
 # entity:fred.stlouisfed.org AND (category_id:32417 AND parent_category_id:9 AND frequency:"Monthly" AND seasonal_adjustment_short:"SA")
 query = 'entity:fred.stlouisfed.org AND (' + selected_options[0] + \
         ' AND ' + selected_options[1] + \
@@ -658,7 +661,7 @@ print(encoded_metrics)
 
 ### Rule
 
-> The full rule configuration available [here](resources/trends-bot.xml).
+> The full rule configuration available [here](./resources/trends-bot.xml).
 
 Navigate to **Alerts > Rules**, click **Create** and use settings below.
 
@@ -668,7 +671,7 @@ To prevent ATSD react to messages sent by bot, specify filters:
 
 ```ls
 Data Type: message
-Type: webhook 
+Type: webhook
 Source: axibase-bot
 Filter Expression: tags.event.subtype != 'bot_message' && tags.event.username != 'axibase_bot'
 Entity Group: axibase-bot-entities
@@ -713,7 +716,7 @@ Configure triggers for custom and built-in integrations:
        ${replacementTable('slack').frequency}
     @else{message == 'Frequency Selected'}
        ${replacementTable('slack').seasonal_adj}  
-    @else{message == 'Seasonal Adj. Selected'}
+    @else{message == 'Seasonal Adjustment Selected'}
        ${replacementTable('slack').chart_type}  
     @else{}
     null
