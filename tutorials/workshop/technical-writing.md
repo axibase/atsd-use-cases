@@ -71,6 +71,8 @@ The guide contains a compilation of grammar, punctuation, and Markdown formattin
 
 ### Capitalization
 
+<!-- markdownlint-disable MD101 MD106 -->
+
 * Use [title case](https://titlecase.com/) in headers.
   * :white_check_mark: `## Import Data`.
   * :no_entry: `## Import data`.
@@ -86,6 +88,8 @@ The guide contains a compilation of grammar, punctuation, and Markdown formattin
 * In ambiguous cases, adhere to one option for consistency:
   * :white_check_mark: Unix, bash, IPv4, IPv6, URL.
   * :no_entry: UNIX, Bash, IP v4, IP v6, Url.
+
+  <!-- markdownlint-enable MD101 MD106 -->
 
 ### Contractions
 
@@ -232,6 +236,8 @@ Apply single backticks to the following:
 
 ### Headers
 
+<!-- markdownlint-disable MD105 -->
+
 * Use [title case](https://titlecase.com/) in headers.
   * :white_check_mark: `## Import Data from File`.
   * :no_entry: `## Import data from file`.
@@ -242,6 +248,8 @@ Apply single backticks to the following:
   * :no_entry: `## Import data from file.`
 * Avoid punctuation symbols in headers except colon (`:`).
   * :no_entry: `## Import Data from File (Directory)`.
+
+  <!-- markdownlint-disable MD105 -->
 
 ### Links
 
@@ -417,7 +425,7 @@ word | alternatives
 
 Configure Travis CI to check custom rules as part of the pull request workflow.
 
-![Travis](./docs/images/travis-check.png)
+![Travis](./images/travis-check.png)
 
 ### Custom Rules
 
@@ -425,7 +433,7 @@ The repository contains custom rules for identifying inconsistencies and style v
 
 ### Rule Scope
 
-To enable or disable [rules](./linting-rules/) within a given Markdown file, wrap the text with non-printable HTML comments.
+To enable or disable [rules](https://github.com/axibase/docs-util/tree/master/linting-rules) within a given Markdown file, wrap the text with non-printable HTML comments.
 
 * Disable all rules: `<!-- markdownlint-disable -->`
 * Enable all rules: `<!-- markdownlint-enable -->`
