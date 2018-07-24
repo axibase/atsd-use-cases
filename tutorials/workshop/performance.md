@@ -6,7 +6,7 @@
 * [JMH: Ultimate Java Benchmarking Tool](#jmh-the-ultimate-java-benchmarking-tool)
   * [Date Formatters Performance Comparison](#date-formatters-performance-comparison)
 * [The Formatters Used by ATSD](#the-formatters-used-by-atsd)
-* [New at the Zoo: ATSD `DatetimeProcessor`](#new-at-the-zoo-atsd-datetimeprocessor)
+* [New at the Zoo: ATSD `DatetimeProcessor`](#atsd-datetimeprocessor)
 * Supported Patterns
   * [Implementation](#implementation)
   * [Caching](#caching)
