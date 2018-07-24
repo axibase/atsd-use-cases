@@ -36,7 +36,7 @@ ATSD will execute [search](https://axibase.com/docs/atsd/api/meta/misc/search.ht
 ## Webhook User
 
 * Create webhook user as described [here](https://axibase.com/docs/atsd/administration/user-authorization.html#webhook-user).
-* Copy webhook url.
+* Copy webhook URL.
 
 To query messages and search series user also must have `API_DATA_READ` and `API_META_READ` roles, and `Read` permisson for bot entities:
 
@@ -566,7 +566,7 @@ Create [template](https://axibase.com/docs/atsd/portals/portals-overview.html#te
     multiple-series = true  
     var metrics = ${metrics}
   for m in metrics
-     [series] 
+    [series] 
 	  metric = @{m}
   endfor
 ```
@@ -757,7 +757,7 @@ Configure triggers for custom and built-in integrations:
 
   ![](./images/trends_bot_11.png)
   
-2. **[SLACK]**
+1. **[SLACK]**
 
 To use the [`addPortal`](https://axibase.com/docs/atsd/rule-engine/functions-portal.html#portal-functions) function configure built-in notification:
 
