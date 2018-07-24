@@ -26,11 +26,11 @@ This visualization uses `alias` settings to capture raw data and `value` setting
 
 ## Tracking the Growth in Imports Against the Decline in Exports
 
-**Trends** visualization service supports [user-defined functions](../../integrations/shared/trends.md#user-defined-functions) for ad hoc data transformations that may be performed inline without modifying the underlying data stored in ATSD.
+**Trends** visualization service supports [user-defined functions](../../tutorials/shared/trends.md#user-defined-functions) for ad hoc data transformations that may be performed inline without modifying the underlying data stored in ATSD.
 
 ### `fred.js` Library
 
-A set of common econometrics used for modifying FRED, or other, economic data is the [`fred.js`](../../integrations/shared/trends.md#fred-library) library, which supports a series of pre-definied functions used to transform data such as advanced technologies import / export figures.
+A set of common econometrics used for modifying FRED, or other, economic data is the [`fred.js`](../../tutorials/shared/trends.md#fred-library) library, which supports a series of pre-definied functions used to transform data such as advanced technologies import / export figures.
 
 ![](./images/change-from-previous-year.png)
 
@@ -66,6 +66,6 @@ With plans to increase munitions expenditures in its [next budget](https://www.d
 
 ### Accessing Data
 
-* Data is stored in the [**Trends**](../../integrations/shared/trends.md) instance of ATSD. To work with this or [other](https://trends.axibase.com/public/reference.html) datasets stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
+* Data is stored in the [**Trends**](../../tutorials/shared/trends.md) instance of ATSD. To work with this or [other](https://trends.axibase.com/public/reference.html) datasets stored there, [reach out to us](https://axibase.com/feedback/), we're happy to provide them.
 * The original FRED [blog post](https://fredblog.stlouisfed.org/2018/05/the-high-tech-trade-balance/) and the three datasets used in this article: [BOPGTB](https://fred.stlouisfed.org/series/BOPGTB), [EXP0007](https://fred.stlouisfed.org/series/EXP0007), and [IMP0007](https://fred.stlouisfed.org/series/IMP0007).
 * Further [reading](https://www.brookings.edu/research/americas-advanced-industries-new-trends/) on growth in American advanced technologies industries.

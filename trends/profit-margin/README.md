@@ -204,7 +204,7 @@ LIMIT 10
 
 ## Resources
 
-* For an introduction to the **Trends** service, see this [guide](../../integrations/shared/trends.md);
+* For an introduction to the **Trends** service, see this [guide](../../tutorials/shared/trends.md);
 
 * View complete SQL Console [documentation](https://axibase.com/docs/atsd/sql);
 

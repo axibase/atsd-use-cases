@@ -34,7 +34,7 @@ Currently, the stated target inflation level of the Federal Reserve is around 2%
 
 ## Configuration
 
-This section of the article discusses the underlying settings used for the chart above. For introductory information on using **Trends**, see this [guide](../../integrations/shared/trends.md).
+This section of the article discusses the underlying settings used for the chart above. For introductory information on using **Trends**, see this [guide](../../tutorials/shared/trends.md).
 
 The configuration for the above chart is shown here:
 

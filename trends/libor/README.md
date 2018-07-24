@@ -27,7 +27,7 @@ Compare the raw year-over-year dataset to the normalized year-over-year dataset 
 
 *Fig 3.* Log returns provide a normalized dataset, which may be more easily operated upon by addtional functions such as continuously-compounds rate of change. A `[threshold]` series is given the value of 0 for ease-of-viewing.
 
-The **Trends** examples in this article use the [fred.js](../../integrations/shared/trends.md#fred-library) library. This is a set of [user-defined functions](../../integrations/shared/trends.md#user-defined-functions). Axibase Time Series Database, the underlying database which supports the data-processing and storage operations for the **Trends** service, supports the creation of user-defined functions for those operations frequently performed by end users.
+The **Trends** examples in this article use the [fred.js](../../tutorials/shared/trends.md#fred-library) library. This is a set of [user-defined functions](../../tutorials/shared/trends.md#user-defined-functions). Axibase Time Series Database, the underlying database which supports the data-processing and storage operations for the **Trends** service, supports the creation of user-defined functions for those operations frequently performed by end users.
 
 ---
 
@@ -80,7 +80,7 @@ Note that months whose first day fell on a weekend or bank holiday are excluded 
 
 * All data is provided by [FRED API](https://fred.stlouisfed.org/);
 
-* For detailed instructions on using the **Trends** service, see this [guide](../../integrations/shared/trends.md#using-trends);
+* For detailed instructions on using the **Trends** service, see this [guide](../../tutorials/shared/trends.md#using-trends);
 
 * Complete [ATSD Documentation](https://axibase.com/docs/atsd/);
 
