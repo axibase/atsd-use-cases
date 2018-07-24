@@ -594,7 +594,7 @@ Install [`jsonpath`](https://pypi.org/project/jsonpath/) to find and extract met
 pip install jsonpath --user
 ```
 
-Create [`search_metrics.py`](./recources/search_metrics.py) script to be used in [`scriptOut`](https://axibase.com/docs/atsd/rule-engine/functions-script.html#syntax) function:
+Create [`search_metrics.py`](./resources/search_metrics.py) script to be used in [`scriptOut`](https://axibase.com/docs/atsd/rule-engine/functions-script.html#syntax) function:
 
 ```bash
 chmod u=rwx,g=rx,o=r /opt/atsd/atsd/conf/script/*
