@@ -17,19 +17,18 @@
 
 ## Introduction
 
-One does not simply measure JVM code performance. A performance engineer must take into consideration multiple features
-that affect the resulting numbers. Some of them are:
+One does not simply measure JVM code performance. A performance engineer must consider numerous aspects which affect the resulting data. Several of these are enumerated below:
 
 * Interpreting and compiled modes ([implementation details](http://hg.openjdk.java.net/jdk8u/jdk8u/hotspot/file/2b2511bd3cc8/src/share/vm/runtime/advancedThresholdPolicy.hpp#l34)).
 * Preemptive compiler optimizations based on collected profiling information.
 * Other optimizations such as: constant folding, loop unrolling, dead code elimination.
 
-## JMH: Ultimate Java Benchmarking Tool
+## JMH: The Ultimate Java Benchmarking Tool
 
-[JMH](http://openjdk.java.net/projects/code-tools/jmh/) (Java Microbenchmarking Harness) is a Java harness for building, running, and analysing
-nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM.
+[Java Microbenchmarking Harness](http://openjdk.java.net/projects/code-tools/jmh/) (JMH) is a Java harness for building, running, and analysing
+nano/micro/milli/macro benchmarks written in Java and other languages targeting the JVM.
 
-To use this tool, create a `maven` project from archetype.
+To use this tool, create a `maven` project from the JMH archetype.
 
 ```sh
 mvn archetype:generate \
@@ -41,7 +40,7 @@ mvn archetype:generate \
           -Dversion=1.0
 ```
 
-A sample JMH benchmark looks like this:
+A sample JMH benchmark is shown below:
 
 ```java
 @State(Scope.Benchmark)
@@ -80,22 +79,21 @@ public class CharIsDigitBenchmark {
 }
 ```
 
-Here, each instrumented method is annotated with `@Benchmark` annotation.
+Each instrumented method is annotated with `@Benchmark` annotation.
 
-The `@State` annotation is used to mark the class that will contain benchmark state.
-It may be either the same class as the one containing instrumented methods, or a separate class (
-in this case the state object is provided to benchmark method as method parameter).
+The `@State` annotation marks the class that contains the benchmark state.
+This annotation defines either the same class as the one containing instrumented methods, or a separate class, in this case the state object is provided to benchmark method as a method parameter.
 
-`@Param` annotation is used to mark a parameterized field. The initialization values can be provided
-as annotation parameter or using command line parameter `-p {param-name}={param-value}`.
+The `@Param` annotation marks parameterized fields. The initialization values can be provided
+via annotation parameters or by using command line parameter `-p {param-name}={param-value}`.
 
-It's worth learning the principles of writing a good JMH benchmark by learning the [examples](http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/).
+It is certainly worth learning the principles of writing a good JMH benchmark by studying the provided [Examples](http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/).
 
 ### Date Formatters Performance Comparison
 
-The date formatters benchmarks can be found on [Github](https://github.com/raipc/benchmarks/blob/master/src/main/java/com/github/raipc/BetterIso8601Benchmarks.java).
+> Review date formatters benchmarks on [Github](https://github.com/raipc/benchmarks/blob/master/src/main/java/com/github/raipc/BetterIso8601Benchmarks.java).
 
-To run the benchmarks, build and run the project.
+To record benchmarks, build and run the project.
 
 ```sh
 mvn clean package
@@ -111,12 +109,13 @@ printJodaIso8601              sample  3662844      509.362 ±  8.079   ns/op
 printWithCustomPrinterIsoOpt  sample  2369326      271.344 ± 10.401   ns/op
 ```
 
-[Chart](https://apps.axibase.com/chartlab/51e517df/2/)
+![](./images/jmh-benchmarks.png)
+
+[![](./images/button.png)](https://apps.axibase.com/chartlab/51e517df/2/)
 
 ## The Formatters Used by ATSD
 
-ATSD used different date parsing and formatting libraries to cover all use cases.
-The following table clarifies which ATSD subsystem used which date formatting library.
+ATSD uses different date parsing and formatting libraries to cover all use cases. The following table clarifies which ATSD subsystem uses which date formatting library.
 
 **ATSD Subsystem** | **Date Formatter**
 -----|-----
@@ -125,13 +124,13 @@ SQL | `Apache Commons`
 Rule Engine | `joda.time`
 Forecasts | `SimpleDateFormat`
 CSV Parser | `SimpleDateFormat`
-UI | `SimpleDateFormat`
+User Interface | `SimpleDateFormat`
 
-The formatters support different patterns, hence all of them need to be documented and the difference should be emphasized.
+Each formatter supports different patterns, hence all of them need to be documented with the differences among them emphasized.
 
-## New at the Zoo: ATSD DatetimeProcessor
+## New at the Zoo: ATSD `DatetimeProcessor`
 
-Introducing of yet-another-date-formatter is dictated by the will to improve maintainability by reducing number of
+The introduction of yet-another-date-formatter is dictated by the desire to improve maintainability by reducing the number of
 supported libraries, date patterns, documentation notes. After analyzing common use cases, the following API was created.
 
 ```java
@@ -171,42 +170,41 @@ String datetime = formatLocalMillisNoTz(long time);
 
 DatetimeProcessor supports Java 8 `DateTimeFormatter` patterns with several differences:
 
-* No need to escape `T` literal
-* `u` pattern is translated to `ccccc` (day of week starting from Monday)
-* `Z` pattern is translated to `XX` (`RFC822` offset, `Z` for zulu)
-* `ZZ` pattern is translated to `XXX` (`ISO8601` offset, `Z` for zulu)
-* `ZZZ` pattern is translated to `VV` (Zone ID)
+* No need to escape `T` literal.
+* `u` pattern is translated to `ccccc`, day of week starting from Monday.
+* `Z` pattern is translated to `XX`, `RFC822` offset, `Z` for `zulu`.
+* `ZZ` pattern is translated to `XXX`, `ISO8601` offset, `Z` for `zulu`.
+* `ZZZ` pattern is translated to `VV`, Zone ID.
 
 ### Implementation
 
 `DatetimeProcessor` interface is implemented by three classes.
-`DatetimeProcessorIso8601` and `DatetimeProcessorLocal` represent highly-optimized date processors for
-ISO pattern (`yyyy-MM-ddTHH:mm:ss[.SSSSSSSSS][Z]`) and local time pattern (`yyyy-MM-dd HH:mm:ss[.SSSSSSSSS][Z]`).
-`DatetimeProcessorCustom` is a wrapper for `java.time.format.DateTimeFormatter` objects. Formatting strictly delegates
-to default implementation. Parsing operation is performed in semi-manual way: after resolving step is performed
-(it includes validating, combining and simplifying the various fields into more useful ones), the date object is
+`DatetimeProcessorIso8601` and `DatetimeProcessorLocal` represent highly optimized date processors for
+ISO pattern `yyyy-MM-ddTHH:mm:ss[.SSSSSSSSS][Z]` and local time pattern `yyyy-MM-dd HH:mm:ss[.SSSSSSSSS][Z]`.
+`DatetimeProcessorCustom` is a wrapper for `java.time.format.DateTimeFormatter` objects. Formatting strictly delegates to default implementation. The parsing operation is performed in semi-manually: After the resolving step, which includes validating, combining and simplifying the various fields into more useful ones, is performed the date object is
 constructed manually by providing default field values if needed.
 
-By design, `DatetimeProcessor` objects must not be constructed manually. Instead, `DateTimeFormatterManager.createFormatter(pattern)`
-factory method must be used. This method is responsible for:
+By design, `DatetimeProcessor` objects must not be constructed manually. Instead, use the `DateTimeFormatterManager.createFormatter(pattern)`
+factory method.
 
-1) Trying to get the `DatetimeProcessor` for the specified `pattern` from [cache](#caching).
-2) In case of cache-miss, normalizing the pattern.
-3) Inserting the most appropriate `DatetimeProcessor` implementation to cache.
+This method is responsible for a number of tasks:
+
+1) Attempt to acquire the `DatetimeProcessor` for the specified `pattern` from [cache](#caching).
+2) In case of cache-miss, normalize the pattern.
+3) Insert the most appropriate `DatetimeProcessor` implementation to cache.
 
 ### Caching
 
-Caching date formatters is not an innovative idea: previously used libraries used this approach under the hood.
+Caching date formatters is not an innovative idea: Previous libraries used this approach under the hood.
 
-`joda.time` cached formatters using `ConcurrentHashMap` limited by 5000 items.
-`Apache Commons` used unlimited `ConcurrentHashMap` cache.
-`DatetimeProcessor` objects are cached in the managed LRU cache `dateTimeFormatters` limited by `cache.formatters.maximum.size` property
-(defaults to `100`) which can be cleared on demand on **Settings > Cache Management** form.
+* `joda.time` cached formatters using `ConcurrentHashMap` limited by 5000 items.
+* `Apache Commons` used unlimited `ConcurrentHashMap` cache.
+* `DatetimeProcessor` objects are cached in the managed LRU cache `dateTimeFormatters` limited by `cache.formatters.maximum.size` property (defaults to `100`) which is cleared on demand with the **Settings > Cache Management** form.
 
 `DatetimeProcessor` caching method advantages:
 
 1) Defense from cache pollution.
-2) Cache replacement policy (LRU) demonstrates higher throughput in worst scenarios (when many formatters are used).
+2) Cache replacement policy (LRU) demonstrates higher throughput in worst scenarios, which is when many formatters are used.
 3) Size is controlled by the user.
 
 ### Breaking Good
@@ -219,10 +217,9 @@ FROM "mpstat.cpu_busy"
 LIMIT 500000
 ```
 
-The above query now affects only formatting of dates with a dynamic pattern (when `DatetimeProcessor` is returned by `DateTimeFormatterManager`).
-It does not affect the performance of date formatting in Data API or other subsystems.
+The above query only affects date formatting with a dynamic pattern, when `DatetimeProcessor` is returned by `DateTimeFormatterManager`. It does not affect the performance of date formatting in Data API or other subsystems.
 
-Better query:
+A better query is shown here:
 
 ```sql
 SELECT *, CONCAT('time: ', date_format(time, 'yyyy-MM-dd HH:mm:ss'), ', value: ', value) AS "time_and_value"
@@ -232,7 +229,9 @@ LIMIT 500000
 
 ### Performance
 
-[ChartLab](https://apps.axibase.com/chartlab/972babb9/16/)
+![](./images/performance.png)
+
+[![](./images/button.png)](https://apps.axibase.com/chartlab/972babb9/16/)
 
 Some performance considerations:
 
