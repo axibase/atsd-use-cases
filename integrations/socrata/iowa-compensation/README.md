@@ -12,7 +12,7 @@ The governments at the federal, state, city, and county level publish datasets i
 
 Using ATSD, you can combine datasets from multiple entities in one portal.
 
-This article uses data collected from the [Bureau of Labor Statistics](https://www.bls.gov/home.htm).
+This integration uses data collected from the [Bureau of Labor Statistics](https://www.bls.gov/home.htm).
 
 ## Iowa Employee Compensation Dataset
 

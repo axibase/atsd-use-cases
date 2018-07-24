@@ -2,7 +2,7 @@
 
 ## 3D Image Design Without Plugins
 
-> Examples in this article use ES6 syntax and Fetch API, which are not supported in Internet Explorer.
+> Examples in this workshop use ES6 syntax and Fetch API, which are not supported in Internet Explorer.
 
 ## Introduction
 

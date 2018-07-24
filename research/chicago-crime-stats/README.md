@@ -29,7 +29,7 @@ of cocaine, manufacturing and delivering heroin, soliciting narcotics etc). Each
 Given the size of the dataset, you cannot load it in Excel. It is much more convenient to interact with the data once it is loaded into a database. The
 ATSD is a powerful tool when it comes to storing, analyzing, and visualizing datasets.
 
-You can load the dataset into an ATSD instance by following the steps provided at the [end of the article](#action-items).
+You can load the dataset into an ATSD instance by following the steps provided at in [Action Items](#action-items).
 
 ## Homicide Numbers
 
@@ -152,7 +152,7 @@ ORDER BY 2 DESC
 | TAVERN                     | 2.0             |
 ```
 
-If you would like to see more queries on this Chicago crime dataset, go to the [Additional SQL Queries](#additional-sql-queries) section at the end of this article.
+To see more queries on this Chicago crime dataset, review the [Additional SQL Queries](#additional-sql-queries) section.
 
 ## A Deeper Look at Crime in Chicago
 

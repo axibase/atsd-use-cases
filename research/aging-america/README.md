@@ -87,7 +87,7 @@ Using a `value` expression, calculated series may be created using existing data
 # Calculated series has no metric value as it is only derived. Alert expression is entered based on information provided by box graph
 ```
 
-Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in **Trends** or **ChartLab**, see the [Calculated Series article](../../tutorials//calculated-values/README.md).
+Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in **Trends** or **ChartLab**, see the [Calculated Series Tutorial](../../tutorials//calculated-values/README.md).
 
 ![](./images/working-population-charts.png)
 [![](./images/button-new.png)](https://trends.axibase.com/68f93899#fullscreen)

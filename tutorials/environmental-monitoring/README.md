@@ -6,7 +6,7 @@ ATSD excels when it comes to working with IoT and sensor-focused use cases.
 
 A typical use case covers the collection and storage of sensor data, execution of data analytics at scale, generation of forecasts, creation of visualization portals, and the activation of an automatic alert in case of abnormal deviations or threshold breaches. ATSD is purposefully designed to handle complex projects like these from start to finish.
 
-This article focuses on an implemented use case, monitoring and analyzing air quality sensor data using the ATSD:
+This tutorial focuses on an implemented use case, monitoring and analyzing air quality sensor data using the ATSD:
 
 * Collect and insert historical data from [AirNow](https://www.airnow.gov/) into ATSD.
 * Stream new data into ATSD.

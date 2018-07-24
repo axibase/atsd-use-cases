@@ -18,7 +18,7 @@ These datasets are published in the [Socrata Open Data Format](https://socrata.c
 
 ## Hawaiian Fuel Prices Dataset
 
-This article use data sourced from [`data.gov`](https://www.data.gov/) concerning Hawaiian fuel prices.
+This article uses data sourced from [`data.gov`](https://www.data.gov/) concerning Hawaiian fuel prices.
 
 From 2006 to 2012, the State of Hawaii compiled AAA fuel prices for each of these fuel types:
 

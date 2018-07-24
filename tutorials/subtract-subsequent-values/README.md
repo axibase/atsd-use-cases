@@ -4,7 +4,7 @@
 
 ATSD has several alternatives to perform ad hoc calculations such as computing the difference between consecutive values for a given series.
 
-This article demonstrates this calculation using three methods:
+This tutorial demonstrates this calculation using three methods:
 
 * [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html)
 * [**Data API** Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html)
@@ -12,7 +12,7 @@ This article demonstrates this calculation using three methods:
 
 ## Dataset
 
-The sample dataset in this article is represented by:
+The sample dataset in this tutorial is represented by:
 
 * Entity `hetzner`
 * Metric `outage-tickets`
