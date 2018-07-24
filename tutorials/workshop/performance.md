@@ -17,15 +17,15 @@
 
 ## Introduction
 
-One does not simply measure JVM code performance. A performance engineer must consider numerous aspects which affect the resulting data. Several of these are enumerated below:
+One does not simply measure JVM code performance. A performance engineer must consider numerous variables which affect the resulting data. Several of these are enumerated below:
 
-* Interpreting and compiled modes ([implementation details](http://hg.openjdk.java.net/jdk8u/jdk8u/hotspot/file/2b2511bd3cc8/src/share/vm/runtime/advancedThresholdPolicy.hpp#l34)).
+* Interpreter and compiled modes ([implementation details](http://hg.openjdk.java.net/jdk8u/jdk8u/hotspot/file/2b2511bd3cc8/src/share/vm/runtime/advancedThresholdPolicy.hpp#l34)).
 * Preemptive compiler optimizations based on collected profiling information.
 * Other optimizations such as: constant folding, loop unrolling, dead code elimination.
 
 ## JMH: The Ultimate Java Benchmarking Tool
 
-[Java Microbenchmarking Harness](http://openjdk.java.net/projects/code-tools/jmh/) (JMH) is a Java harness for building, running, and analysing
+[Java Microbenchmarking Harness](http://openjdk.java.net/projects/code-tools/jmh/) (JMH) is a Java harness for building, running, and analyzing
 nano/micro/milli/macro benchmarks written in Java and other languages targeting the JVM.
 
 To use this tool, create a `maven` project from the JMH archetype.
@@ -82,16 +82,16 @@ public class CharIsDigitBenchmark {
 Each instrumented method is annotated with `@Benchmark` annotation.
 
 The `@State` annotation marks the class that contains the benchmark state.
-This annotation defines either the same class as the one containing instrumented methods, or a separate class, in this case the state object is provided to benchmark method as a method parameter.
+This annotation defines either the same class as the instrumented methods, or a separate class, in which case the state object is provided to benchmark method as a method parameter.
 
 The `@Param` annotation marks parameterized fields. The initialization values can be provided
 via annotation parameters or by using command line parameter `-p {param-name}={param-value}`.
 
-It is certainly worth learning the principles of writing a good JMH benchmark by studying the provided [Examples](http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/).
+Understand the principles of writing an informative JMH benchmark by studying the provided [Examples](http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/).
 
 ### Date Formatters Performance Comparison
 
-> Review date formatters benchmarks on [Github](https://github.com/raipc/benchmarks/blob/master/src/main/java/com/github/raipc/BetterIso8601Benchmarks.java).
+> Review date formatter benchmarks on [Github](https://github.com/raipc/benchmarks/blob/master/src/main/java/com/github/raipc/BetterIso8601Benchmarks.java).
 
 To record benchmarks, build and run the project.
 
@@ -115,22 +115,22 @@ printWithCustomPrinterIsoOpt  sample  2369326      271.344 ± 10.401   ns/op
 
 ## The Formatters Used by ATSD
 
-ATSD uses different date parsing and formatting libraries to cover all use cases. The following table clarifies which ATSD subsystem uses which date formatting library.
+ATSD uses different date parsing and formatting libraries to cover all use cases. The following table clarifies which date formatting libraries are used by each ATSD subsystem.
 
 **ATSD Subsystem** | **Date Formatter**
 -----|-----
-Data API | `joda.time` for parsing, custom formatter for printing
+Data API | `joda.time` to parse, custom formatter to print.
 SQL | `Apache Commons`
 Rule Engine | `joda.time`
 Forecasts | `SimpleDateFormat`
 CSV Parser | `SimpleDateFormat`
 User Interface | `SimpleDateFormat`
 
-Each formatter supports different patterns, hence all of them need to be documented with the differences among them emphasized.
+Each formatter supports different patterns, hence all of them need to be documented, with the differences among them emphasized.
 
-## New at the Zoo: ATSD `DatetimeProcessor`
+## ATSD `DatetimeProcessor`
 
-The introduction of yet-another-date-formatter is dictated by the desire to improve maintainability by reducing the number of
+The introduction of a new date formatter is to improve overall maintainability by reducing the number of
 supported libraries, date patterns, documentation notes. After analyzing common use cases, the following API was created.
 
 ```java
@@ -168,7 +168,7 @@ String datetime = formatLocalMillisNoTz(long time);
 
 ### Supported Patterns
 
-DatetimeProcessor supports Java 8 `DateTimeFormatter` patterns with several differences:
+`DatetimeProcessor` supports Java 8 `DateTimeFormatter` patterns with several differences:
 
 * No need to escape `T` literal.
 * `u` pattern is translated to `ccccc`, day of week starting from Monday.
@@ -217,7 +217,7 @@ FROM "mpstat.cpu_busy"
 LIMIT 500000
 ```
 
-The above query only affects date formatting with a dynamic pattern, when `DatetimeProcessor` is returned by `DateTimeFormatterManager`. It does not affect the performance of date formatting in Data API or other subsystems.
+The above query only affects date formatting with a dynamic pattern, when `DatetimeProcessor` is returned by `DateTimeFormatterManager`. This does not affect the performance of date formatting in Data API or other subsystems.
 
 A better query is shown here:
 
@@ -235,7 +235,7 @@ LIMIT 500000
 
 Some performance considerations:
 
-* Use `JSR-310` `ZoneOffset` instead of `TimeZone` to parse zone offsets. It gives free `RFC822` offsets support.
+* Use `JSR-310` `ZoneOffset` instead of `TimeZone` to parse zone offsets which offers free `RFC822` offsets support.
 * Manipulate datetime units using `OffsetDateTime` instead of `Calendar`.
 * Optimize `parseInt` function with limited characters support.
 * Implement `sizeInDigits` function using divide-and-conquer approach.
