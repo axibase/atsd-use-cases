@@ -427,7 +427,7 @@ Navigate to **Data > Replacement Tables** page an create a table with JSON forma
     "text": "Seasonally Adjusted?",
     "color": "#3AA3E3",
     "attachment_type": "default",
-    "callback_id": "Seasonal Adjustment Selected",
+    "callback_id": "Seasonal Adj. Selected",
     "actions": [
       {
         "name": "seasonal_adj_list",
@@ -716,7 +716,7 @@ Configure triggers for custom and built-in integrations:
        ${replacementTable('slack').frequency}
     @else{message == 'Frequency Selected'}
        ${replacementTable('slack').seasonal_adj}  
-    @else{message == 'Seasonal Adjustment Selected'}
+    @else{message == 'Seasonal Adj. Selected'}
        ${replacementTable('slack').chart_type}  
     @else{}
     null
