@@ -27,7 +27,7 @@ Measuring uptime is important for a variety of use cases such as reviewing IT op
 
 In addition to cumulative availability over a reporting period, identify the total number of downtime incidents as well as the longest incidents for in-depth diagnostics.
 
-While [How to Build Availability Report for AWS Route53](README.md) describes how to collect AWS Route53 statistics with Axibase Time Series Database, this article focuses on creating and delivering scheduled uptime reports.
+While [How to Build Availability Report for AWS Route53](README.md) describes how to collect AWS Route53 statistics with Axibase Time Series Database, this integration focuses on creating and delivering scheduled uptime reports.
 
 ## Preparation
 
@@ -54,7 +54,7 @@ This completes the verification stage. You now have data which can be reported o
 
 Since you need a flexible way of filtering, grouping, and formatting results, rely on [SQL](https://axibase.com/docs/atsd/sql/) implemented in Axibase Time Series Database (ATSD) to prepare reports, including time series extensions for time zone aggregations.
 
-In ATSD, execute SQL queries via web-based console, an external reporting tool using a JDBC/ODBC driver, or with the built-in report generator with email delivery, web publishing, and file generation options. This article relies on the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) to test and fine-tune these queries.
+In ATSD, execute SQL queries via web-based console, an external reporting tool using a JDBC/ODBC driver, or with the built-in report generator with email delivery, web publishing, and file generation options. This integration relies on the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) to test and fine-tune these queries.
 
 ### Base Report
 

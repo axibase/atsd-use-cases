@@ -12,7 +12,7 @@ The governments at the federal, state, city, and county level publish datasets i
 
 Using ATSD, you can combine datasets from multiple entities in one portal.
 
-This article uses data collected from the [Bureau of Labor Statistics](https://www.bls.gov/home.htm).
+This integration uses data collected from the [Bureau of Labor Statistics](https://www.bls.gov/home.htm).
 
 ## Iowa Employee Compensation Dataset
 
@@ -172,7 +172,7 @@ Explore specific metrics in the **Iowa Seasonally Adjusted Non-Farm Employment b
 
 The same decline correlating with the recession period is highlighted the figures above.
 
-Below is a table of datasets from `data.iowa.gov` already available in **ChartLab**. Modify configuration in the **Editor** window to compare data across entities. For more information about **ChartLab** syntax or selecting series, see the [ChartLab Introduction](../../shared/chartlab.md).
+Below is a table of datasets from `data.iowa.gov` already available in **ChartLab**. Modify configuration in the **Editor** window to compare data across entities. For more information about **ChartLab** syntax or selecting series, see the [ChartLab Introduction](../../../tutorials/shared/chartlab.md).
 
 |Entity     | Dataset Title     |
 |-----------|--------------------------|
@@ -337,6 +337,6 @@ With adjusted compensation per employee values derived series, meaningful conclu
 
 * For more information about ATSD Chart services, see the [Charts Documentation](https://github.com/axibase/charts).
 
-* See the [**ChartLab** Introduction](../../shared/chartlab.md) for more information about **ChartLab** functionality.
+* See the [**ChartLab** Introduction](../../../tutorials/shared/chartlab.md) for more information about **ChartLab** functionality.
 
 * Raise an [issue](https://github.com/axibase/atsd-use-cases/issues/new) in the Axibase GitHub repository if you need help.
