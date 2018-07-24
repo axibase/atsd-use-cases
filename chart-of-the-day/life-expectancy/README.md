@@ -193,6 +193,6 @@ Under the assumption that human life expectancy increases roughly 1.4 years each
 
 The following tools may be used to replicate these results in a local ATSD instance:
 
-* Instructional [guide](../../integrations/shared/trends.md) for using **Trends**;
+* Instructional [guide](../../tutorials/shared/trends.md) for using **Trends**;
 * [Death rates and life expectancy data](#data);
 * Use this [guide](../../integrations/socrata/python/README.md) to quickly upload data.gov datasets to a local ATSD instance.
