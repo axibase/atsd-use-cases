@@ -109,7 +109,7 @@ Create custom portals using the example portal above as a template. Change or di
 Create a derived series to calculate the difference between local and mainland prices:
 
 1. In the `Hilo` series, define an alias `alias = s1`. In the `US` series, define a second alias `alias = s2`. Hide both series using a `display=false` setting.
-1. Define a new series with `label = Hilo over US Diesel Surcharges` setting included. Use the expression `value = value('s1') - value('s2')` to calculate the desired metric.
+1. Define a new series with `label = Hilo over US Diesel Surcharges` setting included. Use the expression `value = value('s1') - value('s2')` to calculate the derived metric.
 
 ![Figure 16](./images/Figure16.png)
 
@@ -182,5 +182,5 @@ Compare Diesel prices in Honolulu, Wailuku, and Hilo with residential electricit
 1. [Install ATSD](https://axibase.com/docs/atsd/installation/) on a virtual machine or in a Linux container.
 2. [Install Axibase Collector](https://axibase.com/docs/axibase-collector/#installation) and configure Collector to write data into your ATSD instance.
 3. Upload the [Job](./hawaii_gas_prices.xml) file to Axibase Collector.
-4. Import the desired `data.gov` datasets to enable data collection.
+4. Import `data.gov` datasets to enable data collection.
 5. Log in to ATSD and open a sample Socrata portal to explore the data.

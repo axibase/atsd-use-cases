@@ -18,7 +18,7 @@ The **ChartLab** menu has the following components:
 * **Run**" Apply and view a portal based on the current configuration in the Editor window.
 * **Save**: Save the current configuration under as new version in the current directory;
 * **Clone**: Save current configuration in a new directory;
-* **Widget**: Append widget template to the current desired configuration;
+* **Widget**: Append widget template to the selected configuration;
 * **Source**: Switch between data sources: Random or ATSD.
 
 ## Source
@@ -121,7 +121,7 @@ Access [Charts Documentation](https://axibase.com/products/axibase-time-series-d
 
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 
-```javascript
+```ls
 ### On the [configuration] level, the 'import' command is used to load functions from the `fred.js` file
 ### The library is assigned the name 'fred'.
 ### Multiple function libraries may be imported into the same portal.
