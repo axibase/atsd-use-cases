@@ -567,8 +567,8 @@ Create [template](https://axibase.com/docs/atsd/portals/portals-overview.html#te
     multiple-series = true  
     var metrics = ${metrics}
   for m in metrics
-    [series] 
-	  metric = @{m}
+    [series]
+    metric = @{m}
   endfor
 ```
 
