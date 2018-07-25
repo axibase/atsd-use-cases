@@ -1,4 +1,4 @@
-# Curve Smoothing Using Moving Averages
+# Curve Smoothing Using Weighted Averages
 
 ## Problem Overview
 
@@ -12,7 +12,7 @@ the [New York Department of Transportation](https://www.dot.ny.gov/index) is agg
 * Annually aggregating the Port Authority Cargo data would destroy the granularization that created by monthly collection over the observation period.
 * Using an average baseline calculated over the entire observation period would return results that neglected current trends because four decades worth of data would be regarded equally.
 
-With ATSD and the [Moving Average](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/)
+With ATSD and the [Weighted Average](https://github.com/axibase/charts/blob/master/configuration/aggregators.md#aggregators)
 setting, data with differing granularization is easily comparable.
 
 ## Data
@@ -42,7 +42,7 @@ The passenger enplanement data, aggregated annually is shown below:
 The granularization is mismatched and the observed periods differ by twenty years. The latter problem has a simple solution, modify the observation period using the drop-down lists in **ChartLab** or hardcode the desired timespan in the editor
 window with the `starttime` setting, but the former does not offer such an obvious solution.
 
-The syntax required to modify the dataset to reflect the moving average is two parts and shown below. It can be placed under
+The syntax required to modify the dataset to reflect the weighted average is two parts and shown below. It can be placed under
 the `[widget]` field to modify all available series, or placed under an individual `[series]` field to modify only one desired
 series.
 
@@ -55,11 +55,11 @@ The `period` is set by the user and able to be as low as millisecond granularity
 number of years. This two line syntax calculates the average of each annual input and aggregates the value to return one value
 per selected period. Additionally, this type of ad hoc modification does nothing to the underlying data.
 
-Read detailed documentation about the `wtavg` setting and other supported [aggregation functions](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/).
+> Read detailed documentation about the `wtavg` setting and other supported [aggregation functions](https://github.com/axibase/charts/blob/master/configuration/aggregators.md#aggregators).
 
 ## Implementation
 
-Applying the moving, or weighted, average to **Figures 1.1** and **1.2** is shown below:
+Applying the weighted average to **Figures 1.1** and **1.2** is shown below:
 
 **Figure 2.1** Annual Average of JFK Cargo Tonnage (1997-2015)
 
@@ -108,7 +108,7 @@ state.
 
 Alternatively, it may be helpful to compare the modified chart with the original to calculate concrete monthly baselines. Airport traffic and use is seasonal, as such comparing values month to month may be misleading.
 
-With the moving average calculation included year-on-year monthly data is calculated.
+With the weighted average calculation included year-on-year monthly data is calculated.
 
 ![](./images/ra-009.png)
 
