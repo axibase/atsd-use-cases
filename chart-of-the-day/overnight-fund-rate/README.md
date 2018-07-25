@@ -7,7 +7,7 @@
 
 * **Industrial Production Index**: The Industrial Production Index is a measure of real output from United States manufacturing, mining, and electric, and gas utilities. Because this time series data tracks a longer span of time that the target period, `starttime` and `endtime` [settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) are used to display only the target period.
 
-* **Dow Jones Industrial Average**: One of the best indicators of economic strength is stock market performance. Using a `statistic` expression and [`weighted average (wtavg)`](../../tutorials/weighted-avg/README.md) setting, volatile trade volume values may be smoothed to show a rolling average for a desired time period. Here, the data is grouped by month and shown alongside the closing value of the stock market, which remains unmodified.
+* **Dow Jones Industrial Average**: One of the best indicators of economic strength is stock market performance. Using a `statistic` expression and [`weighted average (wtavg)`](../../tutorials/weighted-avg/README.md) setting, volatile trade volume values may be smoothed to show a rolling average for a specific time period. Here, the data is grouped by month and shown alongside the closing value of the stock market, which remains unmodified.
 
 The overnight market is the shortest term loan market available, whereby banks borrow money overnight which must be repaid the following morning plus interest. Because of the extreme short term nature of these types of loans, they also have some of the lowest interest rates - typically reflective of the target interest rate mandated by the United States Federal Reserve.
 

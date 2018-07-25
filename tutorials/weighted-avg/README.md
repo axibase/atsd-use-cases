@@ -39,12 +39,11 @@ The passenger enplanement data, aggregated annually is shown below:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/00cf9be3/#fullscreen)
 
-The granularization is mismatched and the observed periods differ by twenty years. The latter problem has a simple solution, modify the observation period using the drop-down lists in **ChartLab** or hardcode the desired timespan in the editor
+The granularization is mismatched and the observed periods differ by twenty years. The latter problem has a simple solution, modify the observation period using the drop-down lists in **ChartLab** or hardcode the specific timespan in the editor
 window with the `starttime` setting, but the former does not offer such an obvious solution.
 
 The syntax required to modify the dataset to reflect the weighted average is two parts and shown below. It can be placed under
-the `[widget]` field to modify all available series, or placed under an individual `[series]` field to modify only one desired
-series.
+the `[widget]` field to modify all available series, or placed under an individual `[series]` field to modify only one series.
 
 ```ls
 statistic = wtavg
