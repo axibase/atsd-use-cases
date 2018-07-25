@@ -23,9 +23,13 @@ producers of greenhouse gas emissions like China and India, will not even begin 
 in their production](https://climateactiontracker.org/countries/china.html)
 for up to ten years in the future.
 
+<!-- markdownlint-disable MD105 -->
+
 Is the position of America as a green leader truly in jeopardy?
 Have the last decades of climate change action produced the desired results?
 And perhaps most importantly, what does the data show?
+
+<!-- markdownlint-enable MD105 -->
 
 ## Methodology
 

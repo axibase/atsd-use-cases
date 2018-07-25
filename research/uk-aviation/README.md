@@ -80,7 +80,7 @@ Create additional portals using the example as a template. **ChartLab** supports
 
     ![Figure 5](./images/Figure5.png)
 
-1. Select the desired `metric`. The first drop-down list in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [uk-caa-metrics.txt](uk-caa-metrics.txt).
+1. Select a `metric`. The first drop-down list in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [uk-caa-metrics.txt](uk-caa-metrics.txt).
 
     ![Figure 21](./images/Figure21.png)
 
@@ -92,7 +92,7 @@ Create additional portals using the example as a template. **ChartLab** supports
 
     ![](./images/search-bar.png)
 
-1. A list of matching metrics is visible. The desired metric for this visualization is `uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_scheduled_uk`.
+1. A list of matching metrics is visible. The target metric for this visualization is `uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_scheduled_uk`.
 
     ![Figure 10](./images/matched-metrics.png)
 

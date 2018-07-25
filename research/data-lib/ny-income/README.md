@@ -10,7 +10,7 @@ All data is stored in the [Axibase Time Series Database](https://axibase.com). D
 
 ## Adjusted Gross Income (AGI)
 
-"Adjusted Gross Income is defined as gross income minus adjustments to income." (Source: [Internal Revenue Service](https://www.irs.gov/uac/definition-of-adjusted-gross-income))
+Adjusted Gross Income is defined as gross income minus adjustments to income.
 
 A person's AGI reflects the total amount of money that they earned in a given fiscal year minus whatever deductions that
 filer makes. The City of New York has collected information for all local tax filers, and aggregated them into ten

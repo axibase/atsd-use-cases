@@ -506,7 +506,7 @@ The visualizations have been converted to display average monthly values.
 
 > Note the model error here is consistent with the error demonstrated in the [Validation](#validation) section above.
 
-Data Forecasting has the scalability to render predictions for any desired amount of time, in this case, the
+Data Forecasting has the scalability to render predictions for any amount of time, in this case, the
 numerical predictions in **ChartLab** are given for the day as such they are on the order of `10 x 10^0`.
 
 Below are the anticipated levels of fire-related calls yet-to-be received for the remainder of 2017:

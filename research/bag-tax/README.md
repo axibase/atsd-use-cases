@@ -25,7 +25,7 @@ door and potentially, into the waterways of the county.
 ## Data
 
 to measure the effectiveness of the bag tax as a method of reducing overall plastic bag use, the Montgomery County
-data from the [2010 United States Census](https://www.census.gov/2010census/data/) can be used to define a per capita usage
+data from the 2010 United States Census available at `https://www.census.gov/2010census/data/` can be used to define a per capita usage
 of plastic bags and assess whether the last five years have shown a decrease in plastic bag usage as the city intended. Because
 the official Census occurred 2010, and local population estimates exist for 2015 an average step amount must be calculated
 to determine yearly population totals. Averaging the difference in population numbers provides a approximate per year
@@ -242,7 +242,7 @@ overall plastic bag use, at least in Montgomery County, the Bag Tax seems ineffe
 generated from plastic bag sales is used by the county government to enact water quality initiates which counteract the harmful
 effects of plastic litter clogging up the waterways. The county estimates this total to be around $3 million, and
 the Bag Tax successfully generated roughly that amount. This is the hidden beauty of the Bag Tax, while perhaps ineffective at modifying
-the desired behavior, by taxing plastic bag users for their bags, the county is able to offset its own costs which previously
+the target behavior, by taxing plastic bag users for their bags, the county is able to offset its own costs which previously
 came from another revenue source and still perform its goals of removing garbage from the environment without any individual
 or group seeing a steep increase in their personal tax payments.
 

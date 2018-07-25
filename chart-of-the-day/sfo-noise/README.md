@@ -7,7 +7,7 @@ released by the [City of San Francisco](https://catalog.data.gov/organization/ci
 complaints of air traffic noise from various locations in the San Francisco metropolitan area. Not only
 is 'Frisco home to the Golden Gate Bridge, one of the wonders of the modern world, but also San
 Francisco International Airport, or SFO as it is known to frequent fliers. The data is collected by
-the [Office of Aircraft Noise Abatement](https://www.flysfo.com/community/noise-abatement) and includes
+the [Office of Aircraft Noise Abatement](https://www.flysfo.com/noise) and includes
 complaints received via email, hotline, and even handwritten letter. Open [ChartLab](https://apps.axibase.com/chartlab) below and navigate through time
 using the drop-down menu at the top of the visualization:
 

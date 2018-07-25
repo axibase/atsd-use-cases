@@ -93,7 +93,7 @@ Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available
 
 Open the **Alerts** menu, select **Rules** and import [rules](./resources/rules.xml) (Enable the **Auto-enable New Rules** check box).
 
-Confirm the database imported the desired rules
+Confirm the database imported the rules.
 
 ![](./images/rules_list.png)
 

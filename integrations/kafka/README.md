@@ -44,8 +44,8 @@ This document describes how to monitor availability and performance of [Apache K
 ## Step 2: Configure Kafka in ATSD
 
 1. Log in to the target ATSD instance at `https://atsd_hostname:8443`.
-2. Go to the **Metrics** page and verify that `jmx.kafka.*` metrics are available.
-3. Go to the **Entities** page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
+2. Navigate to the **Metrics** page and verify that `jmx.kafka.*` metrics are available.
+3. Navigate to the **Entities** page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
 4. Open the **Settings** menu, select **Entity Groups** and import [Kafka](./resources/groups.xml) entity group.
 5. Open the **Portals** menu, select **Configure** and import [Kafka](./resources/portal-configs.xml) portals (check on the **Auto-enable New Portals** check box).
 6. Open the ![](./images/alerts.png) **Alerts** menu, select **Rules** and import [Kafka](./resources/rules.xml) rules (check the **Auto-enable New Rules** check box).

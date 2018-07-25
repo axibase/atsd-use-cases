@@ -346,7 +346,7 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
 | 17                 | MADISON        |
 | 13                 | PEORIA         |
 
-Information can also be collected on a desired county, for the entire period:
+Information can also be collected on a specific county, for the entire period:
 
 #### Cook County Live Births (1989 - 2009)
 
@@ -576,7 +576,7 @@ And looking at lines 22 - 48 in the Editor:
 
 ![](./images/ILL13.png)
 
-The `LIST` Setting is used to declare the desired list, in this case, the various
+The `LIST` Setting is used to declare a specific list, in this case, the various
 years of included in the data and the [`[DROPDOWN]`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/)
 clause is used to declare the functionality of the menu itself.
 

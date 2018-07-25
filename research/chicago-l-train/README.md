@@ -268,7 +268,7 @@ average. This means that between any two given years, the difference is roughly 
 by the number of years between them, and between any two given consecutive years, the ridership totals is within 1.62% of
 each other. As the numbers are close together, they can even be used in conjunction with one another, with the understanding
 that expected mean percentage error (MPE) is on the order of 0.13% multiplied by the difference in years, or when speaking
-in terms of passengers, using the average amount for reference, two hundred thousand passengers times the difference in years.
+of passengers, using the average amount for reference, two hundred thousand passengers times the difference in years.
 This error is not on an order higher that 10 x 10^-1 for these purposes, and merely speaks to the likelihood of the model to lose stability
 as it attempts to predict rider amounts further and further into the future without inputting new training data and pruning
 old training data.

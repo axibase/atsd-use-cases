@@ -166,7 +166,7 @@ The sandbox runs two front-facing applications which may be accessed using [defa
 
 Verify that the webhook delivery is working as expected.
 
-Go to Docker Hub and open **Build Settings** for one of the projects (images). Trigger a build for one of the branches known to fail.
+On Docker Hub, open the **Build Settings** for one of the projects (images). Trigger a build for one of the branches known to fail.
 
 ![](./images/docker-hub-trigger.png)
 

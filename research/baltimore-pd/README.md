@@ -528,7 +528,7 @@ homicide made up 1.9% of total Baltimore homicides in 2013, and 1.8% of total Ba
 ![2013](./images/2013Other.png)
 
 to display the total number of police homicides for the observed years, the `[other]`
-function can be used, only displaying data for the desired year, but still showing other data
+function can be used, only displaying data for the specified year, but still showing other data
 alongside for perspective.
 
 >See the [Appendix](#appendix) below for more detailed instructions.
@@ -584,7 +584,7 @@ use the command `expand = true` under the `[series]`:
 
 ### Using the [`OTHER`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
 
-to display a full series of data, but only show detailed information for a desired
+to display a full series of data, but only show detailed information for a specified
 portion of that data, the `[other]` command needs to be included in the `[series]` cluster, and a
 value for `total-value = x` needs to be added under the `[widget]` cluster as shown below,
 
@@ -609,7 +609,7 @@ The `tags.$TAG_NAME$` corresponds to the metric the user is interested in queryi
 ![SQL1](./images/SQL1.png)
 
 With the results displayed below, after the `execute` command is given. Erroneous data, or
-data lacking the desired information with be displayed as `null`.
+data lacking the target information is displayed as `null`.
 
 ![SQL2}](./images/SQL2.png)
 

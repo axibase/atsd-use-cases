@@ -4,9 +4,9 @@
 
 ## Introduction
 
-The [Internal Revenue Service](https://www.irs.gov/) (IRS) of the United States releases quarterly reports tracking the number of expatriated citizens processed in the previous three-month period. The reports are announced via the [Federal Register](https://www.federalregister.gov/) which is the primary publication medium of the federal government and used by a number of agencies as an outreach arm to the public.
+The Internal Revenue Service (IRS) of the United States releases quarterly reports tracking the number of expatriated citizens processed in the previous three-month period. The reports are announced via the [Federal Register](https://www.federalregister.gov/) which is the primary publication medium of the federal government and used by a number of agencies as an outreach arm to the public.
 
-Ostensibly, the tax bureau maintains these records instead of [Citizenship and Immigration Services](https://www.uscis.gov/) (CIS) because the IRS uses that information to adjudicate decisions regarding those expatriating citizens upon whom the [Expatriation Tax](https://www.irs.gov/individuals/international-taxpayers/expatriation-tax) is levied.
+Ostensibly, the tax bureau maintains these records instead of Citizenship and Immigration Services (CIS) because the IRS uses that information to adjudicate decisions regarding those expatriating citizens upon whom the Expatriation Tax is levied.
 
 Previous articles tracking United States expatriation:
 

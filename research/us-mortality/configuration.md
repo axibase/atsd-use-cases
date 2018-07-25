@@ -50,7 +50,7 @@ Below is a step-by-step guide for setting up local instances of Axibase Time Ser
 
 10. After uploading the parser import [`us.population.csv`](./resources/us.population.csv).
 
-    This file contains population estimates from [census.gov](https://www.census.gov/data.html) for all 122 cities for 1960, 1970, 1980, 1990, 2000, 2010,
+    This file contains population estimates from `https://www.census.gov/data.html` for all 122 cities for 1960, 1970, 1980, 1990, 2000, 2010,
     and 2015. Save a local copy of this file. Open the `US_population_all_cities` parser and upload `us.population.csv`.
 
     ![Figure 25](./images/Figure25.png)

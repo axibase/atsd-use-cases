@@ -2,7 +2,7 @@
 
 ![TitlePhoto](./images/TitlePhoto.png)
 
-In 2015, the [U.S. State Department](https://www.state.gov/) earned over **$400 million** from non-immigrant visa applications that ended up being rejected. This article analyzes a dataset from [`travel.state.gov`](https://travel.state.gov) which examines non-immigrant visa figures from 1997 through 2015 together with a second `travel.state.gov` dataset concerning visa refusal rates
+In 2015, the U.S. State Department earned over **$400 million** from non-immigrant visa applications that ended up being rejected. This article analyzes a dataset from [`travel.state.gov`](https://travel.state.gov) which examines non-immigrant visa figures from 1997 through 2015 together with a second `travel.state.gov` dataset concerning visa refusal rates
 from 2006 to 2016.
 
 Publicly available data can be loaded into ATSD, analyzed using [SQL Console](https://axibase.com/docs/atsd/sql/), and visualized with [**ChartLab**](../../tutorials/shared/chartlab.md)
@@ -65,7 +65,7 @@ used to select specific information in the dataset. Read more about SQL syntax i
 The first query shows countries where refusals have increased the most over the last 10 years. Surprisingly, two countries that have long been considered U.S. allies, Canada and Norway,
 saw refusal rates considerably increase during the observed period. Refusal rate in Canada increased from **25.5%** in 2006 to **47.9%** in 2016, while in the same period the
 refusal rate in Norway increased by **17.1%**. Cuba, the country with the largest visa refusal rate in 2016, saw a **20.5%** increase from 2006 to 2016, despite having diplomatic relations improve
-in the [last several years](https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249702.htm).
+in the last several years: `https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249702.htm`.
 
 ```sql
 SELECT tags.country AS "Country",
@@ -464,7 +464,7 @@ group by t1.datetime
 ```
 
 The total amount of money earned from denied visa applications is **$411.4 million**, a little less than `1/4` of the amount earned
-from issued visas. These numbers are in line with the [2015 State Department Report](https://www.state.gov/documents/organization/249770.pdf), which stated that 10.9 million visas were issued at foreign posts. The total revenue earned by U.S. consular services in 2015 is [$5.8 billion](https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249727.htm), meaning that the amount earned from
+from issued visas. These numbers are in line with the 2015 State Department Report (`https://www.state.gov/documents/organization/249770.pdf`), which stated that 10.9 million visas were issued at foreign posts. The total revenue earned by U.S. consular services in 2015 is $5.8 billion (`https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249727.htm`), meaning that the amount earned from
 refusal fees is not just pocket change.
 
 ## Action Items

@@ -13,7 +13,7 @@
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bfcc9660#fullscreen)
 
 > Open the ChartLab visualization above and use the drop-down menus to navigate between countries or select the European Union
-total. Use both charts to compare two countries, one country to the EU total, or any other desired combination.
+total. Use both charts to compare two countries or one country to the EU total.
 
 ## Debt as a Portion of the European Union Total
 

@@ -8,7 +8,7 @@ Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e92a4f6c/10/#fullscreen)
 
-> Use the drop-down lists at the top of the visualization to navigate through time by selecting the desired start and end
+> Use the drop-down lists at the top of the visualization to navigate through time by selecting the start and end
 years for the observation period.
 
 Recently, [European Union Debt Data](../../research/data-lib/eu-debt/README.md) sorted by country was published
