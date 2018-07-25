@@ -66,7 +66,7 @@ releases this number each quarter.
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/842f1dd9/#fullscreen)
 
 > Use the drop-down lists at the top of the visualization screen to navigate through time, selecting the `starttime` and `endtime` values
-to observe a desired period.
+to observe a specific period.
 
 The data can also be queried using the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD.
 Aggregate data annually, derived from the average value of each quarter within a given year:
@@ -206,7 +206,7 @@ displayed:
 ```
 
 Shown below is the debt profile of the average American consumer from 1980 to 2017, navigate through time using the drop-down
-menus at the top of the screen to select a desired span of time and compare how bearing debt has changed over the course of
+menus at the top of the screen to select a specific span of time and compare how bearing debt has changed over the course of
 the last three decades.
 
 ![](./images/fed-003.png)

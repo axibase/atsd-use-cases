@@ -6,13 +6,13 @@
 
 Voters in the 2016 U.S. presidential election wanted to return to a time when America produced more than it consumed. According to data published by the [World Bank](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2015&start=1960&view=chart&year_high_desc=true),
 the United States represented **40%** of world GDP in **1960**. By 2015, that number had dropped to only **24%**. According to the [Bureau of Labor Statistics](https://www.bls.gov/opub/mlr/2012/01/art4full.pdf) (BLS), by 2020 the U.S. is predicted to have **5.7
-million** less manufacturing jobs than it had in 2000. Further, the percentage of Americans employed in manufacturing dropped from **19%** in 1980 to **8%** in 2016. This article analyzes data from [`census.gov`](https://www.census.gov) concerning
-the [international trade balance](https://www.census.gov/foreign-trade/balance/country.xlsx) of the United States of America from 1985 to 2016. Publicly available data from `census.gov` is loaded into the non-relational ATSD
+million** less manufacturing jobs than it had in 2000. Further, the percentage of Americans employed in manufacturing dropped from **19%** in 1980 to **8%** in 2016. This article analyzes data from `census.gov` concerning
+the international trade balance of the United States of America from 1985 to 2016, view the data at `https://www.census.gov/foreign-trade/balance/country.xlsx`. Publicly available data from `census.gov` is loaded into the non-relational ATSD
 for interactive analysis with [SQL](https://axibase.com/docs/atsd/sql/) for [partitioning](https://axibase.com/docs/atsd/sql/#partitioning) and [**ChartLab**](../../tutorials/shared/chartlab.md). See [Installation Documentation](https://axibase.com/docs/atsd/installation/) to set up a local ATSD instance.
 
 ## Dataset
 
-Take a look at a dataset on American international trade from [`census.gov`](https://www.census.gov/foreign-trade/balance/index.html) where  The dataset is available in [`.xlsx`](https://www.census.gov/foreign-trade/balance/country.xlsx) format.
+Take a look at a dataset on American international trade at `https://www.census.gov/foreign-trade/balance/index.html` where  The dataset is available in `.xlsx` format
 
 This dataset contains import and export statistics collected monthly from 1985 to 2016 concerning trade between the United States and 259 other nations and regions.
 
@@ -70,7 +70,7 @@ As shown in the figure below, the trade balance deficit between the U.S. and Chi
 
 Explore the trade between the United States and any other country included in this dataset by opening the **ChartLab** visualization. Open the drop-down lists to navigate between countries, as well as entire continents or specific organizations.
 
-> There are separate filters for the upper and lower graphs.Select the desired location from the `US Import/Export` drop-down list, as well from **US Trade Balance** to perform filtering.
+> There are separate filters for the upper and lower graphs. Select a location from the `US Import/Export` drop-down list, as well from **US Trade Balance** to perform filtering.
 
 The SQL query below tracks the trade balance in USD millions between United States and Mexico from 1985 to 2016:
 
@@ -120,7 +120,7 @@ GROUP BY e.period(1 year), e.tags -- group values by year, tags (include country
 
 How did 2016 look for the United States? Below is a figure of the top countries for U.S. export and imports in 2016. The table to the right of the visualizations provides
 monetary values for exports, imports, and the trade balance between the U.S. and each respective country, continent, or organization. The table is sorted by
-trade balance, with the highest negative trade balances showing at the top. Sort the table as needed by accessing the **ChartLab** portal and selecting the desired column headers.
+trade balance, with the highest negative trade balances showing at the top. Sort the table as needed by accessing the **ChartLab** portal and selecting column headers.
 
 In 2016, the locations with which the United States had the highest negative and positive trade balances are China and Hong Kong at **-$319 billion** and **$25.1 billion**,
 respectively.
@@ -309,7 +309,7 @@ Install local instances of ATSD and [Axibase Collector](https://axibase.com/docs
 
 1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
 2. [Install ATSD](https://axibase.com/docs/atsd/installation/docker.html) Docker image.
-3. Download the [Excel file](https://www.census.gov/foreign-trade/balance/country.xlsx) in CSV format.
+3. Download the Excel file at `https://www.census.gov/foreign-trade/balance/country.xlsx`.
 4. Log in to ATSD by navigating to `https://docker_host:8443/`.
 5. Import the `us-trade-ie-csv-parser.xml` file into ATSD. For a more detailed description, refer to step 9 from these [Configuration Instructions](../us-mortality/configuration.md) from an article tracking [U.S. mortality statistics](../us-mortality/README.md).
 6. Upload the data in `.csv` format to ATSD.

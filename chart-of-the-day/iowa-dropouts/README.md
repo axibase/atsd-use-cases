@@ -35,5 +35,5 @@ also account for more than 30% of high school dropouts.
 
 > *Dropout rate is a calculation of the percent of residents that dropped out, not _eligible_ residents who dropped out.
 
-While Iowa is certainly ahead of the curve in terms of overall graduation rates, the cities shown above have plenty of room
+While Iowa is certainly ahead of the curve with respect to overall graduation rates, the cities shown above have plenty of room
 improve.

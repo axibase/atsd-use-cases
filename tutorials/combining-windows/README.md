@@ -54,7 +54,7 @@ WINDOW TYPE | EXAMPLE | DESCRIPTION
 
 There are different types of moving averages with better control over smoothing with linear, geometric or exponentially decreasing weights (see [Wikipedia](https://en.wikipedia.org/wiki/Moving_average)). Likewise, it is possible to utilize any grouping function such as `percentile(95)` instead of average.
 
-In terms of visualization, moving averages are often displayed alongside raw values and the chart can include multiple moving averages for different time intervals. This is especially common in technical analysis used in finance and econometrics.
+Moving averages are often displayed alongside raw values and the chart can include multiple moving averages for different time intervals. This is especially common in technical analysis used in finance and econometrics.
 
 ![](./images/trading-view.png)
 

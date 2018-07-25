@@ -12,7 +12,7 @@ Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on ATSD
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/9183d77b/8/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time by selecting the desired years in the drop-down lists at the top of screen. Note that debt balances are shown as negative values.
+> Open the ChartLab visualization above to navigate through time by selecting years in the drop-down lists at the top of screen. Note that debt balances are shown as negative values.
 
 The following visualization tracks the last seven years of data (2010-2017) to highlight post-recession changes:
 

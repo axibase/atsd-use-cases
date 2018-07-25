@@ -14,7 +14,7 @@ or [**ChartLab**](https://apps.axibase.com/chartlab) is more meaningful.
 
 Using Bank of Israel foreign trade data as an example, this procedure is explained below:
 
-> Data Source: [Central Bank of Israel](https://www.boi.org.il/en/DataAndStatistics)
+> Data Source: Central Bank of Israel `https://www.boi.org.il/en/DataAndStatistics`
 
 To start, look at the below visualization, SQL query, and result set:
 

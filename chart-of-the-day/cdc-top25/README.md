@@ -188,4 +188,4 @@ LIMIT 25
 The CDC has included over a dozen such metrics, ranging from diabetes to dental
 health, and asthma to arthritis. Open ChartLab with the button below any of the charts
 show above and navigate the rest of this analytical gold mine yourself to find your favorite
-(or least favorite) city using the drop-down list at the top of the display to select the desired city and desired metric.
+(or least favorite) city using the drop-down list at the top of the display to select the city and metric.

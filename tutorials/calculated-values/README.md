@@ -16,7 +16,7 @@ by FRED is **CPIAUCSL**: [Consumer Price Index](https://fred.stlouisfed.org/seri
 
 Replicate and modify the FRED [CPI visualization](https://fred.stlouisfed.org/series/CPIAUCSL#0) using **ChartLab**.
 
-Modify the FRED visualization by clicking **EDIT GRAPH** and selecting the desired transformation. To learn more about how any of the metrics are calculated from the underlying data, [What Formulas are Used to Calculate Growth Rates?](https://fredhelp.stlouisfed.org/fred/data/understanding-the-data/formulas-calculate-growth-rates/)
+Modify the FRED visualization by clicking **EDIT GRAPH** and selecting a transformation. To learn more about how any of the metrics are calculated from the underlying data, [What Formulas are Used to Calculate Growth Rates?](https://fredhelp.stlouisfed.org/fred/data/understanding-the-data/formulas-calculate-growth-rates/)
 provides information about the underlying mathematics.
 
 A brief tutorial on data modification in the FRED interface is shown below:
@@ -27,7 +27,7 @@ A brief tutorial on data modification in the FRED interface is shown below:
 
 ![](./images/tut-2.png)
 
-* From the **Units** drop-down list, select the desired transformation.
+* From the **Units** drop-down list, select a transformation.
 
 ![](./images/tut-3.png)
 
@@ -124,7 +124,7 @@ The syntax for this drop-down list is shown below:
 
 > For more information about the above syntax see the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/).
 
-By modifying any of the dates contained in the `keyDates` list above, the user can select any desired date to set as the
+By modifying any of the dates contained in the `keyDates` list above, the user can select any date to set as the
 baseline value, and the `value` equation contained in the `[option]` portion of the `[dropdown]` configuration above uses
 a simple formula to establish the new index.
 
