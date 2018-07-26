@@ -139,7 +139,7 @@ Set `NOTIFY_URL` variable to a request URL where `on-error` webhook notification
 
 The notification URL may include **Basic** authorization credentials, for example `https://username:password@atsd_hostname:10443/`. SSL certificate validation is disabled by default.
 
-Execute the command below to launch an [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+Execute the command below to launch an [ATSD Sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container.
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 \
