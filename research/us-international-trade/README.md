@@ -7,12 +7,12 @@
 Voters in the 2016 U.S. presidential election wanted to return to a time when America produced more than it consumed. According to data published by the [World Bank](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2015&start=1960&view=chart&year_high_desc=true),
 the United States represented **40%** of world GDP in **1960**. By 2015, that number had dropped to only **24%**. According to the [Bureau of Labor Statistics](https://www.bls.gov/opub/mlr/2012/01/art4full.pdf) (BLS), by 2020 the U.S. is predicted to have **5.7
 million** less manufacturing jobs than it had in 2000. Further, the percentage of Americans employed in manufacturing dropped from **19%** in 1980 to **8%** in 2016. This article analyzes data from `census.gov` concerning
-the international trade balance of the United States of America from 1985 to 2016, view the data at `https://www.census.gov/foreign-trade/balance/country.xlsx`. Publicly available data from `census.gov` is loaded into the non-relational ATSD
+the international trade balance of the United States of America from [1985 to 2016](https://www.census.gov/foreign-trade/balance/country.xlsx). Publicly available data from `census.gov` is loaded into the non-relational ATSD
 for interactive analysis with [SQL](https://axibase.com/docs/atsd/sql/) for [partitioning](https://axibase.com/docs/atsd/sql/#partitioning) and [**ChartLab**](../../tutorials/shared/chartlab.md). See [Installation Documentation](https://axibase.com/docs/atsd/installation/) to set up a local ATSD instance.
 
 ## Dataset
 
-Take a look at a dataset on American international trade at `https://www.census.gov/foreign-trade/balance/index.html` where  The dataset is available in `.xlsx` format
+Review the [American international trade dataset](https://www.census.gov/foreign-trade/balance/index.html) in `.xlsx` format
 
 This dataset contains import and export statistics collected monthly from 1985 to 2016 concerning trade between the United States and 259 other nations and regions.
 

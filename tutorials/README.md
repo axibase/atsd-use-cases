@@ -1,5 +1,7 @@
 # ATSD Tutorials
 
+Review the [Getting Started Guide](https://axibase.com/docs/atsd/tutorials/getting-started.html) to understand the first steps of using ATSD.
+
 ## Data
 
 * [Parsing Irregular Timestamps](irregular-timestamp/README.md)

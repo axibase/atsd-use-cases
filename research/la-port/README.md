@@ -218,8 +218,8 @@ earnest commitment to reducing harmful greenhouse gas production.
 ## Conclusions
 
 Starting in 2006, the Port of Los Angeles has pursued effective and aggressive means to reduce the production of the most
-harmful greenhouse gases and by objective standards they have succeeded. In fact, the according to the results of the 2012
-Inventory of Air Emissions (`https://www.portoflosangeles.org/pdf/2012_Air_Emissions_Inventory.pdf`), the Port has outperformed
+harmful greenhouse gases and by objective standards they have succeeded. In fact, the according to the results of the [2012
+Inventory of Air Emissions](https://www.portoflosangeles.org/pdf/2012_Air_Emissions_Inventory.pdf), the Port has outperformed
 the ambitious goals it set for itself almost half a decade ago. As the world pushes further ahead in the quest to reduce the
 human impact on the planet, organizations like the Port of Los Angeles show that making ardent strides forward is possible
 for industries of any type, location, and size.

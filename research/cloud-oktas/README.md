@@ -14,7 +14,7 @@ Today, cloud cover is measured using automated weather stations, specifically ce
 
 ![](./images/sky_imager.png)
 
-You can learn more about automated weather stations in Australia on the official website of the Bureau of Meteorology Australia: `http://www.bom.gov.au/`.
+You can learn more about automated weather stations in Australia on the official website of the [Bureau of Meteorology Australia](http://www.bom.gov.au/).
 
 Cloud cover measurements have many applications and benefits in weather forecasting and solar energy generation. For example, seasonal cloud cover statistics allow tourists to plan their holidays for sunnier weeks and months of the year. This information is also useful to mountain climbers planning an ascent, since the climbers need to choose seasons with less cloud cover, guaranteeing the best possible conditions for summit attempts. Photovoltaic energy generation hinges heavily on quality cloud cover data. Solar panels are most efficient when there are no clouds, when building a solar power station, a company or government must analyze cloud oktas data. Because automated weather stations that measure this metric are distributed sparsely, the data is often not available. Below is a visualization comparing cloud cover with solar power generation for a particular station in Australia. It is readily apparent that the two metrics are interdependent.
 
@@ -24,7 +24,7 @@ This research project is aimed at calculating cloudiness over Australia from sat
 
 ## Cloudiness Data
 
-Australian meteorological stations are used as the source of cloudiness data. The list of all meteorological stations is available on the website of the Australian Bureau of Meteorology: `http://www.bom.gov.au/climate/cdo/about/sitedata.shtml`.
+Australian meteorological stations are used as the source of cloudiness data. The list of all meteorological stations is available on the website of the [Australian Bureau of Meteorology](http://www.bom.gov.au/climate/cdo/about/sitedata.shtml).
 
 Here is a summary of the available stations:
 
@@ -35,7 +35,7 @@ Here is a summary of the available stations:
 * 394: Total number of stations that measure cloud oktas.
 * 45: Total number of station that measure cloud oktas at least four times per day.
 
-Cloud cover measurements are available from the Australian Bureau of Meteorology Latest Weather Observations Portal: `http://www.bom.gov.au/nsw/observations/nswall.shtml?ref=hdr` . Cloud cover data from each station for the past few days can be retrieved in JSON format using the REST API.
+Cloud cover measurements are available from the Australian Bureau of Meteorology [Latest Weather Observations Portal](http://www.bom.gov.au/nsw/observations/nswall.shtml?ref=hdr). Cloud cover data from each station for the past few days can be retrieved in JSON format using the REST API.
 
 As stated on [Wikipedia](https://en.wikipedia.org/wiki/Cloud_cover), cloud cover is the fraction of the sky obscured by clouds when observed from a particular location. Cloud cover is measured in oktas, meaning eighths: `0`, `1/8`, `2/8`, up to `1`. Several methods are used to measure cloud cover but which method is used by the Australian weather stations is not exactly clear.
 
