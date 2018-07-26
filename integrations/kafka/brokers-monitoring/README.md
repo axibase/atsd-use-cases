@@ -9,11 +9,11 @@ This guide describes how to monitor availability and performance of [Apache Kafk
 ### Prerequisites
 
 * Kafka brokers with enabled JMX.
-* 4 GB RAM for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+* 4 GB RAM for the [ATSD sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container.
 
 ### Launch ATSD Sandbox
 
-Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts:
+Launch [ATSD sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container on one of the Docker hosts:
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \

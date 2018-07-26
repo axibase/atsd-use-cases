@@ -70,7 +70,7 @@ Follow the quick [launch procedure](#launch-sandbox-with-automated-slack-and-ema
 
 Follow this procedure to send AWS CloudWatch events into ATSD to enrich standard SNS notifications with additional resource details and AWS console links.
 
-* Launch an [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox):
+* Launch an [ATSD sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image):
 
 ```sh
 docker run -d -p 8443:8443 \
