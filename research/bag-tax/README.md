@@ -25,7 +25,7 @@ door and potentially, into the waterways of the county.
 ## Data
 
 to measure the effectiveness of the bag tax as a method of reducing overall plastic bag use, the Montgomery County
-data from the 2010 United States Census available at `https://www.census.gov/2010census/data/` can be used to define a per capita usage
+data from the [2010 United States Census](https://www.census.gov/2010census/data/) can be used to define a per capita usage
 of plastic bags and assess whether the last five years have shown a decrease in plastic bag usage as the city intended. Because
 the official Census occurred 2010, and local population estimates exist for 2015 an average step amount must be calculated
 to determine yearly population totals. Averaging the difference in population numbers provides a approximate per year

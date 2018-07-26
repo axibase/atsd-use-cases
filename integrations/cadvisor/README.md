@@ -120,7 +120,7 @@ docker run \
 
 | **Option**                                | **Default Value**                      | **Description**                                                                                    |
 | ----------------------------------------- | -------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `storage_driver_atsd_protocol`            | `tcp`                                  | Transfer protocol. Supported protocols: `http`, `https`, `udp`, `tcp`                              |
+| `storage_driver_atsd_protocol`            | `tcp`                                  | Transfer protocol. Supported protocols: HTTP, HTTPS, UDP, TCP                              |
 | `storage_driver_atsd_skip_verify`         | `false`                                  | Disables ATSD SSL certificate check                                                             |
 | `storage_driver_atsd_store_major_numbers` | `false`                                  | Include statistics for devices with all available major numbers                                    |
 | `storage_driver_atsd_property_interval`   | `1m`                                     | Container property (`host`, `id`, `namespace`) update interval. Must be >= `housekeeping_interval` |

@@ -10,7 +10,7 @@ The total number of questions asked show that there are three programming langua
 
 Using Stack Exchange API to collect hourly data for the following programming languages, via the respective tags:
 
-* Java: `https://java.com/en/`
+* [Java](https://java.com/en/)
 * [Go](https://golang.org/)
 * [Scala](https://www.scala-lang.org/)
 * [Python](https://www.python.org/)

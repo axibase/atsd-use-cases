@@ -144,7 +144,7 @@ for the trends of the state itself:
 The population of these metropolitan areas often accounts for a significant amount
 of the total population of the state. In the Atlanta Metropolitan Area for example, that number
 is as high as 57% of the roughly 10 million residents of the state. On average, in the observed states, the Metropolitan areas observed make up around 30% of the total population of the state, with the Raleigh MSA (population 1.3 million) being a low exception representing only 12%
-of the state population, in fact the Raleigh MSA is not even the largest Metropolitan Area in North Carolina. Charlotte, North Carolina, an MSA with a population of roughly 2.3 million residents that ranked 43rd according to 2015 AFI scores published by `http://www.americanfitnessindex.org/2015-afi-report-archive/`
+of the state population, in fact the Raleigh MSA is not even the largest Metropolitan Area in North Carolina. Charlotte, North Carolina, an MSA with a population of roughly 2.3 million residents that ranked 43rd according to [2015 AFI scores](http://www.americanfitnessindex.org/2015-afi-report-archive/)
 with an overall score of 37.4, ranks below the National Benchmark Average and
 significantly below its less-populous neighbor Raleigh.
 
@@ -199,7 +199,7 @@ active data sets and sending subscribers alerts when a certain threshold value i
 Above, when examining capital cities, the case of the Raleigh MSA and Charlotte MSA is observed. That is, two cities in one state with vastly different
 population sizes and vastly different scores on the American Fitness Index rankings. Is there a correlation between population size and score on the AFI?
 
-The following table shows cities included in earlier data compared to cities not included, their Metropolitan populations, and also their score and rank on the 2017 American Fitness Index report at `http://www.americanfitnessindex.org/wp-content/uploads/2014/02/ACSM-AFI-Report-2017.pdf`:
+The following table shows cities included in earlier data compared to cities not included, their Metropolitan populations, and also their score and rank on the [2017 American Fitness Index report](http://www.americanfitnessindex.org/wp-content/uploads/2014/02/ACSM-AFI-Report-2017.pdf) at:
 
 | State |Metropolitan Statistical Area | Population | AFI Score | Rank |
 |-------|------------------------------|------------|-----------|------|
@@ -377,7 +377,7 @@ where:
 * `w` = Weighted value of indicator, determined by ACSM internally.
 * `Max` = A hypothetical maximum score for the MSA ranked best on both indicators.
 
-> Source: `http://www.americanfitnessindex.org/methodology/` American Fitness Index
+> Source: `http://www.americanfitnessindex.org/methodology/`
 
 ### Using the `ALERT` Setting
 

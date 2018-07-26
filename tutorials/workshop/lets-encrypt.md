@@ -635,7 +635,7 @@ public class CertListCA {
 
 OpenJDK 9
 
-Until fix [JEP 319](http://openjdk.java.net/jeps/319), the OpenJDK 9 (`https://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html#JDK-8189131`) binary for Linux x64 contains an **empty** `cacerts` keystore.
+Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](https://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html#JDK-8189131) binary for Linux x64 contains an **empty** `cacerts` keystore.
 
 <details><summary><b>View OpenJDK 9 CAs</b></summary>
 <!-- markdownlint-disable MD107 -->
@@ -1679,9 +1679,9 @@ Certificate details including DNS names are now publicly available even if the c
 
 * [trends.axibase.com](https://ct.googleapis.com/logs/argon2018/ct/v1/get-entries?start=115175247&end=115175247) CT log
 
-crt.sh (`https://crt.sh`) maintained by one of the CAs, COMODO, allows searching a consolidated log from multiple CT servers for certificates using wildcards.
+[`crt.sh`](https://crt.sh) maintained by one of the CAs, COMODO, allows searching a consolidated log from multiple CT servers for certificates using wildcards.
 
-* axibase.com certificates (`https://crt.sh/?Identity=%.axibase.com`)
+* `axibase.com` certificates (`https://crt.sh/?Identity=%.axibase.com`)
 
 ![](./images/ct_hostname_disclosure.png)
 
