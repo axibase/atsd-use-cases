@@ -137,7 +137,7 @@ LIMIT 10
 ![](./images/market-totals.png)
 [![](./images/button-new.png)](https://trends.axibase.com/c78e4e04#fullscreen)
 
-*Fig 5.* The above visualization tracks market totals across all observed metrics. Use the drop-down menu to narrow the displayed metrics to the top ten, bottom ten, or use the `*` wildcard symbol to show them all. **Metric:** `*`.
+*Fig 5.* The above visualization tracks market totals across all observed metrics. Use the drop-down list to narrow the displayed metrics to the top ten, bottom ten, or use the `*` wildcard symbol to show them all. **Metric:** `*`.
 
 Query:
 

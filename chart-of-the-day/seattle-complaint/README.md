@@ -11,7 +11,7 @@ problem and as of the last year, they've begun to publish the number of complain
 most reported problems.
 
 The chart, made in [ChartLab](https://apps.axibase.com/chartlab) based on ATSD, at the top of the screen shows the total number of complaints received from the beginning of the dataset last July all the way up
-until a few months ago, in June, and the chart below details the complaints by month. Use the drop-down menu at the top of
+until a few months ago, in June, and the chart below details the complaints by month. Use the drop-down list at the top of
 the visualization to change the subject of the complaint and see for yourself the changing rates of the main complaints in Seattle.
 
 ![](./images/SEA_COM2.png)

@@ -32,7 +32,7 @@ From the **SNS Dashboard**, navigate to the **Topics** page from the menu on the
 
 ![](./images/sns-1.png)
 
-Click the **ARN** link of the newly-created topic to configure additional details.
+Click **ARN**for the newly created topic to configure additional details.
 
 ![](./images/sns-2.png)
 
@@ -143,9 +143,9 @@ aws-cw webhook created:
 https://aws-cw:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
 ```
 
-Navigate to the **Topics** section of the **Simple Notification Service** page once again. On the same **Topic Details** page that establishes the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
+Navigate to **Topics** on **Simple Notification Service** once again. On **Topic Details**, which establishes the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
 
-Return to the **Create Subscription** form, and paste the Webhook URL in the **Endpoint** field. Be sure that the **Protocol** drop-down list is showing **HTTPS**.
+Return to **Create Subscription**, and paste the Webhook URL in **Endpoint**. Be sure that **Protocol** is showing **HTTPS**.
 
 AWS SNS notifications over HTTPS protocol do not support destination endpoints with self-signed SSL certificates. If your ATSD instance runs on a self-signed certificate, switch to the HTTP protocol or install a [CA-signed SSL certificate](https://axibase.com/docs/atsd/administration/ssl-self-signed.html) into ATSD.
 
@@ -165,7 +165,7 @@ Customize the generic ATSD launch command with your preferences from these optio
 
 Configure the [Mail Client](https://axibase.com/docs/atsd/administration/mail-client.html) by following the instructions here or by following the alternative launch instructions above.
 
-Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule is named `aws-cloudwatch-events`. Open the rule editor by clicking the link in the **Name** column. Select the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like ATSD to deliver email notifications.
+Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule is named `aws-cloudwatch-events`. Open the rule editor by clicking the link in the **Name** column. Select **Email Notifications** from the toolbar along the top of the screen and update **Recipients** to include those addresses to whom ATSD delivers email notifications.
 
 ![](./images/my-email.png)
 

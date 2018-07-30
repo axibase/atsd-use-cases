@@ -204,7 +204,7 @@ Apply single backticks to the following:
 **Exceptions**:
 
 * Do not backtick an acronym, unless it represents a field or parameter value.
-  * :white_check_mark: ``Select `GZIP` or `LZO` option in the **Codec** drop-down list.``
+  * :white_check_mark: ``Select `GZIP` or `LZO` option in **Codec**.``
   * :no_entry: ``The file is exported in `CSV` format.``
 * Do not use backticks in headings.
   * :white_check_mark: `## Install Python 3.5 using curl`.

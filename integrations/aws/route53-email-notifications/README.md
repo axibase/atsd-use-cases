@@ -30,7 +30,7 @@ This guide describes how to configure email alerts when a URL monitored by Route
 
     ![](./images/route53-region-error.png)
 
-7. If you have not already, configure the new alarm notification target by navigating to the **Alarms** tab and clicking the **Edit** button in the **Actions** column. Select the appropriate **Notification Target** from the drop-down list of existing targets.
+7. If you have not already, configure the new alarm notification target by navigating to the **Alarms** tab and clicking **Edit** under  **Actions**. Select the appropriate **Notification Target** from the drop-down list of existing targets.
 
     ![](./images/route53-alarm.png)
 
@@ -85,15 +85,15 @@ Complete the process below to enhance Route 53 alarms with your local ATSD insta
 
 2. Configure ATSD to accept HTTPS requests from AWS infrastructure servers with a [**CA-signed**](https://axibase.com/docs/atsd/administration/ssl-self-signed.html) SSL certificate. Alternatively, use the HTTP protocol when configuring the SNS subscription URL.
 
-3. Open the **Services** drop-down list and navigate to the **Simple Notification Service** page in the **Application Integration** section of the menu.
+3. Expand **Services** and navigate to **Simple Notification Service** under **Application Integration**.
 
     ![](./images/app-integration-sns.png)
 
-4. Open the **Topics** page from the toolbar on the left, and click the **ARN** link of the alert to integrate.
+4. Open **Topics** from the toolbar on the left, and click **ARN** integrate the alert.
 
     ![](./images/route53-slack-subscription.png)
 
-5. In the **Subscriptions** section of the **Topic Details** page, click **Create Subscription** to enable enriched emails with contextual information. Click **Create Subscription** and use the webhook URL in the **Endpoint** field:
+5. In the **Subscriptions** section of the **Topic Details** page, click **Create Subscription** to enable enriched emails with contextual information. Click **Create Subscription** and use the webhook URL in **Endpoint**:
 
     ```elm
     https://aws-cw:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version

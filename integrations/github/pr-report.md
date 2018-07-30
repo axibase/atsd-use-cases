@@ -92,23 +92,23 @@ Upon successful completion, **Mail Client** in ATSD sends subscribed users a con
 
 ## Configure Subscriber List
 
-After initial launch, you may modify the list of subscribers at any time. Log in to the ATSD web interface, accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports). Open the **Alerts** menu and select **Rules**.
+After initial launch, you may modify the list of subscribers at any time. Log in to the ATSD web interface, accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports). Open **Alerts** and select **Rules**.
 
 ![](./images/alerts-rules.png)
 
-Search for the `github-daily-pr-status` rule and open the **Rule Editor** by clicking the link in the **Name** column.
+Search for the `github-daily-pr-status` rule and open the **Rule Editor** by clicking the link under **Name**.
 
 ![](./images/search-rule.png)
 
-Open the **Email Notifications** tab in the **Rule Editor** and modify the **Recipients** field. Emails must be comma-separated.
+Navigate to **Email Notifications** in the **Rule Editor** and modify **Recipients**. Emails must be comma-separated.
 
 ![](./images/add-new-email.png)
 
 ## Configuring Report Delivery
 
-By default, the `github-daily-pr-status` rule delivers a report upon launch and then again every morning at 5:00 AM server local time. Open the **Settings** menu in ATSD and select **System Information** to view server local time.
+By default, the `github-daily-pr-status` rule delivers a report upon launch and then again every morning at 5:00 AM server local time. Open **Settings** in ATSD and select **System Information** to view server local time.
 
-Modify delivery time by opening the `github-daily-pr-status` rule from the **Rules** page. The **Condition** field contains:
+Modify delivery time by opening `github-daily-pr-status` on **Rules**. The **Condition** contains:
 
 ```java
 now.getHourOfDay() == 5
@@ -124,7 +124,7 @@ Report delivery now occurs at 6:00 PM server local time.
 
 ## Report Contents
 
-The `github-daily-pr-status` rule builds an HTML table with information returned by the GraphQL query according to the configuration found in the **Text** field of the **Email Notifications** tab:
+The `github-daily-pr-status` rule builds an HTML table with information returned by the GraphQL query according to the configuration found in **Text** on the **Email Notifications** tab:
 
 ```javascript
 ${addTable(

@@ -27,7 +27,7 @@ The **marathon_apps** JSON job queries the Marathon `/v2/apps` API endpoint for 
 
 In the **Jobs** drop-down list, select **JSON** jobs.
 
-> By default, the **marathon_apps** job is not enabled and therefore not visible. Be sure that the **Status** drop-down list displays all jobs to proceed.
+> By default, the **marathon_apps** job is not enabled and therefore not visible. Be sure that **Status** displays all jobs to proceed.
 
 Open the **JSON Job** page, then open the **JSON Configuration** page by clicking the **apps** link. On the **JSON Configuration** page, open **HTTP Pool** settings.
 

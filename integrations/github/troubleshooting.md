@@ -10,7 +10,7 @@ The page contains a list of recently received webhook requests.
 
 ![](./images/webhook-diag.png)
 
-Under the **Details** column, click the **View** link to see webhook request parameters, the payload, and the generated ATSD message.
+Under the **Details** column, click **View** to see webhook request parameters, the payload, and the generated ATSD message.
 
 ![](./images/webhook-confirm.png)
 

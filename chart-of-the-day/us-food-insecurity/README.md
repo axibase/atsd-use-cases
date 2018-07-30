@@ -8,7 +8,7 @@
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c8492399/2/#fullscreen)
 
-> Use the drop-down menus to navigate through time or observe a specific county.
+> Use the drop-down lists to navigate through time or observe a specific county.
 
 The United States of America is considered by most of the world to be a land of plenty, but that does not mean that
 food security problems do not exist. In fact, an average one in seven persons is labeled as food insecure by the United States

@@ -36,7 +36,7 @@ the last fifty years.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/62a380f8/3/#fullscreen)
 
-> Open the ChartLab visualization above and navigate through time using the drop-down menu to change to change the observation period.
+> Open the ChartLab visualization above and navigate through time using the drop-down list to change to change the observation period.
 
 ## New Players
 

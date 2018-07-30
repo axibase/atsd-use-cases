@@ -6,11 +6,11 @@ A Scheduled SQL Query is executed by the database on a schedule. Before the quer
 
 Follow this process to add a new Scheduled SQL Query to your local ATSD instance.
 
-1. Expand the **SQL** menu and select **Scheduled Queries**.
+1. Expand **SQL** and select **Scheduled Queries**.
 
     ![](./images/sql-schd.png)
 
-2. From the **Scheduled Queries** page, expand the split button at the bottom of the page and click **Import**.
+2. From the **Scheduled Queries** page, expand the split-button at the bottom of the page and click **Import**.
 
     ![](./images/sql-split-import.png)
 

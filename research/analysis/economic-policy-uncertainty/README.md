@@ -29,7 +29,7 @@ This box chart shows the range of the EPU index for each of the 4 regions. A wid
 ![](./images/epu-box-chart.png)
 [![](./images/button.png)](https://apps.axibase.com/chartlab/af5d576e/2/#fullscreen)
 
-*Fig 2*: Use the drop-down menus in the ChartLab sandbox to change the date range of the visualization. Open the Editor window to modify percentile range with a `percentile = X%/Y%` expression where `X` and `Y` are the values of the percentile range you would like to display.
+*Fig 2*: Use the drop-down lists in the ChartLab sandbox to change the date range of the visualization. Open the Editor window to modify percentile range with a `percentile = X%/Y%` expression where `X` and `Y` are the values of the percentile range you would like to display.
 
 Tracking the EPU Index for the People's Republic of China alongside more concrete metrics can be used to examine the validity of the EPU Index. Shown below, the EPU is placed alongside real PRC Treasury Securities rates for the last decade and a half. The quarterly and bi-annual averages are compared in the same environment and a `wtavg` expression is used to smooth the occasionally volatile movement of both indices. Treasury Securities are a good tool for tracking economic potential and growth because they show the interest rates that businesses borrowing money are paying to their lenders. Historically speaking, a lower interest rate usually encourages business to borrow money and expand their operations.
 

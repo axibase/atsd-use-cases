@@ -32,7 +32,7 @@ Read more about selecting series in the [Charts Documentation](https://axibase.c
 
 ## Metrics Reference Page
 
-For a [listing](https://trends.axibase.com/public/reference.html) of available metrics stored in ATSD and accessible to **Trends** users, click the **Reference** button in the top toolbar.
+For a [listing](https://trends.axibase.com/public/reference.html) of available metrics stored in ATSD and accessible to **Trends** users, click **Reference** in the top toolbar.
 
 ![](./images/ref-button.png)
 
@@ -109,7 +109,7 @@ To save the portal under an entirely new URL click **Clone**.
 
 ## Pre-Defined Widgets
 
-Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections, use these widgets as templates for unique charts.
+Click **Widgets** in the upper toolbar to copy pre-defined widget sections, use these widgets as templates for unique charts.
 
 ![](./images/pre-def-func.png)
 

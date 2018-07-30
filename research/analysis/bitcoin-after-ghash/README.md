@@ -22,7 +22,7 @@ the large-scale nature of certain operations gave rise to better results.
 
 _Source_: [CoinDesk](https://www.coindesk.com/price/)
 
-> Open the ChartLab visualization above and navigate through time using the drop-down menus at the top of the screen.
+> Open the ChartLab visualization above and navigate through time using the drop-down lists at the top of the screen.
 
 In July 2014, a Bitcoin mining pool known as [GHash.IO](http://ghash.io/) breached an unspoken Bitcoin convention by achieving 51%
 of the total hash power for the first time in the short history of Bitcoin, which established what became the first Bitcoin trust.
@@ -38,7 +38,7 @@ transactions also decreased as shown below.
 
 _Source_: Quandl - [Market Capitalization](https://www.quandl.com/data/BCHAIN/MKTCP-Bitcoin-Market-Capitalization), [Estimated Transaction Value](https://www.quandl.com/data/BCHAIN/ETRVU-Bitcoin-Estimated-Transaction-Volume-USD)
 
-> Open the ChartLab visualization above and navigate through time using the drop-down menus at the top of the screen.
+> Open the ChartLab visualization above and navigate through time using the drop-down lists at the top of the screen.
 
 For those unfamiliar with bitcoin mining technique and terminology, the currency operates using a blockchain protocol, that is,
 all bitcoins are inseparably linked through a combination of numbers designating all previous bitcoin transactions. Miners

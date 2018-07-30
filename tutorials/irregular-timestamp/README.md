@@ -44,11 +44,11 @@ Using Excel, Numbers, or LibreOffice to concatenate the `Month` and `Year` colum
 
 Open the **Data > CSV Parsers** page and create a new parser for this file. Alternatively, download the [parser configuration](./resources/irregular-timestamp-parser.xml) and follow the [upload instructions](../shared/import-csv-parser.md) to import the configuration into ATSD.
 
-If you manually create the parser, complete the **Timestamp Columns** field to define both columns which contain a piece of the fragmented timestamp separated by semi-colon, comma, or line break.
+If you manually create the parser, use **Timestamp Columns** to define both columns which contain a piece of the fragmented timestamp separated by semi-colon, comma, or line break.
 
 ![](./images/timestamp-column.png)
 
-Define the **Timestamp Type** as **Pattern** and specify the pattern in the **Timestamp Pattern** field.
+Define the **Timestamp Type** as **Pattern** and specify the pattern in **Timestamp Pattern**.
 
 ![](./images/timestamp-pattern.png)
 

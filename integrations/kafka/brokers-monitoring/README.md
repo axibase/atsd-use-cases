@@ -86,7 +86,7 @@ Open the **Portals** menu and select **Configure**.
 
 ![](./images/portals-enable-1.png)
 
-Select **Kafka Broker** and **Kafka Cluster** portals via checkbox and enable these portals using the split button at the bottom of the page.
+Select **Kafka Broker** and **Kafka Cluster** portals via checkbox and enable these portals using the split-button at the bottom of the page.
 
 ![](./images/portals-enable-2.png)
 
