@@ -249,7 +249,7 @@ Apply single backticks to the following:
 * Avoid punctuation symbols in headers except colon (`:`).
   * :no_entry: `## Import Data from File (Directory)`.
 
-  <!-- markdownlint-disable MD105 -->
+  <!-- markdownlint-enable MD105 -->
 
 ### Links
 
@@ -327,6 +327,8 @@ word | alternatives
 * SSN: `000-00-0000`.
 * File path: `/path/to/new-dir`, `/path/to/new-file`. Replace `new-dir` and `new-file` to indicate the purpose, for example, `/path/to/backup-dir`.
 
+<!-- markdownlint-disable MD109 -->
+
 ### Interface Elements
 
 * Interface elements must be **bold**, exactly as they appear in the UI.
@@ -357,6 +359,8 @@ word | alternatives
   * :no_entry: `Click **Web Notifications** tab`
 * Use `log in` as verb and `login` as noun.
   * :white_check_mark: `Log in to ATSD`.
+
+<!-- markdownlint-enable MD109 -->
 
 ### Issue Subjects
 

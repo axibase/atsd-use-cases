@@ -82,7 +82,7 @@ You begin receiving messenger notifications the next time someone creates a new 
 
 ![](./images/fork-message.png)
 
-**Repository**, **User**, and **New Repository** links redirect you to the original repository, the user who forked it, and the newly-created repository, respectively.
+**Repository**, **User**, and **New Repository** redirect you to the original repository, the user who forked it, and the newly-created repository, respectively.
 
 ## Explore ATSD
 

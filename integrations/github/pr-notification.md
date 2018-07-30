@@ -82,7 +82,7 @@ You begin receiving messenger notifications the next time someone raises a Pull 
 
 ![](./images/slack-pr.png)
 
-**Repository**, **User**, and **PR** links redirect you to the repository where the PR is open, the user who opened the PR, and the PR page itself, respectively.
+**Repository**, **User**, and **PR** redirect you to the repository where the PR is open, the user who opened the PR, and the PR page itself, respectively.
 
 ## Explore ATSD
 

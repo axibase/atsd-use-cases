@@ -81,7 +81,7 @@ You begin receiving messenger notifications the next time someone pushes to your
 
 ![](./images/slack_push.png)
 
-**Repository** and **User** links redirect you to the repository where the push occurred and user who made the push, respectively.
+**Repository** and **User** redirect you to the repository where the push occurred and user who made the push, respectively.
 
 ## Explore ATSD
 

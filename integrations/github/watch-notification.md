@@ -82,7 +82,7 @@ You begin receiving messenger notifications the next time someone watches your G
 
 ![](./images/-slack-watch.png)
 
-**Repository** and **User** links redirect you to the newly-watched repository and the newly-subscribed user, respectively.
+**Repository** and **User** redirect you to the newly-watched repository and the newly-subscribed user, respectively.
 
 ## Explore ATSD
 

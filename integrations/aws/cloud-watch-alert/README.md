@@ -18,7 +18,7 @@ On the left toolbar, click **Rules**. On the **Rules** page, click **Create New 
 
 ![](./images/cw1.png)
 
-On the following page, configure the rule to respond to an **Event Pattern** and in the **Build Event Pattern to Match...** drop-down list, select **All Events**. You can customize the filter later on.
+On the following page, configure the rule to respond to an **Event Pattern** and in **Build Event Pattern to Match...**, select **All Events**. You can customize the filter later on.
 
 ![](./images/cw-2.png)
 
@@ -42,7 +42,7 @@ On the **Topic Details** page, click **Create Subscription**.
 
 ![](./images/sns-3.png)
 
-Define the email address to which you would like AWS to send status change notifications. Be sure to select **Email** from the **Protocol** drop-down list.
+Define the email address to which you would like AWS to send status change notifications. Be sure to select **Email** under **Protocol**.
 
 ![](./images/email-subscription.png)
 
@@ -227,6 +227,6 @@ chat_id=-NNNNNNNNN
 
 Now, ATSD sends status change notifications via email and Telegram.
 
-A sample Telegram message is shown below. Telegram notifications contain links to newly-launched resources, as seen here:
+A sample Telegram message is shown below. Telegram notifications contain links to newly launched resources, as seen here:
 
 ![](./images/telegram-alerts.png)

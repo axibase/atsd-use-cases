@@ -11,7 +11,7 @@
 ## Index
 
 The following table contains the entire set of included metrics as well as their corresponding visualization figure for easy navigation.
-Use the clickable links in the Figure column to jump between visualizations and in ChartLab, use the drop-down lists to toggle
+Use clickable links under `Figure` to jump between visualizations and in **ChartLab**, use the drop-down lists to toggle
 between metrics.
 
 | Metric | Comment | Figure |

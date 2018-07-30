@@ -6,11 +6,10 @@ This guide describes how to configure email alerts when a URL monitored by Route
 
 ## Initial Configuration
 
-1. From the AWS **Console Home** page, navigate to Route53 by opening the **Services** drop-down list in the upper toolbar and clicking **Route53** under the **Networking and Content Delivery** section.
-
+1. From the AWS **Console Home** page, navigate to Route53 by expanding **Services** in the upper toolbar and clicking **Route53** under **Networking and Content Delivery**.
     ![](./images/route53-locate.png)
 
-2. Select **Health Checks** from the toolbar on the left and click **Create Health Check**. If you have not set up Route53 services with your AWS account, bypass the introductory screen by clicking **Get started now** under **Avaialability Monitoring**.
+2. Select **Health Checks** from the toolbar on the left and click **Create Health Check**. If you have not set up Route53 services with your AWS account, bypass the introductory screen by clicking **Get started now** under **Availability Monitoring**.
 
     ![](./images/route53-menu.png)
 
