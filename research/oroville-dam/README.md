@@ -31,11 +31,9 @@ Data is collected hourly for the Oroville dam for the following metrics:
 * Spillway Outflow (cubic feet/second)
 * Rain (inches)
 
-Below is an image showing these CDWR metrics in ATSD. You can toggle between the different metrics by clicking on the drop-down list.
+Below is an image showing these CDWR metrics in ATSD. You can toggle between the different metrics with the drop-down list.
 
 ![Figure 1](./images/Figure1.png)
-
-You can explore the basic CDWR portal (loaded into ATSD) by clicking the button below:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/dee79515/11/#fullscreen)
 
@@ -52,8 +50,6 @@ below the threshold limit** between 11:00 pm on February 12th and 12:00 am (PT) 
 of 3,578,686 af on Sunday February 12th at 3:00 am.
 
 ![Figure 3](./images/Figure3.png)
-
-You can explore this portal by clicking the button below:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/dee79515#fullscreen)
 
@@ -73,8 +69,6 @@ Reservoir levels experienced their first significant uptick on December 10th, 20
 the dam experienced an increase in storage (with the exception of a handful of days). By toggling over each of the individual columns, notice the change in the storage
 for February 9th (237,689 af), 10th (39,522 af), and 11th (53,896 af), which is when the dam was overtopped.
 
-You can explore this portal by clicking on the button below:
-
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/dee79515/2#fullscreen)
 
 ## Reservoir Inflow, Outflows, and Precipitation
@@ -87,8 +81,6 @@ Below are three outputs for the Oroville dam:
 * Precipitation per day (inches) for 2017, 2016, 2015, 2014, and 2013. While inflows for 2017 are quite a bit greater than previous years totals precipitation totals in 2017 are not too far ahead of previous years.
 
 ![Figure 6](./images/Figure6.png)
-
-You can explore this portal by clicking on the button below:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/dee79515/10/#fullscreen)
 
@@ -109,8 +101,6 @@ levels. Periods with rainfall accumulation less than 4 inches experienced much l
 | Jan-07_Jan-10 |      6.2          | 2,050,031 (Jan-06) to 2,830,139 (Jan-14)                   |  **780,108**    |
 | Jan-18_Jan-22 |      3.0          | 2,811,974 (Jan-17) to 2,884,036 (Jan-25)                   |     72,062      |
 | Feb-02_Feb-10 |      7.3          | 2,799,106 (Feb-05) to 3,578,686 (Feb-12)                   |  **779,580**    |
-
-You can explore this portal by clicking on the button below:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/dee79515/7/#fullscreen)
 
@@ -153,7 +143,7 @@ dam storage to reach threshold capacity for a given amount of rainfall per day.
 | 3 inch per day | +268,337.5        | 307,145           | 1.144 days ~ 27 hours   |
 
 Come back to these **ChartLab** portals in the coming days and look at the **realtime analysis** for updates on the Oroville dam. **You do not need to install ATSD** to continue to monitor
-the situation. Simply by clicking on each of the ****ChartLab** buttons**, you can keep up to date on dam storage levels, dam inflow, dam outflow, spillway outflow, and precipitation.
+the situation. Open the **ChartLab** portals to keep up to date on dam storage levels, dam inflow, dam outflow, spillway outflow, and precipitation.
 
 ### Action Items
 

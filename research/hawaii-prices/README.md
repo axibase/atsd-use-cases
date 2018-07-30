@@ -38,7 +38,7 @@ This visualization tool supports time series visualization but lacks tools to pe
 
 These instructions enumerate the process of using plotly to visualize the data.
 
-Open the Hawaii Fuel Prices dataset, and select **plotly** from the **Open With** drop-down list.
+Open the Hawaii Fuel Prices dataset, and select **plotly** from **Open With**.
 
 ![ZZZ](./images/ZZZ.png)
 

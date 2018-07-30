@@ -27,7 +27,7 @@ A brief tutorial on data modification in the FRED interface is shown below:
 
 ![](./images/tut-2.png)
 
-* From the **Units** drop-down list, select a transformation.
+* Expand **Units** and select a transformation.
 
 ![](./images/tut-3.png)
 

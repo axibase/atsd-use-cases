@@ -33,7 +33,7 @@ Data is visualized using **Trends** service from Axibase, a public data reposito
 
 ### Working Population as a Portion of Total Population
 
-Open the **Trends** visualization and use the drop-down menu to navigate through time to compare working-aged population to the United States total population.
+Open the **Trends** visualization and use the drop-down list to navigate through time to compare working-aged population to the United States total population.
 
 ![](./images/working-population.png)
 [![](./images/button-new.png)](https://trends.axibase.com/2228bbde#fullscreen)

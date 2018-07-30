@@ -200,7 +200,7 @@ range of values.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0f8b70ab/10/#fullscreen)
 
-> Open the diagram in ChartLab and use the drop-down menu at the top of the screen to see the changing total values of each
+> Open the diagram in ChartLab and use the drop-down list at the top of the screen to see the changing total values of each
 metric relative to one another throughout the entire observed period.
 
 Based on the above diagram, the relative levels of each measured pollutant are shown alongside one another. Throughout the

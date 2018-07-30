@@ -6,11 +6,11 @@ An Entity configuration describes a monitored object. The [entity record](https:
 
 Follow this process to import entity records into your local ATSD instance.
 
-1. Click the **Entities** link in the toolbar on the left.
+1. Click **Entities** in the toolbar on the left.
 
     ![](./images/entities.png)
 
-2. From the **Entities** page, expand the split button at the bottom of the page and click **Import**.
+2. On **Entities**, expand the split-button at the bottom of the page and click **Import**.
 
     ![](./images/entity-import.png)
 
@@ -22,6 +22,6 @@ Return to the **Entities** page to view the newly-imported entities.
 
 ## Uploading Multiple Configuration Files
 
-Note that multiple files may be uploaded together or as an archive by opening the **Settings** menu, expanding the **Diagnostics** section, selecting the **Backup Import** page, and completing the form.
+Note that multiple files may be uploaded together or as an archive by opening **Settings**, expanding **Diagnostics**, selecting **Backup Import**, and completing the form.
 
 ![](./images/backup-import.png)

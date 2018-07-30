@@ -218,7 +218,7 @@ The visualization created by the `rate` setting configuration is shown below.
 
 ### Create Derived Series Using `replace-value`
 
-Use `value` and `previousValue` fields in the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) function.
+Use `value` and `previousValue` in the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) function.
 
 ```ls
 [series]

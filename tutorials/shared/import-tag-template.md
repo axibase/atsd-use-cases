@@ -10,7 +10,7 @@ Follow this process to upload a tag template to your local ATSD instance.
 
     ![](./images/settings-tag-templates.png)
 
-2. From the **Tag Templates** page, expand the split button, click **Import**
+2. From the **Tag Templates** page, expand the split-button, click **Import**
 
     ![](./images/split-import.png)
 

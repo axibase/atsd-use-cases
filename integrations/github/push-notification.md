@@ -20,7 +20,7 @@ Execute the `docker run` command to launch a local ATSD [sandbox](https://github
 
 Replace the `SERVER_URL` parameter with the public DNS name of the Docker host where the sandbox container is running. The Docker host must be externally accessible to receive webhook notifications from GitHub servers.
 
-To acquire the **Bot User Token**, open the [Slack API](https://api.slack.com/apps), select the application to use for integration, and navigate to the **Install App** tab. The **Bot User OAuth Access Token** field contains the needed information. Note that you must be a collaborator for the application which you want to integrate.
+To acquire the **Bot User Token**, open the [Slack API](https://api.slack.com/apps), select the application to use for integration, and navigate to the **Install App** tab. **Bot User OAuth Access Token** contains the needed information. Note that you must be a collaborator for the application which you want to integrate.
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 \
@@ -81,7 +81,7 @@ You begin receiving messenger notifications the next time someone pushes to your
 
 ![](./images/slack_push.png)
 
-**Repository** and **User** links redirect you to the repository where the push occurred and user who made the push, respectively.
+**Repository** and **User** redirect you to the repository where the push occurred and user who made the push, respectively.
 
 ## Explore ATSD
 

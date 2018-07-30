@@ -243,7 +243,7 @@ Insert your query results into Redash and create visualizations using SQL result
 
 Prepare a visualization for the last SQL query tracking worldwide visa issuances:
 
-1. After completing the walkthrough, from the **Queries** drop-down list select **New Queries**.
+1. After completing the walkthrough, expand **Queries** and select **New Queries**.
 
    ![Figure6](./images/Figure6.png)
 
@@ -257,11 +257,11 @@ Prepare a visualization for the last SQL query tracking worldwide visa issuances
 
    ![Figure8](./images/Figure8.png)
 
-5. Specify visualzation details. Select `tags.country` as the **X Column** and `tags.visa_type` as the **Y Column**. Give the visualization a title with the **Visualization Name** field.
+5. Specify visualization details. Select `tags.country` as the **X Column** and `tags.visa_type` as the **Y Column**. Give the visualization a title with **Visualization Name**.
 
    ![Figure9](./images/Figure9.png)
 
-6. Select the **X Column** tab. Select **Category** as the **Scale**, clear the **Sort Values** checkbox, and modify the height of the column to fit all the country names. Click **Save**.
+6. Select the **X Column** tab. Select **Category** as the **Scale**, clear **Sort Values**, and modify the height of the column to fit all the country names. Click **Save**.
 
    ![Figure10](./images/Figure10.png)
 

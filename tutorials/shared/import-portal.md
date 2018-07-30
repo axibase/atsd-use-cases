@@ -6,11 +6,11 @@ A Portal is a collection of real-time data visualizations grouped together in on
 
 Follow this process to upload a Portal to your local ATSD instance.
 
-1. Click the **Portals** link in the top menu and select **Configure**.
+1. Click **Portals** in the top menu and select **Configure**.
 
     ![](./images/portal-config.png)
 
-2. From the **Portals** page, expand the split button and click **Import**.
+2. From the **Portals** page, expand the split-button and click **Import**.
 
     ![](./images/import-portal.png)
 

@@ -30,7 +30,7 @@ Log into ATSD and click **Portals** in the top menu. Import the [latency portal]
 
 ## Import Entity View
 
-Click the **Entity View** link in the tool menu on the left and import the [Route53 entity view](./resources/entity-views.xml) from the XML file as described by the [Import Instructions](../../../tutorials/shared/import-entity-view.md).
+Click **Entity View** in the tool menu on the left and import the [Route53 entity view](./resources/entity-views.xml) from the XML file as described by the [Import Instructions](../../../tutorials/shared/import-entity-view.md).
 
 ## Results
 

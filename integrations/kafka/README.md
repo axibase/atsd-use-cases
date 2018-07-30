@@ -5,10 +5,10 @@ This document describes how to monitor availability and performance of [Apache K
 ## Step 1: Configure Axibase Collector
 
 1. Log in to Axibase Collector at `https://collector_hostname:9443`
-2. From the **Jobs** page select **Import** by opening the split button below the table.
+2. From the **Jobs** page select **Import** by opening the split-button below the table.
 3. Import the [`kafka-jmx`](./resources/job_jmx_kafka-jmx.xml) job.
 4. Locate the newly-imported `kafka-jmx` job on the **Jobs** page.
-5. On the **JMX Job** page, enable the job status with the **Enabled** checkbox.
+5. On the **JMX Job** page, enable the job status with **Enabled**.
 6. Adjust the `cron` expression if required. For more information on `cron` expressions, see [Scheduling](https://axibase.com/docs/axibase-collector/scheduling.html).
 7. Select a target ATSD database for storing data.
 8. Click **Save**.
@@ -35,7 +35,7 @@ This document describes how to monitor availability and performance of [Apache K
 ### Configure properties collection
 
 1. Select `kafka-properties` configuration.
-2. Set **Host**, **Port**, **User Name**, **Password**, and **Entity** fields as described in the previous section.
+2. Set **Host**, **Port**, **User Name**, **Password**, and **Entity** as described in the previous section.
 3. Click **Test** to validate the configuration.
 4. Click **Save**.
 
@@ -47,8 +47,8 @@ This document describes how to monitor availability and performance of [Apache K
 2. Navigate to the **Metrics** page and verify that `jmx.kafka.*` metrics are available.
 3. Navigate to the **Entities** page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
 4. Open the **Settings** menu, select **Entity Groups** and import [Kafka](./resources/groups.xml) entity group.
-5. Open the **Portals** menu, select **Configure** and import [Kafka](./resources/portal-configs.xml) portals (check on the **Auto-enable New Portals** check box).
-6. Open the ![](./images/alerts.png) **Alerts** menu, select **Rules** and import [Kafka](./resources/rules.xml) rules (check the **Auto-enable New Rules** check box).
+5. Open the **Portals** menu, select **Configure** and import [Kafka](./resources/portal-configs.xml) portals (select **Auto-enable New Portals**).
+6. Open the ![](./images/alerts.png) **Alerts** menu, select **Rules** and import [Kafka](./resources/rules.xml) rules (select **Auto-enable New Rules**).
 7. Open the ![](./images/entity_views.png) **Entity Views** menu, select **Configure** and import [Kafka](./resources/entity-views.xml) entity view.
 
 ## Step 3: Verification

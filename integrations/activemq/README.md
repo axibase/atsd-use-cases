@@ -138,7 +138,7 @@ If the `activemq_hostname` cannot be resolved, add it to `/etc/hosts` manually.
 
 1. Log in to Axibase Collector at `https://collector_hostname:9443`.
 2. From the **Jobs** page, locate the `jmx-activemq` job.
-3. On the **JMX Job** page, enable collection with the **Enabled** check box, click **Save**.
+3. On the **JMX Job** page, allow collection with **Enabled**, click **Save**.
 4. Adjust the `cron` expression if needed. By default, Collector executes the job every ten seconds. For more information on `cron` expressions, see [Scheduling](https://axibase.com/docs/axibase-collector/scheduling.html).
 
 ![JMX_JOB](https://axibase.com/wp-content/uploads/2016/03/jmx_job_to_configuration.png)
@@ -163,7 +163,7 @@ If the `activemq_hostname` cannot be resolved, add it to `/etc/hosts` manually.
 ### Configuring Property Collection
 
 1. From the table on the **JMX Job** page, click **Edit** next to the `activemq-property` configuration.
-2. Set Host, Port, User Name, Password, and Entity fields as described in the previous section.
+2. Set `Host`, `Port`, `User Name`, `Password`, and `Entity` as described in the previous section.
 3. Click **Test** to validate the configuration.
 4. Click **Save**.
 
@@ -171,7 +171,7 @@ If the `activemq_hostname` cannot be resolved, add it to `/etc/hosts` manually.
 
 1. Log in to ATSD web interface at `https://atsd_hostname:8443`.
 2. Open the **Entities** tab.
-3. Locate the ActiveMQ host in the **Entities** list or enter the name in **Search Bar** above the list.
+3. Locate the `ActiveMQ` host in the list or enter the name in **Search Bar** above the list.
 4. Click the **Portal** icon next to the host.
 
 ![](./images/hostname-portal-icon.png)

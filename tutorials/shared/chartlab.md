@@ -48,7 +48,7 @@ ChartLab contains each of these **Widgets**, shown in this image.
 
 See the [Axibase website](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for complete information about available widgets.
 
-To add a Widget template to the **Editor** window, open the **Widget** drop-down list and select a widget.
+To add a widget template to the **Editor** window, expand **Widget** and choose from available templates.
 
 ## Run
 
@@ -81,7 +81,7 @@ Quickly reformat all text shown in the **Editor** window. Select all text and us
 
 If you would like to create a new version of the current portal by adding a version suffix to the current URL, click **Save**.
 
-Use the **Versions** drop-down list to select a specific iteration of a given chart.
+Expand **Versions** to select a specific iteration of a given chart.
 
 ![Figure 8](./images/Figure8.png)
 

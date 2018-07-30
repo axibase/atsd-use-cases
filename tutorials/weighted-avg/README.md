@@ -42,8 +42,7 @@ The passenger enplanement data, aggregated annually is shown below:
 The granularization is mismatched and the observed periods differ by twenty years. The latter problem has a simple solution, modify the observation period using the drop-down lists in **ChartLab** or hardcode the specific timespan in the editor
 window with the `starttime` setting, but the former does not offer such an obvious solution.
 
-The syntax required to modify the dataset to reflect the weighted average is two parts and shown below. It can be placed under
-the `[widget]` field to modify all available series, or placed under an individual `[series]` field to modify only one series.
+The syntax required to modify the dataset to reflect the weighted average is two parts and shown below. It can be placed under `[widget]` settings to modify all available series, or placed under individual `[series]` settings to modify a single series.
 
 ```ls
 statistic = wtavg

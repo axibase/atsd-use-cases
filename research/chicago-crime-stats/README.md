@@ -39,16 +39,11 @@ down as winter approaches.
 
 ![Figure 1](./images/Figure1.png)
 
-Click **ChartLab** button below to take a closer look at these numbers, as well as monthly totals for 31 other crime types, including weapons violations, prostitution, robbery, assault, and
-domestic violence, among many others.
-
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba#fullscreen)
 
 From the previous figure it is difficult to tell how monthly totals for 2016 compare to previous years. Murder totals are shown to be higher in almost every category in 2016.
 
 ![Figure 5](./images/Figure5.png)
-
-Click this button to explore this **ChartLab** portal:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/16/#fullscreen)
 
@@ -110,7 +105,7 @@ is the same at 68%.
 
 ![Figure 6](./images/Figure6.png)
 
-Click this button to explore the **ChartLab** portal for the top five locations for homicides in 2015 and 2016:
+Explore the **ChartLab** portal for the top five locations for homicides in 2015 and 2016:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/d5c04002/6/#fullscreen)
 
@@ -162,7 +157,7 @@ There has been a long term decrease in crime as a whole in Chicago.
 
 ![Figure 3](./images/Figure3.png)
 
-Click the button below to explore this **ChartLab** portal:
+Explore the **ChartLab** portal:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/4/#fullscreen)
 
@@ -193,7 +188,7 @@ year reduction of 48.0% for narcotics makes one think that there may be somethin
 
 ![Figure 7](./images/Figure7.png)
 
-Click this button to check out narcotic arrests in Chicago:
+Explore the narcotics arrests portal:
 
 [![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/7/#fullscreen)
 

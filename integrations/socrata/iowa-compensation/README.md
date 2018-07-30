@@ -78,14 +78,14 @@ Filter data and create interactive functions for any visualization. Open the **C
 * **Industry**: filter each of the 23 industries. The visualization above shows all industries.
 * **Sub-Category**: filter by industry group.
 
-Select **Farm** from the **`industry_type`** drop-down list.The total employee compensation for farming fluctuates quite
+Select **Farm** from **`industry_type`**.The total employee compensation for farming fluctuates quite
 often based on seasonality.
 
 ![Figure 7](./images/Figure7.png)
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/131b7670)
 
-Next, select **Government and Government Enterprises** from the **`industry_type`** drop-down list. The compensation for
+Next, select **Government and Government Enterprises** from **`industry_type`**. The compensation for
 **federal and civilian** and **military** barely increases over time but **state and local** compensation shows steady growth.
 
 ![Figure 8](./images/Figure8.png)
@@ -96,13 +96,13 @@ Exclude series from the filtered view by clicking on the series legend. The imag
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/cb62aab7)
 
-Select the **private non-farm** series using the **`industry_type`** drop-down list.
+Select the **private non-farm** series using **`industry_type`**.
 
 ![Figure 2](./images/Figure2.png)
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0c459d5f)
 
-Filter for the **Construction** and **Manufacturing** metrics by using the **`industry`** drop-down list. Both industries visibly suffered during the Great Recession.
+Filter for the **Construction** and **Manufacturing** metrics by using **`industry`**. Both industries visibly suffered during the Great Recession.
 
 ![Figure 3](./images/Figure3.png)
 
@@ -120,12 +120,12 @@ Insert an additional dataset into ATSD to give the above data context. For examp
 
 1. Navigate to [https://data.iowa.gov](https://data.iowa.gov).
 2. On the home page, select the **Employment** tab.
-3. Scroll to the bottom of the page and open the **Topics** drop-down list. Select **Employment**.
+3. Scroll to the bottom of the page and expand **Topics**. Select **Employment**.
 
    ![Figure 4](./images/Figure4.png)
 
 4. Select [**Iowa Seasonally Adjusted Non-Farm Employment by Month and Industry**](https://data.iowa.gov/Economy/Iowa-Seasonally-Adjusted-Non-Farm-Employment-by-Mo/sxz8-4swt).
-5. Open the **Download** drop-down list and select **JSON**.
+5. Expand **Download** and select **JSON**.
 
    ![Figure 5](./images/Figure5.png)
 

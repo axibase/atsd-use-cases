@@ -93,7 +93,7 @@ docker run \
 * Log in to ATSD web interface at `https://atsd_hostname:8443`.
 * Open the **Metrics** tab in the main menu and search for metrics that start with `cadvisor`.
 * Open the **Entities** tab in the main menu.
-* Select `cadvisor-hosts` in **Entity-Group** drop-down list.
+* Select `cadvisor-hosts` in **Entity-Group**.
 * Click **Portal** icons to view the build-in cAdvisor portals.
 
 > Disk metrics are only collected from containers with attached volumes.

@@ -152,7 +152,7 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/83d2a616/9/#fullscreen)
 
-Open [ChartLab](https://www.axibase.com) with the button above and navigate through time using the drop-down list.
+Open **ChartLab** with the button above and navigate through time using the drop-down list.
 
 Despite consistent overall call numbers throughout the week, it is interesting to note that the number of fire-related calls
 made to the Hartford Fire Department is the highest on Sundays:

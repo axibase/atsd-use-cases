@@ -6,11 +6,11 @@ Metrics are numeric measurements stored in ATSD. The [metric record](https://axi
 
 Follow this process to import metric definitions into your local ATSD instance.
 
-1. Click the **Metrics** link in the toolbar on the left.
+1. Click **Metrics** in the toolbar on the left.
 
     ![](./images/metrics.png)
 
-2. From the **Metrics** page, expand the split button at the bottom of the page and click **Import**.
+2. From the **Metrics** page, expand the split-button at the bottom of the page and click **Import**.
 
     ![](./images/import-metric.png)
 
