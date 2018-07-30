@@ -327,7 +327,7 @@ word | alternatives
 * SSN: `000-00-0000`.
 * File path: `/path/to/new-dir`, `/path/to/new-file`. Replace `new-dir` and `new-file` to indicate the purpose, for example, `/path/to/backup-dir`.
 
-<!-- markdownlint-disable MD109 -->
+<!-- markdownlint-disable MD109 MD105 -->
 
 ### Interface Elements
 
@@ -360,7 +360,7 @@ word | alternatives
 * Use `log in` as verb and `login` as noun.
   * :white_check_mark: `Log in to ATSD`.
 
-<!-- markdownlint-enable MD109 -->
+<!-- markdownlint-enable MD109 MD105-->
 
 ### Issue Subjects
 

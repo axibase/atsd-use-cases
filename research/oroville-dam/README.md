@@ -143,7 +143,7 @@ dam storage to reach threshold capacity for a given amount of rainfall per day.
 | 3 inch per day | +268,337.5        | 307,145           | 1.144 days ~ 27 hours   |
 
 Come back to these **ChartLab** portals in the coming days and look at the **realtime analysis** for updates on the Oroville dam. **You do not need to install ATSD** to continue to monitor
-the situation. Simply by clicking on each of the ****ChartLab** buttons**, you can keep up to date on dam storage levels, dam inflow, dam outflow, spillway outflow, and precipitation.
+the situation. Open the **ChartLab** portals to keep up to date on dam storage levels, dam inflow, dam outflow, spillway outflow, and precipitation.
 
 ### Action Items
 
