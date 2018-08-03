@@ -4,11 +4,11 @@
 <metric>message</metric>
 <type>webhook</type>
 <source>axibase-bot</source>
-<tags>payload.user.id, user_id</tags>
+<tags>payload.user.id, payload.channel.id</tags>
 <tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
 <expression><![CDATA[message != 'Chart Type Selected']]></expression>
 <window>length(1)</window>
-<filter>type='webhook' &amp;&amp; source='axibase-bot' &amp;&amp; tags.event.subtype != 'bot_message' &amp;&amp; tags.event.username != 'axibase_bot'</filter>
+<filter>tags.event.subtype != 'bot_message' &amp;&amp; tags.event.username != 'axibase_bot'</filter>
 <severity>WARNING</severity>
 <alertOpenMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
 <alertMessage><![CDATA[${received_datetime}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
@@ -23,9 +23,11 @@
 <userExpressions>
 <expression><![CDATA[ifEmpty(tags.payload.channel.id, tags.channel_id) AS channel]]></expression>
 <expression><![CDATA[ifEmpty(tags.payload.user.id, tags.user_id) AS usr]]></expression>
-<expression><![CDATA[message!='Chart Type Selected'?'':scriptOut('search_metrics.py', [channel, usr]) AS metrics]]></expression>
+<expression><![CDATA[last_open().query AS last_query]]></expression>
+<expression><![CDATA[message != '/chart' ? (message != 'Chart Type Selected' ? last_query + ' AND ' + tags['payload.actions[0].selected_options[0]]]><![CDATA[.value']:last_query) :'entity:fred.stlouisfed.org' AS query]]></expression>
+<expression><![CDATA[scriptOut('dynamic_response.py',[query, message]) AS dynamic_response]]></expression>
 </userExpressions>
-<lastUpdated>1532430640565</lastUpdated>
+<lastUpdated>1533322236315</lastUpdated>
 <enabled>true</enabled>
 <disableEntityGrouping>false</disableEntityGrouping>
 <leavingEvents>false</leavingEvents>
@@ -68,12 +70,8 @@
 <key>attachments</key>
 <value>@if{message == '/chart'}&#13;
    ${replacementTable('slack').parent_category}&#13;
-@else{message == 'Parent Category Selected'}&#13;
-   ${replacementTable('slack').category}&#13;
-@else{message == 'Category Selected'}&#13;
-   ${replacementTable('slack').frequency}&#13;
-@else{message == 'Frequency Selected'}&#13;
-   ${replacementTable('slack').seasonal_adj}  &#13;
+@else{message IN ('Parent Category Selected','Category Selected','Frequency Selected')}&#13;
+   ${dynamic_response}  &#13;
 @else{message == 'Seasonal Adj. Selected'}&#13;
    ${replacementTable('slack').chart_type}  &#13;
 @else{}&#13;
@@ -96,12 +94,8 @@ null&#13;
 <key>attachments</key>
 <value>@if{message == '/chart'}&#13;
    ${replacementTable('slack').parent_category}&#13;
-@else{message == 'Parent Category Selected'}&#13;
-   ${replacementTable('slack').category}&#13;
-@else{message == 'Category Selected'}&#13;
-   ${replacementTable('slack').frequency}&#13;
-@else{message == 'Frequency Selected'}&#13;
-   ${replacementTable('slack').seasonal_adj}  &#13;
+@else{message IN ('Parent Category Selected','Category Selected','Frequency Selected')}&#13;
+   ${dynamic_response}  &#13;
 @else{message == 'Seasonal Adj. Selected'}&#13;
    ${replacementTable('slack').chart_type}  &#13;
 @else{}&#13;
@@ -177,11 +171,7 @@ null&#13;
 </cancelWebConfigParameters>
 <cancelWebConfigParameters>
 <key>text</key>
-<value>@if{metrics!=''} &#13;
-   ${addPortal('Axibase Bot Portal','fred.stlouisfed.org','',['type':tags["payload.actions[0].value"],'metrics':metrics])}&#13;
-@else{}&#13;
-   No metrics are found. Try again.&#13;
-@end{}</value>
+<value>${addPortal('Trends Bot Portal','fred.stlouisfed.org','',['type':tags["payload.actions[0].value"],'metrics':dynamic_response])}</value>
 </cancelWebConfigParameters>
 <first-enabled>false</first-enabled>
 <repeat-enabled>false</repeat-enabled>
@@ -196,8 +186,8 @@ null&#13;
 <intervalCount>5</intervalCount>
 <intervalUnit>MINUTE</intervalUnit>
 </derivedCommandStrategy>
-<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
-<alertMessageEnabled>false</alertMessageEnabled>
+<alertOpenMessageEnabled>true</alertOpenMessageEnabled>
+<alertMessageEnabled>true</alertMessageEnabled>
 <alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
 <alertOpenScriptEnabled>false</alertOpenScriptEnabled>
 <scriptEnabled>false</scriptEnabled>

@@ -25,7 +25,7 @@ This document describes how to create bot that sends portal with metrics and the
 
 Features of [metrics](https://trends.axibase.com/public/reference.html) stored in the Trends ATSD:
 
-* there are 33,760 metrics;
+* there are > 33,000 metrics;
 * metric names are not informative.
 
 Therefore, the user will be asked to select multiple tags: "Parent Category", "Category", "Frequency", "Seasonal Adjustment".
@@ -38,7 +38,7 @@ ATSD will execute [search](https://axibase.com/docs/atsd/api/meta/misc/search.ht
 * Create webhook user as described [here](https://axibase.com/docs/atsd/administration/user-authorization.html#webhook-user).
 * Copy webhook URL.
 
-To query messages and search series user also must have `API_DATA_READ` and `API_META_READ` roles, and `Read` permission for bot entities:
+To search series user also must have `API_META_READ` role and `Read` permission for bot entities:
 
 ![](./images/trends_bot_9.png)
 
@@ -306,156 +306,6 @@ To send buttons and menu it is useful to store preconfigured JSON files. ATSD Re
 
 Navigate to **Data > Replacement Tables** page an create a table with JSON format and the following keys:
 
-<details><summary>category</summary>
-<p>
-
-```json
-[
-  {
-    "text": "Select Category",
-    "color": "#3AA3E3",
-    "attachment_type": "default",
-    "callback_id": "Category Selected",
-    "actions": [
-      {
-        "name": "category_list",
-        "text": "Category...",
-        "type": "select",
-        "options": [
-          {
-            "text": "Apparel",
-            "value": "category_id:32417"
-          },
-          {
-            "text": "Construction",
-            "value": "category_id:32310"
-          },
-          {
-            "text": "Education and Health Services",
-            "value": "category_id:32322"
-          },
-          {
-            "text": "Food and Beverages",
-            "value": "category_id:32415"
-          },
-          {
-            "text": "GDP/GNP",
-            "value": "category_id:106"
-          },
-          {
-            "text": "Medical Care",
-            "value": "category_id:32419"
-          },
-          {
-            "text": "Labor Force",
-            "value": "category_id:32285"
-          },
-          {
-            "text": "Population",
-            "value": "category_id:32292"
-          },
-          {
-            "text": "Services",
-            "value": "category_id:33441"
-          },
-          {
-            "text": "Recreation",
-            "value": "category_id:32420"
-          },
-          {
-            "text": "Retail Trade",
-            "value": "category_id:6"
-          }
-        ]
-      }
-    ]
-  }
-]
-```
-
-</p>
-</details>
-
-<details><summary>frequency</summary>
-<p>
-
-```json
-[
-  {
-    "text": "Select Frequency",
-    "color": "#3AA3E3",
-    "attachment_type": "default",
-    "callback_id": "Frequency Selected",
-    "actions": [
-      {
-        "name": "frequency_list",
-        "text": "Frequency...",
-        "type": "select",
-        "options": [
-          {
-            "text": "Daily",
-            "value": "frequency:\"Daily\""
-          },
-          {
-            "text": "Monthly",
-            "value": "frequency:\"Monthly\""
-          },
-          {
-            "text": "Quarterly",
-            "value": "frequency:\"Quarterly\""
-          },
-          {
-            "text": "Annual",
-            "value": "frequency:\"Annual\""
-          }
-        ]
-      }
-    ]
-  }
-]
-```
-
-</p>
-</details>
-
-<details><summary>seasonal_adj</summary>
-<p>
-
-```json
-[
-  {
-    "text": "Seasonally Adjusted?",
-    "color": "#3AA3E3",
-    "attachment_type": "default",
-    "callback_id": "Seasonal Adj. Selected",
-    "actions": [
-      {
-        "name": "seasonal_adj_list",
-        "text": "Seasonal Adjustment...",
-        "type": "select",
-        "options": [
-          {
-            "text": "No",
-            "value": "seasonal_adjustment_short:\"NSA\""
-          },
-          {
-            "text": "Yes",
-            "value": "seasonal_adjustment_short:\"SA\""
-          },
-          {
-            "text": "Annual Rate",
-            "value": "seasonal_adjustment_short:\"SAAR\""
-          }
-        ]
-      }
-    ]
-  }
-]
-```
-
-</p>
-</details>
-
 <details><summary>parent_category</summary>
 <p>
 
@@ -560,23 +410,25 @@ Create [template](https://axibase.com/docs/atsd/portals/portals-overview.html#te
   markers = true
   add-meta = true
   label-format = javascript: (meta.metric.label ? meta.metric.label : metric)
-  
+
 [group]
   [widget]
     type = ${type}
-    multiple-series = true  
+    multiple-series = true
     var metrics = ${metrics}
-  for m in metrics
+    for m in metrics
     [series]
-    metric = @{m}
-  endfor
+      metric = @{m}
+    endfor
 ```
 
 <!-- markdownlint-enable MD010 -->
 
 ### Script
 
-[ATSD Client for Python](https://github.com/axibase/atsd-api-python#axibase-time-series-database-client-for-python) provides convenient functionality for querying messages and searching series.
+To ensure that metrics with the specified tags are present in ATSD, JSON with interactive attachment will be build dynamicaly based on options selected by user.
+
+[ATSD Client for Python](https://github.com/axibase/atsd-api-python#axibase-time-series-database-client-for-python) provides convenient functionality for searching series.
 Log in to ATSD server and ensure `atsd_client` version >= `2.2.6`:
 
 ```bash
@@ -588,31 +440,29 @@ atsd-client     2.2.5
 $ pip install --upgrade atsd_client
 ```
 
-Install [`jsonpath`](https://pypi.org/project/jsonpath/) to find and extract metrics out of JSON structures:
+Install [`jsonpath`](https://pypi.org/project/jsonpath/) to find and extract tags and metrics out of JSON structures:
 
 ```bash
 pip install jsonpath --user
 ```
 
-Create [`search_metrics.py`](./resources/search_metrics.py) script to be used in [`scriptOut`](https://axibase.com/docs/atsd/rule-engine/functions-script.html#syntax) function:
+Create [`dynamic_response.py`](./resources/dynamic_response.py) script to be used in [`scriptOut`](https://axibase.com/docs/atsd/rule-engine/functions-script.html#syntax) function:
 
 ```bash
 chmod u=rwx,g=rx,o=r /opt/atsd/atsd/conf/script/*
 
-nano /opt/atsd/atsd/conf/script/search_metrics.py
+nano /opt/atsd/atsd/conf/script/dynamic_response.py
 ```
 
 Replace `atsd_hostname`, `username` and `password` with appropriate values:
 
-<details><summary>search_metrics.py</summary>
+<details><summary>dynamic_response.py</summary>
 <p>
 
 ```python
 #!/usr/bin/python
 
 from atsd_client import connect_url
-from atsd_client.models import EntityFilter, DateFilter, MessageQuery
-from atsd_client.services import MessageService
 from jsonpath import jsonpath
 import argparse
 import logging
@@ -622,38 +472,125 @@ logger.disabled = True
 
 # Parse script arguments
 parser = argparse.ArgumentParser(
-    description='Retreive metric names based on user-specified data.')
-parser.add_argument('channel', help='ID of dialog with bot.')
-parser.add_argument('user', help='User ID.')
+    description='Retreive series based on user-specified data.')
+parser.add_argument('query', help='Query string for /search endpoint.')
+parser.add_argument('message', help='Message identifying which setting was configured by user.')
 args = parser.parse_args()
+message = args.message
 
 # Connect to ATSD server
 connection = connect_url('https://atsd_hostname:8443', 'username', 'password')
 
-# Retrieve user-specified search settings from messages using atsd_client.MessageService
-message_service = MessageService(connection)
-ef = EntityFilter(entity='slack')
-df = DateFilter(interval={"count": 30, "unit": "SECOND"}, end_date='NOW')
-query = MessageQuery(entity_filter=ef, date_filter=df,
-                     type='webhook', source='axibase-bot',
-                     tags={"payload.channel.id":args.channel, "payload.user.id":args.user},
-                     expression='message LIKE "*Selected" AND message NOT LIKE "Chart*"')
-messages = message_service.query(query)
 
-# Retrieve matched metrics using low level request wrapper from atsd_client
-selected_options = [m.tags['payload.actions[0].selected_options[0].value'] for m in messages]
-# Query example:
-# entity:fred.stlouisfed.org AND (category_id:32417 AND parent_category_id:9 AND frequency:"Monthly" AND seasonal_adjustment_short:"SA")
-query = 'entity:fred.stlouisfed.org AND (' + selected_options[0] + \
-        ' AND ' + selected_options[1] + \
-        ' AND ' + selected_options[2] + \
-        ' AND ' + selected_options[3] + ')'
-params = {"query": query, "limit": 5}
-search_result = connection.get('v1/search', params)
-metrics = jsonpath(search_result, "$.data[*][0]")
-# encode() required for Python 2
-encoded_metrics = [m.encode('utf-8') for m in metrics] if metrics else ''
-print(encoded_metrics)
+def search(limit=100, metric_tags=''):
+    """
+    Retrieve matched series using low level request wrapper from atsd_client.
+    :param limit: Maximum number of records to be returned by the server. Default: 100.
+    :param metric_tags: Metric tags to be included in the response.
+    :return: `str`
+    """
+    params = {"query": args.query, "limit": limit, "metricTags": metric_tags}
+    # Query example: entity:fred.stlouisfed.org AND parent_category_id:9
+    return connection.get('v1/search', params)
+
+
+def make_attachments_json(text, callback_id, name, actions_text, option_entries):
+    """
+    Prepare JSON file with Slack interactive message menu.
+    :return: `str`
+    """
+    search_result = search(metric_tags=','.join(option_entries))
+    tags = jsonpath(search_result, "$.data[*][3]")
+    option_text = option_entries[0]
+    option_value = option_entries[1]
+    unique = list({v[option_text]: v for v in tags}.values())
+    first_five = unique[:5]
+    options = []
+    for el in first_five:
+        options.append({"text": el[option_text].encode('utf-8'),
+                        "value": '{}:{}'.format(option_value, el[option_value])})
+
+    attach_json = [{
+        "text": text,
+        "color": "#3AA3E3",
+        "attachment_type": "default",
+        "callback_id": callback_id,
+        "actions": [
+            {
+                "name": name,
+                "text": actions_text,
+                "type": "select",
+                "options": options
+            }
+        ]
+    }]
+    print(attach_json)
+
+
+if message == 'Parent Category Selected':
+    make_attachments_json("Select Category", "Category Selected",
+                          "category_list", "Category...", ["category", "category_id"])
+elif message == 'Category Selected':
+    make_attachments_json("Select Frequency", "Frequency Selected",
+                          "frequency_list", "Frequency...", ["frequency", "frequency_short"])
+elif message == 'Frequency Selected':
+    make_attachments_json("Seasonally Adjusted?", "Seasonal Adj. Selected",
+                          "seasonal_adj_list", "Seasonal Adjustment...", ["seasonal_adjustment",
+                                                                          "seasonal_adjustment_short"])
+elif message == 'Chart Type Selected':
+    # Search metrics when all settings have been specified.
+    result = search(limit=5)
+    metrics = jsonpath(result, "$.data[*][0]")
+    # encode() required for Python 2
+    encoded_metrics = [m.encode('utf-8') for m in metrics]
+    # Metric list example: ['cbr54093wva647ncen', 'cbr38073nda647ncen']
+    print(encoded_metrics)
+```
+
+</p>
+</details>
+<br>
+<details><summary>Example of attachment JSON</summary>
+<p>
+
+```json
+[
+  {
+    "text": "Select Category",
+    "attachment_type": "default",
+    "color": "#3AA3E3",
+    "callback_id": "Category Selected",
+    "actions": [
+      {
+        "text": "Category...",
+        "options": [
+          {
+            "text": "Recreation",
+            "value": "category_id:32420"
+          },
+          {
+            "text": "Medical Care",
+            "value": "category_id:32419"
+          },
+          {
+            "text": "Food and Beverages",
+            "value": "category_id:32415"
+          },
+          {
+            "text": "Education and Communication",
+            "value": "category_id:32421"
+          },
+          {
+            "text": "Apparel",
+            "value": "category_id:32417"
+          }
+        ],
+        "name": "category_list",
+        "type": "select"
+      }
+    ]
+  }
+]
 ```
 
 </p>
@@ -663,7 +600,7 @@ print(encoded_metrics)
 
 > The full rule configuration available [here](./resources/trends-bot.xml).
 
-Navigate to **Alerts > Rules**, click **Create** and use settings below.
+Navigate to **Alerts > Rules**, click **Create** and specify settings below.
 
 #### Filters Tab
 
@@ -677,6 +614,14 @@ Filter Expression: tags.event.subtype != 'bot_message' && tags.event.username !=
 Entity Group: axibase-bot-entities
 ```
 
+#### Windows Tab
+
+Ensure that no grouping tags are used:
+
+```ls
+Group by Tags: No Tags
+```
+
 #### Condition Tab
 
 As mentioned above "Parent Category", "Category", "Frequency", "Seasonal Adjustment" settings are collected to find the metrics and "Chart Type" to allow user customize portal. The window will be in `OPEN` and `REPEAT` status until the user selects chart type and ATSD receives the "Chart Type Selected" message:
@@ -685,17 +630,26 @@ As mentioned above "Parent Category", "Category", "Frequency", "Seasonal Adjustm
 Condition: message != 'Chart Type Selected'
 ```
 
-To find user setting stored as message tags use `channel` and `usr` variables:
+To answer the user specify `channel` and `usr` variables:
 
 ```ls
 channel: ifEmpty(tags.payload.channel.id, tags.channel_id)
 usr: ifEmpty(tags.payload.user.id, tags.user_id)
 ```
 
-If user has specified all search settings, retrieve the message records stored within last 30 seconds for the current channel and user, search the series and extract metric names from response to `metrics` variable:
+Refer to [`ifEmpty`](https://axibase.com/docs/atsd/rule-engine/functions-utility.html#ifempty) funcion.
+
+To dynamically create a query string, access the previous window with [`last_open`](https://axibase.com/docs/atsd/rule-engine/functions-alert-history.html#last_open) function and configure `query` variable:
 
 ```ls
-metrics: message != 'Chart Type Selected'?'':scriptOut('search_metrics.py', [channel, usr])
+last_query: last_open().query
+query: message != '/chart' ? (message != 'Chart Type Selected' ? last_query + ' AND ' + tags['payload.actions[0].selected_options[0].value']:last_query) :'entity:fred.stlouisfed.org'
+```
+
+Create attachments or search the metrics depending on `query` and `message` sent by Slack.
+
+```ls
+dynamic_response: scriptOut('dynamic_response.py',[query, message])
 ```
 
 #### Webhooks Tab
@@ -709,15 +663,11 @@ Configure triggers for custom and built-in integrations:
 
     ```ls
     @if{message == '/chart'}
-       ${replacementTable('slack').parent_category}
-    @else{message == 'Parent Category Selected'}
-       ${replacementTable('slack').category}
-    @else{message == 'Category Selected'}
-       ${replacementTable('slack').frequency}
-    @else{message == 'Frequency Selected'}
-       ${replacementTable('slack').seasonal_adj}  
+      ${replacementTable('slack').parent_category}
+    @else{message IN ('Parent Category Selected','Category Selected','Frequency Selected')}
+      ${dynamic_response}  
     @else{message == 'Seasonal Adj. Selected'}
-       ${replacementTable('slack').chart_type}  
+      ${replacementTable('slack').chart_type}  
     @else{}
     null
     @end{}
@@ -737,6 +687,8 @@ Configure triggers for custom and built-in integrations:
 
     @end{}
     ```
+
+  Refer to [Control Flow](https://axibase.com/docs/atsd/rule-engine/control-flow.html).
 
   ![](./images/trends_bot_10.png)
 
@@ -772,12 +724,10 @@ To use the [`addPortal`](https://axibase.com/docs/atsd/rule-engine/functions-por
     ```
   * `Text`
 
+    Replace `Trends Bot Portal` with appropriate value:
+
     ```ls
-    @if{metrics!=''}
-      ${addPortal('Axibase Bot Portal','fred.stlouisfed.org','',['type':tags["payload.actions[0].value"],'metrics':metrics])}
-    @else{}
-      No metrics have been found. Try again.
-    @end{}
+    ${addPortal('Trends Bot Portal','fred.stlouisfed.org','',['type':tags["payload.actions[0].value"],'metrics':dynamic_response])}
     ```
 
   ![](./images/trends_bot_12.png)
