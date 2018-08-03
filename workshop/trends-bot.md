@@ -56,7 +56,7 @@ If necessary, create new Slack app with the bot user as described [here](https:/
 
 ### Configure Webhook URL
 
-To allow the user select options, use interactive [menus](https://api.slack.com/docs/message-menus) and [buttons](https://api.slack.com/docs/message-buttons). When user selects some item, ATSD will receive a HTTP `POST` with a payload body parameter containing a urlencoded JSON object.
+To allow the user select options, use interactive [menus](https://api.slack.com/docs/message-menus) and [buttons](https://api.slack.com/docs/message-buttons). When user selects some item, ATSD will receive a HTTP `POST` with a `payload` body parameter containing a JSON object.
 
 <details><summary>Sample JSON sent by Slack Menu</summary>
 <p>
@@ -426,7 +426,7 @@ Create [template](https://axibase.com/docs/atsd/portals/portals-overview.html#te
 
 ### Script
 
-To ensure that metrics with the specified tags are present in ATSD, JSON with interactive attachment will be build dynamicaly based on options selected by user.
+To ensure that metrics with the specified tags are present in ATSD, JSON with interactive attachment will be build dynamically based on options selected by user.
 
 [ATSD Client for Python](https://github.com/axibase/atsd-api-python#axibase-time-series-database-client-for-python) provides convenient functionality for searching series.
 Log in to ATSD server and ensure `atsd_client` version >= `2.2.6`:
@@ -637,7 +637,7 @@ channel: ifEmpty(tags.payload.channel.id, tags.channel_id)
 usr: ifEmpty(tags.payload.user.id, tags.user_id)
 ```
 
-Refer to [`ifEmpty`](https://axibase.com/docs/atsd/rule-engine/functions-utility.html#ifempty) funcion.
+Refer to [`ifEmpty`](https://axibase.com/docs/atsd/rule-engine/functions-utility.html#ifempty) function.
 
 To dynamically create a query string, access the previous window with [`last_open`](https://axibase.com/docs/atsd/rule-engine/functions-alert-history.html#last_open) function and configure `query` variable:
 
