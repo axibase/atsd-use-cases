@@ -33,7 +33,7 @@ then submit the new, derived series back in to ATSD:
 * [IBM SPSS Statistics](https://axibase.com/docs/atsd/integration/spss/statistics/)
 * [Pentaho Data Integration](https://axibase.com/docs/atsd/integration/pentaho/data-integration/#pentaho-data-integration)
 * [Pentaho Report Designer](https://axibase.com/docs/atsd/integration/pentaho/report-designer/#pentaho-report-designer)
-* [MatLab](https://axibase.com/docs/atsd/integration/matlab/)
+* [MATLAB](https://axibase.com/docs/atsd/integration/matlab/)
 
 ## Data
 

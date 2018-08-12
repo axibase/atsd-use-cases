@@ -2,15 +2,15 @@
 
 ## Overview
 
-This guide describes how to configure email alerts when a URL monitored by Route53 health checks becomes inaccessible. It also provides information on how to enhance the alerts with availability portals and outage details using Axibase Time Series Database (ATSD) [Rule Engine](https://axibase.com/docs/atsd/rule-engine/).
+This guide describes how to configure email alerts when a URL monitored by Route 53 health checks becomes inaccessible. It also provides information on how to enhance the alerts with availability portals and outage details using Axibase Time Series Database (ATSD) [Rule Engine](https://axibase.com/docs/atsd/rule-engine/).
 
 ## Initial Configuration
 
-1. From the AWS **Console Home** page, navigate to Route53 by opening the **Services** drop-down list in the upper toolbar and clicking **Route53** under the **Networking and Content Delivery** section.
+1. From the AWS **Console Home** page, navigate to Route 53 by opening the **Services** drop-down list in the upper toolbar and clicking **Route 53** under the **Networking and Content Delivery** section.
 
     ![](./images/route53-locate.png)
 
-2. Select **Health Checks** from the toolbar on the left and click **Create Health Check**. If you have not set up Route53 services with your AWS account, bypass the introductory screen by clicking **Get started now** under **Avaialability Monitoring**.
+2. Select **Health Checks** from the toolbar on the left and click **Create Health Check**. If you have not set up Route 53 services with your AWS account, bypass the introductory screen by clicking **Get started now** under **Availability Monitoring**.
 
     ![](./images/route53-menu.png)
 
@@ -22,7 +22,7 @@ This guide describes how to configure email alerts when a URL monitored by Route
 
     ![](./images/route53-alert.png)
 
-5. Once you configure the new health check and alarm, the email address you indicated receives a confirmation email from AWS. Route53 does not execute the health check until you confirm the email address. Once the health check executes, be sure that the monitored site shows 100% health under the **Monitoring** tab.
+5. Once you configure the new health check and alarm, the email address you indicated receives a confirmation email from AWS. Route 53 does not execute the health check until you confirm the email address. Once the health check executes, be sure that the monitored site shows 100% health under the **Monitoring** tab.
 
     ![](./images/route53-githup-api.png)
 
@@ -46,42 +46,42 @@ Complete the process below to enhance Route 53 alarms with your local ATSD insta
 
 1. Install [ATSD sandbox](../route53-health-checks/README.md) with AWS integration. Configure Mail Client, Webhook user and import `rule-aws-cloudwatch-alarm.xml` using Docker `run` command.
 
-    ```sh
-    cat import/mail.properties
-    ```
+```sh
+cat import/mail.properties
+```
 
-    ```txt
-    server=mail.example.org
-    port=587
-    user=user@example.org
-    password=secret
-    ```
+```txt
+server=mail.example.org
+port=587
+user=user@example.org
+password=secret
+```
 
-    ```sh
-    docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
-      --name=atsd-sandbox \
-      --volume=$(pwd)/import:/import \
-      --env ATSD_IMPORT_PATH='https://github.com/axibase/atsd-use-cases/raw/master/integrations/aws/route53-health-checks/resources/aws-route53-xml.zip,https://github.com/axibase/atsd-use-cases/raw/master/integrations/aws/route53-email-notifications/resources/rule-aws-cloudwatch-alarm.xml' \
-      --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/aws/route53-health-checks/resources/job_aws_aws-route53.xml' \
-      --env COLLECTOR_CONFIG='job_aws_aws-route53.xml:aws.properties' \
-      axibase/atsd-sandbox:latest \
-      --env EMAIL_CONFIG=mail.properties \
-      --env WEBHOOK=aws-cw
-    ```
+```sh
+docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
+  --name=atsd-sandbox \
+  --volume=$(pwd)/import:/import \
+  --env ATSD_IMPORT_PATH='https://github.com/axibase/atsd-use-cases/raw/master/integrations/aws/route53-health-checks/resources/aws-route53-xml.zip,https://github.com/axibase/atsd-use-cases/raw/master/integrations/aws/route53-email-notifications/resources/rule-aws-cloudwatch-alarm.xml' \
+  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/aws/route53-health-checks/resources/job_aws_aws-route53.xml' \
+  --env COLLECTOR_CONFIG='job_aws_aws-route53.xml:aws.properties' \
+  axibase/atsd-sandbox:latest \
+  --env EMAIL_CONFIG=mail.properties \
+  --env WEBHOOK=aws-cw
+```
 
-    View container start log:
+View container start log:
 
-    ```sh
-    docker log -f atsd-sandbox
-    ```
+```sh
+docker log -f atsd-sandbox
+```
 
-    Start log displays the webhook at the end of the output:
+Start log displays the webhook at the end of the output:
 
-    ```txt
-    Webhooks created:
-    Webhook user: aws-cw
-    Webhook URL: https://aws-cw:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
-    ```
+```txt
+Webhooks created:
+Webhook user: aws-cw
+Webhook URL: https://aws-cw:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
+```
 
 2. Configure ATSD to accept HTTPS requests from AWS infrastructure servers with a [**CA-signed**](https://axibase.com/docs/atsd/administration/ssl-self-signed.html) SSL certificate. Alternatively, use the HTTP protocol when configuring the SNS subscription URL.
 

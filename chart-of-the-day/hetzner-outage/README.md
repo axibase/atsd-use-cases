@@ -32,7 +32,7 @@ Filing ticket for each affected server and watching the Hetzner status page for 
 
 ## Time to Resolve
 
-We used the reported counters as inputs to arrive at a rough TTR estimate by dividing the ticket count by the hourly rate, calculated as delta value from the previous report.
+We used the reported counters as inputs to arrive at a rough time-ticket ratio estimate by dividing the ticket count by the hourly rate, calculated as delta value from the previous report.
 
 ```javascript
 hourly_rate = -1 * (ticket_count - previous_ticket_count);

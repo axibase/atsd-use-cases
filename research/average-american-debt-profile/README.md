@@ -23,7 +23,7 @@ about these consumers and their monetary practices to better inform their decisi
 ## Data
 
 Provided by the [Federal Reserve](https://www.federalreserve.gov/), this [dataset](https://www.federalreserve.gov/datadownload/Download.aspx?rel=FOR&series=91e0f9a6b8e6a4b1ef334ce2eaf22860&filetype=csv&label=include&layout=seriescolumn&from=01/01/1980&to=12/31/2017)
-must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interpret (`Q/q` letter is not supported). Discard metadata lines in the multi-line header with a [schema-based parser](https://axibase.com/docs/atsd/parsers/csv/) that provides granular control over rows and columns using `RFC 7111` selectors and Javascript:
+must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interpret (`Q/q` letter is not supported). Discard metadata lines in the multi-line header with a [schema-based parser](https://axibase.com/docs/atsd/parsers/csv/) that provides granular control over rows and columns using `RFC 7111` selectors and JavaScript:
 
 ```javascript
 /*
@@ -291,7 +291,7 @@ GROUP BY date_format(time, 'yyyy')
 | 2017 | 4.42     | 5.63     | 5.43          | 15.47 |
 
 The above dataset can illuminate a number of features of the American economy and a number of characteristics of the average
-American consumer. While modern Americans are quick to denounce the zeitgeist of living outside of realistic means, the data
+American consumer. While modern Americans are quick to denounce the Zeitgeist of living outside of realistic means, the data
 shows that in fact, the amount of debt carried by the average American is on par with or even lower in some cases than that
 of his 1980's counterpart. In fact, the only metric which has demonstrated a legitimate increase in value over the last
 several decades has been the roughly one percent increase in non-essential credit holdings by the average consumer.

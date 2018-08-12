@@ -73,7 +73,7 @@ The ten most recent years of federal government lending / borrowing:
 
 As a result, the estimated annual budget balance is now a deficit of `$685` billion, a number that is materially different from the estimated surplus of `$15` billion.
 
-The above query may be executed in the ATSD web console or using the [ATSD API Client for Python](https://github.com/axibase/atsd-api-python), where the data may be queried using SQL and converted to `pandas` dataframes for further analysis.
+The above query may be executed in the ATSD web console or using the [ATSD API Client for Python](https://github.com/axibase/atsd-api-python), where the data may be queried using SQL and converted to `pandas` data frames for further analysis.
 
 ```python
 >>> q = """

@@ -60,7 +60,7 @@ European Union Countries Index:
 * [Sweden](#sweden)
 * [United Kingdom](#united-kingdom)
 
-Using additional EuroStat population data, this debt has been indexed by [per capita value](../eu-debt-per-capita/README.md) as well.
+Using additional Eurostat population data, this debt has been indexed by [per capita value](../eu-debt-per-capita/README.md) as well.
 
 ## European Union Total
 

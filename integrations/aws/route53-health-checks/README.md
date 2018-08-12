@@ -146,7 +146,7 @@ Configure a `cron` scheduled task to copy health check attributes into ATSD sand
 
 ### Consolidated View
 
-View all working Route 53 health checks on the **AWS Route53** tab.
+View all working Route 53 health checks on the **AWS Route 53** tab.
 
 ![](./images/route53-entity-view.png)
 

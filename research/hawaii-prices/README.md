@@ -69,7 +69,7 @@ ATSD does not require you to design database table schema, provision an applicat
 
 Configure a scheduled [job](https://axibase.com/docs/axibase-collector/#jobs) to retrieve data from a specified endpoint import the data into ATSD according to [pre-defined rules](https://axibase.com/docs/atsd/rule-engine/). Once the data is stored in ATSD, creating and sharing reports and creating interactive visualizations with built-in widgets is trivial. Reports are continuously updated with the flow of incoming data.
 
-The plotly visualization above is replicated in **ChartLab** below. **ChartLab** is a visualizaton application that relies on data processing and stored from ATSD.
+The plotly visualization above is replicated in **ChartLab** below. **ChartLab** is a visualization application that relies on data processing and stored from ATSD.
 
 ![Figure 5](./images/Figure5.png)
 
@@ -132,7 +132,7 @@ Exploring the complete dataset for fuel prices, Wailuku is more expensive for an
 
 On `data.gov`, locate the [Hawaii Electricity Prices](https://catalog.data.gov/dataset/hi-electricity-prices-815fa) dataset.
 
-From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/kwh) for each of the Hawaiian islands:
+From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/kWh) for each of the Hawaiian islands:
 
 **Hawaii**, **Kauai**, **Lanai**, **Maui**, **Molokai**, **Oahu**
 

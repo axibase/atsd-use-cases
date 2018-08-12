@@ -8,9 +8,9 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 
 ## Amazon Web Services
 
-* [Build Availability Report for AWS Route53](aws/route53-health-checks/README.md)
+* [Build Availability Report for AWS Route 53](aws/route53-health-checks/README.md)
 * [Configure Launch Notifications for AWS Resources](aws/cloud-watch-alert/README.md)
-* [Route53 Health Status Alarms](aws/route53-email-notifications/README.md)
+* [Route 53 Health Status Alarms](aws/route53-email-notifications/README.md)
 
 ## Apache Kafka
 

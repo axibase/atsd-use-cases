@@ -86,13 +86,13 @@ Use the following resources to select parameters for SSA forecasting:
 When building a forecast, follow the recommended procedure:
 
 * Retrieve `PM2.5` series from ATSD using the [`executeSQLquery()`](https://axibase.com/docs/atsd/rule-engine/functions-sql.html#executesqlquery) function. 72 days of data are loaded from ATSD.
-* Build SSA decomposition with a window of 24 days and 100 [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) triples:
+* Build SSA decomposition with a window of 24 days and 100 [eigentriplets](https://eigen.tuxfamily.org/index.php?title=Main_Page):
 
 ```c++
 dec <- ssa(values, L = 24 * 24, neig = 100)
 ```
 
-> Eigen values, Eigenvectors, pairs of sequential Eigenvectors, and `w`-correlation matrix of the decomposition are graphed.
+> Eigenvalues, eigenvectors, pairs of sequential eigenvectors, and `w`-correlation matrix of the decomposition are graphed.
 
 ```r
 plot(dec, type = "values")
@@ -118,7 +118,7 @@ plot(wcor(dec), idx = 1:100)
 
 ![](./images/correlation.png)
 
-Three different options `– 1`, `1:23`, and `1:35` are tested because groups `1`, `2:23`, and `24:35` are separated from other Eigenvectors, as judged from the `w`-correlation matrix.
+Three different options `– 1`, `1:23`, and `1:35` are tested because groups `1`, `2:23`, and `24:35` are separated from other eigenvectors, as judged from the `w`-correlation matrix.
 
 The `rforecast()` function builds the forecast:
 
@@ -132,7 +132,7 @@ Graph of the original series and three resulting forecasts:
 
 ![](./images/forecast.png)
 
-The forecast with Eigen triples `1:35` is the most accurate and inserted into ATSD.
+The forecast with eigentriplets `1:35` is the most accurate and inserted into ATSD.
 
 ## Generating Forecasts in ATSD
 
@@ -175,7 +175,7 @@ At this point the use case is fully implemented and functions autonomously. ATSD
 
 ## Results and Conclusions
 
-The results of this case can be [useful for travelers](https://www.telegraph.co.uk/travel/travelnews/10239362/Air-pollution-blamed-as-China-loses-tourists.html) who need to have an [accurate forecast of environmental and pollution related issues](resources/content_19087645.htm target=) that they are exposed to during the trip. This information can also be helpful to expats moving to a new city or country. [Studies have proven](http://www.euro.who.int/__data/assets/pdf_file/0006/189051/Health-effects-of-particulate-matter-final-Eng.pdf) that long-term exposure to high levels of `PM2.5` can lead to serious health issues.
+The results of this case can be [useful for travelers](https://www.telegraph.co.uk/travel/travelnews/10239362/Air-pollution-blamed-as-China-loses-tourists.html) who need to have an [accurate forecast of environmental and pollution related issues](resources/content_19087645.htm) that they are exposed to during the trip. This information can also be helpful to expats moving to a new city or country. [Studies have proven](http://www.euro.who.int/__data/assets/pdf_file/0006/189051/Health-effects-of-particulate-matter-final-Eng.pdf) that long-term exposure to high levels of `PM2.5` can lead to serious health issues.
 
 This research and environmental forecasting is especially valuable in regions like [China](https://aqicn.org/map/china/), where air pollution seriously affects the local population and visitors. In cities like [Shanghai](http://www.stateair.net/web/post/1/4.html), [Beijing](http://www.stateair.net/web/post/1/1.html), and [Guangzhou](http://www.stateair.net/web/post/1/3.html), `PM2.5` levels are constantly fluctuating from unhealthy to critical levels, yet accurate forecasting is limited. `PM2.5` forecasting is essential for travelers and tourists who need to plan trips during periods of lower pollution levels due to potential health risks of pollution exposure.
 

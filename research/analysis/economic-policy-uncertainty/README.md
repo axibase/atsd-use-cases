@@ -101,7 +101,7 @@ SELECT ROUND(AVG(value), 0) AS "average-epu" FROM EUEPUINDXM_
 
 This query returns a single-entry table:
 
-|average-epu|
+|`average-epu`|
 |:-:|
 |152|
 

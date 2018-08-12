@@ -9,7 +9,7 @@
 In 2016, Chicago, the 3rd most populous city in the United States, had more homicides
 than New York City and Los Angeles **combined**. In 2016, 753 murders occurred in the city, a **55% increase** from 486 in 2015 with 4,331 total shooting victims in 2016, compared to 2,939
 in 2015. From 2004 to 2015, the peak number of murders in the city was under 500. From 2011 to 2015, the city recorded less than 3,000 shooting victims per year. What is the reason for this alarming
-increase in violence in Chicago? Was there an increase in all kinds of crime, or are the murders and shootings an exception? This article  analyzs a dataset from [`data.gov`](https://www.data.gov/)
+increase in violence in Chicago? Was there an increase in all kinds of crime, or are the murders and shootings an exception? This article  analyzes a dataset from [`data.gov`](https://www.data.gov/)
 tracking [Chicago crime statistics](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4) from 2001 to the present time. This research article illustrates how publicly available data
 from data.gov can be easily loaded into the non-relational ATSD for interactive analysis and graphical
 representation of raw data collected by government and private organizations. The article provides both sample queries and charts, as well as instructions on how to install your own ATSD instance
@@ -19,7 +19,7 @@ and populate it with the raw data.
 
 Take a look at the dataset titled **Crimes - 2001 to present** from [data.gov](https://www.data.gov/).
 
-This dataset can be found on [data.gov](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4). On the data.gov website, this dataset can be downloaded as a CSV (1.4 GB), RDF, JSON (**2.8 GB**), or a
+This dataset can be found on [data.gov](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4). On the data.gov website, this dataset can be downloaded as a CSV (1.4 GB), RDF, JSON (**2.8 GB**), or an
 XML file. This dataset can easily be parsed using the JSON job in Axibase Collector.
 
 This dataset contains crime statistics collected daily from 2001 to the present time. This dataset is continuously updated with a time lag of 7 days. Statistics are available for **32 different crime types**. Furthermore, these crimes may be filtered by the location

@@ -138,7 +138,7 @@ values into 2010 NIS values, before submitting the data into the Axibase Time Se
 
 The script below the comment line `######` is the schema. For details about writing your own schema, read [ATSD Documentation](https://axibase.com/docs/atsd/parsers/csv/).
 
-Because ATSD supports schema-based parsing and javascript customization, modify your data before you submit it for storage and insert the data exactly as needed.
+Because ATSD supports schema-based parsing and JavaScript customization, modify your data before you submit it for storage and insert the data exactly as needed.
 
 An enhanced SQL query and visualization are shown below, featuring the newly calculated values:
 

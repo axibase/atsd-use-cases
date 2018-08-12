@@ -36,7 +36,7 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
     KHD_CSV_EVAL_INTERVAL=60
     ```
 
-  * Restart WareHouse Proxy agent:
+  * Restart Warehouse Proxy agent:
 
     ```sh
     bin/itmcmd stop hd

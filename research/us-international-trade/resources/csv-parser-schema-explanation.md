@@ -81,10 +81,10 @@ The `cell` method returns the value of the cell with listed row and column index
 
 For example, for the first iteration, retrieve the value of the cell that is contained in the first row and the fourth column. It has the value `IJAN`.
 
-## Standard Javascript Methods
+## Standard JavaScript Methods
 
-The cell method returns a value as a string. Use standard javascript call methods and properties from the [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) class.
-Use the [endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) method to determine whether a string ends with the `YR` string or not.
+The cell method returns a value as a string. Use standard JavaScript methods and properties from the [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) class.
+Use the [`endsWith`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) method to determine whether a string ends with the `YR` string or not.
 
 ## Filtering Cells
 

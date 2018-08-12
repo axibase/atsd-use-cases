@@ -10,7 +10,7 @@ Since launching its IPO in mid-2012 for $38 a share, and being initially valued 
 ![](./images/volume-compare.png)
 [![](./images/button.png)](https://apps.axibase.com/chartlab/e2635247#fullscreen)
 
-> The upper chart tracks USD volume of FB common stock, which is skyrocketing in the present week, amid rumors that Mr. Zuckerberg himself is dumping millions of dollars worth of personal stock as well. The lower graph uses a duel [`axis`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) expression to group unlike data in one widget without hindering visibility.
+> The upper chart tracks USD volume of Facebook common stock, which is skyrocketing in the present week, amid rumors that Mr. Zuckerberg himself is dumping millions of dollars worth of personal stock as well. The lower graph uses a duel [`axis`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) expression to group unlike data in one widget without hindering visibility.
 
 As of this writing, FB stock is down almost 15 points within the last 24 hours with little hope that it will rebound soon putting it near official bear market territory. Even the stock prices fall further, the trade volume is continuing to grow, a worrying trend for Zuckerberg and Co. and most certainly a far cry from the days when Facebook seemed an unstoppable giant, it looks like the most recent machinations of the company are in the process of bringing about its untimely demise as well, or at least return to mortality.
 
@@ -18,7 +18,7 @@ Ironically, competitor social media platform Twitter is now home to the `#Delete
 
 ## Resources
 
-* [Nasdaq:FB Historical Data](https://finance.yahoo.com/quote/FB/history?p=FB) from Yahoo! Finance
+* [Nasdaq: FB Historical Data](https://finance.yahoo.com/quote/FB/history?p=FB) from Yahoo! Finance
 * Launch [ATSD](https://axibase.com/docs/atsd/installation/) on your local machine.
 * Import this [parser job](./resources/parser-job.xml) XML file for data handling.
 * [ChartLab](https://apps.axibase.com/) application and associated [documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/)

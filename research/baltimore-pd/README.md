@@ -240,7 +240,7 @@ The day of the week of these incidents can also be considered using this query:
 SELECT date_format(time, 'u'), count(*)
   FROM "row_number.3w4d-kckv"
 GROUP BY date_format(time, 'u')
-  ```
+```
 
 ```ls
 | date_format(time, 'u') | count(*) |

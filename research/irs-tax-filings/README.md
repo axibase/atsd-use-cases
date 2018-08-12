@@ -183,8 +183,9 @@ Syntax Features:
 * [`LAG(columnName)`](https://axibase.com/docs/atsd/sql/): value function which returns the previous data point for the selected column. Very useful for time-on-time comparisons such as the one shown here.
 * [`INTERPOLATE(period)`](https://axibase.com/docs/atsd/sql/examples/interpolate.html): value function which is used to fill gaps for irregular series. Used in this example to regularize data which has a timestamp other than the observed date.
 
-Result:
+**Result:**
 
+```ls
 | Year | Date   | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % |
 |------|--------|----------------|----------------|-----------------|---------------|
 | 2011 | Mar-30 | 87.59          |                |                 |               |
@@ -195,6 +196,7 @@ Result:
 | 2016 | Mar-30 | 95.28          | 94.03          | 1.26            | 1.34          |
 | 2017 | Mar-30 | 92.47          | 95.28          | -2.81           | -2.95         |
 | 2018 | Mar-30 | 94.14          | 92.47          | 1.67            | 1.80          |
+```
 
 #### Year-on-year change based on calendar index position
 

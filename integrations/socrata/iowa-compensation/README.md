@@ -118,7 +118,7 @@ The portal below explores total compensation change per industry in Iowa since 2
 
 Insert an additional dataset into ATSD to give the above data context. For example, use a dataset which provides information on the gross number of employees working in the state.
 
-1. Navigate to [https://data.iowa.gov](https://data.iowa.gov).
+1. Navigate to [Gov Data | State of Iowa](https://data.iowa.gov).
 2. On the home page, select the **Employment** tab.
 3. Scroll to the bottom of the page and open the **Topics** drop-down list. Select **Employment**.
 
