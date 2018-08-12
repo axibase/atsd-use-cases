@@ -1,6 +1,6 @@
-# First Quarter Expatriation Shows Marked Decrease After Post-Election Turmoil
+# Second Quarter Expatriation Remains High Despite GDP Growth
 
-![](./images/title1-2018.png)
+![](./images/expatriation-title-new.png)
 
 ## Introduction
 
@@ -8,25 +8,34 @@ The Internal Revenue Service (IRS) of the United States releases quarterly repor
 
 Ostensibly, the tax bureau maintains these records instead of Citizenship and Immigration Services (CIS) because the IRS uses that information to adjudicate decisions regarding those expatriating citizens upon whom the Expatriation Tax is levied.
 
+An expatriate must meet any one of the following criteria to be liable for the eponymous tax:
+
+* Average annual net income tax for the five years ending before the date of expatriation or termination of residency is more than a specified amount that is adjusted for inflation ($151,000 for 2012, $155,000 for 2013, $157,000 for 2014, and $160,000 for 2015).
+* Net worth is $2 million or more on the date of expatriation or termination of residency.
+* Failure to certify on `Form 8854` that the citizen has complied with all U.S. federal tax obligations for the five years preceding the date of expatriation or termination of residency.
+
+IRS [Form `8854`](https://www.irs.gov/pub/irs-pdf/f8854.pdf) available at is a statement which confirms that up to the date of your expatriation, you have complied with United States Federal Tax Code to the letter of the law. Failing to correctly complete this document means that you are obligated to pay the Expatriation Tax, even if you do not meet either of the previous criteria.
+
 Previous articles tracking United States expatriation:
 
 * [2017 Q2](2017-1.md)
 * [2017 Q3](2017-2.md)
 * [2017 Q4](2017-3.md)
+* [2018 Q1](2018-1.md)
 
 ---
 
 ## Expatriation Review
 
-Axibase [tracked](2017-3.md) record-high expatriation during 2017; in the fourth quarter of last year however, it seemed that expatriation levels had begun to normalize once again. Naturally, the number of expatriating citizens is far lower than the amount of number of new citizens due to naturalization, but the trend remains interesting nonetheless. This trend has been noted by such publications as the [Washington Post](https://www.washingtonpost.com/news/worldviews/wp/2017/02/10/a-potentially-historic-number-of-people-are-giving-up-their-u-s-citizenship/?noredirect=on&utm_term=.5a0d04f0ffb5) as far back as early 2017, when Axibase published the [first article](2017-1.md) citing the trend.
+One of the central principles of the Trump Doctrine has been tangible economic growth. Perhaps invigorated by what former President Obama called the ["new normal,"](http://www.aei.org/publication/team-obama-sorry-america-the-new-normal-may-be-here-to-stay/) that is, roughly 2% quarterly growth, Trump seems to have pulled out all the stops to ensure American GDP grew at a rate greater than the 3.7% standard that we have come to expect since the end of Second World War. Despite the success, expatriation levels remain higher than normal. Naturally, the number of expatriating citizens is far lower than the amount of number of new citizens due to naturalization, but the trend remains interesting nonetheless. This trend has been noted by such publications as the [Washington Post](https://www.washingtonpost.com/news/worldviews/wp/2017/02/10/a-potentially-historic-number-of-people-are-giving-up-their-u-s-citizenship/?noredirect=on&utm_term=.5a0d04f0ffb5) as far back as early 2017, when Axibase published the [first article](2017-1.md) citing the trend.
 
 ---
 
-## Current Data
+## Latest Data
 
-The underlying IRS report contains the names of the individuals who expatriated in the first quarter of 2018.
+The underlying IRS report contains the names of the individuals who expatriated in the second quarter of 2018.
 
-Support for date aggregations in ATSD SQL syntax allows reporting on both the annual and quarterly basis.
+Support for date aggregations in ATSD [SQL syntax](https://axibase.com/docs/atsd/sql/) allows reporting on both the annual and quarterly basis.
 
 ### Annual Data
 
@@ -36,7 +45,7 @@ SELECT date_format(time+365*24*60*60000, 'yyyy') AS "Year",
   count(value)-lag(count(value)) AS "Y-o-Y Change",
   100*(count(value)-lag(count(value)))/lag(count(value)) AS "Y-o-Y Change, %"
 FROM "us-expatriate-counter"
-  WHERE entity = 'us.irs' AND datetime <= '2018-03-31T00:00:00Z'
+  WHERE entity = 'us.irs' AND datetime <= '2018-06-30T00:00:00Z'
 GROUP BY period(1 YEAR, END_TIME)
   ORDER BY period(1 YEAR, END_TIME)
 ```
@@ -44,32 +53,32 @@ GROUP BY period(1 YEAR, END_TIME)
 ```txt
 | Year | Year Total | Y-o-Y Change | Y-o-Y Change, % |
 |------|------------|--------------|-----------------|
-| 2000 | 184        | null         | null            |
-| 2001 | 470        | 286          | 155             |
-| 2002 | 373        | -97          | -21             |
-| 2003 | 507        | 134          | 36              |
-| 2004 | 545        | 38           | 7               |
-| 2005 | 645        | 100          | 18              |
-| 2006 | 724        | 79           | 12              |
-| 2007 | 285        | -439         | -61             |
-| 2008 | 485        | 200          | 70              |
-| 2009 | 174        | -311         | -64             |
-| 2010 | 853        | 679          | 390             |
-| 2011 | 1850       | 997          | 117             |
-| 2012 | 1742       | -108         | -6              |
-| 2013 | 1151       | -591         | -34             |
-| 2014 | 3319       | 2168         | 188             |
-| 2015 | 3743       | 424          | 13              |
-| 2016 | 4096       | 353          | 9               |
-| 2017 | 5557       | 1461         | 36              |
-| 2018 | 4913       | -644         | -12             |
+| 2000 | 273        | null         | null            |
+| 2001 | 502        | 229          | 84              |
+| 2002 | 322        | -180         | -36             |
+| 2003 | 646        | 324          | 101             |
+| 2004 | 474        | -172         | -27             |
+| 2005 | 911        | 437          | 92              |
+| 2006 | 351        | -560         | -61             |
+| 2007 | 368        | 17           | 5               |
+| 2008 | 394        | 26           | 7               |
+| 2009 | 166        | -228         | -58             |
+| 2010 | 1395       | 1229         | 740             |
+| 2011 | 1812       | 417          | 30              |
+| 2012 | 1412       | -400         | -22             |
+| 2013 | 2091       | 679          | 48              |
+| 2014 | 2766       | 675          | 32              |
+| 2015 | 3626       | 860          | 31              |
+| 2016 | 4143       | 517          | 14              |
+| 2017 | 6807       | 2664         | 64              |
+| 2018 | 4228       | -2579        | -38             |
 ```
 
-[**ChartLab**](../../tutorials/shared/chartlab.md) is a visualization service which can display ATSD data as charts. **ChartLab** features a wide range of widgets which can be created using a declarative syntax.
+[**ChartLab**](../../tutorials/shared/chartlab.md) is a visualization service which can display ATSD data as charts. **ChartLab** features a wide range of widgets, created using a declarative syntax.
 
-![](./images/new-yoy.png)
+![](./images/q2-2018-yoy.png)
 
-[![](./images/btn.png)](https://apps.axibase.com/chartlab/ad0f3f03#fullscreen)
+[![](./images/btn.png)](https://apps.axibase.com/chartlab/f45f19fc)
 
 ### Quarterly Data
 
@@ -85,10 +94,6 @@ GROUP BY period(1 QUARTER)
 ```txt
 | Quarter | Year | Quarter Total |
 |---------|------|---------------|
-| 1       | 2013 | 679           |
-| 2       | 2013 | 1129          |
-| 3       | 2013 | 560           |
-| 4       | 2013 | 631           |
 | 1       | 2014 | 999           |
 | 2       | 2014 | 576           |
 | 3       | 2014 | 775           |
@@ -106,15 +111,16 @@ GROUP BY period(1 QUARTER)
 | 3       | 2017 | 1374          |
 | 4       | 2017 | 685           |
 | 1       | 2018 | 1098          |
+| 2       | 2018 | 1071          |
 ```
 
-Although lower than 2017 Q1, 2018 Q1 data is on the order of recent, record-setting years for expatriation numbers.
+Although lower than 2017 Q2, 2018 Q2 data is on the order of recent, record-setting years for expatriation numbers.
 
 Using **ChartLab** for data visualization of the quarterly samples:
 
-![](./images/2018-q2-2.png)
+![](./images/q2-2018-qoq.png)
 
-[![](./images/btn.png)](https://apps.axibase.com/chartlab/ae048be8#fullscreen)
+[![](./images/btn.png)](https://apps.axibase.com/chartlab/7c00db67)
 
 ---
 
@@ -124,7 +130,7 @@ The data published by the Federal Register requires an intermediate ETL step to 
 
 The Web Crawler operates according to this workflow:
 
-![](./images/crawler-flow.png)
+![](./images/crawler-workflow.png)
 
 The Web Crawler reads incoming data from the Federal Register and parses it into [`series` commands](https://axibase.com/docs/atsd/api/network/series.html), readable by ATSD, the database which hosts all the data used in this article and supports the background operations of [SQL Console](https://axibase.com/docs/atsd/sql/). A `series` command template is shown below:
 
@@ -134,7 +140,7 @@ series d:{iso-date} e:{entity} t:{tag-1}={val-1} m:{metric-1}={number}
 
 In the case of expatriation data here, the entity is the publishing body, `us.irs` and the metric is `us-expatriate-counter`.
 
-SQL result set with raw data output no grouping, and entity / metric labels included:
+SQL result set with raw data output no grouping:
 
 ```sql
 SELECT datetime, tags.first_name, tags.middle_name, tags.last_name
@@ -145,80 +151,131 @@ LIMIT 10
 ```
 
 ```txt
-| datetime              | tags.first_name  | tags.middle_name  | tags.last_name |
-|-----------------------|------------------|-------------------|----------------|
-| 2018-03-31T00:00:00Z  | DARSHAM          | EVA               | VOOGT          |
-| 2018-03-31T00:00:00Z  | MAX-DOMINIC      | GRAFBEISSEL       | VONGYMNICH     |
-| 2018-03-31T00:00:00Z  | JORRIT           | FRISCO            | VANDERVEEN     |
-| 2018-03-31T00:00:00Z  | HATTAN           | KHALED            | UJAIMI         |
-| 2018-03-31T00:00:00Z  | KANAE            | -                 | TSURUGA        |
-| 2018-03-31T00:00:00Z  | ELTJE            | FREDERIKA         | TOLLENAAR      |
-| 2018-03-31T00:00:00Z  | GUYSLAINE        | AIMEE             | THALMANN       |
-| 2018-03-31T00:00:00Z  | ZHENGPING        | -                 | TAN            |
-| 2018-03-31T00:00:00Z  | MOTOKI           | -                 | TAKAHASHI      |
-| 2018-03-31T00:00:00Z  | AASIYA           | -                 | TAHIR          |
+| datetime   | tags.first_name | tags.middle_name | tags.last_name |
+|------------|-----------------|------------------|----------------|
+| 2018-06-30 | TIMNA           | null             | SHNITZER       |
+| 2018-06-30 | SHUNTARO        | JAMES            | SHIMIZU        |
+| 2018-06-30 | DANZHU          | null             | SHI            |
+| 2018-06-30 | YOMESH          | DINESH           | SHAH           |
+| 2018-06-30 | FAREHA          | null             | SHAFIQUE       |
+| 2018-06-30 | JUNYA           | null             | SATO           |
+| 2018-06-30 | GETHEN          | JAN              | SASANOW        |
+| 2018-06-30 | THEIPHILUS      | L                | SAMUELS        |
+| 2018-06-30 | NATASJA         | null             | RESLOW         |
+| 2018-06-30 | CHARLEMAGNE     | R                | QUIBAN         |
 ```
 
 ---
 
-### Additional Visualizations
+## Additional Visualizations
 
-#### `time_offset`
+### Ad Hoc Percent Change Calculation
 
-Data may also be compared using `time_offset` features whereby variable time-offsets may be applied to a dataset which may be compared to itself during a different time period, useful when working with time series data.
-
-![](./images/new-qoq.png)
-
-[![](./images/btn.png)](https://apps.axibase.com/chartlab/f3b0e94f#fullscreen)
-
-Additionally, a [`SUM`](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) value function may be applied to aggregate quarterly samples into annual totals using a [`period`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting.
-
-```javascript
-period = 1 year
-statistics = SUM
-time-offset = 1 year
-```
-
-#### `fred.PercentChangeFromYearAgo`
-
-A number of built-in [statistical functions](https://github.com/axibase/charts/blob/master/syntax/value_functions.md#statistical-functions) are already supported by ChartLab, and [user-defined functions](../../tutorials/shared/trends.md#user-defined-functions) may be added to a local ATSD instance. You can follow these [instructions](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files) to upload a user-defined function as a JavaScript file.
-
-![](./images/2018-q2-7.png)
-
-[![](./images/btn.png)](https://apps.axibase.com/chartlab/1ae83460#fullscreen)
-
-Visualization uses the `PercentChangeFromYearAgo` user-defined function. While the absolute value of U.S. expatriates is greatest during 2016-2017, the greatest relative change is observed several years ago.
-
-While the underlying function may be quite verbose:
+Show each data sample a percentage of the previous data sample. Quarters where expatriation increased, thus `value > 100` are highlighted in orange using an [`alert-expression`](https://github.com/axibase/charts/blob/master/syntax/alert-expression.md)
 
 ```ls
-value = var v = value('cpi'); var p = value('prev_cpi'); if(p!=null && v!=null) return (v / p - 1) * 100
+[series]
+  replace-value = value/previousValue *100
+  format = round(value, 2)
+  alert-expression = value > 100
+  alert-style = fill: orange
 ```
 
-The syntax required in the ChartLab configuration is simple:
+![](./images/ad-hoc-percent.png)
+
+[![](./images/btn.png)](https://apps.axibase.com/chartlab/d30a6925)
+
+### Two-Year Average
+
+Group data in two-year periods and calculate the average amongst intervals to highlight overarching trends since year 2000.
 
 ```ls
-value = fred.PercentChangeFromYearAgo('raw')
+[widget]
+  period = 2 year
+  statistics = avg
 ```
 
-> View the complete [`fred.js`](../../tutorials/shared/trends.md#fred-library) UDF library here.
+![](./images/two-year-avg.png)
 
-#### Highlights
+[![](./images/btn.png)](https://apps.axibase.com/chartlab/3b0867f2)
 
-The charts library support `alert-expression` settings to display quarters where the percent change from the previous year is greater than 50% in red, and quarters where it is less than -10% in green.
+### Raw Difference Between Annual and Quarterly Samples
 
-![](./images/2018-q2-6.png)
+Compute the raw differences between samples for both the quarterly and annual datasets.
 
-[![](./images/btn.png)](https://apps.axibase.com/chartlab/8828458c#fullscreen)
+![](./images/raw-difference-2018.png)
 
-The syntax for the `alert-expression` above is shown here:
+[![](./images/btn.png)](https://apps.axibase.com/chartlab/9f15f28f)
 
-```ls
-alert-expression = value > 50 ? 4000 : value < -10 ? -100 : 0
-alert-style = if (alert > 50) return 'color:red'
-alert-style = if (alert < -10) return 'color:green'
+### Expatriation by Name
+
+**The goal of these queries is purely demonstrative and lighthearted. There is no intention to invade privacy, defame people, or
+otherwise cause harm.**
+
+![](./images/2018-first-name.png)
+
+```sql
+SELECT tags.first_name AS "First Name",
+  count(value) AS "Expat Total"
+FROM "us-expatriate-counter"
+  WHERE entity = 'us.irs' AND datetime <= now
+GROUP BY tags.first_name
+  ORDER BY count(value) desc
+LIMIT 15
 ```
 
-When using a two-parameter `alert-expression`, three arguments are needed: an upper bound, lower bound, and median value separated by `:` delimiter.
+```txt
+| First Name  | Expat Total |
+|-------------|-------------|
+| MICHAEL     | 366         |
+| JOHN        | 366         |
+| DAVID       | 364         |
+| ROBERT      | 311         |
+| PETER       | 238         |
+| JAMES       | 235         |
+| THOMAS      | 226         |
+| DANIEL      | 205         |
+| SUSAN       | 196         |
+| MARY        | 194         |
+| WILLIAM     | 190         |
+| RICHARD     | 186         |
+| CHRISTOPHER | 177         |
+| MARK        | 164         |
+| JENNIFER    | 158         |
+```
 
-For more information about ChartLab syntax or to explore other features which may be used in the example above, see the complete [ChartLab documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+> All of these names appear on the list of most common American first names, linked [here](https://www.ssa.gov/oact/babynames/decades/century.html)
+
+![](./images/2018-expatriation-surname.png)
+
+```sql
+SELECT tags.last_name AS "Last Name",
+  count(value) AS "Expat Total"
+FROM "us-expatriate-counter"
+  WHERE entity = 'us.irs' AND datetime <= now
+GROUP BY tags.last_name
+  ORDER BY count(value) desc
+LIMIT 15
+```
+
+```txt
+| Last Name | Expat Total |
+|-----------|-------------|
+| LEE       | 263         |
+| KIM       | 152         |
+| WONG      | 121         |
+| CHAN      | 116         |
+| WANG      | 114         |
+| CHEN      | 99          |
+| SMITH     | 88          |
+| LIN       | 81          |
+| CHANG     | 68          |
+| WU        | 65          |
+| NG        | 56          |
+| PARK      | 54          |
+| LI        | 54          |
+| LIU       | 53          |
+| LIM       | 52          |
+```
+
+>Only the name Smith appears on the list of most common American last names.
