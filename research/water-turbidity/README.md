@@ -42,16 +42,16 @@ Sample records from this dataset are shown here:
 
 | Beach Name | Measurement Timestamp | Water Temperature | Turbidity | Transducer Depth | Wave Height | Wave Period | Battery Life | Measurement Timestamp Label | Measurement ID |
 |------------|-----------------------|-------------------|-----------|------------------|-------------|-------------|--------------|-----------------------------|----------------|
-| Ohio Street Beach | 07/02/2018 05:00:00 PM | 21.6 | 1.39 |       | 0.158 | 4    | 11.9                | 07/02/2018 5:00 PM          | OhioStreetBeach201807021700 |
-| Ohio Street Beach | 07/02/2018 06:00:00 PM | 21.1 | 0.91 |       | 0.189 | 2    | 11.9                | 07/02/2018 6:00 PM          | OhioStreetBeach201807021800 |
-| Ohio Street Beach | 07/02/2018 07:00:00 PM | 20.5 | 1.07 |       | 0.154 | 4    | 11.9                | 07/02/2018 7:00 PM          | OhioStreetBeach201807021900 |
-| Ohio Street Beach | 07/02/2018 08:00:00 PM | 19.9 | 1.11 |       | 0.161 | 3    | 11.7                | 07/02/2018 8:00 PM          | OhioStreetBeach201807022000 |
-| Ohio Street Beach | 07/02/2018 09:00:00 PM | 19.6 | 1.1  |       | 0.19  | 3    | 11.9                | 07/02/2018 9:00 PM          | OhioStreetBeach201807022100 |
-| Ohio Street Beach | 07/02/2018 10:00:00 PM | 19.3 | 1.02 |       | 0.176 | 3    | 11.9                | 07/02/2018 10:00 PM         | OhioStreetBeach201807022200 |
-| Ohio Street Beach | 07/02/2018 11:00:00 PM | 19   | 1.04 |       | 0.117 | 2    | 11.9                | 07/02/2018 11:00 PM         | OhioStreetBeach201807022300 |
-| Ohio Street Beach | 07/03/2018 12:00:00 AM | 18.9 | 1.01 || 0.123 | 3     | 11.9 | 07/03/2018 12:00 AM | OhioStreetBeach201807032400 |                             |
-| Ohio Street Beach | 07/03/2018 01:00:00 AM | 18.8 | 1.02 | |0.102 | 3     | 11.9 | 07/03/2018 1:00 AM  | OhioStreetBeach201807030100 |                             |
-| Ohio Street Beach | 07/03/2018 02:00:00 AM | 18.7 | 1    |       | 0.103 | 3    | 11.9                | 07/03/2018 2:00 AM          | OhioStreetBeach201807030200 |
+| Ohio Street Beach | 07/02/2018 05:00:00 PM | 21.6 | 1.39 |       | 0.158 | 4    | 11.9                | 07/02/2018 5:00 PM          | `OhioStreetBeach201807021700` |
+| Ohio Street Beach | 07/02/2018 06:00:00 PM | 21.1 | 0.91 |       | 0.189 | 2    | 11.9                | 07/02/2018 6:00 PM          | `OhioStreetBeach201807021800` |
+| Ohio Street Beach | 07/02/2018 07:00:00 PM | 20.5 | 1.07 |       | 0.154 | 4    | 11.9                | 07/02/2018 7:00 PM          | `OhioStreetBeach201807021900` |
+| Ohio Street Beach | 07/02/2018 08:00:00 PM | 19.9 | 1.11 |       | 0.161 | 3    | 11.7                | 07/02/2018 8:00 PM          | `OhioStreetBeach201807022000` |
+| Ohio Street Beach | 07/02/2018 09:00:00 PM | 19.6 | 1.1  |       | 0.19  | 3    | 11.9                | 07/02/2018 9:00 PM          | `OhioStreetBeach201807022100` |
+| Ohio Street Beach | 07/02/2018 10:00:00 PM | 19.3 | 1.02 |       | 0.176 | 3    | 11.9                | 07/02/2018 10:00 PM         | `OhioStreetBeach201807022200` |
+| Ohio Street Beach | 07/02/2018 11:00:00 PM | 19   | 1.04 |       | 0.117 | 2    | 11.9                | 07/02/2018 11:00 PM         | `OhioStreetBeach201807022300` |
+| Ohio Street Beach | 07/03/2018 12:00:00 AM | 18.9 | 1.01 || 0.123 | 3     | 11.9 | 07/03/2018 12:00 AM | `OhioStreetBeach201807032400` |                             |
+| Ohio Street Beach | 07/03/2018 01:00:00 AM | 18.8 | 1.02 | |0.102 | 3     | 11.9 | 07/03/2018 1:00 AM  | `OhioStreetBeach201807030100` |                             |
+| Ohio Street Beach | 07/03/2018 02:00:00 AM | 18.7 | 1    |       | 0.103 | 3    | 11.9                | 07/03/2018 2:00 AM          | `OhioStreetBeach201807030200` |
 
 The four relevant columns for this research are `Water Temperature` and `Turbidity`, the associated `Measurement Timestamp`, and the `Beach Name` detector location.
 

@@ -8,7 +8,7 @@ This guide shows how to configure GitHub to alert you when someone forks your re
 
 ## Purpose
 
-Github is a great place for open-source projects. Companies and individuals around the world are collaborating to improve code. Keep an eye on what others are doing with your repositories with **Fork Notifications**.
+GitHub is a great place for open-source projects. Companies and individuals around the world are collaborating to improve code. Keep an eye on what others are doing with your repositories with **Fork Notifications**.
 
 While the default email notifications delivered by GitHub provide a convenient way to stay on track, the flexibility of tracking new repository forks can be better accomplished by programmatic integration leveraging GitHub webhook functionality.
 

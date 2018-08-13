@@ -91,7 +91,7 @@ Container statistics are often gathered for a short timespan, meaning that tradi
 * Service or application name.
 * Function such as database, message-broker, HTTP server.
 * Environment such as testing, staging, production.
-* Data center topology: dc name, region, availability zone.
+* Data center topology: name, region, availability zone.
 
 When such a naming conventions are enforced, monitoring and alerting tools can visualize and prioritize data based on predefined labels. For example, you can easily report on several critical metrics:
 
@@ -213,7 +213,7 @@ Modern companies are becoming increasingly overwhelmed with machine data. They c
 ATSD allows you to automate and optimize a number of tasks:
 
 * Store detailed operational metrics for years without precision loss.
-* Datamine these metrics to predict problems and uncover hidden opportunities.
+* Data mine these metrics to predict problems and uncover hidden opportunities.
 * Improve precision of capacity planning and performance monitoring.
 
 Axibase is focused on three crucial points with respect to performance monitoring:

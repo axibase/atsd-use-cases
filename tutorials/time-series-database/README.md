@@ -9,7 +9,7 @@ The Axibase Time Series Database (ATSD) is able to deliver on both counts, and h
 
 Take a data source that is passive and non-standard. A data source that is passive cannot be instrumented to stream data into ATSD on its own. A data source that is non-standard provides data in neither CSV nor JSON format.
 
-An HMTL file hosted by a SharePoint reporting server returning HTML text in XLS format works well for this example, [`energinet.dk`](https://energinet.dk) market data reporting service fits the bill well.
+An HTML file hosted by a SharePoint reporting server returning HTML text in XLS format works well for this example, [`energinet.dk`](https://energinet.dk) market data reporting service fits the bill well.
 
 Energinet is an all-in-one energy regulator and operator in Denmark. Energinet performs research and development into sustainable energy, collects industry data, and participates in policy action. Download publicly available datasets from the Danish energy industry from the official [Energinet](https://energinet.dk/EN/El/Engrosmarked/Udtraek-af-markedsdata/Sider/default.aspx) website.
 

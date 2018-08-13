@@ -89,7 +89,7 @@ Only the percent change value without the raw figures is stored by this dataset.
 value can be applied to the above dataset. Thus users can see concrete import and export figures shown by change in 2010
 NIS Million, instead of percent.
 
-In a local instance of ATSD open the **Data > CSV Parsers** page, scroll to the bottom of the page, expand the split button, and click **Create**. Copy the schema showed below to the **Schema** field.
+In a local instance of ATSD navigate to **Data > CSV Parsers**, scroll to the bottom of the page, expand the split-button, and click **Create**. Copy the schema showed below to the **Schema** field.
 
 ![](./images/SBP_2.1.png)
 
@@ -138,7 +138,7 @@ values into 2010 NIS values, before submitting the data into the Axibase Time Se
 
 The script below the comment line `######` is the schema. For details about writing your own schema, read [ATSD Documentation](https://axibase.com/docs/atsd/parsers/csv/).
 
-Because ATSD supports schema-based parsing and javascript customization, modify your data before you submit it for storage and insert the data exactly as needed.
+Because ATSD supports schema-based parsing and JavaScript customization, modify your data before you submit it for storage and insert the data exactly as needed.
 
 An enhanced SQL query and visualization are shown below, featuring the newly calculated values:
 

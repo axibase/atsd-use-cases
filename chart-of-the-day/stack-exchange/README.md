@@ -4,7 +4,7 @@
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/c1acecc0)
 
-The total number of questions asked show that there are three programming languages far ahead of others with respect to popularity: Java, Javascript, and PHP.
+The total number of questions asked show that there are three programming languages far ahead of others with respect to popularity: Java, JavaScript, and PHP.
 
 ## Languages
 
@@ -15,7 +15,7 @@ Using Stack Exchange API to collect hourly data for the following programming la
 * [Scala](https://www.scala-lang.org/)
 * [Python](https://www.python.org/)
 * [Ruby](https://www.ruby-lang.org/en/)
-* [Javascript](https://www.javascript.com/)
+* [JavaScript](https://www.javascript.com/)
 * [PHP](https://php.net/)
 * [Ruby on Rails](https://rubyonrails.org/)
 * [SQL](https://en.wikipedia.org/wiki/SQL)

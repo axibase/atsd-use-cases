@@ -1,6 +1,6 @@
 # European Union Net Migration by Country
 
-**Source**: EuroStat [Immigration and Emigration Data](https://ec.europa.eu)
+**Source**: Eurostat [Immigration and Emigration Data](https://ec.europa.eu)
 
 **Visualization**: [ChartLab](https://apps.axibase.com/chartlab)
 

@@ -1,6 +1,6 @@
 # Foreign Businesses Operating in Hong Kong (1996-2016)
 
-Data Source: [data.gov.hk](https://data.gov.hk/en-data/dataset/hk-censtatd-tablechart-scorp)
+Data Source: [`data.gov.hk`](https://data.gov.hk/en-data/dataset/hk-censtatd-tablechart-scorp)
 
 Visualization: [ChartLab](https://apps.axibase.com/chartlab)
 
@@ -86,7 +86,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/5/#fullscreen)
 
-> Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down menu.
+> Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down list.
 
 ### Australia
 
@@ -736,7 +736,7 @@ Return to the [Metric Index](#metric-index)
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/4/#fullscreen)
 
-> Open the visualization in ChartLab and use the drop-down menus at the top of the screen to select a specific observation period.
+> Open the visualization in ChartLab and use the drop-down lists at the top of the screen to select a specific observation period.
 
 Total Foreign Businesses Operating a Local Branch in Hong Kong:
 
@@ -785,7 +785,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/7/#fullscreen)
 
-> Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down menu.
+> Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down list.
 
 ### Australia (Local)
 
@@ -1209,7 +1209,7 @@ Return to the [Metric Index](#metric-index)
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/8/#fullscreen)
 
-> Open the visualization in ChartLab and use the drop-down menus at the top of the screen to select an observation period.
+> Open the visualization in ChartLab and use the drop-down lists at the top of the screen to select an observation period.
 
 Total Foreign Businesses Operating a Regional Branch in Hong Kong:
 
@@ -1271,7 +1271,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/9/#fullscreen)
 
-> Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down menu.
+> Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down list.
 
 ### Australia (Regional)
 

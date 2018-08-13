@@ -16,7 +16,7 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 1. [Public Utilities and Private Industry in Austin](austin-power/README.md) (August 2017)
 1. [International Students in America by Country of Origin](international-students/README.md) (August 2017)
 1. [Who is Dropping Out in the State with the Fewest Dropouts?](iowa-dropouts/README.md) (July 2017)
-1. [What Do Seattlelites Have to Complain About?](seattle-complaint/README.md) (July 2017)
+1. [What Do Seattleites Have to Complain About?](seattle-complaint/README.md) (July 2017)
 1. [San Francisco Air Traffic Noise Complaints by the Numbers](sfo-noise/README.md) (July 2017)
 1. [Island Living is Recession Proof](hawaii-gdp/README.md) (July 2017)
 1. [500 Cities: Local Data for Better Health](cdc-top25/README.md) (June 2017)

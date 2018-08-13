@@ -27,12 +27,12 @@ Measuring uptime is important for a variety of use cases such as reviewing IT op
 
 In addition to cumulative availability over a reporting period, identify the total number of downtime incidents as well as the longest incidents for in-depth diagnostics.
 
-While [How to Build Availability Report for AWS Route53](README.md) describes how to collect AWS Route53 statistics with Axibase Time Series Database, this integration focuses on creating and delivering scheduled uptime reports.
+While [How to Build Availability Report for AWS Route 53](README.md) describes how to collect AWS Route 53 statistics with Axibase Time Series Database, this integration focuses on creating and delivering scheduled uptime reports.
 
 ## Preparation
 
 * Setup an [IAM account](https://axibase.com/docs/axibase-collector/jobs/aws-iam.html)
-* Configure [Route53 & ATSD](README.md) integration. Copy health check attributes as described by the [ATSD Integration Documentation](https://github.com/axibase/atsd-integration/tree/aws-route53)
+* Configure [Route 53 & ATSD](README.md) integration. Copy health check attributes as described by the [ATSD Integration Documentation](https://github.com/axibase/atsd-integration/tree/aws-route53)
 
 Log in to ATSD user interface using `axibase` username and `axibase` password.
 

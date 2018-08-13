@@ -19,7 +19,7 @@ Log in to Axibase Collector instance at `https://atsd_hostname:9443` using `axib
 
 Import the attached [job configuration](./resources/marathon-jobs.xml) XML file.
 
-The **marathon_apps** JSON job queries the Marathon `/v2/apps` API endpoint for Application definitions and health status, then offload this data into ATSD.
+The `marathon_apps` JSON job queries the Marathon `/v2/apps` API endpoint for Application definitions and health status, then offload this data into ATSD.
 
 ![](./images/import_job.png)
 
@@ -27,7 +27,7 @@ The **marathon_apps** JSON job queries the Marathon `/v2/apps` API endpoint for 
 
 In the **Jobs** drop-down list, select **JSON** jobs.
 
-> By default, the **marathon_apps** job is not enabled and therefore not visible. Be sure that the **Status** drop-down list displays all jobs to proceed.
+> By default, the `marathon_apps` job is not enabled and therefore not visible. Be sure that the **Status** drop-down list displays all jobs to proceed.
 
 Open the **JSON Job** page, then open the **JSON Configuration** page by clicking the **apps** link. On the **JSON Configuration** page, open **HTTP Pool** settings.
 
@@ -39,7 +39,7 @@ Specify **Server**, **Username** and **Password** for a Marathon user with API q
 
 Confirm connectivity by clicking **Test**. Click **Save**.
 
-From the **JSON Job** page, enable the **marathon_apps** job. Click **Save**.
+From the **JSON Job** page, enable the `marathon_apps` job. Click **Save**.
 
 ![](./images/enable_job.png)
 
@@ -47,4 +47,4 @@ From the **JSON Job** page, enable the **marathon_apps** job. Click **Save**.
 
 Open ATSD user interface at `https://atsd_hostname:8443`.
 
-Open **Settings > Diagnostics > Backup Import** and upload the [atsd-marathon-xml.zip](./resources/atsd-marathon-xml.zip) archive that contains entity views, portals, queries and rules designed specifically for Marathon.
+Open **Settings > Diagnostics > Backup Import** and upload the [`atsd-marathon-xml.zip`](./resources/atsd-marathon-xml.zip) archive that contains entity views, portals, queries and rules designed specifically for Marathon.
