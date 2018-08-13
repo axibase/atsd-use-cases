@@ -74,8 +74,8 @@ bin/itmcmd start ${PRODUCT_CODE}
 ### Upload CSV Parsers into ATSD
 
 * Log in to the ATSD web interface.
-* Open the **Configuration > Parsers: CSV** page.
-* Open the split button and select **Import**.
+* Navigate to **Configuration > Parsers: CSV**.
+* Expand the split-button and select **Import**.
 * Upload the CSV parser XML files.
 
 ### Configure `inotify` Script to Read CSV files and Upload into ATSD

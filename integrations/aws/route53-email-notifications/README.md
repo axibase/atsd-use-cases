@@ -46,42 +46,42 @@ Complete the process below to enhance Route 53 alarms with your local ATSD insta
 
 1. Install [ATSD sandbox](../route53-health-checks/README.md) with AWS integration. Configure Mail Client, Webhook user and import `rule-aws-cloudwatch-alarm.xml` using Docker `run` command.
 
-```sh
-cat import/mail.properties
-```
+    ```sh
+    cat import/mail.properties
+    ```
 
-```txt
-server=mail.example.org
-port=587
-user=user@example.org
-password=secret
-```
+    ```txt
+    server=mail.example.org
+    port=587
+    user=user@example.org
+    password=secret
+    ```
 
-```sh
-docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
-  --name=atsd-sandbox \
-  --volume=$(pwd)/import:/import \
-  --env ATSD_IMPORT_PATH='https://github.com/axibase/atsd-use-cases/raw/master/integrations/aws/route53-health-checks/resources/aws-route53-xml.zip,https://github.com/axibase/atsd-use-cases/raw/master/integrations/aws/route53-email-notifications/resources/rule-aws-cloudwatch-alarm.xml' \
-  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/aws/route53-health-checks/resources/job_aws_aws-route53.xml' \
-  --env COLLECTOR_CONFIG='job_aws_aws-route53.xml:aws.properties' \
-  axibase/atsd-sandbox:latest \
-  --env EMAIL_CONFIG=mail.properties \
-  --env WEBHOOK=aws-cw
-```
+    ```sh
+    docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
+      --name=atsd-sandbox \
+      --volume=$(pwd)/import:/import \
+      --env ATSD_IMPORT_PATH='https://github.com/axibase/atsd-use-cases/raw/master/integrations/aws/route53-health-checks/resources/aws-route53-xml.zip,    https://github.com/axibase/atsd-use-cases/raw/master/integrations/aws/route53-email-notifications/resources/rule-aws-cloudwatch-alarm.xml' \
+      --env     COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/aws/route53-health-checks/resources/job_aws_aws-route53.    xml' \
+      --env COLLECTOR_CONFIG='job_aws_aws-route53.xml:aws.properties' \
+      axibase/atsd-sandbox:latest \
+      --env EMAIL_CONFIG=mail.properties \
+      --env WEBHOOK=aws-cw
+    ```
 
-View container start log:
+    View container start log:
 
-```sh
-docker log -f atsd-sandbox
-```
+    ```sh
+    docker log -f atsd-sandbox
+    ```
 
-Start log displays the webhook at the end of the output:
+    Start log displays the webhook at the end of the output:
 
-```txt
-Webhooks created:
-Webhook user: aws-cw
-Webhook URL: https://aws-cw:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
-```
+    ```txt
+    Webhooks created:
+    Webhook user: aws-cw
+    Webhook URL: https://aws-cw:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;    SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
+    ```
 
 2. Configure ATSD to accept HTTPS requests from AWS infrastructure servers with a [**CA-signed**](https://axibase.com/docs/atsd/administration/ssl-self-signed.html) SSL certificate. Alternatively, use the HTTP protocol when configuring the SNS subscription URL.
 

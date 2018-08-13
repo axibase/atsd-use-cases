@@ -7,7 +7,7 @@
 
 The **World Progress Explorer** is an aggregation of many statistics that are collected by various international agencies including the [World Bank](https://www.worldbank.org/) and [United Nations Statistical Division](https://unstats.un.org/home/) and retrieved from the [Federal Reserve Economic Research](https://fred.stlouisfed.org/) API.
 
-Open the **Trends** visualization above and use the drop-down menus to navigate between all countries which have recorded data, grouped in alphabetically ascending order. The observed metric may be changed using the right-most drop-down menu. The metrics tracked in the visualization are described in the table below:
+Open the **Trends** visualization above and use the expandable drop-down lists to navigate between all countries which have recorded data, grouped in alphabetically ascending order. The observed metric may be changed using the right-most drop-down list. The metrics tracked in the visualization are described in the table below:
 
 |Metric Name |Description |
 |------------|------------|
@@ -23,7 +23,7 @@ For detailed information about using the **Trends** service, read this [guide](.
 
 ## Visualization
 
-The visualizations in the chart above demonstrate a [user-defined function](../../tutorials/shared/trends.md#user-defined-functions) which sets the year 1990 as the baseline using the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js) library. Using the `PercentChangeFromYearAgo` function instead creates the visualization below. Open the **Trends** interface and explore the data using the same drop-down menus to navigate between countries and metrics.
+The visualizations in the chart above demonstrate a [user-defined function](../../tutorials/shared/trends.md#user-defined-functions) which sets the year 1990 as the baseline using the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js) library. Using the `PercentChangeFromYearAgo` function instead creates the visualization below. Open the **Trends** interface and explore the data using the same drop-down lists to navigate between countries and metrics.
 
 ![](./images/wps-1.png)
 [![](./images/button-new.png)](https://trends.axibase.com/5d0563d2/2#fullscreen)
@@ -271,7 +271,7 @@ FROM "population_total_by_country"
 ![](./images/pop-loss-post-ussr.png)
 [![](./images/button-new.png)](https://trends.axibase.com/fcb79db7)
 
-Open the **Trends** visualization above to track the same pattern in other former Warsaw Pact countries by using the drop-down menus to navigate through the data.
+Open the **Trends** visualization above to track the same pattern in other former Warsaw Pact countries by using the drop-down lists to navigate through the data.
 
 ### Greatest Population Decline Percent Across Observed Period (1970-2015)
 

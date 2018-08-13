@@ -12,7 +12,7 @@
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bfcc9660#fullscreen)
 
-> Open the ChartLab visualization above and use the drop-down menus to navigate between countries or select the European Union
+> Open the ChartLab visualization above and use the drop-down lists to navigate between countries or select the European Union
 total. Use both charts to compare two countries or one country to the EU total.
 
 ## Debt as a Portion of the European Union Total
@@ -21,7 +21,7 @@ total. Use both charts to compare two countries or one country to the EU total.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/64b4fd84/13/#fullscreen)
 
-> Open the ChartLab visualization above and use the drop-down menu to navigate through time.
+> Open the ChartLab visualization above and use the drop-down list to navigate through time.
 
 ## Data
 

@@ -59,7 +59,7 @@ Route 53 supports health checks HTTP, HTTPS, and TCP protocols.
 
 The services considers the endpoint to be in a `Healthy` state when the specified percentage of checkers establish a TCP connection and (for HTTP/S) received a `2xx`/`3xx` response code from the server. The response also contains the specified keyword if **String Matching** is enabled.
 
-When specifying paths for HTTP/S endpoints, factor in the increased traffic sent to the target service to avoid causing excessive load on the server.
+When specifying paths for HTTP or HTTPS endpoints, factor in the increased traffic sent to the target service to avoid causing excessive load on the server.
 
 ### HTTPS
 
