@@ -10,7 +10,7 @@ Follow this process to add a new Scheduled SQL Query to your local ATSD instance
 
     ![](./images/sql-schd.png)
 
-2. From the **Scheduled Queries** page, expand the split button at the bottom of the page and click **Import**.
+2. From the **Scheduled Queries** page, expand the split-button at the bottom of the page and click **Import**.
 
     ![](./images/sql-split-import.png)
 

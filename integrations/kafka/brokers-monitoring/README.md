@@ -38,7 +38,7 @@ docker logs -f atsd-sandbox
 
 Log in to the Collector instance at `https://atsd_hostname:9443` with `axibase` username and `axibase` password.
 
-Expand the **Jobs** drop-down list and select **JMX**. 
+Expand the **Jobs** drop-down list and select **JMX**.
 
 ![](./images/jobs-jmx.png)
 

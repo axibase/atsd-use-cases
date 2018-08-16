@@ -4,7 +4,7 @@
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/89c8183d/2/#fullscreen)
 
-> Use the drop-down menu to examine the Top 10 or Bottom 10 testing stations, or use the Wildcard ([`*`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/))
+> Use the drop-down list to examine the Top 10 or Bottom 10 testing stations, or use the Wildcard ([`*`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/))
 option to view all available testing sites together.
 
 The visualization above shows the ranking of the results of the latest Water Quality Index tests performed by the State of Washington.
@@ -38,7 +38,7 @@ conversions to qualitative words have also been provided below:
 
 >More information about the Water Quality Index, its methodology, or metrics, can be found [here](https://www.water-research.net/)
 
-Use the [ChartLab](https://apps.axibase.com/chartlab) visualization below, and the drop-down lists at the top of the screen to choose the  metric, and compare
+Use the [ChartLab](https://apps.axibase.com/chartlab) visualization below, and the drop-down lists at the top of the screen to choose the metric, and compare
 the Top 10, Top 20, or Top 30, Bottom 10, Bottom 20, or Bottom 30 testing sites, or use the Wildcard option to view all
 available testing sites together.
 

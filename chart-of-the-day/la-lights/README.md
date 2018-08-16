@@ -13,9 +13,9 @@ with light-emitting diode (LED) bulbs to update the traditional incandescent bul
 The [ChartLab](https://apps.axibase.com/chartlab) visualization above, made possible by ATSD,
 tracks government progress with [public data](https://catalog.data.gov/dataset/citywide-led-streetlight-savings) and
 offers insight on the latest foray into environmental protectionism of Los Angeles. Open the chart with the link above, and use the
-drop-down menu to toggle between all of the recorded metrics for a complete picture of [The Los Angeles LED Streetlight Program](https://energy.gov/eere/ssl/text-alternative-version-city-los-angeles-led-streetlight-program).
+drop-down list to toggle between all of the recorded metrics for a complete picture of [The Los Angeles LED Streetlight Program](https://energy.gov/eere/ssl/text-alternative-version-city-los-angeles-led-streetlight-program).
 
-The table below indexes the recorded metrics and offers explanation when  needed:
+The table below indexes the recorded metrics and offers explanation when needed:
 
 | Metric | Unit | Comment |
 |--------|:----:|:-------:|

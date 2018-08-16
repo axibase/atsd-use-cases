@@ -10,7 +10,7 @@ Follow this process to upload a CSV Parser configuration to your local ATSD inst
 
     ![](./images/data-csv-path.png)
 
-2. From the **CSV** page, expand the split button, click **Import**.
+2. From the **CSV** page, expand the split-button, click **Import**.
 
     ![](./images/csv-import.png)
 
