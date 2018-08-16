@@ -60,14 +60,14 @@ county by birthrate, consistently out-performed by the smaller Peoria County (Po
 ![](./images/ILL29.png)
 
 Open [ChartLab](https://apps.axibase.com/chartlab/6402f01c) to explore the number of live births in each of the counties listed above
-and navigate throughout the 20-year time period using the drop-down menu at the top of
+and navigate throughout the 20-year time period using the drop-down list at the top of
 the display.
 
 ![](./images/ILL31.png)
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/2/#fullscreen)
 
->Learn more about creating a drop-down menu in ChartLab in the [Appendix](#appendix) below.
+>Learn more about creating a drop-down list in ChartLab in the [Appendix](#appendix) below.
 
 Use the ChartLab model below to compare the Top 10 counties' live births against the
 whole of Illinois' live births. Toggle between observed years using the drop-down list:
@@ -448,7 +448,7 @@ The dataset used for modeling is as follows:
 
 Using [Fityk](https://fityk.nieto.pl/) to create a best-fit model for this data:
 
-#### Model 1
+#### Model One
 
 ![](./images/ILL21.png)
 
@@ -464,7 +464,7 @@ Moving the window to the right estimates the total live births for years not inc
 
 Excluding the final data point from the series, which deviated significantly, creates a less extreme model:
 
-#### Model 2
+#### Model Two
 
 ![](./images/ILL23.png)
 
@@ -502,7 +502,7 @@ underlining the importance of constantly updating and maintaining such models wi
 
 When updated to include the latest figures, the model looks like this:
 
-#### Model 3
+#### Model Three
 
 ![](./images/ILL25.png)
 
@@ -521,7 +521,7 @@ year 2038, but some of the older data can now be excluded, to reflect the trends
 last decade while excluding data that is two decades old and reflects the trends of a society
 that has experienced a wide array of dramatic changes:
 
-#### Model 4
+#### Model Four
 
 ![](./images/ILL27.png)
 

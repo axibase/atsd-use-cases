@@ -70,7 +70,7 @@ Consumer lag calculation requires information about producer offset and consumer
 
 Producer offset is collected from Kafka brokers by the JMX Job above.
 
-Consumer offset is collected using a Kafka console consumer reading events from  the `__consumer_offset` topic on one of the Kafka servers in the cluster.
+Consumer offset is collected using a Kafka console consumer reading events from the `__consumer_offset` topic on one of the Kafka servers in the cluster.
 
 Log in to the Kafka server.
 

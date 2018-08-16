@@ -81,8 +81,7 @@ You can explore this portal by clicking on the button below:
 
 Below are three outputs for the Oroville dam:
 
-* Precipitation vs new inflows, where net inflow is the difference between reservoir inflow and outflow. With this graph notice the relationship between precipitation totals
-  and the net inflows/storage of the dam.
+* Precipitation vs new inflows, where net inflow is the difference between reservoir inflow and outflow. With this graph notice the relationship between precipitation totals and the net inflows/storage of the dam.
 * Inflows (measured in acre-foot per day) for 2017, 2016, 2015, 2014, and 2013. From this visualization, it is clear that inflows for 2017 have been far greater than any of the recent previous years.
 * Precipitation per day (inches) for 2017, 2016, 2015, 2014, and 2013. While inflows for 2017 are quite a bit greater than previous years totals precipitation totals in 2017 are not too far ahead of previous years.
 

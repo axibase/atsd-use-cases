@@ -9,7 +9,7 @@ is 'Frisco home to the Golden Gate Bridge, one of the wonders of the modern worl
 Francisco International Airport, or SFO as it is known to frequent fliers. The data is collected by
 the [Office of Aircraft Noise Abatement](https://www.flysfo.com/noise) and includes
 complaints received via email, hotline, and even handwritten letter. Open [ChartLab](https://apps.axibase.com/chartlab) below and navigate through time
-using the drop-down menu at the top of the visualization:
+using the list at the top of the visualization:
 
 ![](./images/SFO1.png)
 

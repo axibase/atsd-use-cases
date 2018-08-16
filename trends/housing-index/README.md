@@ -84,7 +84,7 @@ The Federal Reserve records data for types of residences built as well.
 
 [![](./images/button-new.png)](https://trends.axibase.com/2952de5d#fullscreen)
 
-The [Pie Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/#tab-id-1) tracks the annual total for each type of project. Navigate through time using the drop-down list in the portal above. Expand the `range` to view data outside the scope of this article. The Federal Reserve tracks  from completed projects 1971 to the present.
+The [Pie Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/#tab-id-1) tracks the annual total for each type of project. Navigate through time using the drop-down list in the portal above. Expand the `range` to view data outside the scope of this article. The Federal Reserve tracks from completed projects 1971 to the present.
 
 ```ls
 [dropdown]
