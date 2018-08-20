@@ -12,7 +12,7 @@ The portal is available through the **Trends** service, which is a public instan
 
 ## Data
 
-The underlying economic data used in this portal is sourced from the St. Louis Branch of the Federal Reserve data library [FRED](https://fred.stlouisfed.org/)
+The underlying economic data used in this portal is sourced from the St. Louis Branch of the Federal Reserve data library [FRED](https://fred.stlouisfed.org/).
 
 ### Presidential Administrations
 
@@ -48,7 +48,7 @@ Each Presidential adminstration serves as an index baseline for the respective m
 
 [![](./images/button-new.png)](https://trends.axibase.com/93acd671)
 
-The table above tracks the change in the selected economic indicator from the index start date to the most recent data point, which is typically **Q2 2018**. Thus, the CPI has grown by 436 points from the start of the Presidency of Gerald Ford, to the present day.
+The table above tracks the change in the selected economic indicator from the index start date to the most recent data point, which is typically **Q2 2018**. Thus, the CPI has grown by 436 points from the start of the presidency of Gerald Ford, to the present day.
 
 ## Creating the Portal
 
@@ -59,7 +59,7 @@ The Presidential Economic Indicators Portal features a number of syntax features
 Charts applications support [user defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md),
 which are JavaScript files which comprise particular mathematical functions not available using typical Charts syntax.
 
-This portal uses the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js)  library to modify the index position. This modification transforms data to reflect the selected Presidential administration.
+This portal uses the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js)  library to modify the index position. This modification transforms data to reflect the selected administration.
 
 ```ls
 [series]
@@ -68,7 +68,7 @@ This portal uses the [`fred.js`](https://apps-chartlab.axibase.com/portal/resour
 
 ### Inline CSV
 
-The portal contains two CSV files which denote Presidential administrations and their years of service as well as the tracked economic metrics and their associated `FRED ID`. The Presidential administration CSV is shown here:
+The portal contains two CSV files which denote presidential administrations and their years of service as well as the tracked economic metrics and their associated `FRED ID`. The Presidential administration CSV is shown here:
 
 ```ls
 csv index =
