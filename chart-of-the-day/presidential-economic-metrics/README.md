@@ -42,7 +42,7 @@ Metric | FRED ID | Units | Description
 
 ### Relative Economic Performance
 
-Each Presidential adminstration serves as an index baseline for the respective metrics. Thus, comparisons to previous and future Presidents are observable. Of course, the efficacy of a particular administration is gauged by many more metrics than those shown here, such as foreign policy successes and failures, domestic social stability, and the posture of an administration with respect to other branches of government. Nonetheless, American prosperity has traditionally be grounded in economic growth and innovation making the portal an effective tool for inter-administrative comparisons.
+Each Presidential administration serves as an index baseline for the respective metrics. Thus, comparisons to previous and future Presidents are observable. Of course, the efficacy of a particular administration is gauged by many more metrics than those shown here, such as foreign policy successes and failures, domestic social stability, and the posture of an administration with respect to other branches of government. Nonetheless, American prosperity has traditionally be grounded in economic growth and innovation making the portal an effective tool for inter-administrative comparisons.
 
 ![](./images/presidential-table-2.png)
 
@@ -88,7 +88,7 @@ Define [inline CSV](https://github.com/axibase/charts/blob/master/syntax/functio
 
 ### Control Structures
 
-Data [control structures](https://github.com/axibase/charts/blob/master/syntax/control-structures.md) are defined in the **Editor** window. This portal features inline [JavaScript functions](https://github.com/axibase/charts/blob/master/syntax/control-structures.md#script--endscript) which extract the contents of the defined CSV fles to populate the options of each [drop-down list](https://github.com/axibase/charts/blob/master/configuration/drop-down-lists.md).
+Data [control structures](https://github.com/axibase/charts/blob/master/syntax/control-structures.md) are defined in the **Editor** window. This portal features inline [JavaScript functions](https://github.com/axibase/charts/blob/master/syntax/control-structures.md#script--endscript) which extract the contents of the defined CSV files to populate the options of each [drop-down list](https://github.com/axibase/charts/blob/master/configuration/drop-down-lists.md).
 
 ```javascript
 script
