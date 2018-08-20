@@ -1,16 +1,18 @@
 # Presidential Economic Metrics Portal
 
-![]()
+![](./images/presidential-portal.png)
+
+[![](./images/button-new.png)](https://trends.axibase.com/de13a5e5)
 
 ## Overview
 
-The portal above tracks economic metrics through American Presidential administrations from Gerald Ford (1974-1977) to Donald J. Trump (2016-present). Open the portal and use the drop-down lists to navigate between Presidential administrations and metrics.
+The portal above tracks economic metrics for American Presidential administrations from Gerald Ford (1974-1977) to Donald J. Trump (2017-present). Open the portal and use the drop-down lists to navigate between Presidential administrations and metrics.
 
 The portal is available through the **Trends** service, which is a public instance of ATSD, the database responsible for the underlying data management and processing tasks used to create the visualization.
 
 ## Data
 
-The underlying economic data used in this portal is sources from the St. Louis Branch of the Federal Reserve data portal [FRED]()
+The underlying economic data used in this portal is sourced from the St. Louis Branch of the Federal Reserve data library [FRED](https://fred.stlouisfed.org/)
 
 ### Presidential Administrations
 
@@ -27,16 +29,26 @@ Donald Trump | January 20, 2017 - Present | ![](./images/1trump.png)
 
 ### Economic Metrics
 
-Metric | FRED ID | Description
---|--|--
-Consumer Price Index | `CPIAUCSL` | The Consumer Price Index is a measure of the average monthly change in the price for goods and services paid by urban consumers between any two time periods.
-Real Gross National Product | `A001RO1Q156NBEA` | Gross national product (GNP) is the market value of all the goods and services produced in one year by labor and property supplied by the citizens of a country.
-National Income | `A032RC1A027NBEA` | National income is the monetary value of the final goods and services produced by an economy over a period of time.
-Corporate Profits Before Tax | `A464RC1A027NBEA` | Profit before tax (PBT) is a measure that looks at a company's profits before the company has to pay corporate income tax. It deducts all expenses from revenue including interest expenses and operating expenses except for income tax.
-GDP Per Capita | `A939RC0A052NBEA` | The Gross Domestic Product of the United States per individual.
-Average Sale Price of Houses | `ASPUS` | The mean sale price of homes in the United States.
-Capacity Utilization | `CAPUTLB50001SQ` | For a given industry, the capacity utilization rate is equal to an output index divided by a capacity index. The Federal Reserve Board capacity indexes attempt to capture the concept of sustainable maximum output-the greatest level of output a plant can maintain within the framework of a realistic work schedule, after factoring in normal downtime and assuming sufficient availability of inputs to operate the capital in place.
-Cash Surplus or Deficit (% GDP) | `CASHBLUSA188A` | Cash surplus or deficit is revenue (including grants) minus expense, minus net acquisition of non-financial assets.
+Metric | FRED ID | Units | Description
+--|--|--|--|
+[Consumer Price Index](https://fred.stlouisfed.org/series/CPIAUCSL) | `CPIAUCSL` | Index | The Consumer Price Index is a measure of the average monthly change in the price for goods and services paid by urban consumers between any two time periods.
+[Real Gross National Product](https://fred.stlouisfed.org/series/A001RO1Q156NBEA) | `A001RO1Q156NBEA` | Percent Change | Gross national product (GNP) is the market value of all the goods and services produced in one year by labor and property supplied by the citizens of a country.
+[National Income](https://fred.stlouisfed.org/series/A032RC1A027NBEA) | `A032RC1A027NBEA` | Billions of Dollars | National income is the monetary value of the final goods and services produced by an economy over a period of time.
+[Corporate Profits Before Tax](https://fred.stlouisfed.org/series/A464RC1A027NBEA) | `A464RC1A027NBEA` | Billions of Dollars | Profit before tax (PBT) is a measure that looks at a company's profits before the company has to pay corporate income tax. It deducts all expenses from revenue including interest expenses and operating expenses except for income tax.
+[GDP Per Capita](https://fred.stlouisfed.org/series/A939RC0A052NBEA) | `A939RC0A052NBEA` | Dollars | The Gross Domestic Product of the United States per individual.
+[Average Sale Price of Houses](https://fred.stlouisfed.org/series/ASPUS) | `ASPUS`| Dollars | The mean sale price of homes in the United States.
+[Capacity Utilization](https://fred.stlouisfed.org/series/CAPUTLB50001SQ) | `CAPUTLB50001SQ` | Percent of Capacity |For a given industry, the capacity utilization rate is equal to an output index divided by a capacity index. The Federal Reserve Board capacity indexes attempt to capture the concept of sustainable maximum output-the greatest level of output a plant can maintain within the framework of a realistic work schedule, after factoring in normal downtime and assuming sufficient availability of inputs to operate the capital in place.
+[Cash Surplus or Deficit](https://fred.stlouisfed.org/series/CASHBLUSA188A) | `CASHBLUSA188A` | Percent of GDP) |Cash surplus or deficit is revenue (including grants) minus expense, minus net acquisition of non-financial assets.
+
+### Relative Economic Performance
+
+Each Presidential adminstration serves as an index baseline for the respective metrics. Thus, comparisons to previous and future Presidents are observable. Of course, the efficacy of a particular administration is gauged by many more metrics than those shown here, such as foreign policy successes and failures, domestic social stability, and the posture of an administration with respect to other branches of government. Nonetheless, American prosperity has traditionally be grounded in economic growth and innovation making the portal an effective tool for inter-administrative comparisons.
+
+![](./images/presidential-table-2.png)
+
+[![](./images/button-new.png)](https://trends.axibase.com/93acd671)
+
+The table above tracks the change in the selected economic indicator from the index start date to the most recent data point, which is typically **Q2 2018**. Thus, the CPI has grown by 436 points from the start of the Presidency of Gerald Ford, to the present day.
 
 ## Creating the Portal
 
@@ -44,7 +56,7 @@ The Presidential Economic Indicators Portal features a number of syntax features
 
 ### User Defined Functions
 
-Charts services support [user defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md),
+Charts applications support [user defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md),
 which are JavaScript files which comprise particular mathematical functions not available using typical Charts syntax.
 
 This portal uses the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js)  library to modify the index position. This modification transforms data to reflect the selected Presidential administration.
@@ -56,7 +68,7 @@ This portal uses the [`fred.js`](https://apps-chartlab.axibase.com/portal/resour
 
 ### Inline CSV
 
-The portal contains two CSV files which enumerate the Presidential administrations and their years of service as well as the tracked economic metrics and their associated `FRED ID`.
+The portal contains two CSV files which denote Presidential administrations and their years of service as well as the tracked economic metrics and their associated `FRED ID`. The Presidential administration CSV is shown here:
 
 ```ls
 csv index =
@@ -72,14 +84,35 @@ csv index =
 endcsv
 ```
 
-
-
 Define [inline CSV](https://github.com/axibase/charts/blob/master/syntax/functions.md#csv-inline-text-mode) files to associate labels and metrics.
+
+### Control Structures
+
+Data [control structures](https://github.com/axibase/charts/blob/master/syntax/control-structures.md) are defined in the **Editor** window. This portal features inline [JavaScript functions](https://github.com/axibase/charts/blob/master/syntax/control-structures.md#script--endscript) which extract the contents of the defined CSV fles to populate the options of each [drop-down list](https://github.com/axibase/charts/blob/master/configuration/drop-down-lists.md).
+
+```javascript
+script
+window.indexMap = (function () {
+  var map = {};
+  var idx = @{JSON.stringify(index)};
+  for (var i = 0; i < idx.length; i++) {
+    map[idx[i].president] = idx[i].inauguration;
+  }
+  return map;
+})()
+window.setYear = function(widget, year) {
+  var series = widget.config.series
+  series[1].value = series[1].value.replace(/\d{4}/, year || 1974);
+  widget.replaceSeries(series);
+  widget.reset(2);
+}
+endscript
+```
 
 ## Action Items
 
 * To begin work within the **Trends** environment, refer to the [Getting Started Tutorial](../../tutorials/shared/trends.md).
 * For more information about ATSD, or to deploy a local instance, see [ATSD Documentation](https://axibase.com/docs/atsd/).
 * For complete Charts syntax, refer to the [Charts Documentation](https://github.com/axibase/charts).
-* To access raw datasets, append the `FRED ID` of any metric to the URL `https://fred.stlouisfed.org/series/`
+* To access raw datasets, append the `FRED ID` of any metric to the URL `https://fred.stlouisfed.org/series/` or use the links in the [Economic Metrics](#economic-metrics) table above.
 * To view all metrics stored in the **Trends** environment, refer to the [Reference Catalog](https://trends.axibase.com/public/reference.html).
