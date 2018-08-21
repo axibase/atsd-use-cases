@@ -20,7 +20,7 @@ The portal above tracks the Bolívar during three stages of inflation. The first
 
 ![](./images/percent-change-1.png)
 
-[![](./images/button.png)]()
+[![](./images/button.png)](https://apps.axibase.com/chartlab/d0a40fcc)
 
 Quarterly percent change is shown alongside the monthly exchange rate in the portal above from 1995 to 2008, highlighting that although inflation was high, it never exceeded more than an average 15% for any given quarter.
 
@@ -36,7 +36,11 @@ Once price controls were established by the Venezuelan Central Bank, the currenc
 
 Hyperinflation struck Venezuela in early 2018, with the currency deflating in value 200,000%. Since then, inflation has exceeded 30% nearly every month creating a completely untenable exchange rate against the United States Dollar, roughly 220,000:1.
 
+<!-- markdownlint-disable MD105 -->
+
 The currency's value has become so trivialized that small denomination bills are commonly [used as confetti during baseball games](https://www.bloomberg.com/news/articles/2018-03-02/venezuelans-are-paying-a-100-premium-for-cash) and street vendors have begun to create resellable crafts with the near-valueless paper notes.
+
+<!-- markdownlint-enable MD105 -->
 
 ![](./images/bolivar-craft-1.png)
 
