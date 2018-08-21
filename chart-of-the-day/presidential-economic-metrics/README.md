@@ -1,12 +1,12 @@
 # Presidential Economic Metrics Portal
 
-![](./images/presidential-portal.png)
+![](./images/presidential-portal-1.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/de13a5e5)
+[![](./images/button-new.png)](https://trends.axibase.com/24dd54d5)
 
 ## Overview
 
-The portal above tracks economic metrics for American Presidential administrations from Gerald Ford (1974-1977) to Donald J. Trump (2017-present). Open the portal and use the drop-down lists to navigate between Presidential administrations and metrics.
+The portal above tracks economic metrics for American presidential administrations from Gerald Ford (1974-1977) to Donald J. Trump (2017-present). Open the portal and use the drop-down list to navigate between tracked metrics.
 
 The portal is available through the **Trends** service, which is a public instance of ATSD, the database responsible for the underlying data management and processing tasks used to create the visualization.
 
@@ -32,7 +32,7 @@ Donald Trump | January 20, 2017 - Present | ![](./images/1trump.png)
 Metric | FRED ID | Units | Description
 --|--|--|--|
 [Consumer Price Index](https://fred.stlouisfed.org/series/CPIAUCSL) | `CPIAUCSL` | Index | The Consumer Price Index is a measure of the average monthly change in the price for goods and services paid by urban consumers between any two time periods.
-[Real Gross National Product](https://fred.stlouisfed.org/series/A001RO1Q156NBEA) | `A001RO1Q156NBEA` | Percent Change | Gross national product (GNP) is the market value of all the goods and services produced in one year by labor and property supplied by the citizens of a country.
+[Real Gross National Product](https://fred.stlouisfed.org/series/A001RO1Q156NBEA) | `GNPC96` | Billions of Dollars | Gross national product (GNP) is the market value of all the goods and services produced in one year by labor and property supplied by the citizens of a country.
 [National Income](https://fred.stlouisfed.org/series/A032RC1A027NBEA) | `A032RC1A027NBEA` | Billions of Dollars | National income is the monetary value of the final goods and services produced by an economy over a period of time.
 [Corporate Profits Before Tax](https://fred.stlouisfed.org/series/A464RC1A027NBEA) | `A464RC1A027NBEA` | Billions of Dollars | Profit before tax (PBT) is a measure that looks at a company's profits before the company has to pay corporate income tax. It deducts all expenses from revenue including interest expenses and operating expenses except for income tax.
 [GDP Per Capita](https://fred.stlouisfed.org/series/A939RC0A052NBEA) | `A939RC0A052NBEA` | Dollars | The Gross Domestic Product of the United States per individual.
@@ -44,11 +44,11 @@ Metric | FRED ID | Units | Description
 
 Each Presidential administration serves as an index baseline for the respective metrics. Thus, comparisons to previous and future Presidents are observable. Of course, the efficacy of a particular administration is gauged by many more metrics than those shown here, such as foreign policy successes and failures, domestic social stability, and the posture of an administration with respect to other branches of government. Nonetheless, American prosperity has traditionally be grounded in economic growth and innovation making the portal an effective tool for inter-administrative comparisons.
 
-![](./images/presidential-table-2.png)
+![](./images/presidential-table-7.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/93acd671)
+[![](./images/button-new.png)](https://trends.axibase.com/7fe16e8d)
 
-The table above tracks the change in the selected economic indicator from the index start date to the most recent data point, which is typically **Q2 2018**. Thus, the CPI has grown by 436 points from the start of the presidency of Gerald Ford, to the present day.
+List the portal at the beginning of this article, this table indexes each metric from the first year of the respective President's administration. Thus, since Gerald Ford took office in 1974, the Consumer Price Index has increased 435 points. See the [Economic Metrics](#economic-metrics) table above for units of each metric.
 
 ## Creating the Portal
 
@@ -68,46 +68,36 @@ This portal uses the [`fred.js`](https://apps-chartlab.axibase.com/portal/resour
 
 ### Inline CSV
 
-The portal contains two CSV files which denote presidential administrations and their years of service as well as the tracked economic metrics and their associated `FRED ID`. The Presidential administration CSV is shown here:
+The portal contains an [inline CSV](https://github.com/axibase/charts/blob/master/syntax/functions.md#csv-inline-text-mode) file to define each of the tracked economic metrics and their associated `FRED ID`. The CSV is shown here:
 
 ```ls
-csv index =
-  president,inauguration
-  Gerald Ford, 1974
-  Jimmy Carter, 1977
-  Ronald Reagan, 1981
-  George H.W. Bush, 1989
-  Bill Clinton, 1993
-  George W. Bush, 2001
-  Barack Obama, 2009
-  Donald Trump, 2017
+csv metrics =
+  name,id
+  Consumer Price Index,CPIAUCSL
+  Real Gross National Product,A001RO1Q156NBEA
+  National income,A032RC1A027NBEA
+  Corporate Profits Before Tax,A464RC1A027NBEA
+  GDP per Capita,A939RC0A052NBEA
+  Average Sale Price of Houses,ASPUS
+  Capacity Utilization,CAPUTLB50001SQ
+  Cash Surplus or Deficit(% GDP),CASHBLUSA188A
 endcsv
 ```
 
-Define [inline CSV](https://github.com/axibase/charts/blob/master/syntax/functions.md#csv-inline-text-mode) files to associate labels and metrics.
+This CSV list is used to by `[dropdown]` level settings to populate the [drop-down list](https://github.com/axibase/charts/blob/master/configuration/drop-down-lists.md) of available metrics
 
-### Control Structures
+```ls
+[dropdown]
+  change-field = metric
 
-Data [control structures](https://github.com/axibase/charts/blob/master/syntax/control-structures.md) are defined in the **Editor** window. This portal features inline [JavaScript functions](https://github.com/axibase/charts/blob/master/syntax/control-structures.md#script--endscript) which extract the contents of the defined CSV files to populate the options of each [drop-down list](https://github.com/axibase/charts/blob/master/configuration/drop-down-lists.md).
-
-```javascript
-script
-window.indexMap = (function () {
-  var map = {};
-  var idx = @{JSON.stringify(index)};
-  for (var i = 0; i < idx.length; i++) {
-    map[idx[i].president] = idx[i].inauguration;
-  }
-  return map;
-})()
-window.setYear = function(widget, year) {
-  var series = widget.config.series
-  series[1].value = series[1].value.replace(/\d{4}/, year || 1974);
-  widget.replaceSeries(series);
-  widget.reset(2);
-}
-endscript
+  for option in metrics
+    [option]
+      text = @{option.name}
+      value = @{option.id}
+  endfor
 ```
+
+The setting also features a [`for`](https://github.com/axibase/charts/blob/master/syntax/control-structures.md#for--endfor) statement, which is a [control structure](https://github.com/axibase/charts/blob/master/syntax/control-structures.md) which iterates over the CSV array to read each `name` and `id`. The `name` field is added to the drop-down list and the `id` is passed to the `metric` setting to refactor the visualization.
 
 ## Action Items
 
