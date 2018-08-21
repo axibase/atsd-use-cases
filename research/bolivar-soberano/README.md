@@ -2,7 +2,7 @@
 
 ![](./images/soberano.png)
 
-> [ATSD](https://axibase.com/docs/atsd/) was used for visualization and data storage tasks related to this article.
+> [ATSD](https://axibase.com/docs/atsd/) is used for visualization and data storage tasks related to this article.
 
 ## Introduction
 
