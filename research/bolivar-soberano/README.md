@@ -8,15 +8,17 @@
 
 After prolonged economic downturn and hyperinflation the likes of which have never been seen since Venezuelan independence from Spain in 1811, the government of President Nicolás Maduro announced on August 20 the creation of a new national currency: the Bolívar Soberano (English: Sovereign Bolivar).
 
-The currency will be introduced to the market at a rate of 100,000 Bs.F to 1 Bs.S, replacing the Bolívar Fuerte (English: Strong Bolivar).
+The currency will be introduced to the market at a rate of 100,000 `Bs.F` to 1 `Bs.S`, replacing the Bolívar Fuerte (English: Strong Bolivar).
 
 ## Inflation Visualized
+
+> These visualizations reflect the **official** exchange rates in Venezuela. More commonly used [black market exchange rates](https://www.ft.com/content/26d539d0-076d-11e8-9650-9c0ad2d7c5b5) are typically several times greater than this.
 
 ![](./images/bolivar-portal.png)
 
 [![](./images/button.png)](https://apps.axibase.com/chartlab/09f03dc1#fullscreen)
 
-The portal above tracks the Bolívar during three stages of inflation. The first chart shows the Bolívar (Bs) against the United States Dollar (USD) in Bolívar Fuerte denomination. The Bolívar Fuerte was introduced in at a rate of 1,000 Bs to 1 Bs.F after having previously introduced price controls in 2005 to curb the rapid devaluation which occurred the previous year.
+The portal above tracks the Bolívar during three stages of inflation. The first chart shows the Bolívar (`Bs`) against the United States Dollar (`USD`) in Bolívar Fuerte denomination. The Bolívar Fuerte was introduced in at a rate of 1,000 `Bs` to 1 `Bs.F` after having previously introduced price controls in 2005 to curb the rapid devaluation which occurred the previous year.
 
 ![](./images/percent-change-1.png)
 
@@ -44,7 +46,7 @@ The currency's value has become so trivialized that small denomination bills are
 
 ![](./images/bolivar-craft-1.png)
 
-To buy one kilogram of rice requires being a Bolívar millionaire in the formerly most affluent country in South America, as simple bag of the staple food costs around 2,500,000 Bs.F at the moment.
+To buy one kilogram of rice requires being a Bolívar millionaire in the formerly most affluent country in South America, as simple bag of the staple food costs around 2,500,000 `Bs.F` at the moment.
 
 ![](./images/rice-for-bolivar-1.png)
 
