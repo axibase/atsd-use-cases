@@ -64,9 +64,9 @@ the Editor window:
 
 Where,
 
-`replace-value` = F(X),
-`value` = X,
-`previousValue` = previous value of X
+`replace-value` = `f(x)`,<br>
+`value` = `x`,<br>
+`previousValue` = previous value of `x`<br>
 
 This script simply replaces the value stored in the database with the value calculated by the equation, which returns the change in CPI. to smooth the variance of the curve, this setting may be added to the Editor:
 
@@ -80,7 +80,7 @@ This script simply replaces the value stored in the database with the value calc
 The `label` tag describes the visualization and is used in the legend at the top of the screen, the `value` tag here contains
 the [`movavg`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) or moving average
 method, built in to ChartLab. Moving average is an aggregation of a variable number of years, set by the user as the second
-parameter in the brackets, with the first indicating the alias to be averaged. The resulting graph is shown below:
+parameter, with the first indicating the alias to be averaged. The resulting graph is shown below:
 
 ![](./images/CPI_3.1.png)
 
