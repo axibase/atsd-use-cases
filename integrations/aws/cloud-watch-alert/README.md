@@ -42,7 +42,7 @@ On the **Topic Details** page, click **Create Subscription**.
 
 ![](./images/sns-3.png)
 
-Define the email address to which you would like AWS to send status change notifications. Be sure to select **Email** from the **Protocol** drop-down list.
+Define the email address to which you would like AWS to send status change notifications. Select **Email** from the **Protocol** drop-down list.
 
 ![](./images/email-subscription.png)
 
