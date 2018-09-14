@@ -6,7 +6,9 @@
 
 ## Overview
 
-The portal above tracks economic metrics for American presidential administrations from Gerald Ford (1974-1977) to Donald J. Trump (2017-present). Open the portal and use the drop-down list to navigate between tracked metrics.
+The portal above tracks economic metrics for American presidential administrations from Gerald Ford (1974-1977) to Donald Trump (2017-present). Open the portal and use the drop-down list to navigate between tracked metrics.
+
+Each line is indexed to the beginning of the respective president's term in office. Thus, these metrics are tracked from that president's time in office to the present day.
 
 The portal is available through the **Trends** service, which is a public instance of ATSD, the database responsible for the underlying data management and processing tasks used to create the visualization.
 
@@ -48,7 +50,7 @@ Each Presidential administration serves as an index baseline for the respective 
 
 [![](./images/button-new.png)](https://trends.axibase.com/7fe16e8d)
 
-List the portal at the beginning of this article, this table indexes each metric from the first year of the respective President's administration. Thus, since Gerald Ford took office in 1974, the Consumer Price Index has increased 435 points. See the [Economic Metrics](#economic-metrics) table above for units of each metric.
+Like the portal at the beginning of this article, this table indexes each metric from the first year of the respective President's administration. Thus, since Gerald Ford took office in 1974, the Consumer Price Index has increased 435 points. See the [Economic Metrics](#economic-metrics) table above for units of each metric.
 
 ## Creating the Portal
 
