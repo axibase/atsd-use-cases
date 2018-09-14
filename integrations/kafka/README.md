@@ -46,8 +46,8 @@ This integration guide describes how to monitor availability and performance of 
 2. Navigate to the **Metrics** page and verify that `jmx.kafka.*` metrics are available.
 3. Navigate to the **Entities** page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
 4. Open the **Settings > Entity Groups** page and import [Kafka](./resources/groups.xml) entity group.
-5. Expand the **Portals** menu, select **Configure** and import [Kafka](./resources/portal-configs.xml) portals (Enable **Auto-enable New Portals**).
-6. Open the ![](./images/alerts.png) **Alerts** menu, select **Rules** and import [Kafka](./resources/rules.xml) rules (Enable **Auto-enable New Rules**).
+5. Expand the **Portals** menu, click **Configure** and import [Kafka](./resources/portal-configs.xml) portals (Enable **Auto-enable New Portals**).
+6. Open the ![](./images/alerts.png) **Alerts** menu, click **Rules** and import [Kafka](./resources/rules.xml) rules (Enable **Auto-enable New Rules**).
 7. Open the ![](./images/entity_views.png) **Entity Views** menu, select **Configure** and import [Kafka](./resources/entity-views.xml) Entity View configuration.
 
 ## Step 3: Verification

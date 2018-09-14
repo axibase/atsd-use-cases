@@ -12,7 +12,7 @@ While GitHub [webhook integration](pr-notification.md) can notify repository own
 
 The report uses an [OAuth Personal Token](https://blog.github.com/2013-05-16-personal-api-tokens/) to query the GitHub API without transmitting user login information.
 
-While logged in to GitHub, click the user profile picture in the upper-right corner and select **Settings**.
+While logged in to GitHub, click the user profile picture in the upper-right corner and click **Settings**.
 
 ![](./images/developer-settings.png)
 
@@ -92,7 +92,7 @@ Upon successful completion, **Mail Client** in ATSD sends subscribed users a con
 
 ## Configure Subscriber List
 
-After initial launch, you may modify the list of subscribers at any time. Log in to the ATSD web interface, accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports). Open the **Alerts** menu and select **Rules**.
+After initial launch, you may modify the list of subscribers at any time. Log in to the ATSD web interface, accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports). Open the **Alerts** menu and click **Rules**.
 
 ![](./images/alerts-rules.png)
 

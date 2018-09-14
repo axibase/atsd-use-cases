@@ -123,7 +123,7 @@ Follow the optional steps below to further enhance this functionality to send co
 
 ### Advanced Configuration
 
-* To configure advanced settings, expand the **Alerts** menu and select **Rules**. Follow the procedure described by the [Notification Attachments Documentation](https://axibase.com/docs/atsd/rule-engine/notifications/#attachments) to include detailed reports and portals in your alert emails.
+* To configure advanced settings, expand the **Alerts** menu and click **Rules**. Follow the procedure described by the [Notification Attachments Documentation](https://axibase.com/docs/atsd/rule-engine/notifications/#attachments) to include detailed reports and portals in your alert emails.
 
 * Enable the **Attach Details** option to include detailed email reports upon alarm notification:
 
