@@ -4,11 +4,15 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 
 ---
 
+<a href="#activemq"></a>
+
 ![](./images/activemq-logo.png)
 
 * [ActiveMQ Integration](activemq/README.md)
 
 ---
+
+<a href="#aws"></a>
 
 ![](./images/aws-logo.png)
 
@@ -18,6 +22,8 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 
 ---
 
+<a href="#kafka"></a>
+
 ![](./images/kafka-logo.png)
 
 * [Kafka Integration](kafka/README.md)
@@ -26,11 +32,15 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 
 ---
 
+<a href="#cadvisor"></a>
+
 ![](./images/cadvisor-logo.png)
 
 * [ATSD as the Backend for cAdvisor](cadvisor/README.md)
 
 ---
+
+<a href="#docker"></a>
 
 ![](./images/docker-logo.png)
 
@@ -38,6 +48,8 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 * [Docker Container Monitoring](docker/docker-engine.md)
 
 ---
+
+<a href="#github"></a>
 
 ![](./images/github-logo.png)
 
@@ -51,11 +63,15 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 
 ---
 
+<a href="#ibm"></a>
+
 ![](./images/ibm-logo.png)
 
 * [IBM Tivoli Monitoring Integration](itm/README.md)
 
 ---
+
+<a href="#marathon"></a>
 
 ![](./images/marathon-logo.png)
 
@@ -63,12 +79,16 @@ Walkthrough guides for ATSD integration with third-party systems and services.
 
 ---
 
+<a href="#socrata"></a>
+
 ![](./images/socrata-logo.png)
 
 * [From data.gov Dataset to Python DataFrame in 10 minutes](socrata/python/README.md)
 * [Analyzing Socrata Datasets for Iowa Compensation](socrata/iowa-compensation/README.md)
 
 ---
+
+<a href="#zookeeper"></a>
 
 ![](./images/zookeeper-logo.png)
 
