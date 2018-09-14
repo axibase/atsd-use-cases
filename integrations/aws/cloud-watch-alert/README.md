@@ -10,7 +10,7 @@ Follow these instructions to set up default AWS email notifications or follow th
 
 ### Configure a New CloudWatch Event
 
-From the **Console Home** page, open the **Services** menu and in the **Management Tools** section, cli **CloudWatch**.
+From the **Console Home** page, open the **Services** menu and in the **Management Tools** section, click **CloudWatch**.
 
 ![](./images/cw-menu.png)
 
