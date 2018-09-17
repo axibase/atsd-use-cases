@@ -2,7 +2,7 @@
 
 ## Overview
 
-This tutorial demonstrates the application of [Axibase Technical Writing Guidelines](../workshop/technical-writing) to a local GitHub repository. Manage your software documentation directly in the GitHub interface with all of the tools available from a more purpose-specific service. This process uses the [Travis CI](https://docs.travis-ci.com/) continuous integration tool to automatically review newly created pull requests for [`markdownlint` errors](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md#rules) and user-defined rules alongside [ATSD](https://axibase.com/docs/atsd/) for webhook notification. Follow this procedure to enable checks on any local repository.
+This tutorial demonstrates the application of [Axibase Technical Writing Guidelines](../workshop/technical-writing.md) to a local GitHub repository. Manage your software documentation directly in the GitHub interface with all of the tools available from a more purpose-specific service. This process uses the [Travis CI](https://docs.travis-ci.com/) continuous integration tool to automatically review newly created pull requests for [`markdownlint` errors](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md#rules) and user-defined rules alongside [ATSD](https://axibase.com/docs/atsd/) for webhook notification. Follow this procedure to enable checks on any local repository.
 
 ## Getting Started
 
