@@ -46,11 +46,11 @@ Metric | FRED ID | Units | Description
 
 Each Presidential administration serves as an index baseline for the respective metrics. Thus, comparisons to previous and future Presidents are observable. Of course, the efficacy of a particular administration is gauged by many more metrics than those shown here, such as foreign policy successes and failures, domestic social stability, and the posture of an administration with respect to other branches of government. Nonetheless, American prosperity has traditionally be grounded in economic growth and innovation making the portal an effective tool for inter-administrative comparisons.
 
-![](./images/presidential-table-7.png)
+![](./images/table-4.png)
 
 [![](./images/button-new.png)](https://trends.axibase.com/7fe16e8d)
 
-Like the portal at the beginning of this article, this table indexes each metric from the first year of the respective President's administration. Thus, since Gerald Ford took office in 1974, the Consumer Price Index has increased 435 points. See the [Economic Metrics](#economic-metrics) table above for units of each metric.
+This table tracks each metric through the first 100 days of the respective President's administration. Thus, since Gerald Ford took office in 1974, United States capacity utilization declined 0.7%. See the [Economic Metrics](#economic-metrics) table above for the units used for each metric.
 
 ## Creating the Portal
 
@@ -99,7 +99,7 @@ This CSV list is used to by `[dropdown]` level settings to populate the [drop-do
   endfor
 ```
 
-The setting also features a [`for`](https://github.com/axibase/charts/blob/master/syntax/control-structures.md#for--endfor) statement, which is a [control structure](https://github.com/axibase/charts/blob/master/syntax/control-structures.md) which iterates over the CSV array to read each `name` and `id`. The `name` field is added to the drop-down list and the `id` is passed to the `metric` setting to refactor the visualization.
+The setting also features a [`for`](https://github.com/axibase/charts/blob/master/syntax/control-structures.md#for--endfor) statement, which is a [control structure](https://github.com/axibase/charts/blob/master/syntax/control-structures.md) that iterates over the CSV array to read each `name` and `id`. The `name` field is added to the drop-down list and the `id` is passed to the `metric` setting to refactor the visualization.
 
 ## Action Items
 
