@@ -34,8 +34,9 @@ Review the [Getting Started Guide](https://axibase.com/docs/atsd/tutorials/getti
 
 ## Services
 
+* [Axibase Technical Writing Guidelines](linter-tutorial/README.md)
 * [Data Visualization with **ChartLab**](shared/chartlab.md)
-* [Using Trends](shared/trends.md)
+* [Using **Trends**](shared/trends.md)
 
 ## Workshops
 
