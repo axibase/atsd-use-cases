@@ -58,7 +58,7 @@ acknowledgement[s]?
 
 Append `[s]?` to the end of the word to support plural forms of the word.
 
-To modify words included in the dictionary create a local `.dictionary` file, optionally append `-names` or `-other` if necessary. Words included in these files are converted to regular expressions which are recognized by Travis CI during the `spellcheck` portion of the build process. In order to replace the base dictionary and create a new dictionary from scratch, modify the `BASE_DICTIONARY` parameter in [`dictionaries_generator.py`](./resources/dictionaries_generator.py):
+To modify words included in the dictionary create a local `.dictionary` file, optionally append `-names` or `-other` if necessary. Words included in these files are converted to regular expressions which are recognized by Travis CI during the `spellcheck` portion of the build process. To replace the base dictionary and create a new dictionary from scratch, modify the `BASE_DICTIONARY` parameter in [`dictionaries_generator.py`](./resources/dictionaries_generator.py):
 
 ```python
 BASE_DICTIONARY_LOCATION = "https://raw.githubusercontent.com/path/to/dictionary/"
