@@ -60,7 +60,7 @@ As capacity utilization declines in the United States, unemployment correspondin
 
 ## San Francisco Tech Pulse
 
-The sister San Francisco branch of the Federal Reserve St. Louis Branch maintains a limited number of public datasets, however one aggregated dataset which is made available to the public is the [San Francisco Tech Pulse](https://www.frbsf.org/economic-research/indicators-data/tech-pulse/) which is an index series that tracks the overall health of the technology industry. The index date is January 1, 2000, thus the index value is `100` on that date and all preceding and subsequent values can be judged thusly.
+The sister San Francisco branch of the Federal Reserve St. Louis Branch maintains a limited number of public datasets, however one aggregated dataset which is made available to the public is the [San Francisco Tech Pulse](https://www.frbsf.org/economic-research/indicators-data/tech-pulse/) which is an index series that tracks the overall health of the technology industry. The index date is January 1, 2000, thus the index value is `100` on that date and all preceding and subsequent values can be judged using that benchmark.
 
 ![](./images/tech-pulse.png)
 
