@@ -1,8 +1,10 @@
 # Deploying Axibase Technical Writing Guidelines
 
+![](./images/travis-workflow.png)
+
 ## Overview
 
-This tutorial demonstrates the application of [Axibase Technical Writing Guidelines](../workshop/technical-writing.md) to a local GitHub repository. Manage your software documentation directly in the GitHub interface with all of the tools available from a more purpose-specific service. This process uses the [Travis CI](https://docs.travis-ci.com/) continuous integration tool to automatically review newly created pull requests for [`markdownlint` errors](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md#rules) and user-defined rules alongside [ATSD](https://axibase.com/docs/atsd/) for webhook notification. Follow this procedure to enable checks on any local repository.
+This tutorial demonstrates the application of [Axibase Technical Writing Guidelines](../workshop/technical-writing.md) to a local GitHub repository. Manage your software documentation directly in the GitHub interface with all of the tools available from a more purpose-specific service. This process uses the [Travis CI](https://docs.travis-ci.com/) continuous integration tool to automatically review newly created pull requests for [`markdownlint` errors](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md#rules) and user-defined syntax rules as well as [ATSD](https://axibase.com/docs/atsd/) for email and messenger notifications via webhook. Follow this procedure to enable checks on any local repository.
 
 ## Getting Started
 
@@ -10,7 +12,7 @@ Visit the [Travis CI](https://travis-ci.com/) website and click **Sign up with G
 
 ![](./images/sign-up.png)
 
-Complete the Sign-In form with valid GitHub credentials to integrate Travis CI with your GitHub profile. Note that Travis CI does not support users who maintain more than 50 repositories.
+Complete the Sign-In form with valid GitHub credentials to connect the Travis CI tool to your GitHub profile. Note that Travis CI does not support use with more than 50 repositories.
 
 ![](./images/sign-in.png)
 
@@ -24,7 +26,9 @@ On the subsequent GitHub page under the **Repository Access** header, set prefer
 
 Each repository monitored by the Travis CI tool requires a `.travis.yml` file which defines the build configuration.
 
-Download the included [`.travis.yml`](./resources/.travis.yml) file from the `/resources` directory and upload it to the repositories which are to be monitored.
+Download the included [`.travis.yml`](./resources/.travis.yml) file from the `/resources` directory and upload it to the repositories which are to be monitored. The file is visible in the root directory for each monitored repository.
+
+![](./images/travis-file-dir.png)
 
 The `.travis.yml` file references the `.travis-functions.sh` file which controls certain components of the tool such as the repository language and custom dictionary.
 
@@ -38,7 +42,7 @@ After uploading the `.travis.yml` and `travis-functions.sh` files to your local 
 
 ![](./images/building.png)
 
-New pull requests are automatically checked by the Travis CI tool.
+New pull requests are automatically checked by the Travis CI tool. To configure email and messenger notifications for completed builds, see [Configure Notifications](#configure-notifications)
 
 ## Configuring Custom Rules
 
@@ -78,6 +82,8 @@ On line 37 of `.travis-functions.sh`, define the literal URL link to the file wh
 wget https://raw.githubusercontent.com/axibase/atsd/master/.linkcheck-config.json
 ```
 
+Refer to the Axibase `linkcheck` document for a formatting template.
+
 ## Usage
 
 Travis CI automatically triggers a new build each time a pull request is opened or a new push is performed to the subscribed repositories.
@@ -95,3 +101,23 @@ Builds associated with repositories without any errors are passing builds, desig
 Within the GitHub interface, build statistics are displayed on the **Conversation** page.
 
 ![](./images/build-pass-2.png)
+
+## Configure Notifications
+
+ATSD supports incoming and outgoing webhooks for use with GitHub notifications. Launch ATSD via one of the available [deployment methods](https://axibase.com/docs/atsd/installation/). Configure [Travis CI Incoming Webhooks](https://axibase.com/docs/atsd/rule-engine/incoming-webhooks.html#travis-ci) to begin receiving notifications upon build completion.
+
+Webhook is visible on line 18 of the attached `travis.yml` file:
+
+```json
+webhooks: https://apps.axibase.com/api/v1/messages/wk-travis-ci/travis-ci?json.parse=payload&exclude=payload.id;payload.number;payload.config*;payload.repository*;payload.matrix*;payload.*commit*;payload.status_message;payload.result&include=payload.repository.name&command.message=payload.result_message
+```
+
+Complete [Mail Client](https://axibase.com/docs/atsd/administration/mail-client.html) and [Outgoing Webhook](https://axibase.com/docs/atsd/rule-engine/notifications/) configuration to define where notifications messages are sent by ATSD.
+
+![](./images/travis-message.png)
+
+Notifications for pull requests which pass all applied checks contain a link to the newly opened pull request.
+
+Messages associated with failing pull requests contain links to compare the new and old branches, the author name and email address, as well as a link to the failing build for inspection.
+
+![](./images/travis-message-2.png)
