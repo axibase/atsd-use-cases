@@ -2,8 +2,8 @@
 
 Walkthrough guides for ATSD integration with third-party systems and services.
 
-|&nbsp; |&nbsp;|
-|:--:|--|
+| | |
+|:---|:---|
 <a id="activemq"></a>![](./images/activemq-logo-1.png) | <li> [ActiveMQ Integration](activemq/README.md)
 <a id="aws"></a>![](./images/aws-logo-1.png) |<li>[Build Availability Report for AWS Route 53](aws/route53-health-checks/README.md)<br><li>[Configure Launch Notifications for AWS Resources](aws/cloud-watch-alert/README.md)<br><li>[Route 53 Health Status Alarms](aws/route53-email-notifications/README.md) |
 <a id="kafka"></a>![](./images/kafka-logo-1.png) |<li>[Kafka Integration](kafka/README.md)<br><li>[Monitoring Kafka Brokers](kafka/brokers-monitoring/README.md)<br><li>[Monitoring Kafka Consumer Lag](kafka/consumers-monitoring/README.md)
