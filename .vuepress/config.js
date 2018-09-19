@@ -49,7 +49,7 @@ const integrationsMenu = [
             ['activemq/', 'ActiveMQ'],
             ['aws/', 'AWS'],
             ['cadvisor/', 'cAdvisor'],
-            ['docker/', 'Docker'],
+            ['docker/docker-engine.md', 'Docker'],
             ['github/', 'GitHub'],
             ['itm/', 'IBM Tivoli Monitoring'],
             ['kafka/', 'Kafka'],
@@ -76,7 +76,7 @@ module.exports = {
     base: '/use-cases/',
     title: 'Axibase Time Series Database Use Cases',
     titleNote: 'ATSD',
-    description: "Use Cases and Walkthrough Guides for Axibase® Time Series Database",
+    description: "Use Case Articles and Integration Guides for Axibase® Time Series Database",
     head: [
         ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
     ],
