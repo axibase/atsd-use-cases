@@ -26,7 +26,7 @@ On the subsequent GitHub page under the **Repository Access** header, set prefer
 
 Each repository monitored by the Travis CI tool requires a `.travis.yml` file which defines the build configuration.
 
-Download the included [`.travis.yml`](./resources/.travis.yml) file from the `/resources` directory and upload it to the repositories which are to be monitored. The file is visible in the root directory for each monitored repository.
+Download the included [`.travis.yml`](./resources/.travis.yml) file from the `/resources` directory and upload it to the repositories which are to be monitored. The file is visible in the base directory for each monitored repository.
 
 ![](./images/travis-file-dir.png)
 
