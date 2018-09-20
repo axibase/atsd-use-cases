@@ -114,7 +114,7 @@ Within the GitHub interface, build statistics are displayed on the **Conversatio
 
 ATSD supports incoming and outgoing webhooks for use with GitHub notifications. Launch ATSD via one of the available [deployment methods](https://axibase.com/docs/atsd/installation/). Configure [Travis CI Incoming Webhooks](https://axibase.com/docs/atsd/rule-engine/incoming-webhooks.html#travis-ci) to begin receiving notifications upon build completion.
 
-Webhook is visible on line 18 of the attached `travis.yml` file:
+Webhook is visible on line 18 of the attached `.travis.yml` file:
 
 ```json
 webhooks: https://apps.axibase.com/api/v1/messages/wk-travis-ci/travis-ci?json.parse=payload&exclude=payload.id;payload.number;payload.config*;payload.repository*;payload.matrix*;payload.*commit*;payload.status_message;payload.result&include=payload.repository.name&command.message=payload.result_message
