@@ -10,7 +10,7 @@ Follow this process to upload a rule to you local ATSD instance.
 
     ![](./images/alerts-rules.png)
 
-2. From the **Rules** page, expand the split button at the bottom of the page. Click **Import**.
+2. From the **Rules** page, expand the split-button at the bottom of the page. Click **Import**.
 
     ![](./images/rule-split-import.png)
 

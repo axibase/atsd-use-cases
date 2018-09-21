@@ -9,7 +9,7 @@
 
 The **American Enterprise Institute** is a Washington D.C.-based think tank that is dedicated to researching issues of government, politics, economics, and social welfare. Recently, they published an article titles: **The Public Thinks the Average Company Makes a 35% Profit Margin Which is about 5x Too High**, which described the average American perception of the profit margins that companies from various industries are able to make on a consistent basis.
 
-The article drew information from a variety of polling agencies who had sampled large groups of the population and came away with the conclusion that the average American believes most companies, regardless of industry are consistently making profits on the order of 36%. Using data from NYU professor and researcher [Aswath Damodaran](http://people.stern.nyu.edu/adamodar/New_Home_Page/home.htm) AEI came to the conclusion that the average American estimation is off by about 500%. They concluded that the average company makes around 7.9% after taxes and an entire percent lower, 6.9% if the financial industry is excluded.
+The article drew information from a variety of polling agencies who had sampled large groups of the population and came away with the conclusion that the average American believes most companies, regardless of industry are consistently making profits on the order of 36%. Using data from New York University professor and researcher [Aswath Damodaran](http://people.stern.nyu.edu/adamodar/New_Home_Page/home.htm) AEI came to the conclusion that the average American estimation is off by about 500%. They concluded that the average company makes around 7.9% after taxes and an entire percent lower, 6.9% if the financial industry is excluded.
 
 ## Metrics Legend
 
@@ -105,7 +105,7 @@ LIMIT 10
 ![](./images/developing-value.png)
 [![](./images/button-new.png)](https://trends.axibase.com/be5ff3c6#fullscreen)
 
-*Fig 4.* The above industries leverage complex development processes to use existing products in new and innovative ways to develop increased value. A new pharmecutical product, for example, may spend more than 10 years in clinical trials and development before it is approved to be used by the public. **Metric:** `r&d/sales`.
+*Fig 4.* The above industries leverage complex development processes to use existing products in new and innovative ways to develop increased value. A new pharmaceutical product, for example, may spend more than 10 years in clinical trials and development before it is approved to be used by the public. **Metric:** `r&d/sales`.
 
 Query:
 
@@ -137,7 +137,7 @@ LIMIT 10
 ![](./images/market-totals.png)
 [![](./images/button-new.png)](https://trends.axibase.com/c78e4e04#fullscreen)
 
-*Fig 5.* The above visualization tracks market totals across all observed metrics. Use the drop-down menu to narrow the displayed metrics to the top ten, bottom ten, or use the `*` wildcard symbol to show them all. **Metric:** `*`.
+*Fig 5.* The above visualization tracks market totals across all observed metrics. Use the drop-down list to narrow the displayed metrics to the top ten, bottom ten, or use the `*` wildcard symbol to show them all. **Metric:** `*`.
 
 Query:
 

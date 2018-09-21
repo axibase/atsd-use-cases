@@ -23,7 +23,7 @@ about these consumers and their monetary practices to better inform their decisi
 ## Data
 
 Provided by the [Federal Reserve](https://www.federalreserve.gov/), this [dataset](https://www.federalreserve.gov/datadownload/Download.aspx?rel=FOR&series=91e0f9a6b8e6a4b1ef334ce2eaf22860&filetype=csv&label=include&layout=seriescolumn&from=01/01/1980&to=12/31/2017)
-must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interpret (`Q/q` letter is not supported). Discard metadata lines in the multi-line header with a [schema-based parser](https://axibase.com/docs/atsd/parsers/csv/) that provides granular control over rows and columns using `RFC 7111` selectors and Javascript:
+must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interpret (`Q/q` letter is not supported). Discard metadata lines in the multi-line header with a [schema-based parser](https://axibase.com/docs/atsd/parsers/csv/) that provides granular control over rows and columns using `RFC 7111` selectors and JavaScript:
 
 ```javascript
 /*

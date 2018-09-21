@@ -11,6 +11,7 @@ This guide describes how to monitor availability and performance of an [Apache Z
 2) Open the **Collections** drop-down list in the top menu and select **Item Lists**.
 
 3) Click **Add** and create an item list with Zookeeper hosts.
+
 Enter the name `zookeeper-jmx-hosts`, choose type **TEXT** and add comma-separated addresses of Zookeeper hosts in the following format:
 
 ```txt
@@ -33,7 +34,7 @@ Click **Save**.
 
 ### Import Job
 
-Open the **Jobs**page. Expand the split button below the table and select **Import**.
+Open the **Jobs**page. Expand the split-button below the table and select **Import**.
 
 Import the [`zookeeper-jmx`](./resources/jobs.xml) job.
 
@@ -76,7 +77,7 @@ Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available
 
 ### Import entity group
 
-1. Open the **Settings** menu, select **Entity Groups** and import this [entity group](./resources/groups.xml).
+1. Open the **Settings** menu, select **Entity Groups** and import the [entity group configuration file](./resources/groups.xml).
 1. Locate **Zookeeper Nodes** group and open the group by clicking the link in the **Name** column.
 1. Confirm that the database successfully imported the entities.
 
@@ -84,14 +85,14 @@ Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available
 
 ### Import portals
 
-1. Open the **Portals** menu, select **Configure** and import [portals](./resources/portal-configs.xml) (Enable the **Auto-enable New Portals** check box).
+1. Open the **Portals** menu, select **Configure** and import [portals](./resources/portal-configs.xml) (Enable the **Auto-enable New Portals** checkbox).
 2. Verify that new portals are displayed by opening the **Portals** menu and searching for the newly-configured portal named **Zookeeper Cluster**.
 
 ![](./images/test_portals.png)
 
 ### Import rules
 
-Open the **Alerts** menu, select **Rules** and import [rules](./resources/rules.xml) (Enable the **Auto-enable New Rules** check box).
+Open the **Alerts** menu, select **Rules** and import [rules](./resources/rules.xml) (Enable the **Auto-enable New Rules** checkbox).
 
 Confirm the database imported the rules.
 
@@ -133,7 +134,7 @@ For more information about the Rule Engine, see [ATSD Rule Engine Documentation]
 ### Import entity view
 
 Open the **Entity Views** menu, select **Configure** and import the following [entity view](./resources/entity-views.xml).
-Check entity view.  Open the **Entity Views** menu and ensure you see **Zookeeper** entity view.
+Check entity view. Open the **Entity Views** menu and ensure you see **Zookeeper** entity view.
 
 ![](./images/entity_view.png)
 

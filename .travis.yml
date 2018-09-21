@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - "8"
+  - "10"
 install:
   - wget https://raw.githubusercontent.com/axibase/atsd/master/.travis-functions.sh && source .travis-functions.sh
   - install_checkers

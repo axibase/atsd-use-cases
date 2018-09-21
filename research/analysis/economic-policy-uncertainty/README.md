@@ -29,7 +29,7 @@ This box chart shows the range of the EPU index for each of the 4 regions. A wid
 ![](./images/epu-box-chart.png)
 [![](./images/button.png)](https://apps.axibase.com/chartlab/af5d576e/2/#fullscreen)
 
-*Fig 2*: Use the drop-down menus in the ChartLab sandbox to change the date range of the visualization. Open the Editor window to modify percentile range with a `percentile = X%/Y%` expression where `X` and `Y` are the values of the percentile range you would like to display.
+Use the drop-down lists in the ChartLab visualization to change the date range of the visualization. Open the Editor window to modify percentile range with a `percentile = X%/Y%` expression where `X` and `Y` are the values of the percentile range you would like to display.
 
 Tracking the EPU Index for the People's Republic of China alongside more concrete metrics can be used to examine the validity of the EPU Index. Shown below, the EPU is placed alongside real PRC Treasury Securities rates for the last decade and a half. The quarterly and bi-annual averages are compared in the same environment and a `wtavg` expression is used to smooth the occasionally volatile movement of both indices. Treasury Securities are a good tool for tracking economic potential and growth because they show the interest rates that businesses borrowing money are paying to their lenders. Historically speaking, a lower interest rate usually encourages business to borrow money and expand their operations.
 
@@ -94,14 +94,14 @@ The following SQL query returns the [average value](https://axibase.com/docs/ats
 
 ```sql
 SELECT ROUND(AVG(value), 0) AS "average-epu" FROM EUEPUINDXM_
-  WHERE datetime  >= '2002-01'
+  WHERE datetime >= '2002-01'
 ```
 
 > The `datetime` column can be compared with literal dates specified in [various date formats](https://axibase.com/docs/atsd/sql/#interval-condition) including ISO 8601 and short dates such as `yyyy-MM`.
 
 This query returns a single-entry table:
 
-|average-epu|
+|`average-epu`|
 |:-:|
 |152|
 
@@ -109,7 +109,7 @@ The next query targets the months of each of the events above and can be compare
 
 ```sql
 SELECT datetime, ROUND(value,0) FROM EUEPUINDXM_
-  WHERE datetime  IN ('2002-01','2008-11','2010-02','2010-05','2010-11','2012-03','2014-07')
+  WHERE datetime IN ('2002-01','2008-11','2010-02','2010-05','2010-11','2012-03','2014-07')
 ```
 
 Multiple `datetime` values can be conveniently enumerated as a list using an [`IN`](https://axibase.com/docs/atsd/sql/#in-expression) expression. The above query returns these values for each of the targeted months:
@@ -128,7 +128,7 @@ Further querying the data to show the top seven entries for the period from Janu
 
 ```sql
 SELECT datetime, ROUND(value, 0) AS "top-epu" FROM EUEPUINDXM_
-  WHERE datetime  >= '2002-01'
+  WHERE datetime >= '2002-01'
   --AND datetime <= '2014-07'
   --ORDER BY value desc LIMIT 7
 ```
@@ -149,7 +149,7 @@ Tracking both results on a simple [time series chart](https://axibase.com/produc
 
 ![](./images/eurozone-time-chart.png)
 
-*Fig 5*: Highlighted above are points from both queries. Expected results are highlighted with purple arrows while actual results are highlighted with blue arrows.
+Highlighted above are points from both queries. Expected results are highlighted with purple arrows while actual results are highlighted with blue arrows.
 
 ## Conclusion
 

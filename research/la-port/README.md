@@ -31,9 +31,9 @@ The pollutants recorded by the port are shown below:
 
 | Metric | Meaning | Comment |
 |--------|---------|---------|
-| dpm_tpy | Diesel particulate matter | [Group 1 carcinogen](https://www.cancer.org/cancer/cancer-causes/general-info/known-and-probable-human-carcinogens.html) |
-| nox_tpy | Nitric oxides | A leading contributor to both smog and acid rain |
-| sox_try | Sulfur oxides | When found with `NOx`, may form N2SO4 (acid rain) |
+| `dpm_tpy` | Diesel particulate matter | [Group 1 carcinogen](https://www.cancer.org/cancer/cancer-causes/general-info/known-and-probable-human-carcinogens.html) |
+| `nox_tpy` | Nitric oxides | A leading contributor to both smog and acid rain |
+| `sox_try` | Sulfur oxides | When found with `NOx`, may form N2SO4 (acid rain) |
 
 > All values are recorded as tons per year (TPY)
 
@@ -145,7 +145,7 @@ consumer automobiles.
 
 The numerical values associated with the above visualization are shown below:
 
-| Year | SOx (Tons Per Year) |
+| Year | Sulfur Oxides (Tons Per Year) |
 |------|---------------------|
 | 2005 | 5306.0              |
 | 2006 | 5708.0              |
@@ -200,7 +200,7 @@ range of values.
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0f8b70ab/10/#fullscreen)
 
-> Open the diagram in ChartLab and use the drop-down menu at the top of the screen to see the changing total values of each
+> Open the diagram in ChartLab and use the drop-down list at the top of the screen to see the changing total values of each
 metric relative to one another throughout the entire observed period.
 
 Based on the above diagram, the relative levels of each measured pollutant are shown alongside one another. Throughout the

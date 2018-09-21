@@ -16,21 +16,21 @@ favorable while the lower 25th percentile is considered less than favorable. The
 
 [Europe](#europe)
 
-* [European Union Euro (dexuseu)](#usd-v-euro)
-* [Swiss Franc (dexszus)](#usd-v-swiss-franc)
-* [Great British Pound (dexusuk)](#usd-v-great-british-pound)
+* [European Union Euro (`dexuseu`)](#usd-v-euro)
+* [Swiss Franc (`dexszus`)](#usd-v-swiss-franc)
+* [Great British Pound (`dexusuk`)](#usd-v-great-british-pound)
 
 [Asia](#asia)
 
-* [Japanese Yen (dexjpus)](#usd-v-japanese-yen)
-* [Chinese Yuan (dexchus)](#usd-v-chinese-yuan)
-* [Hong Kong Dollar (dexhkus)](#usd-v-hong-kong-dollar)
-* [Singapore Dollar (dexsius)](#usd-v-singapore-dollar)
+* [Japanese Yen (`dexjpus`)](#usd-v-japanese-yen)
+* [Chinese Yuan (`dexchus`)](#usd-v-chinese-yuan)
+* [Hong Kong Dollar (`dexhkus`)](#usd-v-hong-kong-dollar)
+* [Singapore Dollar (`dexsius`)](#usd-v-singapore-dollar)
 
 [North America](#north-america)
 
-* [Canadian Dollar (dexcaus)](#usd-v-canadian-dollar)
-* [Mexican Peso (dexmxus)](#usd-v-mexican-peso)
+* [Canadian Dollar (`dexcaus`)](#usd-v-canadian-dollar)
+* [Mexican Peso (`dexmxus`)](#usd-v-mexican-peso)
 
 ## Europe
 

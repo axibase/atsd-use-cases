@@ -341,8 +341,8 @@ word | alternatives
 * Use consistent UI element types:
   * button
   * split-button (not multi-action button, drop-down button, combo-button)
-  * checkbox (not check box)
-  * drop-down list (not drop-down menu)
+  * checkbox (not checkbox)
+  * drop-down list (not `drop-down menu`)
   * tab
   * link
   * page

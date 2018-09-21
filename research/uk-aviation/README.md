@@ -80,11 +80,11 @@ Create additional portals using the example as a template. **ChartLab** supports
 
     ![Figure 5](./images/Figure5.png)
 
-1. Select a `metric`. The first drop-down list in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [uk-caa-metrics.txt](uk-caa-metrics.txt).
+1. Select a `metric`. The first drop-down list in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [`uk-caa-metrics.txt`](uk-caa-metrics.txt).
 
     ![Figure 21](./images/Figure21.png)
 
-    Metric information is also available in the ARSD web interface on the **Metrics** page.
+    Metric information is also available in the ATSD web interface on the **Metrics** page.
 
     ![](./images/metrics.png)
 

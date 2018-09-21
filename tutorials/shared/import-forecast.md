@@ -10,7 +10,7 @@ Follow this process to upload a forecast configuration to your local ATSD instan
 
     ![](./images/forecast-1.png)
 
-2. From the **Forecasts** page, expand the split button and click **Import**.
+2. From the **Forecasts** page, expand the split-button and click **Import**.
 
     ![](./images/forecast-2.png)
 

@@ -2,13 +2,13 @@
 
 ## Overview
 
-This document describes how to monitor [Apache Kafka](https://kafka.apache.org/) consumer offset using ATSD.
+This integration guide describes how to monitor [Apache Kafka](https://kafka.apache.org/) consumer offset using ATSD.
 
 ## Configuration
 
 ### Launch ATSD
 
-Launch [ATSD container](https://github.com/axibase/dockers) on one of the Docker hosts:
+Launch [ATSD Container](https://github.com/axibase/dockers) on one of the Docker hosts:
 
 ```sh
 docker run \
@@ -22,7 +22,7 @@ docker run \
   axibase/atsd:latest
 ```
 
-Wait until the container initializes, logs show `ATSD start completed`.
+Wait until the container initializes and logs show `ATSD start completed`.
 
 ```sh
 docker logs -f atsd
@@ -32,9 +32,9 @@ docker logs -f atsd
 
 Consumer lag calculation requires information about producer offset and consumer offset.
 
-The producer offset is collected from Kafka brokers by the JMX Job above.
+Producer offset is collected from Kafka brokers by the JMX Job above.
 
-The consumer offset is collected by a Kafka console consumer reading events from  the `__consumer_offset` topic on one of the Kafka servers in the cluster.
+Consumer offset is collected by a Kafka console consumer reading events from  the `__consumer_offset` topic on one of the Kafka servers in the cluster.
 
 Log in to the Kafka server.
 
@@ -45,7 +45,7 @@ Download the [script](./resources/send_offset.sh) into Kafka `bin` directory.
 chmod +x /opt/kafka_2.12-1.0.0/bin/send_offset.sh
 ```
 
-For Kafka versions before `0.10.2.0` use `--zookeeper` option instead `bootstrap-server` in the script.
+For Kafka versions before `0.10.2.0` use `--zookeeper` option instead of `bootstrap-server` in the script.
 
 Replace `ATSD_HOST` and `TCP_PORT` with actual values and launch the script.
 
@@ -76,4 +76,4 @@ series e:kafka_host m:kafka.consumer_offset=550 t:groupid="console-consumer-7262
 Check that metric `kafka.consumer_offset` is available on the **Metrics** tab in ATSD.
 Log in to ATSD, click **Metrics** and type `kafka.consumer_offset` in the **Search Bar**
 
-![](./images/kafka-check-consumer-offset.png)
+![](./images/kafka-consumers.png)

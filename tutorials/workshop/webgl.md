@@ -324,7 +324,7 @@ function draw() {
 draw();
 ```
 
-### 3d charts with THREE.js
+### 3D charts with THREE.js
 
 [View on apps.axibase.com](https://apps.axibase.com/webgl/threegl_chart)
 

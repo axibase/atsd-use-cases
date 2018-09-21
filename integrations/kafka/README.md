@@ -1,30 +1,29 @@
 # Kafka Integration
 
-This document describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) using Axibase Time Series Database (ATSD).
+This integration guide describes how to monitor availability and performance of [Apache Kafka](https://kafka.apache.org/) with ATSD.
 
-## Step 1: Configure Axibase Collector
+## Step 1: Configure Collector
 
-1. Log in to Axibase Collector at `https://collector_hostname:9443`
-2. From the **Jobs** page select **Import** by opening the split button below the table.
+1. Log in to the Collector web interface at `https://collector_hostname:9443`
+2. From the **Jobs** page select **Import** by expanding the split-button below the table.
 3. Import the [`kafka-jmx`](./resources/job_jmx_kafka-jmx.xml) job.
-4. Locate the newly-imported `kafka-jmx` job on the **Jobs** page.
-5. On the **JMX Job** page, enable the job status with the **Enabled** checkbox.
-6. Adjust the `cron` expression if required. For more information on `cron` expressions, see [Scheduling](https://axibase.com/docs/axibase-collector/scheduling.html).
-7. Select a target ATSD database for storing data.
-8. Click **Save**.
+4. On the **JMX Job** page, enable the job status with the **Enabled** checkbox.
+5. Adjust the `cron` expression if required. For more information on `cron` expressions, see [Scheduling](https://axibase.com/docs/axibase-collector/scheduling.html).
+6. Select a target ATSD database to store data.
+7. Click **Save**.
 
 ![JMX_JOB](./images/jmx_job_to_configuration.png)
 
 ### Configure series collection
 
 1. Select `kafka-series` configuration.
-2. On the **JMX Configuration** page, enter the JMX connection parameters or use [Item List](https://axibase.com/docs/axibase-collector/jobs/jmx.html#connection-parameters) with predefined kafka parameters:
+2. On the **JMX Configuration** page, enter the JMX connection parameters or use an [Item List](https://axibase.com/docs/axibase-collector/jobs/jmx.html#connection-parameters) with predefined kafka parameters:
 
     * **Host**: Kafka hostname.
     * **Port**: JMX port.
     * **User Name**: JMX user name.
     * **Password**: Password for JMX user.
-    * **Entity**: Optionally, specify the output of the hostname command on the Kafka server if it is different from `kafka_hostname` (for example if `kafka_hostname` represents a fully-qualified name).
+    * **Entity**: Optionally, specify the output of the hostname command on the Kafka server if it is different from `kafka_hostname` (for example if `kafka_hostname` represents a fully qualified name).
     * Other parameters are optional. For more information on JMX configuration, see [JMX Job Documentation](https://axibase.com/docs/axibase-collector/jobs/jmx.html).
 
 3. Click **Test** to validate the configuration.
@@ -46,10 +45,10 @@ This document describes how to monitor availability and performance of [Apache K
 1. Log in to the target ATSD instance at `https://atsd_hostname:8443`.
 2. Navigate to the **Metrics** page and verify that `jmx.kafka.*` metrics are available.
 3. Navigate to the **Entities** page and verify that `jmx.kafka.*` properties are available for entities from `kafka-properties` configuration.
-4. Open the **Settings** menu, select **Entity Groups** and import [Kafka](./resources/groups.xml) entity group.
-5. Open the **Portals** menu, select **Configure** and import [Kafka](./resources/portal-configs.xml) portals (check on the **Auto-enable New Portals** check box).
-6. Open the ![](./images/alerts.png) **Alerts** menu, select **Rules** and import [Kafka](./resources/rules.xml) rules (check the **Auto-enable New Rules** check box).
-7. Open the ![](./images/entity_views.png) **Entity Views** menu, select **Configure** and import [Kafka](./resources/entity-views.xml) entity view.
+4. Open the **Settings > Entity Groups** page and import [Kafka](./resources/groups.xml) entity group.
+5. Expand the **Portals** menu, click **Configure** and import [Kafka](./resources/portal-configs.xml) portals (Enable **Auto-enable New Portals**).
+6. Open the ![](./images/alerts.png) **Alerts** menu, click **Rules** and import [Kafka](./resources/rules.xml) rules (Enable **Auto-enable New Rules**).
+7. Open the ![](./images/entity_views.png) **Entity Views** menu, select **Configure** and import [Kafka](./resources/entity-views.xml) Entity View configuration.
 
 ## Step 3: Verification
 
@@ -61,7 +60,7 @@ This document describes how to monitor availability and performance of [Apache K
 
     ![](./images/kafka_cluster.png)
 
-3. Verify that portals for each entity refer to the Broker portal:
+3. Verify that the portal for each entity refers to the Broker portal:
 
     ![](./images/kafka_broker.png)
 
@@ -71,11 +70,11 @@ Consumer lag calculation requires information about producer offset and consumer
 
 Producer offset is collected from Kafka brokers by the JMX Job above.
 
-Consumer offset is collected using a Kafka console consumer reading events from  the `__consumer_offset` topic on one of the Kafka servers in the cluster.
+Consumer offset is collected using a Kafka console consumer reading events from the `__consumer_offset` topic on one of the Kafka servers in the cluster.
 
 Log in to the Kafka server.
 
-Download the [shell script](./resources/send_offset.sh) into Kafka `bin` directory.
+Download the [shell script](./resources/send_offset.sh) to the Kafka `bin` directory.
 
 ```sh
 # assign execute permission

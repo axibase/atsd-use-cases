@@ -25,7 +25,7 @@ Dams are built to flood valleys and create water reserves. At the height of the 
 
 ![](./images/folsom-lake-drought.png)
 
-The above photographs show the Folsom reservoir, the main reservoir responsible for providing water to Sacramento, the capitol of the state, in July 2011 and January 2014, respectively.
+The above photographs show the Folsom reservoir, the main reservoir responsible for providing water to Sacramento, the capital of the state, in July 2011 and January 2014, respectively.
 
 This portal tracks Folsom reservoir levels using a `time-offset` setting to display variable year data together.
 

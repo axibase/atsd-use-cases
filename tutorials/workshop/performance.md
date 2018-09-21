@@ -91,7 +91,7 @@ Understand the principles of writing an informative JMH benchmark by studying th
 
 ### Date Formatters Performance Comparison
 
-> Review date formatter benchmarks on [Github](https://github.com/raipc/benchmarks/blob/master/src/main/java/com/github/raipc/BetterIso8601Benchmarks.java).
+> Review date formatter benchmarks on [GitHub](https://github.com/raipc/benchmarks/blob/master/src/main/java/com/github/raipc/BetterIso8601Benchmarks.java).
 
 To record benchmarks, build and run the project.
 

@@ -257,7 +257,7 @@ Prepare a visualization for the last SQL query tracking worldwide visa issuances
 
    ![Figure8](./images/Figure8.png)
 
-5. Specify visualzation details. Select `tags.country` as the **X Column** and `tags.visa_type` as the **Y Column**. Give the visualization a title with the **Visualization Name** field.
+5. Specify visualization details. Select `tags.country` as the **X Column** and `tags.visa_type` as the **Y Column**. Give the visualization a title with the **Visualization Name** field.
 
    ![Figure9](./images/Figure9.png)
 

@@ -11,7 +11,7 @@
 ## Index
 
 The following table contains the entire set of included metrics as well as their corresponding visualization figure for easy navigation.
-Use the clickable links in the Figure column to jump between visualizations and in ChartLab, use the drop-down menus to toggle
+Use the clickable links in the Figure column to jump between visualizations and in ChartLab, use the drop-down lists to toggle
 between metrics.
 
 | Metric | Comment | Figure |
@@ -56,7 +56,7 @@ Local Metrics:
 
 [![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/69d313b9/3/#fullscreen)
 
-> Use the drop-down menu to toggle between metrics
+> Use the list to navigate between metrics
 
 Return to the [Index](#index)
 

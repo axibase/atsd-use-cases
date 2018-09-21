@@ -258,9 +258,9 @@ Underlying Formula:
 
 ```javascript
 value = (Math.pow(( value("cpi") / previous("cpi") ), 12) - 1) * 100
- ```
+```
 
-* This setting uses the built-in [`Math`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) javascript object.
+* This setting uses the built-in [`Math`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) JavaScript object.
 
 Return to the [Index](#index)
 

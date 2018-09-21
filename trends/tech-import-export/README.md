@@ -30,7 +30,7 @@ This visualization uses `alias` settings to capture raw data and `value` setting
 
 ### `fred.js` Library
 
-A set of common econometrics used for modifying FRED, or other, economic data is the [`fred.js`](../../tutorials/shared/trends.md#fred-library) library, which supports a series of pre-definied functions used to transform data such as advanced technologies import / export figures.
+A set of common econometrics used for modifying FRED, or other, economic data is the [`fred.js`](../../tutorials/shared/trends.md#fred-library) library, which supports a series of pre-defined functions used to transform data such as advanced technologies import / export figures.
 
 ![](./images/change-from-previous-year.png)
 
