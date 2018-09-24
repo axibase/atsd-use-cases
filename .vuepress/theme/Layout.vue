@@ -173,5 +173,5 @@ function updateMetaTags (meta, current) {
 }
 </script>
 
-<style src="prismjs/themes/prism-tomorrow.css"></style>
+<style src="./styles/prismjs-axi.css"></style>
 <style src="./styles/theme.styl" lang="stylus"></style>
