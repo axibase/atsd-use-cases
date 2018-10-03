@@ -4,7 +4,7 @@
 
 ## Introduction
 
-[HyperLEDA](http://leda.univ-lyon1.fr/intro.html) is a service which provides a database and collection of tools to study the physics of galaxies and cosmology. The project begain in 1983 and is currently maintained by a collaboration between [Observatoire de Lyon](https://observatoire.univ-lyon1.fr/) in France and the [Special Astrophysical Observatory](http://www.sao.ru/) in the Russian Federation.
+[HyperLEDA](http://leda.univ-lyon1.fr/intro.html) is a service which provides a database and collection of tools to study the physics of galaxies and cosmology. The project began in 1983 and is currently maintained by a collaboration between [Observatoire de Lyon](https://observatoire.univ-lyon1.fr/) in France and the [Special Astrophysical Observatory](http://www.sao.ru/) in the Russian Federation.
 
 To quote the HyperLEDA mission statement: "The principle behind HyperLEDA is to collect measurements published in literature and modern surveys, and to combine them into a unique homogeneous description of the astronomical objects. This enables the researcher to compare objects located at very different distances. This approach is a continuation of the famous series of Bright Galaxy Catalogues (`RC1`, `RC2`, `RC3`) by de Vaucouleurs and co-workers. The result of the homogenization is the Leda catalogue."
 
@@ -121,7 +121,7 @@ Transformed to isolate the derived value *m*, *1* / *m* = (*x* + *b*) / *f(x)*. 
 * *b*: Unitless scalar value.
 * *f(x)*: 3.086*e*<sup>19</sup> *km/s*
 
-As such, the exponentional value is calculated to be `19` - `1` - `7` = `11`. Where `1` is the exponent of the numerator, and `7` is the conversion factor from seconds to years.
+As such, the exponential value is calculated to be `19` - `1` - `7` = `11`. Where `1` is the exponent of the numerator, and `7` is the conversion factor from seconds to years.
 
 Thus, the inverse value of the derived linear regression slope raised to the power of `11` is the theoretical age of the universe. The linear regression intercept is discarded as insignificant.
 
