@@ -108,7 +108,7 @@ statistic = intercept
 
 These values exclude less than 10% of total data as erroneous. The regression line is shown below superimposed over the data.
 
-![](./images/linear-regression-2.png)
+![](./images/linear-regression-4.png)
 
 Using the standard linear equation ***f(x)* = *mx* + *b***, where:
 
