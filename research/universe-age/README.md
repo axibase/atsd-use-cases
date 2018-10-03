@@ -106,7 +106,9 @@ statistic = intercept
 
 > Note that the distance unit has been converted to megaparsecs (MPc), which is one million parsecs.
 
-These values exclude less than 10% of total data as erroneous.
+These values exclude less than 10% of total data as erroneous. The regression line is shown below superimposed over the data.
+
+![](./images/linear-regression-2.png)
 
 Using the standard linear equation ***f(x)* = *mx* + *b***, where:
 
@@ -120,10 +122,6 @@ Transformed to isolate the derived value *m*, *1* / *m* = (*x* + *b*) / *f(x)*. 
 * *x*: *km/s*
 * *b*: Unitless scalar value.
 * *f(x)*: 3.086*e*<sup>19</sup> *km/s*
-
-The regression line is shown below against the data.
-
-![](./images/linear-regression-2.png)
 
 As such, the exponential value is calculated to be `19` - `1` - `7` = `11`. Where `1` is the exponent of the numerator, and `7` is the conversion factor from seconds to years.
 
