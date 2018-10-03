@@ -121,6 +121,10 @@ Transformed to isolate the derived value *m*, *1* / *m* = (*x* + *b*) / *f(x)*. 
 * *b*: Unitless scalar value.
 * *f(x)*: 3.086*e*<sup>19</sup> *km/s*
 
+The regression line is shown below against the data.
+
+![](./images/linear-regression-2.png)
+
 As such, the exponential value is calculated to be `19` - `1` - `7` = `11`. Where `1` is the exponent of the numerator, and `7` is the conversion factor from seconds to years.
 
 Thus, the inverse value of the derived linear regression slope raised to the power of `11` is the theoretical age of the universe. The linear regression intercept is discarded as insignificant.
