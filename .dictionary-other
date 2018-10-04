@@ -1,7 +1,9 @@
+abductive
 aggregator
 al
 annualiz(ed|ation)
 annualiz(e|ing)
+astrophysical
 automakers
 backtick[s]?
 bi-annually
@@ -50,6 +52,7 @@ hardcode[d]?
 highlighted
 historiz(e|ing)
 homegrown
+homogenization
 hostnames
 hypervisor[s]?
 iframe[s]?
@@ -64,12 +67,14 @@ keytool
 lifespan[s]?
 lighthearted
 makam
+megaparsecs
 meltdown
 microbenchmarking
 microservice[s]?
 milli
 minif(y|ied)
 misconfigure[d]?
+mx
 mypassword
 myuser
 nameserver
@@ -79,6 +84,7 @@ oktas
 overallwqi
 overfitting
 outsourced
+parsec[s]?
 particulate
 percentile
 phishing
