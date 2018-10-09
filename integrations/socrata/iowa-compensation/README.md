@@ -291,7 +291,7 @@ value = (value('comp')/(value('emps')+value('empl')))==0 ? null : (value('comp')
 
 Add another dataset to this analysis to adjust for inflation: the consumer price index (CPI).
 
-According to the [Bureau of Labor Statistics (BLS)](https://www.bls.gov/cpi/cpifaq.htm), CPI is a measure of the average change over time in the prices
+CPI is a measure of the average change over time in the prices
 paid by urban consumers for a market basket of goods and services. This market basket includes a wide variety of consumer items such as chicken, bedroom furniture, jewelry, eyeglasses, college tuition,
 tobacco, and many more items. Use CPI to index the real value of average employee salaries change over time using current dollars.
 
