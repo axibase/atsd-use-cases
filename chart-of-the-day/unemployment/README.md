@@ -1,7 +1,7 @@
 # U.S. Approaching 3-Year Mark for Full Employment
 
 ![](./images/unemp-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
 *Fig 1.* The upper chart in the **Trends** visualization above tracks U.S. unemployment and GDP, while the lower charts track percent change in unemployment and GDP value, respectively.
 
@@ -18,7 +18,7 @@ Since the 1980s, the United States has almost always been on the wrong side of t
 ### Full Employment in the United States
 
 ![](./images/full-10-employ.png)
-[![](./images/button-new.png)](https://trends.axibase.com/39178867#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/39178867#fullscreen)
 
 *Fig 2.* Periods of full employment are highlighted in green and periods of over 10% unemployment are highlighted in red. Full-employment and 10%-unemployment `[threshold]` series are used to highlight upper and lower value limits.
 
@@ -29,7 +29,7 @@ The **Trends** chart above tracks periods with full employment using an `alert-e
 While correlation alone can never be used to prove causation, common sense tells us that the more unemployed there are in the population, the worse off the GDP inevitably is. Compare the percent-change charts from above for unemployment and GDP when they are overlaid on one another.
 
 ![](./images/compare-emp-gdp.png)
-[![](./images/button-new.png)](https://trends.axibase.com/2a9d8451#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/2a9d8451#fullscreen)
 
 *Fig 3.* Series of dramatically different orders of magnitude may be shown on the same visualization using an `axis` setting.
 
