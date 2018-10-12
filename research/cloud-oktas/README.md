@@ -94,13 +94,13 @@ Interestingly, the `cloudiness_himawari_b13` series has a daily cycle; the value
 
 View the live ChartLab Portal comparing Cloud Cover to Sun Altitude:
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/08aa5fea/3/)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/08aa5fea/3/)
 
 The results clearly show that the correlation during daytime hours is higher.
 
 The diurnal cycle is removed by subtracting the average of values of the last `n` days. The results with the diurnal cycle removed:
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/06a58e55/7/)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/06a58e55/7/)
 
 ## Improving the Correlation
 
@@ -197,7 +197,7 @@ Comparing the calculated cloud oktas with solar power generation for a particula
 
 ![](./images/pv_cloud_correlation2.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/8e2917e2)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/8e2917e2)
 
 The above ChartLab portal compares the power generation of a solar power station near one of the automated weather stations in the city of Griffith, for which cloud cover is calculated. The solar power station is three kilometers away from the automated weather station. From these results the increases in calculated cloud cover lead to decreases in solar power generation and vice versa. There is a correlation between the calculated cloud oktas and solar power generation.
 

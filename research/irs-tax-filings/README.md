@@ -24,7 +24,7 @@ ChartLab is a data visualization sandbox that uses a simple declarative syntax f
 
 ![](./images/tax-2018-title.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/fd986f58)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/fd986f58)
 
 Tax filing data for the 2017 and 2018 superimposed over previous-year data.
 
@@ -71,7 +71,7 @@ Configuration Features:
 
 ![](./images/tax-2018_1.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/07f8b200)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/07f8b200)
 
 The same data displayed with different settings.
 
@@ -103,7 +103,7 @@ Configuration has been shortened to include only non-repeated settings for brevi
 
 ![](./images/tax-2018-2.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5dba3269)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/5dba3269)
 
 Average filing numbers for the entire observed period show that the total number of Americans filing a tax return has diminished in recent years.
 
@@ -130,7 +130,7 @@ Configuration has been shortened to include only non-repeated settings for brevi
 
 ![](./images/tax-2018-3.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/bdab5fd8)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/bdab5fd8)
 
  A histogram shows the distribution of values for the given datasets. Assuming all series are equally-distributed the slope of the stacked boxes is zero.
 

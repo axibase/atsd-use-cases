@@ -18,7 +18,7 @@ Ohio residents responded positively when asked in they are in good health.
 
 ![](./images/CDC1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1e6f3425/3/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1e6f3425/3/#fullscreen)
 
 ```sql
 SELECT TAGS.placename, TAGS.stateabbr, LAST (VALUE)
@@ -60,7 +60,7 @@ What about the least physically healthy cities?
 
 ![](./images/CDC2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1e6f3425/4/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1e6f3425/4/#fullscreen)
 
 ```sql
 SELECT TAGS.placename, TAGS.stateabbr, LAST (VALUE)
@@ -105,7 +105,7 @@ the lowest level of mental health?
 
 ![](./images/CDC3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1e6f3425/5/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1e6f3425/5/#fullscreen)
 
 ```sql
 SELECT TAGS.placename, TAGS.stateabbr, LAST (VALUE)
@@ -147,7 +147,7 @@ And it would not be any fun with the bottom twenty-five as well, included below:
 
 ![](./images/CDC4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1e6f3425/4/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1e6f3425/4/#fullscreen)
 
 ```sql
 SELECT TAGS.placename, TAGS.stateabbr, LAST (VALUE)

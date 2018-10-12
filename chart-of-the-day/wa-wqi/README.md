@@ -2,7 +2,7 @@
 
 ![](./images/WQI_1.0.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/89c8183d/2/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/89c8183d/2/#fullscreen)
 
 > Use the drop-down list to examine the Top 10 or Bottom 10 testing stations, or use the Wildcard ([`*`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/))
 option to view all available testing sites together.
@@ -44,7 +44,7 @@ available testing sites together.
 
 ![](./images/WQI_2.0.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/89c8183d/5/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/89c8183d/5/#fullscreen)
 
 The map below shows the Top 10 Overall Best WQI site locations noted in blue, and the Bottom 10 Overall Worst WQI site locations
 noted in red. The Station ID for each site is contained in the metadata, and may be returned with this SQL

@@ -43,6 +43,6 @@ In the **AWS Route 53** tab, the newly-configured entity view and portal are now
 The **Latency Portal** has two windows: The first tracks average connection time (milliseconds) and the second shows real-time and historical connection data (milliseconds).
 
 ![](./images/route-53-connection-times.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/f3c08268)
+[![](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/f3c08268)
 
 Open the **ChartLab** example above to see a fully functioning **Latency Portal** integrated with Axibase servers delivering status information from endpoints and applications across the globe.

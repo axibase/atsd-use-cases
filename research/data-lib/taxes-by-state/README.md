@@ -8,7 +8,7 @@ Source: [State of Maryland](https://axibase.com/datasets/socrata/t833-r94z.html)
 
 ![](./images/Taxes_1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d7c5125c/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/d7c5125c/2/#fullscreen)
 
 ```sql
 SELECT tags.state AS "State", value AS "Individual Income Tax Rate (%)"
@@ -75,7 +75,7 @@ GROUP BY 'State', value
 
 ![](./images/Taxes_2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d7c5125c/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/d7c5125c/3/#fullscreen)
 
 ```sql
 SELECT tags.state AS "State", value AS "Corporate Income Tax Rate (%)"
@@ -142,7 +142,7 @@ GROUP BY 'State', value
 
 ![](./images/Taxes_3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d7c5125c/4/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/d7c5125c/4/#fullscreen)
 
 ```sql
 SELECT tags.state AS "State", value AS "Sales Tax Rate (%)"
@@ -211,7 +211,7 @@ GROUP BY 'State', value
 
 ![](./images/Taxes_4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d7c5125c/5/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/d7c5125c/5/#fullscreen)
 
 ```sql
 SELECT tags.state AS "State", value AS "Total Tax Rate (%)"

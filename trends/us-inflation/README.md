@@ -1,7 +1,7 @@
 # Using Thresholds to Track United States Inflation
 
 ![](./images/inflation-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/5bb4621e#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/5bb4621e#fullscreen)
 
 ## Overview
 

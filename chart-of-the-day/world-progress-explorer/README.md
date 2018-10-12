@@ -1,7 +1,7 @@
 # The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions
 
 ![](./images/wps-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/ecb8def7#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/ecb8def7#fullscreen)
 
 ## Introduction
 
@@ -26,7 +26,7 @@ For detailed information about using the **Trends** service, read this [guide](.
 The visualizations in the chart above demonstrate a [user-defined function](../../tutorials/shared/trends.md#user-defined-functions) which sets the year 1990 as the baseline using the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js) library. Using the `PercentChangeFromYearAgo` function instead creates the visualization below. Open the **Trends** interface and explore the data using the same drop-down lists to navigate between countries and metrics.
 
 ![](./images/wps-1.png)
-[![](./images/button-new.png)](https://trends.axibase.com/5d0563d2/2#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/5d0563d2/2#fullscreen)
 
 Axibase [Charts API](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) uses a simple syntax to perform advanced calculations on the client. The underlying mechanics of the `PercentChangeFromYearAgo` function are shown here:
 
@@ -168,7 +168,7 @@ FROM "life_expectancy_at_birth_by_country"
 **Notes**: Almost of the nations appearing on this list are former Soviet Socialist Republics who experienced a huge decrease in life expectancy after the dissolution of the USSR, and have since recovered. Use the chart below showing Belarus and Bulgaria during the 1990s, in the aftermath of the break-up, as a reference.
 
 ![](./images/life-exp-post-cccp.png)
-[![](./images/button-new.png)](https://trends.axibase.com/bf59e818)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/bf59e818)
 
 Open the **Trends** visualization and remove unwanted data by clicking colored indicator labels along the top of the screen to toggle visible countries.
 
@@ -269,7 +269,7 @@ FROM "population_total_by_country"
 **Notes**: Almost all of these countries are form Warsaw Pact / Eastern Bloc countries who have in one way or another achieved some sort of cooperation with European countries that has allowed for massive amounts of emigration from the formerly closed nations. In the case of the Ukraine, the significant drop in population immediately after the dissolution of the USSR is clearly visible.
 
 ![](./images/pop-loss-post-ussr.png)
-[![](./images/button-new.png)](https://trends.axibase.com/fcb79db7)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/fcb79db7)
 
 Open the **Trends** visualization above to track the same pattern in other former Warsaw Pact countries by using the drop-down lists to navigate through the data.
 

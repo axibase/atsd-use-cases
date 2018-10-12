@@ -1,7 +1,7 @@
 # The Creeping Overnight Fund Rate
 
 ![](./images/on-fund.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/e83adce8#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/e83adce8#fullscreen)
 
 * **Overnight Fund Data**: This charts uses a [`dual axis`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2 ) setting to compare two series measured in different units, the Overnight Fund Rate and the Overnight Fund Volume. As expected, while interest rates are under 0.4%, overnight funding activity is the highest and as the Fed steadily raised rates, overnight fund volume steadily decreased.
 

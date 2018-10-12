@@ -174,7 +174,7 @@ The `outage-tickets` dataset visualized in **ChartLab**:
 
 ![](./images/dc07.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/6d7ab88d#fullscreen)
 
 To calculate and display the difference between consecutive values, there are three options.
 
@@ -214,7 +214,7 @@ The visualization created by the `rate` setting configuration is shown below.
 
 ![](./images/rate-setting-visualization.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/6d7ab88d/2/)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/6d7ab88d/2/)
 
 ### Create Derived Series Using `replace-value`
 
@@ -225,7 +225,7 @@ Use `value` and `previousValue` fields in the [`replace-value`](https://axibase.
 replace-value = value - previousValue
 ```
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/af56007b#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/af56007b#fullscreen)
 
 ### Derived Series Using Aliases
 
@@ -248,7 +248,7 @@ Create a derived series using the [`previous(alias)`](https://github.com/axibase
  value = value('raw') - value('prev')
 ```
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/a7b29712)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/a7b29712)
 
 Both methods create the same visualization.
 

@@ -6,7 +6,7 @@ The [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/) o
 
 ![](./images/trade-balance.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/989bfe5c#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/989bfe5c#fullscreen)
 
 ## Advanced Technologies Defined
 
@@ -14,13 +14,13 @@ Advanced technologies are those technologies typically used by military or civil
 
 ![](./images/tech-import-export.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/55cc64c5#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/55cc64c5#fullscreen)
 
 This visualization tracks the growing divide in advanced technologies imported into the country, and advanced technologies exported from the country. Expanding upon the above visualization, the difference between imports and exports in USD millions is shown below.
 
 ![](./images/import-export-difference.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/31b5a64e#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/31b5a64e#fullscreen)
 
 This visualization uses `alias` settings to capture raw data and `value` settings to create new calculated series. Periods with a trade deficit are highlighted in red using an `alert-expression`. For detailed information about syntax in the **Trends** environment, see [Visualization Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
 
@@ -34,7 +34,7 @@ A set of common econometrics used for modifying FRED, or other, economic data is
 
 ![](./images/change-from-previous-year.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/b3acc1ea#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/b3acc1ea#fullscreen)
 
 Using the `ChangeFromPreviousYear` function, data samples may be compared to the same `datetime` value from the previous year. This is a useful technique for mapping relative growth of a metric. The bold trend lines here have been averaged by quarter using `group-statistic` and `group-period` settings to account for the high month-to-month volatility in advanced technologies sales.
 
@@ -48,13 +48,13 @@ Comparing overall trade balance data to advanced technologies shows that the def
 
 ![](./images/compare2.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/22d11a65#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/22d11a65#fullscreen)
 
 Using `alias` settings once again, the impact of the advanced technologies exports as a percent of the total budget deficit may be explored. This value has increased to account for upwards of 10% of the overall deficit.
 
 ![](./images/deficit-percent.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/6bfd112d#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/6bfd112d#fullscreen)
 
 Because of the month-to-month volatility in advanced technology sales, grouping settings are used to average values quarterly and annually.
 

@@ -117,7 +117,7 @@ Access [Charts Documentation](https://axibase.com/products/axibase-time-series-d
 
 ![](./images/fred-lib-demo.png)
 
-[![](./images/button.png)](https://trends.axibase.com/c9311303#fullscreen)
+[![](../../research/images/new-button.png)](https://trends.axibase.com/c9311303#fullscreen)
 
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 

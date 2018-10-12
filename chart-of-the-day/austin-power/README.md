@@ -4,7 +4,7 @@
 
 ![](./images/AP-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/efc684ff/2/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/efc684ff/2/#fullscreen)
 
 Austin, Texas is the capital city of the Lone Star State and one of the fastest growing cities in America. Home to the University
 of Texas at Austin, which produces thousands of well-qualified computer science graduates each year and funnels new talent into largest employers in Austin. Dubbed "the Silicon Hills" for the high concentration of post-dot-com-boom and other newer
@@ -44,7 +44,7 @@ observed period, which is detailed in the table below the visualization.
 
 ![](./images/AP-002.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/efc684ff/3/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/efc684ff/3/#fullscreen)
 
 ```sql
 SELECT tags.customer_class AS "Customer Class", AVG(value)/1000000 AS "Revenue (Million USD)"
@@ -65,7 +65,7 @@ customers significantly out-use the industrial sector by almost double.
 
 ![](./images/AP-003.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/efc684ff/4/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/efc684ff/4/#fullscreen)
 
 ```sql
 SELECT tags.customer_class AS "Customer Class", AVG(value)/1000000 AS "Usage (Million MWh)"

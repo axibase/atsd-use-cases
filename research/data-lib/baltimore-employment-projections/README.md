@@ -39,7 +39,7 @@ ORDER BY 'Year' ASC
 
 ![](./images/BMD_1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/19d89e95/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/19d89e95/2/#fullscreen)
 
 ## Most Populous Industries (2001)
 
@@ -67,7 +67,7 @@ ORDER BY '2001 Total (Thousand)' DESC
 
 ![](./images/BMD_9.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/fa80759c/7/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/fa80759c/7/#fullscreen)
 
 ## Most Populous Industries (2040)
 
@@ -95,7 +95,7 @@ ORDER BY '2040 Total (Thousand)' DESC
 
 ![](./images/BMD_10.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/fa80759c/8/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/fa80759c/8/#fullscreen)
 
 ## Most Populous Industries (Average) (2001-2040)
 
@@ -123,7 +123,7 @@ ORDER BY 'Average Total (Thousand)' DESC
 
 ![](./images/BMD_4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/56ce84ce/5/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/56ce84ce/5/#fullscreen)
 
 ## Most Positive Job Outlook (2001-2040)
 
@@ -154,7 +154,7 @@ ORDER BY 'Average Total (Thousand)' DESC
 
 ![](./images/BMD_3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/56ce84ce/4/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/56ce84ce/4/#fullscreen)
 
 > The delta value is shown for each of the ten fields above
 
@@ -236,7 +236,7 @@ ORDER BY 'Average Total (Thousand)' ASC
 
 ![](./images/BMD_6.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/56ce84ce/7/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/56ce84ce/7/#fullscreen)
 
 ## Least Positive Job Outlook (2001-2040)
 
@@ -264,4 +264,4 @@ ORDER BY 'Average Total (Thousand)' ASC
 
 ![](./images/BMD_5.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/56ce84ce/6/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/56ce84ce/6/#fullscreen)

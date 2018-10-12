@@ -32,7 +32,7 @@ without the needed data, and in the case of emergency services this preparation 
 
 ![](./images/CT_Fire1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0af389cf/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0af389cf/2/#fullscreen)
 
 From just a glance at the above visualization, it is obvious that the number of calls being placed to the Hartford Fire Department
 is on the rise. Unfortunately, this knowledge alone is insufficient to determine the rate at which the number of
@@ -66,7 +66,7 @@ of calls made to the Hartford Fire Department.
 
 ![](./images/CT_Fire2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0af389cf/6/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0af389cf/6/#fullscreen)
 
 ### Call Numbers by Month
 
@@ -120,7 +120,7 @@ GROUP BY period(1 month)
 
 ![](./images/CT_Fire3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/83d2a616/3/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/83d2a616/3/#fullscreen)
 
 While this visualization shows that despite an overall increase in calls to the department has been observed throughout the
 entire observation period, recently, the data shows a certain amount of stability and even decline.
@@ -150,7 +150,7 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
 
 ![](./images/CT_Fire10.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/83d2a616/9/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/83d2a616/9/#fullscreen)
 
 Open [ChartLab](https://www.axibase.com) with the button above and navigate through time using the drop-down list.
 
@@ -211,7 +211,7 @@ GROUP BY period(1 year)
 
 ![](./images/CT_Fire4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0af389cf/7/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0af389cf/7/#fullscreen)
 
 ### Fire Calls by Year
 
@@ -231,7 +231,7 @@ GROUP BY period(1 year)
 
 ![](./images/CT_Fire5.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0af389cf/8/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0af389cf/8/#fullscreen)
 
 ### EMS Calls by Month
 
@@ -285,7 +285,7 @@ GROUP BY period(1 month)
 
 ![](./images/CT_Fire7.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/83d2a616/4/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/83d2a616/4/#fullscreen)
 
 ### Fire Calls by Month
 
@@ -339,7 +339,7 @@ GROUP BY period(1 month)
 
 ![](./images/CT_Fire8.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/83d2a616/5/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/83d2a616/5/#fullscreen)
 
 ## Analysis
 
@@ -502,7 +502,7 @@ The visualizations have been converted to display average monthly values.
 
 ![](./images/CT_Fire20.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0c2f51ef/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0c2f51ef/2/#fullscreen)
 
 > Note the model error here is consistent with the error demonstrated in the [Validation](#validation) section above.
 
@@ -513,14 +513,14 @@ Below are the anticipated levels of fire-related calls yet-to-be received for th
 
 ![](./images/CT_Fire21.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0af389cf/19/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0af389cf/19/#fullscreen)
 
 The forecast feature is able to both effectively predict the increase in fire-related calls the Hartford Fire Department is likely
 to receive during the summer and demonstrate its ability to scale to smaller problems.
 
 ![](./images/CT_Fire19.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1ee63842/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/1ee63842/2/#fullscreen)
 
 Because of the recent trend of increased call volume to the Fire Department Emergency Medical Services Department, a lower
 scoring interval is applied to this data set. The scoring interval determines the weight of recent data compared to the entire set.

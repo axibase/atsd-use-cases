@@ -2,7 +2,7 @@
 
 ![](./images/ccl1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ffe5d3fe/2/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/ffe5d3fe/2/#fullscreen)
 
 > Open the ChartLab visualization above to modify the years of observation in any of the three graphs.
 

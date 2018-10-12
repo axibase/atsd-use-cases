@@ -20,7 +20,7 @@ The original data and new data are shown together. The range of conclusions one 
 
 ![](./images/xo-graph.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/2b56345c#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/2b56345c#fullscreen)
 
 The special item is removed using a [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting:
 

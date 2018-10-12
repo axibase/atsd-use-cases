@@ -214,7 +214,7 @@ This data can be further visualized in ChartLab:
 
 ![MonthIncidentCount](./images/MonthIncidentCount.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/19/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/19/)
 
 Because the nature of the visualization is such that the omission of empty months
 would distort the chronology of the data, interpolation is used once again.
@@ -232,7 +232,7 @@ These results can also be visualized in ChartLab:
 
 ![WeekIncidentCount](./images/WeeklyIncidentCount1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/21/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/21/)
 
 The day of the week of these incidents can also be considered using this query:
 
@@ -306,7 +306,7 @@ rate of homicide, and the location of the incident is underscored:
 
 ![RegionVRegion](./images/ByRegion.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3872c5c/5/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3872c5c/5/)
 
 Although the recorded incidents of police use of force are not necessarily fatal, for the
 given time period eight of them resulted in the death of the victim, there is ostensibly
@@ -404,7 +404,7 @@ the city of Baltimore can be done on a monthly basis:
 
 ![MonthlyIncidentCount2](./images/MonthlyIncidentCount2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/22/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/22/)
 
 Here, the same correlation is less visible, with only one of the three spikes in homicides
 matched by a similar spike in police use of force.
@@ -414,7 +414,7 @@ city of Baltimore can be done on a weekly basis:
 
 ![WeeklyIncidentCount](./images/WeeklyIncidentCount2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/23/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/23/)
 
 Here, the peaks in police use of force are further smoothed to indicate that the hypothetically
 resultant increase in police use of force occurs on a somewhat delayed basis after
@@ -448,7 +448,7 @@ over the span of the entire observed period.
 
 ![TotalVTotal](./images/Total2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/26/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/26/)
 
 ## Analysis
 
