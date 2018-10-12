@@ -2,7 +2,7 @@
 
 ![](./images/presidential-portal-1.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/24dd54d5)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/24dd54d5)
 
 ## Overview
 
@@ -48,7 +48,7 @@ Each Presidential administration serves as an index baseline for the respective 
 
 ![](./images/table-4.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/3cde53d6)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/3cde53d6)
 
 This table tracks each metric through the first 100 days of the respective President's administration. Thus, since Gerald Ford took office in 1974, United States capacity utilization declined 0.7%. See the [Economic Metrics](#economic-metrics) table above for the units used for each metric.
 

@@ -111,7 +111,7 @@ printWithCustomPrinterIsoOpt  sample  2369326      271.344 ± 10.401   ns/op
 
 ![](./images/jmh-benchmarks.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/51e517df/2/)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/51e517df/2/)
 
 ## The Formatters Used by ATSD
 
@@ -231,7 +231,7 @@ LIMIT 500000
 
 ![](./images/performance.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/972babb9/16/)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/972babb9/16/)
 
 Some performance considerations:
 

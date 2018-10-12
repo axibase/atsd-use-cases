@@ -6,7 +6,7 @@
 
 ![](./images/fi1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c8492399/2/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/c8492399/2/#fullscreen)
 
 > Use the drop-down lists to navigate through time or observe a specific county.
 

@@ -42,7 +42,7 @@ SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt (Million Euro)"
 
 ![](./images/acv-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82713e8a/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/82713e8a/#fullscreen)
 
 To calculate the percent growth of Lithuanian debt over the 20-year observation period, use common baselines. Three common baselines are as follows:
 
@@ -104,7 +104,7 @@ Track positive debt growth with an [`alert-expression`](https://axibase.com/prod
 
 ![](./images/acv-003.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82713e8a/5/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/82713e8a/5/#fullscreen)
 
 See lines 17 and 18 for `alert-expression` syntax.
 
@@ -169,7 +169,7 @@ Apply an `alert-expression` to track years by percent deviation from the calcula
 
 ![](./images/acv-004.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82713e8a/4/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/82713e8a/4/#fullscreen)
 
 ### Final Year Baseline
 
@@ -219,6 +219,6 @@ GROUP BY datetime, value
 
 ![](./images/acv-006.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82713e8a/6/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/82713e8a/6/#fullscreen)
 
 The above graph shows percent deviation for Lithuanian government debt using the final year (2015) as a baseline.

@@ -1,7 +1,7 @@
 # Aging America: Modeling Birth Trends in the United States
 
 ![](./images/aging-america-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/9703ea57#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/9703ea57#fullscreen)
 
 > The upper graph shows the growing senior population contrasted against the diminishing birth rate while the lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
 
@@ -36,7 +36,7 @@ Data is visualized using **Trends** service from Axibase, a public data reposito
 Open the **Trends** visualization and use the drop-down list to navigate through time to compare working-aged population to the United States total population.
 
 ![](./images/working-population.png)
-[![](./images/button-new.png)](https://trends.axibase.com/2228bbde#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/2228bbde#fullscreen)
 
 *Fig 2.*: The portion of the population eligible for work (aged between 15 and 64) is shown in purple, while the remaining ineligible population is shown in red.
 
@@ -45,7 +45,7 @@ Open the **Trends** visualization and use the drop-down list to navigate through
 The upper histogram plots the frequency of each value of annual crude births per one thousand persons and the lower histogram tracks the 65+ population in percentile terms. Deceptively, the data seems to show that the average amount of births outperforms the aging population, but when scaled to 100, in fact, the aged population severely outnumbers the amount of crude births which are occurring.
 
 ![](./images/population-histogram.png)
-[![](./images/button-new.png)](https://trends.axibase.com/df87fe0c#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/df87fe0c#fullscreen)
 
 *Fig 3.*: Open the **Trends** visualization and modify the number of bars in either histogram using a [`bar-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/#tab-id-1) setting for more granularized data visualization.
 
@@ -90,7 +90,7 @@ Using a `value` expression, calculated series may be created using existing data
 Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in **Trends** or **ChartLab**, see the [Calculated Series Tutorial](../../tutorials//calculated-values/README.md).
 
 ![](./images/working-population-charts.png)
-[![](./images/button-new.png)](https://trends.axibase.com/68f93899#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/68f93899#fullscreen)
 
 *Fig 4.*: The [box chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) and [histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/) establish the median and range values of the dataset, which are then used in the [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14), which activates when a condition is satisfied. Here, the condition is set to color a bar red if it is greater than the calculated median value. This expression shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
 
@@ -109,7 +109,7 @@ The ATSD Forecast tool may be used to model future trends based on existing data
 Forecasting for each of the original metrics is shown below for roughly 20 years into the future.
 
 ![](./images/forecast_data.png)
-[![](./images/button-new.png)](https://trends.axibase.com/a2967bc9#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/a2967bc9#fullscreen)
 
 *Fig 5.*: The original data is shown here with forecasts performed in ATSD showing the potentially widening gap between those eligible to pay in to the Social Security system and those needing to be paid out from that system.
 

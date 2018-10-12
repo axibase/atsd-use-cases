@@ -2,7 +2,7 @@
 
 ![](./images/vote1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/499e5c3b/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/499e5c3b/#fullscreen)
 
 * Data Source: [The Institute for Democracy and Electoral Assistance](https://www.idea.int/data-tools/question-countries-view/521/295/ctr)
 

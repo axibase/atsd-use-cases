@@ -67,7 +67,7 @@ data from 1947 onward, small scale differences are expected in the outputs of ea
 
 ![](./images/cpi1.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/383632d5/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/383632d5/#fullscreen)
 
 Return to the [Index](#index)
 
@@ -86,7 +86,7 @@ goods are therefore greater than 100.00 while years exhibiting deflation in the 
 
 ![](./images/cpi2.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/978c79b4/4/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/978c79b4/4/#fullscreen)
 
 In **ChartLab**, use the drop-down list at the top of the visualization to select the year to be used as a baseline, or hardcode
 a year not included in the drop-down list by modifying one of the dates in the `keyDates` list.
@@ -150,7 +150,7 @@ The monthly numerical change in CPI value over the observed period.
 
 ![](./images/cpi3.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5267b4a7/2/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/5267b4a7/2/#fullscreen)
 
 Underlying Formula:
 
@@ -176,7 +176,7 @@ The numerical change in CPI value from the same month of the previous year.
 
 ![](./images/cpi4.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5267b4a7/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/5267b4a7/#fullscreen)
 
 Underlying Formula:
 
@@ -202,7 +202,7 @@ The monthly percentile change in CPI value over the entire observed period.
 
 ![](./images/cpi5.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/ab06efab/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/ab06efab/#fullscreen)
 
 Underlying Formula:
 
@@ -228,7 +228,7 @@ The percentile change in CPI from the same month of the previous year.
 
 ![](./images/cpi6.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/4f192b00/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/4f192b00/#fullscreen)
 
 Underlying Formula:
 
@@ -252,7 +252,7 @@ The mean annual rate of change for the Consumer Price Index.
 
 ![](./images/cpi7.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/f6fee48e/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/f6fee48e/#fullscreen)
 
 Underlying Formula:
 
@@ -278,7 +278,7 @@ The mean rate of change for the Consumer Price Index compounded continuously.
 
 ![](./images/cpi8.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/cae3b970/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/cae3b970/#fullscreen)
 
 Underlying Formula:
 
@@ -302,7 +302,7 @@ Return to the [Index](#index)
 
 ![](./images/cpi9.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/225e74f9/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/225e74f9/#fullscreen)
 
 Underlying Formula:
 
@@ -326,7 +326,7 @@ The logarithm of each value set to base of the mathematical constant _e_
 
 ![](./images/cpi10.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/d2ced747/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/d2ced747/#fullscreen)
 
  Underlying Formula:
 

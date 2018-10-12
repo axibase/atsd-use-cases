@@ -22,7 +22,7 @@ Use the Metric Index and Country Index below to navigate between countries and m
 
 ![](./images/hkb-01.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/0a0bc0af/2/#fullscreen)
 
 > Open the visualization in ChartLab and use the drop-down lists at the top of the screen to select an observation period.
 
@@ -84,7 +84,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 ![](./images/hkb-03.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/5/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/0a0bc0af/5/#fullscreen)
 
 > Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down list.
 
@@ -734,7 +734,7 @@ Return to the [Metric Index](#metric-index)
 
 ![](./images/hkb-02.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/4/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/0a0bc0af/4/#fullscreen)
 
 > Open the visualization in ChartLab and use the drop-down lists at the top of the screen to select a specific observation period.
 
@@ -783,7 +783,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 ![](./images/hkb-04.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/7/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/0a0bc0af/7/#fullscreen)
 
 > Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down list.
 
@@ -1207,7 +1207,7 @@ Return to the [Metric Index](#metric-index)
 
 ![](./images/hkb-05.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/8/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/0a0bc0af/8/#fullscreen)
 
 > Open the visualization in ChartLab and use the drop-down lists at the top of the screen to select an observation period.
 
@@ -1269,7 +1269,7 @@ SELECT YEAR(time) AS 'Year', value as 'Businesses in Hong Kong',ROUND((value/ LA
 
 ![](./images/hkb-06.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0a0bc0af/9/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/0a0bc0af/9/#fullscreen)
 
 > Open the ChartLab visualization to toggle between observed countries or navigate through time using the drop-down list.
 

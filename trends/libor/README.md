@@ -1,7 +1,7 @@
 # London Inter-Bank Offered Rate (LIBOR)
 
 ![](./images/libor-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/8f97e6db#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/8f97e6db#fullscreen)
 
 *Fig 1.* The LIBOR and its denominational rates are shown in the upper **Trends** visualization while the difference among each of the rates, compared to the annual lending rate, are shown in the lower visualization. A `[threshold]` series is set to 1, showing divergence of greater than a full percent among series.
 
@@ -14,7 +14,7 @@ In 2012 it was revealed that many of these worldwide member banks, fraudulently 
 ## Year-Over-Year Change and Log Returns
 
 ![](./images/yoy-log.png)
-[![](./images/button-new.png)](https://trends.axibase.com/ea89aea3#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/ea89aea3#fullscreen)
 
 *Fig 2.* The upper chart shows year-over-year changes in the LIBOR index, and the lower chart normalizes the raw values using a natural logarithm function.
 
@@ -23,7 +23,7 @@ Year-On-Year change is a method of long-term analysis which tracks the change in
 Compare the raw year-over-year dataset to the normalized year-over-year dataset shown below:
 
 ![](./images/yoy-yoyn.png)
-[![](./images/button-new.png)](https://trends.axibase.com/a400eabf#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/a400eabf#fullscreen)
 
 *Fig 3.* Log returns provide a normalized dataset, which may be more easily operated upon by additional functions such as continuously-compounds rate of change. A `[threshold]` series is given the value of 0 for ease-of-viewing.
 

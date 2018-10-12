@@ -70,7 +70,7 @@ The figure below shows total statewide employee compensation for each of the 23 
 
 ![Figure 1](./images/Figure1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f5eae012)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/f5eae012)
 
 Filter data and create interactive functions for any visualization. Open the **ChartLab** portal above and explore the Iowa compensation dataset using the drop-down lists:
 
@@ -83,7 +83,7 @@ often based on seasonality.
 
 ![Figure 7](./images/Figure7.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/131b7670)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/131b7670)
 
 Next, select **Government and Government Enterprises** from the **`industry_type`** drop-down list. The compensation for
 **federal and civilian** and **military** barely increases over time but **state and local** compensation shows steady growth.
@@ -94,13 +94,13 @@ Exclude series from the filtered view by clicking on the series legend. The imag
 
 ![Figure 25](./images/Figure25.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/cb62aab7)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/cb62aab7)
 
 Select the **private non-farm** series using the **`industry_type`** drop-down list.
 
 ![Figure 2](./images/Figure2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0c459d5f)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/0c459d5f)
 
 Filter for the **Construction** and **Manufacturing** metrics by using the **`industry`** drop-down list. Both industries visibly suffered during the Great Recession.
 
@@ -112,7 +112,7 @@ The portal below explores total compensation change per industry in Iowa since 2
 
 ![Figure 27](./images/Figure27.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8323be2f/5/)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/8323be2f/5/)
 
 ## Additional Iowa Datasets: State of Iowa Employment by Month and Industry
 
@@ -161,7 +161,7 @@ Filter data and create interactive functions for any visualization. Open the **C
 * **Industry**: filter by each of the three industries.
 * **Sub-Category**: filter by sun-category.
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1ac33603)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1ac33603)
 
 Explore specific metrics in the **Iowa Seasonally Adjusted Non-Farm Employment by Month and Industry** dataset. As with the total statewide employee compensation dataset, filter for the **Construction** and **Manufacturing** metrics. Below are images of the
 **Construction** and **Manufacturing** metrics, respectively.
@@ -172,7 +172,7 @@ Explore specific metrics in the **Iowa Seasonally Adjusted Non-Farm Employment b
 
 The same decline correlating with the recession period is highlighted the figures above.
 
-Below is a table of datasets from `data.iowa.gov` already available in **ChartLab**. Modify configuration in the **Editor** window to compare data across entities. For more information about **ChartLab** syntax or selecting series, see the [ChartLab Introduction](../../../tutorials/shared/chartlab.md).
+Below is a table of datasets from `data.iowa.gov` already available in **ChartLab**. Modify configuration in the **Editor** window to compare data across entities. For more information about **ChartLab** syntax or selecting series, see the [ChartLab Introduction](../../../research/../tutorials/shared/chartlab.md).
 
 |Entity     | Dataset Title     |
 |-----------|--------------------------|
@@ -214,7 +214,7 @@ Use a [`time-offset`](https://axibase.com/products/axibase-time-series-database/
 
 ![Figure 26](./images/Figure26.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/08e6e6f0)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/08e6e6f0)
 
 To summarize the effects of the Great Recession in three parts:
 
@@ -233,7 +233,7 @@ years, as a whole the growth has been quite significant.
 
 ![Figure 15](./images/Figure15.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f5eae012/3/)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/f5eae012/3/)
 
 Divide total employee compensation by the total number of employees to compute an average
 wage (adjusted with CPI values) for this industry as a new metric.
@@ -269,7 +269,7 @@ Below is an image of the average employee compensation for the federal governmen
 
 ![Figure 19](./images/Figure19.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/202133dd)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/202133dd)
 
 The unadjusted average salary for a federal government employee in the state increased from $50,211 in March of 1998 to $92,078 in September of 2016.
 
@@ -285,7 +285,7 @@ The underlying formula is shown here:
 value = (value('comp')/(value('emps')+value('empl')))==0 ? null : (value('comp')/(value('emps')+value('empl')))
 ```
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1ac33603/3/)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1ac33603/3/)
 
 ## Consumer Price Index (CPI) Dataset
 
@@ -321,13 +321,13 @@ The portal contains three active series:
 
 ![Figure 23](./images/Figure23.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1ac33603/6/)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1ac33603/6/)
 
 Below is a screenshot of the complete portal for the local and state government dataset.
 
 ![Figure 24](./images/Figure24.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/6019ae9c)
+[![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/6019ae9c)
 
 With adjusted compensation per employee values derived series, meaningful conclusions can be made by the economically minded observer. The ability of ATSD to easily combine multiple datasets, regardless of standard or non-standard formats, into one visualization makes comparing employee average compensation simple and straightforward and provides outputs that are easy to interpret.
 

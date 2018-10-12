@@ -8,7 +8,7 @@
 
 ![I2](./images/IDO-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/dfbbf75b/2/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/dfbbf75b/2/#fullscreen)
 
 For the 2014-2015 academic year, more than [90%](https://www2.ed.gov/admins/lead/account/consolidated/sy14-15part1/ia.pdf)
 of eligible Iowa students successfully graduated high school making it the [highest

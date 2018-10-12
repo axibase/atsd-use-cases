@@ -2,7 +2,7 @@
 
 ![](./images/sld2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e6cf48b9/2/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/e6cf48b9/2/#fullscreen)
 
 > Open the [ChartLab](https://apps.axibase.com/chartlab) visualization above and use the drop-down lists to navigate through time.
 
