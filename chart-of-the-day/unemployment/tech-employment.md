@@ -2,7 +2,7 @@
 
 ![](./images/unemployment-1.png)
 
-[![](./images/button-1.png)](https://trends.axibase.com/48731e05)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/48731e05)
 
 ## Introduction
 
@@ -12,7 +12,7 @@ One of the hallmarks of a competitive economy in the modern globalized world is 
 
 ![](./images/israel-iran.png)
 
-[![](./images/button-1.png)](https://apps.axibase.com/chartlab/607e5af9)
+[![](../../trends/images/button-new.png)](https://apps.axibase.com/chartlab/607e5af9)
 
 The erratic peaks and valleys of the oft-sanctioned and commodity-driven Iranian economy are shown above alongside the relatively constant growth of the more technology-centric Israeli economy.
 
@@ -24,7 +24,7 @@ The raw unemployment data shown above, along with all other series used for this
 
 ![](./images/unemployment-2.png)
 
-[![](./images/button-1.png)](https://trends.axibase.com/cdfbc613)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/cdfbc613)
 
 Roughly speaking, these two datasets follow the same general course but the latter is often used as an predictor of unemployment figures in the near future, as an increase or decrease in the number of new claims is likely to foreshadow the same trend in overall unemployment.
 
@@ -32,7 +32,7 @@ The chart below contrasts these two series on a duel-axis and compares their rel
 
 ![](./images/unemployment-3.png)
 
-[![](./images/button-1.png)](https://trends.axibase.com/50c23500)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/50c23500)
 
 The more-than-casual relationship between these two metrics is visible when they are compared side-by-side.
 
@@ -44,7 +44,7 @@ More than a handful of economists and politicians have pointed to the overall de
 
 ![](./images/unemployment-6.png)
 
-[![](./images/button-1.png)](https://trends.axibase.com/1ff084af)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/1ff084af)
 
 The declining capacity usage of the United States since 1970 indicates highlights the decrease in domestic production and manufacturing, despite the relative abundance of natural resources.
 
@@ -54,7 +54,7 @@ The visualization below places these series together in one visualization, highl
 
 ![](./images/unemployment-7.png)
 
-[![](./images/button-1.png)](https://trends.axibase.com/f02177d4)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/f02177d4)
 
 As capacity utilization declines in the United States, unemployment correspondingly increases over the same time interval and vise versa. This visualization captures the dependency of a significant number of American jobs on the manufacturing and production industries. The [Capacity Utilization](https://fred.stlouisfed.org/series/TCU) FRED series is an acceptably broad dataset to ascertain the health of American manufacturing and production industries.
 
@@ -64,7 +64,7 @@ The sister San Francisco branch of the Federal Reserve St. Louis Branch maintain
 
 ![](./images/tech-pulse.png)
 
-[![](./images/button-1.png)](https://apps.axibase.com/chartlab/ed476cfc)
+[![](../../trends/images/button-new.png)](https://apps.axibase.com/chartlab/ed476cfc)
 
 The index is composed of a number of indicators, enumerated on the Federal Reserve website, which in total act as a reliable gauge for the health of the United States technology sector.
 
@@ -72,7 +72,7 @@ Although similar peaks and valleys are observable during significant movement in
 
 ![](./images/tech-pulse-1.png)
 
-[![](./images/button-1.png)](https://apps.axibase.com/chartlab/fe09c176)
+[![](../../trends/images/button-new.png)](https://apps.axibase.com/chartlab/fe09c176)
 
 ## Comparing Dissimilar Data
 
@@ -80,7 +80,7 @@ ATSD offers [ad hoc data transformation](https://github.com/axibase/charts/blob/
 
 ![](./images/tech-pulse-3.png)
 
-[![](./images/button-1.png)](https://apps.axibase.com/chartlab/cb49c0e6)
+[![](../../trends/images/button-new.png)](https://apps.axibase.com/chartlab/cb49c0e6)
 
 With the exception of the observed decline of the Tech Pulse index in 2001, which aligns with the burst of the so-called Dot Com Bubble, positive change in US Unemployment (that is, **more** unemployment) is never outstripped by an analogous decline in the Tech Pulse and conversely, percentile growth in the Tech Pulse index is never matched by an analogous decline in overall unemployment (that is, **less** unemployment).
 
