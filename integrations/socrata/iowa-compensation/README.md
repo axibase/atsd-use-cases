@@ -10,7 +10,7 @@ from agriculture and manufacturing, to healthcare and society.
 
 The governments at the federal, state, city, and county level publish datasets in [Socrata Open Data](https://socrata.com) format.
 
-[ATSD](https://axibase.com/docs/atsd/) supports the  combination of multipe datasets in one portal. This integration uses data collected from the [Bureau of Labor Statistics](https://www.bls.gov/home.htm).
+[ATSD](https://axibase.com/docs/atsd/) supports the combination of multiple datasets in one portal. This integration uses data collected from the [Bureau of Labor Statistics](https://www.bls.gov/home.htm).
 
 ## Iowa Employee Compensation Dataset
 
@@ -27,7 +27,7 @@ The state aggregates data in to one of three industries, each with sub-categorie
   * Military
   * State and Local
 * Private Non-farm
-  * Administrative and support of waste management and remediation   services
+  * Administrative and support of waste management and remediation services
   * Accommodation and food services
   * Arts, entertainment, and recreation
   * Construction
@@ -181,7 +181,7 @@ Below is a table of datasets from `data.iowa.gov` which are available in **Chart
 | `rigx-2vau` | [Unemployment insurance initial claims by county](https://data.iowa.gov/Economy/Unemployment-Insurance-Initial-Claims-by-County/rigx-2vau)|
 | `aeyn-twxp` | [Unemployment insurance recipients and unemployment insurance benefit payments by county (monthly)](https://data.iowa.gov/Economy/Unemployment-Insurance-Recipients-and-UI-Benefit-P/aeyn-twxp)|
 
-> If the desired dataset appears to be unavailable, raise an [issue](https://github.com/axibase/atsd-use-cases/issues/new) on the Axibase GitHub page.
+> If a dataset appears to be unavailable, raise an [issue](https://github.com/axibase/atsd-use-cases/issues/new) on the Axibase GitHub page.
 
 Change the entity in the default portal to **Unemployment insurance benefit payments by industry**.
 
@@ -237,7 +237,7 @@ The resulting visualization is shown below:
 ![Figure 16](./images/Figure16.png)
 
 Over time, despite the fact that the total number of employees has decreased, the total employee compensation has increased. The number of federal government employees in the state decreased from 20,300 to 17,700 but the total compensation increased from $999,528,000 to
-$1,629,778,000. 
+$1,629,778,000.
 
 Next, compute the average federal government compensation per employee.
 
