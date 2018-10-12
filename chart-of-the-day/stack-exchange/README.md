@@ -2,7 +2,7 @@
 
 ![](./images/final_portal_so2.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/c1acecc0)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/c1acecc0)
 
 The total number of questions asked show that there are three programming languages far ahead of others with respect to popularity: Java, JavaScript, and PHP.
 

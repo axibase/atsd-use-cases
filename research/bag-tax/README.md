@@ -66,7 +66,7 @@ GROUP BY 'Year'
 
 ![](./images/BT2.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/945ebdb5/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/945ebdb5/2/#fullscreen)
 
 ### Per Capita Bag Usage Defined
 
@@ -86,7 +86,7 @@ is decreasing.
 
 ![](./images/BT_1.2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/945ebdb5/15/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/945ebdb5/15/#fullscreen)
 
 This visualization shows the same period of time as the chart above, but aggregates total plastic bag usage by month instead of
 year, highlighting the sharp increases and decreases in month-to-month usage. The local maxima for each year is unsurprisingly
@@ -118,13 +118,13 @@ GROUP BY 'Year'
 
 ![](./images/BT_2.1.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/945ebdb5/9/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/945ebdb5/9/#fullscreen)
 
 > This chart shows the amount of revenue generated from five of the largest companies in the country.
 
 ![](./images/BT_2.2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/945ebdb5/10/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/945ebdb5/10/#fullscreen)
 
 > Note that certain months are empty because many companies pay their taxes at some internally determined interval, which
 may result in a delay in payments. This typically applies to larger companies who aggregate bag sales across the entire
@@ -167,11 +167,11 @@ GROUP BY 'Year'
 
 ![](./images/BT_3.1.2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/945ebdb5/13/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/945ebdb5/13/#fullscreen)
 
 ![](./images/BT_3.2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/945ebdb5/14/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/945ebdb5/14/#fullscreen)
 
 Montgomery County businesses kept about $610,000 between them each year. The table below shows this cost passed on
 to the people of Montgomery County:
@@ -228,7 +228,7 @@ LIMIT 20
 
 ![](./images/BT_4.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/95365f3d/7/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/95365f3d/7/#fullscreen)
 
 Even enormous national retailers like [Giant-Landover](https://giantfood.com/), [Whole Foods](https://www.wholefoodsmarket.com/), and [Safeway](https://www.safeway.com/)
 never recorded a significant amount of revenue from bag sales, though Giant-Landover held the top spot for every recorded year, with a

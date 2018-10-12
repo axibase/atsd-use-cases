@@ -2,7 +2,7 @@
 
 ![](./images/portal_ddg_final.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/e8635882/7/)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/e8635882/7/)
 
 ## DuckDuckGo
 

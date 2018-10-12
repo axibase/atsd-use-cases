@@ -40,7 +40,7 @@ Below is the output of the default configuration with all 122 U.S. cities parsed
 
 ![Figure 2](./images/Figure2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3d07088c)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3d07088c)
 
 ## Creating Local Configurations for ATSD and Axibase Collector using Docker
 
@@ -382,7 +382,7 @@ Below is a **ChartLab** output for the number of deaths for New Orleans from 197
 
 ![Figure 47](./images/Figure47.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3d07088c/2/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3d07088c/2/)
 
 There is quite a noticeable gap in the data collection history from the city. From August 20th, 2005, to December 8th, 2012, New Orleans did not collect death total statistics.
 

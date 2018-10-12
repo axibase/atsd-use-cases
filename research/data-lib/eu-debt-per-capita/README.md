@@ -30,7 +30,7 @@ Per capita debt indexed by country and year from 2005 to 2016.
 
 ![](./images/eudpc-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -81,7 +81,7 @@ ORDER BY debt.tags.geo
 
 ![](./images/eudpc-002.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/2/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -132,7 +132,7 @@ ORDER BY debt.tags.geo
 
 ![](./images/eudpc-003.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/3/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -183,7 +183,7 @@ ORDER BY debt.tags.geo
 
 ![](./images/eudpc-004.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/4/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/4/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -234,7 +234,7 @@ ORDER BY debt.tags.geo
 
 ![](./images/eudpc-005.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/5/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/5/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -285,7 +285,7 @@ ORDER BY debt.tags.geo
 
 ![](./images/eudpc-006.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/6/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/6/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -336,7 +336,7 @@ ORDER BY debt.tags.geo
 
 ![](./images/eudpc-007.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/7/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/7/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -387,7 +387,7 @@ ORDER BY debt.tags.geo
 
 ![](./images/eudpc-008.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/8/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/8/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -438,7 +438,7 @@ ORDER BY debt.tags.geo
 
 ![](./images/eudpc-009.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/9/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/9/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -489,7 +489,7 @@ ORDER BY debt.tags.geo
 
 ![](./images/eudpc-010.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/10/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/10/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -540,7 +540,7 @@ ORDER BY debt.tags.geo
 
 ![](./images/eudpc-011.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f78f99c7/11/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f78f99c7/11/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS "Country",
@@ -642,7 +642,7 @@ Per capita debt growth indexed by country from 2006 to 2016.
 
 ![](./images/eudpc-013.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d38e750e/6/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/d38e750e/6/#fullscreen)
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS Country,

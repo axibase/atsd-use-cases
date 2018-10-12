@@ -2,7 +2,7 @@
 
 ![](./images/SEA_COM1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/4fe67594/3/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/4fe67594/3/#fullscreen)
 
 Living in the city has always been a "take the good with the bad" compromise. On the upside, there is the culture and the
 location, but on the downside there are the other people there messing it all up. The City of Seattle, like most metropolitan
@@ -16,7 +16,7 @@ the visualization to change the subject of the complaint and see for yourself th
 
 ![](./images/SEA_COM2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/391c03f0/3/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/391c03f0/3/#fullscreen)
 
 It seems hard to believe, but according to these figures, the city government receives something on the order of 100 daily
 complaints about abandoned vehicles littering the city, and an additional 50 about illegal dumping taking place. Knowing

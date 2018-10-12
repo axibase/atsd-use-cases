@@ -23,13 +23,13 @@ The tonnage dataset is visualized below. Because of the differences in the range
 
 ![](./images/ra-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/479e4525/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/479e4525/#fullscreen)
 
 **Figure 1.2**: LGA Cargo Tonnage (1977-2015)
 
 ![](./images/ra-002.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f36262ee/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/f36262ee/#fullscreen)
 
 The passenger enplanement data, aggregated annually is shown below:
 
@@ -37,7 +37,7 @@ The passenger enplanement data, aggregated annually is shown below:
 
 ![](./images/ra-003.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/00cf9be3/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/00cf9be3/#fullscreen)
 
 The granularization is mismatched and the observed periods differ by twenty years. The latter problem has a simple solution, modify the observation period using the drop-down lists in **ChartLab** or hardcode the specific timespan in the editor
 window with the `starttime` setting, but the former does not offer such an obvious solution.
@@ -64,13 +64,13 @@ Applying the weighted average to **Figures 1.1** and **1.2** is shown below:
 
 ![](./images/ra-004.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b03d8e2c/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/b03d8e2c/#fullscreen)
 
 **Figure 2.2** Annual Average of LGA Cargo Tonnage (1997-2015)
 
 ![](./images/ra-005.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b456f1b5/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/b456f1b5/#fullscreen)
 
 > Open the ChartLab visualizations above to inspect the newly-inserted syntax on lines 17 and 18
 
@@ -82,7 +82,7 @@ produces the following visualizations:
 
 ![](./images/ra-006.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/897c0429/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/897c0429/#fullscreen)
 
 Scale Modification:
 
@@ -94,7 +94,7 @@ enplanements = value/100
 
 ![](./images/ra-007.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0de58b58/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/0de58b58/#fullscreen)
 
 Scale Modification:
 
@@ -111,10 +111,10 @@ With the weighted average calculation included year-on-year monthly data is calc
 
 ![](./images/ra-009.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/6b3e4ed6/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/6b3e4ed6/#fullscreen)
 
 ![](./images/ra-010.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/a4d77c47/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/a4d77c47/#fullscreen)
 
 For more information, see the [ATSD Documentation](https://axibase.com/docs/atsd/).

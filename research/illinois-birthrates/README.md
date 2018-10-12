@@ -65,7 +65,7 @@ the display.
 
 ![](./images/ILL31.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/2/#fullscreen)
 
 >Learn more about creating a drop-down list in ChartLab in the [Appendix](#appendix) below.
 
@@ -74,27 +74,27 @@ whole of Illinois' live births. Toggle between observed years using the drop-dow
 
 ![](./images/ILL3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/3/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/3/#fullscreen)
 
 The ChartLab model below displays the same data, with those births not
 included in the top ten counties displayed in grey:
 
 ![](./images/ILL30.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/5/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/5/#fullscreen)
 
 Removing the Illinois total numbers, and observing the live births by year from each of
 the ten largest counties:
 
 ![](./images/ILL15.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/6/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/6/#fullscreen)
 
 Now removing Cook County figures, as they represent the majority of Illinois live births:
 
 ![](./images/ILL16.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/9/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/9/#fullscreen)
 
 Now looking at the whole of Illinois live birth rates, not just those from the most
 populous regions, their performance can be contrasted with the performance of the
@@ -102,7 +102,7 @@ state as a whole:
 
 ![](./images/ILL18.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/7/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/7/#fullscreen)
 
 >Illinois birthrates have been steadily declining for the past several decades.
 
@@ -111,7 +111,7 @@ to 2009:
 
 ![](./images/ILL19.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/8/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/8/#fullscreen)
 
 ### SQL Queries
 

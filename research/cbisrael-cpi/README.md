@@ -42,7 +42,7 @@ values and is shown below:
 
 ![](./images/CPI_4.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f322562c/10/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/f322562c/10/#fullscreen)
 
 > Open the drop-down list in any of these visualizations to navigate through time.
 
@@ -53,7 +53,7 @@ local CPI values.
 
 ![](./images/CPI_2.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f322562c/7/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/f322562c/7/#fullscreen)
 
 Shown above is the percent change of almost half of century's worth of CPI data tracked by the Bank of Israel. The hyperinflation that resulted
 in the establishment of the contemporary currency the country, the New Israeli Shekel (NIS), in 1985 is detailed by the absolute maxima
@@ -84,7 +84,7 @@ parameter, with the first indicating the alias to be averaged. The resulting gra
 
 ![](./images/CPI_3.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f322562c/8/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/f322562c/8/#fullscreen)
 
 Inflation and deflation have a number of tangible effects, the most obvious of which is the increase and decrease in the prices
 of everyday purchases, measured by CPI as shown above. Additionally, gross yield of cash can be measured to track the appreciation
@@ -99,7 +99,7 @@ the early nineties to present day, contrasted against the percent change of the 
 
 ![](./images/CPI_5.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f322562c/13/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/f322562c/13/#fullscreen)
 
 The decreasing difference in absolute value of the two lines here, representing the Gross Yield of cash in blue, and the change
 in CPI value in gold, shows that over the observed period of time the gross yield of cash (or makam) is decreasing, with
@@ -120,18 +120,18 @@ Here, an entirely new series is calculated by subtracting the value of the CPI (
 
 ![](./images/CPI_6.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f322562c/12/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/f322562c/12/#fullscreen)
 
 The above visualization details the real yield of cash (makam) and not just the absolute,
 or gross, yield. Looking closely from 2010 to present day highlights the differences in visualization:
 
 ![](./images/CPI_5.2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f322562c/16/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/f322562c/16/#fullscreen)
 
 ![](./images/CPI_6.2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f322562c/18/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/f322562c/18/#fullscreen)
 
 ## Conclusions
 
@@ -147,7 +147,7 @@ and stable CPI.
 
 ![](./images/CPI_7.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f322562c/19/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/f322562c/19/#fullscreen)
 
 This visualization includes all visualizations discussed in this report, with emphasis added to the calculated metrics. The table below shows how this information applies in a real-world example:
 

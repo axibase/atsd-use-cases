@@ -2,7 +2,7 @@
 
 ![](./images/title.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/8b23c4f8/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/8b23c4f8/#fullscreen)
 
 > Open the ChartLab visualization above and use the drop-down lists to navigate through time.
 
@@ -32,7 +32,7 @@ industry, foreign imports are slowly but surely pushing American producers out o
 
 ![](./images/auto-01.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/4a85afe3/2/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/4a85afe3/2/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](https://fred.stlouisfed.org/series/LAUTONSA)
 
@@ -43,7 +43,7 @@ the trend of declining automobile sales. The above mentioned production downturn
 
 ![](./images/auto-02.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/524763cd/2/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/524763cd/2/#fullscreen)
 
 _Source_: Federal Reserve Economic Data - [Domestic Motor Vehicle Production](https://fred.stlouisfed.org/series/DAUPSA), [Domestic Motor Vehicle Sales](https://fred.stlouisfed.org/series/DAUTOSA)
 
@@ -59,7 +59,7 @@ in the likelihood of its eventual recovery.
 
 ![](./images/auto-03.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/69221ca1/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/69221ca1/#fullscreen)
 
 _Source_: Federal Reserve Economic Data - [Imported and Domestic Motor Vehicle Sales](https://fred.stlouisfed.org/series/LAUTONSA), by unit; [Imported Motor Vehicle Sales](https://fred.stlouisfed.org/series/B149RC1Q027SBEA), by dollar value
 
@@ -73,7 +73,7 @@ came from American producers.
 
 ![](./images/auto-04.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/54105ebb/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/54105ebb/#fullscreen)
 
 _Source_: See **Figures 2** and **3** above.
 
@@ -86,7 +86,7 @@ considering the American automobile sector is one of the the most important in t
 
 ![](./images/auto-06.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/8fb94993/2/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/8fb94993/2/#fullscreen)
 
 _Source_: Federal Reserve Economic Data - [A Class CPI](https://fred.stlouisfed.org/series/CUURA000SS4501A), [B/C Class CPI](https://fred.stlouisfed.org/series/CUURX000SS4501A),
 [D Class CPI](https://fred.stlouisfed.org/series/CUURD000SS4501A)

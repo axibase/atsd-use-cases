@@ -2,7 +2,7 @@
 
 ![](./images/crypto-value-2018.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/71df6f9f#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/71df6f9f#fullscreen)
 
 Although in existence since 2009, the world's first cryptocurrency Bitcoin did not begin making headlines until 2014 when the value of the digital asset grew almost 1,000% in just a few days, jumping from under $100 to almost $1,000. Then it happened again in 2017 at an even larger scale when Bitcoin was valued at nearly $20,000 a unit.
 
@@ -16,7 +16,7 @@ Cryptocurrency movement against the dollar has always been volatile. This visual
 
 ![](./images/bitcoin-index.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/c00386b4#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/c00386b4#fullscreen)
 
 ## Example Investment
 
@@ -26,7 +26,7 @@ Open the visualization and modify the `var positions` and `value` settings in th
 
 ![](./images/personal-wallet.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/c26b6e26)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/c26b6e26)
 
 The default configuration tracks a custom investment of $100 Bitcoin, $400 Etherium, $100 Litecoin, and $400 Bitcoin Cash.
 
@@ -50,7 +50,7 @@ The charts in this article track cryptocurrency prices for 2018 and transform th
 
 ![](./images/monthly-change.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/0fb3df5f#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/0fb3df5f#fullscreen)
 
 Although Bitcoin had the largest absolute movement during the observed period, each currency behaved similarly.
 
@@ -58,7 +58,7 @@ Although Bitcoin had the largest absolute movement during the observed period, e
 
 ![](./images/monthly-percent-change.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5a8664ca#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/5a8664ca#fullscreen)
 
 Cryptocurrency markets fluctuate at surprisingly similar rates when comparing month-on-month percentile change.
 
@@ -68,7 +68,7 @@ The log return value of a dataset is computed `ln(value_t/value_t-1)`. By creati
 
 ![](./images/log-returns.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/df649def#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/df649def#fullscreen)
 
 Log returns are helpful for comparing assets of different orders of value such as `BTC` (average value $7000) and `LIC` (average value $200). With minor deviations, all four cryptocurrencies had similar log return values.
 
@@ -78,7 +78,7 @@ Comparing Bitcoin monthly value change to the `sine` function demonstrates the s
 
 ![](./images/dow-theory.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/78743661#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/78743661#fullscreen)
 
 ## Different Prices, Similar Story
 

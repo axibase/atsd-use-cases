@@ -76,4 +76,4 @@ The solution is to implement a `moving-average` setting, which controls how the 
 
 [ChartLab](../shared/chartlab.md) is a data visualization service which uses ATSD for data monitoring and storage tasks which is tracking CPU utilization right now.
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/7edd79fe/5/)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/7edd79fe/5/)

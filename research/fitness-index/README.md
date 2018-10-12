@@ -45,7 +45,7 @@ and calculations are done using the computational knowledge engine [WolframAlpha
 
 ![AllCity](./images/MainGraph.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/47/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/47/)
 
 Looking at an entire set of data at once is often unhelpful and overwhelming, but
 this visualization can be used to offer a wide lens through which to view what amounts
@@ -55,7 +55,7 @@ who may be otherwise unfamiliar with the scoring system.
 
 ![2015](./images/2015.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/55/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/55/)
 
 This visualization looks at Year 2015 data and highlights those cities performing
 below the National Benchmark Average.
@@ -72,13 +72,13 @@ The Benchmark Average, and by extension alert threshold, is modified for each ye
 
 ![2011](./images/2011.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/56/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/56/)
 
 > Year 2013 (Benchmark Average: 43)
 
 ![2013](./images/2013.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/51/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/51/)
 
 >Even year (2012 and 2014) data can be found in the [Appendix](#appendix)
 
@@ -88,7 +88,7 @@ that are not as obvious in the first visualization:
 
 ![ByCityByYear](./images/ByCityByYear.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c43f580b)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/c43f580b)
 
 >See [Appendix](#appendix) for an alternative display of the above data
 
@@ -98,7 +98,7 @@ needed:
 
 ![ByYearByCity](./images/20112015.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/59/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/59/#fullscreen)
 
 Although the two charts are rendered almost identically with respect to the data,
 the key difference is how they are presented. Here graph is organized to show
@@ -111,35 +111,35 @@ setting, unneeded data can be masked to compare the best and worst performing MS
 
 ![BestAndWorst](./images/BVW.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c43f580b/7/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/c43f580b/7/)
 
 to make observations about the performance of one MSA over the observed time,
 a similar strategy can be used with a different method of visualization:
 
 ![Miami](./images/MVB.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/64/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/64/)
 
 Or, to compare the results of data observed within one state, additions can easily be
 made to include a third entity:
 
 ![Miami](./images/FLVB.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/65/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/65/)
 
 The same can be done using the two Tennessee MSAs, Memphis and Nashville/Davidson,
 displayed here alongside the Benchmark Average value:
 
 ![TN](./images/TNVB.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/66/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/66/)
 
 Additionally, cities that serve as state capitals can be used as a microcosm
 for the trends of the state itself:
 
 ![capitals](./images/CVB.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/67/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/67/)
 
 The population of these metropolitan areas often accounts for a significant amount
 of the total population of the state. In the Atlanta Metropolitan Area for example, that number
@@ -155,7 +155,7 @@ also be displayed next to one another, and the Benchmark Average:
 
 ![Best](./images/AtlRalBM.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/60/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/60/)
 
 ## Analysis
 
@@ -177,7 +177,7 @@ graphic can be used:
 
 ![Box](./images/Box.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/61/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/61/#fullscreen)
 
 Here the individual performance of the city can be analyzed at the same time as its relative
 performance against other cities. The average score of each city over the course of
@@ -192,7 +192,7 @@ active data sets and sending subscribers alerts when a certain threshold value i
 
 ![AtlantaAvg](./images/AtlG2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/70/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/70/#fullscreen)
 
 >Learn more about Gauge controls and explore the results of other MSAs in the [Appendix](#appendix).
 
@@ -399,13 +399,13 @@ And is shown in a ChartLab example below:
 
 ![2012](./images/2012.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/57/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/57/)
 
 >Year 2014 (Benchmark Average: 42)
 
 ![2014](./images/2014.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/58/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/58/)
 
 ### Alternative Display of City By Year Data
 
@@ -413,7 +413,7 @@ It may be more desirable to separate each body of data, for a cleaner visualizat
 
 ![AltView](./images/BYCALT.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c43f580b/8/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/c43f580b/8/#fullscreen)
 
 The visualization show above uses the [`GROUP`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/bar-chart-widget/#[widget]-settings)
 setting in the `[WIDGET]` cluster, as shown below:

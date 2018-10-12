@@ -35,27 +35,27 @@ by country by clicking on the drop-down list. Listed here are a few more countri
 
 ![Figure1](./images/Figure1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8c9bb9cc/4/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/8c9bb9cc/4/#fullscreen)
 
 The below image tracks how refusal rates have changed over time for Afghanistan, Canada, Mainland China, India, Mexico, Norway, Russia, and Vatican City.
 
 ![Figure4](./images/Figure4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8c9bb9cc/5/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/8c9bb9cc/5/#fullscreen)
 
 The figure below shows the countries with the highest and lowest refusal rates in 2015. Cuba topped the list with the highest refusal rate at **82%**, while Liechtenstein, Monaco, and
 San Marino all showed refusal rates of **0%**.
 
 ![Figure3](./images/Figure3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b8675093/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/b8675093/2/#fullscreen)
 
 The figure below shows distribution over time of the lowest and highest refusal rates from 2015. Navigate through the distributions and observe the maximum and minimum refusal rates for the country from 2006 through 2016, as well as values for the 25th, 50th, and 75th percentiles. The visa refusal rates
 for nationals from Monaco has increased to **57%** in 2015 and Cuba has increased to **82%** in 2015.
 
 ![Figure2](./images/Figure2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b8675093#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/b8675093#fullscreen)
 
 ## SQL Queries
 

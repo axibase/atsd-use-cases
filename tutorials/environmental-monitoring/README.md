@@ -156,7 +156,7 @@ ATSD built-in forecasting produces more accurate results than one of the most ad
 
 Keep track of how these forecasts perform in comparison to the actual data in Axibase [ChartLab](../shared/chartlab.md).
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/d06179aa)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/d06179aa)
 
 ### Alerts and Notifications
 
