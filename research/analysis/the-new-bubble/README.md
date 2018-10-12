@@ -4,7 +4,7 @@
 
 ![](./images/fig0.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/25f3a4d2/2/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/25f3a4d2/2/#fullscreen)
 
 ## Introduction
 
@@ -34,7 +34,7 @@ the downturn of 2009, which saw a loss of about a third of the household wealth 
 
 ![](./images/fig1.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/5c59726d/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/5c59726d/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -50,7 +50,7 @@ of the state of the entire U.S. economy.
 
 ![](./images/fig-2.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/cdbfb8ff/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/cdbfb8ff/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -71,7 +71,7 @@ is shrinking and is still nowhere near the levels observed pre-recession.
 
 ![](./images/fig-3.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/da9a7eb6/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/da9a7eb6/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -82,7 +82,7 @@ decreases, the margin between the debt and its market value increases.
 
 ![](./images/fig-4.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/919f5f72/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/919f5f72/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -93,7 +93,7 @@ a decrease in U.S. debt market value.
 
 ![](./images/fig-05.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/a70b074a/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/a70b074a/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -114,7 +114,7 @@ mean diminishing returns on their savings especially in the face of the consumer
 
 ![](./images/fig6.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1a3931ab/2/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/1a3931ab/2/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -138,7 +138,7 @@ historical Fed Rates vs. U.S. Government payments are shown below:
 
 ![](./images/fig7.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1a3931ab/3/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/1a3931ab/3/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -146,7 +146,7 @@ _Source_: [Federal Reserve Economic Data](#sources)
 
 ![](./images/fig8.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1a3931ab/4/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/1a3931ab/4/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 

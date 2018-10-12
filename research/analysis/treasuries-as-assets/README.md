@@ -13,7 +13,7 @@ The United States Government currently bears $19.8 trillion dollars of gross deb
 
 ![](./images/fd-01.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/24f81638/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/24f81638/#fullscreen)
 
 > Open any ChartLab visualization and navigate through time with the drop-down list to observe any span of time.
 
@@ -34,7 +34,7 @@ Public debt holdings have been growing in parallel with gross government debt:
 
 ![](./images/fd-04.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/24f81638/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/24f81638/3/#fullscreen)
 
 Source: [Federal Reserve Economic Data (FRED)](https://fred.stlouisfed.org/series/FYGFDPUN)
 
@@ -84,7 +84,7 @@ ORDER BY last(value) DESC
 
 ![](./images/fd-06.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/#fullscreen)
 
 > Open any ChartLab visualization and navigate through time with the drop-down list to observe any span of time.
 
@@ -98,7 +98,7 @@ to the Yuan, keeping Chinese imports competitive and affordable on U.S. markets.
 
 ![](./images/fd-07.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/2/#fullscreen)
 
 Source: [Department of the Treasury](https://www.treasury.gov/resource-center/data-chart-center/tic/Pages/ticsec2.aspx)
 
@@ -112,7 +112,7 @@ began to reacquire a great deal of U.S. treasuries, shown below:
 
 ![](./images/fd-08.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/3/#fullscreen)
 
 Source: [Department of the Treasury](https://www.treasury.gov/resource-center/data-chart-center/tic/Pages/ticsec2.aspx)
 
@@ -124,7 +124,7 @@ appear in **Table 1**, they are shown below, alongside Singapore and Taiwan.
 
 ![](./images/fd-09.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/4/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/4/#fullscreen)
 
 Source: [Department of the Treasury](https://www.treasury.gov/resource-center/data-chart-center/tic/Pages/ticsec2.aspx)
 
@@ -135,7 +135,7 @@ sole bearers of U.S. treasuries are shown below.
 
 ![](./images/fd-11.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/7/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/7/#fullscreen)
 
 Source: [Department of the Treasury](https://www.treasury.gov/resource-center/data-chart-center/tic/Pages/ticsec2.aspx)
 
@@ -145,7 +145,7 @@ Countries which export oil are central to the global economy, and many of them m
 
 ![](./images/fd-13.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/9/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/17d4a3dc/9/#fullscreen)
 
 > Open any ChartLab visualization and navigate through time with the drop-down list to observe any measured year.
 
@@ -164,7 +164,7 @@ Federal Fund rate. For further explanation of these metrics, see this [analysis]
 
 ![](./images/fd-14.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/9183d77b/10/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/9183d77b/10/#fullscreen)
 
 Source: [Federal Reserve Economic Research (FRED)](https://fred.stlouisfed.org/categories/115)
 
@@ -176,7 +176,7 @@ by China, in total, and less China:
 
 ![](./images/fd-15.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/c281e549/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/c281e549/2/#fullscreen)
 
 Two unique patterns are visible above. Chinese buying and selling of U.S. treasuries remains stable, indicating no change in
 position, from 2010 onward. While the second distinct pattern is shown by the black and grey lines and indicates that foreign
@@ -191,13 +191,13 @@ closely follow the trends set by the total foreign-held debt line than the China
 
 ![](./images/fd-16.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/c281e549/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/c281e549/2/#fullscreen)
 
 **Figure 14**: Fed Interest vs. China-Held Treasuries
 
 ![](./images/fd-17.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/c281e549/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/c281e549/2/#fullscreen)
 
 Further, when considering the Federal Fund Rate, which is the daily lending rate set by the Federal
 Reserve each evening, the relevance of Chinese-held debt movements, which accounts for 5.56% of total U.S. treasuries is shown to be
@@ -207,7 +207,7 @@ more reactionary than causal:
 
 ![](./images/fd-18.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/c281e549/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/c281e549/3/#fullscreen)
 
 ## Debrief
 
@@ -227,7 +227,7 @@ in Cayman positions, shown below:
 
 ![](./images/fd-19.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/c281e549/4/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/c281e549/4/#fullscreen)
 
 Despite such hypotheses, the nature of the global economy is such that most countries are inherently reliant on one another
 for import or export needs, financial support, or a number of other metrics. True financial downturn has long-reaching

@@ -1,6 +1,6 @@
 # Complaints in the Emerald City
 
-![](./images/SEA_COM1.png)
+![](./images/sea-com-1.png)
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/4fe67594/3/#fullscreen)
 
@@ -14,7 +14,7 @@ The chart, made in [ChartLab](https://apps.axibase.com/chartlab) based on ATSD, 
 until a few months ago, in June, and the chart below details the complaints by month. Use the drop-down list at the top of
 the visualization to change the subject of the complaint and see for yourself the changing rates of the main complaints in Seattle.
 
-![](./images/SEA_COM2.png)
+![](./images/sea-com-2.png)
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/391c03f0/3/#fullscreen)
 
