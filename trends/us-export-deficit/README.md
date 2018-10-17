@@ -30,7 +30,7 @@ The chart above features derived values representing the difference between impo
 value = [value('export') - value('import')] / value('gdp')
 ```
 
-For access to these datasets and a tutorial about creating the series used above, refer to the [FRED Blog](https://fredblog.stlouisfed.org/2018/10/the-usual-suspects-behind-u-s-trade-deficits-china-canada-mexico-japan-and-germany/). Alternatively, access the [`/resources`](./resources/country-specific-trade.csv) directory to download any data from this article.
+For access to these datasets and a tutorial about creating the series used above, refer to the [FRED Blog](https://fredblog.stlouisfed.org/2018/10/the-usual-suspects-behind-u-s-trade-deficits-china-canada-mexico-japan-and-germany/). Alternatively, use the [`/resources`](./resources/country-specific-trade.csv) directory to download any data from this article.
 
 ## Entitlements
 
@@ -42,7 +42,7 @@ The casual relationship between entitlements programs, the trade deficit and ove
 
 > **Note**: Datasets are displayed on independent axes.
 
-The primary difference between entitlements programs and trade deficits, is that the former is subsidized by various taxes while the latter directly impacts GDP with little government subsidization. The result is that although the absolute difference between entitlements outlays and those associated with trade deficit is quite significant, the real costs are much smaller when relativity to annual GDP is considered.
+The primary difference between entitlements programs and trade deficits, is that the former is subsidized by various taxes while the latter directly impacts GDP. The result is that although the absolute difference between entitlements outlays and those associated with trade deficit is quite significant, the real costs are much smaller when relativity to annual GDP is considered.
 
 The visualization above displays two derived series. The percent value of each year's GDP invested by the government on Social Security, "includ[ing] old-age, survivors, and disability insurance benefits," is shown to be a fraction of what is spent balancing the trade budget.
 
