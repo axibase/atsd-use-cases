@@ -8,9 +8,17 @@
 
 The United States faces an unprecedented national debt of more than [$21 trillion](http://www.usdebtclock.org/). Among the largest contributors to the annual budget deficit are entitlements programs like Social Security, Medicare, Medicaid (roughly $3.5 trillion each year). Despite this, the areas which consistently receive the most attention remain military spending (roughly $600 billion per year), trade deficits (roughly $520 billion per year), foreign aid (roughly $50.1 billion each year), and education (roughly $670 billion each year).
 
+<!-- markdownlint-disable MD101 -->
+
 Over the last twenty years, net exports of goods and services have stabilized from a two-decade high of $-368 billion and two-decade low of $-711 billion close to the median value of those two parameters, tracked by the [Federal Reserve Economic Research Division](https://fred.stlouisfed.org/): $-521 billion (true median value: $-539.5 billion).
 
+<!-- markdownlint-enable MD101 -->
+
+<!-- markdownlint-disable MD105 -->
+
 Is restructuring reliance on foreign production possible, and would doing so offer relief to the burdened economy?
+
+<!-- markdownlint-enable MD105 -->
 
 ## Relationship to GDP
 
