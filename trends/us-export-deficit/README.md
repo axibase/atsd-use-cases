@@ -14,12 +14,6 @@ Over the last twenty years, net exports of goods and services have stabilized fr
 
 <!-- markdownlint-enable MD101 -->
 
-<!-- markdownlint-disable MD105 -->
-
-Is restructuring reliance on foreign production possible, and would doing so offer relief to the burdened economy?
-
-<!-- markdownlint-enable MD105 -->
-
 ## Relationship to GDP
 
 ![](./images/export-deficit-1.png)
