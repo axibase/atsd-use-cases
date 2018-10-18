@@ -28,6 +28,13 @@ Use the drop-down lists in the the widget headers to filter by value, military/e
 
 ![](./images/portal-2.png)
 
+The pie chart drop-down list selects a specific country and displays the amount of Treasury bonds held as a portion of the whole.
+
+```ls
+[tags]
+  country = China
+```
+
 #### Transforming Data
 
 Use the control panel along the top of the chart to compute and display aggregated values for any of the specified time periods.
