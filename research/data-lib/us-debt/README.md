@@ -14,7 +14,7 @@ The [United States Treasury](https://home.treasury.gov/) releases monthly report
 
 ![](./images/national-debt-6.png)
 
-[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/e2399958#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/058ca84b#fullscreen)
 
 ### Exploring the Portal
 
