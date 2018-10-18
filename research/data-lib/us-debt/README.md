@@ -10,7 +10,7 @@
 
 ## Securities Portal
 
-The [United States Treasury](https://home.treasury.gov/) releases monthly reports detailing major holders of United States Treasury securities. The **Securities Portal** tracks this data for the last two decades, when foreign ownership of national debt began to significantly increase. In 1988, roughly 13% of the debt was foreign held. By 2007, that figure had increased to 25%. At the present, that number has reached 45%.
+The [United States Treasury](https://home.treasury.gov/) releases monthly reports detailing major holders of United States Treasury securities. The **Securities Portal** tracks this data for the last two decades, when foreign ownership of national debt began to significantly increase. In 1988, roughly 13% of the debt was foreign held. By 2007, that figure had increased to 25%. At the present, foreign holders of national debt represent 45% of the total.
 
 ![](./images/national-debt-6.png)
 
@@ -161,13 +161,17 @@ GROUP BY PERIOD(20 year), tags.country
 
 ## The Value of Treasury Securities
 
+<!-- markdownlint-disable MD105 -->
+
 Debt is generally understood to be an economic disadvantage with the great transcendentalist Ralph Waldo Emerson remarking, "a man in debt is so far a slave." The general attitude towards debt has evolved as such, and national debt held by foreign government is traditionally regarded with uneasiness.
+
+<!-- markdownlint-enable MD105 -->
 
 Equity analyst Michael Foster offers a [different perspective](https://www.forbes.com/sites/michaelfoster/2017/11/08/federal-debt-is-reaching-20-trillion-and-i-dont-care/#7f28bf3832ba), whereby the national debt should be considered a reliable long-term asset which promises the stability historically ascribed to the dollar. Certainly, various foreign countries, and several countries in particular, have made significant long-term investments in the national debt. According to Dr. Foster, that the national debt has even begun to exceed GDP is not a harbinger of imminent financial collapse.
 
-Nonetheless, anytime an asset is improperly hedged an inherent and increased risk is assumed. At the moment, roughly 35% of the national debt held by foreign governments is controlled by just two countries: China and Japan. Indeed, the combined share of the debt held by just two parties is nearly equal to half of the the overall value. Such imparity can always produce unknowable outcomes. Should either economy sell their treasury securities *en masse*, the entire market could be affected in ways that are not predictable. Indeed, the theretofore unflappable British pound sterling was significantly rattled during [Black Wednesday](https://en.wikipedia.org/wiki/Black_Wednesday) trading begun by parties controlling far less of the overall market.
+Nonetheless, any time an asset is improperly hedged an inherent and increased risk is assumed. At the moment, roughly 35% of the national debt held by foreign governments is controlled by just two countries: China and Japan. Indeed, the combined share of the debt held by just two parties is nearly equal to half of the the overall value. Such imparity can always produce unknowable outcomes. Should either economy sell their treasury securities *en masse*, the entire market could be affected in ways that are not predictable. Indeed, the theretofore unflappable British pound sterling was significantly rattled during [Black Wednesday](https://en.wikipedia.org/wiki/Black_Wednesday) trading begun by parties controlling far less of the overall market.
 
-The 1-year constant maturity rate for Treasury bonds has been steadily increasing for the last several years. Encouraging considering the half-decade of less-than-one-percent yields on the same bonds.
+The 1-year constant maturity rate for Treasury bonds has been steadily increasing for the last several years. Encouraging considering the half-decade of less-than-one-percent yields on the same bonds during the economic recovery following global financial downturn.
 
 ![](./images/one-year-rate-1.png)
 
