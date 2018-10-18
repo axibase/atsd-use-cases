@@ -24,7 +24,7 @@ The **Securities Portal** includes ad-hoc transformation and filtering tools to 
 
 #### Filtering Series
 
-Use the drop-down lists in the the widget headers to filter by value, military/economic faction, or a specific time span.
+Use the drop-down lists in the widget headers to filter by value, military/economic faction, or a specific time span.
 
 ![](./images/portal-2.png)
 
