@@ -14,7 +14,7 @@ The [United States Treasury](https://home.treasury.gov/) releases monthly report
 
 ![](./images/national-debt-6.png)
 
-[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/2e2299d8#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/27c9577b)
 
 ### Exploring the Portal
 
@@ -176,7 +176,7 @@ Debt is generally understood to be an economic disadvantage with the great trans
 
 Equity analyst Michael Foster offers a [different perspective](https://www.forbes.com/sites/michaelfoster/2017/11/08/federal-debt-is-reaching-20-trillion-and-i-dont-care/#7f28bf3832ba), whereby the national debt should be considered a reliable long-term asset which promises the stability historically ascribed to the dollar. Certainly, various foreign countries, and several countries in particular, have made significant long-term investments in the national debt. According to Dr. Foster, that the national debt has even begun to exceed GDP is not a harbinger of imminent financial collapse.
 
-Nonetheless, any time an asset is improperly hedged an inherent and increased risk is assumed. At the moment, roughly 35% of the national debt held by foreign governments is controlled by just two countries: China and Japan. Indeed, the combined share of the debt held by just two parties is nearly equal to half of the the overall value. Such imparity can always produce unknowable outcomes. Should either economy sell their treasury securities *en masse*, the entire market could be affected in ways that are not predictable. Indeed, the theretofore unflappable British pound sterling was significantly rattled during [Black Wednesday](https://en.wikipedia.org/wiki/Black_Wednesday) trading begun by parties controlling far less of the overall market.
+Nonetheless, any time an asset is improperly hedged an inherent and increased risk is assumed. At the moment, roughly 35% of the national debt held by foreign governments is controlled by just two countries: China and Japan. Indeed, the combined share of the debt held by just two parties is nearly equal to half of the overall value. Such imparity can always produce unknowable outcomes. Should either economy sell their treasury securities *en masse*, the entire market could be affected in ways that are not predictable. Indeed, the theretofore unflappable British pound sterling was significantly rattled during [Black Wednesday](https://en.wikipedia.org/wiki/Black_Wednesday) trading begun by parties controlling far less of the overall market.
 
 The 1-year constant maturity rate for Treasury bonds has been steadily increasing for the last several years. Encouraging considering the half-decade of less-than-one-percent yields on the same bonds during the economic recovery following global financial downturn.
 
