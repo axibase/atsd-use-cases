@@ -82,7 +82,7 @@ The drop-down list in the **Pie Chart** controls the `start-time` of the one-yea
 
 The table below combines data tracking [population](https://data.worldbank.org/indicator/SP.POP.TOTL), the [minimum number of vacation days](https://www.businessinsider.com/how-paid-vacation-time-is-different-around-the-world-2018-7#brazil-1) companies are required to provide for their employees, whether [parental leave](https://en.wikipedia.org/wiki/Parental_leave#Variation_in_international_law)`*` is provided by law, and [per capita GDP](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD) by country.
 
-> `*` Parental leave is defined as at least 30 days at 50% remuneration guaranteed by the employer for **either** parent.
+> `*` Parental leave is defined as at least 30 days at 50% remuneration guaranteed by the employer for **either** parent, meaning available to both.
 
 Country | Population<br>(2017, Million) | Vacation Days | Parental Leave| Per Capita GDP<br>(2017)
 --|:--:|:--:|:--:|:--:
