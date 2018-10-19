@@ -5,10 +5,19 @@
 ## Contents
 
 * [Introduction: Supplemental Benefits Defined](#introduction-supplemental-benefits-defined)
-* [Overview: Growth in Wages and Benefits](#overview-growth-in-wages-and-benefints)
+* [Overview: Growth in Wages and Benefits](#overview-growth-in-wages-and-benefits)
 * [Effectively Zero: Benefit Growth Does Not Exceed One Percent](#effectively-zero-benefit-growth-does-not-exceed-one-percent)
 * [Measurable Differences: A Widening Gap in Wage and Benefit Growth](#measurable-differences-a-widening-gap-in-wage-and-benefit-growth)
-* [Conclusion: The Benefit of Benefits](#the-benefit-of-benefits)
+* [Conclusion: The Benefit of Benefits](#conclusion-the-benefit-of-benefits)
+
+### Source Data
+
+* **Federal Reserve Economic Research**:
+  * [Compensation of employees](https://fred.stlouisfed.org/series/A038RC1Q027SBEA): Supplements to wages and salaries (A038RC1Q027SBEA)
+  * [Gross domestic income](https://fred.stlouisfed.org/series/A4102C1Q027SBEA): Compensation of employees, paid: Wages and salaries (A4102C1Q027SBEA)
+* **World Bank**:
+  * [Population](https://data.worldbank.org/indicator/SP.POP.TOTL), total
+  * [GDP per capita](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD) (current US$)
 
 ## Introduction: Supplemental Benefits Defined
 
@@ -33,7 +42,7 @@ However, from 1990 to 2016 (26 years), that 17.96% increased to a final value of
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/01372a0a#fullscreen)
 
-*Stagflation* is the economic phenomena which arises during intervals of high interest and low economic output. The result is a precarious situation where policymaker intervention can enflame the synchronous problem of high unemployment by any action which is pursued. *Stag-cation* (a portmanteau of stagnant and vacation) is a phenomena currently being evinced in the United States whereby the relative amount of non-wage benefits to employs is no longer growing at a meaningful rate.
+*Stagflation* is the economic phenomena which arises during intervals of high interest and low economic output. The result is a precarious situation where policymaker intervention can exacerbate the synchronous problem of high unemployment by any action which is pursued. *Stag-cation* (a portmanteau of stagnant and vacation) is a phenomena currently being evinced in the United States whereby the relative amount of non-wage benefits to employs is no longer growing at a meaningful rate.
 
 Whereas wages continue to nominally rise, the percent of supplemental benefits, like those mentioned above, has reached a plateau.
 
@@ -43,7 +52,7 @@ Whereas wages continue to nominally rise, the percent of supplemental benefits, 
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/127f1979#fullscreen)
 
-The advent of computing technology has eliminated literal billions of manhours in the modern information era. Yet despite overall increases in wages, albeit mostly [commensurate with inflation](http://www.pewresearch.org/fact-tank/2018/08/07/for-most-us-workers-real-wages-have-barely-budged-for-decades/), huge leaps in time-saving technology have not created the idyllic, but evidently chimerical, [15-hour workweek](http://www.econ.yale.edu/smith/econ116a/keynes1.pdf) envisioned by Keynes in 1930.
+The advent of computing technology has eliminated literal billions of man-hours in the modern information era. Yet despite overall increases in wages, albeit mostly [commensurate with inflation](http://www.pewresearch.org/fact-tank/2018/08/07/for-most-us-workers-real-wages-have-barely-budged-for-decades/), huge leaps in time-saving technology have not created the idyllic, but evidently chimerical, [15-hour workweek](http://www.econ.yale.edu/smith/econ116a/keynes1.pdf) envisioned by Keynes in 1930.
 
 The upper **Time Chart** shows year-on-year change for supplemental benefits as a percent of wages (lavender) and year-on-year change for the absolute growth of wages (blue). Because the two derived series are shown on independent axes, `0` is indicated for each using a `[threshold]`.
 

@@ -2,6 +2,7 @@
 
 Interactive visualizations tracking interesting datasets from a variety of sources.
 
+1. [Stag-cation: The Stagnation of Supplemental Benefits](supplemental-benefits/README.md) (October 2018)
 1. [The Lopsided Nature of US Unemployment](unemployment/tech-employment.md) (September 2018)
 1. [Presidential Economic Metrics Portal](presidential-economic-metrics/README.md) (August 2018)
 1. [California Water Portals](water-portal/README.md) (July 2018)
