@@ -23,7 +23,7 @@
 
 ## Introduction: Supplemental Benefits Defined
 
-In the course of four decades [supplemental benefits](https://fredblog.stlouisfed.org/2018/10/employer-contributions/), or non-wage compensation, paid to employees grew from 6.96% in 1950 to 17.96% in 1990. This sharp increase amounts to a 258% surge, which translates to roughly 6.5% *per annum*. With little deviation, the initial rate of wage supplementation was the factor by which that value increased each year.
+In the course of four decades [supplemental benefits](https://fredblog.stlouisfed.org/2018/10/employer-contributions/), or non-wage compensation, paid to employees grew from 6.96% of wages in 1950 to 17.96% in 1990. This sharp increase amounts to a 258% surge, which translates to roughly 6.5% *per annum*. With little deviation, the initial rate of wage supplementation was the factor by which that value increased each year.
 
 Examples of non-wage benefits:
 
