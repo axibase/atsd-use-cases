@@ -74,7 +74,7 @@ The lower left **Time Chart** highlights periods of negative growth for each der
 
 Compare the absolute change, proportional relationship, and rate of change for wages and supplements. Although wage growth was negative numerous time throughout the observed period, the 40-year rate of change is four times that of supplemental benefits.
 
-The drop-down list in the **Pie Chart** controls the `start-date` of the one-year aggregation period of wages compared to supplements, navigating through time demonstrates that the proportion of supplemental benefits to overall wages has changed very little in the last four decades. The drop-down list in the **Text Widget** controls the interval of aggregation to compare the rates of changes of the two metrics.
+The drop-down list in the **Pie Chart** controls the `start-time` of the one-year aggregation period of wages compared to supplements, navigating through time demonstrates that the proportion of supplemental benefits to overall wages has changed very little in the last four decades. The drop-down list in the **Text Widget** controls the interval of aggregation to compare the rates of changes of the two metrics.
 
 ---
 
