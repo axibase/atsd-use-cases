@@ -21,7 +21,7 @@
 
 ## Introduction: Supplemental Benefits Defined
 
-In the course of four decades [supplemental benefits](https://fredblog.stlouisfed.org/2018/10/employer-contributions/), or non-wage compensation, paid to employees grew from 6.96% in 1950 to 17.96% in 1990. This sharp increase amounts to a 258% surge, which translates to roughly 6.5% *per annum*. Essentially, the initial rate of wage supplementation was the factor by which the value increased each year.
+In the course of four decades [supplemental benefits](https://fredblog.stlouisfed.org/2018/10/employer-contributions/), or non-wage compensation, paid to employees grew from 6.96% in 1950 to 17.96% in 1990. This sharp increase amounts to a 258% surge, which translates to roughly 6.5% *per annum*. With little deviation, the initial rate of wage supplementation was the factor by which that value increased each year.
 
 Examples of non-wage benefits:
 
@@ -48,9 +48,9 @@ Whereas wages continue to nominally rise, the percent of supplemental benefits, 
 
 ## Effectively Zero: Benefit Growth Does Not Exceed One Percent
 
-![](./images/supplemental-benefits-6.png)
+![](./images/supplemental-benefits-8.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/127f1979#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/0e707875#fullscreen)
 
 The advent of computing technology has eliminated literal billions of man-hours in the modern information era. Yet despite overall increases in wages, albeit mostly [commensurate with inflation](http://www.pewresearch.org/fact-tank/2018/08/07/for-most-us-workers-real-wages-have-barely-budged-for-decades/), huge leaps in time-saving technology have not created the idyllic, but evidently chimerical, [15-hour workweek](http://www.econ.yale.edu/smith/econ116a/keynes1.pdf) envisioned by Keynes in 1930.
 
