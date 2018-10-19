@@ -60,12 +60,7 @@ Whereas wages continue to nominally rise, the percent of supplemental benefits, 
 
 The advent of computing technology has eliminated literal billions of man-hours in the modern information era. Yet despite overall increases in wages, albeit mostly [commensurate with inflation](http://www.pewresearch.org/fact-tank/2018/08/07/for-most-us-workers-real-wages-have-barely-budged-for-decades/), huge leaps in time-saving technology have not created the idyllic, but evidently chimerical, [15-hour workweek](http://www.econ.yale.edu/smith/econ116a/keynes1.pdf) envisioned by Keynes in 1930.
 
-The upper **Time Chart** shows year-on-year change for supplemental benefits as a percent of wages (lavender) and year-on-year change for the absolute growth of wages (blue). Because the two derived series are shown on independent axes, `0` is indicated for each using a `[threshold]`.
-
-```ls
-[threshold]
-  value = 0
-```
+The upper **Time Charts** show year-on-year change for supplemental benefits as a percent of wages (lavender) and year-on-year change for the absolute growth of wages (blue).
 
 The lower left **Time Chart** highlights periods of negative growth for each derived metric in red and the **Text Widget** tracks the rate of the change for the defined interval.
 
