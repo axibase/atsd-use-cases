@@ -19,6 +19,8 @@
   * [Population](https://data.worldbank.org/indicator/SP.POP.TOTL), total
   * [GDP per capita](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD) (current US$)
 
+---
+
 ## Introduction: Supplemental Benefits Defined
 
 In the course of four decades [supplemental benefits](https://fredblog.stlouisfed.org/2018/10/employer-contributions/), or non-wage compensation, paid to employees grew from 6.96% in 1950 to 17.96% in 1990. This sharp increase amounts to a 258% surge, which translates to roughly 6.5% *per annum*. With little deviation, the initial rate of wage supplementation was the factor by which that value increased each year.
@@ -36,6 +38,8 @@ Examples of non-wage benefits:
 
 However, from 1990 to 2016 (26 years), that 17.96% increased to a final value of 18.81%, an increase of 0.85% which translates to roughly 0.03% each year. For all intents and purposes, the modern worker is receiving the same benefits as their 1990 counterpart. Moreover, when considered alongside the inflationary effects of a expanding money supply, modern workers are really receiving less.
 
+---
+
 ## Overview: Growth in Wages and Benefits
 
 ![](./images/supplemental-benefits-3.png)
@@ -45,6 +49,8 @@ However, from 1990 to 2016 (26 years), that 17.96% increased to a final value of
 *Stagflation* is the economic phenomena which arises during intervals of high interest and low economic output. The result is a precarious situation where policymaker intervention can exacerbate the synchronous problem of high unemployment by any action which is pursued. *Stag-cation* (a portmanteau of stagnant and vacation) is a phenomena currently being evinced in the United States whereby the relative amount of non-wage benefits to employs is no longer growing at a meaningful rate.
 
 Whereas wages continue to nominally rise, the percent of supplemental benefits, like those mentioned above, has reached a plateau.
+
+---
 
 ## Effectively Zero: Benefit Growth Does Not Exceed One Percent
 
@@ -63,6 +69,8 @@ The upper **Time Chart** shows year-on-year change for supplemental benefits as 
 
 The lower left **Time Chart** highlights periods of negative growth for each derived metric in red and the **Text Widget** tracks the rate of the change for the defined interval.
 
+---
+
 ## Measurable Differences: A Widening Gap in Wage and Benefit Growth
 
 ![](./images/supplemental-benefits-4.png)
@@ -72,6 +80,8 @@ The lower left **Time Chart** highlights periods of negative growth for each der
 Compare the absolute change, proportional relationship, and rate of change for wages and supplements. Although wage growth was negative numerous time throughout the observed period, the 40-year rate of change is four times that of supplemental benefits.
 
 The drop-down list in the **Pie Chart** controls the `start-date` of the one-year aggregation period of wages compared to supplements, navigating through time demonstrates that the proportion of supplemental benefits to overall wages has changed very little in the last four decades. The drop-down list in the **Text Widget** controls the interval of aggregation to compare the rates of changes of the two metrics.
+
+---
 
 ## Conclusion: The Benefit of Benefits
 
@@ -100,3 +110,5 @@ United Kingdom | 66.02 | 28 | :x: | $39,720.44
 United States | 325.72 | 0 | :x: | $59,531.66
 
 Of all countries tracked in the chart above, the United States is the only nation with neither a mandated minimum number of paid vacation days, nor a guaranteed amount of paternal leave for either parent. Despite being among the largest nations in the world and a lack of government-regulated supplementary benefits, the US emerged with the highest per capita GDP.
+
+---
