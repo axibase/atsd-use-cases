@@ -18,7 +18,7 @@ The [United States Treasury](https://home.treasury.gov/) releases monthly report
 
 ### Exploring the Portal
 
-The **Securities Portal** includes ad-hoc transformation and filtering tools to investigate an otherwise large dataset.
+The **Securities Portal** includes *ad hoc* transformation and filtering tools to investigate an otherwise large dataset.
 
 > **ChartLab** uses [Charts syntax](https://axibase.com/products/axibase-time-series-database/visualization/) to create portals from data stored in ATSD.
 
