@@ -1,15 +1,15 @@
-# Static code analysis with SonarQube
+# Code inspection with SonarQube
 
 ![Sonar Logo](./images/sonar_logo.svg)
 
 <!-- TOC -->
 
-- [Static code analysis with SonarQube](#static-code-analysis-with-sonarqube)
+- [Code inspection with SonarQube](#code-inspection-with-sonarqube)
   - [Overview](#overview)
   - [What is a static analysis of a code](#what-is-a-static-analysis-of-a-code)
     - [Benefits](#benefits)
     - [Solutions](#solutions)
-  - [Continious Code Inspection](#continious-code-inspection)
+  - [Continuous Inspection](#continuous-inspection)
   - [Sonarqube](#sonarqube)
     - [Capabilites](#capabilites)
       - [Advantages](#advantages)
@@ -18,7 +18,8 @@
     - [Installation](#installation)
       - [General scheme of installation](#general-scheme-of-installation)
       - [Simplified installation](#simplified-installation)
-  - [Compose file](#compose-file)
+        - [Requirements](#requirements)
+          - [Compose file](#compose-file)
     - [UI Review](#ui-review)
       - [Home page](#home-page)
       - [Project metrics](#project-metrics)
@@ -66,13 +67,12 @@ There are two main ways to analyze the code without execution:
 
 - [ESLint](https://eslint.org/) is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 
-## Continious Code Inspection
+## Continuous Inspection
 
 The major benefit of static code analysis is they can find the bug early in the development cycle, which means less cost to fix them.
 All these advantages of static code analyzer can be best utilized only if they are part of the build process.
 
-The integration code analysis into your CI process calls
-`continuous code inspection`.
+The integration code analysis into your CI process calls `continuous inspection`.
 
 ## Sonarqube
 
@@ -203,19 +203,20 @@ The Sonarqube Platform is Java Web Server that uses a database to store history,
 - Create an empty schema and a `sonarqube` user
 - Grant this  `sonarqube` user permissions to create, update and delete objects for this schema.
 - Copy web app files.
+- Specify database credentials in configuration files.
 - Run the platform using the provided script.
 
 Visit SonarQube [documentation](https://docs.sonarqube.org/display/SONAR/Installing+the+Server#InstallingtheServer-installingDatabaseInstallingtheDatabase) site for details.
 
 #### Simplified installation
 
-The foll## Requirements
+##### Requirements
 
-- Docker Engine 1.9
+- Docker Engine `1.9`
 
-- Docker Compose 1.6
+- Docker Compose `1.6`
 
-## Compose file
+###### Compose file
 
 The docker-compose file allows running SonarQube with a PostgreSQL database.
 
@@ -279,8 +280,8 @@ Analyse a project using `Maven`:
 
 ```bash
 mvn sonar:sonar \
-  -Dsonar.host.url=http://$(boot2docker ip):9000 \
-  -Dsonar.jdbc.url=jdbc:postgresql://$(boot2docker ip)/sonar
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.jdbc.url=jdbc:postgresql://localhost/sonar
 ```
 
 ### UI Review
