@@ -36,7 +36,7 @@ Examples of non-wage benefits:
 * Child care assistance
 * Stock options
 
-However, from 1990 to 2016 (26 years), that 17.96% increased to a final value of 18.81%, an increase of 0.85% which translates to roughly 0.03% each year. For all intents and purposes, the modern worker is receiving the same benefits as their 1990 counterpart. Moreover, when considered alongside the inflationary effects of a expanding money supply, modern workers are really receiving less.
+However, from 1990 to 2016 (26 years), that 17.96% only rose to a final value of 18.81%, an increase of 0.85% which translates to roughly 0.03% each year. For all intents and purposes, the modern worker is receiving the same benefits as their 1990 counterpart.
 
 ---
 
