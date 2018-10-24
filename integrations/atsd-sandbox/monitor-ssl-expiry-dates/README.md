@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Axibase Collector](https://github.com/axibase/axibase-collector/#overview) is a versatile data collection tool written in Java that implements various types of jobs to retrieve data from remote systems. One of such job types is the `HTTP` job which works similar to AWS Health Checks while also collecting detailed SSL status information from HTTPS endpoints.
+[Axibase Collector](https://axibase.com/docs/axibase-collector/#introduction) is a versatile data collection tool written in Java that implements various types of jobs to retrieve data from remote systems. One of such job types is the `HTTP` job which works similar to AWS Health Checks while also collecting detailed SSL status information from HTTPS endpoints.
 
 The `HTTP` job retrieves the list of subdomains from the [CRT Certificate Search](https://crt.sh) database maintained by [Comodo Group](https://www.comodo.com). The list includes active (`NotAfter > 1 week ago`) subdomains for the specified top domain.
 
