@@ -10,23 +10,8 @@ Certificate search engine [`crt.sh`](https://crt.sh) stores information about SS
 
 ## Procedure
 
-1. [Prepare the job and rules for domain](#prepare-files-for-domain).
-2. [Configure and launch ATSD Sandbox](#configure-and-launch-atsd-sandbox).
-3. [Receive notifications](#notifications).
-
-### Prepare Files for Domain
-
-Create a directory to store tutorial files and navigate to the newly created directory in a console.
-
-```bash
-mkdir tutorial && cd ./tutorial
-```
-
-### Configure Slack Notifications
-
-ATSD Sandbox can pass the `SLACK_TOKEN` for notifications as an environment variable.
-
-> See [Webhook Documentation](https://github.com/axibase/dockers/tree/atsd-sandbox#outgoing-webhooks) for more information.
+1. [Configure and launch ATSD Sandbox](#configure-and-launch-atsd-sandbox).
+1. [Configure Slack notifications](#configure-slack-notifications).
 
 ### Configure and Launch ATSD Sandbox
 
@@ -39,7 +24,6 @@ Use your Slack token information instead of the `SLACK_TOKEN` placeholder.
 ```bash
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
-  --volume $(pwd):/import \
   --env TOP_DOMAIN=axibase.com \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/how-to/atsd-sandbox/monitor-ssl-expiry-dates/resources/ssl-certificates-files.tar.gz' \
   --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/integrations/atsd-sandbox/monitor-ssl-expiry-dates/resources/job_http_subdomains-ssl-certificates.xml' \
@@ -47,7 +31,11 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   axibase/atsd-sandbox:latest
 ```
 
-### Notifications
+### Configure Slack Notifications
+
+ATSD Sandbox can pass the `SLACK_TOKEN` for notifications as an environment variable.
+
+> See [Webhook Documentation](https://github.com/axibase/dockers/tree/atsd-sandbox#outgoing-webhooks) for more information.
 
 ATSD sends a test notification to Slack upon successful launch.
 
