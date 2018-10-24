@@ -1,0 +1,62 @@
+<list>
+  <com.axibase.collector.model.job.http.HttpJobConfig>
+    <name>subdomains-ssl-certificates</name>
+    <cronExpression>0 0 * * * ?</cronExpression>
+    <enabled>true</enabled>
+    <jobType>HTTP</jobType>
+    <defaultTags/>
+    <checkLastTime>false</checkLastTime>
+    <commitInterval>10</commitInterval>
+    <errorThreshold>0</errorThreshold>
+    <configurations>
+      <com.axibase.collector.model.job.http.HttpConfiguration>
+        <name>ssl-cert-check</name>
+        <path>https://${ITEM}</path>
+        <matchType>NONE</matchType>
+        <failureRetest>0</failureRetest>
+        <failureRetestDelay>5</failureRetestDelay>
+        <enableWebDriver>false</enableWebDriver>
+        <driverTimeout>0</driverTimeout>
+        <driverFileEncoding>UTF8</driverFileEncoding>
+        <entitySet>
+          <name>domain-subdomains</name>
+          <description>Item list containing list of subdomains for given top domain.</description>
+          <type>QUERY</type>
+          <discardDuplicates>false</discardDuplicates>
+          <entities>
+            <string>SELECT distinct(ci.NAME_VALUE) NAME_VALUE
+FROM certificate_identity ci, certificate c
+WHERE reverse(lower(ci.NAME_VALUE)) LIKE reverse(&apos;%.${ENV.TOP_DOMAIN}&apos;)
+AND ci.CERTIFICATE_ID = c.ID
+AND x509_notAfter(c.CERTIFICATE) &gt; NOW() - interval &apos;7 day&apos;
+AND ci.NAME_VALUE NOT LIKE &apos;*%&apos; AND ci.NAME_VALUE NOT LIKE &apos;?%&apos;
+ORDER BY NAME_VALUE</string>
+          </entities>
+          <databaseConfiguration>
+            <name>crt.sh</name>
+            <type>POSTGRESQL</type>
+            <server>crt.sh</server>
+            <port>5432</port>
+            <database>certwatch</database>
+            <dbUser>guest</dbUser>
+            <maxActive>4</maxActive>
+            <maxIdle>4</maxIdle>
+            <minIdle>0</minIdle>
+            <initialSize>0</initialSize>
+            <maxWaitSeconds>60</maxWaitSeconds>
+            <maxAgeMinutes>60</maxAgeMinutes>
+            <loginTimeoutSeconds>60</loginTimeoutSeconds>
+            <idleTimeoutSeconds>15</idleTimeoutSeconds>
+            <socketTimeoutSeconds>0</socketTimeoutSeconds>
+            <active>0</active>
+            <idle>0</idle>
+            <driverClassName>org.postgresql.Driver</driverClassName>
+            <connectionStringProperties/>
+          </databaseConfiguration>
+          <separator>,</separator>
+        </entitySet>
+        <collectSslMetrics>true</collectSslMetrics>
+      </com.axibase.collector.model.job.http.HttpConfiguration>
+    </configurations>
+  </com.axibase.collector.model.job.http.HttpJobConfig>
+</list>
