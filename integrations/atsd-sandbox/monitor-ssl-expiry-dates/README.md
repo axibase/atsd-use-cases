@@ -63,7 +63,7 @@ Upon modification of SSL certificate expiry date, ATSD sends the following messa
 
 If less than 30 days remain before SSL certificate expiry date, ATSD sends the following message:
 
-![Expiration rule](./images/expiration-approaching.png)
+![Expiration rule](./images/expiration-approaching-2.png)
 
 ## Troubleshooting
 
