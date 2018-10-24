@@ -26,7 +26,7 @@ mkdir tutorial && cd ./tutorial
 
 ATSD Sandbox can pass the `SLACK_TOKEN` for notifications as environment variable.
 
-> See [Web Notifications Documentation](https://github.com/axibase/dockers/tree/atsd-sandbox#web-notifications-configuration) for more information.
+> See [Web Notifications Documentation](https://github.com/axibase/dockers/tree/atsd-sandbox#outgoing-webhooks) for more information.
 
 ### Configure and Launch ATSD Sandbox
 
@@ -42,8 +42,8 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --volume $(pwd):/import \
   --env TOP_DOMAIN=axibase.com \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/how-to/atsd-sandbox/monitor-ssl-expiry-dates/resources/ssl-certificates-files.tar.gz' \
-  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/how-to/atsd-sandbox/monitor-ssl-expiry-dates/resources/job_http_subdomains-ssl-certificates.xml' \
-  --env SLACK_TOKEN={SLACK_TOKEN}\
+  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/integrations/atsd-sandbox/monitor-ssl-expiry-dates/resources/job_http_subdomains-ssl-certificates.xml' \
+  --env SLACK_TOKEN={SLACK_TOKEN} \
   axibase/atsd-sandbox:latest
 ```
 
