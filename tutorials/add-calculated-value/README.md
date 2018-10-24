@@ -8,7 +8,7 @@ This article describes using the [`replace-value`](https://axibase.com/products/
 
 ## Data
 
-Data in this article was collected by entity [Eurostat](http://ec.europa.eu/eurostat) tracking [European Union Debt by Country](../../research/data-lib/eu-debt/README.md),
+Data in this article is collected by entity [Eurostat](https://ec.europa.eu/eurostat) tracking [European Union Debt by Country](../../research/data-lib/eu-debt/README.md),
 recorded in the [Axibase Data Library](https://axibase.com/use-cases/research/#data-library).
 
 ```sql
@@ -42,7 +42,7 @@ SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt (Million Euro)"
 
 ![](./images/acv-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82713e8a/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/82713e8a/#fullscreen)
 
 To calculate the percent growth of Lithuanian debt over the 20-year observation period, use common baselines. Three common baselines are as follows:
 
@@ -66,6 +66,7 @@ Where,
 
 `x = current year debt amount, and y = previous year debt amount`
 
+```ls
 | Year | Debt (Million Euro) | Percent Change (PYB) |
 |------|---------------------|----------------------|
 | 1995 | 1632.00             | null                 |
@@ -89,6 +90,7 @@ Where,
 | 2013 | 19715.70            | -3.27                |
 | 2014 | 19748.30            | 0.17                 |
 | 2015 | 20525.20            | 3.93                 |
+```
 
 `LAG` function returns a [`NULL`](https://axibase.com/docs/atsd/sql/#null) value when no  data sample is found.
 
@@ -102,7 +104,7 @@ Track positive debt growth with an [`alert-expression`](https://axibase.com/prod
 
 ![](./images/acv-003.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82713e8a/5/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/82713e8a/5/#fullscreen)
 
 See lines 17 and 18 for `alert-expression` syntax.
 
@@ -167,11 +169,11 @@ Apply an `alert-expression` to track years by percent deviation from the calcula
 
 ![](./images/acv-004.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82713e8a/4/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/82713e8a/4/#fullscreen)
 
 ### Final Year Baseline
 
-In order to calculate debt growth using a FYB, the following queries are used:
+to calculate debt growth using a FYB, the following queries are used:
 
 ```sql
 SELECT last(value) AS "Final Year Baseline"
@@ -217,6 +219,6 @@ GROUP BY datetime, value
 
 ![](./images/acv-006.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82713e8a/6/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/82713e8a/6/#fullscreen)
 
 The above graph shows percent deviation for Lithuanian government debt using the final year (2015) as a baseline.

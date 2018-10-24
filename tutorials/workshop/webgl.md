@@ -2,7 +2,7 @@
 
 ## 3D Image Design Without Plugins
 
-> Examples in this article use ES6 syntax and Fetch API, which are not supported in Internet Explorer.
+> Examples in this workshop use ES6 syntax and Fetch API, which are not supported in Internet Explorer.
 
 ## Introduction
 
@@ -30,20 +30,18 @@ Drawing in Web:
 ## Key Concepts
 
 * Based on OpenGL ES 2.0, (WebGL2 on OpenGL ES 3.0);
-* GPU-computation principle: execute simple commands for a lot of data in parallel;
+* GPU-computation principle: execute simple commands for a large amount data in parallel;
 * GPU-accelerated rendering using shaders: small programs for GPU (written in GLSL). WebGL supports 2 types of shaders: vertex shaders and fragment shaders.
 
 Pipeline (simplified):
 
 ![](https://kaidu1982.github.io/2013-jco-webgl/reveal.js-master/img/webgl_rendering_pipeline.png)
 
-Simplicity causes a reduced number of primitives to be rendered: WebGL can draw lines, points and triangles (polygons), but it can't draw cubes, spheres, circles etc.). To display other figures, they must be represented as a polygonal model.
+Simplicity causes a reduced number of primitives to be rendered: WebGL can draw lines, points and triangles (polygons), but it cannot draw cubes, spheres, circles etc.). To display other figures, they must be represented as a polygonal model.
 
 ![Utah teapot](./images/utah_teapot.jpg)
 
-![](http://caig.cs.nctu.edu.tw/course/CG2007/images/ex1_wireframe.jpg)
-
-To display this teapot, we need to:
+To display this teapot:
 
 1. Initialize WebGL context;
 2. Create array of vertices for the teapot model;
@@ -139,7 +137,7 @@ void main()
 
 ### Create Fragment Shader
 
-Fragment shaders calculate the color for each vertex. We just pass the argument to output.
+Fragment shaders calculate the color for each vertex. Pass the argument to output.
 
 ```glsl
 // Set medium precision (required in WebGL 1)
@@ -167,16 +165,16 @@ let prog = gl.createProgram();
 gl.attachShader(prog, vertexShader);
 gl.attachShader(prog, fragmentShader);
 gl.linkProgram(prog);
-// Once we linked program, we no longer need these shaders
+// Once program is linked, shaders are no longer needed.
 gl.deleteShader(vertexShader);
 gl.deleteShader(fragmentShader);
 ```
 
 ### Buffer Initialization
 
-Passing data to and from the GPU is expensive, so we need to pass as much data as we can in as few trips as possible. We pass position and color info as a plaintext array through the _buffer object_ `vbo`. To tell the GPU which attribute is located at buffer, we call `gl.vertexAttribPointer`, passing the attribute location index from program, count, and type of attribute type vector (position is `vec2` and color is `vec3`), normalization flag, size of structure and field offset.
+Passing data to and from the GPU is expensive, pass as much data as possible in as few trips as possible. Pass position and color info as a plaintext array through the **buffer object** `vbo`. To tell the GPU which attribute is located at buffer, call `gl.vertexAttribPointer`, passing the attribute location index from program, count, and type of attribute type vector (position is `vec2` and color is `vec3`), normalization flag, size of structure and field offset.
 
-We are drawing a single triangle, so we don't need index buffer.
+Drawing a single triangle, no index buffer is needed.
 
 ```js
 let vertices = new Float32Array([
@@ -326,7 +324,7 @@ function draw() {
 draw();
 ```
 
-### 3d charts with THREE.js
+### 3D charts with THREE.js
 
 [View on apps.axibase.com](https://apps.axibase.com/webgl/threegl_chart)
 
@@ -457,7 +455,7 @@ loadAtsdCpuBusyData.then(data => {
         let columnGeometry = new THREE.BoxGeometry(0.8, 0.8, value);
         let columnMaterial = new THREE.MeshPhongMaterial({color: 0x3366EE});
         let column = new THREE.Mesh(columnGeometry, columnMaterial);
-        // By default column is half below the plane, so we lift it
+        // By default column is half below the plane, lift it
         column.position.z = value / 2;
         column.position.x = (col * 2 + 1) - 3;
         col++;
@@ -478,10 +476,9 @@ loadAtsdCpuBusyData.then(data => {
 
 ![](./images/threejs_gallery.png)
 
-WebGL does not support HTML rendering, but with THREE.js we can work with DOM objects as if they were scene objects.
+WebGL does not support HTML rendering, but with `THREE.js`, work with DOM objects as if they are scene objects.
 
 ```javascript
-
 // Initialize graph scene
 let scene = new THREE.Scene();
 let renderer = new THREE.CSS3DRenderer();

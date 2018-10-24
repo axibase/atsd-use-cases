@@ -1,94 +1,71 @@
-# U.S. State Department: Getting Paid $400 Million While Rejecting Visitors
+# Denied Visa Application Fees Total Over $400 Million
 
 ![TitlePhoto](./images/TitlePhoto.png)
 
-There are a few ways to earn **$400 million** in today's world. You can win the [lottery jackpot](https://en.wikipedia.org/wiki/Lottery_jackpot_records), or come up with the next big [smart phone app](https://www.bloomberg.com/gadfly/articles/2017-03-01/snapchat-s-ipo-leads-the-way-for-other-overheated-startups). These are relatively
-established "get rich" schemes. How about earning millions by rejecting visitors? In 2015, the [U.S. State Department](https://www.state.gov/) earned over **$400 million** from non-immigrant visa applications that ended up being rejected.
-What do the visa refusal rates for countries around the world look like? How have visa refusal rates changed over time? What is the total revenue the U.S. draws from refused
-visa applications?
+In 2015, the U.S. State Department earned over **$400 million** from non-immigrant visa applications that ended up being rejected. This article analyzes a dataset from [`travel.state.gov`](https://travel.state.gov) which examines non-immigrant visa figures from 1997 through 2015 together with a second `travel.state.gov` dataset concerning visa refusal rates
+from 2006 to 2016.
 
-In this article we will analyze a dataset from [travel.state.gov](https://travel.state.gov) looking at non-immigrant visa figures from 1997 through 2015 together with visa refusal rates
-from 2006 to 2016 (also from [travel.state.gov](https://travel.state.gov)). This research article illustrates how publicly available data from travel.state.gov collected by government
-organizations can be easily loaded into the non-relational ATSD for interactive analysis and
-visual outputs with **ChartLab** charts and SQL queries. Additionally, this article contains instructions on how to install your own ATSD instance and populate it with raw data.
+Publicly available data can be loaded into ATSD, analyzed using [SQL Console](https://axibase.com/docs/atsd/sql/), and visualized with [**ChartLab**](../../tutorials/shared/chartlab.md)
 
-## U.S. Visa Dataset and Refusal Rates
+## Dataset
 
-Let's take a look at a dataset from travel.state.gov, which can be accessed via our archive located in the [resources](./resources/visas.tar.gz) folder in this repository. Alternatively, you can
-download the Excel file from the [travel.state.gov](https://travel.state.gov) website and save each separate year as its
-own individual CSV file. The title of the Excel file on the travel.state.gov website is **Nonimmigrant Visa Issuances by Visa Class and by Nationality FY1997-2015 NIV Detail Table**.
+Access the gzipped tarball in the [Resources](./resources/visas.tar.gz) directory or download the collection of annual CSV files from [`travel.state.gov`](https://travel.state.gov). Search for **Nonimmigrant Visa Issuances by Visa Class and by Nationality FY1997-2015 NIV Detail Table**.
 
-This dataset contains yearly totals for non-immigrant visas issued from 1997 through 2015. Totals were collected for 84 different visa types. You can find the complete list of all
-the visa types included in this dataset [here](./resources/visalist.txt). You can find descriptions of all visa types on the [U.S. Department of State](https://travel.state.gov) website.
+The dataset contains yearly totals for non-immigrant visas issued from 1997 through 2015. Totals are collected for 84 different visa types. You can find the complete list of all
+the visa types included in this dataset in the [Resources](./resources/visalist.txt) directory. Read descriptions of each visa type on the [U.S. Department of State](https://travel.state.gov) website.
 
-Visa figures were collected for 200 countries, 7 continents, and for unknown national origins. You can find a complete list of all the countries included in this dataset [here](./resources/countrylist.txt).
+Visa figures are collected from 200 countries, 7 continents, and for those of unknown national origins. You can find a complete list of all the countries included in this dataset in the [Resources](./resources/countrylist.txt) directory.
 
-Visa refusal rates were taken from the [travel.state.gov](https://travel.state.gov/content/dam/visas/Statistics/Non-Immigrant-Statistics/refusalratelanguage.pdf#3) website, and can be
-accessed via our archive located in the [resources](./resources/visa-refusal.csv) as individual CSV files for each year. Alternatively, you can navigate to the travel.state.gov
-website and download each file individually; however these files are only available in PDF format. These refusal rates are applied for only type [B visas](https://en.wikipedia.org/wiki/B_visa). Generally speaking, B-1
-visas are issued for individuals seeking entry for business purposes, while B-2 visas are issued for tourism and non-business purposes. In this article, in order to come up with a total
-monetary value for visa refusal fees, we will apply these refusal rates to all visa types.
+Visa refusal rates are taken from [`travel.state.gov`](https://travel.state.gov/content/dam/visas/Statistics/Non-Immigrant-Statistics/refusalratelanguage.pdf#3). Access the raw data in the [Resources](./resources/visa-refusal.csv) directory as individual CSV files for each year.
 
-As opposed to analyzing this information in Excel, it is much more convenient to interact with the data once it is loaded into a database. We will use two aspects of ATSD to explore this dataset:
+These refusal rates are only tracked for [`B` visas](https://en.wikipedia.org/wiki/B_visa). `B-1`
+visas are issued for individuals seeking entry for business purposes, while `B-2` visas are issued for tourism and non-business purposes.
 
-* Interactive graphs from [**ChartLab**](../../integrations/shared/chartlab.md);
-* Tabular outputs from analytical [SQL queries](https://axibase.com/docs/atsd/sql/).
-
-You can load the dataset into your ATSD instance by following the steps provided at the [end of the article](#action-items).
+As opposed to analyzing this information in Excel, it is much more convenient to interact with the data by loading it into a database. Load the dataset into a local ATSD instance by following the procedure outlined in [Action Items](#action-items).
 
 ## U.S. Visa Refusal Rates
 
-The below figure shows the refusal rates from 2006 through 2016. We can see that refusal rates for Syrian nationals grew from **23.6%** in 2009 to **60.0%** in 2016. You can filter
-by country by clicking on the dropdown button. Here are a few more countries with figures showing how their refusal rates have changed over time.
+The below figure shows the refusal rates from 2006 through 2016. Notice that refusal rates for Syrian nationals grew from **23.6%** in 2009 to **60.0%** in 2016. Filter
+by country by clicking on the drop-down list. Listed here are a few more countries with figures showing how refusal rates have changed over time.
 
-* Mexico: 33.0% (2007) to 23.5% (2016)
-* Russia: 15.3% (2006) to 9.3% (2016)
-* Iran: 45% (2006) to 45% (2016)
-* China: 24.5% (2006) to 12.4% (2016)
+* **Mexico**: 33.0% (2007) to 23.5% (2016)
+* **Russia**: 15.3% (2006) to 9.3% (2016)
+* **Iran**: 45% (2006) to 45% (2016)
+* **China**: 24.5% (2006) to 12.4% (2016)
 
 ![Figure1](./images/Figure1.png)
 
-You can explore this portal by clicking on the below button:
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/8c9bb9cc/4/#fullscreen)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8c9bb9cc/4/#fullscreen)
-
-The below image shows how refusal rates have changed over time for Afghanistan, Canada, China - mainland, India, Mexico, Norway, Russia, and Vatican City.
+The below image tracks how refusal rates have changed over time for Afghanistan, Canada, Mainland China, India, Mexico, Norway, Russia, and Vatican City.
 
 ![Figure4](./images/Figure4.png)
 
-You can explore this portal by clicking on the below button:
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/8c9bb9cc/5/#fullscreen)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8c9bb9cc/5/#fullscreen)
-
-The below figure shows the countries with the highest and lowest refusal rates in 2015. Cuba topped the list with the highest refusal rate at **82%**, while Liechtenstein, Monaco, and
-San Marino all had refusal rates of **0%**.
+The figure below shows the countries with the highest and lowest refusal rates in 2015. Cuba topped the list with the highest refusal rate at **82%**, while Liechtenstein, Monaco, and
+San Marino all showed refusal rates of **0%**.
 
 ![Figure3](./images/Figure3.png)
 
-You can explore this portal by clicking on the below button:
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/b8675093/2/#fullscreen)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b8675093/2/#fullscreen)
-
-The below figure shows the distribution over time of the lowest (top figure) and highest (bottom figure) refusal rates from 2015. By scrolling over of the distributions, you
-can see the maximum and minimum refusal rates for the country from 2006 through 2016, as well as values for the 25th, 50th, and 75th percentiles. We can see that the visa refusal rates
-for nationals from Monaco has shot up to a **57%** refusal rate in 2015 (the absolute minimum in this time frame was 0%). Cuba shot up to a **82%** refusal rate in 2015, with the minimum
-refusal from 2006 to 2014 being 20.5%.
+The figure below shows distribution over time of the lowest and highest refusal rates from 2015. Navigate through the distributions and observe the maximum and minimum refusal rates for the country from 2006 through 2016, as well as values for the 25th, 50th, and 75th percentiles. The visa refusal rates
+for nationals from Monaco has increased to **57%** in 2015 and Cuba has increased to **82%** in 2015.
 
 ![Figure2](./images/Figure2.png)
 
-You can explore this portal by clicking on the below button:
-
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b8675093#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/b8675093#fullscreen)
 
 ## SQL Queries
 
-In addition to outputs from **ChartLab**, ATSD is also capable of performing [SQL queries](https://axibase.com/docs/atsd/sql/),
-which can be used to search for specific information contained in this dataset. You can read more about our SQL syntax [here](https://axibase.com/docs/atsd/sql/#syntax).
+In addition **ChartLab** visualizations, ATSD supports [SQL queries](https://axibase.com/docs/atsd/sql/) from the web-based [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html),
+used to select specific information in the dataset. Read more about SQL syntax in the [SQL Documentation](https://axibase.com/docs/atsd/sql/#syntax).
 
-This first query shows countries were refusals have increased most over the last 10 years. Surprisingly, two countries that have long been considered U.S. allies, Canada and Norway,
-saw their refusal rates considerably increase during this time period. Canada's visa refusal rate increased from **25.5%** in 2006 to **47.9%** in 2016, while in this same period Norway's
-refusal rate increased by **17.1%**. Cuba, the country with the largest visa refusal rate in 2016, saw a **20.5%** increase from 2006 to 2016, despite having diplomatic relations improve
-in the [last several years]( https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249702.htm).
+The first query shows countries where refusals have increased the most over the last 10 years. Surprisingly, two countries that have long been considered U.S. allies, Canada and Norway,
+saw refusal rates considerably increase during the observed period. Refusal rate in Canada increased from **25.5%** in 2006 to **47.9%** in 2016, while in the same period the
+refusal rate in Norway increased by **17.1%**. Cuba, the country with the largest visa refusal rate in 2016, saw a **20.5%** increase from 2006 to 2016, despite having diplomatic relations improve
+in the last several years: `https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249702.htm`.
 
 ```sql
 SELECT tags.country AS "Country",
@@ -133,8 +110,8 @@ ORDER BY 'Change, 2006-2016' DESC
 | Marshall Islands                  | 14.7                | 14.0                    | 29.4                | 14.7              |
 ```
 
-This next query shows countries where refusals have decreased most over the last 10 years. Poland in this time period saw a decrease of **20.8%**, which may be due in part to it's admittance
-to the [European Union](https://en.wikipedia.org/wiki/European_Union) in 2004. Seven African countries (Cote d'Ivoire, Kiribati, Malawi, Niger, Nigeria, Zambia, Zimbabwe) saw decreases
+The query below shows countries where refusals have decreased the most over the last 10 years. Poland experienced a decrease of **20.8%**, most likely resulting from Polish admittance
+to the [European Union](https://en.wikipedia.org/wiki/European_Union) in 2004. Seven African countries (Cote d'Ivoire, Kiribati, Malawi, Niger, Nigeria, Zambia, Zimbabwe) experienced decreases
 greater than **12.4%** from 2006 to 2016.
 
 ```sql
@@ -180,7 +157,7 @@ ORDER BY 'Change, 2006-2016'
 | Kiribati                         | 18.2                | 19.6                    | 5.8                 | -12.4             |
 ```
 
-Countries with worst refusal rates in 2016:
+Countries with greater refusal rates in 2016:
 
 ```sql
 SELECT tags.country AS "Country",
@@ -240,10 +217,8 @@ ORDER BY last(value)
 | United Arab Emirates  | 9.8                 | 8.0                     | 4.0                 | -5.8              |
 ```
 
-How much was earned from visa applications that were submitted but denied? We can load visa refusal rates from
-[travel.state.gov](https://travel.state.gov/content/dam/visas/Statistics/Non-Immigrant-Statistics/RefusalRates/FY16.pdf) into ATSD as a series, and then calculate the
-total dollar amount earned from visas that were denied. In 2015 Mexico topped the list for paying the most for refused visa applications at **$59,794,320**, with India coming in
-at a close second at **$47,992,945**.
+Import visa refusal rates from
+[`travel.state.gov`](https://travel.state.gov/content/dam/visas/Statistics/Non-Immigrant-Statistics/RefusalRates/FY16.pdf) to ATSD as a series, and calculate the dollar amount earned from denied visas. In 2015 Mexico paid the most for refused visa applications at **$59,794,320** with India at a close second paying **$47,992,945**.
 
 ```sql
 SELECT  t1.tags.country AS "Country", t1.value AS "Total Visas Issued", t2.value AS "Visa Refusal Rate",
@@ -459,7 +434,7 @@ ORDER BY 'Refusal Fees' DESC
 | San Marino                             | 25                  | 0                  | 25            | 0         | 0            |
 ```
 
-The below query shows the total revenue for refusal fees from 2006 to 2016, as well as the number of visas issued, total applications, refusals, and refusal percentages.
+The query below shows the total revenue for refusal fees from 2006 to 2016, as well as the number of visas issued, total applications, refusals, and refusal percentages.
 
 ```sql
 SELECT date_format(t1.time, 'yyyy') AS "Year", sum(t1.value)/power(10, 6) AS "Visas, Mln",
@@ -488,38 +463,28 @@ group by t1.datetime
 | 2015  | 10.9        | 13.5               | 2.6            | 19.1         | 411.4               |
 ```
 
-We can see that the total amount of money earned from visa applications which ended up being denied was **$411.4 million**, which comes to a little less than 1/4 of the amount earned
-from visas that were issued. These numbers check out with the State Department's [official report from 2015](https://www.state.gov/documents/organization/249770.pdf), which reported
-that 10.9 million visas were issued at foreign posts in 2015. The total revenue brought in by U.S. consular services in 2015 was [$5.8 billion](https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249727.htm), meaning that the amount earned from
-refusal fees shouldn't be considered pocket change. According to our SQL query, in this year **2.6 million** non-immigrant visa applications were rejected. You can take a closer
-look at the U.S. visa refusal rates by following the below actions items to install your own ATSD instance.
+The total amount of money earned from denied visa applications is **$411.4 million**, a little less than `1/4` of the amount earned
+from issued visas. These numbers are in line with the [2015 State Department Report](https://www.state.gov/documents/organization/249770.pdf), which stated that 10.9 million visas were issued at foreign posts. The total revenue earned by U.S. consular services in 2015 is [$5.8 billion](https://www.state.gov/s/d/rm/rls/perfrpt/2015/html/249727.htm), meaning that the amount earned from
+refusal fees is not just pocket change.
 
 ## Action Items
 
-Below are the summarized steps to follow to install local configurations of ATSD for analyzing United States visa statistics:
+* [Install ATSD](https://axibase.com/docs/atsd/installation/):
 
-* Install the ATSD database on your local configuration:
+  ```sh
+  docker run \
+    --detach \
+    --name=atsd \
+    --restart=always \
+    --publish 8088:8088 \
+    --publish 8443:8443 \
+    --publish 8081:8081 \
+    --publish 8082:8082/udp \
+    axibase/atsd:latest
+  ```
 
-```sh
-docker run \
-  --detach \
-  --name=atsd \
-  --restart=always \
-  --publish 8088:8088 \
-  --publish 8443:8443 \
-  --publish 8081:8081 \
-  --publish 8082:8082/udp \
-  axibase/atsd:latest
-```
-
-* Log in to ATSD and configure the pre-defined administrator account.
-* Import the [`travel_visas.xml`](./resources/travel_visas.xml) and [`visa-refusal-rates-csv-parser.xml`](./resources/visa-refusal-rates-csv-parser.xml) files into ATSD. For a more detailed description, refer to step 9 from this [step-by-step walkthrough](../us-mortality/configuration.md) from our article on [U.S. mortality statistics](../us-mortality/README.md).
-* Import the [`visas.tar.gz`](./resources/visas.tar.gz) file into ATSD using the `travel_visas.xml` parser. For a more detailed description, refer to step 10 from the walkthrough mentioned in the previous step.
-* Import the [`visa-refusal.csv`](./resources/visa-refusal.csv) using the `visa-refusal-rates-csv-parser.xml` parser.
-* To check that data has correctly been imported, navigate to the metrics page in ATSD, and check that the metrics with the names `state.non-immigrant-visa` and `state.visa-refusal-rate` have appeared.
-
-If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
-
-## Sources
-
-[Title Photo](http://www.siam-legal.com/US_Visa/k1-visa-thailand.php)
+* Log in to ATSD and configure an administrator account.
+* Import the [`travel_visas.xml`](./resources/travel_visas.xml) and [`visa-refusal-rates-csv-parser.xml`](./resources/visa-refusal-rates-csv-parser.xml) datasets.
+* Import the [`visas.tar.gz`](./resources/visas.tar.gz) tarball to ATSD using this [parser configuration](./resources/visa-refusal-rates-csv-parser.xml). For information about uploading parser configurations see the [Configuration Tutorial](../../tutorials/shared/import-csv-parser.md)
+* Parse the [raw data](./resources/visa-refusal.csv).
+* On the **Metrics** page of the ATSD web interface, the imported metrics `state.non-immigrant-visa` and `state.visa-refusal-rate` are visible.

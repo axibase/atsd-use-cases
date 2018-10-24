@@ -16,7 +16,7 @@ by FRED is **CPIAUCSL**: [Consumer Price Index](https://fred.stlouisfed.org/seri
 
 Replicate and modify the FRED [CPI visualization](https://fred.stlouisfed.org/series/CPIAUCSL#0) using **ChartLab**.
 
-Modify the FRED visualization by clicking **EDIT GRAPH** and selecting the desired transformation. To learn more about how any of the metrics are calculated from the underlying data, [What Formulas are Used to Calculate Growth Rates?](https://fredhelp.stlouisfed.org/fred/data/understanding-the-data/formulas-calculate-growth-rates/)
+Modify the FRED visualization by clicking **EDIT GRAPH** and selecting a transformation. To learn more about how any of the metrics are calculated from the underlying data, [What Formulas are Used to Calculate Growth Rates?](https://fredhelp.stlouisfed.org/fred/data/understanding-the-data/formulas-calculate-growth-rates/)
 provides information about the underlying mathematics.
 
 A brief tutorial on data modification in the FRED interface is shown below:
@@ -27,7 +27,7 @@ A brief tutorial on data modification in the FRED interface is shown below:
 
 ![](./images/tut-2.png)
 
-* From the **Units** drop-down list, select the desired transformation.
+* From the **Units** drop-down list, select a transformation.
 
 ![](./images/tut-3.png)
 
@@ -67,7 +67,7 @@ data from 1947 onward, small scale differences are expected in the outputs of ea
 
 ![](./images/cpi1.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/383632d5/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/383632d5/#fullscreen)
 
 Return to the [Index](#index)
 
@@ -86,10 +86,10 @@ goods are therefore greater than 100.00 while years exhibiting deflation in the 
 
 ![](./images/cpi2.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/978c79b4/4/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/978c79b4/4/#fullscreen)
 
 In **ChartLab**, use the drop-down list at the top of the visualization to select the year to be used as a baseline, or hardcode
-a year not included in the dropdown by modifying one of the dates in the `keyDates` list.
+a year not included in the drop-down list by modifying one of the dates in the `keyDates` list.
 
 Key Components of This Visualization:
 
@@ -113,18 +113,18 @@ endlist
 The syntax for this drop-down list is shown below:
 
 ```ls
-  [dropdown]
-    on-change = widget.config.series[0].value = this.value; widget.replaceSeries(widget.config.series);
-    for date in keyDates
-      [option]
-        text = Index (Scale to 100 for @{date})
-        value = value("cpi") / value("cpi_@{date}") * 100 || null
-    endfor
+[dropdown]
+  on-change = widget.config.series[0].value = this.value; widget.replaceSeries(widget.config.series);
+  for date in keyDates
+    [option]
+      text = Index (Scale to 100 for @{date})
+      value = value("cpi") / value("cpi_@{date}") * 100 || null
+  endfor
 ```
 
 > For more information about the above syntax see the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/).
 
-By modifying any of the dates contained in the `keyDates` list above, the user can select any desired date to set as the
+By modifying any of the dates contained in the `keyDates` list above, the user can select any date to set as the
 baseline value, and the `value` equation contained in the `[option]` portion of the `[dropdown]` configuration above uses
 a simple formula to establish the new index.
 
@@ -150,7 +150,7 @@ The monthly numerical change in CPI value over the observed period.
 
 ![](./images/cpi3.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5267b4a7/2/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/5267b4a7/2/#fullscreen)
 
 Underlying Formula:
 
@@ -176,7 +176,7 @@ The numerical change in CPI value from the same month of the previous year.
 
 ![](./images/cpi4.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5267b4a7/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/5267b4a7/#fullscreen)
 
 Underlying Formula:
 
@@ -202,7 +202,7 @@ The monthly percentile change in CPI value over the entire observed period.
 
 ![](./images/cpi5.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/ab06efab/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/ab06efab/#fullscreen)
 
 Underlying Formula:
 
@@ -228,7 +228,7 @@ The percentile change in CPI from the same month of the previous year.
 
 ![](./images/cpi6.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/4f192b00/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/4f192b00/#fullscreen)
 
 Underlying Formula:
 
@@ -252,15 +252,15 @@ The mean annual rate of change for the Consumer Price Index.
 
 ![](./images/cpi7.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/f6fee48e/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/f6fee48e/#fullscreen)
 
 Underlying Formula:
 
 ```javascript
 value = (Math.pow(( value("cpi") / previous("cpi") ), 12) - 1) * 100
- ```
+```
 
-* This setting uses the built-in [`Math`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) javascript object.
+* This setting uses the built-in [`Math`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math) JavaScript object.
 
 Return to the [Index](#index)
 
@@ -278,7 +278,7 @@ The mean rate of change for the Consumer Price Index compounded continuously.
 
 ![](./images/cpi8.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/cae3b970/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/cae3b970/#fullscreen)
 
 Underlying Formula:
 
@@ -302,7 +302,7 @@ Return to the [Index](#index)
 
 ![](./images/cpi9.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/225e74f9/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/225e74f9/#fullscreen)
 
 Underlying Formula:
 
@@ -326,7 +326,7 @@ The logarithm of each value set to base of the mathematical constant _e_
 
 ![](./images/cpi10.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/d2ced747/#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/d2ced747/#fullscreen)
 
  Underlying Formula:
 

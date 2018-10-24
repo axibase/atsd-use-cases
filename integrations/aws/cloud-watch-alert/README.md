@@ -10,7 +10,7 @@ Follow these instructions to set up default AWS email notifications or follow th
 
 ### Configure a New CloudWatch Event
 
-From the **Console Home** page, open the **Services** menu and in the **Management Tools** section, select **CloudWatch**.
+From the **Console Home** page, open the **Services** menu and in the **Management Tools** section, click **CloudWatch**.
 
 ![](./images/cw-menu.png)
 
@@ -42,7 +42,7 @@ On the **Topic Details** page, click **Create Subscription**.
 
 ![](./images/sns-3.png)
 
-Define the email address to which you would like AWS to send status change notifications. Be sure to select **Email** from the **Protocol** drop-down list.
+Define the email address to which you would like AWS to send status change notifications. Select **Email** from the **Protocol** drop-down list.
 
 ![](./images/email-subscription.png)
 
@@ -70,7 +70,7 @@ Follow the quick [launch procedure](#launch-sandbox-with-automated-slack-and-ema
 
 Follow this procedure to send AWS CloudWatch events into ATSD to enrich standard SNS notifications with additional resource details and AWS console links.
 
-* Launch an [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox):
+* Launch an [ATSD sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image):
 
 ```sh
 docker run -d -p 8443:8443 \
@@ -99,7 +99,7 @@ To configure an email client in the ATSD sandbox container:
 
   ```txt
   server=mail.example.org
-  user=myuser@example.org
+  user=user@example.org
   password=secret
   ```
 
@@ -140,7 +140,7 @@ Copy the incoming `aws-cw` webhook URL from the start log.
 [ATSD] Importing '/tmp/import/rule_aws-cloudwatch-events.xml' configuration
 [ATSD] Successfully imported '/tmp/import/rule_aws-cloudwatch-events.xml'
 aws-cw webhook created:
-https://aws-cw:PASSWORD@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
+https://aws-cw:password@atsd_hostname:8443/api/v1/messages/webhook/aws-cw?command.date=Timestamp&json.parse=Message&exclude=Signature;SignatureVersion;SigningCertURL;SignatureVersion;UnsubscribeURL;MessageId;Message.detail.instance-id;Message.time;Message.id;Message.version
 ```
 
 Navigate to the **Topics** section of the **Simple Notification Service** page once again. On the same **Topic Details** page that establishes the AWS email subscription, click **Create Subscription** to add a second subscription to the topic.
@@ -165,7 +165,7 @@ Customize the generic ATSD launch command with your preferences from these optio
 
 Configure the [Mail Client](https://axibase.com/docs/atsd/administration/mail-client.html) by following the instructions here or by following the alternative launch instructions above.
 
-Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule is named `aws-cloudwatch-events`. Open the rule editor by clicking the link in the **Name** column. Select the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like ATSD to deliver email notifications.
+Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule is named `aws-cloudwatch-events`. Open the rule editor by clicking the link in the **Name** column. Open the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like ATSD to deliver email notifications.
 
 ![](./images/my-email.png)
 
@@ -182,13 +182,13 @@ ATSD email notifications contain context-aware links to the newly-launched AWS r
 Configure your local ATSD instance to send messages to Slack Messenger by following the [Slack Notifications](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html) procedure or adding the following environment variable to the atsd-sandbox container above:
 
 ```sh
-   --env SLACK_CONFIG="slack.properties"
+--env SLACK_CONFIG="slack.properties"
 ```
 
 Bind the `slack.properties` file to the sandbox container:
 
 ```sh
-   --volume /home/user/slack.properties:/slack.properties
+--volume /home/user/slack.properties:/slack.properties
 ```
 
 The bound volume must contain these required parameters in plaintext:
@@ -209,13 +209,13 @@ A sample status change Slack message is shown here:
 Configure your local ATSD instance to send messages to Telegram Messenger by following the [Telegram Notifications](https://axibase.com/docs/atsd/rule-engine/notifications/telegram.html) procedure or adding the following environment variable to the atsd-sandbox container above:
 
 ```sh
-   --env TELEGRAM_CONFIG="telegram.properties"
+--env TELEGRAM_CONFIG="telegram.properties"
 ```
 
 Bind the `telegram.properties` file to the sandbox container:
 
 ```sh
-   --volume /home/user/telegram.properties:/telegram.properties
+--volume /home/user/telegram.properties:/telegram.properties
 ```
 
 The bound volume contains the required parameters in plaintext:

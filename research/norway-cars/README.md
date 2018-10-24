@@ -2,9 +2,9 @@
 
 ![TitlePhoto](./images/TitlePhoto.png)
 
-Norway's central statistical agency, [SSB](https://www.ssb.no/statistikkbanken/selecttable/hovedtabellHjem.asp?KortNavnWeb=bilreg&CMSSubjectArea=transport-og-reiseliv&PLanguage=1&checked=true), released its annual car registration statistics on March 28, 2017. While the key trends such as the rotation out of gasoline models were still in place, the dataset delivered a few surprises.
+The central statistical agency of Norway, [SSB](https://www.ssb.no/statistikkbanken/selecttable/hovedtabellHjem.asp?KortNavnWeb=bilreg&CMSSubjectArea=transport-og-reiseliv&PLanguage=1&checked=true), released its annual car registration statistics on March 28, 2017. While the key trends such as the rotation out of gasoline models are still observable, the dataset delivered a few surprises.
 
-* The electric vehicles (EVs) continued to gain ground however the pace of growth has slowed down. The installed base of EVs reached **100K** units, the annual increase was 29179 vehicles compared to 31271 vehicles in 2015.
+* The electric vehicles (EVs) continued to gain ground however the pace of growth has slowed down. The installed base of EVs reached **100K** units, the annual increase is 29,179 vehicles compared to 31,271 vehicles in 2015.
 * The unit growth of the EV installed base is getting closer to being on par with the diesel segment: 29179/42824 or **68%** in 2016 versus 31271/64708 or **48%** in 2015.
 * The total number of registered Tesla Motors cars increased by 3361 units in 2016 compared to 3904 units in 2015, suggesting competition with less expensive EV models. Tesla's share in new EV registrations decreased to **11.5%** from **12.5%** in 2015 and from 18.7% in 2014.
 * Starting with 2016, hybrid cars are classified under the `Other fuel` category (hence 90077 y-o-y growth) making direct comparisons for the old Petrol category difficult.
@@ -23,6 +23,7 @@ FROM nor.registered_vehicles
   GROUP BY time
 ```
 
+```txt
 | Year | Vehicles | Change | Change, % |
 |------|----------|--------|-----------|
 | 2008 | 3352344  | null   | null      |
@@ -34,6 +35,7 @@ FROM nor.registered_vehicles
 | 2014 | 3817783  | 70294  | 1.9       |
 | 2015 | 3894267  | 76484  | 2         |
 | 2016 | 3969612  | 75345  | 1.9       |
+```
 
 ---
 
@@ -53,6 +55,7 @@ ORDER BY time
 
 * Electricity
 
+```txt
 | Year | Electric Vehicles | Change | Change, % |
 |------|-------------------|--------|-----------|
 | 2008 | 2834              | null   | null      |
@@ -64,9 +67,11 @@ ORDER BY time
 | 2014 | 42467             | 21455  | 102.1     |
 | 2015 | 73738             | 31271  | 73.6      |
 | 2016 | 102917            | 29179  | 39.6      |
+```
 
 * Diesel
 
+```txt
 | Year | Diesel Vehicles | Change | Change, % |
 |------|-----------------|--------|-----------|
 | 2008 | 1288795         | null   | null      |
@@ -78,6 +83,7 @@ ORDER BY time
 | 2014 | 1946693         | 83506  | 4.5       |
 | 2015 | 2011401         | 64708  | 3.3       |
 | 2016 | 2054225         | 42824  | 2.1       |
+```
 
 ---
 
@@ -85,7 +91,7 @@ ORDER BY time
 
 ![](./images/chart-total.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/5/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/bbc5e671/5/#fullscreen)
 
 ---
 
@@ -93,7 +99,7 @@ ORDER BY time
 
 ![](./images/chart-winner-losers.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/6/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/bbc5e671/6/#fullscreen)
 
 ---
 
@@ -101,7 +107,7 @@ ORDER BY time
 
 ![](./images/chart-tesla.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/7/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/bbc5e671/7/#fullscreen)
 
 ---
 
@@ -110,17 +116,17 @@ look at the statistics by following the below steps to install your own ATSD ins
 
 1. Install the ATSD database from a Docker image:
 
-   ```sql
-    docker run \
-      --detach \
-      --name=atsd \
-      --publish 8443:8443 \
-      axibase/atsd:latest
+   ```sh
+   docker run \
+    --detach \
+    --name=atsd \
+    --publish 8443:8443 \
+    axibase/atsd:latest
    ```
 
 2. Log in to ATSD and configure the pre-defined administrator account.
 3. Import the [`csv-parser-nor-configs.xml`](./resources/csv-parser-nor-configs.xml) parser definitions on **Configuration > Parsers: CSV** page.
-4. Export files from Statbank in Matrix TSV format (see instructions at the end of this article) or upload prepared tsv files as outlined in steps 5 and 6 below.
+4. Export files from Statbank in Matrix TSV format (see instructions at the end of this article) or upload prepared TSV files as outlined in steps 5 and 6 below.
 5. Upload the [`total.tsv`](./resources/total.tsv) file using the `nor-transport` parser.
 6. Upload the [`by-make-1.tsv`](./resources/by-make-1.tsv) and [`by-make-2.tsv`](./resources/by-make-2.tsv) files using the `nor-transport-make` parser.
 7. To check that data has been imported, open the SQL Console tab from the side menu and execute this query:

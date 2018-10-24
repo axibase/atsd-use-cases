@@ -13,21 +13,21 @@ of the incident, the nature of the incident, and the date of the incident.
 Additionally, the City of Baltimore has recorded crime incidents in the city,
 including homicide rates during the years 2013 and 2014. Baltimore has one of the highest murder
 rates in the country, and even ranks 19th on the planet
-[for highest per capita murder rate](http://www.worldatlas.com/articles/most-dangerous-cities-in-the-world.html).
+[for highest per capita murder rate](https://www.worldatlas.com/articles/most-dangerous-cities-in-the-world.html).
 These two data sets can be compared and contrasted to underline a number of features
 regarding the nature and the scope of the violence that occurs against the backdrop of a nearly three hundred
-year old city less than forty miles from the nation's capital.
+year old city less than forty miles from the Washington, DC.
 
 To establish a correlation between incidents of police use of force and incidents of homicide,
 it must be possible to effectively predict the occurrence of an above average amount of incidents of
 police use of force using data about the number of homicides that occurred in a given
 neighborhood. To establish a standard, for the sake of testing, mean values from each dataset
-will be collected. This mean will be compared to observed data from each dataset, and if
+are collected. This mean is compared to observed data from each dataset, and if
 a district is found to have witnessed an above average number of murders during the observed
-period, the alternative hypothesis will predict that the district will have also seen an
+period, the alternative hypothesis predicts that the district also sees an
 above average number of incidents of police use of force.
 
-Both of these datasets can be analyzed in the Axibase Time Series Database which provides a built-in support for the [Socrata](https://axibase.com/docs/axibase-collector/jobs/socrata.html) Open Data format used by the majority of government agencies in the United States. ATSD also includes graphics capabilities to analyze the data with [SQL](https://axibase.com/docs/atsd/sql/)
+Both of these datasets can be analyzed in the Axibase Time Series Database (ATSD) which provides a built-in support for the [Socrata](https://axibase.com/docs/axibase-collector/jobs/socrata.html) Open Data format used by the majority of government agencies in the United States. ATSD also includes graphics capabilities to analyze the data with [SQL](https://axibase.com/docs/atsd/sql/)
 and visualize it with graphs.
 
 > For information about performing these steps in your own ATSD instance, see the [Action Items](#action-items)
@@ -44,7 +44,7 @@ GROUP BY tags.$TAG_NAME$, PERIOD(1 MONTH)
   ORDER BY tags.$TAG_NAME$, datetime
 ```
 
-The `$TAG_NAME$` represents one of the dimensions of the time series collected within the dataset, such AS "district", while  `3w4d-kckv` represents the dataset's unique identifier in the data.gov catalog.
+The `$TAG_NAME$` represents one of the dimensions of the time series collected within the dataset, such AS "district", while  `3w4d-kckv` represents the unique identifier of the dataset in the `data.gov` catalog.
 
 The SQL syntax allows the user to ask and answer a series of relevant questions
 about both sets of data, and ChartLab allow the user to visualize and compare this data for
@@ -52,8 +52,7 @@ a deeper understanding of the information.
 
 ### Location of Homicides
 
-To organize the data so that the location of the incident is considered, this SQL query
-is used:
+Organize the data considering the location of the homicide:
 
 ```sql
 SELECT tags.district, count(*)
@@ -66,7 +65,7 @@ Notice the time period is not set to calculate the break-down of police use of f
 
 This results of this query are as follows:
 
-```sql
+```txt
 | tags.district | count(*) |
 |---------------|----------|
 | null          | 3        |
@@ -81,12 +80,12 @@ This results of this query are as follows:
 | WD            | 9        |
 ```
 
-The data has been sorted by district which names correspond to the Baltimore City Planning Map
+The data has been sorted by district whose names correspond to the Baltimore City Planning Map
 shown below. Data lacking location information has been displayed with the district tag `null`.
-Please notice that the Eastern District of the city is split into two Police Precincts
+Notice that the Eastern District of the city is split into two Police Precincts
 (Eastern and Southeastern), and the unlabeled blue area just below the Central District is
 considered to be Downtown for planning purposes but is patrolled by police from the Central
-Precinct, so that data will be included with other Central District data.
+Precinct, as such, that data is included with other Central District data.
 
 ![BaltimoreDistrictMap](./images/CityPlan.png)
 
@@ -99,8 +98,7 @@ The results from the first query can also be visualized as shown below, by preci
 
 ### Nature of Homicides
 
-To organize the data so that the nature of the incident is considered, this SQL query
-is used:
+Organize the data considering the nature of the homicide:
 
 ```sql
 SELECT tags.type, count(*)
@@ -109,9 +107,10 @@ GROUP BY tags.type
   ORDER BY count(*) DESC
 ```
 
-Because of the `ORDER BY count(*) DESC` command, the data will be displayed in descending
-order. This query's results are displayed as follows:
+Because of the `ORDER BY count(*) DESC` command, the data is displayed in descending
+order.
 
+```ls
 | tags.type                | count(*) |
 |--------------------------|----------|
 | Shooting                 | 33       |
@@ -129,6 +128,7 @@ order. This query's results are displayed as follows:
 | Impact Weapon            | 1        |
 | In Custody Injury        | 1        |
 | Hands                    | 1        |
+```
 
 Shown below is a visualization of three years' worth of incidents, sorted by the type of
 altercation:
@@ -137,8 +137,7 @@ altercation:
 
 ### Date of Homicides
 
-To organize the data so that the year of the incident is considered, this SQL query is
-used:
+Organize the data considering the date of the homicide:
 
 ```sql
 SELECT datetime, count(*)
@@ -149,16 +148,15 @@ GROUP BY period(1 year)
 
 Notice here that the time aggregation interval is now set to 1 year because it is the variable being considered.
 
-This query's results are displayed as follows:
-
+```ls
 | datetime   | count(*) |
 |------------|----------|
 | 2013-01-01 | 12       |
 | 2014-01-01 | 34       |
 | 2015-01-01 | 22       |
+```
 
-To organize the data so that the month of the incident is considered, this SQL query is
-used:
+Organize the data considering the month of the incident:
 
 ```sql
 SELECT datetime, count(*)
@@ -167,8 +165,7 @@ GROUP BY period(1 month, VALUE 0)
   ORDER BY datetime
 ```
 
-This query's results are displayed as follows:
-
+```ls
 | datetime   | count(*) |
 |------------|----------|
 | 2013-01-01 | 5        |
@@ -206,8 +203,9 @@ This query's results are displayed as follows:
 | 2015-09-01 | 1        |
 | 2015-10-01 | 2        |
 | 2015-11-01 | 6        |
+```
 
-In order to maintain the chronology of the display, interpolation is used here to display
+to maintain the chronology of the display, interpolation is used here to display
 those months without incident as well.
 
 >To view this table without interpolation see the [Appendix](#appendix)
@@ -216,13 +214,12 @@ This data can be further visualized in ChartLab:
 
 ![MonthIncidentCount](./images/MonthIncidentCount.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/19/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/19/)
 
 Because the nature of the visualization is such that the omission of empty months
 would distort the chronology of the data, interpolation is used once again.
 
-To organize the data so that the week of the incident is considered, this SQL
-query is used:
+Organize the data considering the week of the incident:
 
 ```sql
 SELECT datetime, count(*)
@@ -235,7 +232,7 @@ These results can also be visualized in ChartLab:
 
 ![WeekIncidentCount](./images/WeeklyIncidentCount1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/21/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/21/)
 
 The day of the week of these incidents can also be considered using this query:
 
@@ -243,10 +240,9 @@ The day of the week of these incidents can also be considered using this query:
 SELECT date_format(time, 'u'), count(*)
   FROM "row_number.3w4d-kckv"
 GROUP BY date_format(time, 'u')
-  ```
+```
 
-The results of this query are displayed as followed:
-
+```ls
 | date_format(time, 'u') | count(*) |
 |------------------------|----------|
 | 1                      | 11       |
@@ -256,6 +252,7 @@ The results of this query are displayed as followed:
 | 5                      | 9        |
 | 6                      | 8        |
 | 7                      | 15       |
+```
 
 When using the `'u'` configuration in the `DARE_FORMAT` clause, the days of the week
 are displayed in order beginning with Monday, and represented with a number.
@@ -267,15 +264,15 @@ an increase in police use of force? Do districts that see high levels of police 
 also see high levels of homicide? Is there a correlation at all?
 
 Similar to the first data set, [Socrata](https://axibase.com/docs/axibase-collector/jobs/socrata.html)
-should be used to compile the data in meaningful way and a [Structured Query Language](https://axibase.com/docs/atsd/sql/)
-should be used again.
+is used to compile the data in meaningful way and a [Structured Query Language](https://axibase.com/docs/atsd/sql/)
+is used once again.
 
 >For a more detailed explanation of performing SQL Queries, see the [Appendix](#appendix)
 below
 
 ### District of Homicides
 
-To organize the data so that the location of the incident is considered, this SQL query is used:
+Organize the data considering the location of the incident:
 
 ```sql
 SELECT tags.district, count(*)
@@ -284,6 +281,7 @@ GROUP BY tags.district
   ORDER BY tags.district
 ```
 
+```ls
 | tags.district | count(*) |
 |---------------|----------|
 | CENTRAL       | 31       |
@@ -295,6 +293,7 @@ GROUP BY tags.district
 | SOUTHERN      | 36       |
 | SOUTHWESTERN  | 51       |
 | WESTERN       | 59       |
+```
 
 A second visualization of the data shows nearly identical results to those seen above, the rates
 of homicides and incidents of police use of force follow a similar pattern:
@@ -307,7 +306,7 @@ rate of homicide, and the location of the incident is underscored:
 
 ![RegionVRegion](./images/ByRegion.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3872c5c/5/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3872c5c/5/)
 
 Although the recorded incidents of police use of force are not necessarily fatal, for the
 given time period eight of them resulted in the death of the victim, there is ostensibly
@@ -328,21 +327,21 @@ GROUP BY tags.weapon
   ORDER BY tags.weapon
 ```
 
-Unsurprisingly, firearms are the primary tool of homicide for the observed period. The results
-of this query are displayed as follows:
+Unsurprisingly, firearms are the primary tool of homicide for the observed period.
 
+```ls
 | tags.weapon | count(*) |
 |-------------|----------|
 | FIREARM     | 329      |
 | KNIFE       | 62       |
 | OTHER       | 35       |
+```
 
 These results can be shown graphically as well:
 
 ![MethodOfAttack](./images/WeaponRing.png)
 
-To organize the data so that the year of the incident is considered, this SQL query
-is used:
+To organize the data considering the year of the incident:
 
 ```sql
 SELECT datetime, count(*)
@@ -351,19 +350,18 @@ GROUP BY period (1 year)
   ORDER BY datetime
 ```
 
-The results of this query are displayed as follows:
-
+```ls
 | datetime   | count(*) |
 |------------|----------|
 | 2013-01-01 | 222      |
 | 2014-01-01 | 204      |
+```
 
 Because of the way the data is stored, modifications need to be made to the way the collector
 reads the data for effective use, see the [Action Items](#action-items) below for the assignment code
 needed.
 
-To organize the data so that the month of the incident is considered, this SQL
-query is used:
+Organize the data considering the month of the incident:
 
 ```sql
 SELECT datetime, count(*)
@@ -372,8 +370,7 @@ GROUP BY period (1 month)
   ORDER BY datetime
 ```
 
-The results of this query are displayed as follows:
-
+```ls
 | datetime   | count(*) |
 |------------|----------|
 | 2013-01-01 | 14       |
@@ -400,16 +397,14 @@ The results of this query are displayed as follows:
 | 2014-10-01 | 18       |
 | 2014-11-01 | 13       |
 | 2014-12-01 | 15       |
+```
 
-Notice here that although there is no command to interpolate the data, because there
-were no months without a homicide, the chronology of the data is not disrupted.
-
-Using ChartLab, a side-by-side comparison of incidents of police use of force and homicides in
+Using **ChartLab**, a side-by-side comparison of incidents of police use of force and homicides in
 the city of Baltimore can be done on a monthly basis:
 
 ![MonthlyIncidentCount2](./images/MonthlyIncidentCount2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/22/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/22/)
 
 Here, the same correlation is less visible, with only one of the three spikes in homicides
 matched by a similar spike in police use of force.
@@ -419,16 +414,16 @@ city of Baltimore can be done on a weekly basis:
 
 ![WeeklyIncidentCount](./images/WeeklyIncidentCount2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/23/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/23/)
 
 Here, the peaks in police use of force are further smoothed to indicate that the hypothetically
-resultant increase in police use of force actually occurs on a somewhat delayed basis after
+resultant increase in police use of force occurs on a somewhat delayed basis after
 a spike in the number of homicides.
 
-Notice that in ChartLab, the `endtime` command has to be modified to reflect the
+Notice that in **ChartLab**, the `endtime` command has to be modified to reflect the
 difference in observation periods of the two data sets.
 
-Additionally, this syntax can be used so that the day of the week of the homicide is considered:
+Organize the data considering the day of the week:
 
 ```sql
 SELECT date_format(time, 'u'), count(*)
@@ -436,8 +431,7 @@ SELECT date_format(time, 'u'), count(*)
 GROUP BY date_format(time, 'u')
 ```
 
-This query's results are displayed as follows:
-
+```ls
 | date_format(time, 'u') | count(*) |
 |------------------------|----------|
 | 1                      | 52       |
@@ -447,22 +441,25 @@ This query's results are displayed as follows:
 | 5                      | 71       |
 | 6                      | 64       |
 | 7                      | 62       |
+```
 
 The above datasets can be combined to show the total number of incidents of police use of force and homicides
 over the span of the entire observed period.
 
 ![TotalVTotal](./images/Total2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/26/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/26/)
 
 ## Analysis
 
+<!-- markdownlint-disable MD101 -->
 The baseline average for number of homicides in a given Baltimore neighborhood was
 47 (47.33) for the given time period. The average number of incidents of police
-use of force was 7 (7.22) during the same time period. If the null hypothesis is to be
+use of force is 7 (7.22) during the same time period. If the null hypothesis is to be
 rejected and the alternative hypothesis considered to be at least possibly true, an
 above average amount of homicides in a given neighborhood should predict an above average
 number of incidents of police use of force.
+<!-- markdownlint-enable MD101 -->
 
 | Neighborhood | O1 (Homicide) | E1 (Homicide) | O2(Police) | E2 (Police) |
 |--------------|---------------|---------------|------------|-------------|
@@ -505,8 +502,8 @@ is 1.0317 and the standard deviation is 0.3765.
 | Southwestern | 0.3404 | 1.2857 |
 | Western | 3.0638 | 0.5714 |
 
-The _p-value_ for the given series is 0.002, which is well within the acceptable range of
-significance, generally set around 0.05. Keep in mind, _p-value_ is used to reject the
+The p-value for the given series is 0.002, which is well within the acceptable range of
+significance, generally set around 0.05. Keep in mind, p-value is used to reject the
 null hypothesis but does not indicate the absolute validity of the alternative
 hypothesis.
 
@@ -515,7 +512,7 @@ protests broke out across the country with the epicenter of the demonstrations i
 Baltimore itself. These demonstrations quickly led to violence, with drugstores looted, vehicles
 set on fire, and police officers and protesters alike injured in the ensuing melee. The
 city was ultimately placed under an official state of emergency by the Governor of Maryland and
-the State National Guard was deployed to quash the unrest. The incident brought to light
+the State National Guard deployed to quash the unrest. The incident brought to light
 a range of issues with the way the American police force deals with the people they are sworn to
 protect and serve.
 
@@ -530,8 +527,8 @@ homicide made up 1.9% of total Baltimore homicides in 2013, and 1.8% of total Ba
 
 ![2013](./images/2013Other.png)
 
-In order to display the total number of police homicides for the observed years, the `[other]`
-function can be used, only displaying the desired year's data, but still showing other data
+to display the total number of police homicides for the observed years, the `[other]`
+function can be used, only displaying data for the specified year, but still showing other data
 alongside for perspective.
 
 >See the [Appendix](#appendix) below for more detailed instructions.
@@ -540,10 +537,10 @@ alongside for perspective.
 
 The protest actions centered around the claim that the death of Mr. Gray was yet another unneeded and
 careless casualty at the hands of a violent and overly-militarized police force, and
-officials' inability to explain the incident clearly only frustrated those who
+official inability to explain the incident clearly only frustrated those who
 felt that the problem was far from resolved by their internal investigations. Countless stories have been published
 by various media outlets that have both defended and defamed law enforcement officers and their actions.
-
+<!-- markdownlint-disable MD101 -->
 Using these two datasets, it can be shown that while there is certainly a strong correlation
 between police precincts that have a high rate of homicide and the number of incidents that
 involve police use of force, the classic paradigm of the chicken and its egg come to mind.
@@ -554,8 +551,8 @@ shown above just cannot support the claim. Likewise the opposite claim,
 that precincts where the police use force to make an arrest are likely to have a homicide in the
 following days is equally unsupported by the data here. Perhaps the only true conclusion
 that can be drawn using such comparison methods is one that has been made since biblical
-times, and was reiterated again during the Civil Rights Movement by Martin Luther King, Jr: "Violence begets more violence."
-
+times, reiterated again during the Civil Rights Movement by Martin Luther King, Jr: "Violence begets more violence."
+<!-- markdownlint-enable MD101 -->
 A total of six officers would be indicted and charged in a second-degree murder case that would
 ultimately see all six either acquitted, released on a mistrial, or free to go because the
 charges against them were dropped. Now, as the incident fades into memory, questions still remain
@@ -566,7 +563,7 @@ available that allows them to do just that.
 
 1. Download [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 2. Download the [`docker-compose.yml`](./resources/docker-compose.yml) file to launch the ATSD container bundle.
-3. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
+3. Launch containers by specifying the built-in collector account credentials that are used by Axibase Collector to insert data into ATSD.
 
 ```sh
 export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
@@ -580,21 +577,21 @@ Contact [Axibase](https://axibase.com/feedback/) with any questions.
 
 ### Using the [`EXPAND`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
 
-In order to highlight specific data, as shown in the [Nature of the Homicides](#nature-of-homicides) section,
-use the command `expand = true` under the `[series]` which should be expanded:
+to highlight specific data, as shown in the [Nature of the Homicides](#nature-of-homicides) section,
+use the command `expand = true` under the `[series]`:
 
 ![Expand1](./images/Expand1.png)
 
 ### Using the [`OTHER`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
 
-In order to display a full series of data, but only show detailed information for a desired
+to display a full series of data, but only show detailed information for a specified
 portion of that data, the `[other]` command needs to be included in the `[series]` cluster, and a
 value for `total-value = x` needs to be added under the `[widget]` cluster as shown below,
 
 ![OtherDisplay](./images/OtherDisplay1.png)
 
-The default setting for the `[other]` command is `false` so if the `display = true` command
-is not entered, the visualization will lack the `total-value` information.
+The default setting for the `[other]` command is `false`. If the `display = true` command
+is not entered, the visualization lacks `total-value` information.
 
 ### Performing Queries in SQL Console
 
@@ -612,7 +609,7 @@ The `tags.$TAG_NAME$` corresponds to the metric the user is interested in queryi
 ![SQL1](./images/SQL1.png)
 
 With the results displayed below, after the `execute` command is given. Erroneous data, or
-data lacking the desired information with be displayed as `null`.
+data lacking the target information is displayed as `null`.
 
 ![SQL2}](./images/SQL2.png)
 
@@ -648,8 +645,9 @@ GROUP BY period(1 month)
 ```
 
 Removing the `VALUE 0` clause from the `GROUP BY` command renders the chart without
-interpolation. This query's results are as shown below:
+interpolation.
 
+```ls
 | datetime   | count(*) |
 |------------|----------|
 | 2013-01-01 | 5        |
@@ -679,5 +677,6 @@ interpolation. This query's results are as shown below:
 | 2015-09-01 | 1        |
 | 2015-10-01 | 2        |
 | 2015-11-01 | 6        |
+```
 
-Please contact [Axibase](https://axibase.com/feedback/) with any questions.
+Contact [Axibase](https://axibase.com/feedback/) with any questions.

@@ -1,16 +1,16 @@
 # Maryland Mortality Statistics (1993-2015)
 
-[Source Dataset](https://github.com/axibase/open-data-catalog/blob/master/datasets/i4x2-3kc7.md)
+[Source Dataset](https://axibase.com/datasets/socrata/i4x2-3kc7.html)
 
 [SQL Console](https://axibase.com/docs/atsd/sql/) from ATSD
 
-[ChartLab](https://apps.axibase.com/chartlab)
+[ChartLab](../../../tutorials/shared/chartlab.md)
 
 ## Total Maryland Deaths Per 100,000 Persons (1992 - 2011)
 
 ![MD2](./images/MD_DEATH3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bb18ecdc/5/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/bb18ecdc/5/#fullscreen)
 
 ```sql
 SELECT date_format(time, 'yyyy') AS 'Year', value as 'Total Deaths per 100,000 Persons'
@@ -51,7 +51,7 @@ ORDER BY date_format(time, 'yyyy')
 
 ![MD](./images/MD_DEATH4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bb18ecdc/6/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/bb18ecdc/6/#fullscreen)
 
 ```sql
 SELECT metric.label AS 'Cause of Death', sum(value) AS 'Total'
@@ -88,7 +88,7 @@ Querying these data for death information by cause and year is shown below.
 
 ![MD](./images/MD_DEATH1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bb18ecdc/7/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/bb18ecdc/7/#fullscreen)
 
 #### Total Deaths Per 100,000 Persons (1992)
 

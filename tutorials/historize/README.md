@@ -2,19 +2,19 @@
 
 ## Overview
 
-The following article describes the process of calculating and historizing operational metrics stored in a relational database.
+The following tutorial describes the process of calculating and historizing operational metrics stored in a relational database.
 
 ## Scenario
 
 Consider a scenario where you have a relational database and one of the tables contains a list of customer orders. The number of daily records is very high and for performance reasons you plan to move the records from this table to a warehouse database as part of the pruning procedure. Assume now that Operations Analysts would like to monitor incoming orders to spot deviations from a baseline as quickly as possible. These analysts calculate the baseline by averaging the number of orders received from customers during the same hour on the same weekday one, two, and four weeks ago.
 
-Since the company stores intraday and historical records in different databases it is not possible to run a single query that returns the number of orders spanning several weeks. Moreover, the query against the warehouse table may be too expensive to run on a continuous basis. Even further, if the analysts were to query the operations table with multiple monitoring tools this may introduce overhead that the operations team is not willing to allow.
+Since the company stores intraday and historical records in different databases it is not possible to run a single query that returns the number of orders spanning several weeks. Moreover, the query against the warehouse table may be too expensive to run on a continuous basis. Even further, if the analysts query the operations table with multiple monitoring tools this can introduce overhead that the operations team is not willing to allow.
 
 ## Solution
 
 Address this challenge by scheduling the execution of an analytical query (one that calculates aggregate statistics) and persisting the results in a separate table. Operational databases often only serve primary applications and therefore storing hourly order statistics in the same database may not be advisable or allowed. For added protection, execute the analytical query under a read-only user account with the permission to `SELECT` data from a specific view encapsulating the query business logic.
 
-The steps below describe how to enable this type of monitoring in ATSD.
+The steps below describe how to enable this type of monitoring in Axibase Time Series Database (ATSD).
 
 ![](./images/diagram.png)
 
@@ -22,7 +22,7 @@ The steps below describe how to enable this type of monitoring in ATSD.
 
 ### Analyze Raw Data
 
-It is important to understand the available data in order to determine useful statistics for end users (Operations Analysts in this case). For the purpose of this guide, assume the Operations Database stores incoming orders in the `daily_orders` table.
+It is important to understand the available data to determine useful statistics for end users (Operations Analysts in this case). For the purpose of this guide, assume the Operations Database stores incoming orders in the `daily_orders` table.
 
 ```sql
 CREATE TABLE daily_orders
@@ -161,7 +161,7 @@ GRANT SELECT ON mysql.stat_orders_hourly_detail TO 'axibase-readonly'@'%';
 
 ## Scheduling Job in Axibase Collector
 
-The [JDBC Job](https://axibase.com/docs/axibase-collector/jobs/jdbc.html) in Axibase Collector executes any query against wide range of databases and persist the results in Axibase Time Series Database for visualization, alerting, and forecasting.
+The [JDBC Job](https://axibase.com/docs/axibase-collector/jobs/jdbc.html) in Axibase Collector executes any query against wide range of databases and persist the results in ATSD for visualization, alerting, and forecasting.
 
 ### Create Data Source
 
@@ -175,7 +175,7 @@ Click **Meta Data** to test the connection.
 
 Execute a sample query to verify permissions.
 
-Add `LIMIT n` clause to the test query in order to restrict the number of returned rows, just in case.
+Add `LIMIT n` clause to the test query to restrict the number of returned rows, just in case.
 
 ```sql
 SELECT * FROM stat_orders_hourly_total LIMIT 5
@@ -199,7 +199,7 @@ The ATSD schema requires that each series has an entity name, a metric name, tim
 
 Both of the below queries store data under the manually-specified `ops_db` value.
 
-Set a common `orders.` metric prefix so that these series can be distinguished from other similarly-named metrics (avoid naming collision).
+Set a common `orders.` metric prefix to distinguish these series from other similarly named metrics and avoid naming collision.
 
 > Accomplish the same result by modifying column aliases, which is less convenient in case of `SELECT *` queries.
 
@@ -223,7 +223,7 @@ series e:ops_db d:2018-04-18T10:25:10.126Z t:customer=eBank m:orders.customer_am
 
 ![](./images/jdbc-detail-test.png)
 
-At the final stage, make sure that the job is enabled.
+Ensure that the job is enabled.
 
 ![](./images/jdbc-config-complete.png)
 

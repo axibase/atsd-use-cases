@@ -1,12 +1,23 @@
 # ATSD Tutorials
 
+Review the [Getting Started Guide](https://axibase.com/docs/atsd/tutorials/getting-started.html) to understand the first steps of using ATSD.
+
 ## Data
 
+* [Parsing Irregular Timestamps](irregular-timestamp/README.md)
+* [Calculating the Difference Between Consecutive Series Values](subtract-subsequent-values/README.md)
+* [Data Flow Control in Time Series Database](data-flow-control/README.md)
 * [Calculated Values With Schema-Based Parsing](schema-based-parser-mod/README.md)
 * [Creating Calculated Metrics in ChartLab and SQL Console](add-calculated-value/README.md)
-* [Curve Smoothing Using Moving Averages](moving-avg/README.md)
+* [Curve Smoothing Using Moving Averages](weighted-avg/README.md)
 * [Historizing Metrics Stored in Database](historize/README.md)
-* [Computing Series Delta Values](subtract-subsequent-values/README.md)
+* [Allocating Resources to Containers](allocating-resources/README.md)
+* [Calculating the Difference Between Consecutive Series Values](subtract-subsequent-values/README.md)
+* [Composite Interval Queries in Axibase Enterprise Reporter](composite-intervals/README.md)
+* [Monitoring Docker Containers](docker-monitoring/README.md)
+* [Combining Periodic and Sliding Windows](combining-windows/README.md)
+* [The Time Series Database is about Reducing Complexity](time-series-database/README.md)
+* [Environmental Monitoring Using Big Data](environmental-monitoring/README.md)
 
 ## Configuration Import
 
@@ -23,11 +34,13 @@
 
 ## Services
 
+* [Deploying Axibase Technical Writing Guidelines](linter-tutorial/README.md)
 * [Data Visualization with **ChartLab**](shared/chartlab.md)
-* [Using Trends](shared/trends.md)
+* [Using **Trends**](shared/trends.md)
 
 ## Workshops
 
+1. [Practical Java Performance: Date Formatting Optimization](workshop/performance.md) (June 2018)
 1. [Technical Writing for Software Developers](workshop/technical-writing.md) (May 2018)
-1. [Let's Encrypt SSL Certificates for Java Developers](workshop/lets-encrypt.md) (May 2018)
+1. [`Let's Encrypt` SSL Certificates for Java Developers](workshop/lets-encrypt.md) (May 2018)
 1. [WebGL: Hello, World and Integration Examples](workshop/webgl.md) (April 2018)

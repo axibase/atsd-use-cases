@@ -2,7 +2,7 @@
 
 ## Overview
 
-[AWS Route 53](https://aws.amazon.com/route53) provides tools to automate DNS configuration in order to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, AWS provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
+[AWS Route 53](https://aws.amazon.com/route53) provides tools to automate DNS configuration to reliably connect external user requests to infrastructure running in AWS. In addition to domain registration, AWS provides dynamic routing services, including latency-based routing, GeoDNS, Geoproximity, and Weighted Round Robin (WRR).
 
 A core Route 53 functionality is the ability to configure [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) which monitor the health of an application and can route incoming traffic to healthy endpoints.
 
@@ -14,15 +14,15 @@ An automation procedure, such as DNS fail-over or service restart, can be initia
 
 ### Geographic Distribution
 
-Route 53 executes health checks from different parts of the world so that outage and latency are independently verified. The latency and connection times collected by the checkers vary widely depending on the geographic proximity of the monitored endpoint to one of the AWS regions used for health checking.
+Route 53 executes health checks from different parts of the world independently verify outage and latency information. The latency and connection times collected by the checkers vary widely depending on the geographic proximity of the monitored endpoint to one of the AWS regions used for health checking.
 
-* us-east-1
-* us-west-1
-* us-west-2
-* sa-east-1
-* ap-southeast-1
-* ap-southeast-2
-* ap-northeast-1
+* `us-east-1`
+* `us-west-1`
+* `us-west-2`
+* `sa-east-1`
+* `ap-southeast-1`
+* `ap-southeast-2`
+* `ap-northeast-1`
 
 ![](./images/route53-region.png)
 
@@ -32,7 +32,7 @@ AWS publishes a list of IP ranges used by [health checker nodes](https://ip-rang
 
 ```json
 {
-  "ip_prefix": "54.243.31.192/26",
+  "ip_prefix": "192.0.2.0/24",
   "region": "us-east-1",
   "service": "ROUTE53_HEALTHCHECKS"
 }
@@ -59,7 +59,7 @@ Route 53 supports health checks HTTP, HTTPS, and TCP protocols.
 
 The services considers the endpoint to be in a `Healthy` state when the specified percentage of checkers establish a TCP connection and (for HTTP/S) received a `2xx`/`3xx` response code from the server. The response also contains the specified keyword if **String Matching** is enabled.
 
-When specifying paths for HTTP/S endpoints, factor in the increased traffic sent to the target service so the monitored URL does not cause excessive load on the server.
+When specifying paths for HTTP or HTTPS endpoints, factor in the increased traffic sent to the target service to avoid causing excessive load on the server.
 
 ### HTTPS
 
@@ -82,7 +82,7 @@ Offload health check statistics to ATSD and create consolidated dashboards with 
 ### Prerequisites
 
 * Create an AWS [IAM account](https://axibase.com/docs/axibase-collector/jobs/aws-iam.html) to query CloudWatch statistics.
-* Make sure 4 GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+* Ensure 4 GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container.
 
 ### Launch ATSD Sandbox
 
@@ -93,7 +93,7 @@ mkdir import
 cd import
 ```
 
-Mount this directory to the Docker container in order to pass AWS credentials to the CloudWatch data collector without exposing sensitive information as environment variables.
+Mount this directory to the Docker container to pass AWS credentials to the CloudWatch data collector without exposing sensitive information as environment variables.
 
 Create an `aws.propeties` file in the `import` directory and replace `KEY` and `SECRET` with **AWS Access Key ID** and **Secret Access Key** respectively.
 
@@ -102,7 +102,7 @@ accessKeyId=KEY
 secretAccessKey=SECRET
 ```
 
-Launch the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on a Docker host:
+Launch the [ATSD sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container on a Docker host:
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
@@ -146,7 +146,7 @@ Configure a `cron` scheduled task to copy health check attributes into ATSD sand
 
 ### Consolidated View
 
-View all working Route 53 health checks on the **AWS Route53** tab.
+View all working Route 53 health checks on the **AWS Route 53** tab.
 
 ![](./images/route53-entity-view.png)
 

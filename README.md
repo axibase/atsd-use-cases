@@ -12,7 +12,7 @@ Detailed [research notes](./research/README.md) that feature in-depth data explo
 
 ## Trends
 
-A publicly accessible ATSD instance with [national economic indicators](./trends/README.md).
+A publicly accessible ATSD service with [national economic indicators](./trends/README.md).
 
 ## Integrations
 
@@ -24,4 +24,4 @@ Step-by-step [instructions](./tutorials/README.md) to perform data transformatio
 
 ## Datasets
 
-Socrata-format [data catalog](https://axibase.com/datasets/) from [`data.gov`](https://www.data.gov/) featuring over 7,000 entities.
+Curated time-series [dataset catalog](https://axibase.com/datasets/) from [`data.gov`](https://www.data.gov/) with over 7,000 entries.

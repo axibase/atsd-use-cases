@@ -2,18 +2,18 @@
 
 > Visualization tools in ATSD.
 
-Thinking of moving to San Francisco anytime soon? Check out [data](https://github.com/axibase/open-data-catalog/blob/master/datasets/q3xd-hfi8.md)
+Thinking of moving to San Francisco anytime soon? Check out data stored in [Axibase Data Catalog](https://axibase.com/datasets/socrata/q3xd-hfi8.html)
 released by the [City of San Francisco](https://catalog.data.gov/organization/city-of-san-francisco) that covers
 complaints of air traffic noise from various locations in the San Francisco metropolitan area. Not only
 is 'Frisco home to the Golden Gate Bridge, one of the wonders of the modern world, but also San
-Francisco International Airport, or SFO as it's known to frequent fliers. The data was collected by
-the airport's [Office of Aircraft Noise Abatement](https://www.flysfo.com/community/noise-abatement) and includes
+Francisco International Airport, or SFO as it is known to frequent fliers. The data is collected by
+the [Office of Aircraft Noise Abatement](https://www.flysfo.com/noise) and includes
 complaints received via email, hotline, and even handwritten letter. Open [ChartLab](https://apps.axibase.com/chartlab) below and navigate through time
-using the drop-down menu at the top of the visualization:
+using the list at the top of the visualization:
 
 ![](./images/SFO1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d8b696da/6/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/d8b696da/6/#fullscreen)
 
 > Neighborhoods with more than 48 complaints in any given year are highlighted in red, while
 those that received 24 or less complaints are highlighted in blue.
@@ -22,14 +22,14 @@ The visualization below further contracts the data, showing complaints by neighb
 
 ![](./images/SFO4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d8b696da/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/d8b696da/#fullscreen)
 
-Follow SFO's seasonal passenger ebb and flow trends to spot patterns in complaint traffic, using additional [city data](https://github.com/axibase/open-data-catalog/blob/master/datasets/rkru-6vcg.md). It's no
+Follow seasonal passenger ebbs and flow trends to spot patterns in complaint traffic, using additional [Passenger Statistics](https://axibase.com/datasets/socrata/rkru-6vcg.html). It is no
 surprise that during peak travel months, the number of complaints received increases as well:
 
 ![](./images/SFO2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d8b696da/3/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/d8b696da/3/#fullscreen)
 
 The map below has been modified to highlight neighborhoods with a low number of complaints in blue and a
 high number of complaints in red, as well as an arrow pointing to the location of the airport itself:

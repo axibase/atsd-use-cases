@@ -55,11 +55,11 @@ Preview metrics with the **Portal** icon. Click the icon to open a preview of th
 Open the **Editor** window in the **Trends** interface by clicking the button in the top menu.
 
 ![](./images/editor-window.png)
-[![](./images/button-new.png)](https://trends.axibase.com/e91b896e#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/e91b896e#fullscreen)
 
 Using the chart above as a configuration example:
 
-```sql
+```ls
 [configuration]
   height-units = 2
   width-units = 1
@@ -109,7 +109,7 @@ To save the portal under an entirely new URL click **Clone**.
 
 ## Pre-Defined Widgets
 
-Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections, use these widgets as templates for unqiue charts.
+Click the **Widgets** button in the upper toolbar to copy pre-defined widget sections, use these widgets as templates for unique charts.
 
 ![](./images/pre-def-func.png)
 
@@ -125,11 +125,11 @@ The Charts API supports user-defined functions, enabling users to store and re-u
 
 ![](./images/fred-lib-demo.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 
-```javascript
+```ls
 ### On the [configuration] level, the 'import' command is used to load functions from the `fred.js` file
 ### The library is assigned the name 'fred'.
 ### Multiple function libraries may be imported into the same portal.

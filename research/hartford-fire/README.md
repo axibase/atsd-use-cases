@@ -9,18 +9,17 @@ making sure to have the exact number of needed personnel on hand at all times. T
 guarantees poor output.
 
 Nobody knows this need better then those working in emergency services. Too many people on the clock at once can lay waste to
-a city's fragile operating income, while too few at the wrong time can spell disaster for those in need of the department's
-emergency services.
+a fragile operating income, while too few at the wrong time can spell disaster for those in need of emergency services.
 
 ## Methodology
 
-Using [time series data](https://github.com/axibase/open-data-catalog/blob/master/datasets/izai-dug8.md) released by the
+Using data from [Axibase Dataset Catalog](https://axibase.com/datasets/socrata/izai-dug8.html) released by the
 City of Hartford, call volume to the local fire department can be analyzed and visualized to predict future infrastructural
-needs in one of the city's most vital sectors. The data is divided to indicate whether the call was about a fire incident
+needs in one of the most vital sectors of the city. The data is divided to indicate whether the call is about a fire incident
 or routed to the paramedics' Emergency Services Department, which includes Medical First Response and Emergency Medical Services
 (EMS).
 
-The data will be parsed and examined to note trends based on the day of the week of calls, monthly and annual figures, and
+The data is parsed and examined to note trends based on the day of the week of calls, monthly and annual figures, and
 compared to Year 2017 data to determine whether the volume is on pace with previous years, in decline, or experiencing
 growth.
 
@@ -33,7 +32,7 @@ without the needed data, and in the case of emergency services this preparation 
 
 ![](./images/CT_Fire1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0af389cf/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0af389cf/2/#fullscreen)
 
 From just a glance at the above visualization, it is obvious that the number of calls being placed to the Hartford Fire Department
 is on the rise. Unfortunately, this knowledge alone is insufficient to determine the rate at which the number of
@@ -67,7 +66,7 @@ of calls made to the Hartford Fire Department.
 
 ![](./images/CT_Fire2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0af389cf/6/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0af389cf/6/#fullscreen)
 
 ### Call Numbers by Month
 
@@ -121,7 +120,7 @@ GROUP BY period(1 month)
 
 ![](./images/CT_Fire3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/83d2a616/3/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/83d2a616/3/#fullscreen)
 
 While this visualization shows that despite an overall increase in calls to the department has been observed throughout the
 entire observation period, recently, the data shows a certain amount of stability and even decline.
@@ -151,12 +150,12 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
 
 ![](./images/CT_Fire10.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/83d2a616/9/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/83d2a616/9/#fullscreen)
 
-Open [ChartLab](https://www.axibase.com) with the button above and navigate through time using the dropdown menu.
+Open [ChartLab](https://www.axibase.com) with the button above and navigate through time using the drop-down list.
 
 Despite consistent overall call numbers throughout the week, it is interesting to note that the number of fire-related calls
-made to the Hartford Fire Department was the highest on Sundays:
+made to the Hartford Fire Department is the highest on Sundays:
 
 ```sql
 SELECT  date_format(time, 'E') AS "Day of the Week", sum(value) AS "Fire Calls"
@@ -175,7 +174,7 @@ GROUP BY date_format(time, 'E'), date_format(time, 'u')
 | Sat             | 648        |
 | Sun             | 696        |
 
-Additionally, the number of EMS calls was highest on Mondays:
+Additionally, the number of EMS calls is highest on Mondays:
 
 ```sql
 SELECT  date_format(time, 'E') AS "Day of the Week", sum(value)/1000 AS "EMS Calls (Thousand)"
@@ -212,7 +211,7 @@ GROUP BY period(1 year)
 
 ![](./images/CT_Fire4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0af389cf/7/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0af389cf/7/#fullscreen)
 
 ### Fire Calls by Year
 
@@ -232,7 +231,7 @@ GROUP BY period(1 year)
 
 ![](./images/CT_Fire5.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0af389cf/8/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0af389cf/8/#fullscreen)
 
 ### EMS Calls by Month
 
@@ -286,7 +285,7 @@ GROUP BY period(1 month)
 
 ![](./images/CT_Fire7.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/83d2a616/4/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/83d2a616/4/#fullscreen)
 
 ### Fire Calls by Month
 
@@ -340,7 +339,7 @@ GROUP BY period(1 month)
 
 ![](./images/CT_Fire8.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/83d2a616/5/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/83d2a616/5/#fullscreen)
 
 ## Analysis
 
@@ -381,7 +380,7 @@ calls received in 2015, however, when modeling using an average value baseline, 
 | 2015* | 0% | 0% | 0% | 0% |
 | 2016 | +16.01% | +8.26% | +10.71% | +14.43% |
 
->2015 was the median baseline
+>2015 is the median baseline
 
 ### Growth Rates
 
@@ -396,7 +395,7 @@ calls received in 2015, however, when modeling using an average value baseline, 
 
 ## Validation
 
-Since data is already available for the first two months of 2017, but was not included in the above calculations, it can be
+Since data is already available for the first two months of 2017, but not included in the above calculations, it can be
 used as holdout data and used to test the validity of the above models. Likewise, this exercise can be used to demonstrate
 the potential scalability of such modeling:
 
@@ -486,13 +485,13 @@ Error Calculations:
 | **Average Value** | +8.98% | +22.34% | +11.40% | p > 0.20 |
 | Median Value | +9.08% | +28.01% | +10.03% | p > 0.20 |
 
-Based on the results of the validation testing, the Average Value Baseline model was alternatively successful and unsuccessful
+Based on the results of the validation testing, the Average Value Baseline model is alternatively successful and unsuccessful
 in predicting the number of calls placed to the Hartford Fire Department; 100% prediction accuracy is almost impossible to achieve
 without drastically overfitting the model to the data, which is also undesirable. Here, when the data showed a sub-standard level of consistency to the
-trend with a major outlier point (January), the model was effectively able to negotiate the irregularity
+trend with a major outlier point (January), the model is effectively able to negotiate the irregularity
 and still predict the number of calls placed in the holdout data to within 5%. When the
-target variable itself was the outlier (February) the model's error percentage grew to almost 12%. This shows that the model itself
-is simply unable to predict whether or not the target data point will be an outlier or not, and the very definition of an outlier
+target variable itself is the outlier (February) the error percentage of this model grew to almost 12%. This shows that the model itself
+is unable to predict whether or not the target data point is an outlier or not, and the very definition of an outlier
 makes its prediction near impossible.
 
 ## Implementation
@@ -503,43 +502,43 @@ The visualizations have been converted to display average monthly values.
 
 ![](./images/CT_Fire20.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0c2f51ef/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0c2f51ef/2/#fullscreen)
 
 > Note the model error here is consistent with the error demonstrated in the [Validation](#validation) section above.
 
-The Forecast feature has the scalability to render predictions for any desired amount of time, in this case, the
-numerical predictions in ChartLab are given for the day so they are on the order of 10 x 10^0.
+Data Forecasting has the scalability to render predictions for any amount of time, in this case, the
+numerical predictions in **ChartLab** are given for the day as such they are on the order of `10 x 10^0`.
 
 Below are the anticipated levels of fire-related calls yet-to-be received for the remainder of 2017:
 
 ![](./images/CT_Fire21.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0af389cf/19/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0af389cf/19/#fullscreen)
 
 The forecast feature is able to both effectively predict the increase in fire-related calls the Hartford Fire Department is likely
 to receive during the summer and demonstrate its ability to scale to smaller problems.
 
 ![](./images/CT_Fire19.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1ee63842/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/1ee63842/2/#fullscreen)
 
-Because of the recent trend of increased call volume to the Fire Department's Emergency Medical Services Department, a lower
-scoring interval was applied to this data set. The scoring interval determines the weight of recent data compared to the entire set.
-A lower scoring interval, like that which was used in this case, applies a stronger weight to recent data. The low scoring
-interval here is demonstrated by the Forecast tool's replication of the patterns seen throughout the year 2016.
+Because of the recent trend of increased call volume to the Fire Department Emergency Medical Services Department, a lower
+scoring interval is applied to this data set. The scoring interval determines the weight of recent data compared to the entire set.
+A lower scoring interval, like that which is used in this case, applies a stronger weight to recent data. The low scoring
+interval here is demonstrated by the replication of the patterns seen throughout the year 2016.
 
-> Because the third category of calls placed to the Department was titled "All Other Calls," analysis was not performed
+> Because the third category of calls placed to the Department is titled "All Other Calls," analysis is not performed
 because of the ambiguous nature of such a category. Additional data would be needed, for example, about Fire Department events
 or public outreach efforts since likely such a category contains calls of a non-emergency nature.
 
 ## Conclusion
 
-This particular data set was extremely responsive to the Average Value Baseline modeling techniques demonstrated above and
-the number of calls to be placed to the Hartford Fire Department about its most serious responsibilities were modeled to anticipate
+This particular data set is extremely responsive to the Average Value Baseline modeling techniques demonstrated above and
+the number of calls to be placed to the Hartford Fire Department about its most serious responsibilities modeled to anticipate
 the future needs of the department.
 
 Often, such models are extremely case-sensitive and are unable to significantly generalize to either a larger population, or a
 different set of data, but the techniques demonstrated above can be applied to a different instance of the same type of data,
 or even an entirely different dataset should the need arise.
 
-> Forecast settings used here are contained in the [Resources](./resources/forecastSettingsList.xml) folder. Launch the Forecast feature with the .xml file contained there by opening your instance of ATSD and following the path Configuration > Forecasts. At the bottom of the screen click `import` and launch the Forecast feature with the provided .xml file. Contact [Axibase](https://axibase.com) with any questions.
+> Forecast settings used here are contained in the [Resources](./resources/forecastSettingsList.xml) folder. Launch the Forecast feature with the `.xml` file contained there by opening your instance of ATSD and following the path Configuration > Forecasts. At the bottom of the screen click `import` and launch the Forecast feature with the provided `.xml` file. Contact [Axibase](https://axibase.com) with any questions.

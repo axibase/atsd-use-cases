@@ -26,11 +26,11 @@ In the above figure, latency spikes indicated by green arrows show regional conn
 
 ## Import Latency Portal
 
-Log into ATSD and click **Portals** in the top menu. Import the [latency portal](./resources/aws-route53-connection-time-latency.xml) from the XML file as described by the [Import Instructions](../../shared/import-portal.md).
+Log into ATSD and click **Portals** in the top menu. Import the [latency portal](./resources/aws-route53-connection-time-latency.xml) from the XML file as described by the [Import Instructions](../../../tutorials/shared/import-portal.md).
 
 ## Import Entity View
 
-Click the **Entity View** link in the tool menu on the left and import the [Route53 entity view](./resources/entity-views.xml) from the XML file as described by the [Import Instructions](../../shared/import-entity-view.md).
+Click the **Entity View** link in the tool menu on the left and import the [Route 53 entity view](./resources/entity-views.xml) from the XML file as described by the [Import Instructions](../../../tutorials/shared/import-entity-view.md).
 
 ## Results
 
@@ -43,6 +43,6 @@ In the **AWS Route 53** tab, the newly-configured entity view and portal are now
 The **Latency Portal** has two windows: The first tracks average connection time (milliseconds) and the second shows real-time and historical connection data (milliseconds).
 
 ![](./images/route-53-connection-times.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/f3c08268)
+[![](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/f3c08268)
 
 Open the **ChartLab** example above to see a fully functioning **Latency Portal** integrated with Axibase servers delivering status information from endpoints and applications across the globe.

@@ -48,16 +48,16 @@ Copy the newly-created GitHub webhook URL from the log output once all applicati
 All applications started
 Webhooks created:
 Webhook user: github
-Webhook URL: https://github:PdWnC1jF@atsd.company.com:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
+Webhook URL: https://github:password@atsd.example.org:8443/api/v1/messages/webhook/github?exclude=organization.*;repository.*;*.signature;*.payload;*.sha;*.ref;*_at;*.id&include=repository.name;repository.full_name&header.tag.event=X-GitHub-Event&excludeValues=http*&debug=true
 ```
 
 Refer to [GitHub Developer Guide](https://developer.github.com/webhooks/) for additional information on outgoing webhooks.
 
-Open the **Settings** menu of the GitHub repository for which you would like to create notifications.
+Open the **Settings** menu of the GitHub repository to monitor.
 
 ![](./images/repo-settings.png)
 
-Select the **Webhooks** tab from the left-side menu and click **Add Webhook**.
+Open the **Webhooks** tab from the left-side menu and click **Add Webhook**.
 
 On the **Add Webhook** page, configure the following settings:
 
@@ -82,7 +82,7 @@ You begin receiving messenger notifications the next time someone creates a proj
 
 ![](./images/slack_project.png)
 
-**Repository**, **User**, and **Project** links redirect you to the repository where the project was created, the user who created the project, and the project page itself, respectively.
+**Repository**, **User**, and **Project** links redirect you to the repository where the project exists, the user who created the project, and the project page itself, respectively.
 
 ## Explore ATSD
 

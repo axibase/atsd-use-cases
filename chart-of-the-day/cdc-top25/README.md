@@ -1,24 +1,24 @@
 # 500 Cities: Local Data for Better Health
 
-Learning about your favorite city's local health has never been easier. With help from
-[data](https://github.com/axibase/open-data-catalog/blob/master/datasets/dxpw-cm5u.md) released by [The Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) plus
+Learning about the local health of your favorite city has never been easier. With help from
+data stored in the [Axibase Data Catalog](https://axibase.com/datasets/socrata/6vp6-wxuq.html) released by [The Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) plus
 visualization and querying tools in ATSD, spotting your city's place in the rankings
-isn't just for your health, but vital to informing your company's next health-related venture
-or enhancing your staff's already existing knowledge of such valuable public data.
+is not just for your health, but vital to informing your company's next health-related venture
+or enhancing the already existing knowledge of your staff with such valuable public data.
 
 The [500 Cities Project](https://www.cdc.gov/500cities/index.htm) uses self-reporting and census-style data-gathering methodology
 to engage in the country-wide conversation about public health using small-area samples from the 500 largest cities in the nation.
 That means cities like Los Angeles and New York are broken up into smaller segments to give a better picture of
-any given location's public health indicators. The information is then presented in a straightforward
+the public health indicators of any given location. The information is then presented in a straightforward
 and easy to understand format that simply shows the percent of respondents who answered in the affirmative to a particular question,
 creating simple solutions for sometimes complex data problems.
 
-So which US city really is the healthiest? Well if you ask them, almost 20% of Youngstown,
-Ohio residents responded positively when asked in they were in good health.
+Which US city really is the healthiest? Well if you ask them, almost 20% of Youngstown,
+Ohio residents responded positively when asked in they are in good health.
 
 ![](./images/CDC1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1e6f3425/3/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1e6f3425/3/#fullscreen)
 
 ```sql
 SELECT TAGS.placename, TAGS.stateabbr, LAST (VALUE)
@@ -28,7 +28,7 @@ GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
 LIMIT 25
 ```
 
-| tags.placename | tags.stateabbr | last(VALUE) |
+| `tags.placename` | `tags.stateabbr` | `last(VALUE)` |
 |----------------|----------------|-------------|
 | Youngstown     | OH             | 19.8        |
 | Gary           | IN             | 19.5        |
@@ -60,7 +60,7 @@ What about the least physically healthy cities?
 
 ![](./images/CDC2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1e6f3425/4/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1e6f3425/4/#fullscreen)
 
 ```sql
 SELECT TAGS.placename, TAGS.stateabbr, LAST (VALUE)
@@ -70,7 +70,7 @@ GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
 LIMIT 25
 ```
 
-| tags.placename  | tags.stateabbr | last(VALUE) |
+| `tags.placename`  | `tags.stateabbr` | `last(VALUE)` |
 |-----------------|----------------|-------------|
 | Plymouth        | MN             | 6.8         |
 | Frisco          | TX             | 6.9         |
@@ -98,14 +98,14 @@ LIMIT 25
 | Lawrence        | KS             | 8.1         |
 | Cary            | NC             | 8.1         |
 
-Of course, physical health is only half of the total picture; mental health is another\
-important metric for gauging overall public health, so which city has the most
+Of course, physical health is only half of the total picture; mental health is another
+important metric for gauging overall public health, which city has the most
 stable demeanor, and perhaps more interestingly, what city considers itself to have
 the lowest level of mental health?
 
 ![](./images/CDC3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1e6f3425/5/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1e6f3425/5/#fullscreen)
 
 ```sql
 SELECT TAGS.placename, TAGS.stateabbr, LAST (VALUE)
@@ -115,7 +115,7 @@ GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
 LIMIT 25
 ```
 
-| tags.placename | tags.stateabbr | last(VALUE) |
+| `tags.placename` | `tags.stateabbr` | `last(VALUE)` |
 |----------------|----------------|-------------|
 | Reading        | PA             | 18.4        |
 | New Bedford    | MA             | 18.2        |
@@ -143,11 +143,11 @@ LIMIT 25
 | Hartford       | CT             | 16.2        |
 | Muncie         | IN             | 16.1        |
 
-And it wouldn't be any fun with the bottom twenty-five as well, included below:
+And it would not be any fun with the bottom twenty-five as well, included below:
 
 ![](./images/CDC4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1e6f3425/4/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/1e6f3425/4/#fullscreen)
 
 ```sql
 SELECT TAGS.placename, TAGS.stateabbr, LAST (VALUE)
@@ -157,7 +157,7 @@ GROUP BY TAGS.placename, TAGS.stateabbr, VALUE
 LIMIT 25
 ```
 
-| tags.placename    | tags.stateabbr | last(VALUE) |
+| `tags.placename`    | `tags.stateabbr` | `last(VALUE)` |
 |-------------------|----------------|-------------|
 | Plymouth          | MN             | 7.2         |
 | Sugar Land        | TX             | 7.3         |
@@ -188,4 +188,4 @@ LIMIT 25
 The CDC has included over a dozen such metrics, ranging from diabetes to dental
 health, and asthma to arthritis. Open ChartLab with the button below any of the charts
 show above and navigate the rest of this analytical gold mine yourself to find your favorite
-(or least favorite) city using the dropdown menu at the top of the display to select the desired city and desired metric.
+(or least favorite) city using the drop-down list at the top of the display to select the city and metric.

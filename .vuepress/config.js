@@ -27,6 +27,7 @@ const chartofthedayMenu = [
         title: "Chart of the Day", children: [
             ['2018.md', '2018'],
             ['2017.md', '2017'],
+            ['2015.md', '2015'],
         ]
     },
 ];
@@ -37,6 +38,7 @@ const researchMenu = [
             ['2018.md', '2018'],
             ['2017.md', '2017'],
             ['2016.md', '2016'],
+            ['2015.md', '2015'],
         ]
     },
 ];
@@ -47,7 +49,7 @@ const integrationsMenu = [
             ['activemq/', 'ActiveMQ'],
             ['aws/', 'AWS'],
             ['cadvisor/', 'cAdvisor'],
-            ['docker/', 'Docker'],
+            ['docker/docker-engine.md', 'Docker'],
             ['github/', 'GitHub'],
             ['itm/', 'IBM Tivoli Monitoring'],
             ['kafka/', 'Kafka'],
@@ -74,7 +76,7 @@ module.exports = {
     base: '/use-cases/',
     title: 'Axibase Time Series Database Use Cases',
     titleNote: 'ATSD',
-    description: "Use Cases and Walkthrough Guides for Axibase® Time Series Database",
+    description: "Use Case Articles and Integration Guides for Axibase® Time Series Database",
     head: [
         ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
     ],
@@ -98,6 +100,9 @@ module.exports = {
         searchMaxSuggestions: 10,
 
         ...githubSettings
+    },
+    markdown: {
+        slugify
     }
 }
 
@@ -112,4 +117,23 @@ function loadFromEnv(setting, varName) {
             module.exports[setting] = value;
         }
     }
+}
+
+const rControl = /[\u0000-\u001f]/g
+const rSpecial = /[\s~`!@#$%^&*()\-+=[\]{}|\\;:"'<>,.?/]+/g
+
+function slugify (str) {
+  return str
+    // Remove control characters
+    .replace(rControl, '')
+    // Replace special characters
+    .replace(rSpecial, '-')
+    // Remove continous separators
+    .replace(/\-{2,}/g, '-')
+    // Remove prefixing and trailing separtors
+    .replace(/^\-+|\-+$/g, '')
+    // ensure it doesn't start with a number (#121)
+    .replace(/^(\d)/, '_$1')
+    // lowercase
+    .toLowerCase()
 }

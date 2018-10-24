@@ -1,8 +1,10 @@
+<!-- markdownlint-disable MD101 -->
+
 # The New Bubble: Fed Rates Stay Low While Debt Value Remains High
 
 ![](./images/fig0.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/25f3a4d2/2/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/25f3a4d2/2/#fullscreen)
 
 ## Introduction
 
@@ -11,20 +13,20 @@ designated by the government to handle the central banking policy of the United 
 American economy as it controls the amount of interest the U.S. pays on its outstanding debt. Typically, increases in
 the Federal Fund Rate indicate a downturn in the market value of the gross federal debt because it suggests a probable slow down
 in government borrowing and repayment brought on by the higher rates. The market value of debt is inherently tied to the
-rate at which it was borrowed.
+borrowed rate.
 
 This market value is at once a speculative metric, upon which a given debt is traded, and a quantitative metric, based on which
 predictions and observations can be made about the overall health of an economy. Traditionally "good debt," that which is
 expected to be repaid on time and in full, demands a lower market cost relative to its true value than debt that is unlikely to
 be paid in a timely manner, or without some kind of additional financial machinations, accounting for the higher risk involved
 in the position. The absolute value of the market price of U.S. Federal Debt has been rising steadily alongside the value
-of U.S. GDP and other important financial metrics, with the difference between the debt's absolute value and traded value
+of U.S. GDP and other important financial metrics, with the difference between the absolute and traded value of the debt
 being reasonably stable.
 
 However, since the Great Recession of 2009, a different and more sinister trend has taken place, while the Fed keeps interest
 rates at historically low levels the value of the market value of the federal debt continues to rise relative to the debt itself,
 indicating speculation and volatility. The result is a new kind of bubble that could rattle the U.S. Economy far worse than
-the downturn of 2009, which saw a loss of about a third of the average family's household wealth ([1](#sources)).
+the downturn of 2009, which saw a loss of about a third of the household wealth of the average family ([1](#sources)).
 
 ## Analysis
 
@@ -32,15 +34,15 @@ the downturn of 2009, which saw a loss of about a third of the average family's 
 
 ![](./images/fig1.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5c59726d/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/5c59726d/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
 The above visualization, made using the non-relational ATSD,
-tracks the growth of the United States GDP, Gross Debt, and Gross Debt Market Valuation. Since August 2011, the market value of the
-government's debt has outstripped the value of the GDP meaning that the United States' debt is worth more than the country
+tracks the growth of the United States GDP, Gross Debt, and Gross Debt Market Valuation. Since August 2011, the market value of
+government debt has outstripped the value of the GDP meaning that the United States' debt is worth more than the country
 is producing, that is, the traditionally safe United States index is primed to lose its position as the place to hold money
-for reliable growth. Because the debt market value also considers the interest rate at which the debt was created it is considered a
+for reliable growth. Because the debt market value also considers the interest rate at which the debt is created it is considered a
 more accurate indicator of the overall state of American debt ([2](#sources)) which is becoming more and more itself an indicator
 of the state of the entire U.S. economy.
 
@@ -48,7 +50,7 @@ of the state of the entire U.S. economy.
 
 ![](./images/fig-2.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/cdbfb8ff/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/cdbfb8ff/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -69,7 +71,7 @@ is shrinking and is still nowhere near the levels observed pre-recession.
 
 ![](./images/fig-3.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/da9a7eb6/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/da9a7eb6/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -80,7 +82,7 @@ decreases, the margin between the debt and its market value increases.
 
 ![](./images/fig-4.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/919f5f72/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/919f5f72/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -91,12 +93,12 @@ a decrease in U.S. debt market value.
 
 ![](./images/fig-05.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/a70b074a/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/a70b074a/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
 Amid the increase in debt value, the actual of amount of wealth created in the United States, expressed by GDP, relative
-to the amount of money the federal government is using to pay down the massive, [$20 trillion](http://www.usdebtclock.org/) debt
+to the amount of money the federal government is using to pay down the massive, [$20 trillion](https://www.usdebtclock.org/) debt
 is sharply decreasing. Less than 2% of new wealth produced in the United States each year is allocated to paying down the debt.
 In fact, since the 2009 meltdown, the Fed has kept interest payments low to allow the government to continue paying down the debt,
 which skyrocketed during the recession due to now infamous government bailouts of several major financial institutions ([4](#sources)),
@@ -112,11 +114,11 @@ mean diminishing returns on their savings especially in the face of the consumer
 
 ![](./images/fig6.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/1a3931ab/2/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/1a3931ab/2/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
-While the government is able to make payments at a lower interest rate, consumers are seeing what's left of their savings accounts
+While the government is able to make payments at a lower interest rate, consumers are seeing what is left of their savings accounts
 slowly drained as the Consumer Price Index continues to affect the value of their personal wealth via inflation ([6](#sources)).
 Increased market activity surrounding Fed announcements ([7](#sources)), shows how ready investors are for a decision from
 the Fed to cave to public pressure, hike interest rates, and potentially trigger a huge sell-off and devaluation of American
@@ -136,7 +138,7 @@ historical Fed Rates vs. U.S. Government payments are shown below:
 
 ![](./images/fig7.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/1a3931ab/3/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/1a3931ab/3/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
@@ -144,15 +146,15 @@ _Source_: [Federal Reserve Economic Data](#sources)
 
 ![](./images/fig8.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/1a3931ab/4/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/1a3931ab/4/#fullscreen)
 
 _Source_: [Federal Reserve Economic Data](#sources)
 
 While the overall relationship between the Fed Rate and the amount paid towards the gross debt is similar, worth
 noticing is the substantial volatility in payments present in the most recent recession comparison, **Figure 6**. During earlier recessions,
-the brunt of the economic damage was exacted on consumers who were affected by inflation of costs and low returns on savings,
+the brunt of the economic damage exacted on consumers is affected by inflation of costs and low returns on savings,
 but during the most recent downturn it was the government itself who seemed to be struggling to make payments. While the United
-States has restructured or "partially defaulted" on its debt a least four times in the Republic's history ([9](#sources)),
+States has restructured or "partially defaulted" on its debt a least four times in the history of the Republic ([9](#sources)),
 a true default has never occurred and it could have any number of effects both predictable and not, underlining the essential and pressing need for
 the American government to address its spending problem before the floor gives out and investors, smelling blood in the water,
 move their resources to something more stable.
@@ -166,7 +168,7 @@ a Federal Reserve that is effectively powerless to pull its traditional levers o
 is firmly in the hands of the people that make up that economy.
 
 If Americans cannot recover, fiscally and mentally, from the challenges of the last decade, the torch of economic hegemony
-may be passed on to the world's next superpower. Historically speaking, this transition has never been without a few bumps
+may be passed on to the next world superpower. Historically speaking, this transition has never been without a few bumps
 in the road, as the nature of such an event is inherently rooted in upheaval, turmoil, and uncertainty. Without a doubt,
 investors have their hands full as the American government tries to keep a lid on the Pandora's Box of bottomless debt in the
 age of Neo-liberalism.
@@ -175,7 +177,7 @@ age of Neo-liberalism.
 
 > All charts from this article can be viewed together [here](https://apps.axibase.com/chartlab/c91957c0/2/).
 
-1. [Smithsonian Magazine](http://www.smithsonianmag.com/smart-news/average-american-household-lost-third-their-net-worth-during-recession-180952191/); 2014; Shultz, Colin.
+1. [Smithsonian Magazine](https://www.smithsonianmag.com/smart-news/average-american-household-lost-third-their-net-worth-during-recession-180952191/); 2014; Shultz, Colin.
 
 2. [Dallas Federal Reserve](https://www.dallasfed.org/research/econdata/govdebt); 2017 ; Mihaylov, Emil
 
@@ -190,6 +192,6 @@ age of Neo-liberalism.
 
 7. [Bloomberg Markets](https://www.bloomberg.com/news/articles/2017-08-25/gold-shaken-out-of-slumber-by-a-mysterious-2-million-ounce-trade); 2017; Barton, Susanne and Javiar, Luzi-Ann
 
-8. [World Atlas](http://www.worldatlas.com/articles/what-was-the-price-revolution.html); 2017 ; Kimutai, Kenneth
+8. [World Atlas](https://www.worldatlas.com/articles/what-was-the-price-revolution.html); 2017 ; Kimutai, Kenneth
 
-9. [Business Insider](http://www.businessinsider.com/econ-myth-busting-sorry-john-carney-the-us-is-not-a-default-virgin-2011-5); 2011; PolyCapitalist, The
+9. [Business Insider](https://www.businessinsider.com/econ-myth-busting-sorry-john-carney-the-us-is-not-a-default-virgin-2011-5); 2011; PolyCapitalist, The

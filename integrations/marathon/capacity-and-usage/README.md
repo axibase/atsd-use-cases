@@ -2,14 +2,14 @@
 
 ## Overview
 
-[Marathon](https://mesosphere.github.io/marathon/) is a framework for automating the deployment of Linux containers on top of clusters managed by [Apache Mesos](http://mesos.apache.org/). The framework supports auto-scaling and fail-over based on built-in health checks.
+[Marathon](https://mesosphere.github.io/marathon/) is a framework for automating the deployment of Linux containers on top of clusters managed by [Apache Mesos](https://mesos.apache.org/). The framework supports auto-scaling and fail-over based on built-in health checks.
 
 The primary concept implemented in Marathon is the [**Application**](https://mesosphere.github.io/marathon/docs/application-basics.html), which is a resizeable collection of identical containers launched as a long-running service or a short-term batch processing job.
 
 The framework consists of the following components:
 
 * Marathon server to translate **Application** definitions into stateful services consisting of Mesos tasks.
-* [REST API](http://mesosphere.github.io/marathon/api-console/index.html) for programmatic access and integration.
+* [REST API](https://mesosphere.github.io/marathon/api-console/index.html) for programmatic access and integration.
 * User Interface to create and manage Applications.
 
 Marathon `v1.5.6` user interface:
@@ -18,7 +18,7 @@ Marathon `v1.5.6` user interface:
 
 ## Capacity
 
-Each container (or **Task** in Marathon terms) is allocated a pre-defined amount of CPU, memory, and disk resources by the application which launches the containers on underlying Mesos [nodes](http://mesos.apache.org/documentation/latest/architecture/) based on available system capacity.
+Each container (or **Task** in Marathon terms) is allocated a pre-defined amount of CPU, memory, and disk resources by the application which launches the containers on underlying Mesos [nodes](https://mesos.apache.org/documentation/latest/architecture/) based on available system capacity.
 
 ### Allocated Capacity
 
@@ -41,9 +41,9 @@ Integration with ATSD adds an additional level of visibility by collecting and a
 
 ### Launch ATSD Sandbox
 
-Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts.
+Launch [ATSD sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container on one of the Docker hosts.
 
-Replace `marathon_hostname`, `my-user`, and `my-password` in the command below with actual Marathon user credentials.
+Replace `marathon_hostname`, `username`, and `password` in the command below with actual Marathon user credentials.
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
@@ -51,7 +51,7 @@ docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --volume /var/run/docker.sock:/var/run/docker.sock \
   --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/marathon/capacity-and-usage/resources/atsd-marathon-xml.zip' \
   --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/marathon/capacity-and-usage/resources/marathon-jobs.xml' \
-  --env COLLECTOR_CONFIG='marathon-jobs.xml:server=marathon_hostname,port=8080,userName=my-user,password=my-password' \
+  --env COLLECTOR_CONFIG='marathon-jobs.xml:server=marathon_hostname,port=8080,userName=username,password=password' \
   axibase/atsd-sandbox:latest
 ```
 

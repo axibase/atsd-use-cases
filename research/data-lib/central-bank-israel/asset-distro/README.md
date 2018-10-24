@@ -2,13 +2,13 @@
 
 [ChartLab](https://apps.axibase.com/chartlab) and SQL Console in ATSD
 
-> Data Source: [Bank of Israel](http://www.boi.org.il/en/DataAndStatistics)
+> Data Source: [Bank of Israel](https://www.boi.org.il/en/DataAndStatistics)
 
 ## Value of the Public Portfolio (NIS Billion)
 
 ![](./images/AD-1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/24b59799/2/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/24b59799/2/#fullscreen)
 
 ```sql
 SELECT date_format(time, 'yyyy-MM') AS "Date", tv.value AS "Total Value (NIS Billion)"
@@ -42,7 +42,7 @@ GROUP BY 'Date', tv.value
 
 ![](./images/AD-5.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/24b59799/6/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/24b59799/6/#fullscreen)
 
 > Months with negative growth are shown in red, and months with positive growth exceeding 25 billion NIS are shown in dark blue.
 
@@ -53,6 +53,7 @@ GROUP BY 'Date', tv.value
   ORDER BY 'Date'
 ```
 
+```txt
 | Date    | Total Value (NIS Billion) | Percent of Current Value | Delta |
 |---------|---------------------------|--------------------------|-------|
 | 1998-01 | 725.1                     | 21.1                     | null  |
@@ -75,21 +76,22 @@ GROUP BY 'Date', tv.value
 | 2015-01 | 3189.5                    | 93                       | 215.2 |
 | 2016-01 | 3305.5                    | 96.4                     | 116   |
 | 2017-01 | 3428.9                    | 100                      | 123.4 |
+```
 
 ## Distributions of Assets by Type (Percent)
 
 ![](./images/AD-3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/040c4e03/5/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/040c4e03/5/#fullscreen)
 
 ```sql
-SELECT date_format(time, 'MM-yyyy') AS "Date",  cd.value AS "Cash and Deposits", gbn.value AS "Government Bonds (Non-Tradeable)", gbt.value AS "Government Bonds (Tradeable)", cbn.value AS "Corporate Bonds (Non-Tradeable)", cbt.value AS "Corporate Bonds (Tradeable)", cm.value AS "Cash (Makam)", i.value AS "Shares in Israel", iad.value AS "Investments Abroad (Deposits)", iab.value AS "Investments Abroad (Bonds)", ias.value AS "Investments Abroad (Shares)", iao.value AS "Investments Abroard (Other)"
+SELECT date_format(time, 'MM-yyyy') AS "Date",  cd.value AS "Cash and Deposits", gbn.value AS "Government Bonds (Non-Tradeable)", gbt.value AS "Government Bonds (Tradeable)", cbn.value AS "Corporate Bonds (Non-Tradeable)", cbt.value AS "Corporate Bonds (Tradeable)", cm.value AS "Cash (Makam)", i.value AS "Shares in Israel", iad.value AS "Investments Abroad (Deposits)", iab.value AS "Investments Abroad (Bonds)", ias.value AS "Investments Abroad (Shares)", iao.value AS "Investments Abroad (Other)"
   FROM "cash_and_desposits" AS cd JOIN "government_bonds_(non-tradeable)" AS gbn JOIN "government_bonds_(tradeable)" AS gbt JOIN "corporate_bonds_(non-tradeable)" AS cbn JOIN "corporate_bonds_(tradeable)" AS cbt JOIN "cash_(makam)" AS cm JOIN "shares_in_israel" AS i JOIN "investments_abroad_(deposits)" AS iad JOIN "investments_abroad_(bonds)" AS iab JOIN "investments_abroad_(shares)" AS ias JOIN "investments_abroad_(other)" AS iao WHERE date_format(time, 'MM') = '01'
 GROUP BY 'Date', cd.value, gbn.value, gbt.value, cbn.value, cbt.value, cm.value, i.value, iab.value, iad.value, ias.value, iao.value
   ORDER BY 'Date'
 ```
 
-| Date    | Cash and Deposits | Government Bonds (Non-Tradeable) | Government Bonds (Tradeable) | Corporate Bonds (Non-Tradeable) | Corporate Bonds (Tradeable) | Cash (Makam) | Shares in Israel | Investments Abroad (Deposits) | Investments Abroad (Bonds) | Investments Abroad (Shares) | Investments Abroard (Other) |
+| Date    | Cash and Deposits | Government Bonds (Non-Tradeable) | Government Bonds (Tradeable) | Corporate Bonds (Non-Tradeable) | Corporate Bonds (Tradeable) | Cash (Makam) | Shares in Israel | Investments Abroad (Deposits) | Investments Abroad (Bonds) | Investments Abroad (Shares) | Investments Abroad (Other) |
 |---------|-------------------|----------------------------------|------------------------------|---------------------------------|-----------------------------|--------------|------------------|-------------------------------|----------------------------|-----------------------------|-----------------------------|
 | 01-1998 | 44.7              | 13.5                             | 12.9                         | 0.8                             | 1.2                         | 2            | 15.9             | 0.9                           | 2.2                        | 0                           | 5.9                         |
 | 01-1999 | 45.5              | 13.3                             | 12                           | 0                               | 1.1                         | 2.1          | 15.4             | 2.4                           | 2.5                        | 0                           | 5.7                         |
@@ -114,4 +116,4 @@ GROUP BY 'Date', cd.value, gbn.value, gbt.value, cbn.value, cbt.value, cm.value,
 
 ![](./images/AD-4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/040c4e03/8/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/040c4e03/8/#fullscreen)

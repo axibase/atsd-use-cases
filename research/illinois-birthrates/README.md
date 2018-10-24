@@ -1,11 +1,13 @@
+<!-- markdownlint-disable MD101 -->
+
 # Modeling Falling Birthrates in the Prairie State
 
 ![](./images/ILL1.jpg)
 
 ## Introduction
 
-Long-considered to be a bellwether for trends in the rest of the country, the nation's
-21st state has grown from a tiny, sparsely-populated part of the Northwest Territory to
+Long-considered to be a bellwether for trends in the rest of the country, the
+ 21st state has grown from a tiny, sparsely-populated part of the Northwest Territory to
 the home of Chicago, the third-largest city in the country. Illinois holds the headquarters
 to some of the largest and most successful corporations in the United States including Boeing, Walgreens
 Boots Alliance, McDonald's, Sears Holdings, and United Continental. The University of
@@ -16,17 +18,16 @@ guilty of misuse of power since the 1920's and a number of other state officials
 also served time in prison as a result of their actions in office.
 
 Home to some of America's favorite anti-heroes like Charlie Birger and Al Capone as well
-as some of the country's icons like former presidents Abraham Lincoln and
-Barack Obama, it's not hard to understand why Illinois is considered as diverse and
+as icons like former presidents Abraham Lincoln and
+Barack Obama, it is not hard to understand why Illinois is considered as diverse and
 unique as the country itself.
 
-The Illinois Center for Health Statistics has released [data](https://github.com/axibase/open-data-catalog/blob/master/datasets/9e74-xdvk.md) that covers two decades of
-live births in the state, from 1989 to 2009. This data has been kept through some of the
+Using data stored in [Axibase Dataset Catalog](https://axibase.com/datasets/socrata/9e74-xdvk.html) released by Illinois Center for Health Statistics that covers two decades of live births in the state, from 1989 to 2009. This data has been kept through some of the
 formative events of the 20th and 21st centuries: the fall of the Berlin Wall, the World Trade Center
 terrorist attacks, the Pathfinder mission to Mars, the completion of the Burj Khalifa, and
 the emergence of the Internet to name a few.
 
-Using the ATSD and the open source modelling software [Fityk](http://fityk.nieto.pl/),
+Using the ATSD and the open source modelling software [Fityk](https://fityk.nieto.pl/),
 the ICHS data can be visualized, modeled, and analyzed to extract valuable information from free public data.
 
 ## Data
@@ -37,7 +38,7 @@ fitting to anticipate future birth rates.
 
 ### Visualizations
 
-Illinois contains 102 counties, the top ten most populous of which will be observed here.
+Illinois contains 102 counties, the top ten most populous of which are observed here.
 They are:
 
 | Rank | County | County Seat | Population (Million) |
@@ -53,47 +54,47 @@ They are:
 | 9 | Madison County | Edwardsville | 0.27 |
 | 10 | Champaign County* | Urbana | 0.20 |
 
-> \* Champaign County was the only top ten county by population to not appear as a top ten
+> \* Champaign County is the only top ten county by population not to appear as a top ten
 county by birthrate, consistently out-performed by the smaller Peoria County (Population: 0.19 million).
 
 ![](./images/ILL29.png)
 
 Open [ChartLab](https://apps.axibase.com/chartlab/6402f01c) to explore the number of live births in each of the counties listed above
-and navigate throughout the 20-year time period using the drop-down menu at the top of
+and navigate throughout the 20-year time period using the drop-down list at the top of
 the display.
 
 ![](./images/ILL31.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/2/#fullscreen)
 
->Learn more about creating a drop-down menu in ChartLab in the [Appendix](#appendix) below.
+>Learn more about creating a drop-down list in ChartLab in the [Appendix](#appendix) below.
 
 Use the ChartLab model below to compare the Top 10 counties' live births against the
-whole of Illinois' live births. Toggle between observed years using the dropdown menu:
+whole of Illinois' live births. Toggle between observed years using the drop-down list:
 
 ![](./images/ILL3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/3/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/3/#fullscreen)
 
 The ChartLab model below displays the same data, with those births not
 included in the top ten counties displayed in grey:
 
 ![](./images/ILL30.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/5/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/5/#fullscreen)
 
 Removing the Illinois total numbers, and observing the live births by year from each of
 the ten largest counties:
 
 ![](./images/ILL15.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/6/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/6/#fullscreen)
 
 Now removing Cook County figures, as they represent the majority of Illinois live births:
 
 ![](./images/ILL16.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/9/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/9/#fullscreen)
 
 Now looking at the whole of Illinois live birth rates, not just those from the most
 populous regions, their performance can be contrasted with the performance of the
@@ -101,7 +102,7 @@ state as a whole:
 
 ![](./images/ILL18.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/7/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/7/#fullscreen)
 
 >Illinois birthrates have been steadily declining for the past several decades.
 
@@ -110,13 +111,13 @@ to 2009:
 
 ![](./images/ILL19.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/8/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3f7c7d8/8/#fullscreen)
 
 ### SQL Queries
 
 The data is difficult to work with because of the way it is stored. Typically, time information is
 stored within a given metric, but in this case, each year is a metric in and of itself. This
-type of storage can present a number of challenges for less robust software, but using the
+type of storage can present a number of challenges for less detail-oriented software, but using the
 ATSD and the supported [`JOIN`](https://axibase.com/docs/atsd/sql/#joins) clause,
 working with, and analyzing even unideal data is well within the scope of possibility.
 
@@ -345,7 +346,7 @@ ORDER BY t1.VALUE DESC, t1.tags.county_name
 | 17                 | MADISON        |
 | 13                 | PEORIA         |
 
-Information can also be collected on a desired county, for the entire period:
+Information can also be collected on a specific county, for the entire period:
 
 #### Cook County Live Births (1989 - 2009)
 
@@ -445,9 +446,9 @@ The dataset used for modeling is as follows:
 | 2008 | 20| 177 |
 | 2009 | 21| 171 |
 
-Using [Fityk](http://fityk.nieto.pl/) to create a best-fit model for this data:
+Using [Fityk](https://fityk.nieto.pl/) to create a best-fit model for this data:
 
-#### Model 1
+#### Model One
 
 ![](./images/ILL21.png)
 
@@ -463,11 +464,11 @@ Moving the window to the right estimates the total live births for years not inc
 
 Excluding the final data point from the series, which deviated significantly, creates a less extreme model:
 
-#### Model 2
+#### Model Two
 
 ![](./images/ILL23.png)
 
-This model's formula is:
+The formula is shown here:
 
 ```javascript
 F(x) = 196 + -1.7*x + 0.0587*x^2 + -0.000794*x^3
@@ -489,7 +490,7 @@ and [WolframAlpha](https://www.wolframalpha.com/) can manage the computations.
 | 2013 | 164, 178 | 157 | 4.46%, 13.37% |
 | 2014 | 160, 178 | 159 | 6.29%, 11.95% |
 
-> \* Indicates a year in which the US Census was performed.
+> \* Indicates a year in which the US Census is performed.
 
 Model 1 more accurately predicts the results of recent live birth numbers, and the variance is reasonable, 0.7085.
 Model 2 less accurately predicts the results of recent live birth numbers and its variance is quite high, 4.4109. These numbers show the stability of the model
@@ -501,11 +502,11 @@ underlining the importance of constantly updating and maintaining such models wi
 
 When updated to include the latest figures, the model looks like this:
 
-#### Model 3
+#### Model Three
 
 ![](./images/ILL25.png)
 
-This updated model's formula is shown here:
+The updated formula is shown here:
 
 ```javascript
 F(x) = 197 + -2.53*x + 0.189*x^2 + -0.006*x^3
@@ -516,15 +517,15 @@ The forward-shift is shown below:
 ![](./images/ILL26.png)
 
 Intuitively, this model appears flawed as it shows Illinois live births dropping to zero around the
-year 2038, but some of the older data can now be excluded, in order to reflect the trends of the
+year 2038, but some of the older data can now be excluded, to reflect the trends of the
 last decade while excluding data that is two decades old and reflects the trends of a society
 that has experienced a wide array of dramatic changes:
 
-#### Model 4
+#### Model Four
 
 ![](./images/ILL27.png)
 
-This newly updated model's formula is shown here:
+The newly updated formula is shown here:
 
 ```javascript
 F(x) = 81.9 + 17.6*x + -0.929*x^2 + 0.0139*x^3
@@ -565,7 +566,7 @@ which can change quite quickly and sometimes unpredictably.
 
 ## Appendix
 
-### Creating a [Dropdown Menu](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/) in [ChartLab](https://apps.axibase.com/chartlab/6402f01c)
+### Creating a [drop-down list](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/) in [ChartLab](https://apps.axibase.com/chartlab/6402f01c)
 
 Using the below chart as an example:
 
@@ -575,7 +576,7 @@ And looking at lines 22 - 48 in the Editor:
 
 ![](./images/ILL13.png)
 
-The `LIST` Setting is used to declare the desired list, in this case, the various
+The `LIST` Setting is used to declare a specific list, in this case, the various
 years of included in the data and the [`[DROPDOWN]`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/)
 clause is used to declare the functionality of the menu itself.
 
@@ -583,10 +584,10 @@ clause is used to declare the functionality of the menu itself.
 
 1. Download [Docker](https://docs.docker.com/engine/installation/linux/ubuntu/).
 2. Download the [`docker-compose.yml`](./resources/docker-compose.yml) file to launch the ATSD container bundle.
-3. Launch containers by specifying the built-in collector account credentials that will be used by Axibase Collector to insert data into ATSD.
+3. Launch containers by specifying the built-in collector account credentials used by Axibase Collector to insert data into ATSD.
 
 ```sh
-   export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
+export C_USER=username; export C_PASSWORD=password; docker-compose pull && docker-compose up -d
 ```
 
 Contact [Axibase](https://axibase.com/feedback/) with any questions.

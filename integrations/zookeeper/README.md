@@ -1,6 +1,6 @@
 # Zookeeper Integration
 
-This guide describes how to monitor availability and performance of an [Apache Zookeeper](https://zookeeper.apache.org/) cluster (3 nodes) using ATSD.
+This guide describes how to monitor availability and performance of an [Apache Zookeeper](https://zookeeper.apache.org/) cluster (3 nodes) using Axibase Time Series Database (ATSD).
 
 ## Step 1: Configure Axibase Collector
 
@@ -11,6 +11,7 @@ This guide describes how to monitor availability and performance of an [Apache Z
 2) Open the **Collections** drop-down list in the top menu and select **Item Lists**.
 
 3) Click **Add** and create an item list with Zookeeper hosts.
+
 Enter the name `zookeeper-jmx-hosts`, choose type **TEXT** and add comma-separated addresses of Zookeeper hosts in the following format:
 
 ```txt
@@ -33,7 +34,7 @@ Click **Save**.
 
 ### Import Job
 
-Open the **Jobs**page. Expand the split button below the table and select **Import**.
+Open the **Jobs**page. Expand the split-button below the table and select **Import**.
 
 Import the [`zookeeper-jmx`](./resources/jobs.xml) job.
 
@@ -60,7 +61,7 @@ On the **JMX Job** page set the **Enabled** checkbox and save the job.
 
 ### Check data collection
 
-Log in to the target Axibase Time Series Database instance at `https://atsd_hostname:8443`.
+Log in to the target ATSD instance at `https://atsd_hostname:8443`.
 
 Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available.
 
@@ -76,7 +77,7 @@ Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available
 
 ### Import entity group
 
-1. Open the **Settings** menu, select **Entity Groups** and import this [entity group](./resources/groups.xml).
+1. Open the **Settings** menu, select **Entity Groups** and import the [entity group configuration file](./resources/groups.xml).
 1. Locate **Zookeeper Nodes** group and open the group by clicking the link in the **Name** column.
 1. Confirm that the database successfully imported the entities.
 
@@ -84,25 +85,25 @@ Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available
 
 ### Import portals
 
-1. Open the **Portals** menu, select **Configure** and import [portals](./resources/portal-configs.xml) (set the flag in the **Auto-enable New Portals** check box).
+1. Open the **Portals** menu, select **Configure** and import [portals](./resources/portal-configs.xml) (Enable the **Auto-enable New Portals** checkbox).
 2. Verify that new portals are displayed by opening the **Portals** menu and searching for the newly-configured portal named **Zookeeper Cluster**.
 
 ![](./images/test_portals.png)
 
 ### Import rules
 
-Open the **Alerts** menu, select **Rules** and import [rules](./resources/rules.xml) (set the flag in the **Auto-enable New Rules** check box).
+Open the **Alerts** menu, select **Rules** and import [rules](./resources/rules.xml) (Enable the **Auto-enable New Rules** checkbox).
 
-Confirm the database imported the desired rules
+Confirm the database imported the rules.
 
 ![](./images/rules_list.png)
 
 * **Zookeeper cluster high latency**: alert opens when more than 50% of the nodes in a cluster have average latency greater than 100 ms in 3 minutes.
 * **Zookeeper cluster not serving requests**: alert opens when node status is `leaderelection`, which means that nodes cannot choose leader.
-* **Zookeeper dead cluster**: opens when no data was collected from cluster in 2 minutes.
-* **Zookeeper dead node**: opens when no data was collected from a single node in 2 minutes.
+* **Zookeeper dead cluster**: opens when no data is collected from cluster in two minutes.
+* **Zookeeper dead node**: opens when no data is collected from a single node in two minutes.
 * **Zookeeper dead nodes list**: same as single dead node, but checks all nodes by timer.
-* **Zookeeper node high latency**: opens when node average latency is above 100 in 3 consecutive measurements.
+* **Zookeeper node high latency**: opens when node average latency is above 100 in three consecutive measurements.
 * **Zookeeper rate metrics**: always open. Used for transform `packetsreceived` and `packetssent` metrics from cumulative to difference (packets per minute) metrics. Uses derived commands.
 
 Verify rule functionality. Stop one node and check that **Zookeeper dead node** and **Zookeeper dead nodes list** rule opens (allow up to two minutes). Open the **Alerts** menu and select **Open Alerts** to view all open rules.
@@ -133,7 +134,7 @@ For more information about the Rule Engine, see [ATSD Rule Engine Documentation]
 ### Import entity view
 
 Open the **Entity Views** menu, select **Configure** and import the following [entity view](./resources/entity-views.xml).
-Check entity view.  Open the **Entity Views** menu and ensure you see **Zookeeper** entity view.
+Check entity view. Open the **Entity Views** menu and ensure you see **Zookeeper** entity view.
 
 ![](./images/entity_view.png)
 

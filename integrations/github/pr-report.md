@@ -12,9 +12,9 @@ While GitHub [webhook integration](pr-notification.md) can notify repository own
 
 The report uses an [OAuth Personal Token](https://blog.github.com/2013-05-16-personal-api-tokens/) to query the GitHub API without transmitting user login information.
 
-While logged in to GitHub, click the user profile picture in the upper-right corner and select **Settings**.
+While logged in to GitHub, click the user profile picture in the upper-right corner and click **Settings**.
 
-![](./images/developer-settings.png)
+![](./images/developer-settings-2.png)
 
 Open the **Developer Settings** page and navigate to the **Personal Access Tokens** tab.
 
@@ -24,7 +24,11 @@ Click **Generate New Token** and enter the account password when prompted.
 
 ![](./images/read:org.png)
 
+<!-- markdownlint-disable MD105 -->
+
 Configure the token to grant **read:org** permissions in the **admin:org** section by checking the appropriate box. This scope grants read-only organization access to any user with this token, keep the contents confidential.
+
+<!-- markdownlint-enable MD105 -->
 
 Copy the token to the `TOKEN` parameter of the [sandbox launch command](#launch-atsd-sandbox).
 
@@ -47,7 +51,7 @@ docker run -d -p 8443:8443 \
   --env START_COLLECTOR=off \
   --env ORGANIZATION=MyOrganization \
   --env TOKEN=**************************************** \
-  --env SUBSCRIBERS=myuser@example.org \
+  --env SUBSCRIBERS=user@example.org \
   --env EMAIL_CONFIG=mail.properties \
   --env ATSD_IMPORT_PATH=https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/github-daily-pr-status.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/github-graphql-table.xml,https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/github/resources/graphql-queries.xml \
   --volume /home/user/mail.properties:/mail.properties \
@@ -58,7 +62,7 @@ Mail configuration has several required parameters, passing these parameters int
 
 ```ls
 server=smtp.example.org
-user=myuser@example.org
+user=user@example.org
 password=secret
 ```
 
@@ -88,7 +92,7 @@ Upon successful completion, **Mail Client** in ATSD sends subscribed users a con
 
 ## Configure Subscriber List
 
-After initial launch, you may modify the list of subscribers at any time. Log in to the ATSD web interface, accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports). Open the **Alerts** menu and select **Rules**.
+After initial launch, you may modify the list of subscribers at any time. Log in to the ATSD web interface, accessible at [`https://docker_host:8443/`](https://github.com/axibase/dockers/tree/atsd-sandbox#exposed-ports). Open the **Alerts** menu and click **Rules**.
 
 ![](./images/alerts-rules.png)
 
@@ -98,7 +102,7 @@ Search for the `github-daily-pr-status` rule and open the **Rule Editor** by cli
 
 Open the **Email Notifications** tab in the **Rule Editor** and modify the **Recipients** field. Emails must be comma-separated.
 
-![](./images/add-new-email.png)
+![](./images/add-new-email-1.png)
 
 ## Configuring Report Delivery
 
@@ -520,8 +524,8 @@ The above JSON result sets are be converted to two outgoing email reports, sent 
 
 Sample Apache Report for `MERGEABLE` Pull Requests with `SUCCESS` State:
 
-![](./images/apache-report-success.png)
+![](./images/apache-report-success-1.png)
 
 Sample Apache Report for `MERGEABLE` Pull Requests with `FAILURE` State:
 
-![](./images/apache-report-failure.png)
+![](./images/apache-report-failure-1.png)

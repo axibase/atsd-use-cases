@@ -4,52 +4,39 @@
 
 ## Introduction
 
-Buy American. Drive American. Wear American. The American economy seems to be on everybody's minds these days, namely returning jobs and money sent overseas back to the American people. Many voters in the 2016 U.S. presidential election
-desired to return to a time when America was producing more than it was taking in. According to data published by the [World Bank](http://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2015&start=1960&view=chart&year_high_desc=true),
-the United States represented **40%** of the world's GDP in **1960**. By 2015, that number had dropped to only **24%**. According to the [Bureau of Labor Statistics (BLS)](https://www.bls.gov/opub/mlr/2012/01/art4full.pdf), by 2020 the U.S. is predicted to have **5.7
-million** less manufacturing jobs than it had in 2000. Additionally, the percentage of Americans employed in manufacturing dropped from **19%** in 1980 to **8%** in 2016. In this article we will analyze a dataset from [census.gov](https://www.census.gov) looking at
-[America's international trade balance](https://www.census.gov/foreign-trade/balance/country.xlsx) from 1985 through the present day. This research article illustrates how
-publicly available data from census.gov can be easily loaded into the non-relational ATSD
-for interactive analysis with SQL and graphical representation of open data published by government and multilateral organizations. This article provides both sample SQL queries and charts,
-as well as instructions on how to install your own ATSD instance and populate it with the underlying data.
+Voters in the 2016 U.S. presidential election wanted to return to a time when America produced more than it consumed. According to data published by the [World Bank](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?end=2015&start=1960&view=chart&year_high_desc=true),
+the United States represented **40%** of world GDP in **1960**. By 2015, that number had dropped to only **24%**. According to the [Bureau of Labor Statistics](https://www.bls.gov/opub/mlr/2012/01/art4full.pdf) (BLS), by 2020 the U.S. is predicted to have **5.7
+million** less manufacturing jobs than it had in 2000. Further, the percentage of Americans employed in manufacturing dropped from **19%** in 1980 to **8%** in 2016. This article analyzes data from `census.gov` concerning
+the international trade balance of the United States of America from [1985 to 2016](https://www.census.gov/foreign-trade/balance/country.xlsx). Publicly available data from `census.gov` is loaded into the non-relational ATSD
+for interactive analysis with [SQL](https://axibase.com/docs/atsd/sql/) for [partitioning](https://axibase.com/docs/atsd/sql/#partitioning) and [**ChartLab**](../../tutorials/shared/chartlab.md). See [Installation Documentation](https://axibase.com/docs/atsd/installation/) to set up a local ATSD instance.
 
-America's International Trade Dataset
+## Dataset
 
-Let's take a look at a dataset on America's international trade from [census.gov](https://www.census.gov/foreign-trade/balance/index.html).  The dataset is available as an Excel file [here](https://www.census.gov/foreign-trade/balance/country.xlsx).
+Review the [American international trade dataset](https://www.census.gov/foreign-trade/balance/index.html) in `.xlsx` format
 
-This dataset contains import and export statistics collected monthly from 1985 to the present time for the United States and 259 locations. These locations include countries,
-world regions (such as Europe and Asia), trade unions (such as the European Union or NAFTA), as well as various other organizations (such as [OPEC](https://en.wikipedia.org/wiki/OPEC)).
+This dataset contains import and export statistics collected monthly from 1985 to 2016 concerning trade between the United States and 259 other nations and regions.
 
-While Excel can provide quick answers to simple questions, when it comes to complex analysis it is much more convenient to interact with the data once it is loaded into a database. The
-ATSD is a powerful tool when it comes to storing, analyzing, and visualizing datasets. We will use the following two capabilities of ATSD to work with this dataset:
+Excel can provide quick answers to simple questions, but when it comes to complex analysis it is much more convenient to interact with the data once it is loaded into a database.
 
-* Interactive graphs from [**ChartLab**](../../integrations/shared/chartlab.md);
+Load the dataset into ATSD by following the instructions provided in [**Action Items**](#action-items).
 
-* Tabular outputs from analytical SQL queries with support for [partitioning](https://axibase.com/docs/atsd/sql/#partitioning).
-
-You can load the dataset into any ATSD instance by following the steps provided at the [end of the article](#action-items).
-
-The BLS file format presents a number of challenges when loading the data. In particular, it requires the parser to handle columns that combine both metric names (E - export, I - import), as well as partial dates (3-letter months).
+The BLS file format presents a number of challenges when loading the data. In particular, it requires the parser to handle columns that combine metric names, `E` meaning `export` and `I` meaning `import` and irregularly named months such a `JUN`, `JAN`, etc.
 
 ![csv-structure](./images/csv-structure.png)
 
-ATSD handles this by implementing a [schema-based](https://axibase.com/docs/atsd/parsers/csv/csv-schema.html) parser which can be configured to load records from non-standard CSV files, such as the BLS report.
+ATSD handles this with a [schema-based](https://axibase.com/docs/atsd/parsers/csv/csv-schema.html) parser which can be configured to load records from non-standard CSV files, such as the BLS report.
 
 ## Overview
 
-Let's begin by analyzing when the U.S. had its best international trade balance in recent history.
+The image below shows import, export, and trade balance values from 1987 to 2016 between the U.S. and the sum of all countries included in this dataset.
 
-Below is an image showing import, export, and trade balance values from 1987 to 2016 between the U.S. and the sum of all countries included in this dataset.
-The top image shows exports (in blue) over imports (in pink). In 2016, imports into the United States totalled **$2 trillion**, while exports were **$1.3 trillion**. The lower figure shows trade balance, which is the dollar amount for exports minus imports. The trade balance deficit grew from **-$152 billion** in 1987 to **-$677 billion** in 2016.
+The upper image shows exports in blue and imports in pink. In 2016, imports into the United States totalled **$2 trillion**, while exports totalled **$1.3 trillion**. The lower figure shows trade balance, the dollar amount for exports minus imports. The trade balance deficit grew from **-$152 billion** in 1987 to **-$677 billion** in 2016.
 
 ![Figure 1](./images/Figure1.png)
 
-You can explore this portal by clicking on the below button:
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/552d7a44/2/#fullscreen)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/552d7a44/2/#fullscreen)
-
-In addition to looking at graphical outputs, we can also perform [SQL queries](https://axibase.com/docs/atsd/sql/), which can be used
-to search for specific information contained in this dataset. From the query below it may be observed that within the dataset time range, 1991 was the year which had the least negative trade balance of **-$66.7 billion**.
+In addition to looking at graphical outputs, perform [SQL queries](https://axibase.com/docs/atsd/sql/) to search for specific information in this dataset. According to the query below, 1991 had the least negative trade balance of **-$66.7 billion**.
 
 ```sql
 SELECT date_format(e.time, 'yyyy') AS "year", e.tags.ctyname AS country,
@@ -72,21 +59,20 @@ GROUP BY e.period(1 year), e.tags
 
 ## Trade by Country
 
-Let's now look at trade balance between the U.S. and individual countries.
+Compare the trade balance between the U.S. and individual countries.
 
-Below is an image showing import, export, and trade balance values between the U.S. and its largest trading partner, China. In 2016, exports and imports to/from China totaled **$104 billion** and **$423 billion**, respectively.
-As marked in the figure below, we can see that the trade balance deficit between the U.S. and China grew from **-$6 million** in 1985 to **-$319 billion** in 2016.
+The image below shows import, export, and trade balance values between the U.S. and its largest trading partner, China. In 2016, exports and imports to and from China totaled **$104 billion** and **$423 billion**, respectively.
+As shown in the figure below, the trade balance deficit between the U.S. and China grew from **-$6 million** in 1985 to **-$319 billion** in 2016.
 
 ![Figure 4](./images/Figure4.png)
 
-By clicking on the below button, you can explore the trade by any country included in this dataset. Simply click on the drop down tabs to scroll between different countries,
-as well as between continents or organizations. **Note**: there are separate filters for the top and bottom graphs. You need to select your desired location from the
-`US Import/Export` drop down, as well from `US Trade Balance` in order to filter.
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/552d7a44#fullscreen)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/552d7a44#fullscreen)
+Explore the trade between the United States and any other country included in this dataset by opening the **ChartLab** visualization. Open the drop-down lists to navigate between countries, as well as entire continents or specific organizations.
 
-Below is a SQL query and output showing the exports, imports, and trade balance
-(all in millions USD) between United States and Mexico from 1985 to 2016:
+> There are separate filters for the upper and lower graphs. Select a location from the `US Import/Export` drop-down list, as well from **US Trade Balance** to perform filtering.
+
+The SQL query below tracks the trade balance in USD millions between United States and Mexico from 1985 to 2016:
 
 ```sql
 SELECT date_format(e.time, 'yyyy') AS "year",
@@ -130,23 +116,20 @@ GROUP BY e.period(1 year), e.tags -- group values by year, tags (include country
 | 1985  | Mexico   | 13634.7   | 19131.7   | -5497.0       |
 ```
 
-## 2016: Year in Review
+## 2016: The Year in Review
 
-How did 2016 look for the United States? Below is a figure of the top countries for U.S. export and imports in 2016. The table to the right of the below graphs provides
-monetary values for exports, imports, and the trade balance (export minus import) between the U.S. and each respective country, continent, or organization. The table is sorted by
-trade balance, with the highest negative trade balances showing at the top. You may sort the table as you wish by accessing the **ChartLab** portal (button below) and clicking
-on the column headers.
+How did 2016 look for the United States? Below is a figure of the top countries for U.S. export and imports in 2016. The table to the right of the visualizations provides
+monetary values for exports, imports, and the trade balance between the U.S. and each respective country, continent, or organization. The table is sorted by
+trade balance, with the highest negative trade balances showing at the top. Sort the table as needed by accessing the **ChartLab** portal and selecting column headers.
 
-In 2016, the locations with which the United States had the highest negative and positive trade balances were China / Hong Kong at **-$319 billion** and **$25.1 billion**,
+In 2016, the locations with which the United States had the highest negative and positive trade balances are China and Hong Kong at **-$319 billion** and **$25.1 billion**,
 respectively.
 
 ![Figure 2](./images/Figure2.png)
 
-You can explore this portal by clicking the button below:
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/53e42403#fullscreen)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/53e42403#fullscreen)
-
-How did 2016 look for the United States for trade balance (in billions USD) with regions of the world as a whole:
+2016 trade balance (in billions USD) with the world as a whole:
 
 ```sql
 SELECT e.tags.ctyname AS region,
@@ -178,19 +161,17 @@ GROUP BY e.period(1 year), e.tags
 | Sub Saharan Africa         | 0019  | 12.4    | 18.2    | -5.8          |
 ```
 
-In addition to tables output from SQL queries, we can display these continental relationships in **ChartLab** graphs. Below is an image for U.S. trade export and import numbers with South and
-Central America, Asia, Africa, Europe, and North America for 2016. Lines are drawn going from (exports) and coming back to (imports) the U.S. The heavier the lines
-are between the U.S. and the respective continent, the greater the dollar amount in trade. We can see that 2016 exports from the U.S. to North America totaled
-**$457 billion**, while imports from North America into the US totaled **$525 billion**, resulting in a trade balance deficit of **-$68 billion**. Additionally, we can see that the
-heaviest lines were between the U.S. and Asia, indicating that these two have the highest trade volume between them.
+In addition to tables output from SQL queries, display these continental relationships in **ChartLab** graphs. Below is an image for U.S. trade export and import numbers with South and
+Central America, Asia, Africa, Europe, and North America for 2016. Lines represent export and import balances. The heavier the lines
+ between the United States and endpoint continent, the greater the dollar amount in trade. Notice that 2016 exports from the U.S. to North America totaled
+**$457 billion**, while imports from North America into the US totaled **$525 billion**, resulting in a trade balance deficit of **-$68 billion**. Further notice that the
+heaviest lines are between the U.S. and Asia, indicating the enormous trade volume between the two.
 
 ![Figure 3](./images/Figure3.png)
 
-You can explore this figures, as well as trade balances for 2006 and 1997, in **ChartLab** by clicking on the button below:
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/b9f27b14/2/#fullscreen)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b9f27b14/2/#fullscreen)
-
-Who were the U.S.'s best trading partners (imports plus exports, in millions USD) in 2016?
+This query tracks the largest absolute trading partners of the United States.
 
 ```sql
 SELECT date_format(e.time, 'yyyy') AS "year", e.tags.ctyname AS country, e.tags.cty_code AS code,
@@ -233,21 +214,20 @@ GROUP BY e.period(1 year), e.tags
 | 2016  | Hong Kong       | 5820  | 31892.2   | 6821.8    | 38714.1       |
 ```
 
-## A Closer Look at America's Trading Partners
+## A Closer Look at the Trading Partners of America
 
-Now let's take a closer look at America's trading partners. Are there any shared characteristics between these countries?
+It is often claimed that developing countries are stealing American jobs and industry. If a country is poaching the jobs and industry of another, it is reasonable
+to assume that the trade balance reflects those changes. For example, the more steel manufacturing jobs that leave the U.S. for Asia, the more steel the
+U.S. needs to import from Asia. In this instance, `2016_GDP_per_capita` is calculated from the following two replacement tables:
+[`world-population.txt`](./resources/world-population.txt) and [`world-gdp.txt`](./resources/world-gdp.txt). Results are sorted by the `2016_trade_balance_rank` of a particular country. The
+more negative a trade balance, the higher the ranking. Refer to [`us-trade-balance-rank-2016.txt`](./resources/us-trade-balance-rank-2016.txt) for these rankings.
 
-A claim often made is that poor, developing countries are stealing American jobs and industry. If a country is poaching another country's jobs and industry, it is reasonable
-to assume that the afflicted country's trade balance would change as a result. For example, the more steel manufacturing jobs that leave the U.S. for Asia, the more steel the
-U.S. will need to import from Asia. In this instance, `2016_GDP_per_capita` was calculated from the following two replacement tables:
-[`world-population.txt`](./resources/world-population.txt) and [`world-gdp.txt`](./resources/world-gdp.txt). Results are sorted by the country's `2016_trade_balance_rank`. The
-more negative a country's trade balance, the higher its ranking. You can refer to the [`us-trade-balance-rank-2016.txt`](./resources/us-trade-balance-rank-2016.txt) file to see these rankings.
-In order to separate rich and poor countries, we calculated an average world GDP. We divided the world population
-by the world's GDP to get a world GDP of $10,273. Any
-countries having a GDP less than this were considered poor countries, while countries with a greater GDP were considered rich.
+To separate rich and poor countries, calculate an average world GDP. Divide the world population
+by the world GDP to get a world GDP of $10,273. Any
+countries producing less than this derived average are considered poor countries for these purposes.
 
-Here is a query showing the year with the highest trade balance (least negative or most positive, in millions USD) going back to 1985
-for countries in the bottom 50% by GDP per capita (true/absolute value shown below):
+This query returns the year with the highest trade balance, least negative or most positive, going back to 1985
+for countries in the bottom 50% by GDP per capita:
 
 ```sql
 SELECT e.tags.ctyname AS country,
@@ -268,12 +248,6 @@ GROUP BY e.period(1 year), e.tags
   LIMIT 10
 ```
 
-Looking at our results, a couple of things stand out:
-
-* We need to go back to the early 1990's for when the U.S. had the best trade balance with the world's poorest countries (1993 for Iraq is the most recent year).
-* The U.S. had negative trade balances (more imports than exports) in 2016 with all of these countries.
-* All of these countries have a GDP per capita of less than $8,240.9 (China).
-
 ```ls
 | country     | year  | export   | import   | trade_balance  | 2016_trade_balance  | 2016_GDP_per_capita  | 2016_trade_balance_rank |
 |-------------|-------|----------|----------|----------------|---------------------|----------------------|-------------------------|
@@ -289,8 +263,8 @@ Looking at our results, a couple of things stand out:
 | Iraq        | 1993  | 4.0      | 0.0      | 4.0            | -4048.3             | 4163.3               | 24.0                    |
 ```
 
-Now, lets take a look at the most recent year the U.S. had the highest trade balance (least negative or most positive, in millions USD) for countries in the top 50% by
-GDP per capita (true/absolute value shown below).
+Compare these results with the most recent year the U.S. had the highest trade balance, least negative or most positive, for countries in the top 50% by
+GDP per capita.
 
 ```sql
 SELECT e.tags.ctyname AS country,
@@ -310,17 +284,6 @@ GROUP BY e.period(1 year), e.tags
   LIMIT 10
 ```
 
-Looking at our results, a couple of things stand out:
-
-* With the exception of 2008 for Switzerland, we need to go back to the 1990's for when the U.S. had the best trade balance with the world's richest countries.
-* The U.S. had negative trade balances (more imports than exports) in 2016 with all of these countries.
-* All of these countries have a GDP per capita of greater than $22,190.9 (Taiwan).
-
-Looking at these two outputs together, we can see that the U.S. has bad trade balances with both poor and rich countries. For both poor and rich countries, we need to go back to the
-early 1900's (as we found in the first query of this article) for when the U.S. had its best trade balance. While there may not be a direct correlation between
-a country losing jobs and having to increase its imports, both rich and poor countries could be equally accused of taking U.S. jobs. In the top ten for trade balance rank, there
-are both five poor (China, Mexico, Vietnam, India, and Malaysia) and rich (Japan, Germany, Ireland, South Korea, and Italy) countries included in this list.
-
 ```ls
 | country       | year  | export   | import   | trade_balance  | 2016_trade_balance  | 2016_GDP_per_capita  | 2016_trade_balance_rank |
 |---------------|-------|----------|----------|----------------|---------------------|----------------------|-------------------------|
@@ -336,36 +299,30 @@ are both five poor (China, Mexico, Vietnam, India, and Malaysia) and rich (Japan
 | Israel        | 1987  | 3130.2   | 2639.3   | 490.9          | -8352.5             | 38051.9              | 17.0                    |
 ```
 
-While improving a country's international trade balance may not solve all of its economic problems, it can be a good place to start looking for answers. Do you agree with the findings
-in this article? Download ATSD, explore this dataset, and make up your own mind.
+Comparing these two result sets, it appears the U.S. has negative trade balances with both poor and rich countries. While there may not be a direct correlation between a country losing jobs and having to increase imports, both rich and poor countries could be equally accused of taking U.S. jobs. In the top ten for trade balance rank, there are both five poor (China, Mexico, Vietnam, India, and Malaysia) and rich (Japan, Germany, Ireland, South Korea, and Italy) countries.
+
+While improving the international trade balance of any given country may not solve all economic problems, it is certainly a good place to start looking for answers.
 
 ## Action Items
 
-Below are the summarized steps to follow to install local configurations of ATSD and Axibase Collector and create SQL queries for analyzing America's trade balance statistics:
+Install local instances of ATSD and [Axibase Collector](https://axibase.com/docs/axibase-collector/) and create SQL queries for analyzing trade balance data:
 
 1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
-2. [Install the ATSD database](https://axibase.com/docs/atsd/installation/docker.html) on in your local Docker configuration.
-3. Save the [Excel file](https://www.census.gov/foreign-trade/balance/country.xlsx) in CSV format.
+2. [Install ATSD](https://axibase.com/docs/atsd/installation/docker.html) Docker image.
+3. Download the Excel file at `https://www.census.gov/foreign-trade/balance/country.xlsx`.
 4. Log in to ATSD by navigating to `https://docker_host:8443/`.
-5. Import the `us-trade-ie-csv-parser.xml` file into ATSD. For a more detailed description, refer to step 9 from this [step-by-step walkthrough](../us-mortality/configuration.md) from our article on [U.S. mortality statistics](../us-mortality/README.md).
-6. Upload the Excel file saved in `.csv` format into ATSD. Refer to step 10 from this same walkthrough.
-7. Import the `us-trade-balance-2016`, `us-trade-balance-rank-2016`, `world-gdp`, and `world-population` replacement tables into ATSD. Refer to steps 7 and 8 from this same walkthrough.
-8. Navigate to the SQL tab in ATSD and begin writing your queries!
+5. Import the `us-trade-ie-csv-parser.xml` file into ATSD. For a more detailed description, refer to step 9 from these [Configuration Instructions](../us-mortality/configuration.md) from an article tracking [U.S. mortality statistics](../us-mortality/README.md).
+6. Upload the data in `.csv` format to ATSD.
+7. Import the `us-trade-balance-2016`, `us-trade-balance-rank-2016`, `world-gdp`, and `world-population` replacement tables to ATSD.
+8. Open the **SQL** menu and select **Console**.
 
-Check out our file on the describing our schema-based parser used for this dataset [here](./resources/csv-parser-schema-explanation.md).
-
-If you require assistance in installing this software or have any questions, please feel free to [contact us](https://axibase.com/feedback/) and we would be happy to be of assistance!
-
-### Sources
-
-* [Title Photo](https://www.reference.com/business-finance/denominations-u-s-currency-918a309bd714c43c)
-* [World Population and World GDP Values](https://www.wikipedia.org/)
+This [CSV Parser Walkthrough](./resources/csv-parser-schema-explanation.md) describes configuring the CSV Parser for this data.
 
 ### Additional SQL Queries
 
-Here are some additional SQL queries (along with snippets of their outputs) which take a closer look at the U.S.'s international trade history.
+Here are additional SQL queries along with abbreviated result sets which examine international trade history of the United States.
 
-Annual exports for Mexico to the United States (in millions USD).
+Annual exports for Mexico to the United States (USD million).
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "year",
@@ -392,7 +349,7 @@ GROUP BY period(1 year), tags
 ...
 ```
 
-Year with the highest/best trade balance (in millions USD) for each country, with 2016 population estimate (absolute value) listed as well.
+Year with the highest/best trade balance (USD million) for each country, with 2016 population estimate (absolute value).
 
 ```sql
 SELECT date_format(e.time, 'yyyy') AS "year", e.tags.ctyname AS country, e.tags.cty_code AS code,
@@ -426,7 +383,7 @@ GROUP BY e.period(1 year), e.tags
 ...
 ```
 
-**Note**: The following countries/codes are excluded since they either no longer exist or their codes have been modified.
+> The following countries/codes are excluded since they either no longer exist or their codes have been modified.
 
 ```ls
 |Code  |   Country                        | Modification Date |
@@ -445,7 +402,7 @@ GROUP BY e.period(1 year), e.tags
 | 8220 |   Unidentified Countries         | 2014-12-01        |
 ```
 
-Year with the highest/best trade balance for the 20 largest countries by 2016 population estimate (in millions).
+Year with the highest/best trade balance for the 20 largest countries by 2016 population estimate (USD million).
 
 ```sql
 SELECT date_format(e.time, 'yyyy') AS "year", e.tags.ctyname AS country, e.tags.cty_code AS code,
@@ -477,7 +434,7 @@ GROUP BY e.period(1 year), e.tags
 ...
 ```
 
-Top 20 countries by largest trade deficit (in millions USD).
+Top 20 countries by largest trade deficit (USD million).
 
 ```sql
 SELECT date_format(e.time, 'yyyy') AS "year", e.tags.ctyname AS country, e.tags.cty_code AS code,
@@ -509,7 +466,7 @@ GROUP BY e.period(1 year), e.tags
 ...
 ```
 
-Year with the highest/best trade balance (in millions USD) by region.
+Year with the highest/best trade balance (USD million) by region.
 
 ```sql
 SELECT e.tags.ctyname AS country,

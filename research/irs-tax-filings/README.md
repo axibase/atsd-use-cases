@@ -8,7 +8,7 @@ Interim 2018 tax filing statistics bring hope that Americans have returned to a 
 
 Each year the Internal Revenue Service (IRS) releases [public data](https://www.irs.gov/newsroom/2018-and-prior-year-filing-season-statistics) about the number of Americans who have filed their annual income tax paperwork. The data for 2018 shows that American filing practice is roughly in line with the previous several years although minor differences can always be detected between any two datasets. Open-source data may be visualized using ATSD and queried with [SQL console](https://axibase.com/docs/atsd/sql/).
 
-We [analyzed](2017.md) IRS filing statistics after Tax Day 2017 saw a higher number of people filing [later than usual](https://www.reuters.com/article/us-money-taxes-delays/u-s-taxpayers-procrastinate-on-filing-returns-this-year-idUSKBN16L18C) or [not at all](https://www.bloomberg.com/news/articles/2017-04-17/millions-of-americans-still-haven-t-filed-their-taxes) according to Reuters and Bloomberg, respectively. The income tax makes up roughly [half](https://www.nationalpriorities.org/budget-basics/federal-budget-101/revenues/) of the federal government's annual revenue (around $1.48 trillion) so a surge in late or missing filings would wreak havoc on the U.S. budget for the subsequent year.
+Axibase [analyzed](2017.md) IRS filing statistics after Tax Day 2017 saw a higher number of people filing [later than usual](https://www.reuters.com/article/us-money-taxes-delays/u-s-taxpayers-procrastinate-on-filing-returns-this-year-idUSKBN16L18C) or [not at all](https://www.bloomberg.com/news/articles/2017-04-17/millions-of-americans-still-haven-t-filed-their-taxes) according to Reuters and Bloomberg, respectively. The income tax makes up roughly [half](https://www.nationalpriorities.org/budget-basics/federal-budget-101/revenues/) of the annual revenue of the federal government (around $1.48 trillion), a surge in late or missing filings would wreak havoc on the U.S. budget for the subsequent year.
 
 ### Objectives
 
@@ -18,20 +18,21 @@ We [analyzed](2017.md) IRS filing statistics after Tax Day 2017 saw a higher num
 
 ### Visualization
 
-ChartLab is a data visualization sandbox that uses a simple declarative syntax for creating charts. It is designed to be used by anyone, but a basic understanding of the key concepts and settings is helpful here. Full ChartLab documentation may be accessed [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/); this article will demonstrate the process of using data stored in ATSD to create multiple visualizations using the same dataset. Each chart will be shown with its configuration and a brief explanation of the particularities therein.
+ChartLab is a data visualization sandbox that uses a simple declarative syntax for creating charts. It is designed to be used by anyone, but a basic understanding of the key concepts and settings is helpful here. Full ChartLab documentation may be accessed [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/); this article demonstrates the process of using data stored in ATSD to create multiple visualizations using the same dataset. Each chart is shown alongside the configuration to create it and a brief explanation of the particularities therein.
 
 #### Configuration 1: Time Series Line Graph
 
 ![](./images/tax-2018-title.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/fd986f58)
 
-*Fig 1.* Tax filing data for the 2017 and 2018 superimposed over previous-year data.
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/fd986f58)
+
+Tax filing data for the 2017 and 2018 superimposed over previous-year data.
 
 Configuration Settings:
 
 Configuration has been shortened to include only relevant settings for brevity, open ChartLab visualization to view the entire configuration.
 
-```sql
+```ls
 [configuration]
   disconnect-interval = 10 day
 
@@ -69,15 +70,16 @@ Configuration Features:
 #### Configuration 2: Time Series Bar Chart
 
 ![](./images/tax-2018_1.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/07f8b200)
 
-*Fig 2.* The same data displayed with different settings.
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/07f8b200)
 
-Configuration Settings:
+The same data displayed with different settings.
+
+**Configuration Settings**:
 
 Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.
 
-```sql
+```ls
 [widget]
   type = chart
   mode = column
@@ -91,24 +93,25 @@ Configuration has been shortened to include only non-repeated settings for brevi
      alert-style = fill:green
 ```
 
-**Configuration Features:**
+**Configuration Features**:
 
-* `alert-expression`: user-defined thresholds may be created via `[threshold]` series, or comparison to other series in the visualization. Here, the two colored series are assigned an `alias` according to their year and compared. When the condition is satisfied, that is, the value of 2018 tax return filings is greater than the value of 2017 tax filings for the same period, the `alert-style` setting is activated, in this case coloring that period's representative bar green.
+* `alert-expression`: user-defined thresholds may be created via `[threshold]` series, or comparison to other series in the visualization. Here, the two colored series are assigned an `alias` according to their year and compared. When the condition is satisfied, that is, the value of 2018 tax return filings is greater than the value of 2017 tax filings for the same period, the `alert-style` setting is activated, in this case coloring the representative bar of a period green.
 
 * `mode`: time charts feature several display [modes](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) to quickly change visualization styles.
 
 #### Configuration 3: Box-and-Whisker Plot
 
 ![](./images/tax-2018-2.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5dba3269)
 
-*Fig 3.* Average filing numbers for the entire observed period show that the total number of Americans filing a tax return has diminished in recent years.
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/5dba3269)
 
-Configuration Settings:
+Average filing numbers for the entire observed period show that the total number of Americans filing a tax return has diminished in recent years.
+
+**Configuration Settings**:
 
 Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.
 
-```sql
+```ls
 [widget]
   type = box
   title = Individual Income Tax Returns Received: 2018 compared to prior years
@@ -118,23 +121,24 @@ Configuration has been shortened to include only non-repeated settings for brevi
   for ofs in offsets
 ```
 
-Configuration Features:
+**Configuration Features**:
 
 * `type`: a variety of visualization widgets are available in ChartLab, see the full list [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
-* `range(y,x)`: in order to show chronological data, a reverse-ordered range setting may be used where the more recent parameter is the second argument instead of the first as seen above.
+* `range(y,x)`: to show chronological data, a reverse-ordered range setting may be used where the more recent parameter is the second argument instead of the first as seen above.
 
 #### Configuration 4: Histogram
 
 ![](./images/tax-2018-3.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/bdab5fd8)
 
-*Fig 4.* A histogram shows the distribution of values for the given datasets. Assuming all series were equally-distributed the slope of the stacked boxes should be zero.
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/bdab5fd8)
 
-Configuration Settings:
+ A histogram shows the distribution of values for the given datasets. Assuming all series are equally-distributed the slope of the stacked boxes is zero.
+
+**Configuration Settings**:
 
 Configuration has been shortened to include only non-repeated settings for brevity, open ChartLab visualization to view the entire configuration.
 
-```sql
+```ls
 [widget]
   type = histogram
   mode = stack
@@ -143,23 +147,23 @@ Configuration has been shortened to include only non-repeated settings for brevi
   percentiles = 20, 40, 60, 80, 99
 ```
 
-Configuration Features:
+**Configuration Features**:
 
 * [`percentiles`](https://apps.axibase.com/chartlab/7f906511/7/): the percentile range for each bar may be set to a user-configured value when observing irregular series. Here, percentile values are `20, 40, 60, 80, 99`.
 * `bar-count`: modify the number of bars displayed in the visualization.
 
 ### SQL
 
-Although ATSD is a non-relational database it offers a SQL-like syntax with time series extensions such as interpolation functions. It also provides a built-in **SQL Console** for ad-hoc data exploration.
+Although ATSD is a non-relational database it offers an [SQL-like syntax](https://axibase.com/docs/atsd/sql/) with time series extensions such as [interpolation](https://axibase.com/docs/atsd/sql/#interpolation) functions. It also provides a built-in [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html) for ad-hoc data exploration.
 
-The following queries will be shown here:
+The following queries are shown below:
 
-* Year-on-year change based on calendar day;
+* Year-on-year change based on calendar day.
 * Year-on-year change based on calendar index position.
 
-#### Year-on-Year Change based on calendar day
+#### Year-on-Year Change based on Calendar Day
 
-Here, the query will return the number of filed tax returns for the same calendar day (March 30) each year.
+Here, the query returns the number of filed tax returns for the same calendar day (March 30) each year.
 
 Query:
 
@@ -177,14 +181,15 @@ WHERE tags.section = 'Individual Income Tax Returns' AND tags.type = 'Total Retu
 ORDER BY date_format(time, 'MM-dd')
 ```
 
-Syntax Features:
+**Syntax Features**:
 
 * [`date_format`](https://axibase.com/docs/atsd/sql/#date-functions): date function which converts Unix millisecond time to a user-defined format.
 * [`LAG(columnName)`](https://axibase.com/docs/atsd/sql/): value function which returns the previous data point for the selected column. Very useful for time-on-time comparisons such as the one shown here.
 * [`INTERPOLATE(period)`](https://axibase.com/docs/atsd/sql/examples/interpolate.html): value function which is used to fill gaps for irregular series. Used in this example to regularize data which has a timestamp other than the observed date.
 
-Result:
+**Result**:
 
+```ls
 | Year | Date   | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % |
 |------|--------|----------------|----------------|-----------------|---------------|
 | 2011 | Mar-30 | 87.59          |                |                 |               |
@@ -195,10 +200,11 @@ Result:
 | 2016 | Mar-30 | 95.28          | 94.03          | 1.26            | 1.34          |
 | 2017 | Mar-30 | 92.47          | 95.28          | -2.81           | -2.95         |
 | 2018 | Mar-30 | 94.14          | 92.47          | 1.67            | 1.80          |
+```
 
-#### Year-on-year change based on calendar index position
+#### Year-On-Year Change Based on Calendar Index Position
 
-Here, the query will return the number of filed tax returns for the same calendar index position. Calendar years with unequal number of days (leap years) will have different index positions for the same day.
+Here, the query returns the number of filed tax returns for the same calendar index position. Calendar years with an abnormal number of days (leap years) have different index positions for the same day.
 
 Query:
 
@@ -217,12 +223,13 @@ WHERE tags.section = 'Individual Income Tax Returns' AND tags.type = 'Total Retu
 ORDER BY "Day in Year", time
 ```
 
-Syntax Features:
+**Syntax Features**:
 
-* [`CAST`](https://axibase.com/docs/atsd/sql/#cast): value function which changes a number into a string or vice versa. Time values are cast as numbers so they may be interpolated.
+* [`CAST`](https://axibase.com/docs/atsd/sql/#cast): value function which changes a number into a string or vice versa. Time values are cast as numbers, as such they may be interpolated.
 
-**Result:**
+**Result**:
 
+```ls
 | Year | Date   | Day in Year | Curr Year, Mln | Prev Year, Mln | YoY Change, Mln | YoY Change, % |
 |------|--------|-------------|----------------|----------------|-----------------|---------------|
 | 2011 | Mar-30 | 89.00       | 87.59          |                |                 |               |
@@ -233,6 +240,7 @@ Syntax Features:
 | 2016 | Mar-29 | 89.00       | 94.11          | 94.03          | 0.08            | 0.09          |
 | 2017 | Mar-30 | 89.00       | 92.47          | 94.11          | -1.64           | -1.74         |
 | 2018 | Mar-30 | 89.00       | 94.14          | 92.47          | 1.67            | 1.80          |
+```
 
 SQL console supports the [`ROUND`](https://axibase.com/docs/atsd/sql/#mathematical-functions) function for inline rounding operations of numerical values, however the SQL console interface also has a decimal precision setting which may be used to adjust date and number formatting even after the query has been completed.
 

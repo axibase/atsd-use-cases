@@ -2,7 +2,7 @@
 
 ![](./images/entity-group1.png)
 
-Entity Groups provide a way to organize similar entities into logical collections so these groups may be operated upon as aggregates by a user when managing permissions, filtering data, calculating statistics, etc.
+Entity Groups provide a way to organize similar entities into logical collections and collectively operate upon the collection when managing permissions, filtering data, calculating statistics, etc.
 
 For more information on entity groups, see the [ATSD Documentation](https://axibase.com/docs/atsd/configuration/entity_groups.html).
 
@@ -12,7 +12,7 @@ Follow this procedure to import an Entity Group definition to your local ATSD in
 
     ![](./images/entity-group2.png)
 
-2. Expand the split button at the bottom of the page and click **Import**.
+2. Expand the split-button at the bottom of the page and click **Import**.
 
     ![](./images/entity-group3.png)
 

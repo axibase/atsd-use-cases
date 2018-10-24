@@ -1,20 +1,20 @@
 # London Inter-Bank Offered Rate (LIBOR)
 
 ![](./images/libor-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/8f97e6db#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/8f97e6db#fullscreen)
 
 *Fig 1.* The LIBOR and its denominational rates are shown in the upper **Trends** visualization while the difference among each of the rates, compared to the annual lending rate, are shown in the lower visualization. A `[threshold]` series is set to 1, showing divergence of greater than a full percent among series.
 
-The LIBOR is a benchmark index that tracks the interest rates at which banks lend money to one another. Similar to the United States Federal Reserve's [Federal Fund and Interest Rates](../../research/analysis/fed-fund-interest/README.md), the LIBOR is often to used to appraise the current market climate and helps to inform investors of broad trends based on the amount of interest being collected. In the years leading up to the worldwide recession of 2009, the LIBOR moved frequently and dramatically, and its subordinate rates (measured daily, monthly, bi-monthly, tri-monthly, quarterly, and annually) often diverged significantly as member banks scrambled to hide losses or hedge positions.
+The LIBOR is a benchmark index that tracks the interest rates at which banks lend money to one another. Similar to the United States Federal Reserve [Federal Fund and Interest Rates](../../research/analysis/fed-fund-interest/README.md), the LIBOR is often to used to appraise the current market climate and helps to inform investors of broad trends based on the amount of interest being collected. In the years leading up to the worldwide recession of 2009, the LIBOR moved frequently and dramatically, and its subordinate rates (measured daily, monthly, bi-monthly, tri-monthly, quarterly, and annually) often diverged significantly as member banks scrambled to hide losses or hedge positions.
 
-In 2012 it was revealed that many of these worldwide member banks, were in fact fraudulently inflating or deflating the rates in order to profit off of short-term trades and increase interest rates in their favor. What came to be known as the LIBOR crisis led to stricter government regulation of the associated member banks and the LIBOR as a whole. As seen in the figure above, the government's intervention has led to a marked stabilization of the various LIBOR-denominated rates.
+In 2012 it was revealed that many of these worldwide member banks, fraudulently inflated or deflated the rates to profit off of short-term trades and increase interest rates in their favor. What came to be known as the LIBOR crisis led to stricter government regulation of the associated member banks and the LIBOR as a whole. As seen in the figure above, the government intervention has led to a marked stabilization of the various LIBOR-denominated rates.
 
 ---
 
 ## Year-Over-Year Change and Log Returns
 
 ![](./images/yoy-log.png)
-[![](./images/button-new.png)](https://trends.axibase.com/ea89aea3#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/ea89aea3#fullscreen)
 
 *Fig 2.* The upper chart shows year-over-year changes in the LIBOR index, and the lower chart normalizes the raw values using a natural logarithm function.
 
@@ -23,11 +23,11 @@ Year-On-Year change is a method of long-term analysis which tracks the change in
 Compare the raw year-over-year dataset to the normalized year-over-year dataset shown below:
 
 ![](./images/yoy-yoyn.png)
-[![](./images/button-new.png)](https://trends.axibase.com/a400eabf#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/a400eabf#fullscreen)
 
-*Fig 3.* Log returns provide a normalized dataset, which may be more easily operated upon by addtional functions such as continuously-compounds rate of change. A `[threshold]` series is given the value of 0 for ease-of-viewing.
+*Fig 3.* Log returns provide a normalized dataset, which may be more easily operated upon by additional functions such as continuously-compounds rate of change. A `[threshold]` series is given the value of 0 for ease-of-viewing.
 
-The **Trends** examples in this article use the [fred.js](../../integrations/shared/trends.md#fred-library) library. This is a set of [user-defined functions](../../integrations/shared/trends.md#user-defined-functions). Axibase Time Series Database, the underlying database which supports the data-processing and storage operations for the **Trends** service, supports the creation of user-defined functions for those operations frequently performed by end users.
+The **Trends** examples in this article use the [`fred.js`](../../tutorials/shared/trends.md#fred-library) library. This is a set of [user-defined functions](../../tutorials/shared/trends.md#user-defined-functions). Axibase Time Series Database, the underlying database which supports the data-processing and storage operations for the **Trends** service, supports the creation of user-defined functions for those operations frequently performed by end users.
 
 ---
 
@@ -47,7 +47,7 @@ FROM "USD1MTD156N"
 WHERE date_format(time, 'dd') = '01'
 ```
 
-The [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause is used so that only one data point is used from each month, the LIBOR is a daily index so the number of returned value would be quite large without some limitations. The addition of a second [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause can target a specific year for a more narrowed result set.
+The [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause is used to select only one data point from each month, the LIBOR is a daily index, as such the number of returned value would be quite large without some limitations. The addition of a second [`WHERE`](https://axibase.com/docs/atsd/sql/#where-clause) clause can target a specific year for a more narrowed result set.
 
 ```sql
 WHERE date_format(time, yyyy) = '2015'
@@ -55,7 +55,7 @@ WHERE date_format(time, yyyy) = '2015'
 
 Previous values may be targeted with [`LAG`](https://axibase.com/docs/atsd/sql/#lag) statements and supported [mathematical functions](https://axibase.com/docs/atsd/sql/#mathematical-functions) may be used in [`SELECT`](https://axibase.com/docs/atsd/sql/#select-expression), `WHERE`, [`GROUP BY`](https://axibase.com/docs/atsd/sql/#group-by-columns), or [`ORDER BY`](https://axibase.com/docs/atsd/sql/#ordering) clauses.
 
-Each of the LIBOR-denominated rates may be explored by changing the [`FROM`](https://axibase.com/docs/atsd/sql/#select-expression) expression to the desired metric name, stored in ATSD.
+Each of the LIBOR-denominated rates may be explored by changing the [`FROM`](https://axibase.com/docs/atsd/sql/#select-expression) expression to the applicable metric name, stored in ATSD.
 
 The result set is shown here:
 
@@ -72,7 +72,7 @@ The result set is shown here:
 | 2015-12-01 | 0.24         | 0.05                       | -1.41      | 0.23              |
 ```
 
-Note that months whose first day fell on a weekend or bank holiday will be excluded here as the LIBOR rate is only set for working days.
+Note that months whose first day fell on a weekend or bank holiday are excluded here as the LIBOR rate is only set for working days.
 
 ---
 
@@ -80,7 +80,7 @@ Note that months whose first day fell on a weekend or bank holiday will be exclu
 
 * All data is provided by [FRED API](https://fred.stlouisfed.org/);
 
-* For detailed instructions on using the **Trends** service, see this [guide](../../integrations/shared/trends.md#using-trends);
+* For detailed instructions on using the **Trends** service, see this [guide](../../tutorials/shared/trends.md#using-trends);
 
 * Complete [ATSD Documentation](https://axibase.com/docs/atsd/);
 

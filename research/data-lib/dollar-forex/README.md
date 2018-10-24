@@ -12,25 +12,25 @@ Data is aggregated daily in visualizations, and annually in SQL queries. Favorab
 while less favorable exchange rates are shown in red, based on the overall 5-year average exchange rate. Each section is accompanied
 by a brief analysis to give the data context. Using computed [value settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/)
 thresholds have been calculated using the underlying data, the upper 25th percentile of a given exchange rate is considered
-favorable while the lower 25th percentile is considered less than favorable. The data is coded with an ID which is provided in the index as well. Open any [ChartLab](https://apps.axibase.com/chartlab) display below to navigate through time, or change the metric to reflect the desired exchange rate.
+favorable while the lower 25th percentile is considered less than favorable. The data is coded with an ID which is provided in the index as well. Open any [ChartLab](https://apps.axibase.com/chartlab) display below to navigate through time, or change the metric to reflect a different exchange rate.
 
 [Europe](#europe)
 
-* [European Union Euro (dexuseu)](#usd-v-euro)
-* [Swiss Franc (dexszus)](#usd-v-swiss-franc)
-* [Great British Pound (dexusuk)](#usd-v-great-british-pound)
+* [European Union Euro (`dexuseu`)](#usd-v-euro)
+* [Swiss Franc (`dexszus`)](#usd-v-swiss-franc)
+* [Great British Pound (`dexusuk`)](#usd-v-great-british-pound)
 
 [Asia](#asia)
 
-* [Japanese Yen (dexjpus)](#usd-v-japanese-yen)
-* [Chinese Yuan (dexchus)](#usd-v-chinese-yuan)
-* [Hong Kong Dollar (dexhkus)](#usd-v-hong-kong-dollar)
-* [Singapore Dollar (dexsius)](#usd-v-singapore-dollar)
+* [Japanese Yen (`dexjpus`)](#usd-v-japanese-yen)
+* [Chinese Yuan (`dexchus`)](#usd-v-chinese-yuan)
+* [Hong Kong Dollar (`dexhkus`)](#usd-v-hong-kong-dollar)
+* [Singapore Dollar (`dexsius`)](#usd-v-singapore-dollar)
 
 [North America](#north-america)
 
-* [Canadian Dollar (dexcaus)](#usd-v-canadian-dollar)
-* [Mexican Peso (dexmxus)](#usd-v-mexican-peso)
+* [Canadian Dollar (`dexcaus`)](#usd-v-canadian-dollar)
+* [Mexican Peso (`dexmxus`)](#usd-v-mexican-peso)
 
 ## Europe
 
@@ -58,9 +58,9 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-01.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/5/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/5/#fullscreen)
 
-Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different currency.
 
 > Return to the [Index](#index)
 
@@ -89,16 +89,16 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-02.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/9/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/9/#fullscreen)
 
-Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different currency.
 
 > Return to the [Index](#index)
 
 ### USD v. Great British Pound
 
 Largely influenced by the divisive Brexit vote, the value of the Pound has remained relatively low since the referendum in
-late June of 2016, which aligns perfectly with the Pound's slight depreciation in value against the dollar on the chart below.
+late June of 2016, which aligns perfectly with the slight depreciation of the Pound in value against the dollar on the chart below.
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
@@ -119,9 +119,9 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-03.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/6/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/6/#fullscreen)
 
-Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different currency.
 
 > Return to the [Index](#index)
 
@@ -132,7 +132,7 @@ Open the ChartLab visualization above to navigate through time or select a diffe
 After purchasing trillions of Yen worth of Japanese national debt from the private sector three years ago, the Central Bank
 of Japan has been watching the gradual decrease in value of the Yen against the dollar. Most analysts, see this
 fall as controlled and predict a bright future for the Yen as the Central Bank can no longer afford to collect more debt
-than they already have. However, the Yen's rise much also be managed as the sudden appreciation of the currency could result in
+than they already have. However, the rise of the Yen must be managed carefully, as the sudden appreciation of the currency could result in
 an increase in loan defaults because industries which have taken loans at current Yen prices would be paying them back at a
 much higher rate.
 
@@ -153,9 +153,9 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-041.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/4/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/4/#fullscreen)
 
-Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different currency.
 
 > Return to the [Index](#index)
 
@@ -183,15 +183,15 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-05.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/2/#fullscreen)
 
-Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different currency.
 
 > Return to the [Index](#index)
 
 ### USD v. Hong Kong Dollar
 
-The Hong Kong Dollar is officially pegged to the value of the United States Dollar so any change in relative
+The Hong Kong Dollar is officially pegged to the value of the United States Dollar. Any change in relative
 value is planned. The "Miracle of the Orient" continues to be one of the most dominant financial markets in the world.
 
 ```sql
@@ -211,9 +211,9 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-06.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/3/#fullscreen)
 
-Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different currency.
 
 > Return to the [Index](#index)
 
@@ -222,7 +222,7 @@ Open the ChartLab visualization above to navigate through time or select a diffe
 One of the financial centers of the world, Singapore is home to the second-busiest port in the world and one of the largest
 oil refining industries worldwide as well. With one of the highest per capita GDP values, Singapore has cemented its
 place of international importance despite inexplicably loose financial policy whereby the Monetary Authority of Singapore
-does not regulate their currency's value by adjusting interest rates, as is common with most central banking systems.
+does not regulate currency value by adjusting interest rates, which is common with most central banking systems.
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", AVG(value) AS "Average Value"
@@ -241,9 +241,9 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-07.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/8/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/8/#fullscreen)
 
-Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different currency.
 
 > Return to the [Index](#index)
 
@@ -272,19 +272,19 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-08.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/#fullscreen)
 
-Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different currency.
 
 > Return to the [Index](#index)
 
 ### USD v. Mexican Peso
 
 Boasting the highest per capita income of Latin America, the Mexican economy has continued to demonstrate healthy growth over
-the last several decades. North America's number one producer of automobiles also enjoys a $46 billion trade surplus with the
+the last several decades. The number one producer of automobiles in North America also enjoys a $46 billion trade surplus with the
 United States, and is the 9th ranked owner of United States government debt. This dependence on America affords Mexico the
 ability to spur dramatic internal growth that has led to the creation of a booming electronics sector, but at the cost of a
-certain amount of reliance on the United States as roughly half of the country's imports and exports originate or end up
+certain amount of reliance on the United States as roughly half of the imports and exports of Mexico originate or end up
 on U.S. soil.
 
 ```sql
@@ -304,8 +304,8 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-09.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/7/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/7/#fullscreen)
 
-Open the ChartLab visualization above to navigate through time or select a different country's currency.
+Open the ChartLab visualization above to navigate through time or select a different currency.
 
 > Return to the [Index](#index)

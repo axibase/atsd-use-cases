@@ -1,9 +1,11 @@
+<!-- markdownlint-disable MD101 -->
+
 # Producers are Spending Less While Consumers are Paying More
 
 ## Introduction
 
 The Consumer Price Index (CPI) is a metric that is most commonly associated with inflation. It tracks the average cost of goods,
-and by doing so, demonstrates the changing prices that consumers are paying for a typical basket of goods. Think about your
+and demonstrates the changing prices that consumers are paying for a typical basket of goods. Think about your
 favorite grandparent telling you about how much the movies cost when they were your age. To learn more about the effect of
 the CPI see this [analysis](../../cbisrael-cpi/README.md) that track how CPI affected the value of the Israeli Shekel over several
 decades.
@@ -15,14 +17,14 @@ a final product. Both are shown below from 1990 to 2017:
 
 ![](./images/pro-one.png)
 
-[![View ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0b791490/#fullscreen)
+[![View ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/0b791490/#fullscreen)
 
-> Open any ChartLab visualization to navigate through time using the dropdown menus at the top of the screen.
+> Open any ChartLab visualization to navigate through time using the drop-down lists at the top of the screen.
 
 _Sources_: [Federal Reserve Economic Data (CPI)](https://fred.stlouisfed.org/series/CPIAUCSL), [Federal Reserve Economic Data (PPI)](https://fred.stlouisfed.org/series/PPIACO)
 
 Both of the above metrics are indexed using the CPI and PPI value from the year 1982 as a baseline. This choice is somewhat
-arbitrary as such a decision simply sets that year's value at 100 and all other data points represent some proportion of that
+arbitrary as such a decision simply sets the value of the index year to 100 and all other data points represent some proportion of that
 value. A value of 50 would indicate proportionally half of the 1982 value, while a value of 150 would indicate a value
 1.5 times greater than the 1982 value. Because CPI and PPI have been converted to unitless values, they can be directly compared.
 
@@ -65,7 +67,7 @@ of the CPI less the value of the PPI.
 | 12-2008 | 211.4 | 170.9 | 40.5                  |
 ```
 
-In order to effectively contextualize this data, average Potential Profitability Values are shown below by year:
+to effectively contextualize this data, average Potential Profitability Values are shown below by year:
 
 ```sql
 SELECT YEAR(time) AS "Date", AVG(cpi.value) AS "Avg CPI", AVG(ppi.value) AS "Avg PPI", AVG(cpi.value - ppi.value) AS "Potential Profitability Value"
@@ -116,7 +118,7 @@ As shown in the table above and figure below, the Potential Profitability Value 
 
 ![](./images/pro-4.png)
 
-[![View ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bbd570f0/#fullscreen)
+[![View ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/bbd570f0/#fullscreen)
 
 The red line shows the average Potential Profitability Value over the entire observed period.
 
@@ -136,13 +138,13 @@ SELECT AVG(cpi.value) AS "Avg CPI", AVG(ppi.value) AS "Avg PPI", AVG(cpi.value -
 Using the [moving average](https://axibase.com/docs/atsd/sql/#aggregation-functions) function to aggregate the
 average values in annual increments instead of across the entire observed period smooths the MPV curve and shows the effects
 of the recession on producer profits. A detailed use case and syntax explanation of the weighted average function can be found
-[here](../../../tutorials//moving-avg/README.md).
+[here](../../../tutorials/weighted-avg/README.md).
 
 **Figure 4**: MPV Annual Aggregation
 
 ![](./images/pro-5.png)
 
-[![View ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/9fe50f95/#fullscreen)
+[![View ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/9fe50f95/#fullscreen)
 
 ## Analysis
 
@@ -165,7 +167,7 @@ The calculations shown above can be repeated with core CPI and PPI to account fo
 
 ![](./images/pro-6.png)
 
-[![View ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f3c7eefe/#fullscreen)
+[![View ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/f3c7eefe/#fullscreen)
 
 Immediately visible is the lack of fluctuation in both CPI and PPI surrounding the years of the recession. The underlying data
 is shown below from 1990 to present:
@@ -215,9 +217,9 @@ GROUP BY YEAR(time)
 
 ![](./images/pro-7.png)
 
-[![View ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bae30175/#fullscreen)
+[![View ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/bae30175/#fullscreen)
 
-> Open any ChartLab visualization to navigate through time using the dropdown menus at the top of the screen.
+> Open any ChartLab visualization to navigate through time using the drop-down lists at the top of the screen.
 
 When the data is controlled to exclude volatile metrics such as energy and food production and consumption,
 a more accurate representation of the difference between production costs and consumer costs can be seen. To further
@@ -228,7 +230,7 @@ sector is shown below alongside the calculated both Potential Profitability Valu
 
 ![](./images/pro-8.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/037a04f9/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/037a04f9/#fullscreen)
 
 In fact, when the energy food sectors are not excluded from CPI and PPI values and compared with the per barrel price of crude
 oil they are shown to be intimately tied to one another. Inverting the axes of the black line representing Potential Profitability Value
@@ -238,11 +240,11 @@ highlights this relationship further:
 
 ![](./images/pro-9.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/037a04f9/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/037a04f9/2/#fullscreen)
 
 Using an ad-hoc modification to align the origin of the two metrics shows the growing gap between oil prices and marginal profit
 indicating that while related to one another, high oil prices do not guarantee a high marginal profit. In fact, because of
-the reflection across the x-axis, as oil prices increase, the value of marginal profit actually decreases.
+the reflection across the x-axis, as oil prices increase, the value of marginal profit decreases.
 
 ## Conclusion
 
@@ -250,7 +252,7 @@ the reflection across the x-axis, as oil prices increase, the value of marginal 
 
 ![](./images/pro-10.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/037a04f9/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/037a04f9/3/#fullscreen)
 
 Despite a significant decrease in marginal profit levels during the late 2000s, when including the energy sector and food
 sectors, it appears that businesses have mostly picked up where they left off pre-downturn. Indeed, when these industries are
@@ -261,7 +263,7 @@ delayed, effect indicating the true power of the oil market over the American ec
 
 ![](./images/pro-12.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/037a04f9/4/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/037a04f9/4/#fullscreen)
 
 Ultimately, the overall cost of various consumer goods in a given basket is heavily impacted by the cost of oil because of
 the need to transport a given good to the needed location and with the nature of the globalized goods market, often that means

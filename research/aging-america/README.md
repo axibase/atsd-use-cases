@@ -1,17 +1,17 @@
 # Aging America: Modeling Birth Trends in the United States
 
 ![](./images/aging-america-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/9703ea57#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/9703ea57#fullscreen)
 
-*Fig. 1*: The upper graph shows the growing senior population contrasted against the diminishing birth rate while the lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
+> The upper graph shows the growing senior population contrasted against the diminishing birth rate while the lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
 
 ## Overview
 
-The United States provides retirement security for the elderly and disabled in a number of ways: Medicaid, Medicare, and Social Security are the main components of the social welfare program. Each of these systems is financed primarily with payroll taxes called the Federal Insurance Contribution Act (FICA) tax. The underlying philosophy of this, and almost any, social welfare program is thus: the young should pay for the healthcare of those unable to do so themselves due to age or disability in the hopes that one day the next generation will do the same for them. Sound logic to be sure, but what happens when the previous generation failed to repopulate the nation in the same way their parents did? What happens when this trend is repeated through one, two, three, or four generations? For a long time analysts have been warning about the coming drought in the Social Security Administration's coffers, but more and more it's starting to appear that it may be just over the horizon.
+The United States provides retirement security for the elderly and disabled in a number of ways: Medicaid, Medicare, and Social Security are the main components of the social welfare program. Each of these systems is financed primarily with payroll taxes called the Federal Insurance Contribution Act (FICA) tax. The underlying philosophy of this, and almost any, social welfare program is thus: the young should pay for the healthcare of those unable to pay for themselves due to age or disability in the hopes that one day the next generation does the same for them. Sound logic to be sure, but what happens when the previous generation failed to repopulate the nation in the same way their parents did? What happens when this trend is repeated through one, two, three, or four generations? For a long time analysts have been warning about the coming drought in the Social Security Administration coffers, but more and more it is starting to appear that it may be just over the horizon.
 
 ## Objectives
 
-Using [**Forecasting**](https://axibase.com/docs/atsd/forecasting/) functionality from ATSD, current population figures and birth data, models may be created to predict trends in America's potential population crisis.
+Using [**Forecasting**](https://axibase.com/docs/atsd/forecasting/) functionality from ATSD, current population figures and birth data, models may be created to predict trends in the potential American population crisis.
 
 ## Data
 
@@ -33,10 +33,10 @@ Data is visualized using **Trends** service from Axibase, a public data reposito
 
 ### Working Population as a Portion of Total Population
 
-Open the **Trends** visualization and use the drop-down menu to navigate through time to compare working-aged population to the United States total population.
+Open the **Trends** visualization and use the drop-down list to navigate through time to compare working-aged population to the United States total population.
 
 ![](./images/working-population.png)
-[![](./images/button-new.png)](https://trends.axibase.com/2228bbde#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/2228bbde#fullscreen)
 
 *Fig 2.*: The portion of the population eligible for work (aged between 15 and 64) is shown in purple, while the remaining ineligible population is shown in red.
 
@@ -45,7 +45,7 @@ Open the **Trends** visualization and use the drop-down menu to navigate through
 The upper histogram plots the frequency of each value of annual crude births per one thousand persons and the lower histogram tracks the 65+ population in percentile terms. Deceptively, the data seems to show that the average amount of births outperforms the aging population, but when scaled to 100, in fact, the aged population severely outnumbers the amount of crude births which are occurring.
 
 ![](./images/population-histogram.png)
-[![](./images/button-new.png)](https://trends.axibase.com/df87fe0c#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/df87fe0c#fullscreen)
 
 *Fig 3.*: Open the **Trends** visualization and modify the number of bars in either histogram using a [`bar-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/#tab-id-1) setting for more granularized data visualization.
 
@@ -53,7 +53,7 @@ The upper histogram plots the frequency of each value of annual crude births per
 
 Using a `value` expression, calculated series may be created using existing data. Here, working-aged population data is subtracted from total population data to create a new series and then visualized. This setting is shown here.
 
-```sql
+```ls
 # Sample configuration for calculating and visualizing an ad-hoc derived series.
 
 [group]
@@ -87,12 +87,12 @@ Using a `value` expression, calculated series may be created using existing data
 # Calculated series has no metric value as it is only derived. Alert expression is entered based on information provided by box graph
 ```
 
-Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in **Trends** or **ChartLab**, see the [Calculated Series article](../../tutorials//calculated-values/README.md).
+Each of the target series is given an `alias` which is then used to create the calculated series. For more information about creating calculated series in **Trends** or **ChartLab**, see the [Calculated Series Tutorial](../../tutorials//calculated-values/README.md).
 
 ![](./images/working-population-charts.png)
-[![](./images/button-new.png)](https://trends.axibase.com/68f93899#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/68f93899#fullscreen)
 
-*Fig 4.*: The [box chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) and [histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/) establish the dataset's median value and range, which are then used in the [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14), which activates when a condition is satisfied. Here, the condition is set to color a bar red if it is greater than the calculated median value. This expression shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
+*Fig 4.*: The [box chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) and [histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/) establish the median and range values of the dataset, which are then used in the [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14), which activates when a condition is satisfied. Here, the condition is set to color a bar red if it is greater than the calculated median value. This expression shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
 
 ### Forecasting
 
@@ -109,7 +109,7 @@ The ATSD Forecast tool may be used to model future trends based on existing data
 Forecasting for each of the original metrics is shown below for roughly 20 years into the future.
 
 ![](./images/forecast_data.png)
-[![](./images/button-new.png)](https://trends.axibase.com/a2967bc9#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/a2967bc9#fullscreen)
 
 *Fig 5.*: The original data is shown here with forecasts performed in ATSD showing the potentially widening gap between those eligible to pay in to the Social Security system and those needing to be paid out from that system.
 
@@ -123,6 +123,6 @@ Using forecasting, the continuation of mathematical trends may be readily observ
 
 The following tools may be used to replicate these results in a local instance of ATSD:
 
-* For information about modifying data visualizations in the **Trends** interface, see the [Trends Guide](../../integrations/shared/trends.md);
+* For information about modifying data visualizations in the **Trends** interface, see the [Trends Guide](../../tutorials/shared/trends.md);
 * [Forecast Configuration](./resources/forecast-settings.xml);
-* For detailed information about configuring the Forecasting tool, see this [guide](../../integrations/shared/import-forecast.md).
+* For detailed information about configuring the Forecasting tool, see this [guide](../../tutorials/shared/import-forecast.md).

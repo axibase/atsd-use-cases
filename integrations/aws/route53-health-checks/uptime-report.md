@@ -8,18 +8,18 @@ A health check is a configuration for a scheduled connectivity test that AWS per
 
 The default list of regions where tests are performed is as follows:
 
-* us-east-1
-* us-west-1
-* us-west-2
-* sa-east-1
-* ap-southeast-1
-* ap-southeast-2
-* ap-northeast-1
+* `us-east-1`
+* `us-west-1`
+* `us-west-2`
+* `sa-east-1`
+* `ap-southeast-1`
+* `ap-southeast-2`
+* `ap-northeast-1`
 
 The test frequency is set to 30 second intervals, which may be reduced to 10 seconds for operation in **Fast** mode.
 In addition to connection parameters, which specify the DNS name or IP address, the port and the path for HTTP/S tests, you can specify retry logic to test the endpoint again if the connection fails. The specified number of retry attempts, executed by the service at the same frequency as the base test, determine how many successive failures Route 53 allows before the service determines an endpoint is unavailable.
 
-The intervals of time when the endpoint is unavailable are captured by the `HealthCheckPercentageHealthy` metric. This metric measures the percentage of time in the given period when the endpoint was available from 0% to 100%. For example, if the value of the average statistic for the `HealthCheckPercentageHealthy` metric is 90% for the 10 minute period, the target was reachable for 9 minutes (`10 * 60 * 90% = 540 seconds`).  AWS CloudWatch stores these statistics  for a period of up two weeks.
+The intervals of time when the endpoint is unavailable are captured by the `HealthCheckPercentageHealthy` metric. This metric measures the percentage of time in the given period when the endpoint is available from 0% to 100%. For example, if the value of the average statistic for the `HealthCheckPercentageHealthy` metric is 90% for the ten-minute period, the target is reachable for nine minutes (`10 * 60 * 90% = 540 seconds`).  AWS CloudWatch stores these statistics  for a period of up two weeks.
 
 ![](./images/route53-sla.png)
 
@@ -27,12 +27,12 @@ Measuring uptime is important for a variety of use cases such as reviewing IT op
 
 In addition to cumulative availability over a reporting period, identify the total number of downtime incidents as well as the longest incidents for in-depth diagnostics.
 
-While [How to Build Availability Report for AWS Route53](README.md) describes how to collect AWS Route53 statistics with Axibase Time Series Database, this article focuses on creating and delivering scheduled uptime reports.
+While [How to Build Availability Report for AWS Route 53](README.md) describes how to collect AWS Route 53 statistics with Axibase Time Series Database, this integration focuses on creating and delivering scheduled uptime reports.
 
 ## Preparation
 
 * Setup an [IAM account](https://axibase.com/docs/axibase-collector/jobs/aws-iam.html)
-* Configure [Route53 & ATSD](README.md) integration. Make sure to copy health check attributes as described by the [ATSD Integration Documentation](https://github.com/axibase/atsd-integration/tree/aws-route53)
+* Configure [Route 53 & ATSD](README.md) integration. Copy health check attributes as described by the [ATSD Integration Documentation](https://github.com/axibase/atsd-integration/tree/aws-route53)
 
 Log in to ATSD user interface using `axibase` username and `axibase` password.
 
@@ -52,9 +52,9 @@ This completes the verification stage. You now have data which can be reported o
 
 ## Reports
 
-Since you need a flexible way of filtering, grouping, and formatting results, rely on [SQL](https://axibase.com/docs/atsd/sql/) implemented in Axibase Time Series Database to prepare reports, including time series extensions for time zone aggregations.
+Since you need a flexible way of filtering, grouping, and formatting results, rely on [SQL](https://axibase.com/docs/atsd/sql/) implemented in Axibase Time Series Database (ATSD) to prepare reports, including time series extensions for time zone aggregations.
 
-In ATSD, execute SQL queries via web-based console, an external reporting tool using a JDBC/ODBC driver, or with the built-in report generator with email delivery, web publishing, and file generation options. This article relies on the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) to test and fine-tune these queries.
+In ATSD, execute SQL queries via web-based console, an external reporting tool using a JDBC/ODBC driver, or with the built-in report generator with email delivery, web publishing, and file generation options. This integration relies on the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) to test and fine-tune these queries.
 
 ### Base Report
 
@@ -78,7 +78,7 @@ The output includes the list of health check IDs and the average percentage heal
 |---------------------------------------|-------------------------------------------|--------------------|--------------|
 | bd04c043-49a3-4618-bb3b-571d9f986d58  | http://api.example.org:80/v1.12/srv-ping  | 100.000            | 1440         |
 | 726bed8e-c205-47d7-9d26-f8e61799b1a3  | https://docs.example.org:443/poll         | 99.958             | 1440         |
-| 007cac9b-3573-493d-9c15-626ebf6a92bd  | tcp://10.102.0.1:443                      | 100.000            | 1440         |
+| 007cac9b-3573-493d-9c15-626ebf6a92bd  | tcp://192.0.2.1:443                       | 100.000            | 1440         |
 ```
 
 This query includes the **Sample Count** column for data quality control purposes. Route 53 reports checks every minute, the number of samples in the report is equal to the number of hours in the reporting interval multiplied by `60`. In the above case, the number of hours is `24` and therefore the sample count is `24*60 = 1440`.
@@ -88,25 +88,25 @@ You can adjust the start and end date of the reporting interval using convenient
 * Last 24-hours:
 
 ```sql
-  WHERE datetime >= NOW - 24*hour AND datetime < NOW
+WHERE datetime >= NOW - 24*hour AND datetime < NOW
 ```
 
 * Previous week:
 
 ```sql
-  WHERE datetime >= previous_week AND datetime < current_week
+WHERE datetime >= previous_week AND datetime < current_week
 ```
 
 * Previous month:
 
 ```sql
-  WHERE datetime >= previous_month AND datetime < current_month
+WHERE datetime >= previous_month AND datetime < current_month
 ```
 
 * Previous quarter:
 
 ```sql
-  WHERE datetime >= previous_quarter AND datetime < current_quarter
+WHERE datetime >= previous_quarter AND datetime < current_quarter
 ```
 
 ### Displaying Health Check Properties
@@ -127,7 +127,7 @@ GROUP BY entity
 |-------------------------------------------|-----------|-------------------|
 | http://api.example.org:80/v1.12/srv-ping  | HTTP      | 100.000           |
 | https://docs.example.org:443/poll         | HTTPS     | 99.958            |
-| tcp://10.102.0.1:443                      | TCP       | 100.000           |
+| tcp://192.0.2.1:443                       | TCP       | 100.000           |
 ```
 
 ### Filtering By Property
@@ -165,7 +165,7 @@ GROUP BY entity
 | URL                                       | Protocol  | Average Health, % |
 |-------------------------------------------|-----------|-------------------|
 | http://api.example.org:80/v1.12/srv-ping  | HTTP      | 100.000           |
-| tcp://10.102.0.1:443                      | TCP       | 100.000           |
+| tcp://192.0.2.1:443                       | TCP       | 100.000           |
 ```
 
 ### Grouping by Property
@@ -229,12 +229,12 @@ GROUP BY entity
 | URL                                       | Average Health, % |
 |-------------------------------------------|-------------------|
 | tcp://status.github.com:443               | 100.000           |
-| tcp://10.102.0.1:443                      | 99.447            |
+| tcp://192.0.2.1:443                       | 99.447            |
 | https://docs.example.org:443/poll         | 99.074            |
 | http://api.example.org:80/v1.12/srv-ping  | 63.636            |
 ```
 
-Similarly, calculate the availability for specific days of the week in order to locate patterns that might lead to enhanced change control, such as instituting a change freeze on Fridays.
+Similarly, calculate the availability for specific days of the week to locate patterns that might lead to enhanced change control, such as instituting a change freeze on Fridays.
 
 ```sql
 SELECT substr(date_format(time, 'u-EEE'), 3) AS day_of_week,
@@ -272,7 +272,7 @@ GROUP BY entity
 | URL                                | Downtime Count |
 |------------------------------------|----------------|
 | https://docs.example.org:443/poll  | 5             |
-| tcp://10.102.0.1:443               | 1             |
+| tcp://192.0.2.1:443                | 1             |
 ```
 
 ### Downtime Incidents - Longest Incidents
@@ -304,6 +304,6 @@ WHERE "period_start" != 0
 ```ls
 | url                                | Incident Start       | Incident End         | Duration, min |
 |------------------------------------|----------------------|----------------------|---------------|
-| tcp://10.102.0.1:443               | 2018-03-14 16:42:00  | 2018-03-14 16:51:00  | 9             |
+| tcp://192.0.2.1:443                | 2018-03-14 16:42:00  | 2018-03-14 16:51:00  | 9             |
 | https://docs.example.org:443/poll  | 2018-03-14 16:41:00  | 2018-03-14 16:50:00  | 9             |
 ```

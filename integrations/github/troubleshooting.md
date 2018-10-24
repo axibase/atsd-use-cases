@@ -17,7 +17,7 @@ Under the **Details** column, click the **View** link to see webhook request par
 If the page does not contain the expected request, check the webhook URL manually:
 
 ```sh
-curl -v "https://usr:pwd@atsd_hostname:8443/api/v1/messages/webhook/github?ping=true&debug=true"
+curl -v "https://username:password@atsd.example.org:8443/api/v1/messages/webhook/github?ping=true&debug=true"
 ```
 
 ATSD responds with the following message:
@@ -39,5 +39,5 @@ ATSD responds with the following message:
 ```
 
 ```json
-{"entity":"github","type":"webhook","source":"github","severity":null,"tags":{"ping":"true","request_ip":"10.10.10.10"},"date":"2018-05-10T07:27:03.819Z"}
+{"entity":"github","type":"webhook","source":"github","severity":null,"tags":{"ping":"true","request_ip":"192.0.2.1"},"date":"2018-05-10T07:27:03.819Z"}
 ```

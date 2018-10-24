@@ -10,7 +10,7 @@ Follow this process to import metric definitions into your local ATSD instance.
 
     ![](./images/metrics.png)
 
-2. From the **Metrics** page, expand the split button at the bottom of the page and click **Import**.
+2. From the **Metrics** page, expand the split-button at the bottom of the page and click **Import**.
 
     ![](./images/import-metric.png)
 

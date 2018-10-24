@@ -8,14 +8,14 @@
 
 ![I2](./images/IDO-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/dfbbf75b/2/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/dfbbf75b/2/#fullscreen)
 
 For the 2014-2015 academic year, more than [90%](https://www2.ed.gov/admins/lead/account/consolidated/sy14-15part1/ia.pdf)
 of eligible Iowa students successfully graduated high school making it the [highest
 performing state](https://nces.ed.gov/programs/coe/indicator_coi.asp) in the country with respect to graduation rate, and the
 first state in recent memory to see such results. Using publicly-available [education data](https://catalog.data.gov/dataset/2014-2015-public-school-district-dropout-rates)
-released by the State of Iowa, it can be seen that cities which account for just 17% of the state's three and a half million residents,
-also account for more than 30% of the state's high school dropouts.
+released by the State of Iowa, it can be seen that cities which account for just 17% of the three and a half million residents,
+also account for more than 30% of high school dropouts.
 
 **Table 1.1**: Iowa State population and dropout rate
 
@@ -35,5 +35,5 @@ also account for more than 30% of the state's high school dropouts.
 
 > *Dropout rate is a calculation of the percent of residents that dropped out, not _eligible_ residents who dropped out.
 
-While Iowa is certainly ahead of the curve in terms of overall graduation rates, the cities shown above have plenty of room
+While Iowa is certainly ahead of the curve with respect to overall graduation rates, the cities shown above have plenty of room
 improve.

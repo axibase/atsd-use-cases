@@ -2,6 +2,11 @@
 
 Interactive visualizations tracking interesting datasets from a variety of sources.
 
+1. [Stag-cation: The Stagnation of Supplemental Benefits](supplemental-benefits/README.md) (October 2018)
+1. [The Lopsided Nature of US Unemployment](unemployment/tech-employment.md) (September 2018)
+1. [Presidential Economic Metrics Portal](presidential-economic-metrics/README.md) (August 2018)
+1. [California Water Portals](water-portal/README.md) (July 2018)
+1. [Tracking 2018 Cryptocurrency Value](crypto/README.md) (June 2018)
 1. [Hetzner May 2018 Outage](hetzner-outage/README.md) (May 2018)
 1. [The Creeping Overnight Fund Rate](overnight-fund-rate/README.md) (March 2018)
 1. [The Fall of Facebook](facebook/README.md) (March 2018)
@@ -14,8 +19,11 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 1. [Public Utilities and Private Industry in Austin](austin-power/README.md) (August 2017)
 1. [International Students in America by Country of Origin](international-students/README.md) (August 2017)
 1. [Who is Dropping Out in the State with the Fewest Dropouts?](iowa-dropouts/README.md) (July 2017)
-1. [What Do Seattlelites Have to Complain About?](seattle-complaint/README.md) (July 2017)
+1. [What Do Seattleites Have to Complain About?](seattle-complaint/README.md) (July 2017)
 1. [San Francisco Air Traffic Noise Complaints by the Numbers](sfo-noise/README.md) (July 2017)
 1. [Island Living is Recession Proof](hawaii-gdp/README.md) (July 2017)
 1. [500 Cities: Local Data for Better Health](cdc-top25/README.md) (June 2017)
-1. [New York City's Most Crowded Industries](ny-employment/README.md) (June 2017)
+1. [The Most Crowded Industries in New York City](ny-employment/README.md) (June 2017)
+1. [DuckDuckGo Search Statistics](duck-duck-go/README.md) (July 2015)
+1. [Tracking Programming Language Popularity on Stack Overflow](stack-exchange/README.md) (June 2015)
+1. [AWS EC2 T2 Instances: 700 seconds of Fame](700-seconds/README.md) (May 2015)

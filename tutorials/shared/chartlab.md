@@ -4,9 +4,9 @@
 
 ## Introduction
 
-**ChartLab** is a versatile online tool which allows users to test drive ATSD visualization capabilities. **ChartLab** does not require any registration and allows you to experiment with different layouts and widget settings prior to deploying it in your own ATSD instance. For front-end developers familiar with [jsfiddle](http://jsfiddle.net/da1rosy8/), **ChartLab** shares many of the same properties and characteristics.
+**ChartLab** is a versatile online tool which allows users to test drive ATSD visualization capabilities. **ChartLab** does not require any registration and allows you to experiment with different layouts and widget settings prior to deploying it in your own ATSD instance. For front-end developers familiar with [jsfiddle](https://jsfiddle.net/da1rosy8/6/), **ChartLab** shares many of the same properties and characteristics.
 
-This article shows basic features and functionality of the **ChartLab** service.
+This tutorial shows basic features and functionality of the **ChartLab** service.
 
 ## ChartLab Features
 
@@ -18,7 +18,7 @@ The **ChartLab** menu has the following components:
 * **Run**" Apply and view a portal based on the current configuration in the Editor window.
 * **Save**: Save the current configuration under as new version in the current directory;
 * **Clone**: Save current configuration in a new directory;
-* **Widget**: Append widget template to the current desired configuration;
+* **Widget**: Append widget template to the selected configuration;
 * **Source**: Switch between data sources: Random or ATSD.
 
 ## Source
@@ -30,15 +30,15 @@ The **ChartLab** menu has the following components:
 
 ![Figure 2](./images/Figure2.png)
 
-The Random Data Generator is a non-existent dataset which invokes the `math.random()` javascript function.
+The Random Data Generator is a non-existent dataset which invokes the `math.random()` JavaScript function.
 
 >For more information see the [Mozilla Developer Network Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random).
 
 This function returns a floating-point, pseudo-random number in the range `[0,1]`, which includes all number from zero up to, but not including, 1. These numbers have no meaning, the functions generates a new random number every 60 seconds.
 
-Use the Randon Data Generator to explore different widgets and layouts available in **ChartLab**
+Use the Random Data Generator to explore different widgets and layouts available in **ChartLab**
 
-ATSD data is data stored in ATSD from a variety of sources including server equipment, network devices, and online resources. Use **ChartLab** to access public data stored by ATSD and [install](https://axibase.com/docs/atsd/installation/) the databast to begin uploading your own.
+ATSD data is data stored in ATSD from a variety of sources including server equipment, network devices, and online resources. Use **ChartLab** to access public data stored by ATSD and [install](https://axibase.com/docs/atsd/installation/) the database to begin uploading your own.
 
 ## Widget
 
@@ -91,7 +91,7 @@ To save the portal under an entirely new URL click **Clone**.
 
 ![Figure 12](./images/Figure12.png)
 
-The cloned portal is identical to the original with a unique URL. Use this feature to publish a final addition so that earlier versions remain hidden.
+The cloned portal is identical to the original with a unique URL. Use this feature to publish a final addition while earlier versions remain hidden.
 
 ## Editor
 
@@ -117,11 +117,11 @@ Access [Charts Documentation](https://axibase.com/products/axibase-time-series-d
 
 ![](./images/fred-lib-demo.png)
 
-[![](./images/button.png)](https://trends.axibase.com/c9311303#fullscreen)
+[![](../../research/images/new-button.png)](https://trends.axibase.com/c9311303#fullscreen)
 
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 
-```javascript
+```ls
 ### On the [configuration] level, the 'import' command is used to load functions from the `fred.js` file
 ### The library is assigned the name 'fred'.
 ### Multiple function libraries may be imported into the same portal.

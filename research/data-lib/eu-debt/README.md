@@ -1,6 +1,6 @@
 # European Union Debt by Country (2005-2016)
 
-**Data Source**: [Eurostat](http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=teina225&plugin=1)
+**Data Source**: [Eurostat](https://ec.europa.eu)
 
 **Visualization**: [ChartLab](https://apps.axibase.com/chartlab)
 
@@ -10,18 +10,18 @@
 
 ![](./images/eud-01.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bfcc9660#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/bfcc9660#fullscreen)
 
-> Open the ChartLab visualization above and use the drop-down menus to navigate between countries or select the European Union
-total. Use both charts to compare two countries, one country to the EU total, or any other desired combination.
+> Open the ChartLab visualization above and use the drop-down lists to navigate between countries or select the European Union
+total. Use both charts to compare two countries or one country to the EU total.
 
 ## Debt as a Portion of the European Union Total
 
 ![](./images/eud-04.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/64b4fd84/13/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/64b4fd84/13/#fullscreen)
 
-> Open the ChartLab visualization above and use the drop-down menu to navigate through time.
+> Open the ChartLab visualization above and use the drop-down list to navigate through time.
 
 ## Data
 
@@ -60,7 +60,7 @@ European Union Countries Index:
 * [Sweden](#sweden)
 * [United Kingdom](#united-kingdom)
 
-Using additional [EuroStat population data](http://ec.europa.eu/eurostat/web/population-demography-migration-projections/population-data), this debt has been indexed by per capita value as well [here](../eu-debt-per-capita/README.md).
+Using additional Eurostat population data, this debt has been indexed by [per capita value](../eu-debt-per-capita/README.md) as well.
 
 ## European Union Total
 

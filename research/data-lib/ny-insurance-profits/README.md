@@ -2,9 +2,9 @@
 
 ## References
 
-* [Dataset](https://github.com/axibase/open-data-catalog/blob/master/datasets/xek8-zfrt.md)
+* [Dataset](https://axibase.com/datasets/socrata/xek8-zfrt.html)
 * [SQL Syntax](https://axibase.com/docs/atsd/sql/)
-* Axibase [ChartLab](https://apps.axibase.com/)
+* Axibase [ChartLab](../../../tutorials/shared/chartlab.md)
 
 ## 2015 Insurance Assets (Top 10)
 
@@ -80,13 +80,13 @@ ORDER BY 'Net Assets' DESC
 
 ![](./images/NY_I6.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3904f832/12/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/3904f832/12/#fullscreen)
 
 ## 2015 New York Insurance Assets Versus Liabilities (Top 10)
 
 ![](./images/NY_I4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/6402f01c/78/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/6402f01c/78/#fullscreen)
 
 ## 2014 - 2015 Change in Net Insurance Assets (Top 10)
 
@@ -117,4 +117,4 @@ LIMIT 10
 
 ![](./images/NY_I2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/6402f01c/76/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/6402f01c/76/#fullscreen)

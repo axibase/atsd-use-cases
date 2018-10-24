@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # The Average American Debt Profile
 
 ![](./images/fed000.jpg)
@@ -7,11 +9,11 @@
 Debt is a complicated concept. After the sub-prime mortgage crisis of the late 2000s, modern Americans are all too familiar
 with the problems of irresponsible spending on credit. Student loan recipients who queue up to drop off another application
 for a job in a field they did not study are quick to point to the trappings of deficit spending as a means of wealth creation.
-Politicians and voters on both sides of the aisle point to the ever-growing [United States Government debt](http://www.usdebtclock.org/)
+Politicians and voters on both sides of the aisle point to the ever-growing [United States Government debt](https://www.usdebtclock.org/)
 with anxiety for the future.
 
-And yet despite all the doom and gloom, the American financial system is one of the most stable and robust in the world, in
-no small part thanks to ingenious monetary policy and hegemonic economic position organized over the entire course of the country's history,
+And yet despite all the doom and gloom, the American financial system is one of the most stable in the world, in
+no small part thanks to ingenious monetary policy and hegemonic economic position organized over the entire course of the history of the country,
 modern American consumers are among the wealthiest on the planet.
 
 The United States Federal Reserve is the central banking system of the United States, responsible for monitoring the global
@@ -21,7 +23,7 @@ about these consumers and their monetary practices to better inform their decisi
 ## Data
 
 Provided by the [Federal Reserve](https://www.federalreserve.gov/), this [dataset](https://www.federalreserve.gov/datadownload/Download.aspx?rel=FOR&series=91e0f9a6b8e6a4b1ef334ce2eaf22860&filetype=csv&label=include&layout=seriescolumn&from=01/01/1980&to=12/31/2017)
-must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interpret (`Q/q` letter is not supported). We also need to discard metadata lines contained in the multi-line header. This can be accomplished with a [schema-based parser](https://axibase.com/docs/atsd/parsers/csv/) that provides granular control over the document's rows and columns using RFC 7111 selectors and Javascript:
+must be correctly parsed during import. The quarterly date format needs to be converted into a monthly format that ATSD can interpret (`Q/q` letter is not supported). Discard metadata lines in the multi-line header with a [schema-based parser](https://axibase.com/docs/atsd/parsers/csv/) that provides granular control over rows and columns using `RFC 7111` selectors and JavaScript:
 
 ```javascript
 /*
@@ -61,13 +63,13 @@ releases this number each quarter.
 
 ![](./images/fed-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/842f1dd9/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/842f1dd9/#fullscreen)
 
-> Use the dropdown menus at the top of the visualization screen to navigate through time, selecting the `starttime` and `endtime` values
-to observe a desired period.
+> Use the drop-down lists at the top of the visualization screen to navigate through time, selecting the `starttime` and `endtime` values
+to observe a specific period.
 
 The data can also be queried using the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD.
-The data will be aggregated annually, derived from the average value of each quarter within a given year:
+Aggregate data annually, derived from the average value of each quarter within a given year:
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", AVG(value) AS "Average FOR"
@@ -122,16 +124,16 @@ GROUP BY date_format(time, 'yyyy')
 
 The Debt Service Ratio (DSR) is more specific than the Financial Obligation Ratio in that it typically does not include
 non-essential debt payments. Here, it has been parsed into two categories, mortgage debt and consumer debt. These numbers represent
-the average percent of a person's earned salary each month which much be used to make the required payments associated with
+the average percent of earned salary each month which must be used to make the required payments associated with
 consumer credit and mortgage.
 
-Typically the DSR is an initial calculation performed to determine a person's eligibility to receive a mortgage. A DSR value
+Typically the DSR is an initial calculation performed to determine eligibility to receive a mortgage. A DSR value
 of less than 48% is generally preferred, meaning that with a particular mortgage plus other credit obligations at least 52%
-of a person's gross monthly earning would still be available to them after making the required payments.
+of the gross monthly earning would still be available to them after making the required payments.
 
 ![](./images/fed-002.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/85522dd3/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/85522dd3/#fullscreen)
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", AVG(value) AS "Average FOR"
@@ -188,56 +190,56 @@ American. By using the calculated value setting shown below, additional data not
 displayed:
 
 ```ls
-    [series]
-      metric = dtfd%ypd.q
-      display = false
-      alias = dsr
+[series]
+  metric = dtfd%ypd.q
+  display = false
+  alias = dsr
 
-    [series]
-      metric = dtf%ypd.q
-      display = false
-      alias = for
+[series]
+  metric = dtf%ypd.q
+  display = false
+  alias = for
 
-    [series]
-      value = value('for') - value('dsr')
-      label = Non-Essential Debt Payment
+[series]
+  value = value('for') - value('dsr')
+  label = Non-Essential Debt Payment
 ```
 
 Shown below is the debt profile of the average American consumer from 1980 to 2017, navigate through time using the drop-down
-menus at the top of the screen to select a desired span of time and compare how bearing debt has changed over the course of
+menus at the top of the screen to select a specific span of time and compare how bearing debt has changed over the course of
 the last three decades.
 
 ![](./images/fed-003.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f25de723/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/f25de723/#fullscreen)
 
 The visualization can also be organized to show the amount of each type of debt as it relates to the others:
 
 ![](./images/fed-004.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/f25de723/3/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/f25de723/3/#fullscreen)
 
 Additionally, these values can be compared on an annual basis as shown in the visualization below:
 
 ![](./images/fed-005.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/81ea0ea0/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/81ea0ea0/#fullscreen)
 
 To view the distribution of these values across time, a histogram is shown below:
 
 ![](./images/fed-006.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/9f74c179/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/9f74c179/#fullscreen)
 
-Use the box diagram to explore time with the dropdown menus at the top of the visualization screen. The visualization
+Use the box diagram to explore time with the drop-down lists at the top of the visualization screen. The visualization
 shows the distribution of debt values as a percentage of total income, with the initial time period set to include the
 entire data set:
 
 ![](./images/fed-007.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/20ff0ade/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/20ff0ade/#fullscreen)
 
-The following SQL query will detail the above visualizations in one table, displaying averaged annual values of each component
+The following SQL query enumerates the above visualizations in one table, displaying averaged annual values of each component
 described above: non-essential credit payments, mortgage credit payments, and consumer credit payments, as well as the Financial
 Obligation Ratio (FOR), or total debt obligations.
 
@@ -289,22 +291,22 @@ GROUP BY date_format(time, 'yyyy')
 | 2017 | 4.42     | 5.63     | 5.43          | 15.47 |
 
 The above dataset can illuminate a number of features of the American economy and a number of characteristics of the average
-American consumer. While modern Americans are quick to denounce the zeitgeist of living outside of one's means, the data
+American consumer. While modern Americans are quick to denounce the zeitgeist of living outside of realistic means, the data
 shows that in fact, the amount of debt carried by the average American is on par with or even lower in some cases than that
 of his 1980's counterpart. In fact, the only metric which has demonstrated a legitimate increase in value over the last
 several decades has been the roughly one percent increase in non-essential credit holdings by the average consumer.
 
 According to [data](https://fred.stlouisfed.org/series/MEHOINUSA646N) from the [Economic Research Department](https://research.stlouisfed.org/)
-of the [Saint Louis Branch of the Federal Reserve](https://www.stlouisfed.org/), the 2015 US median household income was $56,516
+of the [Saint Louis Branch of the Federal Reserve](https://www.stlouisfed.org/), the 2015 US median household income is $56,516
 per year in 2015 USD. This number can be applied to the above table and visualized in [ChartLab](https://apps.axibase.com/chartlab)
 to create more comprehensive data.
 
 ![](./images/fed-008.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/da132e01/11/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/da132e01/11/#fullscreen)
 
-The above visualization aggregates the values from **Table 3.1** based on a time period of the user's selection. Use the drop-down
-menu at the top of the screen to select the aggregation period. The initial visualization shows the average values for each
+The above visualization aggregates the values from **Table 3.1** based on a time period of user definition. Use the drop-down
+list at the top of the screen to select the aggregation period. The initial visualization shows the average values for each
 metric over the entire period of time in 2015 USD by obligation amount per quarter.
 
 The following query summons the same data shown above, but further parses it to show annual average monthly payments instead
@@ -359,8 +361,8 @@ GROUP BY date_format(time, 'yyyy')
 
 ## Conclusions
 
-As it turns out, the idea that your parents paid less for their house than you will is only true in absolute terms. When
-compared with current numbers and controlled for inflation, the average 2017 consumer will pay roughly the same portion of their
+As it turns out, the idea that your parents paid less for their house than you is only true in absolute terms. When
+compared with current numbers and controlled for inflation, the average 2017 consumer pays roughly the same portion of their
 income towards a place to hang their hat up as the average 1980 consumer.
 
 The Federal Reserve is able to pull certain levers of power from the Eccles Building in Washington, D.C. such as printing
@@ -369,8 +371,8 @@ to create small changes that have a butterfly effect over time. Ultimately, the 
 always be something opaque and esoteric to the average man, leading to many people denouncing the Federal Reserve System entirely, occasionally
 opting for a return of the gold standard or leveling accusations of wrong-doing.
 
-However, after reviewing the data above, it seems that at least on a consumer level, the average American actually has more
-today than they would have had thirty years ago, or even just five years ago. Of course, the Federal Reserve isn't completely
+However, after reviewing the data above, it seems that at least on a consumer level, the average American has more
+today than they would have had thirty years ago, or even just five years ago. Of course, the Federal Reserve is not completely
 responsible for the wise consumer choices made in the current decades, but monetary policy enacted by the various branches of the Federal
 Reserve are responsible for maintaining the economic conditions that Americans, and consumers the world over, have come to expect
 from the United States economy.

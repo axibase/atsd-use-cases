@@ -2,7 +2,7 @@
 
 ## Overview
 
-If you have images hosted on the [Docker Hub](https://hub.docker.com) registry, you need to monitor automated build jobs on Docker Hub to make sure that the images you successfully publish new images and your CI pipeline remains healthy.
+If you have images hosted on the [Docker Hub](https://hub.docker.com) registry, you need to monitor automated build jobs on Docker Hub to ensure that the images you successfully publish new images and your CI pipeline remains healthy.
 
 While the Docker Hub provides the capability to trigger [outgoing webhooks](https://docs.docker.com/docker-hub/webhooks/), the webhooks only execute when the automated build completes **successfully**. If the job fails or becomes stuck at **Queued** status, Docker Hub does not fire webhooks and your team remains unaware of broken builds. This limitation is [known](https://forums.docker.com/t/docker-hub-webhook-on-build-failure/1166) but a fix is not yet available.
 
@@ -12,7 +12,7 @@ While the email option serves as a workaround for build failures, do not rely on
 
 ![](./images/docker-email.png)
 
-This guide describes a solution, based on the Rule Engine implemented in [Axibase Time Series Database](https://axibase.com/docs/atsd/rule-engine/), which polls the Docker Hub build history using the Docker Hub `v2` API and generates missing webhooks in case of **build failures** or if the build is queued for more than one hour (you can configure this threshold).
+This guide describes a solution, based on the Rule Engine implemented in [Axibase Time Series Database](https://axibase.com/docs/atsd/rule-engine/) (ATSD), which polls the Docker Hub build history using the Docker Hub `v2` API and generates missing webhooks in case of **build failures** or if the build is queued for more than one hour (you can configure this threshold).
 
 Note that this solution only applies to automated builds which are executed by Docker Hub itself.
 
@@ -128,18 +128,18 @@ As you can see, the synthetic `on-error` payload is similar to the native `on-su
 Set `NAMESPACE` variable in the command below to your Docker Hub namespace, for example:
 
 ```sh
-  --env NAMESPACE='google' \
+--env NAMESPACE='google' \
 ```
 
 Set `NOTIFY_URL` variable to a request URL where `on-error` webhook notifications may be sent, for example:
 
 ```sh
-  --env NOTIFY_URL='https://host01:10443/jenkins/plugin?token=123' \
+--env NOTIFY_URL='https://host01:10443/jenkins/plugin?token=123' \
 ```
 
-The notification URL may include **Basic** authorization credentials, for example `https://usr:pwd@host01:10443/`. SSL certificate validation is disabled by default.
+The notification URL may include **Basic** authorization credentials, for example `https://username:password@atsd_hostname:10443/`. SSL certificate validation is disabled by default.
 
-Execute the command below to launch an [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+Execute the command below to launch an [ATSD Sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container.
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 \
@@ -166,7 +166,7 @@ The sandbox runs two front-facing applications which may be accessed using [defa
 
 Verify that the webhook delivery is working as expected.
 
-Go to Docker Hub and open **Build Settings** for one of the projects (images). Trigger a build for one of the branches known to fail.
+On Docker Hub, open the **Build Settings** for one of the projects (images). Trigger a build for one of the branches known to fail.
 
 ![](./images/docker-hub-trigger.png)
 
@@ -174,7 +174,7 @@ The webhook arrives in less than 5 minutes, which is the collector polling inter
 
 If you do not have a good failure candidate handy, send a test `message` command for `test/my-image` project as described below.
 
-Adjust the frequency in Collector web interface at `https://docker_host:8443`. Open `dockerhub-poller` job and set the **`cron` Expression** to `0 * * * * ?` in order to run the data collection every minute.
+Adjust the frequency in Collector web interface at `https://docker_host:8443`. Open `dockerhub-poller` job and set the **`cron` Expression** to `0 * * * * ?` to run the data collection every minute.
 
 ## Automation
 
@@ -194,7 +194,7 @@ In addition to sending build error notifications, you can program the `dockerhub
 
     ![](./images/docker-hub-trigger-rule.png)
 
-For a more robust implementation, create a [lookup table](https://axibase.com/docs/atsd/rule-engine/functions.html#lookup) to associate images in incoming failure events with trigger tokens.
+For a more advanced implementation, create a [lookup table](https://axibase.com/docs/atsd/rule-engine/functions.html#lookup) to associate images in incoming failure events with trigger tokens.
 
 ### Send Alerts
 
@@ -262,6 +262,6 @@ The target service now receives the JSON payload:
 
 ## References
 
-* Axibase Time Series Database [Rule Engine Documentation](https://axibase.com/docs/atsd/rule-engine/).
+* ATSD [Rule Engine Documentation](https://axibase.com/docs/atsd/rule-engine/).
 * Axibase Collector [JSON Job Documentation](https://axibase.com/docs/axibase-collector/jobs/json.html).
 * Questions? Problems? Contact us by raising an [issue](https://github.com/axibase/atsd-use-cases/issues/new).

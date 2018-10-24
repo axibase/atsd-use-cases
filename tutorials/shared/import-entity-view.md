@@ -10,7 +10,7 @@ Follow this process to upload an Entity View configuration to your local ATSD in
 
     ![](./images/portal-config-path.png)
 
-2. Expand the split button at the bottom of the page, click **Import**.
+2. Expand the split-button at the bottom of the page, click **Import**.
 
     ![](./images/import-evs.png)
 

@@ -9,7 +9,7 @@ There are two options to integrate ATSD with IBM Tivoli Monitoring (ITM):
 
 This document describes the second option, which provides minimal latency at the expense of introducing additional overhead on the WPA server.
 
-In order to offload detailed data from ITM-managed systems with minimal latency you need to enable an ITM Warehouse Proxy Agent (WPA) to write incoming analytical data from ITM agents into CSV files on the local file system. The CSV directory is continuously monitored by an `inotify` script, which uploads new CSV files into ATSD the moment these files are created by ITM agents.
+to offload detailed data from ITM-managed systems with minimal latency you need to enable an ITM Warehouse Proxy Agent (WPA) to write incoming analytical data from ITM agents into CSV files on the local file system. The CSV directory is continuously monitored by an `inotify` script, which uploads new CSV files into ATSD the moment these files are created by ITM agents.
 
 This integration enables ATSD to act as a long-term repository for historical data such as attribute groups with aggressive pruning settings like process tables, which are typically configured to only retain old data for an interval of three to seven days.
 
@@ -28,19 +28,19 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
   * Change to the `/opt/ITM directory` and append the following settings to the `config/hd.ini` file:
 
     ```ini
-            KHD_CSV_OUTPUT_ACTIVATE=Y
-            KHD_CSV_OUTPUT=/tmp/itm/csv
-            KHD_CSV_OUTPUT_TAGGED_ONLY=Y
-            KHD_CSV_ISO_DATE_FORMAT=Y
-            KHD_CSV_MAXSIZE=400
-            KHD_CSV_EVAL_INTERVAL=60
+    KHD_CSV_OUTPUT_ACTIVATE=Y
+    KHD_CSV_OUTPUT=/tmp/itm/csv
+    KHD_CSV_OUTPUT_TAGGED_ONLY=Y
+    KHD_CSV_ISO_DATE_FORMAT=Y
+    KHD_CSV_MAXSIZE=400
+    KHD_CSV_EVAL_INTERVAL=60
     ```
 
-  * Restart WareHouse Proxy agent:
+  * Restart Warehouse Proxy agent:
 
     ```sh
-            bin/itmcmd stop hd
-            bin/itmcmd start hd
+    bin/itmcmd stop hd
+    bin/itmcmd start hd
     ```
 
 ### Configure ITM Agents
@@ -53,16 +53,16 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 
 * Copy the configuration file to the `localconfig/${PRODUCT_CODE}/` directory on the agent machine, where `${PRODUCT_CODE}` is the agent product code. You can look up commonly used product codes in the [IBM Knowledge Center](https://www.ibm.com/support/knowledgecenter/en/SS4EKN_7.2.0/com.ibm.itm.doc_6.3/install/pc_codes.htm).
 
-    > Agent situation files adhere to the following naming convention: ${PRODUCT_CODE}_situations.xml
+    > Agent situation files adhere to the following naming convention: `${PRODUCT_CODE}_situations.xml`
 
 * Restart the agent:
 
 ```bash
-    bin/itmcmd stop ${PRODUCT_CODE}
+bin/itmcmd stop ${PRODUCT_CODE}
 ```
 
 ```bash
-    bin/itmcmd start ${PRODUCT_CODE}
+bin/itmcmd start ${PRODUCT_CODE}
 ```
 
 ### Download CSV Parsers for UX, VM, and MQ Product Codes
@@ -74,8 +74,8 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 ### Upload CSV Parsers into ATSD
 
 * Log in to the ATSD web interface.
-* Open the **Configuration > Parsers: CSV** page.
-* Open the split button and select **Import**.
+* Navigate to **Configuration > Parsers: CSV**.
+* Expand the split-button and click **Import**.
 * Upload the CSV parser XML files.
 
 ### Configure `inotify` Script to Read CSV files and Upload into ATSD
@@ -85,9 +85,9 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 * Specify the ATSD hostname by editing the following line:
 
 ```bash
-    if [ "$url" = "" ]; then
-        url="http://atsd_hostname:8088"
-    fi
+if [ "$url" = "" ]; then
+    url="http://atsd_hostname:8088"
+fi
 ```
 
 * Set username and password in the `inotify_sender.sh` script
@@ -99,13 +99,13 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
 * Set permissions to execute the script:
 
 ```sh
-    chmod a+x inotify_sender.sh
+chmod a+x inotify_sender.sh
 ```
 
 * Launch the `inotify` wrapper script:
 
 ```sh
-    ./inotify_sender.sh
+./inotify_sender.sh
 ```
 
 * Review the logs in the `/tmp/itm/logs` directory.

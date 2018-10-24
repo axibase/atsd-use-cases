@@ -2,16 +2,16 @@
 
 ![](./images/vote1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/499e5c3b/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/499e5c3b/#fullscreen)
 
-* Data Source: [The Institute for Democracy and Electoral Assistance](http://www.idea.int/data-tools/question-countries-view/521/295/ctr)
+* Data Source: [The Institute for Democracy and Electoral Assistance](https://www.idea.int/data-tools/question-countries-view/521/295/ctr)
 
 * Visualization Tool: ATSD
 
 One of the key indicators of a healthy democracy is active participation by its citizenry, who are responsible for electing
 officials to implement the will of the people. Tracking this data since the 1970 elections shows a steadily decreasing voter
 turnout rate with each significant election. Another point of interest is the vast difference in voter turnout for presidential
-and mid-term elections, both of which are tracked by the [The Institute for Democracy and Electoral Assistance](http://www.idea.int/about-us).
+and mid-term elections, both of which are tracked by the [The Institute for Democracy and Electoral Assistance](https://www.idea.int/about-us).
 
 One positive indicator among the decreasing voter turnout rates is the increase in the number of registered voters. Although
 several years showed small reductions in the number of registered voters, when averaged by election cycle, registration numbers

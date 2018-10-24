@@ -50,9 +50,9 @@ CA is a trusted organization authorized to issue public key certificates to end 
 
 Trust is established when the person installs software (OS, browser, Java Runtime/Development Environment, python) containing a list of trusted CAs.
 
-CAs issue certificates which is a file, typically in [X509](https://tools.ietf.org/html/rfc5280) format, containing information about the issuer (CA), the subject or end entity, the certificate's validity dates, issuer signature, and the subject's public key.
+CAs issue certificates which is a file, typically in [X509](https://tools.ietf.org/html/rfc5280) format, containing information about the issuer (CA), the subject or end entity, the certificate validity dates, issuer signature, and the public key of the subject.
 
-In cases of HTTPS connection, the certificate is presented by the web server (nginx, apache, tomcat, jetty) to the client (browser, curl, apache http client, java url connection) as part of an SSL handshake.
+In cases of HTTPS connection, the certificate is presented by the web server (nginx, apache, tomcat, jetty) to the client (browser, `curl`, apache HTTP client, java URL connection) as part of an SSL handshake.
 
 `*.axibase.com` old wildcard certificate:
 
@@ -123,7 +123,7 @@ The certificate is presented to the client as part of the secure connection nego
 `curl` SSL handshake:
 
 ```txt
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to axibase.com (.....) port 443 (#0)
+0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to axibase.com (.....) port 443 (#0)
 * Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
 * successfully set certificate verify locations:
 *   CAfile: /etc/ssl/certs/ca-certificates.crt
@@ -157,17 +157,18 @@ The certificate is presented to the client as part of the secure connection nego
 *  SSL certificate verify ok.
 ```
 
+<!-- markdownlint-disable MD101 -->
 The client uses its private trust store (`CAfile: /etc/ssl/certs/ca-certificates.crt` above) containing the list of trusted CA certificates. These trusted CA certificates are often called **Root** certificates.
-
+<!-- markdownlint-enable MD101 -->
 The CA can delegate certificate issuance to other intermediate CAs.
 
 Both the Root CA and any of its intermediate CAs can issue a certificate to **any** subject.
 
-Trust is established when the issuer of the certificate is present in the client's trust store. Trust is also established when the issuer is an intermediate CA whose authority can be verified with a chain of certificates leading to a trusted CA certificate present in the client's trust store.
+Trust is established when the issuer of the certificate is present in the client trust store. Trust is also established when the issuer is an intermediate CA whose authority can be verified with a chain of certificates leading to a trusted CA certificate present in the client trust store.
 
 The certificates for intermediate CAs are bundled by web server into an ordered chain which is presented to the client during SSL handshake for verification.
 
-In case of the old `*.axibase.com` wildcard certificate, the chain was established as follows:
+In case of the old `*.axibase.com` wildcard certificate, the chain is established as follows:
 
 ```txt
 *.axibase.com
@@ -242,7 +243,7 @@ ls /usr/share/ca-certificates/mozilla/
 
 <details><summary><b>View Ubuntu 14.04 CAs</b></summary>
 
-```css
+```txt
 ACCVRAIZ1.crt                                                       Global_Chambersign_Root_-_2008.crt
 ACEDICOM_Root.crt                                                   GlobalSign_ECC_Root_CA_-_R4.crt
 AC_RAIZ_FNMT-RCM.crt                                                GlobalSign_ECC_Root_CA_-_R5.crt
@@ -323,7 +324,7 @@ GeoTrust_Universal_CA.crt                                           XRamp_Global
 
 The list of root CAs is updated through the `ca-certificates` package.
 
-Search apt package manager history to view when the `ca-certificates` package was last updated.
+Search apt package manager history to view when the `ca-certificates` package is last updated.
 
 ```sh
 zgrep ca-certificates /var/log/apt/history*
@@ -405,7 +406,9 @@ Applications can elect to utilize their own, built-in, trust store or utilize th
 
 The `Requests` module uses certificates from the [`certifi`](https://pypi.python.org/pypi/certifi) package.
 
+<!-- markdownlint-disable MD101 -->
 > [Certifi](https://pypi.python.org/pypi/certifi) is a carefully curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. It has been extracted from the Requests project. Certifi updates its list based on Mozilla [certdata.txt](https://hg.mozilla.org/mozilla-central/raw-file/tip/security/nss/lib/ckfw/builtins/certdata.txt).
+<!-- markdownlint-enable MD101 -->
 
 * Java
 
@@ -452,6 +455,7 @@ public class CertListCA {
 ---
 
 <details><summary><b>View OpenJDK 1.8.0_162 CAs</b></summary>
+<!-- markdownlint-disable MD107 -->
 
 ```ls
      trust.path= /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/cacerts
@@ -624,15 +628,17 @@ public class CertListCA {
      CN = XRamp Global Certification Authority
 ```
 
+<!-- markdownlint-enable MD107 -->
 </details>
 
 ---
 
 OpenJDK 9
 
-Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](http://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html#JDK-8189131) binary for Linux x64 contains an **empty** `cacerts` keystore.
+Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](https://www.oracle.com/technetwork/java/javase/9all-relnotes-3704433.html#JDK-8189131) binary for Linux x64 contains an **empty** `cacerts` keystore.
 
 <details><summary><b>View OpenJDK 9 CAs</b></summary>
+<!-- markdownlint-disable MD107 -->
 
 ```ls
      trust.path= /usr/lib/jvm/java-9-openjdk-amd64/lib/security/cacerts
@@ -787,6 +793,7 @@ Until fix [JEP 319](http://openjdk.java.net/jeps/319), the [OpenJDK 9](http://ww
      CN = XRamp Global Certification Authority
 ```
 
+<!-- markdownlint-enable MD107 -->
 </details>
 
 ---
@@ -798,16 +805,17 @@ diff --unchanged-line-format="" --old-line-format="" --new-line-format="%L" java
 New CAs in OpenJDK 8 -> 9:
 
 ```txt
-  no CN = OU=AC RAIZ FNMT-RCM, O=FNMT-RCM, C=ES
-     CN = Amazon Root CA 1
-     CN = Amazon Root CA 2
-     CN = Amazon Root CA 3
-     CN = Amazon Root CA 4
-     CN = LuxTrust Global Root 2
-     CN = TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1
+no CN = OU=AC RAIZ FNMT-RCM, O=FNMT-RCM, C=ES
+   CN = Amazon Root CA 1
+   CN = Amazon Root CA 2
+   CN = Amazon Root CA 3
+   CN = Amazon Root CA 4
+   CN = LuxTrust Global Root 2
+   CN = TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1
 ```
 
 Removed CAs in OpenJDK 8 -> 9:
+<!-- markdownlint-disable MD107 -->
 
 ```txt
      CN = AC Raíz Certicámara S.A.
@@ -837,9 +845,12 @@ Removed CAs in OpenJDK 8 -> 9:
      CN = WellsSecure Public Root Certificate Authority
 ```
 
+<!-- markdownlint-enable MD107 -->
+
 ---
 
 <details><summary><b>View Oracle OpenJDK 1.8.0_131 CAs</b></summary>
+<!-- markdownlint-disable MD107 -->
 
 ```txt
      trust.path= /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts
@@ -950,11 +961,12 @@ Removed CAs in OpenJDK 8 -> 9:
      CN = XRamp Global Certification Authority
 ```
 
+<!-- markdownlint-enable MD107 -->
 </details>
 
 ## Trust Inheritance
 
-When establishing a secure connection based on X509 certificates, the client is presented not only with the server's own domain certificate, but also with a list of intermediate certificates leading to the root CA in the client's trust store.
+When establishing a secure connection based on X509 certificates, the client is presented not only with the domain certificate of the server, but also with a list of intermediate certificates leading to the root CA in the client trust store.
 
 The list of hierarchically validated certificates is called a **certificate chain**.
 
@@ -965,13 +977,15 @@ Domain Certificate (1)
        Root Certificate (4)
 ```
 
-The chain of client's trust is `(4) -> (3) -> (2) -> (1)`.
+The chain of client trust is `(4) -> (3) -> (2) -> (1)`.
+<!-- markdownlint-disable MD101 -->
 
-* The client trusts Root Certificate (4) because it's in the clients trust store
-* The client trusts Intermediate Certificate (3) because it was signed by Root Certificate (4).
-* The client trusts Intermediate Certificate (2), because it was signed by Intermediate Certificate (3).
-* The client trusts Domain Certificate (1), because it was signed by Intermediate Certificate (2).
+* The client trusts Root Certificate (4) because it is in the clients trust store
+* The client trusts Intermediate Certificate (3) because it is signed by Root Certificate (4).
+* The client trusts Intermediate Certificate (2), because it is signed by Intermediate Certificate (3).
+* The client trusts Domain Certificate (1), because it is signed by Intermediate Certificate (2).
 
+<!-- markdownlint-enable MD101 -->
 The client traverses the chain up until it finds a root CA in its trust store and verifies the validity of the chain using public keys and signatures embedded in each certificate.
 
 ### Viewing Certificate Chain in Java
@@ -1021,9 +1035,9 @@ public class CertListChain {
 The subject is the same as the issuer.
 
 ```txt
-  Subject = CN=atsd, OU=Software Group, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
-   Issuer = CN=atsd, OU=Software Group, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
-    Valid = 2017-01-18 - 2017-04-18
+Subject = CN=atsd, OU=Software Group, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
+  Issuer = CN=atsd, OU=Software Group, O=Axibase Corporation, L=Cupertino, ST=CA, C=US
+   Valid = 2017-01-18 - 2017-04-18
 ```
 
 #### CA-Signed Certificate Chain
@@ -1031,21 +1045,21 @@ The subject is the same as the issuer.
 [CA-Signed](https://axibase.com/docs/atsd/administration/ssl-ca-signed.html) Certificate.
 
 ```txt
-  Subject = CN=*.axibase.com, OU=PositiveSSL Wildcard, OU=Domain Control Validated
-   Issuer = CN=COMODO RSA Domain Validation Secure Server CA, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
-    Valid = 2015-03-17 - 2018-03-16
+Subject = CN=*.axibase.com, OU=PositiveSSL Wildcard, OU=Domain Control Validated
+  Issuer = CN=COMODO RSA Domain Validation Secure Server CA, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+   Valid = 2015-03-17 - 2018-03-16
 :::
-  Subject = CN=COMODO RSA Domain Validation Secure Server CA, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
-   Issuer = CN=COMODO RSA Certification Authority, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
-    Valid = 2014-02-12 - 2029-02-11
+Subject = CN=COMODO RSA Domain Validation Secure Server CA, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+  Issuer = CN=COMODO RSA Certification Authority, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+   Valid = 2014-02-12 - 2029-02-11
 :::
-  Subject = CN=COMODO RSA Certification Authority, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
-   Issuer = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
-    Valid = 2000-05-30 - 2020-05-30
+Subject = CN=COMODO RSA Certification Authority, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+  Issuer = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
+   Valid = 2000-05-30 - 2020-05-30
 :::
-  Subject = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
-   Issuer = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
-    Valid = 2000-05-30 - 2020-05-30
+Subject = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
+  Issuer = CN=AddTrust External CA Root, OU=AddTrust External TTP Network, O=AddTrust AB, C=SE
+   Valid = 2000-05-30 - 2020-05-30
 ```
 
 ### Trust Manager in Java
@@ -1055,16 +1069,16 @@ The subject is the same as the issuer.
 The client can traverse the chain up until it finds a root CA in its trust store.
 
 ```java
-        Enumeration<String> trustStoreAliases = trustStore.aliases();
-        while (trustStoreAliases.hasMoreElements()) {
-            String tAlias = trustStoreAliases.nextElement();
-            X509Certificate rc = (X509Certificate)keyStore.getCertificate(tAlias);
-            if (rc.getIssuerX500Principal().equals(searchCert.getIssuerX500Principal())) {
-                System.err.println("Root CA found by name: " + rc.getIssuerDN());
-                printCert(rootCert);
-                // Proceed to validate the certificate chain using public keys and signatures
-            }
-        }
+Enumeration<String> trustStoreAliases = trustStore.aliases();
+while (trustStoreAliases.hasMoreElements()) {
+    String tAlias = trustStoreAliases.nextElement();
+    X509Certificate rc = (X509Certificate)keyStore.getCertificate(tAlias);
+    if (rc.getIssuerX500Principal().equals(searchCert.getIssuerX500Principal())) {
+        System.err.println("Root CA found by name: " + rc.getIssuerDN());
+        printCert(rootCert);
+        // Proceed to validate the certificate chain using public keys and signatures
+    }
+}
 ```
 
 #### Validating Certificate Chain using TrustManager
@@ -1074,7 +1088,7 @@ Java provides `java.security.X509TrustManager` that implements the required func
 The following example overrides the default `X509TrustManager` with a `LoggingX509TrustManager`.
 
 ```java
-    trustManager.checkServerTrusted(chain, "ECDHE_RSA");
+trustManager.checkServerTrusted(chain, "ECDHE_RSA");
 ```
 
 ```java
@@ -1170,7 +1184,7 @@ public class CertTrust {
 
 Validation results for Expired Certificate:
 
-```css
+```txt
 Certificate chain validation failed: java.security.cert.CertPathValidatorException: timestamp check failed :
   java.security.cert.CertificateExpiredException: NotAfter: Sat Mar 17 02:59:59 MSK 2018
 Default trust manager: certificate chain validation failed:
@@ -1181,7 +1195,7 @@ Default trust manager: certificate chain validation failed:
 
 Validation Results for Self-Signed Certificate:
 
-```css
+```txt
 Certificate chain validation failed: java.security.cert.CertPathValidatorException: Path does not chain with any of the trust anchors : null
 
 Default trust manager: certificate chain validation failed: sun.security.validator.ValidatorException: PKIX path building failed:
@@ -1234,20 +1248,20 @@ Certificate authorities can perform various validation checks, from simple domai
 **Domain validation** is the easiest method to obtain an SSL certificate. It involves checks by the CA to prove that the requester has **full** control of a specific domain (range of domains in case of wildcard certificates).
 
 ```txt
-    Issuer: (CA ID: 1455)
-        commonName                = COMODO RSA Domain Validation Secure Server CA
-        ...
-    Subject:
-        commonName                = *.axibase.com
-        organizationalUnitName    = PositiveSSL Wildcard
-        organizationalUnitName    = Domain Control Validated
+Issuer: (CA ID: 1455)
+    commonName                = COMODO RSA Domain Validation Secure Server CA
+    ...
+Subject:
+    commonName                = *.axibase.com
+    organizationalUnitName    = PositiveSSL Wildcard
+    organizationalUnitName    = Domain Control Validated
 ```
 
 Before Let's Encrypt, this was accomplished by replying to a verification email sent to an inbox address recorded with the domain registrar (or from a shortlist).
 
-This is how we obtained certificates in 2015.
+This is the process to obtain certificates in 2015.
 
-> It was time consuming.
+> It is time consuming.
 
 ![](./images/globe_ssl_1.png)
 
@@ -1275,7 +1289,7 @@ The ACME (v1, v2) protocol used by Let's Encrypt supports the following challeng
 * `TLS-SNI-01`. Certificate requester must respond to HTTPS request on the requested domain to port 443.
 * `DNS-01`. Certificate requester must add an expiring TXT record to its DNS records on a nameserver.
 
-The request must pass the challenge in order to receive the certificate.
+The request must pass the challenge to receive the certificate.
 
 The `TLS-SNI-01` challenge on port 443 is no longer supported by Let's Encrypt.
 
@@ -1283,7 +1297,7 @@ The `TLS-SNI-01` challenge on port 443 is no longer supported by Let's Encrypt.
 
 #### Automation with certbot
 
-How we receive certificates in 2018 using Let's Encrypt plugins and `HOST-01` challenge.
+The process of obtaining certificates in 2018 using Let's Encrypt plugins and `HOST-01` challenge.
 
 ```sh
 sudo apt install software-properties-common
@@ -1313,9 +1327,9 @@ sudo certbot --nginx -d trends.axibase.com
 
 * The certificate is only issued for 90 days.
 * Port 80 must remain open for host challenge to succeed.
-* Our fix to port 80 exposure was to configure nginx to redirect from 80 to 443 using `301` status.
-* Port 80 exposure increases the risk of insecure cookie highjacking, for example in Redmine.
-* DNS validation is **NOT** possible for us since our hosting provider Hostway doesn't provide an API for managing DNS.
+* Fix to port `80` exposure is to configure nginx to redirect from `80` to `443` using `301` status.
+* Port `80` exposure increases the risk of insecure cookie highjacking, for example in Redmine.
+* DNS validation is **NOT** possible for Axibase since the hosting provider Hostway does not provide an API for managing DNS.
 
 #### Standalone Mode
 
@@ -1383,9 +1397,9 @@ The initial integration of the ACME protocol in ATSD contained essentially the s
 
 ![](./images/atsd-acme4j.png)
 
-We implemented HTTP and TLS challenges. The TLS challenge was then discontinued.
+Implement HTTP and TLS challenges. The TLS challenge was then discontinued.
 
-We estimate that most of our enterprise customers do not plan to adopt a centralized approach to automated certificate issuance using DNS challenge. The deployment of certbot on end nodes (hosts) is not necessary.
+Estimate that most Axibase enterprise customers do not plan to adopt a centralized approach to automated certificate issuance using DNS challenge. The deployment of certbot on end nodes (hosts) is not necessary.
 
 ![](./images/certbot-workflow.png)
 
@@ -1414,7 +1428,7 @@ sudo curl -k -u cert-renew:********** -X POST https://locahost:8443/admin/certif
 
 ATSD validates the certificate and install it without restarting the server.
 
-We had to upgrade Jetty to version **9.4** to support SSLContent reloading without reboot.
+Axibase upgraded Jetty to version `9.4` to support SSLContent reloading without reboot.
 
 ### Upload Permissions
 
@@ -1438,7 +1452,7 @@ A new trusted certificate can replace the currently installed trusted certificat
 
 To automate the certificate upload after certbot renewal, create `deploy.sh` script.
 
-> The certbot can be installed on the same machine as ATSD or on a remote machine in which case its IP address must be included in the ['Allow Access'](#upload-permissions) list.
+> The certbot can be installed on the same machine as ATSD or on a remote machine in which case its IP address must be included in the ["Allow Access"](#upload-permissions) list.
 
 ```sh
 #!/bin/bash
@@ -1557,7 +1571,7 @@ Output from deploy.sh:
 Upload private key and certificate
 ```
 
-The script reports an error because the `curl` connection was **closed** when the SSL context is restarted. While all current SSL connections are closed, ATSD server itself is not restarted during this process.
+The script reports an error because the `curl` connection is **closed** when the SSL context is restarted. While all current SSL connections are closed, ATSD server itself is not restarted during this process.
 
 ```txt
 Error output from deploy.sh:
@@ -1639,15 +1653,15 @@ New certificate is now installed. No ATSD restart performed.
 
 ### Certificate Transparency Logs
 
-Some CAs, including Lets Encrypt, voluntarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
+Some CAs, including Let's Encrypt, voluntarily disclose all issued certificates to one or multiple 'Certificate Transparency' servers.
 
-CT servers store immutable logs of certificate issuance events which contain the subject's CN (common name) and certificate details.
+CT servers store immutable logs of certificate issuance events which contain the subject CN (common name) and certificate details.
 
 The CT servers also accept events from crawlers when they identify a new certificate.
 
 crt.sh (`https://crt.sh`) is a front-end to a database of issued certificates, maintained by COMODO CA.
 
-Certificate chain for our old wildcard certificate:
+Certificate chain for the old wildcard certificate:
 
 ```txt
 *.axibase.com
@@ -1661,13 +1675,13 @@ Certificate chain for our old wildcard certificate:
 * `----` 3509153 (`https://crt.sh/?id=3509153`)
 * `------`  1044348 (`https://crt.sh/?id=1044348`)
 
-Certificate details including DNS names are now publicly available even if the certificate was issued for an internal server:
+Certificate details including DNS names are now publicly available even if the certificate is issued for an internal server:
 
 * [trends.axibase.com](https://ct.googleapis.com/logs/argon2018/ct/v1/get-entries?start=115175247&end=115175247) CT log
 
-crt.sh (`https://crt.sh`) maintained by one of the CAs, COMODO, allows searching a consolidated log from multiple CT servers for certificates using wildcards.
+[`crt.sh`](https://crt.sh) maintained by one of the CAs, COMODO, allows searching a consolidated log from multiple CT servers for certificates using wildcards.
 
-* axibase.com certificates (`https://crt.sh/?Identity=%.axibase.com`)
+* `axibase.com` certificates (`https://crt.sh/?Identity=%.axibase.com`)
 
 ![](./images/ct_hostname_disclosure.png)
 
@@ -1750,13 +1764,13 @@ openssl req -x509 -new -nodes -key axibase_root_ca.key -sha256 -days 90 -out axi
 ```
 
 ```txt
-  Country Name (2 letter code) [AU]:US
-  State or Province Name (full name) [Some-State]:CA
-  Locality Name (eg, city) []:Cupertino
-  Organization Name (eg, company) [Internet Widgits Pty Ltd]:Axibase Corporation
-  Organizational Unit Name (eg, section) []:SWG
-  Common Name (e.g. server FQDN or YOUR name) []:Axibase Root CA
-  Email Address []:
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:CA
+Locality Name (eg, city) []:Cupertino
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Axibase Corporation
+Organizational Unit Name (eg, section) []:SWG
+Common Name (e.g. server FQDN or YOUR name) []:Axibase Root CA
+Email Address []:
 ```
 
 Convert PEM file to CRT file.
@@ -1797,7 +1811,7 @@ List current root CA in JRE:
 keytool -list -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts
 ```
 
-Add 'Axibase Root CA' to root CAs (need root privilege).
+Add 'Axibase Root CA' to root CAs (need `root` privilege).
 
 ```sh
 sudo keytool -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/security/cacerts \
@@ -1815,7 +1829,7 @@ Valid from: Thu Apr 12 11:42:02 MSK 2018 until: Wed Jul 11 11:42:02 MSK 2018
 ...
 Extensions:
 
-#2: ObjectId: 2.5.29.19 Criticality=false
+#2: ObjectId: 2.5.29 Criticality=false
 BasicConstraints:[
   CA:true
   PathLen:2147483647
@@ -1874,7 +1888,9 @@ openssl x509 -req -in atsd_axibase_com.csr -CAcreateserial \
   -out atsd_axibase_com.crt -days 90 -sha256 -extfile atsd_axibase_com.conf
 ```
 
+<!-- markdownlint-disable MD101 -->
 Extended settings (`CA:FALSE`).
+<!-- markdownlint-enable MD101 -->
 
 ```sh
 cat atsd_axibase_com.conf
@@ -1906,6 +1922,7 @@ keytool -importkeystore -srckeystore atsd_axibase_com.pkcs12 -srcstoretype PKCS1
 ```
 
 Check `atsd_axibase_com.keystore`: chain and trust.
+<!-- markdownlint-disable MD107 -->
 
 ```txt
         alias= atsd
@@ -1923,9 +1940,11 @@ Certificate chain validated OK
 Default trust manager: certificate chain validated OK
 ```
 
+<!-- markdownlint-enable MD107 -->
+
 The `atsd_axibase_com` certificate, signed with 'Axibase Root CA' is now valid.
 
-If 'Axibase Root CA' were not present in the trust store, an exception is raised:
+If `Axibase Root CA` is not present in the trust store, an exception is raised:
 
 ```txt
 Certificate chain validatation failed: java.security.cert.CertPathValidatorException: Path does not chain with any of the trust anchors : null
@@ -2099,17 +2118,17 @@ nginx.1    | www.uber.com 172.17.0.1 - - [12/Apr/2018:10:55:30 +0000] "GET /api/
 Since custom CA is in the Java trust store, URL connections complete without errors as well.
 
 ```java
-  URL url = new URL("https://www.uber.com:443/");
-  HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-  conn.connect();
-  System.out.println("Connection OK");
+URL url = new URL("https://www.uber.com:443/");
+HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+conn.connect();
+System.out.println("Connection OK");
 ```
 
 ```txt
-  Connection OK
+Connection OK
 ```
 
-If the certificate were untrusted, we would see this error:
+If the certificate is untrusted, you see this error:
 
 ```txt
 Exception in thread "main" javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No name matching www.uber.com found
@@ -2186,7 +2205,7 @@ SSL-Session:
 
 ### Java Client Debugging
 
-The Java clients use a variety of methods to establish SSL connections and execute requests over the https protocol.
+The Java clients use a variety of methods to establish SSL connections and execute requests over the HTTPS protocol.
 
 To debug SSL connectivity issues such as SSL handshake failures, enable the `javax.net.debug` parameter.
 

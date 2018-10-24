@@ -10,15 +10,15 @@ Visualization: [ChartLab](https://apps.axibase.com/chartlab) based on ATSD
 
 ![](./images/fedf-03.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/9183d77b/8/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/9183d77b/8/#fullscreen)
 
-> Open the ChartLab visualization above to navigate through time by selecting the desired years in the dropdown menus at the top of screen. Note that debt balances are shown as negative values.
+> Open the ChartLab visualization above to navigate through time by selecting years in the drop-down lists at the top of screen. Note that debt balances are shown as negative values.
 
 The following visualization tracks the last seven years of data (2010-2017) to highlight post-recession changes:
 
 ![](./images/fedf-02.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/9183d77b/9/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/9183d77b/9/#fullscreen)
 
 ### From the Source Document
 
@@ -39,11 +39,11 @@ After the financial crisis, the federal funds rate remained low until the end of
 
 **Interest Rate (1 Year)**: "The interest rate differential between the federal funds rate and the 1-year Treasury yield has
 been small throughout the period. This is not surprising given that the federal funds rate is a very short-term interest rate.
-Overnight interest rates should be more closely related to the short-term Treasury yields than to the long-term yields.
+Overnight interest rates are more closely related to the short-term Treasury yields than to the long-term yields.
 In other words, the influence of the federal funds rate on Treasury yields diminishes with maturity"
 
 **Interest Rate (10 Year)**: The 10-year interest rate is medium-range measurement that is included to give the data context.
-It is not so dependent on the Federal Fund Rate set daily, nor is it too wide a lens like the 30-year interest rate making
+It is not as dependent on the Federal Fund Rate set daily, nor is it too wide a lens like the 30-year interest rate making
 it a dynamic metric that is included for reference.
 
 **Interest Rate (30 Year)**: "...the 30-year long-term yield declined consistently over the sample period... This slow

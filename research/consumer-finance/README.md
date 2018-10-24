@@ -1,7 +1,8 @@
 # Consumer Finance Protection: League Tables
 
 * Reporting Agency: Bureau of Consumer Financial Protection
-* [Dataset](https://catalog.data.gov/dataset/consumer-complaint-database)
+* [Dataset Overview](https://catalog.data.gov/dataset/consumer-complaint-database)
+* [Axibase Time Series Database](https://axibase.com/docs/atsd) (ATSD)
 
 ## Complaints by Banking Product or Service
 
@@ -145,7 +146,7 @@ ORDER BY COUNT(*) DESC
 
 ## Running SQL Queries Locally
 
-Below are the summarized steps to follow to install local instances of Axibase Time Series Database for analyzing this data.gov dataset with SQL.
+Below are the steps to follow to install a local ATSD instance for analyzing this data.gov dataset with SQL.
 
 1. Install [Docker](https://docs.docker.com/engine/installation/linux/ubuntulinux/).
 2. Download the `docker-compose.yml` file to launch the container bundle.
@@ -160,4 +161,4 @@ Below are the summarized steps to follow to install local instances of Axibase T
    export C_USER=myuser; export C_PASSWORD=mypassword; docker-compose pull && docker-compose up -d
    ```
 
-4. Log in to ATSD at `https://docker_host:8443`, click on the **SQL** tab in the top menu to submit queries.
+4. Log in to ATSD at `https://docker_host:8443`, click the **SQL** tab in the top menu to submit queries.
