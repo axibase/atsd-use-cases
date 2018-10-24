@@ -55,11 +55,11 @@ ATSD sends a test notification to Slack upon successful launch.
 
 Collector starts the imported monitoring job and imports the data into ATSD. The database sends a message with the certificate expiry date for the monitored domain.
 
- ![Certificate expiry date set](./images/expiry-date-set.png)
+ ![Certificate expiry date set](./images/expiry-date-set-1.png)
 
 Upon modification of SSL certificate expiry date, ATSD sends the following message:
 
-![Certificate's expiry date set](./images/expiry-date-changed.png)
+![Certificate's expiry date set](./images/expiry-date-changed-1.png)
 
 If less than 30 days remain before SSL certificate expiry date, ATSD sends the following message:
 
