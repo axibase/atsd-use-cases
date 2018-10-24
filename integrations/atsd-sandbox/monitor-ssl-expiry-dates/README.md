@@ -2,7 +2,7 @@
 
 ## Overview
 
-[Axibase Collector](https://github.com/axibase/axibase-collector/#overview) is a versatile data collection tool written in Java that implements various types of jobs to retrieve data from remote systems. One of such job types is the `HTTP` job which works similar to AWS Health Checks while also collecting detailed SSL status information from HTTPS endpoints.
+[Axibase Collector](https://axibase.com/docs/axibase-collector/#introduction) is a versatile data collection tool written in Java that implements various types of jobs to retrieve data from remote systems. One of such job types is the `HTTP` job which works similar to AWS Health Checks while also collecting detailed SSL status information from HTTPS endpoints.
 
 The `HTTP` job retrieves the list of subdomains from the [CRT Certificate Search](https://crt.sh) database maintained by [Comodo Group](https://www.comodo.com). The list includes active (`NotAfter > 1 week ago`) subdomains for the specified top domain.
 
@@ -27,8 +27,8 @@ Refer to ATSD Sandbox information for additional [environment variables](https:/
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
   --name=atsd-sandbox \
   --env TOP_DOMAIN=example.org \
-  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/integrations/atsd-sandbox/monitor-ssl-expiry-dates/resources/ssl-certificates-files.tar.gz' \
-  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/dev-howto-monitor-ssl-for-domains/integrations/atsd-sandbox/monitor-ssl-expiry-dates/resources/job_http_subdomains-ssl-certificates.xml' \
+  --env ATSD_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/atsd-sandbox/monitor-ssl-expiry-dates/resources/ssl-certificates-files.tar.gz' \
+  --env COLLECTOR_IMPORT_PATH='https://raw.githubusercontent.com/axibase/atsd-use-cases/master/integrations/atsd-sandbox/monitor-ssl-expiry-dates/resources/job_http_subdomains-ssl-certificates.xml' \
   --env SLACK_TOKEN={SLACK_TOKEN} \
   axibase/atsd-sandbox:latest
 ```
