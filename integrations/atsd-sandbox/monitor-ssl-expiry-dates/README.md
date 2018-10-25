@@ -8,7 +8,7 @@ HTTPS is an internet ubiquity, Google Security analysts reported that the [vast 
 
 [Axibase Collector](https://axibase.com/docs/axibase-collector/#introduction) is a data collection tool written in Java which implements tasks to retrieve data from remote systems, one such task is the [HTTP job](https://axibase.com/docs/axibase-collector/jobs/http.html). Using the HTTP job, query HTTPS endpoints to gather information with Collector and pass that information on for storage, processing, and alerting tasks in ATSD.
 
-The [Comodo Group](https://www.comodo.com) maintains the [CRT Certificate Search](https://crt.sh) database which tracks SSL certificates. The list includes active subdomains for each specified top domain and thus, supports the audit of [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content) environments.
+The [Comodo Group](https://www.comodo.com) maintains the [CRT Certificate Search](https://crt.sh) database which tracks SSL certificates. The list includes active subdomains for each specified top domain.
 
 Collector connects to each subdomain in the list and gathers SSL certificate details. The data is passed to ATSD where it is analyzed using the [rule engine](https://axibase.com/docs/atsd/rule-engine/). This rule sends alerts to a specified Slack channel when the SSL certificate is about to expire, as well as when it is replaced.
 
@@ -25,7 +25,7 @@ Collector connects to each subdomain in the list and gathers SSL certificate det
 
 Copy the launch command below to a command-line console.
 
-* Set the `TOP_DOMAIN` variable to the domain name to monitor, for example `example.org`.
+* Set the `TOP_DOMAIN` variable to the domain name to monitor, such as `example.org`.
 * Replace `SLACK_TOKEN` variable with your [Slack token](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html#add-bot-to-channel).
 
 :::tip ATSD Sandbox
