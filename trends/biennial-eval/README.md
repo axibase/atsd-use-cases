@@ -23,8 +23,6 @@ Collected from the Federal Reserve [Economic Research](https://fred.stlouisfed.o
 
 ![](./images/biennial-eval-6.png)
 
-[![](../images/button-new.png)](https://trends.axibase.com/#fullscreen)
-
 ```ls
 value = fred.MonthlyPercentChange('payems')
 ```
@@ -49,7 +47,7 @@ The latest federal budget deficit, according to the [Congressional Budget Office
 * The Federal Funds Rate has increased almost 500% in the last two years. Net interest costs account for 1.8% of 2018 GDP but CBO analysts expect this amount to rise to 5.3% of GDP by 2048.
 * Non-interest outlays are expected to rise from 19% of GDP to 23% by 2048.
 
-![](./images/biennial-eval-11.png)
+![](./images/biennial-eval-12.png)
 
 [![](../images/button-new.png)](https://trends.axibase.com/6b9f6470#fullscreen)
 
@@ -78,7 +76,7 @@ Despite the month of October, average market growth has increased immensely. The
 
 ![](./images/biennial-eval-18.png)
 
-[![](../images/button-new.png)](https://trends.axibase.com/a9352427)
+[![](../images/button-new.png)](https://trends.axibase.com/a9352427#fullscreen)
 
 ```ls
 statistics = slope
