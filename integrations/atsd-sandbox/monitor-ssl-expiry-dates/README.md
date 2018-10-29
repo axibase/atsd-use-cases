@@ -14,8 +14,7 @@ Collector connects to each subdomain in the list and gathers SSL certificate det
 
 ### Tools
 
-:::tip To obtain a **free** SSL certificate, refer to the [`Let's Encrypt` Workshop](../../../tutorials/workshop/lets-encrypt.md) for more information.
-:::
+To obtain a **free** SSL certificate, refer to the [`Let's Encrypt` Workshop](../../../tutorials/workshop/lets-encrypt.md).
 
 * [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox#overview): a Docker image which runs ATSD and Axibase Collector instances.
 
