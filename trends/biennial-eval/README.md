@@ -15,7 +15,7 @@
 
 ## Overview
 
-January 20, 2019 marks the halfway point of the first term of the Trump administration. The President has repeatedly boasted on the state of the economy and lauded the growth which has been a central plank in the administration platform since the campaign trail. America has experienced slow GDP growth since the Recession, with seasonally adjusted quarterly annualized GDP percent change exceeding 3% only roughly one in every ten quarters since 2008.
+January 20, 2019 marks the halfway point of the first term of the Trump administration. The President has repeatedly boasted on the state of the economy and lauded the growth which has been a central plank in the administration platform since the campaign trail. America has experienced slow GDP growth since the Recession, with seasonally adjusted quarterly annualized GDP percent change exceeding 3% roughly one in every ten quarters since 2008.
 
 Collected from the Federal Reserve [Economic Research](https://fred.stlouisfed.org/) Division, the metrics shown above are tracked by October 2016 value, in the month leading up to the election of President Trump, alongside the most recent value, the exact date of which varies by metric.
 
@@ -58,7 +58,7 @@ statistic = avg
 period = 1 month
 ```
 
-An additional thorn in the side of the government is the rising per person cost of healthcare. One of the primary failures of the Trump administration was the repeal of the ACA, famously defeated by an across-the-aisle vote from the late Senator [John McCain](https://www.youtube.com/watch?time_continue=1&v=hT2pp_KrJGg). Healthcare mandatory spending is also projected to outpace per person GDP growth, requiring a greater allotment of federal funds. 10.1% of 2018 GDP was used for mandatory Social Security and health care. CBO predictions indicate that that number will be 15.0% in 2039-2048.
+An additional thorn in the side of the government is the rising per person cost of healthcare. One of the primary failures of the Trump administration was the repeal of the ACA, famously defeated by an across-the-aisle vote from the late Senator [John McCain](https://www.youtube.com/watch?time_continue=1&v=hT2pp_KrJGg). Healthcare mandatory spending is also projected to outpace per person GDP growth, requiring a greater allotment of federal funds. 10.1% of 2018 GDP was used for mandatory Social Security and healthcare. CBO predictions indicate that that number will be 15.0% in 2039-2048.
 
 That leaves a hypothetical United States circa 2048 with approximately 43% of its anticipated GDP tied up in non-discretionary spending.
 
@@ -110,7 +110,7 @@ The traditional basket of indicators is mostly positive for the first two years 
 Perennial market bear Peter Schiff, who correctly predicted the 2008 crisis, recently spoke to [RT America](https://www.youtube.com/watch?time_continue=3&v=mowurscobbk) highlighting numerous potentially catastrophic conditions which could bring the US economy, and worldwide hegemony of the dollar, to its knees:
 
 * Increased debt service costs caused by rising Fed interest rates. Schiff compared this phenomena to the surge in adjustable-rate mortgages which precipitated the housing crisis in 2006.
-* Increased borrowing under the Trump administration. Schiff stressed that he believes the Trump administration [Tax Cuts and Jobs Act](https://www.congress.gov/bill/115th-congress/house-bill/1) will likely serve to decrease government revenue, forcing the Congress to authorize further borrowing. This is a contestable point, as the traditional libertarian perspective argues that lower tax rates also reduce deductions, and therefore potentially increase government revenue.
+* Increased borrowing under the Trump administration. Schiff stressed that he believes the Trump administration [Tax Cuts and Jobs Act](https://www.congress.gov/bill/115th-congress/house-bill/1) will likely serve to decrease government revenue, forcing the Congress to authorize further borrowing. An alternative perspective argues that lower tax rates also reduce deductions, and therefore potentially increase government revenue.
 * According to Schiff, the $15 trillion public debt has become utterly untenable, and paying it all off is a fantasy. It logically follows that this will eventually inspire distrust in the dollar and result in loss of value.
 
 Schiff's skepticism assumes several trends will hold constant: Slow economic growth, decreased tax revenue, and no attempt at addressing the public debt. Schiff is among a small school of thinkers who advocate selling dollar-based assets in favor of a return to his fiat of choice, precious metals.
