@@ -6,22 +6,34 @@
 
 Interactive [visualizations](./chart-of-the-day/README.md) tracking interesting datasets from a variety of sources.
 
+![](./images/chart-of-the-day-1.png)
+
 ## Research
 
 Detailed [research notes](./research/README.md) that feature in-depth data exploration and ATSD tools used to solve modern data problems.
+
+![](./images/research-articles-1.png)
 
 ## Trends
 
 A publicly accessible ATSD service with [national economic indicators](./trends/README.md).
 
+![](./images/trends-1.png)
+
 ## Integrations
 
 Walkthrough [guides](./integrations/README.md) for ATSD integration with various IT infrastructure systems and services.
+
+![](./images/integrations-2.png)
 
 ## Tutorials
 
 Step-by-step [instructions](./tutorials/README.md) to perform data transformation, import configuration files, and other tasks in ATSD.
 
+![](./images/tutorials-3.png)
+
 ## Datasets
 
 Curated time-series [dataset catalog](https://axibase.com/datasets/) from [`data.gov`](https://www.data.gov/) with over 7,000 entries.
+
+![](./images/datasets-1.png)
