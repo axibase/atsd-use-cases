@@ -86,7 +86,7 @@ The Arab Spring showed Saudi authority was not immune to challenge; a number of 
 
 [![](./images/sa-11.png)](https://apps.axibase.com/chartlab/a8da9b06#fullscreen)
 
-The stagnation and decrease in non-oil revenue for the government of Saudi Arabia that coincided with the Saudi protests shows how dramatic an effect domestic unrest plays in national output. The monarchy was able to keep oil production constant, primarily because the majority of the sector's employees were non-Saudi non-demonstrators but the areas affected by Saudi domestic labor sufferered dramatically and recovered slowly; 2018 revenue has only just caught up to the 2008 pre-demonstration value.
+The stagnation and decrease in non-oil revenue for the government of Saudi Arabia that coincided with the Saudi protests shows how dramatic an effect domestic unrest plays in national output. The monarchy was able to keep oil production constant, primarily because the majority of the sector's employees were non-Saudi non-demonstrators but the areas affected by Saudi domestic labor suffered dramatically and recovered slowly; 2018 revenue has only just caught up to the 2008 pre-demonstration value.
 
 [![](./images/sa-15.png)](https://apps.axibase.com/chartlab/c3ac221c#fullscreen)
 
