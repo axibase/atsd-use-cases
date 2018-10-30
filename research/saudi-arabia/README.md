@@ -18,7 +18,7 @@ The current Saudi Arabian economic paradigm is dependant on three assumptions:
 
 Should any of these three realities be challenged, the economy could face legitimate insolvency in conjunction with untenable oil prices, destroyed or damaged production facilities, and challenges to government authority.
 
-Saudi Arabia is special, however, because it represents a geopolitical keystone which faces distinct threats to all three of its primary strategic foils. Underpinning the fragility, each of these goals is intimately related to the others, so collapse from one could quickly produce collapse from all three.
+Saudi Arabia is special, however, because it represents a geopolitical keystone which faces distinct threats to all three of its primary strategic foils. Underpinning the fragility, each of these goals is intimately related to the others; collapse from one could quickly produce collapse from all three.
 
 ## Oil Price Consistency
 
@@ -26,7 +26,7 @@ Saudi Arabia is a founding member of [OPEC](https://www.opec.org/opec_web/en/), 
 
 [![](./images/sa-12.png)](https://apps.axibase.com/chartlab/84a1066f#fullscreen)
 
-For five consecutive years, the Kingdom of Saudi Arabia has been selling their lifeblood at a loss. Low oil prices have had an effect on a number of oil-dependant nations' economies including Saudi Arabia but Saudi Minister of Petroleum and Mineral Resources Ali Al-Naimi refused to relax production quotas when pressed to do so in 2014.
+For five consecutive years, the Kingdom of Saudi Arabia has been selling their lifeblood at a loss. Low oil prices have had an effect on a number of oil-dependant nations' economies including Saudi Arabia but Saudi Minister of Petroleum and Mineral Resources Ali Al-Naimi refused to relax production quotas when pressed in 2014.
 
 > <i>"Is it reasonable for a highly efficient producer to reduce output, while the producer of poor efficiency continues to produce? That is crooked logic. If I reduce, what happens to my market share? The price will go up and the Russians, the Brazilians, [and] US shale oil producers will take my share."</i> <sup>[4](https://www.ft.com/content/51c508a4-89fe-11e4-8daa-00144feabdc0)</sup>
 
@@ -36,13 +36,13 @@ Wielding cartel authority as OAPEC did more than four decades ago has put the cu
 
 [![](./images/sa-13.png)](https://apps.axibase.com/chartlab/e2e02622#fullscreen)
 
-Further challenging regional stability from the Saudi perspective is the assent of the Islamic Republic of Iran, the nominal Shia antagonist to the Sunni Kingdom of Saudi Arabia. Iran, which produces about three million barrels of oil a day<sup>[6](https://www.opec.org/opec_web/en/about_us/163.htm)</sup> compared to the Saudis' nearly ten million, has nonetheless been able to maintain production costs at such a level than their petrol industry is still profitable. Matched with the 83 million or so Iranians living on the other side of Iraq from Saudi Arabia, the Islamic Republic of Iran could eventually move to challenge Saudi hegemony in the Middle East.
+Further challenging regional stability from the Saudi perspective is the assent of the Islamic Republic of Iran, the nominal Shia antagonist to the Sunni Kingdom of Saudi Arabia. Iran, which produces about three million barrels of oil a day<sup>[6](https://www.opec.org/opec_web/en/about_us/163.htm)</sup> compared to the Saudis' nearly ten million, has nonetheless been able to maintain production costs at such a level than their petrol industry is still profitable. Matched with the 83 million Iranians living on the other side of Iraq from Saudi Arabia, the Islamic Republic of Iran could eventually move to challenge Saudi hegemony in the Middle East.
 
 A demonstration of Saudi reliance on oil production can be observed by examining gross domestic product statistics. Non-oil GDP growth has been significant several times in the last decades, but similar to the "Chinese miracle," developing nations are often able to achieve extraordinary growth rates by importing growth from more developed economies. More importantly, non-oil GDP growth has been less than 2% two of the last four years. <sup>[7](https://fred.stlouisfed.org/series/SAUNGDPXORPCHPT)</sup> Matched with diminished oil profits, an ascendent foe, and a slow growing domestic economy, challenge in one theater of Saudi affairs could easily spill over into another.
 
 [![](./images/sa-14.png)](https://apps.axibase.com/chartlab/6870db58#fullscreen)
 
-Real GDP growth rarely exceeded nominal GDP growth, so although the relative size of the Saudi economy continues to expand, the portion of that income which translates into real liquidity is diminishing.
+Real GDP growth rarely exceeded nominal GDP growth, although the relative size of the Saudi economy continues to expand, the portion of that income which translates into real liquidity is diminishing.
 
 As mentioned above, economic instability has the potential to hamper the retention of royal legitimacy or combat readiness and either has the ability to further affect the Saudi economy via oil production costs or sales prices.
 
