@@ -50,7 +50,7 @@ As mentioned above, economic instability has the potential to hamper the retenti
 
 Military operations in the Middle East have had long-reaching effects on oil-producing countries, whether directly or indirectly. War in the Middle East means damaged or ruined extraction and production facilities and especially the decreased production of a particular nation, which can precipitate a spike in oil prices that exclude affected countries.
 
-The following Middle Eastern wars are described in terms of their effect on international and regional oil markets:
+The following Middle Eastern wars are described with respect to their effect on international and regional oil markets:
 
 * **Yom Kippur War** (1973): Arab nations impose an oil embargo on the United States and other developed nations in retaliation for their support of Israel against the alliance of mostly Arab nations. One result was the 1973 energy crisis, whereby oil prices rose fourfold, much to the advantage of oil-producing nations.
 
