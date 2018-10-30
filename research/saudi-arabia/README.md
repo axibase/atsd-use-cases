@@ -106,7 +106,7 @@ Saudi Arabia maintains a fragile regional hegemony that is predicated on its abi
 
 A decline in production is unlikely, the country has no shortage of oil, and barring invasion is unlikely to unwillingly decrease production. The royal family, although challenged in the recent past, provides the people of Saudi Arabia a sufficient amount of outlets for expression and mechanisms to prevent widespread protest that a populist uprising is also unlikely to be fomented<sup>[14](https://www.cfr.org/expert-brief/how-stable-saudi-arabia)</sup>. Saudi Arabia's primary challenge is losing influence in the Muslim world in favor of the larger population and increasingly competitive economy of the Islamic Republic of Iran.
 
-[![](./images/sa-17.png)](https://apps.axibase.com/chartlab/c799ed43)
+[![](./images/sa-17.png)](https://apps.axibase.com/chartlab/c799ed43#fullscreen)
 
 Until 2012, when the international community instituted wide-reaching oil sanctions<sup>[15](https://obamawhitehouse.archives.gov/the-press-office/2012/07/31/fact-sheet-sanctions-related-iran)</sup> on Iran, the economy was approaching the output of neighboring Saudi Arabia. Because of the size of the country, its economic prowess, and the effectiveness of its military, Iran is poised to challenge Saudi Arabia as hegemon of the Middle East in the future.
 
