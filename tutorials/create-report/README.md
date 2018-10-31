@@ -12,7 +12,7 @@
 * [Data Modification](#data-modification)
 * [Visualization Configuration](#visualization-configuration)
 * [Report Distribution](#report-distribution)
-* [Other Examples](#other-examples)
+* [Additional Examples](#additional-examples)
 * [Additional Resources](#additional-resources)
 
 ## Overview
@@ -94,7 +94,7 @@ endfor
 endfor
 ```
 
-The first `for` loop extracts information from the CSV list `terms` shown above and replaces placeholders containing the `term` argument. The second `for` loop iterates across the list `metrics` and creates new `[series]` for each object.
+The first `for` loop extracts information from the CSV list `terms` shown above and replaces placeholders containing the `term` argument. The second `for` loop iterates across the list `metrics` and creates a new `[series]` for each object.
 
 ```ls
 list metrics = cpieall, cpieapparel,
@@ -120,13 +120,13 @@ Charts applications support JavaScript in the **Editor** window. The leading col
 
 > [Charts documentation](https://github.com/axibase/charts/blob/master/README.md) contains a complete list of additional settings not demonstrated in this tutorial.
 
-Format the widget header with the [`header-style`](https://github.com/axibase/charts/blob/master/widgets/shared-table/README.md#header-style) settings at the `[configuration]` level for the changes to apply to the entire portal, or at the `[widget]` level to affect only specific widgets in visualization. This setting supports CSS style syntax.
+Format the widget header with the [`header-style`](https://github.com/axibase/charts/blob/master/widgets/shared-table/README.md#header-style) setting at the `[configuration]` level for the changes to apply to the entire portal, or at the `[widget]` level to affect only specific widgets in visualization. This setting supports CSS style syntax.
 
 ```ls
 header-style = background: white;display: flex;align-items: stretch;padding: 4px;width: auto;
 ```
 
-Define portal parameters using the [`height-units`](https://github.com/axibase/charts/tree/master/configuration#height-units) and [`width-units`](https://github.com/axibase/charts/tree/master/configuration#width-units) settings. Enable automatic size formatting with the [`responsive`](https://github.com/axibase/charts/blob/master/widgets/shared-table/README.md#responsive) setting.
+Define portal parameters using the [`height-units`](https://github.com/axibase/charts/tree/master/configuration#height-units) and [`width-units`](https://github.com/axibase/charts/tree/master/configuration#width-units) settings. Enable automatic text size formatting with the [`responsive`](https://github.com/axibase/charts/blob/master/widgets/shared-table/README.md#responsive) setting.
 
 ```ls
 [configuration]
@@ -158,7 +158,7 @@ To deploy this rule in a local ATSD instance, download the [template](./resource
 
 > For a detailed tutorial on the design and deployment of a custom reporting rule, refer to the [GitHub Pull Request Report](../../integrations/github/pr-report.md#configure-subscriber-list) and [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) documentation.
 
-## Other Examples
+## Additional Examples
 
 The following examples demonstrate the display of comparative data for multiple metrics based on change over time.
 
@@ -168,7 +168,7 @@ The following examples demonstrate the display of comparative data for multiple 
 
 [![](../../trends/images/button-new.png)](https://trends.axibase.com/3cde53d6)
 
-The table above tracks economic performance during the first 100 days of several presidential terms using the `fred.js` function `Index`, which sets the value of a particular metric to 100 for a specified date. Subsequent values are calculated as a proportion of that initial index value, and are thus comparable.
+The table above tracks economic performance during the first 100 days of several presidential terms using the `fred.js` function `Index`, which sets the value of a particular metric to `100` for a specified date. Subsequent values are calculated as a proportion of that initial index value, and are thus comparable.
 
 ```ls
 [series]
