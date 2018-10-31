@@ -8,7 +8,7 @@
 
 It turns out that the family member who insists on buying their Halloween candy after the actual holiday, but in the year before may be on to something.
 
-Federal Reserve economic metrics show that CPI value for candy and chewing gum is wont to increase sharply around the holiday seasons: not just Halloween but New Year's Eve as well. This increase is not met with an analogous increase in PPI value during the same months.
+Federal Reserve economic metrics show that CPI value for candy and chewing gum is wont to increase sharply around the holiday seasons: not just Halloween but New Year's Eve as well. This increase is not met with an analogous increase in PPI value during the same months. As such, producers are not spending more to generate product, but are seeing a larger than normal return from their products.
 
 ## Spooky Spikes in Holiday Prices
 
@@ -28,7 +28,7 @@ Using the [`MonthlyPercentChange`](https://github.com/axibase/charts/blob/master
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/7a8435b4#fullscreen)
 
-Each series is assigned a color, visible in the widget legend, and stacked with other series to show combined total increase or decrease with respect to percent value. The Halloween candy-price creep is demonstrated perfectly in 2015. October 2015 shows an increase in the CPI index for candy and chewing gum in August, followed by no change in September, another increase in October, a slight decrease the following month in November, and a final increase in December. Candy CPI value decreases each month in succession until the second-largest candy-giving day in the United States, Easter.
+Each series is assigned a color, visible in the widget legend, and stacked with other series to show combined total increase or decrease with respect to percent value. The Halloween candy-price creep is demonstrated perfectly in 2015, which shows an increase in the CPI index for candy and chewing gum in August, followed by no change in September, another increase in October, a slight decrease the following month in November, and a final increase in December. Candy CPI value decreases each month in succession until the second-largest candy-themed holiday in the United States, Easter.
 
 ![](./images/halloween-5.png)
 
