@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>report-template</name>
+<metric>cpu_busy</metric>
+<tagsGroupingStrategy>ALL_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[true]]></expression>
+<window>length(1)</window>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<lastUpdated>1540976099762</lastUpdated>
+<enabled>false</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>true</loadHistory>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner>Axibase</owner>
+<description><![CDATA[Send a report to a list of subscribers each time new data is uploaded to monitored metrics.]]></description>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<timeFilter>
+<intervalCount>0</intervalCount>
+<intervalUnit>SECOND</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<emailNotification>
+<disabled>false</disabled>
+<rule-name>monthly-report-demo</rule-name>
+<repeat-interval>
+<type>COUNT</type>
+<intervalCount>1</intervalCount>
+<intervalUnit>HOUR</intervalUnit>
+</repeat-interval>
+<name>Email Notification id=854</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>true</first-details>
+<repeat-details>true</repeat-details>
+<cancel-details>true</cancel-details>
+<first-screenshot>true</first-screenshot>
+<repeat-screenshot>true</repeat-screenshot>
+<cancel-screenshot>true</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<recipients>example@example.com</recipients>
+<first-subject>Economic Indicators Report</first-subject>
+<repeat-subject>Economic Indicators Report</repeat-subject>
+<cancel-subject>Economic Indicators Report</cancel-subject>
+<merge>false</merge>
+<priority>0</priority>
+<body-first>The following report contains economic indicators.&#13;
+&#13;
+${metric} was updated.</body-first>
+<body-repeat>The following report contains economic indicators.&#13;
+&#13;
+${metric} was updated.</body-repeat>
+<body-cancel>The following report contains economic indicators.&#13;
+&#13;
+${metric} was updated.</body-cancel>
+</emailNotification>
+<ruleTable/>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>
