@@ -94,12 +94,12 @@ endfor
 endfor
 ```
 
-The first `for` loop extracts information from the CSV list `terms` shown above and replaces placeholders containing the `term` argument. The second `for` loop itterates across the list `metrics` and creates new `[series]` for each object.
+The first `for` loop extracts information from the CSV list `terms` shown above and replaces placeholders containing the `term` argument. The second `for` loop iterates across the list `metrics` and creates new `[series]` for each object.
 
 ```ls
 list metrics = cpieall, cpieapparel,
-  cpiebev, cpiecomedu, cpiedusl, 
-  cpiehouse, cpiemedcare, cpiengsl, 
+  cpiebev, cpiecomedu, cpiedusl,
+  cpiehouse, cpiemedcare, cpiengsl,
   cpieotrgs, cpierec, cpietrans,
   payems, unrate, civpart, ces0500000003,
   cp, fyfsgda188s, gfdebtn, walcl, djia,
