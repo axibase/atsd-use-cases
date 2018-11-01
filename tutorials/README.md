@@ -4,6 +4,7 @@ Review the [Getting Started Guide](https://axibase.com/docs/atsd/tutorials/getti
 
 ## Data
 
+* [Creating a Custom Report With ATSD and Charts](create-report/README.md)
 * [Parsing Irregular Timestamps](irregular-timestamp/README.md)
 * [Calculating the Difference Between Consecutive Series Values](subtract-subsequent-values/README.md)
 * [Data Flow Control in Time Series Database](data-flow-control/README.md)
