@@ -26,7 +26,7 @@ Indeed, with these three metrics, a presidential term can be viewed empirically 
 
 ## Metrics
 
-Economic data is sourced from the Federal Reserve economic database [FRED](https://fred.stlouisfed.org/), stored in [ATSD](https://axibase.com/docs/atsd/), and visualized using the public-facing [Trends](../../tutorials/shared/trends.md) visualization tool. Each metric is enumerated in the table below along with its database identification name and definition.
+Economic data is sourced from the Federal Reserve economic database [FRED](https://fred.stlouisfed.org/), stored in [ATSD](https://axibase.com/docs/atsd/), and visualized using the public-facing [Trends](../../tutorials/shared/trends.md) visualization tool. Each metric is enumerated in the table below along with its database identification name, definition, and a link to a Trends visualization.
 
 Metric | ID | Description| &nbsp;
 --|--|--|--
@@ -49,13 +49,17 @@ NASDAQ 100 Index | `NASDAQ100` | Market capitalization-weighted index, which tra
 
 Each metric is tracked with the function [`PercentChangeFromYearAgo`](https://github.com/axibase/charts/blob/master/syntax/udf.md#examples) to create two dynamic values which can be compared.
 
-Each value represents a trend at a particular point in time. For the case of comparing presidential performance in each field, the two points in time are 20 January the year a particular president was elected, and 20 January the following year. As such, each value encapsulates not only the metric itself, but its general inertia as well. Thus, a president who was able to maintain falling unemployment rates can is more objectively comparable to a president who was able to reverse growing unemployment.
+Each value represents a trend at a particular point in time. For the case of comparing presidential performance in each field, the two points in time are 20 January the year a particular president was elected, and 20 January the following year. As such, each value encapsulates not only the metric itself, but its general inertia as well. Thus, a president who was able to maintain falling unemployment rates is more objectively comparable to a president who was able to reverse growing unemployment.
 
 ## First Year in Office Economic Scorecard
 
 A president's first year in office is among the most important, if such a comparison can be made. Politically, they are tasked with forming an administration; socially, the promises which got them elected are now potential policy, and economically, the results of their political and social calculus must face the light of day as the ultimate results of their aforementioned machinations are put to the test.
 
+<!-- markdownlint-disable MD105 -->
+
 > <i>"All this will not be finished in the first one hundred days. Nor will it be finished in the first one thousand days... nor even perhaps in our lifetime on this planet. But let us begin."</i> John F. Kennedy <sup>[2](https://www.jfklibrary.org/learn/about-jfk/historic-speeches/inaugural-address)</sup>
+
+<!-- markdownlint-enable MD105 -->
 
 ### Donald Trump
 
@@ -75,7 +79,7 @@ The stock market has been the most consistent and tangible area of growth during
 
 Despite significant decreases in the certain areas of the consumer price index, specifically **Food and Beverages** and **Housing** costs where the erstwhile growing trend was not only halted but reversed, the impact of the Great Recession which is generally considered to have begun with the 2008 financial crisis <sup>[3](http://knowledge.wharton.upenn.edu/article/great-recession-american-dream/)</sup> resulted in a net increase in overall inflation. Especially hard hit was the energy sector, whereby decreasing energy costs of energy were monumentally reversed and grew over 30% in just a year. Worth noting is the 77% growth in the same metric from July 2007 to July 2008 at the end of George W. Bush's second term as president.
 
-Unsurprisingly, a second victim of the global economic downturn was the labor market. Although, again, the amount that this growth can be attributed to President Obama is debatable. Unemployment indeed grew, but in an atmosphere of general unemployment growth, only a portion of the increase can be attributed to Obama-era policy. In fact, both the **Civilian Unemployement Rate** and **Civilian Labor Force Participation Rate** grew almost negligibly, under 2% each.
+Unsurprisingly, a second victim of the global economic downturn was the labor market. Although, again, the amount that this growth can be attributed to President Obama is debatable. Unemployment indeed grew, but in an atmosphere of general unemployment growth, only a portion of the increase can be attributed to Obama-era policy. In fact, both the **Civilian Unemployment Rate** and **Civilian Labor Force Participation Rate** grew almost negligibly, under 2% each.
 
 The main sticking point of President Obama's presidency, and indeed, a likely factor in how it will be reflected upon in the future, was the massive increase in the federal debt. In just the first year of his administration, the total public debt grew nearly 15%, and the by the end of his eight-year two-term presidency, had more than doubled. <sup>[4](http://www.crfb.org/blogs/has-president-obama-doubled-national-debt)</sup> After such monumental growth, the debt-to-GDP ratio exceeded 100% for the first time in United States history.
 
@@ -99,7 +103,7 @@ The Clinton era is generally viewed as peacetime for the United States, with lit
 
 ## Conclusion
 
-> <i>"The only real radicalism in our time will come as it always has— From people who insist on thinking for themselves and who reject party-mindedness."</i> Christopher Hitchens
+> <i>"The only real radicalism in our time will come as it always has— From people who insist on thinking for themselves and who reject party-mindedness."</i> Christopher Hitchens <sup>[9](https://historynewsnetwork.org/article/1881)</sup>
 
 History shows that simply being President of the United States is not enough to make the economy of the country bend to your will. Implementing coherent policy, maintaining international stability though treaties and deterrence, and sound fiscal practices have proven time and time again to be the only consistent solution.
 
@@ -107,5 +111,6 @@ The irony of the two-sided dichotomy is the inability of either to recognize the
 
 ## Resources
 
+* To view the complete **First Year in Office Economic Scorecard** portal, visit [Trends](https://trends.axibase.com/e306a37b#fullscreen). Inspect portal configuration by clicking **Editor** to expand the configuration pane.
 * Refer to the [Creating a Custom Report With ATSD and Charts](../../tutorials/create-report/README.md) tutorial for more information about creating this or similar reports.
 * For more information about using Trends, see the [Using Trends](../../tutorials/shared/trends.md) tutorial.
