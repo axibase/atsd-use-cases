@@ -18,7 +18,7 @@ These datasets are published in the [Socrata Open Data Format](https://socrata.c
 
 ## Hawaiian Fuel Prices Dataset
 
-This article use data sourced from [`data.gov`](https://www.data.gov/) concerning Hawaiian fuel prices.
+This article uses data sourced from [`data.gov`](https://www.data.gov/) concerning Hawaiian fuel prices.
 
 From 2006 to 2012, the State of Hawaii compiled AAA fuel prices for each of these fuel types:
 
@@ -69,11 +69,11 @@ ATSD does not require you to design database table schema, provision an applicat
 
 Configure a scheduled [job](https://axibase.com/docs/axibase-collector/#jobs) to retrieve data from a specified endpoint import the data into ATSD according to [pre-defined rules](https://axibase.com/docs/atsd/rule-engine/). Once the data is stored in ATSD, creating and sharing reports and creating interactive visualizations with built-in widgets is trivial. Reports are continuously updated with the flow of incoming data.
 
-The plotly visualization above is replicated in **ChartLab** below. **ChartLab** is a visualizaton application that relies on data processing and stored from ATSD.
+The plotly visualization above is replicated in **ChartLab** below. **ChartLab** is a visualization application that relies on data processing and stored from ATSD.
 
 ![Figure 5](./images/Figure5.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ee379926)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/ee379926)
 
 Sort the dataset by location or fuel type and easily navigate through the entire dataset using [`[dropdown]`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/) settings to create variable data inputs.
 
@@ -97,7 +97,7 @@ Create custom portals using the example portal above as a template. Change or di
 
 ![Figure 13](./images/Figure13.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/06a95d7c)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/06a95d7c)
 
 ### Diesel [Histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/)
 
@@ -109,7 +109,7 @@ Create custom portals using the example portal above as a template. Change or di
 Create a derived series to calculate the difference between local and mainland prices:
 
 1. In the `Hilo` series, define an alias `alias = s1`. In the `US` series, define a second alias `alias = s2`. Hide both series using a `display=false` setting.
-1. Define a new series with `label = Hilo over US Diesel Surcharges` setting included. Use the expression `value = value('s1') - value('s2')` to calculate the desired metric.
+1. Define a new series with `label = Hilo over US Diesel Surcharges` setting included. Use the expression `value = value('s1') - value('s2')` to calculate the derived metric.
 
 ![Figure 16](./images/Figure16.png)
 
@@ -122,7 +122,7 @@ Make additional optional changes to fine tune the visualization:
 
 ![Figure 17](./images/Figure17.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/aff8779b)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/aff8779b)
 
 > Read [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) for an exhaustive list of available settings.
 
@@ -132,7 +132,7 @@ Exploring the complete dataset for fuel prices, Wailuku is more expensive for an
 
 On `data.gov`, locate the [Hawaii Electricity Prices](https://catalog.data.gov/dataset/hi-electricity-prices-815fa) dataset.
 
-From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/kwh) for each of the Hawaiian islands:
+From 2008 to 2012, the State of Hawaii collected electricity prices (in cents/kWh) for each of the Hawaiian islands:
 
 **Hawaii**, **Kauai**, **Lanai**, **Maui**, **Molokai**, **Oahu**
 
@@ -142,7 +142,7 @@ The electricity metric is tracked by sector:
 
 ![](./images/electricity-portal.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/9e548f6b)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/9e548f6b)
 
 The geographic tags for the gasoline and electricity datasets are different: the former is county-based while the latter is island-based. Regions with data for both metrics are highlighted below:
 
@@ -152,7 +152,7 @@ Compare Diesel prices in Honolulu, Wailuku, and Hilo with residential electricit
 
 ![Figure 10](./images/Figure10.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b1046948)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/b1046948)
 
 > For more information about generating custom portals, see the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/).
 
@@ -182,5 +182,5 @@ Compare Diesel prices in Honolulu, Wailuku, and Hilo with residential electricit
 1. [Install ATSD](https://axibase.com/docs/atsd/installation/) on a virtual machine or in a Linux container.
 2. [Install Axibase Collector](https://axibase.com/docs/axibase-collector/#installation) and configure Collector to write data into your ATSD instance.
 3. Upload the [Job](./hawaii_gas_prices.xml) file to Axibase Collector.
-4. Import the desired `data.gov` datasets to enable data collection.
+4. Import `data.gov` datasets to enable data collection.
 5. Log in to ATSD and open a sample Socrata portal to explore the data.

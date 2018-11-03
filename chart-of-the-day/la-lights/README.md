@@ -2,7 +2,7 @@
 
 ![](./images/lal-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/748691f3/2/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/748691f3/2/#fullscreen)
 
 The City of Los Angeles is keenly aware of the negative effects of greenhouse gas pollution and is often in the process
 of working to counteract the effects of mass individual car ownership by reducing greenhouse gas emissions in other spheres of life.
@@ -13,9 +13,9 @@ with light-emitting diode (LED) bulbs to update the traditional incandescent bul
 The [ChartLab](https://apps.axibase.com/chartlab) visualization above, made possible by ATSD,
 tracks government progress with [public data](https://catalog.data.gov/dataset/citywide-led-streetlight-savings) and
 offers insight on the latest foray into environmental protectionism of Los Angeles. Open the chart with the link above, and use the
-drop-down menu to toggle between all of the recorded metrics for a complete picture of [The Los Angeles LED Streetlight Program](https://energy.gov/eere/ssl/text-alternative-version-city-los-angeles-led-streetlight-program).
+drop-down list to toggle between all of the recorded metrics for a complete picture of [The Los Angeles LED Streetlight Program](https://energy.gov/eere/ssl/text-alternative-version-city-los-angeles-led-streetlight-program).
 
-The table below indexes the recorded metrics and offers explanation when  needed:
+The table below indexes the recorded metrics and offers explanation when needed:
 
 | Metric | Unit | Comment |
 |--------|:----:|:-------:|

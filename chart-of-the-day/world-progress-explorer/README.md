@@ -1,13 +1,13 @@
 # The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions
 
 ![](./images/wps-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/ecb8def7#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/ecb8def7#fullscreen)
 
 ## Introduction
 
 The **World Progress Explorer** is an aggregation of many statistics that are collected by various international agencies including the [World Bank](https://www.worldbank.org/) and [United Nations Statistical Division](https://unstats.un.org/home/) and retrieved from the [Federal Reserve Economic Research](https://fred.stlouisfed.org/) API.
 
-Open the **Trends** visualization above and use the drop-down menus to navigate between all countries which have recorded data, grouped in alphabetically ascending order. The observed metric may be changed using the right-most drop-down menu. The metrics tracked in the visualization are described in the table below:
+Open the **Trends** visualization above and use the expandable drop-down lists to navigate between all countries which have recorded data, grouped in alphabetically ascending order. The observed metric may be changed using the right-most drop-down list. The metrics tracked in the visualization are described in the table below:
 
 |Metric Name |Description |
 |------------|------------|
@@ -19,14 +19,14 @@ Open the **Trends** visualization above and use the drop-down menus to navigate 
 |life_expectancy_at_birth_by_country|Number of years a newborn is predicted to live given constant mortality figures|
 |population_total_by_country| Recorded number of people living in a given country|
 
-For detailed information about using the **Trends** service, read this [guide](../../integrations/shared/trends.md).
+For detailed information about using the **Trends** service, read this [guide](../../tutorials/shared/trends.md).
 
 ## Visualization
 
-The visualizations in the chart above demonstrate a [user-defined function](../../integrations/shared/trends.md#user-defined-functions) which sets the year 1990 as the baseline using the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js) library. Using the `PercentChangeFromYearAgo` function instead creates the visualization below. Open the **Trends** interface and explore the data using the same drop-down menus to navigate between countries and metrics.
+The visualizations in the chart above demonstrate a [user-defined function](../../tutorials/shared/trends.md#user-defined-functions) which sets the year 1990 as the baseline using the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js) library. Using the `PercentChangeFromYearAgo` function instead creates the visualization below. Open the **Trends** interface and explore the data using the same drop-down lists to navigate between countries and metrics.
 
 ![](./images/wps-1.png)
-[![](./images/button-new.png)](https://trends.axibase.com/5d0563d2/2#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/5d0563d2/2#fullscreen)
 
 Axibase [Charts API](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) uses a simple syntax to perform advanced calculations on the client. The underlying mechanics of the `PercentChangeFromYearAgo` function are shown here:
 
@@ -40,7 +40,7 @@ To implement this function, the this setting is used:
 value = fred.PercentChangeFromYearAgo('raw')
 ```
 
-Open the **Trends** visualization and use any of the supported user-defined functions from the [`fred.js` library](../../integrations/shared/trends.md#fred-library).
+Open the **Trends** visualization and use any of the supported user-defined functions from the [`fred.js` library](../../tutorials/shared/trends.md#fred-library).
 
 ## SQL Queries
 
@@ -168,7 +168,7 @@ FROM "life_expectancy_at_birth_by_country"
 **Notes**: Almost of the nations appearing on this list are former Soviet Socialist Republics who experienced a huge decrease in life expectancy after the dissolution of the USSR, and have since recovered. Use the chart below showing Belarus and Bulgaria during the 1990s, in the aftermath of the break-up, as a reference.
 
 ![](./images/life-exp-post-cccp.png)
-[![](./images/button-new.png)](https://trends.axibase.com/bf59e818)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/bf59e818)
 
 Open the **Trends** visualization and remove unwanted data by clicking colored indicator labels along the top of the screen to toggle visible countries.
 
@@ -228,7 +228,7 @@ FROM "population_total_by_country"
 | Saudi Arabia                 | 5.84                      | 32.28                     | 453.01                   |
 | Jordan                       | 1.72                      | 9.46                      | 450.10                   |
 
-> Many of these oil-rich countries discovered their vast supplies of natural resources earlier than the 1970s but did not achieve independence to fully control them until 1971. Qatar, Bahrain, the UAE, and Oman achieved independence in 1971 and have since then vastly expanded their oil production capabilities including inviting large numbers of foreign national into the country to either develop or oversee the continued expansion of an industry which is responsible for the overwhelming majority of the GDP of each country.
+> Many of these oil-rich countries discovered their vast supplies of natural resources earlier than the 1970s but did not achieve independence to fully control them until 1971. Qatar, Bahrain, the United Arab Emirates, and Oman achieved independence in 1971 and have since then vastly expanded their oil production capabilities including inviting large numbers of foreign national into the country to either develop or oversee the continued expansion of an industry which is responsible for the overwhelming majority of the GDP of each country.
 
 The table below shows the percent of foreigners in selected countries above where the figure is significant:
 
@@ -269,9 +269,9 @@ FROM "population_total_by_country"
 **Notes**: Almost all of these countries are form Warsaw Pact / Eastern Bloc countries who have in one way or another achieved some sort of cooperation with European countries that has allowed for massive amounts of emigration from the formerly closed nations. In the case of the Ukraine, the significant drop in population immediately after the dissolution of the USSR is clearly visible.
 
 ![](./images/pop-loss-post-ussr.png)
-[![](./images/button-new.png)](https://trends.axibase.com/fcb79db7)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/fcb79db7)
 
-Open the **Trends** visualization above to track the same pattern in other former Warsaw Pact countries by using the drop-down menus to navigate through the data.
+Open the **Trends** visualization above to track the same pattern in other former Warsaw Pact countries by using the drop-down lists to navigate through the data.
 
 ### Greatest Population Decline Percent Across Observed Period (1970-2015)
 

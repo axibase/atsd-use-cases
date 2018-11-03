@@ -49,7 +49,7 @@ The trade-off between these policies is clear: what is good for producers is bad
 
 ## Queue Size
 
-To derive an optimal series queue size, first consider how much memory is available on the server and how much of it is allocated to ATSD java process (`Xmx`). Review the received rate displayed on the ATSD [default portal](https://axibase.com/docs/atsd/portals/#built-in-portals) and run [HBase Auto Tests](https://hbase.apache.org/0.94/book/hbase.tests.html) to determine recommended thread pool and batch sizes.
+To derive an optimal series queue size, first consider how much memory is available on the server and how much of it is allocated to ATSD Java process (`Xmx`). Review the received rate displayed on the ATSD [default portal](https://axibase.com/docs/atsd/portals/#built-in-portals) and run [HBase Auto Tests](https://hbase.apache.org/0.94/book/hbase.tests.html) to determine recommended thread pool and batch sizes.
 
 ```sh
 series.batch.size = 1024 #number of series commands sent to disk in each transaction

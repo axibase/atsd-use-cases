@@ -36,7 +36,7 @@ Because statistics from ITM agents are received by ATSD with no delay, use this 
     KHD_CSV_EVAL_INTERVAL=60
     ```
 
-  * Restart WareHouse Proxy agent:
+  * Restart Warehouse Proxy agent:
 
     ```sh
     bin/itmcmd stop hd
@@ -74,8 +74,8 @@ bin/itmcmd start ${PRODUCT_CODE}
 ### Upload CSV Parsers into ATSD
 
 * Log in to the ATSD web interface.
-* Open the **Configuration > Parsers: CSV** page.
-* Open the split button and select **Import**.
+* Navigate to **Configuration > Parsers: CSV**.
+* Expand the split-button and click **Import**.
 * Upload the CSV parser XML files.
 
 ### Configure `inotify` Script to Read CSV files and Upload into ATSD

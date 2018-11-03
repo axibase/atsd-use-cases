@@ -59,7 +59,7 @@ Route 53 supports health checks HTTP, HTTPS, and TCP protocols.
 
 The services considers the endpoint to be in a `Healthy` state when the specified percentage of checkers establish a TCP connection and (for HTTP/S) received a `2xx`/`3xx` response code from the server. The response also contains the specified keyword if **String Matching** is enabled.
 
-When specifying paths for HTTP/S endpoints, factor in the increased traffic sent to the target service to avoid causing excessive load on the server.
+When specifying paths for HTTP or HTTPS endpoints, factor in the increased traffic sent to the target service to avoid causing excessive load on the server.
 
 ### HTTPS
 
@@ -82,7 +82,7 @@ Offload health check statistics to ATSD and create consolidated dashboards with 
 ### Prerequisites
 
 * Create an AWS [IAM account](https://axibase.com/docs/axibase-collector/jobs/aws-iam.html) to query CloudWatch statistics.
-* Ensure 4 GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+* Ensure 4 GB RAM is available for the [ATSD sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container.
 
 ### Launch ATSD Sandbox
 
@@ -102,7 +102,7 @@ accessKeyId=KEY
 secretAccessKey=SECRET
 ```
 
-Launch the [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on a Docker host:
+Launch the [ATSD sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container on a Docker host:
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 -p 8081:8081 \
@@ -146,7 +146,7 @@ Configure a `cron` scheduled task to copy health check attributes into ATSD sand
 
 ### Consolidated View
 
-View all working Route 53 health checks on the **AWS Route53** tab.
+View all working Route 53 health checks on the **AWS Route 53** tab.
 
 ![](./images/route53-entity-view.png)
 

@@ -10,7 +10,7 @@ Follow this process to upload a Portal to your local ATSD instance.
 
     ![](./images/portal-config.png)
 
-2. From the **Portals** page, expand the split button and click **Import**.
+2. From the **Portals** page, expand the split-button and click **Import**.
 
     ![](./images/import-portal.png)
 

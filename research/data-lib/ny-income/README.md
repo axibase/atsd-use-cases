@@ -10,7 +10,7 @@ All data is stored in the [Axibase Time Series Database](https://axibase.com). D
 
 ## Adjusted Gross Income (AGI)
 
-"Adjusted Gross Income is defined as gross income minus adjustments to income." (Source: [Internal Revenue Service](https://www.irs.gov/uac/definition-of-adjusted-gross-income))
+Adjusted Gross Income is defined as gross income minus adjustments to income.
 
 A person's AGI reflects the total amount of money that they earned in a given fiscal year minus whatever deductions that
 filer makes. The City of New York has collected information for all local tax filers, and aggregated them into ten
@@ -40,7 +40,7 @@ SELECT tags.income_group AS "AGI Decile", value AS "Total Filers", value/1000 AS
 
 ![](./images/NYP_1.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1576163d/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/1576163d/2/#fullscreen)
 
 ## Average Income by Decile
 
@@ -65,7 +65,7 @@ SELECT tags.income_group AS "AGI Decile", value AS "Decile Average Income"
 
 ![](./images/NYP_2.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d979bec5/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/d979bec5/2/#fullscreen)
 
 > Average Total Income for all deciles: $66,580/year.
 
@@ -107,7 +107,7 @@ SELECT tags.income_group AS "Age Decile", value AS "Decile Total Income (USD Mil
 
 ![](./images/NYP_3.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d979bec5/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/d979bec5/3/#fullscreen)
 
 ## Income by Decile as a Percent of Total Income
 
@@ -135,4 +135,4 @@ SELECT tags.income_group AS "Age Decile", ((value/230468)*100) AS "Percent of To
 
 ![](./images/NYP_4.1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1576163d/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/1576163d/3/#fullscreen)

@@ -4,7 +4,7 @@
 
 ![](./images/AP-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/efc684ff/2/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/efc684ff/2/#fullscreen)
 
 Austin, Texas is the capital city of the Lone Star State and one of the fastest growing cities in America. Home to the University
 of Texas at Austin, which produces thousands of well-qualified computer science graduates each year and funnels new talent into largest employers in Austin. Dubbed "the Silicon Hills" for the high concentration of post-dot-com-boom and other newer
@@ -21,20 +21,20 @@ affected by introducing competitors whereas proponents of regulation say just th
 it is a modern necessity, and government regulation ensures access for everyone. Using the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD, the numerical information associated with the above visualization is shown:
 
 ```sql
-SELECT tags.customer_class AS "Customer Class", AVG(value) AS "Avg KWH (Cents)"
+SELECT tags.customer_class AS "Customer Class", AVG(value) AS "Avg kWh (Cents)"
   FROM "rate_cents_per_kwh" WHERE tags.customer_class != 'Total'
 GROUP BY tags.customer_class
   ORDER BY AVG(value) DESC
 ```
 
-| Customer Class            | Avg KWH (Cents) |
+| Customer Class            | Avg kWh (Cents) |
 |---------------------------|-----------------|
 | Residential               | 10.11           |
 | Commercial                | 9.45            |
 | Lighting (Public & Other) | 7.83            |
 | Industrial                | 6.29            |
 
-> Over the observed time period, residential customers paid an average $0.04 more per kilowatt hour (KWH) than industrial
+> Over the observed time period, residential customers paid an average $0.04 more per kilowatt hour (kWh) than industrial
 clients.
 
 While four cents an hour certainly does not seem like much, the table below shows the amount of revenue generated from each class of customer. Typically, business and industry
@@ -44,7 +44,7 @@ observed period, which is detailed in the table below the visualization.
 
 ![](./images/AP-002.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/efc684ff/3/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/efc684ff/3/#fullscreen)
 
 ```sql
 SELECT tags.customer_class AS "Customer Class", AVG(value)/1000000 AS "Revenue (Million USD)"
@@ -60,12 +60,12 @@ GROUP BY tags.customer_class
 | Industrial                | 151.99                |
 | Lighting (Public & Other) | 83.19                 |
 
-This dramatic difference may be explainable by looking at electricity usage numbers, in the visualation below, where residential
+This dramatic difference may be explainable by looking at electricity usage numbers, in the visualization below, where residential
 customers significantly out-use the industrial sector by almost double.
 
 ![](./images/AP-003.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/efc684ff/4/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/efc684ff/4/#fullscreen)
 
 ```sql
 SELECT tags.customer_class AS "Customer Class", AVG(value)/1000000 AS "Usage (Million MWh)"

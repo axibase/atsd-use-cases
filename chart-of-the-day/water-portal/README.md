@@ -25,11 +25,11 @@ Dams are built to flood valleys and create water reserves. At the height of the 
 
 ![](./images/folsom-lake-drought.png)
 
-The above photographs show the Folsom reservoir, the main reservoir responsible for providing water to Sacramento, the capitol of the state, in July 2011 and January 2014, respectively.
+The above photographs show the Folsom reservoir, the main reservoir responsible for providing water to Sacramento, the capital of the state, in July 2011 and January 2014, respectively.
 
 This portal tracks Folsom reservoir levels using a `time-offset` setting to display variable year data together.
 
-```css
+```ls
 list ofs = 0, 1, 2, 3, 4, 5, 10
 for offs in ofs
   [series]
@@ -39,7 +39,7 @@ for offs in ofs
 
 ![](./images/reservoir-elevation.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/002d531e#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/002d531e#fullscreen)
 
 The `3 years ago` trend line shows that the Folsom reservoir contained comparable water at the height of the drought as the `10 years ago` trend line representing 2008 when the state was in the midst of a [different drought](https://en.wikipedia.org/wiki/Droughts_in_California#2007%E2%80%932009).
 
@@ -51,7 +51,7 @@ Despite heavy rainfall which sparked the [Oroville Dam crisis](../../research/or
 
 To compensate for the increased rainfall, use an [aggregation function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) to smooth the trend lines. Each marker denotes the user-defined period of `1 week`.
 
-```css
+```ls
 [widget]
   group-statistic = avg
   group-period = 1 week
@@ -59,7 +59,7 @@ To compensate for the increased rainfall, use an [aggregation function](https://
 
 ![](./images/oroville-avg.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/df8c25dc#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/df8c25dc#fullscreen)
 
 > Open either visualization to explore reservoir level data  for all recorded locations.
 
@@ -75,7 +75,7 @@ Lake Shasta is considered the keystone of the [Central Valley Project](https://e
 
 ![](./images/shasta-inflow-outflow.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/fb03cb3e#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/fb03cb3e#fullscreen)
 
 Both inflow and outflow have been steadily decreasing. Previous year data is of a much higher magnitude than any other recorded year, evidence of just how desperately needed the increased rainfall of 2017 really was.
 
@@ -89,7 +89,7 @@ The same trends present at Lake Shasta with respect to inflow and outflow were p
 
 ![](./images/millerton-inflow-outflow.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/29f77a22)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/29f77a22)
 
 > Open either visualization to explore inflow and outflow data for all recorded locations using the drop-down lists.
 
@@ -111,18 +111,18 @@ The lake is dammed by the Monticello Dam, where detailed precipitation data is t
 
 ![](./images/precipitation-levels.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/c0dadeb1#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/c0dadeb1#fullscreen)
 
 Immediately visible is that current year data is barely noticeable among other samples. Use the `time period` labels at the top of the visualization to compare `10 years ago` and `0 years ago` or open the **ChartLab** portal where other data is excluded.
 
-```css
+```ls
 list ofs = 0, 10
 for offs in ofs
 ```
 
 ![](./images/10-1-years-ago.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/675bcffc#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/675bcffc#fullscreen)
 
 ---
 
@@ -140,7 +140,7 @@ This portal contains two drop-down lists with all recorded metrics for all recor
 
 ![](./images/main-portal.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/b9d5fe13#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/b9d5fe13#fullscreen)
 
 > Note that not all metrics are available for all locations. Stored data is based on its availability from the State of California.
 

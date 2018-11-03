@@ -12,7 +12,7 @@ Follow this procedure to import an Entity Group definition to your local ATSD in
 
     ![](./images/entity-group2.png)
 
-2. Expand the split button at the bottom of the page and click **Import**.
+2. Expand the split-button at the bottom of the page and click **Import**.
 
     ![](./images/entity-group3.png)
 

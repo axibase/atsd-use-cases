@@ -1,14 +1,14 @@
 # European Union Debt by Country Per Capita (2005-2016)
 
-Data Source: [EuroStat](https://ec.europa.eu/eurostat)
+Data Source: [Eurostat](https://ec.europa.eu/)
 
 Visualization Tool: [ChartLab](https://apps.axibase.com/chartlab)
 
 ![](./images/eudpc-003.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e92a4f6c/10/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/e92a4f6c/10/#fullscreen)
 
-> Use the drop-down lists at the top of the visualization to navigate through time by selecting the desired start and end
+> Use the drop-down lists at the top of the visualization to navigate through time by selecting the start and end
 years for the observation period.
 
 Recently, [European Union Debt Data](../../research/data-lib/eu-debt/README.md) sorted by country was published
@@ -20,7 +20,7 @@ sorted by member country and below that same information is displayed in one yea
 
 ![](./images/eudpc-002.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d38e750e/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/d38e750e/#fullscreen)
 
 > Open the visualization above and navigate through time with the drop-down list.
 
@@ -33,7 +33,7 @@ The following visualization tracks debt growth by country from 2006 to 2016:
 
 ![](./images/eudpc-013.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/d38e750e/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/d38e750e/#fullscreen)
 
 This dataset is queried further and indexed in the [Axibase Dataset Library](https://axibase.com/datasets/) using the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD.
 See the complete entry in the [Data Library](../../research/data-lib/eu-debt-per-capita/README.md).

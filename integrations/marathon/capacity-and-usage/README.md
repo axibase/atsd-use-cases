@@ -41,7 +41,7 @@ Integration with ATSD adds an additional level of visibility by collecting and a
 
 ### Launch ATSD Sandbox
 
-Launch [ATSD sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container on one of the Docker hosts.
+Launch [ATSD sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container on one of the Docker hosts.
 
 Replace `marathon_hostname`, `username`, and `password` in the command below with actual Marathon user credentials.
 

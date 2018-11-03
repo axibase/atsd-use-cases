@@ -35,7 +35,7 @@ Here is a summary of the available stations:
 * 394: Total number of stations that measure cloud oktas.
 * 45: Total number of station that measure cloud oktas at least four times per day.
 
-Cloud cover measurements are available from the Australian Bureau of Meteorology [Latest Weather Observations](http://www.bom.gov.au/nsw/observations/nswall.shtml?ref=hdr) portal. Cloud cover data from each station for the past few days can be retrieved in JSON format using the REST API.
+Cloud cover measurements are available from the Australian Bureau of Meteorology [Latest Weather Observations Portal](http://www.bom.gov.au/nsw/observations/nswall.shtml?ref=hdr). Cloud cover data from each station for the past few days can be retrieved in JSON format using the REST API.
 
 As stated on [Wikipedia](https://en.wikipedia.org/wiki/Cloud_cover), cloud cover is the fraction of the sky obscured by clouds when observed from a particular location. Cloud cover is measured in oktas, meaning eighths: `0`, `1/8`, `2/8`, up to `1`. Several methods are used to measure cloud cover but which method is used by the Australian weather stations is not exactly clear.
 
@@ -54,7 +54,7 @@ To determine cloud cover from Himawari images as simply as possible, only one ba
 
 [ATSD](https://axibase.com/docs/atsd/) can collect data from the Australian Bureau of Meteorology in JSON format. ATSD comes with the [Axibase Collector](https://axibase.com/docs/axibase-collector/), which collects data from any remote source and stores it in ATSD. Another benefit of ATSD is the built-in visualization that supports graphing results, to give a good understanding of the progress.
 
-The images from JMA are loaded in PNG format into R for analysis. To analyze the images in R, use [EBImage](https://www.rdocumentation.org/packages/EBImage/versions/4.14.2), [oce](http://dankelley.github.io/oce/), and [geosphere](https://cran.r-project.org/web/packages/geosphere/index.html) R packages. The results of the analysis are stored in ATSD.
+The images from JMA are loaded in PNG format into R for analysis. To analyze the images in R, use [`EBImage`](https://www.rdocumentation.org/packages/EBImage/versions/4.14.2), [`oce`](https://dankelley.github.io/oce/), and [`geosphere`](https://cran.r-project.org/web/packages/geosphere/index.html) R packages. The results of the analysis are stored in ATSD.
 
 ![](./images/data_flow1.png)
 
@@ -90,17 +90,17 @@ Stations that measure cloud cover at an average frequency of at least once every
 
 This approach does not appear to work particularly well as there is little correlation between computed and factual values.
 
-Interestingly, the `cloudiness_himawari_b13` series has a daily cycle; the value is lower during the day than at night. This trend is clearly visible when comparing this series with the height of the sun above the horizon, known as sun altitude. Sun altitude is calculated using the [SunCalc library](https://github.com/mourner/suncalc) created by [Vladimir Agafonkin](https://github.com/mourner).
+Interestingly, the `cloudiness_himawari_b13` series has a daily cycle; the value is lower during the day than at night. This trend is clearly visible when comparing this series with the height of the sun above the horizon, known as sun altitude. Sun altitude is calculated using the [`SunCalc` library](https://github.com/mourner/suncalc) created by [Vladimir Agafonkin](https://github.com/mourner).
 
 View the live ChartLab Portal comparing Cloud Cover to Sun Altitude:
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/08aa5fea/3/)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/08aa5fea/3/)
 
 The results clearly show that the correlation during daytime hours is higher.
 
 The diurnal cycle is removed by subtracting the average of values of the last `n` days. The results with the diurnal cycle removed:
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/06a58e55/7/)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/06a58e55/7/)
 
 ## Improving the Correlation
 
@@ -197,7 +197,7 @@ Comparing the calculated cloud oktas with solar power generation for a particula
 
 ![](./images/pv_cloud_correlation2.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/8e2917e2)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/8e2917e2)
 
 The above ChartLab portal compares the power generation of a solar power station near one of the automated weather stations in the city of Griffith, for which cloud cover is calculated. The solar power station is three kilometers away from the automated weather station. From these results the increases in calculated cloud cover lead to decreases in solar power generation and vice versa. There is a correlation between the calculated cloud oktas and solar power generation.
 

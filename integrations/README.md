@@ -1,61 +1,16 @@
 # Integrations
 
-Walkthrough guides for ATSD integration with third-party systems and services.
+Reference guides for integrating ATSD with third-party systems and services.
 
-## ActiveMQ
-
-* [ActiveMQ Integration](activemq/README.md)
-
-## Amazon Web Services
-
-* [Build Availability Report for AWS Route53](aws/route53-health-checks/README.md)
-* [Configure Launch Notifications for AWS Resources](aws/cloud-watch-alert/README.md)
-* [Route53 Health Status Alarms](aws/route53-email-notifications/README.md)
-
-## Apache Kafka
-
-* [Kafka Integration](kafka/README.md)
-* [Monitoring Kafka Brokers](kafka/brokers-monitoring/README.md)
-* [Monitoring Kafka Consumer Lag](kafka/consumers-monitoring/README.md)
-
-## cAdvisor
-
-* [ATSD as the Backend for cAdvisor](cadvisor/README.md)
-
-## Docker
-
-* [Notifications for Docker Hub Build Failures](docker/README.md)
-* [Docker Container Monitoring](docker/docker-engine.md)
-
-## GitHub
-
-* [Daily Pull Request Report for GitHub Organizations](github/pr-report.md)
-* [Notifications for New GitHub Repository Forks](github/fork-notification.md)
-* [Notifications for New GitHub Issues](github/issue-notification.md)
-* [Notifications for New GitHub Project Releases](github/project-release-notification.md)
-* [Notifications for New GitHub Pull Requests](github/pr-notification.md)
-* [Notifications for New GitHub Repository Subscriptions](github/watch-notification.md)
-* [Notifications for a New GitHub Repository Push](github/push-notification.md)
-
-## IBM Tivoli Monitoring
-
-* [IBM Tivoli Monitoring Integration](itm/README.md)
-
-## Kafka
-
-* [Kafka Integration](kafka/README.md)
-* [Brokers Monitoring](kafka/brokers-monitoring/README.md)
-* [Consumers Monitoring](kafka/consumers-monitoring/README.md)
-
-## Marathon
-
-* [How to Monitor Marathon Applications as Services](marathon/capacity-and-usage/README.md)
-
-## Socrata
-
-* [From data.gov Dataset to Python DataFrame in 10 minutes](socrata/python/README.md)
-* [Analyzing Socrata Datasets for Iowa Compensation](socrata/iowa-compensation/README.md)
-
-## Zookeeper
-
-* [Zookeeper Integration](zookeeper/README.md)
+| | |
+|:---|:---|
+<a id="activemq"></a>![](./images/activemq-logo-1.png) | <li> [ActiveMQ Integration](activemq/README.md)
+<a id="aws"></a>![](./images/aws-logo-1.png) |<li>[Build Availability Report for AWS Route 53](aws/route53-health-checks/README.md)<br><li>[Configure Launch Notifications for AWS Resources](aws/cloud-watch-alert/README.md)<br><li>[Route 53 Health Status Alarms](aws/route53-email-notifications/README.md) |
+<a id="kafka"></a>![](./images/kafka-logo-1.png) |<li>[Kafka Integration](kafka/README.md)<br><li>[Monitoring Kafka Brokers](kafka/brokers-monitoring/README.md)<br><li>[Monitoring Kafka Consumer Lag](kafka/consumers-monitoring/README.md)
+<a id="cadvisor"></a>![](./images/cadvisor-logo-3.png) | <li>[ATSD as the Backend for cAdvisor](cadvisor/README.md)
+<a id="docker"></a>![](./images/docker-logo-1.png)|<li>[Docker Container Monitoring](docker/docker-engine.md)<br><li>[Notifications for Docker Hub Build Failures](docker/README.md)<br><li>[Monitoring SSL Certificates Expiry Dates for Subdomains](atsd-sandbox/monitor-ssl-expiry-dates/README.md)
+<a id="github"></a>![](./images/github-logo-2.png)|<li>[Daily Pull Request Report for GitHub Organizations](github/pr-report.md)<br>&nbsp; &nbsp; Event Notifications:<br><li>[Repository Forks](github/fork-notification.md)<br><li>[Raised Issues](github/issue-notification.md)<br><li>[Project Releases](github/project-release-notification.md)<br><li>[Pull Requests](github/pr-notification.md)<br><li>[Repository Subscriptions](github/watch-notification.md)<br> <li>[Repository Pushes](github/push-notification.md)
+<a id="ibm"></a>![](./images/ibm-logo-1.png) |<li>[IBM Tivoli Monitoring Integration](itm/README.md)
+<a id="marathon"></a>![](./images/marathon-logo-1.png) |<li>[How to Monitor Marathon Applications as Services](marathon/capacity-and-usage/README.md)
+<a id="socrata"></a>![](./images/socrata-logo-1.png)|<li>[From `data.gov` Dataset to Python DataFrame in Ten Minutes](socrata/python/README.md)<br><li>[Analyzing Socrata Datasets for Iowa Compensation](socrata/iowa-compensation/README.md)<br><li>[Socrata Data Reference](https://axibase.com/docs/axibase-collector/jobs/examples/socrata/state-government.html)
+<a id="zookeeper"></a>![](./images/zookeeper-logo-3.png)| <li>[Zookeeper Integration](zookeeper/README.md)

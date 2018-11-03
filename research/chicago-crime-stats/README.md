@@ -9,7 +9,7 @@
 In 2016, Chicago, the 3rd most populous city in the United States, had more homicides
 than New York City and Los Angeles **combined**. In 2016, 753 murders occurred in the city, a **55% increase** from 486 in 2015 with 4,331 total shooting victims in 2016, compared to 2,939
 in 2015. From 2004 to 2015, the peak number of murders in the city was under 500. From 2011 to 2015, the city recorded less than 3,000 shooting victims per year. What is the reason for this alarming
-increase in violence in Chicago? Was there an increase in all kinds of crime, or are the murders and shootings an exception? This article  analyzs a dataset from [`data.gov`](https://www.data.gov/)
+increase in violence in Chicago? Was there an increase in all kinds of crime, or are the murders and shootings an exception? This article  analyzes a dataset from [`data.gov`](https://www.data.gov/)
 tracking [Chicago crime statistics](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4) from 2001 to the present time. This research article illustrates how publicly available data
 from data.gov can be easily loaded into the non-relational ATSD for interactive analysis and graphical
 representation of raw data collected by government and private organizations. The article provides both sample queries and charts, as well as instructions on how to install your own ATSD instance
@@ -19,17 +19,16 @@ and populate it with the raw data.
 
 Take a look at the dataset titled **Crimes - 2001 to present** from [data.gov](https://www.data.gov/).
 
-This dataset can be found on [data.gov](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4). On the data.gov website, this dataset can be downloaded as a CSV (1.4 GB), RDF, JSON (**2.8 GB**), or a
-XML file. This dataset can easily be parsed using the JSON job in Axibase Collector.
+This dataset can be found on [data.gov](https://catalog.data.gov/dataset/crimes-2001-to-present-398a4). On the data.gov website, this dataset can be downloaded as a CSV (1.4 GB), RDF, JSON (**2.8 GB**), or XML file. The dataset is parsed using [Axibase Collector](https://axibase.com/docs/axibase-collector/) via [JSON Job](https://axibase.com/docs/axibase-collector/jobs/json.html).
 
-This dataset contains crime statistics collected daily from 2001 to the present time. This dataset is continuously updated with a time lag of 7 days. Statistics are available for **32 different crime types**. Furthermore, these crimes may be filtered by the location
+This dataset contains crime statistics collected daily from 2001 to the present. This dataset is continuously updated with a time lag of 7 days. Statistics are available for **32 different crime types**. Furthermore, these crimes may be filtered by the location
 where the crime occurred, and by the specific crime type. For example, for the crime type **Narcotics**, you may filter by 96 locations (for example, alley, street, gas station) and 49 specific violations (possession
 of cocaine, manufacturing and delivering heroin, soliciting narcotics etc). Each crime type has its own number of locations and specific violations that it may be sorted for.
 
 Given the size of the dataset, you cannot load it in Excel. It is much more convenient to interact with the data once it is loaded into a database. The
 ATSD is a powerful tool when it comes to storing, analyzing, and visualizing datasets.
 
-You can load the dataset into an ATSD instance by following the steps provided at the [end of the article](#action-items).
+You can load the dataset into an ATSD instance by following the steps provided in [Action Items](#action-items).
 
 ## Homicide Numbers
 
@@ -42,15 +41,13 @@ down as winter approaches.
 Click **ChartLab** button below to take a closer look at these numbers, as well as monthly totals for 31 other crime types, including weapons violations, prostitution, robbery, assault, and
 domestic violence, among many others.
 
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba#fullscreen)
 
 From the previous figure it is difficult to tell how monthly totals for 2016 compare to previous years. Murder totals are shown to be higher in almost every category in 2016.
 
 ![Figure 5](./images/Figure5.png)
 
-Click this button to explore this **ChartLab** portal:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/16/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/16/#fullscreen)
 
 In addition to looking at graphical outputs, perform [SQL queries](https://axibase.com/docs/atsd/sql/), which can be used to search for specific
 information contained in this dataset. For example, 2016 months totals are greater than the previous years as a whole. But what are the average monthly totals for the last several
@@ -110,9 +107,7 @@ is the same at 68%.
 
 ![Figure 6](./images/Figure6.png)
 
-Click this button to explore the **ChartLab** portal for the top five locations for homicides in 2015 and 2016:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/d5c04002/6/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/d5c04002/6/#fullscreen)
 
 The results of the SQL query below track the average number of the top locations of murders from 2001 through 2015.
 
@@ -152,7 +147,7 @@ ORDER BY 2 DESC
 | TAVERN                     | 2.0             |
 ```
 
-If you would like to see more queries on this Chicago crime dataset, go to the [Additional SQL Queries](#additional-sql-queries) section at the end of this article.
+To see more queries on this Chicago crime dataset, review the [Additional SQL Queries](#additional-sql-queries) section.
 
 ## A Deeper Look at Crime in Chicago
 
@@ -162,17 +157,13 @@ There has been a long term decrease in crime as a whole in Chicago.
 
 ![Figure 3](./images/Figure3.png)
 
-Click the button below to explore this **ChartLab** portal:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/4/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/4/#fullscreen)
 
 Below is a figure showing the change from 2015 to 2016 for each of the crime types included in this dataset.
 
 ![Figure 4](./images/Figure4.png)
 
-Click here to check out these percentage changes in Chicago crime in **ChartLab**:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/d5c04002/7/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/d5c04002/7/#fullscreen)
 
 Certain crimes saw an increase in 2016 from 2015. For example, the number of arrests increased for each of the following crime types:
 
@@ -193,9 +184,7 @@ year reduction of 48.0% for narcotics makes one think that there may be somethin
 
 ![Figure 7](./images/Figure7.png)
 
-Click this button to check out narcotic arrests in Chicago:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/7/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/7/#fullscreen)
 
 According to [an article by the Chicago Tribune](https://www.chicagotribune.com/news/opinion/editorials/ct-chicago-crime-increase-causes-edit-0118-md-20170117-story.html),
 the release of a video in November 2015 showing the police fatally shooting of a black teenager ([Laquan McDonald](https://en.wikipedia.org/wiki/Shooting_of_Laquan_McDonald)), the launch of a
@@ -212,9 +201,7 @@ as a result less willing to go out, fight crime, make arrests, and make a differ
 
 ![Figure 8](./images/Figure8.png)
 
-Click here to explore this **ChartLab** portal:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/8/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/8/#fullscreen)
 
 ## Action Items
 

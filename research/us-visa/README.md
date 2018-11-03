@@ -25,7 +25,7 @@ drop-down list and by visa type with the second. The visualization shows `H-1B` 
 
 ![Figure1](./images/Figure1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8c9bb9cc#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/8c9bb9cc#fullscreen)
 
 The portal below allows you to sort between continents and visa types. Navigate between different continents with the first drop-down list, and by visa type with the second. The images below track `H-1B` visas issued to the those from Asia. The number of visas issued increased from **47,726** in 1997 to **149,788**
 in 2015. The number of `H-1B` visas issued to China and India in 2015 is 138,258, meaning that only **11,530** `H-1B` visas were issued
@@ -33,7 +33,7 @@ to the rest of Asia.
 
 ![Figure2](./images/Figure2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3c55ada0#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3c55ada0#fullscreen)
 
 ## Deeper Analysis
 
@@ -44,7 +44,7 @@ to the first **ChartLab** portal, the total number of visas for the U.K. fell by
 
 ![Figure3](./images/Figure3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3a320d35#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3a320d35#fullscreen)
 
 The visualization below tracks the total visas issued for the countries included in the revised [travel ban](https://www.washingtonpost.com/graphics/national/immigration-order-explainer/)
 of the current administration. The countries affected are Iran, Libya, Somalia, Sudan, Syria, and Yemen. After September 11th, the number of visas issued
@@ -53,7 +53,7 @@ which amounted to **$10 million** in revenue in 2015.
 
 ![Figure4](./images/Figure4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/16c6e667/3/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/16c6e667/3/#fullscreen)
 
 According to a recent article published by [Reuters](https://www.reuters.com/article/us-eu-usa-visa-idUSKBN1691Q9), the [European Union](https://en.wikipedia.org/wiki/European_Union) (EU) is becoming increasingly insistent on requiring American citizens to
 obtain travel visas to visit Europe. This is in response to Washington refusing to grant visa-free access to five EU countries: Poland, Croatia,
@@ -63,7 +63,7 @@ these numbers have decreased dramatically, falling to 9,977 in 2015 ($1,596,320 
 
 ![Figure15](./images/Figure15.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/82d4e825#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/82d4e825#fullscreen)
 
 If the EU required U.S. citizens to obtain travel visas, Washington would likely reciprocate the demand and require the currently visa-exempt countries of the EU to obtain visas to visit the country. The total
 [number of European travelers](https://en.wikipedia.org/wiki/Visa_Waiver_Program ) to the U.S. utilizing the visa waiver program is 14,043,823 and 13,997,570 in 2014 and 2015, respectively. At $160 per visa, this amounts to roughly **$2.24** and **$2.239 billion**, respectively.
@@ -77,7 +77,7 @@ This below figure shows how many dependents come with each primary visa holder. 
 
 ![Figure5](./images/Figure5.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1bc51064/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/1bc51064/2/#fullscreen)
 
 ## SQL Queries
 
@@ -257,7 +257,7 @@ Prepare a visualization for the last SQL query tracking worldwide visa issuances
 
    ![Figure8](./images/Figure8.png)
 
-5. Specify visualzation details. Select `tags.country` as the **X Column** and `tags.visa_type` as the **Y Column**. Give the visualization a title with the **Visualization Name** field.
+5. Specify visualization details. Select `tags.country` as the **X Column** and `tags.visa_type` as the **Y Column**. Give the visualization a title with the **Visualization Name** field.
 
    ![Figure9](./images/Figure9.png)
 

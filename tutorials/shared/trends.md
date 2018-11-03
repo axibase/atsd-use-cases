@@ -4,7 +4,7 @@
 
 ## Overview
 
-[**Trends**](https://trends.axibase.com/) is a data visualization sandbox based on the [Axibase Charts](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) library and the ATSD which provides essential data storage and processing tasks.
+[**Trends**](https://trends.axibase.com/) is a data visualization sandbox based on the [Axibase Charts](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) library which uses ATSD to provide essential data storage and processing tasks. Trends contains data from the Federal Reserve database [FRED](https://fred.stlouisfed.org/).
 
 The **Trends** service enables users to interact with data by creating custom visualizations as well as modifying examples shared by other users.
 
@@ -16,19 +16,19 @@ The **Trends** service enables users to interact with data by creating custom vi
 
 In the **Editor** window you see the configuration for the current portal. All portals have several levels of settings:
 
-* **[configuration]**: Overall settings for the entire portal. Even the most complex visualizations have one set of **[configuration]** settings. Define base parameters for the portal such as layout, offset, formatting, as well as the default parameters that are inherited by all widgets in the portal.
+* `[configuration]`: Overall settings for the entire portal. Even the most complex visualizations have one set of `[configuration]` settings. Define base parameters for the portal such as layout, offset, formatting, as well as the default parameters that are inherited by all widgets in the portal.
 
-* **[group]**: **Trends** defines each row of widgets as a group. **[group]** level settings are applied to an entire row by the service.
+* `[group]`: **Trends** defines each row of widgets as a group. `[group]` level settings are applied to an entire row by the service.
 
-* **[widget]**: Widget represents a chart. Define the [type](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) of chart and other parameters such as title, timespan, formatting.
+* `[widget]`: Widget represents a chart. Define the [type](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) of chart and other parameters such as title, timespan, formatting.
 
-For detailed information about **[widget]** level settings, see additional [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/#series).
+For detailed information about `[widget]` level settings, see additional [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/#series).
 
-* **[series]**: Each widget must have at least one series. A series is an ordered and timestamped array of samples loaded from the database and visualized by the widget. **[series]** settings include the metric name, entity name, optional tags, as well as any series-specific transformations.
+* `[series]`: Each widget must have at least one series. A series is an ordered and timestamped array of samples loaded from the database and visualized by the widget. `[series]` settings include the metric name, entity name, optional tags, as well as any series-specific transformations.
 
 Read more about selecting series in the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/selecting-series/).
 
-> Configure some settings at multiple levels. Settings defined at the **[configuration]** level are inherited by nested levels: **[group]** > **[widget]** > **[series]**. Settings defined at the lower level override those set at the upper level. For example, if you define an entity `x` at the **[configuration]** level for several widgets, and at the **[series]** level for one chart you define a different entity `y`, the service uses entity `x` for all widgets **EXCEPT** the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
+> Configure some settings at multiple levels. Settings defined at the `[configuration]` level are inherited by nested levels: `[group]` > `[widget]` > `[series]`. Settings defined at the lower level override those set at the upper level. For example, if you define an entity `x` at the `[configuration]` level for several widgets, and at the `[series]` level for one chart you define a different entity `y`, the service uses entity `x` for all widgets **EXCEPT** the one where you defined `entity = y`.  This is a useful setting when including an additional set of data from a unique entity.
 
 ## Metrics Reference Page
 
@@ -55,11 +55,11 @@ Preview metrics with the **Portal** icon. Click the icon to open a preview of th
 Open the **Editor** window in the **Trends** interface by clicking the button in the top menu.
 
 ![](./images/editor-window.png)
-[![](./images/button-new.png)](https://trends.axibase.com/e91b896e#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/e91b896e#fullscreen)
 
 Using the chart above as a configuration example:
 
-```sql
+```ls
 [configuration]
   height-units = 2
   width-units = 1
@@ -93,7 +93,7 @@ Modify these settings or add new settings based on Charts syntax. Additionally, 
 
 Likewise, derive new series from existing data according to [Managing Calculated Values](../../tutorials//add-calculated-value/README.md), which shows each step from one series to another.
 
-For baselines and thresholds, manually input data using the `value = x` setting at the **[series]** level, where `x` is a constant value.
+For baselines and thresholds, manually input data using the `value = x` setting at the `[series]` level, where `x` is a constant value.
 
 Once you modify a configuration, click **Run** to apply the new settings.
 
@@ -125,11 +125,11 @@ The Charts API supports user-defined functions, enabling users to store and re-u
 
 ![](./images/fred-lib-demo.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 
-```javascript
+```ls
 ### On the [configuration] level, the 'import' command is used to load functions from the `fred.js` file
 ### The library is assigned the name 'fred'.
 ### Multiple function libraries may be imported into the same portal.

@@ -42,16 +42,16 @@ Sample records from this dataset are shown here:
 
 | Beach Name | Measurement Timestamp | Water Temperature | Turbidity | Transducer Depth | Wave Height | Wave Period | Battery Life | Measurement Timestamp Label | Measurement ID |
 |------------|-----------------------|-------------------|-----------|------------------|-------------|-------------|--------------|-----------------------------|----------------|
-| Ohio Street Beach | 07/02/2018 05:00:00 PM | 21.6 | 1.39 |       | 0.158 | 4    | 11.9                | 07/02/2018 5:00 PM          | OhioStreetBeach201807021700 |
-| Ohio Street Beach | 07/02/2018 06:00:00 PM | 21.1 | 0.91 |       | 0.189 | 2    | 11.9                | 07/02/2018 6:00 PM          | OhioStreetBeach201807021800 |
-| Ohio Street Beach | 07/02/2018 07:00:00 PM | 20.5 | 1.07 |       | 0.154 | 4    | 11.9                | 07/02/2018 7:00 PM          | OhioStreetBeach201807021900 |
-| Ohio Street Beach | 07/02/2018 08:00:00 PM | 19.9 | 1.11 |       | 0.161 | 3    | 11.7                | 07/02/2018 8:00 PM          | OhioStreetBeach201807022000 |
-| Ohio Street Beach | 07/02/2018 09:00:00 PM | 19.6 | 1.1  |       | 0.19  | 3    | 11.9                | 07/02/2018 9:00 PM          | OhioStreetBeach201807022100 |
-| Ohio Street Beach | 07/02/2018 10:00:00 PM | 19.3 | 1.02 |       | 0.176 | 3    | 11.9                | 07/02/2018 10:00 PM         | OhioStreetBeach201807022200 |
-| Ohio Street Beach | 07/02/2018 11:00:00 PM | 19   | 1.04 |       | 0.117 | 2    | 11.9                | 07/02/2018 11:00 PM         | OhioStreetBeach201807022300 |
-| Ohio Street Beach | 07/03/2018 12:00:00 AM | 18.9 | 1.01 || 0.123 | 3     | 11.9 | 07/03/2018 12:00 AM | OhioStreetBeach201807032400 |                             |
-| Ohio Street Beach | 07/03/2018 01:00:00 AM | 18.8 | 1.02 | |0.102 | 3     | 11.9 | 07/03/2018 1:00 AM  | OhioStreetBeach201807030100 |                             |
-| Ohio Street Beach | 07/03/2018 02:00:00 AM | 18.7 | 1    |       | 0.103 | 3    | 11.9                | 07/03/2018 2:00 AM          | OhioStreetBeach201807030200 |
+| Ohio Street Beach | 07/02/2018 05:00:00 PM | 21.6 | 1.39 |       | 0.158 | 4    | 11.9                | 07/02/2018 5:00 PM          | `OhioStreetBeach201807021700` |
+| Ohio Street Beach | 07/02/2018 06:00:00 PM | 21.1 | 0.91 |       | 0.189 | 2    | 11.9                | 07/02/2018 6:00 PM          | `OhioStreetBeach201807021800` |
+| Ohio Street Beach | 07/02/2018 07:00:00 PM | 20.5 | 1.07 |       | 0.154 | 4    | 11.9                | 07/02/2018 7:00 PM          | `OhioStreetBeach201807021900` |
+| Ohio Street Beach | 07/02/2018 08:00:00 PM | 19.9 | 1.11 |       | 0.161 | 3    | 11.7                | 07/02/2018 8:00 PM          | `OhioStreetBeach201807022000` |
+| Ohio Street Beach | 07/02/2018 09:00:00 PM | 19.6 | 1.1  |       | 0.19  | 3    | 11.9                | 07/02/2018 9:00 PM          | `OhioStreetBeach201807022100` |
+| Ohio Street Beach | 07/02/2018 10:00:00 PM | 19.3 | 1.02 |       | 0.176 | 3    | 11.9                | 07/02/2018 10:00 PM         | `OhioStreetBeach201807022200` |
+| Ohio Street Beach | 07/02/2018 11:00:00 PM | 19   | 1.04 |       | 0.117 | 2    | 11.9                | 07/02/2018 11:00 PM         | `OhioStreetBeach201807022300` |
+| Ohio Street Beach | 07/03/2018 12:00:00 AM | 18.9 | 1.01 || 0.123 | 3     | 11.9 | 07/03/2018 12:00 AM | `OhioStreetBeach201807032400` |                             |
+| Ohio Street Beach | 07/03/2018 01:00:00 AM | 18.8 | 1.02 | |0.102 | 3     | 11.9 | 07/03/2018 1:00 AM  | `OhioStreetBeach201807030100` |                             |
+| Ohio Street Beach | 07/03/2018 02:00:00 AM | 18.7 | 1    |       | 0.103 | 3    | 11.9                | 07/03/2018 2:00 AM          | `OhioStreetBeach201807030200` |
 
 The four relevant columns for this research are `Water Temperature` and `Turbidity`, the associated `Measurement Timestamp`, and the `Beach Name` detector location.
 
@@ -74,11 +74,11 @@ The dataset is inconsistent. Some years lack data for certain locations, and oth
 
 ![](./images/temp-turb-portal.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/77067e32#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/77067e32#fullscreen)
 
 View data from other years by modifying the `starttime` expression or isolate a series by clicking the `Beach Name` tag icons above the visualization to toggle the presence of the detector from that location.
 
-```css
+```ls
 [configuration]
   starttime = May 2016
 ```
@@ -89,7 +89,7 @@ This portal tracks the four most recent years of `Ohio Street Beach` data for me
 
 ![](./images/ohio-street-beach-portal.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/8d79f2ce#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/8d79f2ce#fullscreen)
 
 The data is hourly and erratic. This is due to the nature of the device which is unable to discard erroneous readings or the presence of an object, such as a person or thing, near the detector.
 
@@ -101,7 +101,7 @@ The formula associated with Snell's law `n1/n2 =  sin(θ1)/sin(θ2)` states that
 
 Aggregating temperature and turbidity data by the day is a reasonable resolution to the problem of volatile samples considering the observed period is less than six months for each year.
 
-```css
+```ls
 [widget]
   group-period = 1 day
   group-statistic = avg
@@ -109,13 +109,13 @@ Aggregating temperature and turbidity data by the day is a reasonable resolution
 
 ![](./images/aggregated-portal.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/eae1eb1c#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/eae1eb1c#fullscreen)
 
 **ChartLab** supports [user-defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md#user-defined-functions) which aid further analysis. Define JavaScript functions and store them in the [appropriate location](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files). The publicly accessible **ChartLab** application already supports the `fred.js` library. Alternatively, deploy the library locally with the [downloadable resource](https://raw.githubusercontent.com/axibase/charts/master/resources/fred.js).
 
 The `PercentChangeByOffset` function is used below to handle the difference in magnitude of the two metrics and compare relative changes. The `PercentChangeByOffset` function requires two arguments: the `alias` of the series to transform, and the `interval` of the offset.
 
-```css
+```ls
 [series]
   value = local.PercentChangeByOffset('raw-turb', '1 day')
 [series]
@@ -126,7 +126,7 @@ The resultant visualization highlights the analogous changes for each metric.
 
 ![](./images/percent-change-offset.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/7ef7c546#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/7ef7c546#fullscreen)
 
 The converse relationship of turbidity and water temperature is visualized above: larger than normal increases in turbidity and therefore particulate matter, correlate to larger than normal decreases in water temperature. This phenomena occurs because of the energy transfer between solar photons and the media through which they refract. Generally this is treated as either 0% or 100% energy transfer for mathematical purposes. The presence of more absorbing bodies decreases the amount energy transferred to heat the body of water.
 
@@ -134,18 +134,18 @@ The converse relationship of turbidity and water temperature is visualized above
 
 ![](./images/value-previousvalue.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/a420c8de#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/a420c8de#fullscreen)
 
 The pattern is similar when comparing absolute daily average change but the `PercentChangeByOffset` is preferable since absolute turbidity changes are greater than absolute temperature changes. Converting the Celsius temperature values to Fahrenheit is one solution to increase variance.
 
-```css
+```ls
 [series]
   replace-value =  ((value - previousValue) * 9/5 + 32)
 ```
 
 Modifying the derived `value` expression in the visualization created using the `PercentChangeByOffset` function to reflect the `Water Temperature` line about the `x` axis and reducing the observed `time-span` generates a more coherent visualization of the relationship.
 
-```css
+```ls
 [configuration]
   time-span = 20 day
 
@@ -155,7 +155,7 @@ Modifying the derived `value` expression in the visualization created using the 
 
 ![](./images/x-axis-reflection.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/1f2b1be5#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/1f2b1be5#fullscreen)
 
 > For additional Charts syntax, see the [**ChartLab** Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/)
 
@@ -163,7 +163,7 @@ Modifying the derived `value` expression in the visualization created using the 
 
 ![](./images/outlier-portal.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/c18e05f0#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/c18e05f0#fullscreen)
 
 The portal above shows two datasets that contain significant outlier data which does not conform to correlation established through visualization.
 
@@ -171,7 +171,7 @@ The `2015` dataset shows a significant decrease in water temperature without a p
 
 ![](./images/august-water-temp.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/cb2996e1#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/cb2996e1#fullscreen)
 
 [Historical weather reports](https://www.timeanddate.com/weather/usa/chicago/historic?month=8&year=2015) show that during the trend, the recorded high temperature fell from 32° Celsius on August 17 to 24° on August 20 and the recorded low temperature fell from 22° to 16° during the same period. Several days of thunderstorms and a 30% drop in humidity are also recorded. The addition of rainwater and overall drop in atmospheric temperature likely contributed to the decrease in water temperature without an analogous increase in water turbidity. No other rainfall is recorded in the month of August in Chicago.
 
@@ -179,7 +179,7 @@ The `2016` dataset has two irregular incidents. Of the two noted above, the latt
 
 ![](./images/battery-life.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5e4d1b0a#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/5e4d1b0a#fullscreen)
 
 No other substantial fluctuation of battery life is recorded during the observation period, that is likely the cause of the erroneous data.
 
@@ -203,6 +203,6 @@ Average annual turbidity is shown here.
 
 ![](./images/annual-average.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/c046b3ba)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/c046b3ba)
 
 Only one year recorded an annual average turbidity greater than 10 NTU.

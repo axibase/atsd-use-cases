@@ -8,11 +8,11 @@
 
 ![](./images/custom-housing-index.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/1b62b77e#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/1b62b77e#fullscreen)
 
 The visualization above uses the [Housing Consumer Price Index](https://fred.stlouisfed.org/series/CUUS0000SAH) and [Average Sales Price for New Houses in the United States](https://fred.stlouisfed.org/series/ASPNHSUS) datasets to create a derived Housing Price Index.
 
-```css
+```ls
 [series]
   value = (value('price') / value('index'))
 ```
@@ -24,7 +24,7 @@ Ideally, inflation grows at the same rate that housing prices inflate. The visua
 ## Project Start Index
 
 ![](./images/projects-permits.png)
-[![](./images/button-new.png)](https://trends.axibase.com/6b04d60e#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/6b04d60e#fullscreen)
 
 The number of building permits issued for a period is related to the number of new projects. Accepting some deviations as normal, these numbers are in relative sync with one another. The issuance of an increased number of residential building permits indicate tangible growth of both people and capital indicating solvency in the real estate market.
 
@@ -32,7 +32,7 @@ This visualization tracks the number of housing projects initiated against the n
 
 Import a custom library and call user-defined functions by name:
 
-```css
+```ls
 [configuration]
   import fred = fred.js
 
@@ -44,11 +44,11 @@ Import a custom library and call user-defined functions by name:
 
 ![](./images/proj-start-completions.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/bddf1518#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/bddf1518#fullscreen)
 
 Another important set of metrics track the start and end of housing projects. During growth period, you can see that the number of new projects consistently outstrips the number of completed projects, indicating a period a growth. During the housing crisis, this trend reversed significantly. In fact, the difference is more negative than growth periods are positive, showing the severity of the crisis.
 
-```css
+```ls
 [series]
   value = value('hou') - value('comp')
   alert-expression = value < 0
@@ -61,9 +61,9 @@ To illustrate the severity of the housing market crisis with respect to the diff
 
 ![](./images/math-abs.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/75bc2e31)
+[![](../images/button-new.png)](https://trends.axibase.com/75bc2e31)
 
-```css
+```ls
 [series]
   value = Math.abs(value('hou') - value('comp'))
   alert-expression = value('comp') > value('hou');
@@ -82,11 +82,11 @@ The Federal Reserve records data for types of residences built as well.
 
 ![](./images/construction-by-type.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/2952de5d#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/2952de5d#fullscreen)
 
-The [Pie Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/#tab-id-1) tracks the annual total for each type of project. Navigate through time using the drop-down list in the portal above. Expand the `range` to view data outside the scope of this article. The Federal Reserve tracks  from completed projects 1971 to the present.
+The [Pie Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/#tab-id-1) tracks the annual total for each type of project. Navigate through time using the drop-down list in the portal above. Expand the `range` to view data outside the scope of this article. The Federal Reserve tracks from completed projects 1971 to the present.
 
-```css
+```ls
 [dropdown]
  options = @{range(2000,2018)}
  change-field = starttime

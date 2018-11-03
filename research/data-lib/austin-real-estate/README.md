@@ -11,7 +11,7 @@
 ## Index
 
 The following table contains the entire set of included metrics as well as their corresponding visualization figure for easy navigation.
-Use the clickable links in the Figure column to jump between visualizations and in ChartLab, use the drop-down menus to toggle
+Use the clickable links in the Figure column to jump between visualizations and in ChartLab, use the drop-down lists to toggle
 between metrics.
 
 | Metric | Comment | Figure |
@@ -54,9 +54,9 @@ Local Metrics:
 
 ![](./images/hma-001.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/69d313b9/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/69d313b9/3/#fullscreen)
 
-> Use the drop-down menu to toggle between metrics
+> Use the list to navigate between metrics
 
 Return to the [Index](#index)
 
@@ -72,7 +72,7 @@ Local Metrics:
 
 ![](./images/hma-002.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/0964c838/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/0964c838/2/#fullscreen)
 
 > Use the drop-down list to toggle between metrics
 
@@ -93,7 +93,7 @@ Local Metrics:
 
 ![](./images/hma-0031.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/4/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/ac220ab9/4/#fullscreen)
 
 > Use the drop-down list to toggle between metrics
 
@@ -124,7 +124,7 @@ Figure 4.1
 
 ![](./images/hma-0041.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/ac220ab9/2/#fullscreen)
 
 > Use the drop-down list to toggle between metrics
 
@@ -132,7 +132,7 @@ Figure 4.2
 
 ![](./images/hma-0042.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/ac220ab9/3/#fullscreen)
 
 > Use the drop-down list to toggle between metrics
 
@@ -152,7 +152,7 @@ Figure 5.1
 
 ![](./images/hma-005.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/ac220ab9/5/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/ac220ab9/5/#fullscreen)
 
 > Use the drop-down list to toggle between metrics
 

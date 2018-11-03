@@ -8,7 +8,7 @@ ChartLab and SQL Console in ATSD
 
 ![](./images/CBI_9.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/7/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/7/#fullscreen)
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", pd.value AS "Public Debt", gd.value AS "Government Debt", dd.value AS "Domestic Debt", fd.value AS "Foreign Debt"
@@ -44,7 +44,7 @@ GROUP BY 'Date', pd.value, gd.value, dd.value, fd.value
 
 ![](./images/CBI_3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/6/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/6/#fullscreen)
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", pd.value AS "Public Debt Percent GDP", gd.value AS "Government Debt Percent GDP", dd.value AS "Domestic Debt Percent GDP", fd.value AS "Foreign Debt Percent GDP"
@@ -78,13 +78,13 @@ GROUP BY 'Date', pd.value, gd.value, dd.value, fd.value
 
 ![](./images/CBI_6.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/7b59b331/8/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/7b59b331/8/#fullscreen)
 
 ## Government Debt Balance by Type of Indexation
 
 ![](./images/CBI_7.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/3/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/3/#fullscreen)
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Date", cpi.value AS "CPI-Indexed", ui1.value AS "Unindexed, Fixed or Zero", ui2.value AS "Unindexed, Variable", di.value AS "Dollar-Indexed", fcd.value AS "Foreign-Currency Denominated"
@@ -118,8 +118,8 @@ GROUP BY 'Date', cpi.value, ui1.value, ui2.value, di.value, fcd.value
 
 ![](./images/CBI_10.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/040c4e03/2/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/040c4e03/2/#fullscreen)
 
 ![](./images/CBI_8.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/5/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/c6a6b0c8/5/#fullscreen)

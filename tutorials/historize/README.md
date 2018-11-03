@@ -2,7 +2,7 @@
 
 ## Overview
 
-The following article describes the process of calculating and historizing operational metrics stored in a relational database.
+The following tutorial describes the process of calculating and historizing operational metrics stored in a relational database.
 
 ## Scenario
 

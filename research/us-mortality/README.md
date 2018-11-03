@@ -40,7 +40,7 @@ Below is the output of the default configuration with all 122 U.S. cities parsed
 
 ![Figure 2](./images/Figure2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3d07088c)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3d07088c)
 
 ## Creating Local Configurations for ATSD and Axibase Collector using Docker
 
@@ -382,7 +382,7 @@ Below is a **ChartLab** output for the number of deaths for New Orleans from 197
 
 ![Figure 47](./images/Figure47.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3d07088c/2/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3d07088c/2/)
 
 There is quite a noticeable gap in the data collection history from the city. From August 20th, 2005, to December 8th, 2012, New Orleans did not collect death total statistics.
 
@@ -930,7 +930,7 @@ and manufacturing industries. However, in the middle of the twentieth century ma
 Along with Detroit, MI and Gary, IN, Youngstown, OH is often used to showcase the rise and fall of manufacturing in the United States. Youngstown was once a city where steel was king. Steel
 dominated every aspect of life, and as this industry grew, Youngstown grew as well. According to the [Hampton Institute](https://www.hamptoninstitution.org/youngstown.html#.WE6P3URVZhE), the
 population of Youngstown grew from 33,000 in 1890 to 170,000 in 1930. Youngstown became the center of Mahoning Valley, which became to be known as "Steel Valley." By the thirties, Youngstown
-ranked fifth in the nation in terms of home ownership. But the glory of Youngstown was short lived. According to [`encyclopedia.com`](https://www.encyclopedia.com/places/united-states-and-canada/miscellaneous-us-geography/rust-belt):
+ranked fifth in the nation with respect to home ownership. But the glory of Youngstown was short lived. According to [`encyclopedia.com`](https://www.encyclopedia.com/places/united-states-and-canada/miscellaneous-us-geography/rust-belt):
 
 "The U.S. worldwide market share of manufactured steel went from 20 percent in 1970 to 12 percent by 1990, and American employment in the industry dropped from 400,000 to 140,000 over the
 same period. Starting in the late 1970s, steel factories began closing. Among the hardest hit of the communities was Youngstown, Ohio, where the closure of three steel mills starting in

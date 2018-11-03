@@ -139,7 +139,7 @@ Set `NOTIFY_URL` variable to a request URL where `on-error` webhook notification
 
 The notification URL may include **Basic** authorization credentials, for example `https://username:password@atsd_hostname:10443/`. SSL certificate validation is disabled by default.
 
-Execute the command below to launch an [ATSD Sandbox](https://github.com/axibase/dockers/tree/atsd-sandbox) container.
+Execute the command below to launch an [ATSD Sandbox](https://github.com/axibase/dockers/blob/atsd-sandbox/README.md#atsd-sandbox-docker-image) container.
 
 ```sh
 docker run -d -p 8443:8443 -p 9443:9443 \
@@ -166,7 +166,7 @@ The sandbox runs two front-facing applications which may be accessed using [defa
 
 Verify that the webhook delivery is working as expected.
 
-Go to Docker Hub and open **Build Settings** for one of the projects (images). Trigger a build for one of the branches known to fail.
+On Docker Hub, open the **Build Settings** for one of the projects (images). Trigger a build for one of the branches known to fail.
 
 ![](./images/docker-hub-trigger.png)
 

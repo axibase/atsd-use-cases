@@ -1,7 +1,7 @@
 # London Inter-Bank Offered Rate (LIBOR)
 
 ![](./images/libor-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/8f97e6db#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/8f97e6db#fullscreen)
 
 *Fig 1.* The LIBOR and its denominational rates are shown in the upper **Trends** visualization while the difference among each of the rates, compared to the annual lending rate, are shown in the lower visualization. A `[threshold]` series is set to 1, showing divergence of greater than a full percent among series.
 
@@ -14,7 +14,7 @@ In 2012 it was revealed that many of these worldwide member banks, fraudulently 
 ## Year-Over-Year Change and Log Returns
 
 ![](./images/yoy-log.png)
-[![](./images/button-new.png)](https://trends.axibase.com/ea89aea3#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/ea89aea3#fullscreen)
 
 *Fig 2.* The upper chart shows year-over-year changes in the LIBOR index, and the lower chart normalizes the raw values using a natural logarithm function.
 
@@ -23,11 +23,11 @@ Year-On-Year change is a method of long-term analysis which tracks the change in
 Compare the raw year-over-year dataset to the normalized year-over-year dataset shown below:
 
 ![](./images/yoy-yoyn.png)
-[![](./images/button-new.png)](https://trends.axibase.com/a400eabf#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/a400eabf#fullscreen)
 
-*Fig 3.* Log returns provide a normalized dataset, which may be more easily operated upon by addtional functions such as continuously-compounds rate of change. A `[threshold]` series is given the value of 0 for ease-of-viewing.
+*Fig 3.* Log returns provide a normalized dataset, which may be more easily operated upon by additional functions such as continuously-compounds rate of change. A `[threshold]` series is given the value of 0 for ease-of-viewing.
 
-The **Trends** examples in this article use the [fred.js](../../integrations/shared/trends.md#fred-library) library. This is a set of [user-defined functions](../../integrations/shared/trends.md#user-defined-functions). Axibase Time Series Database, the underlying database which supports the data-processing and storage operations for the **Trends** service, supports the creation of user-defined functions for those operations frequently performed by end users.
+The **Trends** examples in this article use the [`fred.js`](../../tutorials/shared/trends.md#fred-library) library. This is a set of [user-defined functions](../../tutorials/shared/trends.md#user-defined-functions). Axibase Time Series Database, the underlying database which supports the data-processing and storage operations for the **Trends** service, supports the creation of user-defined functions for those operations frequently performed by end users.
 
 ---
 
@@ -55,7 +55,7 @@ WHERE date_format(time, yyyy) = '2015'
 
 Previous values may be targeted with [`LAG`](https://axibase.com/docs/atsd/sql/#lag) statements and supported [mathematical functions](https://axibase.com/docs/atsd/sql/#mathematical-functions) may be used in [`SELECT`](https://axibase.com/docs/atsd/sql/#select-expression), `WHERE`, [`GROUP BY`](https://axibase.com/docs/atsd/sql/#group-by-columns), or [`ORDER BY`](https://axibase.com/docs/atsd/sql/#ordering) clauses.
 
-Each of the LIBOR-denominated rates may be explored by changing the [`FROM`](https://axibase.com/docs/atsd/sql/#select-expression) expression to the desired metric name, stored in ATSD.
+Each of the LIBOR-denominated rates may be explored by changing the [`FROM`](https://axibase.com/docs/atsd/sql/#select-expression) expression to the applicable metric name, stored in ATSD.
 
 The result set is shown here:
 
@@ -80,7 +80,7 @@ Note that months whose first day fell on a weekend or bank holiday are excluded 
 
 * All data is provided by [FRED API](https://fred.stlouisfed.org/);
 
-* For detailed instructions on using the **Trends** service, see this [guide](../../integrations/shared/trends.md#using-trends);
+* For detailed instructions on using the **Trends** service, see this [guide](../../tutorials/shared/trends.md#using-trends);
 
 * Complete [ATSD Documentation](https://axibase.com/docs/atsd/);
 

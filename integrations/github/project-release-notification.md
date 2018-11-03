@@ -57,7 +57,7 @@ Open the **Settings** menu of the GitHub repository to monitor.
 
 ![](./images/repo-settings.png)
 
-Select the **Webhooks** tab from the left-side menu and click **Add Webhook**.
+Open the **Webhooks** tab from the left-side menu and click **Add Webhook**.
 
 On the **Add Webhook** page, configure the following settings:
 

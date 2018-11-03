@@ -6,6 +6,10 @@ ATSD functionality and features applied to real-world public data to solve commo
 
 Detailed use cases that feature in-depth data exploration and complex functionality used to solve modern data problems.
 
+1. [The Saudi Arabia Challenge](saudi-arabia/README.md) (October 2018)
+1. [Calculating the Age of the Universe](universe-age/README.md) (October 2018)
+1. [The Birth of the Bolívar Soberano](bolivar-soberano/README.md) (August 2018)
+1. [Second Quarter Expatriation Remains High Despite GDP Growth](expatriation/README.md) (August 2018)
 1. [The Effect of Particulate Matter on Water Temperature](water-turbidity/README.md) (July 2018)
 1. [SQL Queries and Data Visualization with Python and ATSD](python-budget/README.md) (May 2018)
 1. [The World Progress Explorer: In-Depth Visualization with SQL and User-Defined Functions](../chart-of-the-day/world-progress-explorer/README.md) (April 2018)
@@ -30,7 +34,7 @@ Detailed use cases that feature in-depth data exploration and complex functional
 1. [Riding the L Train in 2025](chicago-l-train/README.md) (July 2017)
 1. [How to Predict a Fire in Hartford](hartford-fire/README.md) (July 2017)
 1. [Visa Travel to the United States with Charts, SQL, and Redash](us-visa/README.md) (March 2017)
-1. [Realtime Analysis of the Oroville Dam Disaster](oroville-dam/README.md) (February 2017)
+1. [Real-time Analysis of the Oroville Dam Disaster](oroville-dam/README.md) (February 2017)
 1. [Analyzing Econometric Datasets with Calculated Series](../tutorials//calculated-values/README.md) (July 2017)
 1. [Modeling Falling Birthrates in the Prairie State](illinois-birthrates/README.md) (July 2017)
 1. [U.S. Expatriation Statistics (Quarter 2 Update)](expatriation/2017-2.md) (June 2017)
@@ -53,6 +57,7 @@ Detailed use cases that feature in-depth data exploration and complex functional
 
 Visualizations and SQL queries that are indexed by topic to form the Axibase Data Library, an invaluable tool for researchers looking for specific data. Data shorts display comprehensive information from a wide-range of data sets.
 
+1. [Major Foreign Holders of Treasury Securities (2000-2018)](data-lib/us-debt/README.md) (October 2018)
 1. [Foreign Businesses Operating in Hong Kong (1996-2016)](data-lib/hong-kong-foreign-investment/README.md) (October 2017)
 1. [Maryland Death Statistics (1993-2015)](data-lib/maryland-mort-stats/README.md) (October 2017)
 1. [European Union Net Migration (2004-2015)](data-lib/eu-migration/README.md) (September 2017)

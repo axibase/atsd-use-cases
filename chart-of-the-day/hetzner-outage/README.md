@@ -28,11 +28,11 @@ Filing ticket for each affected server and watching the Hetzner status page for 
 
 ![](./images/ticket_count.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/984e6935/5#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/984e6935/5#fullscreen)
 
 ## Time to Resolve
 
-We used the reported counters as inputs to arrive at a rough TTR estimate by dividing the ticket count by the hourly rate, calculated as delta value from the previous report.
+We used the reported counters as inputs to arrive at a rough time-to-resolution (TTR) estimate by dividing the ticket count by the hourly rate, calculated as delta value from the previous report.
 
 ```javascript
 hourly_rate = -1 * (ticket_count - previous_ticket_count);
@@ -52,6 +52,6 @@ Plugging these formulas in to a `replace-value` setting and calculated the time-
 
 ![](./images/ticket_rate_dc07.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/984e6935/7#fullscreen)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/984e6935/7#fullscreen)
 
 P.S. Axibase servers were recovered earlier than that, the longest outage lasting about 32 hours.

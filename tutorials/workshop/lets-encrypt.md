@@ -243,7 +243,7 @@ ls /usr/share/ca-certificates/mozilla/
 
 <details><summary><b>View Ubuntu 14.04 CAs</b></summary>
 
-```css
+```txt
 ACCVRAIZ1.crt                                                       Global_Chambersign_Root_-_2008.crt
 ACEDICOM_Root.crt                                                   GlobalSign_ECC_Root_CA_-_R4.crt
 AC_RAIZ_FNMT-RCM.crt                                                GlobalSign_ECC_Root_CA_-_R5.crt
@@ -1184,7 +1184,7 @@ public class CertTrust {
 
 Validation results for Expired Certificate:
 
-```css
+```txt
 Certificate chain validation failed: java.security.cert.CertPathValidatorException: timestamp check failed :
   java.security.cert.CertificateExpiredException: NotAfter: Sat Mar 17 02:59:59 MSK 2018
 Default trust manager: certificate chain validation failed:
@@ -1195,7 +1195,7 @@ Default trust manager: certificate chain validation failed:
 
 Validation Results for Self-Signed Certificate:
 
-```css
+```txt
 Certificate chain validation failed: java.security.cert.CertPathValidatorException: Path does not chain with any of the trust anchors : null
 
 Default trust manager: certificate chain validation failed: sun.security.validator.ValidatorException: PKIX path building failed:
@@ -1679,9 +1679,9 @@ Certificate details including DNS names are now publicly available even if the c
 
 * [trends.axibase.com](https://ct.googleapis.com/logs/argon2018/ct/v1/get-entries?start=115175247&end=115175247) CT log
 
-crt.sh (`https://crt.sh`) maintained by one of the CAs, COMODO, allows searching a consolidated log from multiple CT servers for certificates using wildcards.
+[`crt.sh`](https://crt.sh) maintained by one of the CAs, COMODO, allows searching a consolidated log from multiple CT servers for certificates using wildcards.
 
-* axibase.com certificates (`https://crt.sh/?Identity=%.axibase.com`)
+* `axibase.com` certificates (`https://crt.sh/?Identity=%.axibase.com`)
 
 ![](./images/ct_hostname_disclosure.png)
 

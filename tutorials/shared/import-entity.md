@@ -10,7 +10,7 @@ Follow this process to import entity records into your local ATSD instance.
 
     ![](./images/entities.png)
 
-2. From the **Entities** page, expand the split button at the bottom of the page and click **Import**.
+2. From the **Entities** page, expand the split-button at the bottom of the page and click **Import**.
 
     ![](./images/entity-import.png)
 

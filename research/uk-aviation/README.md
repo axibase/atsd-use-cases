@@ -80,11 +80,11 @@ Create additional portals using the example as a template. **ChartLab** supports
 
     ![Figure 5](./images/Figure5.png)
 
-1. Select the desired `metric`. The first drop-down list in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [uk-caa-metrics.txt](uk-caa-metrics.txt).
+1. Select a `metric`. The first drop-down list in **ChartLab** only contains the shortened version of the metric names. This text file which contains the full raw metric names: [`uk-caa-metrics.txt`](uk-caa-metrics.txt).
 
     ![Figure 21](./images/Figure21.png)
 
-    Metric information is also available in the ARSD web interface on the **Metrics** page.
+    Metric information is also available in the ATSD web interface on the **Metrics** page.
 
     ![](./images/metrics.png)
 
@@ -92,7 +92,7 @@ Create additional portals using the example as a template. **ChartLab** supports
 
     ![](./images/search-bar.png)
 
-1. A list of matching metrics is visible. The desired metric for this visualization is `uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_scheduled_uk`.
+1. A list of matching metrics is visible. The target metric for this visualization is `uk-caa.air-pax-by-type-and-nat-of-op.pax_terminal_scheduled_uk`.
 
     ![Figure 10](./images/matched-metrics.png)
 
@@ -112,7 +112,7 @@ Create additional portals using the example as a template. **ChartLab** supports
 
     ![Figure 13](./images/Figure13.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/cca64be9)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/cca64be9)
 
 ### [Calendar Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/calendar-chart-widget/)
 
@@ -136,7 +136,7 @@ Create additional portals using the example as a template. **ChartLab** supports
 
 ![Figure 16](./images/Figure16.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/8dc941e3)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/8dc941e3)
 
 This configuration defines a month-to-month breakdown of international passenger traffic from all tracked UK airports. Use the calendar widget to gain an understanding of the general trends of a dataset. In 2015 the most popular travel season is May to October based on the visualization.
 
@@ -160,7 +160,7 @@ Use `[widget]` level settings to modify the nature of the visualization without 
 
 ![Figure 18](./images/Figure18.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/1f9f05a1/4)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/1f9f05a1/4)
 
 ### Passenger Traffic Distribution
 
@@ -182,7 +182,7 @@ Using `MANCHESTER` as the argument for the `var baseAirport` variable.
 
 ![Figure 26](./images/Figure26.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e6822a69/5/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e6822a69/5/)
 
 ## Action Items
 

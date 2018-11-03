@@ -17,7 +17,7 @@ Citywide | April | 2016 | 4.7
 Citywide | May | 2016| 4.7
 Citywide | June | 2016 | 4.8
 
-Because the timestamp is split across two columns, working with the data from within the `data.gov` portal is impossible because defining either part of the timpstamp as the `x` axis erroneously groups the data, considering either only the month or year of the data sample.
+Because the timestamp is split across two columns, working with the data from within the `data.gov` portal is impossible because defining either part of the timestamp as the `x` axis erroneously groups the data, considering either only the month or year of the data sample.
 
 ![](./images/plotly-axis.png)
 
@@ -25,7 +25,7 @@ Access the [plotly](https://plot.ly/external/?url=https://data.cityofnewyork.us/
 
 ![](./images/plotly-visualization.png)
 
-The dataset tracks data from March 2016 to April 2018, thus most months contain two datapoints, April contains three, and August and September contain one.
+The dataset tracks data from March 2016 to April 2018, thus most months contain two data points, April contains three, and August and September contain one.
 
 ## CSV Parser
 
@@ -52,19 +52,19 @@ Define the **Timestamp Type** as **Pattern** and specify the pattern in the **Ti
 
 ![](./images/timestamp-pattern.png)
 
-> See [Oracle Documentation](https://docs.oracle.com/javase/tutorial/i18n/format/simpleDateFormat.html) for more information about `SimpleDateFormat` timestamp patterns.
+> See [ATSD Documentation](https://axibase.com/docs/atsd/shared/time-pattern.html) for more information about timestamp patterns.
 
 During import, ATSD concatenates the specified columns to create the **Timestamp Pattern**. Each component of the timestamp may be defined by its own column and still be read by the database during import using the appropriate configuration.
 
-Using [**ChartLab**](../shared/chartlab.md), the DOP dataset is parsed to create a visualization that shows the time series data as it is meant to be portrayed.
+Using [**ChartLab**](../shared/chartlab.md), the dataset is parsed to create a visualization that shows the time series data as it is meant to be portrayed.
 
 ![](./images/juvenille-rearrest-rate.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/b560456e)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/b560456e)
 
 The declarative [Charts Syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) defines the `entity` and `metric` created by the parser upon import:
 
-```css
+```ls
 [series]
   entity = data.cityofnewyork.us
   metric = juvenile_rearrest_rate

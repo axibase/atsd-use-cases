@@ -91,7 +91,7 @@ ORDER BY time
 
 ![](./images/chart-total.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/5/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/bbc5e671/5/#fullscreen)
 
 ---
 
@@ -99,7 +99,7 @@ ORDER BY time
 
 ![](./images/chart-winner-losers.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/6/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/bbc5e671/6/#fullscreen)
 
 ---
 
@@ -107,7 +107,7 @@ ORDER BY time
 
 ![](./images/chart-tesla.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/7/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/bbc5e671/7/#fullscreen)
 
 ---
 
@@ -116,7 +116,7 @@ look at the statistics by following the below steps to install your own ATSD ins
 
 1. Install the ATSD database from a Docker image:
 
-   ```sql
+   ```sh
    docker run \
     --detach \
     --name=atsd \
@@ -126,7 +126,7 @@ look at the statistics by following the below steps to install your own ATSD ins
 
 2. Log in to ATSD and configure the pre-defined administrator account.
 3. Import the [`csv-parser-nor-configs.xml`](./resources/csv-parser-nor-configs.xml) parser definitions on **Configuration > Parsers: CSV** page.
-4. Export files from Statbank in Matrix TSV format (see instructions at the end of this article) or upload prepared tsv files as outlined in steps 5 and 6 below.
+4. Export files from Statbank in Matrix TSV format (see instructions at the end of this article) or upload prepared TSV files as outlined in steps 5 and 6 below.
 5. Upload the [`total.tsv`](./resources/total.tsv) file using the `nor-transport` parser.
 6. Upload the [`by-make-1.tsv`](./resources/by-make-1.tsv) and [`by-make-2.tsv`](./resources/by-make-2.tsv) files using the `nor-transport-make` parser.
 7. To check that data has been imported, open the SQL Console tab from the side menu and execute this query:

@@ -8,7 +8,7 @@
 
 ![](./images/AD-1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/24b59799/2/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/24b59799/2/#fullscreen)
 
 ```sql
 SELECT date_format(time, 'yyyy-MM') AS "Date", tv.value AS "Total Value (NIS Billion)"
@@ -42,7 +42,7 @@ GROUP BY 'Date', tv.value
 
 ![](./images/AD-5.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/24b59799/6/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/24b59799/6/#fullscreen)
 
 > Months with negative growth are shown in red, and months with positive growth exceeding 25 billion NIS are shown in dark blue.
 
@@ -82,7 +82,7 @@ GROUP BY 'Date', tv.value
 
 ![](./images/AD-3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/040c4e03/5/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/040c4e03/5/#fullscreen)
 
 ```sql
 SELECT date_format(time, 'MM-yyyy') AS "Date",  cd.value AS "Cash and Deposits", gbn.value AS "Government Bonds (Non-Tradeable)", gbt.value AS "Government Bonds (Tradeable)", cbn.value AS "Corporate Bonds (Non-Tradeable)", cbt.value AS "Corporate Bonds (Tradeable)", cm.value AS "Cash (Makam)", i.value AS "Shares in Israel", iad.value AS "Investments Abroad (Deposits)", iab.value AS "Investments Abroad (Bonds)", ias.value AS "Investments Abroad (Shares)", iao.value AS "Investments Abroad (Other)"
@@ -116,4 +116,4 @@ GROUP BY 'Date', cd.value, gbn.value, gbt.value, cbn.value, cbt.value, cm.value,
 
 ![](./images/AD-4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/040c4e03/8/#fullscreen)
+[![View in ChartLab](../../../images/new-button.png)](https://apps.axibase.com/chartlab/040c4e03/8/#fullscreen)
