@@ -231,7 +231,7 @@ LIMIT 500000
 
 ![](./images/performance.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/972babb9/16/)
+[![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/972babb9/16/)
 
 Some performance considerations:
 
