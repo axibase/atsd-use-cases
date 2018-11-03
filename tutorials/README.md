@@ -38,10 +38,3 @@ Review the [Getting Started Guide](https://axibase.com/docs/atsd/tutorials/getti
 * [Deploying Axibase Technical Writing Guidelines](linter-tutorial/README.md)
 * [Data Visualization with **ChartLab**](shared/chartlab.md)
 * [Using **Trends**](shared/trends.md)
-
-## Workshops
-
-1. [Practical Java Performance: Date Formatting Optimization](workshop/performance.md) (June 2018)
-1. [Technical Writing for Software Developers](workshop/technical-writing.md) (May 2018)
-1. [`Let's Encrypt` SSL Certificates for Java Developers](workshop/lets-encrypt.md) (May 2018)
-1. [WebGL: Hello, World and Integration Examples](workshop/webgl.md) (April 2018)
