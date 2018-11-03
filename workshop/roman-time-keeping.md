@@ -10,7 +10,7 @@
 * Customs and society in [Ancient Rome](#ancient-rome).
 * Roman [calendars](#calendar-overview).
   * [Kingdom Calendar](#kingdom-calendar)
-  * [Julian Calendar](#julius-calendar)
+  * [Julian Calendar](#julian-calendar)
   * [Augustan Calendar](#augustan-calendar)
   * [Commodus Calendar](#commodus-calendar)
 
@@ -70,7 +70,7 @@
 
 * Priest *collegium* ("*co leges*")
   * Pontificies supervised sacrifices, ceremonies and **calendars**. *Collegium Pontificum*, *Pontifex Maximus*.
-  * [Augurs](https://en.wikipedia.org/wiki/Augur) observed and recorded unnatural incidents (*auspicia oblativa*) and watched birded (*auspicia imperativa* - per request).
+  * [Augurs](https://en.wikipedia.org/wiki/Augur) observed and recorded unnatural incidents (*auspicia oblativa*) and watched birds (*auspicia imperativa* - per request).
   * [Sibyls](https://en.wikipedia.org/wiki/Sibyl) were oracles who interpreted ancient scripts. When to make major sacrifices, e.g. human burials in 228 BCE, 216 BCE, 214 BCE to avert Gaul invasions.
 
 ### Political Timeline
@@ -187,7 +187,7 @@
 
   ![](./images/rome-16.png)
 
-  * Leap years were considered unluckey and were occasionally skipped during tough years, for example during the [Punic Wars](https://en.wikipedia.org/wiki/Punic_Wars), against Carthage. Sometimes they were "closed" early, for example 363 BCE was called to terminate early to fight plague.
+  * Leap years were considered unlucky and were occasionally skipped during tough years, for example during the [Punic Wars](https://en.wikipedia.org/wiki/Punic_Wars), against Carthage. Sometimes they were "closed" early, for example 363 BCE was called to an end early to fight plague.
 
 #### Republican Month
 
@@ -258,7 +258,7 @@
 * Renamed all months. Most names come from Commodus' own [regnal name](https://en.wikipedia.org/wiki/Regnal_name) (below).
 * The exact order of new month names is unknown.
 * Renamed Rome to *Colonia Lucia Annia Commondiana*.
-* Reforms rolled back in 193 CE after Cev 192 CE assassination as part of the *damnatio memoriae*.
+* Reforms rolled back in 193 CE after 192 CE assassination as part of the *damnatio memoriae*.
 
 ![](./images/rome-22.png)
 
@@ -270,7 +270,7 @@
 
 * Gregorian calendar spans hundreds of years, which was beyond the recording capabilities and planning horizon of ancient peoples.
 * Gregorian calendar also has an accumulating error: 365.2422 (actual) versus 365.2425 (calendar). The error of +26 seconds per year translates to one day per 3,323 years but will occur in ~10,000 years due to changes in solar year duration.
-* What could be the shortest leap cycle duration within a life expectancy of 30 years with mimimal errors?
+* What could be the shortest leap cycle duration within a life expectancy of 30 years with minimal errors?
   * **20-year Cycle**: 365*3+366 and skip every twentieth leap year: `365 + 1/4 - 1/20 = 365.2000`. Error is **61** minutes per year.
   * **40-year Cycle**: 365*3+366 and skip every fortieth leap year: `365 + 1/4 - 1/40 = 365.2250`. Error is **25** minutes per year.
   * **100-year Cycle**: 265*3+366 and skip every hundredth leap year: `365 + 1/4 - 1/100 = 365.2400`. Error is **3** minutes per year.

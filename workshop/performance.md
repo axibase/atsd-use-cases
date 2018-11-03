@@ -111,7 +111,7 @@ printWithCustomPrinterIsoOpt  sample  2369326      271.344 ± 10.401   ns/op
 
 ![](./images/jmh-benchmarks.png)
 
-[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/51e517df/2/)
+[![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/51e517df/2/)
 
 ## The Formatters Used by ATSD
 
