@@ -14,12 +14,13 @@ const topNavMenu = [
 ]
 
 const landingPageMenu = [
-    ['/research/', 'Research'],
     [ '/chart-of-the-day/', 'Chart of the Day'],
-    [ '/trends/',  'Trends' ],
-    [ '/integrations/', 'Integrations' ],
-    [ '/tutorials/', 'Tutorials' ],
     ['https://axibase.com/datasets/', 'Datasets'],
+    [ '/integrations/', 'Integrations' ],
+    ['/research/', 'Research'],
+    [ '/trends/',  'Trends' ],
+    [ '/tutorials/', 'Tutorials' ],
+    ['/workshop/', 'Workshops'],
 ];
 
 const chartofthedayMenu = [
