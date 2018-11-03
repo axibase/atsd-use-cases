@@ -4,7 +4,7 @@
 
 ## Overview
 
-The modern state of Saudi Arabia, an absolute monarchy on the Arab Gulf, came about at the end of the First World War, when allied victory over the Ottoman Empire ensured the decline of Ottoman influence in the region.
+The modern state of Saudi Arabia, an absolute monarchy on the Arabian Gulf, came about at the end of the First World War, when allied victory over the Ottoman Empire ensured the decline of Ottoman influence in the region.
 
 Since then, the nation of 33 million which occupies two million square kilometers in the Arab gulf has grown to the world's eighteenth largest economy (behind Turkey, ahead of Switzerland)<sup>[1](https://data.worldbank.org/country/saudi-arabia)</sup> and secured regional preeminence. The discovery of vast petroleum reserves in 1938 resulted in Saudi Arabia becoming the world's largest oil exporter for many years, having been only recently unseated by the United States.
 
