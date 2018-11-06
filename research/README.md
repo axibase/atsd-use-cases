@@ -6,6 +6,7 @@ ATSD functionality and features applied to real-world public data to solve commo
 
 Detailed use cases that feature in-depth data exploration and complex functionality used to solve modern data problems.
 
+1. [The Case for the Income Tax](income-tax/README.md) (November 2018)
 1. [The Saudi Arabia Challenge](saudi-arabia/README.md) (October 2018)
 1. [Calculating the Age of the Universe](universe-age/README.md) (October 2018)
 1. [The Birth of the Bolívar Soberano](bolivar-soberano/README.md) (August 2018)
