@@ -5,11 +5,12 @@ const githubSettings = {
 }
 
 const topNavMenu = [
-    { text: 'Research', link: '/research/' },
     { text: 'Chart of the Day', link: '/chart-of-the-day/' },
-    { text: 'Trends', link: '/trends/' },
     { text: 'Integrations', link: '/integrations/' },
+    { text: 'Research', link: '/research/' },
+    { text: 'Trends', link: '/trends/' },
     { text: 'Tutorials', link: '/tutorials/' },
+    { text: 'Workshops', link: '/workshop/'},
     { text: 'Docs', link: 'https://axibase.com/docs/atsd/' },
 ]
 
