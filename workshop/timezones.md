@@ -16,6 +16,8 @@
 * [International Time Zones](#international-time-zones)
 * [Information Age](#information-age)
 
+---
+
 ## Overview
 
 ### Timeline
@@ -37,6 +39,8 @@
 
   ![](./images/tz-9.png)
 
+---
+
 ## Apparent Solar Time
 
 * Apparent solar day is derived via measurement of one complete solar cycle.
@@ -55,6 +59,8 @@
 * The length of the mean solar day is gradually increasing each year.
 
 ![](./images/tz-13.gif)
+
+---
 
 ## Early Necessity
 
@@ -94,3 +100,5 @@
 * `time_t` format: number of seconds elapsed since Thursday, January 1, 1970.
 * GMT renamed Coordinated Universal Time (UTC), most Unix-like operating systems determine `time_t` from UTC time by default.
 * **1988**: International Organization for Standardization creates ISO 8601 format to establish a standard expression of time and date.
+
+---
