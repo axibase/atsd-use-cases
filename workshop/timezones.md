@@ -40,11 +40,12 @@
 ## Apparent Solar Time
 
 * Apparent solar day is derived via measurement of one complete solar cycle.
+* Used in conjunction with sidereal time, calculated from the location of the stars.
 * Problems:
   * Elliptical orbit of Earth around the sun.
   * Imperfect rotational axis.
   * Spherical shape of the planet.
-  
+
 ![](./images/tz-10.png)
 
 ## Mean Solar Time
