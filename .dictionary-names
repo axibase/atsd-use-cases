@@ -15,6 +15,7 @@ Amex
 Arundel
 Aswath
 Aurelius
+Axibase
 Ayatollah
 Bancorp
 Barbour
@@ -52,6 +53,7 @@ Cerebrovascular
 Certifi
 Chavez
 Chien
+Checkstyle
 Christi
 Citywide
 Clair
@@ -85,6 +87,7 @@ Duluth
 DuPage
 Ebola
 Eccles
+ECMAScript
 Edinburgh
 Edwardsville
 Eid
@@ -93,6 +96,7 @@ Energinet
 Enfield
 ENSO
 Equifax
+ESLint
 Etherium
 Eurostat
 Eurozone
@@ -102,6 +106,7 @@ Excellus
 Experian
 Falkenstein
 Fargo
+FindBugs
 Fityk
 Folsom
 Fremont
@@ -111,8 +116,10 @@ Fuerte
 Fullerton
 GeoDNS
 GHash
+GitHub
 Germanicus
 Glendale
+Gradle
 Gronongin
 Hali
 Hanson
@@ -133,11 +140,13 @@ Humberside
 HyperLEDA
 IaaS
 IceInSpace
+IntelliJ
 Irvine
 Istambul
 Iverson
 Jamal
 Javiar
+Jenkins
 JetBrains
 Jimi
 Joaquin
@@ -187,6 +196,7 @@ Mahoning
 Mai
 MapReduce
 Maui
+Maven
 Maximus
 Maynard
 McDonald
@@ -308,9 +318,13 @@ Snell
 Soberano
 Socrata
 SolarCity
+SonarLint
+SonarQube
+SonarSource
 Somerville
 Sowell
 Spokane
+SpotBugs
 SpringerBriefs
 SQLService
 SSLContent
@@ -344,6 +358,7 @@ Valeev
 Vaucouleurs
 Volkswagen
 von
+VSCode
 Wabash
 Wailuku
 Walgreens

@@ -29,6 +29,7 @@ credentialed
 cryptocurrenc(y|ies)
 ctyname
 curated
+cyclomatic
 dashboarding
 datacenter[s]?
 datapoint
@@ -83,6 +84,7 @@ jsfiddle
 keystore
 keytool
 lifeblood
+lifecycle
 lifespan[s]?
 lighthearted
 lunisolar
@@ -139,6 +141,7 @@ real-time
 rebranded
 recomputation
 redesignated
+refactoring
 repopulate
 resellable
 resizeable
