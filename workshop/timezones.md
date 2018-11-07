@@ -14,6 +14,7 @@
 * [Early Necessity](#early-necessity)
 * [Expansion and Standardization](#expansion-and-standardization)
 * [International Time Zones](#international-time-zones)
+* [Information Age](#information-age)
 
 ## Overview
 
@@ -49,6 +50,7 @@
 
 * Day begins at 00:00 which corresponds to midnight, 12:00 is set at the zenith of the sun.
 * Mean solar day is calculated based on a one year solar cycle.
+* The length of the mean solar day is gradually increasing each year.
 
 ![](./images/tz-13.gif)
 
@@ -69,20 +71,24 @@
 * **1847**: Using telegraph technology, time signals were transmitted great distances across Great Britain (~1,350 km) to coordinate railroad activities and thus became known as [Railway time](https://en.wikipedia.org/wiki/Time_zone#Railway_time).
 * **New Zealand Mean Time** (GMT +11:30): The first recognized time zone.
 * Other railroad systems were far less compact, and therefore able to function using far sloppier time keeping methods.
+  * Local standardization in the Russian Empire occurred in **1880** with the introduction of **Moscow Mean Time** which was unaffiliated with GMT.
   * North American standardization occurred in **1883**, with major railroad stations used as delimiting points.
-  * By 1884, 85% of American cities used standardized time.
-  * Detroit: Operated on non-standard local time until 1900, then Central Standard Time, local mean time, and Eastern Standard Time before a May 1915 ordinance settled on EST and was ratified by popular vote in August 1916.
-  * Standardization in the Russian Empire occurred in **1880** with the introduction of **Moscow Mean Time** which was unaffiliated with GMT.
-  * The Soviet Union standardized **Moscow Time** to GMT +2:00, as well as other Russian time zones, and implemented the use of the Gregorian calendar.
+  * By **1884**, 85% of American cities used GMT standardized time.
+  * Detroit: Operated on non-standard local time until **1900**, then Central Standard Time, local mean time, and Eastern Standard Time before a May 1915 ordinance settled on EST and was ratified by popular vote in August 1916.
+  * The Soviet Union standardized **Moscow Time** to GMT +2:00 in **1917**, as well as other Russian time zones, and implemented the use of the Gregorian calendar.
 
 ## International Time Zones
 
-* First proposed in 1858 by Italian mathematician [Quirico Filopanti](https://en.wikipedia.org/wiki/Quirico_Filopanti).
+* First proposed in **1858** by Italian mathematician [Quirico Filopanti](https://en.wikipedia.org/wiki/Quirico_Filopanti).
 * Scottish-Canadian [Sandford Fleming](https://en.wikipedia.org/wiki/Sandford_Fleming) successfully proposed the creation of a "universal time," which all other time zones would eventually be based on in 1879.
-* By 1900, nearly every country had approximately standardized its own time, but international cooperation was still rare.
+* By **1900**, nearly every country had approximately standardized its own time, but international cooperation was still rare.
 * Between 1900-1929 all major countries standardized their own time to a derivation of GMT.
-* 1956: Nepal is the last country to standardize its time to GMT.
+* **1956**: Nepal is the last country to standardize its time to GMT.
 
 ![](./images/tz-16.png)
 
-## Information Age 
+## Information Age
+
+* `time_t` format: number of seconds elapsed since Thursday, January 1, 1970.
+* GMT renamed Coordinated Universal Time (UTC), by default most Unix-like operating systems determine `time_t` from UTC time by default.
+* **1988**: International Organization for Standardization createas ISO 8601 format to establish a standard expression of time and date.
