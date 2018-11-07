@@ -22,7 +22,7 @@
 
 * Ancient time was regulated with [apparent solar time](https://en.wikipedia.org/wiki/Solar_time#Apparent_solar_time).
 * In 1675, Greenwich Mean Time was established to aid mariners in the calculation of longitude.
-* The advanced mechanization of time keeping allowed the use of an atomic [mean solar time](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time) for larger regions by the nineteenth century.
+* The advanced mechanization of time keeping allowed the use of [mean solar time](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time) for larger regions by the nineteenth century.
 
 ### Technology
 
@@ -44,7 +44,8 @@
   * Elliptical orbit of Earth around the sun.
   * Imperfect rotational axis.
   * Spherical shape of the planet.
-  ![](./images/tz-10.png)
+  
+![](./images/tz-10.png)
 
 ## Mean Solar Time
 
