@@ -92,5 +92,5 @@
 ## Information Age
 
 * `time_t` format: number of seconds elapsed since Thursday, January 1, 1970.
-* GMT renamed Coordinated Universal Time (UTC), by default most Unix-like operating systems determine `time_t` from UTC time by default.
+* GMT renamed Coordinated Universal Time (UTC), most Unix-like operating systems determine `time_t` from UTC time by default.
 * **1988**: International Organization for Standardization creates ISO 8601 format to establish a standard expression of time and date.
