@@ -68,15 +68,15 @@ The main difference between SonarQube and the other tools is that the code analy
 ### Capabilities
 
 * Many languages are supported:
-  * `Java`
-  * `C`
-  * `C++`
-  * `C#`
-  * `Objective-C`
-  * `Swift`
-  * `PHP`
-  * `JavaScript`
-  * `Python`
+  * Java
+  * C
+  * C++
+  * C#
+  * Objective-C
+  * Swift
+  * PHP
+  * JavaScript
+  * Python
 * Reports for:
   * Code duplication
   * Compliance with the coding standards
