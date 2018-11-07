@@ -5,21 +5,23 @@ const githubSettings = {
 }
 
 const topNavMenu = [
-    { text: 'Research', link: '/research/' },
     { text: 'Chart of the Day', link: '/chart-of-the-day/' },
-    { text: 'Trends', link: '/trends/' },
     { text: 'Integrations', link: '/integrations/' },
+    { text: 'Research', link: '/research/' },
+    { text: 'Trends', link: '/trends/' },
     { text: 'Tutorials', link: '/tutorials/' },
+    { text: 'Workshops', link: '/workshop/'},
     { text: 'Docs', link: 'https://axibase.com/docs/atsd/' },
 ]
 
 const landingPageMenu = [
-    ['/research/', 'Research'],
     [ '/chart-of-the-day/', 'Chart of the Day'],
-    [ '/trends/',  'Trends' ],
-    [ '/integrations/', 'Integrations' ],
-    [ '/tutorials/', 'Tutorials' ],
     ['https://axibase.com/datasets/', 'Datasets'],
+    [ '/integrations/', 'Integrations' ],
+    ['/research/', 'Research'],
+    [ '/trends/',  'Trends' ],
+    [ '/tutorials/', 'Tutorials' ],
+    ['/workshop/', 'Workshops'],
 ];
 
 const chartofthedayMenu = [

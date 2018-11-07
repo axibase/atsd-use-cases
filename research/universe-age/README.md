@@ -117,7 +117,7 @@ Using the standard linear equation ***f(x)* = *mx* + *b***, where:
 * *x*: Velocity in *km/s*.
 * *b*: Intercept of regression line.
 
-Transformed to isolate the derived value *m*, *1* / *m* = (*x* + *b*) / *f(x)*. Where the units for each value are:
+Transformed to isolate the derived value <b>*m*, *1* / *m* = (*x* + *b*) / *f(x)*</b>. Where the units for each value are:
 
 * *x*: *km/s*
 * *b*: Unitless scalar value.

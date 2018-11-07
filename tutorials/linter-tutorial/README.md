@@ -4,7 +4,7 @@
 
 ## Overview
 
-This tutorial demonstrates the application of [Axibase Technical Writing Guidelines](../workshop/technical-writing.md) to a local GitHub repository. Manage your software documentation directly in the GitHub interface with all of the tools available from a more purpose-specific service. This process uses the [Travis CI](https://docs.travis-ci.com/) continuous integration tool to automatically review newly created pull requests for [`markdownlint` errors](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md#rules) and user-defined syntax rules as well as [ATSD](https://axibase.com/docs/atsd/) for email and messenger notifications via webhook. Follow this procedure to enable checks on any local repository.
+This tutorial demonstrates the application of [Axibase Technical Writing Guidelines](../../workshop/technical-writing.md) to a local GitHub repository. Manage your software documentation directly in the GitHub interface with all of the tools available from a more purpose-specific service. This process uses the [Travis CI](https://docs.travis-ci.com/) continuous integration tool to automatically review newly created pull requests for [`markdownlint` errors](https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md#rules) and user-defined syntax rules as well as [ATSD](https://axibase.com/docs/atsd/) for email and messenger notifications via webhook. Follow this procedure to enable checks on any local repository.
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ New pull requests are automatically checked by the Travis CI tool. To configure 
 
 ## Configuring Custom Rules
 
-The attached configuration contains a number of [custom rules](https://github.com/axibase/docs-util#custom-rules) which reflect the guidelines outlined in the [Axibase Technical Writing Style Guide](../workshop/technical-writing.md). Modify existing custom rules or create your own according to the instructions in the [How To Add Custom `markdownlint` Rules Tutorial](https://github.com/axibase/docs-util/blob/master/docs/how-to-add-custom-linter-rule.md#how-to-add-custom-markdownlint-rule).
+The attached configuration contains a number of [custom rules](https://github.com/axibase/docs-util#custom-rules) which reflect the guidelines outlined in the [Axibase Technical Writing Style Guide](../../workshop/technical-writing.md). Modify existing custom rules or create your own according to the instructions in the [How To Add Custom `markdownlint` Rules Tutorial](https://github.com/axibase/docs-util/blob/master/docs/how-to-add-custom-linter-rule.md#how-to-add-custom-markdownlint-rule).
 
 ### Custom Dictionaries
 
