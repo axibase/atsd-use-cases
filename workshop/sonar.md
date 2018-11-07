@@ -7,14 +7,14 @@
 * [Overview](#overview)
 * [Static Analysis](#static-analysis)
   * [Benefits](#benefits)
-  * [Solutions](#solutions)
+  * [Tools](#tools)
 * [SonarQube](#sonarqube)
   * [Capabilities](#capabilities)
   * [Advantages](#advantages)
   * [Disadvantages](#disadvantages)
   * [Assessing Code Quality](#assessing-code-quality)
 * [Installation](#installation)
-  * [Process](#installation-schema)
+  * [Process](#process)
   * [Requirements](#requirements)
   * [Compose File](#compose-file)
 * [Interface](#interface)
@@ -24,9 +24,9 @@
   * [Rules, Quality Profiles, and Quality Gates](#rules-quality-profiles-and-quality-gates)
 * [IDE Integration](#ide-integration)
   * [Supported IDEs](#supported-ides)
-* [Github Integration](#github-integration)
+* [GitHub Integration](#github-integration)
   * [Plugin Requirements](#plugin-requirements)
-  * [Running Sonar Analysis in CI](#running-sonar-analysis-in-ci)
+  * [Sonar Analysis in CI](#sonar-analysis-in-ci)
 
 ## Overview
 
@@ -34,7 +34,7 @@
 
 ## Static Analysis
 
-*Static analysis* is the analysis of computer software which is performed without actually executing programs, in contrast with *dynamic analysis*, which is analysis performed on programs as they execute.
+*Static analysis* is the analysis of computer software which is performed without executing programs, in contrast with *dynamic analysis*, which is analysis performed on programs as they execute.
 
 There are two types of code which may be analyzed without execution: **source code** and **object code**.
 
@@ -95,7 +95,7 @@ The main difference between SonarQube and the other tools is that the code analy
   * Visual Studio
   * Eclipse
   * VSCode
-  * Via SolarLint plugin
+  * Via SonarLint plugin
 * External tool integration:
   * JIRA
   * Mantis
@@ -306,7 +306,7 @@ Coverage of new code >= 80%
 
 ![sonar-supported-ides](./images/sonar-supported-ides.png)
 
-### Github Integration
+### GitHub Integration
 
 The [GitHub plugin](https://docs.sonarqube.org/display/PLUG/GitHub+Plugin) analyzes GitHub pull requests without pushing results to SonarQube. Any issues that are found are published as comments on the pull request.
 
@@ -315,7 +315,7 @@ The plugin adds comments to the commit:
 * For each issue.
 * A global comment that gives a summary of the analysis.
 
-![Github Review](./images/sonar-github-review.png)
+![](./images/sonar-github-review.png)
 
 #### Plugin Requirements
 
