@@ -21,7 +21,11 @@ Consolidation seemed to be the best way to compete with the four largest America
 
 > Source: *The New York Times*, 2018<sup>[2](https://markets.on.nytimes.com/research/markets/usmarkets/industry.asp?industry=52421)</sup>
 
+<!-- markdownlint-disable MD101 -->
+
 The true result however was decreased competitiveness which precipitated rising prices, evidenced by the growth of the CPI basket price for air travel at a rate greater than that of generalized inflation as well as airport-level economic studies.<sup>[3](http://faculty.haas.berkeley.edu/borenste/download/AERPP90AirMerge.pdf)</sup>
+
+<!-- markdownlint-enable MD101 -->
 
 ## The Dawn of Ultra Low Cost Carriers
 
@@ -38,7 +42,7 @@ Representing less than the market share of American Airlines between them, the e
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/4a9a5aa3#fullscreen)
 
-Although more dramatically affected by the economic downturn which began in 2008, the emergence of JetBlue in 2000 and the formation of additional low cost airlines throughout the decade have noticeably affected the overall cost of airline travel in the United States. Not only did the airline fare CPI basket grow less significantly than the overall basket of goods, the majority of years, it actually decreased indicating that relative prices were decreasing with respect to overall inflation.
+Although more dramatically affected by the economic downturn which began in 2008, the emergence of JetBlue in 2000 and the formation of additional low cost airlines throughout the decade have noticeably affected the overall cost of airline travel in the United States. Not only did the airline fare CPI basket grow less significantly than the overall basket of goods, the majority of years, the value decreased indicating that relative prices were decreasing with respect to overall inflation.
 
 ## The Future of Low Cost
 
@@ -46,7 +50,11 @@ The [World Bank](https://www.worldbank.org/) anticipates the low cost revolution
 
 In fact, relative airline costs have fallen roughly 50% since 1980<sup>[7](https://www.theatlantic.com/business/archive/2013/02/how-airline-ticket-prices-fell-50-in-30-years-and-why-nobody-noticed/273506/)</sup> showing that industry regulation usually serves to stifle competition, increase barriers to market access for new players, and decrease innovation via stagnation. Indeed, economic consulting firm [Compass Lexecon](http://www.compasslexecon.com/) released a 2017 report showing that increased competition has not only resulted in lower prices, but also increased quality among those airlines which are not interesting in pursuing the low cost model.<sup>[8](http://darinlee.net/pdfs/airline_competition.pdf)</sup>
 
+<!-- markdownlint-disable MD101 -->
+
 Likewise, this trend has been noted by Federal Reserve economists, who postulate that the airline industry is essentially an oligopoly which steadily moving towards an environment of true competition.<sup>[9](https://research.stlouisfed.org/publications/page1-econ/2018/11/01/the-economics-of-flying-how-competitive-are-the-friendly-skies)</sup>
+
+<!-- markdownlint-enable MD101 -->
 
 Data from this article is sourced from the Federal Reserve database [FRED](https://fred.stlouisfed.org/) and valued on a 100-point scale. The CPI basket for airline fares is indexed in 1982, meaning all following values are derived based on their relationship to the 1982 value. If that index year is changed to 2001, the stark difference in CPI inflation from all items and airfare becomes obvious.
 
