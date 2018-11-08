@@ -2,6 +2,7 @@
 
 Interactive visualizations tracking interesting datasets from a variety of sources.
 
+1. [Increased Competition Fosters Falling Airline Prices](airline-prices/README.md) (November 2018)
 1. [The Econometrics of Halloween](halloween/README.md) (October 2018)
 1. [Stag-cation: The Stagnation of Supplemental Benefits](supplemental-benefits/README.md) (October 2018)
 1. [The Lopsided Nature of US Unemployment](unemployment/tech-employment.md) (September 2018)
