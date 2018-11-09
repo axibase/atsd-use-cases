@@ -24,7 +24,6 @@
   * [Assumptions](#assumptions)
   * [Procedure](#procedure)
   * [Calculation](#calculation)
-  * [Visualization](#visualization)
 
 <!-- markdownlint-enable MD101 -->
 
