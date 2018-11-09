@@ -6,6 +6,8 @@
 
 ## Contents
 
+<!-- markdownlint-disable MD101 -->
+
 * [Overview](#overview)
   * [Technology Timeline](#technology-timeline)
 * [Methodology](#methodology)
@@ -23,6 +25,8 @@
   * [Procedure](#procedure)
   * [Calculation](#calculation)
   * [Visualization](#visualization)
+
+<!-- markdownlint-enable MD101 -->
 
 ---
 
@@ -148,10 +152,12 @@ Modern time zones have been standardized to Greenwich Mean Time (GMT) also calle
 ### Physics
 
 * The second: International System of Units standard unit for time.
-  * "The duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom," in an environment whose temperature is **not** 0 K (-273.15&deg;C).<sup>[18]((https://www.nist.gov/sites/default/files/documents/2016/12/07/sp330.pdf))</sup>
+  * "The duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom," in an environment whose temperature is **not** 0 K (-273.15&deg;C).<sup>[18](https://www.nist.gov/sites/default/files/documents/2016/12/07/sp330.pdf))</sup>
 * The [atomic clock](https://time.is/UTC): Measurement of a finite discontinuous event (quantum leap) serves as the basis of time.
 
 ---
+
+<!-- markdownlint-disable MD101 -->
 
 ## Calculating True Solar Time
 
@@ -227,3 +233,5 @@ ORDER BY "Margin of Error (Minutes)" ASC
 | Saint Petersburg | 30.3 | 3.0| 121.2 | 180.0| 58.8
 | Omsk| 73.3 | 6.0| 293.2 | 360.0| 66.8
 | Kamchatka Peninsula | 160.0| 12.0 | 640.0 | 720.0| 80.0
+
+<!-- markdownlint-enable MD101 -->
