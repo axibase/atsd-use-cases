@@ -22,6 +22,7 @@
 * [Application](#application)
   * [True Solar Time](#true-solar-time)
   * [True Zenith Time](#true-zenith-time)
+  * [Calculating Sunrise and Sunset](#calculating-sunrise-and-sunset)
 
 <!-- markdownlint-enable MD101 -->
 
@@ -54,23 +55,32 @@ Modern time zones are standardized to Greenwich Mean Time (GMT) also called Coor
 
   ![](./images/tz-6.png)
 
-> The [mysteries of antiquity](https://youtu.be/BoS75-0BRWo?t=2880).
+> The [Antikythera mechanism](https://youtu.be/BoS75-0BRWo?t=2880), discovered in 1902 amidst wreckage off the coast of the Greek island of Antikythera. Phenomena tracked by the device were observed and studied by Greek astronomer Hipparchus in the second century BCE, as such, he is thought to have been involved in its creation and design.
 
 #### Middle Ages
 
-* **300 - 1100 CE**: The development of continuous escapement mechanisms.<sup>[4](https://www.mas.bg.ac.rs/_media/istrazivanje/fme/vol40/1/03_mstoimenov.pdf)</sup> The [sliding rope paradox](https://arxiv.org/pdf/1002.1586.pdf) remains unsolved.
+* Three distinct periods, none of which are particularly good for time-keeping advancements:
+  * Early Middle Ages: **400 - 999 CE**
+  * High Middle Ages: **1000 - 1249 CE**
+  * Late Middle Ages: **1250 - 1500 CE**
+* **300 - 1200 CE**: The development of continuous escapement mechanisms.<sup>[4](https://www.mas.bg.ac.rs/_media/istrazivanje/fme/vol40/1/03_mstoimenov.pdf)</sup> The [sliding rope paradox](https://arxiv.org/pdf/1002.1586.pdf) remains unsolved until the invention of calculus in the 17th century.
 
-  Century | Number of Major Battles
-  :--:|:--:
-  5th | 7
-  6th | 14
-  7th | 17
-  8th | 5
-  9th | 36
-  10th | 15
-  11th | 20
+  Century | Number of Major Battles | Annual Average<sup>*</sup> | Percent Change
+  :--:|:--:|:--:|:--:
+  5th<sup>&#10013;</sup> | 7 | 7 | +0%
+  6th | 14 | 11 | +57%
+  7th<sup>^</sup> | 17 | 13| +18%
+  8th | 5 | 11 | -15%
+  9th<sup>**</sup> | 36 | 16 | +45%
+  10th | 15 | 16 | +0%
+  11th | 20 | 16 | +0%
 
-  > Source: *Battlefield Trust*, 2018<sup>[5](http://www.battlefieldstrust.com/media/733.pdf)</sup>
+    > Source: *Battlefield Trust*, 2018<sup>[5](http://www.battlefieldstrust.com/media/733.pdf)</sup>
+
+  * <sup>*</sup> Values rounded to nearest whole **integer**.
+  * <sup>&#10013;</sup> Collapse of the Roman Empire.
+  * <sup>^</sup> Foundation of Islam.
+  * <sup>**</sup> Invasion of the [Great Heathen Army](https://thehistoryofengland.co.uk/2011/01/17/6-the-great-heathen-army/).
 
 * **1237**: The development of *verge-and-foilet* escapement improves the accuracy of timekeeping.<sup>[6](https://aapt.scitation.org/doi/10.1119/1.3479712)</sup>
   * Time-keeping devices become larger and more public.
@@ -271,7 +281,7 @@ ORDER BY "Margin of Error (Minutes)" ASC
 | Omsk| 73.3 | 6.0| 293.2 | 360.0| 66.8
 | Kamchatka Peninsula | 160.0| 12.0 | 640.0 | 720.0| 80.0
 
-## True Zenith Time
+### True Zenith Time
 
 According to the principles of mean solar time, 12:00 corresponds to the sun's highest point in the sky during the day. Because time zones are regulated by a longitudinally oriented system, significant latitudinal distance is encapsulated within one time zone.
 
@@ -313,7 +323,7 @@ South Pole | N/A | 90&deg; S
 
 **Visualization**:
 
-[![](./images/tz-35.png)](https://www.desmos.com/calculator/5njo9fkqpt)
+[![](./images/tz-35.png)](https://www.desmos.com/calculator/yomny7xm8g)
 
 Open the Desmos widget and visualize the true zenith time offset for various cities listed above by substituting the value for latitude into **function 4** in the initial argument <b>(*x*/90)</b>.
 
