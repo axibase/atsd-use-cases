@@ -313,7 +313,7 @@ South Pole | N/A | 90&deg; S
 
 **Visualization**:
 
-[![](./images/tz-35.png)](https://www.desmos.com/calculator/jo8yufea75)
+[![](./images/tz-35.png)](https://www.desmos.com/calculator/5njo9fkqpt)
 
 Open the Desmos widget and visualize the true zenith time offset for various cities listed above by substituting the value for latitude into **function 4** in the initial argument <b>(*x*/90)</b>.
 
