@@ -84,7 +84,7 @@ Modern time zones are standardized to Greenwich Mean Time (GMT) also called Coor
 * **1237**: The development of *verge-and-foilet* escapement improves the accuracy of timekeeping.<sup>[6](https://aapt.scitation.org/doi/10.1119/1.3479712)</sup>
   * Time-keeping devices become larger and more public.
   * Early standardization begins.
-* **1287**: The Dubstable Priory clock, believed to be the first mechanical clock in the world is erected in England.<sup>[7](https://www.dunstablehistory.co.uk/archives/PQR/Dunstable%20Priory%20in%201283_oldest%20recorded%20mechanical%20clock.htm)</sup>
+* **1287**: The Dubstable Priory clock, believed to be the first mechanical clock in the world is erected in Bedfordshire, England.<sup>[7](https://www.dunstablehistory.co.uk/archives/PQR/Dunstable%20Priory%20in%201283_oldest%20recorded%20mechanical%20clock.htm)</sup>
 
   ![](./images/tz-23.png)
 
