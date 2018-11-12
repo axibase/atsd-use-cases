@@ -22,7 +22,6 @@
 * [Application](#application)
   * [True Solar Time](#true-solar-time)
   * [True Zenith Time](#true-zenith-time)
-  * [Calculating Sunrise and Sunset](#calculating-sunrise-and-sunset)
 
 <!-- markdownlint-enable MD101 -->
 
