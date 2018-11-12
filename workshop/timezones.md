@@ -31,7 +31,11 @@
 
 Time zones were conceived to standardize the differences in time between geographical locations by reliable method. The idea of relative time began as a tool of *navigation*, but grew into a tool of *administration*, as technology allowed and globalization necessitated.
 
+<!-- markdownlint-disable MD105 -->
+
 Modern time zones are standardized to Greenwich Mean Time (GMT) also called Coordinated Universal Time (UTC). Modern time keeping is so precise the Earth's slowing rotation is considered during calculation.<sup>[1](https://www.ietf.org/timezones/data/leap-seconds.list)</sup>
+
+<!-- markdownlint-enable MD105 -->
 
 ### Technology Timeline
 
@@ -267,15 +271,13 @@ ORDER BY "Margin of Error (Minutes)" ASC
 | Omsk| 73.3 | 6.0| 293.2 | 360.0| 66.8
 | Kamchatka Peninsula | 160.0| 12.0 | 640.0 | 720.0| 80.0
 
-## True Zenith
+## True Zenith Time
 
 According to the principles of mean solar time, 12:00 corresponds to the sun's highest point in the sky during the day. Because time zones are regulated by a longitudinally oriented system, significant latitudinal distance is encapsulated within one time zone.
 
 ![](./images/tz-34.png)
 
 Because Earth orbits the sun on an elliptical path and rotates about an axis whose absolute angle is not 0&deg;, the length of days differs throughout the year naturally.
-
-<!-- markdownlint-enable MD101 -->
 
 ![](./images/tz-25.png)
 
@@ -316,3 +318,5 @@ South Pole | N/A | 90&deg; S
 Open the Desmos widget and visualize the true zenith time offset for various cities listed above by substituting the value for latitude into **function 4** in the initial argument <b>(*x*/90)</b>.
 
 > Values in the southern hemisphere must be expressed as &lt; 0.
+
+<!-- markdownlint-enable MD101 -->
