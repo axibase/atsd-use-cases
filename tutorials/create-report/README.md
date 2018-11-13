@@ -65,7 +65,7 @@ The user-defined function configuration file [`fred.js`](https://apps-chartlab.a
 series-value = fred.PercentChangeFromYearAgo(config().alias, '@{term.baseDate}')
 ```
 
-The `series-value` setting contains placeholder syntax `@{}`; Charts iterates over a list of presidents and dates then inserts this value at each row in the finished table. The `config()` function returns a particular object from the application configuration, in this case, the [`alias`](https://axibase.com/docs/charts/widgets/shared/README.html#alias) for each series.
+The `series-value` setting contains placeholder syntax `@{}`; Charts iterates over a list of presidents and dates then inserts this value at each row in the finished table. The `config()` function returns a particular object from the application configuration, in this case, the [`alias`](https://axibase.com/docs/charts/widgets/shared#alias) for each series.
 
 ```ls
 csv terms = name,baseDate,currDate
