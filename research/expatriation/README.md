@@ -171,7 +171,7 @@ LIMIT 10
 
 ### Ad Hoc Percent Change Calculation
 
-Show each data sample a percentage of the previous data sample. Quarters where expatriation increased, thus `value > 100` are highlighted in orange using an [`alert-expression`](https://github.com/axibase/charts/blob/master/syntax/alert-expression.md)
+Show each data sample a percentage of the previous data sample. Quarters where expatriation increased, thus `value > 100` are highlighted in orange using an [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html)
 
 ```ls
 [series]

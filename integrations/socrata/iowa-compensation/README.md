@@ -333,7 +333,7 @@ With adjusted compensation per employee values derived series, meaningful conclu
 
 * See [ATSD Documentation](https://axibase.com/docs/atsd/installation/) for installation instructions.
 
-* For more information about ATSD Chart services, see the [Charts Documentation](https://github.com/axibase/charts).
+* For more information about ATSD Chart services, see the [Charts Documentation](https://axibase.com/docs/charts/).
 
 * See the [**ChartLab** Introduction](../../../tutorials/shared/chartlab.md) for more information about **ChartLab** functionality.
 

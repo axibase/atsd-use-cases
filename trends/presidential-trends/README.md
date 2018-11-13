@@ -47,7 +47,7 @@ NASDAQ 100 Index | `NASDAQ100` | Market capitalization-weighted index, which tra
 
 ### Methodology
 
-Each metric is either tracked with the function [`PercentChangeFromYearAgo`](https://github.com/axibase/charts/blob/master/syntax/udf.md#examples) to create two dynamic values which can be compared, or compared in its underlying format.
+Each metric is either tracked with the function [`PercentChangeFromYearAgo`](https://axibase.com/docs/charts/syntax/udf.html#examples) to create two dynamic values which can be compared, or compared in its underlying format.
 
 Each derived value represents a trend at a particular point in time. To compare presidential performance in each field, the two points in time are 20 January the year a particular president was elected (i.e. their inauguration date), and 20 January the following year. As such, each value encapsulates not only the metric itself, but any inertia as well. Thus, a president who is able to maintain falling unemployment rates is more objectively comparable to a president who was able to reverse growing unemployment.
 

@@ -64,7 +64,7 @@ Scale Modifications:
 * `inbound_calls = value/10`
 * `call abandonment rate = value*100`
 
-> To learn more about scale modification in ChartLab, see [Charts Documentation](https://github.com/axibase/charts/blob/master/widgets/shared/README.md).
+> To learn more about *ad hoc* data modification in ChartLab, see [Charts Documentation](https://axibase.com/docs/charts/widgets/shared/#derived-value-settings).
 
 Although an increased call volume results in increased abandonment rates several times throughout the observed period,
 several local maxima in call volume are not matched by a corresponding maxima in abandoned calls. The visualization below compares

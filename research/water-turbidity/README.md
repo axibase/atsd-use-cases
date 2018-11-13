@@ -111,7 +111,7 @@ Aggregating temperature and turbidity data by the day is a reasonable resolution
 
 [![](../images/new-button.png)](https://apps.axibase.com/chartlab/eae1eb1c#fullscreen)
 
-**ChartLab** supports [user-defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md#user-defined-functions) which aid further analysis. Define JavaScript functions and store them in the [appropriate location](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files). The publicly accessible **ChartLab** application already supports the `fred.js` library. Alternatively, deploy the library locally with the [downloadable resource](https://raw.githubusercontent.com/axibase/charts/master/resources/fred.js).
+**ChartLab** supports [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html#user-defined-functions) which aid further analysis. Define JavaScript functions and store them in the [appropriate location](https://axibase.com/docs/charts/syntax/udf.html#deploying-function-files). The publicly accessible **ChartLab** application already supports the `fred.js` library. Alternatively, deploy the library locally with the [downloadable resource](https://raw.githubusercontent.com/axibase/charts/master/resources/fred.js).
 
 The `PercentChangeByOffset` function is used below to handle the difference in magnitude of the two metrics and compare relative changes. The `PercentChangeByOffset` function requires two arguments: the `alias` of the series to transform, and the `interval` of the offset.
 
