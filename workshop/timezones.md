@@ -196,7 +196,7 @@ The Age of Enlightenment (1715-1799) fostered growth in every area of human life
 * GMT renamed Coordinated Universal Time (UTC), most Unix-like operating systems determine `time_t` from UTC time by default.
 * **1988**: International Organization for Standardization creates [ISO 8601](https://axibase.com/docs/atsd/shared/date-format.html) format to establish a standard expression of time and date.
 * The second: International System of Units standard unit for time.
-  * "The duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom," in an environment whose temperature is **not** 0 K (-273.15&deg;C).<sup>[25](https://www.nist.gov/sites/default/files/documents/2016/12/07/sp330.pdf))</sup>
+  * "The duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom," in an environment whose temperature is **not** 0 K (-273.15&deg;C).<sup>[25](https://www.nist.gov/sites/default/files/documents/2016/12/07/sp330.pdf)</sup>
 * The [atomic clock](https://time.is/UTC): Measurement of a finite discontinuous event (quantum leap) serves as the basis of time.
 
 ![](./images/tz-24.png)
@@ -213,26 +213,27 @@ As an observer travels longitudinally, that is, east to west or vice versa, true
 
 ![](./images/tz-28.png)
 
-Listed below are various large cities, their central longitude, the UTC offset applied to calculate local time.
+<a name="table"></a>
 
-City | Longitude | UTC Offset (hours) | Population (million)
---|:--:|:--:|:--:
-Berlin | 13&deg;23'20'' E | +1 | 3.58
-Chicago | 87&deg;41'05'' W | -6 | 2.72
-Kamchatka Peninsula | 160&deg; E | +12 | 0.32
-London | 0&deg;7'39'' W | 0 | 8.14
-Los Angeles | 118&deg;15' W | -8 | 4.0
-Midway Atoll | 177&deg;20' W | -11 | 0.0
-Monrovia | 10&deg;48'5'' W | 0 | 1.0
-Moscow | 37&deg;37' E | +3 | 11.9
-New York | 70&deg;0'21'' W | -5 | 8.6
-Omsk | 73&deg;22' E | +6 | 1.2
-Paris | 2&deg;21'03'' E | +1 | 2.2
-Rio de Janeiro | 43&deg;11'47'' W | -3 | 6.3
-Saint Petersburg | 30&deg;18'31'' E | +3 | 5.0
-Tokyo | 139&deg;41' E | +9 | 9.3
-Tomsk | 84&deg;58' E | +6 | 0.5
-Warsaw | 21&deg;1' E | +1 | 1.8
+Listed below are various large cities, their central latitude and longitude, the UTC offset applied to calculate local time, and their populations.
+
+City | Latitude | Longitude | UTC Offset (hours) | Population (million)
+--|:--:|:--:|:--:|:--:
+Berlin | 51&deg;30'35'' N | 13&deg;23'20'' E | +1 | 3.58
+Chicago |41&deg;52'55'' N | 87&deg;41'05'' W | -6 | 2.72
+Kamchatka Peninsula | 56&deg;20' N | 160&deg; E | +12 | 0.32
+London | 51&deg;30'35'' N | 0&deg;7'39'' W | 0 | 8.14
+Los Angeles | 34&deg;3' N | 118&deg;15' W | -8 | 4.0
+Monrovia | 6&deg;18'2'' N | 10&deg;48'5'' W | 0 | 1.0
+Moscow | 55&deg;45'7'' N | 37&deg;37' E | +3 | 11.9
+New York | 40&deg;43'50'' N | 70&deg;0'21'' W | -5 | 8.6
+Omsk | 54&deg;59'32'' N | 73&deg;22' E | +6 | 1.2
+Paris | 48&deg;51'52'' N | 2&deg;21'03'' E | +1 | 2.2
+Rio de Janeiro | 22&deg;54'39'' S | 43&deg;11'47'' W | -3 | 6.3
+Saint Petersburg | 59&deg;57' N  | 30&deg;18'31'' E | +3 | 5.0
+Tokyo | 36&deg;39'10'' N | 139&deg;41' E | +9 | 9.3
+Tomsk | 56&deg;30' N | 84&deg;58' E | +6 | 0.5
+Warsaw | 52&deg;14'13'' N | 21&deg;1' E | +1 | 1.8
 
 > Source: Google Maps, 2018<sup>[26](https://www.google.com/maps)</sup>
 
@@ -240,9 +241,7 @@ Warsaw | 21&deg;1' E | +1 | 1.8
 
 * The Earth is a sphere.
 * The sun traverses this sphere in 23 hours 56 minutes and 4.1 seconds (23.933 hours for calculation).<sup>[27](https://plus.maths.org/content/how-long-day)</sup>
-  * This amount can be expressed as 0.25&deg;/min.
   * Each longitudinal degree represents &pm;4 minutes from the origin.
-* The [atomic clock](https://time.is/UTC) is accurate to within 0.02-0.10 seconds.<sup>[28](https://time.is/about)</sup>
 
 **Procedure**:
 
@@ -254,7 +253,7 @@ Warsaw | 21&deg;1' E | +1 | 1.8
 **Calculation**:
 
 ```sql
-SELECT longitude.tags.city AS "City", longitude.value AS "Longitude", "offset".value AS "Offset (Hours)", longitude.value*4 AS "True Offset (Minutes)", "offset".value*60 AS "UTC Offset (Minutes)", abs((longitude.value*4) - ("offset".value*60)) AS "Margin of Error (Minutes)"
+SELECT longitude.tags.city AS "City", longitude.value AS "Longitude", "offset".value AS "Offset (Hours)", abs(longitude.value*4) AS "True Offset (Minutes)", abs("offset".value*60) AS "UTC Offset (Minutes)", abs((longitude.value*4) - abs("offset".value*60)) AS "Margin of Error (Minutes)"
   FROM "longitude"
   JOIN "offset"
   WHERE longitude.tags.city != 'null'
@@ -273,7 +272,6 @@ ORDER BY "Margin of Error (Minutes)" ASC
 | Warsaw | 21.0 | 1.0| 84.0| 60.0 | 24.0
 | Moscow | 37.6 | 3.0| 150.4 | 180.0| 29.6
 | Monrovia | 10.8 | 0.0| 43.2| 0.0| 43.2
-| Midway Atoll | 177.3| 11.0 | 709.2 | 660.0| 49.2
 | Paris | 2.3| 1.0| 9.2| 60.0 | 50.8
 | Tokyo | 149.6| 9.0| 598.4 | 540.0| 58.4
 | Saint Petersburg | 30.3 | 3.0| 121.2 | 180.0| 58.8
@@ -290,42 +288,69 @@ Because Earth orbits the sun on an elliptical path and rotates about an axis who
 
 ![](./images/tz-25.png)
 
-Capital City | Country | Latitude |
-:--|:--|:--:|
-Brazzaville | Republic of the Congo | 4&deg;16'4'' S |
-Canberra | Australia | 35&deg;18'27'' S
-London | England | 51&deg;30'26'' N |
-Monrovia | Liberia | 6&deg;18'48'' N |
-Nairobi | Kenya | 1&deg;17' S |
-North Pole | N/A | 90&deg; N
-Rio de Janeiro | Brazil | 22&deg;54' S |
-Reykjavík | Iceland | 64&deg;08' N
-Stanley | Falkland Islands | 51&deg;42' S
-South Pole | N/A | 90&deg; S
-
-> Source: Google Maps, 2018<sup>[29](https://www.google.com/maps)</sup>
-
 **Assumptions**:
 
-* The validity of the [dynamical mean sun](http://www.astro.gla.ac.uk/~martin/a1notes/pos_astro/PA12.pdf): a satisfactory approximation of the varied speed at which Earth orbits the sun.
-* The validity of the [equation of time](http://info.ifpan.edu.pl/firststep/aw-works/fsII/mul/mueller.pdf): <b>*EoT =* 9.87*sin*(2*d*) - 7.53*cos*(*d*) - 1.5*sin*(*d*)</b> where *d* is the number of days since the start of the year.
+* [Local Standard Time Meridian](http://pvcdrom.pveducation.org/SUNLIGHT/SOLART.HTM): <b>*LSTM* = 15&deg; * &Delta;T<sub>GMT</sub></b>
+* The [equation of time](http://info.ifpan.edu.pl/firststep/aw-works/fsII/mul/mueller.pdf): <b>*EoT =* 9.87*sin*(2*B*) - 7.53*cos*(*B*) - 1.5*sin*(*B*)</b> where, <b>*B* = 360/365 * (*d* - 81)</b> and *d* is the number of days since the start of the year.
+* The [time correction factor](https://sailtraininginternational.org/sailtraining/the-rule-of-rating-and-time-correction-factor-explained/): <b>*TC* = 4(*Longitude* - *LSTM*) + *EoT*</b>
 * The Earth rotates about an axis at an angle of 23.45&deg;.
-  * Relative angle of declination is calculated as <b>&#948; = 23.45*sin*[360/365 * (*d* - 81)]</b> where *d* is the number of days since the start of the year.
 
 **Procedure**:
 
-* Compute the equation of time for several dates throughout the year.
-* Transform each latitudinal offset to determine margin of error from zenith of the sun.
-* Visualize data using [Desmos](https://www.desmos.com/) graphing tools.
+* Calculate LSTM and EoT values to derive time correction factor.
+* Check answers using the formula for local solar time: <b>*LST* = *LT* + *TC*/60</b>
 
-> Download the [`true-zenith-time` CSV](./resources/true-solar-time.csv) file, the parser configuration above also works with this document.
+**Calculation**:
 
-**Visualization**:
+```sql
+SELECT latitude.tags.city AS "City", latitude.value * 3.14159/180 AS "Radian Latitude", longitude.value * 3.14159/180 AS "Radian Longitude", 0.261 * "offset".value AS "LSTM", -1 * ((4 *((longitude.value * 3.14159/180) - (0.261 * "offset".value))) + (9.87 * sin(2 * ((360/365 * (1-81)) * (3.14159/180)))) - (7.53 * cos((360/365 * (1-81)) * (3.14159/180))) + (1.5 * sin((360/365 * (1-81)) * (3.14159/180))))  AS "TC"
+  FROM "latitude"
+  JOIN "longitude"
+  JOIN "offset"
+  WHERE latitude.tags.city != 'null'
+ORDER BY latitude.tags.city ASC
+```
 
-[![](./images/tz-35.png)](https://www.desmos.com/calculator/yomny7xm8g)
+| City| Radian Latitude | Radian Longitude | LSTM | TC   |
+|--|:--:|:--:|:--:|:--:|
+| Berlin  | 0.90| 0.23 | 0.26 | 6.76 |
+| Chicago | 0.73| 1.53 | 1.57 | -6.80 |
+| Kamchatka Peninsula | 0.98| 2.79 | 3.13 | 8.01 |
+| London  | 0.90| 0.00 | 0.00 | 6.65 |
+| Los Angeles | 0.60| 2.06 | 2.09 | -6.74 |
+| Monrovia| 0.11| 0.19 | 0.00 | -5.90 |
+| Moscow  | 0.97| 0.66 | 0.78 | 7.16 |
+| New York| 0.71| 1.22 | 1.30 | 6.98 |
+| Omsk| 0.96| 1.28 | 1.57 | 7.80 |
+| Paris   | 0.85| 0.04 | 0.26 | 7.53 |
+| Rio de Janeiro  | -0.40   | 0.75 | 0.78 | -6.77 |
+| Saint Petersburg| 1.05| 0.53 | 0.78 | 7.67 |
+| Tokyo   | 0.64| 2.61 | 2.35 | 5.60 |
+| Tomsk   | 0.99| 1.48 | 1.57 | 6.99 |
+| Warsaw  | 0.91| 0.37 | 0.26 | -6.23 |
 
-Open the Desmos widget and visualize the true zenith time offset for various cities listed above by substituting the value for latitude into **function 4** in the initial argument <b>(*x*/90)</b>.
+> True zenith time is calculated for 1 January 2018, substitute different days by modifying the <b>(*d* - 81)</b> expressions.
 
-> Values in the southern hemisphere must be expressed as &lt; 0.
+Comparing derived values to future values from `timeanddate.com`, margin of error is shown below.
+
+City | Derived | Recorded | Margin of Error
+--|:--:|:--:|:--:
+Berlin | 12:07 | 12:09 | 0.3%
+Chicago | 11:53 | 11:54 | 0.2%
+Kamchatka Peninsula | 12:08 | 12:28 | 2.7%
+London | 12:07 | 12:04 | 0.4%
+Los Angeles | 11:53 | 11:56 | 0.4%
+Monrovia | 11:54 | 11:46 | 1.1%
+Moscow | 12:07 | 12:13 | 0.8%
+New York | 12:07 | 11:59 | 1.1%
+Omsk | 12:08 | 12:09 | 0.1%
+Paris | 12:08 | 12:34 | 3.4%
+Rio de Janeiro | 11:53 | 11:56 | 0.4%
+Saint Petersburg | 12:08 | 12:02 | 0.8%
+Tokyo | 11:54 | 11:44 | 1.4%
+Tomsk | 12:07 | 12:23 | 2.2%
+Warsaw | 11:39 | 11:54 | 2.1%
+
+> Average Margin of Error: 0.98%
 
 <!-- markdownlint-enable MD101 -->
