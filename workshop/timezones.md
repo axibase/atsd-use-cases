@@ -331,7 +331,7 @@ ORDER BY latitude.tags.city ASC
 
 > True zenith time is calculated for 1 January 2018, substitute different days by modifying the <b>(*d* - 81)</b> expressions.
 
-Comparing derived values to future values from `timeanddate.com`, margin of error is shown below.
+Comparing derived values to future values from [`timeanddate.com`](https://www.timeanddate.com/), margin of error is shown below.
 
 City | Derived | Recorded | Margin of Error
 --|:--:|:--:|:--:
