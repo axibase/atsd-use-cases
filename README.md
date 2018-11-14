@@ -18,7 +18,7 @@ Curated time-series [dataset catalog](https://axibase.com/datasets/) from [`data
 
 Walkthrough [guides](./integrations/README.md) for ATSD integration with various IT infrastructure systems and services.
 
-![](./images/integrations-2.png)
+![](./images/integration-4.png)
 
 ## Research
 
