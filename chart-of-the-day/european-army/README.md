@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD101 -->
 
-# The Practicality of A True European Army
+# The Practicality of a True European Army
 
 [![](./images/euro-4.png)](https://apps.axibase.com/chartlab/5645f9f7#fullscreen)
 
