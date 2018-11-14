@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD101 -->
+
 # The Practicality of A True European Army
 
 [![](./images/euro-4.png)](https://apps.axibase.com/chartlab/5645f9f7#fullscreen)
@@ -14,7 +16,7 @@ The chart above visualizes the Franco-Germanic proportion of real European Union
 
 [![](./images/euro-5.png)](https://apps.axibase.com/chartlab/08965f01#fullscreen)
 
-Nonetheless, President Macron's appeal is a far cry from the rearmament of the 1930s, whereby combatant nations increased military armament production in some cases up to five times their pre-war levels.<sup>[5](https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ehr88postprint.pdf)</sup> In fact, despite nearly universal criticism, President Macron's suggestion could represent an important evolution of the current world order; European security in the hands of European nations would deliver a tangible increase in European Union autonomy and potentially reinvigorate the beaurocratic body, which some experts have already begun to eulogize.<sup>[6](https://www.hoover.org/research/why-europe-gets-no-respect)</sup>
+Nonetheless, President Macron's appeal is a far cry from the rearmament of the 1930s, whereby combatant nations increased military armament production in some cases up to five times their pre-war levels.<sup>[5](https://warwick.ac.uk/fac/soc/economics/staff/mharrison/public/ehr88postprint.pdf)</sup> In fact, despite nearly universal criticism, President Macron's suggestion could represent an important evolution of the current world order; European security in the hands of European nations would deliver a tangible increase in European Union autonomy and potentially reinvigorate the bureaucratic body, which some experts have already begun to eulogize.<sup>[6](https://www.hoover.org/research/why-europe-gets-no-respect)</sup>
 
 President Trump has made known his displeasure with the amount of NATO spending pledged by Germany, France, and other member countries;<sup>[7](https://www.reuters.com/article/us-nato-summit/trump-claims-nato-victory-after-go-it-alone-ultimatum-idUSKBN1K135H)</sup> data shows that the combined efforts of Germany and France although significantly less in absolute terms, are in fact comparable in relative terms to United States outlays.
 
@@ -35,7 +37,7 @@ Likewise, France has generally positioned itself as a war-intolerant nation: out
 > France and Germany need to increase military spending to make serious inroads towards a true European army.<br>
 Source: Combined [FRED](https://fred.stlouisfed.org/) and [World Bank](https://www.worldbank.org/) data.
 
-The charts above contrast dollar-denominated defense spending by a combined France and Germany (upper) and the United States (lower). At the moment, U.S. defense spending is around five and a half times larger in absolute terms. In order to match U.S. spending, both nations would be forced to increase defense spending a least threefold, individually. Thus, their combined output would be on the level of the United States.
+The charts above contrast dollar-denominated defense spending by a combined France and Germany (upper) and the United States (lower). At the moment, U.S. defense spending is around five and a half times larger in absolute terms. To match U.S. spending, both nations would be forced to increase defense spending a least threefold, individually. Thus, their combined output would be on the level of the United States.
 
 If the historically antagonistic German and French states could reach an understanding and foster genuine military cooperation, the balance of power could swing westward for the first time in recent memory. The neutrality of the Low Countries, specifically Belgium, has always been tied to the delimitation of France and Germany,<sup>[13](http://faculty.virginia.edu/setear/students/jcs/neutrality.htm)</sup> but an environment of integrated cooperation might eliminate the need for the *de facto* buffer states. Indeed, the additional manpower, technology, and capitol from the disproportionately productive nation could even serve to bolster French and German investment in a common defense infrastructure.
 
@@ -46,3 +48,5 @@ Not only is the European army initiative viable for defense purposes, it is like
 Indeed, much of the current United States and French military structure as well as the Supreme Allied Command of NATO demonstrate significant overlap; current Secretary of State James Mattis served in the role a decade ago and has since then been succeeded by consecutive French military officials.<sup>[16](https://act.nato.int/list-of-supreme-allied-commanders-atlantic)</sup>
 
 > <i>"The most powerful weapon on Earth is the human soul on fire."</i> Ferdinand Foch, *The Principles of War* 1903<sup>[17](https://archive.org/details/principlesofwar00foch/page/n7)</sup>
+
+<!-- markdownlint-enable MD101 -->
