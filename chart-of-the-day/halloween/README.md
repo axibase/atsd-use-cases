@@ -12,7 +12,7 @@ Federal Reserve economic metrics show that CPI value for candy and chewing gum i
 
 ## Spooky Spikes in Holiday Prices
 
-The time charts below track monthly CPI value for candy and chewing gum for the most recent three years. The maximum value is highlighted with an [`alert-expression`](https://github.com/axibase/charts/tree/master/widgets/shared#alert-expression).
+The time charts below track monthly CPI value for candy and chewing gum for the most recent three years. The maximum value is highlighted with an [`alert-expression`](https://axibase.com/docs/charts/widgets/shared#alert-expression).
 
 ![](./images/halloween-3.png)
 
@@ -22,7 +22,7 @@ Notice that the greatest value for the cost of candy and sweets always falls dur
 
 ## A Vampire's Ball
 
-Using the [`MonthlyPercentChange`](https://github.com/axibase/charts/blob/master/syntax/udf.md#examples) function from the [user-defined function](https://github.com/axibase/charts/blob/master/syntax/udf.md) library `fred.js`, the monthly percent change value for each metric is calculated.
+Using the [`MonthlyPercentChange`](https://axibase.com/docs/charts/syntax/udf.html#examples) function from the [user-defined function](https://axibase.com/docs/charts/syntax/udf.html) library `fred.js`, the monthly percent change value for each metric is calculated.
 
 ![](./images/halloween-4.png)
 

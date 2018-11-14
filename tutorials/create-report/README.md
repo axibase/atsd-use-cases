@@ -44,11 +44,11 @@ Refer to the documentation above for specific instructions about each method of 
 
 ## Data Modification
 
-[Charts](https://github.com/axibase/charts/blob/master/README.md) is a graphics library for visualizing time series data with [widgets](https://github.com/axibase/charts/blob/master/widgets/README.md). This tutorial demonstrates report creation using the [**Property Table**](https://github.com/axibase/charts/blob/master/widgets/property-table/README.md), which displays properties collected by an entity in tabular format.
+[Charts](https://axibase.com/docs/charts/) is a graphics library for visualizing time series data with [widgets](https://axibase.com/docs/charts/widgets/). This tutorial demonstrates report creation using the [**Property Table**](https://axibase.com/docs/charts/widgets/property-table/), which displays properties collected by an entity in tabular format.
 
 The report compares metric value year-on-year percent change on 1 January after a president is elected to year-on-year percent change on 1 September after a president has served almost nine months and then calculates the difference between each value for each metric for each president.
 
-These calculations require [user-defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md), a Charts feature whereby particular mathematical formulae not included in the Charts [value functions library](https://github.com/axibase/charts/blob/master/syntax/value_functions.md) are uploaded to a local ATSD server in JavaScript form and invoked within a Charts application to be used for a particular visualization. Additionally, the [Federal Reserve](https://fred.stlouisfed.org/) provides metadata which is uploaded along with series values. Rows are labeled with human-readable names (`CPI: All Items`) instead of their identification code in the FRED database (`CPIEALL`) with the underlying metadata.
+These calculations require [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html), a Charts feature whereby particular mathematical formulae not included in the Charts [value functions library](https://axibase.com/docs/charts/syntax/value_functions.html) are uploaded to a local ATSD server in JavaScript form and invoked within a Charts application to be used for a particular visualization. Additionally, the [Federal Reserve](https://fred.stlouisfed.org/) provides metadata which is uploaded along with series values. Rows are labeled with human-readable names (`CPI: All Items`) instead of their identification code in the FRED database (`CPIEALL`) with the underlying metadata.
 
 ```ls
 [configuration]
@@ -58,14 +58,14 @@ add meta = true
 
 ### Value Calculation
 
-The user-defined function configuration file [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js) includes the [`PercentChangeFromYearAgo`](https://github.com/axibase/charts/blob/master/syntax/udf.md#examples) function which is used to calculate each year-on-year change value.
+The user-defined function configuration file [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js) includes the [`PercentChangeFromYearAgo`](https://axibase.com/docs/charts/syntax/udf.html#examples) function which is used to calculate each year-on-year change value.
 
 ```ls
 [column]
 series-value = fred.PercentChangeFromYearAgo(config().alias, '@{term.baseDate}')
 ```
 
-The `series-value` setting contains placeholder syntax `@{}`; Charts iterates over a list of presidents and dates then inserts this value at each row in the finished table. The `config()` function returns a particular object from the application configuration, in this case, the [`alias`](https://github.com/axibase/charts/blob/master/widgets/shared/README.md#alias) for each series.
+The `series-value` setting contains placeholder syntax `@{}`; Charts iterates over a list of presidents and dates then inserts this value at each row in the finished table. The `config()` function returns a particular object from the application configuration, in this case, the [`alias`](https://axibase.com/docs/charts/widgets/shared#alias) for each series.
 
 ```ls
 csv terms = name,baseDate,currDate
@@ -76,7 +76,7 @@ csv terms = name,baseDate,currDate
 endcsv
 ```
 
-With [control structures](https://github.com/axibase/charts/blob/master/syntax/control-structures.md), define [lists](https://github.com/axibase/charts/blob/master/syntax/control-structures.md#list) and [loops](https://github.com/axibase/charts/blob/master/syntax/control-structures.md#for), such as the one shown above. The column `baseDate` is used in the placeholder `@{term.basedate}` where `term` is a separate variable defined in the configuration.
+With [control structures](https://axibase.com/docs/charts/syntax/control-structures.html), define [lists](https://axibase.com/docs/charts/syntax/control-structures.html#list) and [loops](https://axibase.com/docs/charts/syntax/control-structures.html#for), such as the one shown above. The column `baseDate` is used in the placeholder `@{term.basedate}` where `term` is a separate variable defined in the configuration.
 
 ```ls
 for term in terms
@@ -118,15 +118,15 @@ Charts applications support JavaScript in the **Editor** window. The leading col
 
 ## Visualization Configuration
 
-> [Charts documentation](https://github.com/axibase/charts/blob/master/README.md) contains a complete list of additional settings not demonstrated in this tutorial.
+> [Charts documentation](https://axibase.com/docs/charts/) contains a complete list of additional settings not demonstrated in this tutorial.
 
-Format the widget header with the [`header-style`](https://github.com/axibase/charts/blob/master/widgets/shared-table/README.md#header-style) setting at the `[configuration]` level for the changes to apply to the entire portal, or at the `[widget]` level to affect only specific widgets in visualization. This setting supports CSS style syntax.
+Format the widget header with the [`header-style`](https://axibase.com/docs/charts/widgets/shared-table#header-style) setting at the `[configuration]` level for the changes to apply to the entire portal, or at the `[widget]` level to affect only specific widgets in visualization. This setting supports CSS style syntax.
 
 ```ls
 header-style = background: white;display: flex;align-items: stretch;padding: 4px;width: auto;
 ```
 
-Define portal parameters using the [`height-units`](https://github.com/axibase/charts/tree/master/configuration#height-units) and [`width-units`](https://github.com/axibase/charts/tree/master/configuration#width-units) settings. Enable automatic text size formatting with the [`responsive`](https://github.com/axibase/charts/blob/master/widgets/shared-table/README.md#responsive) setting.
+Define portal parameters using the [`height-units`](https://axibase.com/docs/charts/configuration#height-units) and [`width-units`](https://axibase.com/docs/charts/configuration#width-units) settings. Enable automatic text size formatting with the [`responsive`](https://axibase.com/docs/charts/widgets/shared-table#responsive) setting.
 
 ```ls
 [configuration]
@@ -135,7 +135,7 @@ Define portal parameters using the [`height-units`](https://github.com/axibase/c
   responsive = true
 ```
 
-When a portal does not require an entire window, modify its location with [offset settings](https://github.com/axibase/charts/tree/master/configuration#layout-settings) to specify where the portal is displayed.
+When a portal does not require an entire window, modify its location with [offset settings](https://axibase.com/docs/charts/configuration#layout-settings) to specify where the portal is displayed.
 
 ```ls
 [configuration]
@@ -181,7 +181,7 @@ value = fred.Index('raw', '2017-01-20') - fred.Index('raw', '2017-04-30')
 
 [![](../../trends/images/button-new.png)](https://trends.axibase.com/81002545)
 
-The two-year report card tracks economic metrics during the previous two years and calculates the percent change during that period. Each derived value is transformed with the `PercentChangeFromYearAgo` function then checked against an [`alert-expression`](https://github.com/axibase/charts/blob/master/widgets/shared/README.md#alert-expression) and modified when that expression evaluates to `true`.
+The two-year report card tracks economic metrics during the previous two years and calculates the percent change during that period. Each derived value is transformed with the `PercentChangeFromYearAgo` function then checked against an [`alert-expression`](https://axibase.com/docs/charts/widgets/shared#alert-expression) and modified when that expression evaluates to `true`.
 
 ```ls
 [widget]
@@ -197,14 +197,14 @@ Refer to the following additional resources for more information about using any
 ### Visualization
 
 * [Trends Tutorial](../shared/trends.md)
-* [Charts documentation](https://github.com/axibase/charts/blob/master/README.md)
-* [Property Table documentation](https://github.com/axibase/charts/blob/master/widgets/property-table/README.md)
+* [Charts documentation](https://axibase.com/docs/charts)
+* [Property Table documentation](https://axibase.com/docs/charts/widgets/property-table/)
 
 ### Configuration
 
-* [User-Defined Functions](https://github.com/axibase/charts/blob/master/syntax/udf.md)
-* [Control Structures](https://github.com/axibase/charts/blob/master/syntax/control-structures.md)
-* [Alert Expressions](https://github.com/axibase/charts/blob/master/syntax/alert-expression.md)
+* [User-Defined Functions](https://axibase.com/docs/charts/syntax/udf.html)
+* [Control Structures](https://axibase.com/docs/charts/syntax/control-structures.html)
+* [Alert Expressions](https://axibase.com/docs/charts/syntax/alert-expression.html)
 
 ### Demonstration
 

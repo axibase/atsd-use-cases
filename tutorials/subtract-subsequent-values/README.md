@@ -8,7 +8,7 @@ This tutorial demonstrates this calculation using three methods:
 
 * [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html)
 * [**Data API** Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html)
-* [Charts Functions](https://github.com/axibase/charts/blob/master/README.md)
+* [Charts Functions](https://axibase.com/docs/charts/)
 
 ## Dataset
 
@@ -168,7 +168,7 @@ Omit the rate `period` parameter, or set its count to zero, to return the differ
 
 ## Charts Functions
 
-[Charts Syntax](https://github.com/axibase/charts/blob/master/README.md#axibase-charts) provides several alternatives to visualize the raw data and to perform delta calculations in the browser.
+[Charts Syntax](https://axibase.com/docs/charts/) provides several alternatives to visualize the raw data and to perform delta calculations in the browser.
 
 The `outage-tickets` dataset visualized in **ChartLab**:
 
@@ -229,7 +229,7 @@ replace-value = value - previousValue
 
 ### Derived Series Using Aliases
 
-Create a derived series using the [`previous(alias)`](https://github.com/axibase/charts/blob/master/syntax/functions.md#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
+Create a derived series using the [`previous(alias)`](https://axibase.com/docs/charts/syntax/functions.html#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
 
 ```ls
 /* raw series data */
@@ -254,4 +254,4 @@ Both methods create the same visualization.
 
 ![](./images/dc07-delta1.png)
 
-For more function examples, view [Charts Functions](https://github.com/axibase/charts/blob/master/syntax/functions.md#-functions).
+For more function examples, view [Charts Functions](https://axibase.com/docs/charts/syntax/functions.html#-functions).

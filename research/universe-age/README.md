@@ -77,7 +77,7 @@ To replicate the remaining procedure, download [ATSD](https://axibase.com/docs/a
 
 Import the required data into a local ATSD instance using the attached [CSV Parser Configuration](./resources/parser-config.xml). Refer to the [Configuration Import Tutorial](../../tutorials/shared/import-csv-parser.md) to upload configuration to ATSD.
 
-Data is visualized below using the [**ChartLab**](https://github.com/axibase/charts/blob/master/README.md#axibase-charts).
+Data is visualized below using the [**ChartLab**](https://axibase.com/docs/charts/).
 
 ![](./images/scatter-plot-1.png)
 
