@@ -2,6 +2,7 @@
 
 Interactive visualizations tracking interesting datasets from a variety of sources.
 
+1. [The Practicality of a True European Army](european-army/README.md) (November 2018)
 1. [Increased Competition Fosters Falling Airline Prices](airline-prices/README.md) (November 2018)
 1. [The Econometrics of Halloween](halloween/README.md) (October 2018)
 1. [Stag-cation: The Stagnation of Supplemental Benefits](supplemental-benefits/README.md) (October 2018)
