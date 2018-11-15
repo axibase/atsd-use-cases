@@ -2,6 +2,9 @@
 
 Interactive visualizations tracking interesting datasets from a variety of sources.
 
+<!-- markdownlint-disable MD101 -->
+
+1. [The Practicality of a True European Army](european-army/README.md) (November 2018)
 1. [Increased Competition Fosters Falling Airline Prices](airline-prices/README.md) (November 2018)
 1. [The Econometrics of Halloween](halloween/README.md) (October 2018)
 1. [Stag-cation: The Stagnation of Supplemental Benefits](supplemental-benefits/README.md) (October 2018)
@@ -29,3 +32,5 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 1. [DuckDuckGo Search Statistics](duck-duck-go/README.md) (July 2015)
 1. [Tracking Programming Language Popularity on Stack Overflow](stack-exchange/README.md) (June 2015)
 1. [AWS EC2 T2 Instances: 700 seconds of Fame](700-seconds/README.md) (May 2015)
+
+<!-- markdownlint-enable MD101 -->
