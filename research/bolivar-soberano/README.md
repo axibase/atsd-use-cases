@@ -62,7 +62,7 @@ As of 2014, Venezuela has the largest proven oil reserves in the world. This ann
 
 [![](../images/new-button.png)](https://apps.axibase.com/chartlab/95f54104)
 
-Using a [dual axis](https://github.com/axibase/charts/blob/master/widgets/time-chart/README.md) setting in [ChartLab](../../tutorials/shared/chartlab.md), global crude oil prices are shown alongside the exchange rate of the Bolívar Fuerte to United States Dollar. 2014 marked a steep decline in oil prices which may have even been related to the Venezuelan announcement of its newly proven reserves. FRED data only tracks oil prices as recently as April 2017, but even since then the price has continued to fall, with OPEC announcing on August 17, 2018 that the [overall price basket](https://www.opec.org/opec_web/en/press_room/4749.htm) for fifteen different types of crude oil stood at $70.27.
+Using a [dual axis](https://axibase.com/docs/charts/widgets/shared/#axis) setting in [ChartLab](../../tutorials/shared/chartlab.md), global crude oil prices are shown alongside the exchange rate of the Bolívar Fuerte to United States Dollar. 2014 marked a steep decline in oil prices which may have even been related to the Venezuelan announcement of its newly proven reserves. FRED data only tracks oil prices as recently as April 2017, but even since then the price has continued to fall, with OPEC announcing on August 17, 2018 that the [overall price basket](https://www.opec.org/opec_web/en/press_room/4749.htm) for fifteen different types of crude oil stood at $70.27.
 
 ## Conclusion
 

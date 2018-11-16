@@ -44,7 +44,7 @@ The final value of the `Base Performance` investment is $494.42 against the `Per
 
 ## Mathematical Functions
 
-The charts in this article track cryptocurrency prices for 2018 and transform the underlying data using [user-defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md#user-defined-functions) in ATSD and [ChartLab](../../tutorials/shared/chartlab.md). The [`fred.js`](../../tutorials/shared/trends.md#fred-library) library is a collection of mathematical functions used to transform FRED data.
+The charts in this article track cryptocurrency prices for 2018 and transform the underlying data using [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html) in ATSD and [ChartLab](../../tutorials/shared/chartlab.md). The [`fred.js`](../../tutorials/shared/trends.md#fred-library) library is a collection of mathematical functions used to transform FRED data.
 
 ### Monthly Change
 
