@@ -381,7 +381,7 @@ ORDER BY city ASC
 **Margin of Error**:
 
 City | 1 Jan Derived | 1 Jan Recorded | 1 Jan Error | 1 May Derived | 1 May Recorded | 1 May Error | 1 Sep Derived | 1 Sep Recorded | 1 Sep Error | &nbsp;| Overall Error|
---|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|--|:--|
+--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|--
 Berlin | 12:07 | 12:09 | 0.27% | 12:01 | 12:03 | 0.27% | 12:03 | 12:06 | 0.43% | &nbsp; | 0.32%
 Chicago | 11:47 | 11:54 | 0.98% | 11:52 | 11:47 | 0.70% | 11:56 | 11:50 | 0.82% | &nbsp; | 0.83%
 Kamchatka Peninsula | 12:13 | 12:28 | 2.05% | 12:08 | 12:17 | 1.24% | 12:04 | 12:20 | 2.16% | &nbsp; | 1.82%
