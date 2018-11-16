@@ -58,7 +58,7 @@ The Presidential Economic Indicators Portal features a number of syntax features
 
 ### User Defined Functions
 
-Charts applications support [user defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md),
+Charts applications support [user defined functions](https://axibase.com/docs/charts/syntax/udf.html),
 which are JavaScript files which comprise particular mathematical functions not available using typical Charts syntax.
 
 This portal uses the [`fred.js`](https://apps-chartlab.axibase.com/portal/resource/scripts/fred.js)  library to modify the index position. This modification transforms data to reflect the selected administration.
@@ -70,7 +70,7 @@ This portal uses the [`fred.js`](https://apps-chartlab.axibase.com/portal/resour
 
 ### Inline CSV
 
-The portal contains an [inline CSV](https://github.com/axibase/charts/blob/master/syntax/functions.md#csv-inline-text-mode) file to define each of the tracked economic metrics and their associated `FRED ID`. The CSV is shown here:
+The portal contains an [inline CSV](https://axibase.com/docs/charts/syntax/control-structures.html#csv) file to define each of the tracked economic metrics and their associated `FRED ID`. The CSV is shown here:
 
 ```ls
 csv metrics =
@@ -86,7 +86,7 @@ csv metrics =
 endcsv
 ```
 
-This CSV list is used to by `[dropdown]` level settings to populate the [drop-down list](https://github.com/axibase/charts/blob/master/configuration/drop-down-lists.md) of available metrics
+This CSV list is used to by `[dropdown]` level settings to populate the [drop-down list](https://axibase.com/docs/charts/configuration/drop-down-lists.html) of available metrics
 
 ```ls
 [dropdown]
@@ -99,12 +99,12 @@ This CSV list is used to by `[dropdown]` level settings to populate the [drop-do
   endfor
 ```
 
-The setting also features a [`for`](https://github.com/axibase/charts/blob/master/syntax/control-structures.md#for--endfor) statement, which is a [control structure](https://github.com/axibase/charts/blob/master/syntax/control-structures.md) that iterates over the CSV array to read each `name` and `id`. The `name` field is added to the drop-down list and the `id` is passed to the `metric` setting to refactor the visualization.
+The setting also features a [`for`](https://axibase.com/docs/charts/syntax/control-structures.html#for) statement, which is a [control structure](https://axibase.com/docs/charts/syntax/control-structures.html) that iterates over the CSV array to read each `name` and `id`. The `name` field is added to the drop-down list and the `id` is passed to the `metric` setting to refactor the visualization.
 
 ## Action Items
 
 * To begin work within the **Trends** environment, refer to the [Getting Started Tutorial](../../tutorials/shared/trends.md).
 * For more information about ATSD, or to deploy a local instance, see [ATSD Documentation](https://axibase.com/docs/atsd/).
-* For complete Charts syntax, refer to the [Charts Documentation](https://github.com/axibase/charts).
+* For complete Charts syntax, refer to the [Charts Documentation](https://axibase.com/docs/charts/).
 * To access raw datasets, append the `FRED ID` of any metric to the URL `https://fred.stlouisfed.org/series/` or use the links in the [Economic Metrics](#economic-metrics) table above.
 * To view all metrics stored in the **Trends** environment, refer to the [Reference Catalog](https://trends.axibase.com/public/reference.html).

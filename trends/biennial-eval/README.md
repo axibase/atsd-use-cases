@@ -27,7 +27,7 @@ Collected from the Federal Reserve [Economic Research](https://fred.stlouisfed.o
 value = fred.MonthlyPercentChange('payems')
 ```
 
-These [charts](https://github.com/axibase/charts/blob/master/widgets/time-chart/README.md#time-chart) display the values shown in the **Employment** table above by month and track the percent change during each interval.
+These [charts](https://axibase.com/docs/charts/widgets/time-chart/) display the values shown in the **Employment** table above by month and track the percent change during each interval.
 
 The BLS [Employment Situation Summary](https://www.bls.gov/news.release/empsit.nr0.htm) (released October 5, 2018) contains the most current public information available. The report enunciates the following trends:
 
@@ -99,7 +99,7 @@ thresholds = 0, 0.2, 1.0, 2.0
 summarize-period = 1 month
 ```
 
-The [Calendar Chart](https://github.com/axibase/charts/blob/master/widgets/calendar-chart/README.md) tracks deviation from a calculated threshold. Here, each monthly value is assigned a color based on how it compares to overall average monthly value. Refer to the legend along the top of the chart for reference. The steep increase in the effective Fed rate began in October 2016 and has continued to the present. A higher Fed rate means larger return on investment in US Treasury bonds, but has the caveat of requiring larger net interest payments by the government as well.
+The [Calendar Chart](https://axibase.com/docs/charts/widgets/calendar-chart/) tracks deviation from a calculated threshold. Here, each monthly value is assigned a color based on how it compares to overall average monthly value. Refer to the legend along the top of the chart for reference. The steep increase in the effective Fed rate began in October 2016 and has continued to the present. A higher Fed rate means larger return on investment in US Treasury bonds, but has the caveat of requiring larger net interest payments by the government as well.
 
 ## Conclusion
 

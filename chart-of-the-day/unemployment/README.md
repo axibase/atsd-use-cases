@@ -60,7 +60,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   display = false
 ```
 
-* [`value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting can define series value without `entity` or `metric`. In this case, a [user-defined function](https://github.com/axibase/charts/blob/master/syntax/udf.md) is used for inline value calculation.
+* [`value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting can define series value without `entity` or `metric`. In this case, a [user-defined function](https://axibase.com/docs/charts/syntax/udf.html) is used for inline value calculation.
 
 ```ls
 [series]

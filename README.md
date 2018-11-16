@@ -1,4 +1,4 @@
-# ATSD Use Cases
+# Introduction
 
 **Use Cases** documentation demonstrates solutions to real-world data problems using Axibase Time Series Database (ATSD) and contains in-depth guides for programmatic integration with commonly-used enterprise software systems and services, as well as tutorials for data transformation and visualizations created with ATSD.
 
@@ -18,7 +18,7 @@ Curated time-series [dataset catalog](https://axibase.com/datasets/) from [`data
 
 Walkthrough [guides](./integrations/README.md) for ATSD integration with various IT infrastructure systems and services.
 
-![](./images/integrations-2.png)
+![](./images/integration-4.png)
 
 ## Research
 

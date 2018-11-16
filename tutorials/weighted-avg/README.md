@@ -12,7 +12,7 @@ the [New York Department of Transportation](https://www.dot.ny.gov/index) is agg
 * Annually aggregating the Port Authority Cargo data would destroy the granularization that created by monthly collection over the observation period.
 * Using an average baseline calculated over the entire observation period would return results that neglected current trends because four decades worth of data would be regarded equally.
 
-With ATSD and the [Weighted Average](https://github.com/axibase/charts/blob/master/configuration/aggregators.md#aggregators)
+With ATSD and the [Weighted Average](https://axibase.com/docs/charts/configuration/aggregators.html#aggregators)
 setting, data with differing granularization is easily comparable.
 
 ## Data
@@ -54,7 +54,7 @@ The `period` is set by the user and able to be as low as millisecond granularity
 number of years. This two line syntax calculates the average of each annual input and aggregates the value to return one value
 per selected period. Additionally, this type of ad hoc modification does nothing to the underlying data.
 
-> Read detailed documentation about the `wtavg` setting and other supported [aggregation functions](https://github.com/axibase/charts/blob/master/configuration/aggregators.md#aggregators).
+> Read detailed documentation about the `wtavg` setting and other supported [aggregation functions](https://axibase.com/docs/charts/configuration/aggregators.html).
 
 ## Implementation
 
