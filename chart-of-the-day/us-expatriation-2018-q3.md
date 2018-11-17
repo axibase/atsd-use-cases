@@ -12,7 +12,7 @@ On November 16, 2018 the IRS published a [scheduled report](https://www.federalr
 
 ![](./images/expatriation_2018_q3.png)
 
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/ad0f3f03/2/)
+[![View in ChartLab](../research/images/new-button.png)](https://apps.axibase.com/chartlab/ad0f3f03/2/)
 
 ## Syntax Features
 
