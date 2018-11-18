@@ -28,8 +28,8 @@ On November 16, 2018 the IRS published a [scheduled report](https://www.federalr
 * [`time-offset`](https://axibase.com/docs/charts/widgets/shared/#time-offset) setting to add lag to the underlying series for year-on-year comparison.
 
 ```ls
-  [series]  
-    label-format = Year Ago
-    time-offset = 1 year
-    color = skyblue
+[series]  
+  label-format = Year Ago
+  time-offset = 1 year
+  color = skyblue
 ```
