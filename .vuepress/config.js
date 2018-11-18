@@ -1,7 +1,7 @@
 const githubSettings = {
     docsRepo: 'axibase/atsd-use-cases',
     editLinks: true,
-    editLinkText: 'Help us improve this page!'
+    editLinkText: 'Feedback? Comments?'
 }
 
 const topNavMenu = [
