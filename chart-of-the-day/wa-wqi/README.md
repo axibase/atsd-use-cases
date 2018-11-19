@@ -4,7 +4,7 @@
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/89c8183d/2/#fullscreen)
 
-> Use the drop-down list to examine the Top 10 or Bottom 10 testing stations, or use the [wildcard]((https://axibase.com/docs/charts/syntax/wildcards.html#wildcards)) (`*`)
+> Use the drop-down list to examine the Top 10 or Bottom 10 testing stations, or use the [wildcard](https://axibase.com/docs/charts/syntax/wildcards.html#wildcards) (`*`)
 option to view all available testing sites together.
 
 The visualization above shows the ranking of the results of the latest Water Quality Index tests performed by the State of Washington.
