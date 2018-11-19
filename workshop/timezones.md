@@ -12,6 +12,7 @@
 * [Methodology](#methodology)
   * [Apparent Solar Time](#apparent-solar-time)
   * [Mean Solar Time](#mean-solar-time)
+  * [Problem Solving](#problem-solving)
 * [Historical Time Keeping](#historical-time-keeping)
   * [Antiquity](#antiquity)
   * [Middle Ages](#middle-ages)
@@ -27,6 +28,10 @@
   * [Officiating Bodies](#officiating-bodies)
   * [True Solar Time](#true-solar-time)
   * [True Zenith Time](#true-zenith-time)
+  * [Martian Time Zones](#martian-time-zones)
+    * [Comparative Statistics](#comparative-statistics)
+    * [The Martian Day](the-martian-day)
+    * [Mars Retrograde](#mars-retrograde)
 
 <!-- markdownlint-enable MD101 -->
 
@@ -48,11 +53,12 @@ Modern time zones are standardized to Greenwich Mean Time (GMT) also called Coor
 
 ### Apparent Solar Time
 
-* Apparent solar day is derived via measurement of one complete solar cycle.
-* Used in conjunction with sidereal time, calculated from the location of the stars.
+* Solar day (24 hours) is derived via measurement of one complete solar cycle.
+* Used in conjunction with the sidereal day (23 hours 56 minutes), calculated from the location of the stars.
 * Problems:
   * Elliptical orbit of Earth around the sun.
   * Imperfect rotational axis; effects of latitude.
+  * Difference in solar and sidereal day lengths.
 
 ![](./images/tz-10.png)
 
@@ -63,6 +69,32 @@ Modern time zones are standardized to Greenwich Mean Time (GMT) also called Coor
 * The length of the mean solar day is gradually increasing each year.
 
 ![](./images/tz-13.gif)
+
+### Problem Solving
+
+Find apparent solar time (AST) at 8:00 a.m. MST on 21 July in Phoenix, AZ, which is located at 112&deg; W longitude and 33.43&deg; N latitude.
+
+**Parameters**:
+
+* Phoenix does not observe DST.
+* 21 July is day 202.
+* [Local Standard Time Meridian](http://pvcdrom.pveducation.org/SUNLIGHT/SOLART.HTM): <b>*LSTM* = 15&deg; * &Delta;T<sub>GMT</sub></b>
+* The [equation of time](http://info.ifpan.edu.pl/firststep/aw-works/fsII/mul/mueller.pdf): <b>*EoT =* 9.87<small>sin</small>(2*B*) - 7.53<small>cos</small>(*B*) - 1.5<small>sin</small>(*B*)</b> where, <b>*B* = 360&deg;/365 * (*d* - 81)</b> and *d* is the number of days since the start of the year.
+  * For these purposes, *B* = 119.342
+* The [time correction factor](https://sailtraininginternational.org/sailtraining/the-rule-of-rating-and-time-correction-factor-explained/): <b>*TC* = 4(*LSTM* - *Longitude*) + *EoT*</b>
+
+**Solution**:
+
+*EoT* = 9.87<small>sin</small>(288.384&deg;) - 7.53<small>cos</small>(119.342&deg;) - 1.5<small>sin</small>(119.342&deg;)<br>
+  = -6.05 minutes
+
+*LSTM* = 15&deg; * (112&deg;/15&deg;)<br>
+  = 105&deg;
+
+TC = 4 <small>minutes</small> * (105&deg; - 112&deg;) - 6.05<small>minutes</small><br>
+  = -34.05 <small>minutes</small>
+
+At 8:00 a.m. on 21 July, apparent solar time is 7:26 a.m.
 
 ---
 
@@ -225,11 +257,11 @@ The Age of Enlightenment (1715-1799) fostered growth in every area of human life
 * **1988**: International Organization for Standardization creates [ISO 8601](https://axibase.com/docs/atsd/shared/date-format.html) format to establish a standard expression of time and date.
 * The second: International System of Units standard unit for time.
   * "The duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom," in an environment whose temperature is **not** 0 K (-273.15&deg;C).<sup>[29](https://www.nist.gov/sites/default/files/documents/2016/12/07/sp330.pdf)</sup>
-* The [atomic clock](https://time.is/UTC): Measurement of a finite discontinuous event (quantum leap) serves as the basis of time.
+* The [atomic clock](https://time.is/UTC): measurement of a finite discontinuous event (quantum leap) serves as the basis of time.
 
 ![](./images/tz-24.png)
 
-> <b><big>The Fate of Daylight Savings Time</big></b><br>Russian Federation ceases the practice of Daylight Savings Time in 2010.<sup>[30](https://www.npr.org/templates/story/story.php?storyId=131104637)</sup><br>European Union plans to eliminate daylight savings time in the coming years.<sup>[31](https://www.bbc.com/news/world-europe-45366390)</sup><br>Most nations still observing daylight savings time are former British colonies or territories.<sup>[32](https://en.wikipedia.org/wiki/Daylight_saving_time_by_country)</sup>
+> <b><big>The Fate of Daylight Savings Time</big></b><br>Russian Federation ceases the practice of Daylight Savings Time in <b>2010</b>.<sup>[30](https://www.npr.org/templates/story/story.php?storyId=131104637)</sup><br>European Union plans to eliminate daylight savings time in the coming years.<sup>[31](https://www.bbc.com/news/world-europe-45366390)</sup><br>Most nations still observing daylight savings time are former British colonies or territories.<sup>[32](https://en.wikipedia.org/wiki/Daylight_saving_time_by_country)</sup>
 
 ---
 
@@ -243,6 +275,7 @@ Despite international cooperation in a number of practices, different components
 
 * The [Internet Assigned Numbers Authority](https://www.iana.org/) maintains the `tz` or `zoneinfo` database, which contains code and data for many representative locations around the globe. It is updated periodically to reflect changes made by political bodies to time zone boundaries, UTC offsets, and daylight-saving rules.<sup>[33](https://tools.ietf.org/html/rfc6557)</sup>
 * Historical time zones are recorded from 1 June, 1970 (Unix epoch) for the entire planet, as well as other celestial bodies.
+* Pre-1970 time zones are recorded on a best-effort basis.
 
   ![](./images/tz-40.png)
 
@@ -334,7 +367,7 @@ Because Earth orbits the sun on an elliptical path and rotates about an axis who
 **Assumptions**:
 
 * [Local Standard Time Meridian](http://pvcdrom.pveducation.org/SUNLIGHT/SOLART.HTM): <b>*LSTM* = 15&deg; * &Delta;T<sub>GMT</sub></b>
-* The [equation of time](http://info.ifpan.edu.pl/firststep/aw-works/fsII/mul/mueller.pdf): <b>*EoT =* 9.87*sin*(2*B*) - 7.53*cos*(*B*) - 1.5*sin*(*B*)</b> where, <b>*B* = 360/365 * (*d* - 81)</b> and *d* is the number of days since the start of the year.
+* The [equation of time](http://info.ifpan.edu.pl/firststep/aw-works/fsII/mul/mueller.pdf): <b>*EoT =* 9.87<small>sin</small>(2*B*) - 7.53<small>cos</small>(*B*) - 1.5<small>sin</small>(*B*)</b> where, <b>*B* = 360&deg;/365 * (*d* - 81)</b> and *d* is the number of days since the start of the year.
 * The [time correction factor](https://sailtraininginternational.org/sailtraining/the-rule-of-rating-and-time-correction-factor-explained/): <b>*TC* = 4(*Longitude* - *LSTM*) + *EoT*</b>
 * The Earth rotates about an axis at an angle of 23.45&deg;.
 
@@ -394,3 +427,57 @@ Warsaw | 11:54 | 11:54 | 0.00% | 12:25 | 12:33 | 1.01% | 12:33 | 12:36 | 0.43% |
 1 January: 0.48%<br>1 May: 0.52%<br>1 Sep: 0.57%<br>Overall: 0.52%<br><sup>^</sup>Does not include <b>Kamchatka Peninsula</b> data.
 
 <!-- markdownlint-enable MD101 -->
+
+### Martian Time Zones
+
+[Mars](https://mars.nasa.gov/#red_planet/0), pictured below, is the fourth of eight planets in our solar system and among the most similar to Earth.<sup>[35](http://curious.astro.cornell.edu/about-us/63-our-solar-system/planets-and-dwarf-planets/comparisons-with-earth/264-which-planet-is-most-similar-to-earth-intermediate)</sup>
+
+![](./images/tz-53.png)
+
+* Coordinated Mars Time (MTC) is a proposed Martian derivative of UTC along the prime meridian proposed by German astronomers Wilhelm Beer and Johann Heinrich Mädler in **1830**.<sup>[36](https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA03207)</sup>
+
+#### Comparative Statistics
+
+| &nbsp; | Earth | Mars |
+|--|--|--|
+Angle of Rotation | 23.5&deg; | 25.2&deg;
+Diameter | 12,742 km | 6,787 km |
+Length of Day | 24 hours | 24 hours 39 minutes (24.655 for calculations)|
+Orbital Period | 365 days | 687 days
+Average Distance from the Sun | 149.6 * 10<sup>6</sup> km (1 AU) | 1.524 AU
+Highest Point on Surface | 6,263 m | 24,000 m
+
+> Source: NASA [Jet Propulsion Lab](https://pds.jpl.nasa.gov/planets/special/mars.htm).
+
+* The [Darian System](http://ops-alaska.com/time/gangale_converter/calendar_clock.htm), established by American aerospace engineer Thomas Gangale, is the most widely used Martian calendar.
+* Due to Mars' longer orbital path and period, the Martian calendar is 22 months long.
+
+![](./images/tz-52.png)
+
+> A sol is the duration of a solar day on Mars: 24 hours 39 minutes and 35.244 seconds.<sup>[37](https://www.jpl.nasa.gov/news/fact_sheets/viking.pdf)</sup><br>Adopted during the [Viking Lander](https://mars.nasa.gov/programmissions/missions/past/viking/) missions.
+
+* Each longitudinal degree represents &pm; 4.11 minutes from the origin.
+
+![](./images/tz-55.png)
+
+> Source: University of Texas, Richard Fitzpatrick.<sup>[38](http://farside.ph.utexas.edu/Books/Syntaxis/Almagest/node37.html)</sup>
+
+* Mars' severe axis of rotation, and its asynchronous orbit create a distorted version of the Equation of Time function.
+* Longer orbital path as well as angle of rotation increases the amount of time by which solar days differentiate throughout the year.
+
+#### The Martian Day
+
+* The diameter of Earth is roughly 187% that of Mars, but sidereal and solar days only differ by 2%.
+  * Within our solar system, planetary days range from 10 (Jupiter) to 5832 (Venus) hours.
+* This similarity is explained by the culmination of billions of years, billions of events, and in the end: coincidence.
+  * Mars and Earth are different sizes.
+  * Mars and Earth have a different number of moons (Mars has two).<sup>[39](https://solarsystem.nasa.gov/moons/mars-moons/overview/?page=0&per_page=40&order=name+asc&search=&condition_1=6%3Aparent_id&condition_2=moon%3Abody_type%3Ailike)</sup>
+  * Mars and Earth are dramatically different distances from the sun.
+
+#### Mars Retrograde
+
+![](./images/tz-57.png)
+
+> Mars retrograde, visualized by position.<br>Source: [NASA Mars Expedition](https://mars.nasa.gov/).
+
+* Biennial event whereby the position of Mars in the night sky moves from east to west, caused by relative differences in planetary orbits.<sup>[40](https://mars.nasa.gov/allaboutmars/nightsky/retrograde/)</sup>
