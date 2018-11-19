@@ -75,7 +75,7 @@ The plotly visualization above is replicated in **ChartLab** below. **ChartLab**
 
 [![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/ee379926)
 
-Sort the dataset by location or fuel type and easily navigate through the entire dataset using [`[dropdown]`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/) settings to create variable data inputs.
+Sort the dataset by location or fuel type and easily navigate through the entire dataset using [`[dropdown]`](https://axibase.com/docs/charts/configuration/drop-down-lists.html#drop-down-lists) settings to create variable data inputs.
 
 ### Hilo Fuel Prices (All Fuel Types)
 
@@ -92,16 +92,16 @@ Create custom portals using the example portal above as a template. Change or di
 ### Recreate Hilo Fuel Prices Visualization
 
 1. Open the Fuel Portal above.
-1. Define the `county` and `fuel` tags. Use **Hilo** for county and [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/wildcards/) `*` for fuel to select all types.
+1. Define the `county` and `fuel` tags. Use **Hilo** for county and [wildcard](https://axibase.com/docs/charts/syntax/wildcards.html#wildcards) `*` for fuel to select all types.
 1. Click **Run** to render the visualization.
 
 ![Figure 13](./images/Figure13.png)
 
 [![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/06a95d7c)
 
-### Diesel [Histogram](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/)
+### Diesel Histogram
 
-1. In the **Editor Window** define the `county` and `fuel` tags as `Hilo` and `diesel` respectively.
+1. In the **Editor** window specify `county` and `fuel` tags as `Hilo` and `diesel`, respectively.
 1. To calculate the difference between Hilo and mainland diesel prices, create a second series. Define the `county` tag as `US`.
 
   ![Figure 14](./images/Figure-14.png)
@@ -124,7 +124,7 @@ Make additional optional changes to fine tune the visualization:
 
 [![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/aff8779b)
 
-> Read [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) for an exhaustive list of available settings.
+> Read [Charts Documentation](https://axibase.com/docs/charts/) for an exhaustive list of available settings.
 
 ### Combining Datasets
 
@@ -154,7 +154,7 @@ Compare Diesel prices in Honolulu, Wailuku, and Hilo with residential electricit
 
 [![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/b1046948)
 
-> For more information about generating custom portals, see the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/).
+> For more information about generating custom portals, see the [Charts Documentation](https://axibase.com/docs/charts/).
 
 ### Additional Datasets
 

@@ -122,13 +122,13 @@ The syntax for this drop-down list is shown below:
   endfor
 ```
 
-> For more information about the above syntax see the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/).
+> For more information about the above syntax refer to [Charts Documentation](https://axibase.com/docs/charts/configuration/drop-down-lists.html#drop-down-lists).
 
 By modifying any of the dates contained in the `keyDates` list above, the user can select any date to set as the
 baseline value, and the `value` equation contained in the `[option]` portion of the `[dropdown]` configuration above uses
 a simple formula to establish the new index.
 
-The `on-change` setting defines this newly calculated series, and is explained piecewise below:
+The [`on-change`](https://axibase.com/docs/charts/configuration/drop-down-lists.html#on-change) setting defines this newly calculated series, and is explained piecewise below:
 
 * `widget.config.series[0]` selects the series to be replaced. Series are indexed beginning with `0` and increasing by a single step for each additional series (`0`,`1`,`2`,`3`....). There is only one underlying series in this visualization.
 * `value = this.value` assigns a user-defined value, the option selected in the drop-down list, as the value for the series defined in the the `widget.config` portion of the script. `this` defines the specific object to be modified, in this case the drop-down list.
@@ -158,7 +158,7 @@ Underlying Formula:
 value = delta("cpi", "1 month")
 ```
 
-* This setting uses the [`delta`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) function.
+* This setting uses the [`delta`](https://axibase.com/docs/charts/syntax/extended-aggregators.html#delta) function.
 
 Return to the [Index](#index)
 
@@ -184,7 +184,7 @@ Underlying Formula:
 value = var v = value('cpi'); var p = value('prev_cpi'); if(p != null && v != null) return v - p;
 ```
 
-* This setting uses a second underlying series to select values of the Consumer Price Index from one year ago using a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting and comparing the data to the current year values.
+* This setting uses a second underlying series to select values of the Consumer Price Index from one year ago using a [`time-offset`](https://axibase.com/docs/charts/widgets/time-chart/#time-offset-setting) setting and comparing the data to the current year values.
 
 Return to the [Index](#index)
 

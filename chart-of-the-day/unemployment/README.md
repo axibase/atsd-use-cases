@@ -51,7 +51,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   style = stroke-width:3
 ```
 
-* [`format`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/format-settings/) setting is used to display numerical information without insignificant figures.
+* [`format`](https://axibase.com/docs/charts/syntax/format-settings.html#format-settings) setting is used to display numerical information without insignificant figures.
 
 ```ls
 [series]
@@ -60,7 +60,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   display = false
 ```
 
-* [`value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting can define series value without `entity` or `metric`. In this case, a [user-defined function](https://axibase.com/docs/charts/syntax/udf.html) is used for inline value calculation.
+* [`value`](https://axibase.com/docs/charts/syntax/value_functions.html#value-functions) setting can define series value without `entity` or `metric`. In this case, a [user-defined function](https://axibase.com/docs/charts/syntax/udf.html) is used for inline value calculation.
 
 ```ls
 [series]
@@ -88,7 +88,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   alert-style = if (alert < 0.05) return 'color: green'
 ```
 
-* [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) may be created and customized using `alert-style` setting, where
+* [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions) may be created and customized using `alert-style` setting, where
 
 ```ls
 [threshold]
@@ -105,7 +105,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
    label-format = Full Employment Threshold
 ```
 
-* `[threshold]` series are used to define upper and lower limits for particular values.
+* [`[threshold]`](https://axibase.com/docs/charts/widgets/time-chart/#threshold-settings) settings are used to define upper and lower limits for particular values.
 
 * For full configuration settings open the **Trends** visualization [above](#the-relationship-between-gdp-and-unemployment).
 
@@ -117,15 +117,13 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   style = opacity: 0.25
 ```
 
-* [`axis`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting is used to enable dual-axis functionality when comparing two series of different orders of magnitude.
+* [`axis`](https://axibase.com/docs/charts/widgets/shared/#axis) setting is used to enable dual-axis functionality when comparing two series of different orders of magnitude.
 
 ## Resources
 
-The **Trends** service relies on ATSD for data-storage and processing tasks. All of the data from this article is stored in the publicly accessible instance of the **Trends** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) or any of the configuration settings explained in this article.
+The **Trends** service relies on ATSD for data-storage and processing tasks. All of the data from this article is stored in the publicly accessible instance of the **Trends** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/docs/charts/) or any of the configuration settings explained in this article.
 
 To create your own chart using the existing data, open an empty **Trends** [instance](https://trends.axibase.com/).
-
-For questions, technical support, or to suggest a dataset that you would like to see visualized, visit the Axibase GitHub repository and [raise an issue](https://github.com/axibase/atsd-use-cases/issues).
 
 Source data used for this article is linked here:
 

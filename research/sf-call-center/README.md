@@ -206,7 +206,7 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "C
 
 Adjusted average wait time: `33.7` seconds
 
-The training data is visualized below with an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/alert-expressions/)
+The training data is visualized below with an [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions)
 included to highlight those months where the call abandonment rate exceeded `1.56%`.
 
 ![](./images/sfc-009.png)
@@ -261,7 +261,7 @@ SELECT datetime AS "Date", car.value AS "Call Abandonment Rate", cat.value AS "C
 
 Adjusted average wait time: **15.5 seconds**
 
-The training data is visualized below with an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/alert-expressions/)
+The training data is visualized below with an [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions)
 included to highlight those months where the call abandonment rate did not exceed `1.00%`.
 
 ![](./images/sfc-010.png)

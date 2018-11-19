@@ -72,7 +72,7 @@ Explore the CAA dataset in the portal below. Filter data using the three drop-do
 
 ## Creating Custom Portals
 
-Create additional portals using the example as a template. **ChartLab** supports complete customization for all visualizations. See the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for complete instructions.
+Create additional portals using the example as a template. **ChartLab** supports complete customization for all visualizations. See [Charts Documentation](https://axibase.com/docs/charts/) for complete instructions.
 
 ### Year-On-Year Domestic Traffic
 
@@ -97,12 +97,12 @@ Create additional portals using the example as a template. **ChartLab** supports
     ![Figure 10](./images/matched-metrics.png)
 
 1. Modify the `metric` setting to designate the `air-pax-by-type` metric.
-1. Use the settings `starttime = current_year` and `endtime = next_year` to define the timespan.
+1. Use the settings `start-time = current_year` and `end-time = next_year` to define the timespan.
 1. For total domestic travel, enter `group-statistic = sum` and change mode from `column-stack` to `column`. The `group-statistic = sum` command calculates the total number of passengers for all airports in a given month, and the `column` shows the total number of passengers together as one column per month.
 
     ![Figure 11](./images/Figure11.png)
 
-1. To track total domestic value select all airport and group names.  Create a new `[tags]` configuration group under `[widget]` and enter `airport_name = *` and `group_name = *` (Asterisk `*` is one of the supported [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/wildcards/) symbols in the Charts API).
+1. To track total domestic value select all airport and group names.  Create a new `[tags]` configuration group under `[widget]` and enter `airport_name = *` and `group_name = *` (Asterisk `*` is one of the supported [wildcard](https://axibase.com/docs/charts/syntax/wildcards.html#wildcards) symbols in Charts API).
 1. To display data for 2016, create a new `[series]` and enter `label = current year`.
 1. To display data for 2015, create a new `[series]` and enter `label = previous year`. Enter `time-offset = 1 year` and `color = orange`. The `time-offset = 1 year` command shifts historical data by the specific lag to the current time. In this case, data for the year 2015 is displayed as data for 2016.
 
@@ -114,10 +114,10 @@ Create additional portals using the example as a template. **ChartLab** supports
 
 [![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/cca64be9)
 
-### [Calendar Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/calendar-chart-widget/)
+### Calendar Chart
 
-1. Open a [blank](https://apps.axibase.com/chartlab) **ChartLab** instance.
-1. Set **Data Source** to **ATSD** and select **calendar** from the **Widget** drop-down list.
+1. Open a [blank](https://apps.axibase.com/chartlab) **ChartLab** instance and specify `type = calendar` to create a [Calendar Chart](https://axibase.com/docs/charts/widgets/calendar-chart/#calendar-chart) or select **Calendar** from the **Widget** drop-down list.
+1. Set **Data Source** to **ATSD**.
 1. Delete the section of the configuration as shown in the image below.
 
     ![Figure 14](./images/Figure14.png)
@@ -126,7 +126,7 @@ Create additional portals using the example as a template. **ChartLab** supports
 1. To display international passenger figures for all available UK airports, create a **[tags]** level configuration. Under the heading, select all airports using the wildcard setting `airport_name = *`.
 1. Under the `[configuration]` heading, define `timezone = UTC`.
 1. Under the `[widget]` heading, delete `timespan = 3 hour`.
-1. To define a new timespan, enter `starttime = 2015-01-01T00:00:00z` and `endtime = current_month`.
+1. To define a new timespan, enter `start-time = 2015-01-01T00:00:00z` and `end-time = current_month`.
 1. Modify the `summarize-period` setting to `1 month`.
 1. Use the `label-format = tags.airport_name` setting to assign label names based on metadata information stored by ATSD in the underlying data.
 
@@ -151,7 +151,7 @@ Additionally, observe outliers for Scatsta and Wick John O Groats for the high t
 Use `[widget]` level settings to modify the nature of the visualization without affecting the underlying data.
 
 1. Under the `[widget]` heading, change the `type` setting from `calendar` to `pie` and define additional settings: `summarize-period = 1 month` and `color-range = blue`.
-1. Change `starttime = 2015-01-01T00:00:00Z` to `starttime = current year`.
+1. Change `start-time = 2015-01-01T00:00:00Z` to `start-time = current year`.
 1. Apply a limit settings using a `display` parameter: `display = value > top(15)` limits the visualization to contain on the top 15 results.
 1. To show a legend with the figure, enter `legend-position = top`.
 1. To display numeric values with the figure, enter `series-labels = connected`.
@@ -164,7 +164,7 @@ Use `[widget]` level settings to modify the nature of the visualization without 
 
 ### Passenger Traffic Distribution
 
-To show passenger traffic distribution between different UK airports for a given time period use the [Graph Widget](https://axibase.com/products/axibase-time-series-database/visualization/widgets/graph-widget/). This visualization tracks a base airport in relation to all associated destination airports, connected by flight path lines going from the base airport to airport `x`, and from airport `x` back to the base airport.
+To show passenger traffic distribution between different UK airports for a given time period use the [Graph Widget](https://axibase.com/docs/charts/widgets/graph/). This visualization tracks a base airport in relation to all associated destination airports, connected by flight path lines going from the base airport to airport `x`, and from airport `x` back to the base airport.
 
 In the example below, Heathrow is used as the base airport in relation to available flight paths to airports across the UK for May 2016. The heavier the flight paths, the greater the traffic between the two associated airports. The CAA dataset for this figure can be found on [`caa.co.uk`](https://www.caa.co.uk/uploadedFiles/CAA/Content/Standard_Content/Data_and_analysis/Datasets/Airport_stats/Airport_data_2016_05/Table_12_3_Dom_Air_Pax_Route_Analysis_by_Each_Reporting_Airport_PDF.pdf).
 

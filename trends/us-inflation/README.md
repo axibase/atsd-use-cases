@@ -22,13 +22,13 @@ Naturally, the ideal level of inflation is somewhere between these two extremes;
 
 ## US Inflation
 
-The chart above tracks inflation for the United States for a two-decade period beginning in 2000 and uses `alert-expression` and `threshold` settings to highlight periods outside of the user-defined range as well as to overlay percentile statistics.
+The chart above tracks inflation for the United States for a two-decade period beginning in 2000 and uses [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions) and [threshold settings](https://axibase.com/docs/charts/widgets/time-chart/#threshold-settings) to highlight periods outside of the user-defined range as well as to overlay percentile statistics.
 
 The `alert-expression` specifies a range of observed inflation of 0.5 to 4.0 percent. Values outside of this range are filled with red and blue colors respectively.
 
 The `threshold` sections calculate and display top and bottom deciles for the most recent 10-year period.
 
-The chart is created using the declarative [graphics syntax](https://axibase.com/products/axibase-time-series-database/visualization/) implemented in the [Axibase Time Series Database](https://axibase.com/products/axibase-time-series-database).
+The chart is created using the declarative [Charts syntax](https://axibase.com/docs/charts/) and [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
 Currently, the stated target inflation level of the Federal Reserve is around 2%. Fed Chairman Jerome Powell [has claimed](https://www.bloomberg.com/news/articles/2018-04-06/who-needs-an-economics-ph-d-as-powell-unravels-inflation-riddle) that online-only retailers like Amazon and others have contributed to keeping inflation levels down because of their ability to completely streamline their business models. Not exactly a criticism, but certainly not the kind of glowing praise Jeff Bezos et al are used to receiving from Obama-era policy makers.
 
@@ -97,9 +97,9 @@ The configuration for the above chart is shown here:
 
 There are five series in this configuration, defined by their `alias` setting:
 
-* **s-1**: United States Experimental CPI value for all items, sourced from the United States Federal Reserve [FRED API](https://fred.stlouisfed.org/series/CPIEALL). This series has a `display = false` expression to hide the series in final version of the visualization but may still be used for deriving a new series. When displayed, the series is aligned to the right axis using a [dual-axis](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting, which is helpful when visualizing series with dramatically different orders of magnitude.
+* **s-1**: United States Experimental CPI value for all items, sourced from the United States Federal Reserve [FRED API](https://fred.stlouisfed.org/series/CPIEALL). This series has a `display = false` expression to hide the series in final version of the visualization but may still be used for deriving a new series. When displayed, the series is aligned to the right axis using a [dual-axis](https://axibase.com/docs/charts/widgets/shared/#axis) setting, which is helpful when visualizing series with dramatically different orders of magnitude.
 
-* **s-2**: A derived series which uses a collection of functions implemented in the `fred.js` library to calculate percent change from a year ago. This is a set of [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html) and must be imported using the `import fred = fred.js` expression at the **[configuration]** level. This functionality may be extended with built-in JavaScript [`Math`](../../tutorials/calculated-values/README.md) functions, which are supported in **Trends** charts. An `alert-expression` is defined for this series. Wherever the condition is satisfied, the bar corresponding to the date of the alert is modified with `alert-style`, in this case, a specific color.
+* **s-2**: A derived series which uses a collection of functions implemented in the `fred.js` library to calculate percent change from a year ago. This is a set of [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html) and must be imported using the `import fred = fred.js` expression at the **[configuration]** level. This functionality may be extended with JavaScript [`Math`](../../tutorials/calculated-values/README.md) functions, which are supported in **Trends** charts. An `alert-expression` is defined for this series. Wherever the condition is satisfied, the bar corresponding to the date of the alert is modified with `alert-style`, in this case, a specific color.
 
 * **t-1**: The upper-limit threshold is defined with a `value` setting, `value = percentile(90, 's-2', '10 year')`, where the first argument is the percentile, the second argument is the series from which the value is calculated, and the third is the time period for applying the statistic.
 
@@ -107,4 +107,4 @@ There are five series in this configuration, defined by their `alias` setting:
 
 * **t-3**: The target inflation level of the Fed is defined similarly to **t-1** and **t-2**
 
-Complete Charts documentation may be found [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+> For more information refer to [Charts Documentation](https://axibase.com/docs/charts/).

@@ -4,7 +4,7 @@
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/89c8183d/2/#fullscreen)
 
-> Use the drop-down list to examine the Top 10 or Bottom 10 testing stations, or use the Wildcard ([`*`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/))
+> Use the drop-down list to examine the Top 10 or Bottom 10 testing stations, or use the [wildcard](https://axibase.com/docs/charts/syntax/wildcards.html#wildcards) (`*`)
 option to view all available testing sites together.
 
 The visualization above shows the ranking of the results of the latest Water Quality Index tests performed by the State of Washington.
@@ -36,9 +36,9 @@ conversions to qualitative words have also been provided below:
 | 25-50 | Bad |
 | 0-25 | Very Bad |
 
->More information about the Water Quality Index, its methodology, or metrics, can be found [here](https://www.water-research.net/)
+>More information about the Water Quality Index, its methodology, or metrics, refer to guidelines from [Water Research Center](https://www.water-research.net/).
 
-Use the [ChartLab](https://apps.axibase.com/chartlab) visualization below, and the drop-down lists at the top of the screen to choose the metric, and compare
+Use the [ChartLab](https://axibase.com/use-cases/tutorials/shared/chartlab.html) visualization below, and the drop-down lists at the top of the screen to choose the metric, and compare
 the Top 10, Top 20, or Top 30, Bottom 10, Bottom 20, or Bottom 30 testing sites, or use the Wildcard option to view all
 available testing sites together.
 
@@ -101,5 +101,4 @@ Lowest Water Quality Test Sites
 
 ![](./images/WQI_Map.png)
 
-Find your favorite waterway in the data above, or discover a new one and enjoy all the natural beauty
-that Washington has to offer.
+Find your favorite waterway in the data above, or discover a new one and enjoy all the natural beauty that Washington has to offer.

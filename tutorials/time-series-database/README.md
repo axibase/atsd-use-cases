@@ -25,13 +25,13 @@ With ATSD you do not have to stage a database, design table schema, provision an
 
 The built-in visualization also allows you to combine wildcards, aggregators, and simple control functions to build a fairly complex report in less than 50 lines:
 
-* [`for/endfor` loop](https://axibase.com/products/axibase-time-series-database/visualization/widgets/control-structures): create a set of similar widgets for different metrics
-* [inheritance](https://axibase.com/products/axibase-time-series-database/visualization/widgets/inheritance): apply similar settings to all widgets
-* [group-statistics](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/): merge multiple series
-* [group-period](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/): aggregate data by month
-* [`endtime`](https://axibase.com/products/axibase-time-series-database/visualization/end-time/): syntax to align start/end times to calendar units
-* [offset](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/): setting to overlay data from previous comparable intervals onto one chart
-* [layout settings](https://github.com/axibase/atsd/blob/master/portals/portal-settings.md#layout): arrange, style, and format graphs
+* [`for/endfor` loop](https://axibase.com/docs/charts/syntax/control-structures.html#for): create a set of similar widgets for different metrics
+* [inheritance](https://axibase.com/docs/charts/configuration/inheritance.html#inheritance): apply similar settings to all widgets
+* [`group-statistic`](https://axibase.com/docs/charts/widgets/shared/#group-statistic): merge multiple series
+* [`group-period`](https://axibase.com/docs/charts/widgets/shared/#group-period): aggregate data by month
+* [`end-time`](https://axibase.com/docs/charts/widgets/shared/#end-time): syntax to align start/end times to calendar units
+* [`time-offset`](https://axibase.com/docs/charts/widgets/shared/#time-offset): setting to overlay data from previous comparable intervals onto one chart
+* [layout settings](https://axibase.com/docs/atsd/portals/portal-settings.html#portal-settings): arrange, style, and format graphs
 
 Imagine the time and effort required using traditional reporting tools.
 
