@@ -96,6 +96,8 @@ TC = 4 <small>minutes</small> * (105&deg; - 112&deg;) - 6.05<small>minutes</smal
 
 At 8:00 a.m. on 21 July, apparent solar time is 7:26 a.m.
 
+> Refer to [Applications](#applications) for additional calculations which relate to apparent solar time and local time.
+
 ---
 
 ## Historical Time Keeping
@@ -265,7 +267,7 @@ The Age of Enlightenment (1715-1799) fostered growth in every area of human life
 
 ---
 
-## Application
+## Applications
 
 ### Officiating Bodies
 
