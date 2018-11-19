@@ -24,7 +24,7 @@
   * [International Demarcation](#international-demarcation)
   * [Daylight Savings Time](#daylight-savings-time)
   * [Information Age](#information-age)
-* [Application](#application)
+* [Applications](#applications)
   * [Officiating Bodies](#officiating-bodies)
   * [True Solar Time](#true-solar-time)
   * [True Zenith Time](#true-zenith-time)
