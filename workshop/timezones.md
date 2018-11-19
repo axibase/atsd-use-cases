@@ -30,7 +30,7 @@
   * [True Zenith Time](#true-zenith-time)
   * [Martian Time Zones](#martian-time-zones)
     * [Comparative Statistics](#comparative-statistics)
-    * [The Martian Day](the-martian-day)
+    * [The Martian Day](#the-martian-day)
     * [Mars Retrograde](#mars-retrograde)
 
 <!-- markdownlint-enable MD101 -->
