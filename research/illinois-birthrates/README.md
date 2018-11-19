@@ -566,7 +566,9 @@ which can change quite quickly and sometimes unpredictably.
 
 ## Appendix
 
-### Creating a [drop-down list](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/) in [ChartLab](https://apps.axibase.com/chartlab/6402f01c)
+### Creating a Drop-Down List
+
+> For a complete walkthrough, refer to [Drop-Down Lists](https://axibase.com/docs/charts/configuration/drop-down-lists.html#drop-down-lists).
 
 Using the below chart as an example:
 
@@ -577,8 +579,8 @@ And looking at lines 22 - 48 in the Editor:
 ![](./images/ILL13.png)
 
 The `LIST` Setting is used to declare a specific list, in this case, the various
-years of included in the data and the [`[DROPDOWN]`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/dropdown/)
-clause is used to declare the functionality of the menu itself.
+years of included in the data and the [`[dropdown]`](https://axibase.com/docs/charts/configuration/drop-down-lists.html#drop-down-lists)
+heading is used to declare the functionality of the menu itself.
 
 ## Action Items
 

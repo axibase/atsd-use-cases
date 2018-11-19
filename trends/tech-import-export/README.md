@@ -22,11 +22,11 @@ This visualization tracks the growing divide in advanced technologies imported i
 
 [![](../images/button-new.png)](https://trends.axibase.com/31b5a64e#fullscreen)
 
-This visualization uses `alias` settings to capture raw data and `value` settings to create new calculated series. Periods with a trade deficit are highlighted in red using an `alert-expression`. For detailed information about syntax in the **Trends** environment, see [Visualization Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+This visualization uses `alias` settings to capture raw data and `value` settings to create new calculated series. Periods with a trade deficit are highlighted in red using an `alert-expression`. For detailed information about syntax in the **Trends** environment, see [Charts Documentation](https://axibase.com/docs/charts/).
 
 ## Tracking the Growth in Imports Against the Decline in Exports
 
-**Trends** visualization service supports [user-defined functions](../../tutorials/shared/trends.md#user-defined-functions) for ad hoc data transformations that may be performed inline without modifying the underlying data stored in ATSD.
+**Trends** visualization service supports [user-defined functions](../../tutorials/shared/trends.md#user-defined-functions) for *ad hoc* data transformations that may be performed without modifying the underlying data stored in ATSD.
 
 ### `fred.js` Library
 

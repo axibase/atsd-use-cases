@@ -4,7 +4,7 @@
 
 Raw data alone rarely contains enough information to answer meaningful questions. ATSD supports on the fly calculation in [**SQL Console**](https://axibase.com/docs/atsd/sql/) and [Charts](https://axibase.com/docs/charts/) services.
 
-This article describes using the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) in [**ChartLab**](../shared/chartlab.md) and [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function in **SQL Console** to calculate percent change for a given dataset.
+This article describes using the [`replace-value`](https://axibase.com/docs/charts/widgets/shared/#replace-value) in [**ChartLab**](../shared/chartlab.md) and [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function in **SQL Console** to calculate percent change for a given dataset.
 
 ## Data
 
@@ -100,7 +100,7 @@ Use the `replace-value` setting to apply the same calculation in **ChartLab**. O
 replace-value = (value/previousValue-1)*100
 ```
 
-Track positive debt growth with an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-14).
+Track positive debt growth with an [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions).
 
 ![](./images/acv-003.png)
 

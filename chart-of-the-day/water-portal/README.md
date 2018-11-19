@@ -49,7 +49,7 @@ The same 3-year period wrecked havoc on Bidwell Marina located on Lake Oroville 
 
 Despite heavy rainfall which sparked the [Oroville Dam crisis](../../research/oroville-dam/README.md), whereby the main and emergency spillways of the dam were heavily damaged, prompting almost 200 thousand citizens to be evacuated by local authorities,  water levels have continued to decline in Lake Oroville.
 
-To compensate for the increased rainfall, use an [aggregation function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) to smooth the trend lines. Each marker denotes the user-defined period of `1 week`.
+To compensate for the increased rainfall, use an [aggregation function](https://axibase.com/docs/charts/configuration/aggregators.html#aggregators) to smooth the trend lines. Each marker denotes the user-defined period of `1 week`.
 
 ```ls
 [widget]

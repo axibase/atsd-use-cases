@@ -72,7 +72,7 @@ Consider the case of CPU utilization where you need to display hourly CPU averag
 
 Consider the above example. Notice how average for the last hour spikes from 5% to 23% and back within a matter of several minutes. This can raise false positive alerts, particularly if the underlying metric is collected at high frequency and exhibits significant variance.
 
-The solution is to implement a `moving-average` setting, which controls how the aggregate for the most recent period is calculated. If `moving-average` is enabled, the last period is computed as a sliding window. The end of the sliding window is equal to last sample time, and the length of the window equals aggregation period. This allows you to smooth aggregate values displayed at the beginning of the period. This [setting](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#settings) is useful and enabled by default.
+The solution is to implement a [`moving-average`](https://axibase.com/docs/charts/widgets/time-chart/#moving-average) setting, which controls how the aggregate for the most recent period is calculated. If `moving-average` is enabled, the last period is computed as a sliding window. The end of the sliding window is equal to last sample time, and the length of the window equals aggregation period. This allows you to smooth aggregate values displayed at the beginning of the period.
 
 [ChartLab](../shared/chartlab.md) is a data visualization service which uses ATSD for data monitoring and storage tasks which is tracking CPU utilization right now.
 

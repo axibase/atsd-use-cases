@@ -106,7 +106,7 @@ trends based on the year, and even though the same amount of data is still
 present, tracing patterns `year-to-year` is much easier than in the previous
 display. Notice that because data is only available for 2015 for Baton Rouge, Louisiana the remaining empty columns are still rendered for the sake of chronology.
 
-Using the [`DISPLAY`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/)
+Using the [`display`](https://axibase.com/docs/charts/configuration/display-filters.html#display-filters)
 setting, unneeded data can be masked to compare the best and worst performing MSAs over the observed period. Here, Oklahoma City, Oklahoma is the lowest-performing MSA and Raleigh, North Carolina is the highest-performing MSA based on averaged performance. Displayed next to one another, their absolute and relative differences can be underlined:
 
 ![BestAndWorst](./images/BVW.png)
@@ -172,7 +172,7 @@ to public health and cause the true goal of the AFI to be lost if other factors 
 making a thorough examination of the data even more important.
 
 to simultaneously analyze the ranking of each city and its individual performance,
-the following [Box-and-Whisker](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/)
+the following [Box Chart](https://axibase.com/docs/charts/widgets/box-chart/)
 graphic can be used:
 
 ![Box](./images/Box.png)
@@ -185,7 +185,7 @@ the entire period is displayed along with its maximum and minimum values.
 Outlier data is loosely connected to the central box to indicate that it was
 atypical. When viewed in **ChartLab**, a detailed breakdown of the data is visible when hovering the cursor over a box or its features.
 
-Average performance of the observed cities can also be displayed with a less ambiguous visualization using the [Gauge Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/gauge-chart/)
+Average performance of the observed cities can also be displayed with a less ambiguous visualization using the [Gauge Chart](https://axibase.com/docs/charts/widgets/gauge-chart/)
 that shows subjective performance standards, here the threshold has been set at 42
 to represent the National Benchmark Average value, although this tool is also capable of handling
 active data sets and sending subscribers alerts when a certain threshold value is crossed.
@@ -343,7 +343,7 @@ of such consistences is outside the scope of this experiment but well within the
 The data observed here is objectively quite large, and effective management and presentation of such data is crucial to drawing meaningful conclusions from it, which is why the ATSD is ideal for comprehensive and comprehensible solutions
 to a wide range of data science problems.
 
-> Contact [us](https://axibase.com/feedback/) with any support issues.
+> Contact [Axibase](https://axibase.com/feedback/) with any support issues.
 
 ## Action Items
 
@@ -381,8 +381,8 @@ where:
 
 ### Using the `ALERT` Setting
 
-The [`ALERT`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/bar-chart-widget/#tab-id-3)
-setting has a two-part syntax:
+[Alert Expressions](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions)
+use two-part syntax:
 
 ```elm
 alert-expression = YOUR_CONDITION_HERE
@@ -415,13 +415,13 @@ It may be more desirable to separate each body of data, for a cleaner visualizat
 
 [![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/c43f580b/8/#fullscreen)
 
-The visualization show above uses the [`GROUP`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/bar-chart-widget/#[widget]-settings)
-setting in the `[WIDGET]` cluster, as shown below:
+The visualization show above uses the [`group`](https://axibase.com/docs/charts/widgets/bar-chart/#group)
+setting under the `[widget]` heading, as shown below:
 
 ![Syntax1](./images/Syntax1.png)
 
-Because of the highlighted setting, data is separated by its `location` tag, but in
-the visualization shown in the [Data](#data) section, the `GROUP = LOCATION` tag is ignored because of the [`SORT`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/bar-chart-widget/#[widget]-settings)
+Because of the highlighted setting, data is separated by `location` tag, but in
+the visualization shown in the [Data](#data) section, the `group = location` tag is ignored because of the [`sort`](https://axibase.com/docs/charts/widgets/bar-chart/#sort)
 setting shown below:
 
 ![Syntax2](./images/Syntax2.png)
@@ -430,9 +430,8 @@ setting shown below:
 
 ### Modifying the Gauge to Display Other Cities
 
-Locate the `LOCATION` setting at the bottom of the Editor and correct the text to the
-observed MSA that you would like to view with the Gauge, being sure to follow the
-syntax including the two-letter state abbreviation, and the `\,` comma notation.
-For a better presentation, change the `TITLE` setting as well.
+The `tags.location` setting at the bottom of the Editor specifies the
+observed MSA that you would like to view with the Gauge. Include the two-letter state abbreviation, and the `\,` escape notation.
+For a better presentation, change the [`title`](https://axibase.com/docs/charts/widgets/shared/#title) setting as well.
 
 ![Gauge](./images/Gauge2.png)

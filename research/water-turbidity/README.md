@@ -76,11 +76,11 @@ The dataset is inconsistent. Some years lack data for certain locations, and oth
 
 [![](../images/new-button.png)](https://apps.axibase.com/chartlab/77067e32#fullscreen)
 
-View data from other years by modifying the `starttime` expression or isolate a series by clicking the `Beach Name` tag icons above the visualization to toggle the presence of the detector from that location.
+View data from other years by modifying the `start-time` setting or isolate a series by clicking the `Beach Name` tag icons above the visualization to toggle the presence of the detector from that location.
 
 ```ls
 [configuration]
-  starttime = May 2016
+  start-time = May 2016
 ```
 
 The `Ohio Street Beach` dataset is the most consistent, and the only data tracked for the entire observed period. To maintain consistency, other data is henceforth excluded.
@@ -143,11 +143,11 @@ The pattern is similar when comparing absolute daily average change but the `Per
   replace-value =  ((value - previousValue) * 9/5 + 32)
 ```
 
-Modifying the derived `value` expression in the visualization created using the `PercentChangeByOffset` function to reflect the `Water Temperature` line about the `x` axis and reducing the observed `time-span` generates a more coherent visualization of the relationship.
+Modifying the derived `value` expression in the visualization created using the `PercentChangeByOffset` function to reflect the `Water Temperature` line about the `x` axis and reducing the observed `timespan` generates a more coherent visualization of the relationship.
 
 ```ls
 [configuration]
-  time-span = 20 day
+  timespan = 20 day
 
 [series]
   value = -1 * local.PercentChangeByOffset('raw-temp', '1 day')
@@ -157,7 +157,7 @@ Modifying the derived `value` expression in the visualization created using the 
 
 [![](../images/new-button.png)](https://apps.axibase.com/chartlab/1f2b1be5#fullscreen)
 
-> For additional Charts syntax, see the [**ChartLab** Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/)
+> For additional information and syntax, refer to [Charts Documentation](https://axibase.com/docs/charts/).
 
 ## Outlier Data
 

@@ -65,7 +65,7 @@ releases this number each quarter.
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/842f1dd9/#fullscreen)
 
-> Use the drop-down lists at the top of the visualization screen to navigate through time, selecting the `starttime` and `endtime` values
+> Use the drop-down lists at the top of the visualization screen to navigate through time, selecting the `start-time` and `end-time` values
 to observe a specific period.
 
 The data can also be queried using the web-based [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD.
