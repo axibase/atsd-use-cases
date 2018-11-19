@@ -109,7 +109,12 @@ Early time keeping methods were localized. Very few municipal standardization me
   10th | 15 | -58% | 16 | +0%
   11th | 20 | +33% | 16 | +0%
 
-> Source: *Battlefield Trust*, 2018<sup>[5](http://www.battlefieldstrust.com/media/733.pdf)</sup><br><sup>*</sup> Values rounded to nearest whole **integer**.<br><sup>&#10013;</sup> Collapse of the Roman Empire.<br><sup>^</sup> Foundation of Islam.<br><sup>**</sup> Invasion of the [Great Heathen Army](https://thehistoryofengland.co.uk/2011/01/17/6-the-great-heathen-army/).
+> Source: *Battlefield Trust*, 2018<sup>[5](http://www.battlefieldstrust.com/media/733.pdf)</sup>
+
+  * <sup>*</sup> Values rounded to nearest whole **integer**.
+  * <sup>&#10013;</sup> Collapse of the Roman Empire.
+  * <sup>^</sup> Foundation of Islam.
+  * <sup>**</sup> Invasion of the [Great Heathen Army](https://thehistoryofengland.co.uk/2011/01/17/6-the-great-heathen-army/).
 
 * **1237**: The development of *verge-and-foilet* escapement improves the accuracy of timekeeping.<sup>[6](https://aapt.scitation.org/doi/10.1119/1.3479712)</sup>
   * Time-keeping devices become larger and more public.
@@ -121,7 +126,7 @@ Early time keeping methods were localized. Very few municipal standardization me
 * **1347-1351**: Peak of the Black Death.
 
   ![](./images/tz-45.png)
-  > *Danse Macabre* by Michael Wolgemut (1493)
+  > *Danse Macbre* by Michael Wolgemut (1493)
 
 * **c.1250-1500**: Major wars of the Late Middle Ages.
   * Mongol Invasion of Kievan Rus' (1237-1242)
