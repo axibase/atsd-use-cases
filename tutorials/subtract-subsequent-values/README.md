@@ -218,7 +218,7 @@ The visualization created by the `rate` setting configuration is shown below.
 
 ### Create Derived Series Using `replace-value`
 
-Use `value` and `previousValue` fields in the [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) function.
+Use `value` and `previousValue` fields in the [`replace-value`](https://axibase.com/docs/charts/widgets/shared/#replace-value) function.
 
 ```ls
 [series]
@@ -229,7 +229,7 @@ replace-value = value - previousValue
 
 ### Derived Series Using Aliases
 
-Create a derived series using the [`previous(alias)`](https://axibase.com/docs/charts/syntax/functions.html#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
+Create a derived series using the [`previous()`](https://axibase.com/docs/charts/syntax/functions.html#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
 
 ```ls
 /* raw series data */

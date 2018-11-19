@@ -42,11 +42,11 @@ ATSD data is data stored in ATSD from a variety of sources including server equi
 
 ## Widget
 
-ChartLab contains each of these **Widgets**, shown in this image.
+**ChartLab** contains each of these **Widgets**, shown below.
 
 ![Figure 3](./images/Figure3.png)
 
-See the [Axibase website](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for complete information about available widgets.
+> For more information about Charts widgets, refer to [Charts Documentation](https://axibase.com/docs/charts/).
 
 To add a Widget template to the **Editor** window, open the **Widget** drop-down list and select a widget.
 
@@ -109,7 +109,7 @@ Use the toolbar at the top of the screen to further customize your visualization
 
 **Fullscreen** toggles the view between standard and fullscreen.
 
-Access [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/) by clicking **Information**.
+Access [Charts Documentation](https://axibase.com/docs/charts/) by clicking **Information**.
 
 ## User-Defined Functions
 
@@ -155,15 +155,15 @@ Any **ChartLab** user may access the `fred.js` library, which contains the follo
 |------------------------------------|-----------------|-------------|
 | [`MonthlyChange`](https://trends.axibase.com/c5e043b5)                      | alias           | Month-on-month change |
 | [`ChangeFromYearAgo`](https://trends.axibase.com/34165ff1)                  | alias           | Year-on-year change |
-| [`ChangeByOffset`](https://trends.axibase.com/90cfadae)                     | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
+| [`ChangeByOffset`](https://trends.axibase.com/90cfadae)                     | alias, [interval](https://axibase.com/docs/charts/widgets/shared/#end-time) | Customizable interval-on-interval change |
 | [`MonthlyPercentChange`](https://trends.axibase.com/7bca24b2)               | alias           | Month-on-month percent change |
 | [`PercentChangeFromYearAgo`](https://trends.axibase.com/44627e1d)           | alias           | Year-on-year percent change |
-| [`PercentChangeByOffset`](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
+| [`PercentChangeByOffset`](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/docs/charts/widgets/shared/#end-time) | Customizable interval-on-interval change |
 | [`CompoundedAnnualRateOfChange`](https://trends.axibase.com/f04b65fc)       | alias           | Geometric-progression ratio which compounds change annually
 | [`ContinuouslyCompoundedRateOfChange`](https://trends.axibase.com/16ea90bf) | alias           | Geometric-progression ratio which continuously compounds change over an infinitesimally small interval
 | [`NaturalLog`](https://trends.axibase.com/897f53e1)                         | alias           | Natural Logarithm (`LOG` base constant `e`)
 | [`IndexMax`](https://trends.axibase.com/3db3bfa7)                           | alias           | Maximum series value is used as index value
-| [`Index`](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/products/axibase-time-series-database/visualization/end-time/)     | User-selected value is used as index value
+| [`Index`](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/docs/charts/widgets/shared/#end-time)     | User-selected value is used as index value
 
 Open any of the visualizations above to see syntax and visual demonstrations of each function.
 

@@ -61,7 +61,7 @@ The retrieved data can also be found in the Stack Overflow user interface by sea
 
 ## Tools
 
-[Axibase Collector](https://axibase.com/docs/axibase-collector/) is used to collect the data. A [JSON job](https://axibase.com/docs/axibase-collector/jobs/json.html) in Axibase Collector collects data for each of the programming language tags and stores it in the ATSD for [analytics](https://axibase.com/docs/atsd/rule-engine/) and [visualization](https://axibase.com/products/axibase-time-series-database/visualization/).
+[Axibase Collector](https://axibase.com/docs/axibase-collector/) is used to collect the data. A [JSON job](https://axibase.com/docs/axibase-collector/jobs/json.html) in Axibase Collector collects data for each of the programming language tags and stores it in the ATSD for [analytics](https://axibase.com/docs/atsd/rule-engine/) and [visualization](https://axibase.com/docs/charts/).
 
 ![](./images/so_collector_job.png)
 

@@ -3,7 +3,7 @@
 ## Toolkit
 
 * Data Source: [`treasury.gov`](https://home.treasury.gov/)
-* Visualization Tool: [**ChartLab**](https://axibase.com/products/axibase-time-series-database/visualization/)
+* Visualization Tool: [ChartLab](https://axibase.com/use-cases/tutorials/shared/chartlab.html)
 * Query Language: [**SQL Console**](https://axibase.com/docs/atsd/sql/)
 
 > To replicate this or [other portals](../../../README.md), install [ATSD](https://axibase.com/docs/atsd/installation/) or launch the [Docker Container](https://axibase.com/docs/atsd/installation/images.html).
@@ -20,7 +20,7 @@ The [United States Treasury](https://home.treasury.gov/) releases monthly report
 
 The **Securities Portal** includes *ad hoc* transformation and filtering tools to investigate an otherwise large dataset.
 
-> **ChartLab** uses [Charts syntax](https://axibase.com/products/axibase-time-series-database/visualization/) to create portals from data stored in ATSD.
+> **ChartLab** uses [Charts syntax](https://axibase.com/docs/charts/) to create portals from data stored in ATSD.
 
 #### Filtering Series
 
@@ -57,7 +57,7 @@ Click a filled circle to remove a specific series from the visualization.
 
 ### Modifying the Portal
 
-To customize the visualization, expand the **Editor** pane. Refer to the [**ChartLab** tutorial](../../../tutorials/shared/chartlab.md) to get started. [**ChartLab** documentation](https://axibase.com/products/axibase-time-series-database/visualization/) includes other basic configuration examples.
+To customize the visualization, expand the **Editor** pane. Refer to the [**ChartLab** tutorial](../../../tutorials/shared/chartlab.md) to get started. [**ChartLab** documentation](https://axibase.com/docs/charts/) includes other basic configuration examples.
 
 ![](./images/portal-5.png)
 

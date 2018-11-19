@@ -420,8 +420,7 @@ Here, the peaks in police use of force are further smoothed to indicate that the
 resultant increase in police use of force occurs on a somewhat delayed basis after
 a spike in the number of homicides.
 
-Notice that in **ChartLab**, the `endtime` command has to be modified to reflect the
-difference in observation periods of the two data sets.
+Notice that in **ChartLab**, the `end-time` setting must be modified to reflect the difference in observation periods between the two data sets.
 
 Organize the data considering the day of the week:
 
@@ -575,17 +574,17 @@ Contact [Axibase](https://axibase.com/feedback/) with any questions.
 
 ## Appendix
 
-### Using the [`EXPAND`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
+### Using the `expand` Setting
 
 to highlight specific data, as shown in the [Nature of the Homicides](#nature-of-homicides) section,
-use the command `expand = true` under the `[series]`:
+use the [`expand`](https://axibase.com/docs/charts/widgets/pie-chart/#expand) setting under the `[series]` heading:
 
 ![Expand1](./images/Expand1.png)
 
-### Using the [`OTHER`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
+### Using the `[other]` Setting
 
 to display a full series of data, but only show detailed information for a specified
-portion of that data, the `[other]` command needs to be included in the `[series]` cluster, and a
+portion of that data, the [`[other]`](https://axibase.com/docs/charts/widgets/pie-chart/#other-settings) command needs to be included in the `[series]` cluster, and a
 value for `total-value = x` needs to be added under the `[widget]` cluster as shown below,
 
 ![OtherDisplay](./images/OtherDisplay1.png)

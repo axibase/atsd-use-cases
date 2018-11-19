@@ -28,7 +28,7 @@ for the years 2020 and 2025.
 
 Open the visualization below in [ChartLab](https://axibase.com) to see the data in its entirety. Use the drop-down lists at
 the top to navigate through time, selecting the years to be observed. Use the third drop-down list to toggle between visualizations
-of the top or bottom fifteen stations, the top or bottom fifty stations, or select the wildcard [`*`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/selecting-series/)
+of the top or bottom fifteen stations, the top or bottom fifty stations, or select the [wildcard](https://axibase.com/docs/charts/syntax/wildcards.html#wildcards) (`*`)
 option to see all 145.
 
 ![](./images/LT2.2.png)

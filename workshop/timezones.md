@@ -56,6 +56,10 @@ Modern time zones are standardized to Greenwich Mean Time (GMT) also called Coor
 
 ![](./images/tz-10.png)
 
+**Example**:
+
+
+
 ### Mean Solar Time
 
 * Day begins at 00:00 which corresponds to midnight, 12:00 is set at the zenith of the sun.

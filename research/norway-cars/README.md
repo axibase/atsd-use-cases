@@ -139,9 +139,9 @@ look at the statistics by following the below steps to install your own ATSD ins
   ```
 
 * Execute SQL queries for `nor.registered_vehicles` and `nor.registered_vehicles_by_make` to analyze statistics in tabular format using [SQL](https://axibase.com/docs/atsd/sql/) syntax implemented in ATSD.
-* Create new [visualizations](https://axibase.com/products/axibase-time-series-database/visualization/) on **Configuration > Portals** page using chart configurations from the ChartLab examples above.
+* Create new [visualizations](https://axibase.com/docs/charts/) on the **Configuration > Portals** page using chart configurations from the ChartLab examples above.
 
-> Feel free to contact us with installation and technical support issues via the [feedback](https://axibase.com/feedback/) form.
+> Feel free to contact Axibase with installation and technical support issues via the [feedback](https://axibase.com/feedback/) form.
 
 ---
 

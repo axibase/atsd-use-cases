@@ -60,7 +60,7 @@ With ATSD and Collector:
 * Provision application server tasks.
 * Write programs which parse irregular files.
 
-Configure a [scheduled job](https://axibase.com/docs/axibase-collector/#job-types) to retrieve the data from a specified ATSD endpoint and parse any dataset according to pre-defined rules. Once a dataset is loaded, creating and sharing reports with built-in widgets is simple using examples from [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/). The database continuously updates the dataset as new data is published by the state of Iowa.
+Configure a [scheduled job](https://axibase.com/docs/axibase-collector/#job-types) to retrieve the data from a specified ATSD endpoint and parse any dataset according to pre-defined rules. Once a dataset is loaded, creating and sharing reports with built-in widgets is simple using examples from [Charts Documentation](https://axibase.com/docs/charts/). The database continuously updates the dataset as new data is published by the state of Iowa.
 
 The portal below displays total statewide employee compensation for each of the 23 recorded industries.
 
@@ -110,7 +110,7 @@ The portal below visualizes total compensation change per industry in Iowa since
 
 [![View in ChartLab](../../../research/images/new-button.png)](https://apps.axibase.com/chartlab/8323be2f/5/)
 
-> Refer to [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for information about other **ChartLab** widgets.
+> Refer to [Charts Documentation](https://axibase.com/docs/charts/) for information about other **ChartLab** widgets.
 
 ## Additional Iowa Datasets: State of Iowa Employment by Month and Industry
 
@@ -197,7 +197,7 @@ Navigate to **Unemployment insurance claims and payments (statewide - monthly)**
 This dataset follows a similar trend, with payments tending to peak in January of each year and fall throughout
 the remaining months. However, in the late 2000's, the series shifted upward, highlighted in the figure above.
 
-Use a [`time-offset`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) setting to compare previous year data.
+Use a [`time-offset`](https://axibase.com/docs/charts/widgets/shared/#time-offset) setting to compare previous year data.
 
 ```ls
 [series]
@@ -236,7 +236,7 @@ The image below shows the initial configuration for this visualization.
 
 ![Figure 17](./images/Figure-17.png)
 
-Add a `[series]` section for both fields by specifying the respective entity and metric names. Next, use `[tags]` settings to display more specific information, in this case federal government data. Finally, specify a [**Dual Axis**](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting.
+Add a `[series]` section for both fields by specifying the respective entity and metric names. Next, use `[tags]` settings to display more specific information, in this case federal government data. Finally, include an [`axis`](https://axibase.com/docs/charts/widgets/shared/#axis) setting.
 
 The resulting visualization is shown below:
 
@@ -251,7 +251,7 @@ The **ChartLab** configuration is shown below:
 
 ![Figure 18](./images/Figure18.png)
 
-Begin by specifying the `[series]` and `[tags]` clauses. To display only the average employee compensation in this output, specify `display = false` for both series used for calculation. Next, assign these series an [`alias`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/). Finally, specify a `value` with the formula used by **ChartLab** to calculate the new derived series.
+Begin by specifying the `[series]` and `[tags]` clauses. To display only the average employee compensation in this output, specify `display = false` for both series used for calculation. Next, assign these series an [`alias`](https://axibase.com/docs/charts/widgets/shared/#alias). Finally, specify a `value` with the formula used by **ChartLab** to calculate the new derived series.
 
 The underlying formula is shown here:
 
