@@ -4,6 +4,8 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 
 <!-- markdownlint-disable MD101 -->
 
+1. [Oroville Dam Baselines](oroville-dam-baselines.md) (November 2018)
+1. [US Expatriations are back to Pre-Election Levels](us-expatriation-2018-q3.md) (November 2018)
 1. [The Practicality of a True European Army](european-army/README.md) (November 2018)
 1. [Increased Competition Fosters Falling Airline Prices](airline-prices/README.md) (November 2018)
 1. [The Econometrics of Halloween](halloween/README.md) (October 2018)
