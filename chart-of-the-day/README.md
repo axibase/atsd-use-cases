@@ -4,6 +4,7 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 
 <!-- markdownlint-disable MD101 -->
 
+1. [Fixing Rate for Precious Metals](gold-money/README.md) (November 2018)
 1. [Oroville Dam Baselines](oroville-dam-baselines.md) (November 2018)
 1. [US Expatriations are back to Pre-Election Levels](us-expatriation-2018-q3.md) (November 2018)
 1. [The Practicality of a True European Army](european-army/README.md) (November 2018)
