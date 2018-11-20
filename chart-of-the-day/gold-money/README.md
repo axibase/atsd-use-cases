@@ -5,11 +5,11 @@
 * Since 2018 began, gold prices in the [London Bullion Market](http://www.lbma.org.uk/) have fallen 12.4%.
 * Indexed industrial production value at 82 (scale of 100), down from previous month value 87.
 * Silver prices down 14% since January 2018.
-* Year-on-year change tracked via [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html).
+* Month-on-month change tracked via [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html).
 
 ## Graphics
 
-[![](../../research/images/new-button.png)]()
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/61de3cb1#fullscreen)
 
 ![](./images/gold-2.png)
 
