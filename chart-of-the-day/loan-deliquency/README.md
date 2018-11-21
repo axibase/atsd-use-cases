@@ -45,5 +45,3 @@ header-style = background: white;display: flex;align-items: stretch;padding: 4px
 [configuration]
   format = percent
 ```
-
----
