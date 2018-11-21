@@ -35,7 +35,11 @@
 
 ![](./images/mi-24.png)
 
-Because only youth unemployment is tracked in [FRED](https://fred.stlouisfed.org/), the Federal Reserve data from which data is sourced, a so-called youth misery index is shown above.
+<!-- markdownlint-disable MD105 -->
+
+Because only youth unemployment is tracked in [FRED](https://fred.stlouisfed.org/), the Federal Reserve database from which data is sourced, a so-called youth misery index is shown above.
+
+<!-- markdownlint-disable MD105 -->
 
 Azerbaijan has among the lowest youth unemployment rates in the Commonwealth of Independent States (CIS), a confederation of Eurasian former-Soviet states.<sup>[1](https://eeca.unfpa.org/sites/default/files/pub-pdf/Youth%20in%20CIS%20eng.pdf)</sup>
 
@@ -225,7 +229,7 @@ Control the maximum and minimum boundaries for data with high variance using the
 
 The effects of the 1998 Russian financial crisis are visible; the currency was greatly devalued resulting in soaring inflation and the government issued a moratorium on foreign debt obligation repayments on 17 August 1998.<sup>[8](https://files.stlouisfed.org/files/htdocs/publications/review/02/11/ChiodoOwyang.pdf)</sup>
 
-The [`color`](https://axibase.com/docs/charts/widgets/shared/#color) setting accepts [web color](https://en.wikipedia.org/wiki/Web_colors) names or hex codes; use exact colors when needed, such as the [official colors](https://www.prlib.ru/en/history/619479) of the Russian flag. Because one of the colors is white (`#FFFFFF`), use [portal themes](https://axibase.com/docs/atsd/portals/portals-overview.html#portal-themes) so it is visible.
+The [`color`](https://axibase.com/docs/charts/widgets/shared/#color) setting accepts [web color](https://en.wikipedia.org/wiki/Web_colors) names or hex codes; use exact colors when needed, such as the [official colors](https://www.prlib.ru/en/history/619479) of the Russian flag. Because one of the colors is white (`#FFFFFF`), use [portal themes](https://axibase.com/docs/atsd/portals/portals-overview.html#portal-themes) to ensure it is visible.
 
 <details><summary>View the tripart, tricolor chart.</summary>
 
