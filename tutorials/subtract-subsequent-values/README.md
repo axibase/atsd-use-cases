@@ -71,7 +71,7 @@ To filter data for another series tag, modify the `tags.dc` condition in the [`W
 
 ## Series Query
 
-The [`series: query`](https://axibase.com/docs/atsd/api/data/series/query.html) API endpoint allows you to query time series records for a specified metric, entity, tag, and interval filters.
+The [`series: query`](https://axibase.com/docs/atsd/api/data/series/query.html) API endpoint allows you to query time series records for specified metric, entity, tag, and interval filters.
 
 ```json
 [{
