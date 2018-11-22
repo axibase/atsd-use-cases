@@ -4,7 +4,7 @@
 
 ATSD supports *ad hoc* calculation in [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html) and [Charts](https://axibase.com/docs/charts/) services.
 
-This article describes using the [`replace-value`](https://axibase.com/docs/charts/widgets/shared/#replace-value) setting in [**ChartLab**](../shared/chartlab.md) and the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function in **SQL Console** to derive percent change for a given dataset.
+This article describes the use of the [`replace-value`](https://axibase.com/docs/charts/widgets/shared/#replace-value) setting in [**ChartLab**](../shared/chartlab.md) and the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function in **SQL Console** to derive percent change for a given dataset.
 
 ## Data
 
