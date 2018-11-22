@@ -2,23 +2,25 @@
 
 ## Purpose
 
-ATSD has several alternatives to perform ad hoc calculations such as computing the difference between consecutive values for a given series.
+ATSD has several methods to perform *ad hoc* calculations without modifying any underlying data. A common example is the computation of the difference between consecutive values for a given series.
 
-This tutorial demonstrates this calculation using three methods:
+This tutorial demonstrates such a calculation via three methods:
 
 * [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html)
-* [**Data API** Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html)
+* [REST API `series: query`](https://axibase.com/docs/atsd/api/data/series/query.html)
 * [Charts Functions](https://axibase.com/docs/charts/)
 
 ## Dataset
 
-The sample dataset in this tutorial is represented by:
+The dataset in this tutorial is represented by:
 
 * Entity `hetzner`
 * Metric `outage-tickets`
 * Series tags: `DC=07`, `DC=10`, and `DC=12`
 
 The `outage-tickets` metric measures the number of tickets open in the service provider support desk during a power outage incident.
+
+> For more information about the dataset, refer to [Hetzner Outage, May 2018](../../chart-of-the-day/hetzner-outage/README.md)
 
 ## SQL Console
 
@@ -31,7 +33,7 @@ WHERE entity = 'hetzner' AND tags.dc = '07'
   ORDER BY datetime
 ```
 
-Compute the difference between consecutive values with the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function. When `LAG` encounters a non-existent sample, it returns [`null`](https://axibase.com/docs/atsd/sql/#null) value.
+Compute the difference between consecutive values with the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function. When `LAG` encounters a non-existent sample, it returns [`null`](https://axibase.com/docs/atsd/sql/#null).
 
 ```txt
 | datetime             | VALUE| DIFF |
@@ -69,7 +71,7 @@ To filter data for another series tag, modify the `tags.dc` condition in the [`W
 
 ## Series Query
 
-The [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) API endpoint allows you to query time series records for the specified metric, entity, tag, and interval filters.
+The [`series: query`](https://axibase.com/docs/atsd/api/data/series/query.html) API endpoint allows you to query time series records for a specified metric, entity, tag, and interval filters.
 
 ```json
 [{
@@ -112,7 +114,7 @@ The [Series: Query](https://axibase.com/docs/atsd/api/data/series/query.html) AP
 {"d":"2018-05-26T13:38:00","v":0.0}]}]
 ```
 
-Add the [Rate Processor](https://axibase.com/docs/atsd/api/data/series/rate.html) to compute the difference between consecutive samples per unit of time, or rate period.
+Include [rate processor](https://axibase.com/docs/atsd/api/data/series/rate.html) to compute the difference between consecutive samples per unit of time, or rate period.
 
 ```json
 "rate": {
@@ -121,7 +123,7 @@ Add the [Rate Processor](https://axibase.com/docs/atsd/api/data/series/rate.html
 }
 ```
 
-Omit the rate `period` parameter, or set its count to zero, to return the difference between consecutive samples.
+Omit the `period` parameter, or set its count to zero, to return the difference between consecutive samples.
 
 ```json
 [{
@@ -168,7 +170,7 @@ Omit the rate `period` parameter, or set its count to zero, to return the differ
 
 ## Charts Functions
 
-[Charts Syntax](https://axibase.com/docs/charts/) provides several alternatives to visualize the raw data and to perform delta calculations in the browser.
+[Charts](https://axibase.com/docs/charts/) services provide several alternatives to visualize raw data and perform delta calculations in the browser.
 
 The `outage-tickets` dataset visualized in **ChartLab**:
 
@@ -180,7 +182,7 @@ To calculate and display the difference between consecutive values, there are th
 
 ### Rate Setting
 
-Use the `rate` setting to calculate the difference between the current data sample and the previous sample and return the difference in place of the current data sample.
+Use the [`rate`](https://axibase.com/docs/charts/widgets/shared/#rate) setting to calculate the difference between the current data sample and the previous sample and return this amount in place of the current data sample.
 
 ```ls
 [series]
@@ -188,25 +190,21 @@ Use the `rate` setting to calculate the difference between the current data samp
   rate-counter = false
 ```
 
-The `rate` setting defines the period to pro-rate the change in value. The underlying formula is shown here:
+The `rate` setting defines the period to prorate the value change. The underlying formula is shown here:
 
-```javascript
-(value_1 - value_0) / (time_1 - time_0) * rate_period
-```
+*Sample Value* = (value<sub>1</sub> - value<sub>0</sub>) / (time<sub>1</sub> - time<sub>0</sub>) * `rate`
 
-* `value_1`: current value
-* `value_0`: previous value
-* `time_1`: current value in Unix milliseconds
-* `time_0`: previous value in Unix milliseconds
-* `rate_period`: rate period in Unix milliseconds
+* value<sub>1</sub>: current value
+* value<sub>0</sub>: previous value
+* time<sub>1</sub>: current value in Unix milliseconds
+* time<sub>0</sub>: previous value in Unix milliseconds
+* `rate`: period in Unix milliseconds
 
 For example, `rate = 1 minute` calculates the change in value (first derivative) per unit of time equal to **one** minute.
 
 If the rate period is zero, the formula is:
 
-```javascript
-(value_1 - value_0)
-```
+*Sample Value* = value<sub>1</sub> - value<sub>0</sub>
 
 The `rate-counter` parameter ignores negative differences when set to `true`.
 
@@ -218,11 +216,11 @@ The visualization created by the `rate` setting configuration is shown below.
 
 ### Create Derived Series Using `replace-value`
 
-Use `value` and `previousValue` fields in the [`replace-value`](https://axibase.com/docs/charts/widgets/shared/#replace-value) function.
+Use `value` and `previousValue` placeholders in the [`replace-value`](https://axibase.com/docs/charts/widgets/shared/#replace-value) function.
 
 ```ls
 [series]
-replace-value = value - previousValue
+  replace-value = value - previousValue
 ```
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/af56007b#fullscreen)
@@ -250,7 +248,7 @@ Create a derived series using the [`previous()`](https://axibase.com/docs/charts
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/a7b29712)
 
-Both methods create the same visualization.
+Both methods create the same visualization, shown below.
 
 ![](./images/dc07-delta1.png)
 
