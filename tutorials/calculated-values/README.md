@@ -125,7 +125,7 @@ The syntax for this drop-down list is shown below:
 
 Modify any of the dates contained in the `keyDates` list above to select a date to use as the baseline value. The [`value`](https://axibase.com/docs/charts/widgets/shared/#value) setting under the `[option]` heading of the `[dropdown]` configuration above uses a formula to calculate a new index.
 
-The [`on-change`](https://axibase.com/docs/charts/configuration/drop-down-lists.html#on-change) setting defines the newly calculated serie.
+The [`on-change`](https://axibase.com/docs/charts/configuration/drop-down-lists.html#on-change) setting defines the newly calculated series.
 
 Additional configuration components are enumerated below:
 
