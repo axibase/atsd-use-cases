@@ -4,6 +4,7 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 
 <!-- markdownlint-disable MD101 -->
 
+1. [Total Known and Endangered Species by Country and Type](endangered-animals/README.md) (November 2018)
 1. [Workers in Alternative Arrangements](alt-work/README.md) (November 2018)
 1. [Loan Delinquency Rates, All Commercial Banks](loan-delinquency-rate/README.md) (November 2018)
 1. [Fixing Rate for Precious Metals](gold-money/README.md) (November 2018)

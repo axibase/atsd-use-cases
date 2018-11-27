@@ -10,13 +10,13 @@
 
 ## Graphics
 
-## Grouped by Metric
+### Grouped by Metric
 
 [![](../images/button-new.png)](https://trends.axibase.com/363b5710#fullscreen)
 
 ![](./images/op-inflation-1.png)
 
-## Grouped by Index
+### Grouped by Index
 
 [![](../images/button-new.png)](https://trends.axibase.com/3bd070da#fullscreen)
 
