@@ -1,15 +1,15 @@
 # Calculated Values in SQL Console and ChartLab
 
-## Introduction
+## Overview
 
-Raw data alone rarely contains enough information to answer meaningful questions. ATSD supports on the fly calculation in [**SQL Console**](https://axibase.com/docs/atsd/sql/) and [Charts](https://axibase.com/docs/charts/) services.
+ATSD supports *ad hoc* calculation in [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html) and [Charts](https://axibase.com/docs/charts/) services.
 
-This article describes using the [`replace-value`](https://axibase.com/docs/charts/widgets/shared/#replace-value) in [**ChartLab**](../shared/chartlab.md) and [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function in **SQL Console** to calculate percent change for a given dataset.
+This article describes the use of the [`replace-value`](https://axibase.com/docs/charts/widgets/shared/#replace-value) setting in [**ChartLab**](../shared/chartlab.md) and the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function in **SQL Console** to derive percent change for a given dataset.
 
 ## Data
 
-Data in this article is collected by entity [Eurostat](https://ec.europa.eu/eurostat) tracking [European Union Debt by Country](../../research/data-lib/eu-debt/README.md),
-recorded in the [Axibase Data Library](https://axibase.com/use-cases/research/#data-library).
+Data is collected by the entity [Eurostat](https://ec.europa.eu/eurostat) tracking [European Union Debt by Country](../../research/data-lib/eu-debt/README.md),
+available in the [Axibase Data Library](https://axibase.com/use-cases/research/#data-library).
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt (Million Euro)"
@@ -44,7 +44,9 @@ SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt (Million Euro)"
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/82713e8a/#fullscreen)
 
-To calculate the percent growth of Lithuanian debt over the 20-year observation period, use common baselines. Three common baselines are as follows:
+To calculate the percent growth of Lithuanian debt over the 20-year observation period, use baselines.
+
+Three common baselines:
 
 * Previous Year Baseline (PYB)
 * Average Value Baseline (AVB)
@@ -60,11 +62,11 @@ ORDER BY datetime
 
 The underlying formula in this query is simple:
 
-`100 * [(x/y)-1]`
+PYB = 100 * [(<sup>x</sup>/<sub>y</sub>) - 1]
 
 Where,
 
-`x = current year debt amount, and y = previous year debt amount`
+*x* = current year debt amount, and *y* = previous year debt amount`
 
 ```ls
 | Year | Debt (Million Euro) | Percent Change (PYB) |
@@ -92,9 +94,9 @@ Where,
 | 2015 | 20525.20            | 3.93                 |
 ```
 
-`LAG` function returns a [`NULL`](https://axibase.com/docs/atsd/sql/#null) value when no  data sample is found.
+The `LAG` function returns [`null`](https://axibase.com/docs/atsd/sql/#null) when no data is found.
 
-Use the `replace-value` setting to apply the same calculation in **ChartLab**. Open the Editor window in ChartLab and see the setting on line 16.
+Use the `replace-value` setting to apply the same calculation in **ChartLab**. Open the **Editor** window in **ChartLab** and inspect the setting on line 16.
 
 ```javascript
 replace-value = (value/previousValue-1)*100
@@ -106,15 +108,15 @@ Track positive debt growth with an [`alert-expression`](https://axibase.com/docs
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/82713e8a/5/#fullscreen)
 
-See lines 17 and 18 for `alert-expression` syntax.
+Inspect the `alert-expression` syntax on lines 17 and 18.
 
-```javascript
+```ls
 alert-expression = value < 0
 alert-style = fill: green
 ```
 
-This setting renders all incidences of negative debt growth (or debt growth less than 0) as green, while positive debt growth
-is rendered in red.
+This setting renders all incidences of negative debt growth (debt growth less than zero) green, while positive debt growth
+is rendered red.
 
 ### Average Value Baseline
 
@@ -126,8 +128,6 @@ SELECT AVG(value) AS "Debt (Million Euro)"
 | Debt (Million Euro) |
 |---------------------|
 | 12175.6             |
-
-Use this value as a baseline.
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt (Million Euro)", (100*((value)/12175.6-1)) AS "Percent Change (AVB)"
@@ -159,7 +159,7 @@ ORDER BY datetime
 | 2014 | 19748.3             | 62.2                 |
 | 2015 | 20525.2             | 68.6                 |
 
-Use a similar `replace-value` setting in **ChartLab**.
+Use the `replace-value` setting in **ChartLab**.
 
 ```javascript
 replace-value = (value/12175.6-1)*100
@@ -173,7 +173,7 @@ Apply an `alert-expression` to track years by percent deviation from the calcula
 
 ### Final Year Baseline
 
-to calculate debt growth using a FYB, the following queries are used:
+To calculate debt growth using FYB, use these queries:
 
 ```sql
 SELECT last(value) AS "Final Year Baseline"
@@ -184,7 +184,7 @@ SELECT last(value) AS "Final Year Baseline"
 |---------------------|
 | 20525.2             |
 
-Again, insert the value into the percent change calculation.
+Insert the value into a percent change function.
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year", value AS "Debt (Million Euro)", (100*(value/20525.2-1)) AS "Percent Change (FYB)"

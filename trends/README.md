@@ -2,6 +2,8 @@
 
 A publicly accessible ATSD instance which contains [Federal Reserve Economic Data](https://fred.stlouisfed.org/).
 
+1. [The Effects of Oil Price on Inflation](op-inflation/README.md) (November 2018)
+1. [The Misery Index, Revisited](misery-index/README.md) (November 2018)
 1. [The Obsolescence Problem](long-term-unrate/README.md) (November 2018)
 1. [Presidential Economic Trends](presidential-trends/README.md) (November 2018)
 1. [Biennial Evaluation of the Trump Administration](biennial-eval/README.md) (October 2018)

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide shows how to configure GitHub to alert you when someone forks your repository. This feature allows you to monitor activity related to your repository. Follow the instructions to configure ATSD to send you the notifications directly through a third-party messenger service with.
+This guide shows how to configure GitHub to alert you when someone forks your repository. This feature allows you to monitor activity related to your repository. Follow the instructions to configure ATSD to send you the notifications directly through a third-party messenger service.
 
 ![](./images/workflow_fork.png)
 
