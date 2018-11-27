@@ -2,7 +2,7 @@
 
 ## Overview
 
-* The Organization for Economic Co-operation and Developemnt (OECD) maintains the database [**OECD.Stat**](https://stats.oecd.org/), which tracks data and metadata for OECD and non-member countries.
+* The Organization for Economic Co-operation and Development (OECD) maintains the database [**OECD.Stat**](https://stats.oecd.org/), which tracks data and metadata for OECD and non-member countries.
   * One such dataset is [**Threatened Species**](https://stats.oecd.org/Index.aspx?DataSetCode=WILD_LIFE) (Dataset Code: `WILD_LIFE`), which records the number of total known species and those recognized as endangered, critical, threatened, and vulnerable by country.
   * Native OECD visualization is currently unavailable for this particular dataset.
 
