@@ -10,7 +10,7 @@ Follow these instructions to set up default AWS email notifications or follow th
 
 ### Configure a New CloudWatch Event
 
-From the **Console Home** page, open the **Services** menu and in the **Management Tools** section, select **CloudWatch**.
+From the **Console Home** page, open the **Services** menu and in the **Management Tools** section, click **CloudWatch**.
 
 ![](./images/cw-menu.png)
 
@@ -42,7 +42,7 @@ On the **Topic Details** page, click **Create Subscription**.
 
 ![](./images/sns-3.png)
 
-Define the email address to which you would like AWS to send status change notifications. Be sure to select **Email** from the **Protocol** drop-down list.
+Define the email address to which you would like AWS to send status change notifications. Select **Email** from the **Protocol** drop-down list.
 
 ![](./images/email-subscription.png)
 
@@ -165,7 +165,7 @@ Customize the generic ATSD launch command with your preferences from these optio
 
 Configure the [Mail Client](https://axibase.com/docs/atsd/administration/mail-client.html) by following the instructions here or by following the alternative launch instructions above.
 
-Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule is named `aws-cloudwatch-events`. Open the rule editor by clicking the link in the **Name** column. Select the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like ATSD to deliver email notifications.
+Open the **Alerts** menu from the toolbar on the left and select **Rules**. By default the imported rule is named `aws-cloudwatch-events`. Open the rule editor by clicking the link in the **Name** column. Open the **Email Notifications** tab from the toolbar along the top of the screen and update the **Recipients** field to include those addresses to whom you would like ATSD to deliver email notifications.
 
 ![](./images/my-email.png)
 

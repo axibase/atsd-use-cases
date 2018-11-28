@@ -10,7 +10,7 @@
 
 ![](./images/CTP2.2.png)
 
-[![](../../data-lib/connecticut-prison-pop/images/button.png)](https://apps.axibase.com/chartlab/bff45f46/8/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/bff45f46/8/#fullscreen)
 
 ```sql
 SELECT date_format(time, 'yyyy-MM') AS "Time", sum(value)/1000 AS "Total Population (1000 Persons)"
@@ -59,7 +59,7 @@ GROUP BY time
 
 ![](./images/CTP8.1.png)
 
-[![](../../data-lib/connecticut-prison-pop/images/button.png)](https://apps.axibase.com/chartlab/bff45f46/3/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/bff45f46/3/#fullscreen)
 
 ```sql
 SELECT tags.facility_name AS "Facility Name", avg(value) AS "Population"
@@ -95,13 +95,13 @@ respectively.
 
 ![](./images/CTP1.1.png)
 
-[![](../../data-lib/connecticut-prison-pop/images/button.png)](https://apps.axibase.com/chartlab/bff45f46/9/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/bff45f46/9/#fullscreen)
 
 ## Current Connecticut Prison Population by Facility (2017)
 
 ![](./images/CTP7.1.png)
 
-[![](../../data-lib/connecticut-prison-pop/images/button.png)](https://apps.axibase.com/chartlab/bff45f46/10/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/bff45f46/10/#fullscreen)
 
 ```sql
 SELECT tags.facility_name AS "Facility Name", last(value) AS "Population"
@@ -138,7 +138,7 @@ GROUP BY 'Facility Name'
 
 ![](./images/CTP4.1.png)
 
-[![](../../data-lib/connecticut-prison-pop/images/button.png)](https://apps.axibase.com/chartlab/bff45f46/11/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/bff45f46/11/#fullscreen)
 
 ```sql
 SELECT tags.facility_name AS "Facility Name", avg(value) AS "Density"
@@ -170,7 +170,7 @@ ORDER BY 'Density' DESC
 
 ![](./images/CTP5.1.png)
 
-[![](../../data-lib/connecticut-prison-pop/images/button.png)](https://apps.axibase.com/chartlab/bff45f46/12/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/bff45f46/12/#fullscreen)
 
 > The five most densely-populated Connecticut prisons are shown above.
 

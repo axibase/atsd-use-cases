@@ -45,7 +45,7 @@ and calculations are done using the computational knowledge engine [WolframAlpha
 
 ![AllCity](./images/MainGraph.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/47/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/47/)
 
 Looking at an entire set of data at once is often unhelpful and overwhelming, but
 this visualization can be used to offer a wide lens through which to view what amounts
@@ -55,7 +55,7 @@ who may be otherwise unfamiliar with the scoring system.
 
 ![2015](./images/2015.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/55/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/55/)
 
 This visualization looks at Year 2015 data and highlights those cities performing
 below the National Benchmark Average.
@@ -72,13 +72,13 @@ The Benchmark Average, and by extension alert threshold, is modified for each ye
 
 ![2011](./images/2011.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/56/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/56/)
 
 > Year 2013 (Benchmark Average: 43)
 
 ![2013](./images/2013.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/51/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/51/)
 
 >Even year (2012 and 2014) data can be found in the [Appendix](#appendix)
 
@@ -88,7 +88,7 @@ that are not as obvious in the first visualization:
 
 ![ByCityByYear](./images/ByCityByYear.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c43f580b)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/c43f580b)
 
 >See [Appendix](#appendix) for an alternative display of the above data
 
@@ -98,7 +98,7 @@ needed:
 
 ![ByYearByCity](./images/20112015.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/59/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/59/#fullscreen)
 
 Although the two charts are rendered almost identically with respect to the data,
 the key difference is how they are presented. Here graph is organized to show
@@ -106,40 +106,40 @@ trends based on the year, and even though the same amount of data is still
 present, tracing patterns `year-to-year` is much easier than in the previous
 display. Notice that because data is only available for 2015 for Baton Rouge, Louisiana the remaining empty columns are still rendered for the sake of chronology.
 
-Using the [`DISPLAY`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/)
+Using the [`display`](https://axibase.com/docs/charts/configuration/display-filters.html#display-filters)
 setting, unneeded data can be masked to compare the best and worst performing MSAs over the observed period. Here, Oklahoma City, Oklahoma is the lowest-performing MSA and Raleigh, North Carolina is the highest-performing MSA based on averaged performance. Displayed next to one another, their absolute and relative differences can be underlined:
 
 ![BestAndWorst](./images/BVW.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c43f580b/7/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/c43f580b/7/)
 
 to make observations about the performance of one MSA over the observed time,
 a similar strategy can be used with a different method of visualization:
 
 ![Miami](./images/MVB.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/64/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/64/)
 
 Or, to compare the results of data observed within one state, additions can easily be
 made to include a third entity:
 
 ![Miami](./images/FLVB.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/65/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/65/)
 
 The same can be done using the two Tennessee MSAs, Memphis and Nashville/Davidson,
 displayed here alongside the Benchmark Average value:
 
 ![TN](./images/TNVB.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/66/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/66/)
 
 Additionally, cities that serve as state capitals can be used as a microcosm
 for the trends of the state itself:
 
 ![capitals](./images/CVB.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/67/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/67/)
 
 The population of these metropolitan areas often accounts for a significant amount
 of the total population of the state. In the Atlanta Metropolitan Area for example, that number
@@ -155,7 +155,7 @@ also be displayed next to one another, and the Benchmark Average:
 
 ![Best](./images/AtlRalBM.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/60/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/60/)
 
 ## Analysis
 
@@ -172,12 +172,12 @@ to public health and cause the true goal of the AFI to be lost if other factors 
 making a thorough examination of the data even more important.
 
 to simultaneously analyze the ranking of each city and its individual performance,
-the following [Box-and-Whisker](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/)
+the following [Box Chart](https://axibase.com/docs/charts/widgets/box-chart/)
 graphic can be used:
 
 ![Box](./images/Box.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/61/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/61/#fullscreen)
 
 Here the individual performance of the city can be analyzed at the same time as its relative
 performance against other cities. The average score of each city over the course of
@@ -185,14 +185,14 @@ the entire period is displayed along with its maximum and minimum values.
 Outlier data is loosely connected to the central box to indicate that it was
 atypical. When viewed in **ChartLab**, a detailed breakdown of the data is visible when hovering the cursor over a box or its features.
 
-Average performance of the observed cities can also be displayed with a less ambiguous visualization using the [Gauge Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/gauge-chart/)
+Average performance of the observed cities can also be displayed with a less ambiguous visualization using the [Gauge Chart](https://axibase.com/docs/charts/widgets/gauge-chart/)
 that shows subjective performance standards, here the threshold has been set at 42
 to represent the National Benchmark Average value, although this tool is also capable of handling
 active data sets and sending subscribers alerts when a certain threshold value is crossed.
 
 ![AtlantaAvg](./images/AtlG2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/70/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/70/#fullscreen)
 
 >Learn more about Gauge controls and explore the results of other MSAs in the [Appendix](#appendix).
 
@@ -343,7 +343,7 @@ of such consistences is outside the scope of this experiment but well within the
 The data observed here is objectively quite large, and effective management and presentation of such data is crucial to drawing meaningful conclusions from it, which is why the ATSD is ideal for comprehensive and comprehensible solutions
 to a wide range of data science problems.
 
-> Contact [us](https://axibase.com/feedback/) with any support issues.
+> Contact [Axibase](https://axibase.com/feedback/) with any support issues.
 
 ## Action Items
 
@@ -381,8 +381,8 @@ where:
 
 ### Using the `ALERT` Setting
 
-The [`ALERT`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/bar-chart-widget/#tab-id-3)
-setting has a two-part syntax:
+[Alert Expressions](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions)
+use two-part syntax:
 
 ```elm
 alert-expression = YOUR_CONDITION_HERE
@@ -399,13 +399,13 @@ And is shown in a ChartLab example below:
 
 ![2012](./images/2012.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/57/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/57/)
 
 >Year 2014 (Benchmark Average: 42)
 
 ![2014](./images/2014.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e926d483/58/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e926d483/58/)
 
 ### Alternative Display of City By Year Data
 
@@ -413,15 +413,15 @@ It may be more desirable to separate each body of data, for a cleaner visualizat
 
 ![AltView](./images/BYCALT.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/c43f580b/8/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/c43f580b/8/#fullscreen)
 
-The visualization show above uses the [`GROUP`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/bar-chart-widget/#[widget]-settings)
-setting in the `[WIDGET]` cluster, as shown below:
+The visualization show above uses the [`group`](https://axibase.com/docs/charts/widgets/bar-chart/#group)
+setting under the `[widget]` heading, as shown below:
 
 ![Syntax1](./images/Syntax1.png)
 
-Because of the highlighted setting, data is separated by its `location` tag, but in
-the visualization shown in the [Data](#data) section, the `GROUP = LOCATION` tag is ignored because of the [`SORT`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/bar-chart-widget/#[widget]-settings)
+Because of the highlighted setting, data is separated by `location` tag, but in
+the visualization shown in the [Data](#data) section, the `group = location` tag is ignored because of the [`sort`](https://axibase.com/docs/charts/widgets/bar-chart/#sort)
 setting shown below:
 
 ![Syntax2](./images/Syntax2.png)
@@ -430,9 +430,8 @@ setting shown below:
 
 ### Modifying the Gauge to Display Other Cities
 
-Locate the `LOCATION` setting at the bottom of the Editor and correct the text to the
-observed MSA that you would like to view with the Gauge, being sure to follow the
-syntax including the two-letter state abbreviation, and the `\,` comma notation.
-For a better presentation, change the `TITLE` setting as well.
+The `tags.location` setting at the bottom of the Editor specifies the
+observed MSA that you would like to view with the Gauge. Include the two-letter state abbreviation, and the `\,` escape notation.
+For a better presentation, change the [`title`](https://axibase.com/docs/charts/widgets/shared/#title) setting as well.
 
 ![Gauge](./images/Gauge2.png)

@@ -74,13 +74,13 @@ The dataset is inconsistent. Some years lack data for certain locations, and oth
 
 ![](./images/temp-turb-portal.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/77067e32#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/77067e32#fullscreen)
 
-View data from other years by modifying the `starttime` expression or isolate a series by clicking the `Beach Name` tag icons above the visualization to toggle the presence of the detector from that location.
+View data from other years by modifying the `start-time` setting or isolate a series by clicking the `Beach Name` tag icons above the visualization to toggle the presence of the detector from that location.
 
 ```ls
 [configuration]
-  starttime = May 2016
+  start-time = May 2016
 ```
 
 The `Ohio Street Beach` dataset is the most consistent, and the only data tracked for the entire observed period. To maintain consistency, other data is henceforth excluded.
@@ -89,7 +89,7 @@ This portal tracks the four most recent years of `Ohio Street Beach` data for me
 
 ![](./images/ohio-street-beach-portal.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/8d79f2ce#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/8d79f2ce#fullscreen)
 
 The data is hourly and erratic. This is due to the nature of the device which is unable to discard erroneous readings or the presence of an object, such as a person or thing, near the detector.
 
@@ -109,9 +109,9 @@ Aggregating temperature and turbidity data by the day is a reasonable resolution
 
 ![](./images/aggregated-portal.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/eae1eb1c#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/eae1eb1c#fullscreen)
 
-**ChartLab** supports [user-defined functions](https://github.com/axibase/charts/blob/master/syntax/udf.md#user-defined-functions) which aid further analysis. Define JavaScript functions and store them in the [appropriate location](https://github.com/axibase/charts/blob/master/syntax/udf.md#deploying-function-files). The publicly accessible **ChartLab** application already supports the `fred.js` library. Alternatively, deploy the library locally with the [downloadable resource](https://raw.githubusercontent.com/axibase/charts/master/resources/fred.js).
+**ChartLab** supports [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html#user-defined-functions) which aid further analysis. Define JavaScript functions and store them in the [appropriate location](https://axibase.com/docs/charts/syntax/udf.html#deploying-function-files). The publicly accessible **ChartLab** application already supports the `fred.js` library. Alternatively, deploy the library locally with the [downloadable resource](https://raw.githubusercontent.com/axibase/charts/master/resources/fred.js).
 
 The `PercentChangeByOffset` function is used below to handle the difference in magnitude of the two metrics and compare relative changes. The `PercentChangeByOffset` function requires two arguments: the `alias` of the series to transform, and the `interval` of the offset.
 
@@ -126,7 +126,7 @@ The resultant visualization highlights the analogous changes for each metric.
 
 ![](./images/percent-change-offset.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/7ef7c546#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/7ef7c546#fullscreen)
 
 The converse relationship of turbidity and water temperature is visualized above: larger than normal increases in turbidity and therefore particulate matter, correlate to larger than normal decreases in water temperature. This phenomena occurs because of the energy transfer between solar photons and the media through which they refract. Generally this is treated as either 0% or 100% energy transfer for mathematical purposes. The presence of more absorbing bodies decreases the amount energy transferred to heat the body of water.
 
@@ -134,7 +134,7 @@ The converse relationship of turbidity and water temperature is visualized above
 
 ![](./images/value-previousvalue.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/a420c8de#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/a420c8de#fullscreen)
 
 The pattern is similar when comparing absolute daily average change but the `PercentChangeByOffset` is preferable since absolute turbidity changes are greater than absolute temperature changes. Converting the Celsius temperature values to Fahrenheit is one solution to increase variance.
 
@@ -143,11 +143,11 @@ The pattern is similar when comparing absolute daily average change but the `Per
   replace-value =  ((value - previousValue) * 9/5 + 32)
 ```
 
-Modifying the derived `value` expression in the visualization created using the `PercentChangeByOffset` function to reflect the `Water Temperature` line about the `x` axis and reducing the observed `time-span` generates a more coherent visualization of the relationship.
+Modifying the derived `value` expression in the visualization created using the `PercentChangeByOffset` function to reflect the `Water Temperature` line about the `x` axis and reducing the observed `timespan` generates a more coherent visualization of the relationship.
 
 ```ls
 [configuration]
-  time-span = 20 day
+  timespan = 20 day
 
 [series]
   value = -1 * local.PercentChangeByOffset('raw-temp', '1 day')
@@ -155,15 +155,15 @@ Modifying the derived `value` expression in the visualization created using the 
 
 ![](./images/x-axis-reflection.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/1f2b1be5#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/1f2b1be5#fullscreen)
 
-> For additional Charts syntax, see the [**ChartLab** Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/)
+> For additional information and syntax, refer to [Charts Documentation](https://axibase.com/docs/charts/).
 
 ## Outlier Data
 
 ![](./images/outlier-portal.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/c18e05f0#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/c18e05f0#fullscreen)
 
 The portal above shows two datasets that contain significant outlier data which does not conform to correlation established through visualization.
 
@@ -171,7 +171,7 @@ The `2015` dataset shows a significant decrease in water temperature without a p
 
 ![](./images/august-water-temp.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/cb2996e1#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/cb2996e1#fullscreen)
 
 [Historical weather reports](https://www.timeanddate.com/weather/usa/chicago/historic?month=8&year=2015) show that during the trend, the recorded high temperature fell from 32° Celsius on August 17 to 24° on August 20 and the recorded low temperature fell from 22° to 16° during the same period. Several days of thunderstorms and a 30% drop in humidity are also recorded. The addition of rainwater and overall drop in atmospheric temperature likely contributed to the decrease in water temperature without an analogous increase in water turbidity. No other rainfall is recorded in the month of August in Chicago.
 
@@ -179,7 +179,7 @@ The `2016` dataset has two irregular incidents. Of the two noted above, the latt
 
 ![](./images/battery-life.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5e4d1b0a#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/5e4d1b0a#fullscreen)
 
 No other substantial fluctuation of battery life is recorded during the observation period, that is likely the cause of the erroneous data.
 
@@ -203,6 +203,6 @@ Average annual turbidity is shown here.
 
 ![](./images/annual-average.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/c046b3ba)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/c046b3ba)
 
 Only one year recorded an annual average turbidity greater than 10 NTU.

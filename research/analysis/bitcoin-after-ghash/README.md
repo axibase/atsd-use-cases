@@ -18,7 +18,7 @@ the large-scale nature of certain operations gave rise to better results.
 
 ![](./images/btc-2.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/cfef4d8b/2/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/cfef4d8b/2/#fullscreen)
 
 _Source_: [CoinDesk](https://www.coindesk.com/price/)
 
@@ -34,7 +34,7 @@ transactions also decreased as shown below.
 
 ![](./images/btc-1.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/6677a920/2/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/6677a920/2/#fullscreen)
 
 _Source_: Quandl - [Market Capitalization](https://www.quandl.com/data/BCHAIN/MKTCP-Bitcoin-Market-Capitalization), [Estimated Transaction Value](https://www.quandl.com/data/BCHAIN/ETRVU-Bitcoin-Estimated-Transaction-Volume-USD)
 
@@ -72,7 +72,7 @@ generally seen a healthy resurgence in both usage and value.
 
 ![](./images/btc-3.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/6d049b41/2/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/6d049b41/2/#fullscreen)
 
 _Source_: Quandl - [Market Capitalization](https://www.quandl.com/data/BCHAIN/MKTCP-Bitcoin-Market-Capitalization), [Estimated Transaction Value](https://www.quandl.com/data/BCHAIN/ETRVU-Bitcoin-Estimated-Transaction-Volume-USD)
 
@@ -89,7 +89,7 @@ wallets and beginning to invest themselves.
 
 ![](./images/btc-5.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/94cad80b/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/94cad80b/#fullscreen)
 
 _Source_: Quandl - [Number of Users](https://www.quandl.com/data/BCHAIN/NADDU-Bitcoin-Number-of-Unique-Bitcoin-Addresses-Used), [Number of Transactions](https://www.quandl.com/data/BCHAIN/NTRAN-Bitcoin-Number-of-Transactions)
 
@@ -112,7 +112,7 @@ interface, the traded value of Bitcoin is normalized using log returns to track 
 
 ![](./images/btc-6.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/27a6f919/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/27a6f919/#fullscreen)
 
 Logarithmic, or log, returns are a simple methodology used by traders to normalize the value of a given stock. The same principle
 can be applied here to the traded value of Bitcoin because its volatility more closely resembles that of a stock, than that of

@@ -1,7 +1,7 @@
 # U.S. Approaching 3-Year Mark for Full Employment
 
 ![](./images/unemp-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/3a3b1c01#fullscreen)
 
 *Fig 1.* The upper chart in the **Trends** visualization above tracks U.S. unemployment and GDP, while the lower charts track percent change in unemployment and GDP value, respectively.
 
@@ -18,7 +18,7 @@ Since the 1980s, the United States has almost always been on the wrong side of t
 ### Full Employment in the United States
 
 ![](./images/full-10-employ.png)
-[![](./images/button-new.png)](https://trends.axibase.com/39178867#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/39178867#fullscreen)
 
 *Fig 2.* Periods of full employment are highlighted in green and periods of over 10% unemployment are highlighted in red. Full-employment and 10%-unemployment `[threshold]` series are used to highlight upper and lower value limits.
 
@@ -29,7 +29,7 @@ The **Trends** chart above tracks periods with full employment using an `alert-e
 While correlation alone can never be used to prove causation, common sense tells us that the more unemployed there are in the population, the worse off the GDP inevitably is. Compare the percent-change charts from above for unemployment and GDP when they are overlaid on one another.
 
 ![](./images/compare-emp-gdp.png)
-[![](./images/button-new.png)](https://trends.axibase.com/2a9d8451#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/2a9d8451#fullscreen)
 
 *Fig 3.* Series of dramatically different orders of magnitude may be shown on the same visualization using an `axis` setting.
 
@@ -51,7 +51,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   style = stroke-width:3
 ```
 
-* [`format`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/format-settings/) setting is used to display numerical information without insignificant figures.
+* [`format`](https://axibase.com/docs/charts/syntax/format-settings.html#format-settings) setting is used to display numerical information without insignificant figures.
 
 ```ls
 [series]
@@ -60,7 +60,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   display = false
 ```
 
-* [`value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting can define series value without `entity` or `metric`. In this case, a [user-defined function](https://github.com/axibase/charts/blob/master/syntax/udf.md) is used for inline value calculation.
+* [`value`](https://axibase.com/docs/charts/syntax/value_functions.html#value-functions) setting can define series value without `entity` or `metric`. In this case, a [user-defined function](https://axibase.com/docs/charts/syntax/udf.html) is used for inline value calculation.
 
 ```ls
 [series]
@@ -88,7 +88,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   alert-style = if (alert < 0.05) return 'color: green'
 ```
 
-* [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) may be created and customized using `alert-style` setting, where
+* [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions) may be created and customized using `alert-style` setting, where
 
 ```ls
 [threshold]
@@ -105,7 +105,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
    label-format = Full Employment Threshold
 ```
 
-* `[threshold]` series are used to define upper and lower limits for particular values.
+* [`[threshold]`](https://axibase.com/docs/charts/widgets/time-chart/#threshold-settings) settings are used to define upper and lower limits for particular values.
 
 * For full configuration settings open the **Trends** visualization [above](#the-relationship-between-gdp-and-unemployment).
 
@@ -117,15 +117,13 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   style = opacity: 0.25
 ```
 
-* [`axis`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) setting is used to enable dual-axis functionality when comparing two series of different orders of magnitude.
+* [`axis`](https://axibase.com/docs/charts/widgets/shared/#axis) setting is used to enable dual-axis functionality when comparing two series of different orders of magnitude.
 
 ## Resources
 
-The **Trends** service relies on ATSD for data-storage and processing tasks. All of the data from this article is stored in the publicly accessible instance of the **Trends** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) or any of the configuration settings explained in this article.
+The **Trends** service relies on ATSD for data-storage and processing tasks. All of the data from this article is stored in the publicly accessible instance of the **Trends** sandbox. Open any of the above visualizations shown here to perform custom modifications based on the [Charts Documentation](https://axibase.com/docs/charts/) or any of the configuration settings explained in this article.
 
 To create your own chart using the existing data, open an empty **Trends** [instance](https://trends.axibase.com/).
-
-For questions, technical support, or to suggest a dataset that you would like to see visualized, visit the Axibase GitHub repository and [raise an issue](https://github.com/axibase/atsd-use-cases/issues).
 
 Source data used for this article is linked here:
 

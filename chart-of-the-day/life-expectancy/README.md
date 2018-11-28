@@ -1,7 +1,7 @@
 # Slow Growth is Becoming a Human Trend Too
 
 ![](./images/life-ex-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/a31598af#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/a31598af#fullscreen)
 
 *Fig 1.* The above chart shows United States life expectancy figures for the last three and a half decades contrasted against the age-adjusted death rate per 100,000 persons.
 
@@ -37,9 +37,9 @@ Data is visualized using **Trends** service from Axibase, a public data reposito
 Open the **Trends** visualization to toggle secondary datasets on and off using the labeled buttons along the top of the visualization.
 
 ![](./images/life-ex-10.png)
-[![](./images/button-new.png)](https://trends.axibase.com/172ff342#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/172ff342#fullscreen)
 
-*Fig 2.* Using a variable `value` expression and a `time-offset` setting, previous-year data may be compared to current-year data to show the diminishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/) below the [Time Series](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) chart tracks the distribution range of values and shows that the average growth rate of the life expectancy has not achieved for the last several years from all tracked demographics.
+*Fig 2.* Using a variable [`value`](https://axibase.com/docs/charts/widgets/shared/#derived-value-settings) expression and a [`time-offset`](https://axibase.com/docs/charts/widgets/shared/#time-offset) setting, previous-year data may be compared to current-year data to show the diminishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/docs/charts/widgets/box-chart/) (below) and  the [Time Chart](hhttps://axibase.com/docs/charts/widgets/time-chart/) (above) track the value distribution range and shows that the average growth rate of the life expectancy was achieved for the last several years for any tracked demographics.
 
 The `value` expression using to derive the above series is shown here:
 
@@ -73,14 +73,14 @@ To create such a series in a local **Trends** instance, use this syntax as a tem
       value = var v = value('cle'); var p = value('cleo'); if(p!=null && v!=null) return v - p
 ```
 
-For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression. For metrics with multiple tags, [wildcard](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) (`*`) symbols are used. Metric tag labels are set automatically using [label formatting](https://axibase.com/products/axibase-time-series-database/visualization/widgets/label-formatting/) settings.
+For both series used to calculate the derived series, an `alias` is applied and the `display` setting is `false`. The `time-offset` setting is applied to a second identical dataset and used in the third **[series]** expression. For metrics with multiple tags, [wildcard](https://axibase.com/docs/charts/syntax/wildcards.html#wildcards) (`*`) symbols are used. Metric tag labels are set automatically using [label formatting](https://axibase.com/docs/charts/syntax/label-formatting.html) settings.
 
 ### Compounded Decadal Rate of Change
 
 Because changes in life expectancy may fluctuate dramatically, compounding the decadal rate of change is useful to smooth such volatility across the entire trend line.
 
 ![](./images/comp-life-ex.png)
-[![](./images/button-new.png)](https://trends.axibase.com/e9e54d0f#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/e9e54d0f#fullscreen)
 
 *Fig 3.* Because compounded rate of change is an iterative set of added values, the individual points along the trend line display even more variance than before but the slope of the line is shown to be distinctly negative.
 
@@ -120,10 +120,10 @@ The `previous` function is used to select the entry preceding the current value.
 
 While the compounded annual rate of change for this dataset showed the overall downward trend of the growth in life expectancy figure, it failed to smooth the individual points along the trend line and exaggerated them in some places.
 
-The moving average [statistical function](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) is a native ATSD aggregator which records a new average value for some number of index positions, in this case each index position represents one year.
+The moving average [statistical function](https://axibase.com/docs/charts/configuration/aggregators.html#aggregators) is a native ATSD aggregator which records a new average value for some number of index positions, in this case each index position represents one year.
 
 ![](./images/smooth-life-ex.png)
-[![](./images/button-new.png)](https://trends.axibase.com/0533f119#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/0533f119#fullscreen)
 
 *Fig 4.* Not only is the general downward slope of the trend line visible but most of the dramatically varied data points have been smoothed, moving them closer to the median value. The upper time series chart shows the smoothed data, the lower chart shows the original data for comparison.
 
@@ -174,7 +174,7 @@ Instead of using a wildcard to access each tag for the given series, this config
 Compare the combined life expectancy data for both sexes and racial categories on one chart to see the effects of smoothing:
 
 ![](./images/life-ex-comp.png)
-[![](./images/button-new.png)](https://trends.axibase.com/1e7242d7#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/1e7242d7#fullscreen)
 
 *Fig 5.*: The original life expectancy change from previous year data is shown here with the same data after it the `movavg` function has been applied.
 
@@ -183,7 +183,7 @@ Compare the combined life expectancy data for both sexes and racial categories o
 The diminishing increase in United States life expectancy indicates that this rate of improvements may be as good as it gets for mankind. A number of [easily accessible](https://lmgtfy.com/?q=peak+life+expectancy) and recent resources have shown large research organizations coming to the same conclusion: sometime in the next 20 - 30 years we may see a complete flattening of that line. Despite the continuous increase in nutritional, performance-enhancing, and medical / surgical options, scientists are beginning to believe that current human life expectancy may not reach much higher than it already has.
 
 ![](./images/life-ex-comb.png)
-[![](./images/button-new.png)](https://trends.axibase.com/feeee62f#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/feeee62f#fullscreen)
 
 *Fig 6.* Open the **Trends** visualization above and disable the series as shown to reproduce the above visualization showing that allow life expectancy continues to increase, the derivative rate of increase is approaching zero.
 

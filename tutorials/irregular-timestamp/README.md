@@ -60,9 +60,9 @@ Using [**ChartLab**](../shared/chartlab.md), the dataset is parsed to create a v
 
 ![](./images/juvenille-rearrest-rate.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/b560456e)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/b560456e)
 
-The declarative [Charts Syntax](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) defines the `entity` and `metric` created by the parser upon import:
+[Charts syntax](https://axibase.com/docs/charts/) specifies [`entity`](https://axibase.com/docs/charts/widgets/alert-console/#entity) and [`metric`](https://axibase.com/docs/charts/widgets/alert-console/#metric) created by the parser upon import:
 
 ```ls
 [series]

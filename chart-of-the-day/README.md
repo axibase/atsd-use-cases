@@ -2,6 +2,19 @@
 
 Interactive visualizations tracking interesting datasets from a variety of sources.
 
+<!-- markdownlint-disable MD101 -->
+
+1. [Workers in Alternative Arrangements](alt-work/README.md) (November 2018)
+1. [Loan Delinquency Rates, All Commercial Banks](loan-delinquency-rate/README.md) (November 2018)
+1. [Fixing Rate for Precious Metals](gold-money/README.md) (November 2018)
+1. [Oroville Dam Baselines](oroville-dam-baselines.md) (November 2018)
+1. [US Expatriations are back to Pre-Election Levels](us-expatriation-2018-q3.md) (November 2018)
+1. [The Practicality of a True European Army](european-army/README.md) (November 2018)
+1. [Increased Competition Fosters Falling Airline Prices](airline-prices/README.md) (November 2018)
+1. [The Econometrics of Halloween](halloween/README.md) (October 2018)
+1. [Stag-cation: The Stagnation of Supplemental Benefits](supplemental-benefits/README.md) (October 2018)
+1. [The Lopsided Nature of US Unemployment](unemployment/tech-employment.md) (September 2018)
+1. [Presidential Economic Metrics Portal](presidential-economic-metrics/README.md) (August 2018)
 1. [California Water Portals](water-portal/README.md) (July 2018)
 1. [Tracking 2018 Cryptocurrency Value](crypto/README.md) (June 2018)
 1. [Hetzner May 2018 Outage](hetzner-outage/README.md) (May 2018)
@@ -24,3 +37,5 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 1. [DuckDuckGo Search Statistics](duck-duck-go/README.md) (July 2015)
 1. [Tracking Programming Language Popularity on Stack Overflow](stack-exchange/README.md) (June 2015)
 1. [AWS EC2 T2 Instances: 700 seconds of Fame](700-seconds/README.md) (May 2015)
+
+<!-- markdownlint-enable MD101 -->

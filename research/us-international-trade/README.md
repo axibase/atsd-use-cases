@@ -34,7 +34,7 @@ The upper image shows exports in blue and imports in pink. In 2016, imports into
 
 ![Figure 1](./images/Figure1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/552d7a44/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/552d7a44/2/#fullscreen)
 
 In addition to looking at graphical outputs, perform [SQL queries](https://axibase.com/docs/atsd/sql/) to search for specific information in this dataset. According to the query below, 1991 had the least negative trade balance of **-$66.7 billion**.
 
@@ -66,7 +66,7 @@ As shown in the figure below, the trade balance deficit between the U.S. and Chi
 
 ![Figure 4](./images/Figure4.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/552d7a44#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/552d7a44#fullscreen)
 
 Explore the trade between the United States and any other country included in this dataset by opening the **ChartLab** visualization. Open the drop-down lists to navigate between countries, as well as entire continents or specific organizations.
 
@@ -127,7 +127,7 @@ respectively.
 
 ![Figure 2](./images/Figure2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/53e42403#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/53e42403#fullscreen)
 
 2016 trade balance (in billions USD) with the world as a whole:
 
@@ -169,7 +169,7 @@ heaviest lines are between the U.S. and Asia, indicating the enormous trade volu
 
 ![Figure 3](./images/Figure3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/b9f27b14/2/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/b9f27b14/2/#fullscreen)
 
 This query tracks the largest absolute trading partners of the United States.
 

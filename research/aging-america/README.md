@@ -1,7 +1,7 @@
 # Aging America: Modeling Birth Trends in the United States
 
 ![](./images/aging-america-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/9703ea57#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/9703ea57#fullscreen)
 
 > The upper graph shows the growing senior population contrasted to the diminishing birth rate.<br>The lower graphs show the growing difference in total population and total work-eligible population aged 15-64.
 
@@ -36,7 +36,7 @@ Data is visualized using **Trends**, a public instance of ATSD with subsets of p
 Open the **Trends** visualization and use the drop-down list to navigate through time to compare working-aged population to the United States total population.
 
 ![](./images/working-population.png)
-[![](./images/button-new.png)](https://trends.axibase.com/2228bbde#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/2228bbde#fullscreen)
 
 *Fig 2*: The portion of the population eligible for work (aged between 15 and 64) is shown in purple, while the remaining ineligible population is shown in red.
 
@@ -45,9 +45,9 @@ Open the **Trends** visualization and use the drop-down list to navigate through
 The upper [Histogram Chart](https://axibase.com/docs/charts/widgets/histogram/) plots the frequency of each value of annual crude births per one thousand persons; the lower Histogram Chart tracks the 65+ population by percentage. Deceptively, the data seems to show that the average amount of births outperforms the aging population, but when scaled to 100, in fact, the aged population severely outnumbers the amount of crude births which are occurring.
 
 ![](./images/population-histogram.png)
-[![](./images/button-new.png)](https://trends.axibase.com/df87fe0c#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/df87fe0c#fullscreen)
 
-*Fig 3*: Open the **Trends** visualization and modify the number of bars in either histogram using a [`bar-count`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/histogram-chart/#tab-id-1) setting for more granularized data visualization.
+*Fig 3*: Open the **Trends** visualization and modify the number of bars in either histogram using a [`bar-count`](https://axibase.com/docs/charts/widgets/histogram/#bar-count) setting for more granularized data visualization.
 
 ### Diminishing Working Population
 
@@ -61,8 +61,8 @@ Using the [`value`](https://axibase.com/docs/charts/widgets/shared/#value) setti
     title = Working Population Bar Chart
     type = chart
     mode = column
-    starttime = 1980
-    endtime = 2017
+    start-time = 1980
+    end-time = 2017
 
     [series]
     metric = POPTOTUSA647NWDB
@@ -90,7 +90,7 @@ Using the [`value`](https://axibase.com/docs/charts/widgets/shared/#value) setti
 Each of the target series is given an [`alias`](https://axibase.com/docs/charts/widgets/shared/#alias) which is then used to create the calculated series. For more information about creating calculated series in **Trends** or **ChartLab**, refer to the [Calculated Series Tutorial](../../tutorials//calculated-values/README.md).
 
 ![](./images/working-population-charts.png)
-[![](./images/button-new.png)](https://trends.axibase.com/68f93899#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/68f93899#fullscreen)
 
 *Fig 4*: The [Box Chart](https://axibase.com/docs/charts/widgets/box-chart/) and Histogram Chart establish the median and range values of the dataset, which are then used in the [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions), which alerts when a condition is satisfied. Here, the condition colors a bar red if it is greater than the calculated median value. This shows that since late 1998, the number of people deemed ineligible to work has surpassed the calculated median value and continued to grow.
 
@@ -111,9 +111,9 @@ Use [Data Forecasting](https://axibase.com/docs/atsd/forecasting/#data-forecasti
 The results for each of the original metrics are shown below for 20 years into the future.
 
 ![](./images/forecast_data.png)
-[![](./images/button-new.png)](https://trends.axibase.com/a2967bc9#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/a2967bc9#fullscreen)
 
-*Fig 5*: The original data is shown here with forecasts  showing the potentially widening gap between those eligible to pay in to the Social Security system and those needing to be paid out from that system.
+*Fig 5*: The original data is shown here with forecasts showing the potentially widening gap between those eligible to pay in to the Social Security system and those needing to be paid out from that system.
 
 Scale Data Forecasting to work with <i>per annum</i> data as seen here just as readily as millisecond-frequency data input from a sensor or other device.
 

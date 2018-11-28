@@ -56,7 +56,7 @@ The [File Job](https://axibase.com/docs/axibase-collector/jobs/file.html) sets u
 
 ![](./images/collector_file_job.png)
 
-The [File Forwarding Configuration](https://axibase.com/docs/axibase-collector/jobs/file.html#configuration) is a parser configuration for incoming data from the external source. The path to the external data source is specified and a default entity is assigned to the Fresno monitoring sensor station. `Starttime` and [`endtime`](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) determine the time frame for retrieving new data.
+The [File Forwarding Configuration](https://axibase.com/docs/axibase-collector/jobs/file.html#configuration) is a parser configuration for incoming data from the external source. The path to the external data source is specified and a default entity is assigned to the Fresno monitoring sensor station. [`start-time`](https://axibase.com/docs/charts/widgets/shared/#start-time) and [`end-time`](https://axibase.com/docs/charts/widgets/shared/#end-time) determine the time frame for retrieving new data.
 
 ![](./images/collector_parser1.png)
 
@@ -142,7 +142,7 @@ The next step is to create a competing forecast in ATSD using the built-in forec
 
 ### Visualizing the Results
 
-To visualize the data and forecasts, a portal is created using the [visualization](https://axibase.com/products/axibase-time-series-database/visualization/) features of ATSD.
+To visualize the data and forecasts, create a portal from data stored in ATSD using [Charts](https://axibase.com/docs/charts/).
 
 ![](./images/portal_air_quality1.png)
 
@@ -156,7 +156,7 @@ ATSD built-in forecasting produces more accurate results than one of the most ad
 
 Keep track of how these forecasts perform in comparison to the actual data in Axibase [ChartLab](../shared/chartlab.md).
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/d06179aa)
+[![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/d06179aa)
 
 ### Alerts and Notifications
 

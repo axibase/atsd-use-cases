@@ -20,9 +20,9 @@ The original data and new data are shown together. The range of conclusions one 
 
 ![](./images/xo-graph.png)
 
-[![](./images/button-new.png)](https://trends.axibase.com/2b56345c#fullscreen)
+[![](../../trends/images/button-new.png)](https://trends.axibase.com/2b56345c#fullscreen)
 
-The special item is removed using a [`replace-value`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/) setting:
+The special item is removed using the [`replace-value`](https://axibase.com/docs/charts/widgets/shared/#replace-value) setting:
 
 ```javascript
 # remove extraordinary item completely.
@@ -31,7 +31,7 @@ replace-value = time == new Date('2017-10-01T00:00:00Z').getTime() ? value-1000 
 
 This setting targets a specific date, and evaluates an `if-else` expression which subtracts `$1` trillion or `$750` billion from the value of the defined date.
 
-The `group-period` and `group-statistic` settings are used to return non-annualized data, which still includes the `$250` billion extraordinary item, but does not include the additional `$750` billion from annualization.
+The [`group-period`](https://axibase.com/docs/charts/widgets/shared/#group-period) and [`group-statistic`](https://axibase.com/docs/charts/widgets/shared/#group-statistic) settings are used to return non-annualized data, which still includes the `$250` billion extraordinary item, but does not include the additional `$750` billion from annualization.
 
 ```javascript
 # remove annualization factor from raw data, group by annual period, sum samples for actual results.

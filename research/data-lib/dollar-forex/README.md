@@ -2,17 +2,17 @@
 
 Data Source: [Federal Reserve Economic Data (FRED)](https://fred.stlouisfed.org/categories/94)
 
-Visualizations: [ChartLab](https://apps.axibase.com/chartlab)
+Visualizations: [ChartLab](https://axibase.com/use-cases/tutorials/shared/chartlab.html)
 
-Structured Query Language: [SQL Console](https://axibase.com/docs/atsd/sql/) in ATSD
+Structured Query Language: [SQL Console](https://axibase.com/docs/atsd/sql/sql-console.html) in ATSD
 
 ## Index
 
 Data is aggregated daily in visualizations, and annually in SQL queries. Favorable dollar exchange rates are shown in green
 while less favorable exchange rates are shown in red, based on the overall 5-year average exchange rate. Each section is accompanied
-by a brief analysis to give the data context. Using computed [value settings](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/)
+by a brief analysis to give the data context. Using [derived value settings](https://axibase.com/docs/charts/widgets/shared/#derived-value-settings)
 thresholds have been calculated using the underlying data, the upper 25th percentile of a given exchange rate is considered
-favorable while the lower 25th percentile is considered less than favorable. The data is coded with an ID which is provided in the index as well. Open any [ChartLab](https://apps.axibase.com/chartlab) display below to navigate through time, or change the metric to reflect a different exchange rate.
+favorable while the lower 25th percentile is considered less than favorable. The data is coded with an ID which is provided in the index as well. Open any [ChartLab](https://axibase.com/use-cases/tutorials/shared/chartlab.html) display below to navigate through time, or change the metric to reflect a different exchange rate.
 
 [Europe](#europe)
 
@@ -58,7 +58,7 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-01.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/5/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/5/#fullscreen)
 
 Open the ChartLab visualization above to navigate through time or select a different currency.
 
@@ -89,7 +89,7 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-02.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/9/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/9/#fullscreen)
 
 Open the ChartLab visualization above to navigate through time or select a different currency.
 
@@ -119,7 +119,7 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-03.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/6/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/6/#fullscreen)
 
 Open the ChartLab visualization above to navigate through time or select a different currency.
 
@@ -153,7 +153,7 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-041.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/4/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/4/#fullscreen)
 
 Open the ChartLab visualization above to navigate through time or select a different currency.
 
@@ -183,7 +183,7 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-05.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/2/#fullscreen)
 
 Open the ChartLab visualization above to navigate through time or select a different currency.
 
@@ -211,7 +211,7 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-06.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/3/#fullscreen)
 
 Open the ChartLab visualization above to navigate through time or select a different currency.
 
@@ -241,7 +241,7 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-07.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/8/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/8/#fullscreen)
 
 Open the ChartLab visualization above to navigate through time or select a different currency.
 
@@ -272,7 +272,7 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-08.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/#fullscreen)
 
 Open the ChartLab visualization above to navigate through time or select a different currency.
 
@@ -304,7 +304,7 @@ GROUP BY PERIOD(1 YEAR)
 
 ![](./images/de-09.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/424eb6b2/7/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/424eb6b2/7/#fullscreen)
 
 Open the ChartLab visualization above to navigate through time or select a different currency.
 

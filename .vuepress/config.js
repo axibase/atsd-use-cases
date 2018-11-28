@@ -1,25 +1,27 @@
 const githubSettings = {
     docsRepo: 'axibase/atsd-use-cases',
     editLinks: true,
-    editLinkText: 'Help us improve this page!'
+    editLinkText: 'Feedback? Comments?'
 }
 
 const topNavMenu = [
-    { text: 'Research', link: '/research/' },
     { text: 'Chart of the Day', link: '/chart-of-the-day/' },
-    { text: 'Trends', link: '/trends/' },
     { text: 'Integrations', link: '/integrations/' },
+    { text: 'Research', link: '/research/' },
+    { text: 'Trends', link: '/trends/' },
     { text: 'Tutorials', link: '/tutorials/' },
+    { text: 'Workshops', link: '/workshop/'},
     { text: 'Docs', link: 'https://axibase.com/docs/atsd/' },
 ]
 
 const landingPageMenu = [
-    ['/research/', 'Research'],
     [ '/chart-of-the-day/', 'Chart of the Day'],
-    [ '/trends/',  'Trends' ],
-    [ '/integrations/', 'Integrations' ],
-    [ '/tutorials/', 'Tutorials' ],
     ['https://axibase.com/datasets/', 'Datasets'],
+    [ '/integrations/', 'Integrations' ],
+    ['/research/', 'Research'],
+    [ '/trends/',  'Trends' ],
+    [ '/tutorials/', 'Tutorials' ],
+    ['/workshop/', 'Workshops'],
 ];
 
 const chartofthedayMenu = [
@@ -49,7 +51,7 @@ const integrationsMenu = [
             ['activemq/', 'ActiveMQ'],
             ['aws/', 'AWS'],
             ['cadvisor/', 'cAdvisor'],
-            ['docker/', 'Docker'],
+            ['docker/docker-engine.md', 'Docker'],
             ['github/', 'GitHub'],
             ['itm/', 'IBM Tivoli Monitoring'],
             ['kafka/', 'Kafka'],
@@ -76,7 +78,7 @@ module.exports = {
     base: '/use-cases/',
     title: 'Axibase Time Series Database Use Cases',
     titleNote: 'ATSD',
-    description: "Use Cases and Walkthrough Guides for Axibase® Time Series Database",
+    description: "Use Case Articles and Integration Guides for Axibase® Time Series Database",
     head: [
         ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
     ],
@@ -84,7 +86,14 @@ module.exports = {
     themeConfig: {
         nav: topNavMenu,
         logo: '/images/axibase_logo_site.png',
-
+        algolia: {
+            appId: 'BH4D9OD16A',
+            apiKey: 'd46fb51356528c83c9c1c427e6d7206d',
+            indexName: 'axibase',
+            algoliaOptions: {
+                facetFilters: ["tags:use-cases"]
+            }
+        },
         sidebarDepth: 1,
         sidebar: {
             '/trends/': trendsMenu,
@@ -100,6 +109,9 @@ module.exports = {
         searchMaxSuggestions: 10,
 
         ...githubSettings
+    },
+    markdown: {
+        slugify
     }
 }
 
@@ -114,4 +126,23 @@ function loadFromEnv(setting, varName) {
             module.exports[setting] = value;
         }
     }
+}
+
+const rControl = /[\u0000-\u001f]/g
+const rSpecial = /[\s~`!@#$%^&*()\-+=[\]{}|\\;:"'<>,.?/]+/g
+
+function slugify (str) {
+  return str
+    // Remove control characters
+    .replace(rControl, '')
+    // Replace special characters
+    .replace(rSpecial, '-')
+    // Remove continous separators
+    .replace(/\-{2,}/g, '-')
+    // Remove prefixing and trailing separtors
+    .replace(/^\-+|\-+$/g, '')
+    // ensure it doesn't start with a number (#121)
+    .replace(/^(\d)/, '_$1')
+    // lowercase
+    .toLowerCase()
 }

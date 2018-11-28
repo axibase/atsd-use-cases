@@ -85,7 +85,7 @@ Open the **Entities** tab and ensure Collector displays the Kafka nodes with hos
 
 ![](./images/nodes-hosts1.png)
 
-Open the **Portals** menu and select **Configure**.
+Open the **Portals** menu and click **Configure**.
 
 ![](./images/portals-enable-1.png)
 
@@ -99,7 +99,7 @@ Check **Kafka Broker** portal. Return to the **Entities** page, find any kafka b
 
 ![](./images/kafka-broker-portal-check-2.png)
 
-Check Kafka cluster entity view and portal. Open the **Entity Views** menu and select **Kafka**.
+Check Kafka cluster entity view and portal. Open the **Entity Views** menu and click **Kafka**.
 
 ![](./images/kafka-cluster-check-1.png)
 

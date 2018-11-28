@@ -4,9 +4,9 @@
 
 ## Introduction
 
-**ChartLab** is a versatile online tool which allows users to test drive ATSD visualization capabilities. **ChartLab** does not require any registration and allows you to experiment with different layouts and widget settings prior to deploying it in your own ATSD instance. For front-end developers familiar with [jsfiddle](https://jsfiddle.net/da1rosy8/6/), **ChartLab** shares many of the same properties and characteristics.
+**ChartLab** is a versatile online tool which supports the visualization capabilities of ATSD. **ChartLab** does not require any registration and allows any user to experiment with different [widgets](https://axibase.com/docs/charts/#widgets) and [settings](https://axibase.com/docs/charts/widgets/shared/) prior to deploying it in a local ATSD instance. For front-end developers familiar with [JsFiddle](https://jsfiddle.net/da1rosy8/6/), **ChartLab** shares many of the same properties and characteristics.
 
-This tutorial shows basic features and functionality of the **ChartLab** service.
+This tutorial shows basic **ChartLab** features and functionality.
 
 ## ChartLab Features
 
@@ -19,7 +19,7 @@ The **ChartLab** menu has the following components:
 * **Save**: Save the current configuration under as new version in the current directory;
 * **Clone**: Save current configuration in a new directory;
 * **Widget**: Append widget template to the selected configuration;
-* **Source**: Switch between data sources: Random or ATSD.
+* **Source**: Switch between data sources; **Random** or **ATSD**.
 
 ## Source
 
@@ -30,23 +30,21 @@ The **ChartLab** menu has the following components:
 
 ![Figure 2](./images/Figure2.png)
 
-The Random Data Generator is a non-existent dataset which invokes the `math.random()` JavaScript function.
+The Random Data Generator is a non-existent dataset which invokes the JavaScript function [`Math.random()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random).
 
->For more information see the [Mozilla Developer Network Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random).
+>For more information refer to [Mozilla Developer Network Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random).
 
-This function returns a floating-point, pseudo-random number in the range `[0,1]`, which includes all number from zero up to, but not including, 1. These numbers have no meaning, the functions generates a new random number every 60 seconds.
+This function returns a floating-point, pseudo-random number in the range `[0,1]`, which includes all number from `0` up to, but not including `1`. These numbers have no meaning, the function generates a new random number every 60 seconds.
 
-Use the Random Data Generator to explore different widgets and layouts available in **ChartLab**
+> Use the Random Data Generator to explore different widgets and layouts available in **ChartLab**
 
-ATSD data is data stored in ATSD from a variety of sources including server equipment, network devices, and online resources. Use **ChartLab** to access public data stored by ATSD and [install](https://axibase.com/docs/atsd/installation/) the database to begin uploading your own.
+The **ATSD** option sources data stored in ATSD from a variety of entities such as server equipment, network devices, and online resources. Use **ChartLab** to access public data stored by ATSD or [install the database](https://axibase.com/docs/atsd/installation/) to insert more.
 
 ## Widget
 
-ChartLab contains each of these **Widgets**, shown in this image.
+**ChartLab** contains a number of **Widgets**, shown below.
 
 ![Figure 3](./images/Figure3.png)
-
-See the [Axibase website](https://axibase.com/products/axibase-time-series-database/visualization/widgets/) for complete information about available widgets.
 
 To add a Widget template to the **Editor** window, open the **Widget** drop-down list and select a widget.
 
@@ -56,17 +54,17 @@ Once you define a **Source** and **Widget**, click **Run** to render the visuali
 
 ## Widget Settings
 
-Widgets are visualized chronologically, from top to bottom, based on the order in the **Editor** window. The figure below displays a Chart and Histogram widget, respectively.
+Widgets are visualized chronologically, from top to bottom, based on the order in the **Editor** window. The figure below displays a [Time Chart](https://axibase.com/docs/charts/widgets/time-chart/) and [Histogram Chart](https://axibase.com/docs/charts/widgets/histogram/), respectively.
 
 ![Figure 13](./images/Figure13.png)
 
-By default, widgets are arranged in a single horizontal row. Add a new `[group]` clause to modify this feature.
+By default, widgets are arranged in a single horizontal row. Add a new `[group]` header to modify this feature.
 
-In the image below, a Pie Chart widget is created by adding a new `[group]`.
+In the image below, a [Pie Chart](https://axibase.com/docs/charts/widgets/pie-chart/) is created via the addition of a new `[group]` and `[widget]` header.
 
 ![Figure 15](./images/Figure15.png)
 
-Change **height-units** and **width-units** settings in the **Editor** window to resize the widgets.
+Modify [`height-units`](https://axibase.com/docs/charts/configuration/#height-units) and [`width-units`](https://axibase.com/docs/charts/configuration/#width-units) settings in the **Editor** window to resize the widgets.
 
 ![Figure 16](./images/Figure16.png)
 
@@ -79,7 +77,9 @@ Quickly reformat all text shown in the **Editor** window. Select all text and us
 
 ## Save
 
-If you would like to create a new version of the current portal by adding a version suffix to the current URL, click **Save**.
+To create a new version of the current portal by adding a version suffix to the current URL, click **Save**.
+
+> Note that if the visualization has not been saved yet, clicking **Save** assigns the visualization a new URL.
 
 Use the **Versions** drop-down list to select a specific iteration of a given chart.
 
@@ -91,7 +91,7 @@ To save the portal under an entirely new URL click **Clone**.
 
 ![Figure 12](./images/Figure12.png)
 
-The cloned portal is identical to the original with a unique URL. Use this feature to publish a final addition while earlier versions remain hidden.
+The cloned portal is identical to the original with a unique URL. Use this feature to publish a final edition while earlier versions remain hidden.
 
 ## Editor
 
@@ -99,7 +99,7 @@ Show or hide the **Editor** window by clicking **Editor**.
 
 ## Miscellaneous Features
 
-Use the toolbar at the top of the screen to further customize your visualization.
+Use the toolbar at the top of the screen to further customize a visualization.
 
 ![Figure 10](./images/Figure10.png)
 
@@ -109,7 +109,7 @@ Use the toolbar at the top of the screen to further customize your visualization
 
 **Fullscreen** toggles the view between standard and fullscreen.
 
-Access [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/portal-settings/) by clicking **Information**.
+Access [Charts Documentation](https://axibase.com/docs/charts/) by clicking **Information**.
 
 ## User-Defined Functions
 
@@ -117,7 +117,7 @@ Access [Charts Documentation](https://axibase.com/products/axibase-time-series-d
 
 ![](./images/fred-lib-demo.png)
 
-[![](./images/button.png)](https://trends.axibase.com/c9311303#fullscreen)
+[![](../../research/images/new-button.png)](https://trends.axibase.com/c9311303#fullscreen)
 
 The above visualization applies user-defined functions for each of the series. An abbreviated version of the configuration is shown here:
 
@@ -145,7 +145,7 @@ The above visualization applies user-defined functions for each of the series. A
   value = fred.MonthlyChange('base')
 ```
 
-Using two series, **ChartLab** calculates the monthly change as a new series with a `value` expression which applies `MonthlyChange` function from the `fred` library to the series identified with alias `base`.
+Using two series, **ChartLab** calculates the monthly change as a new series with a [`value`](https://axibase.com/docs/charts/widgets/shared/#value) expression which applies `MonthlyChange` function from the `fred` library to the series identified with alias `base`.
 
 ### `fred` Library
 
@@ -155,20 +155,20 @@ Any **ChartLab** user may access the `fred.js` library, which contains the follo
 |------------------------------------|-----------------|-------------|
 | [`MonthlyChange`](https://trends.axibase.com/c5e043b5)                      | alias           | Month-on-month change |
 | [`ChangeFromYearAgo`](https://trends.axibase.com/34165ff1)                  | alias           | Year-on-year change |
-| [`ChangeByOffset`](https://trends.axibase.com/90cfadae)                     | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
+| [`ChangeByOffset`](https://trends.axibase.com/90cfadae)                     | alias, [interval](https://axibase.com/docs/charts/widgets/shared/#end-time) | Customizable interval-on-interval change |
 | [`MonthlyPercentChange`](https://trends.axibase.com/7bca24b2)               | alias           | Month-on-month percent change |
 | [`PercentChangeFromYearAgo`](https://trends.axibase.com/44627e1d)           | alias           | Year-on-year percent change |
-| [`PercentChangeByOffset`](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/products/axibase-time-series-database/visualization/end-time/) | Customizable interval-on-interval change |
+| [`PercentChangeByOffset`](https://trends.axibase.com/b0deb565)              | alias, [interval](https://axibase.com/docs/charts/widgets/shared/#end-time) | Customizable interval-on-interval change |
 | [`CompoundedAnnualRateOfChange`](https://trends.axibase.com/f04b65fc)       | alias           | Geometric-progression ratio which compounds change annually
 | [`ContinuouslyCompoundedRateOfChange`](https://trends.axibase.com/16ea90bf) | alias           | Geometric-progression ratio which continuously compounds change over an infinitesimally small interval
-| [`NaturalLog`](https://trends.axibase.com/897f53e1)                         | alias           | Natural Logarithm (`LOG` base constant `e`)
+| [`NaturalLog`](https://trends.axibase.com/897f53e1)                         | alias           | Natural Logarithm (<small>log</small><sub>e</sub> or <small>ln</small>)
 | [`IndexMax`](https://trends.axibase.com/3db3bfa7)                           | alias           | Maximum series value is used as index value
-| [`Index`](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/products/axibase-time-series-database/visualization/end-time/)     | User-selected value is used as index value
+| [`Index`](https://trends.axibase.com/964a4b97)                              | alias, [time](https://axibase.com/docs/charts/widgets/shared/#end-time)     | User-selected value is used as index value
 
 Open any of the visualizations above to see syntax and visual demonstrations of each function.
 
 ## Further Reading
 
-For more detailed information about ATSD, the underlying mechanics, or download instructions see the [ATSD Documentation](https://axibase.com/docs/atsd/).
+For more detailed information about ATSD, the underlying mechanics, or download instructions refer to [ATSD Documentation](https://axibase.com/docs/atsd/).
 
 Reach out with questions, comments, or suggestions by raising an [issue](https://github.com/axibase/atsd-use-cases/issues) on the Axibase GitHub page.

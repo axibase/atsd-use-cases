@@ -1,7 +1,7 @@
 # Profit Margin by Industry Explorer
 
 ![](./images/pm-title.png)
-[![](./images/button-new.png)](https://trends.axibase.com/54f3afeb)
+[![](../images/button-new.png)](https://trends.axibase.com/54f3afeb)
 
 *Fig 1.* Open the **Trends** explorer above to navigate through the visualization of the data used to for a recent AEI article written by economist Mike J. Perry.
 
@@ -39,7 +39,7 @@ Using the [**Trends**](https://trends.axibase.com/) service and [SQL Console](ht
 ## Trading Value
 
 ![](./images/trading-value.png)
-[![](./images/button-new.png)](https://trends.axibase.com/2eb832d7#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/2eb832d7#fullscreen)
 
 *Fig 2.* The above industries logged the highest profit margin based purely on marking up the price of their product relative to the cost it took to create and distribute it. **Metric:** `cogs/sales`.
 
@@ -71,7 +71,7 @@ LIMIT 10
 ## Creating Value
 
 ![](./images/creating-value.png)
-[![](./images/button-new.png)](https://trends.axibase.com/407829bc#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/407829bc#fullscreen)
 
 *Fig 3.* The above industries trade in goods that are intrinsically valueless but are deployed in such as way as to create value based on real-world transaction. Note that R.E.I.T. is an abbreviation for the real estate, investment, and trust industry. **Metric:** `gross_margin`.
 
@@ -103,7 +103,7 @@ LIMIT 10
 ## Developing Value
 
 ![](./images/developing-value.png)
-[![](./images/button-new.png)](https://trends.axibase.com/be5ff3c6#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/be5ff3c6#fullscreen)
 
 *Fig 4.* The above industries leverage complex development processes to use existing products in new and innovative ways to develop increased value. A new pharmaceutical product, for example, may spend more than 10 years in clinical trials and development before it is approved to be used by the public. **Metric:** `r&d/sales`.
 
@@ -135,7 +135,7 @@ LIMIT 10
 ## Market Totals
 
 ![](./images/market-totals.png)
-[![](./images/button-new.png)](https://trends.axibase.com/c78e4e04#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/c78e4e04#fullscreen)
 
 *Fig 5.* The above visualization tracks market totals across all observed metrics. Use the drop-down list to narrow the displayed metrics to the top ten, bottom ten, or use the `*` wildcard symbol to show them all. **Metric:** `*`.
 
@@ -173,7 +173,7 @@ ORDER BY value DESC
 ## Top Ten Industries with the Highest Profit Margin
 
 ![](./images/top-ten-by-sector.png)
-[![](./images/button-new.png)](https://trends.axibase.com/f2a850a5#fullscreen)
+[![](../images/button-new.png)](https://trends.axibase.com/f2a850a5#fullscreen)
 
 **Fig 6.** The top ten industries with the highest profit margin with all factors considered are shown here. Use the drop-down list to navigate through all metrics and see the top ten or bottom ten sectors for each one, or select the `*` wildcard character to view them all together. When doing this it is recommended to apply the setting `horizontal = true` by removing the `#` comment character from the configuration window. **Metric:** `net_margin`
 

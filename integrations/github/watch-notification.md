@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide shows how to configure GitHub to alert you when someone begins to watch your repository. This feature allows you to monitor your repository followers. Follow the instructions to configure ATSD to send you the notifications directly through a third-party messenger service with.
+This guide shows how to configure GitHub to alert you when someone begins to watch your repository. This feature allows you to monitor your repository followers. Follow the instructions to configure ATSD to send you the notifications directly through a third-party messenger service.
 
 ![](./images/workflow_watch.png)
 
@@ -57,7 +57,7 @@ Open the **Settings** menu of the GitHub repository to monitor.
 
 ![](./images/repo-settings.png)
 
-Select the **Webhooks** tab from the left-side menu and click **Add Webhook**.
+Open the **Webhooks** tab from the left-side menu and click **Add Webhook**.
 
 On the **Add Webhook** page, configure the following settings:
 

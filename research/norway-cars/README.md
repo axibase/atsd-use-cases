@@ -91,7 +91,7 @@ ORDER BY time
 
 ![](./images/chart-total.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/5/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/bbc5e671/5/#fullscreen)
 
 ---
 
@@ -99,7 +99,7 @@ ORDER BY time
 
 ![](./images/chart-winner-losers.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/6/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/bbc5e671/6/#fullscreen)
 
 ---
 
@@ -107,7 +107,7 @@ ORDER BY time
 
 ![](./images/chart-tesla.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/bbc5e671/7/#fullscreen)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/bbc5e671/7/#fullscreen)
 
 ---
 
@@ -139,9 +139,9 @@ look at the statistics by following the below steps to install your own ATSD ins
   ```
 
 * Execute SQL queries for `nor.registered_vehicles` and `nor.registered_vehicles_by_make` to analyze statistics in tabular format using [SQL](https://axibase.com/docs/atsd/sql/) syntax implemented in ATSD.
-* Create new [visualizations](https://axibase.com/products/axibase-time-series-database/visualization/) on **Configuration > Portals** page using chart configurations from the ChartLab examples above.
+* Create new [visualizations](https://axibase.com/docs/charts/) on the **Configuration > Portals** page using chart configurations from the ChartLab examples above.
 
-> Feel free to contact us with installation and technical support issues via the [feedback](https://axibase.com/feedback/) form.
+> Feel free to contact Axibase with installation and technical support issues via the [feedback](https://axibase.com/feedback/) form.
 
 ---
 

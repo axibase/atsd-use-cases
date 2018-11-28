@@ -1,15 +1,15 @@
 # United States Federal Reserve: The Economic Policy Uncertainty Index
 
 ![](./images/epu_title.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/59f36025#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/59f36025#fullscreen)
 
-> The EPU Index for the United States, China, Russia, and Europe (Eurozone countries), superimposed over the quarterly average of the same value. Months where the EPU value is greater than the quarterly average are shown in red using an [`alert-expression`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/alert-expressions/).
+> The EPU Index for the United States, China, Russia, and Europe (Eurozone countries), superimposed over the quarterly average of the same value. Months where the EPU value is greater than the quarterly average are shown in red using an [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions).
 
 **Source Data**: [FRED Economic Data](https://fred.stlouisfed.org/categories/33201)
 
-**Visualization Tool**: [Axibase ChartLab](https://apps.axibase.com/chartlab)
+**Visualization Tool**: [Axibase ChartLab](https://axibase.com/docs/charts/)
 
-**Structured Query Language (SQL)**: [Axibase SQL Console](https://axibase.com/docs/atsd/sql/)
+**Structured Query Language (SQL)**: [Axibase SQL Console](https://axibase.com/docs/atsd/sql/sql-console.html)
 
 ## Introduction
 
@@ -24,28 +24,28 @@ predict economic growth and investment by tracking geopolitical events such as i
 
 ## Visualization
 
-This box chart shows the range of the EPU index for each of the 4 regions. A wider range shows greater variance of index values, and the central box has may be modified to include any [percentile](https://axibase.com/products/axibase-time-series-database/visualization/widgets/box-chart-widget/#tab-id-6) values. According to the data, the People's Republic of China has seen the most volatile movements of their EPU Index, followed by the Eurozone, the Russian Federation, and the United States. Perhaps this is due to recent slow downs in the fixed assets and exports industry in China in recent years as the index reached its absolute maximum value within the last few years.
+This box chart shows the range of the EPU index for each of the 4 regions. A wider range shows greater variance of index values, and the central box has may be modified to include any [percentile](https://axibase.com/docs/charts/widgets/box-chart/#class) values. According to the data, the People's Republic of China has seen the most volatile movements of their EPU Index, followed by the Eurozone, the Russian Federation, and the United States. Perhaps this is due to recent slow downs in the fixed assets and exports industry in China in recent years as the index reached its absolute maximum value within the last few years.
 
 ![](./images/epu-box-chart.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/af5d576e/2/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/af5d576e/2/#fullscreen)
 
 Use the drop-down lists in the ChartLab visualization to change the date range of the visualization. Open the Editor window to modify percentile range with a `percentile = X%/Y%` expression where `X` and `Y` are the values of the percentile range you would like to display.
 
-Tracking the EPU Index for the People's Republic of China alongside more concrete metrics can be used to examine the validity of the EPU Index. Shown below, the EPU is placed alongside real PRC Treasury Securities rates for the last decade and a half. The quarterly and bi-annual averages are compared in the same environment and a `wtavg` expression is used to smooth the occasionally volatile movement of both indices. Treasury Securities are a good tool for tracking economic potential and growth because they show the interest rates that businesses borrowing money are paying to their lenders. Historically speaking, a lower interest rate usually encourages business to borrow money and expand their operations.
+Tracking the EPU Index for the People's Republic of China alongside more concrete metrics can be used to examine the validity of the EPU Index. Shown below, the EPU is placed alongside real PRC Treasury Securities rates for the last decade and a half. The quarterly and bi-annual averages are compared in the same environment and a [`wtavg`](https://axibase.com/docs/charts/configuration/aggregators.html#wtavg) aggregation is used to smooth the occasionally volatile movement of both indices. Treasury Securities are a good tool for tracking economic potential and growth because they show the interest rates that businesses borrowing money are paying to their lenders. Historically speaking, a lower interest rate usually encourages business to borrow money and expand their operations.
 
 ![](./images/epu-rates.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/661d387e/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/661d387e/#fullscreen)
 
 > Economic Policy Uncertainty Index and PRC Treasury Securities Rates (2000-2017), bi-annually and quarterly.
 
-The above figure is made using the [`weighted average`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/configuring-the-widgets/aggregators/) statistical tool. This tool may be used to creating a rolling average value for a specific time period. For more information about using this statistical tool, see this [guide](../../../tutorials/weighted-avg/README.md).
+The above figure is made using the [weighted average](https://axibase.com/docs/charts/configuration/aggregators.html#wtavg) aggregation. This tool may be used to creating a rolling average value for a specific time period. For more information about using this statistical tool, refer to [Curve Smoothing Using Weighted Averages](../../../tutorials/weighted-avg/README.md).
 
 ### Dual Axis
 
-Using a time series chart with two axes, drastically different data may be compared side-by-side without significantly altering one dataset using a [`replace-value`](https://apps.axibase.com/chartlab/3f080fe4/2/) expression. In the visualization here, per capita GDP for the Russian Federation is compared alongside EPU index for the same period of time using [`axis`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/#tab-id-2) expressions.
+Using a time series chart with two axes, drastically different data may be compared side-by-side without significantly altering one dataset using a [`replace-value`](https://apps.axibase.com/chartlab/3f080fe4/2/) expression. In the visualization here, per capita GDP for the Russian Federation is compared alongside EPU index for the same period of time using [`axis`](https://axibase.com/docs/charts/widgets/shared/#replace-value) expressions.
 
 ![](./images/epu-gdp-russia.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/ebbe24c0/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/ebbe24c0/#fullscreen)
 
 > The left and right axis display different orders of value based on the `axis` setting. Open the Editor window in ChartLab to see the syntax for such expressions.
 
@@ -74,9 +74,9 @@ The above query returns this result set:
 Using [public data](https://www.britannica.com/topic/United-States-Presidential-Election-Results-1788863) from [Encyclopaedia Britannica](https://www.britannica.com/) to track election results for the same period of time produces this visualization.
 
 ![](./images/election-results.png)
-[![](./images/button.png)](https://apps.axibase.com/chartlab/73ab0050/2/#fullscreen)
+[![](../../images/new-button.png)](https://apps.axibase.com/chartlab/73ab0050/2/#fullscreen)
 
-> Historical election result data from recent U.S. presidential elections, the winning candidate has been separated from the remaining area using the [`expand`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/#tab-id-2) setting. Open the ChartLab sandbox to view the complete figure.
+> Historical election result data from recent U.S. presidential elections, the winning candidate has been separated from the remaining area using the [`expand`](https://axibase.com/docs/charts/widgets/pie-chart/#expand) setting. Open the ChartLab sandbox to view the complete figure.
 
 Although the 2016 election is one of the more contentious in recent U.S. history, the EPU index immediately before the election is lower than the previous four elections.
 
@@ -145,11 +145,11 @@ This query shows that none of the expected entries appear among the greatest EPU
 |2011-10|242|
 |2013-01|240|
 
-Tracking both results on a simple [time series chart](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) to compare the expected versus actual results:
+Tracking both results on a [Time Chart](https://axibase.com/docs/charts/widgets/time-chart/) to compare the expected versus actual results:
 
 ![](./images/eurozone-time-chart.png)
 
-Highlighted above are points from both queries. Expected results are highlighted with purple arrows while actual results are highlighted with blue arrows.
+Highlighted above are points from both queries. Expected results are highlighted with purple arrows whilst actual results are highlighted with blue arrows.
 
 ## Conclusion
 
@@ -163,5 +163,5 @@ Use the following tools to recreate any of the visualizations seen here.
 
 * Install an ATSD instance on your local Linux system [here](https://axibase.com/docs/atsd/installation/).
 * Visit [FRED](https://fred.stlouisfed.org/) for any of the data used in this article.
-* Access the ChartLab sandbox, and other Axibase [applications](https://apps.axibase.com/) and view the complete [Charts Documentation](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+* Access the ChartLab sandbox, and other Axibase [applications](https://apps.axibase.com/) and view the complete [Charts Documentation](https://axibase.com/docs/charts/).
 * Download this [parser job file](./resources/csv-parser-epu-demo.xml) which contains the settings that you can use to configure the CSV Document parser in the ATSD interface. Use the [Import Walkthrough](../../../tutorials/shared/import-csv-parser.md) for help uploading the XML file to ATSD.

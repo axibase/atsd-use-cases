@@ -18,13 +18,15 @@ Axibase [analyzed](2017.md) IRS filing statistics after Tax Day 2017 saw a highe
 
 ### Visualization
 
-ChartLab is a data visualization sandbox that uses a simple declarative syntax for creating charts. It is designed to be used by anyone, but a basic understanding of the key concepts and settings is helpful here. Full ChartLab documentation may be accessed [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/); this article demonstrates the process of using data stored in ATSD to create multiple visualizations using the same dataset. Each chart is shown alongside the configuration to create it and a brief explanation of the particularities therein.
+ChartLab is a data visualization sandbox that uses a simple declarative syntax for creating charts. It is designed to be used by anyone, but a basic understanding of the key concepts and settings is helpful here. This article demonstrates the process of using data stored in ATSD to create multiple visualizations using the same dataset. Each chart is shown alongside the configuration to create it and a brief explanation of the particularities therein.
+
+> For more information regarding Charts syntax, refer to [Charts Documentation](https://axibase.com/docs/charts/).
 
 #### Configuration 1: Time Series Line Graph
 
 ![](./images/tax-2018-title.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/fd986f58)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/fd986f58)
 
 Tax filing data for the 2017 and 2018 superimposed over previous-year data.
 
@@ -63,15 +65,15 @@ Configuration Features:
 
 * `disconnect-interval`: data with missing points, or gaps in the time series, are highlighted by specifying a user-defined data gap. Compare this [example](https://apps.axibase.com/chartlab/8234982b) which features a `disconnect-interval` setting to [this one](https://apps.axibase.com/chartlab/2f06ecee) where the setting is disabled, or [here](https://apps.axibase.com/chartlab/bb9e34e8) where the `disconnect-value` setting has been given a non-zero value.
 
-* `var`: ChartLab configurations may include JavaScript objects and functions as well as built-in [control structures](https://axibase.com/products/axibase-time-series-database/visualization/widgets/control-structures/). Here a variable called `offsets` is created using a `range(x,y)` function to control the settings for multiple `[series]` at once representing previous-year data. The index begins at `0`.
+* `var`: ChartLab configurations may include JavaScript objects and functions as well as built-in [control structures](https://axibase.com/docs/charts/syntax/control-structures.html#control-structures). Here a variable called `offsets` is created using a `range(x,y)` function to control the settings for multiple `[series]` at once representing previous-year data. The index begins at `0`.
 
-* `color`: this setting may accept RGB parameters, web color names, or HTML color codes.
+* [`color`](https://axibase.com/docs/charts/widgets/shared/#color):  accepts RGB parameters, web color names, or HTML color codes.
 
 #### Configuration 2: Time Series Bar Chart
 
 ![](./images/tax-2018_1.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/07f8b200)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/07f8b200)
 
 The same data displayed with different settings.
 
@@ -95,15 +97,15 @@ Configuration has been shortened to include only non-repeated settings for brevi
 
 **Configuration Features**:
 
-* `alert-expression`: user-defined thresholds may be created via `[threshold]` series, or comparison to other series in the visualization. Here, the two colored series are assigned an `alias` according to their year and compared. When the condition is satisfied, that is, the value of 2018 tax return filings is greater than the value of 2017 tax filings for the same period, the `alert-style` setting is activated, in this case coloring the representative bar of a period green.
+* [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html#alert-expressions): user-defined thresholds may be created via [`[threshold]`](https://axibase.com/docs/charts/widgets/time-chart/#threshold-settings) series, or comparison to other series in the visualization. Here, the two colored series are assigned an `alias` according to their year and compared. When the condition is satisfied, that is, the value of 2018 tax return filings is greater than the value of 2017 tax filings for the same period, the `alert-style` setting is activated, in this case coloring the representative bar of a period green.
 
-* `mode`: time charts feature several display [modes](https://axibase.com/products/axibase-time-series-database/visualization/widgets/time-chart/) to quickly change visualization styles.
+* [`mode`](https://axibase.com/docs/charts/widgets/time-chart/#mode): time charts feature several display modes to quickly change visualization styles.
 
-#### Configuration 3: Box-and-Whisker Plot
+#### Configuration 3: Box Chart
 
 ![](./images/tax-2018-2.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/5dba3269)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/5dba3269)
 
 Average filing numbers for the entire observed period show that the total number of Americans filing a tax return has diminished in recent years.
 
@@ -123,14 +125,14 @@ Configuration has been shortened to include only non-repeated settings for brevi
 
 **Configuration Features**:
 
-* `type`: a variety of visualization widgets are available in ChartLab, see the full list [here](https://axibase.com/products/axibase-time-series-database/visualization/widgets/).
+* [`type`](https://axibase.com/docs/charts/widgets/shared/#type): a variety of visualization widgets are available in [ChartLab](https://axibase.com/use-cases/tutorials/shared/chartlab.html), refer to [Charts Documentation](https://axibase.com/docs/charts/#widgets) for a complete list of available widgets.
 * `range(y,x)`: to show chronological data, a reverse-ordered range setting may be used where the more recent parameter is the second argument instead of the first as seen above.
 
 #### Configuration 4: Histogram
 
 ![](./images/tax-2018-3.png)
 
-[![](./images/button.png)](https://apps.axibase.com/chartlab/bdab5fd8)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/bdab5fd8)
 
  A histogram shows the distribution of values for the given datasets. Assuming all series are equally-distributed the slope of the stacked boxes is zero.
 
@@ -149,12 +151,12 @@ Configuration has been shortened to include only non-repeated settings for brevi
 
 **Configuration Features**:
 
-* [`percentiles`](https://apps.axibase.com/chartlab/7f906511/7/): the percentile range for each bar may be set to a user-configured value when observing irregular series. Here, percentile values are `20, 40, 60, 80, 99`.
+* [`percentiles`](https://axibase.com/docs/charts/widgets/box-chart/#percentiles): the percentile range for each bar may be set to a user-configured value when observing irregular series. Here, percentile values are `20, 40, 60, 80, 99`.
 * `bar-count`: modify the number of bars displayed in the visualization.
 
 ### SQL
 
-Although ATSD is a non-relational database it offers an [SQL-like syntax](https://axibase.com/docs/atsd/sql/) with time series extensions such as [interpolation](https://axibase.com/docs/atsd/sql/#interpolation) functions. It also provides a built-in [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html) for ad-hoc data exploration.
+Although ATSD is a non-relational database it includes [SQL syntax](https://axibase.com/docs/atsd/sql/) with time series extensions such as [interpolation](https://axibase.com/docs/atsd/sql/#interpolation) functions. It also provides a built-in [**SQL Console**](https://axibase.com/docs/atsd/sql/sql-console.html) for ad-hoc data exploration.
 
 The following queries are shown below:
 

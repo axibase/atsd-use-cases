@@ -41,15 +41,13 @@ down as winter approaches.
 Click **ChartLab** button below to take a closer look at these numbers, as well as monthly totals for 31 other crime types, including weapons violations, prostitution, robbery, assault, and
 domestic violence, among many others.
 
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba#fullscreen)
 
 From the previous figure it is difficult to tell how monthly totals for 2016 compare to previous years. Murder totals are shown to be higher in almost every category in 2016.
 
 ![Figure 5](./images/Figure5.png)
 
-Click this button to explore this **ChartLab** portal:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/16/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/16/#fullscreen)
 
 In addition to looking at graphical outputs, perform [SQL queries](https://axibase.com/docs/atsd/sql/), which can be used to search for specific
 information contained in this dataset. For example, 2016 months totals are greater than the previous years as a whole. But what are the average monthly totals for the last several
@@ -109,9 +107,7 @@ is the same at 68%.
 
 ![Figure 6](./images/Figure6.png)
 
-Click this button to explore the **ChartLab** portal for the top five locations for homicides in 2015 and 2016:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/d5c04002/6/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/d5c04002/6/#fullscreen)
 
 The results of the SQL query below track the average number of the top locations of murders from 2001 through 2015.
 
@@ -161,17 +157,13 @@ There has been a long term decrease in crime as a whole in Chicago.
 
 ![Figure 3](./images/Figure3.png)
 
-Click the button below to explore this **ChartLab** portal:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/4/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/4/#fullscreen)
 
 Below is a figure showing the change from 2015 to 2016 for each of the crime types included in this dataset.
 
 ![Figure 4](./images/Figure4.png)
 
-Click here to check out these percentage changes in Chicago crime in **ChartLab**:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/d5c04002/7/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/d5c04002/7/#fullscreen)
 
 Certain crimes saw an increase in 2016 from 2015. For example, the number of arrests increased for each of the following crime types:
 
@@ -192,9 +184,7 @@ year reduction of 48.0% for narcotics makes one think that there may be somethin
 
 ![Figure 7](./images/Figure7.png)
 
-Click this button to check out narcotic arrests in Chicago:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/7/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/7/#fullscreen)
 
 According to [an article by the Chicago Tribune](https://www.chicagotribune.com/news/opinion/editorials/ct-chicago-crime-increase-causes-edit-0118-md-20170117-story.html),
 the release of a video in November 2015 showing the police fatally shooting of a black teenager ([Laquan McDonald](https://en.wikipedia.org/wiki/Shooting_of_Laquan_McDonald)), the launch of a
@@ -211,9 +201,7 @@ as a result less willing to go out, fight crime, make arrests, and make a differ
 
 ![Figure 8](./images/Figure8.png)
 
-Click here to explore this **ChartLab** portal:
-
-[![](../baltimore-pd/images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/8/#fullscreen)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/8/#fullscreen)
 
 ## Action Items
 

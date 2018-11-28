@@ -2,13 +2,13 @@
 
 ![](./images/docker_container_engine_logo.png)
 
-In recent months, Docker is the hot topic in Server Infrastructure and DevOps conversations. It seems like everyone is either deploying on Docker, integrating with Docker, or developing for Docker. It is an understandable position: Linux containers provide many of benefits for developers while allowing the operations team to manage infrastructure as a homogeneous pool of computing resources, as opposed to siloed, host-based installations.
+In recent months, Docker is the hot topic in Server Infrastructure and DevOps conversations; it seems like everyone is either deploying on Docker, integrating with Docker, or developing for Docker. It is an understandable position: Linux containers provide many benefits for developers and allows the operations team to manage infrastructure as a homogeneous pool of computing resources, as opposed to siloed, host-based installations.
 
 ## Summary
 
-Are you already familiar with Docker and Linux containers? Do you need to monitor containerized services for availability and performance without resorting to legacy approaches such as using host naming conventions or scheduled CMDB discovery?
+Are you already familiar with Docker and Linux containers? Do you need to monitor containerized services for availability and performance without legacy approaches such as the use of host naming conventions or scheduled CMDB discovery?
 
-Adopt a policy of assigning [container labels](https://docs.docker.com/engine/userguide/labels-custom-metadata/) to monitor your services based on a combination of built-time and run-time metadata.
+Adopt a policy of assigning [container labels](https://docs.docker.com/engine/userguide/labels-custom-metadata/) to monitor your services based on a combination of build-time and runtime metadata.
 
 Leverage the fact that container labels override image labels by delegating labeling responsibilities to operations and development teams.
 
@@ -44,7 +44,7 @@ docker run \
   axibase/atsd:latest
 ```
 
-Whether or not you manually assign container labels using deployment scripts or through orchestration frameworks such as [Kubernetes](https://kubernetes.io/) or [Mesos](https://mesos.apache.org/documentation/latest/docker-containerizer/) that manage containers on a large fleet of machines is an implementation detail that is specific to each organization.
+Whether you assign container labels manually via deployment scripts or through orchestration frameworks such as [Kubernetes](https://kubernetes.io/) or [Mesos](https://mesos.apache.org/documentation/latest/docker-containerizer/) that manage containers on a large fleet of machines is an implementation detail that is specific to each organization.
 
 Once you have container labeling in place, you can create roll-up dashboards and configure alerting without referring to hostnames or container ids and aliases.
 
@@ -62,7 +62,7 @@ Grouping based on metadata allows you to build roll-up portals. Below is an exam
 
 ![](./images/api_service_portal_atsd1.png)
 
-See [Writing Docker Data](https://axibase.com/products/axibase-time-series-database/writing-data/docker/) for deployment instructions.
+> Refer to [Writing Docker Data](https://axibase.com/products/axibase-time-series-database/writing-data/docker/) for deployment instructions.
 
 ## Docker
 
@@ -70,7 +70,7 @@ The Docker set of tools includes a runtime engine for managing containers, a lay
 
 Resource isolation features of the Linux kernel, such as `cgroups`, namespaces, and `chroot`, allow groups of processes to have a private view of the system and run independently on a single Linux host. This architecture allows you to avoid the overhead of starting and running several virtual machines (VMs). Since VMs run on a Host OS, each new application needs to start a Guest OS. This process does not scale well for microservice architectures, where the footprint of services is smaller but at the count is greater. In Docker, you simply start applications as a group of processes that remain separate from one another while sharing underlying computing resources.
 
-When comparing Linux containers with virtual machines, VMs require more resources but provide better isolation since VM Hypervisors emulate the full operating system stack including virtual hardware. Containers, on the other hand, run on a shared operating system. Containers leave most of the VM bulk behind, VM sizes can often reach tens of gigabytes, in favor of a miniature package that contains the application and dependencies. As a result, a Docker host can run many more applications on identical hardware.
+When comparing Linux containers with virtual machines, VMs require more resources but provide better isolation since VM Hypervisors emulate the full operating system stack including virtual hardware. Containers, on the other hand, run on a shared operating system. The size of a VM can often reach tens of gigabytes whereas containers leave most of that behind in favor of a miniature package that contains application and dependencies. As a result, a Docker host can run many more applications on identical hardware.
 
 ![](./images/docker_introduction.png)
 
@@ -78,13 +78,13 @@ When comparing Linux containers with virtual machines, VMs require more resource
 
 Containers are wrapped-up applications and pieces of software that include all dependencies but use a shared kernel with other containers. Essentially, containers are isolated sets of processes in the userspace on the host operating system. While Hypervisors abstract the entire device, containers just abstract the operating system kernel. One important limitation is the fact that all containers running on a single machine must use the same kernel, Host OS, whereas with Hypervisors each VM can run its own Guest OS with different kernels.
 
-Another key difference between containers and VMs is execution speed. Launching a VM can take several minutes and is often very resource intensive. As such, launching several VMs requires some planning and scheduling. You can launch multiple containers within seconds, as they are very lightweight. This kind of performance and scalability leads to a new type, or even a new generation, of distributed applications where containers are automatically launching and stopping depending on various factors like user traffic, events, queries, scheduled tasks, etc.
+Another key difference between containers and VMs is execution speed. Launching a VM can take several minutes and is often resource intensive. As such, launching several VMs requires some planning and scheduling. You can launch multiple containers within seconds, as they are very lightweight. This kind of performance and scalability leads to a new type, or even a new generation, of distributed applications where containers are automatically launching and stopping depending on various factors like user traffic, events, queries, scheduled tasks, etc.
 
 ![](./images/microservices_docker2.png)
 
-### Micro-services and the Right Approach to Collecting Docker Performance Data
+### Microservices and the Right Approach to Collecting Docker Performance Data
 
-Executing containers on Docker enables decomposition of applications into microservices which improves fault tolerance and manageability. However, the side effect is more challenging performance monitoring, since microservice life cycles are often very short. The lifespan of containers can be as short as just a few minutes – in some cases even seconds – while Virtual Machines can have lifespans measured in years. Treating containers like VMs might seem convenient, it is a misleading analogy.
+Executing containers on Docker enables decomposition of applications into microservices which improves fault tolerance and manageability. However, the side effect is more challenging performance monitoring, since microservice life cycles are often very short. The lifespan of containers can be as short as just a few minutes – in some cases even seconds – while Virtual Machines can have lifespans measured in years. Treating containers like VMs might seem convenient but it is a misleading analogy.
 
 Container statistics are often gathered for a short timespan, meaning that traditional ways of monitoring are not applicable. Once the container is stopped, the data becomes obsolete for the purpose of troubleshooting, since the workload has been taken over by a new container. Instead of chasing individual container identifiers, consider monitoring applications and services based on labels: application name, type, role, function, etc. This can be accomplished by leveraging container labels to encode type, role, or function groups. To provide a meaningful amount of metadata about each micro-service, container labels needs to include:
 
@@ -93,7 +93,7 @@ Container statistics are often gathered for a short timespan, meaning that tradi
 * Environment such as testing, staging, production.
 * Data center topology: name, region, availability zone.
 
-When such a naming conventions are enforced, monitoring and alerting tools can visualize and prioritize data based on predefined labels. For example, you can easily report on several critical metrics:
+When such naming conventions are enforced, monitoring and alerting tools can visualize and prioritize data based on predefined labels. For example, you can easily report on several critical metrics:
 
 * Average CPU utilization for containers that are part of the specified service name.
 * Number of logins for micro-services that execute the authentication function for web applications.
@@ -109,7 +109,7 @@ Allocation of resources to containers is especially important as containers are 
 
 Each container is assigned a share of the CPU, set to `1024` by default. By itself, `1024` CPU share does not mean anything. If there is only a single container running, then the container can use all the available CPU resources. However, if you launch another container and both containers have `1024` CPU share, then each container can claim only 50% of the total available CPU resources.
 
-CPU share is set using the `-c` or `--cpu-shares` setting when launching the container:
+CPU share is set using the `-c` or `--cpu-shares` flag when launching the container:
 
 ```sh
 docker run -ti -c 1024 ubuntu:14.04 /bin/bash
@@ -131,7 +131,7 @@ Containers can also be assigned to use only specific CPUs or CPU cores. In this 
 
 ### Memory
 
-Things are more simple when it comes to memory. Memory can be limited with a short command, `-m`, and the limits are applied to both memory and swap:
+Things are more simple with respect to memory. Memory can be limited with a short flag, `-m`, and the limits are applied to both memory and swap:
 
 ```sh
 docker run -ti -m 300M --memory-swap 300M ubuntu:14.04 /bin/bash
@@ -170,9 +170,9 @@ In complex infrastructures, a single resource-starved microservice can lead to a
 
 ### Automated Monitoring and Alerting
 
-Of course machines and systems fail if thresholds are breached or forecasts and trends are negative. In that case, container owners need to be alerted immediately of performance issues.
+Of course machines and systems fail if certain thresholds are breached or forecasts and trends are negative. In that case, container owners need to be immediately alerted of performance issues.
 
-To raise and deliver these alerts proactively using system performance forecasting and trending methods, an automated thresholding and alerting system must be in place. ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) and with [Data Forecasting](https://axibase.com/docs/atsd/forecasting/) are capable of resolving this issue autonomously.
+To raise and deliver these alerts proactively using system performance forecasting and trending methods, an automated thresholding and alerting system must be in place. ATSD [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) and [Data Forecasting](https://axibase.com/docs/atsd/forecasting/) are capable of resolving this issue autonomously.
 
 Rule Engine applies statistical functions to incoming data streams before the data is stored on disk. You can create alerting rules with time or count-based sliding windows, aggregation, and forecasting functions. Deliver raised alerts to enterprise consoles, email, or ticketing systems. Execute system commands automatically based on alert-action settings.
 
@@ -204,11 +204,11 @@ This rule raises an alert if the 15-minute average exceeds the 1-hour average by
 
 These rules adapt to events and change over time. If your daily number of users is growing, the load on your infrastructure is growing as well. This rule takes that fact into account when calculating thresholds. This is where daily recalculation of forecasts shows its strengths – it allows the database to determine new periods and new trends continuously. New forecasts are generated every night, taking into account all the recent developments and trends that have occurred. This kind of approach results in improved forecast accuracy and dynamic response to abnormal events and new trends.
 
-As a result of advanced forecasting techniques, you can delegate alerting and monitoring to Axibase Time Series Database (ATSD) which informs you of critical events and forecast deviations. In addition, the database eliminates the need to revisit and adapt thresholds manually, which can be a time-consuming task itself. In short, automated thresholding is the future of performance monitoring.
+With advanced forecasting techniques, you can delegate alerting and monitoring to ATSD, which informs you of critical events and forecast deviations. In addition, the database eliminates the need to revisit and adapt thresholds manually, which can be a time-consuming task itself. In short, automated thresholding is the future of performance monitoring.
 
-## Monitoring Linux Containers with the Axibase Time Series Database
+## Monitoring Linux Containers with ATSD
 
-Modern companies are becoming increasingly overwhelmed with machine data. They can rarely leverage this information to predict operational behavior of their systems, applications, and users because advanced analytics and forecasts require detailed data collected for several business cycles (years) to be accurate. ATSD solves this problem by storing granular data for long periods of time to support fully automated, adaptive thresholding at scale.
+Modern companies are increasingly overwhelmed with machine data and are rarely able to leverage this information to predict operational behavior of their systems, applications, and users because advanced analytics and forecasts require detailed data collected for several business cycles (years) to be accurate. ATSD solves this problem by storing granular data for long periods of time to support fully automated, adaptive thresholding at scale.
 
 ATSD allows you to automate and optimize a number of tasks:
 
@@ -222,7 +222,7 @@ Axibase is focused on three crucial points with respect to performance monitorin
 * Control
 * Automation
 
-ATSD collects Docker metrics for long-term retention, analytics, and visualization. A single ATSD instance can collect metrics from many Docker hosts.
+ATSD collects Docker metrics for long-term retention, analytics, and visualization; a single ATSD instance can collect metrics from many Docker hosts.
 
 ![](./images/basic_arch2.png)
 
@@ -232,7 +232,7 @@ To enhance the data that ATSD retrieves from Docker, install `scollector`, `tcol
 
 ![](./images/distributed_arch.png)
 
-To get started with Docker monitoring, continue reading ATSD setup and usage guide [Writing Docker Data](https://axibase.com/products/axibase-time-series-database/writing-data/docker/).
+> To get started with Docker monitoring, refer to [Writing Docker Data](https://axibase.com/products/axibase-time-series-database/writing-data/docker/).
 
 ## Collected Metrics
 

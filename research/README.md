@@ -6,6 +6,9 @@ ATSD functionality and features applied to real-world public data to solve commo
 
 Detailed use cases that feature in-depth data exploration and complex functionality used to solve modern data problems.
 
+1. [Income Tax as a Vehicle for Centralization](income-tax/README.md) (November 2018)
+1. [The Saudi Arabia Challenge](saudi-arabia/README.md) (October 2018)
+1. [Calculating the Age of the Universe](universe-age/README.md) (October 2018)
 1. [The Birth of the Bolívar Soberano](bolivar-soberano/README.md) (August 2018)
 1. [Second Quarter Expatriation Remains High Despite GDP Growth](expatriation/README.md) (August 2018)
 1. [The Effect of Particulate Matter on Water Temperature](water-turbidity/README.md) (July 2018)
@@ -55,6 +58,7 @@ Detailed use cases that feature in-depth data exploration and complex functional
 
 Visualizations and SQL queries that are indexed by topic to form the Axibase Data Library, an invaluable tool for researchers looking for specific data. Data shorts display comprehensive information from a wide-range of data sets.
 
+1. [Major Foreign Holders of Treasury Securities (2000-2018)](data-lib/us-debt/README.md) (October 2018)
 1. [Foreign Businesses Operating in Hong Kong (1996-2016)](data-lib/hong-kong-foreign-investment/README.md) (October 2017)
 1. [Maryland Death Statistics (1993-2015)](data-lib/maryland-mort-stats/README.md) (October 2017)
 1. [European Union Net Migration (2004-2015)](data-lib/eu-migration/README.md) (September 2017)

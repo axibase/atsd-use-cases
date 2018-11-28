@@ -214,7 +214,7 @@ This data can be further visualized in ChartLab:
 
 ![MonthIncidentCount](./images/MonthIncidentCount.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/19/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/19/)
 
 Because the nature of the visualization is such that the omission of empty months
 would distort the chronology of the data, interpolation is used once again.
@@ -232,7 +232,7 @@ These results can also be visualized in ChartLab:
 
 ![WeekIncidentCount](./images/WeeklyIncidentCount1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/21/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/21/)
 
 The day of the week of these incidents can also be considered using this query:
 
@@ -306,7 +306,7 @@ rate of homicide, and the location of the incident is underscored:
 
 ![RegionVRegion](./images/ByRegion.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/e3872c5c/5/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/e3872c5c/5/)
 
 Although the recorded incidents of police use of force are not necessarily fatal, for the
 given time period eight of them resulted in the death of the victim, there is ostensibly
@@ -404,7 +404,7 @@ the city of Baltimore can be done on a monthly basis:
 
 ![MonthlyIncidentCount2](./images/MonthlyIncidentCount2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/22/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/22/)
 
 Here, the same correlation is less visible, with only one of the three spikes in homicides
 matched by a similar spike in police use of force.
@@ -414,14 +414,13 @@ city of Baltimore can be done on a weekly basis:
 
 ![WeeklyIncidentCount](./images/WeeklyIncidentCount2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/23/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/23/)
 
 Here, the peaks in police use of force are further smoothed to indicate that the hypothetically
 resultant increase in police use of force occurs on a somewhat delayed basis after
 a spike in the number of homicides.
 
-Notice that in **ChartLab**, the `endtime` command has to be modified to reflect the
-difference in observation periods of the two data sets.
+Notice that in **ChartLab**, the `end-time` setting must be modified to reflect the difference in observation periods between the two data sets.
 
 Organize the data considering the day of the week:
 
@@ -448,7 +447,7 @@ over the span of the entire observed period.
 
 ![TotalVTotal](./images/Total2.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/3f33d4ba/26/)
+[![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/3f33d4ba/26/)
 
 ## Analysis
 
@@ -575,17 +574,17 @@ Contact [Axibase](https://axibase.com/feedback/) with any questions.
 
 ## Appendix
 
-### Using the [`EXPAND`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
+### Using the `expand` Setting
 
 to highlight specific data, as shown in the [Nature of the Homicides](#nature-of-homicides) section,
-use the command `expand = true` under the `[series]`:
+use the [`expand`](https://axibase.com/docs/charts/widgets/pie-chart/#expand) setting under the `[series]` heading:
 
 ![Expand1](./images/Expand1.png)
 
-### Using the [`OTHER`](https://axibase.com/products/axibase-time-series-database/visualization/widgets/pie-chart-widget/) Command
+### Using the `[other]` Setting
 
 to display a full series of data, but only show detailed information for a specified
-portion of that data, the `[other]` command needs to be included in the `[series]` cluster, and a
+portion of that data, the [`[other]`](https://axibase.com/docs/charts/widgets/pie-chart/#other-settings) command needs to be included in the `[series]` cluster, and a
 value for `total-value = x` needs to be added under the `[widget]` cluster as shown below,
 
 ![OtherDisplay](./images/OtherDisplay1.png)

@@ -78,7 +78,7 @@ GROUP BY period(1 YEAR, END_TIME)
 
 ![](./images/q2-2018-yoy.png)
 
-[![](./images/btn.png)](https://apps.axibase.com/chartlab/f45f19fc)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/f45f19fc)
 
 ### Quarterly Data
 
@@ -120,7 +120,7 @@ Using **ChartLab** for data visualization of the quarterly samples:
 
 ![](./images/q2-2018-qoq.png)
 
-[![](./images/btn.png)](https://apps.axibase.com/chartlab/7c00db67)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/7c00db67)
 
 ---
 
@@ -171,7 +171,7 @@ LIMIT 10
 
 ### Ad Hoc Percent Change Calculation
 
-Show each data sample a percentage of the previous data sample. Quarters where expatriation increased, thus `value > 100` are highlighted in orange using an [`alert-expression`](https://github.com/axibase/charts/blob/master/syntax/alert-expression.md)
+Show each data sample a percentage of the previous data sample. Quarters where expatriation increased, thus `value > 100` are highlighted in orange using an [`alert-expression`](https://axibase.com/docs/charts/syntax/alert-expression.html)
 
 ```ls
 [series]
@@ -183,7 +183,7 @@ Show each data sample a percentage of the previous data sample. Quarters where e
 
 ![](./images/ad-hoc-percent.png)
 
-[![](./images/btn.png)](https://apps.axibase.com/chartlab/d30a6925)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/d30a6925)
 
 ### Two-Year Average
 
@@ -197,7 +197,7 @@ Group data in two-year periods and calculate the average amongst intervals to hi
 
 ![](./images/two-year-avg.png)
 
-[![](./images/btn.png)](https://apps.axibase.com/chartlab/3b0867f2)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/3b0867f2)
 
 ### Raw Difference Between Annual and Quarterly Samples
 
@@ -205,7 +205,7 @@ Compute the raw differences between samples for both the quarterly and annual da
 
 ![](./images/raw-difference-2018.png)
 
-[![](./images/btn.png)](https://apps.axibase.com/chartlab/9f15f28f)
+[![](../images/new-button.png)](https://apps.axibase.com/chartlab/9f15f28f)
 
 ### Expatriation by Name
 

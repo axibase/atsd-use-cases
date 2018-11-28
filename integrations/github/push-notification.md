@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide shows how to configure GitHub to alert you when someone pushes to your repository. This feature allows you to monitor the dataflow in your repository. Follow the instructions to configure ATSD to send you the notifications directly through a third-party messenger service with.
+This guide shows how to configure GitHub to alert you when someone pushes to your repository. This feature allows you to monitor the dataflow in your repository. Follow the instructions to configure ATSD to send you the notifications directly through a third-party messenger service.
 
 ![](./images/workflow_push.png)
 
@@ -56,12 +56,12 @@ Open the **Settings** menu of the GitHub repository to monitor.
 
 ![](./images/repo-settings.png)
 
-Select the **Webhooks** tab from the left-side menu and click **Add Webhook**.
+Open the **Webhooks** tab from the left-side menu and click **Add Webhook**.
 
 On the **Add Webhook** page, configure the following settings:
 
 * **Payload URL**: Copy the GitHub webhook URL from the Docker log.
-* **Content Type**: Select **application/json**.
+* **Content Type**: **application/json**.
 * Click **Disable SSL Verification** and confirm the setting.
 * Select **Send me everything**, under **Which events would you like to trigger this webhook?** The rule engine filters other events.
 

@@ -77,7 +77,7 @@ Open the **Metrics** tab and verify that `jmx.zookeeper.*` metrics are available
 
 ### Import entity group
 
-1. Open the **Settings** menu, select **Entity Groups** and import this [entity group](./resources/groups.xml).
+1. Open the **Settings** menu, select **Entity Groups** and import the [entity group configuration file](./resources/groups.xml).
 1. Locate **Zookeeper Nodes** group and open the group by clicking the link in the **Name** column.
 1. Confirm that the database successfully imported the entities.
 

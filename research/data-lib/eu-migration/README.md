@@ -11,7 +11,7 @@ net migration data.
 
 ![](./images/mig-01.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/574349d5/3/#fullscreen)
+[![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/574349d5/3/#fullscreen)
 
 > Use the drop-down list to navigate between countries.
 

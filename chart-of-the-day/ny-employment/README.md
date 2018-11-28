@@ -2,7 +2,7 @@
 
 ![NY1](./images/NY_Jobs1.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/6402f01c/19/#fullscreen)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/6402f01c/19/#fullscreen)
 
 Running New York City is a big business. In fact, according to [data](https://catalog.data.gov/dataset/jobs-by-industry)
 released by the State of New York that tracks employment figures by industry, the top two industries
@@ -17,7 +17,7 @@ years in the Big Apple alone.
 
 ![NY2](./images/NY_Jobs3.png)
 
-[![View in ChartLab](./images/button.png)](https://apps.axibase.com/chartlab/6402f01c/20/)
+[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/6402f01c/20/)
 
 Additionally, the number of working government positions in the city has increased by roughly 38,000
 and using the [SQL Console](https://axibase.com/docs/atsd/sql/) interface in ATSD,
