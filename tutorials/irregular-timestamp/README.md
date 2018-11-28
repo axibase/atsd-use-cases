@@ -62,7 +62,7 @@ Using [**ChartLab**](../shared/chartlab.md), the dataset is parsed to create a v
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/b560456e)
 
-[Charts syntax](https://axibase.com/docs/charts/) specifies [`entity`](https://axibase.com/docs/charts/widgets/alert-console/#entity) and [`metric`](https://axibase.com/docs/charts/widgets/alert-console/#metric) created by the parser upon import:
+[Charts syntax](https://axibase.com/docs/charts/) specifies [`entity`](https://axibase.com/docs/charts/widgets/alert-table/#entity) and [`metric`](https://axibase.com/docs/charts/widgets/alert-table/#metric) created by the parser upon import:
 
 ```ls
 [series]
