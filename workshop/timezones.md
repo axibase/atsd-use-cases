@@ -6,6 +6,8 @@
 
 ## Contents
 
+> This workshop enumerates and explains organizations and agencies which maintain and organize international time zones as well as the methodology implemented for reasons of precision.<br>For information relating to improvements in local time-keeping accuracy, refer to [Historical Time Keeping](./time-keeping.md)
+
 <!-- markdownlint-disable MD101 -->
 
 * [Overview](#overview)
@@ -13,13 +15,7 @@
   * [Apparent Solar Time](#apparent-solar-time)
   * [Mean Solar Time](#mean-solar-time)
   * [Problem Solving](#problem-solving)
-* [Historical Time Keeping](#historical-time-keeping)
-  * [Antiquity](#antiquity)
-  * [Middle Ages](#middle-ages)
-  * [Age of Exploration](#age-of-exploration)
 * [Early Time Zones](#early-time-zones)
-  * [Navigational Necessity](#navigational-necessity)
-  * [Expansion and Standardization](#expansion-and-standardization)
 * [Modern Time Zones](#modern-time-zones)
   * [International Demarcation](#international-demarcation)
   * [Daylight Savings Time](#daylight-savings-time)
@@ -97,88 +93,6 @@ TC = 4 <small>minutes</small> * (105&deg; - 112&deg;) - 6.05<small>minutes</smal
 At 8:00 a.m. on 21 July, apparent solar time is 7:26 a.m.
 
 > Refer to [Applications](#applications) for additional calculations which relate to apparent solar time and local time.
-
----
-
-## Historical Time Keeping
-
-Early time keeping methods were localized. Very few municipal standardization methods emerged until the Late Middle Ages (1250-1500).
-
-### Antiquity
-
-* **1500 BCE**: Oldest extant continuous time-keeping device found in the Valley of the Kings.<sup>[2](http://www-history.mcs.st-andrews.ac.uk/HistTopics/Sundials.html)</sup>
-  * Nocturnal time keeping impossible.
-  * Discrete measurement imprecise.
-  * Changing location changes measurement.
-
-  ![](./images/tz-4.png)
-
-* **200 BCE**: Water clocks used for discrete measurements of time during the Han dynasty.<sup>[3](https://www.metmuseum.org/art/collection/search/696219)</sup>
-  * Nocturnal time keeping introduced.
-  * Tedious to maintain.
-
-  ![](./images/tz-6.png)
-
-> The [Antikythera mechanism](https://youtu.be/BoS75-0BRWo?t=2880), discovered in 1902 amidst wreckage off the coast of the Greek island of Antikythera. Phenomenon tracked by the device were observed and studied by Greek astronomer Hipparchus in the second century BCE, as such, he is thought to have been involved in its creation and design.
-
-### Middle Ages
-
-* Three distinct periods, none of which are particularly good for time-keeping advancements:
-  * Early Middle Ages: **400 - 999 CE**
-  * High Middle Ages: **1000 - 1249 CE**
-  * Late Middle Ages: **1250 - 1500 CE**
-* **300 - 1200 CE**: The development of continuous escapement mechanisms.<sup>[4](https://www.mas.bg.ac.rs/_media/istrazivanje/fme/vol40/1/03_mstoimenov.pdf)</sup> The [sliding rope paradox](https://arxiv.org/pdf/1002.1586.pdf) remains unsolved until the invention of calculus in the 17th century.
-
-  Century | Number of Major Battles | Year-on-Year Change | Annual Average<sup>*</sup> | Percent Change
-  :--:|:--:|:--:|:--:|:--:
-  5th<sup>&#10013;</sup> | 7 | +0% | 7 | +0%
-  6th | 14 | +100% |  11 | +57%
-  7th<sup>^</sup> | 17 | +21% | 13| +18%
-  8th | 5 | -70% | 11 | -15%
-  9th<sup>**</sup> | 36 | +720% | 16 | +45%
-  10th | 15 | -58% | 16 | +0%
-  11th | 20 | +33% | 16 | +0%
-
-> Source: *Battlefield Trust*, 2018<sup>[5](http://www.battlefieldstrust.com/media/733.pdf)</sup><br><sup>*</sup> Values rounded to nearest whole **integer**.<br><sup>&#10013;</sup> Collapse of the Roman Empire.<br><sup>^</sup> Foundation of Islam.<br><sup>**</sup> Invasion of the [Great Heathen Army](https://thehistoryofengland.co.uk/2011/01/17/6-the-great-heathen-army/).
-
-* **1237**: The development of *verge-and-foilet* escapement improves the accuracy of timekeeping.<sup>[6](https://aapt.scitation.org/doi/10.1119/1.3479712)</sup>
-  * Time-keeping devices become larger and more public.
-  * Early standardization begins.
-* **1287**: The Dubstable Priory clock, believed to be the first mechanical clock in the world is erected in Bedfordshire, England.<sup>[7](https://www.dunstablehistory.co.uk/archives/PQR/Dunstable%20Priory%20in%201283_oldest%20recorded%20mechanical%20clock.htm)</sup>
-
-  ![](./images/tz-23.png)
-
-* **1347-1351**: Peak of the Black Death.
-
-  ![](./images/tz-45.png)
-  > *Danse Macabre* by Michael Wolgemut (1493)
-
-* **c.1250-1500**: Major wars of the Late Middle Ages.
-  * Mongol Invasion of Kievan Rus' (1237-1242)
-  * Wars of Scottish Independence (1296-1357)
-  * Hundred Years' War (1337-1453)
-  * War of the Roses (1455-1487)
-  * Burgundian Wars (1474-1477)
-  * Muscovite-Lithuanian Wars (1492-1537)
-  * Rapid Ottoman expansion.
-
-### Age of Exploration
-
-![](./images/tz-30.png)
-
-> *Map of the New World*, Sebastian Münster, 1540
-
-* **1507**: Amerigo Vespucci demonstrates that what will come to be known as the Americas are not connected to Asia, but represent a "fourth area" of the world.<sup>[8](https://www.history.com/topics/exploration/amerigo-vespucci)</sup>
-* **1657**: The first pendulum clock is patented on 16 June by Christiaan Huygens in the Spanish Netherlands;<sup>[9](https://faculty.history.wisc.edu/sommerville/351/dutch%20republic.htm)</sup> this method will remain the most accurate way of keeping time until the 1930s.<sup>[10](http://www.cs.rhul.ac.uk/~adrian/timekeeping/galileo/)</sup>
-  * Entire process is uniform.
-  * Maintenance is trivial.
-  * Precise time-keeping technology paves the road for Enlightenment thinkers to perform repeatable scientific experimentation.
-
-  ![](./images/tz-9.png)
-
-* **1675**: Greenwich Mean Time established to aid mariners in the calculation of longitude.<sup>[11](http://adsabs.harvard.edu/full/1970JBAA...80..208H)</sup>
-* **1698**: Thomas Savery invents the steam engine.<sup>[12](https://www.egr.msu.edu/~lira/supp/steam/)</sup>
-* **1715**: The death of Louis XIV marks the beginning of the Age of Enlightenment.
 
 ---
 
@@ -364,7 +278,7 @@ According to the principles of mean solar time, 12:00 corresponds to the sun's h
 
 Because Earth orbits the sun on an elliptical path and rotates about an axis whose absolute angle is not 0&deg;, the length of days differs throughout the year naturally.
 
-![](./images/tz-25.png)
+![](./images/tz-58.png)
 
 **Assumptions**:
 
