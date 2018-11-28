@@ -2,23 +2,18 @@
 
 ## Introduction
 
-Data is not always recorded ideally for a given analysis. Perhaps the metrics that you would like to work with are not contained
-in a given file, or maybe calculations must be done with the given data to arrive to a dataset that better suits
-your current needs.
+Data is not always recorded ideally for a given analysis. Perhaps the required metrics are not contained in a given file, or perhaps calculations must be performed upon the given data to arrive to a series which better suits current needs.
 
-With [Schema-Based Parsing](https://axibase.com/docs/atsd/parsers/csv/) in ATSD
-data may be modified upon import, thus working with it in [SQL Console](https://axibase.com/docs/atsd/sql/)
-or [**ChartLab**](https://apps.axibase.com/chartlab) is more meaningful.
+[Schema-based parsing](https://axibase.com/docs/atsd/parsers/csv/) in ATSD supports modification upon import. Thus, working with any data in [SQL Console](https://axibase.com/docs/atsd/sql/)
+or [**ChartLab**](https://apps.axibase.com/chartlab) is more meaningful. Using Bank of Israel foreign trade data as an example, this procedure is explained within this tutorial.
 
 ## Data
 
-Using Bank of Israel foreign trade data as an example, this procedure is explained below:
-
 > Data Source: Central Bank of Israel `https://www.boi.org.il/en/DataAndStatistics`
 
-To start, look at the below visualization, SQL query, and result set:
+To start, look at the visualization, SQL query, and result set below:
 
->The data here has been imported into ATSD with no modification.
+> Data has been imported into ATSD **without** modification.
 
 ![](./images/SBP_1.1.png)
 
@@ -26,6 +21,8 @@ To start, look at the below visualization, SQL query, and result set:
 SELECT date_format(time, 'yyyy') AS "Year", im.value AS "Import Percent Change", ex.value 'Export Percent Change'
   FROM import_total AS "im" JOIN export_total AS "ex"
 ```
+
+<details><summary>Expand this section to view query results.</summary>
 
 | Year | Import Percent Change | Export Percent Change |
 |------|-----------------------|-----------------------|
@@ -77,17 +74,18 @@ SELECT date_format(time, 'yyyy') AS "Year", im.value AS "Import Percent Change",
 | 2015 | -0.5                  | -4.3                  |
 | 2016 | 9.5                   | 3.0                   |
 
-The given dataset shows the annual change in 2010 New Israeli Shekel (NIS) amount of foreign trade done by Israel for each year
-from 1970 to 2016. These values are a calculated percent and the following key applies for 2016 information:
+</summary>
+
+The dataset shows the annual change in the amount of foreign trade done by Israel for each year from 1970 to 2016 denominated by 2010 New Israeli Shekel (NIS) value. These values are a calculated percent and the following key applies for 2016 information:
 
 ```ls
 NIS Million at 2010 Prices:
 2016: Total Import: 367,246; Total Export: 341,267
 ```
 
-Only the percent change value without the raw figures is stored by this dataset. Using this method, the 2010 NIS Million
-value can be applied to the above dataset. Thus users can see concrete import and export figures shown by change in 2010
-NIS Million, instead of percent.
+Only the percent change value without the raw figures is stored in dataset. Using this method, the 2010 NIS Million
+value can be applied to the above dataset. Thus, users can see concrete import and export figures shown by change in 2010
+NIS Million, instead of percentile value.
 
 In a local instance of ATSD navigate to **Data > CSV Parsers**, scroll to the bottom of the page, expand the split-button, and click **Create**. Copy the schema showed below to the **Schema** field.
 
@@ -133,14 +131,13 @@ metric(cell(1,col)).
 value(changeSeparator(cell(row, col)))
 ```
 
-By manually entering the actual values provided in the data set as a `var` group and writing a simple program to convert the percent change
-values into 2010 NIS values, before submitting the data into the Axibase Time Series Database, the CSV parser calculates and inserts a new value without destroying the original value.
+By manually entering the actual values provided in the data set as a `var` group and writing a program to convert the percent change values into 2010 NIS values, before submitting the data into the ATSD, the parser calculates and inserts new values without modifying the originals.
 
-The script below the comment line `######` is the schema. For details about writing your own schema, read [ATSD Documentation](https://axibase.com/docs/atsd/parsers/csv/).
+The script below the comment line `######` is the schema. For details about writing a custom schema, refer to [Uploading CSV Files](https://axibase.com/docs/atsd/parsers/csv/).
 
-Because ATSD supports schema-based parsing and JavaScript customization, modify your data before you submit it for storage and insert the data exactly as needed.
+Because ATSD supports schema-based parsing and JavaScript customization, modify data before submission to store and insert data exactly as needed.
 
-An enhanced SQL query and visualization are shown below, featuring the newly calculated values:
+An enhanced SQL query and visualization are shown below, featuring newly calculated values:
 
 ![](./images/SBP_3.1.png)
 
@@ -148,6 +145,8 @@ An enhanced SQL query and visualization are shown below, featuring the newly cal
 SELECT date_format(time, 'yyyy') AS "Year", ima.value AS "Import Total", im.value AS "Import Percent Change", exa.value AS "Export Total", ex.value 'Export Percent Change'
   FROM import_total AS "im" JOIN import_total_actual AS "ima" JOIN export_total AS "ex" JOIN export_total_actual AS "exa"
 ```
+
+<details><summary>Expand this section to view query results.</summary>
 
 | Year | Import Total | Import Percent Change | Export Total | Export Percent Change |
 |------|--------------|-----------------------|--------------|-----------------------|
@@ -198,3 +197,5 @@ SELECT date_format(time, 'yyyy') AS "Year", ima.value AS "Import Total", im.valu
 | 2014 | 337069.8     | 3.8                   | 346214.4     | 1.4                   |
 | 2015 | 335384.5     | -0.5                  | 331327.2     | -4.3                  |
 | 2016 | 367246.0     | 9.5                   | 341267.0     | 3.0                   |
+
+</summary>
