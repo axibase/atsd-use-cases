@@ -2,19 +2,19 @@
 
 ## Overview
 
-This tutorial describes the process of calculating and historizing operational metrics stored in a relational database.
+This tutorial describes the process of historizing operational metrics stored in a relational database.
 
 ## Scenario
 
-Consider a scenario with a relational database where one of the tables contains a list of customer orders. The number of daily records is very high and for performance reasons the records must be moved from this table to a warehouse database as part of the pruning procedure. Assume now that Operations Analysts would like to monitor incoming orders to spot deviations from a baseline as quickly as possible. These analysts calculate the baseline by averaging the number of orders received from customers during the same hour on the same weekday one, two, and four weeks ago.
+Consider a scenario where one of the tables in the target relational database contains a list of customer orders. The number of daily orders is high and to isolate the primary database from analytical queries, the records must be copied to a separate warehouse database as part of the daily pruning procedure. Assume now that a business analyst needs to monitor incoming orders to spot baseline outliers as quickly as possible. The baseline itself is calculated by averaging the number of orders received from customers during the same hour on the same weekday one, two, and four weeks ago.
 
-Since the company stores intraday and historical records in different databases, it is impossible to run a single query that returns the number of orders spanning several weeks. Moreover, the query against the warehouse table may be too expensive to run continuously. Further still, if the analysts query the operations table with multiple monitoring tools, this can introduce overhead that the operations team is not willing to allow.
+Since the company stores intraday and historical records in different databases, it is impossible to run a single query that returns the number of orders spanning several weeks. Moreover, the baseline-calculating query against the warehouse table may be too expensive to run continuously. Further still, if the queries against the operations database are executed by multiple monitoring tools, this can introduce unwanted overhead.
 
 ## Solution
 
-Address this challenge by scheduling the execution of an analytical query (one that calculates [aggregate statistics](https://axibase.com/docs/atsd/sql/#aggregation-functions)) and persisting the results in a separate table. Operational databases often only serve primary applications and therefore storing hourly order statistics in one same database is inadvisable or disallowed. For added protection, execute the analytical query under a read-only user account with the permission to [`SELECT`](https://axibase.com/docs/atsd/sql/#select-expression) data from a specific view encapsulating the query business logic.
+Address this challenge by scheduling the execution of an analytical query (one that calculates a multi-dimensional count of orders, for example) and persisting the results in ATSD. This minimizes the load on the operational databases and therefore storing order statistics in the same database is inadvisable. Execute the analytical query under a `read-only` user account with the permission to `SELECT` data from a specific view encapsulating the query business logic.
 
-The steps below describe how to enable this type of monitoring in [Axibase Time Series Database](https://axibase.com/docs/atsd/).
+The steps below describe how to enable this type of monitoring using [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
 ![](./images/his-2.png)
 
@@ -22,7 +22,7 @@ The steps below describe how to enable this type of monitoring in [Axibase Time 
 
 ### Analyze Raw Data
 
-It is important to understand available data to determine useful statistics for end users, Operations Analysts in this case. For the purpose of this guide, assume the Operations Database stores incoming orders in the `daily_orders` table.
+Start by understanding available data to determine useful statistics for end users. For the purpose of this guide, assume the operations database stores incoming orders in the `daily_orders` table.
 
 ```sql
 CREATE TABLE daily_orders
@@ -64,7 +64,7 @@ SELECT * FROM daily_orders
 
 ### Calculate Statistics with Analytical Queries
 
-The Operations Analysts are not interested in specific orders but rather, the total number and dollar amount of orders received during the last hour.
+The monitoring and reporting team is not interested in specific orders but rather, the total number and perhaps dollar amount of orders received during the last hour.
 
 ```sql
 SELECT SUM(amount), COUNT(amount)
@@ -78,7 +78,7 @@ WHERE received > NOW() - INTERVAL 1 HOUR
 | 920         | 1             |
 ```
 
-In addition, the analysts might be interested in tracking the top customers during the given hour and therefore another query grouping orders by customer is necessary:
+In addition, the business analysts might be interested in tracking the top customers during the given hour and therefore another query grouping orders by customer is necessary:
 
 ```sql
 SELECT customer, SUM(amount), COUNT(amount)
@@ -105,7 +105,7 @@ SELECT SUM(amount) AS total_amount, COUNT(amount) AS total_count
 WHERE received > NOW() - INTERVAL 1 HOUR
 ```
 
-For detailed statistics (grouped by customer), apply the `customer_` prefix and add the customer name to the list of column in the `SELECT` expression.
+For statistics grouped by customer, add the customer name to the list of columns in the `SELECT` expression.
 
 ```sql
 SELECT customer, SUM(amount) AS customer_amount, COUNT(amount) AS customer_count
@@ -116,7 +116,7 @@ WHERE received > NOW() - INTERVAL 1 HOUR
 
 ## Creating Views and Granting Permissions
 
-Creating views is optional but recommended to prevent the monitoring account under which the queries are executed from customizing the query text, thus inadvertently retrieving more data than necessary for monitoring purposes.
+Creating views is optional but recommended to prevent the monitoring account under which the queries are executed from customizing the query text, thus inadvertently retrieving more data than necessary.
 
 ```sql
 CREATE VIEW stat_orders_hourly_total AS
