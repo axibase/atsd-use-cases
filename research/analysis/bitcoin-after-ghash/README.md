@@ -2,15 +2,15 @@
 
 # Bitcoin After the GHash.IO Era
 
-> _Visualizations made using ATSD, author
-has no position in Bitcoin_
+> <i>Visualizations made in <b>ChartLab</b>, author
+has no position in Bitcoin.</i>
 
 ## Introduction
 
 Since its introduction by the enigmatic figure known only as Satoshi Nakamoto, Bitcoin has transformed from a fringe investment
-security used by speculators and dark web consumers to the premier cryptocurrency with market capitalization of
+security used by speculators and dark web consumers to the premier cryptocurrency with a market capitalization of
 more than [$70 billion USD](https://coinmarketcap.com/) and an average of more than 200,000 transactions a day since 2016.
-Bitcoin is created through a process called mining, special machines can be built specifically for the task and they quickly
+Bitcoin is created through a process called mining, special machines are built specifically for the task, and they quickly
 appeared after the debut of Bitcoin. Collective mining operations called pools followed shortly after as well, advantageous because
 the large-scale nature of certain operations gave rise to better results.
 
@@ -20,7 +20,7 @@ the large-scale nature of certain operations gave rise to better results.
 
 [![](../../images/new-button.png)](https://apps.axibase.com/chartlab/cfef4d8b/2/#fullscreen)
 
-_Source_: [CoinDesk](https://www.coindesk.com/price/)
+<i>Source</i>: [CoinDesk](https://www.coindesk.com/price/)
 
 > Open the ChartLab visualization above and navigate through time using the drop-down lists at the top of the screen.
 
@@ -36,11 +36,11 @@ transactions also decreased as shown below.
 
 [![](../../images/new-button.png)](https://apps.axibase.com/chartlab/6677a920/2/#fullscreen)
 
-_Source_: Quandl - [Market Capitalization](https://www.quandl.com/data/BCHAIN/MKTCP-Bitcoin-Market-Capitalization), [Estimated Transaction Value](https://www.quandl.com/data/BCHAIN/ETRVU-Bitcoin-Estimated-Transaction-Volume-USD)
+<i>Source</i>: Quandl - [Market Capitalization](https://www.quandl.com/data/BCHAIN/MKTCP-Bitcoin-Market-Capitalization), [Estimated Transaction Value](https://www.quandl.com/data/BCHAIN/ETRVU-Bitcoin-Estimated-Transaction-Volume-USD)
 
 > Open the ChartLab visualization above and navigate through time using the drop-down lists at the top of the screen.
 
-For those unfamiliar with bitcoin mining technique and terminology, the currency operates using a blockchain protocol, that is,
+For those unfamiliar with Bitcoin mining technique and terminology, the currency operates using a blockchain protocol, that is,
 all bitcoins are inseparably linked through a combination of numbers designating all previous bitcoin transactions. Miners
 gain new bitcoins by confirming these transactions with their personal machines, verifying the combination of numbers is valid,
 and then attempting to discover the next link in the blockchain through brute force, literally guessing. The hash protocol
@@ -91,7 +91,7 @@ wallets and beginning to invest themselves.
 
 [![](../../images/new-button.png)](https://apps.axibase.com/chartlab/94cad80b/#fullscreen)
 
-_Source_: Quandl - [Number of Users](https://www.quandl.com/data/BCHAIN/NADDU-Bitcoin-Number-of-Unique-Bitcoin-Addresses-Used), [Number of Transactions](https://www.quandl.com/data/BCHAIN/NTRAN-Bitcoin-Number-of-Transactions)
+<i>Source</i>: Quandl - [Number of Users](https://www.quandl.com/data/BCHAIN/NADDU-Bitcoin-Number-of-Unique-Bitcoin-Addresses-Used), [Number of Transactions](https://www.quandl.com/data/BCHAIN/NTRAN-Bitcoin-Number-of-Transactions)
 
 Of course, Bitcoin is utterly dwarfed in size when compared to other payment processors; Mastercard, for example, handles
 around [300 million unique transactions](https://www.techrepublic.com/blog/decision-central/process-300-million-transactions-a-day-without-going-crazy/)
