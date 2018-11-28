@@ -1,9 +1,10 @@
-# Series Filter
+# U.S. Treasury Holdings Series Filter
 
 ## Overview
 
-* Filtering data is an important characteristic of any visualization with the aim of presenting [Beautiful Evidence](https://en.wikipedia.org/wiki/Edward_Tufte) with the smallest amount of 'digital ink'.
+* Filtering data is an important task of any visualization with the aim of presenting evidence with the smallest amount of ['digital ink'](https://en.wikipedia.org/wiki/Edward_Tufte).
 * This note illustrates several techniques to identify interesting series in the U.S. debt [foreign portfolio holdings](https://www.treasury.gov/resource-center/data-chart-center/tic/Pages/ticsec2.aspx) reported by the U.S. Treasury Department.
+* The techniques rely on basic statistical and analytical functions to reduce visual clutter and to spot outliers.
 
 ## Keywords
 
