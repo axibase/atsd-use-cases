@@ -4,6 +4,7 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 
 <!-- markdownlint-disable MD101 -->
 
+1. [U.S. Treasury Holdings Series Filter](multi-season-baseline.md) (November 2018)
 1. [Multi-season Baselines](multi-season-baseline.md) (November 2018)
 1. [Workers in Alternative Arrangements](alt-work/README.md) (November 2018)
 1. [Loan Delinquency Rates, All Commercial Banks](loan-delinquency-rate/README.md) (November 2018)
