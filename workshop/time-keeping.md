@@ -14,8 +14,10 @@
   * [Middle Ages](#middle-ages)
   * [Age of Exploration](#age-of-exploration)
 * [Early Time Zones](#early-time-zones)
-  * [Navigational Necessity](#navigational-necessity)
-  * [Expansion and Standardization](#expansion-and-standardization)
+* [Modern Time Zones](#modern-time-zones)
+  * [International Demarcation](#international-demarcation)
+  * [Daylight Savings Time](#daylight-savings-time)
+  * [Information Age](#information-age)
 
 ## Overview
 
@@ -129,5 +131,61 @@ The Age of Enlightenment (1715-1799) fostered growth in every area of human life
   * By **1884**, 85% of American cities used GMT standardized time.
     * Detroit: Operated on non-standard local time until **1900**, then Central Standard Time, local mean time, and Eastern Standard Time before a May 1915 ordinance settled on EST and was ratified by popular vote in August 1916.
   * The Soviet Union standardized **Moscow Time** to GMT +2:00 in **1919**, as well as other Russian time zones, and implemented the use of the Gregorian calendar.
+
+---
+
+## Modern Time Zones
+
+### International Demarcation
+
+* First proposed in **1858** by Italian mathematician Quirico Filopanti.<sup>[19](http://www.scienzagiovane.unibo.it/English/scientists/filopanti-2.html)</sup>
+* Scottish-Canadian Sandford Fleming successfully proposed the creation of a "universal time," upon which all other time zones would eventually be based in **1879**.<sup>[20](https://www.erudit.org/fr/revues/scientia/1990-v14-n1-2-scientia3118/800302ar.pdf)</sup>
+* By **1900**, nearly every country had approximately standardized its own time, but international cooperation was still rare.
+* Between **1900-1929** all major countries standardized their own time to a derivation of GMT.
+* **1956**: Nepal is the last country to standardize its time to GMT.<sup>[21](https://web.archive.org/web/20110725100005/http://www.nepalitimes.com.np/issue/155/Heritage/10013)</sup>
+
+![](./images/tz-16.png)
+
+### Daylight Savings Time
+
+> Daylight savings time is a one-hour correction applied to local time during summer months to account for discrepancies between apparent solar time and mean solar time.
+
+* First proposed in **1895** by New Zealand entomologist George Hudson.<sup>[22](https://www.fi.edu/benjamin-franklin/daylight-savings-time)</sup>
+* **1908**: Port Arthur, Ontario, Canada is the first municipality to implement daylight savings time. Several other Northern Canadian municipalities followed suit.<sup>[23](https://www.northernontario.travel/thunder-bay/the-thunder-bay-connection-to-daylight-savings-time)</sup>
+* **1916**: Implemented for the first time on a national level by the German and Austro-Hungarian Empires.<sup>[24](http://www.aaham.org/About/Blogs/ExecutiveDirectorsBlog/tabid/649/ArticleID/190/DST-DAYLIGHT-SAVING-TIME.aspx)</sup>
+  * Justification for this move emphasized the electrical energy which could be diverted to the war effort (First World War: 28 July 1914 - 11 November 1918).
+
+    ![](./images/tz-47.png)
+
+  * Britain and most of western Europe matched the change. Russia implemented the change in 1917. The United States implemented the change in 1918.
+  * The British Empire, its dominions, and the United States maintained the practice after the war but it was abandoned by other countries during the interwar period.
+* Daylight savings time reintroduced at the global level during World War II.<sup>[25](https://www.atlasobscura.com/articles/the-extreme-daylight-savings-time-of-world-war-ii)</sup>
+  * British time is pushed ahead two hours instead of the usual one, called "Double Summer Time".
+  * America creates "War Time," or permanent daylight savings time.
+
+    ![](./images/tz-49.png)
+
+  * Vichy France enforces Double Summer Time during its alliance with the Axis.
+  * **1945**: The Soviet sector in Berlin, as well as the German Democratic Republic as a whole, practice Double Summer Time to align local time with Moscow.
+
+### Information Age
+
+* **1921**: Crystal oscillation technology is independently discovered and experimented upon in various locations; Alexander Nicholson of Bell Telephone Laboratories is generally credited with the invention.<sup>[26](https://tf.nist.gov/general/pdf/2534.pdf)</sup>
+* **1936**: Alan Turing proposes the modern computer in his paper [*On Computable Numbers, With an Application to the Entscheidungsproblem*](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf).
+* **1948**: "Manchester Baby" runs its first program 21 June.<sup>[27](http://www.computinghistory.org.uk/det/6013/The-Manchester-Baby-the-world-s-first-stored-program-computer-ran-its-first-program)</sup>
+
+  ![](./images/tz-32.png)
+
+* During the 1970s energy crisis, daylight savings time is adopted by most affected nations to conserve fuel reserves.<sup>[26](http://americanhistory.si.edu/american-enterprise-exhibition/consumer-era/energy-crisis)</sup>
+* `time_t` format: number of seconds elapsed since Thursday, January 1, 1970.<sup>[28](https://en.cppreference.com/w/c/chrono/time)</sup>
+* GMT renamed Coordinated Universal Time (UTC), most Unix-like operating systems determine `time_t` from UTC time by default.
+* **1988**: International Organization for Standardization creates [ISO 8601](https://axibase.com/docs/atsd/shared/date-format.html) format to establish a standard expression of time and date.
+* The second: International System of Units standard unit for time.
+  * "The duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom," in an environment whose temperature is **not** 0 K (-273.15&deg;C).<sup>[29](https://www.nist.gov/sites/default/files/documents/2016/12/07/sp330.pdf)</sup>
+* The [atomic clock](https://time.is/UTC): measurement of a finite discontinuous event (quantum leap) serves as the basis of time.
+
+![](./images/tz-24.png)
+
+> <b><big>The Fate of Daylight Savings Time</big></b><br>Russian Federation ceases the practice of Daylight Savings Time in <b>2010</b>.<sup>[30](https://www.npr.org/templates/story/story.php?storyId=131104637)</sup><br>European Union plans to eliminate daylight savings time in the coming years.<sup>[31](https://www.bbc.com/news/world-europe-45366390)</sup><br>Most nations still observing daylight savings time are former British colonies or territories.<sup>[32](https://en.wikipedia.org/wiki/Daylight_saving_time_by_country)</sup>
 
 ---
