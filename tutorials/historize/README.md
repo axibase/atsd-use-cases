@@ -22,7 +22,7 @@ The steps below describe how to enable this type of monitoring using [Axibase Ti
 
 ### Analyze Raw Data
 
-Start by understanding available data to determine useful statistics for end users. For the purpose of this guide, assume the operations database stores incoming orders in the `daily_orders` table.
+Start by understanding available data to determine useful statistics for end users. For the purpose of this tutorial, assume the operations database stores incoming orders in the `daily_orders` table.
 
 ```sql
 CREATE TABLE daily_orders
@@ -116,7 +116,7 @@ WHERE received > NOW() - INTERVAL 1 HOUR
 
 ## Creating Views and Granting Permissions
 
-Creating views is optional but recommended to prevent the monitoring account under which the queries are executed from customizing the query text, thus inadvertently retrieving more data than necessary.
+Creating views is optional but recommended to ensure the monitoring account under which the queries are executed cannot customize the query text, inadvertently retrieving more data than necessary.
 
 ```sql
 CREATE VIEW stat_orders_hourly_total AS
@@ -185,7 +185,7 @@ SELECT * FROM stat_orders_hourly_total LIMIT 5
 
 ### Create JDBC Job
 
-Now that the data source is configured and validated, create a new JDBC job on the **Jobs** tab.
+After the data source is configured and validated, create a new JDBC job on the **Jobs** tab.
 
 ![images](./images/jdbc-config.png)
 
