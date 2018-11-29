@@ -4,6 +4,12 @@
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/4fe67594/3/#fullscreen)
 
+## Keywords
+
+`period`, `statistics`, `column-label-format`, `group`, `tags`, `sort`
+
+## Overview
+
 Living in the city has always been a "take the good with the bad" compromise. On the upside, there is the culture and the
 location, but on the downside there are the other people there messing it all up. The City of Seattle, like most metropolitan
 areas, has a number of methods for community members to reach out and draw the attention of the government to a particularly egregious

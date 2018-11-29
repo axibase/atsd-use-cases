@@ -6,6 +6,10 @@
 
 > Germany and France represent a large portion of the total real GDP in Europe.<br>Source: Federal Reserve database [FRED](https://fred.stlouisfed.org/)
 
+## Keywords
+
+`format`, `step-line`, `display`, `statistic`, `period`, `web colors`, `header-style`, `rotate-ticks`
+
 ## Overview
 
 On 6 November, 2018 in the forever-haunted Verdun (or as it was known at the time of the battle to be commemorated, *Verdun-sur-Meuse*) ahead of a ceremony marking the centenary remembrance of the end of hostilities in Europe during the First World War, French President Emmanuel Macron enunciated the need for a true European army.<sup>[1](https://www.bbc.com/news/world-europe-46108633)</sup> Within several days, German Chancellor Angela Merkel voiced her support for the notion before the European Parliament in Strasbourg.<sup>[2](https://multimedia.europarl.europa.eu/en/debate-on-the-future-of-europe-opening-statement-by-angela-merkel-german-federal-chancellor-_I162933-V_rv)</sup> Within hours of both events, and indeed during Chancellor Merkel's speech itself, critics of the idea intervened to resonate their displeasure with or, in the case of the President of the United States, offense at the suggestion.<sup>[3](https://www.ft.com/content/11944bce-e485-11e8-8e70-5e22a430c1ad)</sup> Even those who spoke in favor of the plan, underlined that despite recent increases in European defense budgets, an army on the level of which Macron spoke is still a distant ambition.<sup>[4](https://news.sky.com/story/emmanuel-macron-calls-for-real-european-army-to-defend-against-russia-and-us-11546376)</sup>

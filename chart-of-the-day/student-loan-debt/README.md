@@ -10,6 +10,12 @@
 
 **Visualization Tool**: [Axibase Times Series Database](https://axibase.com/docs/atsd/)
 
+## Keywords
+
+`format`, `alias`, `context-path`, `alias`, `drop-down`, `style`, `change-field`, `axis`, `range`
+
+## Overview
+
 The United States is carrying around about $20 trillion USD in outstanding debt right now, $14 trillion of which is being
 traded on various financial markets across the globe. The remaining amount is mostly held in Social Security assets ([1](../../research/analysis/the-new-bubble/README.md))
 or owed to various United States government agencies is called intergovernmental debt. China owns about a trillion

@@ -1,6 +1,12 @@
 # Air Traffic Noise Complaints in San Francisco by the Numbers
 
-> Visualization tools in ATSD.
+> Visualizations made with [Axibase Charts](https://axibase.com/docs/charts/) library.
+
+## Keywords
+
+`column-stack`, `alert-expression`, `alert-style`, `tags`, `legend-value`, `pointer-position`, `label-format`
+
+## Overview
 
 Thinking of moving to San Francisco anytime soon? Check out data stored in [Axibase Data Catalog](https://axibase.com/datasets/socrata/q3xd-hfi8.html)
 released by the [City of San Francisco](https://catalog.data.gov/organization/city-of-san-francisco) that covers

@@ -8,6 +8,12 @@
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/69decfcc/2/#fullscreen)
 
+## Keywords
+
+`SQL`, `SELECT`, `value`, `AS`, `aliases`, `ORDER BY`, `ordering`, `sort`, `column-label-format`, `group`, `legend-position`
+
+## Overview
+
 America has always been a country that thrived on immigration, and American universities are regarded among the best in
 the world. International students find the middle ground of these two metrics and come to the country to experience American
 life and study at some of the best American universities, sometimes returning home after they complete their education

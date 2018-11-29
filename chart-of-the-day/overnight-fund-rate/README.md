@@ -3,6 +3,10 @@
 ![](./images/on-fund.png)
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/e83adce8#fullscreen)
 
+## Keywords
+
+`axis`, `style`, `offset-right`, `format`, `statistic`, `period`, `format`, `wtavg`
+
 * **Overnight Fund Data**: This charts uses an [`axis`](https://axibase.com/docs/charts/widgets/shared/#axis) setting to compare two series measured in different units, the Overnight Fund Rate and the Overnight Fund Volume. As expected, while interest rates are under 0.4%, overnight funding activity is the highest and as the Fed steadily raised rates, overnight fund volume steadily decreased.
 
 * **Industrial Production Index**: The Industrial Production Index is a measure of real output from United States manufacturing, mining, and electric, and gas utilities. Because this time series data tracks a longer span of time that the target period, `start-time` and `end-time` [settings](https://axibase.com/docs/charts/widgets/shared/#data-loading) are used to display only the target period.

@@ -10,6 +10,12 @@
 
 **Visualization Tool**: ATSD
 
+## Keywords
+
+`format`, `drop-down`, `change-field`, `options`, `alert-expression`, `alert-style`, `alias`, `web colors`, `statistics`, `period`, `pointer-position`, `value`, `opacity`
+
+## Overview
+
 Since credit card loan delinquency rose to almost seven percent at the height of the most recent global recession, United States
 consumers have shown a positive trend in reducing the percent of consumers paying off their personal credit card debt delinquently.
 Credit card loan delinquency is often a sign of downturn in the amount of household income present and puts a strain on

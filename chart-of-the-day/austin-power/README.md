@@ -6,6 +6,12 @@
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/efc684ff/2/#fullscreen)
 
+## Keywords
+
+`SELECT`, `AS`, `aliases`, `ORDER BY`, `GROUP BY`, `ordering`, `grouping`, `FROM`, `WHERE`, `stack`, `tags`, `legend-value`
+
+## Overview
+
 Austin, Texas is the capital city of the Lone Star State and one of the fastest growing cities in America. Home to the University
 of Texas at Austin, which produces thousands of well-qualified computer science graduates each year and funnels new talent into largest employers in Austin. Dubbed "the Silicon Hills" for the high concentration of post-dot-com-boom and other newer
 high-tech companies that populate the city, Austin is seen as an all-around business friendly city.

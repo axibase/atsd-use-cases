@@ -8,6 +8,10 @@
 * Silver prices down 14% since January 2018.
 * Month-on-month change tracked via [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html).
 
+## Keywords
+
+`import`, `ticks`, `axis`, `style`, `opacity`, `stroke-width`, `format`, `offset`, `alias`
+
 ## Graphics
 
 ### Short-Term Fixing Price

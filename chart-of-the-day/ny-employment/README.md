@@ -4,6 +4,12 @@
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/6402f01c/19/#fullscreen)
 
+## Keywords
+
+`bar chart`, `tags`, `escape character`, `max-range`, `group`, `sort`
+
+## Overview
+
 Running New York City is a big business. In fact, according to [data](https://catalog.data.gov/dataset/jobs-by-industry)
 released by the State of New York that tracks employment figures by industry, the top two industries
 are partially staffed or entirely staffed by government employees and the third position

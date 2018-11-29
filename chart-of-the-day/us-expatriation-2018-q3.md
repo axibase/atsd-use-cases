@@ -8,6 +8,10 @@ On November 16, 2018 the IRS published a [scheduled report](https://www.federalr
 * Annualized total is **4,228** which is **38%** lower than **6,807** reported a year ago.
 * The 2018 annual run rate is in line with the pre-election levels.
 
+## Keywords
+
+`timezone`, `mode`, `max-range`, `period`, `statistics`, `align`, `END_TIME`, `sum`, `update-interval`
+
 ## Graphics
 
 ![](./images/expatriation_2018_q3.png)
