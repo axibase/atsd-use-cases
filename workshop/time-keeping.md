@@ -6,7 +6,7 @@
 
 ## Contents
 
-> This workshop enumerates methods of improving time-keeping practices.<br>For more information about time zones, refer to the partner workshop [The Evolution of Time Zones](./timezones.md)
+> This workshop enumerates methods of improving time-keeping practices.<br>For more information about time zones, refer to the partner workshop [Time Zone Administration](./timezones.md)
 
 * [Overview](#overview)
 * [Ancient Time Keeping](#historical-time-keeping)

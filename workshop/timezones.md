@@ -1,4 +1,4 @@
-# The Evolution of Time Zones
+# Time Zone Administration
 
 ![](./images/tz.png)
 
