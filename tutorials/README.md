@@ -4,6 +4,7 @@ Review the [Getting Started Guide](https://axibase.com/docs/atsd/tutorials/getti
 
 ## Data
 
+* [Monitoring Event Sequences](event-sequence/README.md)
 * [Copying Static Data to ATSD](table-to-property/README.md)
 * [Creating a Custom Report With ATSD and Charts](create-report/README.md)
 * [Parsing Irregular Timestamps](irregular-timestamp/README.md)
