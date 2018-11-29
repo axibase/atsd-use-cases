@@ -2,7 +2,7 @@
 
 ## Overview
 
-This tutorial describes the process of copying static data (without time dimension) from a relational database into [Axibase Time Series Database](https://axibase.com/docs/atsd/).
+This tutorial describes the process of copying static data (without a time dimension) from a relational database into [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
 ![](./images/ui_entities_3.png)
 
@@ -14,13 +14,13 @@ This tutorial describes the process of copying static data (without time dimensi
 
 ## Objective
 
-In this scenario results of a custom query needs to be copied into ATSD with most recently collected rows displayed using the [property table](https://axibase.com/docs/charts/widgets/property-table/).
+In this scenario, the results of a custom query need to be copied into ATSD with the most recently collected rows displayed in a [property table](https://axibase.com/docs/charts/widgets/property-table/).
 
-The list of rows retrieved by the query in each iteration may change and the property table must contain the exact same records as retrieved by the query in the latest iteration.
+The list of rows retrieved by the query at each iteration may change and the property table must contain the exact same records as retrieved by the query in the latest iteration.
 
 ## Solution
 
-Schedule the custom query using the [JDBC job](https://axibase.com/docs/axibase-collector/jobs/jdbc.html) in Axibase Collector to store results as `property` records in ATSD.
+Schedule the custom query via [JDBC job](https://axibase.com/docs/axibase-collector/jobs/jdbc.html) in Axibase Collector to store results as `property` records in ATSD.
 
 For added protection, execute the query under a `read-only` user account with the permission to `SELECT` data from a specific view encapsulating the query business logic.
 
@@ -64,8 +64,8 @@ SELECT * FROM ticket_status
 | SAP-1     | CHG-1203   | John Doe    | Cancelled    | 2018-11-28T20:35:09.000Z  | orange |
 ```
 
-* The records are stored in a company-wide database without any separation by the object being monitored.
-* The records are stored with a unique record identifier specified in the `ticket_id` column.
+* Records are stored in a company-wide database without separation by monitored object.
+* Records are stored with a unique record identifier specified in the `ticket_id` column.
 * It is not clear from the record if the `app_name` is part of the primary key.
 
 ### Create JDBC Job in Axibase Collector
@@ -108,23 +108,23 @@ Click **Test** to run the query and review `property` commands.
 
 ![](./images/prop_job_4.png)
 
-Save the configuration, click **Cancel** and execute the job manually, ahead of schedule, by clicking on **Run**.
+Save the configuration, click **Cancel** and execute the job manually, ahead of schedule, by clicking **Run**.
 
 ### Verify Data in ATSD
 
-Click on the **Entities** tab in the ATSD web interface.
+Open the **Entities** tab in the ATSD web interface.
 
-Locate the `ticket_st` entity and click on the **Properties** icon.
+Locate the `ticket_st` entity and click the **Properties** icon.
 
 ![](./images/ui_entities.png)
 
-Select `ticket_status` in the **Type** drop-down and review records. The records should match rows retrieved by the query.
+Select `ticket_status` in the **Type** drop-down list and review the records, which match rows retrieved by the query.
 
 ![](./images/ui_entities_2.png)
 
 ### Create Property Table
 
-Create a new [portal](https://axibase.com/docs/atsd/portals/portals-overview.html) or open an existing portal to insert the [property](https://axibase.com/docs/charts/widgets/property-table/) widget.
+Create a new [portal](https://axibase.com/docs/atsd/portals/portals-overview.html) or open an existing portal to insert a [property table](https://axibase.com/docs/charts/widgets/property-table/).
 
 The [`last`](https://axibase.com/docs/charts/widgets/property-table/#last) setting ensures that only records collected during the latest iteration are presented in the widget.
 
