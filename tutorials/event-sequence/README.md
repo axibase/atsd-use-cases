@@ -4,7 +4,7 @@
 
 Reacting to incoming messages in the ATSD [rule engine](https://axibase.com/docs/atsd/rule-engine/) is fairly straightforward. Specifying a filter and a response action to be triggered is sufficient in most situations.
 
-![](./resources/window-time.svg)
+![](./resources/window-count.svg)
 
 On the other hand, monitoring event **sequences** requires more advanced features especially if one needs to check for events that **fail** to arrive within the expected time window. This type of monitoring is often _heartbeat_ monitoring, except that here the sequence of events is equally important.
 
