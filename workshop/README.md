@@ -4,7 +4,7 @@ Internal Axibase knowledge seminars made public for secondary use or personal le
 
 <!-- markdownlint-disable MD101 -->
 
-1. [Singular Spectrum Analysis]() (November 2018) <sup>Available in [PDF]() format.</sup>
+1. [Singular Spectrum Analysis](https://axibase.com/files/ssa_introduction.pdf) (November 2018) <sup>Available in [PDF](https://axibase.com/files/ssa_introduction.pdf) format.</sup>
 1. [The Evolution of Time Zones](./timezones.md) (November 2018)
 1. [Time Zone Administration](./timezones.md) (November 2018)
 1. [Historical Time Keeping](./time-keeping.md) (November 2018)
