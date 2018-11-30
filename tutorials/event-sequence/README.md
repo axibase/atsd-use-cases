@@ -37,7 +37,7 @@ Create an alert if an event does **not** arrive on time.
 
   ![](./images/window_duration.png)
 
-* [Group](https://axibase.com/docs/atsd/rule-engine/grouping.html) incoming events by entity and by task name. Enumerate grouping tags so that events for the same task are accumulated in the **same window**. If there is no task name, choose **No Tags**.
+* [Group](https://axibase.com/docs/atsd/rule-engine/grouping.html) incoming events by entity and by task name. Enumerate grouping tags to ensure events for the same task are accumulated in the **same window**. If there is no task name, choose **No Tags**.
 
   ![](./images/window_grouping.png)
 
@@ -87,10 +87,10 @@ Open the **Data > Data Entry** page and submit the following [`message`](https:/
 message t:task_name=Task-01 t:stage=started m:"Task 1 initiated by user" e:test t:type=test t:source=test
 ```
 
-Wait for several seconds (less than 1 minute) and submit the following command to "finish" the task in due time.
+Wait for several seconds (less than 1 minute) and submit the command below to "finish" the task in due time.
 
 ```ls
 message t:task_name=Task-01 t:stage=finished m:"Task 1 completed successfully" e:test t:type=test t:source=test
 ```
 
-Wait for maximum delay (1 minute) and confirm on the **Alerts > Open Alerts** page that no alert is raised for this rule. The alert is not raised since the last expiring message is a message with `stage` tag set to `finished`.
+Wait for maximum delay (1 minute) and confirm on the **Alerts > Open Alerts** page that no alert is raised for this rule. The alert is not raised since the last expiring message is a message with `stage` tag set to `finished`. 
