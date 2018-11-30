@@ -19,6 +19,10 @@
   * [Population](https://data.worldbank.org/indicator/SP.POP.TOTL), total
   * [GDP per capita](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD) (current US$)
 
+### Keywords
+
+`min-range`, `max-range`, `value`, `label`, `format`, `legend-position`, `pointer-position`
+
 ---
 
 ## Introduction: Supplemental Benefits Defined

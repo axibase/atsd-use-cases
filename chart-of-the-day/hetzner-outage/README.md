@@ -2,6 +2,10 @@
 
 If you're a [Hetzner](https://hetzner.de) hosting customer in Germany or elsewhere, you've likely found the service reliable and easy to manage. You're also likely to recommend it for its reasonable pricing with respect to bare computing and bandwidth services that Amazon and Google have yet to match. However, after the May 2018 power outage that affected all Hetzner primary data centers outside Nuremberg, there remain lessons to be learned- especially for dedicated server customers.
 
+## Keywords
+
+`context-path`, `timezone`, `widgets-per-row`, `label-format`, `disconnect-interval` `rotate-ticks`
+
 ## Infrastructure Outage
 
 An outage of this type typically affects shared resources at the data center level. Since `DC07`, `DC10`, and `DC12` source power from the same grid in Falkenstein, any problems that may occur affect all data centers simultaneously, which highlights the grid as a single point of failure.

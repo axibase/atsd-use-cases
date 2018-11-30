@@ -2,27 +2,27 @@
 
 ## Overview
 
-The following tutorial describes the process of calculating and historizing operational metrics stored in a relational database.
+This tutorial describes the process of historizing operational metrics stored in a relational database.
 
 ## Scenario
 
-Consider a scenario where you have a relational database and one of the tables contains a list of customer orders. The number of daily records is very high and for performance reasons you plan to move the records from this table to a warehouse database as part of the pruning procedure. Assume now that Operations Analysts would like to monitor incoming orders to spot deviations from a baseline as quickly as possible. These analysts calculate the baseline by averaging the number of orders received from customers during the same hour on the same weekday one, two, and four weeks ago.
+Consider a scenario where one of the tables in the target relational database contains a list of customer orders. The number of daily orders is high and to isolate the primary database from analytical queries, the records must be copied to a separate warehouse database as part of the daily pruning procedure. Assume now that a business analyst needs to monitor incoming orders to spot baseline outliers as quickly as possible. The baseline itself is calculated by averaging the number of orders received from customers during the same hour on the same weekday one, two, and four weeks ago.
 
-Since the company stores intraday and historical records in different databases it is not possible to run a single query that returns the number of orders spanning several weeks. Moreover, the query against the warehouse table may be too expensive to run on a continuous basis. Even further, if the analysts query the operations table with multiple monitoring tools this can introduce overhead that the operations team is not willing to allow.
+Since the company stores intraday and historical records in different databases, it is impossible to run a single query that returns the number of orders spanning several weeks. Moreover, the baseline-calculating query against the warehouse table may be too expensive to run continuously. Further still, if the queries against the operations database are executed by multiple monitoring tools, this can introduce unwanted overhead.
 
 ## Solution
 
-Address this challenge by scheduling the execution of an analytical query (one that calculates aggregate statistics) and persisting the results in a separate table. Operational databases often only serve primary applications and therefore storing hourly order statistics in the same database may not be advisable or allowed. For added protection, execute the analytical query under a read-only user account with the permission to `SELECT` data from a specific view encapsulating the query business logic.
+Address this challenge by scheduling the execution of an analytical query (one that calculates a multi-dimensional count of orders, for example) and persisting the results in ATSD. This minimizes the load on the operational databases and therefore storing order statistics in the same database is inadvisable. Execute the analytical query under a `read-only` user account with the permission to `SELECT` data from a specific view encapsulating the query business logic.
 
-The steps below describe how to enable this type of monitoring in Axibase Time Series Database (ATSD).
+The steps below describe how to enable this type of monitoring using [Axibase Time Series Database](https://axibase.com/docs/atsd/).
 
-![](./images/diagram.png)
+![](./images/his-2.png)
 
 ---
 
 ### Analyze Raw Data
 
-It is important to understand the available data to determine useful statistics for end users (Operations Analysts in this case). For the purpose of this guide, assume the Operations Database stores incoming orders in the `daily_orders` table.
+Start by understanding available data to determine useful statistics for end users. For the purpose of this tutorial, assume the operations database stores incoming orders in the `daily_orders` table.
 
 ```sql
 CREATE TABLE daily_orders
@@ -64,7 +64,7 @@ SELECT * FROM daily_orders
 
 ### Calculate Statistics with Analytical Queries
 
-The Operations Analysts are not interested in specific orders, but rather the total number and dollar amount of orders received during the last hour.
+The monitoring and reporting team is not interested in specific orders but rather, the total number and perhaps dollar amount of orders received during the last hour.
 
 ```sql
 SELECT SUM(amount), COUNT(amount)
@@ -78,7 +78,7 @@ WHERE received > NOW() - INTERVAL 1 HOUR
 | 920         | 1             |
 ```
 
-In addition, the analysts might be interested in tracking the top customers during the given hour and therefore another query grouping orders by customer is necessary:
+In addition, the business analysts might be interested in tracking the top customers during the given hour and therefore another query grouping orders by customer is necessary:
 
 ```sql
 SELECT customer, SUM(amount), COUNT(amount)
@@ -95,9 +95,9 @@ WHERE received > NOW() - INTERVAL 1 HOUR
 
 ### Preparing Queries for Historical Retention
 
-To differentiate between collected metrics by name, you need to assign aliases to each column.
+To differentiate between collected metrics by name, assign [aliases](https://axibase.com/docs/atsd/sql/#aliases) to each column.
 
-For the summary statistics (without `GROUP BY` customer clause), adopt the `total_` prefix.
+For summary statistics (without [`GROUP BY`](https://axibase.com/docs/atsd/sql/#grouping) customer clause), apply the `total_` prefix.
 
 ```sql
 SELECT SUM(amount) AS total_amount, COUNT(amount) AS total_count
@@ -105,7 +105,7 @@ SELECT SUM(amount) AS total_amount, COUNT(amount) AS total_count
 WHERE received > NOW() - INTERVAL 1 HOUR
 ```
 
-For detailed statistics (grouped by customer), adopt the `customer_` prefix and add the customer name to the list of column in the `SELECT` expression.
+For statistics grouped by customer, add the customer name to the list of columns in the `SELECT` expression.
 
 ```sql
 SELECT customer, SUM(amount) AS customer_amount, COUNT(amount) AS customer_count
@@ -116,7 +116,7 @@ WHERE received > NOW() - INTERVAL 1 HOUR
 
 ## Creating Views and Granting Permissions
 
-Creating views is optional but recommended to prevent the monitoring account under which the queries are executed from customizing the query text, thus inadvertently retrieving more data than necessary for monitoring purposes.
+Creating views is optional but recommended to ensure the monitoring account under which the queries are executed cannot customize the query text, inadvertently retrieving more data than necessary.
 
 ```sql
 CREATE VIEW stat_orders_hourly_total AS
@@ -133,7 +133,7 @@ CREATE VIEW stat_orders_hourly_detail AS
     GROUP BY customer
 ```
 
-You can then create a read-only account and restrict it to executing `SELECT` queries on specific views.
+Create a read-only account and restrict it to executing `SELECT` queries on specific views.
 
 ```sql
 GRANT SELECT ON mysql.stat_orders_hourly_total TO 'axibase-readonly'@'%';
@@ -175,7 +175,7 @@ Click **Meta Data** to test the connection.
 
 Execute a sample query to verify permissions.
 
-Add `LIMIT n` clause to the test query to restrict the number of returned rows, just in case.
+Add [`LIMIT`](https://axibase.com/docs/atsd/sql/#limiting) clause to the test query to restrict the number of returned rows, just in case.
 
 ```sql
 SELECT * FROM stat_orders_hourly_total LIMIT 5
@@ -185,19 +185,19 @@ SELECT * FROM stat_orders_hourly_total LIMIT 5
 
 ### Create JDBC Job
 
-Now that the data source is configured and validated, create a new `JDBC` job on the **Jobs** tab.
+After the data source is configured and validated, create a new JDBC job on the **Jobs** tab.
 
 ![images](./images/jdbc-config.png)
 
 To execute the job once per hour, set schedule as `0 0 * * * ?`.
 
-Each query requires a separate configuration in the `JDBC` job. The job executes configurations within one job sequentially to minimize the load on the database.
+Each query requires a separate configuration in the JDBC job. The job executes configurations within one job sequentially to minimize the load on the database.
 
 The configuration determines rules for mapping results of the query to ATSD schema.
 
-The ATSD schema requires that each series has an entity name, a metric name, time, and value. Optionally, set series tags for series with extra dimensions.
+The ATSD schema requires that each series have an entity name, metric name, time, and value. Optionally, set [series tags](https://axibase.com/docs/atsd/#glossary) for series with extra dimensions.
 
-Both of the below queries store data under the manually-specified `ops_db` value.
+Both of the queries below store data under the manually specified `ops_db` value.
 
 Set a common `orders.` metric prefix to distinguish these series from other similarly named metrics and avoid naming collision.
 
@@ -247,11 +247,11 @@ To view individual series, click the **Series** icon and then the chart link.
 
 ## Monitoring Data
 
-Now that you have data being continuously inserted into ATSD by Collector, you can:
+Data being continuously inserted into ATSD by Collector enables:
 
-* Visualize data with [portals](https://axibase.com/docs/atsd/portals/). Show hourly orders overlaid with previous day/week/etc.
+* Data visualization with [portals](https://axibase.com/docs/atsd/portals/). Show hourly orders overlaid with previous day/week/etc.
 
 ![](./images/order-chart.png)
 
-* Build automated [forecasts](https://axibase.com/docs/atsd/forecasting/).
-* Create Slack/email [alerts](https://axibase.com/docs/atsd/rule-engine/notifications/#creating-notifications) using the [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) which notifies when the order activity is abnormal.
+* Automated [forecasting](https://axibase.com/docs/atsd/forecasting/).
+* The creation of Slack/email [alerts](https://axibase.com/docs/atsd/rule-engine/notifications/#creating-notifications) using the [Rule Engine](https://axibase.com/docs/atsd/rule-engine/) which notifies upon abnormal order activity.

@@ -10,6 +10,12 @@
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/dfbbf75b/2/#fullscreen)
 
+## Keywords
+
+`horizontal`, `bar chart`, `column-label-format`, `tags`, `label-format`, `stack`, `group`, `max-range`
+
+## Overview
+
 For the 2014-2015 academic year, more than [90%](https://www2.ed.gov/admins/lead/account/consolidated/sy14-15part1/ia.pdf)
 of eligible Iowa students successfully graduated high school making it the [highest
 performing state](https://nces.ed.gov/programs/coe/indicator_coi.asp) in the country with respect to graduation rate, and the

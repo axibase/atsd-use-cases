@@ -4,6 +4,10 @@
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/e8635882/7/)
 
+## Keywords
+
+`forecasting`, `holt-winters`, `format`, `numeric`, `label`, `data-type`, `forecast-name`, `period`, `statistic`, `max`
+
 ## DuckDuckGo
 
 Axibase tracks [DuckDuckGo](https://duckduckgo.com/) search statistics. It is a very interesting case as DuckDuckGo shares the core operational metric with minimal delay. The primary DuckDuckGo metric that the company tracks is the number of [search queries per day](https://duckduckgo.com/traffic.html).

@@ -6,7 +6,7 @@
 
 ## Introduction
 
-The Chicago Elevated Train, or the L as it is known, is a fixture of the city, with portions of the second-busiest transit system in the United States operating
+The Chicago Elevated or 'L' Train, is a fixture of the city, with portions of the second-busiest transit system in the United States operating
 since 1892. The L sees close to a million passengers every day spread across its 145 stations and more
 than 100 miles of tracks.
 
@@ -14,10 +14,10 @@ than 100 miles of tracks.
 
 Using [ridership data](https://axibase.com/datasets/socrata/t2rn-p8d7.html) stored in the [Axibase Dataset Catalog](https://axibase.com/datasets/) released by the City
 of Chicago rider estimates can be made for the future. Analytics tools in ATSD
-can model current ridership trends to highlight patterns in transit system usage and Future Value models can be used to
+can model current ridership trends to highlight patterns in transit system usage and future value models can be used to
 estimate future rider totals. The population of Chicago is falling, and it is the only major United
 States metropolitan to experience such changes, but unfortunately, that is unlikely to mean an extra seat opening up on
-your commute home. Although currently in a period of growth stagnation, the City of Chicago has plans to fully update and
+the commute home. Although currently in a period of growth stagnation, the City of Chicago has plans to fully update and
 re-brand the L to adapt it to the modern city landscape and help it to regain its relevance in the age of the mass car ownership.
 
 Four instances in time are examined: 2001, 2006, 2011, and 2016, to establish standards of annual ridership. Month-to-month
@@ -74,8 +74,8 @@ GROUP BY date_format(time, 'yyyy')
 [![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/4e2ef3cc/2/#fullscreen)
 
 While it is certainly possible that L ridership has peaked and will begin to decline in the future, a total of three such
-periods of stagnation are observable throughout the observation period of sixteen years leading to the conclusion that there are and always
-have been occasional decreases in annual ridership that are not necessarily indicative of true decline.
+periods of stagnation are observable throughout the observation period of 16 years leading to the conclusion that there are, and always
+have been, occasional decreases in annual ridership that are not necessarily indicative of true decline.
 
 #### 2001
 
@@ -176,9 +176,9 @@ LIMIT 15
 
 [![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/2c9f96cf/9/#fullscreen)
 
-Here the month of February is the only month where ridership fell below four million people among the top fifteen stations
+The month of February is the only period where ridership fell below four million people among the top fifteen stations
 while in 2001 four million riders among the top fifteen stations would have ranked as one of the busiest months of the year, showing
-the relative overall growth of L ridership as a whole.
+the overall growth of L ridership as a whole.
 
 #### 2016
 
@@ -216,12 +216,12 @@ LIMIT 15
 
 Because of the nature of L ridership, and the patterns observed in the visualizations above, using data from the previous
 year as a baseline for performance during the current year is reasonable. Ridership is increasing consistently when aggregating
-the data in five year interval periods. Despite this, there still exists occasional periods of stagnation that must be considered,
+the data in 5-year interval periods. Despite this, there still exists occasional periods of stagnation to consider,
 which is why a second baseline must be established. Using an Average Value Baseline makes sense given the fluctuations in passenger totals because
 such a calculation would account for both positive and negative changes in ridership and combine them for calculation of
 future year averages.
 
-Similar to the financial model for calculating Future Value (FV) of an investment, the following formula Can be used to
+Similar to the financial model for calculating the future value (FV) of an investment, the formula below is used to
 predict ridership on the L several years in to the future:
 
 `FV = I * (1 + (R * T))`
@@ -269,9 +269,9 @@ by the number of years between them, and between any two given consecutive years
 each other. As the numbers are close together, they can even be used in conjunction with one another, with the understanding
 that expected mean percentage error (MPE) is on the order of 0.13% multiplied by the difference in years, or when speaking
 of passengers, using the average amount for reference, two hundred thousand passengers times the difference in years.
-This error is not on an order higher that 10 x 10^-1 for these purposes, and merely speaks to the likelihood of the model to lose stability
+This error is not on an order higher that 10 x 10<sup>-1</sup> for these purposes, and indicates the likelihood of the model to lose stability
 as it attempts to predict rider amounts further and further into the future without inputting new training data and pruning
-old training data.
+old information.
 
 ### Implementation
 
@@ -284,17 +284,17 @@ aboard the Chicago L Train in the future.
 | 2020 (4) | 207.88 | +/- 0.52% (8,000 passengers) |
 | 2025 (9) | 230.90 | +/- 1.17% (18,000 passengers)|
 
-Essentially, this model predicts the probable bounds of ridership aboard the Chicago L. As the amount of time between the
+This model predicts the probable bounds of ridership aboard the Chicago L. As the amount of time between the
 training data and the prediction grows, the uncertainty of the model does as well, which is reflected by the growing difference
 between the bounds of probable ridership.
 
 ### Analysis
 
 While probably too broad a model to be used for serious funds allocation or city planning, the applications of such a model
-are fairly diverse. Future growth estimates are excellent for determining target values of a certain infrastructure and providing
+are diverse; future growth estimates are excellent for determining target values of certain infrastructure and providing
 bounds for more specific calculations that can act as guidelines for the results. As time passes, the training data can be
-modified to provide more time-specific information. If for example, L ridership has indeed peaked and the rate of its coming
-decline are to be calculated, early 2000's training data could be excluded and more recent data could be included to predict
+modified to provide more time-specific information. If L ridership has indeed peaked and the rate of its coming
+decline is to be calculated, early 2000s training data could be excluded and more recent data could be included to predict
 future, lower ridership levels using a new average value baseline, and updating the average percent change in the previous
 year baseline number.
 

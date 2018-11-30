@@ -13,6 +13,10 @@
 * Each individual category of loan delinquency has reached pre-recession levels <b>except</b> single-family mortgages.
 * After it exceeded credit card loans for the first time in 2009, mortgage delinquency has remained the largest contributor to the overall loan delinquency rates.
 
+## Keywords
+
+`legend-position`, `label`, `markers`, `pointer-position`, `drop-down`, `histogram`, `header-style`
+
 ---
 
 ## Graphics

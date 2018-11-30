@@ -4,10 +4,8 @@
 
 ## Introduction
 
-The Consumer Price Index (CPI) is a metric that is most commonly associated with inflation. It tracks the average cost of goods,
-and demonstrates the changing prices that consumers are paying for a typical basket of goods. Think about your
-favorite grandparent telling you about how much the movies cost when they were your age. To learn more about the effect of
-the CPI see this [analysis](../../cbisrael-cpi/README.md) that track how CPI affected the value of the Israeli Shekel over several
+The Consumer Price Index (CPI) is the metric most commonly associated with inflation. It tracks the average cost of consumer goods, and tracks the changing prices that consumers are paying for a typical basket of such goods. To learn more about the effect of
+the CPI refer to [The Consumer Price Index Versus Your Savings Account](../../cbisrael-cpi/README.md), which tracks how CPI affected the value of the Israeli Shekel over several
 decades.
 
 The Producer Price Index (PPI) is a complementary metric which tracks the amount of capital that producers are using to create
@@ -21,9 +19,9 @@ a final product. Both are shown below from 1990 to 2017:
 
 > Open any ChartLab visualization to navigate through time using the drop-down lists at the top of the screen.
 
-_Sources_: [Federal Reserve Economic Data (CPI)](https://fred.stlouisfed.org/series/CPIAUCSL), [Federal Reserve Economic Data (PPI)](https://fred.stlouisfed.org/series/PPIACO)
+<i>Sources</i>: [Federal Reserve Economic Data (CPI)](https://fred.stlouisfed.org/series/CPIAUCSL), [Federal Reserve Economic Data (PPI)](https://fred.stlouisfed.org/series/PPIACO)
 
-Both of the above metrics are indexed using the CPI and PPI value from the year 1982 as a baseline. This choice is somewhat
+Both of the above metrics are indexed from the year 1982, which is used as the baseline. This choice is somewhat
 arbitrary as such a decision simply sets the value of the index year to 100 and all other data points represent some proportion of that
 value. A value of 50 would indicate proportionally half of the 1982 value, while a value of 150 would indicate a value
 1.5 times greater than the 1982 value. Because CPI and PPI have been converted to unitless values, they can be directly compared.
@@ -45,7 +43,7 @@ SELECT date_format(time, 'MM-yyyy') AS "Date", cpi.value AS "CPI", ppi.value AS 
   FROM cpi AS cpi JOIN ppi AS ppi WHERE YEAR(time) = 2008
 ```
 
-Marginal Profit is the value retained by a producer after creating and selling one unit. Here it is represented as the value
+Marginal profit is the value retained by a producer after creating and selling one unit. Here it is represented as the value
 of the CPI less the value of the PPI.
 
 **Table 1**: Marginal Profit Year 2008
@@ -67,7 +65,7 @@ of the CPI less the value of the PPI.
 | 12-2008 | 211.4 | 170.9 | 40.5                  |
 ```
 
-to effectively contextualize this data, average Potential Profitability Values are shown below by year:
+To effectively contextualize this data, average Potential Profitability Values are shown below by year:
 
 ```sql
 SELECT YEAR(time) AS "Date", AVG(cpi.value) AS "Avg CPI", AVG(ppi.value) AS "Avg PPI", AVG(cpi.value - ppi.value) AS "Potential Profitability Value"
@@ -135,10 +133,11 @@ SELECT AVG(cpi.value) AS "Avg CPI", AVG(ppi.value) AS "Avg PPI", AVG(cpi.value -
 | 188.2   | 153.7   | 34.5                  |
 ```
 
-Using the [moving average](https://axibase.com/docs/atsd/sql/#aggregation-functions) function to aggregate the
+Using the [`movavg()`](https://axibase.com/docs/charts/syntax/functions.html#movavg) moving average function to aggregate the
 average values in annual increments instead of across the entire observed period smooths the MPV curve and shows the effects
-of the recession on producer profits. A detailed use case and syntax explanation of the weighted average function can be found
-[here](../../../tutorials/weighted-avg/README.md).
+of the recession on producer profits.
+
+> Refer to [Curve Smoothing Using Weighted Averages](../../../tutorials/weighted-avg/README.md) for more information about using moving and weighted averages.
 
 **Figure 4**: MPV Annual Aggregation
 
@@ -221,9 +220,8 @@ GROUP BY YEAR(time)
 
 > Open any ChartLab visualization to navigate through time using the drop-down lists at the top of the screen.
 
-When the data is controlled to exclude volatile metrics such as energy and food production and consumption,
-a more accurate representation of the difference between production costs and consumer costs can be seen. To further
-lend credence to the instability of the energy market, the per barrel price of oil, one of the largest parts of the energy
+When data is controlled to exclude volatile metrics such as energy and food production and consumption,
+a more accurate representation of the difference between production costs and consumer costs is seen. To lend further credence to the instability of the energy market, the per barrel price of oil, one of the largest parts of the energy
 sector is shown below alongside the calculated both Potential Profitability Values calculated above:
 
 **Figure 7**: Per Barrel Price of Crude Oil versus Potential Profitability Value
@@ -242,8 +240,8 @@ highlights this relationship further:
 
 [![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/037a04f9/2/#fullscreen)
 
-Using an ad-hoc modification to align the origin of the two metrics shows the growing gap between oil prices and marginal profit
-indicating that while related to one another, high oil prices do not guarantee a high marginal profit. In fact, because of
+Using an <i>ad hoc</i> modification to align the origin of the two metrics shows the growing gap between oil prices and marginal profit
+indicating that while some correlation exists, high oil prices do not guarantee a high marginal profit. In fact, because of
 the reflection across the x-axis, as oil prices increase, the value of marginal profit decreases.
 
 ## Conclusion
@@ -255,7 +253,7 @@ the reflection across the x-axis, as oil prices increase, the value of marginal 
 [![View in ChartLab](../../images/new-button.png)](https://apps.axibase.com/chartlab/037a04f9/3/#fullscreen)
 
 Despite a significant decrease in marginal profit levels during the late 2000s, when including the energy sector and food
-sectors, it appears that businesses have mostly picked up where they left off pre-downturn. Indeed, when these industries are
+sectors, it appears that businesses have mostly picked up where they left off since before the downturn. Indeed, when these industries are
 excluded an overall slowdown is still observed, but even the worst year of the recession shows a significantly smaller, and even
 delayed, effect indicating the true power of the oil market over the American economy.
 

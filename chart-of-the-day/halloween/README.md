@@ -4,6 +4,10 @@
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/5ffd61e3#fullscreen)
 
+## Keywords
+
+`alert-expression`, `min-range`, `max-range`, `min-range-right`, `max-range-right`, `axis`, `legend-value`, `header-style`, `markers`
+
 ## Overview
 
 It turns out that the family member who insists on buying their Halloween candy after the actual holiday, but in the year before may be on to something.

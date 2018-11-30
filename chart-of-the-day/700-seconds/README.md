@@ -2,6 +2,12 @@
 
 ![](./images/admin-ajax.png)
 
+## Keywords
+
+`aws`, `bar chart`, `time chart`
+
+## Overview
+
 There is no shortage of innovation going on in cloud pricing models, ranging from [preemptible virtual machines](https://cloudplatform.googleblog.com/2015/05/Introducing-Preemptible-VMs-a-new-class-of-compute-available-at-70-off-standard-pricing.html) from Google to pay-per-tick code execution services such as [AWS Lambda](https://aws.amazon.com/lambda/). The overall trend is that pricing is getting ever more granular and complex. This applies to both emerging pay-as-you-go services as well as mainstream virtual machines. As IaaS providers get more creative, IaaS customers do as well. The IT world is not far from a time where capacity owners are placing and buying back IT capacity just like corporate cash positions today. The future is a world where enterprises close daily books not just in dollars, but also in petabytes and GHz.
 
 A small step in this direction is a new utility pricing model implemented by AWS for their T2 virtual machines, also known as EC2 instances. These virtual machines have a fixed maximum capacity measured based on the number of CPU cores and a variable burst capacity measured in CPU credit units. CPU credits measure the amount of time that the virtual machine is allowed run at maximum capacity. One CPU credit is equal to one virtual CPU running at 100% utilization for one minute. If the machine has 60 credits, it can utilize one vCPU for 1 hour. If the CPU credit balance of a machine is zero, it runs at base performance.

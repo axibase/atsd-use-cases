@@ -4,11 +4,17 @@
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/71df6f9f#fullscreen)
 
+## Overview
+
 Although in existence since 2009, the world's first cryptocurrency Bitcoin did not begin making headlines until 2014 when the value of the digital asset grew almost 1,000% in just a few days, jumping from under $100 to almost $1,000. Then it happened again in 2017 at an even larger scale when Bitcoin was valued at nearly $20,000 a unit.
 
 Things have cooled off slightly for `BTC`, as its known on the digital currency news and analysis site [CoinDesk](https://www.coindesk.com/), but the sustained popularity of Bitcoin has led to the creation of hundreds of other similar products.
 
 The relevance of the technology, and the acceptance of digital currency in general, is given a significant boost because the Federal Reserve [announced](https://news.research.stlouisfed.org/2018/06/fred-adds-cryptocurrency-series/) that it now hosts cryptocurrency pricing data on its economic data website [FRED](https://research.stlouisfed.org/). The pursuit of recognition and legitimacy has always been central to the ability of cryptocurrency to meaningfully sidestep traditional brick and mortar financial institutions, the inclusion of value data by the largest central bank in the world should come as welcome news.
+
+### Keywords
+
+`value`, `label`, `display`, `markers`, `format`, `import`, `fred.js`, `math.sin`, `currency`
 
 ## Bitcoin Index
 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>task-not-finished</name>
+<metric>message</metric>
+<type>test</type>
+<source>test</source>
+<tags>source, task_name</tags>
+<tagsGroupingStrategy>DEFINED_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[count() == 0 && tags.stage != 'finished']]></expression>
+<window>time(1 minute)</window>
+<filter>tags.stage IN ('started', 'finished')</filter>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<lastUpdated>1543501563824</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>false</loadHistory>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner>john doe</owner>
+<description><![CDATA[Message when 'finished' event does not arrive in 1 minute.]]></description>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<timeFilter>
+<intervalCount>0</intervalCount>
+<intervalUnit>SECOND</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<emailNotification>
+<disabled>false</disabled>
+<rule-name>task-not-finished</rule-name>
+<repeat-interval>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>HOUR</intervalUnit>
+</repeat-interval>
+<name>Email Notification id=856</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>true</first-details>
+<repeat-details>true</repeat-details>
+<cancel-details>true</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<recipients>user@example.org</recipients>
+<first-subject>[${status}] ${rule} for ${entity.displayName} ${tags}. ${alert_duration}</first-subject>
+<repeat-subject>[${status}] ${rule} for ${entity.displayName} ${tags}. ${alert_duration}</repeat-subject>
+<cancel-subject>[${status}] ${rule} for ${entity.displayName} ${tags}. ${alert_duration}</cancel-subject>
+<merge>false</merge>
+<priority>0</priority>
+<body-first>${addLink('Task Completion Messages', serverLink + '/messages?type=test&amp;source=scheduler&amp;interval=1-DAY')}&#13;
+&lt;hr&gt;&#13;
+${ruleLink}</body-first>
+<body-repeat>${addLink('Task Completion Messages', serverLink + '/messages?type=test&amp;source=scheduler&amp;interval=1-DAY')}&#13;
+&lt;hr&gt;&#13;
+${ruleLink}</body-repeat>
+<body-cancel>${addLink('Task Completion Messages', serverLink + '/messages?type=test&amp;source=scheduler&amp;interval=1-DAY')}&#13;
+&lt;hr&gt;&#13;
+${ruleLink}</body-cancel>
+</emailNotification>
+<ruleTable/>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>
