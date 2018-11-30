@@ -93,4 +93,4 @@ Wait for several seconds (less than 1 minute) and submit the command below to "f
 message t:task_name=Task-01 t:stage=finished m:"Task 1 completed successfully" e:test t:type=test t:source=test
 ```
 
-Wait for maximum delay (1 minute) and confirm on the **Alerts > Open Alerts** page that no alert is raised for this rule. The alert is not raised since the last expiring message is a message with `stage` tag set to `finished`. 
+Wait for maximum delay (1 minute) and confirm on the **Alerts > Open Alerts** page that no alert is raised for this rule. The alert is not raised since the last expiring message is a message with `stage` tag set to `finished`.
