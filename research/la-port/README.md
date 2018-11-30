@@ -2,6 +2,8 @@
 
 ![](./images/Vincent_Thomas.jpg)
 
+<!-- markdownlint-disable MD105 -->
+
 ## Introduction
 
 The Port of Los Angeles, also known as America's Port, occupies 7,500 acres of land and water in southern
@@ -222,3 +224,5 @@ Inventory of Air Emissions](https://www.portoflosangeles.org/pdf/2012_Air_Emissi
 the ambitious goals it set for itself almost half a decade ago. As the world pushes further ahead in the quest to reduce the
 human impact on the planet, organizations like the Port of Los Angeles show that making ardent strides forward is possible
 for industries of any type, location, and size.
+
+<!-- markdownlint-enable MD105 -->
