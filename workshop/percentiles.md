@@ -287,3 +287,35 @@ The following software provides functonality to use any of solutions above:
 * [Apache Commons Math 3.6 Percentile](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html) (in particular [Percentile.EstimationType](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/descriptive/rank/Percentile.EstimationType.html))
 * [NIST Dataplot](https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/percenti.htm)
 * [R](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)
+
+## NaN
+
+* [Apache Commons Math 3.6 NaNStrategy](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/ranking/NaNStrategy.html):
+
+    ```txt
+    MINIMAL - NaNs are treated as minimal in the ordering, equivalent to (that is, tied with) Double.NEGATIVE_INFINITY.
+    MAXIMAL - NaNs are treated as maximal in the ordering, equivalent to Double.POSITIVE_INFINITY
+    REMOVED - NaNs are removed before the rank transform is applied
+    FIXED - NaNs are left "in place," that is the rank transformation is applied to the other elements in the input array, but the NaN elements are returned unchanged.
+    FAILED - If any NaN is encountered in the input array, an appropriate exception is thrown
+    ```
+* [R quantile()](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile):
+
+    ```txt
+    na.rm - if true, any NA and NaN's are removed from x before the quantiles are computed
+            if false NA and NaN values are not allowed
+    ```
+
+## Approximation
+
+For small samples, where data can be stored and processed in memory, these methods are enough. To estimate percentile from either distributed data or streaming data the approximation methods are used:
+
+1. [P<sup>2</sup> Algorithm for Dynamic Calculation of Quantiles and Histogram Without Storing Observations](https://www.cse.wustl.edu/~jain/papers/ftp/psqr.pdf)
+
+    Used by used by [Apache Commons Math 3.6 PSquarePercentile](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/descriptive/rank/PSquarePercentile.html). 
+
+2. [q-Digest](https://papercruncher.wordpress.com/2011/07/31/q-digest/)
+
+3. [t-Digest](https://github.com/tdunning/t-digest/blob/master/docs/t-digest-paper/histo.pdf)
+
+    Used by [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-percentile-aggregation.html). See [implementations on Java and other](https://github.com/tdunning/t-digest#implementations-in-other-languages).
