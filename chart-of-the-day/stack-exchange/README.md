@@ -6,6 +6,10 @@
 
 The total number of questions asked show that there are three programming languages far ahead of others with respect to popularity: Java, JavaScript, and PHP.
 
+## Keywords
+
+`sql`, `collector`, `stack overflow`, `json`
+
 ## Languages
 
 Using Stack Exchange API to collect hourly data for the following programming languages, via the respective tags:

@@ -13,6 +13,10 @@
 * Use the [drop-down lists](https://axibase.com/docs/charts/configuration/drop-down-lists.html) to filter data.
   * Metrics with the annotation `_ind` refer to those statistics for indigenous species.
 
+## Keywords
+
+`expand`, `list`, `drop-down`, `column-label-format`, `group`
+
 ## Graphics
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/4531593b#fullscreen)

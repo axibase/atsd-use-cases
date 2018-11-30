@@ -6,6 +6,10 @@
 * Lagged time series facilitate year-on-year comparison and help determine the [baseline](https://axibase.com/docs/charts/configuration/baselines.html#baselines).
 * Past series are de-emphasized using calculated opacity.
 
+## Keywords
+
+`last-marker`, `time-offset`, `hex code`, `range`, `context-path`, `for`
+
 ## Graphics
 
 [![View in ChartLab](../research/images/new-button.png)](https://apps.axibase.com/chartlab/e0271c06)

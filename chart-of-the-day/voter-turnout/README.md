@@ -8,6 +8,12 @@
 
 * Visualization Tool: ATSD
 
+## Keywords
+
+`offset-right`, `max-range`, `style`, `stroke-width`, `drop-down`, `range`, `change-field`, `options`
+
+## Overview
+
 One of the key indicators of a healthy democracy is active participation by its citizenry, who are responsible for electing
 officials to implement the will of the people. Tracking this data since the 1970 elections shows a steadily decreasing voter
 turnout rate with each significant election. Another point of interest is the vast difference in voter turnout for presidential

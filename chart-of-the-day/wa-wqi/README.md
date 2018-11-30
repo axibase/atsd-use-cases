@@ -7,6 +7,12 @@
 > Use the drop-down list to examine the Top 10 or Bottom 10 testing stations, or use the [wildcard](https://axibase.com/docs/charts/syntax/wildcards.html#wildcards) (`*`)
 option to view all available testing sites together.
 
+## Keywords
+
+`horizontal`, `tags`, `column-label-format`, `list`, `drop-down`, `legend-position`, `wildcard`, `group`, `sort`
+
+## Overview
+
 The visualization above shows the ranking of the results of the latest Water Quality Index tests performed by the State of Washington.
 Washington State is known for its scenic mountain ranges, diverse climate, and crystal clear water and has
 published the [following dataset](https://catalog.data.gov/dataset/annual-2015-water-quality-index-data), which tracks
@@ -15,7 +21,7 @@ a number of metrics for the 2015 Water Quality tests performed by the [Departmen
 | Metric Abbreviation | Abbreviation Meaning | Metric Weight |
 |---------------------|----------------------|---------------|
 | `overallwqi_2015` | **Overall Water Quality Index (WQI) Score** | 1.00 |
-| `wqifc` | **Fecal Coliform** count (mg FC / L H2O) | .176 |
+| `wqifc` | **Fecal Coliform** count (mg <small>FC</small> / L <small>H<sub>2</sub>O</small>) | .176 |
 | `wqioxy` | **Dissolved O2** (mg/L), ideally between 1-15 mg/L| 0.187 |
 | `wqiph` | **Probability of Hydrogen (pH)**, ascending scale, 1-14 | 0.121 |
 | `wqitemp` | **Temperature Score** for regularity |  0.11 |

@@ -4,6 +4,10 @@
 
 [![](../../trends/images/button-new.png)](https://trends.axibase.com/48731e05)
 
+## Keywords
+
+`group-period`, `group-statistic`, `label`, `format`, `avg`, `import`, `fred.js`, `alias`, `display`
+
 ## Introduction
 
 The [Civilian Unemployment Rate](https://fred.stlouisfed.org/series/UNRATE) is generally considered an important indicator of the overall health of the United States Economy, and is frequently cited by politicians seeking office or hoping to retain it.
