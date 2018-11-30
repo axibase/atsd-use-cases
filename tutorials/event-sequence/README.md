@@ -19,7 +19,7 @@ The objective is to raise an alert if the **`Task-01` finished** event is not re
 
 ![](./images/email_alert.png)
 
-The maximum delay of 5 minutes is calculated as the average (or maximum) task execution time of 3 minutes plus an additional 2 minute grace interval. Review historical data on the **Messages** tab can assist in measure the expected time to completion more accurately.
+The maximum delay of 5 minutes is calculated as the average (or maximum) task execution time of 3 minutes plus an additional 2 minute grace interval. Review historical data on the **Messages** tab to assist in the measurement of the expected time to completion.
 
   ![](./images/message_log.png)
 
@@ -37,7 +37,7 @@ Create an alert if an event does **not** arrive on time.
 
   ![](./images/window_duration.png)
 
-* [Group](https://axibase.com/docs/atsd/rule-engine/grouping.html) incoming events by entity and by task name. Enumerate grouping tags so that events for the same task are accumulated in the **same window**. If there is no task name, choose **No Tags**.
+* [Group](https://axibase.com/docs/atsd/rule-engine/grouping.html) incoming events by entity and by task name. Enumerate grouping tags to ensure events for the same task are accumulated in the **same window**. If there is no task name, choose **No Tags**.
 
   ![](./images/window_grouping.png)
 
@@ -73,11 +73,11 @@ message t:task_name=Task-01 t:stage=started m:"Task 1 initiated by user" e:test 
 
   ![](./images/data_entry.png)
 
-Wait for maximum delay (1 minute) and confirm on the **Alerts > Open Alerts** page that an alert is raised for this rule. The alert is raised because the last expiring message is a message with `stage` tag set to `started` (and not to `finished`).
+Wait for maximum delay (1 minute) and confirm on the **Alerts > Open Alerts** page that an alert is raised for this rule. The alert is raised because the last expiring message is a message with the `stage` tag set to `started` (and not to `finished`).
 
   ![](./images/task_window_open.png)
 
-A corresponding alert email is sent with the detailed alert information.
+A corresponding alert email is sent with detailed alert information.
 
 #### Normal Task Test
 
@@ -87,7 +87,7 @@ Open the **Data > Data Entry** page and submit the following [`message`](https:/
 message t:task_name=Task-01 t:stage=started m:"Task 1 initiated by user" e:test t:type=test t:source=test
 ```
 
-Wait for several seconds (less than 1 minute) and submit the following command to "finish" the task in due time.
+Wait for several seconds (less than 1 minute) and submit the command below to "finish" the task in due time.
 
 ```ls
 message t:task_name=Task-01 t:stage=finished m:"Task 1 completed successfully" e:test t:type=test t:source=test
