@@ -4,7 +4,8 @@
 
 ### Order statistics
 
-For a series of measurements **X<sub>1</sub>**, ..., **X<sub>N</sub> = {4, 2, 1, 3}**, denote the data ordered in increasing order of magnitude by **X<sub>(1)</sub>**, ..., **X<sub>(N)</sub> = {1, 2, 3, 4}**. These ordered data are called **order statistics**.
+For a series of measurements **X<sub>1</sub>**, ..., **X<sub>N</sub> = {4, 2, 1, 3}**, denote the data ordered in increasing order of magnitude by
+**X<sub>(1)</sub>**, ..., **X<sub>(N)</sub> = {1, 2, 3, 4}**. These ordered data are called **order statistics**.
 
 ### Rank
 
@@ -77,7 +78,7 @@ Often the percentile of interest is not correspond to a specific data point. In 
 Consider these methods in the following example:
 
 i|X<sub>i</sub>|X<sub>(i)</sub>
----|---|---|---
+---|---|---
 1| 39 | 7
 2| 45 | 9
 3| 46 | 16
