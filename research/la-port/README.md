@@ -2,23 +2,24 @@
 
 ![](./images/Vincent_Thomas.jpg)
 
+<!-- markdownlint-disable MD105 -->
+
 ## Introduction
 
-The Port of Los Angeles, or America's Port as it has come to be known, occupies 7,500 acres of land and water in southern
-Los Angeles. Directly across the Vincent Thomas Bridge from San Pedro, the home of the port, in Long Beach, California is the
+The Port of Los Angeles, also known as America's Port, occupies 7,500 acres of land and water in southern
+Los Angeles. Directly across the Vincent Thomas Bridge from San Pedro, the home of the port, in Long Beach is the
 entirely separate Port of Long Beach.
 
 The Port of Los Angeles handles over $1.2 billion of unique cargo every day from its 23 cargo terminals, 270 deep water berths, 77 container
 cranes, and 113 miles of on-port railways. [The Port employees](https://www.portoflosangeles.org/about/facts.asp) half a million Southern California residents, and has 2.8 million employees
 worldwide. When ranked by cargo value, America's Port holds the top spot in the United States with a value that continues to
-grow each year. By volume, the port is ranked 16th in the world (or 9th if combined with the nearby Long Beach Port), and has
-recently had its [main navigational channel deepened](https://www.portoflosangeles.org/newsroom/2013_releases/news_040313_Main_Channel.asp)
+grow each year. By volume, the port is ranked 16<sup>th</sup> in the world (or 9<sup>th</sup> if combined with the nearby Long Beach Port), and has recently had its [main navigational channel deepened](https://www.portoflosangeles.org/newsroom/2013_releases/news_040313_Main_Channel.asp)
 to 53 feet to accommodate the [newest line of super-sized international freighters](https://www.maersk.com/en/hardware/triple-e),
 yet to debut in American port waters.
 
-Amongst all the traffic, the Port has managed to prioritize green initiatives to lower its internal greenhouse gas emissions
+Amid the development, the Port has managed to prioritize green initiatives to lower its internal greenhouse gas emissions
 and meet city, county, state, and federally mandated goals for cutting the amount of harmful combustion by-products expelled
-in to the already polluted Los Angeles air.
+into the already polluted Los Angeles air.
 
 ## Data
 
@@ -33,7 +34,7 @@ The pollutants recorded by the port are shown below:
 |--------|---------|---------|
 | `dpm_tpy` | Diesel particulate matter | [Group 1 carcinogen](https://www.cancer.org/cancer/cancer-causes/general-info/known-and-probable-human-carcinogens.html) |
 | `nox_tpy` | Nitric oxides | A leading contributor to both smog and acid rain |
-| `sox_try` | Sulfur oxides | When found with `NOx`, may form N2SO4 (acid rain) |
+| `sox_try` | Sulfur oxides | When found with NO<sub>x</sub> can form N<sub>2</sub>SO<sub>4</sub> (acid rain) |
 
 > All values are recorded as tons per year (TPY)
 
@@ -52,8 +53,8 @@ alike and even damage buildings.
 
 The annual average value of each of the observed metrics is shown above. The annual average can be helpful when looking at
 overall emission totals because it establishes perspective for the following visualizations. Additionally, it shows relative
-change amongst different metrics, for example when comparing DPM change to `NOx` change, what amounts to a huge seven year reduction
-of Diesel Particulate Matter relatively, is more than doubly achieved in `NOx` emission reduction for 2006-2007.
+change amongst different metrics, for example when comparing DPM change to NO<sub>x</sub> change, what amounts to a huge seven year reduction
+of Diesel Particulate Matter relatively, is more than doubly achieved in NO<sub>x</sub> emission reduction for 2006-2007.
 
 ### Diesel Particulate Matter
 
@@ -61,7 +62,7 @@ of Diesel Particulate Matter relatively, is more than doubly achieved in `NOx` e
 
 [![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0f8b70ab/6/#fullscreen)
 
-The numbers associated with **Figure 2.1** are shown below:
+The numbers associated with the [Time Chart](https://axibase.com/docs/charts/widgets/time-chart/) above are shown below:
 
 | Year | DPM (Tons Per Year)   |
 |------|-----------------------|
@@ -98,7 +99,7 @@ Using the previous year as a baseline, the percent change for each year is shown
 
 > The average change per year is -17.98%
 
-### `NOx`: Nitrogen Oxides
+### NO<sub>x</sub> Nitrogen Oxides
 
 ![](./images/LAP_2.1.1.png)
 
@@ -118,9 +119,9 @@ The SQL returns this result set:
 | 2012 | 7177.0              |
 
 In 2005, the Port represented only 5% of Los Angeles Basin area nitrogen emissions, but by 2012 that already low number had
-fallen even further to only 3%. What is interesting to note with the `NOx` metric, as shown above in the visualization above and below, `NOx` production by the port paradoxically represents the overwhelming majority of raw emission
+fallen even further to only 3%. What is interesting to note with the NO<sub>x</sub> metric, as shown above in the visualization above and below, NO<sub>x</sub> production by the port paradoxically represents the overwhelming majority of raw emission
 numbers from the port but only a fractional amount of the overall emission rate in the Los Angeles Basin, giving perspective on
-the sheer magnitude of the problem of `NOx` emission in the Los Angeles area. `NOx` compounds are a contributor to both smog and acid
+the sheer magnitude of the problem of NO<sub>x</sub> emission in the Los Angeles area. NO<sub>x</sub> compounds are a contributor to both smog and acid
 rain and primarily form during imperfect high-temperature combustion processes such as those that occur under the hood of
 consumer automobiles.
 
@@ -137,7 +138,7 @@ consumer automobiles.
 
 > The average change per year is -10.40%.
 
-#### `SOx`: Sulfur Oxides
+#### SO<sub>x</sub> Sulfur Oxides
 
 ![](./images/LAP_3.1.png)
 
@@ -157,7 +158,7 @@ The numerical values associated with the above visualization are shown below:
 | 2012 | 631.0               |
 
 Sulfur Oxide is produced naturally by volcanoes but the majority of its harmful production comes from burning fossil fuels
-in industrial processes. The Port of Los Angeles has cut its own portion of such production by a stunning 20% in just 7 years,
+in industrial processes. The Port of Los Angeles has cut its own portion of such production by 20% in 7 years,
 down from 25% of the Los Angeles Basin total in 2005 to just 6% in 2012.
 
 | Year | Percent Change |
@@ -184,7 +185,7 @@ below details those changes, showing the frequency of various percentile changes
 
 The above chart details the frequency and severity of the Port of Los Angeles' efforts to reduce various observed pollution
 metrics. The large central red bar shows that the majority of the reduction for diesel particulate matter is consistent
-throughout the observed period, but much more varied for `NOx` pollution. Interestingly, this wider range resulted in substantially
+throughout the observed period, but much more varied for NO<sub>x</sub> pollution. Interestingly, this wider range resulted in substantially
 better reduction results, detailed in the legend at the top of the screen.
 
 ![](./images/LAP_7.1.png)
@@ -192,7 +193,7 @@ better reduction results, detailed in the legend at the top of the screen.
 [![View in ChartLab](../images/new-button.png)](https://apps.axibase.com/chartlab/0f8b70ab/12/#fullscreen)
 
 The same data regarding average percent change can be visualized differently to highlight the deviation in percent change
-value. Here the taller green box (representing percent change in `NOx` emissions) has a broader area, indicating a wider range
+value. Here the taller green box (representing percent change in NO<sub>x</sub> emissions) has a broader area, indicating a wider range
 of values whereas the red box (representing percent change in DPM emissions) has a much smaller area, indicating a much narrower
 range of values.
 
@@ -204,7 +205,7 @@ range of values.
 metric relative to one another throughout the entire observed period.
 
 Based on the above diagram, the relative levels of each measured pollutant are shown alongside one another. Throughout the
-observation period, `NOx` pollution is emitted significantly more than the other two metrics combined. Nitrogen oxides most
+observation period, NO<sub>x</sub> pollution is emitted significantly more than the other two metrics combined. Nitrogen oxides most
 heavily contribute to the reddish-brown smog layer that hangs over Los Angeles and other polluted metropolitan areas.
 
 ![](./images/LAP_6.1.png)
@@ -223,3 +224,5 @@ Inventory of Air Emissions](https://www.portoflosangeles.org/pdf/2012_Air_Emissi
 the ambitious goals it set for itself almost half a decade ago. As the world pushes further ahead in the quest to reduce the
 human impact on the planet, organizations like the Port of Los Angeles show that making ardent strides forward is possible
 for industries of any type, location, and size.
+
+<!-- markdownlint-enable MD105 -->
