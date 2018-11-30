@@ -30,7 +30,7 @@ explore the sector as a whole, view the results of the work of many states side 
 and analyze the results of several decades of effort. The New York State data can be extrapolated
 to serve as a microcosm for the efforts of the entire country.
 
-The data trakcs information from diverse sectors of the economy: industrial, residential,
+The data tracks information from diverse sectors of the economy: industrial, residential,
 commercial, and transportation. Additionally, there are figures which concern energy imported into New York State. This is an interesting and
 important metric to consider because externally produced energy makes up more than
 half of the [New York State energy market](https://www.eia.gov/state/analysis.php?sid=NY).
