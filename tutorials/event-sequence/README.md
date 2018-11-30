@@ -19,7 +19,7 @@ The objective is to raise an alert if the **`Task-01` finished** event is not re
 
 ![](./images/email_alert.png)
 
-The maximum delay of 5 minutes is calculated as the average (or maximum) task execution time of 3 minutes plus an additional 2 minute grace interval. Review historical data on the **Messages** tab can assist in measure the expected time to completion more accurately.
+The maximum delay of 5 minutes is calculated as the average (or maximum) task execution time of 3 minutes plus an additional 2 minute grace interval. Review historical data on the **Messages** tab to assist in the measurement of the expected time to completion.
 
   ![](./images/message_log.png)
 
@@ -73,11 +73,11 @@ message t:task_name=Task-01 t:stage=started m:"Task 1 initiated by user" e:test 
 
   ![](./images/data_entry.png)
 
-Wait for maximum delay (1 minute) and confirm on the **Alerts > Open Alerts** page that an alert is raised for this rule. The alert is raised because the last expiring message is a message with `stage` tag set to `started` (and not to `finished`).
+Wait for maximum delay (1 minute) and confirm on the **Alerts > Open Alerts** page that an alert is raised for this rule. The alert is raised because the last expiring message is a message with the `stage` tag set to `started` (and not to `finished`).
 
   ![](./images/task_window_open.png)
 
-A corresponding alert email is sent with the detailed alert information.
+A corresponding alert email is sent with detailed alert information.
 
 #### Normal Task Test
 
