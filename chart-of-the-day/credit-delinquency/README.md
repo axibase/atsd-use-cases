@@ -12,7 +12,7 @@
 
 ## Keywords
 
-`format`, `drop-down`, `change-field`, `options`, `alert-expression`, `alert-style`, `alias`, `web colors`, `statistics`, `period`, `pointer-position`, `value`, `opacity`
+`format`, `drop-down`, `change-field`, `options`, `alert-expression`, `alert-style`, `alias`, `web colors`, `statistics`, `period`, `value`, `opacity`
 
 ## Overview
 

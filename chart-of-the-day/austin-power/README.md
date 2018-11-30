@@ -8,7 +8,7 @@
 
 ## Keywords
 
-`SELECT`, `AS`, `aliases`, `ORDER BY`, `GROUP BY`, `ordering`, `grouping`, `FROM`, `WHERE`, `stack`, `tags`, `legend-value`
+`ordering`, `grouping`, `stack`, `tags`, `legend-value`
 
 ## Overview
 

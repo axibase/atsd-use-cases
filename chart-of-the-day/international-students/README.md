@@ -10,7 +10,7 @@
 
 ## Keywords
 
-`SQL`, `SELECT`, `value`, `AS`, `aliases`, `ORDER BY`, `ordering`, `sort`, `column-label-format`, `group`, `legend-position`
+`sql`, `value`, `aliases`, `ordering`, `sort`, `column-label-format`, `group`, `legend-position`
 
 ## Overview
 

@@ -4,7 +4,7 @@ If you're a [Hetzner](https://hetzner.de) hosting customer in Germany or elsewhe
 
 ## Keywords
 
-`context-path`, `timezone`, `widgets-per-row`, `label-format`, `disconnect-interval` `rotate-ticks`, `offset-right`
+`context-path`, `timezone`, `widgets-per-row`, `label-format`, `disconnect-interval` `rotate-ticks`
 
 ## Infrastructure Outage
 

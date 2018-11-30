@@ -10,7 +10,7 @@
 
 ## Keywords
 
-`import`, `ticks`, `axis`, `style`, `opacity`, `stroke-width`, `format`, `offset`, `alias`
+`import`, `ticks`, `axis`, `style`, `opacity`, `format`, `offset`, `alias`
 
 ## Graphics
 

@@ -15,7 +15,7 @@
 
 ## Keywords
 
-`expand`, `list`, `drop-down`, `column-label-format`, `expand`, `group-by`
+`expand`, `list`, `drop-down`, `column-label-format`, `group`
 
 ## Graphics
 

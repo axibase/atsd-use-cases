@@ -14,7 +14,7 @@ The relevance of the technology, and the acceptance of digital currency in gener
 
 ### Keywords
 
-`value`, `label`, `display`, `offset-right`, `markers`, `format`, `import`, `fred.js`, `Math.sin`, `currency`
+`value`, `label`, `display`, `markers`, `format`, `import`, `fred.js`, `math.sin`, `currency`
 
 ## Bitcoin Index
 

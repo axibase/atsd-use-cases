@@ -2,7 +2,7 @@
 
 ## Keywords
 
-`LAST`, `GROUP BY`, `grouping`, `ORDER BY`, `ordering`, `LIMIT`, `horizontal`, `hide-empty-columns`, `legend-position`, `sort`, `list`, `group`, `tags`
+`grouping`, `ordering`, `limiting`, `horizontal`, `hide-empty-columns`, `sort`, `list`, `group`, `tags`
 
 ## Overview
 

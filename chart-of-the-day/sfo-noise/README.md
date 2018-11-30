@@ -4,7 +4,7 @@
 
 ## Keywords
 
-`column-stack`, `alert-expression`, `alert-style`, `tags`, `legend-value`, `pointer-position`, `label-format`
+`column-stack`, `alert-expression`, `alert-style`, `tags`, `legend-value`, `label-format`
 
 ## Overview
 

@@ -15,7 +15,7 @@
 
 ## Keywords
 
-`legend-position`, `label`, `markers`, `pointer-position`, `drop-down`, `histogram`, `start-time`, `end-time`, `header-style`
+`legend-position`, `label`, `markers`, `pointer-position`, `drop-down`, `histogram`, `header-style`
 
 ---
 

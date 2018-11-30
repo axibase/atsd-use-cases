@@ -5,7 +5,7 @@
 
 ## Keywords
 
-`axis`, `style`, `offset-right`, `format`, `statistic`, `period`, `format`, `wtavg`
+`axis`, `style`, `format`, `statistic`, `period`, `format`, `wtavg`
 
 * **Overnight Fund Data**: This charts uses an [`axis`](https://axibase.com/docs/charts/widgets/shared/#axis) setting to compare two series measured in different units, the Overnight Fund Rate and the Overnight Fund Volume. As expected, while interest rates are under 0.4%, overnight funding activity is the highest and as the Fed steadily raised rates, overnight fund volume steadily decreased.
 
