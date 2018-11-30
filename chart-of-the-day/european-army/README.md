@@ -8,7 +8,7 @@
 
 ## Keywords
 
-`format`, `step-line`, `display`, `statistic`, `period`, `web colors`, `header-style`, `rotate-ticks`
+`format`, `step-line`, `display`, `statistic`, `period`, `web colors`, `rotate-ticks`
 
 ## Overview
 

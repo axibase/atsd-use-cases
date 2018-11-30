@@ -6,7 +6,7 @@
 
 ## Keywords
 
-`import`, `fred.js`, `csv`, `markers`, `display`, `alias`, `style`, `var`, `drop-down`, `change-field`, `text`
+`import`, `fred.js`, `csv`, `markers`, `display`, `alias`, `style`, `var`, `text`
 
 ## Overview
 

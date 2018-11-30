@@ -2,7 +2,7 @@
 
 ## Keywords
 
-`grouping`, `ordering`, `limiting`, `horizontal`, `hide-empty-columns`, `sort`, `list`, `group`, `tags`
+`grouping`, `ordering`, `limiting`, `horizontal`, `sort`, `list`, `group`, `tags`
 
 ## Overview
 
