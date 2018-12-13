@@ -7,7 +7,7 @@
 For a series of measurements **X<sub>1</sub>**, ..., **X<sub>N</sub>**, denote the data ordered in increasing order of magnitude by **X<sub>(1)</sub>**, ..., **X<sub>(N)</sub>**. These ordered data are called **order statistics**:
 
 i|X<sub>i</sub>|X<sub>(i)</sub>
----|---|---|---
+---|---|---
 1| 50 | 10
 2| 40 | 12
 3| 40 | 14
@@ -26,7 +26,7 @@ If **X<sub>(j)</sub>** is the order statistic that corresponds to the measuremen
 **Ranking** is the data transformation in which original values are replaced by their rank.
 
 i|X<sub>i</sub>|X<sub>(i)</sub>| r<sub>i</sub>
----|---|---|---|---
+---|---|---|---
 1| 50 | 10 | 10
 2| 40 | 12 | 9
 3| 40 | 14 | 8
@@ -45,8 +45,9 @@ Below is the definition of percentile proposed by [NIST Engineering Statistics H
 *the p-th percentile is a value, **P<sub>p</sub>**, such that at most p% of the measurements are less than this value and at most (1−p)% are greater.*
 
 ![](./images/percentile.png)
+[![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/09315b88/9/)
 
-Life example: if your exam score is in the 20th percentile, that means you scored better than 20% of people who took the test.
+For the example above, in 20% of measurements the amount of available memory is less than 427.232, that means that **P<sub>20</sub> = 427.232**.
 
 ### Percentile Rank
 
@@ -115,12 +116,6 @@ i|X<sub>i</sub>|X<sub>(i)</sub>
 
 N = 10
 
-Below is the [Histogram Chart](https://github.com/axibase/charts/blob/master/widgets/histogram/README.md) of the sample:
-
-![](./images/histogram.png)
-
-[![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/ba84ee52)
-
 **Notation**:
 
 `p` - the percentile rank divided by 100, i.e. p = p / 100
@@ -151,7 +146,8 @@ Percentile | Calculations<sup>[data](#example-data)</sup>
 
 The approach is used by<sup>[1](#tools-summary)</sup>:
 
-1. [SAS](http://support.sas.com/documentation/cdl/en/procstat/68142/HTML/default/viewer.htm#procstat_univariate_details14.htm)
+1. [Azure Kusto](https://docs.microsoft.com/en-us/azure/kusto/query/percentiles-aggfunction#nearest-rank-percentile)
+2. [SAS](http://support.sas.com/documentation/cdl/en/procstat/68142/HTML/default/viewer.htm#procstat_univariate_details14.htm)
 
 #### R2. Inverse of EDF with averaging at discontinuities
 
@@ -351,15 +347,15 @@ The graph below shows a comparison of the 6-th and 7-th methods:
 
 ### Key Percentiles Summary
 
-Percentile | R1 | R2 | R3 | R4 | R5 | R6 | R7 | R8 | R9 |
-:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-0   | 10  | 10  | 10  | 10  | 10  | 10  | 10  | 10  |  10 |
-25  | 14  | 14  | 12  | 13  | 14  | 13.5| 14.5| 13.83 |  13.875  |
-50  | 18  | 19  | 18  | 18  | 19  | 19  | 19  | 19  |  19 |
-75  | 40  | 40  | 40  | 35  | 40  | 40  | 37.5| 40  |  40  |
-90  | 40  | 45  | 40  | 40  | 45  | 49  | 41  | 46.33  |  46  |
-99  | 50  | 50  | 50  | 49  | 50  | 50  | 49.1| 50  |  50  |
-100 | 50  | 50  | 50  | 50  | 50  | 50  | 50  | 50  |  50  |
+Percentile | R1 | R2 | R3 | R4 | R5 | R6 | Legacy | R7 | R8 | R9 |
+:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+0   | 10  | 10  | 10  | 10  | 10  | 10  | 10  | 10  | 10  |  10 |
+25  | 14  | 14  | 12  | 13  | 14  | 13.5| 13.5| 14.5| 13.83 |  13.875  |
+50  | 18  | 19  | 18  | 18  | 19  | 19  | 19  | 19  | 19  |  19 |
+75  | 40  | 40  | 40  | 35  | 40  | 40  | 40  | 37.5| 40  |  40  |
+90  | 40  | 45  | 40  | 40  | 45  | 49  | 49  | 41  | 46.33  |  46  |
+99  | 50  | 50  | 50  | 49  | 50  | 50  | 50  | 49.1| 50  |  50  |
+100 | 50  | 50  | 50  | 50  | 50  | 50  | 50  | 50  | 50  |  50  |
 
 ![](./images/R_all.png)
 
@@ -387,7 +383,7 @@ The following software provides functonality to use any of solutions above:
 
 Method|Tools
 :---:|:---
-R1|<span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_1`](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html)<br><span>&#8226;</span> [R `type=1`](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)<br><span>&#8226;</span> [SAS `PCTLDEF=3`](http://support.sas.com/documentation/cdl/en/procstat/68142/HTML/default/viewer.htm#procstat_univariate_details14.htm)
+R1|<span>&#8226;</span> [Azure Kusto](https://docs.microsoft.com/en-us/azure/kusto/query/percentiles-aggfunction#nearest-rank-percentile)<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_1`](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html)<br><span>&#8226;</span> [R `type=1`](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)<br><span>&#8226;</span> [SAS `PCTLDEF=3`](http://support.sas.com/documentation/cdl/en/procstat/68142/HTML/default/viewer.htm#procstat_univariate_details14.htm)
 R2|<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_2`](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html)<br><span>&#8226;</span> [R `type=2`](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)<br><span>&#8226;</span> [SAS `PCTLDEF=5`](http://support.sas.com/documentation/cdl/en/procstat/68142/HTML/default/viewer.htm#procstat_univariate_details14.htm)
 R3|<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_3`](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html)<br><span>&#8226;</span> [R `type=3`](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)<br><span>&#8226;</span> [SAS `PCTLDEF=2`](http://support.sas.com/documentation/cdl/en/procstat/68142/HTML/default/viewer.htm#procstat_univariate_details14.htm)
 R4|<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_4`](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html)<br><span>&#8226;</span> [R `type=4`](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)<br><span>&#8226;</span> [SAS `PCTLDEF=1`](http://support.sas.com/documentation/cdl/en/procstat/68142/HTML/default/viewer.htm#procstat_univariate_details14.htm)<br><span>&#8226;</span> [SciPy v1.1.0 `alphap=0, betap=1`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mstats.mquantiles.html)
@@ -413,7 +409,7 @@ R9|<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_9`](https
     NaN values are removed before the percentiles are estimated.
     </code>
 
-## Box Plot
+## Graphical Representation Of Percentiles
 
 Box-And-Whiskers Diagram or Box Plot is the visual representation of the several percentiles of a given data set:
 
@@ -424,6 +420,17 @@ Below is the [Box Plot](https://axibase.com/docs/charts/widgets/box-chart/) for 
 ![](./images/box-chart.png)
 
 [![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/10c4b5b4/2/)
+
+Sometimes it is more convenient to present the percentiles with the [Histogram Chart](https://github.com/axibase/charts/blob/master/widgets/histogram/README.md):
+
+![](./images/histogram.png)
+
+[![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/ba84ee52)
+
+Percentiles are also great for thresholds checking, below values that are greater that P<sub>70</sub> = 37 are colored in red:
+
+![](./images/threshold.png)
+[![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/9a32b716/2/)
 
 ## Approximation
 
