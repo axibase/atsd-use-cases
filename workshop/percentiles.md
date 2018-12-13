@@ -47,7 +47,7 @@ Below is the definition of percentile proposed by [NIST Engineering Statistics H
 ![](./images/percentile.png)
 [![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/09315b88/9/)
 
-For the example above, in 20% of measurements the amount of available memory is less than 427.232, that means that **P<sub>20</sub> = 427.232**.
+For the example above, in 20% of measurements the amount of available memory is less than 427.232, that means that **P<sub>20</sub>=427.232**.
 
 ### Percentile Rank
 
@@ -102,7 +102,7 @@ Often the percentile of interest is not correspond to a specific data point. In 
 Consider these methods in the following example:
 
 i|X<sub>i</sub>|X<sub>(i)</sub>
----|---|---|---
+---|---|---
 1| 50 | 10
 2| 40 | 12
 3| 40 | 14
@@ -142,7 +142,7 @@ X<sub>j</sub> - the j-th element of the order statistics, X<sub>3</sub> = 16
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
-25-th | <code><span>&#8226;</span> h = 10 × 0.25 = 2.5 => ⌈h⌉ = ⌈2.5⌉ = 3 <br><span>&#8226;</span> P<sub>25</sub> = X<sub>3</sub> = 14</code>
+25-th | <span>&#8226;</span> <code>h = 10 × 0.25 = 2.5 => ⌈h⌉ = ⌈2.5⌉ = 3</code><br><span>&#8226;</span> <code>P<sub>25</sub> = X<sub>3</sub> = 14</code>
 
 The approach is used by<sup>[1](#tools-summary)</sup>:
 
@@ -177,7 +177,7 @@ The approach is used by<sup>[1](#tools-summary)</sup>:
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
-25-th | <code><span>&#8226;</span> h = 10 × 0.25 = 2.5 => ⌈h⌋ = 2<br><span>&#8226;</span> P<sub>25</sub> = X<sub>2</sub> = 12</code>
+25-th | <span>&#8226;</span> <code>h = 10 × 0.25 = 2.5 => ⌈h⌋ = 2</code><br><span>&#8226;</span> <code>P<sub>25</sub> = X<sub>2</sub> = 12</code>
 
 The approach is used by<sup>[1](#tools-summary)</sup>:
 
@@ -205,7 +205,7 @@ All subsequent methods use linear interpolation:
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
-25-th | <code><span>&#8226;</span> h = 10 × 0.25 = 2.5 => ⌊h⌋ = ⌊2⌋ = 2<br><span>&#8226;</span> P<sub>25</sub> = X<sub>2</sub> + (2.5 - 2) × (X<sub>3</sub> - X<sub>2</sub>) = 13</code>
+25-th | <span>&#8226;</span> <code>h = 10 × 0.25 = 2.5 => ⌊h⌋ = ⌊2⌋ = 2</code><br><span>&#8226;</span> <code>P<sub>25</sub> = X<sub>2</sub> + (2.5 - 2) × (X<sub>3</sub> - X<sub>2</sub>) = 13</code>
 
 The approach is used by<sup>[1](#tools-summary)</sup>:
 
@@ -223,7 +223,7 @@ The approach is used by<sup>[1](#tools-summary)</sup>:
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
-25-th | <code><span>&#8226;</span> h = 10 × 0.25 + 0.5 = 3 => ⌊h⌋ = ⌊3⌋ = 3<br><span>&#8226;</span> P<sub>25</sub> = X<sub>3</sub> + (3 - 3) × (X<sub>4</sub> - X<sub>3</sub>) = 14 </code>
+25-th | <span>&#8226;</span> <code>h = 10 × 0.25 + 0.5 = 3 => ⌊h⌋ = ⌊3⌋ = 3</code><br><span>&#8226;</span> <code>P<sub>25</sub> = X<sub>3</sub> + (3 - 3) × (X<sub>4</sub> - X<sub>3</sub>) = 14</code>
 
 The approach is used by<sup>[1](#tools-summary)</sup>:
 
@@ -247,7 +247,7 @@ The graph below shows a comparison of the 4-th and 5-th methods:
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
-25-th | <code><span>&#8226;</span> h = (10 + 1) × 0.25 = 2.75 => ⌊h⌋ = ⌊2.75⌋ = 2<br><span>&#8226;</span> P<sub>25</sub> = X<sub>2</sub> + (2.75 - 2) × (X<sub>3</sub> - X<sub>2</sub>) = 13.5 </code>
+25-th | <span>&#8226;</span> <code>h = (10 + 1) × 0.25 = 2.75 => ⌊h⌋ = ⌊2.75⌋ = 2</code><br><span>&#8226;</span> <code>P<sub>25</sub> = X<sub>2</sub> + (2.75 - 2) × (X<sub>3</sub> - X<sub>2</sub>) = 13.5 </code>
 
 The approach is used by<sup>[1](#tools-summary)</sup>:
 
@@ -288,7 +288,7 @@ The approach is used by<sup>[1](#tools-summary)</sup>:
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
-25-th | <code><span>&#8226;</span> h = (10 - 1) × 0.25 + 1 = 3.25 => ⌊h⌋ = ⌊3.25⌋ = 3<br><span>&#8226;</span> P<sub>25</sub> = X<sub>3</sub> + (3.25 - 3) × (X<sub>4</sub> - X<sub>3</sub>) = 14.5 </code>
+25-th | <span>&#8226;</span> <code>h = (10 - 1) × 0.25 + 1 = 3.25 => ⌊h⌋ = ⌊3.25⌋ = 3</code><br><span>&#8226;</span> <code>P<sub>25</sub> = X<sub>3</sub> + (3.25 - 3) × (X<sub>4</sub> - X<sub>3</sub>) = 14.5 </code>
 
 The approach is used by<sup>[1](#tools-summary)</sup>:
 
@@ -321,7 +321,7 @@ The resulting quantile estimates are approximately median-unbiased regardless of
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
-25-th | <code><span>&#8226;</span> h = (10 + 0.33) × 0.25 + 0.33 = 2.91 => ⌊h⌋ = ⌊2.91⌋ = 2<br><span>&#8226;</span> P<sub>25</sub> = X<sub>2</sub> + (2.91 - 2) × (X<sub>3</sub> - X<sub>2</sub>) = 13.83 </code>
+25-th | <span>&#8226;</span> <code>h = (10 + 0.33) × 0.25 + 0.33 = 2.91 => ⌊h⌋ = ⌊2.91⌋ = 2</code><br><span>&#8226;</span> <code>P<sub>25</sub> = X<sub>2</sub> + (2.91 - 2) × (X<sub>3</sub> - X<sub>2</sub>) = 13.83 </code>
 
 > This method was recomended by Hyndman and Fan.
 
@@ -337,7 +337,7 @@ Percentile | Calculations<sup>[data](#example-data)</sup>
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
-25-th | <code><span>&#8226;</span> h = (10 + 0.25) × 0.25 + 0.375 = 2.93 => ⌊h⌋ = ⌊2.94⌋ = 2<br><span>&#8226;</span> P<sub>25</sub> = X<sub>2</sub> + (2.94 - 2) × (X<sub>3</sub> - X<sub>2</sub>) = 13.875 </code>
+25-th | <span>&#8226;</span> <code>h = (10 + 0.25) × 0.25 + 0.375 = 2.93 => ⌊h⌋ = ⌊2.94⌋ = 2</code><br><span>&#8226;</span> <code>P<sub>25</sub> = X<sub>2</sub> + (2.94 - 2) × (X<sub>3</sub> - X<sub>2</sub>) = 13.875 </code>
 
 The graph below shows a comparison of the 6-th and 7-th methods:
 
@@ -401,6 +401,7 @@ R9|<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_9`](https
     [Apache Commons Math 3.6 NaNStrategy](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/ranking/NaNStrategy.html):<br><code><br>MINIMAL - NaNs are treated as minimal in the ordering, equivalent to (that is, tied with) Double.NEGATIVE_INFINITY.<br>MAXIMAL - NaNs are treated as maximal in the ordering, equivalent to Double.POSITIVE_INFINITY<br>REMOVED - NaNs are removed before the rank transform is applied<br>FIXED - NaNs are left "in place," that is the rank transformation is applied to the other elements in the input array, but the NaN elements are returned unchanged.<br>FAILED - If any NaN is encountered in the input array, an appropriate exception is thrown</code>
 
 * [R](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)
+
     <code><br>na.rm - if true, any NA and NaN's are removed from x before the quantiles are computed<br>if false NA and NaN values are not allowed</code>
 
 * ATSD
@@ -421,15 +422,16 @@ Below is the [Box Plot](https://axibase.com/docs/charts/widgets/box-chart/) for 
 
 [![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/10c4b5b4/2/)
 
-Sometimes it is more convenient to present the percentiles with the [Histogram Chart](https://github.com/axibase/charts/blob/master/widgets/histogram/README.md):
+Sometimes it is more convenient to present the percentiles with the [Histogram Chart](https://axibase.com/docs/charts/widgets/histogram/):
 
 ![](./images/histogram.png)
 
 [![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/ba84ee52)
 
-Percentiles are also great for thresholds checking, below values that are greater that P<sub>70</sub> = 37 are colored in red:
+Percentiles are also great for [thresholds](https://axibase.com/docs/charts/syntax/thresholds.html#thresholds) checking, below values that are greater than P<sub>70</sub> = 37 are colored in red:
 
 ![](./images/threshold.png)
+
 [![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/9a32b716/2/)
 
 ## Approximation
