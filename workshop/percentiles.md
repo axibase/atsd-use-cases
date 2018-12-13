@@ -161,7 +161,7 @@ The approach is used by<sup>[1](#tools-summary)</sup>:
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
-25-th | <code><span>&#8226;</span> h = 10 × 0.25 + 0.5 = 3 => ⌈h – 1/2⌉ = ⌈2.5⌉ = 3, ⌊h + 1/2⌋ = ⌊3.5⌋ = 3<br><span>&#8226;</span> P<sub>25</sub> = (X<sub>3</sub> + X<sub>3</sub>) / 2 = 14</code>
+25-th | <span>&#8226;</span> <code>h = 10 × 0.25 + 0.5 = 3 => ⌈h – 1/2⌉ = ⌈2.5⌉ = 3, ⌊h + 1/2⌋ = ⌊3.5⌋ = 3</code><br><span>&#8226;</span> <code>P<sub>25</sub> = (X<sub>3</sub> + X<sub>3</sub>) / 2 = 14</code>
 
 The approach is used by<sup>[1](#tools-summary)</sup>:
 
