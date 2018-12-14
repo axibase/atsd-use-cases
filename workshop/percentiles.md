@@ -2,6 +2,8 @@
 
 ## Table of Contents
 
+<!-- markdownlint-disable MD105 -->
+
 * [Terminology](#terminology)
   * [Order Statistics](#order-statistics)
   * [Rank](#rank)
@@ -27,16 +29,12 @@
   * [Tools Summary](#tools-summary)
   * [NaN Strategy](#nan-strategy)
 * [Graphical Representation Of Percentiles](#graphical-representation-of-percentiles)
-
-<!-- markdownlint-disable MD105 -->
-
 * [Robust Statistics](#robust-statistics)
-
-<!-- markdownlint-enable MD105 -->
-
   * [Median vs Average](#median-vs-average)
   * [Median Absolute Deviation vs IQR vs Standard Deviation](#median-absolute-deviation-vs-iqr-vs-standard-deviation)
 * [Sources](#sources)
+
+<!-- markdownlint-enable MD105 -->
 
 ## Terminology
 
