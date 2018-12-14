@@ -1,8 +1,40 @@
 # How To Calculate The Percentiles
 
+## Table of Contents
+
+* [Terminology](#terminology)
+  * [Order Statistics](#order-statistics)
+  * [Rank](#rank)
+  * [Percentiles](#percentiles)
+  * [Percentile Rank](#percentile-rank)
+  * [Quantile vs Percentile](#quantile-vs-percentile)
+* [Estimation Of Percentiles](#estimation-of-percentiles)
+  * [Discontinuous Sample](#discontinuous-sample)
+    * [R1](#r1-inverse-of-edf)
+    * [R2](#r2-inverse-of-edf-with-averaging-at-discontinuities)
+    * [R3](#r3-sas-definition-nearest-even)
+  * [Continuous Sample](#continuous-sample)
+    * [R4](#r4-linear-interpolation-of-the-edf)
+    * [R5](#r5-piecewise-linear-function)
+    * [R6](#r6-linear-interpolation-of-the-mathematical-expectations)
+    * [Legacy](#legacy-apache-commons-math)
+    * [R7](#r7-linear-interpolation-of-the-modes)
+    * [R8](#r8-linear-interpolation-of-the-approximate-medians)
+    * [R9](#r9-approximately-unbiased-estimates-if-x-is-normally-distributed)
+* [Summaries](#summaries)
+  * [Key Percentiles Summary](#key-percentiles-summary)
+  * [Methods Differences](#methods-differences)
+  * [Tools Summary](#tools-summary)
+  * [NaN Strategy](#nan-strategy)
+* [Graphical Representation Of Percentiles](#graphical-representation-of-percentiles)
+* [Robust Statistics](#robust-statistics)
+  * [Median vs Average](#median-vs-average)
+  * [Median Absolute Deviation vs IQR vs Standard Deviation](#median-absolute-deviation-vs-iqr-vs-standard-deviation)
+* [Sources](#sources)
+
 ## Terminology
 
-### Order statistics
+### Order Statistics
 
 For a series of measurements **X<sub>1</sub>**, ..., **X<sub>N</sub>**, denote the data ordered in increasing order of magnitude by **X<sub>(1)</sub>**, ..., **X<sub>(N)</sub>**. These ordered data are called **order statistics**:
 
@@ -130,7 +162,7 @@ X<sub>j</sub> - the j-th element of the order statistics, X<sub>3</sub> = 16
 
 `⌊⌉` - rounding to the nearest even integer, for example `⌊3.2⌉ = 4`
 
-### Discontinuous sample
+### Discontinuous Sample
 
 #### R1. Inverse of [EDF](https://en.wikipedia.org/wiki/Empirical_distribution_function)
 
@@ -191,7 +223,7 @@ All subsequent methods use linear interpolation:
 
 * <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
 
-### Continuous sample
+### Continuous Sample
 
 #### R4. Linear interpolation of the EDF
 
@@ -416,6 +448,8 @@ Box-And-Whiskers Diagram or Box Plot is the visual representation of the several
 
 ![](./images/box-plot.png)
 
+> Outliers are described [below](#robust-statistics).
+
 Below is the [Box Plot](https://axibase.com/docs/charts/widgets/box-chart/) for the example [data](#example-data):
 
 ![](./images/box-chart.png)
@@ -434,16 +468,53 @@ Percentiles are also great for [thresholds](https://axibase.com/docs/charts/synt
 
 [![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/9a32b716/2/)
 
-## Approximation
+## Robust Statistics
 
-For small samples, where data can be stored and processed in memory, these methods are enough. To estimate percentile from either distributed data or streaming data the approximation methods are used:
+The term "robust statistics" is closely related to the term "outliers".
 
-1. [P<sup>2</sup> Algorithm for Dynamic Calculation of Quantiles and Histogram Without Storing Observations](https://www.cse.wustl.edu/~jain/papers/ftp/psqr.pdf)
+Outlier is an observation (or subset of observations) which appears to be inconsistent with the remainder of that set of data.
 
-    Used by used by [Apache Commons Math 3.6 PSquarePercentile](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/descriptive/rank/PSquarePercentile.html).
+This definition is not precise, actually the decision whether an observation is an outlier, is left to the subjective judgement of the researcher.
 
-2. [q-Digest](https://papercruncher.wordpress.com/2011/07/31/q-digest/)
+Robust statistics are resistant to outliers. In other words, if data set contains very high or very low values, then some statistics will be good estimators for population parameters, and some statistics will be poor estimators. For example, the ariphmetic mean is very susceptible to outliers (it is non-robust), while the median is not affected by outliers (it is robust).
 
-3. [t-Digest](https://github.com/tdunning/t-digest/blob/master/docs/t-digest-paper/histo.pdf)
+### Median vs Average
 
-    Used by [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-metrics-percentile-aggregation.html). See [implementations on Java and other](https://github.com/tdunning/t-digest#implementations-in-other-languages).
+Average or arithmetic mean is the sum of the numbers divided by how many numbers are being averaged:
+
+![](./images/avg.png)
+
+The [median](#quantile-vs-percentile) is a robust measure of central tendency, while the mean is not.
+
+For the symmetric distributions (normal in particular) the mean is also the median.
+
+For the example sample mean is greater than median:
+
+![](./images/median_vs_average.png)
+
+[![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/68554877/2/)
+
+### Median Absolute Deviation vs IQR vs Standard Deviation
+
+Median Absolute Deviation, IQR and Standard Deviation are measures of spread (also called measures of dispersion), that means that they show something about how wide the set of data is.
+
+The standard deviation is a measure of how spread out data is around center of the distribution. It also gives an idea of where, percentage wise, a certain value falls. The SD is affected by extremely high or extremely low values and non normality, in other words it is not robust.
+
+![](./images/sd.png)
+
+![](./images/sds.png)
+
+The median absolute deviation is a robust measure of how spread out a set of data is. If data is normal, the SD is usually the best choice for assessing spread, otherwise, the MAD is preffered.
+
+![](./images/mad.png)
+
+The [IQR](#quantile-vs-percentile) is similar to the MAD, but it is less robust.
+The IQR is often used to find outliers in sample: observations that fall below `Q1 − 1.5 × IQR` or above `Q3 + 1.5 × IQR` are marked as outliers. In a [box plot](#graphical-representation-of-percentiles), the highest and lowest occurring value within this limit are indicated by whiskers of the box and any outliers as individual points.
+
+## Sources
+
+1. ["A Brief Introduction to Robust Statistics", André Lucas](https://personal.vu.nl/a.lucas/thesis/chap2.pdf)
+2. [NIST Engineering Statistics Handbook](https://www.itl.nist.gov/div898/handbook/prc/section2/prc262.htm)
+3. ["Sttistical Computing", Hyndman, R. J. and Fan, Y. (1986)](https://www.amherst.edu/media/view/129116/original/Sample+Quantiles.pdf)
+4. [Statistics How To](https://www.statisticshowto.datasciencecentral.com/resistance-resistant-measures/)
+5. [Wiki Quantile](https://en.wikipedia.org/wiki/Quantile)
