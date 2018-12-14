@@ -4,6 +4,7 @@ Internal Axibase knowledge seminars made public for secondary use or personal le
 
 <!-- markdownlint-disable MD101 -->
 
+1. [How To Calculate The Percentiles](./percentiles.md) (December 2018)
 1. [The Evolution of Time Zones](./timezones.md) (November 2018)
 1. [Roman Time Keeping](https://axibase.com/files/roman-time-keeping/assets/player/KeynoteDHTMLPlayer.html#0) (November 2018) <sup>Available in [PDF](https://axibase.com/files/roman-time-keeping/roman_time_keeping.pdf) format.</sup>
 1. [Code Inspection with SonarQube](./sonar.md) (July 2018)

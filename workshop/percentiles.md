@@ -408,7 +408,7 @@ R9|`(N + 1/4) × p + 3/8`|<code>X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>
 
 ### Tools Summary
 
-The following software provides functonality to use any of solutions above:
+The following software provides functonality to use any of R1-R9:
 
 * [Apache Commons Math 3.6 Percentile](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html), refer to [Percentile.EstimationType](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/descriptive/rank/Percentile.EstimationType.html)
 * [R](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)
@@ -430,11 +430,22 @@ R9|<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_9`](https
 
 * [Apache Commons Math 3.6](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html)
 
-    [Apache Commons Math 3.6 NaNStrategy](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/ranking/NaNStrategy.html):<br><code><br>MINIMAL - NaNs are treated as minimal in the ordering, equivalent to (that is, tied with) Double.NEGATIVE_INFINITY.<br>MAXIMAL - NaNs are treated as maximal in the ordering, equivalent to Double.POSITIVE_INFINITY<br>REMOVED - NaNs are removed before the rank transform is applied<br>FIXED - NaNs are left "in place," that is the rank transformation is applied to the other elements in the input array, but the NaN elements are returned unchanged.<br>FAILED - If any NaN is encountered in the input array, an appropriate exception is thrown</code>
+    [Apache Commons Math 3.6 NaNStrategy](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/ranking/NaNStrategy.html):
+
+    <span>&#8226;</span> <code>MINIMAL - NaNs are treated as minimal in the ordering, equivalent to (that is, tied with) Double.NEGATIVE_INFINITY</code>
+
+    <span>&#8226;</span> <code>MAXIMAL - NaNs are treated as maximal in the ordering, equivalent to Double.POSITIVE_INFINITY</code>
+
+    <span>&#8226;</span> <code>REMOVED - NaNs are removed before the rank transform is applied</code>
+
+    <span>&#8226;</span> <code>FIXED - NaNs are left "in place," that is the rank transformation is applied to the other elements in the input array, but the NaN elements are returned unchanged.</code>
+
+    <span>&#8226;</span> <code>FAILED - If any NaN is encountered in the input array, an appropriate exception is thrown.</code>
 
 * [R](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)
 
-    <code><br>na.rm - if true, any NA and NaN's are removed from x before the quantiles are computed<br>if false NA and NaN values are not allowed</code>
+    <span>&#8226;</span> <code>na.rm - if true, any NA and NaN's are removed from x before the quantiles are computed</code>
+    <span>&#8226;</span> <code>if false NA and NaN values are not allowed</code>
 
 * ATSD
 
@@ -444,25 +455,25 @@ R9|<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_9`](https
 
 ## Graphical Representation Of Percentiles
 
-Box-And-Whiskers Diagram or Box Plot is the visual representation of the several percentiles of a given data set:
+Box-And-Whiskers Diagram or Box Plot is the visual representation of the several percentiles of a given data set.
 
 ![](./images/box-plot.png)
 
 > Outliers are described [below](#robust-statistics).
 
-Below is the [Box Plot](https://axibase.com/docs/charts/widgets/box-chart/) for the example [data](#example-data):
+Below is the [Box Plot](https://axibase.com/docs/charts/widgets/box-chart/) for the example [data](#example-data).
 
 ![](./images/box-chart.png)
 
 [![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/10c4b5b4/2/)
 
-Sometimes it is more convenient to present the percentiles with the [Histogram Chart](https://axibase.com/docs/charts/widgets/histogram/):
+It is also convenient to display the percentiles in the [Histogram Chart](https://axibase.com/docs/charts/widgets/histogram/).
 
 ![](./images/histogram.png)
 
 [![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/ba84ee52)
 
-Percentiles are also great for [thresholds](https://axibase.com/docs/charts/syntax/thresholds.html#thresholds) checking, below values that are greater than P<sub>70</sub> = 37 are colored in red:
+Percentiles are often used for [thresholds](https://axibase.com/docs/charts/syntax/thresholds.html#thresholds) checking, below values that are greater than P<sub>70</sub> = 37 are colored in red.
 
 ![](./images/threshold.png)
 
