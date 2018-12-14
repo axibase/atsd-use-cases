@@ -4,6 +4,10 @@
 
 [![](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/9be28417#fullscreen)
 
+## Keywords
+
+`offset`, `group-statistic`, `group-period`, `alias`, `pointer-position`, `alert-expression`, `alert-style`, `pointer-position`
+
 ## Introduction
 
 The 1978 [Airline Deregulation Act](https://www.gpo.gov/fdsys/pkg/STATUTE-92/pdf/STATUTE-92-Pg1705.pdf) granted private airlines the freedom to select routes, set fares, and design schedules. Previously these were regulated by a federal agency, the Civil Aeronautics Board.<sup>[1](https://www.archives.gov/research/guide-fed-records/groups/197.html)</sup> The government took a more *laissez-faire* approach to the airline industry, and it began to consolidate under the control of its largest players.

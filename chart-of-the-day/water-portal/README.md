@@ -17,6 +17,10 @@ Many of following portals show areas where the state has begun to recover from o
 
 > A complete portal with all recorded metrics and locations is available in the [Complete California Water Portal](#complete-california-water-portal) section. For instructions on recreating these portals locally, see [Validation](#validation).
 
+## Keywords
+
+`add-meta`, `time-offset`, `list`, `replace-value`, `drop-down`, `change-field`, `options`
+
 ---
 
 ## Reservoir Levels

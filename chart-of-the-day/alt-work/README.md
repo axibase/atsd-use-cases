@@ -9,6 +9,10 @@
 * BLS has not released information for this statistic since 2005.
 * Alternative workers have decreased as a portion of the whole since 2005.
 
+## Keywords
+
+`format`, `for`, `opacity`, `time-offset`, `color`, `style`
+
 ## Graphics
 
 ### Percent of Total Employed

@@ -4,6 +4,10 @@
 
 [![](../../trends/images/button-new.png)](https://trends.axibase.com/24dd54d5)
 
+## Keywords
+
+`import`, `fred.js`, `csv`, `markers`, `display`, `alias`, `style`, `var`, `text`
+
 ## Overview
 
 The portal above tracks economic metrics for American presidential administrations from Gerald Ford (1974-1977) to Donald Trump (2017-present). Open the portal and use the drop-down list to navigate between tracked metrics.

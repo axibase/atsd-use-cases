@@ -4,13 +4,19 @@
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/748691f3/2/#fullscreen)
 
+## Keywords
+
+`list`, `sort`, `group`, `column-label-format`, `label-format`, `drop-down`, `change-field`, `options`
+
+## Overview
+
 The City of Los Angeles is keenly aware of the negative effects of greenhouse gas pollution and is often in the process
 of working to counteract the effects of mass individual car ownership by reducing greenhouse gas emissions in other spheres of life.
 The Port of Los Angeles for example, reduced the amount of a number of toxic emissions during their
 [2005-2012 green campaign](../../research/la-port/README.md). Additionally, the City has begun to retrofit their public lighting infrastructure
 with light-emitting diode (LED) bulbs to update the traditional incandescent bulbs, which are [shockingly less efficient](https://energy.gov/energysaver/how-energy-efficient-light-bulbs-compare-traditional-incandescents).
 
-The [ChartLab](https://apps.axibase.com/chartlab) visualization above, made possible by ATSD,
+The [**ChartLab**](https://apps.axibase.com/chartlab) visualization above, made possible by ATSD,
 tracks government progress with [public data](https://catalog.data.gov/dataset/citywide-led-streetlight-savings) and
 offers insight on the latest foray into environmental protectionism of Los Angeles. Open the chart with the link above, and use the
 drop-down list to toggle between all of the recorded metrics for a complete picture of [The Los Angeles LED Streetlight Program](https://energy.gov/eere/ssl/text-alternative-version-city-los-angeles-led-streetlight-program).

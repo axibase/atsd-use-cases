@@ -13,7 +13,7 @@
 
 ## Graphics
 
-The chart shows the Oroville Dam water levels for the current year (2018, red series) with prior year overlays displayed with a gradually decreasing visibility. Year 2009 is the least visibile.
+The chart shows the Oroville Dam water levels for the current year (2018, red series) with prior year overlays displayed with a gradually decreasing visibility. Year 2009 is the least visible.
 
 [![View in ChartLab](../research/images/new-button.png)](https://apps.axibase.com/chartlab/e0271c06/2/)
 
