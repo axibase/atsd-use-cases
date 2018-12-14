@@ -27,7 +27,13 @@
   * [Tools Summary](#tools-summary)
   * [NaN Strategy](#nan-strategy)
 * [Graphical Representation Of Percentiles](#graphical-representation-of-percentiles)
+
+<!-- markdownlint-disable MD105 -->
+
 * [Robust Statistics](#robust-statistics)
+
+<!-- markdownlint-enable MD105 -->
+
   * [Median vs Average](#median-vs-average)
   * [Median Absolute Deviation vs IQR vs Standard Deviation](#median-absolute-deviation-vs-iqr-vs-standard-deviation)
 * [Sources](#sources)
@@ -340,7 +346,7 @@ The graph below shows a comparison of the 6-th and 7-th methods:
 
 The resulting quantile estimates are approximately median-unbiased regardless of the distribution of `X`.
 
-> The bias of an estimator is the difference between this estimator's expected value and the true value of the parameter being estimated.
+> The bias of an estimator is the difference between this estimator's expected value and the `true` value of the parameter being estimated.
 > An estimator or decision rule with zero bias is called unbiased. Otherwise the estimator is said to be biased.
 
 * `h = (N + 1/3) × p + 1/3`
@@ -432,20 +438,20 @@ R9|<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_9`](https
 
     [Apache Commons Math 3.6 NaNStrategy](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/ranking/NaNStrategy.html):
 
-    <span>&#8226;</span> <code>MINIMAL - NaNs are treated as minimal in the ordering, equivalent to (that is, tied with) Double.NEGATIVE_INFINITY</code>
-
-    <span>&#8226;</span> <code>MAXIMAL - NaNs are treated as maximal in the ordering, equivalent to Double.POSITIVE_INFINITY</code>
-
-    <span>&#8226;</span> <code>REMOVED - NaNs are removed before the rank transform is applied</code>
-
-    <span>&#8226;</span> <code>FIXED - NaNs are left "in place," that is the rank transformation is applied to the other elements in the input array, but the NaN elements are returned unchanged.</code>
-
-    <span>&#8226;</span> <code>FAILED - If any NaN is encountered in the input array, an appropriate exception is thrown.</code>
+    ```txt
+    MINIMAL - NaNs are treated as minimal in the ordering, equivalent to (that is, tied with) Double.NEGATIVE_INFINITY
+    MAXIMAL - NaNs are treated as maximal in the ordering, equivalent to Double.POSITIVE_INFINITY
+    REMOVED - NaNs are removed before the rank transform is applied
+    FIXED - NaNs are left "in place," that is the rank transformation is applied to the other elements in the input array, but the NaN elements are returned unchanged.
+    FAILED - If any NaN is encountered in the input array, an appropriate exception is thrown.
+    ```
 
 * [R](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)
 
-    <span>&#8226;</span> <code>na.rm - if true, any NA and NaN's are removed from x before the quantiles are computed</code>
-    <span>&#8226;</span> <code>if false NA and NaN values are not allowed</code>
+    ```txt
+    na.rm - if true, any NA and NaN's are removed from x before the quantiles are computed
+    if false NA and NaN values are not allowed
+    ```
 
 * ATSD
 
@@ -479,13 +485,15 @@ Percentiles are often used for [thresholds](https://axibase.com/docs/charts/synt
 
 [![](../research/images/new-button.png)](https://apps.axibase.com/chartlab/9a32b716/2/)
 
+<!-- markdownlint-disable MD105 -->
+
 ## Robust Statistics
 
 The term "robust statistics" is closely related to the term "outliers".
 
 Outlier is an observation (or subset of observations) which appears to be inconsistent with the remainder of that set of data.
 
-This definition is not precise, actually the decision whether an observation is an outlier, is left to the subjective judgement of the researcher.
+This definition is not precise, the decision whether an observation is an outlier, is left to the subjective judgement of the researcher.
 
 Robust statistics are resistant to outliers. In other words, if data set contains very high or very low values, then some statistics will be good estimators for population parameters, and some statistics will be poor estimators. For example, the ariphmetic mean is very susceptible to outliers (it is non-robust), while the median is not affected by outliers (it is robust).
 
