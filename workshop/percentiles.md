@@ -131,7 +131,7 @@ There are relations between different types of quantiles:
 
 When there is a small sample of measurements, the [CDF](https://en.wikipedia.org/wiki/Cumulative_distribution_function) of the underlying population is unknown, that is why the percentile can not be calculated, it can be only **estimated** instead.
 
-Often the percentile of interest is not correspond to a specific data point. In this case, interpolation between points is required. There is no a standard univerally accepted way to perform this interpolation. [Hyndman, R. J. and Fan, Y. (1986)](https://www.amherst.edu/media/view/129116/original/Sample+Quantiles.pdf) described nine different methods for computing percentiles, most of statistical software use one of them.
+Often the percentile of interest is not correspond to a specific data point. In this case, interpolation between points is required. There is no a standard universally accepted way to perform this interpolation. [Hyndman, R. J. and Fan, Y. (1986)](https://www.amherst.edu/media/view/129116/original/Sample+Quantiles.pdf) described nine different methods for computing percentiles, most of statistical software use one of them.
 
 ### Example Data
 
@@ -359,7 +359,7 @@ Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
 25-th | <span>&#8226;</span> <code>h = (10 + 0.33) × 0.25 + 0.33 = 2.91 => ⌊h⌋ = ⌊2.91⌋ = 2</code><br><span>&#8226;</span> <code>P<sub>25</sub> = X<sub>2</sub> + (2.91 - 2) × (X<sub>3</sub> - X<sub>2</sub>) = 13.83 </code>
 
-> This method was recomended by Hyndman and Fan.
+> This method was recommended by Hyndman and Fan.
 
 #### R9. Approximately unbiased estimates (if `X` is normally distributed)
 
@@ -412,7 +412,7 @@ R9|`(N + 1/4) × p + 3/8`|<code>X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>
 
 ### Tools Summary
 
-The following software provides functonality to use any of R1-R9:
+The following software provides functionality to use any of R1-R9:
 
 * [Apache Commons Math 3.6 Percentile](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html), refer to [Percentile.EstimationType](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/descriptive/rank/Percentile.EstimationType.html)
 * [R](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)
@@ -493,7 +493,7 @@ Outlier is an observation (or subset of observations) which appears to be incons
 
 This definition is not precise, the decision whether an observation is an outlier, is left to the subjective judgement of the researcher.
 
-Robust statistics are resistant to outliers. In other words, if data set contains very high or very low values, then some statistics will be good estimators for population parameters, and some statistics will be poor estimators. For example, the ariphmetic mean is very susceptible to outliers (it is non-robust), while the median is not affected by outliers (it is robust).
+Robust statistics are resistant to outliers. In other words, if data set contains very high or very low values, then some statistics will be good estimators for population parameters, and some statistics will be poor estimators. For example, the arithmetic mean is very susceptible to outliers (it is non-robust), while the median is not affected by outliers (it is robust).
 
 ### Median vs Average
 
@@ -521,7 +521,7 @@ The standard deviation is a measure of how spread out data is around center of t
 
 ![](./images/sds.png)
 
-The median absolute deviation is a robust measure of how spread out a set of data is. If data is normal, the SD is usually the best choice for assessing spread, otherwise, the MAD is preffered.
+The median absolute deviation is a robust measure of how spread out a set of data is. If data is normal, the SD is usually the best choice for assessing spread, otherwise, the MAD is preferred.
 
 ![](./images/mad.png)
 
@@ -532,6 +532,6 @@ The IQR is often used to find outliers in sample: observations that fall below `
 
 1. ["A Brief Introduction to Robust Statistics", André Lucas](https://personal.vu.nl/a.lucas/thesis/chap2.pdf)
 2. [NIST Engineering Statistics Handbook](https://www.itl.nist.gov/div898/handbook/prc/section2/prc262.htm)
-3. ["Sttistical Computing", Hyndman, R. J. and Fan, Y. (1986)](https://www.amherst.edu/media/view/129116/original/Sample+Quantiles.pdf)
+3. ["Statistical Computing", Hyndman, R. J. and Fan, Y. (1986)](https://www.amherst.edu/media/view/129116/original/Sample+Quantiles.pdf)
 4. [Statistics How To](https://www.statisticshowto.datasciencecentral.com/resistance-resistant-measures/)
 5. [Wiki Quantile](https://en.wikipedia.org/wiki/Quantile)
