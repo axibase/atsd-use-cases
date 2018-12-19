@@ -133,7 +133,7 @@ SELECT AVG(cpi.value) AS "Avg CPI", AVG(ppi.value) AS "Avg PPI", AVG(cpi.value -
 | 188.2   | 153.7   | 34.5                  |
 ```
 
-Using the [`movavg()`](https://axibase.com/docs/charts/syntax/value=functions.html#movavg-function) moving average function to aggregate the
+Using the [`movavg()`](https://axibase.com/docs/charts/syntax/value-functions.html#movavg-function) moving average function to aggregate the
 average values in annual increments instead of across the entire observed period smooths the MPV curve and shows the effects
 of the recession on producer profits.
 

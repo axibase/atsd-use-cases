@@ -28,7 +28,9 @@ How is it possible for Excel to survive fierce competition over such a long peri
 
 * Reference style that works for staged calculations. Whether `R1C1` or `A1`, users find Excel's way of passing calculation results _by reference_ most intuitive.  In combination with a compact syntax that allows to fix the referenced row or column `$A$1` and `LOOKUP`/`VLOOKUP` functions, it provides a visual programming environment that works.
 
-Let's go through cell reference basics in Excel using the following time series data. The table shows the amount of goods sold by a hypothetical company, measured in $US millions.
+## Referencing in Excel
+
+The following table contains time series data which shows the amount of goods sold since 2010.
 
 ```txt
 | Year | Sales Volume, $M |
@@ -43,19 +45,3 @@ Let's go through cell reference basics in Excel using the following time series 
 | 2017 |               75 |
 | 2018 |               80 |
 ```
-
-## Data
-
-The tonnage dataset is visualized below. Because of the differences in the ranges of the data, there are two charts to show the high variance for each of the metrics:
-
-*Figure 1*: JFK Cargo Tonnage (1977-2015)
-
-![](./images/ra-001.png)
-
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/479e4525/#fullscreen)
-
-*Figure 2*: LGA Cargo Tonnage (1977-2015)
-
-![](./images/ra-002.png)
-
-[![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/f36262ee/#fullscreen)
