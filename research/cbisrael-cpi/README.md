@@ -78,7 +78,7 @@ This script simply replaces the value stored in the database with the value calc
 ```
 
 The `label` tag describes the visualization and is used in the legend at the top of the screen, the `value` tag here contains
-the [`movavg`](https://axibase.com/docs/charts/syntax/functions.html#movavg) or moving average
+the [`movavg`](https://axibase.com/docs/charts/syntax/value-functions.html#movavg-function) or moving average
 method, built in to ChartLab. Moving average is an aggregation of a variable number of years, set by the user as the second
 parameter, with the first indicating the alias to be averaged. The resulting graph is shown below:
 

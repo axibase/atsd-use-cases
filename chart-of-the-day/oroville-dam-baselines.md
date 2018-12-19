@@ -34,7 +34,7 @@ for name in offsets
 endfor
 ```
 
-* [`range`](https://axibase.com/docs/charts/syntax/functions.html#range) function to generate a numeric sequence, for example a range of years by which the series is shifted to the past. The function can be invoked inline.
+* `range` function to generate a numeric sequence, for example a range of years by which the series is shifted to the past. The function can be invoked inline.
 
 ```ls
 # define named array

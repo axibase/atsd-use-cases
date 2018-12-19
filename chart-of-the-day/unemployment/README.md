@@ -60,7 +60,7 @@ Annual average percent change in both GDP and unemployment is the dominant line 
   display = false
 ```
 
-* [`value`](https://axibase.com/docs/charts/syntax/value_functions.html#value-functions) setting can define series value without `entity` or `metric`. In this case, a [user-defined function](https://axibase.com/docs/charts/syntax/udf.html) is used for inline value calculation.
+* [`value`](https://axibase.com/docs/charts/syntax/value-functions.html) setting can define series value without `entity` or `metric`. In this case, a [user-defined function](https://axibase.com/docs/charts/syntax/udf.html) is used for inline value calculation.
 
 ```ls
 [series]

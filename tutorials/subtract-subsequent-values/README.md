@@ -227,7 +227,7 @@ Use `value` and `previousValue` placeholders in the [`replace-value`](https://ax
 
 ### Derived Series Using Aliases
 
-Create a derived series using the [`previous()`](https://axibase.com/docs/charts/syntax/functions.html#previous) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
+Create a derived series using the [`previous()`](https://axibase.com/docs/charts/syntax/value-functions.html) function.  Hide both the raw series and the derived series. Create a third series and calculate the difference in consecutive values for each timestamp by referencing values of the hidden series.
 
 ```ls
 /* raw series data */
@@ -252,4 +252,4 @@ Both methods create the same visualization, shown below.
 
 ![](./images/dc07-delta1.png)
 
-For more function examples, view [Charts Functions](https://axibase.com/docs/charts/syntax/functions.html#-functions).
+For more function examples, view [Charts Functions](https://axibase.com/docs/charts/syntax/value-functions.html).

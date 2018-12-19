@@ -35,7 +35,7 @@
 header-style = background: white;display: flex;align-items: stretch;padding: 4px;width: auto;
 ```
 
-* [`[dropdown]`](https://axibase.com/docs/charts/configuration/drop-down-lists.html#drop-down-lists) with [`range`](https://axibase.com/docs/charts/syntax/functions.html#range) function for timespan selection.
+* [`[dropdown]`](https://axibase.com/docs/charts/configuration/drop-down-lists.html#drop-down-lists function for timespan selection.
 
 ```ls
 [dropdown]

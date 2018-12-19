@@ -80,7 +80,7 @@ Although similar peaks and valleys are observable during significant movement in
 
 ## Comparing Dissimilar Data
 
-ATSD offers [ad hoc data transformation](https://axibase.com/docs/charts/syntax/functions.html) features and [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html) that assist in comparing this dissimilar data. Instead of contrasting raw values against one another, comparing the three central metrics: Capacity Usage, Unemployment, and the Tech Pulse Index based on percentile change is a reasonable way to circumnavigate the problem.
+ATSD graphics provides ad hoc data transformation features and [user-defined functions](https://axibase.com/docs/charts/syntax/udf.html) that assist in comparing this dissimilar data. Instead of contrasting raw values against one another, comparing the three central metrics: Capacity Usage, Unemployment, and the Tech Pulse Index based on percentile change is a reasonable way to circumnavigate the problem.
 
 ![](./images/tech-pulse-3.png)
 
