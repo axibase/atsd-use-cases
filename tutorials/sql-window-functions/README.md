@@ -28,10 +28,6 @@ How is it possible for Excel to survive fierce competition over such a long peri
 
 * Reference style that works for staged calculations. Whether `R1C1` or `A1`, users find Excel's way of passing calculation results _by reference_ most intuitive.  In combination with a compact syntax that allows to fix the referenced row or column `$A$1` and `LOOKUP`/`VLOOKUP` functions, it provides a visual programming environment that works.
 
-:::warn Network effects at work.
-Anecdotal evidence. One of our customers in the Bay Area offers its engineers a fully paid annual training entitlement. To this day, the Advanced Excel class remains well attended by the company's IT infrastructure engineers.
-:::
-
 Let's go through cell reference basics in Excel using the following time series data. The table shows the amount of goods sold by a hypothetical company, measured in $US millions.
 
 ```txt
@@ -47,9 +43,6 @@ Let's go through cell reference basics in Excel using the following time series 
 | 2017 |               75 |
 | 2018 |               80 |
 ```
-
-The 
-
 
 ## Data
 
