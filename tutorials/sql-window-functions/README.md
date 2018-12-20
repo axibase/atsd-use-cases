@@ -2,33 +2,14 @@
 
 ## Overview
 
-What follows is a rather unusual introduction into the `LAG` function in SQL. The purpose of this exercise however is not to provide a definitive comparison between [Generations X, Y, and Z](https://hbr.org/2017/08/a-survey-of-19-countries-shows-how-generations-x-y-and-z-are-and-arent-different) but to draw the reader's attention to the last line in the table.
-
-*Table 1*: The Impact of Generational Shift on Workplace Evolution
-
-| | 1985-2000 | 2000-2015 | 2015+ |
-|---|---|---|---|
-| Organizational Structure | Hierarchical | Matrix | Horizontal |
-| Work Unit | Function | Product | Project |
-| Dominant Tribe | Baby Boomers | Gen X | Millennials |
-| Runner-up Tribe | Gen X | Millennials | Digital Natives |
-| Workspace Layout | Private Office | Cubicle | Open Floor |
-| Schedule | 9-to-5 | Flex Hours | Always On |
-| Communications | Phone | Email | Chat |
-| Knowledge Medium | Book | Article | Video |
-| Data Analysis | Excel | Excel | Excel |
-
-As the [Digital Natives](https://cyber.harvard.edu/research/youthandmedia/digitalnatives) enter the workforce, they're finding themselves in a rather peculiar situation where their _digital_ skills are not up to date. We're talking about to perform data analysis in **Excel** - the reigning king of number crunching. Despite repeated (and apparently failed) [attempts](https://www.wsj.com/articles/stop-using-excel-finance-chiefs-tell-staffs-1511346601) to depose it, Excel remains the most commonly used tool for business analysis and reporting. Although BI systems such as Qlik and Tableau have seen some adoption, they're still used primarily to interact with and interpret curated reports rather for analysis per se.
-
-How is it possible for Excel to survive fierce competition over such a long period of time? Here's my take on the main reasons:
-
-* Database and code in a single file. This bundling approach works well for ad hoc (task specific) analysis. Unlike R and Python, changing the existing data or creating new records with copy-paste is user friendly, even for non-programmers.
-
-* Charting library that covers all the bases for graphical representation of data. It may not offer the latest and greatest visualization options (choropleths, Voronoy diagrams, cross-tabs, etc) but works for the majority of use cases.
-
-* Reference style that works for staged calculations. Whether `R1C1` or `A1`, users find Excel's way of passing calculation results _by reference_ most intuitive.  In combination with a compact syntax that allows to fix the referenced row or column `$A$1` and `LOOKUP`/`VLOOKUP` functions, it provides a visual programming environment that works.
+It is probably an overstatement, but [`LAG`](https://axibase.com/docs/atsd/sql/#lag) functions bring SQL as close as possible to [Excel reference style](../../blog/excel.md)  as possible.
 
 ## Referencing in Excel
+
+In Excel, the user can refer to another cell by its address using one of the following notations to refer to rows and columns:
+
+* `A1` reference style: `=B3-B2`
+* `R1C1` reference style: `=RC[-1] - R[-1]C[-1]`
 
 The following table contains time series data which shows the amount of goods sold since 2010.
 
@@ -45,3 +26,74 @@ The following table contains time series data which shows the amount of goods so
 | 2017 |               75 |
 | 2018 |               80 |
 ```
+
+To calculate the year-over-year change, enter `=B3 - B2` as the value of the current cell.
+
+![](./images/excel-refer-1.png)
+
+Since the reference in relative, the row and column indexes are automaticaly updated when we copy the cell value to the remaining cells in the `Y-o-Y Change, $M` column.
+
+![](./images/excel-refer-2.png)
+
+The above references are relative to the current cell position but they can also refer to an absolute address using `$` prefix, for example `=B3 - B$2` to calculate change in sales since 1010.
+
+![](./images/excel-refer-3.png)
+
+## Referencing in SQL
+
+The purpose of the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) and [`LEAD`](https://axibase.com/docs/atsd/sql/#lag) window functions in SQL is similar - to provide an ability to reference a column value in one of the preceding or following columns.
+
+Assuming the same dataset is loaded in the database, it can be queried with a `SELECT` statement as follows:
+
+```sql
+SELECT date_format(time, 'yyyy') AS "Year",
+  value AS "Sales Volume, $M"
+FROM "win-sales"
+  ORDER BY time
+```
+
+```txt
+| Year | Sales Volume, $M |
+|------|------------------|
+| 2010 |               50 |
+| 2011 |               52 |
+| 2012 |               55 |
+| 2013 |               55 |
+| 2014 |               70 |
+| 2015 |               72 |
+| 2016 |               70 |
+| 2017 |               75 |
+| 2018 |               80 |
+```
+
+:::tip Tip
+Note that unless `ORDER BY` is specified in the query, the database does not guarantee the particular order of rows. Always add `ORDER BY` clause if sorting is necessary for the results to be correct. In this particular case, the results are sorted by `time` column in ascending order.
+:::
+
+### Relative References
+
+Unlike Excel, the reference in `LAG` function consists of the column name and the offset index, which starts with `1` by default.
+
+```sql
+SELECT date_format(time, 'yyyy') AS "Year",
+  value AS "Sales Volume, $M",
+  LAG(value) AS "Previous Sales Volume, $M",
+  value - LAG(value) AS "Y-o-Y Change, $M"
+FROM "win-sales"
+```
+
+```txt
+| Year | Sales Volume, $M | Previous Sales Volume, $M | Y-o-Y Change, $M |
+|------|------------------|---------------------------|------------------|
+| 2010 |               50 |                           |                  |
+| 2011 |               52 |                        50 |                2 |
+| 2012 |               55 |                        52 |                3 |
+| 2013 |               55 |                        55 |                0 |
+| 2014 |               70 |                        55 |               15 |
+| 2015 |               72 |                        70 |                2 |
+| 2016 |               70 |                        72 |               -2 |
+| 2017 |               75 |                        70 |                5 |
+| 2018 |               80 |                        75 |                5 |
+```
+
+The `value - LAG(value)` expression returns the same results as `B3 - B2` in Excel. In this case `B` and `value` are equivalent column name.

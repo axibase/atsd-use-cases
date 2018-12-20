@@ -7,21 +7,18 @@ const githubSettings = {
 const topNavMenu = [
     { text: 'Chart of the Day', link: '/chart-of-the-day/' },
     { text: 'Integrations', link: '/integrations/' },
+    { text: 'Tutorials', link: '/tutorials/' },    
     { text: 'Research', link: '/research/' },
-    { text: 'Trends', link: '/trends/' },
-    { text: 'Tutorials', link: '/tutorials/' },
-    { text: 'Workshops', link: '/workshop/'},
-    { text: 'Docs', link: 'https://axibase.com/docs/atsd/' },
+    { text: 'Documentation', link: 'https://axibase.com/docs/atsd/' },
 ]
 
 const landingPageMenu = [
     [ '/chart-of-the-day/', 'Chart of the Day'],
-    ['https://axibase.com/datasets/', 'Datasets'],
     [ '/integrations/', 'Integrations' ],
-    ['/research/', 'Research'],
-    [ '/trends/',  'Trends' ],
-    [ '/tutorials/', 'Tutorials' ],
-    ['/workshop/', 'Workshops'],
+    [ '/tutorials/', 'Tutorials' ],    
+    [ '/research/', 'Research'],   
+    [ 'https://axibase.com/docs/atsd', 'Documentation'],      
+    [ '/workshop/', 'Workshops'],
 ];
 
 const chartofthedayMenu = [
@@ -66,14 +63,6 @@ const tutorialsMenu = [
     '',
 ];
 
-const trendsMenu = [
-    {
-        title: "Trends", children: [
-            ['2018.md', '2018'],
-        ]
-    },
-];
-
 module.exports = {
     base: '/use-cases/',
     title: 'Axibase Time Series Database Use Cases',
@@ -96,7 +85,6 @@ module.exports = {
         },
         sidebarDepth: 1,
         sidebar: {
-            '/trends/': trendsMenu,
             '/chart-of-the-day/': chartofthedayMenu,
             '/research/': researchMenu,
             '/tutorials/': tutorialsMenu,

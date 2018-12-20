@@ -8,17 +8,17 @@ Interactive [visualizations](./chart-of-the-day/README.md) tracking interesting 
 
 [![](./images/chart-of-the-day-1.png)](./chart-of-the-day/README.md)
 
+## Integrations
+
+Step-by-step [guides](./integrations/README.md) for integrating ATSD with various systems and services.
+
+[![](./images/integrations-7.png)](./integrations/README.md)
+
 ## Tutorials
 
 Step-by-step [instructions](./tutorials/README.md) to perform data transformation, import configuration files, and other tasks in ATSD.
 
 [![](./images/tutorials-3.png)](./tutorials/README.md)
-
-## Integrations
-
-Walkthrough [guides](./integrations/README.md) for ATSD integration with various IT infrastructure systems and services.
-
-[![](./images/integrations-7.png)](./integrations/README.md)
 
 ## Research
 
@@ -26,20 +26,14 @@ Walkthrough [guides](./integrations/README.md) for ATSD integration with various
 
 [![](./images/research-articles-1.png)](./research/README.md)
 
-## Trends
-
-A publicly accessible ATSD service with [national economic indicators](./trends/README.md).
-
-[![](./images/trends-1.png)](./trends/README.md)
-
-## Datasets
-
-Time-series [dataset catalog](https://axibase.com/datasets/) from [`data.gov`](https://www.data.gov/) with over 7,000 entries.
-
-[![](./images/datasets-2.png)](https://axibase.com/datasets/)
-
 ## Workshops
 
 Internal Axibase [knowledge sharing seminars](./workshop/README.md) made public for personal learning.
 
 [![](./images/workshop-2.png)](./workshop/README.md)
+
+## Datasets
+
+Curated time series [dataset catalog](https://axibase.com/datasets/) from [`data.gov`](https://www.data.gov/) with over 7,000 records.
+
+[![](./images/datasets-2.png)](https://axibase.com/datasets/)
