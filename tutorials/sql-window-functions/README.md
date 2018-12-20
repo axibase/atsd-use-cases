@@ -97,3 +97,17 @@ FROM "win-sales"
 ```
 
 The `value - LAG(value)` expression returns the same results as `B3 - B2` in Excel. In this case `B` and `value` are equivalent column names.
+
+### Appendix A: Sales Dataset
+
+```ls
+series e:win-test d:2010-01-01T00:00:00Z m:win-sales=50
+series e:win-test d:2011-01-01T00:00:00Z m:win-sales=52
+series e:win-test d:2012-01-01T00:00:00Z m:win-sales=55
+series e:win-test d:2013-01-01T00:00:00Z m:win-sales=55
+series e:win-test d:2014-01-01T00:00:00Z m:win-sales=70
+series e:win-test d:2015-01-01T00:00:00Z m:win-sales=72
+series e:win-test d:2016-01-01T00:00:00Z m:win-sales=70
+series e:win-test d:2017-01-01T00:00:00Z m:win-sales=75
+series e:win-test d:2018-01-01T00:00:00Z m:win-sales=80
+```
