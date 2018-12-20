@@ -31,7 +31,7 @@ To calculate the year-over-year change, enter `=B3 - B2` as the value of the cur
 
 ![](./images/excel-refer-1.png)
 
-Since the reference in relative, the row and column indexes are automaticaly updated when we copy the cell value to the remaining cells in the `Y-o-Y Change, $M` column.
+Since the reference in relative, the row and column indexes are automatically updated when we copy the cell value to the remaining cells in the `Y-o-Y Change, $M` column.
 
 ![](./images/excel-refer-2.png)
 
