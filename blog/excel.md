@@ -36,6 +36,6 @@ In combination with a compact syntax that allows fixing referenced rows/columns 
 
 Lessons learned:
 
-* `simple` beats `complex`
-* `specialized` beats `generic`
-* `clicking` beats `typing`
+* Simple beats complex.
+* Specialized beats generic.
+* Clicking (or swiping) beats typing.
