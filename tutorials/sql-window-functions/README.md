@@ -96,4 +96,4 @@ FROM "win-sales"
 | 2018 |               80 |                        75 |                5 |
 ```
 
-The `value - LAG(value)` expression returns the same results as `B3 - B2` in Excel. In this case `B` and `value` are equivalent column name.
+The `value - LAG(value)` expression returns the same results as `B3 - B2` in Excel. In this case `B` and `value` are equivalent column names.
