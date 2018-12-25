@@ -1,33 +1,46 @@
-# SQL: LAG Function Examples
+# Cell Referencing in SQL and Excel
 
 ## Overview
 
-**Analytical** functions in SQL are often called **window** functions due to their ability to aggregate columns without grouping the result set. This allows collating original data with aggregates in the same row, for example to calculate a running total.
+This article contains examples of how analytic functions in SQL can be used to emulate step-by-step calculations in Microsoft Excel.
 
-In addition, `LAG/LEAD` and `FIRST/LAST` functions provide access to neighboring rows which can be used to reproduce cell references and staged calculations in Microsoft Excel.
+**Analytic** functions in SQL allow developers to access grouped statistics without reducing the number of rows returned by the query.
 
-This note contains a set of examples to analyze time series data using Excel and SQL.
+```sql
+SELECT value,
+  -- SUM calculated without GROUP BY
+  value/SUM(value) OVER() AS weight
+  FROM table-name
+ORDER BY weight DESC
+```
+
+Often called **windowing** functions due to their ability to operate on ordered and partitioned groups of records, analytic functions are different from **aggregate** functions which reduce several rows into a **single** result row.
+
+Many aggregate functions such as `SUM`, `AVG`, and `COUNT` can be invoked as analytic functions using the `OVER` clause. However the class of analytic functions also includes **reference** functions which operate on an ordered set of records. Such reference functions include:
+
+* `LAG`. Provides access to a previous row at a specified offset from the current position.
+* `LEAD`. Provides access to a following row at a specified offset from the current position.
+* `FIRST`. Provides access to the first row, also called `FIRST_VALUE`.
+* `LAST`. Provides access to the last row, also called `LAST_VALUE`.
 
 ## Documentation Links
 
 * ATSD [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function
 * Oracle [`LAG`](https://docs.oracle.com/cd/B19306_01/server.102/b14200/functions070.htm) function
-* Excel [`cell references`](https://support.office.com/en-us/article/switch-between-relative-absolute-and-mixed-references-dfec08cd-ae65-4f56-839e-5f0d8d0baca9)
+* Excel [`cell referencing`](https://support.office.com/en-us/article/switch-between-relative-absolute-and-mixed-references-dfec08cd-ae65-4f56-839e-5f0d8d0baca9)
 
 ## Staged Calculations in Excel
 
-To assist users in splitting complex analysis into step-by-step calculations, Excel provides a convenient `A1` [addressing](https://support.office.com/en-us/article/ADDRESS-function-D0C26C0D-3991-446B-8DE4-AB46431D4F89) notation, or reference style, to pass calculation results _by value_:
+To assist users in organizing complex analysis into step-by-step calculations, Excel provides a convenient `A1` [addressing](https://support.office.com/en-us/article/ADDRESS-function-D0C26C0D-3991-446B-8DE4-AB46431D4F89) notation, or reference style, to pass calculation results between cells _by value_:
 
 * Columns are assigned letter names, starting with `A` for the left-most column.
 * Rows are assigned ordinal numbers, starting with `1` for the top row.
 * `=B2` returns the value of cell located in column `B` and row `2`.
 * `=B3 - B2` returns the difference between values of cells `B3` and `B2`.
 
-> Excel also supports `R1C1` reference style.
-
   ![](./images/excel-refer-0.png)
 
-To calculate the year-over-year change, enter `=B3 - B2` as the value of the current cell.
+Users can easily calculate the year-over-year change by entering `=B3 - B2` formula as the value of the current cell.
 
 ![](./images/excel-refer-1.png)
 
@@ -41,7 +54,7 @@ The above references are relative to the current cell position but they can also
 
 ## Referencing in SQL
 
-The purpose of the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) and [`LEAD`](https://axibase.com/docs/atsd/sql/#lag) window functions in SQL is similar - to provide an ability to reference a column value in one of the preceding or following columns.
+The purpose of the [`LAG`](https://axibase.com/docs/atsd/sql/#lag) and [`LEAD`](https://axibase.com/docs/atsd/sql/#lag) functions in SQL is similar - to access a column value in a preceding or following row.
 
 Assuming the same dataset is loaded in the database, it can be queried with a `SELECT` statement as follows:
 
@@ -66,13 +79,9 @@ FROM "win-sales"
 | 2018 |               80 |
 ```
 
-:::tip Tip
-Note that unless `ORDER BY` is specified in the query, the database does not guarantee the particular order of rows. Always add `ORDER BY` clause if sorting is necessary for the results to be correct. In this particular case, the results are sorted by `time` column in ascending order.
-:::
-
 ### Relative References
 
-Similar to Excel, the reference in `LAG` function consists of the column name and the row offset index, which starts with `1` by default. Excel assigns column names automatically, starting with `A` (up to 16,384 are allowed). In SQL, the function must to refer to the name of an existing column or alias such as `LAG(value)`, or the function can include an expression such as `LAG(value*2)`.
+Similar to Excel, the reference in `LAG` function consists of the column name and the row offset, which starts with `1` by default. Excel assigns column names automatically, starting with `A` (up to 16,384 are allowed). In SQL, the function must to refer to the name of an existing column or alias such as `LAG(value)`.
 
 ```sql
 SELECT date_format(time, 'yyyy') AS "Year",
@@ -96,7 +105,7 @@ FROM "win-sales"
 | 2018 |               80 |                        75 |                5 |
 ```
 
-The `value - LAG(value)` expression returns the same results as `B3 - B2` in Excel. In this case `B` and `value` are equivalent column names.
+The `value - LAG(value)` expression returns the same results as `=B3 - B2` in Excel. In this case `B` and `value` are equivalent column names.
 
 To accomplish the same result in Oracle Database, add [`OVER`](https://docs.oracle.com/cd/E11882_01/server.112/e41084/functions004.htm#SQLRF06174) clause after each analytical function.
 
@@ -150,6 +159,8 @@ FROM win_sales
 
 ### Aggregate Functions
 
+#### Sliding Total
+
 To calculate a running (sliding) total in Excel, one can pass a relative range of cell values, for example: `=SUM(B2:B4)`.
 
 ![](./images/excel-refer-4.png)
@@ -198,7 +209,18 @@ FROM "win-sales"
 
 The above query produces the same result using the `SUM` function with the size of the sliding window controlled in the `ROW_NUMBER` clause.
 
-To calculate a growing total in Excel, fix the starting range row using an absolute row index in the reference as follows: `=SUM(B2:B4)`.
+* Oracle version:
+
+```sql
+SELECT time AS "Year",
+  value AS "Sales Volume, $M",
+  SUM(value) OVER(ORDER BY time ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS "3-Year Sales Volume, $M"
+FROM win_sales
+```
+
+#### Growing Total
+
+To calculate a growing total in Excel, set the starting row to an absolute value `=SUM(B$2:B4)`.
 
 ![](./images/excel-refer-5.png)
 
