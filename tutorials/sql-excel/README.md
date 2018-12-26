@@ -130,6 +130,7 @@ SELECT date_format(time, 'yyyy') AS "Year",
   value - LAG(value) AS "Y-o-Y Change, $M",
   value - FIRST_VALUE(value) AS "Change since 2010, $M"
 FROM "win-sales"
+  WITH ROW_NUMBER(entity, tags ORDER BY time) > 0
 ```
 
 ```txt
