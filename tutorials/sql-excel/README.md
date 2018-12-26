@@ -1,4 +1,4 @@
-# Cell Referencing in SQL and Excel
+# Cell References in SQL and Excel
 
 ## Overview
 

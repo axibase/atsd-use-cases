@@ -1,9 +1,12 @@
 # ATSD Tutorials
 
-Review the [Getting Started Guide](https://axibase.com/docs/atsd/tutorials/getting-started.html) to understand the first steps of using ATSD.
+## Introduction
+
+* [Getting Started with ATSD](https://axibase.com/docs/atsd/tutorials/getting-started.html)
 
 ## Data
 
+* [Cell References in SQL and Excel](sql-excel/README.md)
 * [Monitoring Event Sequences](event-sequence/README.md)
 * [Copying Static Data to ATSD](table-to-property/README.md)
 * [Creating a Custom Report With ATSD and Charts](create-report/README.md)
