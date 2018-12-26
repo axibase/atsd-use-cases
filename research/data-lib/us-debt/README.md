@@ -105,7 +105,7 @@ LIMIT 10
 ### Greatest Percent Increase in Securities Holdings
 
 ```sql
-SELECT tags.country as "Country", FIRST(value) AS "Initial", LAST(value) AS "Final", LAST(value)/FIRST(value)* 100 as "%Increase"
+SELECT tags.country as "Country", FIRST_VALUE(value) AS "Initial", LAST_VALUE(value) AS "Final", LAST_VALUE(value)/FIRST_VALUE(value)* 100 as "%Increase"
   FROM tic_foreign_holders
 WHERE tags.country NOT LIKE 'Total'
   AND tags.country NOT LIKE 'For. Official'

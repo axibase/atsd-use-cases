@@ -646,10 +646,10 @@ Per capita debt growth indexed by country from 2006 to 2016.
 
 ```sql
 SELECT SUBSTR(debt.tags.geo, 1, locate('(', debt.tags.geo)-1) AS Country,
-  ROUND(FIRST(debt.value)/FIRST(pop.value)*1000000, -2) AS "2006, €",
-  ROUND(LAST(debt.value)/LAST(pop.value)*1000000, -2) AS "2016, €",
-  ROUND((LAST(debt.value)/LAST(pop.value) - FIRST(debt.value)/FIRST(pop.value))*1000000, -2) AS "New Debt, €",
-  ROUND(100*((LAST(debt.value)/LAST(pop.value))/(FIRST(debt.value)/FIRST(pop.value))-1)) AS "New Debt, %"
+  ROUND(FIRST_VALUE(debt.value)/FIRST_VALUE(pop.value)*1000000, -2) AS "2006, €",
+  ROUND(LAST_VALUE(debt.value)/LAST_VALUE(pop.value)*1000000, -2) AS "2016, €",
+  ROUND((LAST_VALUE(debt.value)/LAST_VALUE(pop.value) - FIRST_VALUE(debt.value)/FIRST_VALUE(pop.value))*1000000, -2) AS "New Debt, €",
+  ROUND(100*((LAST_VALUE(debt.value)/LAST_VALUE(pop.value))/(FIRST_VALUE(debt.value)/FIRST_VALUE(pop.value))-1)) AS "New Debt, %"
 FROM government_consolidated_gross_debt AS debt
   JOIN "average_population_-_total" AS pop
   ON debt.entity = pop.entity AND debt.time = pop.time AND debt.tags = pop.tags

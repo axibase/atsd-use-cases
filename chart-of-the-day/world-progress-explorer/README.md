@@ -110,9 +110,9 @@ ORDER BY "Life Expectancy" ASC
 
 ```sql
 SELECT tags.country AS "Country",
-  FIRST(value) AS "1971 Value",
-  LAST(value) AS "2015 Value",
-  LAST(value) - FIRST(value) AS "Change in Life Expectancy"
+  FIRST_VALUE(value) AS "1971 Value",
+  LAST_VALUE(value) AS "2015 Value",
+  LAST_VALUE(value) - FIRST_VALUE(value) AS "Change in Life Expectancy"
 FROM "life_expectancy_at_birth_by_country"
   GROUP BY "Country"
   ORDER BY "Change in Life Expectancy" DESC
@@ -143,9 +143,9 @@ Clauses used in this query:
 
 ```sql
 SELECT tags.country AS "Country",
-  FIRST(value) AS "1971 Value",
-  LAST(value) AS "2015 Value",
-  LAST(value) - FIRST(value) AS "Change in Life Expectancy"
+  FIRST_VALUE(value) AS "1971 Value",
+  LAST_VALUE(value) AS "2015 Value",
+  LAST_VALUE(value) - FIRST_VALUE(value) AS "Change in Life Expectancy"
 FROM "life_expectancy_at_birth_by_country"
   GROUP BY "Country"
   ORDER BY "Change in Life Expectancy" ASC
@@ -176,10 +176,10 @@ Open the **Trends** visualization and remove unwanted data by clicking colored i
 
 ```sql
 SELECT tags.country AS "Country",
-ROUND((LAST(value) - FIRST(value))/1000000,0) AS "Change in Population (Million)"
+ROUND((LAST_VALUE(value) - FIRST_VALUE(value))/1000000,0) AS "Change in Population (Million)"
 FROM "population_total_by_country"
   GROUP BY "Country"
-  ORDER BY LAST(value) - FIRST(value) DESC
+  ORDER BY LAST_VALUE(value) - FIRST_VALUE(value) DESC
   LIMIT 10
 ```
 
@@ -206,9 +206,9 @@ Clauses used in this query:
 
 ```sql
 SELECT tags.country AS "Country",
-  FIRST(value)/1000000 AS "Population 1971 (Million)",
-  LAST(value)/1000000 AS "Population 2015 (Million)",
-  ((LAST(value) - FIRST(value)) / FIRST(value)) * 100 AS "Change in Population (%)"
+  FIRST_VALUE(value)/1000000 AS "Population 1971 (Million)",
+  LAST_VALUE(value)/1000000 AS "Population 2015 (Million)",
+  ((LAST_VALUE(value) - FIRST_VALUE(value)) / FIRST_VALUE(value)) * 100 AS "Change in Population (%)"
 FROM "population_total_by_country"
   GROUP BY "Country"
   ORDER BY "Change in Population (%)" DESC
@@ -246,10 +246,10 @@ The table below shows the percent of foreigners in selected countries above wher
 
 ```sql
 SELECT tags.country AS "Country",
-(LAST(value) - FIRST(value)/1000000 AS "Change in Population"
+(LAST_VALUE(value) - FIRST_VALUE(value)/1000000 AS "Change in Population"
 FROM "population_total_by_country"
   GROUP BY "Country"
-  ORDER BY LAST(value) - FIRST(value) ASC
+  ORDER BY LAST_VALUE(value) - FIRST_VALUE(value) ASC
   LIMIT 10
 ```
 
@@ -277,9 +277,9 @@ Open the **Trends** visualization above to track the same pattern in other forme
 
 ```sql
 SELECT tags.country AS "Country",
-  FIRST(value)/1000000 AS "Population 1971 (Million)",
-  LAST(value)/1000000 AS "Population 2015 (Million)",
-  ((LAST(value) - FIRST(value)) / FIRST(value)) * 100 AS "Change in Population (%)"
+  FIRST_VALUE(value)/1000000 AS "Population 1971 (Million)",
+  LAST_VALUE(value)/1000000 AS "Population 2015 (Million)",
+  ((LAST_VALUE(value) - FIRST_VALUE(value)) / FIRST_VALUE(value)) * 100 AS "Change in Population (%)"
 FROM "population_total_by_country"
   GROUP BY "Country"
   ORDER BY "Change in Population (%)" ASC
@@ -305,10 +305,10 @@ FROM "population_total_by_country"
 
 ```sql
 SELECT tags.country AS "Country",
-LAST(value) AS "Fertility Rate"
+LAST_VALUE(value) AS "Fertility Rate"
 FROM "fertility_rate_total_by_country"
   GROUP BY "Country"
-  ORDER BY LAST(value) DESC
+  ORDER BY LAST_VALUE(value) DESC
   LIMIT 10
 ```
 
@@ -331,10 +331,10 @@ FROM "fertility_rate_total_by_country"
 
 ```sql
 SELECT tags.country AS "Country",
-LAST(value) AS "Fertility Rate"
+LAST_VALUE(value) AS "Fertility Rate"
 FROM "fertility_rate_total_by_country"
   GROUP BY "Country"
-  ORDER BY LAST(value) ASC
+  ORDER BY LAST_VALUE(value) ASC
   LIMIT 10
 ```
 

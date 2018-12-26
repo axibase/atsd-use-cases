@@ -92,9 +92,9 @@ ORDER BY 'Net Assets' DESC
 
 ```sql
 SELECT t1.tags.company_name AS "Company",
-  (LAST(t1.value) - FIRST(t1.value))/1000000 AS "Change in Assets, $M",
-  (LAST(t2.value) - FIRST(t2.value))/1000000 AS "Change in Liabilities, $M",
-  (LAST(t1.value) - FIRST(t1.value) - (LAST(t2.value) - FIRST(t2.value)))/1000000 AS "Change in Net Assets, $M"
+  (LAST_VALUE(t1.value) - FIRST_VALUE(t1.value))/1000000 AS "Change in Assets, $M",
+  (LAST_VALUE(t2.value) - FIRST_VALUE(t2.value))/1000000 AS "Change in Liabilities, $M",
+  (LAST_VALUE(t1.value) - FIRST_VALUE(t1.value) - (LAST_VALUE(t2.value) - FIRST_VALUE(t2.value)))/1000000 AS "Change in Net Assets, $M"
 FROM assets t1
   JOIN liabilities t2
 GROUP BY t1.tags.company_name

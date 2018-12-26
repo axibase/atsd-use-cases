@@ -20,8 +20,8 @@ Many aggregate functions such as `SUM`, `AVG`, and `COUNT` can be invoked as ana
 
 * `LAG`. Provides access to a previous row at a specified offset from the current position.
 * `LEAD`. Provides access to a following row at a specified offset from the current position.
-* `FIRST`. Provides access to the first row, also called `FIRST_VALUE`.
-* `LAST`. Provides access to the last row, also called `LAST_VALUE`.
+* `FIRST_VALUE`. Provides access to the first row.
+* `LAST_VALUE`. Provides access to the last row.
 
 ## Documentation Links
 
@@ -128,7 +128,7 @@ SELECT date_format(time, 'yyyy') AS "Year",
   value AS "Sales Volume, $M",
   LAG(value) AS "Previous Sales Volume, $M",
   value - LAG(value) AS "Y-o-Y Change, $M",
-  value - FIRST(value) AS "Change since 2010, $M"
+  value - FIRST_VALUE(value) AS "Change since 2010, $M"
 FROM "win-sales"
 ```
 
