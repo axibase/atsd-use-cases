@@ -62,11 +62,11 @@ i|X<sub>i</sub>|X<sub>(i)</sub>
 
 The **k**-th order statistic is equal **k**-th smallest value. Special cases include:
 
-* minimum: <code>X<sub>1</sub></code>
-* maximum: <code>X<sub>N</sub></code>
-* range: <code>X<sub>N</sub> - X<sub>1</sub></code>
-* midrange: <code>(X<sub>N</sub> - X<sub>1</sub>) × 1/2</code>
-* median: refer [below](#quantile-vs-percentile)
+- minimum: <code>X<sub>1</sub></code>
+- maximum: <code>X<sub>N</sub></code>
+- range: <code>X<sub>N</sub> - X<sub>1</sub></code>
+- midrange: <code>(X<sub>N</sub> - X<sub>1</sub>) × 1/2</code>
+- median: refer [below](#quantile-vs-percentile)
 
 ### Rank
 
@@ -122,11 +122,11 @@ This means that the term **percentiles** is the name for 100-quantiles.
 
 Also some other q-quantiles have special names:
 
-* **decile** ~ 10-quantile is any of the nine values that divide the order statistic into ten equal parts, and each part represents 1/10 of the sample or population.
+- **decile** ~ 10-quantile is any of the nine values that divide the order statistic into ten equal parts, and each part represents 1/10 of the sample or population.
 
-* **median** ~ 2-quantile is the value that divide the order statistic to the two equal parts.
+- **median** ~ 2-quantile is the value that divide the order statistic to the two equal parts.
 
-* **quartile** ~ 4-quantile is any of the three values that divide the order statistic to the four equal parts, named quarters.
+- **quartile** ~ 4-quantile is any of the three values that divide the order statistic to the four equal parts, named quarters.
 
 The difference between upper and lower quartiles is also called the **interquartile range** → `IQR = Q3 − Q1`.
 
@@ -189,11 +189,11 @@ X<sub>j</sub> - the j-th element of the order statistics, X<sub>3</sub> = 16
 
 #### R1. Inverse of [EDF](https://en.wikipedia.org/wiki/Empirical_distribution_function)
 
-* `h = N × q`
+- `h = N × q`
 
-* <code>P<sub>p</sub> = X<sub>⌈h⌉</sub></code>
+- <code>P<sub>p</sub> = X<sub>⌈h⌉</sub></code>
 
-* if `q = 0`, <code>P<sub>0</sub> = X<sub>1</sub></code>
+- if `q = 0`, <code>P<sub>0</sub> = X<sub>1</sub></code>
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
@@ -206,13 +206,13 @@ The approach is used by<sup>[1](#tools-summary)</sup>:
 
 #### R2. Inverse of EDF with averaging at discontinuities
 
-* `h = N × q + 1/2`
+- `h = N × q + 1/2`
 
-* <code>P<sub>p</sub> = (X<sub>⌈h – 1/2⌉</sub> + X<sub>⌊h + 1/2⌋</sub>) / 2</code>
+- <code>P<sub>p</sub> = (X<sub>⌈h – 1/2⌉</sub> + X<sub>⌊h + 1/2⌋</sub>) / 2</code>
 
-* if `q = 0`, <code>P<sub>0</sub> = X<sub>1</sub></code>
+- if `q = 0`, <code>P<sub>0</sub> = X<sub>1</sub></code>
 
-* if `q = 1`, <code>P<sub>1</sub> = X<sub>N</sub></code>
+- if `q = 1`, <code>P<sub>1</sub> = X<sub>N</sub></code>
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
@@ -224,11 +224,11 @@ The approach is used by<sup>[1](#tools-summary)</sup>:
 
 #### R3. [SAS](http://support.sas.com/documentation/cdl/en/statug/68162/HTML/default/viewer.htm#statug_boxplot_details10.htm) definition: nearest even
 
-* `h = N × q`
+- `h = N × q`
 
-* <code>P<sub>p</sub> = X<sub>⌈h⌋</sub></code>
+- <code>P<sub>p</sub> = X<sub>⌈h⌋</sub></code>
 
-* if `q ≤ (1/2)/N`, <code>P<sub>p</sub> = X<sub>1</sub></code>
+- if `q ≤ (1/2)/N`, <code>P<sub>p</sub> = X<sub>1</sub></code>
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
@@ -244,19 +244,19 @@ The graph below shows a comparison of the first three methods:
 
 All subsequent methods use linear interpolation:
 
-* <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
+- <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
 
 ### Continuous Sample
 
 #### R4. Linear interpolation of the EDF
 
-* `h = N × q`
+- `h = N × q`
 
-* <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
+- <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
 
-* if `q < 1/N`, <code>P<sub>p</sub> = X<sub>1</sub></code>
+- if `q < 1/N`, <code>P<sub>p</sub> = X<sub>1</sub></code>
 
-* if `q = 1`, <code>P<sub>1</sub> = X<sub>N</sub></code>
+- if `q = 1`, <code>P<sub>1</sub> = X<sub>N</sub></code>
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
@@ -268,13 +268,13 @@ The approach is used by<sup>[1](#tools-summary)</sup>:
 
 #### R5. Piecewise linear function
 
-* `h = N × q + 1/2`
+- `h = N × q + 1/2`
 
-* <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
+- <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
 
-* if `q ≤ (1/2)/N`, <code>P<sub>p</sub> = X<sub>1</sub></code>
+- if `q ≤ (1/2)/N`, <code>P<sub>p</sub> = X<sub>1</sub></code>
 
-* if `q ≥ (N - 1/2)/N`, <code>P<sub>p</sub> = X<sub>N</sub></code>
+- if `q ≥ (N - 1/2)/N`, <code>P<sub>p</sub> = X<sub>N</sub></code>
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
@@ -292,13 +292,13 @@ The graph below shows a comparison of the 4-th and 5-th methods:
 
 #### R6. Linear interpolation of the mathematical expectations
 
-* `h = (N + 1) × q`
+- `h = (N + 1) × q`
 
-* <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
+- <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
 
-* if `q ≤ 1/(N + 1)`, <code>P<sub>p</sub> = X<sub>1</sub></code>
+- if `q ≤ 1/(N + 1)`, <code>P<sub>p</sub> = X<sub>1</sub></code>
 
-* if `q ≥ N/(N + 1)`, <code>P<sub>p</sub> = X<sub>N</sub></code>
+- if `q ≥ N/(N + 1)`, <code>P<sub>p</sub> = X<sub>N</sub></code>
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
@@ -309,18 +309,18 @@ The approach is used by<sup>[1](#tools-summary)</sup>:
 1. [ATSD SQL PERCENTILE](https://axibase.com/docs/atsd/sql/#percentile)
 2. [ATSD Rule Engine percentile()](https://axibase.com/docs/atsd/rule-engine/functions-statistical.html#percentile)
 3. [ATSD Data API PERCENTILE](https://axibase.com/docs/atsd/api/data/aggregation.html#percentile)
-4. [Charts PERCENTILE](https://axibase.com/docs/charts/syntax/value_functions.html#statistical-functions)
+4. [Charts PERCENTILE](https://axibase.com/docs/charts/syntax/value-functions.html#statistical-functions)
 5. [Excel PERCENTILE.EXC](https://support.office.com/en-us/article/percentile-exc-function-bbaa7204-e9e1-4010-85bf-c31dc5dce4ba)
 6. [SAS](http://support.sas.com/documentation/cdl/en/procstat/68142/HTML/default/viewer.htm#procstat_univariate_details14.htm)
 7. [SciPy v1.1.0](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mstats.mquantiles.html)
 
 #### R7. Linear interpolation
 
-* `h = (N - 1) × q + 1`
+- `h = (N - 1) × q + 1`
 
-* <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
+- <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
 
-* if `q = 1`, <code>P<sub>1</sub> = X<sub>N</sub></code>
+- if `q = 1`, <code>P<sub>1</sub> = X<sub>N</sub></code>
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
@@ -347,13 +347,13 @@ The resulting quantile estimates are approximately median-unbiased regardless of
 > The bias of an estimator is the difference between this estimator's expected value and the `true` value of the parameter being estimated.
 > An estimator or decision rule with zero bias is called unbiased. Otherwise the estimator is said to be biased.
 
-* `h = (N + 1/3) × q + 1/3`
+- `h = (N + 1/3) × q + 1/3`
 
-* <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
+- <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
 
-* if `q ≤ (2/3)/(N + 1/3)`, <code>P<sub>p</sub> = X<sub>1</sub></code>
+- if `q ≤ (2/3)/(N + 1/3)`, <code>P<sub>p</sub> = X<sub>1</sub></code>
 
-* if `q ≥ (N - 1/3)/(N + 1/3)`, <code>P<sub>p</sub> = X<sub>N</sub></code>
+- if `q ≥ (N - 1/3)/(N + 1/3)`, <code>P<sub>p</sub> = X<sub>N</sub></code>
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
@@ -363,13 +363,13 @@ Percentile | Calculations<sup>[data](#example-data)</sup>
 
 #### R9. Approximately unbiased estimates (if `X` is normally distributed)
 
-* `h = (N + 1/4) × q + 3/8`
+- `h = (N + 1/4) × q + 3/8`
 
-* <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
+- <code>P<sub>p</sub> = X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>⌊h⌋ + 1</sub> - X<sub>⌊h⌋</sub>)</code>
 
-* if `q < (5/8)/(N + 1/4)`, <code>P<sub>p</sub> = X<sub>1</sub></code>
+- if `q < (5/8)/(N + 1/4)`, <code>P<sub>p</sub> = X<sub>1</sub></code>
 
-* if `q ≥ (N - 3/8)/(N + 1/4)`, <code>P<sub>p</sub> = X<sub>N</sub></code>
+- if `q ≥ (N - 3/8)/(N + 1/4)`, <code>P<sub>p</sub> = X<sub>N</sub></code>
 
 Percentile | Calculations<sup>[data](#example-data)</sup>
 ---|---
@@ -413,11 +413,11 @@ R9|`(N + 1/4) × q + 3/8`|<code>X<sub>⌊h⌋</sub> + (h − ⌊h⌋) × (X<sub>
 
 The following software provides functionality to use any of R1-R9:
 
-* [Apache Commons Math 3.6 Percentile](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html), refer to [Percentile.EstimationType](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/descriptive/rank/Percentile.EstimationType.html)
+- [Apache Commons Math 3.6 Percentile](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html), refer to [Percentile.EstimationType](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/descriptive/rank/Percentile.EstimationType.html)
 
 > `q` must be in interval `q ∈ (0, 1]`, otherwise `org.apache.commons.math3.exception.OutOfRangeException` is thrown.
 
-* [R quantile](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)
+- [R quantile](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)
 
 Method|Tools
 :---:|:---
@@ -433,7 +433,7 @@ R9|<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_9`](https
 
 ### NaN Strategy
 
-* [Apache Commons Math 3.6](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html)
+- [Apache Commons Math 3.6](https://commons.apache.org/proper/commons-math/javadocs/api-3.0/org/apache/commons/math3/stat/descriptive/rank/Percentile.html)
 
     [Apache Commons Math 3.6 NaNStrategy](http://commons.apache.org/proper/commons-math/javadocs/api-3.6/org/apache/commons/math3/stat/ranking/NaNStrategy.html):
 
@@ -445,14 +445,14 @@ R9|<br><span>&#8226;</span> [Apache Commons Math 3.6 `EstimationType.R_9`](https
     FAILED - If any NaN is encountered in the input array, an appropriate exception is thrown.
     ```
 
-* [R quantile](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)
+- [R quantile](https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/quantile)
 
     ```txt
     na.rm - if true, any NA and NaN's are removed from x before the quantiles are computed
     if false NA and NaN values are not allowed
     ```
 
-* ATSD
+- ATSD
 
     <code>
     NaN values are removed before the percentiles are estimated.
@@ -540,7 +540,7 @@ The median absolute deviation is a robust measure of how spread out a set of dat
 
 ![](./images/mad_vs_std.png)
 
-If data is normaly distributed, the SD is usually the best choice for assessing spread, otherwise, the MAD is preferred, but it must be multiplied with scale factor `k` - a constant linked to the assumption of normality of the data, read additional information in [[3](#sources)] and [[6](#sources)].
+If data is normally distributed, the SD is usually the best choice for assessing spread, otherwise, the MAD is preferred, but it must be multiplied with scale factor `k` - a constant linked to the assumption of normality of the data, read additional information in [[3](#sources)] and [[6](#sources)].
 
 ![](./images/scale_factor.png)
 
