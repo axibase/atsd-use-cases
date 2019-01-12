@@ -21,8 +21,8 @@
 * [`merge-columns`](https://axibase.com/docs/charts/widgets/series-table/#merge-columns) setting to merge multiple series into one row.
 
 ```ls
-  # merge base and offset series into a single row, one per country
-  merge-columns = a.tags.country == b.tags.country
+# merge base and offset series into a single row, one per country
+merge-columns = a.tags.country == b.tags.country
 ```
 
 * [`time-offset`](https://axibase.com/docs/charts/widgets/shared/#time-offset) setting to load series with a time lag.
