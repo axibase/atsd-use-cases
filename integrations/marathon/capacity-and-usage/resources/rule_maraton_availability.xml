@@ -28,7 +28,7 @@
         <scriptAsOpen>true</scriptAsOpen>
         <alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
         <logOutput>false</logOutput>
-        <owner>Igor Shmagrinsky</owner>
+        <owner>axibase</owner>
         <actionStrategy>
             <type>ALL</type>
             <intervalCount>5</intervalCount>
@@ -140,7 +140,7 @@
             <cancel-screenshot>false</cancel-screenshot>
             <repeat-as-open>true</repeat-as-open>
             <cancel-as-open>true</cancel-as-open>
-            <recipients>unrealwork@gmail.com</recipients>
+            <recipients>mail@example.org</recipients>
             <first-subject>[${status}] Marathon application [${entity.displayName}] is not available on any host</first-subject>
             <repeat-subject>[${status}] Marathon application [${entity.displayName}] is not available on any host</repeat-subject>
             <cancel-subject>[${status}] Marathon application [${entity.displayName}] is not available on any host</cancel-subject>
