@@ -9,12 +9,12 @@
     * [Simple Graal Benchmark](#simple-graal-benchmark)
 * [GraalVM and Truffle](#graalvm-and-truffle)
     * [JavaScript](#javascript)
-    * [Ruby](#ruby)
     * [Polyglot](#polyglot)
 * [Going Native](#going-native)
-*    [Native Image](#native-image)
-*    [Native Library](#native-library)
-*    [Disadvantages](#disadvantages)
+    * [Native Image](#native-image)
+    * [Native Library](#native-library)
+    * [Disadvantages](#disadvantages)
+    * [Limitations](#limitations)
 * [Summary](#summary)
 * [Sources](#sources)
 
@@ -118,11 +118,11 @@ NearestNumber.findNearestNumber:·gc.count                         <non-empty>  
 NearestNumber.findNearestNumber:·gc.time                          <non-empty>  avgt   15   161.000                ms
 ```
 
-TODO explain why performance increased
+The numbers show a significant performance gain and lower normalized allocation rate due to partial escape analysis described in the [paper](http://www.ssw.uni-linz.ac.at/Research/Papers/Stadler14/Stadler2014-CGO-PEA.pdf).
 
 ## GraalVM and Truffle
 
-![](./images/istanbul_cats.jpg)
+![](./images/microservices.jpg)
 
 GraalVM is a Hotspot JVM (currently 1.8.0_192) with implements JVMCI and has Graal compiler enabled by default. 
 It also delivers Truffle, a framework for implementing interpreters, and some language implementations, e.g. `node`, and package tools, e.g. `npm`.
@@ -134,19 +134,39 @@ $GRAALVM_HOME/bin/gu install python
 
 ### JavaScript
 
-[ECMAScript Features Compatibility Table](https://kangax.github.io/compat-table/es6/)
+JavaScript is the language shipped with GraalVM without additional setup. Compared to Nashorn engine, Truffle implementation supports modern standards and a lot faster.
 
-### Ruby
+Well-known tools can already be run under TruffleJS.
+
+```
+$GRAALVM_HOME/bin/npm install leftpad
+```
+
+[ECMAScript Features Compatibility Table](https://kangax.github.io/compat-table/es6/)
 
 ### Polyglot
 
-TODO example
+Add the following dependency to work with Truffle from IDEA.
+
+```xml
+ <dependency>
+    <groupId>org.graalvm.truffle</groupId>
+    <artifactId>truffle-api</artifactId>
+    <version>1.0.0-rc10</version>
+</dependency>
+```
+
+```java
+final Context context = Context.create();
+final Function<List<Number>, Number> f = context.eval(language, code).as(Function.class);
+executeTests(f);
+```
 
 TODO integrate into ATSD, measure performance and memory footprint.
 
 ## Going Native
 
-![](./images/goreme_guard.jpg)
+![](./images/dogger_container.jpg)
 
 `native-image` tool compiles Java bytecode (class file or jar archive) into native code which contains a minimalistic Java runtime called `SubstrateVM`.
 
@@ -346,13 +366,21 @@ $ /usr/bin/time -l ./example
        1  involuntary context switches
 ```
 
-TODO What is not supported
-
 ### Disadvantages
 
 - Hard to configure: any application bigger than "Hello, World" can take tens of compilation attempts using trial and error method.
 - Compilation is slow: 28 seconds for a simple application exposing a single function.
 - The tool is highly voracios: 4 GB of memory were taken during compilation of the application above.
+
+### Limitations
+
+1. AOT compilation relies on close-world assumption: all used classes must be distinguished at compile-time. It means, the code testing if some
+library exists in the classpath won't work, but the problem can be solved by [substitutions](https://medium.com/graalvm/instant-netty-startup-using-graalvm-native-image-generation-ed6f14ff7692).
+Substitution mechanism allows to provide SubstrateVM with better specialized (non-reflective) piece of code using annotations or JSON configuration.
+2. Reflection usage is limited: constant class loading (`Class.forName("com.axibase.Example")) is resolved automatically, but field or method access need
+[configuration](https://github.com/oracle/graal/blob/master/substratevm/REFLECTION.md).
+3. Static fields are initialized at compile time.
+4. Java management and debugging interfaces (JVMTI, JMX) are not supported.
 
 ## Summary
 
@@ -367,4 +395,8 @@ integration of services written in different languages (by using Polyglot VM) an
 2. [GraalVM Github](https://github.com/oracle/graal)
 3. [JEP 243: Java-Level JVM Compiler Interface](https://openjdk.java.net/jeps/243)
 4. ["Graal: how to use the new JVM JIT compiler in real life" Christian Thalinger](https://www.youtube.com/watch?v=OPOHmQORG6M)
-5. [ECMAScript Compatibility Table](https://kangax.github.io/compat-table/es6/)
+6. ["Under the hood of GraalVM JIT optimizations" Aleksandar Prokopec](https://medium.com/graalvm/under-the-hood-of-graalvm-jit-optimizations-d6e931394797)
+6. ["Understanding How Graal Works - a Java JIT Compiler Written in Java" Chris Seaton](https://chrisseaton.com/truffleruby/jokerconf17/)
+7. ["Partial Escape Analysis and Scalar Replacement for Java" Lukas Stadler, Thomas Würthinger, Hanspeter Mössenböck](http://www.ssw.uni-linz.ac.at/Research/Papers/Stadler14/Stadler2014-CGO-PEA.pdf)
+8. [ECMAScript Compatibility Table](https://kangax.github.io/compat-table/es6/)
+9. ["Instant Netty Startup using GraalVM Native Image Generation" Codrut Stancu](https://medium.com/graalvm/instant-netty-startup-using-graalvm-native-image-generation-ed6f14ff7692)
