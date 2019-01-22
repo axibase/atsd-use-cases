@@ -10,7 +10,7 @@
   height-units = 2
   width-units = 1
   server-aggregate = true
-  multiple-series = true
+  merge-series = false
   entities = *  
   disconnect-interval = 3 minute
   server-aggregate = true

@@ -17,7 +17,7 @@
     type = chart
     title = Average latency
     timespan = 15 minute
-    multiple-series = true
+    merge-series = false
     label-format=entity
     alert-expression = (new Date()).getTime() - time &gt; 120 * 1000
     alert-style = background-color: red
@@ -33,7 +33,7 @@
     column-time = Last online
     column-metric = null
     column-value = null
-    multiple-series = true
+    merge-series = false
     
     alert-expression = (new Date()).getTime() - time &gt; 120 * 1000
     alert-style = background-color: red
@@ -80,7 +80,7 @@
   [widget]
     type = chart
     title = Latency: ${entity}
-    multiple-series = true
+    merge-series = false
     
     [series]
       label = Min
@@ -163,7 +163,7 @@
     type = chart
     title = Average latency
     timespan = 15 minute
-    multiple-series = true
+    merge-series = false
     label-format=entity
     alert-expression = (new Date()).getTime() - time &gt; 120 * 1000
     alert-style = background-color: red
@@ -177,7 +177,7 @@
     column-time = Last online
     column-metric = null
     column-value = null
-    multiple-series = true
+    merge-series = false
     
     alert-expression = (new Date()).getTime() - time &gt; 120 * 1000
     alert-style = background-color: red
