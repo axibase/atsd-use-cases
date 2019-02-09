@@ -4,6 +4,7 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 
 <!-- markdownlint-disable MD101 -->
 
+1. [Major Foreign U.S. Treasury Holders: End of Year Positioning](us-treasury-foreign-holdings-2018-october.md) (February 2019)
 1. [Major Foreign Holders Reducing U.S. Treasury Holdings](us-treasury-foreign-holdings-2018-october.md) (January 2019)
 1. [Total Known and Endangered Species by Country and Type](endangered-animals/README.md) (November 2018)
 1. [U.S. Treasury Holdings Series Filter](us-treasury-holdings-series-filter.md) (November 2018)
