@@ -2,10 +2,10 @@
 
 ## Overview
 
-* What does France know about treasuries?
-* Italy is stable, however its mix of short versus long maturities has changed.
-* China and Japan trade offset each other.
-* With 85% of treasuries sold, Russia keeps pushing its holdings even lower.
+* Does France know something special about the treasuries?
+* Italy maintains an overall stable level, however the share of short maturities has increased rapidly.
+* China and Japan, the two largest holders, offset each other.
+* With 85% of treasuries sold, Russia keeps pushing its holdings even lower, reducing it to $13 billion.
 
 ## Keywords
 
