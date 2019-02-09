@@ -1,4 +1,4 @@
-# Major Foreign Holders Reducing U.S. Treasury Holdings
+# Foreign U.S. Treasury Holders: France, Italy, and End of Year Positioning. November 2018
 
 ## Overview
 

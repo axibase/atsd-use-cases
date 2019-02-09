@@ -1,4 +1,4 @@
-# Major Foreign Holders Reducing U.S. Treasury Holdings
+# Foreign Holders Reducing U.S. Treasury Holdings, October 2018
 
 ## Overview
 
