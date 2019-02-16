@@ -138,7 +138,7 @@ The Age of Enlightenment (1715-1799) fostered growth in every area of human life
 
 ### International Demarcation
 
-* First proposed in **1858** by Italian mathematician Quirico Filopanti.<sup>[19](http://www.scienzagiovane.unibo.it/English/scientists/filopanti-2.html)</sup>
+* First proposed in **1858** by Italian mathematician Quirico Filopanti.
 * Scottish-Canadian Sandford Fleming successfully proposed the creation of a "universal time," upon which all other time zones would eventually be based in **1879**.<sup>[20](https://www.erudit.org/fr/revues/scientia/1990-v14-n1-2-scientia3118/800302ar.pdf)</sup>
 * By **1900**, nearly every country had approximately standardized its own time, but international cooperation was still rare.
 * Between **1900-1929** all major countries standardized their own time to a derivation of GMT.

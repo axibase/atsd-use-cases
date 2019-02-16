@@ -58,7 +58,7 @@ csv offsets = alias,offset,label
       now,0 month,Now
       m1,1 month,1 month ago
       y1,1 year,1 year ago
-      y3,3 year,3 years ago 
+      y3,3 year,3 years ago
       y5,5 year,5 years ago
 endcsv
 ```
