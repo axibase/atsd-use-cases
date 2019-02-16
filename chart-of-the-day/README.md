@@ -4,6 +4,7 @@ Interactive visualizations tracking interesting datasets from a variety of sourc
 
 <!-- markdownlint-disable MD101 -->
 
+1. [Foreign U.S. Treasury Holders: Big Moves by France and Norway. December 2018](us-treasury-foreign-holdings-2018-november.md) (February 2019)
 1. [Foreign U.S. Treasury Holders: France, Italy, and End of Year Positioning. November 2018](us-treasury-foreign-holdings-2018-november.md) (February 2019)
 1. [Foreign Holders Reducing U.S. Treasury Holdings, October 2018](us-treasury-foreign-holdings-2018-october.md) (January 2019)
 1. [Total Known and Endangered Species by Country and Type](endangered-animals/README.md) (November 2018)
