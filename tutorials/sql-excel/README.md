@@ -4,31 +4,6 @@
 
 This article contains examples of how analytic functions in SQL can be used to emulate step-by-step calculations in Microsoft Excel.
 
-**Analytic** functions in SQL allow developers to access grouped statistics without reducing the number of rows returned by the query.
-
-```sql
-SELECT value,
-  -- SUM calculated without GROUP BY
-  value/SUM(value) OVER() AS weight
-  FROM table-name
-ORDER BY weight DESC
-```
-
-Often called **windowing** functions due to their ability to operate on ordered and partitioned groups of records, analytic functions are different from **aggregate** functions which reduce several rows into a **single** result row.
-
-Many aggregate functions such as `SUM`, `AVG`, and `COUNT` can be invoked as analytic functions using the `OVER` clause. However the class of analytic functions also includes **reference** functions which operate on an ordered set of records. Such reference functions include:
-
-* `LAG`. Provides access to a previous row at a specified offset from the current position.
-* `LEAD`. Provides access to a following row at a specified offset from the current position.
-* `FIRST_VALUE`. Provides access to the first row.
-* `LAST_VALUE`. Provides access to the last row.
-
-## Documentation Links
-
-* ATSD [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function
-* Oracle [`LAG`](https://docs.oracle.com/cd/B19306_01/server.102/b14200/functions070.htm) function
-* Excel [`cell referencing`](https://support.office.com/en-us/article/switch-between-relative-absolute-and-mixed-references-dfec08cd-ae65-4f56-839e-5f0d8d0baca9)
-
 ## Staged Calculations in Excel
 
 To assist users in organizing complex analysis into step-by-step calculations, Excel provides a convenient `A1` [addressing](https://support.office.com/en-us/article/ADDRESS-function-D0C26C0D-3991-446B-8DE4-AB46431D4F89) notation, or reference style, to pass calculation results between cells _by value_:
@@ -40,17 +15,45 @@ To assist users in organizing complex analysis into step-by-step calculations, E
 
   ![](./images/excel-refer-0.png)
 
-Users can easily calculate the year-over-year change by entering `=B3 - B2` formula as the value of the current cell.
+Users can calculate the year-on-year change by entering `=B3 - B2` formula as the value of the current cell.
 
 ![](./images/excel-refer-1.png)
 
-Since the reference in relative, the row and column indexes are automatically updated when we copy the cell value to the remaining cells in the `Y-o-Y Change, $M` column.
+Such references are relative, and the row index is updated behind the scenes when you copy the cell to fill the `Y-o-Y Change, $M` column.
 
 ![](./images/excel-refer-2.png)
 
-The above references are relative to the current cell position but they can also refer to an absolute address using `$` prefix, for example `=B3 - B$2` to calculate change in sales since 2010.
+To fix the row in the address, use `$` prefix, for example `=B3 - B$2`. This makes it possible to calculate change in sales since 2010, for example.
 
 ![](./images/excel-refer-3.png)
+
+## Analytic Functions in SQL
+
+To achieve the same results in SQL we need to first cover a special class of functions called **analytic** functions.
+
+The analytic functions in SQL allow access to grouped statistics without reducing the number of rows returned by the query.
+
+```sql
+SELECT value,
+  -- SUM(value) below is calculated without GROUP BY
+  value/SUM(value) OVER() AS weight
+FROM table-name ORDER BY weight DESC
+```
+
+Often called **windowing** functions due to their ability to operate on ordered and partitioned groups of records, analytic functions are different from **aggregate** functions which reduce multiple rows in the same group into a **single** result row.
+
+Many aggregate functions such as `SUM`, `AVG`, and `COUNT` can be invoked as analytic functions using the `OVER` clause. However the class of analytic functions also includes **reference** functions which operate on an ordered set of records. Such reference functions include:
+
+* `LAG`. Provides access to a previous row at a specified offset from the current position.
+* `LEAD`. Provides access to a following row at a specified offset from the current position.
+* `FIRST_VALUE`. Provides access to the first row.
+* `LAST_VALUE`. Provides access to the last row.
+
+## Documentation Links
+
+* Excel [`cell referencing`](https://support.office.com/en-us/article/switch-between-relative-absolute-and-mixed-references-dfec08cd-ae65-4f56-839e-5f0d8d0baca9)
+* ATSD [`LAG`](https://axibase.com/docs/atsd/sql/#lag) function
+* Oracle [`LAG`](https://docs.oracle.com/cd/B19306_01/server.102/b14200/functions070.htm) function
 
 ## Referencing in SQL
 
