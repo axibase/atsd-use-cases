@@ -18,7 +18,7 @@ If the metric is present in results, check that its **Last Insert** date is clos
 
 ![](./images/search-metric-result.png)
 
-Click on the **Series** icon to view specific time series collected for this metric.
+Click the **Series** icon to view specific time series collected for this metric.
 
 Each time series is unique and is identified by the metric name, the entity name and an optional set of tags describing the series.
 
@@ -79,7 +79,7 @@ Alternatively, create a [portal](https://axibase.com/docs/atsd/portals/) with [c
 For more information about ATSD graphics, review the [portal](https://axibase.com/docs/atsd/portals/) and [charts](https://axibase.com/docs/charts/) documentation.
 :::
 
-Once the series is located, click on the ∑ icon to open the **Series Statistics** page. This page analyzes the series and presents summary information about the observed values.
+Once the series is located, click the ∑ icon to open the **Series Statistics** page. This page analyzes the series and presents summary information about the observed values.
 
 ![](./images/series-statistics.png)
 
@@ -133,7 +133,7 @@ To test the rule on incoming data you can temporarily adjust the condition, for 
 value > 10
 ```
 
-Save the rule and click on the **View Windows** link on the **Windows**
+Save the rule and click the **View Windows** link on the **Windows**
 tab.
 
 ![](./images/rule-windows-open.png)
@@ -144,15 +144,15 @@ The status of the window indicates whether the condition evaluated to `true` or 
 
 ![](./images/rule-windows-list.png)
 
-If the list remains empty for the current rule, make sure all Status checkboxes are enabled and that the data continues to arrive into ATSD. If the windows are still missing, open the **Filters** tab in the rule editor and click on **Filter Results** link to view which samples are discarded and why.
+If the list remains empty for the current rule, ensure that all Status checkboxes are enabled and that the data continues to arrive into ATSD. If the windows are still missing, open the **Filters** tab in the rule editor and click **Filter Results** link to view which samples are discarded and why.
 
 ![](./images/rule-filter-results.png)
 
 ### Test on Historical Data
 
-Click on the **Test** tab in the rule editor to back-test the rule on historical data.
+Click the **Test** tab in the rule editor to back-test the rule on historical data.
 
-Modify the entity name and add or remove tags to filter the results so that they only apply to a subset of all series collected by the metric.
+Modify the entity name and add or remove tags to filter the results to select a subset of series collected by the metric.
 
 Adjust the **Selection Interval** to customize the default back-testing interval.
 
@@ -192,7 +192,7 @@ Create a new notification, enter one or multiple subscribers, and enable the **O
 
 The **On Open** trigger delivers emails only when the window status changes from `false` to `true`. It does not deliver emails when the incoming value confirms the status. Use the **On Repeat** trigger if repeat notifications are required, for example to re-send the email every 2 hours.
 
-Click **Test** to verify email delivery. 
+Click **Test** to verify email delivery.
 
 :::warning Note
 The test attempts to find an historical record in the database that both passes the filter and matches the condition. If such sample cannot be found, it sends an email message assembled from a synthetic sample. Therefore the content of the email message for an actual alert is different.
