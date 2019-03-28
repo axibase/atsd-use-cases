@@ -91,7 +91,7 @@ Click **Create Rule** to open the rule editor.
 
 ## Create Rule
 
-Open the **Overview** tab and customize the rule name. It is recommended that you establish a naming convention so that rules can be easily categorized and filtered by name, if necessary.
+Open the **Overview** tab and customize the rule name. It is recommended that you establish a naming convention to easily categorize and filter rules by name.
 
 Click the **Filters** tab. The tab is automatically pre-filled with the entity name and tag values for the selected series. This filter can be relaxed at a later stage to accept more than one series.
 
