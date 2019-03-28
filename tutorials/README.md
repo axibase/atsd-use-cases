@@ -6,6 +6,7 @@
 
 ## Data
 
+* [Basic Forecasting Workflow](forecasting-basic-workflow/README.md)
 * [Creating Alert Rules: Basic Workflow](create-rule-workflow/README.md)
 * [Cell References in SQL and Excel](sql-excel/README.md)
 * [Monitoring Event Sequences](event-sequence/README.md)
