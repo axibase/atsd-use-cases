@@ -6,11 +6,11 @@
 
 Follow this process to upload a forecast configuration to your local ATSD instance.
 
-1. Expand the **Data** menu and select **Forecasts**.
+1. Expand the **Data** menu and select **Forecast Jobs**.
 
     ![](./images/forecast-1.png)
 
-2. From the **Forecasts** page, expand the split-button and click **Import**.
+2. From the **Forecast Jobs** page, expand the split-button and click **Import**.
 
     ![](./images/forecast-2.png)
 
@@ -18,7 +18,7 @@ Follow this process to upload a forecast configuration to your local ATSD instan
 
     ![](./images/forecast-3.png)
 
-Return to the **Forecasts** page to view the newly-configured forecast settings.
+Return to the **Forecast Jobs** page to view the newly-configured forecast settings.
 
 ## Uploading Multiple Configuration Files
 

@@ -121,7 +121,7 @@ Adjust the following key settings to control the result.
 As a rule of thumb, the **Forecast Horizon** setting needs to be less than 50% of the historical selection interval. For example, to forecast one year into the future, select historical data for two years or more.
 :::
 
-The **Aggregation Period** can be increased to show more details in the predicated values. For example, the weekly cycle can be captured by reducing the period to 1 day.
+The **Aggregation Period** can be increased to show more details in the predicted values. For example, the weekly cycle can be captured by reducing the period to 1 day.
 
 ![](./images/forecast-manual-custom.png)
 
@@ -147,7 +147,9 @@ The **Forecast Name** setting controls under which identifier the derived foreca
 
 ![](./images/forecast-scheduled-name.png)
 
-Click **Run** to execute the job manually. Review the list of prepared series to ensure that the predicated values are calculated as expected.
+Click **Run** to execute the job manually. Click the chart links in the list of stored forecast series to ensure that the predicted values are calculated as expected.
+
+Click **Save** to save the settings.
 
 ![](./images/forecast-scheduled-run-series.png)
 
@@ -267,7 +269,7 @@ Check the results to ensure the upload is successful.
 
 The last step in the automation workflow is to deliver forecast results to end-users.
 
-Open the **Data > Forecasts** page and click on the `ddg-queries-1` forecast settings.
+Open the **Data > Forecast Jobs** page and click on the `ddg-queries-1` forecast settings.
 
 Click **Export** to open the **Data > Export** form with pre-filled settings.
 
