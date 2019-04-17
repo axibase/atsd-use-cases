@@ -125,7 +125,7 @@ The **Aggregation Period** can be increased to show more details in the predicte
 
 ![](./images/forecast-manual-custom.png)
 
-Once you determine settings that are reasonable for the given series, click on the **clock** icon to schedule the forecast.
+Once you determine settings that are reasonable for the given series, click the **clock** icon to schedule the forecast.
 
 ![](./images/forecast-schedule.png)
 
@@ -168,7 +168,7 @@ There are two options for automating this step:
 
 This option relies on a simple script that downloads the source file to an intermediate server (or ATSD server itself) with a subsequent upload of the file into the database.
 
-Login into the server and verify connectivity by downloading the `direct.csv` file to `/tmp/direct.csv`.
+Log in to the server and verify connectivity by downloading the `direct.csv` file to `/tmp/direct.csv`.
 
 ```bash
 curl https://duckduckgo.com/traffic_data/direct.csv -o /tmp/direct.csv
@@ -186,7 +186,7 @@ tail -n 3 /tmp/direct.csv
 2019-03-19,37533760
 ```
 
-Go back to the CSV Wizard summary page and click on **curl: Token Authentication** to issue an API token. The token authentication grants the external program a permission to perform a specific action - in this case to submit a CSV file to the specific CSV parser identified by name `ddg-parser`.
+Go back to the CSV Wizard summary page and click **`curl`: Token Authentication** to issue an API token. The token authentication grants the external program a permission to perform a specific action - in this case to submit a CSV file to the specific CSV parser identified by name `ddg-parser`.
 
 ![](./images/token-1.png)
 
@@ -241,7 +241,7 @@ The example above execute the job at 4:00 AM daily with command output saved to 
 
 [Axibase Collector](https://axibase.com/docs/axibase-collector) is an ETL tool which implements various job types to collect data into ATSD on schedule. One of such jobs is the [`FILE`](https://axibase.com/docs/axibase-collector/jobs/file.html) job that is capable of fetching files from HTTP/FTP/SFTP URLs or from the local file system and to pass it to the database for processing.
 
-Return to the CSV Wizard summary page and click on **Axibase Collector: FILE Job**.
+Return to the CSV Wizard summary page and click **Axibase Collector: FILE Job**.
 
 Enter the `direct.csv` URL and click **Export Job**.
 
@@ -283,7 +283,7 @@ Expand **Export Options** and select one of the options to retrieve forecast res
 
 * **Download CSV**: Direct link to results in CSV format.
 * **Schedule Job**: Save results in CSV/Excel format to file or deliver via email.
-* **curl: User/Token Authentication**: Execute `curl` command to retrieve results in CSV format.
+* **`curl`: User/Token Authentication**: Execute `curl` command to retrieve results in CSV format.
 
 ![](./images/export-options-schedule.png)
 
@@ -295,7 +295,7 @@ Click **Run** to test report delivery.
 
 ![](./images/export-job-run.png)
 
-The test generates CSV or Excel report files, persisted to disk and/or delivered via email.
+The test generates CSV or Excel report files, persisted to disk or delivered via email.
 
 ![](./images/export-job-email-result.png)
 
