@@ -44,7 +44,7 @@ Click **Series** icon to view monitored health checks.
 
 ![](./images/route53-series.png)
 
-Click one of the health check IDs under the **Entity** column to view properties. Verify that both the standard and custom resource tags are present in ATSD.
+Click any health check ID under the **Entity** column to view properties. Verify that both the standard and custom resource tags are present in ATSD.
 
 ![](./images/route53-attributes.png)
 

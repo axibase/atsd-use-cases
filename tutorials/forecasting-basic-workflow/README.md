@@ -269,7 +269,7 @@ Check the results to ensure the upload is successful.
 
 The last step in the automation workflow is to deliver forecast results to end-users.
 
-Open the **Data > Forecast Jobs** page and click on the `ddg-queries-1` forecast settings.
+Open the **Data > Forecast Jobs** page and select the `ddg-queries-1` settings.
 
 Click **Export** to open the **Data > Export** form with pre-filled settings.
 
