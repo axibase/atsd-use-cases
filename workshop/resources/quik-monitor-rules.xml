@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>quik-disconnect</name>
+<metric>quik-info.connected</metric>
+<tagsGroupingStrategy>ALL_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[count() == 0 || value != 1]]></expression>
+<window>time(1 minute)</window>
+<filter>now.is_weekday() &amp;&amp; now.to_timezone('Europe/Moscow').hourOfDay BETWEEN 10 AND 18</filter>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>false</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>false</alertCancellationMessageAsOpen>
+<logToAlertHistory>false</logToAlertHistory>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<lastUpdated>1558191312176</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>false</loadHistory>
+<instantAction>false</instantAction>
+<scriptAsOpen>false</scriptAsOpen>
+<alertCancellationScriptAsOpen>false</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner></owner>
+<description><![CDATA[Alert when connected is not 1 or when it's not received within 1 minute]]></description>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<entityFilter>quik-terminal</entityFilter>
+<timeFilter>
+<intervalCount>0</intervalCount>
+<intervalUnit>SECOND</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>quik-disconnect</rule-name>
+<repeat-interval>
+<type>INTERVAL</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>HOUR</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=904</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<webNotificationConfigName>Rocket.Chat CUSTOM</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>channel</key>
+<value>market-data</value>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>text</key>
+<value>Terminal `${tags.userid}` connection error: count=`${count}` value=`${value}`. ${ruleLink}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>channel</key>
+<value>market-data</value>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>Terminal `${tags.userid}` connection error: count=`${count}` value=`${value}`. ${ruleLink}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>channel</key>
+<value>market-data</value>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>Terminal `${tags.userid}` connection error: count=`${count}` value=`${value}`. ${ruleLink}</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>true</repeat-enabled>
+<cancel-enabled>false</cancel-enabled>
+</webNotification>
+<ruleTable/>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+<rule>
+<name>quik_quote_monitor</name>
+<metric>property</metric>
+<type>quik_current</type>
+<tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[count() = 0]]></expression>
+<window>time(10 minute)</window>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<logToAlertHistory>false</logToAlertHistory>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<lastUpdated>1556783445799</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>true</loadHistory>
+<instantAction>false</instantAction>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner></owner>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<entityFilter>sber_[tqbr]</entityFilter>
+<entityFilter>sber_[smal]</entityFilter>
+<timeFilter>
+<intervalCount>1</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</timeFilter>
+<discardPreviousValues>false</discardPreviousValues>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>quik_quote_monitor</rule-name>
+<repeat-interval>
+<type>NONE</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>HOUR</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=900</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>false</cancel-as-open>
+<webNotificationConfigName>Rocket.Chat CUSTOM</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>channel</key>
+<value>market-data</value>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>text</key>
+<value>No quotes for ${entity} in ${window}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>channel</key>
+<value>market-data</value>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>No quotes for ${entity} in ${window}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>channel</key>
+<value>market-data</value>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>Quotes available for ${entity} in ${window}</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>false</repeat-enabled>
+<cancel-enabled>true</cancel-enabled>
+</webNotification>
+<ruleTable/>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+<rule>
+<name>quik_tx_monitor</name>
+<metric>quik_tx_all_price</metric>
+<tagsGroupingStrategy>ALL_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[count() = 0]]></expression>
+<window>time(3 minute)</window>
+<filter>tags.operation = 'BUY'</filter>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<logToAlertHistory>false</logToAlertHistory>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<lastUpdated>1556647452773</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>false</loadHistory>
+<instantAction>false</instantAction>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner></owner>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<entityFilter>sber_[tqbr]</entityFilter>
+<timeFilter>
+<intervalCount>1</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>quik_tx_monitor</rule-name>
+<repeat-interval>
+<type>NONE</type>
+<intervalCount>6</intervalCount>
+<intervalUnit>HOUR</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=899</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>false</cancel-as-open>
+<webNotificationConfigName>Rocket.Chat CUSTOM</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>channel</key>
+<value>market-data</value>
+</firstWebConfigParameters>
+<firstWebConfigParameters>
+<key>text</key>
+<value>No data for ${metric}/${entity} for ${window}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>channel</key>
+<value>market-data</value>
+</repeatWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>No data for ${metric}/${entity} for ${window}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>channel</key>
+<value>market-data</value>
+</cancelWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>Data is available for ${metric}/${entity} for ${window}</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>false</repeat-enabled>
+<cancel-enabled>true</cancel-enabled>
+</webNotification>
+<ruleTable/>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>
