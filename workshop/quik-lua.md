@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Quik Overview](#quik-overview)
-* [Quik Terminal Features](#quik-terminal-features)
+* [Quik Features](#quik-features)
 * [Market Data](#market-data)
 * [ATSD Quik ODBC Driver](#atsd-quik-odbc-driver)
 * [Board Arbitrage](#board-arbitrage)
@@ -12,13 +12,13 @@
 
 ## Quik Overview
 
-[Quik](https://arqatech.com/ru/products/quik/terminals/user-applications/quik-workstation/) is a widely used brokerage terminal in Russia. It allows professional traders to buy and sell stocks, bonds, derivatives, and currencies on the [Moscow Exchange](https://moex.com) through a broker.
+[Quik Workstation](https://arqatech.com/ru/products/quik/terminals/user-applications/quik-workstation/) is a brokerage application. It allows professional traders to buy and sell stocks, bonds, derivatives, and currencies on the [Moscow Exchange](https://moex.com) through a broker.
 
-Quik Terminal UI
+Quik UI
 
 ![](./images/quik_terminal.png)
 
-The terminal supports two-factor authentication and connects securely to the Quik server installed at the broker.
+The workstation supports two-factor authentication and connects securely to the Quik server installed at the broker.
 
 The Quik server validates and routes orders to the exchange while also interfacing with the broker's back-end systems.
 
@@ -32,7 +32,7 @@ Quik is a 32-bit Windows program developed by `Arqatech` and is installed from a
 
 Current version as of May 2019 at Sberbank is `v7.19.3.1`.
 
-## Quik Terminal Features
+## Quik Features
 
 * Create and cancel orders
 
@@ -77,7 +77,7 @@ Current version as of May 2019 at Sberbank is `v7.19.3.1`.
 
 ### Data Exposed by Quik
 
-The Quik terminal provides access to market data of various types:
+The Quik workstation provides access to market data of various types:
 
 * Trades
 
@@ -263,7 +263,7 @@ The `quik_quote` rule maintains the consolidated quote for each instrument.
 
 ![](./images/quik-base-quote-vars.png)
 
-The in-memory [windows](https://axibase.com/docs/atsd/rule-engine/window.html) created by these rules for each instrument are continuously updated as the data from the Quik terminal is received.
+The in-memory [windows](https://axibase.com/docs/atsd/rule-engine/window.html) created by these rules for each instrument are continuously updated as the data from the Quik workstation is received and processed by ATSD.
 
 ### Create Arbitrage Rules
 
@@ -281,7 +281,7 @@ ${sendTcpMessageReply('quik-01.example.org', 13770, buy_order_command)}
 @end{}
 ```
 
-The advantage of executing strategy rules in ATSD compared to local Lua scripts executed directly by the Quik terminal are as follows:
+The advantage of executing strategy rules in ATSD compared to local Lua scripts executed directly by the Quik workstation are as follows:
 
 * Offload heavy calculations to the server.
 * Apply strategies to **all** active instruments without sacrificing performance.
@@ -297,7 +297,7 @@ Modify connection parameters to the ATSD TCP service.
 local host, port = "atsd.example.org", 8081
 ```
 
-Start the script which collects key Quik terminal parameters every 5 seconds including:
+Start the script which collects key Quik workstation parameters every 5 seconds including:
 
 * Connection status.
 * Quik server response time (`ping`).
@@ -309,8 +309,8 @@ To deploy this portal, create a new portal in ATSD based on [`quik-monitor.confi
 
 To receive email/chat alerts when the data stops arriving, open **Rules > Import** page in ATSD and upload the following rules from [`quik-monitor-rules.xml`](./resources/quik-monitor-rules.xml).
 
-* Alert when terminal reports disconnected status.
-* Alert when no connection status commands are received from the terminal within 3 minutes.
+* Alert when the workstation disconnects from the broker's Quik server.
+* Alert when no connection status commands are received from the workstation within 3 minutes.
 * Alert when no `BUY` trades are received within 3 minutes for `sber_[tqbr]`.
 * Alert when no quotes are received within 10 minutes for `sber_[tqbr]` and `sber_[smal]`.
 
