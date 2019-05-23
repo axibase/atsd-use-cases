@@ -1,4 +1,4 @@
-# Using Lua to Automate Quik Terminal Actions
+# Integrating Quik with ATSD: Board Arbitrage
 
 ## Table of Contents
 
@@ -6,7 +6,7 @@
 * [Quik Terminal Features](#quik-terminal-features)
 * [Market Data](#market-data)
 * [ATSD Quik ODBC Driver](#atsd-quik-odbc-driver)
-* [Arbitrage Strategy](#arbitrage-strategy)
+* [Board Arbitrage](#board-arbitrage)
 * [Availability Monitoring](#availability-monitoring)
 * [Reference](#reference)
 
@@ -30,7 +30,7 @@ Quik is a 32-bit Windows program developed by `Arqatech` and is installed from a
 
 ![](./images/quik-connect.png)
 
-Current version as of May 2019 at Sberbank is `7.19.3.1`.
+Current version as of May 2019 at Sberbank is `v7.19.3.1`.
 
 ## Quik Terminal Features
 
@@ -161,22 +161,6 @@ Data available as a [subscription](https://www.moex.com/ru/orders?historicaldata
 | ORDER A   | SNGS   | S         | 100004735095 |            | 26.855 |      900 |
 ```
 
-### Boards / Classes
-
-Main [boards](http://fs.moex.com/files/3864)
-
-Class | Description
----|---
-TQBR | Т+ Акции и ДР
-TQIF | Т+ Паи
-TQTF | Т+ ETF
-TQOB | Т+ Облигации
-TQBD | Т+ Акции и ДР (расч. в USD)
-TQTD | Т+ ETF (расч. в USD)
-TQOD | Т+ Облигации (расч.в USD)
-SMAL | Т+ Неполные лоты
-CETS | Валютная секция
-
 ## ATSD Quik ODBC Driver
 
 ### Driver Setup
@@ -193,7 +177,7 @@ Open **Control Panel** and created a User DSN.
 
 Create a new table **Таблица обезличенных сделок** in Quik.
 
-Right click on the table and select **Вывод по ODBC**.
+Right click the table and select **Вывод по ODBC**.
 
 ![](./images/quik-odbc-export.png)
 
@@ -203,7 +187,7 @@ Include and map only those columns that are present in the target `quik_tx_all` 
 
 ![](./images/quik_odbc_tx_all.png)
 
-Make sure **Формальные имена** setting is checked.
+Ensure that **Формальные имена** setting is checked.
 
 ![](./images/quik-odbc-formal-names.png)
 
@@ -221,7 +205,7 @@ Map **all** available columns.
 
 ![](./images/quik-odbc-column-mapping.png)
 
-Make sure **Формальные имена** setting is checked.
+Ensure that **Формальные имена** setting is checked.
   
 ![](./images/quik-odbc-formal-names.png)
 
@@ -243,7 +227,27 @@ Select one of the entities from the list and check that the `quik_current` is co
 
 ![](./images/quik-check-current-prop.png)
 
-## Arbitrage Strategy
+## Board Arbitrage
+
+### Strategy Description
+
+The strategy generates a paired buy and sell signal when the price of identical securities diverges between different boards by a spread exceeding the brokerage fees, exchange fees, and the cost of capital.
+
+### Boards / Classes
+
+Main [boards](http://fs.moex.com/files/3864)
+
+Class | Description
+---|---
+TQBR | Т+ Акции и ДР
+TQIF | Т+ Паи
+TQTF | Т+ ETF
+TQOB | Т+ Облигации
+TQBD | Т+ Акции и ДР (расч. в USD)
+TQTD | Т+ ETF (расч. в USD)
+TQOD | Т+ Облигации (расч.в USD)
+SMAL | Т+ Неполные лоты
+CETS | Валютная секция
 
 ### Create Data Rules
 
@@ -295,9 +299,9 @@ local host, port = "atsd.example.org", 8081
 
 Start the script which collects key Quik terminal parameters every 5 seconds including:
 
-* Connection status
-* Quik server response (ping) time
-* Number of records in tables: `orders`, `trades`, `depo_limits`
+* Connection status.
+* Quik server response time (`ping`).
+* Number of records in tables: `orders`, `trades`, `depo_limits`.
 
 ![](./images/quik-info-monitor.png)
 
