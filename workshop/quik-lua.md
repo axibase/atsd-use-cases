@@ -340,7 +340,7 @@ In the example below, the offer on the left is below the bid on the right.
 
 * Buy  `N` units at `1.840` (offer).
 * Sell `M` units at `1.920` (bid).
-* Profit is `M * (1.920 - 1.840)` before [fees](#brokerage-and-exchange-fees), or `4.348%`.
+* Profit is `M * (1.920 - 1.840)` before [fees](#broker-and-exchange-fees), or `4.348%`.
 * Net market exposure: `1.840 * (N - M)`.
 * The net exposure is subject to risk-adjusted cost of capital.
 
