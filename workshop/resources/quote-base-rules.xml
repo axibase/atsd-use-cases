@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>quik_quote</name>
+<metric>property</metric>
+<type>quik_current</type>
+<tagsGroupingStrategy>ALL_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[true]]></expression>
+<window>length(1)</window>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<logToAlertHistory>false</logToAlertHistory>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<userExpressions>
+<expression><![CDATA[toNumber(properties_all['спрос']) AS bid]]></expression>
+<expression><![CDATA[toNumber(properties_all['предл.']) AS ask]]></expression>
+<expression><![CDATA[toNumber(properties_all['кол._спрос']) AS bid_size]]></expression>
+<expression><![CDATA[toNumber(properties_all['кол._предл.']) AS ask_size]]></expression>
+<expression><![CDATA[toNumber(properties_all['кол-во_послед.']) AS last_trade_size]]></expression>
+<expression><![CDATA[toNumber(properties_all['цена_послед.']) AS last_trade_price]]></expression>
+<expression><![CDATA[toNumber(properties_all['оборот_посл.']) AS last_amount]]></expression>
+<expression><![CDATA[toNumber(properties_all['оборот']) AS total_amount]]></expression>
+<expression><![CDATA[toNumber(properties_all['кол-во_сделок']) AS total_trade_count]]></expression>
+<expression><![CDATA[toNumber(properties_all['общее_кол-во']) AS total_volume]]></expression>
+<expression><![CDATA[toNumber(properties_all['лот']) AS lot]]></expression>
+<expression><![CDATA[properties_all['время_послед.'] AS last_trade_time]]></expression>
+<expression><![CDATA[ifEmpty(properties_all['бумага'], properties_all['бумага_сокр.']]]><![CDATA[) AS desc]]></expression>
+<expression><![CDATA[lot > 0 && (bid <= 0 || ask <= 0 || ask > bid) AS is_valid]]></expression>
+<expression><![CDATA[bid > 0 && ask > 0 && ask > bid && bid_size > 0 && ask_size > 0 AS two_sided]]></expression>
+</userExpressions>
+<lastUpdated>1555445317111</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>true</loadHistory>
+<instantAction>false</instantAction>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner></owner>
+<description></description>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<entityFilter>*_[tqbr]</entityFilter>
+<entityFilter>*_[smal]</entityFilter>
+<timeFilter>
+<intervalCount>0</intervalCount>
+<intervalUnit>SECOND</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<ruleTable/>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+<rule>
+<name>quik_trade</name>
+<metric>quik_tx_all_price</metric>
+<tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[true]]></expression>
+<window>length(1)</window>
+<severity>NORMAL</severity>
+<alertOpenMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<logToAlertHistory>false</logToAlertHistory>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<userExpressions>
+<expression><![CDATA[value('quik_tx_all_volume') AS trade_size]]></expression>
+</userExpressions>
+<lastUpdated>1555445048673</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>true</loadHistory>
+<instantAction>false</instantAction>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner></owner>
+<description></description>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<entityFilter>*_[tqbr]</entityFilter>
+<entityFilter>*_[smal]</entityFilter>
+<timeFilter>
+<intervalCount>0</intervalCount>
+<intervalUnit>SECOND</intervalUnit>
+</timeFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<ruleTable/>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>
