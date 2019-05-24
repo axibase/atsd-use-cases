@@ -173,15 +173,15 @@ Open **Control Panel** and created a User DSN.
 
 ![](./images/quik-odbc-configure.png)
 
-### Export Trade Data
+### Export Trades
 
-Create a new table **Таблица обезличенных сделок** in Quik.
+Create a new table **Таблица обезличенных сделок** in Quik. This table includes **all** trades executed on the exchange, not just the client trades which are accessible in a different table called **Таблица Сделок**.
 
 Right click the table and select **Вывод по ODBC**.
 
 ![](./images/quik-odbc-export.png)
 
-Connect to the data source. Choose `ATSD.quik_tx_all` from the list of available tables.
+Connect to the data source. Choose `ATSD.quik_tx_all` from the list of available database tables.
 
 Include and map only those columns that are present in the target `quik_tx_all` table.
 
@@ -193,13 +193,13 @@ Ensure that **Формальные имена** setting is checked.
 
 Click **Начать вывод данных**.
 
-### Export Quotes (Level 1) Data
+### Export Quotes (Level 1)
 
 Create a new table **Текущая таблица параметров** in Quik. Include **all** columns to the table.
 
-Right click on the table and select **Вывод по ODBC**.
+Right click the table and select **Вывод по ODBC**.
 
-Choose `ATSD.quik_tx_all` from the list of available tables.
+Connect to the data source. Choose `ATSD.quik_current` from the list of available database tables.
 
 Map **all** available columns.
 
@@ -211,11 +211,83 @@ Ensure that **Формальные имена** setting is checked.
 
 Click **Начать вывод данных**.
 
-### Check Data
+## Verify Data Insertion in ATSD
+
+### Enable Quik Logging
+
+Open **Settings > Configuration > Configuration Files** page. Add Quik file [loggers](https://axibase.com/docs/atsd/administration/logging.html#logging-properties) to record SQL commands received from the ATSD ODBC driver to the `logback.xml` file.
+
+```xml
+<appender name="quik.1" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>../logs/quik_tx.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>../logs/quik_tx.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+      <maxFileSize>200MB</maxFileSize>
+      <maxHistory>7</maxHistory>
+      <totalSizeCap>4GB</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%d{"yyyy-MM-dd'T'HH:mm:ss.SSSXXX",UTC};%message%n</pattern>
+    </encoder>
+</appender>
+
+<logger name="sql.quik.quik_tx_all" level="DEBUG"  additivity="false">
+    <appender-ref ref="quik.1"/>
+</logger>
+
+<appender name="quik.2" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>../logs/quik_current.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>../logs/quik_current.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+      <maxFileSize>200MB</maxFileSize>
+      <maxHistory>7</maxHistory>
+      <totalSizeCap>4GB</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%d{"yyyy-MM-dd'T'HH:mm:ss.SSSXXX",UTC};%message%n</pattern>
+    </encoder>
+</appender>
+
+<logger name="sql.quik.quik_current" level="DEBUG"  additivity="false" >
+    <appender-ref ref="quik.2"/>
+</logger>
+```
+
+### Verify Trade Data
 
 Enter `quik_tx_all` on the **Metrics** tab in ATSD and check that at least price and volume metrics are listed.
 
 ![](./images/quik-check-tx.png)
+
+Trades are received as `INSERT` statements from the ODBC driver and are logged in the `quik_tx.log` file.
+
+```sh
+tail -F /opt/atsd/atsd/logs/quik_tx.log
+```
+
+```sql
+... INSERT INTO ATSD.quik_tx_all (number, date, time, time_us, instrument, price, volume, operation) VALUES (2964058799.00000000, '2019-05-24', '10:53:11', 223665.00000000, 'MGNT [TQBR]', 3570.50000000, 2.00000000, 'BUY')
+... INSERT INTO ATSD.quik_tx_all (number, date, time, time_us, instrument, price, volume, operation) VALUES (2964058800.00000000, '2019-05-24', '10:53:11', 225257.00000000, 'UPRO [TQBR]', 2.49400000, 1.00000000, 'BUY')
+... INSERT INTO ATSD.quik_tx_all (number, date, time, time_us, instrument, price, volume, operation) VALUES (2964058801.00000000, '2019-05-24', '10:53:11', 226478.00000000, 'SNGS [TQBR]', 24.32500000, 10.00000000, 'BUY')
+... INSERT INTO ATSD.quik_tx_all (number, date, time, time_us, instrument, price, volume, operation) VALUES (2964058802.00000000, '2019-05-24', '10:53:11', 227701.00000000, 'MOEX [TQBR]', 84.09000000, 15.00000000, 'BUY')
+... INSERT INTO ATSD.quik_tx_all (number, date, time, time_us, instrument, price, volume, operation) VALUES (2964058803.00000000, '2019-05-24', '10:53:11', 228902.00000000, 'NVTK [TQBR]', 1292.80000000, 6.00000000, 'BUY')
+```
+
+The `INSERT` statements containing trade details are converted into `series` commands as part of processing.
+
+```sh
+tail -F /opt/atsd/atsd/logs/command.log | grep quik_tx_all
+```
+
+```python
+... series e:poly_[tqbr] ms:1558685669225 t:operation=BUY m:quik_tx_all_price=674.2 m:quik_tx_all_volume=7
+... series e:gmkn_[tqbr] ms:1558685669624 t:operation=SELL m:quik_tx_all_price=13686.0 m:quik_tx_all_volume=14
+... series e:gmkn_[tqbr] ms:1558685669625 t:operation=SELL m:quik_tx_all_price=13684.0 m:quik_tx_all_volume=1
+... series e:gmkn_[tqbr] ms:1558685669626 t:operation=SELL m:quik_tx_all_price=13684.0 m:quik_tx_all_volume=35
+... series e:vtbr_[tqbr] ms:1558685669775 t:operation=SELL m:quik_tx_all_price=0.0382 m:quik_tx_all_volume=11
+```
+
+### Verify Quote Data
 
 Enter `*[tqbr]` on the **Entities** tab and check that the list contains symbol names with class code as a suffix.
 
@@ -227,11 +299,50 @@ Select one of the entities from the list and check that the `quik_current` is co
 
 ![](./images/quik-check-current-prop.png)
 
+Quote are received as `INSERT` and incremental `UPDATE` statements from the ODBC driver and are logged in the `quik_current.log` file.
+
+```sh
+tail -F /opt/atsd/atsd/logs/quik_current.log
+```
+
+```sql
+... UPDATE ATSD.quik_current SET "Предл."=0.07170, "Предл.сессии"=0.07170 WHERE "Инструмент"='MRKY [TQBR]'
+... UPDATE ATSD.quik_current SET "% измен.закр."=1.51, "Оборот"=7187975, "Спрос"=59.12, "Предл."=59.26, "Цена послед."=59.20, "Время послед."='11:30:47', "Кол-во послед."=14, "Общее кол-во"=120800, "Кол-во сделок"=423, "Предл.сессии"=59.26, "Спрос сессии"=59.12, "Оборот посл."=8288.00, "Кол. предл."=40, "Измен. к закр."=0.88, "Кол. спрос"=68 WHERE "Инструмент"='TRMK [TQBR]'
+... UPDATE ATSD.quik_current SET "Кол. спрос"=5 WHERE "Инструмент"='RSTI [TQBR]'
+... UPDATE ATSD.quik_current SET "Предл."=0.07160, "Предл.сессии"=0.07160, "Кол. предл."=6 WHERE "Инструмент"='MRKY [TQBR]'
+... UPDATE ATSD.quik_current SET "Предл."=1.2537, "Предл.сессии"=1.2537, "Кол. предл."=8 WHERE "Инструмент"='RSTI [TQBR]'
+```
+
+The statements containing quote changes are converted into `property` commands.
+
+```sh
+tail -F /opt/atsd/atsd/logs/command.log | grep quik_current
+```
+
+```python
+... property t:quik_current e:tatn_[tqbr] ms:1558686958347 v:%_измен.закр.=0.92 v:время_послед.=11:35:58 v:измен._к_закр.=6.5 v:кол-во_послед.=1 v:кол-во_сделок=1425 v:кол._предл.=119 v:оборот=171458842 v:оборот_посл.=7145.0 v:общее_кол-во=239790 v:цена_послед.=714.5
+... property t:quik_current e:sberp_[tqbr] ms:1558686958388 v:кол._предл.=56
+... property t:quik_current e:aflt_[tqbr] ms:1558686958388 v:кол._предл.=1000 v:предл.=91.4 v:предл.сессии=91.4
+... property t:quik_current e:vtbr_[tqbr] ms:1558686958389 v:время_послед.=11:35:58 v:кол-во_послед.=1 v:кол-во_сделок=45674 v:кол._предл.=160 v:оборот=2982679106 v:оборот_посл.=383.15 v:общее_кол-во=76894410000
+```
+
+The incremental updates are automatically assembled into a composite property record that contains the latest values for all fields.
+
 ## Board Arbitrage
 
 ### Strategy Description
 
 The strategy generates a paired buy and sell signal when the price of identical securities diverges between different boards by a spread exceeding the brokerage fees, exchange fees, and the cost of capital.
+
+In the example below, the offer on the left is below the bid on the right.
+
+![](./images/quote_board_arbitrage_level2.png)
+
+* Buy  `N` units at `1.840` (offer).
+* Sell `M` units at `1.920` (bid).
+* Profit is `M * (1.920 - 1.840)` before [fees](#brokerage-and-exchange-fees), or `4.348%`.
+* Net market exposure: `1.840 * (N - M)`.
+* The net exposure is subject to risk-adjusted cost of capital.
 
 ### Boards / Classes
 
@@ -248,6 +359,20 @@ TQTD | Т+ ETF (расч. в USD)
 TQOD | Т+ Облигации (расч.в USD)
 SMAL | Т+ Неполные лоты
 CETS | Валютная секция
+
+### White / Black Lists
+
+Dynamic rules are required to protect the strategy from manipulated dislocations, for example "pump and dump" stocks.
+
+![](./images/quik_blacklist_tanl.png)
+
+The lists can be maintained manually using **Named Collections**, or using statistical filters implemented as scheduled [SQL jobs](https://axibase.com/docs/atsd/sql/scheduled-sql.html).
+
+```javascript
+collection('quik_order_blacklist').contains(upper(symbol))
+```
+
+![](./images/quik_blacklist_named_list.png)
 
 ### Create Data Rules
 
@@ -267,11 +392,11 @@ The in-memory [windows](https://axibase.com/docs/atsd/rule-engine/window.html) c
 
 ### Create Arbitrage Rules
 
-Create a separate analytical rule for each strategy that reference base rules using the [`rule_window()`](https://axibase.com/docs/atsd/rule-engine/functions-rules.html#rule_window).
+Create an arbitrage rule that references base rules using the [`rule_window()`](https://axibase.com/docs/atsd/rule-engine/functions-rules.html#rule_window).
 
-The analytical rules can now operate on **all matching** instruments using in-memory data of various types (trades, quotes, statistics) to trigger algorithmic trades.
+The arbitrage rules can now operate on **matching** instrument pairs, or baskets, using in-memory trades, quotes, and statistics to trigger algorithmic trades.
 
-![](./images/quik-base-reference.png)
+![](./images/quik-strategy-rule.png)
 
 To automatically execute trades, send the trade signal command using the [`sendTcpMessageReply`](https://axibase.com/docs/atsd/rule-engine/functions-utility.html#sendtcpmessagereply) function, execute a [script](https://axibase.com/docs/atsd/rule-engine/scripts.html), or trigger an outgoing [webhook](https://axibase.com/docs/atsd/rule-engine/notifications/) to an external service.
 
@@ -286,6 +411,13 @@ The advantage of executing strategy rules in ATSD compared to local Lua scripts 
 * Offload heavy calculations to the server.
 * Apply strategies to **all** active instruments without sacrificing performance.
 * Correlate data from different sources - Quik and other sources.
+
+### Strategy Example
+
+* Redacted for non-public display.
+* Profitability example, daily result is `T2 - T1` for `T2` traded securities.
+
+![](./images/quik-strategy-result.png)
 
 ## Availability Monitoring
 
