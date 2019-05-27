@@ -151,6 +151,15 @@ ${subscribers(type)}
 > AR
 
 * Таблица с примерами выражений (condition) и кратким описанием - от простых правил к сложным
+
+**Выражение** | **Описание** | **Пример**
+----|----|----
+`true` | Безусловное срабатывание правила | [Обработка вебхуков](https://nur.axibase.com/rule/edit.xhtml?name=travis-ci-build-status)
+`count() == 0` | Срабатывает для временных окон, если в окно не было добавлено ни одной команды в течение периода длительности окна | [Проверка поступления данных с докер хоста](https://nur.axibase.com/rule/edit.xhtml?name=docker-job-no-messages)
+`value > 95` | Значение превышает заданный порог (95) | [Проверка места на диске](https://nur.axibase.com/rule/edit.xhtml?name=disk_VERY_low)
+`value > 95 or avg() > 85` | Значение превышает 95 или среднее всех значений в окне превышает 85 | [Потребление оперативной памяти](https://nur.axibase.com/rule/edit.xhtml?name=JVM%20memory%20low)
+`forecast('forecast_name').violates(avg(), level)` | Значение в окне отличается от предсказанного | [Предсказание занятости процессора](https://nur.axibase.com/rule/edit.xhtml?name=cpu_busy_forecast_ssa_15m)
+
 * Пример извлечения порога из тэга сущности, из replacement table
 * Пример с таблицей Overrides, где приведены разные значения для разных рядов
 * Пример с авто-порогами используя SSA
