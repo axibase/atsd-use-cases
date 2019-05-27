@@ -23,9 +23,25 @@
 > AV
 
 * Пример из UI выдачи прав на просмотр пользовательской группе
+
+![demo-user-groups-portal](./images/demo-user-groups-portal.png)
 * Портал, который представляет данные по разному в зависимости от  роли: `userHasRole`
+
+`demo-user-roles`
+
+User ![demo-user-roles-user](./images/demo-user-roles-user.png)
+Admin ![demo-user-roles-user](./images/demo-user-roles-admin.png)
 * Портал, который представляет данные по разному в зависимости от  принадлежности к заданной группе: `userInGroup`
+
+
+`demo-user-groups`
+
+`demo-users` ![demo-user-roles-user](./images/demo-user-roles-user.png)
+
+Rest ![demo-user-roles-user](./images/demo-user-roles-admin.png)
+
 * Портал в режиме гостевого доступа
+![demo-guest-portal](./images/demo-guest-portal.png)
 
 3.1.4) Возможность категоризации событийной информации по типу
 
@@ -44,11 +60,18 @@
 Продукт: ATSD
 
 > AV
-
 * Открытие графика из строки таблицы, например загрузка ЦПУ несколькими серверами и график открывает историю.
-* Открытие порталов для сущности из консоли алертов
+
+`demo-table-sysmon`
+
+* Открытие порталов для сущности из консоли алертов.
+_ATSD or Charts?_
 * Обновление виджета по нажатию. Должно быть сделать в портале Докера.
 * Открыть график по ссылке из email alert
+
+`demo-rule-email`
+
+![demo-rule-email](./images/demo-rule-email.png)
 
 3.1.8) Возможность отображения на одном графике данных от нескольких источников для возможности сопоставления и оценки работы объектов мониторинга
 
@@ -57,8 +80,14 @@
 > AV
 
 * График с двумя осями: CPU server и Java GC %
+    
+`demo-cpu-usage` ![demo-cpu-usage](./images/demo-cpu-usage.png)
 * График с двумя осями: nginx request count (latency), сеть (байты), и ЦПУ
+
+`demo-server-status` ![demo-server-status](./images/demo-server-status.png)
 * Календарь с несколькими серверами - при этом ЦПУ с scollector (linux) и SCOM windows
+    
+`demo-cpu-calendar` ![demo-cpu-calendar](./images/demo-cpu-calendar.png)
 
 3.1.9) Возможность гибкой настройки оповещений ответственных в соответствии с их зонами ответственности и событиями, приходящими от подсистем системы мониторинга
 
@@ -137,9 +166,16 @@
 > AV
 
 * Диаграмма со структурой Docker tag templates
+![docker-templates-diagram](./images/docker-templates-diagram.png)
 * Примеры из редактора с наследованием шаблонов (н-р контейнер наследует от docker base)
+![tag-template-inherit](./images/tag-template-inherit.png)
 * Примеры настроек колонок типа Entity Link
+
+Demo Docker Container
+![demo-entity-link](./images/demo-entity-link.png)
+
 * Примеры встроенных Entity Views для Докера, где демонстрируется группировка по полю, содержащему связанную сущность (group by tags.docker-host)
+![entity-view-group-by](./images/entity-view-group-by.png)
 
 3.2.3) Возможность создания эталонных моделей
 
@@ -148,6 +184,7 @@
 > AV
 
 * Редактор entity tags
+![entity-tags-edit](./images/entity-tags-edit.png)
 
 3.2.4) Возможность изменения и настройки отчетов
 
@@ -195,7 +232,9 @@
 > AV
 
 * Пример tag templates и их назначения
+![tag-template-to-entities](./images/tag-template-to-entities.png)
 * Пример entity views их применения к группам
+![demo-entity-view-to-group](./images/demo-entity-view-to-group.png)
 
 3.3.3) Возможность удаления, создания и изменения связей между конфигурационными единицами и атрибутов конфигурационных единиц и связей
 
