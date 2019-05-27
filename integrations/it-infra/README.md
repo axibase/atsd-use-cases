@@ -251,8 +251,13 @@ value > toNumber(lookup('docker_env_thresholds', entity.tags.environment))
 
 > AR
 
-* Пример правила с двумя метриками (value function)
-* Пример правила с двумя метриками - загрузка ЦПУ контейнера и загрузка ЦПУ докер-хоста на котором контейнер исполяется
+* Пример правила с двумя метриками (value function): [проверка истечения SSL сертификатов](https://nur.axibase.com/rule/edit.xhtml?name=ssl-certificates-expiration)
+
+```javascript
+(value < expiration_limit) and (value('http.ssl_certificate_status') != 5)
+```
+
+* Пример правила с двумя метриками - загрузка ЦПУ контейнера и загрузка ЦПУ докер-хоста, на котором контейнер исполяется
 * Пример правила с двумя метриками - DB server db space usage (mysql, postgres, SQL server) and OS disk space
 
 3.2.6) Возможность настройки динамической корелляции событийной информации на основе топологических данных о взаимосвязях элементов инфраструктуры
