@@ -159,70 +159,69 @@
 
 1. Перeйдите на страницу **Data > Export Jobs**, нажмите **Create**.
 
-   ![](images/export_job_1.png)
+   ![](./images/export_job_1.png)
   
 2. Установите периодичность запуска задачи, например, `каждый час`.
 
-   ![](images/export_job_2.png)
+   ![](./images/export_job_2.png)
   
 3. Укажите `entity`, `metric` и временной интервал экспортируемых данных.
 
-   ![](images/export_job_3.png)
-   
+   ![](./images/export_job_3.png)
+
 4. **Дополнительно.** Укажите фильтр значений, например, задайте минимальный порог.
 
-   ![](images/export_job_8.png)
+   ![](./images/export_job_8.png)
 
 5. **Дополнительно.** Выберите аггрегирующую функцию и период аггрегации.
 
-   ![](images/export_job_4.png)
-   
+   ![](./images/export_job_4.png)
+
 6. **Дополнительно.** Задайте настройки, связанные с форматом отчёта, например, выберите формат, тип сжатия или укажите аннотацию - текст, который будет добавлен в начало сгенерированного файла.
 
-   ![](images/export_job_9.png)
-   
+   ![](./images/export_job_9.png)
+
    Дополнительно можно указать следующие настройки:
-   
+
       * **Entity Tags** - список тегов сущности, значения которых будут добавлены в отчёт как колонки
       * **Metric Tags** - список тегов метрики, значения которых будут добавлены в отчёт как колонки
       * **Decimal Precision** - количество знаков после запятой, `-1`- оставить значения без изменений
       * **Date Format** - формат даты
       * **Time Zone** - временная зона, которая будет применена к **Date Format**
       * **Add Metadata** - добавить метаданные в заголовок файла
-      
-        ![](images/export_job_10.png)
+
+        ![](./images/export_job_10.png)
   
 7. Укажите список e-mail адресов или абсолютный путь к отчёту на файловой системе ATSD. Сохраните задачу.
 
-   ![](images/export_job_5.png)
+   ![](./images/export_job_5.png)
   
 8. Для проверки задачи, нажмите **Run**.
 
-   ![](images/export_job_6.png)
-     
-   ![](images/export_job_7.png)
-  
+   ![](./images/export_job_6.png)
 
+   ![](./images/export_job_7.png)
+  
 ### Пример настроек [SQL Job](https://axibase.com/docs/atsd/sql/scheduled-sql.html#sql-scheduler)
 
 1. Перeйдите на страницу **SQL > Scheduled Queries**, нажмите **Create**.
 
-   ![](images/sql_job_1.png)
-   
+   ![](./images/sql_job_1.png)
+
 2. Установите периодичность запуска задачи, например, `каждый день в 02:00`.
 
-   ![](images/sql_job_2.png)
-   
+   ![](./images/sql_job_2.png)
+
 3. Укажите SQL-запрос.
 
-   ![](images/sql_job_3.png)
-   
-4. Выберите формат, укажите список e-mail адресов или абсолютный путь к отчёту на файловой системе ATSD.
+   ![](./images/sql_job_3.png)
 
-   ![](images/sql_job_4.png)
-   
+4. Выберите формат и укажите список e-mail адресов или абсолютный путь к отчёту на файловой системе ATSD.
+
+   ![](./images/sql_job_4.png)
+
    Дополнительно можно указать следующие настройки:
-   
+
       * **Decimal Precision** - количество знаков после запятой, `-1`- оставить значения без изменений
       * **Add Metadata** - добавить метаданные в заголовок файла
       * **Send Empty Report** - отпрявлять e-mail, даже если SQl-запрос вернул пустой результат
@@ -231,18 +230,18 @@
 
 5. **Дополнительно.** Установите ограничение на значения дат для сохраняемых серий.
 
-   ![](images/sql_job_5.png)
+   ![](./images/sql_job_5.png)
 
 6. **Дополнительно.** Укажите настройки публикации результатов.
 
     * **Guest Access** - предоставить анонимный доступ для неавторизованных пользователей
     * **Allow Refresh** - обновлять отчёт, если в запросе задан параметер `refresh=true`
-    
-   ![](images/sql_job_6.png)
-   
+
+   ![](./images/sql_job_6.png)
+
 7. Сохраните задачу.
 
-   ![](images/sql_job_7.png)
+   ![](./images/sql_job_7.png)
 
 8. Для проверки задачи, нажмите **Test**.
 
@@ -250,48 +249,48 @@
 
 1. Перeйдите на страницу **Alerts > Rules**, нажмите **New**.
 
-   ![](images/rule_1.png)
-   
+   ![](./images/rule_1.png)
+
 2. Вкладка **Overview**: укажите имя нового правила.
 
-   ![](images/settings_rule_2.png)
-   
+   ![](./images/settings_rule_2.png)
+
    > Чтобы посмотреть описание всех настроек, используйте кнопку **Help** в верхнем правом углу вкладки.
-   
-   ![](images/rule_3.png)
-   
+
+   ![](./images/rule_3.png)
+
 3. Вкладка **Filters**: укажите метрику и сущность.
-   
-   ![](images/settings_rule_4.png)
-      
+
+   ![](./images/settings_rule_4.png)
+
 4. Вкладка **Condition**: укажите условие, на которое должно сработать правило, например, `value > 50`.
-   
-   ![](images/settings_rule_5.png)
-   
+
+   ![](./images/settings_rule_5.png)
+
 5. Вкладка **Email**: укажите получателей и настройте **On Open** триггер. Установите флаг **Series Chart**, чтобы отправлять скриншот с порталом, содержащим серии из текущего правила.
-   
+
    > Предварительно нужно настроить [**Mail Client**](https://axibase.com/docs/atsd/administration/mail-client.html#mail-client).
-      
-   ![](images/settings_rule_6.png)
-   
+
+   ![](./images/settings_rule_6.png)
+
 6. Для проверки уведомления нажмите **Test**.
 
-   ![](images/rule_7.png)
-   
-   ![](images/settings_rule_8.png)
-   
+   ![](./images/rule_7.png)
+
+   ![](./images/settings_rule_8.png)
+
 7. Вкладка **Webhooks**: выберите Webhook и настройте **On Open** триггер. Установите флаг **Series Chart**, чтобы отправлять скриншот с порталом, содержащим серии из текущего правила.
-   
+
    > Предварительно нужно настроить [**Slack Webhook**](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html#slack-notifications).
-   
-   ![](images/settings_rule_9.png)
-   
+
+   ![](./images/settings_rule_9.png)
+
 8. Для проверки уведомления нажмите **Test**.
 
-   ![](images/settings_rule_10.png)
-   
-   ![](images/settings_rule_11.png)
-   
+   ![](./images/settings_rule_10.png)
+
+   ![](./images/settings_rule_11.png)
+
 9. Сохраните правило.
 
 3.2.5) Возможностью создания правил корреляции с использованием графического интерфейса (без использования программирования), учитывая сервисно-ресурсную модель компонентов объекта мониторинга
@@ -379,54 +378,54 @@
 
 * Удаление **User Group**
 
-  ![](./images/delete_user_group.png)
+  ![](././images/delete_user_group.png)
 
 * Удаление **Series**
 
-  ![](./images/delete_series.png)
+  ![](././images/delete_series.png)
 
 #### Пример уведомления по почте
 
 * Удаление **User Group**
 
-  ![](images/mail_notif_about_delete.png)
+  ![](./images/mail_notif_about_delete.png)
   
 ##### Настройка правила
 
 1. Перeйдите на страницу **Alerts > Rules**, нажмите **New**.
 
-   ![](images/rule_1.png)
-   
+   ![](./images/rule_1.png)
+
 2. Вкладка **Overview**: укажите имя нового правила.
 
-   ![](images/rule_2.png)
-   
+   ![](./images/rule_2.png)
+
    > Чтобы посмотреть описание всех настроек, используйте кнопку **Help** в верхнем правом углу вкладки.
-   
-   ![](images/rule_3.png)
-   
+
+   ![](./images/rule_3.png)
+
 3. Вкладка **Filters**: в меню **Data Type** выберите **Message**, установите `Type = audit`, `Source = user_group`.
-   
-   ![](images/rule_4.png)
-   
+
+   ![](./images/rule_4.png)
+
    Укажите **Filter Expression**: `tags.action == 'delete'`.
-   
-   ![](images/rule_8.png)
-   
+
+   ![](./images/rule_8.png)
+
 4. Вкладка **Condition**: укажите условие, на которое должно сработать правило, в данном случае `true`, чтобы правило срабатывало всегда.
-   
-   ![](images/rule_5.png)
-   
+
+   ![](./images/rule_5.png)
+
 5. Вкладка **Email**: укажите получателей и настройте **On Open** триггер. Установите флаг **Attach Details**, чтобы отправлять таблицу, содержащую детальную информацию о правиле.
-   
+
    > Предварительно нужно настроить [**Mail Client**](https://axibase.com/docs/atsd/administration/mail-client.html#mail-client).
-      
-   ![](images/rule_6.png)
-   
+
+   ![](./images/rule_6.png)
+
 6. Для проверки уведомления нажмите **Test**.
 
-   ![](images/rule_7.png) 
-   
+   ![](./images/rule_7.png)
+
 7. Сохраните правило.
 
 4.2) Возможность эскалации сообщений
