@@ -204,7 +204,7 @@
   
 ### Пример настроек [SQL Job](https://axibase.com/docs/atsd/sql/scheduled-sql.html#sql-scheduler)
 
-1. Перeйдите на страницу **SQL > Scheduled Queries**, нажмите **Create**.
+1. Перейдите на страницу **SQL > Scheduled Queries**, нажмите **Create**.
 
    ![](./images/sql_job_1.png)
 
@@ -247,7 +247,7 @@
 
 ### Пример portal screenshot to Email, portal to Slack
 
-1. Перeйдите на страницу **Alerts > Rules**, нажмите **New**.
+1. Перейдите на страницу **Alerts > Rules**, нажмите **New**.
 
    ![](./images/rule_1.png)
 
