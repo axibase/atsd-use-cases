@@ -164,10 +164,8 @@ ${subscribers(type)}
 
 * Пример извлечения порога из тэга сущности
 
-![](images/entity_tags_container.png)
-
 ```javascript
-tags.state = 'running' and value > toNumber(entity.tags.expected_memory_consumption)
+value > 0.9 * toNumber(entity.tags['mem-limit'])
 ```
 
 * Пример извлечения порога из replacement table
