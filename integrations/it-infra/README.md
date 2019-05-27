@@ -154,15 +154,51 @@ ${subscribers(type)}
 
 **Выражение** | **Описание** | **Пример**
 ----|----|----
-`true` | Безусловное срабатывание правила | [Обработка вебхуков](https://nur.axibase.com/rule/edit.xhtml?name=travis-ci-build-status)
+`true` | Безусловное срабатывание правила | [Обработка вебхуков Travis](https://nur.axibase.com/rule/edit.xhtml?name=travis-ci-build-status)
 `count() == 0` | Срабатывает для временных окон, если в окно не было добавлено ни одной команды в течение периода длительности окна | [Проверка поступления данных с докер хоста](https://nur.axibase.com/rule/edit.xhtml?name=docker-job-no-messages)
 `value > 95` | Значение превышает заданный порог (95) | [Проверка места на диске](https://nur.axibase.com/rule/edit.xhtml?name=disk_VERY_low)
 `value > 95 or avg() > 85` | Значение превышает 95 или среднее всех значений в окне превышает 85 | [Потребление оперативной памяти](https://nur.axibase.com/rule/edit.xhtml?name=JVM%20memory%20low)
+`rate_per_minute() > 10` | Скорость роста значения превышает порог (10) | [Вызов сборки мусора JVM](https://nur.axibase.com/rule/edit.xhtml?name=jvm_garbage_collection_rate)
 `forecast('forecast_name').violates(avg(), level)` | Значение в окне отличается от предсказанного | [Предсказание занятости процессора](https://nur.axibase.com/rule/edit.xhtml?name=cpu_busy_forecast_ssa_15m)
+`now.add(1, 'day').is_workday() AND NOT now.add(2, 'days').is_workday()` | Продвинутая фильтрация по календарю рабочих дней: срабатывает в последний рабочий день на неделе | [Friday Pizza](https://nur.axibase.com/rule/edit.xhtml?name=Pizza%20Time)
 
-* Пример извлечения порога из тэга сущности, из replacement table
+* Пример извлечения порога из тэга сущности
+
+![](images/entity_tags_container.png)
+
+```javascript
+tags.state = 'running' and value > toNumber(entity.tags.expected_memory_consumption)
+```
+
+* Пример извлечения порога из replacement table
+
+![](images/env_thresholds_replacement_table.png)
+![](images/entity_tags_vm.png)
+
+```javascript
+value > toNumber(lookup('docker_env_thresholds', entity.tags.environment))
+```
+
 * Пример с таблицей Overrides, где приведены разные значения для разных рядов
+
+![](images/overrides.png)
+
+[Правило](https://nur.axibase.com/rule/edit.xhtml?name=Disk%20Size%20Thresholds#condition_overrides)
+
 * Пример с авто-порогами используя SSA
+
+Функция [forecast](https://axibase.com/docs/atsd/rule-engine/functions-forecast.html#forecast) возвращает объект, содержащий предсказанные значение и время, который можно использовать для проверки соответствия прогнозируемого значения реальному, при помощи метода `violates(value, delta)`
+Функция [forecast_score_stdev](https://axibase.com/docs/atsd/rule-engine/functions-forecast.html#forecast_score_stdev) возвращает стандартное отклонение агрегированных значений от наиболее подходящего прогноза, которое может быть полезно при определении порогов.
+Для работы функций необходимо заранее создать хранимый Forecast и задать ему имя.
+
+![](images/forecast_job_1.png)
+![](images/forecast_job_2.png)
+
+[Forecast](https://nur.axibase.com/forecast/settings/edit.xhtml?settingsKey=144)
+
+Пример использования.
+
+![](images/forecast_example.png)
 
 3.1.14) Возможность расчета эталонных значений отслеживаемых метрик на основе статистической информации за определенный исторический период
 
@@ -322,7 +358,7 @@ ${subscribers(type)}
 
 ![](images/custom_webhook.png)
 
-3. В качестве примера создадим правило, которое инициирует инцидент, если занимаемое место на диске превышает 90%, и закрывает инцидент, если занимаемое место не превышает 90%.
+3. В качестве примера создадим правило, которое инициирует инцидент, если занимаемое место на диске превышает 75%, и закрывает инцидент, если занимаемое место не превышает 75%.
 Чтобы открыть и закрыть один и тот же инцидент, заранее сгенерируем уникальный ключ и сохраним его в переменной dedup_key.
 
 ![](images/condition.png)
