@@ -258,7 +258,13 @@ value > toNumber(lookup('docker_env_thresholds', entity.tags.environment))
 ```
 
 * Пример правила с двумя метриками - загрузка ЦПУ контейнера и загрузка ЦПУ докер-хоста, на котором контейнер исполяется
-* Пример правила с двумя метриками - DB server db space usage (mysql, postgres, SQL server) and OS disk space
+
+
+
+* Пример правила с двумя метриками - [Общее занятое пространство на диске, занятое пространство под таблицы MS SQL Server](https://nur.axibase.com/rule/edit.xhtml?name=%D0%91%D0%B0%D0%B7%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+MS+SQL+Server+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F)
+
+![](images/mssql_server_disk_condition.png)
+![](images/mssql_server_disk_usage_slack.png)
 
 3.2.6) Возможность настройки динамической корелляции событийной информации на основе топологических данных о взаимосвязях элементов инфраструктуры
 
