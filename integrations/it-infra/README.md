@@ -82,7 +82,11 @@ Rest ![demo-user-roles-user](./images/demo-user-roles-admin.png)
 `demo-table-sysmon`
 
 * Открытие порталов для сущности из консоли алертов.
-_ATSD or Charts?_
+
+`demo-entity-portal-from-table`
+
+![demo-entity-portal-from-table](./images/demo-entity-portal-from-table.png)
+
 * Обновление виджета по нажатию. Должно быть сделать в портале Докера.
 * Открыть график по ссылке из email alert
 
@@ -99,9 +103,11 @@ _ATSD or Charts?_
 * График с двумя осями: CPU server и Java GC %
     
 `demo-cpu-usage` ![demo-cpu-usage](./images/demo-cpu-usage.png)
+
 * График с двумя осями: nginx request count (latency), сеть (байты), и ЦПУ
 
 `demo-server-status` ![demo-server-status](./images/demo-server-status.png)
+
 * Календарь с несколькими серверами - при этом ЦПУ с scollector (linux) и SCOM windows
     
 `demo-cpu-calendar` ![demo-cpu-calendar](./images/demo-cpu-calendar.png)
