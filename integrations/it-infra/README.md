@@ -123,13 +123,72 @@ _ATSD or Charts?_
 
 3.1.12) Сбор данных о метриках функционирования приложений (статусы\состояния)
 
-Продукт: АТСД
+* Поддерживаемые источники данных 
 
-> IS
+  * **Базы данных**
+    * Oracle
+    * IBM DB2
+    * Microsoft SQL Server
+    * MySQL
+    * PostgreSQL
+    * Sybase
+    * Apache Derby
+    * Vertica
+    * ATSD
+    * SAP HANA
+    * OSIsoft PI Data Archive
+    * OSIsoft PIOleDBEnt
+    * Custom
+  
+  * **Сетевые протоколы и протоколы передачи данных**
+    
+    * JDBC
+    * SNMP
+    * JMX
+    * ICMP
+    * TCP
+    * HTTP
+    * MQTT
+    
+  * **Файловые форматы**
+ 
+    * CSV
+    * TSV
+    * Text
+    * JSON
 
-* Список API, с которых поддерживается сбор данных: JMX, JSON, JDBC, file, Java.
-* Таблица примеров со ссылками на порталы/чарлабы для Tomcat, SpringBoot, Marathon, Kafka, ATSD, и пр.
+  * **APIs**
+    * Kafka
+    * Amazon Web Services CloudWatch
+    * Docker Engine
+    * HP OVPM (Performance Manager)
+    
+    
+    
+* Примеры
 
+| Продукт | Источник данных | Портал |
+| --- | --- | --- |
+| [ATSD](http://axibase.com/docs/atsd) | Built-in | [↗](https://nur.axibase.com/portal/156.xhtml?menu=true)
+| [ActiveMQ](https://axibase.com/docs/axibase-collector/jobs/examples/activemq/) | JMX | [↗](https://apps.axibase.com/chartlab/2f11a5ef) |
+| [HP OpenView](https://axibase.com/docs/axibase-collector/jobs/examples/hp-openview/) | OVMP | [↗](https://apps.axibase.com/chartlab/f9d176ac/2/) |
+| [JVM](https://axibase.com/docs/axibase-collector/jobs/examples/jvm/) | JMX | [↗](https://apps.axibase.com/chartlab/e6911d9d) |
+| [Docker](https://axibase.com/docs/axibase-collector/jobs/docker.html) | Docker | [↗](https://nur.axibase.com/portal/tabs?entity=nurswghbs001&id=112&id=38&id=113&id=2&id=45&id=24) |
+| [NGINX](https://axibase.com/docs/axibase-collector/jobs/examples/nginx/) | File | [↗](https://apps.axibase.com/chartlab/966f33e4) |
+| [Tomcat](https://axibase.com/docs/axibase-collector/jobs/examples/tomcat/) | JMX | [↗](https://apps.axibase.com/chartlab/106bddba) |
+| [Jetty](https://axibase.com/docs/axibase-collector/jobs/examples/jetty/) | JMX | [↗](https://apps.axibase.com/chartlab/8a7d8268) |
+| [SCOM](https://axibase.com/docs/axibase-collector/jobs/examples/scom/) |  JDBC| [↗](https://apps.axibase.com/chartlab/c09dc1cd) |
+| [Oracle EM](https://axibase.com/docs/axibase-collector/jobs/examples/oracle-enterprise-manager/) | JDBC | [↗](https://apps.axibase.com/chartlab/8c86c962) |
+|[PostgreSQL](https://axibase.com/docs/axibase-collector/jobs/examples/postgres/) | JDBC | [↗](https://apps.axibase.com/chartlab/070b4941) |
+| [IBM Tivoli](https://axibase.com/use-cases/integrations/itm/) | File | [↗](https://apps.axibase.com/chartlab/43f054ee)|
+| [Marathon](https://axibase.com/use-cases/integrations/marathon/capacity-and-usage/) | JSON | [↗](https://nur.axibase.com/portal/name/Marathon%20App%20Portal?entity=%2Fbasic-0) |
+| [Kafka](https://axibase.com/use-cases/integrations/kafka/) | Kafka | [↗](https://nur.axibase.com/portal/name/Kafka%20Broker?entity=nurswgvml700.axibase.com) |
+| [Socrata](https://axibase.com/use-cases/integrations/socrata/) | SOCRATA | [↗](https://apps.axibase.com/chartlab/f5eae012) |
+|[VMWare](https://axibase.com/docs/axibase-collector/jobs/examples/vmware/) | JDBC | [↗](https://apps.axibase.com/chartlab/36ae5c9e/3/) |
+|[Spring Boot](https://axibase.com/docs/atsd/integration/spring-boot/#spring-boot) | Storage Driver | |
+
+
+    
 3.1.13) Пользовательская настройка правил мониторинга (пороговых значений и логики проверки) метрик на серверных платформах
 
 Продукт: АТСД
