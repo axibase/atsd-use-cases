@@ -113,10 +113,53 @@ _ATSD or Charts?_
 > AR
 
 * Условные выражения для отправки почты на разные адреса в зависисмости от критичности события и от времени суток
+
+```javascript
+@if{now.timeOfDay BETWEEN '08:00' AND '20:00'}
+daywatch@example.org
+@else{}
+nightwatch@example.org
+@end{}
+@if{severity = 'CRITICAL' or severity = 'FATAL'}
+ops_team@example.org
+@end{}
+```
+
 * Отмена уведомлений по расписанию с использованием cancelAction
+
+```javascript
+@if{NOT now.timeOfDay BETWEEN '08:00' AND '20:00'}
+${cancelAction()}
+@end{}
+```
+
 * Отправка уведомления на группу пользователей
+
+```javascript
+${get_group_emails('DevOps')}
+```
+
 * Отправка уведомления собственнику системы (указан email в тэге owner сущности)
+
+```javascript
+${entity.tags.owner}
+```
+
 * Отправка уведомления подвыборке подписанных пользовалей - по ключевым словам. В данном примере лучше взять messages - чтобы пользователи могли указать type/source где-то в настройках
+
+В ATSD пользователи могут в настройках счёта самостоятельно задавать события, уведомления о которых они хотели бы получать.
+
+![](images/user.png)
+
+Полный перечень доступных событий создаётся администратором и содержится в служебной таблице `$topics`. Ключом является идентификатор события, значением – его описание.
+
+![](images/topics_table.png)
+
+Функция `subscribers` в Rule Engine принимает один или несколько ключей и возвращает email адреса всех пользователей, имеющих хотя бы один ключ в списке тем.
+
+```javascript
+${subscribers(type)}
+```
 
 3.1.10) Сбор данных о метриках функционирования серверного оборудования и рабочих станций (степень утилизации, загрузка CPU, RAM, HDD)
 
@@ -213,9 +256,52 @@ _ATSD or Charts?_
 > AR
 
 * Таблица с примерами выражений (condition) и кратким описанием - от простых правил к сложным
-* Пример извлечения порога из тэга сущности, из replacement table
+
+**Выражение** | **Описание** | **Пример**
+----|----|----
+`true` | Безусловное срабатывание правила | [Обработка вебхуков Travis](https://nur.axibase.com/rule/edit.xhtml?name=travis-ci-build-status)
+`count() == 0` | Срабатывает для временных окон, если в окно не было добавлено ни одной команды в течение периода длительности окна | [Проверка поступления данных с докер хоста](https://nur.axibase.com/rule/edit.xhtml?name=docker-job-no-messages)
+`value > 95` | Значение превышает заданный порог (95) | [Проверка места на диске](https://nur.axibase.com/rule/edit.xhtml?name=disk_VERY_low)
+`value > 95 or avg() > 85` | Значение превышает 95 или среднее всех значений в окне превышает 85 | [Потребление оперативной памяти](https://nur.axibase.com/rule/edit.xhtml?name=JVM%20memory%20low)
+`rate_per_minute() > 10` | Скорость роста значения превышает порог (10) | [Вызов сборки мусора JVM](https://nur.axibase.com/rule/edit.xhtml?name=jvm_garbage_collection_rate)
+`forecast('forecast_name').violates(avg(), level)` | Значение в окне отличается от предсказанного | [Предсказание занятости процессора](https://nur.axibase.com/rule/edit.xhtml?name=cpu_busy_forecast_ssa_15m)
+`now.add(1, 'day').is_workday() AND NOT now.add(2, 'days').is_workday()` | Продвинутая фильтрация по календарю рабочих дней: срабатывает в последний рабочий день на неделе | [Friday Pizza](https://nur.axibase.com/rule/edit.xhtml?name=Pizza%20Time)
+
+* Пример извлечения порога из тэга сущности
+
+```javascript
+value > 0.9 * toNumber(entity.tags['mem-limit'])
+```
+
+* Пример извлечения порога из replacement table
+
+![](images/env_thresholds_replacement_table.png)
+![](images/entity_tags_vm.png)
+
+```javascript
+value > toNumber(lookup('docker_env_thresholds', entity.tags.environment))
+```
+
 * Пример с таблицей Overrides, где приведены разные значения для разных рядов
+
+![](images/overrides.png)
+
+[Правило](https://nur.axibase.com/rule/edit.xhtml?name=Disk%20Size%20Thresholds#condition_overrides)
+
 * Пример с авто-порогами используя SSA
+
+Функция [forecast](https://axibase.com/docs/atsd/rule-engine/functions-forecast.html#forecast) возвращает объект, содержащий предсказанные значение и время, который можно использовать для проверки соответствия прогнозируемого значения реальному, при помощи метода `violates(value, delta)`
+Функция [forecast_score_stdev](https://axibase.com/docs/atsd/rule-engine/functions-forecast.html#forecast_score_stdev) возвращает стандартное отклонение агрегированных значений от наиболее подходящего прогноза, которое может быть полезно при определении порогов.
+Для работы функций необходимо заранее создать хранимый Forecast и задать ему имя.
+
+![](images/forecast_job_1.png)
+![](images/forecast_job_2.png)
+
+[Forecast](https://nur.axibase.com/forecast/settings/edit.xhtml?settingsKey=144)
+
+Пример использования.
+
+![](images/forecast_example.png)
 
 3.1.14) Возможность расчета эталонных значений отслеживаемых метрик на основе статистической информации за определенный исторический период
 
@@ -421,9 +507,22 @@ Demo Docker Container
 
 > AR
 
-* Пример правила с двумя метриками (value function)
-* Пример правила с двумя метриками - загрузка ЦПУ контейнера и загрузка ЦПУ докер-хоста на котором контейнер исполяется
-* Пример правила с двумя метриками - DB server db space usage (mysql, postgres, SQL server) and OS disk space
+* Пример правила с двумя метриками (value function): [проверка истечения SSL сертификатов](https://nur.axibase.com/rule/edit.xhtml?name=ssl-certificates-expiration)
+
+```javascript
+value < expiration_limit and value('http.ssl_certificate_status') != 5
+```
+
+* Пример правила с двумя метриками: [Загрузка ЦПУ контейнера и загрузка ЦПУ докер-хоста, на котором контейнер исполяется]()
+
+![](images/cpu_busy_condition.png)
+![](images/cpu_busy_notification_config.png)
+![](images/cpu_busy_slack.png)
+
+* Пример правила с двумя метриками: [Общее занятое пространство на диске, занятое пространство под таблицы MS SQL Server](https://nur.axibase.com/rule/edit.xhtml?name=%D0%91%D0%B0%D0%B7%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+MS+SQL+Server+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F)
+
+![](images/mssql_server_disk_condition.png)
+![](images/mssql_server_disk_usage_slack.png)
 
 3.2.6) Возможность настройки динамической корелляции событийной информации на основе топологических данных о взаимосвязях элементов инфраструктуры
 
@@ -558,8 +657,67 @@ Demo Docker Container
 
 > AR
 
-* Пример правила, которое вызывает скрипт (opc_msg) для отправки алерта во внешнюю систему используя спец. программу (есть пример, делали с AV)
+* Пример правила, которое вызывает скрипт (opc_msg) для отправки алерта во внешнюю систему используя спец. программу
+
+Для отправки сообщения во внешнюю систему (для примера возьмём HP Operations Connector) через скрипты командной оболочки можно воспользоваться механизмом исполнения скриптов на вкладке Scripts.
+В целях безопасности разрешено запускать только доверенные скрипты из директории `/opt/atsd/atsd/conf/script`. Поэтому для начала необходимо создать в этой директории файл `opcmsg_execute.sh` и дать ему права на исполнение: `chmod +x opcmsg_execute.sh`.
+Все скрипты, доступные для исполнения в ATSD, можно просмотреть на странице **Alerts / Script Viewer**
+
+![](images/script_viewer.png)
+
+Для исполнения можно выбрать доступный скрипт из списка и перечислить необходимые параметры, каждый параметр с новой строки. Параметры могут быть вычислены динамически с использованием переменных окна, пользовательских переменных, определённых на вкладке Overview, встроенных функций и условных выражений.
+
+![](images/scripts_tab.png)
+
+[Правило](https://nur.axibase.com/rule/edit.xhtml?name=docker-container-cpu-high)
+
 * Пример правила, которое дергает веб сервис для отправки алерта во внешнюю систему алертинга (AlarmPoint, PagerDuty - у нас должны быть примеры)
+
+Интеграция с веб-сервисами как правило происходит в три этапа:
+
+1. Подготовка счёта, от имени которого будут отправляться сообщения, и получение токенов аутентификации.
+
+2. Создание конфигурации вебхука в ATSD с фиксированием токена авторизации и заданием переопределяемых параметров.
+
+3. Создание правила, использующего данную конфигурацию с подставленными значениями.
+
+Рассмотрим интеграцию на примере PagerDuty.
+
+1. Создадим интеграцию для сервиса ATSD.
+
+![](images/pagerduty_service.png)
+
+![](images/pagerduty_integration.png)
+
+Сгенерированный ключ Integration Key впоследствии будет использоваться для авторизации вебхуков.
+
+![](images/pagerduty_key.png)
+
+2. Для отправки вебхуков PagerDuty в ATSD нужно создать Custom Outgoing Webhook.
+
+![](images/webhook_new.png)
+
+Описание принимаемых параметров и примеры запросов к PagerDuty находим в [документации](https://v2.developer.pagerduty.com/docs/send-an-event-events-api-v2). Заполняем форму в соответствии с документацией, заменяя реальные значения, которые будут подставляться динамически, именованными шаблонами. Копируем ранее полученный ключ Integration Key в поле routing_key.
+
+![](images/custom_webhook.png)
+
+3. В качестве примера создадим правило, которое инициирует инцидент, если занимаемое место на диске превышает 75%, и закрывает инцидент, если занимаемое место не превышает 75%.
+Чтобы открыть и закрыть один и тот же инцидент, заранее сгенерируем уникальный ключ и сохраним его в переменной dedup_key.
+
+![](images/condition.png)
+![](images/alert_history.png)
+![](images/webhook_open.png)
+
+При срабатывании правила Rule Engine отправляет запрос в PagerDuty на создание инцидента, сопровождая его информацией о состоянии файловой системы, и предоставляет ссылку на портал с метрикой disk_used.
+
+![](images/pagerduty_alert_open.png)
+
+При возврате метрики к приемлемым значениям Rule Engine отправляет запрос на закрытие инцидента. Функция `last_open()` позволяет получить состояние окна в момент предыдущего срабатывания правила.
+
+![](images/webhook_cancel.png)
+![](images/pagerduty_alert_resolved.png)
+
+[Правило](https://nur.axibase.com/rule/edit.xhtml?name=atsd_disk_low_pagerduty)
 
 4.3) Возможность получения информации из сторонних систем мониторинга IT инфраструктуры и комплексов обеспечения информационной безопасности. (ArcSight ESM, IBM Tivoli, Nagios, HP NNMi, HP OneView, MS SCOM, VmWare vCenter, OmniVista)
 
