@@ -6,21 +6,38 @@
 
 3.1.1) Возможность использования единой консоли для отображения, анализа и управления всей событийной информацией, поступающей от компонентов мониторинга сетевой инфраструктурой и серверного оборудования
 
-Продукт: АС
+* Аксибейс СитЦентр позволяет создать единую точку интеграции без копирования информации и таким образом построить единую систему отображения ("витрину") данных.
+* [Пример консолидированной консоли](https://hbs.axibase.com/workspace/index-noc.htm): [конфигурация](https://hbs.axibase.com/dashboard/widgets.jsp?fileName=widgets_noc.config)
+* Примеры клиентов представлены в файле examples.pdf.
+* Консоли собираются из [виджетов](https://axibase.com/docs/charts/#widgets). Виджеты поддерживают подгрузку данных из разных источников.
+* Переходы между консолями позволяют построить навигационную модель, соответствующую организационной роли пользователя.
+* Поддерживается добавление кастомизированной оболочки на верхнем уровня навигации.
 
-> SR
+![](./images/as_arch.png)
+
+![](./images/cons_console.png)
+
+![](./images/widgets.png)
 
 3.1.2) Возможность представления в единой консоли совокупных, взаимосвязанных данных топологических представлений активного сетевого оборудования и  сервисно-ресурсной модели серверных платформ
 
-Продукт: АС
+* Источники топологических представлений:
+  * Встроенные механизмы построения моделей (примеры - WMQ, Hana, Docker)
+  * Низлежащий инструмент (SCOM distributed apps)
+  * Модель эскалации критичности, построенная в СитЦентре
+  * Диаграмма Визио, созданная автоматически или вручную.
 
-> SR
+![](./images/topology.png)
 
 3.1.3) Доступ к консоли на основе ролевой модели
 
-Продукт: ATSD
+СитЦентр
 
-> AV
+![](./images/user_group_diagram.png)
+
+![](./images/user_group_dashboard.png)
+
+АТСД
 
 * Пример из UI выдачи прав на просмотр пользовательской группе
 
@@ -214,9 +231,18 @@ _ATSD or Charts?_
 
 3.2.1) Наличие встроенных моделей, описывающих наиболее популярные и известные промышленные приложения (таких как MS SQL, MS Exchange, MS Active Directory, Oracle, SAP, Oracle Application server, IIS)
 
-Продукт: АС
+* Задача `om_dstr_app_topology` для автоматического построения представлений распределенных приложений из топологии SCOM
+* Задача `mq_topology` для автоматического построения транспортной схемы WebSphere MQ: менеджеры, очереди, каналы.
 
-> SR
+![](./images/wmq.png)
+
+* Встроенная кластерная топология для [SAP HANA](https://axibase.com/products/axibase-enterprise-reporter/axibase-enterprise-reporter-for-sap-hana/)
+
+![](./images/sap_hana.png)
+
+* Встроенный stack для микро-сервисов на основе ресурсной модели контейнеров [Docker](https://nur.axibase.com/portal/tabs?entity=nurswghbs001&id=112&id=113)
+
+![](./images/docker_host_stack.png)
 
 3.2.2) Наличие встроенных типов конфигурационных элементов и связей между ними
 
@@ -414,9 +440,9 @@ Demo Docker Container
 
 3.3.1) Возможность импорта сервисно-ресурсной модели из внешних источников (например, из базы данных конфигурационных единиц предприятия (CMDB))
 
-Продукт: АС
+* СитЦентр предоставляет специализированный [адаптер](https://axibase.com/files/dcx/axibase_er_cmdb_adapter.pdf) для интеграции с CMDB
 
-> SR
+![](./images/cmdb.png)
 
 3.3.2) Возможность в графическом режиме без использования программирования удалять, создавать и изменять типы конфигурационных единиц и собственные типы связей между конфигурационными элементами
 
@@ -537,9 +563,25 @@ Demo Docker Container
 
 4.3) Возможность получения информации из сторонних систем мониторинга IT инфраструктуры и комплексов обеспечения информационной безопасности. (ArcSight ESM, IBM Tivoli, Nagios, HP NNMi, HP OneView, MS SCOM, VmWare vCenter, OmniVista)
 
-Продукт: АС
+СитЦентр интегрируется с низлежащими системами на основе Linked Data - без копирования исходных данных.
 
-> SR
+![](./images/adapter_arch.gif)
+
+![](./images/adapter_add.png)
+
+![](./images/adapter-itm.png)
+
+Для копирования и долгосрочного хранения данных в АТСД реализованы интеграции с использованием Коллектора или промежуточных механизмов (CSV файлы, Кафка):
+
+* [HP OpenView](https://axibase.com/docs/axibase-collector/jobs/examples/hp-openview/)
+* [IBM Tivoli Monitoring](https://axibase.com/use-cases/integrations#ibm)
+* [Microsoft System Center Operations Manager](https://axibase.com/docs/axibase-collector/jobs/examples/scom/)
+* [Oracle Enterprise Manager](https://axibase.com/docs/axibase-collector/jobs/examples/oracle-enterprise-manager/)
+* [OSISoft PI](https://axibase.com/docs/axibase-collector/jobs/examples/pi/)
+
+[Entity View](https://nur.axibase.com/entities/views/78.xhtml): пример для [SCOM OS и SQL Server](https://nur.axibase.com/portal/tabs?entity=nurswgvmw014&id=30&id=31)
+
+![](./images/scom-portal.png)
 
 4.4) Возможность доработки коннекторов для интеграции с промышленным оборудованием под нужды заказчика.
 
