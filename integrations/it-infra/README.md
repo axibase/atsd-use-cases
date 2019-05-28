@@ -576,44 +576,40 @@ value < expiration_limit and value('http.ssl_certificate_status') != 5
 
 * CSV Parsers
 * Entity
+* Entity Group
 * Entity View
 * Export Job
 * Forecast Jobs
 * Named Collection
 * Metric
+* Outgoing Webhook
 * Portal
 * Replacement Table
 * Rule
-* Series
 * Scheduled SQL Queries
+* Tag Templates
 * User
 * User Group
 
-### Пример сообщения в лог при удалении
+### Примеры
 
-* Удаление **Series**
+Удаление группы пользователей **Editors**:
 
-```js
-2019-05-24 10:42:00,501;INFO;qtp2117132196-228;com.axibase.tsd.service.TimeSeriesDeleteServiceImpl;Starting series removal , series key 157:4,1=197,4=114
-```
+* сообщениe в лог при удалении
 
-### Пример message при удалении
+  ```js
+  2019-05-28 12:27:12,999;INFO;qtp543648248-214;com.axibase.tsd.service.admin.ActionAuditServiceImpl;Record type: USER_GROUP, name: Editors, action: delete, user: axibase
+  ```
 
-* Удаление **User Group**
+* message при удалении
 
   ![](././images/delete_user_group.png)
 
-* Удаление **Series**
-
-  ![](././images/delete_series.png)
-
-#### Пример уведомления по почте
-
-* Удаление **User Group**
+* уведомлениe по почте
 
   ![](./images/mail_notif_about_delete.png)
   
-##### Настройка правила
+#### Настройка правила для отправки уведомления
 
 1. Перeйдите на страницу **Alerts > Rules**, нажмите **New**.
 
