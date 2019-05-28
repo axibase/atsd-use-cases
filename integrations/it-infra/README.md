@@ -254,14 +254,16 @@ value > toNumber(lookup('docker_env_thresholds', entity.tags.environment))
 * Пример правила с двумя метриками (value function): [проверка истечения SSL сертификатов](https://nur.axibase.com/rule/edit.xhtml?name=ssl-certificates-expiration)
 
 ```javascript
-(value < expiration_limit) and (value('http.ssl_certificate_status') != 5)
+value < expiration_limit and value('http.ssl_certificate_status') != 5
 ```
 
-* Пример правила с двумя метриками - загрузка ЦПУ контейнера и загрузка ЦПУ докер-хоста, на котором контейнер исполяется
+* Пример правила с двумя метриками: [Загрузка ЦПУ контейнера и загрузка ЦПУ докер-хоста, на котором контейнер исполяется]()
 
+![](images/cpu_busy_condition.png)
+![](images/cpu_busy_notification_config.png)
+![](images/cpu_busy_slack.png)
 
-
-* Пример правила с двумя метриками - [Общее занятое пространство на диске, занятое пространство под таблицы MS SQL Server](https://nur.axibase.com/rule/edit.xhtml?name=%D0%91%D0%B0%D0%B7%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+MS+SQL+Server+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F)
+* Пример правила с двумя метриками: [Общее занятое пространство на диске, занятое пространство под таблицы MS SQL Server](https://nur.axibase.com/rule/edit.xhtml?name=%D0%91%D0%B0%D0%B7%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+MS+SQL+Server+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F)
 
 ![](images/mssql_server_disk_condition.png)
 ![](images/mssql_server_disk_usage_slack.png)
