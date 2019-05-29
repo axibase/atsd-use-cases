@@ -172,12 +172,13 @@ ${subscribers(type)}
 
 3.1.10) Сбор данных о метриках функционирования серверного оборудования и рабочих станций (степень утилизации, загрузка CPU, RAM, HDD)
 
-Продукт: АТСД
+| Агент | Поддерживаемые ОС | Собираемые метрики | Порталы | 
+|---|---|---|---|
+| [collectd](https://axibase.com/docs/atsd/integration/collectd/) | `Ubuntu`, `Centos`, `RHEL` |  [↗](https://axibase.com/docs/atsd/integration/collectd/#collected-metrics) | [Linux](https://nur.axibase.com/portal/tabs?entity=nurswghbs001&id=38&id=112&id=113&id=2&id=45&id=24) ![](./images/collectors/collectd/linux.png) |
+| [scollector](https://axibase.com/docs/atsd/integration/scollector/) | `Linux`, `Windows` `MacOS` | [↗](https://axibase.com/docs/atsd/integration/scollector/#collected-metrics) | [Linux](https://nur.axibase.com/portal/name/scollector%20-%20Linux?entity=nurswghbs001) ![](./images/collectors/scollector/linux.png) <br>[Microsoft Windows Server](https://nur.axibase.com/portal/tabs?entity=nurswgvmw015&id=44&id=30) ![](./images/collectors/scollector/linux.png) |
+| [tcollector](https://axibase.com/docs/atsd/integration/tcollector/) | `Linux` | [↗](https://axibase.com/docs/atsd/integration/tcollector/#list-of-tcollector-metrics) | [Linux](https://nur.axibase.com/portal/name/tcollector%20-%20Linux?entity=nurswghbs001) ![](./images/collectors/tcollector/linux.png) |
+| [nmon](https://axibase.com/docs/atsd/integration/nmon/) | `Linux`, `AIX` | [↗](https://axibase.com/docs/atsd/integration/tcollector/#list-of-tcollector-metrics) | [Linux](https://nur.axibase.com/portal/name/Linux%20nmon?entity=nurswghbs001) ![](./images/collectors/nmon/linux.png) <br> [AIX](https://nur.axibase.com/portal/name/AIX%20nmon?entity=aix03) ![](./images/collectors/nmon/linux.png)|
 
-> IS
-
-* Таблица с типом ОС (windows, linux, aix) и поддерживаемые агенты со ссылками: scollector, tcollector, nmon, и т.д.
-* Пример entity view, портала и списки собираемых метрик
 
 3.1.11) Сбор данных о метриках функционирования сетевого оборудования (сетевая доступность конфигурационных единиц, степень утлизация каналов связи)
 
