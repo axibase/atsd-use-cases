@@ -40,26 +40,46 @@
 АТСД
 
 * Пример из UI выдачи прав на просмотр пользовательской группе
+* Портал, который представляет данные по разному в зависимости от  принадлежности к заданной группе: `userInGroup`
+* Портал, который представляет данные по разному в зависимости от  роли: `userHasRole`
+
+Функции, доступные в Freemarker-выражениях в портале: [`userHasRole`](https://axibase.com/docs/atsd/rule-engine/functions-security.html#userhasrole) и [`userInGroup`](https://axibase.com/docs/atsd/rule-engine/functions-security.html#useringroup)
+
+[Группа пользователей](https://nur.axibase.com/admin/users/groups/edit.xhtml?group=demo-users)
+
+Пример использования Freemarker-выражения для организации доступа к виджетам в портале
+
+```html
+[configuration]
+[group]
+
+  # Виджет видем всем, кто имеет доступ к порталу
+  [widget]
+    type = pie
+    title = Пространство на диске
+    ...
+
+# Ограничим доступ к сводному графику
+<#if userHasRole("ROLE_ADMIN") || (userHasRole("ROLE_EDITOR") && userInGroup("demo-users"))>
+      
+[group]
+  # Виджет видем только администраторам и редакторам из группы 'demo-users'
+  [widget]
+    type = bar
+    title = Использование диска (по серверам)
+    ...
+            
+</#if>
+```
+
+[Портал](https://nur.axibase.com/portal/256.xhtml)
+([редактор](https://nur.axibase.com/portals/edit?id=256))
 
 ![demo-user-groups-portal](./images/demo-user-groups-portal.png)
 
-* Портал, который представляет данные по-разному, в зависимости от  роли: `userHasRole`
-
-`demo-user-roles`
-
-User ![demo-user-roles-user](./images/demo-user-roles-user.png)
-Admin ![demo-user-roles-user](./images/demo-user-roles-admin.png)
-
-* Портал, который представляет данные по-разному, в зависимости от  принадлежности к заданной группе: `userInGroup`
-
-`demo-user-groups`
-
-`demo-users` ![demo-user-roles-user](./images/demo-user-roles-user.png)
-
-Rest ![demo-user-roles-user](./images/demo-user-roles-admin.png)
-
 * Портал в режиме гостевого доступа
-![demo-guest-portal](./images/demo-guest-portal.png)
+[Портал](https://nur.axibase.com/portal/256.xhtml)
+([редактор](https://nur.axibase.com/portals/edit?id=256))
 
 3.1.4) Возможность категоризации событийной информации по типу
 
@@ -81,19 +101,34 @@ Rest ![demo-user-roles-user](./images/demo-user-roles-admin.png)
 
 * Открытие графика из строки таблицы, например, загрузка ЦПУ несколькими серверами - график открывает историю.
 
-`demo-table-sysmon`
+[Мониторинг загрузки серверов](https://nur.axibase.com/portal/name/demo-table-sysmon)
+([редактор](https://nur.axibase.com/portals/edit?id=268))
+
+![demo-table-sysmon](./images/demo-table-sysmon.png)
 
 * Открытие порталов для сущности из консоли алертов.
 
-`demo-entity-portal-from-table`
+```js
+format = value ? value + ' (<a href="/entities/' +encodeURIComponent(value)+'/metricsPortal">portal</a>)' : ''
+```
+
+[Консоль событий ATSD](https://nur.axibase.com/portal/name/demo-entity-portal-from-table)
+([редактор](https://nur.axibase.com/portals/edit?id=268))
 
 ![demo-entity-portal-from-table](./images/demo-entity-portal-from-table.png)
 
-* Обновление виджета по нажатию. Должно быть сделать в портале Докера.
+* Обновление виджета по нажатию на сущность или при смене периода загрузки данных. 
+[Портал scollector'а](https://nur.axibase.com/portal/name/demo-scollector-monitor)
+([редактор](https://nur.axibase.com/portals/edit?id=274))
+
+![demo-docker-images-summary](./images/demo-scollector-monitor.png)
 
 * Открыть график по ссылке из email alert
 
-`demo-rule-email`
+Для доступа у порталу ряда, для которого сработало правило, можно использовать переменную
+[`chartLink`](https://axibase.com/docs/atsd/rule-engine/links.html#chartlink)
+
+[Уведомление о превышении порога загрузки ЦП](https://nur.axibase.com/rule/edit.xhtml?name=demo-rule-email#notifications_email)
 
 ![demo-rule-email](./images/demo-rule-email.png)
 
@@ -105,15 +140,71 @@ Rest ![demo-user-roles-user](./images/demo-user-roles-admin.png)
 
 * График с двумя осями: CPU server и Java GC %
 
-`demo-cpu-usage` ![demo-cpu-usage](./images/demo-cpu-usage.png)
+```ini
+  [widget]
+    type = chart
+    ...
+    
+    [series]
+      axis = left
+      metric = jvm_system_cpu_load
+
+    [series]
+      axis = right
+      metric = gc_time_percent
+```
+
+
+[Загрузка ЦП](https://nur.axibase.com/portal/name/demo-cpu-usage)
+([редактор](https://nur.axibase.com/portals/edit?id=254))
+  ![demo-cpu-usage](./images/demo-cpu-usage.png)
 
 * График с двумя осями: nginx request count (latency), сеть (байты), и ЦПУ
 
-`demo-server-status` ![demo-server-status](./images/demo-server-status.png)
+```ini
+[widget]
+  ...  
+  [series]
+    entity = apps.axibase.com
+    metric = nginx.server_requests
+  	statistics = counter # Метрика является накопительной
+      
+  [series]
+    axis = right
+    entity = nurswgvml501
+    metric = cpu_busy
+    statistic = max
+```
+[Статус сервера NGINX](https://nur.axibase.com/portal/name/demo-server-status)
+([редактор](https://nur.axibase.com/portals/edit?id=263))
+![demo-server-status](./images/demo-server-status.png)
 
 * Календарь с несколькими серверами - при этом ЦПУ с scollector (linux) и SCOM windows
 
-`demo-cpu-calendar` ![demo-cpu-calendar](./images/demo-cpu-calendar.png)
+```ini
+csv cpu_usage =
+  os,group,metric
+  Windows,scom-servers,scom.server.processor_information.%_processor_time
+  Linux,nmon-linux,cpu_busy
+endcsv
+
+[group]
+  [widget]
+    type = calendar
+    summarize-statistic = percentile(95)
+    summarize-period = 1 day
+    ...
+  for cpu_info in cpu_usage
+    [series]
+      entity-group = @{cpu_info.group}
+      metric = @{cpu_info.metric}
+  endfor
+```
+
+[Загрузка ЦП по серверам](https://nur.axibase.com/portal/name/demo-cpu-calendar)
+([редактор](https://nur.axibase.com/portals/edit?id=255))
+
+![demo-cpu-calendar](./images/demo-cpu-calendar.png)
 
 3.1.9) Возможность гибкой настройки оповещений ответственных в соответствии с их зонами ответственности и событиями, приходящими от подсистем системы мониторинга
 
@@ -363,12 +454,17 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 * Диаграмма со структурой Docker tag templates
 ![docker-templates-diagram](./images/docker-templates-diagram.png)
+
+
 * Примеры из редактора с наследованием шаблонов (н-р контейнер наследует от docker base)
+[Docker Container](https://nur.axibase.com/tags/templates/edit.xhtml?tagTemplateId=12)
 ![tag-template-inherit](./images/tag-template-inherit.png)
+
 * Примеры настроек колонок типа Entity Link
 
-  Demo Docker Container
-  ![demo-entity-link](./images/demo-entity-link.png)
+[Docker Container](https://nur.axibase.com/tags/templates/edit.xhtml?tagTemplateId=12)
+
+![demo-entity-link](./images/demo-entity-link.png)
 
 * Примеры встроенных Entity Views для Докера, где демонстрируется группировка по полю, содержащему связанную сущность (group by tags.docker-host)
 ![entity-view-group-by](./images/entity-view-group-by.png)
@@ -380,7 +476,16 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 > AV
 
 * Редактор entity tags
+
+При создании сущностей можно выбрать шаблон для предварительного заполнения тегов
 ![entity-tags-edit](./images/entity-tags-edit.png)
+
+
+При редактировании сущностей доступны сгруппированные по имени шаблона теги, если шаблон применяется к данной сущности.
+![entity-tags-edit](./images/entity-tags-edit-modify.png)
+
+Возможно создание нового шаблона из текущего набора тегов
+![entity-tags-edit](./images/entity-tags-edit-newtemplate.png)
 
 3.2.4) Возможность изменения и настройки отчетов
 
@@ -577,9 +682,19 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 > AV
 
 * Пример tag templates и их назначения
-![tag-template-to-entities](./images/tag-template-to-entities.png)
+
+[Docker Container](https://nur.axibase.com/tags/templates/edit.xhtml?tagTemplateId=12)
+
+[Docker Container Member](https://nur.axibase.com/entities/0d3809b9ef8364029add6a4eb126475ae2a285be2f34c9aa844bd9d9c1af898d)
+
+![demo-docker-container-template](./images/demo-docker-container-template.png)
+
+
 * Пример entity views их применения к группам
-![demo-entity-view-to-group](./images/demo-entity-view-to-group.png)
+[Docker Containers View](https://nur.axibase.com/entities/views/3.xhtml)
+([редактор](https://nur.axibase.com/entities/views/edit.xhtml?entityViewId=3))
+
+![demo-entity-view-edit](./images/demo-entity-view-edit.png)
 
 3.3.3) Возможность удаления, создания и изменения связей между конфигурационными единицами и атрибутов конфигурационных единиц и связей
 
