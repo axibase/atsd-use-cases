@@ -1,0 +1,12 @@
+Загрузка CPU для nurswgvml007.
+#publisher,Axibase Time-Series Database,https://nur.axibase.com
+#created,2019-05-29T07:41:43.552Z
+#title,CSV export
+#name,Timestamp,Avg,P75,Metric,Entity,environment,app,os,source
+#datatype,xsd:dateTimeStamp,double,double,string,string,string,string,string,string
+#titles,Timestamp,Avg,P75,Metric,Entity,environment,app,os,source
+Timestamp,Avg,P75,Metric,Entity,environment,app,os,source
+2019-05-29 06:45:00,20.46136363636363636,21.115,cpu_busy,nurswgvml007,prod,ATSD,Linux,iostat
+2019-05-29 07:00:00,21.57958333333333333,23.5125,cpu_busy,nurswgvml007,prod,ATSD,Linux,iostat
+2019-05-29 07:15:00,17.51787878787878788,19,cpu_busy,nurswgvml007,prod,ATSD,Linux,iostat
+2019-05-29 07:30:00,22.31941176470588235,25.98,cpu_busy,nurswgvml007,prod,ATSD,Linux,iostat
