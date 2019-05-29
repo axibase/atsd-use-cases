@@ -1,0 +1,61 @@
+<list>
+  <com.axibase.tsd.model.export.job.ExportJob>
+    <tagModels/>
+    <id>54</id>
+    <name>Загрузка CPU</name>
+    <format>CSV</format>
+    <metric>cpu_busy</metric>
+    <entity>nurswgvml007</entity>
+    <entityTags class="java.util.Arrays$ArrayList">
+      <a class="string-array">
+        <string>environment</string>
+        <string>app</string>
+        <string>os</string>
+      </a>
+    </entityTags>
+    <metricTags class="java.util.Arrays$ArrayList">
+      <a class="string-array">
+        <string>source</string>
+      </a>
+    </metricTags>
+    <selectionInterval>
+      <intervalCount>1</intervalCount>
+      <intervalUnit>HOUR</intervalUnit>
+      <name>interval</name>
+    </selectionInterval>
+    <enabled>false</enabled>
+    <timeFormat>LOCAL</timeFormat>
+    <dateFormat>LOCALTIME_SECONDS</dateFormat>
+    <timeZone>LOCAL</timeZone>
+    <milliseconds>false</milliseconds>
+    <aggregate>true</aggregate>
+    <interpolation>
+      <type>NONE</type>
+      <value>0.0</value>
+      <extend>false</extend>
+      <backwardCompatibilityFlag>false</backwardCompatibilityFlag>
+      <windowLength>0</windowLength>
+    </interpolation>
+    <aggregations>
+      <com.axibase.tsd.model.Aggregation>AVG</com.axibase.tsd.model.Aggregation>
+      <com.axibase.tsd.model.Aggregation>PERCENTILE_75</com.axibase.tsd.model.Aggregation>
+    </aggregations>
+    <aggregateInterval>
+      <intervalCount>15</intervalCount>
+      <intervalUnit>MINUTE</intervalUnit>
+      <name>interval</name>
+    </aggregateInterval>
+    <annotation>Загрузка CPU для nurswgvml007.</annotation>
+    <numericPrecision>-1</numericPrecision>
+    <splitByEntity>false</splitByEntity>
+    <exportType>HISTORY</exportType>
+    <csvCompressType>GZIP</csvCompressType>
+    <versioning>false</versioning>
+    <emailSubscribers>user@example.com</emailSubscribers>
+    <emailSubject>Загрузка CPU</emailSubject>
+    <valueFilter>value &gt; 10</valueFilter>
+    <revisionsOnly>false</revisionsOnly>
+    <schedule>0 0 * * * ?</schedule>
+    <addMetaData>true</addMetaData>
+  </com.axibase.tsd.model.export.job.ExportJob>
+</list>
