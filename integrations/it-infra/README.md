@@ -495,70 +495,112 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 ### Пример настроек [Export Job](https://axibase.com/docs/atsd/reporting/scheduled-exporting.html)
 
+> Задача [Загрузка CPU](https://nur.axibase.com/export/jobs/job.xhtml?jobId=54).
+>
+> Скачать конфигурацию [здесь](https://github.com/axibase/atsd-use-cases/tree/master/resources/export-jobs.xml).
+
 1. Перeйдите на страницу **Data > Export Jobs**, нажмите **Create**.
 
    ![](./images/export_job_1.png)
   
-2. Установите периодичность запуска задачи, например, `каждый час`.
+1. Установите периодичность запуска задачи, например, `каждый час`.
 
    ![](./images/export_job_2.png)
   
-3. Укажите `entity`, `metric` и временной интервал экспортируемых данных.
+1. Укажите `entity`, `metric` и временной интервал экспортируемых данных.
 
    ![](./images/export_job_3.png)
 
-4. **Дополнительно.** Укажите фильтр значений, например, задайте минимальный порог.
+1. **Дополнительно.** <details><summary>Укажите фильтр значений</summary>
+Например, задайте минимальный порог.
 
    ![](./images/export_job_8.png)
 
-5. **Дополнительно.** Выберите аггрегирующую функцию и период аггрегации.
+   </details>
+
+1. **Дополнительно.** <details><summary>Аггрегация</summary>
+Выберите аггрегирующую функцию, период аггрегации и метод интерполяции.
 
    ![](./images/export_job_4.png)
 
-6. **Дополнительно.** Задайте настройки, связанные с форматом отчёта, например, выберите формат, тип сжатия или укажите аннотацию - текст, который будет добавлен в начало сгенерированного файла.
+   </details>
+
+1. **Дополнительно.**<details><summary>Задайте настройки, связанные с форматом отчёта</summary>
+Например, выберите формат, тип сжатия или укажите аннотацию - текст, который будет добавлен в начало сгенерированного файла.
 
    ![](./images/export_job_9.png)
 
-   Дополнительно можно указать следующие настройки:
+   Кроме того, можно указать следующие настройки:
 
-      * **Entity Tags** - список тегов сущности, значения которых будут добавлены в отчёт как колонки
-      * **Metric Tags** - список тегов метрики, значения которых будут добавлены в отчёт как колонки
-      * **Decimal Precision** - количество знаков после запятой, `-1`- оставить значения без изменений
-      * **Date Format** - формат даты
-      * **Time Zone** - временная зона, которая будет применена к **Date Format**
-      * **Add Metadata** - добавить метаданные в заголовок файла
+      ![](./images/export_job_10.png)
 
-        ![](./images/export_job_10.png)
-  
-7. Укажите список e-mail адресов или абсолютный путь к отчёту на файловой системе ATSD. Сохраните задачу.
+   * **Entity Tags** - список тегов сущности, значения которых будут добавлены в отчёт как колонки
+   * **Metric Tags** - список тегов метрики, значения которых будут добавлены в отчёт как колонки
+   * **Decimal Precision** - количество знаков после запятой, `-1`- оставить значения без изменений
+   * **Date Format** - формат даты
+   * **Time Zone** - временная зона, которая будет применена к **Date Format**
+   * **Add Metadata** - добавить метаданные в заголовок файла
+
+   </details>
+
+1. Укажите список e-mail адресов и тему письма или абсолютный путь к отчёту на файловой системе ATSD.
 
    ![](./images/export_job_5.png)
+
+    Абсолютный путь и тема письма могут содержать следующие плэйсхолдеры:
+
+    * `${entity}`
+    * `${entity.tagName}`
+    * `${metric}`
+    * `${metric.tagName}`
+    * `${yyyy-MM-dd}`
+    * `${yyyy/MM/dd}`
+    * `${yyyy-MM-dd-HH-mm-ss.SSS}`
+
+    Сохраните задачу.
   
-8. Для проверки задачи, нажмите **Run**.
+1. Для проверки задачи, нажмите **Run**.
 
    ![](./images/export_job_6.png)
 
    ![](./images/export_job_7.png)
-  
+
+    Содержимое файла [здесь](https://github.com/axibase/atsd-use-cases/tree/master/resources/export-job-54.csv).
+
 ### Пример настроек [SQL Job](https://axibase.com/docs/atsd/sql/scheduled-sql.html#sql-scheduler)
+
+> Задача [Ежедневное использование CPU](https://nur.axibase.com/export/queries/query.xhtml?queryId=126).
+>
+> Скачать конфигурацию [здесь](https://github.com/axibase/atsd-use-cases/tree/master/resources/export-queries.xml).
 
 1. Перейдите на страницу **SQL > Scheduled Queries**, нажмите **Create**.
 
    ![](./images/sql_job_1.png)
 
-2. Установите периодичность запуска задачи, например, `каждый день в 02:00`.
+1. Установите периодичность запуска задачи, например, `каждый день в 02:00`.
 
    ![](./images/sql_job_2.png)
 
-3. Укажите SQL-запрос.
+1. Укажите SQL-запрос.
 
    ![](./images/sql_job_3.png)
 
-4. Выберите формат и укажите список e-mail адресов или абсолютный путь к отчёту на файловой системе ATSD.
+1. Выберите формат и укажите список e-mail адресов и тему письма или абсолютный путь к отчёту на файловой системе ATSD.
 
    ![](./images/sql_job_4.png)
 
-   Дополнительно можно указать следующие настройки:
+    Абсолютный путь и тема письма могут содержать следующие плэйсхолдеры:
+
+    * `${entity}`
+    * `${entity.tagName}`
+    * `${metric}`
+    * `${metric.tagName}`
+    * `${yyyy-MM-dd}`
+    * `${yyyy/MM/dd}`
+    * `${yyyy-MM-dd-HH-mm-ss.SSS}`
+
+   Кроме того, можно указать дополнительные настройки:
+   <details><summary>смотреть</summary>
 
       * **Decimal Precision** - количество знаков после запятой, `-1`- оставить значения без изменений
       * **Add Metadata** - добавить метаданные в заголовок файла
@@ -566,26 +608,40 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
       * **Send Error Report** - отпрявлять e-mail, даже если SQl-запрос завершился с ошибкой
       * **Fail on No Data** - генерировать ошибку, если SQL-запрос не получил данные из таблицы `atsd_d`
 
-5. **Дополнительно.** Установите ограничение на значения дат для сохраняемых серий.
+    </details>
+
+1. **Дополнительно.**<details><summary>Установите ограничение на значения дат для сохраняемых серий</summary>
 
    ![](./images/sql_job_5.png)
 
-6. **Дополнительно.** Укажите настройки публикации результатов.
+   Подробнее об опции **Store** [здесь](https://axibase.com/docs/atsd/sql/scheduled-sql-store.html#sql-scheduled-store).
+
+   </details>
+
+1. **Дополнительно.**<details><summary>Укажите настройки публикации результатов</summary>
 
     * **Guest Access** - предоставить анонимный доступ для неавторизованных пользователей
     * **Allow Refresh** - обновлять отчёт, если в запросе задан параметер `refresh=true`
 
    ![](./images/sql_job_6.png)
 
-7. Сохраните задачу.
+   </details>
+
+1. Сохраните задачу.
 
    ![](./images/sql_job_7.png)
 
-8. Для проверки задачи, нажмите **Test**.
+1. Для проверки задачи, нажмите **Test**.
+
+   ![](./images/sql_job_8.png)
+
+   Опубликованный отчёт [здесь](https://nur.axibase.com/sqla/126.html).
 
 ### Пример portal screenshot to Email, portal to Slack
 
 > Правило [Высокая загрузка CPU](https://nur.axibase.com/rule/edit.xhtml?name=%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B0%D1%8F%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20CPU#overview).
+>
+> Скачать конфигурацию [здесь](https://github.com/axibase/atsd-use-cases/tree/master/resources/rule_1.xml).
 
 1. Перейдите на страницу **Alerts > Rules**, нажмите **New**.
 
@@ -596,8 +652,8 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
    ![](./images/settings_rule_2.png)
 
    > Чтобы посмотреть описание всех настроек, используйте кнопку **Help** в верхнем правом углу вкладки.
-
-   ![](./images/rule_3.png)
+   >
+   > ![](./images/rule_3.png)
 
 3. Вкладка **Filters**: укажите метрику и сущность.
 
@@ -808,7 +864,6 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
     ![](./images/entity/csv_entity_created.png)
 
-
 ## 4. Прочие требования к характеристикам
 
 4.1) Аудит действий в подсистеме
@@ -843,7 +898,8 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 * сообщениe в лог при удалении
 
   ```js
-  2019-05-28 12:27:12,999;INFO;qtp543648248-214;com.axibase.tsd.service.admin.ActionAuditServiceImpl;Record type: USER_GROUP, name: Editors, action: delete, user: axibase
+  2019-05-28 12:27:12,999;INFO;qtp543648248-214;com.axibase.tsd.service.admin.ActionAuditServiceImpl;
+  Record type: USER_GROUP, name: Editors, action: delete, user: axibase
   ```
 
 * message при удалении
@@ -853,46 +909,8 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 * уведомлениe по почте
 
   ![](./images/mail_notif_about_delete.png)
-  
-#### Настройка правила для отправки уведомления
 
-> Правило [Удаление группы пользователей](https://nur.axibase.com/rule/edit.xhtml?name=%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B+%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9#overview).
-
-1. Перeйдите на страницу **Alerts > Rules**, нажмите **New**.
-
-   ![](./images/rule_1.png)
-
-2. Вкладка **Overview**: укажите имя нового правила.
-
-   ![](./images/rule_2.png)
-
-   > Чтобы посмотреть описание всех настроек, используйте кнопку **Help** в верхнем правом углу вкладки.
-
-   ![](./images/rule_3.png)
-
-3. Вкладка **Filters**: в меню **Data Type** выберите **Message**, установите `Type = audit`, `Source = user_group`.
-
-   ![](./images/rule_4.png)
-
-   Укажите **Filter Expression**: `tags.action == 'delete'`.
-
-   ![](./images/rule_8.png)
-
-4. Вкладка **Condition**: укажите условие, на которое должно сработать правило, в данном случае `true`, чтобы правило срабатывало всегда.
-
-   ![](./images/rule_5.png)
-
-5. Вкладка **Email**: укажите получателей и настройте **On Open** триггер. Установите флаг **Attach Details**, чтобы отправлять таблицу, содержащую детальную информацию о правиле.
-
-   > Предварительно нужно настроить [**Mail Client**](https://axibase.com/docs/atsd/administration/mail-client.html#mail-client).
-
-   ![](./images/rule_6.png)
-
-6. Для проверки уведомления нажмите **Test**.
-
-   ![](./images/rule_7.png)
-
-7. Сохраните правило.
+  Пример настройки правила [здесь](./audit_rule.md).
 
 4.2) Возможность эскалации сообщений
 

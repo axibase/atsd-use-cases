@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>Высокая загрузка CPU</name>
+<metric>cpu_busy</metric>
+<tagsGroupingStrategy>ALL_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[value > 50]]></expression>
+<window>length(1)</window>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<logToAlertHistory>false</logToAlertHistory>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<lastUpdated>1559126759050</lastUpdated>
+<enabled>false</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>true</loadHistory>
+<instantAction>false</instantAction>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner>Администратор</owner>
+<description><![CDATA[Отправляет email и сообщение в Slack, если значение cpu_busy > 50.]]></description>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<entityFilter>nurswgvml007</entityFilter>
+<timeFilter>
+<intervalCount>0</intervalCount>
+<intervalUnit>SECOND</intervalUnit>
+</timeFilter>
+<dateFilter>
+<start-time>00:00</start-time>
+<end-time>24:00</end-time>
+<type>ALL</type>
+</dateFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<emailNotification>
+<disabled>false</disabled>
+<rule-name>Высокая загрузка CPU</rule-name>
+<repeat-interval>
+<type>NONE</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>HOUR</intervalUnit>
+</repeat-interval>
+<name>Email Notification id=921</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>true</first-screenshot>
+<repeat-screenshot>true</repeat-screenshot>
+<cancel-screenshot>true</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<recipients>user@example.com</recipients>
+<first-subject>[${status}] ${rule} for ${entity.displayName} ${tags}</first-subject>
+<repeat-subject>[${status}] ${rule} for ${entity.displayName} ${tags}</repeat-subject>
+<cancel-subject>[${status}] ${rule} for ${entity.displayName} ${tags}</cancel-subject>
+<merge>false</merge>
+<priority>0</priority>
+<body-first>&lt;hr&gt;&#13;
+${ruleLink}</body-first>
+<body-repeat>&lt;hr&gt;&#13;
+${ruleLink}</body-repeat>
+<body-cancel>&lt;hr&gt;&#13;
+${ruleLink}</body-cancel>
+</emailNotification>
+<webNotification>
+<disabled>false</disabled>
+<rule-name>Высокая загрузка CPU</rule-name>
+<repeat-interval>
+<type>NONE</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>HOUR</intervalUnit>
+</repeat-interval>
+<name>Web Service Notification id=922</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>true</first-screenshot>
+<repeat-screenshot>true</repeat-screenshot>
+<cancel-screenshot>true</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<webNotificationConfigName>slack-devops</webNotificationConfigName>
+<firstWebConfigParameters>
+<key>text</key>
+<value>[${status}] ${rule} for ${entity.displayName} ${tags}</value>
+</firstWebConfigParameters>
+<repeatWebConfigParameters>
+<key>text</key>
+<value>[${status}] ${rule} for ${entity.displayName} ${tags}</value>
+</repeatWebConfigParameters>
+<cancelWebConfigParameters>
+<key>text</key>
+<value>[${status}] ${rule} for ${entity.displayName} ${tags}</value>
+</cancelWebConfigParameters>
+<first-enabled>true</first-enabled>
+<repeat-enabled>false</repeat-enabled>
+<cancel-enabled>false</cancel-enabled>
+</webNotification>
+<ruleTable/>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>

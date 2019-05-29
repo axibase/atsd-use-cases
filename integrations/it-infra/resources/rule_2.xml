@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+<rule>
+<name>Аудит</name>
+<metric>message</metric>
+<type>audit</type>
+<tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
+<expression><![CDATA[true]]></expression>
+<window>length(1)</window>
+<filter>tags.action == 'delete'</filter>
+<severity>WARNING</severity>
+<alertOpenMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+<alertMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+<alertMessageAsOpen>true</alertMessageAsOpen>
+<alertCancellationMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+<alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+<logToAlertHistory>false</logToAlertHistory>
+<alertStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</alertStrategy>
+<userExpressions>
+<expression><![CDATA[db_messages('3 day', 'audit', '', ['action':'delete','user':tags.user]) AS msgs]]></expression>
+</userExpressions>
+<lastUpdated>1559138908762</lastUpdated>
+<enabled>true</enabled>
+<disableEntityGrouping>false</disableEntityGrouping>
+<leavingEvents>true</leavingEvents>
+<loadHistory>true</loadHistory>
+<instantAction>false</instantAction>
+<scriptAsOpen>true</scriptAsOpen>
+<alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+<logOutput>false</logOutput>
+<owner>Администратор</owner>
+<description><![CDATA[Отправляет уведомление об удалении любого из наблюдаемых объектов:
+* CSV Parsers
+* Entity
+* Entity Group
+* Entity View
+* Export Job
+* Forecast Jobs
+* Named Collection
+* Metric
+* Outgoing Webhook
+* Portal
+* Replacement Table
+* Rule
+* Scheduled SQL Queries
+* Tag Templates
+* User
+* User Group]]></description>
+<actionStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</actionStrategy>
+<timeFilter>
+<intervalCount>0</intervalCount>
+<intervalUnit>SECOND</intervalUnit>
+</timeFilter>
+<dateFilter>
+<start-time>00:00</start-time>
+<end-time>24:00</end-time>
+<type>ALL</type>
+</dateFilter>
+<discardPreviousValues>true</discardPreviousValues>
+<emailNotification>
+<disabled>false</disabled>
+<rule-name>Аудит</rule-name>
+<repeat-interval>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>HOUR</intervalUnit>
+</repeat-interval>
+<name>Email Notification id=926</name>
+<use-in-threshold-only>false</use-in-threshold-only>
+<first-details>false</first-details>
+<repeat-details>false</repeat-details>
+<cancel-details>false</cancel-details>
+<first-screenshot>false</first-screenshot>
+<repeat-screenshot>false</repeat-screenshot>
+<cancel-screenshot>false</cancel-screenshot>
+<repeat-as-open>true</repeat-as-open>
+<cancel-as-open>true</cancel-as-open>
+<recipients>user@example.com</recipients>
+<first-subject>[${status}] Удалён объект</first-subject>
+<repeat-subject>[${status}] Удалён объект</repeat-subject>
+<cancel-subject>[${status}] Удалён объект</cancel-subject>
+<merge>false</merge>
+<priority>1</priority>
+<body-first>Пользователь &lt;b&gt;${tags.user}&lt;/b&gt; удалил объект &lt;b&gt;${tags.source}&lt;/b&gt;: &lt;b&gt;&lt;i&gt;${tags.name}&lt;/i&gt;&lt;/b&gt;.&lt;br&gt;&#13;
+Объекты, удалённые пользователем за 3 дня:&lt;br&gt;&#13;
+${addTable(msgs, 'html')}</body-first>
+<body-repeat>Пользователь &lt;b&gt;${tags.user}&lt;/b&gt; удалил объект &lt;b&gt;${tags.source}&lt;/b&gt;: &lt;b&gt;&lt;i&gt;${tags.name}&lt;/i&gt;&lt;/b&gt;.&lt;br&gt;&#13;
+Объекты, удалённые пользователем за 3 дня:&lt;br&gt;&#13;
+${addTable(msgs, 'html')}</body-repeat>
+<body-cancel>Пользователь &lt;b&gt;${tags.user}&lt;/b&gt; удалил объект &lt;b&gt;${tags.source}&lt;/b&gt;: &lt;b&gt;&lt;i&gt;${tags.name}&lt;/i&gt;&lt;/b&gt;.&lt;br&gt;&#13;
+Объекты, удалённые пользователем за 3 дня:&lt;br&gt;&#13;
+${addTable(msgs, 'html')}</body-cancel>
+</emailNotification>
+<ruleTable/>
+<derivedCommandEnabled>false</derivedCommandEnabled>
+<derivedCommandStrategy>
+<type>ALL</type>
+<intervalCount>5</intervalCount>
+<intervalUnit>MINUTE</intervalUnit>
+</derivedCommandStrategy>
+<alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+<alertMessageEnabled>false</alertMessageEnabled>
+<alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+<alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+<scriptEnabled>false</scriptEnabled>
+<alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+</rule>
+</rules>
