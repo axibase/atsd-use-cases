@@ -6,9 +6,9 @@
 
 3.1.1) Возможность использования единой консоли для отображения, анализа и управления всей событийной информацией, поступающей от компонентов мониторинга сетевой инфраструктурой и серверного оборудования
 
-* Аксибейс СитЦентр позволяет создать единую точку интеграции без копирования информации и таким образом построить единую систему отображения ("витрину") данных.
+* Аксибейс СитЦентр позволяет создать единую точку интеграции без копирования информации и, таким образом, построить единую систему отображения ("витрину") данных.
 * [Пример консолидированной консоли](https://hbs.axibase.com/workspace/index-noc.htm): [конфигурация](https://hbs.axibase.com/dashboard/widgets.jsp?fileName=widgets_noc.config)
-* Примеры клиентов представлены в файле examples.pdf.
+* Примеры клиентов представлены в файле `examples.pdf`.
 * Консоли собираются из [виджетов](https://axibase.com/docs/charts/#widgets). Виджеты поддерживают подгрузку данных из разных источников.
 * Переходы между консолями позволяют построить навигационную модель, соответствующую организационной роли пользователя.
 * Поддерживается добавление кастомизированной оболочки на верхнем уровня навигации.
@@ -42,14 +42,15 @@
 * Пример из UI выдачи прав на просмотр пользовательской группе
 
 ![demo-user-groups-portal](./images/demo-user-groups-portal.png)
-* Портал, который представляет данные по разному в зависимости от  роли: `userHasRole`
+
+* Портал, который представляет данные по-разному, в зависимости от  роли: `userHasRole`
 
 `demo-user-roles`
 
 User ![demo-user-roles-user](./images/demo-user-roles-user.png)
 Admin ![demo-user-roles-user](./images/demo-user-roles-admin.png)
-* Портал, который представляет данные по разному в зависимости от  принадлежности к заданной группе: `userInGroup`
 
+* Портал, который представляет данные по-разному, в зависимости от  принадлежности к заданной группе: `userInGroup`
 
 `demo-user-groups`
 
@@ -77,7 +78,8 @@ Rest ![demo-user-roles-user](./images/demo-user-roles-admin.png)
 Продукт: ATSD
 
 > AV
-* Открытие графика из строки таблицы, например загрузка ЦПУ несколькими серверами и график открывает историю.
+
+* Открытие графика из строки таблицы, например, загрузка ЦПУ несколькими серверами - график открывает историю.
 
 `demo-table-sysmon`
 
@@ -88,6 +90,7 @@ Rest ![demo-user-roles-user](./images/demo-user-roles-admin.png)
 ![demo-entity-portal-from-table](./images/demo-entity-portal-from-table.png)
 
 * Обновление виджета по нажатию. Должно быть сделать в портале Докера.
+
 * Открыть график по ссылке из email alert
 
 `demo-rule-email`
@@ -101,7 +104,7 @@ Rest ![demo-user-roles-user](./images/demo-user-roles-admin.png)
 > AV
 
 * График с двумя осями: CPU server и Java GC %
-    
+
 `demo-cpu-usage` ![demo-cpu-usage](./images/demo-cpu-usage.png)
 
 * График с двумя осями: nginx request count (latency), сеть (байты), и ЦПУ
@@ -109,7 +112,7 @@ Rest ![demo-user-roles-user](./images/demo-user-roles-admin.png)
 `demo-server-status` ![demo-server-status](./images/demo-server-status.png)
 
 * Календарь с несколькими серверами - при этом ЦПУ с scollector (linux) и SCOM windows
-    
+
 `demo-cpu-calendar` ![demo-cpu-calendar](./images/demo-cpu-calendar.png)
 
 3.1.9) Возможность гибкой настройки оповещений ответственных в соответствии с их зонами ответственности и событиями, приходящими от подсистем системы мониторинга
@@ -118,7 +121,7 @@ Rest ![demo-user-roles-user](./images/demo-user-roles-admin.png)
 
 > AR
 
-* Условные выражения для отправки почты на разные адреса в зависисмости от критичности события и от времени суток
+* Условные выражения для отправки уведомлений на разные адреса в зависисмости от критичности события и от времени суток
 
 ```javascript
 @if{now.timeOfDay BETWEEN '08:00' AND '20:00'}
@@ -131,7 +134,7 @@ ops_team@example.org
 @end{}
 ```
 
-* Отмена уведомлений по расписанию с использованием cancelAction
+* Отмена уведомлений по расписанию с использованием `cancelAction`
 
 ```javascript
 @if{NOT now.timeOfDay BETWEEN '08:00' AND '20:00'}
@@ -139,29 +142,29 @@ ${cancelAction()}
 @end{}
 ```
 
-* Отправка уведомления на группу пользователей
+* Отправка уведомления группе пользователей
 
 ```javascript
 ${get_group_emails('DevOps')}
 ```
 
-* Отправка уведомления собственнику системы (указан email в тэге owner сущности)
+* Отправка уведомления собственнику системы (указан email в тэге `owner` сущности)
 
 ```javascript
 ${entity.tags.owner}
 ```
 
-* Отправка уведомления подвыборке подписанных пользовалей - по ключевым словам. В данном примере лучше взять messages - чтобы пользователи могли указать type/source где-то в настройках
+* Отправка уведомления подвыборке подписанных пользовалей - по ключевым словам. В данном примере лучше взять messages, чтобы пользователи могли указать `type/source` где-то в настройках
 
 В ATSD пользователи могут в настройках счёта самостоятельно задавать события, уведомления о которых они хотели бы получать.
 
-![](images/user.png)
+![](./images/user.png)
 
 Полный перечень доступных событий создаётся администратором и содержится в служебной таблице `$topics`. Ключом является идентификатор события, значением – его описание.
 
-![](images/topics_table.png)
+![](./images/topics_table.png)
 
-Функция `subscribers` в Rule Engine принимает один или несколько ключей и возвращает email адреса всех пользователей, имеющих хотя бы один ключ в списке тем.
+Функция `subscribers` в **Rule Engine** принимает один или несколько ключей и возвращает email адреса всех пользователей, имеющих хотя бы один ключ в списке тем.
 
 ```javascript
 ${subscribers(type)}
@@ -169,12 +172,13 @@ ${subscribers(type)}
 
 3.1.10) Сбор данных о метриках функционирования серверного оборудования и рабочих станций (степень утилизации, загрузка CPU, RAM, HDD)
 
-Продукт: АТСД
+| Агент | Поддерживаемые ОС | Собираемые метрики | Порталы | 
+|---|---|---|---|
+| [collectd](https://axibase.com/docs/atsd/integration/collectd/) | `Ubuntu`, `Centos`, `RHEL` |  [↗](https://axibase.com/docs/atsd/integration/collectd/#collected-metrics) | [Linux](https://nur.axibase.com/portal/tabs?entity=nurswghbs001&id=38&id=112&id=113&id=2&id=45&id=24) ![](./images/collectors/collectd/linux.png) |
+| [scollector](https://axibase.com/docs/atsd/integration/scollector/) | `Linux`, `Windows` `MacOS` | [↗](https://axibase.com/docs/atsd/integration/scollector/#collected-metrics) | [Linux](https://nur.axibase.com/portal/name/scollector%20-%20Linux?entity=nurswghbs001) ![](./images/collectors/scollector/linux.png) <br>[Microsoft Windows Server](https://nur.axibase.com/portal/tabs?entity=nurswgvmw015&id=44&id=30) ![](./images/collectors/scollector/linux.png) |
+| [tcollector](https://axibase.com/docs/atsd/integration/tcollector/) | `Linux` | [↗](https://axibase.com/docs/atsd/integration/tcollector/#list-of-tcollector-metrics) | [Linux](https://nur.axibase.com/portal/name/tcollector%20-%20Linux?entity=nurswghbs001) ![](./images/collectors/tcollector/linux.png) |
+| [nmon](https://axibase.com/docs/atsd/integration/nmon/) | `Linux`, `AIX` | [↗](https://axibase.com/docs/atsd/integration/tcollector/#list-of-tcollector-metrics) | [Linux](https://nur.axibase.com/portal/name/Linux%20nmon?entity=nurswghbs001) ![](./images/collectors/nmon/linux.png) <br> [AIX](https://nur.axibase.com/portal/name/AIX%20nmon?entity=aix03) ![](./images/collectors/nmon/linux.png)|
 
-> IS
-
-* Таблица с типом ОС (windows, linux, aix) и поддерживаемые агенты со ссылками: scollector, tcollector, nmon, и т.д.
-* Пример entity view, портала и списки собираемых метрик
 
 3.1.11) Сбор данных о метриках функционирования сетевого оборудования (сетевая доступность конфигурационных единиц, степень утлизация каналов связи)
 
@@ -504,7 +508,6 @@ ${subscribers(type)}
     * Custom
   
   * **Сетевые протоколы и протоколы передачи данных**
-    
     * JDBC
     * SNMP
     * JMX
@@ -512,9 +515,8 @@ ${subscribers(type)}
     * TCP
     * HTTP
     * MQTT
-    
+
   * **Файловые форматы**
- 
     * CSV
     * TSV
     * Text
@@ -525,9 +527,7 @@ ${subscribers(type)}
     * Amazon Web Services CloudWatch
     * Docker Engine
     * HP OVPM (Performance Manager)
-    
-    
-    
+
 * Примеры
 
 | Продукт                                                                                          | Источник данных | Портал                                                                                                                                       |
@@ -549,6 +549,7 @@ ${subscribers(type)}
 | [VMWare](https://axibase.com/docs/axibase-collector/jobs/examples/vmware/)                       | JDBC            | ![](./images/collectors/vmware_portal.png) [↗](https://apps.axibase.com/chartlab/36ae5c9e/3/)                                                |
 | [Spring Boot](https://axibase.com/docs/atsd/integration/spring-boot/#spring-boot)                | Storage Driver  | ![](./images/collectors/springboot_portal.png) [↗](https://apps.axibase.com/chartlab/5525c0dc/4/)                                            |
 
+
 3.1.13) Пользовательская настройка правил мониторинга (пороговых значений и логики проверки) метрик на серверных платформах
 
 Продукт: АТСД
@@ -569,39 +570,39 @@ ${subscribers(type)}
 
 * Пример извлечения порога из тэга сущности
 
-```javascript
-value > 0.9 * toNumber(entity.tags['mem-limit'])
-```
+  ```javascript
+  value > 0.9 * toNumber(entity.tags['mem-limit'])
+  ```
 
 * Пример извлечения порога из replacement table
 
-![](images/env_thresholds_replacement_table.png)
-![](images/entity_tags_vm.png)
+  ![](./images/env_thresholds_replacement_table.png)
+  ![](./images/entity_tags_vm.png)
 
-```javascript
-value > toNumber(lookup('docker_env_thresholds', entity.tags.environment))
-```
+  ```javascript
+  value > toNumber(lookup('docker_env_thresholds', entity.tags.environment))
+  ```
 
 * Пример с таблицей Overrides, где приведены разные значения для разных рядов
 
-![](images/overrides.png)
+  ![](./images/overrides.png)
 
-[Правило](https://nur.axibase.com/rule/edit.xhtml?name=Disk%20Size%20Thresholds#condition_overrides)
+  [Правило](https://nur.axibase.com/rule/edit.xhtml?name=Disk%20Size%20Thresholds#condition_overrides)
 
 * Пример с авто-порогами используя SSA
 
-Функция [forecast](https://axibase.com/docs/atsd/rule-engine/functions-forecast.html#forecast) возвращает объект, содержащий предсказанные значение и время, который можно использовать для проверки соответствия прогнозируемого значения реальному, при помощи метода `violates(value, delta)`
-Функция [forecast_score_stdev](https://axibase.com/docs/atsd/rule-engine/functions-forecast.html#forecast_score_stdev) возвращает стандартное отклонение агрегированных значений от наиболее подходящего прогноза, которое может быть полезно при определении порогов.
-Для работы функций необходимо заранее создать хранимый Forecast и задать ему имя.
+  Функция [forecast](https://axibase.com/docs/atsd/rule-engine/functions-forecast.html#forecast) возвращает объект, содержащий предсказанные значение и время, который можно использовать для проверки соответствия прогнозируемого значения реальному, при помощи метода `violates(value, delta)`
+  Функция [forecast_score_stdev](https://axibase.com/docs/atsd/rule-engine/functions-forecast.html#forecast_score_stdev) возвращает стандартное отклонение агрегированных значений от наиболее подходящего прогноза, которое может быть полезно при определении порогов.
+  Для работы функций необходимо заранее создать хранимый Forecast и задать ему имя.
 
-![](images/forecast_job_1.png)
-![](images/forecast_job_2.png)
+  ![](./images/forecast_job_1.png)
+  ![](./images/forecast_job_2.png)
 
-[Forecast](https://nur.axibase.com/forecast/settings/edit.xhtml?settingsKey=144)
+  [Forecast](https://nur.axibase.com/forecast/settings/edit.xhtml?settingsKey=144)
 
 Пример использования.
 
-![](images/forecast_example.png)
+![](./images/forecast_example.png)
 
 3.1.14) Возможность расчета эталонных значений отслеживаемых метрик на основе статистической информации за определенный исторический период
 
@@ -651,15 +652,15 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 * Задача `om_dstr_app_topology` для автоматического построения представлений распределенных приложений из топологии SCOM
 * Задача `mq_topology` для автоматического построения транспортной схемы WebSphere MQ: менеджеры, очереди, каналы.
 
-![](./images/wmq.png)
+  ![](./images/wmq.png)
 
 * Встроенная кластерная топология для [SAP HANA](https://axibase.com/products/axibase-enterprise-reporter/axibase-enterprise-reporter-for-sap-hana/)
 
-![](./images/sap_hana.png)
+  ![](./images/sap_hana.png)
 
 * Встроенный stack для микро-сервисов на основе ресурсной модели контейнеров [Docker](https://nur.axibase.com/portal/tabs?entity=nurswghbs001&id=112&id=113)
 
-![](./images/docker_host_stack.png)
+  ![](./images/docker_host_stack.png)
 
 3.2.2) Наличие встроенных типов конфигурационных элементов и связей между ними
 
@@ -673,8 +674,8 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 ![tag-template-inherit](./images/tag-template-inherit.png)
 * Примеры настроек колонок типа Entity Link
 
-Demo Docker Container
-![demo-entity-link](./images/demo-entity-link.png)
+  Demo Docker Container
+  ![demo-entity-link](./images/demo-entity-link.png)
 
 * Примеры встроенных Entity Views для Докера, где демонстрируется группировка по полю, содержащему связанную сущность (group by tags.docker-host)
 ![entity-view-group-by](./images/entity-view-group-by.png)
@@ -786,6 +787,8 @@ Demo Docker Container
 
 ### Пример portal screenshot to Email, portal to Slack
 
+> Правило [Высокая загрузка CPU](https://nur.axibase.com/rule/edit.xhtml?name=%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B0%D1%8F%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20CPU#overview).
+
 1. Перейдите на страницу **Alerts > Rules**, нажмите **New**.
 
    ![](./images/rule_1.png)
@@ -840,20 +843,20 @@ Demo Docker Container
 
 * Пример правила с двумя метриками (value function): [проверка истечения SSL сертификатов](https://nur.axibase.com/rule/edit.xhtml?name=ssl-certificates-expiration)
 
-```javascript
-value < expiration_limit and value('http.ssl_certificate_status') != 5
-```
+  ```javascript
+  value < expiration_limit and value('http.ssl_certificate_status') != 5
+  ```
 
 * Пример правила с двумя метриками: [Загрузка ЦПУ контейнера и загрузка ЦПУ докер-хоста, на котором контейнер исполяется]()
 
-![](images/cpu_busy_condition.png)
-![](images/cpu_busy_notification_config.png)
-![](images/cpu_busy_slack.png)
+  ![](./images/cpu_busy_condition.png)
+  ![](./images/cpu_busy_notification_config.png)
+  ![](./images/cpu_busy_slack.png)
 
 * Пример правила с двумя метриками: [Общее занятое пространство на диске, занятое пространство под таблицы MS SQL Server](https://nur.axibase.com/rule/edit.xhtml?name=%D0%91%D0%B0%D0%B7%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+MS+SQL+Server+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F)
 
-![](images/mssql_server_disk_condition.png)
-![](images/mssql_server_disk_usage_slack.png)
+  ![](./images/mssql_server_disk_condition.png)
+  ![](./images/mssql_server_disk_usage_slack.png)
 
 3.2.6) Возможность настройки динамической корелляции событийной информации на основе топологических данных о взаимосвязях элементов инфраструктуры
 
@@ -872,7 +875,7 @@ value < expiration_limit and value('http.ssl_certificate_status') != 5
 
 * СитЦентр предоставляет специализированный [адаптер](https://axibase.com/files/dcx/axibase_er_cmdb_adapter.pdf) для интеграции с CMDB
 
-![](./images/cmdb.png)
+  ![](./images/cmdb.png)
 
 3.3.2) Возможность в графическом режиме без использования программирования удалять, создавать и изменять типы конфигурационных единиц и собственные типы связей между конфигурационными элементами
 
@@ -1010,44 +1013,42 @@ value < expiration_limit and value('http.ssl_certificate_status') != 5
 
 * CSV Parsers
 * Entity
+* Entity Group
 * Entity View
 * Export Job
 * Forecast Jobs
 * Named Collection
 * Metric
+* Outgoing Webhook
 * Portal
 * Replacement Table
 * Rule
-* Series
 * Scheduled SQL Queries
+* Tag Templates
 * User
 * User Group
 
-### Пример сообщения в лог при удалении
+### Примеры
 
-* Удаление **Series**
+Удаление группы пользователей **Editors**:
 
-```js
-2019-05-24 10:42:00,501;INFO;qtp2117132196-228;com.axibase.tsd.service.TimeSeriesDeleteServiceImpl;Starting series removal , series key 157:4,1=197,4=114
-```
+* сообщениe в лог при удалении
 
-### Пример message при удалении
+  ```js
+  2019-05-28 12:27:12,999;INFO;qtp543648248-214;com.axibase.tsd.service.admin.ActionAuditServiceImpl;Record type: USER_GROUP, name: Editors, action: delete, user: axibase
+  ```
 
-* Удаление **User Group**
+* message при удалении
 
   ![](././images/delete_user_group.png)
 
-* Удаление **Series**
-
-  ![](././images/delete_series.png)
-
-#### Пример уведомления по почте
-
-* Удаление **User Group**
+* уведомлениe по почте
 
   ![](./images/mail_notif_about_delete.png)
   
-##### Настройка правила
+#### Настройка правила для отправки уведомления
+
+> Правило [Удаление группы пользователей](https://nur.axibase.com/rule/edit.xhtml?name=%D0%A3%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B+%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9#overview).
 
 1. Перeйдите на страницу **Alerts > Rules**, нажмите **New**.
 
@@ -1097,11 +1098,11 @@ value < expiration_limit and value('http.ssl_certificate_status') != 5
 В целях безопасности разрешено запускать только доверенные скрипты из директории `/opt/atsd/atsd/conf/script`. Поэтому для начала необходимо создать в этой директории файл `opcmsg_execute.sh` и дать ему права на исполнение: `chmod +x opcmsg_execute.sh`.
 Все скрипты, доступные для исполнения в ATSD, можно просмотреть на странице **Alerts / Script Viewer**
 
-![](images/script_viewer.png)
+![](./images/script_viewer.png)
 
 Для исполнения можно выбрать доступный скрипт из списка и перечислить необходимые параметры, каждый параметр с новой строки. Параметры могут быть вычислены динамически с использованием переменных окна, пользовательских переменных, определённых на вкладке Overview, встроенных функций и условных выражений.
 
-![](images/scripts_tab.png)
+![](./images/scripts_tab.png)
 
 [Правило](https://nur.axibase.com/rule/edit.xhtml?name=docker-container-cpu-high)
 
@@ -1119,37 +1120,37 @@ value < expiration_limit and value('http.ssl_certificate_status') != 5
 
 1. Создадим интеграцию для сервиса ATSD.
 
-![](images/pagerduty_service.png)
+![](./images/pagerduty_service.png)
 
-![](images/pagerduty_integration.png)
+![](./images/pagerduty_integration.png)
 
 Сгенерированный ключ Integration Key впоследствии будет использоваться для авторизации вебхуков.
 
-![](images/pagerduty_key.png)
+![](./images/pagerduty_key.png)
 
 2. Для отправки вебхуков PagerDuty в ATSD нужно создать Custom Outgoing Webhook.
 
-![](images/webhook_new.png)
+![](./images/webhook_new.png)
 
 Описание принимаемых параметров и примеры запросов к PagerDuty находим в [документации](https://v2.developer.pagerduty.com/docs/send-an-event-events-api-v2). Заполняем форму в соответствии с документацией, заменяя реальные значения, которые будут подставляться динамически, именованными шаблонами. Копируем ранее полученный ключ Integration Key в поле routing_key.
 
-![](images/custom_webhook.png)
+![](./images/custom_webhook.png)
 
 3. В качестве примера создадим правило, которое инициирует инцидент, если занимаемое место на диске превышает 75%, и закрывает инцидент, если занимаемое место не превышает 75%.
 Чтобы открыть и закрыть один и тот же инцидент, заранее сгенерируем уникальный ключ и сохраним его в переменной dedup_key.
 
-![](images/condition.png)
-![](images/alert_history.png)
-![](images/webhook_open.png)
+![](./images/condition.png)
+![](./images/alert_history.png)
+![](./images/webhook_open.png)
 
 При срабатывании правила Rule Engine отправляет запрос в PagerDuty на создание инцидента, сопровождая его информацией о состоянии файловой системы, и предоставляет ссылку на портал с метрикой disk_used.
 
-![](images/pagerduty_alert_open.png)
+![](./images/pagerduty_alert_open.png)
 
 При возврате метрики к приемлемым значениям Rule Engine отправляет запрос на закрытие инцидента. Функция `last_open()` позволяет получить состояние окна в момент предыдущего срабатывания правила.
 
-![](images/webhook_cancel.png)
-![](images/pagerduty_alert_resolved.png)
+![](./images/webhook_cancel.png)
+![](./images/pagerduty_alert_resolved.png)
 
 [Правило](https://nur.axibase.com/rule/edit.xhtml?name=atsd_disk_low_pagerduty)
 
