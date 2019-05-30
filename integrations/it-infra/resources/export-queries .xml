@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="&quot;&quot;">
+<com.axibase.tsd.service.export.query.QueryImpl xsi:type="queryImpl">
+<id>126</id>
+<name>Ежедневное использование CPU</name>
+<query><![CDATA[SELECT entity AS "Server", entity.tags.app AS "Application", 
+  ROUND(AVG(value), 1) AS "Average CPU Used, %",
+  ROUND(PERCENTILE(90, value), 1) AS "p75 CPU Used, %",
+  COUNT(value) AS "Sample Count"
+FROM "cpu_busy"
+  WHERE datetime >= previous_day AND datetime < current_day
+GROUP BY entity
+  HAVING AVG(value) > 50]]></query>
+<fileName>/opt/atsd/atsd/reports/${name}_${yyyy-MM-dd}</fileName>
+<enabled>false</enabled>
+<schedule>0 0 2 * * *</schedule>
+<format>HTML</format>
+<csvCompressType>GZIP</csvCompressType>
+<numericPrecision>-1</numericPrecision>
+<addMetaData>false</addMetaData>
+<sendEmptyReport>false</sendEmptyReport>
+<sendErrorReport>true</sendErrorReport>
+<enableExport>true</enableExport>
+<enableStore>false</enableStore>
+<enablePublish>true</enablePublish>
+<failOnError>false</failOnError>
+<checkLastTime>true</checkLastTime>
+<guestAccess>true</guestAccess>
+<refresh>true</refresh>
+<lastUpdated>1559120083369</lastUpdated>
+<author>Anna Striganova</author>
+<errorOnNoRowsFetched>true</errorOnNoRowsFetched>
+</com.axibase.tsd.service.export.query.QueryImpl>
+</list>
