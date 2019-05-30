@@ -212,6 +212,20 @@ endcsv
 
 > AR
 
+Список используемых правил
+
+![](./images/rule_examples.png)
+
+Настройка адресата Email уведомления
+
+![](./images/email_recipients_field.png)
+
+* Задание адресатов уведомлений списком
+
+```javascript
+user1@example.org,user2@example.org,user3@example.org
+```
+
 * Условные выражения для отправки уведомлений на разные адреса в зависисмости от критичности события и от времени суток
 
 ```javascript
@@ -220,8 +234,8 @@ daywatch@example.org
 @else{}
 nightwatch@example.org
 @end{}
-@if{severity = 'CRITICAL' or severity = 'FATAL'}
-ops_team@example.org
+@if{tags.error_code = 'ORA-12317'}
+dba@example.org
 @end{}
 ```
 
@@ -235,17 +249,21 @@ ${cancelAction()}
 
 * Отправка уведомления группе пользователей
 
+![](./images/devops_users.png)
+
+Функция вернёт список известных адресов всех членов запрашиваемой группы: `axibase@example.com,jane.doe@example.org,john.doe@example.org`
+
 ```javascript
 ${get_group_emails('DevOps')}
 ```
 
-* Отправка уведомления собственнику системы (указан email в тэге `owner` сущности)
+* Отправка уведомления ответственному за систему (указан email в тэге `owner` сущности). Если тэг не указан, получатель – `devops@example.org`.
 
 ```javascript
-${entity.tags.owner}
+${ifEmpty(entity.tags.owner, 'devops@example.org')}
 ```
 
-* Отправка уведомления подвыборке подписанных пользовалей - по ключевым словам. В данном примере лучше взять messages, чтобы пользователи могли указать `type/source` где-то в настройках
+* Отправка уведомления подвыборке подписанных пользовалей - по ключевым словам.
 
 В ATSD пользователи могут в настройках счёта самостоятельно задавать события, уведомления о которых они хотели бы получать.
 
@@ -257,9 +275,13 @@ ${entity.tags.owner}
 
 Функция `subscribers` в **Rule Engine** принимает один или несколько ключей и возвращает email адреса всех пользователей, имеющих хотя бы один ключ в списке тем.
 
+В данном примере уведомления отправляются в ответ на все входящие сообщения пользователям, которые подписаны на сообщения с данным типом. 
+
 ```javascript
 ${subscribers(type)}
 ```
+
+[Пример правила](https://nur.axibase.com/rule/edit.xhtml?name=Message+Audit#notifications_email)
 
 3.1.10) Сбор данных о метриках функционирования серверного оборудования и рабочих станций (степень утилизации, загрузка CPU, RAM, HDD)
 
@@ -340,31 +362,88 @@ ${subscribers(type)}
 
 > AR
 
-* Таблица с примерами выражений (condition) и кратким описанием - от простых правил к сложным
+* Примеры выражений (condition) и краткое описание - от простых правил к сложным
 
-**Выражение** | **Описание** | **Пример**
-----|----|----
-`true` | Безусловное срабатывание правила | [Обработка вебхуков Travis](https://nur.axibase.com/rule/edit.xhtml?name=travis-ci-build-status)
-`count() == 0` | Срабатывает для временных окон, если в окно не было добавлено ни одной команды в течение периода длительности окна | [Проверка поступления данных с докер хоста](https://nur.axibase.com/rule/edit.xhtml?name=docker-job-no-messages)
-`value > 95` | Значение превышает заданный порог (95) | [Проверка места на диске](https://nur.axibase.com/rule/edit.xhtml?name=disk_VERY_low)
-`value > 95 or avg() > 85` | Значение превышает 95 или среднее всех значений в окне превышает 85 | [Потребление оперативной памяти](https://nur.axibase.com/rule/edit.xhtml?name=JVM%20memory%20low)
-`rate_per_minute() > 10` | Скорость роста значения превышает порог (10) | [Вызов сборки мусора JVM](https://nur.axibase.com/rule/edit.xhtml?name=jvm_garbage_collection_rate)
-`forecast('forecast_name').violates(avg(), level)` | Значение в окне отличается от предсказанного | [Предсказание занятости процессора](https://nur.axibase.com/rule/edit.xhtml?name=cpu_busy_forecast_ssa_15m)
-`now.add(1, 'day').is_workday() AND NOT now.add(2, 'days').is_workday()` | Продвинутая фильтрация по календарю рабочих дней: срабатывает в последний рабочий день на неделе | [Friday Pizza](https://nur.axibase.com/rule/edit.xhtml?name=Pizza%20Time)
+    * Безусловное срабатывание правила
+    
+        ```javascript
+        true
+        ```
+        
+        [Правило: Обработка вебхуков Travis](https://nur.axibase.com/rule/edit.xhtml?name=travis-ci-build-status)
+    
+    * Проверка поступления данных в течение периода длительности окна
+    
+        ```javascript
+        count() == 0
+        ```
+        
+        [Правило: Проверка поступления данных с докер хоста](https://nur.axibase.com/rule/edit.xhtml?name=docker-job-no-messages)
+        
+    * Значение превышает заданный порог (95)
+        
+        ```javascript
+        value > 95
+        ``` 
+        
+        [Правило: Проверка места на диске](https://nur.axibase.com/rule/edit.xhtml?name=disk_VERY_low)
+
+    * Значение превышает 95 или среднее всех значений в окне превышает 85
+    
+       ```javascript
+        value > OR avg() > 85
+        ```
+        [Документация по агрегационным функциям](https://axibase.com/docs/atsd/rule-engine/functions.html#statistical)
+        
+        [Правило: Потребление оперативной памяти](https://nur.axibase.com/rule/edit.xhtml?name=JVM%20memory%20low)
+    
+    * Скорость роста значения превышает порог (10)
+    
+        ```javascript
+        rate_per_minute() > 10
+        ``` 
+        
+        [Правило: Анализ сборки мусора JVM](https://nur.axibase.com/rule/edit.xhtml?name=jvm_garbage_collection_rate)
+    
+    * Значение в окне отличается от предсказанного
+    
+        ```javascript
+        forecast('forecast_name').violates(avg(), 20)
+        ```
+        [Правило: Предсказание занятости процессора](https://nur.axibase.com/rule/edit.xhtml?name=cpu_busy_forecast_ssa_15m)
+        
+    * Срабатывает, если предсказанное заполнение диска наступит ранее, чем через два часа
+    
+        ```javascript
+        threshold_linear_time(99) < 120
+        ```
+        
+        [Правило: Предсказание времени, когда закончится место на диске](https://nur.axibase.com/rule/edit.xhtml?name=disk_threshold#condition_overrides)
+    
+    * Продвинутая фильтрация по календарю рабочих дней 
+    
+        ```javascript
+        now.is_workday() AND NOT now.add(1, 'day').is_workday()
+        ```
+        
+        [Правило: Заказ пиццы в последний рабочий день на неделе](https://nur.axibase.com/rule/edit.xhtml?name=Pizza%20Time)
 
 * Пример извлечения порога из тэга сущности
 
   ```javascript
-  value > 0.9 * toNumber(entity.tags['mem-limit'])
+  value > 0.9 * entity.tags.memory_limit
   ```
 
 * Пример извлечения порога из replacement table
 
   ![](./images/env_thresholds_replacement_table.png)
+  
+  [Таблица порогов](https://nur.axibase.com/replacement-tables/docker_env_thresholds)
+  
   ![](./images/entity_tags_vm.png)
 
   ```javascript
-  value > toNumber(lookup('docker_env_thresholds', entity.tags.environment))
+  value > lookup('docker_env_thresholds', entity.tags.environment)
   ```
 
 * Пример с таблицей Overrides, где приведены разные значения для разных рядов
@@ -384,9 +463,9 @@ ${subscribers(type)}
 
   [Forecast](https://nur.axibase.com/forecast/settings/edit.xhtml?settingsKey=144)
 
-Пример использования.
-
-![](./images/forecast_example.png)
+  Пример использования.
+  
+  ![](./images/forecast_example.png)
 
 3.1.14) Возможность расчета эталонных значений отслеживаемых метрик на основе статистической информации за определенный исторический период
 
@@ -604,8 +683,8 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
       * **Decimal Precision** - количество знаков после запятой, `-1`- оставить значения без изменений
       * **Add Metadata** - добавить метаданные в заголовок файла
-      * **Send Empty Report** - отпрявлять e-mail, даже если SQl-запрос вернул пустой результат
-      * **Send Error Report** - отпрявлять e-mail, даже если SQl-запрос завершился с ошибкой
+      * **Send Empty Report** - отпрявлять e-mail, даже если SQL-запрос вернул пустой результат
+      * **Send Error Report** - отпрявлять e-mail, даже если SQL-запрос завершился с ошибкой
       * **Fail on No Data** - генерировать ошибку, если SQL-запрос не получил данные из таблицы `atsd_d`
 
     </details>
@@ -689,28 +768,40 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 9. Сохраните правило.
 
-3.2.5) Возможностью создания правил корреляции с использованием графического интерфейса (без использования программирования), учитывая сервисно-ресурсную модель компонентов объекта мониторинга
+3.2.5) Возможность создания правил корреляции с использованием графического интерфейса (без использования программирования), учитывая сервисно-ресурсную модель компонентов объекта мониторинга
 
 Продукт: АТСД
 
 > AR
 
-* Пример правила с двумя метриками (value function): [проверка истечения SSL сертификатов](https://nur.axibase.com/rule/edit.xhtml?name=ssl-certificates-expiration)
+  * Пример правила с двумя метриками (Dependent Rule): [Общее занятое пространство на диске, занятое пространство под таблицы MS SQL Server](https://nur.axibase.com/rule/edit.xhtml?name=%D0%91%D0%B0%D0%B7%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+MS+SQL+Server+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F+dep#condition_overrides)
+  
+    Dependent Rule – правило, окно в котором должно находиться в состоянии OPEN, чтобы сработало основное правило.
+  
+    [Вспомогательное правило](https://nur.axibase.com/rule/edit.xhtml?name=%D0%97%D0%B0%D0%BA%D0%B0%D0%BD%D1%87%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%BD%D0%B0%20%D1%85%D0%BE%D1%81%D1%82%D0%B5%20%D0%91%D0%94#condition_overrides): срабатывает, если на диске меньше 25% свободного места
+  
+    ![](./images/base_rule_config.png)
+    ![](./images/mssql_server_disk_condition_dep.png)
+    ![](./images/mssql_server_disk_slack_config_dep.png)
+    ![](./images/mssql_server_disk_usage_slack.png)
 
-  ```javascript
-  value < expiration_limit and value('http.ssl_certificate_status') != 5
-  ```
+  * Пример правила с двумя метриками (Доступ к данным стороннего окна независимо от его состояния): [Общее занятое пространство на диске, занятое пространство под таблицы MS SQL Server](https://nur.axibase.com/rule/edit.xhtml?name=%D0%91%D0%B0%D0%B7%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+MS+SQL+Server+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F)
+  
+    ![](./images/mssql_server_disk_condition.png)
+    ![](./images/mssql_server_disk_slack_config.png)
+    ![](./images/mssql_server_disk_usage_slack.png)
 
-* Пример правила с двумя метриками: [Загрузка ЦПУ контейнера и загрузка ЦПУ докер-хоста, на котором контейнер исполяется]()
+  * Пример правила с двумя метриками (value function): [Проверка истечения SSL сертификатов](https://nur.axibase.com/rule/edit.xhtml?name=ssl-certificates-expiration)
+    
+    ```javascript
+    value < expiration_limit AND value('http.ssl_certificate_status') != 5
+    ```
 
-  ![](./images/cpu_busy_condition.png)
-  ![](./images/cpu_busy_notification_config.png)
-  ![](./images/cpu_busy_slack.png)
-
-* Пример правила с двумя метриками: [Общее занятое пространство на диске, занятое пространство под таблицы MS SQL Server](https://nur.axibase.com/rule/edit.xhtml?name=%D0%91%D0%B0%D0%B7%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+MS+SQL+Server+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F)
-
-  ![](./images/mssql_server_disk_condition.png)
-  ![](./images/mssql_server_disk_usage_slack.png)
+  * Пример правила с двумя метриками: [Загрузка ЦПУ контейнера и загрузка ЦПУ докер-хоста, на котором контейнер исполяется](https://nur.axibase.com/rule/edit.xhtml?name=%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20%20CPU%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0#condition_overrides)
+  
+    ![](./images/cpu_busy_condition.png)
+    ![](./images/cpu_busy_notification_config.png)
+    ![](./images/cpu_busy_slack.png)
 
 3.2.6) Возможность настройки динамической корелляции событийной информации на основе топологических данных о взаимосвязях элементов инфраструктуры
 
