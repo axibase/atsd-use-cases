@@ -646,37 +646,6 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     * Допустим у нас есть CSV файл в котором хранится описание хостов
 
       ```csv
-      hostname,ip,protocol,tz
-      test.axibase.com,192.168.1.8,tcp,EST
-      datagram.axibase.com,192.168.1.7,udp,UTC
-      ...
-      ```
-
-    * Откройте страницу **Data>CSV Parser Wizard** из основного меню
-      ![](./images/entity/csv_wizard.png)
-
-    * Прикрепите файл с помощью конпки **Browse**
-
-    * В выпадающем списке выберите действие **Insert as Entities**
-    ![](./images/entity/csv_wizart_1.png)
-
-    * На стадии **Parse** убедитесь что CSV распознан корректно и нажмите кнопку **Next**
-
-    * На стадии **Model** опишите как колонки должны соотноститься с полями сущности и нажмите кнопку **Apply**
-    ![](./images/entity/csv_wizart_2.png)
-
-    * На заключетельной стадии загрузите исходный файл с помощью построенного парсера нажав кнопку **Upload file**
-
-    * Убедитесь, что сущности появилсь в списке сущностей и их поля проставлены корректно.
-
-    ![](./images/entity/csv_entity_created.png)
-  * Импорт из CSV файла
-
-     Сущность может быть описана как строка в CSV файле. АТСД  позволяет распарсить CSV файл как набор сущностей используя  **CSV Parser Wizard**
-
-    * Допустим у нас есть CSV файл в котором хранится описание хостов
-
-      ```csv
       hostname,ip,os,type,vendor
       test.axibase.com,192.168.1.8,AIX,Cloud,IBM
       amazoncloud.com,192.168.1.7,Ubuntu 16.03,Gaming,Amazon
@@ -884,4 +853,39 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 > IS
 
-* Пример интеграции: запись данных из [OpenMuc](https://www.openmuc.org/openmuc/user-guide/#_build_a_simple_m_bus_data_logger) в удаленную ATSD как data logger. OpenMuc выпускается под GPL и поэтому не может быть встроен в Коллектор.
+* Пример интеграции: запись данных из [OpenMuc](https://www.openmuc.org/openmuc/user-guide/#_build_a_simple_m_bus_data_logger) в удаленную ATSD как data logger. 
+    
+   * Требования
+       * Экземпляр [OpenMuc](https://www.openmuc.org)
+       * Экземпляр [ATSD](https://axibase.com/docs/atsd/)
+       * Экземпляр [Axibase Collector](https://axibase.com/docs/axibase-collector/).
+   * Запустите свой экземпляр OpenMuc.
+   
+   * Сконфигурируйте задачу в  Axibase Collector
+     * Создайте [Http Pool](https://axibase.com/docs/axibase-collector/jobs/http-pool.html) 
+     
+     ![](./images/openmuc/httppool.png)
+     
+     * Создайте [список  элементов](https://axibase.com/docs/axibase-collector/collections.html#item-lists) с ноебходимым списком каналов.
+     
+     ![](./images/openmuc/itemlist.png)
+     
+    * Cоздайте [файловую задачу](https://axibase.com/docs/axibase-collector/jobs/file.html#file-job) указав экземпляр ATSD .
+     ![](./images/openmuc/filejob.png)
+    
+    * Добавьте конфигурацию описывающую преоброзвание response от OpenMuc REST API в СSV, который будет обработан [СSV парсером](https://axibase.com/docs/atsd/writing-data.html#csv-parsers) в ATSD.
+    
+      ![](./images/openmuc/filejobconf.png)
+      
+  * Cоздайте [CSV парсер](https://nur.axibase.com/csv/configs/edit.xhtml?configName=openmuc-parser) который преобразует данные отправленные коллектором.
+  
+    ![](./images/openmuc/csvparser.png)
+    
+  * Протестируйте созданную раннее конфигурацию
+  
+  ![](./images/openmuc/testjob.png)
+  
+  
+  * Убедитесь что данные [поступают](https://nur.axibase.com/entities/openmuc-device/) в ATSD.
+  
+  ![](./images/openmuc/metriclist.png)
