@@ -450,7 +450,6 @@ ${subscribers(type)}
 * Пример с авто-порогами используя SSA
 
   Функция [forecast](https://axibase.com/docs/atsd/rule-engine/functions-forecast.html#forecast) возвращает объект, содержащий предсказанные значение и время, который можно использовать для проверки соответствия прогнозируемого значения реальному, при помощи метода `violates(value, delta)`
-  Функция [forecast_score_stdev](https://axibase.com/docs/atsd/rule-engine/functions-forecast.html#forecast_score_stdev) возвращает стандартное отклонение агрегированных значений от наиболее подходящего прогноза, которое может быть полезно при определении порогов.
   Для работы функций необходимо заранее создать хранимый Forecast и задать ему имя.
 
   ![](./images/forecast_job_1.png)
@@ -458,9 +457,10 @@ ${subscribers(type)}
 
   [Forecast](https://nur.axibase.com/forecast/settings/edit.xhtml?settingsKey=144)
 
-  Пример использования.
+  [Пример использования](https://nur.axibase.com/rule/edit.xhtml?name=cpu_busy_forecast_ssa_15m_level20#condition_overrides)
   
   ![](./images/forecast_example.png)
+  ![](./images/forecast_example_windows.png)
 
 3.1.14) Возможность расчета эталонных значений отслеживаемых метрик на основе статистической информации за определенный исторический период
 
@@ -776,6 +776,9 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     [Вспомогательное правило](https://nur.axibase.com/rule/edit.xhtml?name=%D0%97%D0%B0%D0%BA%D0%B0%D0%BD%D1%87%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%BD%D0%B0%20%D1%85%D0%BE%D1%81%D1%82%D0%B5%20%D0%91%D0%94#condition_overrides): срабатывает, если на диске меньше 25% свободного места
   
     ![](./images/base_rule_config.png)
+    
+    Основное правило
+    
     ![](./images/mssql_server_disk_condition_dep.png)
     ![](./images/mssql_server_disk_slack_config_dep.png)
     ![](./images/mssql_server_disk_usage_slack.png)
@@ -810,7 +813,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 | Правило | Пример оповещения |
 | --- | --- |
 | [Высокая загрузка CPU](https://nur.axibase.com/rule/edit.xhtml?name=%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B0%D1%8F%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20CPU#overview) | ![](./images/rules/cpu_notification.png)|
-| [Мало место на диске](https://nur.axibase.com/rule/edit.xhtml?name=atsd_disk_low#condition_overrides) | ![](./images/rules/disk_notification.png) |
+| [Мало места на диске](https://nur.axibase.com/rule/edit.xhtml?name=atsd_disk_low#condition_overrides) | ![](./images/rules/disk_notification.png) |
 | [Оперативная память заканчивается](https://nur.axibase.com/rule/edit.xhtml?name=atsd.jvm.low_memory#condition_overrides) | ![](./images/rules/jvm_notification.png) | 
 
 * Ссылки на примеры из коллектора где есть правила для импорта
