@@ -292,6 +292,8 @@ ${get_group_emails('DevOps')}
 
 * Отправка уведомления ответственному за систему (указан email в тэге `owner` сущности). Если тэг не указан, получатель – `devops@example.org`.
 
+![](./images/entity_tag_owner.png)
+
 ```javascript
 ${ifEmpty(entity.tags.owner, 'devops@example.org')}
 ```
@@ -576,7 +578,11 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 ![demo-entity-link](./images/demo-entity-link.png)
 
 * Примеры встроенных Entity Views для Докера, где демонстрируется группировка по полю, содержащему связанную сущность (group by tags.docker-host)
-![entity-view-group-by](./images/entity-view-group-by.png)
+
+[Docker Network](https://nur.axibase.com/entities/views/7.xhtml)
+([редактор](https://nur.axibase.com/entities/views/edit.xhtml?entityViewId=7))
+
+[entity-view-group-by](./images/entity-view-group-by.png)
 
 #### 3.2.3) Возможность создания эталонных моделей
 
@@ -1017,7 +1023,9 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
   ![](./images/mail_notif_about_delete.png)
 
-  Пример настройки правила [здесь](./audit_rule.md).
+  [Правило: Аудит](https://nur.axibase.com/rule/edit.xhtml?name=%D0%90%D1%83%D0%B4%D0%B8%D1%82#notifications_email).
+
+  Инструкция по настройке правила [здесь](./audit_rule.md).
 
 ### 4.2) Возможность эскалации сообщений
 
