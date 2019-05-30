@@ -582,7 +582,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 [Docker Network](https://nur.axibase.com/entities/views/7.xhtml)
 ([редактор](https://nur.axibase.com/entities/views/edit.xhtml?entityViewId=7))
 
-[entity-view-group-by](./images/entity-view-group-by.png)
+![entity-view-group-by](./images/entity-view-group-by.png)
 
 #### 3.2.3) Возможность создания эталонных моделей
 
