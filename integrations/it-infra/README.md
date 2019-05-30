@@ -1087,29 +1087,68 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 Продукт: АТСД
 
-> IS
+* Пример интеграции: запись данных из [OpenMuc](https://github.com/gythialy/openmuc#features) в удаленную ATSD как data logger. 
 
-* Пример интеграции: запись данных из [OpenMuc](https://www.openmuc.org/openmuc/user-guide/#_build_a_simple_m_bus_data_logger) в удаленную ATSD как data logger. 
+   * Поддерживаемые протоколы
+      * Modbus TCP
+      *  IEC 61850
+      *  DLMS/COSEM
+      *  KNX
+      *  M-Bus (wired)
+      *  eHz meters
+      *  CANopen
+      *  IEC 62056-21
+      *  S7 PLC protocol
+      *  SNMP
+    
+   * Файлы для импорта
+     * [Задача сбора](./resources/job_file_openmuc.xml)
+     * [Парсер](./resources/csv-parser-openmuc-parser.xml)
     
    * Требования
-       * Экземпляр [OpenMuc](https://www.openmuc.org)
+       * Экземпляр [OpenMuc](https://gythialy.github.io/openmuc/)
        * Экземпляр [ATSD](https://axibase.com/docs/atsd/)
        * Экземпляр [Axibase Collector](https://axibase.com/docs/axibase-collector/).
    * Запустите свой экземпляр OpenMuc.
-   
    * Сконфигурируйте задачу в  Axibase Collector
-     * Создайте [Http Pool](https://axibase.com/docs/axibase-collector/jobs/http-pool.html) 
+     * Создайте [Http Pool](https://hbs.axibase.com:10443/pool/form.xhtml?connectionPoolId=145) 
      
      ![](./images/openmuc/httppool.png)
      
-     * Создайте [список  элементов](https://axibase.com/docs/axibase-collector/collections.html#item-lists) с ноебходимым списком каналов.
+     * Создайте [список  элементов](https://hbs.axibase.com:10443/collection/form.xhtml?collectionId=356) с ноебходимым списком каналов.
      
      ![](./images/openmuc/itemlist.png)
      
-    * Cоздайте [файловую задачу](https://axibase.com/docs/axibase-collector/jobs/file.html#file-job) указав экземпляр ATSD .
+   * Cоздайте [файловую задачу](https://hbs.axibase.com:10443/job-file.xhtml?jobId=5949) указав экземпляр ATSD.
      ![](./images/openmuc/filejob.png)
+     
+     **Response**
+     ```json
+     {
+         "records": [
+             {
+                 "id": "power_grid",
+                 "valueType": "DOUBLE",
+                 "record": {
+                     "timestamp": 1559207680005,
+                     "flag": "VALID",
+                     "value": -2.186
+                 }
+             },
+             {
+                 "id": "status_electric_vehicle",
+                 "valueType": "STRING",
+                 "record": {
+                     "timestamp": 1559207679749,
+                     "flag": "VALID",
+                     "value": "idle"
+                 }
+             },
+        ...
+     }
+     ```
     
-    * Добавьте конфигурацию описывающую преоброзвание response от OpenMuc REST API в СSV, который будет обработан [СSV парсером](https://axibase.com/docs/atsd/writing-data.html#csv-parsers) в ATSD.
+   * Добавьте конфигурацию описывающую преоброзвание response от OpenMuc REST API в СSV, который будет обработан [СSV парсером](https://axibase.com/docs/atsd/writing-data.html#csv-parsers) в ATSD.
     
       ![](./images/openmuc/filejobconf.png)
       
