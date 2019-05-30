@@ -259,6 +259,8 @@ ${get_group_emails('DevOps')}
 
 * Отправка уведомления ответственному за систему (указан email в тэге `owner` сущности). Если тэг не указан, получатель – `devops@example.org`.
 
+![](./images/entity_tag_owner.png)
+
 ```javascript
 ${ifEmpty(entity.tags.owner, 'devops@example.org')}
 ```
@@ -424,6 +426,8 @@ ${subscribers(type)}
         [Правило: Заказ пиццы в последний рабочий день на неделе](https://nur.axibase.com/rule/edit.xhtml?name=Pizza%20Time)
 
 * Пример извлечения порога из тэга сущности
+
+![](./images/entity_tag_memory_limit.png)
 
   ```javascript
   value > 0.9 * entity.tags.memory_limit
