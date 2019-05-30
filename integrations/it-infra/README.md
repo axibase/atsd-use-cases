@@ -338,18 +338,13 @@ ${subscribers(type)}
 
 | Продукт                                                                                          | Источник данных | Портал                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------ | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ATSD](http://axibase.com/docs/atsd)                                                             | Built-in        | ![](./images/collectors/atsd_portal.png)[↗](https://nur.axibase.com/portal/156.xhtml?menu=true)                                              |
-| [ActiveMQ](https://axibase.com/docs/axibase-collector/jobs/examples/activemq/)                   | JMX             | ![](./images/collectors/acrivemq_portal.png)[↗](https://apps.axibase.com/chartlab/2f11a5ef)                                                  |
-| [HP OpenView](https://axibase.com/docs/axibase-collector/jobs/examples/hp-openview/)             | OVMP            | ![](./images/collectors/ovmp_portal.png) [↗](https://apps.axibase.com/chartlab/f9d176ac/2/)                                                  |
 | [JVM](https://axibase.com/docs/axibase-collector/jobs/examples/jvm/)                             | JMX             | ![](./images/collectors/jvm_portal.png) [↗](https://apps.axibase.com/chartlab/e6911d9d)                                                      |
+| [ActiveMQ](https://axibase.com/docs/axibase-collector/jobs/examples/activemq/)                   | JMX             | ![](./images/collectors/acrivemq_portal.png)[↗](https://apps.axibase.com/chartlab/2f11a5ef)                                                  |
 | [Docker](https://axibase.com/docs/axibase-collector/jobs/docker.html)                            | Docker          | ![](./images/collectors/docker_portal.png) [↗](https://nur.axibase.com/portal/tabs?entity=nurswghbs001&id=112&id=38&id=113&id=2&id=45&id=24) |
 | [NGINX](https://axibase.com/docs/axibase-collector/jobs/examples/nginx/)                         | File            | ![](./images/collectors/nginx_portal.png) [↗](https://apps.axibase.com/chartlab/966f33e4)                                                    |
 | [Tomcat](https://axibase.com/docs/axibase-collector/jobs/examples/tomcat/)                       | JMX             | ![](./images/collectors/tomcat_portal.png) [↗](https://apps.axibase.com/chartlab/106bddba)                                                   |
-| [Jetty](https://axibase.com/docs/axibase-collector/jobs/examples/jetty/)                         | JMX             | ![](./images/collectors/jetty_portal.png) [↗](https://apps.axibase.com/chartlab/8a7d8268)                                                    |
-| [SCOM](https://axibase.com/docs/axibase-collector/jobs/examples/scom/)                           | JDBC            | ![](./images/collectors/scom_portal.png) [↗](https://apps.axibase.com/chartlab/c09dc1cd)                                                     |
 | [Oracle EM](https://axibase.com/docs/axibase-collector/jobs/examples/oracle-enterprise-manager/) | JDBC            | ![](./images/collectors/oracle_portal.png) [↗](https://apps.axibase.com/chartlab/8c86c962)                                                   |
 | [PostgreSQL](https://axibase.com/docs/axibase-collector/jobs/examples/postgres/)                 | JDBC            | ![](./images/collectors/postgres_portal.png) [↗](https://apps.axibase.com/chartlab/070b4941)                                                 |
-| [IBM Tivoli](https://axibase.com/use-cases/integrations/itm/)                                    | File            | ![](./images/collectors/itm_portal.png) [↗](https://apps.axibase.com/chartlab/43f054ee)                                                      |
 | [Marathon](https://axibase.com/use-cases/integrations/marathon/capacity-and-usage/)              | JSON            | ![](./images/collectors/mara_portal.png) [↗](https://apps.axibase.com/chartlab/5e5d7c72)                                                     |
 | [Kafka](https://axibase.com/use-cases/integrations/kafka/)                                       | Kafka           | ![](./images/collectors/kafka_portal.png) [↗](https://apps.axibase.com/chartlab/27ac1d9d)                                                    |
 | [VMWare](https://axibase.com/docs/axibase-collector/jobs/examples/vmware/)                       | JDBC            | ![](./images/collectors/vmware_portal.png) [↗](https://apps.axibase.com/chartlab/36ae5c9e/3/)                                                |
@@ -809,11 +804,25 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 Встроенные правила мониторинга серверных платформ с возможностью их изменения
 
-> IS
 
 * Примеры правил для CPU high, memory low, disk low для линукс
-* Ссылки на примеры из коллектора где есть правила для импорта
 
+| Правило | Пример оповещения |
+| --- | --- |
+| [Высокая загрузка CPU](https://nur.axibase.com/rule/edit.xhtml?name=%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B0%D1%8F%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20CPU#overview) | ![](./images/rules/cpu_notification.png)|
+| [Мало место на диске](https://nur.axibase.com/rule/edit.xhtml?name=atsd_disk_low#condition_overrides) | ![](./images/rules/disk_notification.png) |
+| [Оперативная память заканчивается](https://nur.axibase.com/rule/edit.xhtml?name=atsd.jvm.low_memory#condition_overrides) | ![](./images/rules/jvm_notification.png) | 
+
+* Ссылки на примеры из коллектора где есть правила для импорта
+  * [JVM Rules](https://axibase.com/docs/axibase-collector/jobs/examples/jvm/#rules)
+  * [ActiveMQ Rules](https://axibase.com/docs/axibase-collector/jobs/examples/activemq/#rules)
+  * [Nginx Rules](https://axibase.com/docs/axibase-collector/jobs/examples/nginx/#import-jobs)
+  * [Docker Rules](https://axibase.com/use-cases/integrations/docker/docker-engine.html#verify-installation)
+  * [Kafka Rules](https://axibase.com/use-cases/integrations/kafka/#step-2-configure-kafka-in-atsd)
+  * [Marathon Rules](https://axibase.com/use-cases/integrations/marathon/capacity-and-usage/manual-upload.html#import-marathon-models-into-atsd)
+  * [Zookeeper Rules](https://axibase.com/use-cases/integrations/zookeeper/#import-rules)
+  
+  
 ### 3.3. Удаление, создание и изменение типов конфигурационных единиц
 
 3.3.1) Возможность импорта сервисно-ресурсной модели из внешних источников (например, из базы данных конфигурационных единиц предприятия (CMDB))
@@ -851,7 +860,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 Сущность - это объект, который можно охарактеризовать несколькими метриками. Простые объекты, такие как датчик температуры, могут собирать несколько метрик. Более сложная система, такая как автомобиль, может собирать сотни метрик. В ИТ-инфраструктуре объект может представлять сервер, виртуальную машину, сетевое устройство, приложение или службу.
 
-* Создание сущности
+* Создание [сущности](https://axibase.com/products/axibase-time-series-database/data-model/entities/)
   
   * С помощью действия **Create** на странице  **Entities**
 
@@ -887,7 +896,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     * Выберите один из существующих шаблонов c типом `ENTITY` или создайте новый.
     ![](./images/entity/tag_template.png)
 
-    * Нажмите кнопку **Create* Entity**, список имен тэгов будет создан исходя из шаблона.
+    * Нажмите кнопку **Create Entity**, список имен тэгов будет создан исходя из шаблона.
     ![](./images/entity/entity_tag_template_form.png)
 
     * Заполните оставшиеся поля и нажмите кнопку **Save**
@@ -930,9 +939,9 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     * Допустим у нас есть CSV файл в котором хранится описание хостов
 
       ```csv
-      hostname,ip,protocol,tz
-      test.axibase.com,192.168.1.8,tcp,EST
-      datagram.axibase.com,192.168.1.7,udp,UTC
+      hostname,ip,os,type,vendor
+      test.axibase.com,192.168.1.8,AIX,Cloud,IBM
+      amazoncloud.com,192.168.1.7,Ubuntu 16.03,Gaming,Amazon
       ...
       ```
 
