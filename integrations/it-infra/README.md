@@ -584,7 +584,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 Сущность - это объект, который можно охарактеризовать несколькими метриками. Простые объекты, такие как датчик температуры, могут собирать несколько метрик. Более сложная система, такая как автомобиль, может собирать сотни метрик. В ИТ-инфраструктуре объект может представлять сервер, виртуальную машину, сетевое устройство, приложение или службу.
 
-* Создание сущности
+* Создание [сущности](https://axibase.com/products/axibase-time-series-database/data-model/entities/)
   
   * С помощью действия **Create** на странице  **Entities**
 
@@ -620,7 +620,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     * Выберите один из существующих шаблонов c типом `ENTITY` или создайте новый.
     ![](./images/entity/tag_template.png)
 
-    * Нажмите кнопку **Create* Entity**, список имен тэгов будет создан исходя из шаблона.
+    * Нажмите кнопку **Create Entity**, список имен тэгов будет создан исходя из шаблона.
     ![](./images/entity/entity_tag_template_form.png)
 
     * Заполните оставшиеся поля и нажмите кнопку **Save**
@@ -663,9 +663,9 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     * Допустим у нас есть CSV файл в котором хранится описание хостов
 
       ```csv
-      hostname,ip,protocol,tz
-      test.axibase.com,192.168.1.8,tcp,EST
-      datagram.axibase.com,192.168.1.7,udp,UTC
+      hostname,ip,os,type,vendor
+      test.axibase.com,192.168.1.8,AIX,Cloud,IBM
+      amazoncloud.com,192.168.1.7,Ubuntu 16.03,Gaming,Amazon
       ...
       ```
 
