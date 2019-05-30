@@ -577,9 +577,9 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 ### Пример настроек [Export Job](https://axibase.com/docs/atsd/reporting/scheduled-exporting.html)
 
-> Задача [Загрузка CPU](https://nur.axibase.com/export/jobs/job.xhtml?jobId=54).
+> [Задача: Загрузка CPU](https://nur.axibase.com/export/jobs/job.xhtml?jobId=54).
 >
-> Скачать конфигурацию [здесь](https://github.com/axibase/atsd-use-cases/tree/master/resources/export-jobs.xml).
+> [Скачать](./resources/export-jobs.xml) конфигурацию.
 
 1. Перeйдите на страницу **Data > Export Jobs**, нажмите **Create**.
 
@@ -647,13 +647,13 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
    ![](./images/export_job_7.png)
 
-    Содержимое файла [здесь](https://github.com/axibase/atsd-use-cases/tree/master/resources/export-job-54.csv).
+    [Посмотреть](./resources/export-job-54.csv) cодержимое файла.
 
 ### Пример настроек [SQL Job](https://axibase.com/docs/atsd/sql/scheduled-sql.html#sql-scheduler)
 
-> Задача [Ежедневное использование CPU](https://nur.axibase.com/export/queries/query.xhtml?queryId=126).
+> [Задача: Ежедневное использование CPU](https://nur.axibase.com/export/queries/query.xhtml?queryId=126).
 >
-> Скачать конфигурацию [здесь](https://github.com/axibase/atsd-use-cases/tree/master/resources/export-queries.xml).
+> [Скачать](./resources/export-queries.xml) конфигурацию.
 
 1. Перейдите на страницу **SQL > Scheduled Queries**, нажмите **Create**.
 
@@ -721,9 +721,9 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 ### Пример portal screenshot to Email, portal to Slack
 
-> Правило [Высокая загрузка CPU](https://nur.axibase.com/rule/edit.xhtml?name=%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B0%D1%8F%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20CPU#overview).
+> [Правило: Высокая загрузка CPU](https://nur.axibase.com/rule/edit.xhtml?name=%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B0%D1%8F%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20CPU#overview).
 >
-> Скачать конфигурацию [здесь](https://github.com/axibase/atsd-use-cases/tree/master/resources/rule_1.xml).
+> [Скачать](./resources/rule_1.xml) конфигурацию.
 
 1. Перейдите на страницу **Alerts > Rules**, нажмите **New**.
 
@@ -990,7 +990,8 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
   ![](./images/mail_notif_about_delete.png)
 
-  Пример настройки правила [здесь](./audit_rule.md).
+  [Правило: Аудит](https://nur.axibase.com/rule/edit.xhtml?name=%D0%90%D1%83%D0%B4%D0%B8%D1%82#notifications_email).
+  Инструкция по настройке правила [здесь](./audit_rule.md).
 
 4.2) Возможность эскалации сообщений
 
