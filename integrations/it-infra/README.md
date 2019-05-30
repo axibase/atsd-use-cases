@@ -552,11 +552,25 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 Встроенные правила мониторинга серверных платформ с возможностью их изменения
 
-> IS
 
 * Примеры правил для CPU high, memory low, disk low для линукс
-* Ссылки на примеры из коллектора где есть правила для импорта
 
+| Правило | Пример оповещения |
+| --- | --- |
+| [Высокая загрузка CPU](https://nur.axibase.com/rule/edit.xhtml?name=%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B0%D1%8F%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20CPU#overview) | ![](./images/rules/cpu_notification.png)|
+| [Мало место на диске](https://nur.axibase.com/rule/edit.xhtml?name=atsd_disk_low#condition_overrides) | ![](./images/rules/disk_notification.png) |
+| [Оперативная память заканчивается](https://nur.axibase.com/rule/edit.xhtml?name=atsd.jvm.low_memory#condition_overrides) | ![](./images/rules/jvm_notification.png) | 
+
+* Ссылки на примеры из коллектора где есть правила для импорта
+  * [JVM Rules](https://axibase.com/docs/axibase-collector/jobs/examples/jvm/#rules)
+  * [ActiveMQ Rules](https://axibase.com/docs/axibase-collector/jobs/examples/activemq/#rules)
+  * [Nginx Rules](https://axibase.com/docs/axibase-collector/jobs/examples/nginx/#import-jobs)
+  * [Docker Rules](https://axibase.com/use-cases/integrations/docker/docker-engine.html#verify-installation)
+  * [Kafka Rules](https://axibase.com/use-cases/integrations/kafka/#step-2-configure-kafka-in-atsd)
+  * [Marathon Rules](https://axibase.com/use-cases/integrations/marathon/capacity-and-usage/manual-upload.html#import-marathon-models-into-atsd)
+  * [Zookeeper Rules](https://axibase.com/use-cases/integrations/zookeeper/#import-rules)
+  
+  
 ### 3.3. Удаление, создание и изменение типов конфигурационных единиц
 
 3.3.1) Возможность импорта сервисно-ресурсной модели из внешних источников (например, из базы данных конфигурационных единиц предприятия (CMDB))
