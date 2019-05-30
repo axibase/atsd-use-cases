@@ -541,6 +541,10 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 ![demo-entity-link](./images/demo-entity-link.png)
 
 * Примеры встроенных Entity Views для Докера, где демонстрируется группировка по полю, содержащему связанную сущность (group by tags.docker-host)
+
+[Docker Network](https://nur.axibase.com/entities/views/7.xhtml)
+([редактор](https://nur.axibase.com/entities/views/edit.xhtml?entityViewId=7))
+
 ![entity-view-group-by](./images/entity-view-group-by.png)
 
 3.2.3) Возможность создания эталонных моделей
