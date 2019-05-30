@@ -102,7 +102,7 @@
 * Открытие графика из строки таблицы, например, загрузка ЦПУ несколькими серверами - график открывает историю.
 
 [Мониторинг загрузки серверов](https://nur.axibase.com/portal/name/demo-table-sysmon)
-([редактор](https://nur.axibase.com/portals/edit?id=268))
+([редактор](https://nur.axibase.com/portals/edit?id=261))
 
 ![demo-table-sysmon](./images/demo-table-sysmon.png)
 
