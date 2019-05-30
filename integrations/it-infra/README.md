@@ -1117,6 +1117,6 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
   ![](./images/openmuc/testjob.png)
   
   
-  * Убедитесь что данные [поступают](https://nur.axibase.com/entities/openmuc-device/) в ATSD.
+  * Убедитесь, что данные [поступают](https://nur.axibase.com/entities/openmuc-device/) в ATSD.
   
   ![](./images/openmuc/metriclist.png)
