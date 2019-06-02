@@ -165,13 +165,19 @@ Data available as a [subscription](https://www.moex.com/ru/orders?historicaldata
 
 ### Driver Setup
 
-Install 32-bit ATSD ODBC driver for Quik from `atsd_odbc_x32.msi`.
+Install 32-bit ATSD ODBC driver for Quik from [`atsd_odbc_x32.msi`](https://raw.githubusercontent.com/axibase/atsd-use-cases/master/workshop/resources//atsd_odbc_x32.msi).
 
-Open **Control Panel** and created a User DSN.
+Open **Control Panel** and create a User DSN.
 
 ![](./images/quik-odbc-ansi.png)
 
 ![](./images/quik-odbc-configure.png)
+
+If the ATSD driver is not listed in the **User DSN** tab when installing the driver on a 64-bit Windows server, open the ODBC tool as follows:
+
+```sh
+C:\Windows\SysWOW64\odbcad32.exe
+```
 
 ### Export Trades
 
@@ -449,6 +455,16 @@ To receive email/chat alerts when the data stops arriving, open **Rules > Import
 ![](./images/quik-monitor-rules.png)
 
 ## Reference
+
+## Driver Tracing
+
+To enable detailed driver logging for connection and latency diagnostics, open the Windows registry with `regedit` and add `Trace` and `TraceFile` keys as follows:
+
+```
+HKEY_CURRENT_USER\Software\ODBC\ODBC.INI\<DSN name>
+```
+
+![](./images/quik_odbc_tracing.png)
 
 ### Brokers
 
