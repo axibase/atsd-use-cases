@@ -460,7 +460,7 @@ To receive email/chat alerts when the data stops arriving, open **Rules > Import
 
 To enable detailed driver logging for connection and latency diagnostics, open the Windows registry with `regedit` and add `Trace` and `TraceFile` keys as follows:
 
-```
+```txt
 HKEY_CURRENT_USER\Software\ODBC\ODBC.INI\<DSN name>
 ```
 
