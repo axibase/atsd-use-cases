@@ -179,6 +179,12 @@ If the ATSD driver is not listed in the **User DSN** tab when installing the dri
 C:\Windows\SysWOW64\odbcad32.exe
 ```
 
+### Regional Settings
+
+Open **Control Panel** > **Regional Settings** and modify **Short Date** and **Long Time** formats as follows:
+
+![](./images/quik_win_date_format.png)
+
 ### Export Trades
 
 Create a new table **Таблица обезличенных сделок** in Quik. This table includes **all** trades executed on the exchange, not just the client trades which are accessible in a different table called **Таблица Сделок**.
@@ -456,7 +462,7 @@ To receive email/chat alerts when the data stops arriving, open **Rules > Import
 
 ## Reference
 
-## Driver Tracing
+### Driver Tracing
 
 To enable detailed driver logging for connection and latency diagnostics, open the Windows registry with `regedit` and add `Trace` and `TraceFile` keys as follows:
 
@@ -465,6 +471,22 @@ HKEY_CURRENT_USER\Software\ODBC\ODBC.INI\<DSN name>
 ```
 
 ![](./images/quik_odbc_tracing.png)
+
+### Virtual Box Port Forwarding
+
+If the Windows VM with the Quik workstation is installed as a Virtual Box VM, the VM needs to be configured to accept TCP commands generated from ATSD.
+
+Open the **Network** tab in the VM settings in Virtual Box.
+
+![](./images/quik_vm_settings.png)
+
+Click **Port Forwarding** if the VM runs in NAT mode.
+
+Add a forwarding configuration to pass allow TCP traffic from host port to the VM port.
+
+![](./images/quik_port_forward.png)
+
+Configure the Windows firewall to allow incoming traffic on the designated VM port.
 
 ### Brokers
 
