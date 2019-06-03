@@ -197,7 +197,7 @@ function get_trade_count_commands()
         end
     end
 
-    local cmd_template = base_series_template() .. " m:%srecord_count=%s m:%stotal_price=%s t:table_name=trades t:operation=%s\n"
+    local cmd_template = base_series_template() .. " m:%srecord_count=%s m:%stotal_price=%s  t:table_name=trades t:operation=%s\n"
     local commands = string.format(cmd_template, table_prefix, buy_cnt, table_prefix, buy_amount, 'buy')
     commands = commands .. string.format(cmd_template, table_prefix, sell_cnt, table_prefix, sell_amount, 'sell')
     return commands
@@ -224,16 +224,20 @@ function base_series_template()
 end
 
 function get_assets_commands()
-    local cmd_template = base_series_template() .. " m:%s%s=%s m:%s%s=%s\n"
+    local cmd_template = base_series_template() .. " m:%s%s=%s m:%s%s=%s t:type=T%s\n"
     local asset_prefix = "quik-asset."
     local commands = ""
     local size = getNumberOf("money_limits")
     for i = 0, size - 1 do
         local lim = getItem("money_limits", i)
         local p_info = getPortfolioInfo(lim.firmid, lim.client_code)
-        commands = commands .. string.format(cmd_template,
-                asset_prefix, "amount_init", p_info.in_assets,
-                asset_prefix, "amount_current", p_info.assets)
+        if (tonumber(p_info.assets) > 0) then
+            commands = commands .. string.format(cmd_template,
+                    asset_prefix, "amount_init", p_info.in_assets,
+                    asset_prefix, "amount_current", p_info.assets,
+                    tostring(lim.limit_kind)
+            )
+        end
     end
     return commands;
 end
