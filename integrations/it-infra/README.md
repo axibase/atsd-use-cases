@@ -82,7 +82,7 @@
 
 Пример использования Freemarker-выражения для организации доступа к виджетам в портале
 
-```html
+```ls
 [configuration]
 [group]
 
@@ -94,14 +94,14 @@
 
 # Ограничим доступ к сводному графику
 <#if userHasRole("ROLE_ADMIN") || (userHasRole("ROLE_EDITOR") && userInGroup("demo-users"))>
-      
+
 [group]
   # Виджет видем только администраторам и редакторам из группы 'demo-users'
   [widget]
     type = bar
     title = Использование диска (по серверам)
     ...
-            
+
 </#if>
 ```
 
@@ -150,7 +150,7 @@ format = value ? value + ' (<a href="/entities/' +encodeURIComponent(value)+'/me
 
 ![demo-entity-portal-from-table](./images/demo-entity-portal-from-table.png)
 
-* Обновление виджета по нажатию на сущность или при смене периода загрузки данных. 
+* Обновление виджета по нажатию на сущность или при смене периода загрузки данных.
 [Портал scollector'а](https://nur.axibase.com/portal/name/demo-scollector-monitor)
 ([редактор](https://nur.axibase.com/portals/edit?id=274))
 
@@ -173,11 +173,11 @@ format = value ? value + ' (<a href="/entities/' +encodeURIComponent(value)+'/me
 
 * График с двумя осями: CPU server и Java GC %
 
-```ini
-  [widget]
+```ls
+[widget]
     type = chart
     ...
-    
+
     [series]
       axis = left
       metric = jvm_system_cpu_load
@@ -187,34 +187,34 @@ format = value ? value + ' (<a href="/entities/' +encodeURIComponent(value)+'/me
       metric = gc_time_percent
 ```
 
-
 [Загрузка ЦП](https://nur.axibase.com/portal/name/demo-cpu-usage)
 ([редактор](https://nur.axibase.com/portals/edit?id=254))
   ![demo-cpu-usage](./images/demo-cpu-usage.png)
 
 * График с двумя осями: nginx request count (latency), сеть (байты), и ЦПУ
 
-```ini
+```ls
 [widget]
   ...  
   [series]
     entity = apps.axibase.com
     metric = nginx.server_requests
-  	statistics = counter # Метрика является накопительной
-      
+    statistics = counter # Метрика является накопительной
+
   [series]
     axis = right
     entity = nurswgvml501
     metric = cpu_busy
     statistic = max
 ```
+
 [Статус сервера NGINX](https://nur.axibase.com/portal/name/demo-server-status)
 ([редактор](https://nur.axibase.com/portals/edit?id=263))
 ![demo-server-status](./images/demo-server-status.png)
 
 * Календарь с несколькими серверами - при этом ЦПУ с scollector (linux) и SCOM windows
 
-```ini
+```ls
 csv cpu_usage =
   os,group,metric
   Windows,scom-servers,scom.server.processor_information.%_processor_time
@@ -255,12 +255,15 @@ endcsv
 
 * Задание адресатов уведомлений списком
 
+<!-- markdownlint-disable MD104 -->
 ```javascript
 user1@example.org,user2@example.org,user3@example.org
 ```
+<!-- markdownlint-enable MD104 -->
 
 * Условные выражения для отправки уведомлений на разные адреса в зависисмости от критичности события и от времени суток
 
+<!-- markdownlint-disable MD104 -->
 ```javascript
 @if{now.timeOfDay BETWEEN '08:00' AND '20:00'}
 daywatch@example.org
@@ -271,6 +274,7 @@ nightwatch@example.org
 dba@example.org
 @end{}
 ```
+<!-- markdownlint-enable MD104 -->
 
 * Отмена уведомлений по расписанию с использованием `cancelAction`
 
@@ -284,18 +288,18 @@ ${cancelAction()}
 
 ![](./images/devops_users.png)
 
-Функция вернёт список известных адресов всех членов запрашиваемой группы: `axibase@example.com,jane.doe@example.org,john.doe@example.org`
+Функция вернёт список известных адресов всех членов запрашиваемой группы: `jack.smith@example.org,mary.jones@example.org,john.doe@example.org`
 
 ```javascript
 ${get_group_emails('DevOps')}
 ```
 
-* Отправка уведомления ответственному за систему (указан email в тэге `owner` сущности). Если тэг не указан, получатель – `devops@example.org`.
+* Отправка уведомления ответственному за систему (указан email в тэге `owner` сущности). Если тэг не указан, получатель – `dev-atsd@axibase.com`.
 
 ![](./images/entity_tag_owner.png)
 
 ```javascript
-${ifEmpty(entity.tags.owner, 'devops@example.org')}
+${ifEmpty(entity.tags.owner, 'dev-atsd@axibase.com')}
 ```
 
 * Отправка уведомления подвыборке подписанных пользовалей - по ключевым словам.
@@ -310,7 +314,7 @@ ${ifEmpty(entity.tags.owner, 'devops@example.org')}
 
 Функция `subscribers` в **Rule Engine** принимает один или несколько ключей и возвращает email адреса всех пользователей, имеющих хотя бы один ключ в списке тем.
 
-В данном примере уведомления отправляются в ответ на все входящие сообщения пользователям, которые подписаны на сообщения с данным типом. 
+В данном примере уведомления отправляются в ответ на все входящие сообщения пользователям, которые подписаны на сообщения с данным типом.
 
 ```javascript
 ${subscribers(type)}
@@ -320,13 +324,12 @@ ${subscribers(type)}
 
 #### [⇧](#содержание) 3.1.10) Сбор данных о метриках функционирования серверного оборудования и рабочих станций (степень утилизации, загрузка CPU, RAM, HDD)
 
-| Агент | Поддерживаемые ОС | Собираемые метрики | Порталы | 
+| Агент | Поддерживаемые ОС | Собираемые метрики | Порталы |
 |---|---|---|---|
 | [collectd](https://axibase.com/docs/atsd/integration/collectd/) | `Ubuntu`, `Centos`, `RHEL` |  [↗](https://axibase.com/docs/atsd/integration/collectd/#collected-metrics) | [Linux](https://nur.axibase.com/portal/tabs?entity=nurswghbs001&id=38&id=112&id=113&id=2&id=45&id=24) ![](./images/collectors/collectd/linux.png) |
 | [scollector](https://axibase.com/docs/atsd/integration/scollector/) | `Linux`, `Windows` `MacOS` | [↗](https://axibase.com/docs/atsd/integration/scollector/#collected-metrics) | [Linux](https://nur.axibase.com/portal/name/scollector%20-%20Linux?entity=nurswghbs001) ![](./images/collectors/scollector/linux.png) <br>[Microsoft Windows Server](https://nur.axibase.com/portal/tabs?entity=nurswgvmw015&id=44&id=30) ![](./images/collectors/scollector/linux.png) |
 | [tcollector](https://axibase.com/docs/atsd/integration/tcollector/) | `Linux` | [↗](https://axibase.com/docs/atsd/integration/tcollector/#list-of-tcollector-metrics) | [Linux](https://nur.axibase.com/portal/name/tcollector%20-%20Linux?entity=nurswghbs001) ![](./images/collectors/tcollector/linux.png) |
 | [nmon](https://axibase.com/docs/atsd/integration/nmon/) | `Linux`, `AIX` | [↗](https://axibase.com/docs/atsd/integration/tcollector/#list-of-tcollector-metrics) | [Linux](https://nur.axibase.com/portal/name/Linux%20nmon?entity=nurswghbs001) ![](./images/collectors/nmon/linux.png) <br> [AIX](https://nur.axibase.com/portal/name/AIX%20nmon?entity=aix03) ![](./images/collectors/nmon/linux.png)|
-
 
 #### [⇧](#содержание) 3.1.11) Сбор данных о метриках функционирования сетевого оборудования (сетевая доступность конфигурационных единиц, степень утлизация каналов связи)
 
@@ -337,7 +340,7 @@ ${subscribers(type)}
   * [Список](https://axibase.com/docs/axibase-collector/jobs/snmp.html#snmp-object-reference) собираемых метрик для базового файла MIB
 
     ![](./images/snmp/snmp-walk.png)
-    
+
   * [Список MIB файлов](https://axibase.com/docs/axibase-collector/jobs/snmp.html#base-mib-files)
     ![](./images/snmp/snmp-mibs.png)
   
@@ -385,7 +388,6 @@ ${subscribers(type)}
 | [VMWare](https://axibase.com/docs/axibase-collector/jobs/examples/vmware/)                       | JDBC            | ![](./images/collectors/vmware_portal.png) [↗](https://apps.axibase.com/chartlab/36ae5c9e/3/)                                                |
 | [Spring Boot](https://axibase.com/docs/atsd/integration/spring-boot/#spring-boot)                | Storage Driver  | ![](./images/collectors/springboot_portal.png) [↗](https://apps.axibase.com/chartlab/5525c0dc/4/)                                            |
 
-
 #### [⇧](#содержание) 3.1.13) Пользовательская настройка правил мониторинга (пороговых значений и логики проверки) метрик на серверных платформах
 
 Продукт: АТСД
@@ -394,69 +396,71 @@ ${subscribers(type)}
 
 * Примеры выражений (condition) и краткое описание - от простых правил к сложным
 
-    * Безусловное срабатывание правила
-    
-        ```javascript
-        true
-        ```
-        
-        [Правило: Обработка вебхуков Travis](https://nur.axibase.com/rule/edit.xhtml?name=travis-ci-build-status)
-    
-    * Проверка поступления данных в течение периода длительности окна
-    
-        ```javascript
-        count() == 0
-        ```
-        
-        [Правило: Проверка поступления данных с докер хоста](https://nur.axibase.com/rule/edit.xhtml?name=docker-job-no-messages)
-        
-    * Значение превышает заданный порог (95)
-        
-        ```javascript
-        value > 95
-        ``` 
-        
-        [Правило: Проверка места на диске](https://nur.axibase.com/rule/edit.xhtml?name=disk_VERY_low)
+  * Безусловное срабатывание правила
 
-    * Значение превышает 95 или среднее всех значений в окне превышает 85
-    
-       ```javascript
-        value > OR avg() > 85
-        ```
-        [Документация по агрегационным функциям](https://axibase.com/docs/atsd/rule-engine/functions.html#statistical)
-        
-        [Правило: Потребление оперативной памяти](https://nur.axibase.com/rule/edit.xhtml?name=JVM%20memory%20low)
-    
-    * Скорость роста значения превышает порог (10)
-    
-        ```javascript
-        rate_per_minute() > 10
-        ``` 
-        
-        [Правило: Анализ сборки мусора JVM](https://nur.axibase.com/rule/edit.xhtml?name=jvm_garbage_collection_rate)
-    
-    * Значение в окне отличается от предсказанного
-    
-        ```javascript
-        forecast('forecast_name').violates(avg(), 20)
-        ```
-        [Правило: Предсказание занятости процессора](https://nur.axibase.com/rule/edit.xhtml?name=cpu_busy_forecast_ssa_15m)
-        
-    * Срабатывает, если предсказанное заполнение диска наступит ранее, чем через два часа
-    
-        ```javascript
-        threshold_linear_time(99) < 120
-        ```
-        
-        [Правило: Предсказание времени, когда закончится место на диске](https://nur.axibase.com/rule/edit.xhtml?name=disk_threshold#condition_overrides)
-    
-    * Продвинутая фильтрация по календарю рабочих дней 
-    
-        ```javascript
-        now.is_workday() AND NOT now.add(1, 'day').is_workday()
-        ```
-        
-        [Правило: Заказ пиццы в последний рабочий день на неделе](https://nur.axibase.com/rule/edit.xhtml?name=Pizza%20Time)
+      ```javascript
+      true
+      ```
+
+      [Правило: Обработка вебхуков Travis](https://nur.axibase.com/rule/edit.xhtml?name=travis-ci-build-status)
+
+  * Проверка поступления данных в течение периода длительности окна
+
+      ```javascript
+      count() == 0
+      ```
+
+      [Правило: Проверка поступления данных с докер хоста](https://nur.axibase.com/rule/edit.xhtml?name=docker-job-no-messages)
+
+  * Значение превышает заданный порог (95)
+
+      ```javascript
+      value > 95
+      ```
+
+      [Правило: Проверка места на диске](https://nur.axibase.com/rule/edit.xhtml?name=disk_VERY_low)
+
+  * Значение превышает 95 или среднее всех значений в окне превышает 85
+
+      ```javascript
+      value > OR avg() > 85
+       ```
+
+      [Документация по агрегационным функциям](https://axibase.com/docs/atsd/rule-engine/functions.html#statistical)
+
+      [Правило: Потребление оперативной памяти](https://nur.axibase.com/rule/edit.xhtml?name=JVM%20memory%20low)
+
+  * Скорость роста значения превышает порог (10)
+
+      ```javascript
+      rate_per_minute() > 10
+      ```
+
+      [Правило: Анализ сборки мусора JVM](https://nur.axibase.com/rule/edit.xhtml?name=jvm_garbage_collection_rate)
+
+  * Значение в окне отличается от предсказанного
+
+      ```javascript
+      forecast('forecast_name').violates(avg(), 20)
+      ```
+
+      [Правило: Предсказание занятости процессора](https://nur.axibase.com/rule/edit.xhtml?name=cpu_busy_forecast_ssa_15m)
+
+  * Срабатывает, если предсказанное заполнение диска наступит ранее, чем через два часа
+
+      ```javascript
+      threshold_linear_time(99) < 120
+      ```
+
+      [Правило: Предсказание времени, когда закончится место на диске](https://nur.axibase.com/rule/edit.xhtml?name=disk_threshold#condition_overrides)
+
+  * Продвинутая фильтрация по календарю рабочих дней
+
+      ```javascript
+      now.is_workday() AND NOT now.add(1, 'day').is_workday()
+      ```
+
+      [Правило: Заказ пиццы в последний рабочий день на неделе](https://nur.axibase.com/rule/edit.xhtml?name=Pizza%20Time)
 
 * Пример извлечения порога из тэга сущности
 
@@ -566,7 +570,6 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 * Диаграмма со структурой Docker tag templates
 ![docker-templates-diagram](./images/docker-templates-diagram.png)
 
-
 * Примеры из редактора с наследованием шаблонов (н-р контейнер наследует от docker base)
 [Docker Container](https://nur.axibase.com/tags/templates/edit.xhtml?tagTemplateId=12)
 ![tag-template-inherit](./images/tag-template-inherit.png)
@@ -594,7 +597,6 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 При создании сущностей можно выбрать шаблон для предварительного заполнения тегов
 ![entity-tags-edit](./images/entity-tags-edit.png)
-
 
 При редактировании сущностей доступны сгруппированные по имени шаблона теги, если шаблон применяется к данной сущности.
 ![entity-tags-edit](./images/entity-tags-edit-modify.png)
@@ -810,16 +812,16 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 > AR
 
-  * Пример правила с двумя метриками (Dependent Rule): [Общее занятое пространство на диске, занятое пространство под таблицы MS SQL Server](https://nur.axibase.com/rule/edit.xhtml?name=%D0%91%D0%B0%D0%B7%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+MS+SQL+Server+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F+dep#condition_overrides)
+* Пример правила с двумя метриками (Dependent Rule): [Общее занятое пространство на диске, занятое пространство под таблицы MS SQL Server](https://nur.axibase.com/rule/edit.xhtml?name=%D0%91%D0%B0%D0%B7%D0%B0+%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85+MS+SQL+Server+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D1%81%D1%82%D0%B0%D0%B5%D1%82%D1%81%D1%8F+dep#condition_overrides)
   
     Dependent Rule – правило, окно в котором должно находиться в состоянии OPEN, чтобы сработало основное правило.
   
     [Вспомогательное правило](https://nur.axibase.com/rule/edit.xhtml?name=%D0%97%D0%B0%D0%BA%D0%B0%D0%BD%D1%87%D0%B8%D0%B2%D0%B0%D0%B5%D1%82%D1%81%D1%8F%20%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%BD%D0%B0%20%D1%85%D0%BE%D1%81%D1%82%D0%B5%20%D0%91%D0%94#condition_overrides): срабатывает, если на диске меньше 25% свободного места
   
     ![](./images/base_rule_config.png)
-    
+
     Основное правило
-    
+
     ![](./images/mssql_server_disk_condition_dep.png)
     ![](./images/mssql_server_disk_slack_config_dep.png)
     ![](./images/mssql_server_disk_usage_slack.png)
@@ -831,7 +833,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     ![](./images/mssql_server_disk_usage_slack.png)
 
   * Пример правила с двумя метриками (value function): [Проверка истечения SSL сертификатов](https://nur.axibase.com/rule/edit.xhtml?name=ssl-certificates-expiration)
-    
+
     ```javascript
     value < expiration_limit AND value('http.ssl_certificate_status') != 5
     ```
@@ -848,14 +850,13 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 Встроенные правила мониторинга серверных платформ с возможностью их изменения
 
-
 * Примеры правил для CPU high, memory low, disk low для линукс
 
 | Правило | Пример оповещения |
 | --- | --- |
 | [Высокая загрузка CPU](https://nur.axibase.com/rule/edit.xhtml?name=%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%B0%D1%8F%20%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0%20CPU#overview) | ![](./images/rules/cpu_notification.png)|
 | [Мало места на диске](https://nur.axibase.com/rule/edit.xhtml?name=atsd_disk_low#condition_overrides) | ![](./images/rules/disk_notification.png) |
-| [Оперативная память заканчивается](https://nur.axibase.com/rule/edit.xhtml?name=atsd.jvm.low_memory#condition_overrides) | ![](./images/rules/jvm_notification.png) | 
+| [Оперативная память заканчивается](https://nur.axibase.com/rule/edit.xhtml?name=atsd.jvm.low_memory#condition_overrides) | ![](./images/rules/jvm_notification.png) |
 
 * Ссылки на примеры из коллектора где есть правила для импорта
   * [JVM Rules](https://axibase.com/docs/axibase-collector/jobs/examples/jvm/#rules)
@@ -865,7 +866,6 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
   * [Kafka Rules](https://axibase.com/use-cases/integrations/kafka/#step-2-configure-kafka-in-atsd)
   * [Marathon Rules](https://axibase.com/use-cases/integrations/marathon/capacity-and-usage/manual-upload.html#import-marathon-models-into-atsd)
   * [Zookeeper Rules](https://axibase.com/use-cases/integrations/zookeeper/#import-rules)
-  
   
 ### [⇧](#содержание) 3.3. Удаление, создание и изменение типов конфигурационных единиц
 
@@ -888,7 +888,6 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 [Docker Container Member](https://nur.axibase.com/entities/0d3809b9ef8364029add6a4eb126475ae2a285be2f34c9aa844bd9d9c1af898d)
 
 ![demo-docker-container-template](./images/demo-docker-container-template.png)
-
 
 * Пример entity views их применения к группам
 [Docker Containers View](https://nur.axibase.com/entities/views/3.xhtml)
@@ -953,8 +952,8 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
       ```csv
       hostname,ip,os,type,vendor
-      test.axibase.com,192.168.1.8,AIX,Cloud,IBM
-      amazoncloud.com,192.168.1.7,Ubuntu 16.03,Gaming,Amazon
+      test.axibase.com,192.0.2.8,AIX,Cloud,IBM
+      amazoncloud.com,192.0.2.7,Ubuntu 16.03,Gaming,Amazon
       ...
       ```
 
@@ -1061,21 +1060,21 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 1. Создадим интеграцию для сервиса ATSD.
 
-![](./images/pagerduty_service.png)
+    ![](./images/pagerduty_service.png)
 
-![](./images/pagerduty_integration.png)
+    ![](./images/pagerduty_integration.png)
 
-Сгенерированный ключ Integration Key впоследствии будет использоваться для авторизации вебхуков.
+    Сгенерированный ключ Integration Key впоследствии будет использоваться для авторизации вебхуков.
 
-![](./images/pagerduty_key.png)
+    ![](./images/pagerduty_key.png)
 
 2. Для отправки вебхуков PagerDuty в ATSD нужно создать Custom Outgoing Webhook.
 
-![](./images/webhook_new.png)
+    ![](./images/webhook_new.png)
 
-Описание принимаемых параметров и примеры запросов к PagerDuty находим в [документации](https://v2.developer.pagerduty.com/docs/send-an-event-events-api-v2). Заполняем форму в соответствии с документацией, заменяя реальные значения, которые будут подставляться динамически, именованными шаблонами. Копируем ранее полученный ключ Integration Key в поле routing_key.
+    Описание принимаемых параметров и примеры запросов к PagerDuty находим в [документации](https://v2.developer.pagerduty.com/docs/send-an-event-events-api-v2). Заполняем форму в соответствии с документацией, заменяя реальные значения, которые будут подставляться динамически, именованными шаблонами. Копируем ранее полученный ключ Integration Key в поле routing_key.
 
-![](./images/custom_webhook.png)
+    ![](./images/custom_webhook.png)
 
 3. В качестве примера создадим правило, которое инициирует инцидент, если занимаемое место на диске превышает 75%, и закрывает инцидент, если занимаемое место не превышает 75%.
 Чтобы открыть и закрыть один и тот же инцидент, заранее сгенерируем уникальный ключ и сохраним его в переменной dedup_key.
@@ -1121,42 +1120,43 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 Продукт: АТСД
 
-* Пример интеграции: запись данных из [OpenMuc](https://github.com/gythialy/openmuc#features) в удаленную ATSD как data logger. 
+* Пример интеграции: запись данных из [OpenMuc](https://github.com/gythialy/openmuc#features) в удаленную ATSD как data logger.
 
-   * Поддерживаемые протоколы
-      * Modbus TCP
-      *  IEC 61850
-      *  DLMS/COSEM
-      *  KNX
-      *  M-Bus (wired)
-      *  eHz meters
-      *  CANopen
-      *  IEC 62056-21
-      *  S7 PLC protocol
-      *  SNMP
-    
-   * Файлы для импорта
-     * [Задача сбора](./resources/job_file_openmuc.xml)
-     * [Парсер](./resources/csv-parser-openmuc-parser.xml)
+  * Поддерживаемые протоколы
+    * Modbus TCP
+    * IEC 61850
+    * DLMS/COSEM
+    * KNX
+    * M-Bus (wired)
+    * eHz meters
+    * CANopen
+    * IEC 62056-21
+    * S7 PLC protocol
+    * SNMP
 
-   * Требования
-       * Экземпляр [OpenMuc](https://gythialy.github.io/openmuc/)
-       * Экземпляр [ATSD](https://axibase.com/docs/atsd/)
-       * Экземпляр [Axibase Collector](https://axibase.com/docs/axibase-collector/).
-   * Запустите свой экземпляр OpenMuc.
-   * Сконфигурируйте задачу в  Axibase Collector
-     * Создайте [Http Pool](https://hbs.axibase.com:10443/pool/form.xhtml?connectionPoolId=145) 
-     
+  * Файлы для импорта
+    * [Задача сбора](./resources/job_file_openmuc.xml)
+    * [Парсер](./resources/csv-parser-openmuc-parser.xml)
+
+  * Требования
+    * Экземпляр [OpenMuc](https://gythialy.github.io/openmuc/)
+    * Экземпляр [ATSD](https://axibase.com/docs/atsd/)
+    * Экземпляр [Axibase Collector](https://axibase.com/docs/axibase-collector/).
+  * Запустите свой экземпляр OpenMuc.
+  * Сконфигурируйте задачу в  Axibase Collector
+    * Создайте [Http Pool](https://hbs.axibase.com:10443/pool/form.xhtml?connectionPoolId=145)
+
      ![](./images/openmuc/httppool.png)
-     
-     * Создайте [список  элементов](https://hbs.axibase.com:10443/collection/form.xhtml?collectionId=356) с ноебходимым списком каналов.
-     
+
+    * Создайте [список  элементов](https://hbs.axibase.com:10443/collection/form.xhtml?collectionId=356) с ноебходимым списком каналов.
+
      ![](./images/openmuc/itemlist.png)
-     
-   * Cоздайте [файловую задачу](https://hbs.axibase.com:10443/job-file.xhtml?jobId=5949) указав экземпляр ATSD.
+
+    * Cоздайте [файловую задачу](https://hbs.axibase.com:10443/job-file.xhtml?jobId=5949) указав экземпляр ATSD.
      ![](./images/openmuc/filejob.png)
-     
-     **Response**
+
+    ####**Response**
+
      ```json
      {
          "records": [
@@ -1183,18 +1183,18 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
      ```
 
     * Добавьте конфигурацию описывающую преоброзвание response от OpenMuc REST API в СSV, который будет обработан [СSV парсером](https://axibase.com/docs/atsd/writing-data.html#csv-parsers) в ATSD.
-    
+
       ![](./images/openmuc/filejobconf.png)
-      
+
   * Cоздайте [CSV парсер](https://nur.axibase.com/csv/configs/edit.xhtml?configName=openmuc-parser) который преобразует данные отправленные коллектором.
   
     ![](./images/openmuc/csvparser.png)
-    
+
   * Протестируйте созданную раннее конфигурацию
   
   ![](./images/openmuc/testjob.png)
   
-  
   * Убедитесь, что данные [поступают](https://nur.axibase.com/entities/openmuc-device/) в ATSD.
   
   ![](./images/openmuc/metriclist.png)
+  
