@@ -229,7 +229,7 @@ function get_assets_commands()
     local commands = ""
     local size = getNumberOf("money_limits")
     for i = 0, size - 1 do
-        local lim = getItem("orders", i)
+        local lim = getItem("money_limits", i)
         local p_info = getPortfolioInfo(lim.firmid, lim.client_code)
         commands = commands .. string.format(cmd_template,
                 asset_prefix, "amount_init", p_info.in_assets,
