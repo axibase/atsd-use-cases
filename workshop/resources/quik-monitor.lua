@@ -230,13 +230,29 @@ function get_assets_commands()
     local size = getNumberOf("money_limits")
     for i = 0, size - 1 do
         local lim = getItem("money_limits", i)
-        local p_info = getPortfolioInfo(lim.firmid, lim.client_code)
-        if (tonumber(p_info.assets) > 0) then
-            commands = commands .. string.format(cmd_template,
-                    asset_prefix, "amount_init", p_info.in_assets,
-                    asset_prefix, "amount_current", p_info.assets,
-                    tostring(lim.limit_kind)
-            )
+        if (lim.currcode == 'SUR' and (lim.openbal > 0 or lim.currentbal > 0)) then
+            local p_info = getPortfolioInfoEx(lim.firmid, lim.client_code, lim.limit_kind)
+
+            local numeric_values = {}
+            numeric_values.currentbal = lim.currentbal
+            numeric_values.openbal = lim.openbal
+            numeric_values.all_assets = p_info.all_assets
+            numeric_values.in_all_assets = p_info.in_all_assets
+
+            local text_values = {}
+            text_values.currcode = 'SUR'
+            text_values.tag = lim.tag
+            text_values.limit_kind = tostring(lim.limit_kind)
+
+
+            commands = commands .. base_series_template()
+            for k,v in pairs(numeric_values) do
+                commands = commands .. " m:" .. asset_prefix .. k .. "=" .. tostring(v)
+            end
+            for k,v in pairs(text_values) do
+                commands = commands .. " t:" .. k .. "=\"" .. tostring(v) .. "\""
+            end
+            commands = commands .. "\n"
         end
     end
     return commands;
