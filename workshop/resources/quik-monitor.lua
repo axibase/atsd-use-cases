@@ -6,6 +6,7 @@ local interval_seconds = 5
 local mon_entity = "quik-terminal"
 local info_prefix, table_prefix = "quik-info.", "quik-table."
 local error_count = 0
+local msk_tz_offset = 3 * 60 * 60;
 
 local numeric_params = {
     "NUMRECORDS", "MESSAGESSENT", "ALLRECV", "ALLSENT", "BYTESSENT", "MESSAGESRECV", "BYTESRECV",
@@ -247,10 +248,10 @@ function get_assets_commands()
             text_values.limit_kind = tostring(lim.limit_kind)
 
             commands = commands .. base_series_template()
-            for k,v in pairs(numeric_values) do
+            for k, v in pairs(numeric_values) do
                 commands = commands .. " m:" .. asset_prefix .. k .. "=" .. tostring(v)
             end
-            for k,v in pairs(text_values) do
+            for k, v in pairs(text_values) do
                 commands = commands .. " t:" .. k .. "=\"" .. tostring(v) .. "\""
             end
             commands = commands .. "\n"
@@ -261,29 +262,58 @@ end
 
 function date_to_string(dt)
     if dt == nil then
-      return nil
+        return nil
     end
     if (dt.year == 1601) then
-      return nil
+        return nil
     end
     local res = ("%04d-%02d-%02d %02d:%02d:%02d"):format(dt.year, dt.month, dt.day, dt.hour, dt.min, dt.sec)
     if dt.mcs ~= nil then
-      res = res .. "." .. tostring(dt.mcs)
+        res = res .. "." .. tostring(dt.mcs)
     elseif dt.ms ~= nil then
-      res = res .. "." .. tostring(dt.ms)
+        res = res .. "." .. tostring(dt.ms)
     end
     return res
 end
 
 function round(a)
-    return a>=0 and math.floor(a+0.5) or math.ceil(a-0.5)
-  end
+    return a >= 0 and math.floor(a + 0.5) or math.ceil(a - 0.5)
+end
+
+local function get_timezone()
+    local now = os.time()
+    return os.difftime(now, os.time(os.date("!*t", now)))
+end
+
+function get_timezone()
+    local now = os.time()
+
+    local function get_timezone_offset(ts)
+        local utcdate = os.date("!*t", ts)
+        local localdate = os.date("*t", ts)
+        localdate.isdst = false
+        return os.difftime(os.time(localdate), os.time(utcdate))
+    end
+
+    return get_timezone_offset(now)
+end
+
+function get_ms(dt)
+    if (dt.ms ~= nil and dt.ms > 0) then
+        return dt.ms
+    end
+    if (dt.mcs ~= nil and dt.mcs > 0) then
+        return dt.mcs / 1000
+    end
+    return 0
+end
 
 function get_trade_message_command(trade)
     local entity = string.format("%s_[%s]", trade.sec_code, trade.class_code)
     local cmd = "message e:" .. entity .. " t:source=quik-terminal t:type=quik m:\"\""
     cmd = cmd .. " t:userid=" .. getInfoParam("USERID")
-    local fields = {"class_code", "order_num", "sec_code", "price", "settle_currency", "trade_currency", "trade_num", "trans_id", "value", "exchange_comission", "clearing_comission"}
+    local fields = { "class_code", "order_num", "sec_code", "price", "settle_currency", "trade_currency", "trade_num",
+                     "trans_id", "value", "exchange_comission", "clearing_comission" }
     for _, k in pairs(fields) do
         local v = trade[k]
         if v ~= nil and v ~= '' then
@@ -294,13 +324,19 @@ function get_trade_message_command(trade)
     if dt ~= nil and dt ~= '' then
         cmd = cmd .. " t:trade_date=\"" .. dt .. "\""
     end
+    local tz_off = get_timezone();
+    local trade_time = (os.time(trade.datetime) + tz_off - msk_tz_offset) * 1000 + get_ms(trade.datetime);
     local price = tonumber(trade.price)
     local lots = tonumber(trade.qty)
     local amount = tonumber(trade.value)
-    local quantity = round(amount/price)
+    local quantity = round(amount / price)
+    local operation = bit.band(trade.flags, 0x4) and "sell" or "buy"
+    local broker_ref = trade.brokerref ~= nil and trade.brokerref:gsub(trade.client_code, "") or trade.brokerref
 
     cmd = cmd .. " t:lots=\"" .. tostring(lots) .. "\""
     cmd = cmd .. " t:quantity=\"" .. tostring(quantity) .. "\""
-
+    cmd = cmd .. " t:operation=" .. operation
+    cmd = cmd .. " t:brokerref=" .. utf.cp1251_utf8(broker_ref)
+    cmd = cmd .. " ms:" .. tostring(trade_time)
     return cmd .. "\n"
 end
