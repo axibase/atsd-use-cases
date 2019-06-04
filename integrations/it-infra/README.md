@@ -1045,7 +1045,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 * message при удалении
 
-  ![](././images/delete_user_group.png)
+  ![](./images/delete_user_group.png)
 
 * уведомлениe по почте
 
