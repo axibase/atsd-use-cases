@@ -152,7 +152,7 @@
     ![demo-entity-portal-from-table](./images/demo-entity-portal-from-table.png)
 
 * Обновление виджета по нажатию на сущность или при смене периода загрузки данных.
-    
+
     [Портал scollector'а](https://nur.axibase.com/portal/name/demo-scollector-monitor)
     ([редактор](https://nur.axibase.com/portals/edit?id=274))
 
@@ -350,11 +350,11 @@ ${subscribers(type)}
     ![](./images/snmp/snmp-walk.png)
 
   * [Список MIB файлов](https://axibase.com/docs/axibase-collector/jobs/snmp.html#base-mib-files)
-    
+
     ![](./images/snmp/snmp-mibs.png)
   
   * [SNMP портал](https://nur.axibase.com/portal/197.xhtml?entity=nur.axibase.com) с доступностью и утилизация
-    
+
     ![](./images/snmp/snmp_portal.png)
 
 #### [⇧](#содержание) 3.1.12) Сбор данных о метриках функционирования приложений (статусы\состояния)
@@ -653,7 +653,8 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     </details>
 
 5. **Дополнительно.** <details><summary>Аггрегация</summary>
-Выберите аггрегирующую функцию, период аггрегации и метод интерполяции.
+
+    Выберите аггрегирующую функцию, период аггрегации и метод интерполяции.
 
     ![](./images/export_job_4.png)
 
@@ -983,7 +984,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
       ```
 
     * Откройте страницу **Data>CSV Parser Wizard** из основного меню
-      
+  
       ![](./images/entity/csv_wizard.png)
 
     * Прикрепите файл с помощью конпки **Browse**
