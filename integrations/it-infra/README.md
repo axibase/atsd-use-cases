@@ -464,7 +464,7 @@ ${subscribers(type)}
 
 * Пример извлечения порога из тэга сущности
 
-![](./images/entity_tag_memory_limit.png)
+  ![](./images/entity_tag_memory_limit.png)
 
   ```javascript
   value > 0.9 * entity.tags.memory_limit
@@ -568,24 +568,27 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 > AV
 
 * Диаграмма со структурой Docker tag templates
-![docker-templates-diagram](./images/docker-templates-diagram.png)
+
+  ![docker-templates-diagram](./images/docker-templates-diagram.png)
 
 * Примеры из редактора с наследованием шаблонов (н-р контейнер наследует от docker base)
-[Docker Container](https://nur.axibase.com/tags/templates/edit.xhtml?tagTemplateId=12)
-![tag-template-inherit](./images/tag-template-inherit.png)
+
+  [Docker Container](https://nur.axibase.com/tags/templates/edit.xhtml?tagTemplateId=12)
+
+  ![tag-template-inherit](./images/tag-template-inherit.png)
 
 * Примеры настроек колонок типа Entity Link
 
-[Docker Container](https://nur.axibase.com/tags/templates/edit.xhtml?tagTemplateId=12)
+  [Docker Container](https://nur.axibase.com/tags/templates/edit.xhtml?tagTemplateId=12)
 
-![demo-entity-link](./images/demo-entity-link.png)
+  ![demo-entity-link](./images/demo-entity-link.png)
 
 * Примеры встроенных Entity Views для Докера, где демонстрируется группировка по полю, содержащему связанную сущность (group by tags.docker-host)
 
-[Docker Network](https://nur.axibase.com/entities/views/7.xhtml)
-([редактор](https://nur.axibase.com/entities/views/edit.xhtml?entityViewId=7))
+  [Docker Network](https://nur.axibase.com/entities/views/7.xhtml)
+  ([редактор](https://nur.axibase.com/entities/views/edit.xhtml?entityViewId=7))
 
-![entity-view-group-by](./images/entity-view-group-by.png)
+  ![entity-view-group-by](./images/entity-view-group-by.png)
 
 #### [⇧](#содержание) 3.2.3) Возможность создания эталонных моделей
 
@@ -596,12 +599,15 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 * Редактор entity tags
 
 При создании сущностей можно выбрать шаблон для предварительного заполнения тегов
+
 ![entity-tags-edit](./images/entity-tags-edit.png)
 
 При редактировании сущностей доступны сгруппированные по имени шаблона теги, если шаблон применяется к данной сущности.
+
 ![entity-tags-edit](./images/entity-tags-edit-modify.png)
 
 Возможно создание нового шаблона из текущего набора тегов
+
 ![entity-tags-edit](./images/entity-tags-edit-newtemplate.png)
 
 #### [⇧](#содержание) 3.2.4) Возможность изменения и настройки отчетов
@@ -620,36 +626,36 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
    ![](./images/export_job_1.png)
   
-1. Установите периодичность запуска задачи, например, `каждый час`.
+2. Установите периодичность запуска задачи, например, `каждый час`.
 
    ![](./images/export_job_2.png)
   
-1. Укажите `entity`, `metric` и временной интервал экспортируемых данных.
+3. Укажите `entity`, `metric` и временной интервал экспортируемых данных.
 
    ![](./images/export_job_3.png)
 
-1. **Дополнительно.** <details><summary>Укажите фильтр значений</summary>
+4. **Дополнительно.** <details><summary>Укажите фильтр значений</summary>
 Например, задайте минимальный порог.
 
    ![](./images/export_job_8.png)
 
    </details>
 
-1. **Дополнительно.** <details><summary>Аггрегация</summary>
+5. **Дополнительно.** <details><summary>Аггрегация</summary>
 Выберите аггрегирующую функцию, период аггрегации и метод интерполяции.
 
    ![](./images/export_job_4.png)
 
    </details>
 
-1. **Дополнительно.**<details><summary>Задайте настройки, связанные с форматом отчёта</summary>
+6. **Дополнительно.**<details><summary>Задайте настройки, связанные с форматом отчёта</summary>
 Например, выберите формат, тип сжатия или укажите аннотацию - текст, который будет добавлен в начало сгенерированного файла.
 
    ![](./images/export_job_9.png)
 
    Кроме того, можно указать следующие настройки:
 
-      ![](./images/export_job_10.png)
+   ![](./images/export_job_10.png)
 
    * **Entity Tags** - список тегов сущности, значения которых будут добавлены в отчёт как колонки
    * **Metric Tags** - список тегов метрики, значения которых будут добавлены в отчёт как колонки
@@ -660,7 +666,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
    </details>
 
-1. Укажите список e-mail адресов и тему письма или абсолютный путь к отчёту на файловой системе ATSD.
+7. Укажите список e-mail адресов и тему письма или абсолютный путь к отчёту на файловой системе ATSD.
 
    ![](./images/export_job_5.png)
 
@@ -676,7 +682,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
     Сохраните задачу.
   
-1. Для проверки задачи, нажмите **Run**.
+8. Для проверки задачи, нажмите **Run**.
 
    ![](./images/export_job_6.png)
 
@@ -694,15 +700,15 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
    ![](./images/sql_job_1.png)
 
-1. Установите периодичность запуска задачи, например, `каждый день в 02:00`.
+2. Установите периодичность запуска задачи, например, `каждый день в 02:00`.
 
    ![](./images/sql_job_2.png)
 
-1. Укажите SQL-запрос.
+3. Укажите SQL-запрос.
 
    ![](./images/sql_job_3.png)
 
-1. Выберите формат и укажите список e-mail адресов и тему письма или абсолютный путь к отчёту на файловой системе ATSD.
+4. Выберите формат и укажите список e-mail адресов и тему письма или абсолютный путь к отчёту на файловой системе ATSD.
 
    ![](./images/sql_job_4.png)
 
@@ -727,7 +733,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
     </details>
 
-1. **Дополнительно.**<details><summary>Установите ограничение на значения дат для сохраняемых серий</summary>
+5. **Дополнительно.**<details><summary>Установите ограничение на значения дат для сохраняемых серий</summary>
 
    ![](./images/sql_job_5.png)
 
@@ -735,7 +741,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
    </details>
 
-1. **Дополнительно.**<details><summary>Укажите настройки публикации результатов</summary>
+6. **Дополнительно.**<details><summary>Укажите настройки публикации результатов</summary>
 
     * **Guest Access** - предоставить анонимный доступ для неавторизованных пользователей
     * **Allow Refresh** - обновлять отчёт, если в запросе задан параметер `refresh=true`
@@ -744,11 +750,11 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
    </details>
 
-1. Сохраните задачу.
+7. Сохраните задачу.
 
    ![](./images/sql_job_7.png)
 
-1. Для проверки задачи, нажмите **Test**.
+8. Для проверки задачи, нажмите **Test**.
 
    ![](./images/sql_job_8.png)
 
@@ -908,12 +914,15 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
   * С помощью действия **Create** на странице  **Entities**
 
     * Перейдите в раздел **Entites** в главном меню
-    ![](./images/entity/entities_list.png)
+
+      ![](./images/entity/entities_list.png)
 
     * Выбeрите действие **Create** из списка действий
-    ![](./images/entity/entity_create_action.png)
+
+      ![](./images/entity/entity_create_action.png)
 
     * Форма создания новой сущности содержит следующие поля
+
       ![](./images/entity/entity_new_form.png)
 
       | Поле        | Тип    | Описание                                                                                                                                                                  |
@@ -934,13 +943,16 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     AТСД позволяет объединять различные сущности имеющие схожие тэги.
 
     * Откройте страницу **Settings > Tag Templates** в основном меню.
-    ![](./images/entity/tag_templates.png)
+
+      ![](./images/entity/tag_templates.png)
 
     * Выберите один из существующих шаблонов c типом `ENTITY` или создайте новый.
-    ![](./images/entity/tag_template.png)
+
+      ![](./images/entity/tag_template.png)
 
     * Нажмите кнопку **Create Entity**, список имен тэгов будет создан исходя из шаблона.
-    ![](./images/entity/entity_tag_template_form.png)
+
+      ![](./images/entity/entity_tag_template_form.png)
 
     * Заполните оставшиеся поля и нажмите кнопку **Save**
 
@@ -963,18 +975,20 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     * Прикрепите файл с помощью конпки **Browse**
 
     * В выпадающем списке выберите действие **Insert as Entities**
-    ![](./images/entity/csv_wizart_1.png)
+
+      ![](./images/entity/csv_wizart_1.png)
 
     * На стадии **Parse** убедитесь что CSV распознан корректно и нажмите кнопку **Next**
 
     * На стадии **Model** опишите как колонки должны соотноститься с полями сущности и нажмите кнопку **Apply**
-    ![](./images/entity/csv_wizart_2.png)
+
+      ![](./images/entity/csv_wizart_2.png)
 
     * На заключетельной стадии загрузите исходный файл с помощью построенного парсера нажав кнопку **Upload file**
 
     * Убедитесь, что сущности появилсь в списке сущностей и их поля проставлены корректно.
 
-    ![](./images/entity/csv_entity_created.png)
+      ![](./images/entity/csv_entity_created.png)
 
 ## [⇧](#содержание) 4. Прочие требования к характеристикам
 
@@ -1079,20 +1093,20 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 3. В качестве примера создадим правило, которое инициирует инцидент, если занимаемое место на диске превышает 75%, и закрывает инцидент, если занимаемое место не превышает 75%.
 Чтобы открыть и закрыть один и тот же инцидент, заранее сгенерируем уникальный ключ и сохраним его в переменной dedup_key.
 
-![](./images/condition.png)
-![](./images/alert_history.png)
-![](./images/webhook_open.png)
+    ![](./images/condition.png)
+    ![](./images/alert_history.png)
+    ![](./images/webhook_open.png)
 
-При срабатывании правила Rule Engine отправляет запрос в PagerDuty на создание инцидента, сопровождая его информацией о состоянии файловой системы, и предоставляет ссылку на портал с метрикой disk_used.
+    При срабатывании правила Rule Engine отправляет запрос в PagerDuty на создание инцидента, сопровождая его информацией о состоянии файловой системы, и предоставляет ссылку на портал с метрикой disk_used.
 
-![](./images/pagerduty_alert_open.png)
+    ![](./images/pagerduty_alert_open.png)
 
-При возврате метрики к приемлемым значениям Rule Engine отправляет запрос на закрытие инцидента. Функция `last_open()` позволяет получить состояние окна в момент предыдущего срабатывания правила.
+    При возврате метрики к приемлемым значениям Rule Engine отправляет запрос на закрытие инцидента. Функция `last_open()` позволяет получить состояние окна в момент предыдущего срабатывания правила.
 
-![](./images/webhook_cancel.png)
-![](./images/pagerduty_alert_resolved.png)
+    ![](./images/webhook_cancel.png)
+    ![](./images/pagerduty_alert_resolved.png)
 
-[Правило](https://nur.axibase.com/rule/edit.xhtml?name=atsd_disk_low_pagerduty)
+    [Правило](https://nur.axibase.com/rule/edit.xhtml?name=atsd_disk_low_pagerduty)
 
 ### [⇧](#содержание) 4.3) Возможность получения информации из сторонних систем мониторинга IT инфраструктуры и комплексов обеспечения информационной безопасности. (ArcSight ESM, IBM Tivoli, Nagios, HP NNMi, HP OneView, MS SCOM, VmWare vCenter, OmniVista)
 
@@ -1146,41 +1160,42 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
   * Сконфигурируйте задачу в  Axibase Collector
     * Создайте [Http Pool](https://hbs.axibase.com:10443/pool/form.xhtml?connectionPoolId=145)
 
-     ![](./images/openmuc/httppool.png)
+       ![](./images/openmuc/httppool.png)
 
     * Создайте [список  элементов](https://hbs.axibase.com:10443/collection/form.xhtml?collectionId=356) с ноебходимым списком каналов.
 
-     ![](./images/openmuc/itemlist.png)
+       ![](./images/openmuc/itemlist.png)
 
     * Cоздайте [файловую задачу](https://hbs.axibase.com:10443/job-file.xhtml?jobId=5949) указав экземпляр ATSD.
-     ![](./images/openmuc/filejob.png)
 
-    ####**Response**
+       ![](./images/openmuc/filejob.png)
 
-     ```json
-     {
-         "records": [
-             {
-                 "id": "power_grid",
-                 "valueType": "DOUBLE",
-                 "record": {
-                     "timestamp": 1559207680005,
-                     "flag": "VALID",
-                     "value": -2.186
-                 }
-             },
-             {
-                 "id": "status_electric_vehicle",
-                 "valueType": "STRING",
-                 "record": {
-                     "timestamp": 1559207679749,
-                     "flag": "VALID",
-                     "value": "idle"
-                 }
-             },
-        ...
-     }
-     ```
+        ####**Response**
+
+         ```json
+         {
+             "records": [
+                 {
+                     "id": "power_grid",
+                     "valueType": "DOUBLE",
+                     "record": {
+                         "timestamp": 1559207680005,
+                         "flag": "VALID",
+                         "value": -2.186
+                     }
+                 },
+                 {
+                     "id": "status_electric_vehicle",
+                     "valueType": "STRING",
+                     "record": {
+                         "timestamp": 1559207679749,
+                         "flag": "VALID",
+                         "value": "idle"
+                     }
+                 },
+            ...
+         }
+         ```
 
     * Добавьте конфигурацию описывающую преоброзвание response от OpenMuc REST API в СSV, который будет обработан [СSV парсером](https://axibase.com/docs/atsd/writing-data.html#csv-parsers) в ATSD.
 
@@ -1192,9 +1207,9 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
   * Протестируйте созданную раннее конфигурацию
   
-  ![](./images/openmuc/testjob.png)
+    ![](./images/openmuc/testjob.png)
   
   * Убедитесь, что данные [поступают](https://nur.axibase.com/entities/openmuc-device/) в ATSD.
   
-  ![](./images/openmuc/metriclist.png)
+    ![](./images/openmuc/metriclist.png)
   
