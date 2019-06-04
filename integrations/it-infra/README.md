@@ -1186,7 +1186,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
        ![](./images/openmuc/filejob.png)
 
-        ####**Response**
+        **Response**
 
          ```json
          {
