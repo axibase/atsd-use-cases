@@ -238,12 +238,13 @@ function get_assets_commands()
             numeric_values.openbal = lim.openbal
             numeric_values.all_assets = p_info.all_assets
             numeric_values.in_all_assets = p_info.in_all_assets
+            numeric_values.open_positions = p_info.in_all_assets - lim.openbal
+            numeric_values.curr_positions = p_info.all_assets - lim.currentbal
 
             local text_values = {}
             text_values.currcode = 'SUR'
             text_values.tag = lim.tag
             text_values.limit_kind = tostring(lim.limit_kind)
-
 
             commands = commands .. base_series_template()
             for k,v in pairs(numeric_values) do
@@ -258,15 +259,48 @@ function get_assets_commands()
     return commands;
 end
 
+function date_to_string(dt)
+    if dt == nil then
+      return nil
+    end
+    if (dt.year == 1601) then
+      return nil
+    end
+    local res = ("%04d-%02d-%02d %02d:%02d:%02d"):format(dt.year, dt.month, dt.day, dt.hour, dt.min, dt.sec)
+    if dt.mcs ~= nil then
+      res = res .. "." .. tostring(dt.mcs)
+    elseif dt.ms ~= nil then
+      res = res .. "." .. tostring(dt.ms)
+    end
+    return res
+end
+
+function round(a)
+    return a>=0 and math.floor(a+0.5) or math.ceil(a-0.5)
+  end
+
 function get_trade_message_command(trade)
-    local entity = string.format("%s[%s]", trade.sec_code, trade.class_code)
-    local msg = ""
-    local cmd = "message e:" .. entity .. " t:userid=" .. getInfoParam("USERID") ..
-            " t:source=quik-terminal t:type=quik" .. " m:\"" .. msg .. "\""
-    for k, v in pairs(trade) do
-        if (k ~= "userid") then
+    local entity = string.format("%s_[%s]", trade.sec_code, trade.class_code)
+    local cmd = "message e:" .. entity .. " t:source=quik-terminal t:type=quik m:\"\""
+    cmd = cmd .. " t:userid=" .. getInfoParam("USERID")
+    local fields = {"class_code", "order_num", "sec_code", "price", "settle_currency", "trade_currency", "trade_num", "trans_id", "value", "exchange_comission", "clearing_comission"}
+    for _, k in pairs(fields) do
+        local v = trade[k]
+        if v ~= nil and v ~= '' then
             cmd = cmd .. " t:" .. tostring(k) .. "=\"" .. utf.cp1251_utf8(tostring(v)) .. "\""
         end
     end
+    local dt = date_to_string(trade.datetime)
+    if dt ~= nil and dt ~= '' then
+        cmd = cmd .. " t:trade_date=\"" .. dt .. "\""
+    end
+    local price = tonumber(trade.price)
+    local lots = tonumber(trade.qty)
+    local amount = tonumber(trade.value)
+    local quantity = round(amount/price)
+
+    cmd = cmd .. " t:lots=\"" .. tostring(lots) .. "\""
+    cmd = cmd .. " t:quantity=\"" .. tostring(quantity) .. "\""
+
     return cmd .. "\n"
 end

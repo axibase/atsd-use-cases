@@ -472,6 +472,61 @@ HKEY_CURRENT_USER\Software\ODBC\ODBC.INI\<DSN name>
 
 ![](./images/quik_odbc_tracing.png)
 
+### Time Management
+
+Configure the Windows operating system to continuously synchronize [date and time](https://docs.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings) using NTP.
+
+```sh
+win32tm /query /configuration
+```
+
+```txt
+[Configuration]
+EventLogFlags: 2 (Local)
+AnnounceFlags: 5 (Local)
+TimeJumpAuditOffset: 28800 (Local)
+MinPollInterval: 6 (Local)
+MaxPollInterval: 10 (Local)
+MaxNegPhaseCorrection: 172800 (Local)
+MaxPosPhaseCorrection: 172800 (Local)
+MaxAllowedPhaseOffset: 300 (Local)
+
+FrequencyCorrectRate: 4 (Local)
+PollAdjustFactor: 5 (Local)
+LargePhaseOffset: 50000000 (Local)
+SpikeWatchPeriod: 900 (Local)
+LocalClockDispersion: 10 (Local)
+HoldPeriod: 5 (Local)
+PhaseCorrectRate: 7 (Local)
+UpdateInterval: 100 (Local)
+
+[TimeProviders]
+NtpClient (Local)
+DllName: C:\Windows\system32\w32time.dll (Local)
+Enabled: 1 (Local)
+InputProvider: 1 (Local)
+AllowNonstandardModeCombinations: 1 (Local)
+ResolvePeerBackoffMinutes: 15 (Local)
+ResolvePeerBackoffMaxTimes: 7 (Local)
+CompatibilityFlags: 2147483648 (Local)
+EventLogFlags: 1 (Local)
+LargeSampleSkew: 3 (Local)
+SpecialPollInterval: 3600 (Local)
+Type: NTP (Local)
+NtpServer: 0.pool.ntp.org, 1.pool.ntp.org, 2.pool.ntp.org (Local)
+
+NtpServer (Local)
+DllName: C:\Windows\system32\w32time.dll (Local)
+Enabled: 1 (Local)
+InputProvider: 0 (Local)
+AllowNonstandardModeCombinations: 1 (Local)
+
+VMICTimeProvider (Local)
+DllName: C:\Windows\System32\vmictimeprovider.dll (Local)
+Enabled: 1 (Local)
+InputProvider: 1 (Local)
+```
+
 ### Virtual Box Port Forwarding
 
 If the Windows VM with the Quik workstation is installed as a Virtual Box VM, the VM needs to be configured to accept TCP commands generated from ATSD.
