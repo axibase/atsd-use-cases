@@ -111,8 +111,9 @@
 ![demo-user-groups-portal](./images/demo-user-groups-portal.png)
 
 * Портал в режиме гостевого доступа
-[Портал](https://nur.axibase.com/portal/256.xhtml)
-([редактор](https://nur.axibase.com/portals/edit?id=256))
+
+    [Портал](https://nur.axibase.com/portal/256.xhtml)
+    ([редактор](https://nur.axibase.com/portals/edit?id=256))
 
 #### [⇧](#содержание) 3.1.4) Возможность категоризации событийной информации по типу
 
@@ -134,36 +135,37 @@
 
 * Открытие графика из строки таблицы, например, загрузка ЦПУ несколькими серверами - график открывает историю.
 
-[Мониторинг загрузки серверов](https://nur.axibase.com/portal/name/demo-table-sysmon)
-([редактор](https://nur.axibase.com/portals/edit?id=261))
+    [Мониторинг загрузки серверов](https://nur.axibase.com/portal/name/demo-table-sysmon)
+    ([редактор](https://nur.axibase.com/portals/edit?id=261))
 
-![demo-table-sysmon](./images/demo-table-sysmon.png)
+    ![demo-table-sysmon](./images/demo-table-sysmon.png)
 
 * Открытие порталов для сущности из консоли алертов.
 
-```js
-format = value ? value + ' (<a href="/entities/' +encodeURIComponent(value)+'/metricsPortal">portal</a>)' : ''
-```
+    ```js
+    format = value ? value + ' (<a href="/entities/' +encodeURIComponent(value)+'/metricsPortal">portal</a>)' : ''
+    ```
 
-[Консоль событий ATSD](https://nur.axibase.com/portal/name/demo-entity-portal-from-table)
-([редактор](https://nur.axibase.com/portals/edit?id=268))
+    [Консоль событий ATSD](https://nur.axibase.com/portal/name/demo-entity-portal-from-table)
+    ([редактор](https://nur.axibase.com/portals/edit?id=268))
 
-![demo-entity-portal-from-table](./images/demo-entity-portal-from-table.png)
+    ![demo-entity-portal-from-table](./images/demo-entity-portal-from-table.png)
 
 * Обновление виджета по нажатию на сущность или при смене периода загрузки данных.
-[Портал scollector'а](https://nur.axibase.com/portal/name/demo-scollector-monitor)
-([редактор](https://nur.axibase.com/portals/edit?id=274))
+    
+    [Портал scollector'а](https://nur.axibase.com/portal/name/demo-scollector-monitor)
+    ([редактор](https://nur.axibase.com/portals/edit?id=274))
 
-![demo-docker-images-summary](./images/demo-scollector-monitor.png)
+    ![demo-docker-images-summary](./images/demo-scollector-monitor.png)
 
 * Открыть график по ссылке из email alert
 
-Для доступа у порталу ряда, для которого сработало правило, можно использовать переменную
-[`chartLink`](https://axibase.com/docs/atsd/rule-engine/links.html#chartlink)
+    Для доступа у порталу ряда, для которого сработало правило, можно использовать переменную
+    [`chartLink`](https://axibase.com/docs/atsd/rule-engine/links.html#chartlink)
 
-[Уведомление о превышении порога загрузки ЦП](https://nur.axibase.com/rule/edit.xhtml?name=demo-rule-email#notifications_email)
+    [Уведомление о превышении порога загрузки ЦП](https://nur.axibase.com/rule/edit.xhtml?name=demo-rule-email#notifications_email)
 
-![demo-rule-email](./images/demo-rule-email.png)
+    ![demo-rule-email](./images/demo-rule-email.png)
 
 #### [⇧](#содержание) 3.1.8) Возможность отображения на одном графике данных от нескольких источников для возможности сопоставления и оценки работы объектов мониторинга
 
@@ -173,71 +175,73 @@ format = value ? value + ' (<a href="/entities/' +encodeURIComponent(value)+'/me
 
 * График с двумя осями: CPU server и Java GC %
 
-```ls
-[widget]
-    type = chart
-    ...
+    ```ls
+    [widget]
+        type = chart
+        ...
 
-    [series]
-      axis = left
-      metric = jvm_system_cpu_load
+        [series]
+          axis = left
+          metric = jvm_system_cpu_load
 
-    [series]
-      axis = right
-      metric = gc_time_percent
-```
+        [series]
+          axis = right
+          metric = gc_time_percent
+    ```
 
-[Загрузка ЦП](https://nur.axibase.com/portal/name/demo-cpu-usage)
-([редактор](https://nur.axibase.com/portals/edit?id=254))
-  ![demo-cpu-usage](./images/demo-cpu-usage.png)
+    [Загрузка ЦП](https://nur.axibase.com/portal/name/demo-cpu-usage)
+    ([редактор](https://nur.axibase.com/portals/edit?id=254))
+
+    ![demo-cpu-usage](./images/demo-cpu-usage.png)
 
 * График с двумя осями: nginx request count (latency), сеть (байты), и ЦПУ
 
-```ls
-[widget]
-  ...  
-  [series]
-    entity = apps.axibase.com
-    metric = nginx.server_requests
-    statistics = counter # Метрика является накопительной
+    ```ls
+    [widget]
+      ...  
+      [series]
+        entity = apps.axibase.com
+        metric = nginx.server_requests
+        statistics = counter # Метрика является накопительной
 
-  [series]
-    axis = right
-    entity = nurswgvml501
-    metric = cpu_busy
-    statistic = max
-```
+      [series]
+        axis = right
+        entity = nurswgvml501
+        metric = cpu_busy
+        statistic = max
+    ```
 
-[Статус сервера NGINX](https://nur.axibase.com/portal/name/demo-server-status)
-([редактор](https://nur.axibase.com/portals/edit?id=263))
-![demo-server-status](./images/demo-server-status.png)
+    [Статус сервера NGINX](https://nur.axibase.com/portal/name/demo-server-status)
+    ([редактор](https://nur.axibase.com/portals/edit?id=263))
+
+    ![demo-server-status](./images/demo-server-status.png)
 
 * Календарь с несколькими серверами - при этом ЦПУ с scollector (linux) и SCOM windows
 
-```ls
-csv cpu_usage =
-  os,group,metric
-  Windows,scom-servers,scom.server.processor_information.%_processor_time
-  Linux,nmon-linux,cpu_busy
-endcsv
+    ```ls
+    csv cpu_usage =
+      os,group,metric
+      Windows,scom-servers,scom.server.processor_information.%_processor_time
+      Linux,nmon-linux,cpu_busy
+    endcsv
 
-[group]
-  [widget]
-    type = calendar
-    summarize-statistic = percentile(95)
-    summarize-period = 1 day
-    ...
-  for cpu_info in cpu_usage
-    [series]
-      entity-group = @{cpu_info.group}
-      metric = @{cpu_info.metric}
-  endfor
-```
+    [group]
+      [widget]
+        type = calendar
+        summarize-statistic = percentile(95)
+        summarize-period = 1 day
+        ...
+      for cpu_info in cpu_usage
+        [series]
+          entity-group = @{cpu_info.group}
+          metric = @{cpu_info.metric}
+      endfor
+    ```
 
-[Загрузка ЦП по серверам](https://nur.axibase.com/portal/name/demo-cpu-calendar)
-([редактор](https://nur.axibase.com/portals/edit?id=255))
+    [Загрузка ЦП по серверам](https://nur.axibase.com/portal/name/demo-cpu-calendar)
+    ([редактор](https://nur.axibase.com/portals/edit?id=255))
 
-![demo-cpu-calendar](./images/demo-cpu-calendar.png)
+    ![demo-cpu-calendar](./images/demo-cpu-calendar.png)
 
 #### [⇧](#содержание) 3.1.9) Возможность гибкой настройки оповещений ответственных в соответствии с их зонами ответственности и событиями, приходящими от подсистем системы мониторинга
 
@@ -256,14 +260,17 @@ endcsv
 * Задание адресатов уведомлений списком
 
 <!-- markdownlint-disable MD104 -->
+
 ```javascript
 user1@example.org,user2@example.org,user3@example.org
 ```
+
 <!-- markdownlint-enable MD104 -->
 
 * Условные выражения для отправки уведомлений на разные адреса в зависисмости от критичности события и от времени суток
 
 <!-- markdownlint-disable MD104 -->
+
 ```javascript
 @if{now.timeOfDay BETWEEN '08:00' AND '20:00'}
 daywatch@example.org
@@ -274,6 +281,7 @@ nightwatch@example.org
 dba@example.org
 @end{}
 ```
+
 <!-- markdownlint-enable MD104 -->
 
 * Отмена уведомлений по расписанию с использованием `cancelAction`
@@ -342,9 +350,11 @@ ${subscribers(type)}
     ![](./images/snmp/snmp-walk.png)
 
   * [Список MIB файлов](https://axibase.com/docs/axibase-collector/jobs/snmp.html#base-mib-files)
+    
     ![](./images/snmp/snmp-mibs.png)
   
   * [SNMP портал](https://nur.axibase.com/portal/197.xhtml?entity=nur.axibase.com) с доступностью и утилизация
+    
     ![](./images/snmp/snmp_portal.png)
 
 #### [⇧](#содержание) 3.1.12) Сбор данных о метриках функционирования приложений (статусы\состояния)
@@ -624,51 +634,53 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 1. Перeйдите на страницу **Data > Export Jobs**, нажмите **Create**.
 
-   ![](./images/export_job_1.png)
+    ![](./images/export_job_1.png)
   
 2. Установите периодичность запуска задачи, например, `каждый час`.
 
-   ![](./images/export_job_2.png)
+    ![](./images/export_job_2.png)
   
 3. Укажите `entity`, `metric` и временной интервал экспортируемых данных.
 
-   ![](./images/export_job_3.png)
+    ![](./images/export_job_3.png)
 
 4. **Дополнительно.** <details><summary>Укажите фильтр значений</summary>
-Например, задайте минимальный порог.
 
-   ![](./images/export_job_8.png)
+    Например, задайте минимальный порог.
 
-   </details>
+    ![](./images/export_job_8.png)
+
+    </details>
 
 5. **Дополнительно.** <details><summary>Аггрегация</summary>
 Выберите аггрегирующую функцию, период аггрегации и метод интерполяции.
 
-   ![](./images/export_job_4.png)
+    ![](./images/export_job_4.png)
 
-   </details>
+    </details>
 
 6. **Дополнительно.**<details><summary>Задайте настройки, связанные с форматом отчёта</summary>
-Например, выберите формат, тип сжатия или укажите аннотацию - текст, который будет добавлен в начало сгенерированного файла.
 
-   ![](./images/export_job_9.png)
+    Например, выберите формат, тип сжатия или укажите аннотацию - текст, который будет добавлен в начало сгенерированного файла.
 
-   Кроме того, можно указать следующие настройки:
+    ![](./images/export_job_9.png)
 
-   ![](./images/export_job_10.png)
+    Кроме того, можно указать следующие настройки:
 
-   * **Entity Tags** - список тегов сущности, значения которых будут добавлены в отчёт как колонки
-   * **Metric Tags** - список тегов метрики, значения которых будут добавлены в отчёт как колонки
-   * **Decimal Precision** - количество знаков после запятой, `-1`- оставить значения без изменений
-   * **Date Format** - формат даты
-   * **Time Zone** - временная зона, которая будет применена к **Date Format**
-   * **Add Metadata** - добавить метаданные в заголовок файла
+    ![](./images/export_job_10.png)
 
-   </details>
+    * **Entity Tags** - список тегов сущности, значения которых будут добавлены в отчёт как колонки
+    * **Metric Tags** - список тегов метрики, значения которых будут добавлены в отчёт как колонки
+    * **Decimal Precision** - количество знаков после запятой, `-1`- оставить значения без изменений
+    * **Date Format** - формат даты
+    * **Time Zone** - временная зона, которая будет применена к **Date Format**
+    * **Add Metadata** - добавить метаданные в заголовок файла
+
+    </details>
 
 7. Укажите список e-mail адресов и тему письма или абсолютный путь к отчёту на файловой системе ATSD.
 
-   ![](./images/export_job_5.png)
+    ![](./images/export_job_5.png)
 
     Абсолютный путь и тема письма могут содержать следующие плэйсхолдеры:
 
@@ -684,9 +696,9 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
   
 8. Для проверки задачи, нажмите **Run**.
 
-   ![](./images/export_job_6.png)
+    ![](./images/export_job_6.png)
 
-   ![](./images/export_job_7.png)
+    ![](./images/export_job_7.png)
 
     [Посмотреть](./resources/export-job-54.csv) cодержимое файла.
 
@@ -698,19 +710,19 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 1. Перейдите на страницу **SQL > Scheduled Queries**, нажмите **Create**.
 
-   ![](./images/sql_job_1.png)
+    ![](./images/sql_job_1.png)
 
 2. Установите периодичность запуска задачи, например, `каждый день в 02:00`.
 
-   ![](./images/sql_job_2.png)
+    ![](./images/sql_job_2.png)
 
 3. Укажите SQL-запрос.
 
-   ![](./images/sql_job_3.png)
+    ![](./images/sql_job_3.png)
 
 4. Выберите формат и укажите список e-mail адресов и тему письма или абсолютный путь к отчёту на файловой системе ATSD.
 
-   ![](./images/sql_job_4.png)
+    ![](./images/sql_job_4.png)
 
     Абсолютный путь и тема письма могут содержать следующие плэйсхолдеры:
 
@@ -722,8 +734,8 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     * `${yyyy/MM/dd}`
     * `${yyyy-MM-dd-HH-mm-ss.SSS}`
 
-   Кроме того, можно указать дополнительные настройки:
-   <details><summary>смотреть</summary>
+    Кроме того, можно указать дополнительные настройки:
+    <details><summary>смотреть</summary>
 
       * **Decimal Precision** - количество знаков после запятой, `-1`- оставить значения без изменений
       * **Add Metadata** - добавить метаданные в заголовок файла
@@ -735,30 +747,30 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 5. **Дополнительно.**<details><summary>Установите ограничение на значения дат для сохраняемых серий</summary>
 
-   ![](./images/sql_job_5.png)
+    ![](./images/sql_job_5.png)
 
-   Подробнее об опции **Store** [здесь](https://axibase.com/docs/atsd/sql/scheduled-sql-store.html#sql-scheduled-store).
+    Подробнее об опции **Store** [здесь](https://axibase.com/docs/atsd/sql/scheduled-sql-store.html#sql-scheduled-store).
 
-   </details>
+    </details>
 
 6. **Дополнительно.**<details><summary>Укажите настройки публикации результатов</summary>
 
     * **Guest Access** - предоставить анонимный доступ для неавторизованных пользователей
     * **Allow Refresh** - обновлять отчёт, если в запросе задан параметер `refresh=true`
 
-   ![](./images/sql_job_6.png)
+    ![](./images/sql_job_6.png)
 
-   </details>
+    </details>
 
 7. Сохраните задачу.
 
-   ![](./images/sql_job_7.png)
+    ![](./images/sql_job_7.png)
 
 8. Для проверки задачи, нажмите **Test**.
 
-   ![](./images/sql_job_8.png)
+    ![](./images/sql_job_8.png)
 
-   Опубликованный отчёт [здесь](https://nur.axibase.com/sqla/126.html).
+    Опубликованный отчёт [здесь](https://nur.axibase.com/sqla/126.html).
 
 * **Пример portal screenshot to Email, portal to Slack**
 
@@ -768,47 +780,47 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 1. Перейдите на страницу **Alerts > Rules**, нажмите **New**.
 
-   ![](./images/rule_1.png)
+    ![](./images/rule_1.png)
 
 2. Вкладка **Overview**: укажите имя нового правила.
 
-   ![](./images/settings_rule_2.png)
+    ![](./images/settings_rule_2.png)
 
-   > Чтобы посмотреть описание всех настроек, используйте кнопку **Help** в верхнем правом углу вкладки.
-   >
-   > ![](./images/rule_3.png)
+    > Чтобы посмотреть описание всех настроек, используйте кнопку **Help** в верхнем правом углу вкладки.
+    >
+    > ![](./images/rule_3.png)
 
 3. Вкладка **Filters**: укажите метрику и сущность.
 
-   ![](./images/settings_rule_4.png)
+    ![](./images/settings_rule_4.png)
 
 4. Вкладка **Condition**: укажите условие, на которое должно сработать правило, например, `value > 50`.
 
-   ![](./images/settings_rule_5.png)
+    ![](./images/settings_rule_5.png)
 
 5. Вкладка **Email**: укажите получателей и настройте **On Open** триггер. Установите флаг **Series Chart**, чтобы отправлять скриншот с порталом, содержащим серии из текущего правила.
 
-   > Предварительно нужно настроить [**Mail Client**](https://axibase.com/docs/atsd/administration/mail-client.html#mail-client).
+    > Предварительно нужно настроить [**Mail Client**](https://axibase.com/docs/atsd/administration/mail-client.html#mail-client).
 
-   ![](./images/settings_rule_6.png)
+    ![](./images/settings_rule_6.png)
 
 6. Для проверки уведомления нажмите **Test**.
 
-   ![](./images/rule_7.png)
+    ![](./images/rule_7.png)
 
-   ![](./images/settings_rule_8.png)
+    ![](./images/settings_rule_8.png)
 
 7. Вкладка **Webhooks**: выберите Webhook и настройте **On Open** триггер. Установите флаг **Series Chart**, чтобы отправлять скриншот с порталом, содержащим серии из текущего правила.
 
-   > Предварительно нужно настроить [**Slack Webhook**](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html#slack-notifications).
+    > Предварительно нужно настроить [**Slack Webhook**](https://axibase.com/docs/atsd/rule-engine/notifications/slack.html#slack-notifications).
 
-   ![](./images/settings_rule_9.png)
+    ![](./images/settings_rule_9.png)
 
 8. Для проверки уведомления нажмите **Test**.
 
-   ![](./images/settings_rule_10.png)
+    ![](./images/settings_rule_10.png)
 
-   ![](./images/settings_rule_11.png)
+    ![](./images/settings_rule_11.png)
 
 9. Сохраните правило.
 
@@ -889,17 +901,18 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 * Пример tag templates и их назначения
 
-[Docker Container](https://nur.axibase.com/tags/templates/edit.xhtml?tagTemplateId=12)
+  [Docker Container](https://nur.axibase.com/tags/templates/edit.xhtml?tagTemplateId=12)
 
-[Docker Container Member](https://nur.axibase.com/entities/0d3809b9ef8364029add6a4eb126475ae2a285be2f34c9aa844bd9d9c1af898d)
+  [Docker Container Member](https://nur.axibase.com/entities/0d3809b9ef8364029add6a4eb126475ae2a285be2f34c9aa844bd9d9c1af898d)
 
-![demo-docker-container-template](./images/demo-docker-container-template.png)
+  ![demo-docker-container-template](./images/demo-docker-container-template.png)
 
 * Пример entity views их применения к группам
-[Docker Containers View](https://nur.axibase.com/entities/views/3.xhtml)
-([редактор](https://nur.axibase.com/entities/views/edit.xhtml?entityViewId=3))
 
-![demo-entity-view-edit](./images/demo-entity-view-edit.png)
+  [Docker Containers View](https://nur.axibase.com/entities/views/3.xhtml)
+  ([редактор](https://nur.axibase.com/entities/views/edit.xhtml?entityViewId=3))
+
+  ![demo-entity-view-edit](./images/demo-entity-view-edit.png)
 
 #### [⇧](#содержание) 3.3.3) Возможность удаления, создания и изменения связей между конфигурационными единицами и атрибутов конфигурационных единиц и связей
 
@@ -970,6 +983,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
       ```
 
     * Откройте страницу **Data>CSV Parser Wizard** из основного меню
+      
       ![](./images/entity/csv_wizard.png)
 
     * Прикрепите файл с помощью конпки **Browse**
@@ -1091,7 +1105,8 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
     ![](./images/custom_webhook.png)
 
 3. В качестве примера создадим правило, которое инициирует инцидент, если занимаемое место на диске превышает 75%, и закрывает инцидент, если занимаемое место не превышает 75%.
-Чтобы открыть и закрыть один и тот же инцидент, заранее сгенерируем уникальный ключ и сохраним его в переменной dedup_key.
+
+    Чтобы открыть и закрыть один и тот же инцидент, заранее сгенерируем уникальный ключ и сохраним его в переменной dedup_key.
 
     ![](./images/condition.png)
     ![](./images/alert_history.png)
