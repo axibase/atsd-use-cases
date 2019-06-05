@@ -1182,7 +1182,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
        ![](./images/openmuc/itemlist.png)
 
-    * Cоздайте [файловую задачу](https://hbs.axibase.com:10443/job-file.xhtml?jobId=5949) указав экземпляр ATSD.
+    * Создайте [файловую задачу](https://hbs.axibase.com:10443/job-file.xhtml?jobId=5949) указав экземпляр ATSD.
 
        ![](./images/openmuc/filejob.png)
 
