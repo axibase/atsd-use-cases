@@ -278,7 +278,7 @@ function date_to_string(dt)
     elseif dt.ms ~= nil then
         res = res .. "." .. string.format("%03d", dt.ms)
     end
-    return res .. "Z"
+    return res .. "+03:00"
 end
 
 function round(a)
