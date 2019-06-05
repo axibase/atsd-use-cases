@@ -34,9 +34,7 @@ end
 function OnTrade(trade)
     if (isConnected()) then
         local ft = filtered_trade_table(trade)
-        if (last_trades[ft.trade_num] == nil) then
-            last_trades[ft.trade_num] = ft
-        end
+        last_trades[ft.trade_num] = ft
     end
 end
 
@@ -283,19 +281,6 @@ end
 
 function round(a)
     return a >= 0 and math.floor(a + 0.5) or math.ceil(a - 0.5)
-end
-
-function get_timezone()
-    local now = os.time()
-
-    local function get_timezone_offset(ts)
-        local utcdate = os.date("!*t", ts)
-        local localdate = os.date("*t", ts)
-        localdate.isdst = false
-        return os.difftime(os.time(localdate), os.time(utcdate))
-    end
-
-    return get_timezone_offset(now)
 end
 
 function now_ms()
