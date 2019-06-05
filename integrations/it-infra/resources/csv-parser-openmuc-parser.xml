@@ -1,0 +1,38 @@
+<list>
+  <com.axibase.tsd.model.csv.CsvConfiguration>
+    <name>openmuc-parser</name>
+    <enabled>true</enabled>
+    <delimiter>,</delimiter>
+    <recordDelimiter>&#xd;</recordDelimiter>
+    <padding>�</padding>
+    <comment>�</comment>
+    <textQualifier>&quot;</textQualifier>
+    <decimalSeparator>.</decimalSeparator>
+    <groupingSeparator>�</groupingSeparator>
+    <skipLines>0</skipLines>
+    <processEvents>false</processEvents>
+    <ignoreParseErrors>false</ignoreParseErrors>
+    <header/>
+    <putType>METRIC</putType>
+    <entityColumn/>
+    <defaultEntity>openmuc-device</defaultEntity>
+    <timestampColumn class="java.util.Arrays$ArrayList">
+      <a class="string-array">
+        <string>timestamp</string>
+      </a>
+    </timestampColumn>
+    <metricValueColumn>value</metricValueColumn>
+    <timestampType>MILLISECONDS</timestampType>
+    <defaultMetric>chanell</defaultMetric>
+    <writeProperty>false</writeProperty>
+    <discardNan>true</discardNan>
+    <tagColumns class="linked-hash-set"/>
+    <excludedColumns class="linked-hash-set"/>
+    <propertyColumns class="linked-hash-set"/>
+    <propertyKeyColumns class="linked-hash-set"/>
+    <entityTags class="linked-hash-set"/>
+    <metricTags class="linked-hash-set"/>
+    <defaultTags class="linked-hash-map"/>
+    <renamedColumns class="linked-hash-map"/>
+  </com.axibase.tsd.model.csv.CsvConfiguration>
+</list>
