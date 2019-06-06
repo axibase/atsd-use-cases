@@ -477,7 +477,11 @@ HKEY_CURRENT_USER\Software\ODBC\ODBC.INI\<DSN name>
 Configure the Windows operating system to continuously synchronize [date and time](https://docs.microsoft.com/en-us/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings) using NTP.
 
 ```sh
-win32tm /query /configuration
+net stop w32time
+w32tm /config /syncfromflags:manual /manualpeerlist:"0.it.pool.ntp.org 1.it.pool.ntp.org 2.it.pool.ntp.org 3.it.pool.ntp.org" /reliable:yes
+net start w32time
+w32tm /config /update
+w32tm /resync /rediscover
 ```
 
 ```txt
@@ -526,6 +530,10 @@ DllName: C:\Windows\System32\vmictimeprovider.dll (Local)
 Enabled: 1 (Local)
 InputProvider: 1 (Local)
 ```
+
+Modify the built-in scheduled task in Windows Scheduler to run more often.
+
+![](./images/quik_window_scheduler_time_sync.png)
 
 ### Virtual Box Port Forwarding
 
