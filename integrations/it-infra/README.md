@@ -632,7 +632,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 >
 > [Скачать](./resources/export-jobs.xml) конфигурацию.
 
-1. Перeйдите на страницу **Data > Export Jobs**, нажмите **Create**.
+1. Перейдите на страницу **Data > Export Jobs**, нажмите **Create**.
 
     ![](./images/export_job_1.png)
   
@@ -701,7 +701,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
     ![](./images/export_job_7.png)
 
-    [Посмотреть](./resources/export-job-54.csv) cодержимое файла.
+    [Посмотреть](./resources/export-job-54.csv) содержимое файла.
 
 * ***Пример настроек [SQL Job](https://axibase.com/docs/atsd/sql/scheduled-sql.html#sql-scheduler)***
 
@@ -931,7 +931,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
       ![](./images/entity/entities_list.png)
 
-    * Выбeрите действие **Create** из списка действий
+    * Выберите действие **Create** из списка действий
 
       ![](./images/entity/entity_create_action.png)
 
@@ -948,7 +948,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
       | Time Zone   | строка | Идентификатор часового пояса, например `EST`. Часовой пояс применяется функциями форматирования даты, чтобы возвращать местное время в часовом поясе в зависимости от сущности. |
       | Tags | словарь | Список дополнительных характеристик сущности. Задается в формате `ключ-значение`. Может быть подгружен из шаблона тегов. |
 
-    * Заполните все необходимые поля и нажитe кнопку **Save**
+    * Заполните все необходимые поля и нажмитe кнопку **Save**
 
       ![](./images/entity/entity_form_save.png)
   
@@ -1036,7 +1036,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
 Удаление группы пользователей **Editors**:
 
-* сообщениe в лог при удалении
+* сообщение в лог при удалении
 
   ```js
   2019-05-28 12:27:12,999;INFO;qtp543648248-214;com.axibase.tsd.service.admin.ActionAuditServiceImpl;
@@ -1047,7 +1047,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
   ![](./images/delete_user_group.png)
 
-* уведомлениe по почте
+* уведомление по почте
 
   ![](./images/mail_notif_about_delete.png)
 
@@ -1217,7 +1217,7 @@ avg("30 minute") > baseline("avg", "1 day", "30 minute")
 
       ![](./images/openmuc/filejobconf.png)
 
-  * Cоздайте [CSV парсер](https://nur.axibase.com/csv/configs/edit.xhtml?configName=openmuc-parser) который преобразует данные отправленные коллектором.
+  * Создайте [CSV парсер](https://nur.axibase.com/csv/configs/edit.xhtml?configName=openmuc-parser) который преобразует данные отправленные коллектором.
   
     ![](./images/openmuc/csvparser.png)
 
