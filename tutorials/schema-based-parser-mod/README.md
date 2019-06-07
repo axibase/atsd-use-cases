@@ -74,7 +74,7 @@ SELECT date_format(time, 'yyyy') AS "Year", im.value AS "Import Percent Change",
 | 2015 | -0.5                  | -4.3                  |
 | 2016 | 9.5                   | 3.0                   |
 
-</summary>
+</details>
 
 The dataset shows the annual change in the amount of foreign trade done by Israel for each year from 1970 to 2016 denominated by 2010 New Israeli Shekel (NIS) value. These values are a calculated percent and the following key applies for 2016 information:
 
