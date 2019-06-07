@@ -2,11 +2,9 @@
 
 ## Lua Overview
 
-1) [Lua](https://www.lua.org/) is a scripting language to use when there are no other options. It is embedded into other [apps](https://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua/) for automation purposes.
+[Lua](https://www.lua.org/) is a scripting language which is typically [embedded](https://stackoverflow.com/questions/4448835/alternatives-to-lua-as-an-embedded-language) into C++ [programs](https://blog.cloudflare.com/pushing-nginx-to-its-limit-with-lua/) for automation purposes.
 
-2) Lua is fun to learn and makes it possible to be productive.
-
-3) You do not have to be a Java developer to enjoy some of tricks described in this paper.
+You use Lua when there are no other options but the language is fun to learn and makes it possible to be productive.
 
 ## Comments
 
@@ -40,6 +38,8 @@ hello
 * string
 * `nil`
 
+Numbers are stored as **doubles**.
+
 ## Variables
 
 ### Variable Scope
@@ -49,10 +49,11 @@ By default, all variables are **global**.
 * Global scope
 
 ```lua
-NAME='John'
-AGE=20
-THRESHOLD=1.25
-REF = nil
+NAME = 'St Petersburg'
+AGE  = 316
+AREA = 1439.5
+CAPITAL = false
+COORD = nil
 ```
 
 String literals can be declared with single or double quotes.
@@ -94,6 +95,86 @@ To check if variable is not assigned:
 ```lua
 if s ~= nil then
 
+end
+```
+
+## UTF Support
+
+To convert encode `CP-1251` string as UTF, we use [utf.lua](./resources/utf.lua)
+
+```lua
+local str = -- CP-1251 string
+local utf_str = utf.cp1251_utf8(str)
+```
+
+## Syntax Highlights
+
+* Tilde in negative equality check. `~=` instead of `!=`
+
+```lua
+obj ~= nil
+```
+
+* Array or table size using hash.
+
+```lua
+local tsize = #my_table
+```
+
+* Array index starts with `1` instead of `0`
+
+```lua
+local arr = {"a", "b"}
+ -- arr[1] returns a
+```
+
+* Unary operators.
+
+`++` et al is not supported. Incrementing by 1 is verbose.
+
+```lua
+count = count + 1
+```
+
+* Ternary operator.
+
+`?` is not supported.
+
+```lua
+-- illegal
+local limit = count > 5 ? 20 : 10
+```
+
+Workaround is verbose and not readable.
+
+```lua
+local limit = count > 5 and 20 or 10
+```
+
+* Control flow.
+
+There is no `continue` operator to skip the block in a loop.
+
+```lua
+for i = 1, 10 do
+  if i == 3 then
+    -- do something on even numbers
+    -- and skip the rest of the cycle???
+  end
+end
+```
+
+Verbose workaround for Lua `5.2+` using `goto`.
+
+```lua
+for i = 1, 10 do
+  if i == 3 then
+    -- do something
+    -- and skip the rest of the cycle???
+    goto continue
+  end
+  --
+  ::continue::  
 end
 ```
 
@@ -246,23 +327,22 @@ end
     isdst=false
 ```
 
+The `os.date` functions accepts Unix **seconds** as the optional second argument.
+
 ```lua
-function date_to_string(dt)
-  if dt == nil then
-    return "date is nil"
-  end
-  if (dt.year == 1601) then
-    return "-"
-  end
-  local res = ("%04d-%02d-%02d %02d:%02d:%02d"):format(dt.year, dt.month, dt.day, dt.hour, dt.min, dt.sec)
-  if dt.mcs ~= nil then
-    res = res .. "." .. tostring(dt.mcs)
-  elseif dt.ms ~= nil then
-    res = res .. "." .. tostring(dt.ms)
-  end
-  return res
-end
+local unix_seconds = 1559837000
+print(os.date("!%Y-%m-%dT%H:%M:%SZ", unix_seconds))
 ```
+
+```txt
+2019-06-06T16:03:20Z
+```
+
+However, `os.date` ignores fractional seconds. Use a workaround by formatting seconds to date and appending fractions.
+
+Be ready for online ads when searching for info on Lua [date](https://www.lua.org/pil/22.1.html) functions.
+
+![](./images/lua-date-ads.png)
 
 ## Re-using Code
 
@@ -422,10 +502,34 @@ idx=b, val=2
 
 ### Size
 
-Unusual `#` syntax. Too much sugar?
+Unusual `#` operator. Too much sugar?
 
 ```lua
 local size = #my_table
+```
+
+Size with `#<name>` is not always equal to size counted with `pairs` iterator.
+
+```lua
+local count = 0
+for idx,val in ipairs(my_list) do
+  print(tostring(idx) .. '=' .. tostring(val))
+  count = count + 1
+end
+
+print(#my_list .. ' / ' .. count)
+```
+
+```txt
+1=a
+2=b
+4 / 2
+```
+
+Hint: the list contains `nil`.
+
+```lua
+local my_list  = {"a", "b", nil, "d"}
 ```
 
 ### Add Element To Array
