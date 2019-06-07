@@ -4,7 +4,7 @@
 >
 > [Скачать](./resources/rule_2.xml) конфигурацию.
 
-1. Перeйдите на страницу **Alerts > Rules**, нажмите **New**.
+1. Откройте страницу **Alerts > Rules**, нажмите **New**.
 
    ![](./images/rule_1.png)
 
