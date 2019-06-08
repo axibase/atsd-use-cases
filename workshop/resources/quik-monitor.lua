@@ -7,6 +7,9 @@ local mon_entity = "quik-terminal"
 local info_prefix, table_prefix = "quik-info.", "quik-table."
 local error_count = 0
 
+local last_trades = {
+}
+
 local numeric_params = {
     "NUMRECORDS", "MESSAGESSENT", "ALLRECV", "ALLSENT", "BYTESSENT", "MESSAGESRECV", "BYTESRECV",
     "MEMORY", "BYTESPERSECSENT", "BYTESPERSECRECV", "AVGSENT", "AVGRECV", "LASTPINGDURATION",
@@ -30,11 +33,8 @@ end
 
 function OnTrade(trade)
     if (isConnected()) then
-        local tcp = socket.tcp()
-        tcp:settimeout(5)
-        tcp:connect(host, port)
-        tcp:send(get_trade_message_command(trade))
-        tcp:close()
+        local ft = filtered_trade_table(trade)
+        last_trades[ft.trade_num] = ft
     end
 end
 
@@ -64,10 +64,12 @@ function main()
                 local cmds_depo_limits = get_depolimit_count_commands()
                 local cmds_orders = get_order_count_commands()
                 local cmds_assets = get_assets_commands()
+                local cmd_trades = last_trades_cmds()
                 -- reset count on successful connect
                 error_count = 0
-                tcp:send(cmds_trade_counts .. cmds_depo_limits .. cmds_orders .. cmds_assets)
+                tcp:send(cmds_trade_counts .. cmds_depo_limits .. cmds_orders .. cmds_assets .. cmd_trades)
                 tcp:close()
+
                 if counter % 100 == 1 then
                     message(cmd_info_series)
                     message(cmd_info_property)
@@ -75,6 +77,9 @@ function main()
                     message(cmds_depo_limits)
                     message(cmds_orders)
                     message(cmds_assets)
+                    if (cmd_trades ~= "") then
+                        message(cmd_trades)
+                    end
                     message(string.format("Commands sent to %s:%s. counter: %s", host, port, counter))
                 end
             end
@@ -224,7 +229,6 @@ function base_series_template()
 end
 
 function get_assets_commands()
-    local cmd_template = base_series_template() .. " m:%s%s=%s m:%s%s=%s t:type=T%s\n"
     local asset_prefix = "quik-asset."
     local commands = ""
     local size = getNumberOf("money_limits")
@@ -247,10 +251,10 @@ function get_assets_commands()
             text_values.limit_kind = tostring(lim.limit_kind)
 
             commands = commands .. base_series_template()
-            for k,v in pairs(numeric_values) do
+            for k, v in pairs(numeric_values) do
                 commands = commands .. " m:" .. asset_prefix .. k .. "=" .. tostring(v)
             end
-            for k,v in pairs(text_values) do
+            for k, v in pairs(text_values) do
                 commands = commands .. " t:" .. k .. "=\"" .. tostring(v) .. "\""
             end
             commands = commands .. "\n"
@@ -261,46 +265,83 @@ end
 
 function date_to_string(dt)
     if dt == nil then
-      return nil
+        return nil
     end
     if (dt.year == 1601) then
-      return nil
+        return nil
     end
-    local res = ("%04d-%02d-%02d %02d:%02d:%02d"):format(dt.year, dt.month, dt.day, dt.hour, dt.min, dt.sec)
+    local res = ("%04d-%02d-%02dT%02d:%02d:%02d"):format(dt.year, dt.month, dt.day, dt.hour, dt.min, dt.sec)
     if dt.mcs ~= nil then
-      res = res .. "." .. tostring(dt.mcs)
+        res = res .. "." .. string.format("%03d", math.floor(dt.mcs / 1000))
     elseif dt.ms ~= nil then
-      res = res .. "." .. tostring(dt.ms)
+        res = res .. "." .. string.format("%03d", dt.ms)
     end
-    return res
+    return res .. "+03:00"
 end
 
 function round(a)
-    return a>=0 and math.floor(a+0.5) or math.ceil(a-0.5)
-  end
+    return a >= 0 and math.floor(a + 0.5) or math.ceil(a - 0.5)
+end
 
-function get_trade_message_command(trade)
+function now_ms()
+    local cur_date = os.sysdate()
+    return (os.time(cur_date)) * 1000 + math.floor(cur_date.mcs / 1000)
+end
+
+function last_trades_cmds()
+    local commands = ""
+    local now = now_ms()
+    for k, v in pairs(last_trades) do
+        if ((now - v.ms) > 1000) then
+            commands = commands .. get_trade_command(v)
+            last_trades[k] = nil
+        end
+    end
+    return commands
+end
+
+function get_trade_command(trade)
     local entity = string.format("%s_[%s]", trade.sec_code, trade.class_code)
     local cmd = "message e:" .. entity .. " t:source=quik-terminal t:type=quik m:\"\""
-    cmd = cmd .. " t:userid=" .. getInfoParam("USERID")
-    local fields = {"class_code", "order_num", "sec_code", "price", "settle_currency", "trade_currency", "trade_num", "trans_id", "value", "exchange_comission", "clearing_comission"}
+    for k, v in pairs(trade) do
+        if (k == "ms") then
+            cmd = cmd .. " ms:" .. tostring(v)
+        else
+            cmd = cmd .. " t:" .. k .. "=" .. "\"" .. utf.cp1251_utf8(tostring(v)) .. "\""
+        end
+    end
+    return cmd .. "\n"
+end
+
+function filtered_trade_table(trade)
+    local fields = { "class_code", "order_num", "sec_code", "price", "settle_currency", "trade_currency", "trade_num",
+                     "trans_id", "value", "exchange_comission", "clearing_comission" }
+    local filtered_trade = {}
+    filtered_trade.sec_code = trade.sec_code
+    filtered_trade.class_code = trade.class_code
+    filtered_trade.userid = getInfoParam("USERID")
+
     for _, k in pairs(fields) do
         local v = trade[k]
         if v ~= nil and v ~= '' then
-            cmd = cmd .. " t:" .. tostring(k) .. "=\"" .. utf.cp1251_utf8(tostring(v)) .. "\""
+            filtered_trade[k] = v
         end
     end
     local dt = date_to_string(trade.datetime)
     if dt ~= nil and dt ~= '' then
-        cmd = cmd .. " t:trade_date=\"" .. dt .. "\""
+        filtered_trade.trade_date = dt
     end
     local price = tonumber(trade.price)
     local lots = tonumber(trade.qty)
     local amount = tonumber(trade.value)
-    local quantity = round(amount/price)
+    local quantity = round(amount / price)
+    local operation = bit.band(trade.flags, 0x4) and "sell" or "buy"
+    local broker_ref = trade.brokerref ~= nil and trade.brokerref:gsub(trade.client_code, "") or trade.brokerref
 
-    cmd = cmd .. " t:lots=\"" .. tostring(lots) .. "\""
-    cmd = cmd .. " t:quantity=\"" .. tostring(quantity) .. "\""
-
-    return cmd .. "\n"
+    filtered_trade.lots = tostring(lots)
+    filtered_trade.quantity = tostring(quantity)
+    filtered_trade.operation = tostring(operation)
+    filtered_trade.brokerref = tostring(broker_ref)
+    filtered_trade.ms = now_ms()
+    return filtered_trade
 end
