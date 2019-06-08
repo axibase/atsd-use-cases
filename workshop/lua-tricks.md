@@ -115,10 +115,10 @@ local utf_str = utf.cp1251_utf8(str)
 obj ~= nil
 ```
 
-* Array or table size using hash.
+* Array size using hash.
 
 ```lua
-local tsize = #my_table
+local tsize = #my_array
 ```
 
 * Array index starts with `1` instead of `0`
@@ -453,102 +453,136 @@ end
 return publicClass;
 ```
 
-## Tables
+### Tables and Arrays
 
-Arrays are implemented as tables. The built-in index starts at `1` (not at `0`). Tables look like objects.
+Both arrays and tables are stored internally in **tables** as evidenced by the `type()` function.
 
 ```lua
-local my_list  = {"a", "b"}
-local my_table = {a=1, b=2, 3=3}
-print(my_list)
+local my_array  = {"a", "b"}
+local my_table  = {f1 = "hello", f2 = "world"}
+
+print(my_array)
 print(my_table)
-print(my_list[1])
+```
+
+```txt
+table: 0x7f80ad409750
+table: 0x7f80ad4096b0
+```
+
+The table uses **two** different structures: one for storing indexed elements with integer indices starting at `1`, and the other for storing hashed key-value pairs.
+
+The unary `#` operator is provided to get the size of the collection but it only returns the size of the first structure (indexed elements).
+
+```lua
+local arr = {"hello", "world"}
+print(#arr)
+
+local tab = {f1 = "hello", f2 = "world"}
+print(#tab)
+
+local arrtab = {"hello", f1 = "hello", f2 = "world"}
+print(#arrtab)
+```
+
+```txt
+2 -- the indexed part of arr contains two elements.
+0 -- the indexed part of tab contains no elements. f1 and f2 are in hash part.
+1 -- the indexed part of arrtab contains only one element: "hello"
+```
+
+## Tables and Arrays
+
+Arrays are implemented as tables. The built-in index starts at `1` (not at `0`).
+
+## Arrays
+
+```lua
+local my_array  = {"a", "b"}
+print(my_array[1])
+```
+
+```txt
+a
+```
+
+## Tables
+
+```lua
+local my_table = {a=1, b=2, 3=3}
 print(my_table.a)
 print(my_table["a"])
 print(my_table[1])
 ```
 
 ```txt
-table: 0x7f80ad4096b0
-table: 0x7f80ad409750
 a
 1
 1
 nil
 ```
 
-### Iterate Over Elements
+### Array Size
 
-Iterator `ipairs` works for arrays, but returns no elements for tables.
-
-```lua
--- ipairs also works
-for idx,val in pairs(my_list) do
-  print('idx=' .. tostring(idx) .. ', val=' .. tostring(val))
-end
-```
-
-```txt
-idx=1, val=a
-idx=2, val=b
-```
+`#` operator retrieves the count of elements in the indexed part of the table (in the array itself).
 
 ```lua
--- only pairs works for table
-for idx,val in pairs(my_table) do
-  print('idx=' .. tostring(idx) .. ', val=' .. tostring(val))
-end
+local size = #my_array
 ```
 
-```txt
-idx=a, val=1
-idx=b, val=2
-```
-
-### Table and Array Size
-
-Unusual `#` operator. Too much sugar?
+The `ipairs` function returns an iterator which is not always equal to size counted with `pairs` iterator.
 
 ```lua
-local size = #my_table
-```
-
-Size with `#<name>` is not always equal to size counted with `pairs` iterator.
-
-```lua
+local arrtab = {"a", nil, "b", f1 = "hello", f2 = "world"}
 local count = 0
-for idx,val in ipairs(my_list) do
+for idx,val in ipairs(arrtab) do
   print(tostring(idx) .. '=' .. tostring(val))
   count = count + 1
 end
 
-print(#my_list .. ' / ' .. count)
+print(#arrtab .. ' / ' .. count)
 ```
 
 ```txt
 1=a
-2=b
-4 / 2
+3 / 1
 ```
 
-Hint: the list contains `nil`.
+Reason is that `ipairs` function stops when it encounters the first `nil` element.
+
+The `pairs` function returns elements from both structures in the table: first the indexed elements, then key-value pairs. The `mil` elements are skipped from **both** structures.
 
 ```lua
-local my_list  = {"a", "b", nil, "d"}
+local arrtab = {"a", nil, "b", f1 = "hello", f2 = nil, f3 = "world"}
+local count = 0
+for idx,val in pairs(arrtab) do
+  print(tostring(idx) .. '=' .. tostring(val))
+  count = count + 1
+end
+
+print(#arrtab .. ' / ' .. count)
 ```
 
-### Viewing All Elements
+```txt
+1=a
+3=b
+f2=world
+f1=hello
+3 / 4
+```
+
+### Viewing All Elements in Array
 
 Beware of the unusual iterator behavior if the array contains a `nil` value.
 
 ```lua
-local my_list  = {"a", "b", nil, "d"}
+local my_array  = {"a", "b", nil, "d"}
 ```
 
 * `ipairs` ignores `nil` values and stops at the first `nil` value. Subsequent elements are not printed.
 
 ```lua
-for idx,val in ipairs(my_list) do
+for idx,val in ipairs(my_array) do
   print(tostring(idx) .. '=' .. tostring(val))
 end
 ```
@@ -561,7 +595,7 @@ end
 * `pairs` ignores `nil` values.
 
 ```lua
-for idx,val in pairs(my_list) do
+for idx,val in pairs(my_array) do
   print(tostring(idx) .. '=' .. tostring(val))
 end
 ```
@@ -575,8 +609,8 @@ end
 * To view **all** elements, access them by index.
 
 ```lua
-for i=1,#my_list do
-  local val = my_list[i]
+for i=1,#my_array do
+  local val = my_array[i]
   print(tostring(i) .. '=' .. tostring(val))
 end
 ```
@@ -591,7 +625,7 @@ end
 ### Add Element To Array
 
 ```lua
-my_list[#my_list+1] = "c"
+my_array[#my_array+1] = "c"
 ```
 
 ### Check Value In Array or Table
