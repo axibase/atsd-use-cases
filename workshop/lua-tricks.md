@@ -674,7 +674,10 @@ The functions can return multiple values.
 function checkUrl(url)
     if url == nil then
         return 1, 'No url'
-    elseif url:find('http') ~= 1 then
+    end
+    -- note that find function returns two variables: start and end, which can be null
+    s, e = url:find('http')
+    if s == nil or s > 1 then
         return 2, 'Not an http URL: ' .. url
     else
         return 3, 'Url is OK'
