@@ -260,23 +260,28 @@ Using string comparison is possible but verbose and probably slower. The below r
 tostring(21) == tostring(300 * 0.07)
 ```
 
-Basic comparison functions:
+Basic comparison functions to replace checks such as `x == 0` with `eq(x, 0)`.
 
 ```lua
-function gt(a, b)
-  return a - b > EPSILON
+EPSILON=1e-14
+
+function eq(x, y)
+  -- faster than math.abs(x - y) < EPSILON
+  local diff = x - y
+  return diff < EPSILON and diff > -EPSILON
 end
 
-function gte(a, b)
-  return a - b > EPSILON or math.abs(a - b) < EPSILON
+function gt(x, y)
+  return x - y > EPSILON
 end
 
-function eq(a, b)
-  return math.abs(a - b) < EPSILON
+function gte(x, y)
+  return x - y >= -EPSILON
 end
 
-function is_zero(a)
-  return math.abs(a) < EPSILON
+function is_zero(x)
+  -- faster than math.abs(x) < EPSILON
+  return x < EPSILON and x > -EPSILON
 end
 ```
 
@@ -349,8 +354,8 @@ Be ready for online ads when searching for info on Lua [date](https://www.lua.or
 Define shared, re-usable functions in a separate file, for example `util.lua`.
 
 ```lua
-function round(a)
-  return a>=0 and math.floor(a+0.5) or math.ceil(a-0.5)
+function round(x)
+  return x >= 0 and math.floor(x + 0.5) or math.ceil(x - 0.5)
 end
 ```
 
@@ -373,8 +378,8 @@ To better organize the code, and especially if there is collision risk between f
 ```lua
 local publicClass={};
 
-function publicClass.round(a)
-  return a >= 0 and math.floor(a + 0.5) or math.ceil(a - 0.5)
+function publicClass.round(x)
+  return x >= 0 and math.floor(x + 0.5) or math.ceil(x - 0.5)
 end
 
 return publicClass;
@@ -419,8 +424,8 @@ print(last_name)
 ```
 
 ```txt
+John
 nil
-Doe
 ```
 
 ### Private Functions
@@ -430,9 +435,9 @@ To hide some of the functions in the shared library, define them with `local` sc
 ```lua
 ------- private functions -------
 
-local function roundDec(a, prec)
+local function roundDec(x, prec)
   local mult = 10^prec
-  return (a >= 0 and math.floor(a * mult + 0.5) or math.ceil(a * mult - 0.5))/mult
+  return (x >= 0 and math.floor(x * mult + 0.5) or math.ceil(x * mult - 0.5))/mult
 end
 
 ------- public functions  -------
@@ -441,8 +446,8 @@ local publicClass={};
 
 -- local function publicClass.name is not allowed
 
-function publicClass.roundInt(a)
-  return roundDec(a, 0)
+function publicClass.roundInt(x)
+  return roundDec(x, 0)
 end
 
 return publicClass;
@@ -500,7 +505,7 @@ idx=a, val=1
 idx=b, val=2
 ```
 
-### Size
+### Table and Array Size
 
 Unusual `#` operator. Too much sugar?
 
@@ -530,6 +535,57 @@ Hint: the list contains `nil`.
 
 ```lua
 local my_list  = {"a", "b", nil, "d"}
+```
+
+### Viewing All Elements
+
+Beware of the unusual iterator behavior if the array contains a `nil` value.
+
+```lua
+local my_list  = {"a", "b", nil, "d"}
+```
+
+* `ipairs` ignores `nil` values and stops at the first `nil` value. Subsequent elements are not printed.
+
+```lua
+for idx,val in ipairs(my_list) do
+  print(tostring(idx) .. '=' .. tostring(val))
+end
+```
+
+```txt
+1=a
+2=b
+```
+
+* `pairs` ignores `nil` values.
+
+```lua
+for idx,val in pairs(my_list) do
+  print(tostring(idx) .. '=' .. tostring(val))
+end
+```
+
+```txt
+1=a
+2=b
+4=d
+```
+
+* To view **all** elements, access them by index.
+
+```lua
+for i=1,#my_list do
+  local val = my_list[i]
+  print(tostring(i) .. '=' .. tostring(val))
+end
+```
+
+```txt
+1=a
+2=b
+3=nil
+4=d
 ```
 
 ### Add Element To Array
@@ -611,4 +667,26 @@ function log(msg, ...)
   -- also log to file
   print(string.format(msg, ...), 1)
 end
+```
+
+## Benchmarking
+
+`os.time()` precision is limited to seconds. 
+
+Use `os.clock()` to measure intervals with sub-second precision.
+
+```lua
+local start_clock = os.clock()
+local start_time = os.time()
+for i=1,1000000 do
+  my_func(math.random(), math.random())
+end
+local end_clock = os.clock()
+local end_time = os.time()
+
+print((end_clock - start_clock) .. ' / ' .. (end_time - start_time))
+```
+
+```txt
+2.003726 / 2
 ```
