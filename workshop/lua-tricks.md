@@ -705,7 +705,7 @@ end
 
 ## Benchmarking
 
-`os.time()` precision is limited to seconds. 
+`os.time()` precision is limited to seconds.
 
 Use `os.clock()` to measure intervals with sub-second precision.
 
