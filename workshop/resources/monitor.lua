@@ -1,12 +1,63 @@
 local socket = require("socket")
 local utf = require("utf")
+math.randomseed(os.clock() * os.time())
 
-local host, port = "atsd.example.org", 8081
-local interval_seconds = 5
-local mon_entity = "quik-terminal"
-local info_prefix, table_prefix = "quik-info.", "quik-table."
+----- functions required to load properties from file -----
+
+local function trim(s)
+  return (s:gsub("^%s*(.-)%s*$", "%1"))
+end
+
+local function read_props(file_name)
+  local res = {}
+  local f = io.open(file_name, "r")
+  if f then
+      local lines_found = false
+      for line in f:lines() do
+          -- ignores all lines without equal sign and lines starting with hash
+          if line ~= "" and trim(line):find('#') == nil and line:find('=') ~= nil then
+            for k, v in string.gmatch(line, "(.+%s*)=(.*)") do
+                res[trim(k)] = trim(v)
+                lines_found = true
+            end
+          end
+      end
+      if lines_found == false then
+        error("configuration file has no key=value lines: " .. file_name)
+      end
+  else
+    error("configuration file missing: " .. file_name)
+  end
+  return res
+end
+
+----- read from monitor.lua >> monitor.conf  -----
+
+--[[
+ATSD_HOST = 10.102.0.6
+ATSD_PORT = 8081
+SEND_ASSETS = true
+SEND_TRADES = true
+]]--
+
+local SCRIPT_PATH = debug.getinfo(1).short_src
+local CONF_FILE = SCRIPT_PATH:gsub("\.lua", ".conf")            
+local CONF = read_props(CONF_FILE)
+
+local ATSD_HOST = CONF.ATSD_HOST
+local ATSD_PORT = tonumber(CONF.ATSD_PORT)
+local INTERVAL_SECONDS = CONF.INTERVAL_SECONDS and tonumber(CONF.INTERVAL_SECONDS) > 0 or 5
+local ENTITY = CONF.ENTITY or "quik-terminal"
+local USERID = CONF.USERID or getInfoParam("USERID")
+local TRADE_SEND_TIMEOUT_SECONDS = CONF.TRADE_SEND_TIMEOUT_SECONDS and tonumber(TRADE_SEND_TIMEOUT_SECONDS) > 0 or 1
+local TIMEOUT_SECONDS = CONF.TIMEOUT_SECONDS and tonumber(TIMEOUT_SECONDS) > 0 or 3
+local SEND_ASSETS = CONF.SEND_ASSETS ~= nil and CONF.SEND_ASSETS == 'true'
+local SEND_TRADES = CONF.SEND_TRADES ~= nil and CONF.SEND_TRADES == 'true'
+
+local run_loop = true
 local error_count = 0
 
+local info_prefix, table_prefix = "quik-info.", "quik-table."
 local numeric_params = {
     "NUMRECORDS", "MESSAGESSENT", "ALLRECV", "ALLSENT", "BYTESSENT", "MESSAGESRECV", "BYTESRECV",
     "MEMORY", "BYTESPERSECSENT", "BYTESPERSECRECV", "AVGSENT", "AVGRECV", "LASTPINGDURATION",
@@ -26,13 +77,17 @@ local string_params = {
 
 function OnStop()
     run_loop = false
+    return 50
 end
 
+local last_trade_num = 0
 function OnTrade(trade)
-    if (isConnected()) then
+    -- discard duplication notifications
+    if SEND_TRADES == true and run_loop == true and last_trade_num ~= trade.trade_num then
+        last_trade_num = trade.trade_num
         local tcp = socket.tcp()
-        tcp:settimeout(5)
-        tcp:connect(host, port)
+        tcp:settimeout(TRADE_SEND_TIMEOUT_SECONDS)
+        tcp:connect(ATSD_HOST, ATSD_PORT)
         tcp:send(get_trade_message_command(trade))
         tcp:close()
     end
@@ -40,19 +95,21 @@ end
 
 function main()
 
+    message(string.format("Connect to %s:%s as userid %s. assets: %s trades: %s", ATSD_HOST, ATSD_PORT, USERID, tostring(SEND_ASSETS), tostring(SEND_TRADES)))
+
     local counter = 0
     while run_loop ~= false do
 
         counter = counter + 1
 
         local tcp = socket.tcp()
-        tcp:settimeout(5)
+        tcp:settimeout(TIMEOUT_SECONDS)
 
-        local status, error = tcp:connect(host, port)
+        local status, error = tcp:connect(ATSD_HOST, ATSD_PORT)
         if status == nil or status ~= 1 then
             error_count = error_count + 1
             message(string.format('Connection to %s:%s failed: %s. status: %s',
-                    host, port, tostring(error), tostring(status)), 3)
+                ATSD_HOST, ATSD_PORT, tostring(error), tostring(status)), 3)
             counter = 0
         else
             -- commands must end with line break
@@ -75,12 +132,12 @@ function main()
                     message(cmds_depo_limits)
                     message(cmds_orders)
                     message(cmds_assets)
-                    message(string.format("Commands sent to %s:%s. counter: %s", host, port, counter))
+                    message(string.format("Commands sent to %s:%s. counter: %s", ATSD_HOST, ATSD_PORT, counter))
                 end
             end
         end
 
-        sleep(interval_seconds * 1000)
+        sleep(INTERVAL_SECONDS * 1000)
     end
 end
 
@@ -95,9 +152,9 @@ function get_conn_status()
 end
 
 function get_info_series_commands(counter)
-    local command = "series e:" .. mon_entity
+    local command = "series e:" .. ENTITY
     command = command .. " t:protocol=tcp"
-    command = command .. string.format(" t:%s=%s", "USERID", getInfoParam("USERID"))
+    command = command .. string.format(" t:%s=%s", "USERID", USERID)
     command = command .. string.format(" m:%s%s=%s", info_prefix, "CONNECTED", get_conn_status())
     command = command .. string.format(" m:%serror_count=%d", info_prefix, error_count)
     command = command .. string.format(" m:%scounter=%d", info_prefix, counter)
@@ -112,9 +169,9 @@ function get_info_series_commands(counter)
 end
 
 function get_info_property_commands(counter)
-    local command = "property e:" .. mon_entity
+    local command = "property e:" .. ENTITY
     command = command .. " t:terminal-info k:protocol=tcp"
-    command = command .. string.format(" k:%s=\"%s\"", "USERID", getInfoParam("USERID"))
+    command = command .. string.format(" k:%s=\"%s\"", "USERID", USERID)
     command = command .. string.format(" v:%s=\"%s\"", "CONNECTED", get_conn_status())
     command = command .. string.format(" v:%s=\"%s\"", "counter", counter)
     local usr = getInfoParam("USER")
@@ -127,7 +184,11 @@ function get_info_property_commands(counter)
     end
 
     for _, name in pairs(string_params) do
-        command = command .. string.format(" v:%s=\"%s\"", name, utf.cp1251_utf8(getInfoParam(name)))
+        local pv = getInfoParam(name)
+        -- send whitespace to delete tag values after disconnected
+        --if pv ~= nil and pv ~= '' then
+            command = command .. string.format(" v:%s=\"%s\"", name, utf.cp1251_utf8(getInfoParam(name)))
+        --end
     end
 
     for _, name in pairs(numeric_params) do
@@ -220,10 +281,13 @@ function get_depolimit_count_commands()
 end
 
 function base_series_template()
-    return "series e:" .. mon_entity .. " t:" .. "USERID=" .. getInfoParam("USERID")
+    return "series e:" .. ENTITY .. " t:userid=" .. USERID
 end
 
 function get_assets_commands()
+    if COLLECT_ASSETS ~= true then
+        return ""
+    end
     local cmd_template = base_series_template() .. " m:%s%s=%s m:%s%s=%s t:type=T%s\n"
     local asset_prefix = "quik-asset."
     local commands = ""
@@ -234,12 +298,18 @@ function get_assets_commands()
             local p_info = getPortfolioInfoEx(lim.firmid, lim.client_code, lim.limit_kind)
 
             local numeric_values = {}
-            numeric_values.currentbal = lim.currentbal
             numeric_values.openbal = lim.openbal
-            numeric_values.all_assets = p_info.all_assets
-            numeric_values.in_all_assets = p_info.in_all_assets
-            numeric_values.open_positions = p_info.in_all_assets - lim.openbal
-            numeric_values.curr_positions = p_info.all_assets - lim.currentbal
+            numeric_values.currentbal = lim.currentbal
+            numeric_values.locked = lim.locked
+            numeric_values.unlocked = lim.currentbal - lim.locked
+
+            -- until 8:55 prices are not reported causing all positions to be valued at 0
+            if p_info ~= nil and p_info.in_all_assets ~= nil and p_info.in_all_assets - lim.openbal > 0.1 then
+                numeric_values.all_assets = p_info.all_assets
+                numeric_values.in_all_assets = p_info.in_all_assets
+                numeric_values.open_positions = p_info.in_all_assets - lim.openbal
+                numeric_values.curr_positions = p_info.all_assets - lim.currentbal
+            end
 
             local text_values = {}
             text_values.currcode = 'SUR'
@@ -275,21 +345,29 @@ function date_to_string(dt)
     return res
 end
 
-function round(a)
-    return a>=0 and math.floor(a+0.5) or math.ceil(a-0.5)
-  end
+local function round(a)
+    return a >= 0 and math.floor(a + 0.5) or math.ceil(a - 0.5)
+end
 
 function get_trade_message_command(trade)
     local entity = string.format("%s_[%s]", trade.sec_code, trade.class_code)
     local cmd = "message e:" .. entity .. " t:source=quik-terminal t:type=quik m:\"\""
-    cmd = cmd .. " t:userid=" .. getInfoParam("USERID")
-    local fields = {"class_code", "order_num", "sec_code", "price", "settle_currency", "trade_currency", "trade_num", "trans_id", "value", "exchange_comission", "clearing_comission"}
+    cmd = cmd .. " t:userid=" .. USERID
+    local fields = {"class_code", "order_num", "sec_code", "price", "trade_currency", "trade_num", "trans_id", "value", "exchange_comission", "clearing_comission"}
     for _, k in pairs(fields) do
         local v = trade[k]
         if v ~= nil and v ~= '' then
             cmd = cmd .. " t:" .. tostring(k) .. "=\"" .. utf.cp1251_utf8(tostring(v)) .. "\""
         end
     end
+    local operation = bit.test(trade.flags, 2) and "sell" or "buy"
+    cmd = cmd .. " t:operation=" .. operation
+
+    local broker_ref = trade.brokerref ~= nil and trade.brokerref:gsub(trade.client_code, "") or trade.brokerref    
+    cmd = cmd .. " t:broker_ref=\"" .. utf.cp1251_utf8(tostring(broker_ref)) .. "\""
+    
+    -- must convert Moscow TZ (dst=false, offset=3*3600) to UTC
+    -- subtract 10800 from trade.datetime
     local dt = date_to_string(trade.datetime)
     if dt ~= nil and dt ~= '' then
         cmd = cmd .. " t:trade_date=\"" .. dt .. "\""
@@ -299,8 +377,8 @@ function get_trade_message_command(trade)
     local amount = tonumber(trade.value)
     local quantity = round(amount/price)
 
-    cmd = cmd .. " t:lots=\"" .. tostring(lots) .. "\""
-    cmd = cmd .. " t:quantity=\"" .. tostring(quantity) .. "\""
+    cmd = cmd .. " t:lots=" .. tostring(lots)
+    cmd = cmd .. " t:quantity=" .. tostring(quantity)
 
     return cmd .. "\n"
 end

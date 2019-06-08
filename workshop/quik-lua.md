@@ -433,12 +433,15 @@ The advantage of executing strategy rules in ATSD compared to local Lua scripts 
 
 ## Availability Monitoring
 
-Open **Сервисы > Lua Скрипты** and load the [`quik-monitor.lua`](./resources/quik-monitor.lua) script.
+Open **Сервисы > Lua Скрипты** and load the [`monitor.lua`](./resources/monitor.lua) script.
 
-Modify connection parameters to the ATSD TCP service.
+Modify connection parameters in the `monitor.conf` file.
 
-```lua
-local host, port = "atsd.example.org", 8081
+```txt
+ATSD_HOST = atsd.example.org
+ATSD_PORT = 8081
+SEND_ASSETS = true
+SEND_TRADES = true
 ```
 
 Start the script which collects key Quik workstation parameters every 5 seconds including:
@@ -449,7 +452,7 @@ Start the script which collects key Quik workstation parameters every 5 seconds 
 
 ![](./images/quik-info-monitor.png)
 
-To deploy this portal, create a new portal in ATSD based on [`quik-monitor.config`](./resources/quik-monitor.config).
+To deploy this portal, create a new portal in ATSD based on [`quik-monitor-portal.config`](./resources/quik-monitor-portal.config).
 
 To receive email/chat alerts when the data stops arriving, open **Rules > Import** page in ATSD and upload the following rules from [`quik-monitor-rules.xml`](./resources/quik-monitor-rules.xml).
 

@@ -4,6 +4,8 @@ Internal Axibase knowledge seminars made public for secondary use or personal le
 
 <!-- markdownlint-disable MD101 -->
 
+1. [Lua Tricks](./lua-tricks.md) (June 2019)
+1. [ATSD and Lua/Quik Integration for Board Arbitrage](./quik-lua.md) (May 2019)
 1. [How To Calculate Percentiles](./percentiles.md) (December 2018)
 1. [Singular Spectrum Analysis](https://axibase.com/files/ssa_introduction.pdf) (November 2018) <sup>Available in [PDF](https://axibase.com/files/ssa_introduction.pdf) format.</sup>
 1. [The Evolution of Time Zones](./timezones.md) (November 2018)
