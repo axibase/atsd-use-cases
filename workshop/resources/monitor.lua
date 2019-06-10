@@ -44,13 +44,13 @@ local SCRIPT_PATH = debug.getinfo(1).short_src
 local CONF_FILE = SCRIPT_PATH:gsub("\.lua", ".conf")            
 local CONF = read_props(CONF_FILE)
 
-local ATSD_HOST = CONF.ATSD_HOST
-local ATSD_PORT = tonumber(CONF.ATSD_PORT)
-local INTERVAL_SECONDS = CONF.INTERVAL_SECONDS and tonumber(CONF.INTERVAL_SECONDS) > 0 or 5
+local ATSD_HOST = CONF.ATSD_HOST or DEFAULT_ATSD_HOST
+local ATSD_PORT = CONF.ATSD_PORT and tonumber(CONF.ATSD_PORT) or DEFAULT_ATSD_PORT
+local INTERVAL_SECONDS = CONF.INTERVAL_SECONDS and tonumber(CONF.INTERVAL_SECONDS) or 5
 local ENTITY = CONF.ENTITY or "quik-terminal"
 local USERID = CONF.USERID or getInfoParam("USERID")
-local TRADE_SEND_TIMEOUT_SECONDS = CONF.TRADE_SEND_TIMEOUT_SECONDS and tonumber(TRADE_SEND_TIMEOUT_SECONDS) > 0 or 1
-local TIMEOUT_SECONDS = CONF.TIMEOUT_SECONDS and tonumber(TIMEOUT_SECONDS) > 0 or 3
+local TRADE_SEND_TIMEOUT_SECONDS = CONF.TRADE_SEND_TIMEOUT_SECONDS and tonumber(TRADE_SEND_TIMEOUT_SECONDS) or 1
+local TIMEOUT_SECONDS = CONF.TIMEOUT_SECONDS and tonumber(TIMEOUT_SECONDS) or 3
 local SEND_ASSETS = CONF.SEND_ASSETS ~= nil and CONF.SEND_ASSETS == 'true'
 local SEND_TRADES = CONF.SEND_TRADES ~= nil and CONF.SEND_TRADES == 'true'
 
@@ -285,7 +285,7 @@ function base_series_template()
 end
 
 function get_assets_commands()
-    if COLLECT_ASSETS ~= true then
+    if SEND_ASSETS ~= true then
         return ""
     end
     local cmd_template = base_series_template() .. " m:%s%s=%s m:%s%s=%s t:type=T%s\n"
