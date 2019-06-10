@@ -198,4 +198,4 @@ SELECT date_format(time, 'yyyy') AS "Year", ima.value AS "Import Total", im.valu
 | 2015 | 335384.5     | -0.5                  | 331327.2     | -4.3                  |
 | 2016 | 367246.0     | 9.5                   | 341267.0     | 3.0                   |
 
-</summary>
+</details>

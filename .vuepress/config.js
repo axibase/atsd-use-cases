@@ -71,7 +71,7 @@ module.exports = {
     head: [
         ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
     ],
-    staticFilesExtensionsTest: /(?:tcollector|\.(?:pdf|xlsx?|xml|txt|csv|str|java|json|sql|sps|yxmd|htm|prpt|do|tdc|jsonld|ktr|service|sh|ya?ml))$/,
+    staticFilesExtensionsTest: /(?:tcollector|\.(?:pdf|xlsx?|xml|txt|csv|str|java|json|sql|sps|yxmd|htm|prpt|do|tdc|jsonld|ktr|service|sh|ya?ml|lua))$/,
     themeConfig: {
         nav: topNavMenu,
         logo: '/images/axibase_logo_site.png',
