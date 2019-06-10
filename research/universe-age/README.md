@@ -55,7 +55,7 @@ The [inverse-square law](https://en.wikipedia.org/wiki/Inverse-square_law) allow
 * &mu;: Distance modulus.
 * *d*: Distance in [parsecs](https://en.wikipedia.org/wiki/Parsec).
 
-Therefore, ***d* = 10<sup>(&mu;-25)/5</sup>** or ***d* = 10<sup>(&mu;/5)+ 1**</sup>.
+Therefore, ***d* = 10<sup>(&mu;-25)/5</sup>** or ***d* = 10<sup>(&mu;/5)+ 1</sup>**.
 
 > For more information about converting the distance modulus to absolute distance, the Australian amateur astronomy society [IceInSpace](http://www.iceinspace.com.au/forum/index.php) offers a convenient [tutorial](http://www.iceinspace.com.au/forum/archive/index.php/t-104145.html).
 

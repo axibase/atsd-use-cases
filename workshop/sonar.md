@@ -328,7 +328,7 @@ The plugin adds comments to the commit:
 
   ![sonar GitHub permission](./images/sonar-github-permissions.png)
 
-> For more information about generating a GitHub token, refer to the [GitHub Pull Request Report](../integrations/github/pr-report.md/#generate-oauth-access-token) tutorial.
+> For more information about generating a GitHub token, refer to the [GitHub Pull Request Report](../integrations/github/pr-report.md#generate-oauth-access-token) tutorial.
 
 #### Sonar Analysis in CI
 
