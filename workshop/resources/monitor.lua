@@ -42,7 +42,7 @@ SEND_TRADES = true
 ]]--
 
 local SCRIPT_PATH = debug.getinfo(1).short_src
-local CONF_FILE = SCRIPT_PATH:gsub("\.lua", ".conf")            
+local CONF_FILE = SCRIPT_PATH:gsub("\.lua", ".conf")
 local CONF = read_props(CONF_FILE)
 local LOG_PATH = CONF.LOG_PATH or SCRIPT_PATH:gsub("\.lua", ".log")   -- hello.lua >> hello.log
 
@@ -300,9 +300,9 @@ function get_assets_commands()
     if SEND_ASSETS ~= true then
         return ""
     end
-    local cmd_template = base_series_template() .. " m:%s%s=%s m:%s%s=%s t:type=T%s\n"
     local asset_prefix = "quik-asset."
     local commands = ""
+    local cur_seconds = tostring(os.time())
     local size = getNumberOf("money_limits")
     for i = 0, size - 1 do
         local lim = getItem("money_limits", i)
@@ -328,7 +328,7 @@ function get_assets_commands()
             text_values.tag = lim.tag
             text_values.limit_kind = tostring(lim.limit_kind)
 
-            commands = commands .. base_series_template()
+            commands = commands .. base_series_template() .. " s:" .. cur_seconds
             for k,v in pairs(numeric_values) do
                 commands = commands .. " m:" .. asset_prefix .. k .. "=" .. tostring(v)
             end
@@ -375,9 +375,9 @@ function get_trade_message_command(trade)
     local operation = bit.test(trade.flags, 2) and "sell" or "buy"
     cmd = cmd .. " t:operation=" .. operation
 
-    local broker_ref = trade.brokerref ~= nil and trade.brokerref:gsub(trade.client_code, "") or trade.brokerref    
+    local broker_ref = trade.brokerref ~= nil and trade.brokerref:gsub(trade.client_code, "") or trade.brokerref
     cmd = cmd .. " t:broker_ref=\"" .. utf.cp1251_utf8(tostring(broker_ref)) .. "\""
-    
+
     -- must convert Moscow TZ (dst=false, offset=3*3600) to UTC
     -- subtract 10800 from trade.datetime
     local dt = date_to_string(trade.datetime)
