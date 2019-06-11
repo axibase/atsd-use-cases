@@ -34,7 +34,8 @@ end
 ----- read from monitor.lua >> monitor.conf  -----
 
 --[[
-ATSD_HOST = 10.102.0.6
+-- ATSD tcp port
+ATSD_HOST = atsd.example.org
 ATSD_PORT = 8081
 SEND_ASSETS = true
 SEND_TRADES = true
@@ -43,6 +44,7 @@ SEND_TRADES = true
 local SCRIPT_PATH = debug.getinfo(1).short_src
 local CONF_FILE = SCRIPT_PATH:gsub("\.lua", ".conf")            
 local CONF = read_props(CONF_FILE)
+local LOG_PATH = CONF.LOG_PATH or SCRIPT_PATH:gsub("\.lua", ".log")   -- hello.lua >> hello.log
 
 local ATSD_HOST = CONF.ATSD_HOST or DEFAULT_ATSD_HOST
 local ATSD_PORT = CONF.ATSD_PORT and tonumber(CONF.ATSD_PORT) or DEFAULT_ATSD_PORT
@@ -53,6 +55,9 @@ local TRADE_SEND_TIMEOUT_SECONDS = CONF.TRADE_SEND_TIMEOUT_SECONDS and tonumber(
 local TIMEOUT_SECONDS = CONF.TIMEOUT_SECONDS and tonumber(TIMEOUT_SECONDS) or 3
 local SEND_ASSETS = CONF.SEND_ASSETS ~= nil and CONF.SEND_ASSETS == 'true'
 local SEND_TRADES = CONF.SEND_TRADES ~= nil and CONF.SEND_TRADES == 'true'
+
+LOG_FILE = io.open(LOG_PATH, "w")
+LOG_FILE:write("\n==========")
 
 local run_loop = true
 local error_count = 0
@@ -91,9 +96,16 @@ function OnTrade(trade)
         tcp:send(get_trade_message_command(trade))
         tcp:close()
     end
+    --message("trade: %s", obj_to_string(trade))
+    LOG_FILE:write('\ntrade: ' .. obj_to_string(trade))
+    LOG_FILE:flush()
 end
 
 function main()
+
+    if tonumber(USERID) ~= 510373 then
+        error("Unsupported userid: " .. getInfoParam("USERID") .. ' / ' .. USERID)
+    end
 
     message(string.format("Connect to %s:%s as userid %s. assets: %s trades: %s", ATSD_HOST, ATSD_PORT, USERID, tostring(SEND_ASSETS), tostring(SEND_TRADES)))
 
@@ -381,4 +393,17 @@ function get_trade_message_command(trade)
     cmd = cmd .. " t:quantity=" .. tostring(quantity)
 
     return cmd .. "\n"
+end
+
+function obj_to_string(obj)
+    if type(obj) ~= 'table' then
+      return tostring(obj)
+    end
+    local tres = ""
+    local eol = ""
+    for key,value in pairs(obj) do
+      tres = tres .. eol .. "  - " .. tostring(key) .. '=' .. tostring(value);
+      eol = "\n"
+    end
+    return tres
 end
