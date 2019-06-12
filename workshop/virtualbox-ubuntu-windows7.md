@@ -395,7 +395,13 @@ tcp        0      0 *:5989                  *:*                     LISTEN
 
 ## Modifying VM Settings
 
-Stop the VM. Run `modifyvm` to increase CPU count or memory.
+Stop the VM by initiating the shutdown from the guest OS or by powering off the VM.
+
+```sh
+VBoxManage controlvm ie11-win7 poweroff
+```
+
+Run `modifyvm` to increase CPU count or memory.
 
 ```sh
 VBoxManage modifyvm ie11-win7 --cpus 4
