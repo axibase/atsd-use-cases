@@ -39,7 +39,7 @@ Open the **Trends** visualization to toggle secondary datasets on and off using 
 ![](./images/life-ex-10.png)
 [![](../../trends/images/button-new.png)](https://trends.axibase.com/172ff342#fullscreen)
 
-*Fig 2.* Using a variable [`value`](https://axibase.com/docs/charts/widgets/shared/#derived-value-settings) expression and a [`time-offset`](https://axibase.com/docs/charts/widgets/shared/#time-offset) setting, previous-year data may be compared to current-year data to show the diminishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/docs/charts/widgets/box-chart/) (below) and  the [Time Chart](hhttps://axibase.com/docs/charts/widgets/time-chart/) (above) track the value distribution range and shows that the average growth rate of the life expectancy was achieved for the last several years for any tracked demographics.
+*Fig 2.* Using a variable [`value`](https://axibase.com/docs/charts/widgets/shared/#derived-value-settings) expression and a [`time-offset`](https://axibase.com/docs/charts/widgets/shared/#time-offset) setting, previous-year data may be compared to current-year data to show the diminishing growth of life expectancy from all measured metrics. The [Box Chart](https://axibase.com/docs/charts/widgets/box-chart/) (below) and  the [Time Chart](https://axibase.com/docs/charts/widgets/time-chart/) (above) track the value distribution range and shows that the average growth rate of the life expectancy was achieved for the last several years for any tracked demographics.
 
 The `value` expression using to derive the above series is shown here:
 

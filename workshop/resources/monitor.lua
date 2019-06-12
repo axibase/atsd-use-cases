@@ -34,25 +34,30 @@ end
 ----- read from monitor.lua >> monitor.conf  -----
 
 --[[
-ATSD_HOST = 10.102.0.6
+-- ATSD tcp port
+ATSD_HOST = atsd.example.org
 ATSD_PORT = 8081
 SEND_ASSETS = true
 SEND_TRADES = true
 ]]--
 
 local SCRIPT_PATH = debug.getinfo(1).short_src
-local CONF_FILE = SCRIPT_PATH:gsub("\.lua", ".conf")            
+local CONF_FILE = SCRIPT_PATH:gsub("\.lua", ".conf")
 local CONF = read_props(CONF_FILE)
+local LOG_PATH = CONF.LOG_PATH or SCRIPT_PATH:gsub("\.lua", ".log")   -- hello.lua >> hello.log
 
-local ATSD_HOST = CONF.ATSD_HOST
-local ATSD_PORT = tonumber(CONF.ATSD_PORT)
-local INTERVAL_SECONDS = CONF.INTERVAL_SECONDS and tonumber(CONF.INTERVAL_SECONDS) > 0 or 5
+local ATSD_HOST = CONF.ATSD_HOST or DEFAULT_ATSD_HOST
+local ATSD_PORT = CONF.ATSD_PORT and tonumber(CONF.ATSD_PORT) or DEFAULT_ATSD_PORT
+local INTERVAL_SECONDS = CONF.INTERVAL_SECONDS and tonumber(CONF.INTERVAL_SECONDS) or 5
 local ENTITY = CONF.ENTITY or "quik-terminal"
 local USERID = CONF.USERID or getInfoParam("USERID")
-local TRADE_SEND_TIMEOUT_SECONDS = CONF.TRADE_SEND_TIMEOUT_SECONDS and tonumber(TRADE_SEND_TIMEOUT_SECONDS) > 0 or 1
-local TIMEOUT_SECONDS = CONF.TIMEOUT_SECONDS and tonumber(TIMEOUT_SECONDS) > 0 or 3
+local TRADE_SEND_TIMEOUT_SECONDS = CONF.TRADE_SEND_TIMEOUT_SECONDS and tonumber(TRADE_SEND_TIMEOUT_SECONDS) or 1
+local TIMEOUT_SECONDS = CONF.TIMEOUT_SECONDS and tonumber(TIMEOUT_SECONDS) or 3
 local SEND_ASSETS = CONF.SEND_ASSETS ~= nil and CONF.SEND_ASSETS == 'true'
 local SEND_TRADES = CONF.SEND_TRADES ~= nil and CONF.SEND_TRADES == 'true'
+
+LOG_FILE = io.open(LOG_PATH, "w")
+LOG_FILE:write("\n==========")
 
 local run_loop = true
 local error_count = 0
@@ -91,9 +96,16 @@ function OnTrade(trade)
         tcp:send(get_trade_message_command(trade))
         tcp:close()
     end
+    --message("trade: %s", obj_to_string(trade))
+    LOG_FILE:write('\ntrade: ' .. obj_to_string(trade))
+    LOG_FILE:flush()
 end
 
 function main()
+
+    if tonumber(USERID) ~= 510373 then
+        error("Unsupported userid: " .. getInfoParam("USERID") .. ' / ' .. USERID)
+    end
 
     message(string.format("Connect to %s:%s as userid %s. assets: %s trades: %s", ATSD_HOST, ATSD_PORT, USERID, tostring(SEND_ASSETS), tostring(SEND_TRADES)))
 
@@ -285,12 +297,12 @@ function base_series_template()
 end
 
 function get_assets_commands()
-    if COLLECT_ASSETS ~= true then
+    if SEND_ASSETS ~= true then
         return ""
     end
-    local cmd_template = base_series_template() .. " m:%s%s=%s m:%s%s=%s t:type=T%s\n"
     local asset_prefix = "quik-asset."
     local commands = ""
+    local cur_seconds = tostring(os.time())
     local size = getNumberOf("money_limits")
     for i = 0, size - 1 do
         local lim = getItem("money_limits", i)
@@ -316,7 +328,7 @@ function get_assets_commands()
             text_values.tag = lim.tag
             text_values.limit_kind = tostring(lim.limit_kind)
 
-            commands = commands .. base_series_template()
+            commands = commands .. base_series_template() .. " s:" .. cur_seconds
             for k,v in pairs(numeric_values) do
                 commands = commands .. " m:" .. asset_prefix .. k .. "=" .. tostring(v)
             end
@@ -363,9 +375,9 @@ function get_trade_message_command(trade)
     local operation = bit.test(trade.flags, 2) and "sell" or "buy"
     cmd = cmd .. " t:operation=" .. operation
 
-    local broker_ref = trade.brokerref ~= nil and trade.brokerref:gsub(trade.client_code, "") or trade.brokerref    
+    local broker_ref = trade.brokerref ~= nil and trade.brokerref:gsub(trade.client_code, "") or trade.brokerref
     cmd = cmd .. " t:broker_ref=\"" .. utf.cp1251_utf8(tostring(broker_ref)) .. "\""
-    
+
     -- must convert Moscow TZ (dst=false, offset=3*3600) to UTC
     -- subtract 10800 from trade.datetime
     local dt = date_to_string(trade.datetime)
@@ -381,4 +393,17 @@ function get_trade_message_command(trade)
     cmd = cmd .. " t:quantity=" .. tostring(quantity)
 
     return cmd .. "\n"
+end
+
+function obj_to_string(obj)
+    if type(obj) ~= 'table' then
+      return tostring(obj)
+    end
+    local tres = ""
+    local eol = ""
+    for key,value in pairs(obj) do
+      tres = tres .. eol .. "  - " .. tostring(key) .. '=' .. tostring(value);
+      eol = "\n"
+    end
+    return tres
 end
