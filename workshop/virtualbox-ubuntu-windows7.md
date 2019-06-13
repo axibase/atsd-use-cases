@@ -197,9 +197,9 @@ mkdir /home/axibase/win_vm/ie_disk
 VBoxManage sharedfolder add ie11-win7 --name ie_disk --hostpath /home/axibase/win_vm/ie_disk --automount
 ```
 
-## Configure RDP Port
+## Setup RDP Connection
 
-View VM information.
+Review VM attributes.
 
 ```sh
 VBoxManage showvminfo ie11-win7
@@ -340,20 +340,26 @@ Configured memory balloon size:      0 MB
 
 </details>
 
-Locate the `TCP/Ports` and `TCP/Address` properties.
+Locate the `TCP/Ports` and `TCP/Address` settings.
 
 ```txt
 VRDE property: TCP/Ports  = "5989"
 VRDE property: TCP/Address = "127.0.0.1"
 ```
 
-To configure the VM to listed on all interfaces change the `TCP/Address` to `0.0.0.0`. Modify the port as well, if necessary.
+If the `TCP/Address` is set to `127.0.0.1`, the VM is accessible only to the local clients.
+
+### Allow External Connections
+
+To reconfigure the VM to listen on all interfaces change the `TCP/Address` to `0.0.0.0`.
 
 ```sh
-VBoxManage modifyvm ie11-win7 --vrdeaddress "0.0.0.0" --vrdeport 5989
+VBoxManage modifyvm ie11-win7 --vrdeaddress "0.0.0.0"
 ```
 
-List the VM properties again and check that the RDP interface and port are set as expected.
+> The port can be changed with `--vrdeport 5989`
+
+List the VM properties again and check that the RDP address and port are set as expected.
 
 ```sh
 VBoxManage showvminfo ie11-win7 | grep "VRDE property: TCP"
@@ -364,15 +370,56 @@ VRDE property: TCP/Ports  = "5989"
 VRDE property: TCP/Address = "0.0.0.0"
 ```
 
+Configure the firewall to grant access to the `VRDE` port if necessary.
+
+* Allow access to `5589` clients from `192.0.2.1`
+
+```sh
+sudo ufw allow from 192.0.2.1 to any port 5589
+```
+
+* Allow access to `5589` clients from any IP address
+
+```sh
+sudo ufw allow 5589
+```
+
+### Open SSH Tunnel
+
+Use SSH tunnel to connect to the VM restricted to local clients from `127.0.0.1`.
+
+```sh
+ssh -L 5989:127.0.0.1:5989 user@test.example.org -p 22 -i /path/to/ssh_priv_key
+```
+
+When connecting to the VM, specify `localhost` instead of the host IP address.
+
+![](./images/vbox_rdp_localhost.png)
+
 ## Start VM
 
 ```sh
-VBoxManage startvm ie11-win7 --vrde on --type headless
+VBoxManage startvm ie11-win7 --type headless
 ```
 
 ```txt
 Waiting for VM "ie11-win7" to power on...
 VM "ie11-win7" has been successfully started.
+```
+
+## Add Port Forwarding
+
+To forward TCP traffic from host port `12000` to guest port `11000`, add the following NAT rule.
+
+```sh
+VBoxManage modifyvm ie11-win7 --natpf1 "test,tcp,,12000,,11000"
+```
+
+The `controlvm` allows adding or deleting port forwarding rules without restarting the VM.
+
+```sh
+VBoxManage controlvm ie11-win7 natpf1 delete test
+VBoxManage controlvm ie11-win7 natpf1 "test,tcp,,12000,,10000"
 ```
 
 ## Connect to RDP
@@ -405,4 +452,10 @@ Run `modifyvm` to increase CPU count or memory.
 
 ```sh
 VBoxManage modifyvm ie11-win7 --cpus 4
+```
+
+## Delete VM
+
+```sh
+VBoxManage unregistervm ie11-win7 --delete
 ```
