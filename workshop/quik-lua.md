@@ -538,6 +538,19 @@ Modify the built-in scheduled task in Windows Scheduler to run more often.
 
 ![](./images/quik_window_scheduler_time_sync.png)
 
+Alternatively create a batch script and execute it every 5 minutes. If necessary, add sleep commands to trigger NTP synchronization more often.
+
+```bat
+net start w32time
+w32tm /resync /rediscover
+timeout 60 /nobreak
+w32tm /resync /rediscover
+timeout 60 /nobreak
+w32tm /resync /rediscover
+timeout 60 /nobreak
+w32tm /resync /rediscover
+```
+
 ### Virtual Box Port Forwarding
 
 If the Windows VM with the Quik workstation is installed as a Virtual Box VM, the VM needs to be configured to accept TCP commands generated from ATSD.

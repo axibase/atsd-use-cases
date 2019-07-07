@@ -197,150 +197,31 @@ mkdir /home/axibase/win_vm/ie_disk
 VBoxManage sharedfolder add ie11-win7 --name ie_disk --hostpath /home/axibase/win_vm/ie_disk --automount
 ```
 
-## Setup RDP Connection
+## RDP Connection
+
+To connect to the guest VM, configure settings for the native RDP server or for the VirtualBox built-in `VRDE` extension.
+
+The native RDP connection supports attaching local folders as shared folders.
+
+### Native RDP Connection
+
+Open **Control Panel > System** and check **Remote Settings**. Modify the Windows firewall to enable remote RDP access.
+
+Configure a port forwarding rule to tunnel RDP connections into the guest VM on the default RDP port `3389`.
+
+The external host port is set to `3389` in the example below.
+
+```sh
+VBoxManage controlvm ie11-win7 natpf1 "rdp,tcp,,3389,,3389"
+```
+
+### `VRDE` RDP Connection
 
 Review VM attributes.
 
 ```sh
-VBoxManage showvminfo ie11-win7
+VBoxManage showvminfo ie11-win7 | grep "VRDE property: TCP"
 ```
-
-<details><summary>Click to view VM info</summary>
-
-```txt
-Name:            ie11-win7
-Groups:          /
-Guest OS:        Windows 7 (32-bit)
-UUID:            6e35d733-54b7-417b-8ce6-9c0a4a61732c
-Config file:     /home/axibase/VirtualBox VMs/ie11-win7/ie11-win7.vbox
-Snapshot folder: /home/axibase/VirtualBox VMs/ie11-win7/Snapshots
-Log folder:      /home/axibase/VirtualBox VMs/ie11-win7/Logs
-Hardware UUID:   6e35d733-54b7-417b-8ce6-9c0a4a61732c
-Memory size:     4096MB
-Page Fusion:     off
-VRAM size:       8MB
-CPU exec cap:    100%
-HPET:            off
-Chipset:         piix3
-Firmware:        BIOS
-Number of CPUs:  2
-PAE:             on
-Long Mode:       off
-Synthetic CPU:   off
-CPUID overrides: None
-Boot menu mode:  message and menu
-Boot Device (1): HardDisk
-Boot Device (2): DVD
-Boot Device (3): Not Assigned
-Boot Device (4): Not Assigned
-ACPI:            on
-IOAPIC:          on
-Time offset:     0ms
-RTC:             local time
-Hardw. virt.ext: on
-Nested Paging:   on
-Large Pages:     on
-VT-x VPID:       on
-VT-x unr. exec.: on
-State:           powered off (since 2018-01-03T06:00:58.000000000)
-Monitor count:   1
-3D Acceleration: off
-2D Video Acceleration: off
-Teleporter Enabled: off
-Teleporter Port: 0
-Teleporter Address:
-Teleporter Password:
-Tracing Enabled: off
-Allow Tracing to Access VM: off
-Tracing Configuration:
-Autostart Enabled: off
-Autostart Delay: 0
-Default Frontend:
-Storage Controller Name (0):            IDE Controller
-Storage Controller Type (0):            PIIX4
-Storage Controller Instance Number (0): 0
-Storage Controller Max Port Count (0):  2
-Storage Controller Port Count (0):      2
-Storage Controller Bootable (0):        on
-IDE Controller (0, 0): /home/axibase/vms/ie11-win7.vmdk (UUID: e3f59158-1152-4291-869f-e04eaef763ed)
-NIC 1:           MAC: 0800274BE007, Attachment: NAT, Cable connected: on, Trace: off (file: none), Type: 82540EM, Reported speed: 0 Mbps, Boot priority: 0, Promisc Policy: deny, Bandwidth group: none
-NIC 1 Settings:  MTU: 0, Socket (send: 64, receive: 64), TCP Window (send:64, receive: 64)
-NIC 2:           disabled
-NIC 3:           disabled
-NIC 4:           disabled
-NIC 5:           disabled
-NIC 6:           disabled
-NIC 7:           disabled
-NIC 8:           disabled
-Pointing Device: PS/2 Mouse
-Keyboard Device: PS/2 Keyboard
-UART 1:          disabled
-UART 2:          disabled
-LPT 1:           disabled
-LPT 2:           disabled
-Audio:           enabled (Driver: ALSA, Controller: AC97)
-Clipboard Mode:  disabled
-Drag'n'drop Mode: disabled
-VRDE:            enabled (Address 127.0.0.1, Ports 5989, MultiConn: off, ReuseSingleConn: off, Authentication type: null)
-Video redirection: disabled
-VRDE property: TCP/Ports  = "5989"
-VRDE property: TCP/Address = "127.0.0.1"
-VRDE property: VideoChannel/Enabled = <not set>
-VRDE property: VideoChannel/Quality = <not set>
-VRDE property: VideoChannel/DownscaleProtection = <not set>
-VRDE property: Client/DisableDisplay = <not set>
-VRDE property: Client/DisableInput = <not set>
-VRDE property: Client/DisableAudio = <not set>
-VRDE property: Client/DisableUSB = <not set>
-VRDE property: Client/DisableClipboard = <not set>
-VRDE property: Client/DisableUpstreamAudio = <not set>
-VRDE property: Client/DisableRDPDR = <not set>
-VRDE property: H3DRedirect/Enabled = <not set>
-VRDE property: Security/Method = <not set>
-VRDE property: Security/ServerCertificate = <not set>
-VRDE property: Security/ServerPrivateKey = <not set>
-VRDE property: Security/CACertificate = <not set>
-VRDE property: Audio/RateCorrectionMode = <not set>
-VRDE property: Audio/LogPath = <not set>
-USB:             disabled
-EHCI:            disabled
-
-USB Device Filters:
-
-<none>
-
-Available remote USB devices:
-
-<none>
-
-Currently Attached USB Devices:
-
-<none>
-
-Bandwidth groups:  <none>
-
-Shared folders:  
-
-Name: 'ie_disk', Host path: '/home/axibase/win_vm/ie_disk' (machine mapping), writable
-
-VRDE Connection:    not active
-Clients so far:     0
-
-Video capturing:    not active
-Capture screens:    0
-Capture file:       /home/axibase/VirtualBox VMs/ie11-win7/ie11-win7.webm
-Capture dimensions: 1024x768
-Capture rate:       512 kbps
-Capture FPS:        25
-
-Guest:
-
-Configured memory balloon size:      0 MB
-```
-
-</details>
-
-Locate the `TCP/Ports` and `TCP/Address` settings.
 
 ```txt
 VRDE property: TCP/Ports  = "5989"
@@ -348,8 +229,6 @@ VRDE property: TCP/Address = "127.0.0.1"
 ```
 
 If the `TCP/Address` is set to `127.0.0.1`, the VM is accessible only to the local clients.
-
-### Allow External Connections
 
 To reconfigure the VM to listen on all interfaces change the `TCP/Address` to `0.0.0.0`.
 
@@ -370,7 +249,44 @@ VRDE property: TCP/Ports  = "5989"
 VRDE property: TCP/Address = "0.0.0.0"
 ```
 
-Configure the firewall to grant access to the `VRDE` port if necessary.
+## Start VM
+
+```sh
+VBoxManage startvm ie11-win7 --type headless
+```
+
+```txt
+Waiting for VM "ie11-win7" to power on...
+VM "ie11-win7" has been successfully started.
+```
+
+## Connect to Guest VM
+
+Connect to the VM under the `Administrator` or `IEUser` using the `Passw0rd!` password.
+
+### SSH Tunnel
+
+Use SSH tunnel to connect to the VM restricted to local clients from `127.0.0.1`.
+
+* RDP
+
+```sh
+ssh -L 3389:127.0.0.1:3389 user@test.example.org -p 22 -i /path/to/ssh_priv_key
+```
+
+* `VRDE`
+
+```sh
+ssh -L 5989:127.0.0.1:5989 user@test.example.org -p 22 -i /path/to/ssh_priv_key
+```
+
+When connecting to the VM, specify `localhost` instead of the host IP address.
+
+![](./images/vbox_rdp_localhost.png)
+
+### Add Firewall Rules
+
+Configure the firewall to grant access to the `VRDE` port or external RDP port, as configured.
 
 * Allow access to `5589` clients from `192.0.2.1`
 
@@ -384,32 +300,19 @@ sudo ufw allow from 192.0.2.1 to any port 5589
 sudo ufw allow 5589
 ```
 
-### Open SSH Tunnel
-
-Use SSH tunnel to connect to the VM restricted to local clients from `127.0.0.1`.
+If the connection fails, check that the VM is listening on all interfaces on the configured RDP port and add firewall rules if necessary.
 
 ```sh
-ssh -L 5989:127.0.0.1:5989 user@test.example.org -p 22 -i /path/to/ssh_priv_key
-```
-
-When connecting to the VM, specify `localhost` instead of the host IP address.
-
-![](./images/vbox_rdp_localhost.png)
-
-## Start VM
-
-```sh
-VBoxManage startvm ie11-win7 --type headless
+netstat -l | grep 5989
 ```
 
 ```txt
-Waiting for VM "ie11-win7" to power on...
-VM "ie11-win7" has been successfully started.
+tcp        0      0 *:5989                  *:*                     LISTEN
 ```
 
-## Add Port Forwarding
+## Application Port Forwarding
 
-To forward TCP traffic from host port `12000` to guest port `11000`, add the following NAT rule.
+To forward application traffic from host port `12000` to guest port `11000`, add the following NAT rule.
 
 ```sh
 VBoxManage modifyvm ie11-win7 --natpf1 "test,tcp,,12000,,11000"
@@ -424,17 +327,7 @@ VBoxManage controlvm ie11-win7 natpf1 "test,tcp,,12000,,10000"
 
 ## Connect to RDP
 
-Connect to the VM under the `Administrator` or `IEUser` using the `Passw0rd!` password.
 
-If the RDP connection fails, check that the VM is listening on all interfaces on the configured RDP port and add rules to the `ufw` firewall if necessary.
-
-```sh
-netstat -l | grep 5989
-```
-
-```txt
-tcp        0      0 *:5989                  *:*                     LISTEN
-```
 
 ## Check VM Settings
 
