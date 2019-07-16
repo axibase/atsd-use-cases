@@ -94,7 +94,7 @@ Like macroeconomic stagnation at the federal level, microeconomic stagnation at 
 
 Of the three strategic sectors of Saudi Arabia, the royal family's grasp on power is the most stable. Most internal struggles between factions of the royal family, and domestic struggles against organized protesters have subsided. Indeed, after the death of Jamal Khashoggi in the Saudi embassy in Istambul, the Saudi government responded with no international backlash that would challenge the authority of the ruling family.
 
-The Saudi government has introduced a number of reforms within the last years which are enumerated below<sup>[13](http://vision2030.gov.sa/en/node/125)</sup>:
+The Saudi government has introduced a number of reforms within the last years which are enumerated below<sup>[13](https://vision2030.gov.sa/en/node/125)</sup>:
 
 * **2011**: Suffrage and the right to hold office extended to women in 2015 elections.
 * **2013**: Domestic violence criminalized.

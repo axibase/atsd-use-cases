@@ -46,7 +46,7 @@ New pull requests are automatically checked by the Travis CI tool. To configure 
 
 ## Configuring Custom Rules
 
-The attached configuration contains a number of [custom rules](https://github.com/axibase/docs-util#custom-rules) which reflect the guidelines outlined in the [Axibase Technical Writing Style Guide](../../workshop/technical-writing.md). Modify existing custom rules or create your own according to the instructions in the [How To Add Custom `markdownlint` Rules Tutorial](https://github.com/axibase/docs-util/blob/master/docs/how-to-add-custom-linter-rule.md#how-to-add-custom-markdownlint-rule).
+The attached configuration contains a number of [custom rules](https://github.com/axibase/docs-util#custom-rules) which reflect the guidelines outlined in the [Axibase Technical Writing Style Guide](../../workshop/technical-writing.md). Modify existing custom rules or create your own according to the instructions in the [How To Add Custom `markdownlint` Rules Tutorial](https://github.com/axibase/docs-util/blob/master/docs/CONTRIBUTING.md#how-to-add-custom-markdownlint-rule).
 
 ### Custom Dictionaries
 
