@@ -40,7 +40,7 @@ If the `VBoxVRDP` [extension](https://www.virtualbox.org/manual/ch08.html#vboxma
 wget https://download.virtualbox.org/virtualbox/4.3.36/Oracle_VM_VirtualBox_Extension_Pack-4.3.36-105129a.vbox-extpack
 ```
 
-Install the `VBoxVRDP` extension pack under the root privileges.
+Install the `VBoxVRDP` extension pack under the `root` privileges.
 
 ```sh
 sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-4.3.36-105129a.vbox-extpack
@@ -271,13 +271,13 @@ Use SSH tunnel to connect to the VM restricted to local clients from `127.0.0.1`
 * RDP
 
 ```sh
-ssh -L 3389:127.0.0.1:3389 user@test.example.org -p 22 -i /path/to/ssh_priv_key
+ssh -L 3389:127.0.0.1:3389 user@example.org -p 22 -i /path/to/ssh_priv_key
 ```
 
 * `VRDE`
 
 ```sh
-ssh -L 5989:127.0.0.1:5989 user@test.example.org -p 22 -i /path/to/ssh_priv_key
+ssh -L 5989:127.0.0.1:5989 user@example.org -p 22 -i /path/to/ssh_priv_key
 ```
 
 When connecting to the VM, specify `localhost` instead of the host IP address.
@@ -326,8 +326,6 @@ VBoxManage controlvm ie11-win7 natpf1 "test,tcp,,12000,,10000"
 ```
 
 ## Connect to RDP
-
-
 
 ## Check VM Settings
 

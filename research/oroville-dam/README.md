@@ -4,12 +4,12 @@
 
 In February 2017, reservoir levels for the tallest dam in the United States, located near [Oroville, California](https://en.wikipedia.org/wiki/Oroville_Dam), were
 beginning to reach capacity from high rainfall totals. Officials decided to begin using the primary dam spillway, which quickly began to deteriorate, and by
-February 10th, a hole 300 feet wide, 500 feet long, and 45 feet deep had appeared in the spillway. [On February 11th](https://www.latimes.com/local/california/la-live-updates-oroville-dam-oroville-dam-spillway-expected-to-fail-1486953074-htmlstory.html),
+February 10th, a hole 300 feet wide, 500 feet long, and 45 feet deep had appeared in the spillway. [On February 11th](https://www.cbsnews.com/news/oroville-dam-water-released-over-emergency-spillway-in-northern-california/),
 officials decided to begin using an auxiliary, spillway composed of earthen materials. The emergency spillway quickly began to erode as well. On
 February 12th, due to the "hazardous situation" surrounding the dam, more than [200,000 people](https://www.npr.org/sections/thetwo-way/2017/02/14/515172686/with-more-rain-forecast-crews-work-to-reinforce-oroville-dam)
 from downstream communities were ordered to evacuate the area. In the early morning hours of February 13th, the reservoir water levels returned below the threshold capacity of the dam.
 
-While the situation has calmed somewhat in the last several days, the crisis is by no means over. Rain has been [forecasted](https://weather.com/en/weather/tenday/l/95966:4:US)
+While the situation has calmed somewhat in the last several days, the crisis is by no means over. Rain has been [forecast](https://weather.com/en/weather/tenday/l/95966:4:US)
 for the next several days. With a water surface area of 15,810 acres, the difference of mere inches of rain can make the difference between crisis averted and complete disaster for the
 Oroville dam.
 
