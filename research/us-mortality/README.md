@@ -5,7 +5,7 @@
 ## Introduction
 
 According to [`infoplease.com`](https://www.infoplease.com/ipa/A0005148.html), life expectancy from 1935 to 2010 for both sexes in the U.S. increased from 61.7 to 78.7 years.
-As reported by the [Center for Disease Control and Prevention](https://www.cdc.gov/nchs/data/databriefs/db88.htm#x2013;2010%3C/a%3E>) (CDC), the crude death rate in the United States fell from
+As reported by the [Center for Disease Control and Prevention](https://www.cdc.gov/nchs/data/databriefs/db88.pdf) (CDC), the crude death rate in the United States fell from
 10.9 to 7.9 deaths per 1,000 people from 1935 to 2010, translating to a **27% decrease**. Mortality rates are vastly different across different U.S. cities and age groups.
 This article explores a `data.gov` dataset containing [mortality statistics for 122 U.S. cities](https://catalog.data.gov/dataset/deaths-in-122-u-s-cities-1962-2016-122-cities-mortality-reporting-system) using ATSD and [SQL Console](https://axibase.com/docs/atsd/sql/).
 
