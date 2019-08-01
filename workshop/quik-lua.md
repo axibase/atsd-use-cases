@@ -487,6 +487,23 @@ w32tm /config /update
 w32tm /resync /rediscover
 ```
 
+You can also sync to the Moscow Exchange [NTP servers](https://www.moex.com/n17103/?nt=0) in the col-location zone.
+
+```sh
+w32tm /config /syncfromflags:manual /manualpeerlist:"91.203.252.12 91.203.254.12" /reliable:yes
+```
+
+To verify that NTP server is available:
+
+```sh
+w32tm /stripchart /computer:91.203.252.12 /dataonly /samples:5
+```
+
+```sh
+w32tm /query /config
+w32tm /query /peers
+```
+
 ```txt
 [Configuration]
 EventLogFlags: 2 (Local)
@@ -542,13 +559,11 @@ Alternatively create a batch script and execute it every 5 minutes. If necessary
 
 ```bat
 net start w32time
+
+for /l %%x in (1, 1, 100000) do (
 w32tm /resync /rediscover
 timeout 60 /nobreak
-w32tm /resync /rediscover
-timeout 60 /nobreak
-w32tm /resync /rediscover
-timeout 60 /nobreak
-w32tm /resync /rediscover
+)
 ```
 
 ### Virtual Box Port Forwarding
