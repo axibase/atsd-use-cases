@@ -22,7 +22,7 @@ Search queries are driven by humans. This activity at a large scale is subject t
 
 The [Holt-Winters algorithm](https://axibase.com/docs/atsd/forecasting/calendar_exceptions_testing.html#settings-3), which is built into ATSD, is designed to detect trends over periods of time. ATSD iterates various Holt-Winters algorithm parameters to arrive at a combination of settings that produces the most accurate forecast.
 
-Using the [Data Forecasting](https://axibase.com/docs/atsd/forecasting/) to predict the amount of daily search queries in DuckDuckGo. DuckDuckGo is approaching 10 million search queries per day, and ATSD can forecast the exact day when DuckDuckGo can surpass this threshold for the first time.  See the [DuckDuckGo Blog](https://duck.co/blog/post/176/-why-duckduckgo-is-giving-away-shirts) for more information about this milestone.
+Using the [Data Forecasting](https://axibase.com/docs/atsd/forecasting/) to predict the amount of daily search queries in DuckDuckGo. DuckDuckGo is approaching 10 million search queries per day, and ATSD can forecast the exact day when DuckDuckGo can surpass this threshold for the first time.  See the [DuckDuckGo Blog](https://web.archive.org/web/20180909180434/https://duck.co/blog/post/176/-why-duckduckgo-is-giving-away-shirts) for more information about this milestone.
 
 For the above forecast, automatic parameters are calculated using Data Forecasting, allowing the system to match the best parameters to historical data. However, if the Holt-Winters algorithm is to run using static parameters, the system cannot forecast abnormal events such as news publications or one-time events such as NSA PRISM disclosures.
 
