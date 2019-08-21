@@ -57,7 +57,7 @@ The [inverse-square law](https://en.wikipedia.org/wiki/Inverse-square_law) allow
 
 Therefore, ***d* = 10<sup>(&mu;-25)/5</sup>** or ***d* = 10<sup>(&mu;/5)+ 1</sup>**.
 
-> For more information about converting the distance modulus to absolute distance, the Australian amateur astronomy society [IceInSpace](http://www.iceinspace.com.au/forum/index.php) offers a convenient [tutorial](http://www.iceinspace.com.au/forum/archive/index.php/t-104145.html).
+> For more information about converting the distance modulus to absolute distance, the Australian amateur astronomy society [IceInSpace](https://www.iceinspace.com.au/forum/index.php) offers a convenient [tutorial](https://www.iceinspace.com.au/forum/archive/index.php/t-104145.html).
 
 Apply this formula to the raw data, or download the converted dataset from the [`/resources`](./resources/converted-data.csv) directory, which includes the derived `dist` column and is stored in CSV format.
 
