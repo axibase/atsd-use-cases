@@ -92,7 +92,7 @@ Early time keeping methods were localized. Very few municipal standardization me
 > *Map of the New World*, Sebastian Münster, 1540
 
 * **1507**: Amerigo Vespucci demonstrates that what will come to be known as the Americas are not connected to Asia, but represent a "fourth area" of the world.<sup>[8](https://www.history.com/topics/exploration/amerigo-vespucci)</sup>
-* **1657**: The first pendulum clock is patented on 16 June by Christiaan Huygens in the Spanish Netherlands;<sup>[9](https://faculty.history.wisc.edu/sommerville/351/dutch%20republic.htm)</sup> this method will remain the most accurate way of keeping time until the 1930s.<sup>[10](http://www.cs.rhul.ac.uk/~adrian/timekeeping/galileo/)</sup>
+* **1657**: The first pendulum clock is patented on 16 June by Christiaan Huygens in the Spanish Netherlands;<sup>[9](https://faculty.history.wisc.edu/sommerville/351/dutch%20republic.htm)</sup> this method will remain the most accurate way of keeping time until the 1930s.<sup>[10](https://web.archive.org/web/20070513175811/http://www.ieee-uffc.org/freqcontrol/marrison/Marrison.html)</sup>
   * Entire process is uniform.
   * Maintenance is trivial.
   * Precise time-keeping technology paves the road for Enlightenment thinkers to perform repeatable scientific experimentation.
