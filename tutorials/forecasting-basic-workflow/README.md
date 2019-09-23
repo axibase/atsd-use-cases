@@ -194,7 +194,7 @@ Copy the command template from the summary page. Replace `@direct.csv` with the 
 
 ```txt
 curl --request POST  "https://atsd.example.org:8443/api/v1/csv?config=ddg-parser" \
- --insecure --header "Authorization: Bearer jnGDJS2N6OaAKikGeWQ7PifPE4uRaR0ul1L3" \
+ --insecure --header "Authorization: Bearer <token>" \
  --form filedata="@/tmp/direct.csv"
 ```
 
@@ -219,7 +219,7 @@ Create a script file named `ddg_upload.sh` with the below contents. The script d
 #!/bin/bash
 curl https://duckduckgo.com/traffic_data/direct.csv -o /tmp/direct.csv \
   && curl --request POST  "https://atsd.example.org:8443/api/v1/csv?config=ddg-parser" \
-      --insecure --header "Authorization: Bearer jnGDJS2N6OaAKikGeWQ7PifPE4uRaR0ul1L3" \
+      --insecure --header "Authorization: Bearer <token>" \
       --form filedata="@/tmp/direct.csv"
 ```
 

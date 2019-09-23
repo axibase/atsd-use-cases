@@ -28,7 +28,7 @@ shown below using [data](https://ourworldindata.org/nuclear-weapons/) from a 201
 of nuclear weapons among observed nations.
 
 Despite this however, the former Cold War rivals have also been the most proactive about self-disarmament and as permanent
-members of the [United Nations Security Council](https://www.un.org/en/sc/members/), have lead the world away from the atomic brink.
+members of the [United Nations Security Council](https://www.un.org/securitycouncil/content/current-members), have lead the world away from the atomic brink.
 The visualization here traces the number of nuclear weapons held by the Russian Federation or Soviet Union and the United States over
 the last fifty years.
 
