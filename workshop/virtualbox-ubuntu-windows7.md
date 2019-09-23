@@ -138,11 +138,11 @@ Virtual system 0:
 
 Import the VM with the default settings by running `VBoxManage import IE11_Win7.ova` or modify the settings.
 
-The the settings by adding `--dry-run argument` prior to importing the VM.
+Check settings by adding `--dry-run argument` prior to importing the VM.
 
 ```sh
 VBoxManage import IE11_Win7.ova \
-  --vsys 0 --cpus 2 --memory 4096 --vmname ie11-win7 \
+  --vsys 0 --cpus 4 --memory 4096 --vmname ie11-win7 \
   --unit 8 --disk /home/axibase/vms/ie11-win7.vmdk \
   --dry-run
 ```
@@ -158,7 +158,7 @@ Virtual system 0:
  0: Suggested OS type: "Windows7"
     (change with "--vsys 0 --ostype <type>"; use "list ostypes" to list all possible values)
  1: VM name specified with --vmname: "ie11-win7"
- 2: No. of CPUs specified with --cpus: 2
+ 2: No. of CPUs specified with --cpus: 4
  3: Guest memory specified with --memory: 4096 MB
  4: Sound card (appliance expects "", can change on import)
     (disable with "--vsys 0 --unit 4 --ignore")
