@@ -319,7 +319,7 @@ word | alternatives
 * Host name: `atsd_hostname`, `atsd_ip_address`.
 * DNS name: `example.org` per [RFC 2606](https://tools.ietf.org/html/rfc2606), [localized domains](https://www.iana.org/domains/reserved).
 * Subdomain: `test.example.org`, `atsd.example.org`.
-* Organization: Example Foundation, Example Corporation. Avoid [`Contoso`](https://en.wikipedia.org/wiki/List_of_fictional_Microsoft_companies).
+* Organization: Example Foundation, Example Corporation. Avoid [`Contoso`](https://microsoft.fandom.com/wiki/List_of_fictional_Microsoft_companies).
 * Email: `user@example.org`, `test@example.org`, `john.doe@example.org`.
 * First name: `John`, `Jack`, `Jane`, `Mary`.
 * Last name: `Doe`, `Smith`, `Jones`.

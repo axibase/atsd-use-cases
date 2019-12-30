@@ -12,7 +12,7 @@ Using SQL to query the HyperLEDA database and [Axibase Time Series Database](htt
 
 ## Data Collection
 
-HyperLEDA provides an [SQL interface](http://leda.univ-lyon1.fr/leda/fullsql.html) to query data stored in their database. This research focuses on three metrics:
+HyperLEDA provides an [SQL interface](http://leda.univ-lyon1.fr/fullsql.html) to query data stored in their database. This research focuses on three metrics:
 
 * `objname`: The name of an astronomical object, assigned by the scientific community.
 * `mod0`: The [distance modulus](https://en.wikipedia.org/wiki/Distance_modulus) of the astronomical object.
