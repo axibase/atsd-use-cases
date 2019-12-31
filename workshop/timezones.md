@@ -69,7 +69,7 @@ Find apparent solar time (AST) at 8:00 a.m. MST on 21 July in Phoenix, AZ, which
 
 * Phoenix does not observe DST.
 * 21 July is day 202.
-* [Local Standard Time Meridian](http://pvcdrom.pveducation.org/SUNLIGHT/SOLART.HTM): <b>*LSTM* = 15&deg; * &Delta;T<sub>GMT</sub></b>
+* [Local Standard Time Meridian](https://web.archive.org/web/20140201055941/http://pvcdrom.pveducation.org/SUNLIGHT/SOLART.HTM): <b>*LSTM* = 15&deg; * &Delta;T<sub>GMT</sub></b>
 * The [equation of time](http://info.ifpan.edu.pl/firststep/aw-works/fsII/mul/mueller.pdf): <b>*EoT =* 9.87<small>sin</small>(2*B*) - 7.53<small>cos</small>(*B*) - 1.5<small>sin</small>(*B*)</b> where, <b>*B* = 360&deg;/365 * (*d* - 81)</b> and *d* is the number of days since the start of the year.
   * For these purposes, *B* = 119.342
 * The [time correction factor](https://sailtraininginternational.org/sailtraining/the-rule-of-rating-and-time-correction-factor-explained/): <b>*TC* = 4(*LSTM* - *Longitude*) + *EoT*</b>
@@ -192,7 +192,7 @@ Because Earth orbits the sun on an elliptical path and rotates about an axis who
 
 **Assumptions**:
 
-* [Local Standard Time Meridian](http://pvcdrom.pveducation.org/SUNLIGHT/SOLART.HTM): <b>*LSTM* = 15&deg; * &Delta;T<sub>GMT</sub></b>
+* [Local Standard Time Meridian](https://web.archive.org/web/20140201055941/http://pvcdrom.pveducation.org/SUNLIGHT/SOLART.HTM): <b>*LSTM* = 15&deg; * &Delta;T<sub>GMT</sub></b>
 * The [equation of time](http://info.ifpan.edu.pl/firststep/aw-works/fsII/mul/mueller.pdf): <b>*EoT =* 9.87<small>sin</small>(2*B*) - 7.53<small>cos</small>(*B*) - 1.5<small>sin</small>(*B*)</b> where, <b>*B* = 360&deg;/365 * (*d* - 81)</b> and *d* is the number of days since the start of the year.
 * The [time correction factor](https://sailtraininginternational.org/sailtraining/the-rule-of-rating-and-time-correction-factor-explained/): <b>*TC* = 4(*Longitude* - *LSTM*) + *EoT*</b>
 * The Earth rotates about an axis at an angle of 23.45&deg;.

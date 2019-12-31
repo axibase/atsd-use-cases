@@ -39,7 +39,7 @@ increase value (+14,503 persons) which gives these estimates:
 | 2015* | 1,044,292 |
 | 2016 | 1,044,292 |
 
-> *Source: Montgomery College [Public Data](https://cms.montgomerycollege.edu/EDU/Department.aspx?id=45574)
+> *Source: Montgomery College [Public Data](https://web.archive.org/web/20170303122813/https://cms.montgomerycollege.edu/EDU/Department.aspx?id=45574)
 
 ### Overall Bag Usage
 

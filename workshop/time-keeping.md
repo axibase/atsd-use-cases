@@ -181,7 +181,7 @@ The Age of Enlightenment (1715-1799) fostered growth in every area of human life
 * GMT renamed Coordinated Universal Time (UTC), most Unix-like operating systems determine `time_t` from UTC time by default.
 * **1988**: International Organization for Standardization creates [ISO 8601](https://axibase.com/docs/atsd/shared/date-format.html) format to establish a standard expression of time and date.
 * The second: International System of Units standard unit for time.
-  * "The duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom," in an environment whose temperature is **not** 0 K (-273.15&deg;C).<sup>[29](https://www.nist.gov/sites/default/files/documents/2016/12/07/sp330.pdf)</sup>
+  * "The duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium 133 atom," in an environment whose temperature is **not** 0 K (-273.15&deg;C).<sup>[29](https://www.nist.gov/pml/special-publication-330)</sup>
 * The [atomic clock](https://time.is/UTC): measurement of a finite discontinuous event (quantum leap) serves as the basis of time.
 
 ![](./images/tz-24.png)
