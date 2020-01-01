@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?><rules>
+    <rule>
+        <name>Marathon Availability Checks</name>
+        <metric>marathon.apps.tasksrunning</metric>
+        <tags>host</tags>
+        <tagsGroupingStrategy>NO_TAGS</tagsGroupingStrategy>
+        <expression><![CDATA[activeAppCount == 0]]></expression>
+        <window>time(1 minute)</window>
+        <severity>WARNING</severity>
+        <alertOpenMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertOpenMessage>
+        <alertMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertMessage>
+        <alertMessageAsOpen>true</alertMessageAsOpen>
+        <alertCancellationMessage><![CDATA[${update_time}	${status}	${severity}	${rule}	${metric}	${entity.displayName}	${tags}	${value}]]></alertCancellationMessage>
+        <alertCancellationMessageAsOpen>true</alertCancellationMessageAsOpen>
+        <alertStrategy>
+            <type>ALL</type>
+            <intervalCount>5</intervalCount>
+            <intervalUnit>MINUTE</intervalUnit>
+        </alertStrategy>
+        <userExpressions>
+            <expression><![CDATA[countIf('value > 0') AS activeAppCount]]></expression>
+        </userExpressions>
+        <lastUpdated>1547732910234</lastUpdated>
+        <enabled>true</enabled>
+        <disableEntityGrouping>false</disableEntityGrouping>
+        <leavingEvents>true</leavingEvents>
+        <loadHistory>true</loadHistory>
+        <scriptAsOpen>true</scriptAsOpen>
+        <alertCancellationScriptAsOpen>true</alertCancellationScriptAsOpen>
+        <logOutput>false</logOutput>
+        <owner>axibase</owner>
+        <actionStrategy>
+            <type>ALL</type>
+            <intervalCount>5</intervalCount>
+            <intervalUnit>MINUTE</intervalUnit>
+        </actionStrategy>
+        <timeFilter>
+            <intervalCount>0</intervalCount>
+            <intervalUnit>SECOND</intervalUnit>
+        </timeFilter>
+        <discardPreviousValues>true</discardPreviousValues>
+        <webNotification>
+            <disabled>true</disabled>
+            <rule-name>Marathon Availability Checks</rule-name>
+            <repeat-interval>
+                <type>NONE</type>
+                <intervalCount>5</intervalCount>
+                <intervalUnit>HOUR</intervalUnit>
+            </repeat-interval>
+            <name>Web Service Notification id=858</name>
+            <use-in-threshold-only>false</use-in-threshold-only>
+            <first-details>false</first-details>
+            <repeat-details>false</repeat-details>
+            <cancel-details>false</cancel-details>
+            <first-screenshot>false</first-screenshot>
+            <repeat-screenshot>false</repeat-screenshot>
+            <cancel-screenshot>false</cancel-screenshot>
+            <repeat-as-open>true</repeat-as-open>
+            <cancel-as-open>true</cancel-as-open>
+            <webNotificationConfigName>telegram-shmagrinsky</webNotificationConfigName>
+            <firstWebConfigParameters>
+                <key>bot_id</key>
+                <value>562232537:AAHALyVuCg7-q2BroN09JRaBz8bBuke-Xqw</value>
+            </firstWebConfigParameters>
+            <firstWebConfigParameters>
+                <key>chat_id</key>
+                <value>-1001188111171</value>
+            </firstWebConfigParameters>
+            <firstWebConfigParameters>
+                <key>disable_notification</key>
+                <value/>
+            </firstWebConfigParameters>
+            <firstWebConfigParameters>
+                <key>details_table_format</key>
+                <value>ascii</value>
+            </firstWebConfigParameters>
+            <firstWebConfigParameters>
+                <key>text</key>
+                <value>[${status}] ${rule} for ${entity.displayName} ${tags}. ${alert_duration}</value>
+            </firstWebConfigParameters>
+            <repeatWebConfigParameters>
+                <key>bot_id</key>
+                <value>562232537:AAHALyVuCg7-q2BroN09JRaBz8bBuke-Xqw</value>
+            </repeatWebConfigParameters>
+            <repeatWebConfigParameters>
+                <key>chat_id</key>
+                <value>-1001188111171</value>
+            </repeatWebConfigParameters>
+            <repeatWebConfigParameters>
+                <key>disable_notification</key>
+                <value/>
+            </repeatWebConfigParameters>
+            <repeatWebConfigParameters>
+                <key>details_table_format</key>
+                <value>ascii</value>
+            </repeatWebConfigParameters>
+            <repeatWebConfigParameters>
+                <key>text</key>
+                <value>[${status}] ${rule} for ${entity.displayName} ${tags}. ${alert_duration}</value>
+            </repeatWebConfigParameters>
+            <cancelWebConfigParameters>
+                <key>bot_id</key>
+                <value>562232537:AAHALyVuCg7-q2BroN09JRaBz8bBuke-Xqw</value>
+            </cancelWebConfigParameters>
+            <cancelWebConfigParameters>
+                <key>chat_id</key>
+                <value>-1001188111171</value>
+            </cancelWebConfigParameters>
+            <cancelWebConfigParameters>
+                <key>disable_notification</key>
+                <value/>
+            </cancelWebConfigParameters>
+            <cancelWebConfigParameters>
+                <key>details_table_format</key>
+                <value>ascii</value>
+            </cancelWebConfigParameters>
+            <cancelWebConfigParameters>
+                <key>text</key>
+                <value>[${status}] ${rule} for ${entity.displayName} ${tags}. ${alert_duration}</value>
+            </cancelWebConfigParameters>
+            <first-enabled>true</first-enabled>
+            <repeat-enabled>false</repeat-enabled>
+            <cancel-enabled>false</cancel-enabled>
+        </webNotification>
+        <emailNotification>
+            <disabled>false</disabled>
+            <rule-name>Marathon Availability Checks</rule-name>
+            <repeat-interval>
+                <type>INTERVAL</type>
+                <intervalCount>6</intervalCount>
+                <intervalUnit>HOUR</intervalUnit>
+            </repeat-interval>
+            <name>Email Notification id=859</name>
+            <use-in-threshold-only>false</use-in-threshold-only>
+            <first-details>true</first-details>
+            <repeat-details>true</repeat-details>
+            <cancel-details>true</cancel-details>
+            <first-screenshot>false</first-screenshot>
+            <repeat-screenshot>false</repeat-screenshot>
+            <cancel-screenshot>false</cancel-screenshot>
+            <repeat-as-open>true</repeat-as-open>
+            <cancel-as-open>true</cancel-as-open>
+            <recipients>mail@example.org</recipients>
+            <first-subject>[${status}] Marathon application [${entity.displayName}] is not available on any host</first-subject>
+            <repeat-subject>[${status}] Marathon application [${entity.displayName}] is not available on any host</repeat-subject>
+            <cancel-subject>[${status}] Marathon application [${entity.displayName}] is not available on any host</cancel-subject>
+            <merge>false</merge>
+            <priority>0</priority>
+            <body-first>&lt;hr&gt;&#13;
+                ${ruleLink}</body-first>
+            <body-repeat>&lt;hr&gt;&#13;
+                ${ruleLink}</body-repeat>
+            <body-cancel>&lt;hr&gt;&#13;
+                ${ruleLink}</body-cancel>
+        </emailNotification>
+        <ruleTable/>
+        <derivedCommandEnabled>false</derivedCommandEnabled>
+        <derivedCommandStrategy>
+            <type>ALL</type>
+            <intervalCount>5</intervalCount>
+            <intervalUnit>MINUTE</intervalUnit>
+        </derivedCommandStrategy>
+        <alertOpenMessageEnabled>false</alertOpenMessageEnabled>
+        <alertMessageEnabled>false</alertMessageEnabled>
+        <alertCancellationMessageEnabled>false</alertCancellationMessageEnabled>
+        <alertOpenScriptEnabled>false</alertOpenScriptEnabled>
+        <scriptEnabled>false</scriptEnabled>
+        <alertCancellationScriptEnabled>false</alertCancellationScriptEnabled>
+    </rule>
+</rules>
