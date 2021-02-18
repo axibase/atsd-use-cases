@@ -1,0 +1,26 @@
+name: ATSD Use Cases CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * *"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        linter: [spelling_retext, spelling_yandex, links, style, anchors]
+
+    steps:
+      - uses: axibase/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Running ${{ matrix.linter }} linter
+        uses: axibase/docs-linter@v1
+        with:
+          linter: ${{ matrix.linter }}
