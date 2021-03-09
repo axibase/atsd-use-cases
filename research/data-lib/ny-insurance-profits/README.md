@@ -2,7 +2,6 @@
 
 ## References
 
-* [Dataset](https://axibase.com/datasets/socrata/xek8-zfrt.html)
 * [SQL Syntax](https://axibase.com/docs/atsd/sql/)
 * Axibase [ChartLab](../../../tutorials/shared/chartlab.md)
 

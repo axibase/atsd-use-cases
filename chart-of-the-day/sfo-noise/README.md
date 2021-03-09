@@ -8,7 +8,7 @@
 
 ## Overview
 
-Thinking of moving to San Francisco anytime soon? Check out data stored in [Axibase Data Catalog](https://axibase.com/datasets/socrata/q3xd-hfi8.html)
+Thinking of moving to San Francisco anytime soon? Check out data stored in Axibase Data Catalog
 released by the [City of San Francisco](https://catalog.data.gov/organization/city-of-san-francisco) that covers
 complaints of air traffic noise from various locations in the San Francisco metropolitan area. Not only
 is 'Frisco home to the Golden Gate Bridge, one of the wonders of the modern world, but also San
@@ -30,7 +30,7 @@ The visualization below further contracts the data, showing complaints by neighb
 
 [![View in ChartLab](../../research/images/new-button.png)](https://apps.axibase.com/chartlab/d8b696da/#fullscreen)
 
-Follow seasonal passenger ebbs and flow trends to spot patterns in complaint traffic, using additional [Passenger Statistics](https://axibase.com/datasets/socrata/rkru-6vcg.html). It is no
+Follow seasonal passenger ebbs and flow trends to spot patterns in complaint traffic, using additional Passenger Statistics. It is no
 surprise that during peak travel months, the number of complaints received increases as well:
 
 ![](./images/SFO2.png)

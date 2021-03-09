@@ -13,7 +13,7 @@ a fragile operating income, while too few at the wrong time can spell disaster f
 
 ## Methodology
 
-Using data from [Axibase Dataset Catalog](https://axibase.com/datasets/socrata/izai-dug8.html) released by the
+Using data from Axibase Dataset Catalog released by the
 City of Hartford, call volume to the local fire department can be analyzed and visualized to predict future infrastructural
 needs in one of the most vital sectors of the city. The data is divided to indicate whether the call is about a fire incident
 or routed to the paramedics' Emergency Services Department, which includes Medical First Response and Emergency Medical Services

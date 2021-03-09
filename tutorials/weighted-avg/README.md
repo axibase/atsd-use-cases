@@ -2,8 +2,8 @@
 
 ## Overview
 
-An operations analyst has with two datasets, [cargo tonnage data](https://axibase.com/datasets/socrata/nthh-fhwt.html) from the two largest airports in the New York City Metropolitan Area and [passenger enplanement data](https://axibase.com/datasets/socrata/vpv5-zd4k.html)
-from the same airports both available from the [Axibase Dataset Catalog](https://axibase.com/datasets/). The analyst must create a relational model between the two datasets for an airline looking to expand their presence at either LaGuardia (LGA) or John F. Kennedy Airport (JFK) to facilitate the maximum number of passengers and cargo.
+An operations analyst has with two datasets, cargo tonnage data from the two largest airports in the New York City Metropolitan Area and passenger enplanement data
+from the same airports both available from the Axibase Dataset Catalog . The analyst must create a relational model between the two datasets for an airline looking to expand their presence at either LaGuardia (LGA) or John F. Kennedy Airport (JFK) to facilitate the maximum number of passengers and cargo.
 
 The first dataset, collected by the [Port Authority of New York and New Jersey](https://www.panynj.gov/) is aggregated monthly while the second dataset from
 the [New York Department of Transportation](https://www.dot.ny.gov/index) is aggregated annually.

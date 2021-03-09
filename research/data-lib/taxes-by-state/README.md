@@ -2,8 +2,6 @@
 
 Visualization and analysis tools from [Axibase](https://axibase.com)
 
-Source: [State of Maryland](https://axibase.com/datasets/socrata/t833-r94z.html)
-
 ## State Level Individual Income Tax Rate
 
 ![](./images/Taxes_1.png)

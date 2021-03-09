@@ -8,7 +8,7 @@ This tutorial explains how to use [CSV parsing](https://axibase.com/docs/atsd/pa
 
 ## Dataset
 
-The dataset parsed in this tutorial is stored in the [Axibase Dataset Catalog](https://axibase.com/datasets/). The data tracks City of New York Department of Probation [Youth Rearrest Rates](https://catalog.data.gov/dataset/juvenile-rearrest-rate-monthly-average). Data samples from the downloadable table are shown below:
+The dataset parsed in this tutorial is stored in the Axibase Dataset Catalog. The data tracks City of New York Department of Probation [Youth Rearrest Rates](https://catalog.data.gov/dataset/juvenile-rearrest-rate-monthly-average). Data samples from the downloadable table are shown below:
 
 Region | Month | Year | Rate
 --|--|--|--

@@ -20,20 +20,8 @@ Step-by-step [instructions](./tutorials/README.md) to perform data transformatio
 
 [![](./images/tutorials-3.png)](./tutorials/README.md)
 
-## Research
-
-[Research notes](./research/README.md) that feature in-depth data exploration and ATSD tools used to solve modern data problems.
-
-[![](./images/research-articles-1.png)](./research/README.md)
-
 ## Workshops
 
 Internal Axibase [knowledge sharing seminars](./workshop/README.md) made public for personal learning.
 
 [![](./images/workshop-2.png)](./workshop/README.md)
-
-## Datasets
-
-Curated time series [dataset catalog](https://axibase.com/datasets/) from [`data.gov`](https://www.data.gov/) with over 7,000 records.
-
-[![](./images/datasets-2.png)](https://axibase.com/datasets/)

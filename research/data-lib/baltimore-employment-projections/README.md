@@ -1,7 +1,5 @@
 # Projected Baltimore Employment Figures (2001-2040)
 
-[Data Source](https://axibase.com/datasets/socrata/5w8e-5mc3.html)
-
 [SQL Console](https://axibase.com/docs/atsd/sql/) and [ChartLab](../../../tutorials/shared/chartlab.md) from Axibase
 
 ## Total Projected Employment Numbers (2001-2040)

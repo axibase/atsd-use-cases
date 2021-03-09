@@ -1,7 +1,5 @@
 # Connecticut Prison Populations
 
-[Source Dataset](https://axibase.com/datasets/socrata/f8ar-pgu4.html)
-
 [SQL Console](https://axibase.com/docs/atsd/sql/)
 
 [ChartLab](../../../tutorials/shared/chartlab.md) in ATSD

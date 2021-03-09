@@ -34,7 +34,7 @@ Vermont | 10 or 25 NTU
 
 ## Dataset
 
-The City of Chicago makes use of several such detectors during the summer months to track water turbidity and temperature. The dataset is stored in [Socrata](https://axibase.com/use-cases/integrations/socrata/python/) format and available in the [Axibase Dataset Catalog](https://axibase.com/datasets/socrata/qmqz-2xku.html).
+The City of Chicago makes use of several such detectors during the summer months to track water turbidity and temperature. The dataset is stored in [Socrata](https://axibase.com/use-cases/integrations/socrata/python/) format and available in the Axibase Dataset Catalog.
 
 Alternatively, download the [CSV file](./resources/water-turbidity-and-temperature.csv) from the `/resources` directory.
 

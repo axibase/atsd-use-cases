@@ -7,7 +7,7 @@
 ## Overview
 
 Learning about the local health of your favorite city has never been easier. With help from
-data stored in the [Axibase Data Catalog](https://axibase.com/datasets/socrata/6vp6-wxuq.html) released by [The Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) plus
+data released by [The Centers for Disease Control and Prevention](https://www.cdc.gov/) (CDC) plus
 visualization and querying tools in ATSD, spotting your city's place in the rankings
 is not just for your health, but vital to informing your company's next health-related venture
 or enhancing the already existing knowledge of your staff with such valuable public data.
