@@ -8,15 +8,13 @@ const topNavMenu = [
     { text: 'Chart of the Day', link: '/chart-of-the-day/' },
     { text: 'Integrations', link: '/integrations/' },
     { text: 'Tutorials', link: '/tutorials/' },    
-    { text: 'Research', link: '/research/' },
-    { text: 'Documentation', link: 'https://axibase.com/docs/atsd/' },
+    { text: 'ATSD Docs', link: 'https://axibase.com/docs/atsd/' },
 ]
 
 const landingPageMenu = [
     [ '/chart-of-the-day/', 'Chart of the Day'],
     [ '/integrations/', 'Integrations' ],
     [ '/tutorials/', 'Tutorials' ],    
-    [ '/research/', 'Research'],   
     [ 'https://axibase.com/docs/atsd', 'Documentation'],      
     [ '/workshop/', 'Workshops'],
 ];
