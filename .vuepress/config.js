@@ -5,14 +5,14 @@ const githubSettings = {
 }
 
 const topNavMenu = [
-    { text: 'Chart of the Day', link: '/chart-of-the-day/' },
+    { text: 'Visualizations', link: '/chart-of-the-day/' },
     { text: 'Integrations', link: '/integrations/' },
     { text: 'Tutorials', link: '/tutorials/' },    
     { text: 'ATSD Docs', link: 'https://axibase.com/docs/atsd/' },
 ]
 
 const landingPageMenu = [
-    [ '/chart-of-the-day/', 'Chart of the Day'],
+    [ '/chart-of-the-day/', 'Visualizations'],
     [ '/integrations/', 'Integrations' ],
     [ '/tutorials/', 'Tutorials' ],    
     [ 'https://axibase.com/docs/atsd', 'Documentation'],      
@@ -20,13 +20,7 @@ const landingPageMenu = [
 ];
 
 const chartofthedayMenu = [
-    {
-        title: "Chart of the Day", children: [
-            ['2018.md', '2018'],
-            ['2017.md', '2017'],
-            ['2015.md', '2015'],
-        ]
-    },
+   '',
 ];
 
 const researchMenu = [
